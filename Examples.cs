@@ -1,5 +1,5 @@
 /** 
- * file: Example.cs 
+ * file: Examples.cs 
  * start date: 12/8/14
  * @author:  DocuSign
  * descr:  Sample C# file used to illustrate NuGet Client usage.  

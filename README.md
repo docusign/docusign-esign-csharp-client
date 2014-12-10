@@ -9,7 +9,7 @@ Pre-requisites
 * DocuSign Developer account (Free)
 * Microsoft Visual Studio
 
-You can create your free dev account at the [DocuSign DevCenter](https://www.docusign.com/developer-center) using this [registration from](https://www.docusign.com/developer-center/get-started). You will need the **Integrator Key** from your developer account in order to use the DocuSign .NET Client.  See [Common Terms](https://www.docusign.com/developer-center/explore/overview) for an explantion of the basic components of the DocuSign platform.
+You can create your free dev account at the [DocuSign DevCenter](https://www.docusign.com/developer-center) using this [registration from](https://www.docusign.com/developer-center/get-started). You will need the **Integrator Key** from your developer account in order to use the DocuSign .NET Client.
 
 Quickstart Guide
 ----------

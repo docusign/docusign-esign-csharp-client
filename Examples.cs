@@ -2,7 +2,7 @@
  * file: Examples.cs 
  * start date: 12/8/14
  * @author:  DocuSign
- * descr:  Sample C# file used to illustrate NuGet Client usage.  
+ * descr:  Sample C# console application used to illustrate DocuSign .NET Client usage.  
  **/
 
 using System;
@@ -96,7 +96,7 @@ namespace DocuSignNuGetSamples
             };
 
             // Email subject is a required parameter when requesting signatures
-            envelope.EmailSubject = "DocuSign NuGet Client - Signature Request from Template";
+            envelope.EmailSubject = "DocuSign .NET Client - Signature Request from Template";
 
             // "sent" to send immediately, "created" to save envelope as draft
             envelope.Status = "sent";
@@ -265,7 +265,7 @@ namespace DocuSignNuGetSamples
             envelope.Status = "sent";
 
             // email subject is required
-            envelope.EmailSubject = "DocuSign NuGet Client - Signature Request on Document";
+            envelope.EmailSubject = "DocuSign .NET Client - Signature Request on Document";
 
             // create envelope and send the signature request (since status is set to "sent")
             result = envelope.Create(documentPath);
@@ -435,7 +435,7 @@ namespace DocuSignNuGetSamples
             // assign the envelope id that was passed in
             envelope.EnvelopeId = EnvelopeId;
 
-            // add one signer (single recipient embedded signing currently supported in DocuSign NuGet Client)
+            // add one signer (single recipient embedded signing currently supported in DocuSign .NET Client)
             envelope.Recipients = new Recipients()
             {
                 signers = new Signer[]

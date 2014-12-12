@@ -1,4 +1,4 @@
-#![Logo](Doc/icons/logo.jpg)
+#![Logo](icon.png)
 
 DocuSign .NET Client
 =========================================

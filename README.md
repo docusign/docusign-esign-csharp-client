@@ -15,13 +15,18 @@ Quickstart Guide
 
 ### Add the DocuSign .NET Client to your project
 
-Follow these steps to add the DocuSign .NET Client to your project:
+METHOD 1:  Install from Visual Studio
 
 * In Visual Studio open existing project or create a new one.
 * Go to **Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution**.
 * Search for "DocuSign" in the package manager window.
 * Select the **DocuSign .NET Client** and click **Install**. 
 * Additionally install **Json.NET** (the client's only external dependency).
+
+METHOD 2:  Manual Install
+
+* Download GitHub zip or pull code from Git command line.
+* Copy source into your project's library directory (or other locations as needed).
 
 You can also install the DocuSign .NET Client and Json.NET dependency by running the following commands in the [NuGet Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
 

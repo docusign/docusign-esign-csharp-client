@@ -1,6 +1,4 @@
-#![Logo](icon.png)
-
-DocuSign .NET Client
+#![Logo](icon.png)  DocuSign .NET Client
 =========================================
 
 The DocuSign .NET Client is built on our public [REST API](https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm) and provides a quick and easy way for developers to add DocuSign's world-class document signing experience to their .NET applications.

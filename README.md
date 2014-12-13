@@ -38,7 +38,7 @@ METHOD 3:  Manual Install
 
 ### Add the using directive for access to DocuSign types
 
-Add the following line to your project:
+Add the following line of code to your project:
 
 ```
 using DocuSign.Integrations.Client;

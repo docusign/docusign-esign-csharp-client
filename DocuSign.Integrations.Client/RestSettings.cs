@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DocuSign.Integrations.Client
+namespace DocuSignClient
 {
     using System;
     using System.Collections.Generic;
@@ -57,6 +57,7 @@ namespace DocuSign.Integrations.Client
                 return instance;
             }
         }
+
         /// <summary>
         /// Gets or sets the REST tracing
         /// </summary>
@@ -101,10 +102,5 @@ namespace DocuSign.Integrations.Client
         /// Gets or sets the email subject line
         /// </summary>
         public string EmailSubject { get; set; }
-
-        /// <summary>
-        /// Gets or sets the DocuSign Address
-        /// </summary>
-        public string DocuSignAddress { get; set; }
     }
 }

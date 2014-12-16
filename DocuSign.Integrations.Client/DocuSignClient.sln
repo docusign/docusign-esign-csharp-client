@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSignClient", "DocuSignClient.csproj", "{EC9542CD-C506-4941-A59A-B89370D1BC2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSignClientUnitTests", "DocuSignClientUnitTests\DocuSignClientUnitTests.csproj", "{F4C0F2AA-BA38-45D5-A908-D6793D427351}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6BF1AD6D-3653-42E3-9002-BB5E89D1FD5F}"
+	ProjectSection(SolutionItems) = preProject
+		DocuSignClient.vsmdi = DocuSignClient.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomConfig", "..\CustomConfig\CustomConfig.csproj", "{B835AE39-7E5D-4626-AA41-1B0D5A056EC7}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DocuSignClient.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC9542CD-C506-4941-A59A-B89370D1BC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC9542CD-C506-4941-A59A-B89370D1BC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC9542CD-C506-4941-A59A-B89370D1BC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC9542CD-C506-4941-A59A-B89370D1BC2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C0F2AA-BA38-45D5-A908-D6793D427351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C0F2AA-BA38-45D5-A908-D6793D427351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C0F2AA-BA38-45D5-A908-D6793D427351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C0F2AA-BA38-45D5-A908-D6793D427351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B835AE39-7E5D-4626-AA41-1B0D5A056EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B835AE39-7E5D-4626-AA41-1B0D5A056EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B835AE39-7E5D-4626-AA41-1B0D5A056EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B835AE39-7E5D-4626-AA41-1B0D5A056EC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

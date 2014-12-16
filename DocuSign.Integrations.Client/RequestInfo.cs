@@ -4,14 +4,14 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DocuSign.Integrations.Client
+namespace DocuSignClient
 {
     using System.Collections.Generic;
 
     /// <summary>
     /// RequestInfo class
     /// </summary>
-    public class RequestInfo
+    internal class RequestInfo
     {
         /// <summary>
         /// Gets or sets the uri property
@@ -114,11 +114,6 @@ namespace DocuSign.Integrations.Client
         /// Gets or sets the DistributorPassword property
         /// </summary>
         public string DistributorPassword { get; set; }
-
-        /// <summary>
-        /// Gets or sets the SOBO user id property
-        /// </summary>
-        public string SOBOUserId { get; set; }
 
         /// <summary>
         /// Gets or sets the Uri property

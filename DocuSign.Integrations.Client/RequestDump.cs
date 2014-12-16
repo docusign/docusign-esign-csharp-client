@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DocuSign.Integrations.Client
+namespace DocuSignClient
 {
     using System;
     using System.Collections.Generic;
@@ -13,16 +13,8 @@ namespace DocuSign.Integrations.Client
     using System.Net;
     using System.Text;
 
-    /// <summary>
-    /// RequestDump class
-    /// </summary>
     static class RequestDump
     {
-        /// <summary>
-        /// Dumps a specific request
-        /// </summary>
-        /// <param name="req"></param>
-        /// <returns></returns>
         public static string Dump(this RequestBuilder req)
         {
             StringBuilder sb = new StringBuilder();
@@ -30,7 +22,7 @@ namespace DocuSign.Integrations.Client
             sb.AppendLine();
             sb.AppendLine("Headers:");
 
-            for (int x = 0; x < req.HttpRequest.Headers.Count; x++)
+            for(int x = 0; x < req.HttpRequest.Headers.Count; x++)
             {
                 var key = req.HttpRequest.Headers.Keys[x];
                 var val = req.HttpRequest.Headers[x];

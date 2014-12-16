@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DocuSign.Integrations.Client
+namespace DocuSignClient
 {
     using System;
     using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace DocuSign.Integrations.Client
     /// <summary>
     /// RequestBody class
     /// </summary>
-    public class RequestBody
+    internal class RequestBody
     {
         /// <summary>
         /// Initializes a new instance of the RequestBody class

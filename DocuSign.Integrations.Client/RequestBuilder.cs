@@ -6,7 +6,7 @@
 
 #define ENABLE_REQ_DUMP
 
-namespace DocuSign.Integrations.Client
+namespace DocuSignClient
 {
     using System;
     using System.IO;
@@ -18,7 +18,7 @@ namespace DocuSign.Integrations.Client
     /// <summary>
     /// RequestBuilder class
     /// </summary>
-    public class RequestBuilder
+    internal class RequestBuilder
     {
 #if ENABLE_REQ_DUMP                
         /// <summary>
@@ -160,7 +160,7 @@ namespace DocuSign.Integrations.Client
                 this.webRequest.ContentType = string.Format("{0}; boundary={1}", this.webRequest.ContentType, this.Request.MultipartBoundary);
             }
 
-            if (this.webRequest.Method != "GET")
+            if (this.webRequest.Method == "PUT" || this.webRequest.Method == "POST")
             {
                 this.ConstructPOST();
             }
@@ -180,8 +180,7 @@ namespace DocuSign.Integrations.Client
             if (this.AuthorizationFlag != AuthOptions.IntegratorKeyOnly)
             {
                 this.docuSignCredentials.Username = this.Request.LoginEmail;
-                this.docuSignCredentials.Password = string.IsNullOrWhiteSpace(this.Request.ApiPassword) == false ? this.Request.ApiPassword : this.Request.LoginPassword;
-                this.docuSignCredentials.SendOnBehalfOf = this.Request.SOBOUserId;
+                this.docuSignCredentials.Password = this.Request.LoginPassword;
             }
         }
 
@@ -215,8 +214,6 @@ namespace DocuSign.Integrations.Client
 
                     this.ReadResponse(resp);
 
-                    this.responseInfo.ResponseStream = resp.GetResponseStream();
-
                     if (this.responseInfo.ContentType == "application/pdf")
                     {
                     }
@@ -249,6 +246,9 @@ namespace DocuSign.Integrations.Client
                 {
                     this.responseInfo.ResponseText = string.Format("Non-Protocol Error: {0}", ex.Status.ToString());
                 }
+            }
+            catch (Exception e)
+            {
             }
         }
 

@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DocuSign.Integrations.Client
+namespace DocuSignClient
 {
     using System;
     using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace DocuSign.Integrations.Client
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Credentials information for a DocuSign account
+    /// TODO: Update summary.
     /// </summary>
     [DataContract(Namespace = "")]
     public class DocuSignCredentials

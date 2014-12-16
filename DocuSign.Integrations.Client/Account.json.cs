@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DocuSign.Integrations.Client
+namespace DocuSignClient
 {
     using System;
     using System.Collections.Generic;
@@ -103,8 +103,6 @@ namespace DocuSign.Integrations.Client
         /// Gets or sets the SocialAccountInformation property
         /// </summary>
         public SocialAccountInformation socialAccountInformation { get; set; }
-
-        public ReferralInformation referralInformation { get; set; }
 
         /// <summary>
         /// Gets or sets the distributor code
@@ -402,7 +400,7 @@ namespace DocuSign.Integrations.Client
         /// Gets or sets the api password property
         /// </summary>
         public string ApiPassword { get; set; }
-
+        
         /// <summary>
         /// Gets or sets the X property
         /// </summary>
@@ -427,37 +425,6 @@ namespace DocuSign.Integrations.Client
         /// Gets or sets the user name property
         /// </summary>
         public string UserName { get; set; }
-    }
-
-    /// <summary>
-    /// Json class for account settings
-    /// </summary>
-    [Serializable]
-    public class AccountSettings
-    {
-        /// <summary>
-        /// Gets or sets array of new user objects
-        /// </summary>
-        public AccountSetting[] accountSettings { get; set; }
-
-        /// <summary>
-        /// Deserializes Json text into the object's properties
-        /// </summary>
-        /// <param name="json">string of Json text</param>
-        /// <returns>CreatedUsers instance</returns>
-        public static AccountSettings FromJson(string json)
-        {
-            return JsonConvert.DeserializeObject<AccountSettings>(json);
-        }
-
-        /// <summary>
-        /// Serializes self
-        /// </summary>
-        /// <returns>serialized Json text</returns>
-        public string Serialize()
-        {
-            return JsonConvert.SerializeObject(this);
-        }
     }
 
     /// <summary>
@@ -493,37 +460,6 @@ namespace DocuSign.Integrations.Client
         /// Gets or sets the value property
         /// </summary>
         public string value { get; set; }
-    }
-
-    /// <summary>
-    /// Json class for user settings
-    /// </summary>
-    [Serializable]
-    public class UserSettings
-    {
-        /// <summary>
-        /// Gets or sets array of new user objects
-        /// </summary>
-        public UserSetting[] userSettings { get; set; }
-
-        /// <summary>
-        /// Deserializes Json text into the object's properties
-        /// </summary>
-        /// <param name="json">string of Json text</param>
-        /// <returns>CreatedUsers instance</returns>
-        public static UserSettings FromJson(string json)
-        {
-            return JsonConvert.DeserializeObject<UserSettings>(json);
-        }
-
-        /// <summary>
-        /// Serializes self
-        /// </summary>
-        /// <returns>serialized Json text</returns>
-        public string Serialize()
-        {
-            return JsonConvert.SerializeObject(this);
-        }
     }
 
     /// <summary>
@@ -753,39 +689,6 @@ namespace DocuSign.Integrations.Client
     }
 
     /// <summary>
-    /// Billing plan class
-    /// </summary>
-    [Serializable]
-    public class Plan
-    {
-        /// <summary>
-        /// Gets or sets the billing plans array
-        /// </summary>
-        public BillingPlan BillingPlan { get; set; }
-
-        public BillingPlan[] SuccessorPlans { get; set; }
-
-        /// <summary>
-        /// Deserializes Json text into the object's properties
-        /// </summary>
-        /// <param name="json">string of Json text</param>
-        /// <returns>Plans instance</returns>
-        public static Plan FromJson(string json)
-        {
-            return JsonConvert.DeserializeObject<Plan>(json);
-        }
-
-        /// <summary>
-        /// Serializes self
-        /// </summary>
-        /// <returns>serialized Json text</returns>
-        public string Serialize()
-        {
-            return JsonConvert.SerializeObject(this);
-        }
-    }
-
-    /// <summary>
     /// Billing plans class
     /// </summary>
     [Serializable]
@@ -871,78 +774,5 @@ namespace DocuSign.Integrations.Client
         /// Gets or sets support plan fee property
         /// </summary>
         public string SupportPlanFee { get; set; }
-    }
-
-    /// <summary>
-    /// Class to store a list of login accounts for a specific user
-    /// </summary>
-    [Serializable]
-    public class Logins
-    {
-        /// <summary>
-        /// token used by DocuSign for API calls for this user
-        /// </summary>
-        public string ApiPassword { get; set; }
-
-        /// <summary>
-        /// List of accounts for this user
-        /// </summary>
-        public LoginAccount[] LoginAccounts { get; set; }
-        /// <summary>
-        /// Deserializes Json text into the object's properties
-        /// </summary>
-        /// <param name="json">string of Json text</param>
-        /// <returns>Plans instance (list)</returns>
-        public static Logins FromJson(string json)
-        {
-            return JsonConvert.DeserializeObject<Logins>(json);
-        }
-
-        /// <summary>
-        /// Serializes self
-        /// </summary>
-        /// <returns>serialized Json text</returns>
-        public string Serialize()
-        {
-            return JsonConvert.SerializeObject(this);
-        }
-    }
-
-    /// <summary>
-    /// Login account information
-    /// </summary>
-    [Serializable]
-    public class LoginAccount
-    {
-        public string Name { get; set; }
-        public string AccountId { get; set; }
-        public string AccountIdGuid { get; set; }
-        public string BaseUrl { get; set; }
-        public bool IsDefault { get; set; }
-        public string UserName { get; set; }
-        public string UserId { get; set; }
-        public string Email { get; set; }
-        public string SiteDescription { get; set; }
-    }
-
-    /// <summary>
-    /// Represents information about referral
-    /// </summary>
-    [Serializable]
-    public class ReferralInformation
-    {
-        public string advertisementId { get; set; }
-        public string enableSupport { get; set; }
-        public string groupMemberId { get; set; }
-        public string idType { get; set; }
-        public string includedSeats { get; set; }
-        public string industry { get; set; }
-        public string planStartMonth { get; set; }
-        public string promoCode { get; set; }
-        public string publisherId { get; set; }
-        public string referralCode { get; set; }
-        public string referrerName { get; set; }
-        public string saleDiscountPercent { get; set; }
-        public string shopperId { get; set; }
     }
 }

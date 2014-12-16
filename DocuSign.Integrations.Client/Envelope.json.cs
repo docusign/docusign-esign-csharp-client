@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DocuSign.Integrations.Client
+namespace DocuSignClient
 {
     using System;
     using System.Collections.Generic;
@@ -22,8 +22,8 @@ namespace DocuSign.Integrations.Client
         /// <summary>
         /// Initializes a new instance of the EnvelopeCreate class
         /// </summary>
-        public EnvelopeCreate()
-        {
+        public EnvelopeCreate() 
+        { 
         }
 
         /// <summary>
@@ -91,15 +91,7 @@ namespace DocuSign.Integrations.Client
         /// </summary>
         public string emailSubject { get; set; }
 
-        public string status { get; set; }
-
-        public string templateId { get; set; }
-
         public Recipients recipients { get; set; }
-
-        public TemplateRole[] templateRoles { get; set; }
-
-		public Recipients carbonCopies { get; set; }
 
         public CustomFields customFields { get; set; }
 
@@ -107,7 +99,7 @@ namespace DocuSign.Integrations.Client
         /// Gets or sets the Document property
         /// </summary>
         public Document[] documents { get; set; }
-
+        
         /// <summary>
         /// Deserializes Json text into the object's properties
         /// </summary>
@@ -131,45 +123,16 @@ namespace DocuSign.Integrations.Client
     [Serializable]
     public class Recipients
     {
-		/// <summary>
-		/// List of contact that needs to sign this envelope
-		/// </summary>
-		public Signer[] signers { get; set; }
-		/// <summary>
-		/// List of contacts that gets an email when this envelope is signed
-		/// </summary>
-		public Signer[] carbonCopies { get; set; }
-
-        /// <summary>
-        /// List of contacts that gets to view the email to complete the action
-        /// </summary>
-        public Signer[] certifiedDeliveries { get; set; }
-
-        /// <summary>
-        /// List of contacts that gets to address receipts
-        /// </summary>
-        public Signer[] agents { get; set; }
-
-        /// <summary>
-        /// List of contacts that gets to manage receipts
-        /// </summary>
-        public Signer[] intermediaries { get; set; }
-
-        /// <summary>
-        /// List of contacts that gets to manage envelope
-        /// </summary>
-        public Signer[] editors { get; set; }
+        public Signer[] signers { get; set; }
     }
 
     [Serializable]
     public class Signer
     {
-        public string email { get; set; }
-        public string name { get; set; }
+        public string email{ get; set; }
+        public string name{ get; set; }
         public string recipientId { get; set; }
         public string routingOrder { get; set; }
-        public string roleName { get; set; }
-        public Tabs tabs { get; set; }
     }
 
     /// <summary>
@@ -273,55 +236,14 @@ namespace DocuSign.Integrations.Client
         /// <summary>
         /// Initializes a new instance of the SenderView class
         /// </summary>
-        public SenderView()
-        {
+        public SenderView() 
+        { 
         }
 
         /// <summary>
         /// Gets or sets the return url property
         /// </summary>
         public string returnUrl { get; set; }
-
-        /// <summary>
-        /// Deserializes Json text into the object's properties
-        /// </summary>
-        /// <param name="json">string of Json text</param>
-        /// <returns>EnvelopeCreate instance</returns>
-        public static SenderView FromJson(string json)
-        {
-            return JsonConvert.DeserializeObject<SenderView>(json);
-        }
-
-        /// <summary>
-        /// Serializes self
-        /// </summary>
-        /// <returns>serialized Json text</returns>
-        public string Serialize()
-        {
-            return JsonConvert.SerializeObject(this);
-        }
-    }
-
-    /// <summary>
-    /// Json class for documents
-    /// </summary>
-    [Serializable]
-    public class RecipientView
-    {
-        /// <summary>
-        /// Initializes a new instance of the RecipientView class
-        /// </summary>
-        public RecipientView()
-        {
-        }
-
-        /// <summary>
-        /// Gets or sets the return url property
-        /// </summary>
-        public string returnUrl { get; set; }
-        public string userName { get; set; }
-        public string email { get; set; }
-        public string authenticationMethod { get; set; }
 
         /// <summary>
         /// Deserializes Json text into the object's properties
@@ -430,132 +352,4 @@ namespace DocuSign.Integrations.Client
             return JsonConvert.SerializeObject(this);
         }
     }
-
-    /// <summary>
-    /// Envelope event class
-    /// </summary>
-    [Serializable]
-    public class EnvelopeDocuments
-    {
-        public string envelopeId { get; set; }
-        public EnvelopeDocument[] envelopeDocuments { get; set; }
-
-        /// <summary>
-        /// Deserializes Json text into the object's properties
-        /// </summary>
-        /// <param name="json">string of Json text</param>
-        /// <returns>EnvelopeCreate instance</returns>
-        public static EnvelopeDocuments FromJson(string json)
-        {
-            return JsonConvert.DeserializeObject<EnvelopeDocuments>(json);
-        }
-
-        /// <summary>
-        /// Serializes self
-        /// </summary>
-        /// <returns>serialized Json text</returns>
-        public string Serialize()
-        {
-            return JsonConvert.SerializeObject(this);
-        }
-    }
-
-    /// <summary>
-    /// Envelope event class
-    /// </summary>
-    [Serializable]
-    public class EnvelopeDocument
-    {
-        public string documentId { get; set; }
-        public string name { get; set; }
-        public string type { get; set; }
-        public string uri { get; set; }
-        public string order { get; set; }
-        public string pages { get; set; }
-
-    }
-
-    [Serializable]
-    public class AccountEnvelopes
-    {
-
-        public string ResultSetSize { get; set; }
-        public string TotalSetSize { get; set; }
-        public string StartPosition { get; set; }
-        public string EndPosition { get; set; }
-        public string NextUri { get; set; }
-        public string PreviousUri { get; set; }
-        public EnvelopeInfo[] Envelopes { get; set; }
-
-        //Empty Constructor
-        public AccountEnvelopes() { }
-
-        public string Serialize()
-        {
-            return JsonConvert.SerializeObject(this);
-        }
-        public static AccountEnvelopes FromJson(string json)
-        {
-            return JsonConvert.DeserializeObject<AccountEnvelopes>(json);
-        }
-    }
-
-
-    [Serializable]
-    public class EnvelopeInfo
-    {
-
-        public string Status { get; set; }
-        public string DocumentsUri { get; set; }
-        public string RecipientsUri { get; set; }
-        public string EnvelopeUri { get; set; }
-        public string EnvelopeId { get; set; }
-        public string CustomFieldsUri { get; set; }
-        public string NotificationUri { get; set; }
-        public string StatusChangedDateTime { get; set; }
-        public string DocumentsCombinedUri { get; set; }
-        public string CertificateUri { get; set; }
-        public string TemplatesUri { get; set; }
-
-        //Empty Constructor
-        public EnvelopeInfo() { }
-
-
-    }
-
-    /// <summary>
-    /// Used to provide template information for envelope creation
-    /// </summary>
-    [Serializable]
-    public class TemplateRole
-    {
-        /// <summary>
-        /// Recipient email's address
-        /// </summary>
-        public string email { get; set; }
-        public string name { get; set; }
-        public string roleName { get; set; }
-        public string routingOrder { get; set; }
-        public string defaultRecipient { get; set; }
-    }
-
-    /// <summary>
-    /// Used for submitting for RESTAPI
-    /// </summary>
-    [Serializable]
-    public class Tabs
-    {
-        public Tab[] signHereTabs { get; set; }
-        public Tab[] initialHereTabs { get; set; }
-        public Tab[] fullNameTabs { get; set; }
-        public Tab[] emailTabs { get; set; }
-        public Tab[] textTabs { get; set; }
-        public Tab[] titleTabs { get; set; }
-        public Tab[] companyTabs { get; set; }
-        public Tab[] dateSignedTabs { get; set; }
-        public Tab[] checkboxTabs { get; set; }
-        public Tab[] signerAttachmentTabs { get; set; }
-    }
-
-
 }

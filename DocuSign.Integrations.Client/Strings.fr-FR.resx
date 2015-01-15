@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element msdata:IsDataSet="true" name="root">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="value" type="xsd:string"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" msdata:Ordinal="1" name="value" type="xsd:string"/>
+                <xsd:element minOccurs="0" msdata:Ordinal="2" name="comment" type="xsd:string"/>
+              </xsd:sequence>
+              <xsd:attribute msdata:Ordinal="1" name="name" type="xsd:string" use="required"/>
+              <xsd:attribute msdata:Ordinal="3" name="type" type="xsd:string"/>
+              <xsd:attribute msdata:Ordinal="4" name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" msdata:Ordinal="1" name="value" type="xsd:string"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>À propos</value>
+  </data>
+  <data name="AboutDocuSign" xml:space="preserve">
+    <value>À propos de DocuSign pour SharePoint</value>
+  </data>
+  <data name="AcccountLoginInvalidCredentials" xml:space="preserve">
+    <value>Désolé, ces informations ne donnent aucun résultat dans notre base de données. Veuillez les vérifier et réessayer.</value>
+  </data>
+  <data name="AccountLoginError" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="AdditionalInfo" xml:space="preserve">
+    <value>Utilisez ce champ pour saisir des informations complémentaires.</value>
+  </data>
+  <data name="BackToLoginOptions" xml:space="preserve">
+    <value>Revenir aux options de connexion</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="CreateMicrosoft" xml:space="preserve">
+    <value>Nous rejoindre via Microsoft</value>
+  </data>
+  <data name="CreateOffice365" xml:space="preserve">
+    <value>Nous rejoindre via Office 365</value>
+  </data>
+  <data name="DocumentCertificates" xml:space="preserve">
+    <value>Certificats de document</value>
+  </data>
+  <data name="DocuSignAdminAccount" xml:space="preserve">
+    <value>Votre compte d’administration DocuSign</value>
+  </data>
+  <data name="DocuSignForMicrosoft" xml:space="preserve">
+    <value>Applications DocuSign pour Microsoft</value>
+  </data>
+  <data name="DoNotIncludeCoC" xml:space="preserve">
+    <value>Ne pas inclure de certificat de signature avec les documents signés</value>
+  </data>
+  <data name="EditDocuSignEnvironment" xml:space="preserve">
+    <value>Modifier l’environnement DocuSign</value>
+  </data>
+  <data name="Environment" xml:space="preserve">
+    <value>Environnement</value>
+  </data>
+  <data name="EnvironmentChangeRemovesUsers" xml:space="preserve">
+    <value>La mise à jour de votre environnement entraînera la suppression de tous les rapports de statut.</value>
+  </data>
+  <data name="GetSignatures" xml:space="preserve">
+    <value>Obtenir des signatures</value>
+  </data>
+  <data name="HelpAndSupport" xml:space="preserve">
+    <value>Aide et assistance</value>
+  </data>
+  <data name="IdentityUnknown" xml:space="preserve">
+    <value>Impossible de déterminer votre identité. Veuillez réessayer en lançant l’application installée sur votre site.</value>
+  </data>
+  <data name="IncludeCoC" xml:space="preserve">
+    <value>Inclure un certificat de signature avec tous les documents signés</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Se connecter avec DocuSign</value>
+  </data>
+  <data name="LoginByClickingThis" xml:space="preserve">
+    <value>En utilisant cette application, vous acceptez d’utiliser DocuSign pour signer vos documents.</value>
+  </data>
+  <data name="LoginCreateAccount" xml:space="preserve">
+    <value>Créer un compte</value>
+  </data>
+  <data name="LoginForgotPassword" xml:space="preserve">
+    <value>Mot de passe oublié?</value>
+  </data>
+  <data name="LoginMicrosoft" xml:space="preserve">
+    <value>Se connecter avec Microsoft</value>
+  </data>
+  <data name="LoginMicrosoftAccountTooltip" xml:space="preserve">
+    <value>un compte personnel</value>
+  </data>
+  <data name="LoginOffice365" xml:space="preserve">
+    <value>Se connecter avec Office 365</value>
+  </data>
+  <data name="LoginPlaceholderEmail" xml:space="preserve">
+    <value>Saisir une adresse e-mail</value>
+  </data>
+  <data name="LoginPlaceholderPassword" xml:space="preserve">
+    <value>Saisir le mot de passe</value>
+  </data>
+  <data name="LoginRememberMe" xml:space="preserve">
+    <value>Se souvenir de moi</value>
+  </data>
+  <data name="LoginTermsAndConditions" xml:space="preserve">
+    <value>Conditions d'utilisation</value>
+  </data>
+  <data name="LoginWithDocusignCredentials" xml:space="preserve">
+    <value>Veuillez ouvrir une session avec vos identifiants DocuSign.</value>
+  </data>
+  <data name="Marketing" xml:space="preserve">
+    <value>Marketing:</value>
+  </data>
+  <data name="OthersSigning" xml:space="preserve">
+    <value>D’autres personnes doivent-elles signer ce document?</value>
+  </data>
+  <data name="ContinueToSharePoint" xml:space="preserve">
+    <value>Continuer et accéder à SharePoint</value>
+  </data>
+  <data name="SelectDocuSignEnvironment" xml:space="preserve">
+    <value>Sélectionnez votre environnement DocuSign</value>
+  </data>
+  <data name="SharePointURL" xml:space="preserve">
+    <value>URL SharePoint</value>
+  </data>
+  <data name="SignThisDoc" xml:space="preserve">
+    <value>Signer ce document</value>
+  </data>
+  <data name="SPOLoginModalCreateTooltip" xml:space="preserve">
+    <value>Utilisez cette option pour créer un nouveau compte DocuSign à l’aide de vos identifiants utilisateur Office 365.</value>
+  </data>
+  <data name="SPOLoginModalLogin" xml:space="preserve">
+    <value>Connexion à DocuSign</value>
+  </data>
+  <data name="SPOLoginModalLoginTooltip" xml:space="preserve">
+    <value>Utilisez cette option si vous possédez déjà un compte DocuSign créé précédemment.</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Assistance:</value>
+  </data>
+  <data name="TrackDocStatus" xml:space="preserve">
+    <value>Suivre le statut du document</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>Utilisateur inconnu</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="VisitDocuSign" xml:space="preserve">
+    <value>Visiter DocuSign.com</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bienvenue</value>
+  </data>
+  <data name="YouSigning" xml:space="preserve">
+    <value>Êtes-vous le seul signataire?</value>
+  </data>
+  <data name="SPOMain" xml:space="preserve">
+    <value>Utilisez DocuSign pour SharePoint afin de signer vos documents ou de les faire signer à d’autres personnes.</value>
+  </data>
+  <data name="SPOMain2" xml:space="preserve">
+    <value>Ouvrez une session à l’aide de vos identifiants DocuSign existants ou inscrivez-vous gratuitement via Office 365.</value>
+  </data>
+  <data name="VisitDocusignToLearn" xml:space="preserve">
+    <value>Visitez le site DocuSign pour en savoir plus</value>
+  </data>
+  <data name="EnvironmentNotConfigured" xml:space="preserve">
+    <value>L’application DocuSign pour SharePoint n’a pas encore été configurée. Contactez l’administrateur du site et demandez-lui de configurer l’application.</value>
+  </data>
+  <data name="UnknownConfiguration" xml:space="preserve">
+    <value>Le type d’environnement DocuSign {0} est inconnu de ce système.</value>
+  </data>
+  <data name="DefaultEmailBody" xml:space="preserve">
+    <value>Veuillez signer ce document avec DocuSign</value>
+  </data>
+  <data name="DefaultEmailSubject" xml:space="preserve">
+    <value>Veuillez signer ce document avec DocuSign</value>
+  </data>
+  <data name="LoginOffice365Tooptip" xml:space="preserve">
+    <value>un compte d’entreprise</value>
+  </data>
+  <data name="Office365LoginSuccessful" xml:space="preserve">
+    <value>Connexion à Office 365 réussie</value>
+  </data>
+  <data name="ReturnToDocuSign" xml:space="preserve">
+    <value>Revenir à DocuSign pour SharePoint</value>
+  </data>
+  <data name="SharePointDesktopTitle" xml:space="preserve">
+    <value>DocuSign pour SharePoint en ligne</value>
+  </data>
+  <data name="EditCoC" xml:space="preserve">
+    <value>Modifier les certificats DocuSign</value>
+  </data>
+  <data name="ErrorDialogTitle" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Paramètres DocuSign pour SharePoint</value>
+  </data>
+  <data name="DocuSign" xml:space="preserve">
+    <value>DocuSign</value>
+  </data>
+  <data name="DocuSignStatus" xml:space="preserve">
+    <value>Statut DocuSign</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="NoDocumentSelected" xml:space="preserve">
+    <value>Aucun document sélectionné</value>
+  </data>
+  <data name="CertPref" xml:space="preserve">
+    <value>Préférences du certificat de signature</value>
+  </data>
+  <data name="BadDocsSelected" xml:space="preserve">
+    <value>Un ou plusieurs documents sélectionnés ne sont pas pris en charge par DocuSign pour la signature.</value>
+  </data>
+  <data name="ErrorOccurred" xml:space="preserve">
+    <value>Une erreur s’est produite: {0}</value>
+  </data>
+  <data name="FreemiumExplained" xml:space="preserve">
+    <value>Inscrivez-vous pour un essai gratuit de DocuSign: signez autant de documents que vous le souhaitez et faites signer jusqu’à dix documents</value>
+  </data>
+  <data name="JoinTodayFree" xml:space="preserve">
+    <value>Rejoignez DocuSign dès aujourd’hui, c’est gratuit!</value>
+  </data>
+  <data name="LoginCreateForFree" xml:space="preserve">
+    <value>Créez-en un gratuitement</value>
+  </data>
+  <data name="LoginDontHaveAcccount" xml:space="preserve">
+    <value>Vous n’avez pas encore de compte?</value>
+  </data>
+  <data name="LogIntoDocuSign" xml:space="preserve">
+    <value>Connexion à DocuSign</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Demo" xml:space="preserve">
+    <value>Démonstration</value>
+  </data>
+  <data name="EditDocuSignCertificates" xml:space="preserve">
+    <value>Modifier les paramètres du certificat de signature</value>
+  </data>
+  <data name="NoSelectionMade" xml:space="preserve">
+    <value>Aucune sélection effectuée</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Production</value>
+  </data>
+  <data name="Stage" xml:space="preserve">
+    <value>Étape</value>
+  </data>
+  <data name="Test0" xml:space="preserve">
+    <value>Test0</value>
+  </data>
+  <data name="Test1" xml:space="preserve">
+    <value>Test1</value>
+  </data>
+  <data name="Test2" xml:space="preserve">
+    <value>Test2</value>
+  </data>
+  <data name="DocuSignAppsForMicrosoft" xml:space="preserve">
+    <value>Applications DocuSign pour Microsoft</value>
+  </data>
+  <data name="GetSignaturesFromOthers" xml:space="preserve">
+    <value>Faire signer des documents</value>
+  </data>
+  <data name="HelpAndSuppport" xml:space="preserve">
+    <value>Aide et assistance</value>
+  </data>
+  <data name="SignDocumentYourself" xml:space="preserve">
+    <value>Signer ce document vous-même</value>
+  </data>
+  <data name="WithDSforSP" xml:space="preserve">
+    <value>Grâce à DocuSign pour SharePoint en ligne, vous pouvez signer ou faire signer des documents conservés dans une bibliothèque en ligne SharePoint</value>
+  </data>
+  <data name="EmailInvalid" xml:space="preserve">
+    <value>Adresse e-mail non valide</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Adresse e-mail requise</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Mot de passe requis</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Annulé</value>
+  </data>
+  <data name="Checked" xml:space="preserve">
+    <value>vérifié</value>
+  </data>
+  <data name="CheckStatus" xml:space="preserve">
+    <value>Vérifier le statut</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Signé</value>
+  </data>
+  <data name="DateCreated" xml:space="preserve">
+    <value>Date de création</value>
+  </data>
+  <data name="Declined" xml:space="preserve">
+    <value>Refusé</value>
+  </data>
+  <data name="FileNames" xml:space="preserve">
+    <value>Nom(s) de fichier</value>
+  </data>
+  <data name="NeedSignatures" xml:space="preserve">
+    <value>Signatures requises</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>Rechercher le nom de fichier, l’expéditeur, le destinataire et le statut...</value>
+  </data>
+  <data name="SentBy" xml:space="preserve">
+    <value>Envoyé par</value>
+  </data>
+  <data name="SentTo" xml:space="preserve">
+    <value>Envoyé à</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Statut</value>
+  </data>
+  <data name="ViewDocument" xml:space="preserve">
+    <value>Afficher le document</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ConsoleError" xml:space="preserve">
+    <value>Désolé, un problème est survenu durant le traitement de ce fichier. Veuillez vérifier que le document peut être ouvert dans SharePoint, puis réessayez.</value>
+  </data>
+  <data name="GlobalErrorHeader" xml:space="preserve">
+    <value>Une erreur s'est produite.</value>
+  </data>
+  <data name="GlobalErrorText" xml:space="preserve">
+    <value>Il semblerait qu’un problème soit survenu. Veuillez réessayer. Si le problème persiste, veuillez contacter l’assistance à l’adresse support@docusign.com.</value>
+  </data>
+  <data name="GlobalErrorTitle" xml:space="preserve">
+    <value>Erreur DocuSign pour SharePoint</value>
+  </data>
+  <data name="NoItemsFound" xml:space="preserve">
+    <value>Aucun résultat trouvé…</value>
+  </data>
+  <data name="DocuSignStatuses" xml:space="preserve">
+    <value>Statuts DocuSign</value>
+  </data>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>Seuls les membres du site peuvent utiliser les fonctionnalités DocuSign</value>
+  </data>
+</root>

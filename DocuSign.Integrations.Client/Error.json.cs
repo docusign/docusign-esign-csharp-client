@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DocuSignClient
+namespace DocuSign.Integrations.Client
 {
     using System;
     using System.Collections.Generic;

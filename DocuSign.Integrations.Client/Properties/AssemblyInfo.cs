@@ -1,22 +1,16 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="AssemblyInfo.cs" company="DocuSign, Inc.">
-// Copyright (c) DocuSign, Inc. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
-
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DocuSign Integrations RestClient")]
+[assembly: AssemblyTitle("DocuSign.Integration.Client")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("DocuSign, Inc.")]
-[assembly: AssemblyProduct("DocuSign Integrations RestClient")]
-[assembly: AssemblyCopyright("Copyright © DocuSign, Inc. 2012")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("DocuSign.Integration.Client")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -26,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fdeb7c97-7256-4ef5-b7eb-adb79c776edc")]
+[assembly: Guid("bb114eca-f959-4b7e-87a0-dd6f707fa7fd")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -38,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyFileVersion("13.2.625.00000")]
+[assembly: AssemblyVersion("1.0.0.2")]
+[assembly: AssemblyFileVersion("1.0.0.2")]

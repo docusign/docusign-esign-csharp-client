@@ -4,9 +4,10 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DocuSignClient
+namespace DocuSign.Integrations.Client
 {
     using System.Net;
+    using System.IO;
 
     /// <summary>
     /// ResponseInfo class
@@ -49,5 +50,10 @@ namespace DocuSignClient
         /// Gets or sets the ResponseBytes property
         /// </summary>
         public byte[] ResponseBytes { get; set; } // if a binary response
+
+        /// <summary>
+        /// Gets or sets the Stream property
+        /// </summary>
+        public Stream ResponseStream { get; set; } // if a binary response
     }
 }

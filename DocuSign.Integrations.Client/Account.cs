@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DocuSignClient
+namespace DocuSign.Integrations.Client
 {
     using System;
     using System.Collections.Generic;
@@ -15,13 +15,24 @@ namespace DocuSignClient
     using System.Text;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
+    using System.Net.Http;
 
     /// <summary>
     /// Account class, for creating accounts, logging, etc.
     /// </summary>
     public class Account
     {
-        private string UserId { get; set; }
+        private string MatchingUserId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the UserId property
+        /// </summary>
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// Gets or set the UserName property
+        /// </summary>
+        public string UserName { get; set; }
 
         /// <summary>
         /// Gets or sets the email address to associate with the account, either for logging in or creating.
@@ -58,16 +69,6 @@ namespace DocuSignClient
         public bool IsDefault { get; private set; }
 
         /// <summary>
-        /// Gets or sets the referrer name
-        /// </summary>
-        public string Referrer { get; set; }
-
-        /// <summary>
-        /// Gets or sets the referrer code
-        /// </summary>
-        public string ReferrerProvidedCode { get; set; }
-        
-        /// <summary>
         /// Gets or sets a string representing the BaseUrl to be used in subsequent REST calls
         /// </summary>
         public string BaseUrl { get; set; }
@@ -83,6 +84,11 @@ namespace DocuSignClient
         public SocialAccountInformation Social { get; set; }
 
         /// <summary>
+        /// Gets or sets the Referral property
+        /// </summary>
+        public ReferralInformation Referral { get; set; }
+
+        /// <summary>
         /// Gets or sets a SocialAccountInformation instance
         /// </summary>
         public AddressInformation Address { get; set; }
@@ -91,7 +97,7 @@ namespace DocuSignClient
         /// Gets or sets a SocialAccountInformation instance
         /// </summary>
         public CreditCardInformation CreditCard { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the api password returned from the REST call
         /// </summary>
@@ -118,14 +124,25 @@ namespace DocuSignClient
         public string RestTrace { get; private set; }
 
         /// <summary>
+        /// List of accounts accosiated with this user
+        /// </summary>
+        public Logins LoginAccounts { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the SOBO user id property
+        /// </summary>
+        public string SOBOUserId { get; set; }
+
+        /// <summary>
         /// Logs in to the account based on the credentials provided.
         /// </summary>
         /// <returns>true if successful, false otherwise</returns>
+        /// <exception cref="ArgumentNullException">If password or email are missing</exception>
         public bool Login()
         {
             if (string.IsNullOrEmpty(this.Password) == true && string.IsNullOrEmpty(this.ApiPassword))
             {
-                if (string.IsNullOrEmpty(this.JanrainToken) == true)
+                if (string.IsNullOrEmpty(this.JanrainToken))
                 {
                     throw new ArgumentNullException("Password");
                 }
@@ -149,10 +166,92 @@ namespace DocuSignClient
         }
 
         /// <summary>
-        /// Attempts to get the User Id
+        /// Logs in to the account based on the credentials provided.
         /// </summary>
-        /// <returns>user id or empty string</returns>
-        public string GetUserId()
+        /// <param name="matchingUserId">UserId to match when logging in</param>
+        /// <returns>true if successful, false otherwise</returns>
+        /// <exception cref="ArgumentNullException">If password or email are missing</exception>
+        public bool Login(string matchingUserId)
+        {
+            if (string.IsNullOrEmpty(this.Password) == true && string.IsNullOrEmpty(this.ApiPassword))
+            {
+                if (string.IsNullOrEmpty(this.JanrainToken) == true)
+                {
+                    throw new ArgumentNullException("Password");
+                }
+            }
+
+            if (string.IsNullOrEmpty(this.Email) == true)
+            {
+                throw new ArgumentNullException("Email");
+            }
+
+            this.BaseUrl = string.Empty;
+            this.MatchingUserId = matchingUserId;
+
+            if (string.IsNullOrEmpty(this.ApiPassword) == true)
+            {
+                return this.LoginDirect();
+            }
+            else
+            {
+                return this.LoginSocial();
+            }
+        }
+
+        /// <summary>
+        /// gets the level of permission to templates user has
+        /// </summary>
+        /// <returns>template permission level (none, use, create, share)</returns>
+        public string CanManageTemplates()
+        {
+            if (String.IsNullOrEmpty(this.UserId))
+            {
+                this.updateUserId();
+            }
+            RequestInfo req = new RequestInfo();
+            RequestBuilder utils = new RequestBuilder();
+
+            req.RequestContentType = "application/json";
+            req.AcceptContentType = "application/json";
+            req.HttpMethod = "GET";
+            req.LoginEmail = this.Email;
+            req.LoginPassword = string.IsNullOrEmpty(this.ApiPassword) == false ? this.ApiPassword : this.Password;
+            req.DistributorCode = RestSettings.Instance.DistributorCode;
+            req.DistributorPassword = RestSettings.Instance.DistributorPassword;
+            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+            req.Uri = string.Format("{0}/users/{1}", this.BaseUrl, this.UserId);
+
+            utils.Request = req;
+            utils.Proxy = this.Proxy;
+
+            ResponseInfo response = utils.MakeRESTRequest();
+
+            this.Trace(utils, response);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                this.ParseErrorResponse(response);
+                return "";
+            }
+
+            JObject json = JObject.Parse(response.ResponseText);
+            string value = "";
+            foreach (JObject j in json["userSettings"])
+            {
+                if ((string)j["name"] == "canManageTemplates")
+                {
+                    value = (string)j["value"];
+                }
+            }
+            return value;
+        }
+
+        /// <summary>
+        /// Gets the settings for the logged in account
+        /// </summary>
+        /// <returns>AccountSettings object if successful, null otherwise</returns>
+        public AccountSettings GetAccountSettings()
         {
             try
             {
@@ -163,31 +262,106 @@ namespace DocuSignClient
                 req.AcceptContentType = "application/json";
                 req.HttpMethod = "GET";
                 req.LoginEmail = this.Email;
-                req.LoginPassword = string.Empty;
+                req.LoginPassword = string.IsNullOrEmpty(this.ApiPassword) == false ? this.ApiPassword : this.Password;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}{1}", RestSettings.Instance.WebServiceUrl, "/login_information");
+
+                string method = string.Format("/accounts/{0}/settings?api_password=true", this.AccountId);
+
+                req.Uri = string.Format("{0}{1}", RestSettings.Instance.WebServiceUrl, method);
 
                 utils.Request = req;
                 utils.Proxy = this.Proxy;
+                utils.AuthorizationFormat = RequestBuilder.AuthFormat.Json;
 
                 ResponseInfo response = utils.MakeRESTRequest();
-
                 this.Trace(utils, response);
 
-                if (response.StatusCode != HttpStatusCode.OK)
+                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Created)
+                {
+                    var settings = AccountSettings.FromJson(response.ResponseText);
+                    return settings;
+                }
+                else
                 {
                     this.ParseErrorResponse(response);
                 }
 
-                this.ParseLoginResponse(response);
-
-                return string.Empty;
+                return null;
             }
-            catch
+            catch (Exception ex)
             {
-                return string.Empty;
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return null;
+                }
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Gets the settings for the user
+        /// </summary>
+        /// <param name="userId">UserId for the user you want settings for</param>
+        /// <returns>UserSettings object if successful, null otherwise</returns>
+        public UserSettings GetUserSettings(string userId)
+        {
+            try
+            {
+                RequestInfo req = new RequestInfo();
+                RequestBuilder utils = new RequestBuilder();
+
+                req.RequestContentType = "application/json";
+                req.AcceptContentType = "application/json";
+                req.HttpMethod = "GET";
+                req.LoginEmail = this.Email;
+                req.LoginPassword = string.IsNullOrEmpty(this.ApiPassword) == false ? this.ApiPassword : this.Password;
+                req.DistributorCode = RestSettings.Instance.DistributorCode;
+                req.DistributorPassword = RestSettings.Instance.DistributorPassword;
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+
+                string method = string.Format("/accounts/{0}/users/{1}/settings?api_password=true", this.AccountId, userId);
+                if (String.IsNullOrEmpty(this.BaseUrl))
+                {
+                    req.Uri = string.Format("{0}{1}", RestSettings.Instance.WebServiceUrl, method);
+                }
+                else // prefer the BaseUrl
+                {
+                    method = string.Format("/users/{1}/settings?api_password=true", this.AccountId, userId);
+                    req.Uri = string.Format("{0}{1}", this.BaseUrl, method);
+                }
+
+                utils.Request = req;
+                utils.Proxy = this.Proxy;
+                utils.AuthorizationFormat = RequestBuilder.AuthFormat.Json;
+
+                ResponseInfo response = utils.MakeRESTRequest();
+                this.Trace(utils, response);
+
+                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Created)
+                {
+                    var settings = UserSettings.FromJson(response.ResponseText);
+                    return settings;
+                }
+                else
+                {
+                    this.ParseErrorResponse(response);
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return null;
+                }
+
+                throw;
             }
         }
 
@@ -195,6 +369,7 @@ namespace DocuSignClient
         /// Creates a new account based on the account information provided.
         /// </summary>
         /// <returns>true if successful, false otherwise</returns>
+        /// <exception cref="ArgumentNullException">If password or email are missing</exception>
         public bool Create()
         {
             if (string.IsNullOrEmpty(this.Email) == true)
@@ -254,11 +429,113 @@ namespace DocuSignClient
                 }
                 return response.StatusCode == HttpStatusCode.Created;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return false;
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return false;
+                }
+
+                throw;
             }
         }
+
+        /// <summary>
+        /// Used to update account's userId, which is missing when using oauth (O365 etc.)
+        /// </summary>
+        private void updateUserId()
+        {
+            RequestInfo req = new RequestInfo();
+            RequestBuilder utils = new RequestBuilder();
+
+            req.RequestContentType = "application/json";
+            req.AcceptContentType = "application/json";
+            req.HttpMethod = "GET";
+            req.LoginEmail = this.Email;
+            req.LoginPassword = string.IsNullOrEmpty(this.ApiPassword) == false ? this.ApiPassword : this.Password;
+            req.DistributorCode = RestSettings.Instance.DistributorCode;
+            req.DistributorPassword = RestSettings.Instance.DistributorPassword;
+            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+            int index = this.BaseUrl.LastIndexOf('/') - 9;
+            string url = this.BaseUrl.Substring(0, index);
+            req.Uri = string.Format("{0}/login_information", url);
+
+            utils.Request = req;
+            utils.Proxy = this.Proxy;
+
+            ResponseInfo response = utils.MakeRESTRequest();
+
+            this.Trace(utils, response);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                this.ParseErrorResponse(response);
+                return;
+            }
+
+            JObject json = JObject.Parse(response.ResponseText);
+            foreach (JObject j in json["loginAccounts"])
+            {
+                this.UserId = (string)j["userId"];
+                return;
+            }
+        }
+
+        /// <summary>
+        /// Used to update account's userId, which is missing when using oauth (O365 etc.)
+        /// </summary>
+        public void updateAllAccountsInfo()
+        {
+            if (LoginAccounts == null)
+            {
+                LoginAccounts = new Logins();
+            }
+            RequestInfo req = new RequestInfo();
+            RequestBuilder utils = new RequestBuilder();
+
+            req.RequestContentType = "application/json";
+            req.AcceptContentType = "application/json";
+            req.HttpMethod = "GET";
+            req.LoginEmail = this.Email;
+            req.LoginPassword = string.IsNullOrEmpty(this.ApiPassword) == false ? this.ApiPassword : this.Password;
+            req.DistributorCode = RestSettings.Instance.DistributorCode;
+            req.DistributorPassword = RestSettings.Instance.DistributorPassword;
+            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+            int index = this.BaseUrl.LastIndexOf('/') - 9;
+            string url = this.BaseUrl.Substring(0, index);
+            req.Uri = string.Format("{0}/login_information", url);
+
+            utils.Request = req;
+            utils.Proxy = this.Proxy;
+
+            ResponseInfo response = utils.MakeRESTRequest();
+
+            this.Trace(utils, response);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                this.ParseErrorResponse(response);
+                return;
+            }
+
+            var accounts = new List<LoginAccount>();
+            JObject json = JObject.Parse(response.ResponseText);
+            foreach (JObject j in json["loginAccounts"])
+            {
+                var loginAccount = new LoginAccount();
+                loginAccount.Name = (string)j["name"];
+                loginAccount.UserId = (string)j["userId"];
+                loginAccount.UserName = (string)j["userName"];
+                loginAccount.AccountId = (string)j["accountId"];
+                loginAccount.BaseUrl = (string)j["baseUrl"];
+                loginAccount.IsDefault = (bool)j["isDefault"];
+                loginAccount.Email = (string)j["email"];
+                accounts.Add(loginAccount);
+            }
+            this.LoginAccounts.LoginAccounts = accounts.ToArray();
+        }
+
 
         private void Trace(RequestBuilder utils, ResponseInfo response)
         {
@@ -269,6 +546,7 @@ namespace DocuSignClient
                 sb.AppendLine(utils.Dump());
                 sb.AppendLine();
                 sb.AppendLine("Response:");
+                sb.AppendLine(response.StatusCode.ToString());
                 sb.AppendLine(response.ResponseText);
                 this.RestTrace = sb.ToString();
                 sb.AppendLine();
@@ -278,8 +556,9 @@ namespace DocuSignClient
         /// <summary>
         /// Adds a new user to an existing account
         /// </summary>
-        /// <param name="users">AddUsers object</param>
-        /// <returns>true if successful, false otherwise</returns>
+        /// <param name="users">Object representing the users to add</param>
+        /// <returns>List of created users</returns>
+        /// <exception cref="ArgumentNullException">If email, users or accountId are missing</exception>
         public CreatedUsers AddUser(AddUsers users)
         {
             if (users == null)
@@ -337,11 +616,10 @@ namespace DocuSignClient
                 if (response.StatusCode != HttpStatusCode.Created)
                 {
                     this.ParseErrorResponse(response);
+                    return null;
                 }
 
-                var created = CreatedUsers.FromJson(response.ResponseText);
-
-                return created;
+                return CreatedUsers.FromJson(response.ResponseText);
             }
             catch
             {
@@ -353,7 +631,66 @@ namespace DocuSignClient
         /// <summary>
         /// Adds social credentials to an existing account
         /// </summary>
+        /// <param name="login">Account to associate the social login with</param>
         /// <returns>true if successful, false otherwise</returns>
+        /// <exception cref="ArgumentException">If insufficient information to associate account</exception>
+        public bool AssociateSocialAccount(LoginAccount login)
+        {
+            if (this.ValidateSocial() == false)
+            {
+                throw new ArgumentException("Insufficient information to associate account");
+            }
+
+            try
+            {
+                RequestInfo req = new RequestInfo();
+                req.RequestContentType = "application/json";
+                req.AcceptContentType = "application/json";
+                req.HttpMethod = "PUT";
+                req.ApiPassword = this.ApiPassword;
+                req.LoginEmail = login.Email;
+                req.Uri = string.Format("{0}/users/{2}/social", login.BaseUrl, login.AccountId, login.UserId);
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+
+                RequestBuilder utils = new RequestBuilder();
+                utils.Proxy = this.Proxy;
+
+                List<RequestBody> requestBodies = new List<RequestBody>();
+                RequestBody rb = new RequestBody();
+
+                rb.Text = this.ConstructAssociateJson();
+
+                if (string.IsNullOrEmpty(rb.Text) == true)
+                {
+                    return false;
+                }
+
+                requestBodies.Add(rb);
+
+                req.RequestBody = requestBodies.ToArray();
+                utils.Request = req;
+                ResponseInfo response = utils.MakeRESTRequest();
+
+                this.Trace(utils, response);
+
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    this.ParseErrorResponse(response);
+                }
+
+                return response.StatusCode == HttpStatusCode.OK;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Adds social credentials to an existing account
+        /// </summary>
+        /// <returns>true if successful, false otherwise</returns>
+        /// <exception cref="ArgumentException">If insufficient information to associate account</exception>
         public bool AssociateSocialAccount()
         {
             if (this.ValidateSocial() == false)
@@ -433,12 +770,16 @@ namespace DocuSignClient
                 ResponseInfo response = builder.MakeRESTRequest();
 
                 this.Trace(builder, response);
-                this.ParseLoginResponse(response);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {
                     this.ParseErrorResponse(response);
                 }
+                else
+                {
+                    this.ParseLoginResponse(response);
+                }
+
                 return response.StatusCode == HttpStatusCode.OK;
             }
             catch
@@ -448,7 +789,39 @@ namespace DocuSignClient
         }
 
         /// <summary>
-        /// Logs in to the account based on the credentials provided.
+        /// Retreive information about the account
+        /// <returns>Collection of objects</returns>
+        /// </summary>
+        public JObject GetAccountInfo()
+        {
+            RequestInfo req = new RequestInfo();
+            RequestBuilder utils = new RequestBuilder();
+
+            req.RequestContentType = "application/json";
+            req.AcceptContentType = "application/json";
+            req.HttpMethod = "GET";
+            req.LoginEmail = this.Email;
+            req.LoginPassword = string.IsNullOrEmpty(this.ApiPassword) == false ? this.ApiPassword : this.Password;
+            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+            req.Uri = this.BaseUrl;
+
+            utils.Request = req;
+            utils.Proxy = this.Proxy;
+
+            ResponseInfo response = utils.MakeRESTRequest();
+            this.Trace(utils, response);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                this.ParseErrorResponse(response);
+            }
+
+            JObject json = JObject.Parse(response.ResponseText);
+            return json;
+        }
+
+        /// <summary>
+        /// Get all billing plans
         /// </summary>
         /// <returns>Plans object if successful, null otherwise</returns>
         public Plans BillingPlans()
@@ -494,8 +867,8 @@ namespace DocuSignClient
         /// Logs in to the account based on the credentials provided.
         /// </summary>
         /// <param name="planId">Plan ID</param>
-        /// <returns>true if successful, false otherwise</returns>
-        public Plans BillingPlan(string planId)
+        /// <returns>Plan object if successful, null otherwise</returns>
+        public Plan BillingPlan(string planId)
         {
             try
             {
@@ -516,8 +889,6 @@ namespace DocuSignClient
                 builder.Proxy = this.Proxy;
 
                 ResponseInfo response = builder.MakeRESTRequest();
-
-                this.ParseLoginResponse(response);
                 this.Trace(builder, response);
 
                 if (response.StatusCode != HttpStatusCode.OK)
@@ -526,7 +897,7 @@ namespace DocuSignClient
                 }
                 else
                 {
-                    return Plans.FromJson(response.ResponseText);
+                    return Plan.FromJson(response.ResponseText);
                 }
             }
             catch
@@ -557,24 +928,72 @@ namespace DocuSignClient
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
                 req.Uri = string.Format("{0}/views/console", this.BaseUrl);
 
+                if (string.IsNullOrWhiteSpace(this.SOBOUserId) == false)
+                {
+                    req.SOBOUserId = this.SOBOUserId;
+                    utils.AuthorizationFormat = RequestBuilder.AuthFormat.Json;
+                }
+
                 utils.Request = req;
                 utils.Proxy = this.Proxy;
 
                 ResponseInfo response = utils.MakeRESTRequest();
                 this.Trace(utils, response);
 
-                this.ParseLoginResponse(response);
-                if (response.StatusCode != HttpStatusCode.OK)
+                if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Created)
                 {
                     this.ParseConsoleResponse(response);
                 }
+                else
+                {
+                    this.ParseErrorResponse(response);
+                }
 
-                return response.StatusCode == HttpStatusCode.OK;
+                return (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Created);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return false;
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return false;
+                }
+
+                throw;
             }
+        }
+
+        /// <summary>
+        /// Gets the profile picture for this user
+        /// </summary>
+        /// <returns>byte array representing image</returns>
+        public byte[] GetUserProfilePicture()
+        {
+            RequestInfo req = new RequestInfo();
+            RequestBuilder utils = new RequestBuilder();
+
+            req.RequestContentType = "application/json";
+            req.AcceptContentType = "application/json";
+            req.HttpMethod = "GET";
+            req.LoginEmail = this.Email;
+            req.LoginPassword = string.IsNullOrEmpty(this.ApiPassword) == false ? this.ApiPassword : this.Password;
+            req.DistributorCode = RestSettings.Instance.DistributorCode;
+            req.DistributorPassword = RestSettings.Instance.DistributorPassword;
+            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+            req.Uri = string.Format("{0}/users/{1}/profile/image", this.BaseUrl, this.UserId);
+
+            utils.Request = req;
+            utils.Proxy = this.Proxy;
+
+            ResponseInfo response = utils.MakeRESTRequest();
+            this.Trace(utils, response);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                this.ParseErrorResponse(response);
+            }
+
+            return response.ResponseBytes;
         }
 
         /// <summary>
@@ -604,17 +1023,26 @@ namespace DocuSignClient
                 ResponseInfo response = utils.MakeRESTRequest();
                 this.Trace(utils, response);
 
-                this.ParseLoginResponse(response);
                 if (response.StatusCode != HttpStatusCode.OK)
                 {
                     this.ParseErrorResponse(response);
                 }
+                else
+                {
+                    this.ParseLoginResponse(response);
+                }
 
                 return response.StatusCode == HttpStatusCode.OK;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return false;
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return false;
+                }
+
+                throw;
             }
         }
 
@@ -644,19 +1072,28 @@ namespace DocuSignClient
 
                 ResponseInfo response = utils.MakeRESTRequest();
 
-                this.ParseLoginResponse(response);
                 this.Trace(utils, response);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {
                     this.ParseErrorResponse(response);
                 }
+                else
+                {
+                    this.ParseLoginResponse(response);
+                }
 
                 return response.StatusCode == HttpStatusCode.OK;
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return false;
+                }
+
+                throw;
             }
         }
 
@@ -677,6 +1114,10 @@ namespace DocuSignClient
         {
             if (response.StatusCode == HttpStatusCode.OK)
             {
+                // this is the new way of managing the login accounts
+                this.LoginAccounts = Logins.FromJson(response.ResponseText);
+
+                // this is the old way so we don't break old clients
                 JObject json = JObject.Parse(response.ResponseText);
 
                 if (json != null)
@@ -684,25 +1125,50 @@ namespace DocuSignClient
                     this.ApiPassword = (string)json["apiPassword"];
                     foreach (JObject j in json["loginAccounts"])
                     {
-                        this.AccountId = (string)j["accountId"];
+                        string userId = (string)j["userId"];
                         string def = (string)j["isDefault"];
-                        string guid = (string)j["accountIdGuid"];
 
-                        if (string.IsNullOrEmpty(guid) == false)
+                        if (string.IsNullOrEmpty(this.MatchingUserId) == false)
                         {
-                            this.AccountIdGuid = new Guid(guid);
+                            if (userId == this.MatchingUserId)
+                            {
+                                CaptureAccountInfo(j);
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            if (def.Equals("true"))
+                            {
+                                CaptureAccountInfo(j);
+                                break;
+                            }
                         }
 
-                        if (def.Equals("true"))
-                        {
-                            this.BaseUrl = (string)j["baseUrl"];
-                            this.AccountName = (string)j["userName"];
-                            this.UserId = (string)j["userId"];
-                            this.IsDefault = true;
-                        }
                     }
                 }
             }
+        }
+
+        private void CaptureAccountInfo(JObject j)
+        {
+            this.AccountId = (string)j["accountId"];
+            string guid = (string)j["accountIdGuid"];
+
+            if (string.IsNullOrEmpty(guid) == false)
+            {
+                this.AccountIdGuid = new Guid(guid);
+            }
+
+            this.BaseUrl = (string)j["baseUrl"];
+            this.AccountName = (string)j["userName"];
+            this.Email = (string)j["email"];
+            this.UserId = (string)j["userId"];
+
+            string def = (string)j["isDefault"];
+            bool isdef = false;
+            bool.TryParse(def, out isdef);
+            this.IsDefault = isdef;
         }
 
         /// <summary>
@@ -728,7 +1194,14 @@ namespace DocuSignClient
         /// <param name="response">ResponseInfo object</param>
         private void ParseErrorResponse(ResponseInfo response)
         {
-            this.RestError = Error.FromJson(response.ResponseText);
+            try
+            {
+                this.RestError = Error.FromJson(response.ResponseText);
+            }
+            catch
+            {
+                this.RestError = new Error { message = response.ResponseText };
+            }
         }
 
         /// <summary>
@@ -747,6 +1220,7 @@ namespace DocuSignClient
                     this.AccountIdGuid = new Guid(acct);
                     this.AccountId = (string)json["accountId"];
                     this.ApiPassword = (string)json["apiPassword"];
+                    this.UserId = (string)json["userId"];
                     this.BaseUrl = (string)json["baseUrl"];
                 }
             }
@@ -798,8 +1272,11 @@ namespace DocuSignClient
                 ac.distributorCode = RestSettings.Instance.DistributorCode;
                 ac.distributorPassword = RestSettings.Instance.DistributorPassword;
                 ac.socialAccountInformation = this.Social;
-                ac.referrer = this.Referrer;
-                ac.referrerProvidedCode = this.ReferrerProvidedCode;
+
+                if (this.Referral != null)
+                {
+                    ac.referralInformation = this.Referral;
+                }
 
                 List<AccountSetting> acctSettings = new List<AccountSetting>();
                 acctSettings.Add(new AccountSetting("attachCompletedEnvelope", "true"));
@@ -814,7 +1291,7 @@ namespace DocuSignClient
                 ac.initialUser = new InitialUser();
                 ac.initialUser.email = this.Email;
                 ac.initialUser.password = this.Password;
-                ac.initialUser.userName = this.AccountName;
+                ac.initialUser.userName = string.IsNullOrEmpty(this.UserName) == true ? this.AccountName : this.UserName;
                 ac.initialUser.sendActivationOnInvalidLogin = false.ToString();
 
                 List<UserSetting> userSettings = new List<UserSetting>();

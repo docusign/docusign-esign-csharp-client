@@ -6,7 +6,7 @@
 
 #define ENABLE_REQ_DUMP
 
-namespace DocuSignClient
+namespace DocuSign.Integrations.Client
 {
     using System;
     using System.IO;
@@ -18,7 +18,7 @@ namespace DocuSignClient
     /// <summary>
     /// RequestBuilder class
     /// </summary>
-    internal class RequestBuilder
+    public class RequestBuilder
     {
 #if ENABLE_REQ_DUMP                
         /// <summary>
@@ -160,7 +160,7 @@ namespace DocuSignClient
                 this.webRequest.ContentType = string.Format("{0}; boundary={1}", this.webRequest.ContentType, this.Request.MultipartBoundary);
             }
 
-            if (this.webRequest.Method == "PUT" || this.webRequest.Method == "POST")
+            if (this.webRequest.Method != "GET")
             {
                 this.ConstructPOST();
             }
@@ -180,7 +180,8 @@ namespace DocuSignClient
             if (this.AuthorizationFlag != AuthOptions.IntegratorKeyOnly)
             {
                 this.docuSignCredentials.Username = this.Request.LoginEmail;
-                this.docuSignCredentials.Password = this.Request.LoginPassword;
+                this.docuSignCredentials.Password = string.IsNullOrWhiteSpace(this.Request.ApiPassword) == false ? this.Request.ApiPassword : this.Request.LoginPassword;
+                this.docuSignCredentials.SendOnBehalfOf = this.Request.SOBOUserId;
             }
         }
 
@@ -214,6 +215,8 @@ namespace DocuSignClient
 
                     this.ReadResponse(resp);
 
+                    this.responseInfo.ResponseStream = resp.GetResponseStream();
+
                     if (this.responseInfo.ContentType == "application/pdf")
                     {
                     }
@@ -246,9 +249,6 @@ namespace DocuSignClient
                 {
                     this.responseInfo.ResponseText = string.Format("Non-Protocol Error: {0}", ex.Status.ToString());
                 }
-            }
-            catch (Exception e)
-            {
             }
         }
 

@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomConfig", "..\CustomConfig\CustomConfig.csproj", "{B835AE39-7E5D-4626-AA41-1B0D5A056EC7}"
-EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = DocuSignClient.vsmdi
@@ -31,10 +29,6 @@ Global
 		{F4C0F2AA-BA38-45D5-A908-D6793D427351}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4C0F2AA-BA38-45D5-A908-D6793D427351}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4C0F2AA-BA38-45D5-A908-D6793D427351}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B835AE39-7E5D-4626-AA41-1B0D5A056EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B835AE39-7E5D-4626-AA41-1B0D5A056EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B835AE39-7E5D-4626-AA41-1B0D5A056EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B835AE39-7E5D-4626-AA41-1B0D5A056EC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

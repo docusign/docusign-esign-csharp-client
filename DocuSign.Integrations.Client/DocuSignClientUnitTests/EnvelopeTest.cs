@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using DocuSignClient;
+using DocuSign.Integrations.Client;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
@@ -143,10 +143,10 @@ namespace RestClientUnitTests
             }
 
             Assert.AreEqual(expected, actual);
-            AddUsers add = new DocuSignClient.AddUsers();
-            List<NewUser> userList = new List<DocuSignClient.NewUser>();
+            AddUsers add = new AddUsers();
+            List<NewUser> userList = new List<NewUser>();
 
-            NewUser nu = new DocuSignClient.NewUser();
+            NewUser nu = new NewUser();
             nu.userName = Util.MakeUnique("ds client unit test member {unique}");
             nu.email = Util.MakeUnique("ds_client_unit_member_{unique}@gmail.com");
             nu.sendActivationOnInvalidLogin = false.ToString();
@@ -163,7 +163,7 @@ namespace RestClientUnitTests
             userList.Add(nu);
             add.newUsers = userList.ToArray();
 
-            DocuSignClient.CreatedUsers added = null;
+            CreatedUsers added = null;
 
             try
             {

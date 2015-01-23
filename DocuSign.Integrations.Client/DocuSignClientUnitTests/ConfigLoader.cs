@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocuSign.Integrations.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,20 +11,17 @@ namespace RestClientUnitTests
     {
         public static void LoadConfig()
         {
-            CustomConfig.AttributeSelectableSection rest = new CustomConfig.AttributeSelectableSection();
-            CustomConfig.AttributeSelectableReader reader = new CustomConfig.AttributeSelectableReader();
 
-            reader.ReadConfig(rest, "TargetSystems");
-
-            DocuSignClient.RestSettings.Instance.DistributorCode = rest.Values["DistributorCode"];
-            DocuSignClient.RestSettings.Instance.DistributorPassword = rest.Values["DistributorPassword"];
-            DocuSignClient.RestSettings.Instance.IntegratorKey = rest.Values["IntegratorKey"];
-            DocuSignClient.RestSettings.Instance.PlanId = rest.Values["PlanId"];
-            DocuSignClient.RestSettings.Instance.FeatureSetId = rest.Values["FeatureSetId"];
-            DocuSignClient.RestSettings.Instance.WebServiceUrl = rest.Values["WebServiceUrl"];
-            DocuSignClient.RestSettings.Instance.EmailBlurb = rest.Values["EmailBlurb"];
-            DocuSignClient.RestSettings.Instance.EmailSubject = rest.Values["EmailSubject"];
-            DocuSignClient.RestSettings.Instance.RestTracing = true;
+            //TODO - update these values so that tests can run properly
+            RestSettings.Instance.DistributorCode = "";
+            RestSettings.Instance.DistributorPassword = "";
+            RestSettings.Instance.IntegratorKey = "";
+            RestSettings.Instance.PlanId = "";
+            RestSettings.Instance.FeatureSetId = "";
+            RestSettings.Instance.WebServiceUrl = "";
+            RestSettings.Instance.EmailBlurb = "";
+            RestSettings.Instance.EmailSubject = "";
+            RestSettings.Instance.RestTracing = true;
         }
     }
 }

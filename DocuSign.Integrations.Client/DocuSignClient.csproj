@@ -39,6 +39,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,6 +57,7 @@
     <Compile Include="DocuSignCredentials.cs" />
     <Compile Include="Envelope.cs" />
     <Compile Include="Envelope.json.cs" />
+    <Compile Include="EnvelopeStatus.cs" />
     <Compile Include="Error.json.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestBody.cs" />
@@ -64,6 +66,8 @@
     <Compile Include="RequestInfo.cs" />
     <Compile Include="ResponseInfo.cs" />
     <Compile Include="RestSettings.cs" />
+    <Compile Include="Tab.cs" />
+    <Compile Include="Template.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

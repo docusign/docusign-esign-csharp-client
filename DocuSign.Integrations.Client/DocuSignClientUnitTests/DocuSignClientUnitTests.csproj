@@ -68,16 +68,6 @@
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CustomConfig\CustomConfig.csproj">
-      <Project>{b835ae39-7e5d-4626-aa41-1b0d5a056ec7}</Project>
-      <Name>CustomConfig</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DocuSignClient.csproj">
-      <Project>{EC9542CD-C506-4941-A59A-B89370D1BC2B}</Project>
-      <Name>DocuSignClient</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -87,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Test References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DocuSignClient.csproj">
+      <Project>{ec9542cd-c506-4941-a59a-b89370d1bc2b}</Project>
+      <Name>DocuSignClient</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,12 +3,10 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DocuSignClient;
+using DocuSign.Integrations.Client;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Reflection;
-using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -22,7 +20,7 @@ namespace RestClientUnitTests
         {
             ConfigLoader.LoadConfig();
 
-            DocuSignClient.Plans actual = null;
+            Plans actual = null;
 
             Account acct = new Account();
             //acct.Email = "greg.miskin@docusign.com";
@@ -49,7 +47,7 @@ namespace RestClientUnitTests
         {
             ConfigLoader.LoadConfig();
 
-            DocuSignClient.Plans actual = null;
+            Plan actual = null;
 
             Account acct = new Account();
 

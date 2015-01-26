@@ -743,12 +743,16 @@ namespace DocuSign.Integrations.Client
                 throw;
             }
         }
+
         /// <summary>
         /// Update recipients in the envelope
         /// </summary>
         /// <param name="recipients"></param>
+        /// <param name="resendEnvelope">True or false setting that defaults to false. 
+        /// Setting this to true will resend the envelope to the recipient. 
+        /// The resend_envelope flag is only used to resend an In Process envelope.</param>
         /// <returns>true if successful, false otherwise</returns>
-        public bool UpdateRecipients(Recipients recipients)
+        public bool UpdateRecipients(Recipients recipients, bool resendEnvelope = false)
         {
             try
             {
@@ -759,7 +763,7 @@ namespace DocuSign.Integrations.Client
                 req.LoginEmail = Login.Email;
                 req.LoginPassword = Login.Password;
                 req.ApiPassword = Login.ApiPassword;
-                req.Uri = String.Format("/envelopes/{0}/recipients", EnvelopeId);
+                req.Uri = String.Format(resendEnvelope ? "/envelopes/{0}/recipients?resend_envelope=true" : "/envelopes/{0}/recipients", EnvelopeId);
                 req.HttpMethod = "PUT";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 

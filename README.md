@@ -100,4 +100,4 @@ The DocuSign .NET Client is licensed under the [DocuSign .NET Client License](LI
 DocuSign DevCon 2015
 ----------
 
-Looking to fast-track your integration?  Join us at DocuSign DevCon 2015 to learn from the leading business platforms, attend hands-on coding sessions, and network directly with DocuSign engineers and architects.  We'll be taking over Union Square in San Francisco starting with an opening keynote from Geoffrey Moore.  [REGISTER NOW!](http://momentum.docusign.com/san-francisco/dev-con/?mc=devcon-github)
+Looking to fast-track your integration?  Join us at DocuSign DevCon 2015 to learn from the leading business platforms, attend hands-on coding sessions, and network directly with DocuSign engineers and architects.  We'll be taking over Union Square in San Francisco for this 2-day developer conference starting with an opening keynote from the legendary Geoffrey Moore.  [REGISTER NOW!](http://momentum.docusign.com/san-francisco/dev-con/?mc=devcon-github)

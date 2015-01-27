@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountTest.cs" />
+    <Compile Include="AdvancedScenarios.cs" />
     <Compile Include="BillingPlanTests.cs" />
     <Compile Include="ConfigLoader.cs" />
     <Compile Include="EnvelopeTest.cs" />

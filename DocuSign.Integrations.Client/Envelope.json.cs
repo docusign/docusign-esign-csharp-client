@@ -166,11 +166,33 @@ namespace DocuSign.Integrations.Client
     [Serializable]
     public class Signer
     {
+        /// <summary>
+        /// The signer's email address
+        /// </summary>
         public string email { get; set; }
+        /// <summary>
+        /// The signer's name
+        /// </summary>
         public string name { get; set; }
+        /// <summary>
+        /// The signer's recipient unique identifier
+        /// </summary>
         public string recipientId { get; set; }
+        /// <summary>
+        /// The signer's routing order
+        /// </summary>
         public string routingOrder { get; set; }
+        /// <summary>
+        /// The signer's role name
+        /// </summary>
         public string roleName { get; set; }
+        /// <summary>
+        /// The signer's client user unique identifier (For embedded signing)
+        /// </summary>
+        public string clientUserId { get; set; }
+        /// <summary>
+        /// Collection of tab information
+        /// </summary>
         public Tabs tabs { get; set; }
     }
 
@@ -318,11 +340,24 @@ namespace DocuSign.Integrations.Client
         }
 
         /// <summary>
-        /// Gets or sets the return url property
+        /// URL to take the user after they finish signing
         /// </summary>
         public string returnUrl { get; set; }
+        /// <summary>
+        /// Name of the recipient
+        /// </summary>
         public string userName { get; set; }
+        /// <summary>
+        /// Email of the recipient
+        /// </summary>
         public string email { get; set; }
+        /// <summary>
+        /// Client User Unique Identifier (For Embedded signing)
+        /// </summary>
+        public string clientUserId { get; set; }
+        /// <summary>
+        /// Method for authentication
+        /// </summary>
         public string authenticationMethod { get; set; }
 
         /// <summary>

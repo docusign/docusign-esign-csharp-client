@@ -1502,6 +1502,75 @@ namespace DocuSign.Integrations.Client
         }
 
         /// <summary>
+        /// Generates a URL For embedded signing for a specific signer
+        /// </summary>
+        /// <param name="returnUrl">URL to take user after signing is completed</param>
+        /// <param name="signer">Signer information for the person that would be signing</param>
+        /// <returns>Url for embedded signing</returns>
+        public string GetEmbeddedSignerView(string returnUrl, Signer signer)
+        {
+            try
+            {
+                RequestInfo req = new RequestInfo();
+                req.RequestContentType = "application/json";
+                req.AcceptContentType = "application/json";
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.LoginPassword = this.Login.Password;
+                req.ApiPassword = this.Login.ApiPassword;
+                req.Uri = "/envelopes/" + this.EnvelopeId + "/views/recipient";
+                req.HttpMethod = "POST";
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+
+                RequestBuilder builder = new RequestBuilder();
+                builder.Proxy = this.Proxy;
+                builder.Request = req;
+
+                if (string.IsNullOrWhiteSpace(this.Login.SOBOUserId) == false)
+                {
+                    req.SOBOUserId = this.Login.SOBOUserId;
+                    builder.AuthorizationFormat = RequestBuilder.AuthFormat.Json;
+                }
+
+                List<RequestBody> requestBodies = new List<RequestBody>();
+                RequestBody rb = new RequestBody();
+
+                RecipientView rv = new RecipientView();
+                rv.returnUrl = returnUrl;
+                rv.email = signer.email;
+                rv.userName = signer.name;
+                rv.clientUserId = signer.clientUserId;
+                rv.authenticationMethod = "email";
+
+                rb.Text = rv.Serialize();
+                requestBodies.Add(rb);
+
+                req.RequestBody = requestBodies.ToArray();
+                builder.Request = req;
+                ResponseInfo response = builder.MakeRESTRequest();
+                this.Trace(builder, response);
+
+                if (response.StatusCode == HttpStatusCode.Created)
+                {
+                    JObject json = JObject.Parse(response.ResponseText);
+                    return (string)json["url"];
+                }
+
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return string.Empty;
+                }
+
+                throw;
+            }
+        }
+
+        /// <summary>
         /// Once an envelope has been created, this method obtains the URL to the sender view
         /// </summary>
         /// <returns>true if successful, false otherwise</returns>

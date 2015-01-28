@@ -64,5 +64,17 @@ namespace RestClientUnitTests
             Assert.IsTrue(envelope.UpdateStatus());
             Assert.IsNull(template.RestError);
         }
+
+        [TestMethod]
+        public void ReteivingAllDraftEnvelopesTest()
+        {
+            var envelope = new Envelope { Login = _account };
+            // add a draft envelope to be found later
+            Assert.IsTrue(envelope.Create());
+            Assert.IsNull(envelope.RestError);
+            var accountEnvelopes = envelope.GetDraftEnvelopes(DateTime.Now.AddSeconds(-5));
+            Assert.IsNull(envelope.RestError);
+            Assert.AreEqual(1, accountEnvelopes.Envelopes.Length, "We except only 1 draft envelope in the last 5 seconds that was created by this unit test");
+        }
     }
 }

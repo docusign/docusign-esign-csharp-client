@@ -158,5 +158,56 @@ namespace RestClientUnitTests
             Assert.AreEqual(4, envelope.GetRecipientNames().Count());
             Assert.AreEqual((string)(envelope.GetFirstRecipients().First()["email"]), "unitests1@testing.com");
         }
+
+        [TestMethod]
+        public void AddEmailSubjectAndBlurbToExisitingEnvelopeAndVeryifyStatusTest()
+        {
+            var envelope = new Envelope { Login = _account };
+            byte[] doc1 = { 36, 45, 34, 67, 121, 87, 99, 32, 32, 32, 54, 54, 55, 56, 32 };
+            var names = new List<string>();
+            var docs = new List<byte[]>();
+            names.Add("test1.doc");
+            docs.Add(doc1);
+            var signers = new List<Signer>();
+            signers.Add(new Signer { email = "unitests1@testing.com", name = "test2", recipientId = "1", routingOrder = "1" });
+            envelope.Recipients = new Recipients { signers = signers.ToArray()};
+            Assert.IsTrue(envelope.Create(doc1, "test-self-signed.doc"));
+            Assert.IsNull(envelope.RestError);
+            Assert.IsTrue(envelope.AddEmailInformation("DocuSign Client Tests Message", "DocuSign Client Tests Message"));
+            Assert.IsNull(envelope.RestError);
+            var time = envelope.GetStatus(envelope.EnvelopeId);
+            Assert.AreEqual("created", envelope.Status);
+            // envelope was created very recently...
+            Assert.IsTrue(DateTime.Now.Subtract(time).Ticks < 10000);
+            // send envelope
+            envelope.Status = "sent";
+            envelope.UpdateStatus();
+        }
+
+        [TestMethod]
+        public void EnvelopeCustomFieldsTest()
+        {
+            var envelope = new Envelope { Login = _account };
+            byte[] doc1 = { 36, 45, 34, 67, 121, 87, 99, 32, 32, 32, 54, 54, 55, 56, 32 };
+            var names = new List<string>();
+            var docs = new List<byte[]>();
+            names.Add("test1.doc");
+            docs.Add(doc1);
+            var signers = new List<Signer>();
+            signers.Add(new Signer { email = "unitests1@testing.com", name = "test2", recipientId = "1", routingOrder = "1" });
+            envelope.Recipients = new Recipients { signers = signers.ToArray() };
+            Assert.IsTrue(envelope.Create(doc1, "test-self-signed.doc"));
+            Assert.IsNull(envelope.RestError);
+            var fields = new Dictionary<string, object>();
+            fields.Add("time", DateTime.Now);
+            fields.Add("isUnitTest", true);
+            fields.Add("unitTestName", "EnvelopeCustomFieldsTest");
+            Assert.IsTrue(envelope.AddCustomFields(fields));
+            Assert.IsNull(envelope.RestError);
+            Assert.IsTrue(envelope.GetCustomFields()); 
+            Assert.IsNull(envelope.RestError);
+            Assert.AreEqual(3, envelope.CustomFields.textCustomFields.Length);
+            Assert.AreEqual("True", envelope.CustomFields.textCustomFields[1].value);
+        }
     }
 }

@@ -405,10 +405,8 @@ namespace DocuSign.Integrations.Client
         /// <summary>
         /// Get the custom fields loaded into this envelope object
         /// </summary>
-        /// <param name="accountId">The accountId for the account used</param>
-        /// <param name="envelopeId">The envelopeId for this envelope</param>
         /// <returns>true if successful, false otherwise</returns>
-        public bool GetCustomFields(string accountId, string envelopeId)
+        public bool GetCustomFields()
         {
             try
             {
@@ -419,12 +417,13 @@ namespace DocuSign.Integrations.Client
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
                 req.HttpMethod = "GET";
-                req.LoginEmail = string.Empty;
-                req.LoginPassword = string.Empty;
+                req.LoginEmail = Login.Email;
+                req.LoginPassword = Login.Password;
+                req.ApiPassword = Login.ApiPassword; 
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/custom_fields.json", this.Login.BaseUrl, envelopeId);
+                req.Uri = string.Format("{0}/envelopes/{1}/custom_fields.json", this.Login.BaseUrl, this.EnvelopeId);
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -438,6 +437,7 @@ namespace DocuSign.Integrations.Client
                     return false;
                 }
 
+                this.CustomFields = JsonConvert.DeserializeObject<CustomFields>(response.ResponseText);
                 return true;
             }
             catch (Exception ex)

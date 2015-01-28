@@ -81,9 +81,9 @@
     <Folder Include="Test References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DocuSignClient.csproj">
-      <Project>{ec9542cd-c506-4941-a59a-b89370d1bc2b}</Project>
-      <Name>DocuSignClient</Name>
+    <ProjectReference Include="..\DocuSign.Integrations.Client.csproj">
+      <Project>{d2eb5f7f-dd6d-4f75-93f6-004be536288c}</Project>
+      <Name>DocuSign.Integrations.Client</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSignClient", "DocuSignClient.csproj", "{EC9542CD-C506-4941-A59A-B89370D1BC2B}"
-EndProject
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSignClientUnitTests", "DocuSignClientUnitTests\DocuSignClientUnitTests.csproj", "{F4C0F2AA-BA38-45D5-A908-D6793D427351}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6BF1AD6D-3653-42E3-9002-BB5E89D1FD5F}"
@@ -12,25 +12,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSign.Integrations.Client", "DocuSign.Integrations.Client.csproj", "{D2EB5F7F-DD6D-4F75-93F6-004BE536288C}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = DocuSignClient.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EC9542CD-C506-4941-A59A-B89370D1BC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC9542CD-C506-4941-A59A-B89370D1BC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC9542CD-C506-4941-A59A-B89370D1BC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC9542CD-C506-4941-A59A-B89370D1BC2B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F4C0F2AA-BA38-45D5-A908-D6793D427351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F4C0F2AA-BA38-45D5-A908-D6793D427351}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4C0F2AA-BA38-45D5-A908-D6793D427351}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4C0F2AA-BA38-45D5-A908-D6793D427351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2EB5F7F-DD6D-4F75-93F6-004BE536288C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2EB5F7F-DD6D-4F75-93F6-004BE536288C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2EB5F7F-DD6D-4F75-93F6-004BE536288C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2EB5F7F-DD6D-4F75-93F6-004BE536288C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DocuSignClient.vsmdi
 	EndGlobalSection
 EndGlobal

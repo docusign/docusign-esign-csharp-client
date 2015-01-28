@@ -1943,7 +1943,7 @@ namespace DocuSign.Integrations.Client
                 {
                     var ei = new EnvelopeInfo();
                     ei.EnvelopeId = (string)item["envelopeId"];
-                    ei.StatusChangedDateTime = item["createdDateTime"].ToString();
+                    ei.StatusChangedDateTime = (string)item["createdDateTime"];
                     ei.Status = "created";
                     envs.Add(ei);
                 }

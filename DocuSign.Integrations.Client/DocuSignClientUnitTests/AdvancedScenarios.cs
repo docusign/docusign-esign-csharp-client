@@ -209,5 +209,30 @@ namespace RestClientUnitTests
             Assert.AreEqual(3, envelope.CustomFields.textCustomFields.Length);
             Assert.AreEqual("True", envelope.CustomFields.textCustomFields[1].value);
         }
+
+        [TestMethod]
+        public void UserSettingsAndInfoTest()
+        {
+            // insure we have UserId (would not be needed in this case, but good to have)
+            _account.updateAllAccountsInfo();
+            Assert.IsNull(_account.RestError);
+            var userSettings = _account.GetUserSettings(_account.UserId);
+            Assert.IsNull(_account.RestError);
+            Assert.IsNotNull(userSettings);
+            Assert.AreEqual("canManageAccount", userSettings.userSettings[0].name);
+            Assert.AreEqual("true", userSettings.userSettings[0].value);
+            var pic = _account.GetUserProfilePicture();
+            Assert.IsNull(_account.RestError);
+            string templateAccess = _account.CanManageTemplates();
+            Assert.IsNull(_account.RestError);
+            Assert.AreEqual("share", templateAccess);
+            Assert.IsTrue(_account.GetUserConsoleView());
+            Assert.IsNull(_account.RestError);
+            Assert.IsFalse(string.IsNullOrEmpty(_account.ConsoleUrl));
+            // must have a profile picture for this part...
+            Assert.IsNotNull(pic);
+            Assert.IsTrue(pic.Length > 0);
+
+        }
     }
 }

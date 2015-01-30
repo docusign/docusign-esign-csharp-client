@@ -96,6 +96,10 @@ namespace RestClientUnitTests
             // we should have exactly 1 doc now
             Assert.AreEqual(1, envelope.GetDocIds(envelope.EnvelopeId).Count);
             Assert.AreEqual("test1.doc", envelope.GetDocNames(envelope.EnvelopeId).First());
+            var envelopeDocuments = envelope.GetEnvelopeDocumentInfo(envelope.EnvelopeId);
+            Assert.AreEqual(envelopeDocuments.envelopeId, envelope.EnvelopeId);
+            Assert.AreEqual(envelopeDocuments.envelopeDocuments[0].name, "test1.doc");
+            Assert.AreEqual(envelopeDocuments.envelopeDocuments[0].documentId, "1");
             // remove the doc
             Assert.IsTrue(envelope.RemoveDocument(1));
             Assert.IsNull(envelope.RestError);
@@ -263,6 +267,22 @@ namespace RestClientUnitTests
             // now, this one won't work until first one signed (which cannot happen in this test)
             // this is because second recpieint was set to sign only after the first one finished (routing order)
             Assert.IsTrue(string.IsNullOrEmpty(urlForSecondSigner));
+        }
+
+        [TestMethod]
+        public void GetSearchFolderCountTest()
+        {
+            // Note: in order for this test to pass- you must have envelopes in these states
+            var envelope = new Envelope { Login = _account };
+            int completed = envelope.GetSearchFolderCount("completed", DateTime.Today.AddMonths(-1));
+            Assert.IsNull(envelope.RestError);
+            Assert.AreNotEqual(completed, 0);
+            int waitingMe = envelope.GetSearchFolderCount("awaiting_my_signature", DateTime.Today.AddMonths(-1));
+            Assert.IsNull(envelope.RestError);
+            Assert.AreNotEqual(waitingMe, 0);
+            int waitingOthers = envelope.GetSearchFolderCount("out_for_signature", DateTime.Today.AddMonths(-1));
+            Assert.IsNull(envelope.RestError);
+            Assert.AreNotEqual(waitingOthers, 0);
         }
     }
 }

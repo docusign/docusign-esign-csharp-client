@@ -232,7 +232,37 @@ namespace RestClientUnitTests
             // must have a profile picture for this part...
             Assert.IsNotNull(pic);
             Assert.IsTrue(pic.Length > 0);
+        }
 
+        [TestMethod]
+        public void EmbeddedSigningViewTest()
+        {
+            // create a new envelope with 2 recipients            
+            var envelope = new Envelope { Login = _account };
+            byte[] doc1 = { 36, 45, 34, 67, 121, 87, 99, 32, 32, 32, 54, 54, 55, 56, 32 };
+            var names = new List<string>();
+            var docs = new List<byte[]>();
+            names.Add("test1.doc");
+            docs.Add(doc1);
+            var signers = new List<Signer>();
+            // note we need to specify clientUserId
+            signers.Add(new Signer { email = "unitests1@testing.com", name = "test1", recipientId = "1", routingOrder = "1", clientUserId = "1" });
+            signers.Add(new Signer { email = "unitests2@testing.com", name = "test2", recipientId = "2", routingOrder = "2", clientUserId = "2" });
+            envelope.Recipients = new Recipients { signers = signers.ToArray() };
+            Assert.IsTrue(envelope.Create(doc1, "test-self-signed.doc"));
+            Assert.IsNull(envelope.RestError);
+            // send it
+            envelope.Status = "sent";
+            Assert.IsTrue(envelope.UpdateStatus());
+            Assert.IsNull(envelope.RestError);
+            // get embedded signing views for 2 recipients
+            string urlForfirstSigner = envelope.GetEmbeddedSignerView("www.docusign.com", signers.First());
+            Assert.IsNull(envelope.RestError);
+            Assert.IsFalse(string.IsNullOrEmpty(urlForfirstSigner));
+            string urlForSecondSigner = envelope.GetEmbeddedSignerView("www.docusign.com", signers.Last());
+            // now, this one won't work until first one signed (which cannot happen in this test)
+            // this is because second recpieint was set to sign only after the first one finished (routing order)
+            Assert.IsTrue(string.IsNullOrEmpty(urlForSecondSigner));
         }
     }
 }

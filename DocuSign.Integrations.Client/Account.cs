@@ -248,6 +248,46 @@ namespace DocuSign.Integrations.Client
         }
 
         /// <summary>
+        /// gets the DateTime when the user was first created
+        /// </summary>
+        /// <returns>DateTime object</returns>
+        public DateTime CreatedDateTime()
+        {
+            if (String.IsNullOrEmpty(this.UserId))
+            {
+                this.updateUserId();
+            }
+            RequestInfo req = new RequestInfo();
+            RequestBuilder utils = new RequestBuilder();
+
+            req.RequestContentType = "application/json";
+            req.AcceptContentType = "application/json";
+            req.HttpMethod = "GET";
+            req.LoginEmail = this.Email;
+            req.LoginPassword = string.IsNullOrEmpty(this.ApiPassword) == false ? this.ApiPassword : this.Password;
+            req.DistributorCode = RestSettings.Instance.DistributorCode;
+            req.DistributorPassword = RestSettings.Instance.DistributorPassword;
+            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+            req.Uri = string.Format("{0}/users/{1}", this.BaseUrl, this.UserId);
+
+            utils.Request = req;
+            utils.Proxy = this.Proxy;
+
+            ResponseInfo response = utils.MakeRESTRequest();
+
+            this.Trace(utils, response);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                this.ParseErrorResponse(response);
+                return DateTime.MinValue;
+            }
+
+            JObject json = JObject.Parse(response.ResponseText);
+            return (DateTime)json["createdDateTime"];
+        }
+
+        /// <summary>
         /// Gets the settings for the logged in account
         /// </summary>
         /// <returns>AccountSettings object if successful, null otherwise</returns>
@@ -589,7 +629,15 @@ namespace DocuSign.Integrations.Client
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
                 string method = string.Format("/accounts/{0}/users?api_password=true", this.AccountId);
 
-                req.Uri = string.Format("{0}{1}", RestSettings.Instance.WebServiceUrl, method);
+                if (String.IsNullOrEmpty(this.BaseUrl))
+                {
+                    req.Uri = string.Format("{0}{1}", RestSettings.Instance.WebServiceUrl, method);
+                }
+                else
+                {
+                    req.Uri = string.Format("{0}{1}", this.BaseUrl, "/users?api_password=true");
+                }
+
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
                 RequestBuilder utils = new RequestBuilder();
@@ -994,6 +1042,17 @@ namespace DocuSign.Integrations.Client
             }
 
             return response.ResponseBytes;
+        }
+
+        /// <summary>
+        /// Determined if the user is newly created within certain amount of time
+        /// </summary>
+        /// <param name="seconds">The threshold for determining if it is a new user</param>
+        /// <returns></returns>
+        public bool IsNewUser(int seconds)
+        {
+            // A bug in RESTApi causes double counting of 8 hrs offset. We offset that 8 hrs for the moment before the bug is fixed
+            return DateTime.UtcNow.Subtract(this.CreatedDateTime()).TotalSeconds + 28800 < seconds;
         }
 
         /// <summary>

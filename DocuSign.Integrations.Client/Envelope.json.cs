@@ -611,10 +611,26 @@ namespace DocuSign.Integrations.Client
         /// Recipient email's address
         /// </summary>
         public string email { get; set; }
+        /// <summary>
+        /// Recipient's name
+        /// </summary>
         public string name { get; set; }
+        /// <summary>
+        /// Recipient's role
+        /// </summary>
         public string roleName { get; set; }
+        /// <summary>
+        /// Recipient's routing order
+        /// </summary>
         public string routingOrder { get; set; }
+        /// <summary>
+        /// Is this a default recipient
+        /// </summary>
         public string defaultRecipient { get; set; }
+        /// <summary>
+        /// The signer's client user unique identifier (For embedded signing)
+        /// </summary>
+        public string clientUserId { get; set; }
     }
 
     /// <summary>

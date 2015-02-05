@@ -6,7 +6,7 @@ The DocuSign .NET Client is built on DocuSign's public [REST API](https://www.do
 Pre-requisites
 ----------
 
-* DocuSign Developer account (Free)
+* DocuSign Developer account (*Free*)
 
 You can create your free dev account at the [DocuSign Dev Center](https://www.docusign.com/developer-center). You will need the **Integrator Key** from your developer account in order to use the DocuSign .NET Client.
 

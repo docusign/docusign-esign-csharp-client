@@ -21,14 +21,12 @@ METHOD 1:  Install from Visual Studio
 * Go to **Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution**.
 * Search for "DocuSign" in the package manager window.
 * Select the **DocuSign .NET Client** and click **Install**. 
-* Additionally install **Json.NET** (the client's only external dependency).
 
 METHOD 2:  Install from the Console
 
 You can also install the DocuSign .NET Client and Json.NET dependency by running the following commands in the [NuGet Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
 
     PM> Install-Package DocuSign.Integration.Client.dll
-    PM> Install-Package Newtonsoft.Json
 
 METHOD 3:  Manual Install
 

@@ -1045,8 +1045,9 @@ namespace DocuSign.Integrations.Client
         /// <summary>
         /// updates the envelope's status to the one provided
         /// </summary>
+        /// <param name="voidedReason">voided reason required when status is being updated to voided</param>
         /// <returns>true if successful, false otherwise</returns>
-        public bool UpdateStatus()
+        public bool UpdateStatus(string voidedReason = null)
         {
             try
             {
@@ -1066,7 +1067,14 @@ namespace DocuSign.Integrations.Client
 
                 RequestBody rb = new RequestBody();
 
-                rb.Text = "{\"status\":\"" + this.Status + "\"}";
+                StringBuilder sb = new StringBuilder();
+                sb.Append("{");
+                sb.AppendFormat("\"status\":\"{0}\"", this.Status);
+                if (this.Status == "voided" && voidedReason != null)
+                    sb.AppendFormat(", \"voidedReason\":\"{0}\"", voidedReason);
+                sb.Append("}");
+
+                rb.Text = sb.ToString();
                 requestBodies.Add(rb);
 
                 req.RequestBody = requestBodies.ToArray();

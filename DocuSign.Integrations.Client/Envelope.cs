@@ -1070,8 +1070,15 @@ namespace DocuSign.Integrations.Client
                 StringBuilder sb = new StringBuilder();
                 sb.Append("{");
                 sb.AppendFormat("\"status\":\"{0}\"", this.Status);
-                if (this.Status == "voided" && voidedReason != null)
+
+                if (this.Status == "voided") {
+
+                    if (String.IsNullOrEmpty(voidedReason))
+                        throw new ArgumentException("The voided reason is required to change status to voided.");
+
                     sb.AppendFormat(", \"voidedReason\":\"{0}\"", voidedReason);
+                }
+                    
                 sb.Append("}");
 
                 rb.Text = sb.ToString();

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DocuSign.Integrations.Client;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
+using System.IO;
 
 namespace RestClientUnitTests
 {
@@ -115,10 +116,27 @@ namespace RestClientUnitTests
         {
             var envelope = new Envelope { Login = _account };
             byte[] doc1 = { 36, 45, 34, 67, 121, 87, 99, 32, 32, 32, 54, 54, 55, 56, 32 };
-            var names = new List<string>();
-            var docs = new List<byte[]>();
-            names.Add("test1.doc");
-            docs.Add(doc1);
+            envelope.Status = "sent";
+            var signers = new List<Signer>();
+            signers.Add(new Signer { email = _account.Email, name = _account.AccountName, recipientId = "1", routingOrder = "1" });
+            envelope.Recipients = new Recipients { signers = signers.ToArray() };
+            Assert.IsTrue(envelope.Create(doc1, "test-self-signed.doc"));
+            Assert.IsNull(envelope.RestError);
+            Assert.IsTrue(envelope.GetRecipientView());
+            Assert.IsNull(envelope.RestError);
+            // note SenderViewUrl in this case is the Signer view (Recipient)
+            Assert.IsNotNull(envelope.SenderViewUrl);
+        }
+
+        /// <summary>
+        /// In this test we create an envelope to be signed by the sender only
+        /// </summary>
+        [TestMethod]
+        public void CreateEnvelopeFromStreamTest()
+        {
+            var envelope = new Envelope { Login = _account };
+            byte[] byteArray = { 36, 45, 34, 67, 121, 87, 99, 32, 32, 32, 54, 54, 55, 56, 32 };
+            var doc1 = new MemoryStream(byteArray);
             envelope.Status = "sent";
             var signers = new List<Signer>();
             signers.Add(new Signer { email = _account.Email, name = _account.AccountName, recipientId = "1", routingOrder = "1" });
@@ -140,10 +158,6 @@ namespace RestClientUnitTests
         {
             var envelope = new Envelope { Login = _account };
             byte[] doc1 = { 36, 45, 34, 67, 121, 87, 99, 32, 32, 32, 54, 54, 55, 56, 32 };
-            var names = new List<string>();
-            var docs = new List<byte[]>();
-            names.Add("test1.doc");
-            docs.Add(doc1);
             var signers = new List<Signer>();
             var ccs = new List<Signer>();
             signers.Add(new Signer { email = "unitests1@testing.com", name = "test2", recipientId = "1", routingOrder = "1" });
@@ -168,10 +182,6 @@ namespace RestClientUnitTests
         {
             var envelope = new Envelope { Login = _account };
             byte[] doc1 = { 36, 45, 34, 67, 121, 87, 99, 32, 32, 32, 54, 54, 55, 56, 32 };
-            var names = new List<string>();
-            var docs = new List<byte[]>();
-            names.Add("test1.doc");
-            docs.Add(doc1);
             var signers = new List<Signer>();
             signers.Add(new Signer { email = "unitests1@testing.com", name = "test2", recipientId = "1", routingOrder = "1" });
             envelope.Recipients = new Recipients { signers = signers.ToArray()};
@@ -193,10 +203,6 @@ namespace RestClientUnitTests
         {
             var envelope = new Envelope { Login = _account };
             byte[] doc1 = { 36, 45, 34, 67, 121, 87, 99, 32, 32, 32, 54, 54, 55, 56, 32 };
-            var names = new List<string>();
-            var docs = new List<byte[]>();
-            names.Add("test1.doc");
-            docs.Add(doc1);
             var signers = new List<Signer>();
             signers.Add(new Signer { email = "unitests1@testing.com", name = "test2", recipientId = "1", routingOrder = "1" });
             envelope.Recipients = new Recipients { signers = signers.ToArray() };
@@ -244,10 +250,6 @@ namespace RestClientUnitTests
             // create a new envelope with 2 recipients            
             var envelope = new Envelope { Login = _account };
             byte[] doc1 = { 36, 45, 34, 67, 121, 87, 99, 32, 32, 32, 54, 54, 55, 56, 32 };
-            var names = new List<string>();
-            var docs = new List<byte[]>();
-            names.Add("test1.doc");
-            docs.Add(doc1);
             var signers = new List<Signer>();
             // note we need to specify clientUserId
             signers.Add(new Signer { email = "unitests1@testing.com", name = "test1", recipientId = "1", routingOrder = "1", clientUserId = "1" });

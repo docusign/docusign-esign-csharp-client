@@ -1339,6 +1339,23 @@ namespace DocuSign.Integrations.Client
         }
 
         /// <summary>
+        /// Creates an envelope for the user.
+        /// </summary>
+        /// <param name="fileBytes">Stream of the file content.</param>
+        /// <param name="fileName">Name of the file</param>
+        /// <returns>true if successful, false otherwise</returns>
+        public bool Create(Stream fileStream, string fileName)
+        {
+            var fileBytesList = new List<byte[]>();
+            var fileNamesList = new List<string>();
+            var memoryStream = new MemoryStream();
+            fileStream.CopyTo(memoryStream);
+            fileBytesList.Add(memoryStream.ToArray());
+            fileNamesList.Add(fileName);
+            return Create(fileBytesList, fileNamesList);
+        }
+
+        /// <summary>
         /// Creates a new envelope without specifying document information
         /// If the TemplateId is set - this will create the envelope based on the spcecified template
         /// </summary>

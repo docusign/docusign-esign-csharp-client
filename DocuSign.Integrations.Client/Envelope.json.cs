@@ -161,6 +161,21 @@ namespace DocuSign.Integrations.Client
         /// List of contacts that gets to manage envelope
         /// </summary>
         public Signer[] editors { get; set; }
+
+        /// <summary>
+        /// List of contacts who will sign in-person
+        /// </summary>
+        public Signer[] inPersonSigners { get; set; }
+
+        /// <summary>
+        /// Number of total contacts on the envelope
+        /// </summary>
+        public string recipientCount { get; set; }
+
+        /// <summary>
+        /// Ordinal value of where the envelope currently is in signing order
+        /// </summary>
+        public string currentRoutingOrder { get; set; }
     }
 
     [Serializable]
@@ -179,6 +194,18 @@ namespace DocuSign.Integrations.Client
         /// </summary>
         public string recipientId { get; set; }
         /// <summary>
+        /// The signer's recipient unique identifier in Globally Unique Identifier format
+        /// </summary>
+        public string recipientIdGuid { get; set; }
+        /// <summary>
+        /// Recipient's DocuSign user Id
+        /// </summary>
+        public string userId { get; set; }
+        /// <summary>
+        /// Controls whether or not the recipient requires an RSA Id check
+        /// </summary>
+        public string requireIdLookup { get; set; }
+        /// <summary>
         /// The signer's routing order
         /// </summary>
         public string routingOrder { get; set; }
@@ -191,9 +218,17 @@ namespace DocuSign.Integrations.Client
         /// </summary>
         public string clientUserId { get; set; }
         /// <summary>
-        /// Collection of tab information
+        /// Collection of tab information that is included when the recipients request URL contains the query value "include_tabs=true"
         /// </summary>
         public Tabs tabs { get; set; }
+        /// <summary>
+        /// Has the recipient been added as a bulk recipient
+        /// </summary>
+        public string isBulkRecipient { get; set; }
+        /// <summary>
+        /// Currently envelope status with respect to the recipient
+        /// </summary>
+        public string status { get; set; }
     }
 
     /// <summary>
@@ -327,7 +362,7 @@ namespace DocuSign.Integrations.Client
     }
 
     /// <summary>
-    /// Json class for documents
+    /// Json class for getting recipient view
     /// </summary>
     [Serializable]
     public class RecipientView

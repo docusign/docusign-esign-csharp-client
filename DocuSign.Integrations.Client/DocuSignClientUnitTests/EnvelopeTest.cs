@@ -307,5 +307,71 @@ namespace RestClientUnitTests
             Assert.AreEqual(expected, actual);
             Assert.IsFalse(string.IsNullOrEmpty(target.SenderViewUrl));
         }
+
+        /// <summary>
+        ///A test for Status on a known envelope
+        ///</summary>
+        [TestMethod()]
+        public void EnvelopeGetRecipients()
+        {
+            ConfigLoader.LoadConfig();
+
+            bool expected = true;
+            bool actual = true;
+
+            Account acct = new Account();
+
+            // $TODO: Add creds for known account
+            acct.Email = "";
+            acct.Password = "";
+            acct.AccountName = "";
+
+            try
+            {
+                actual = acct.Login();
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Unexpected exception during account creation part of test {0}: {1}", ex.GetType(), ex.Message);
+                return;
+            }
+
+            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(string.IsNullOrEmpty(acct.BaseUrl));
+
+            Envelope target = new Envelope();
+            target.Login = acct;
+
+            // $TODO: add known Envelope ID
+            target.EnvelopeId = " 10211DCED6744C13A2B82AACC0AF4BEC";
+
+
+            actual = false;
+
+            try
+            {
+                actual = target.GetRecipients();
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Unexpected exception during test {0}: {1}", ex.GetType(), ex.Message);
+                return;
+            }
+
+            Assert.AreEqual(expected, actual);
+
+            // $TODO: add Asserts for known Recipient Properties on the envelope
+            Assert.IsNotNull(target.Recipients);
+            Assert.AreEqual(target.Recipients.recipientCount, "3");
+            Assert.AreEqual(target.Recipients.signers[0].email, "test1@docusign20154.onmicrosoft.com");
+            Assert.AreEqual(target.Recipients.signers[0].name, "Test One");
+            Assert.AreEqual(target.Recipients.signers[0].status, "sent");
+            Assert.AreEqual(target.Recipients.signers[1].email, "test2@docusign20154.onmicrosoft.com");
+            Assert.AreEqual(target.Recipients.signers[1].name, "Test Two");
+            Assert.AreEqual(target.Recipients.signers[1].status, "created");
+            Assert.AreEqual(target.Recipients.signers[2].email, "test3@docusign20154.onmicrosoft.com");
+            Assert.AreEqual(target.Recipients.signers[2].name, "Test Three");
+            Assert.AreEqual(target.Recipients.signers[2].status, "created");
+        }
     }
 }

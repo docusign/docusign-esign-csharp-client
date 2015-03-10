@@ -20,6 +20,44 @@ namespace DocuSign.Integrations.Client
     /// </summary>
     public class Envelope
     {
+        #region Helpers
+
+        public IEnumerable<Signer> AllRecipients
+        {
+            get
+            {
+                if (this.Recipients.agents != null)
+                    foreach (var signer in this.Recipients.agents)
+                        yield return signer;
+
+                if (this.Recipients.carbonCopies != null)
+                    foreach (var signer in this.Recipients.carbonCopies)
+                        yield return signer;
+
+                if (this.Recipients.certifiedDeliveries != null)
+                    foreach (var signer in this.Recipients.certifiedDeliveries)
+                        yield return signer;
+
+                if (this.Recipients.editors != null)
+                    foreach (var signer in this.Recipients.editors)
+                        yield return signer;
+
+                if (this.Recipients.inPersonSigners != null)
+                    foreach (var signer in this.Recipients.inPersonSigners)
+                        yield return signer;
+
+                if (this.Recipients.intermediaries != null)
+                    foreach (var signer in this.Recipients.intermediaries)
+                        yield return signer;
+
+                if (this.Recipients.signers != null)
+                    foreach (var signer in this.Recipients.signers)
+                        yield return signer;
+            }
+        }
+
+        #endregion
+
         protected const string DefaultMimeType = "application/pdf";
         private static readonly int MaxBlurbSize = 1000;
 

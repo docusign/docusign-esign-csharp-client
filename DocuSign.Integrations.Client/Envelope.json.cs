@@ -666,6 +666,38 @@ namespace DocuSign.Integrations.Client
         /// The signer's client user unique identifier (For embedded signing)
         /// </summary>
         public string clientUserId { get; set; }
+        /// <summary>
+        /// The signer's tabs
+        /// </summary>
+        public RoleTabs tabs { get; set; }
+    }
+
+    /// <summary>
+    /// RoleTabs
+    /// </summary>
+    [Serializable]
+    public class RoleTabs
+    {
+        //public RoleTab[] signHereTabs { get; set; }
+        //public RoleTab[] initialHereTabs { get; set; }
+        //public RoleTab[] fullNameTabs { get; set; }
+        //public RoleTab[] emailTabs { get; set; }
+        public RoleTextTab[] textTabs { get; set; }
+        //public RoleTab[] titleTabs { get; set; }
+        //public RoleTab[] companyTabs { get; set; }
+        //public RoleTab[] dateSignedTabs { get; set; }
+        //public RoleTab[] checkboxTabs { get; set; }
+        //public RoleTab[] signerAttachmentTabs { get; set; }
+    }
+
+    /// <summary>
+    /// RoleTabs
+    /// </summary>
+    [Serializable]
+    public class RoleTextTab
+    {
+        public string tabLabel { get; set; }
+        public string value { get; set; }
     }
 
     /// <summary>
@@ -678,7 +710,7 @@ namespace DocuSign.Integrations.Client
         public Tab[] initialHereTabs { get; set; }
         public Tab[] fullNameTabs { get; set; }
         public Tab[] emailTabs { get; set; }
-        public Tab[] textTabs { get; set; }
+        public TextTab[] textTabs { get; set; }
         public Tab[] titleTabs { get; set; }
         public Tab[] companyTabs { get; set; }
         public Tab[] dateSignedTabs { get; set; }

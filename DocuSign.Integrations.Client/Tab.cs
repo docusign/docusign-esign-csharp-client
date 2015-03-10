@@ -134,7 +134,7 @@ namespace DocuSign.Integrations.Client
 		/// <summary>
 		/// This tab is a field where the recipient can enter any type of characters. 
 		/// </summary>
-		public List<Tab> textTabs { get; set; }
+		public List<TextTab> textTabs { get; set; }
 		/// <summary>
 		/// Place this tag on the document where you want the recipient’s title to appear.
 		/// </summary>
@@ -165,7 +165,7 @@ namespace DocuSign.Integrations.Client
 			this.initialHereTabs = new List<Tab>();
 			this.fullNameTabs = new List<Tab>();
 			this.emailTabs = new List<Tab>();
-			this.textTabs = new List<Tab>();
+            this.textTabs = new List<TextTab>();
 			this.titleTabs = new List<Tab>();
 			this.companyTabs = new List<Tab>();
 			this.dateSignedTabs = new List<Tab>();

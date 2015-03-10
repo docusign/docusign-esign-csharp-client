@@ -850,6 +850,61 @@ namespace DocuSign.Integrations.Client
 
 
         /// <summary>
+        /// Gets the recipients in the envelope
+        /// </summary>
+        /// <param name="includeTabs"></param>
+        /// <param name="includeExtended"></param>
+        /// <returns>true if successful, false otherwise</returns>
+        public bool GetRecipients(bool includeTabs, bool includeExtended)
+        {
+            try
+            {
+                var includeTabsUrlParam = (includeTabs) ? "true" : "false";
+                var includeExtendedUrlParam = (includeExtended) ? "true" : "false";
+
+                RequestInfo req = new RequestInfo();
+                req.RequestContentType = "application/json";
+                req.AcceptContentType = "application/json";
+                req.BaseUrl = Login.BaseUrl;
+                req.LoginEmail = Login.Email;
+                req.LoginPassword = Login.Password;
+                req.ApiPassword = Login.ApiPassword;
+                req.Uri = String.Format("/envelopes/{0}/recipients?include_tabs={1}&include_extended={2}", EnvelopeId, includeTabsUrlParam, includeExtendedUrlParam);
+                req.HttpMethod = "GET";
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+
+                RequestBuilder builder = new RequestBuilder();
+                builder.Proxy = Proxy;
+                builder.Request = req;
+
+                List<RequestBody> requestBodies = new List<RequestBody>();
+
+                ResponseInfo response = builder.MakeRESTRequest();
+                this.Trace(builder, response);
+
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    this.ParseErrorResponse(response);
+                    return false;
+                }
+
+                Recipients = JsonConvert.DeserializeObject<Recipients>(response.ResponseText);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return false;
+                }
+
+                throw;
+            }
+        }
+
+
+        /// <summary>
         /// Serializes the Json objects
         /// </summary>
         /// <param name="docPath">String value of the full path to a document.  Not required.  May be null or empty.</param>

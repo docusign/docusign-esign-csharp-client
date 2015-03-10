@@ -73,9 +73,6 @@
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
     <None Include="Test Contract.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

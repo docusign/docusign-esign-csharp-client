@@ -114,6 +114,7 @@
     <Compile Include="RestSettings.cs" />
     <Compile Include="Tab.cs" />
     <Compile Include="Template.cs" />
+    <Compile Include="TextTab.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

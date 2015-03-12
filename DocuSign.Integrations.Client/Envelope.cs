@@ -1558,8 +1558,10 @@ namespace DocuSign.Integrations.Client
         /// <summary>
         /// Once an envelope has been created, this method obtains the URL to the recipient view
         /// </summary>
+        /// <param name="returnUrl">URL to take user after signing is completed</param>
+        /// <param name="signAndReturn">Optional - should new signing expereince show the "Sign and Return" dialog for self-signed envelopes</param>
         /// <returns>true if successful, false otherwise</returns>
-        public bool GetRecipientView(string returnUrl)
+        public bool GetRecipientView(string returnUrl, bool signAndReturn = true)
         {
             try
             {
@@ -1571,6 +1573,10 @@ namespace DocuSign.Integrations.Client
                 req.LoginPassword = this.Login.Password;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = "/envelopes/" + this.EnvelopeId + "/views/recipient.json?api_password=true";
+                if (!signAndReturn)
+                {
+                    req.Uri += "&disable_cc_for_selfsign=true";
+                }
                 req.HttpMethod = "POST";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 

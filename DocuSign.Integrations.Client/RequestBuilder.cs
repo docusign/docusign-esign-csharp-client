@@ -194,6 +194,7 @@ namespace DocuSign.Integrations.Client
             this.webRequest.Method = this.Request.HttpMethod;
             this.webRequest.Accept = this.Request.AcceptContentType;
             this.webRequest.ContentType = this.Request.RequestContentType;
+            this.webRequest.Proxy = this.Proxy;
 
             if (this.Request.Timeout.HasValue)
             {

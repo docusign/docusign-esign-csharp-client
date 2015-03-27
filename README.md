@@ -8,7 +8,7 @@ Pre-requisites
 
 * DocuSign Developer account (*Free*)
 
-You can create your free dev account at the [DocuSign Dev Center](https://www.docusign.com/developer-center). You will need the **Integrator Key** from your developer account in order to use the DocuSign .NET Client.
+You can create your free dev sandbox at the [DocuSign Developer Center](https://www.docusign.com/developer-center). You will need the **Integrator Key** from your developer account in order to use the DocuSign .NET Client, see the Quick Start section of the Developer Center for steps on how to create your key.  
 
 Quickstart Guide
 ----------

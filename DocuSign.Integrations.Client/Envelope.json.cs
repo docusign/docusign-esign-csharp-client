@@ -713,9 +713,10 @@ namespace DocuSign.Integrations.Client
         public TextTab[] textTabs { get; set; }
         public Tab[] titleTabs { get; set; }
         public Tab[] companyTabs { get; set; }
-        public Tab[] dateSignedTabs { get; set; }
+        public DateSignedTab[] dateSignedTabs { get; set; }
         public Tab[] checkboxTabs { get; set; }
         public Tab[] signerAttachmentTabs { get; set; }
+        public RadioGroupTab[] radioGroupTabs { get; set; }
     }
 
     /// <summary>

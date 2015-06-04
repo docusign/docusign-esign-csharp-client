@@ -108,6 +108,11 @@ namespace DocuSign.Integrations.Client
         /// The recipient for the tab
         /// </summary>
         public string recipientId { get; set; }
+
+
+        public string selected { get; set; }
+
+
 	}
 
 	/// <summary>
@@ -146,7 +151,7 @@ namespace DocuSign.Integrations.Client
 		/// <summary>
 		/// Place this tag on the document where you want the date the recipient signed the document to automatically appear.
 		/// </summary>
-		public List<Tab> dateSignedTabs { get; set; }
+		public List<DateSignedTab> dateSignedTabs { get; set; }
 		/// <summary>
 		/// Place this tag on the document in a location where the recipient can select a yes/no (on/off) type option.
 		/// </summary>
@@ -155,6 +160,8 @@ namespace DocuSign.Integrations.Client
         /// Place this tag on the document to allow signer to add attachments to the signed doc
         /// </summary>
         public List<Tab> signerAttachmentTabs { get; set; }
+
+        public List<RadioGroupTab> radioGroupTabs { get; set; }
 
 		/// <summary>
 		/// Default constructor
@@ -168,9 +175,10 @@ namespace DocuSign.Integrations.Client
             this.textTabs = new List<TextTab>();
 			this.titleTabs = new List<Tab>();
 			this.companyTabs = new List<Tab>();
-			this.dateSignedTabs = new List<Tab>();
+			this.dateSignedTabs = new List<DateSignedTab>();
 			this.checkboxTabs = new List<Tab>();
             this.signerAttachmentTabs = new List<Tab>();
+            this.radioGroupTabs = new List<RadioGroupTab>();
 		}
 	}
 }

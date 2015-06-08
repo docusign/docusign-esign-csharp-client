@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Account.json.cs" />
+    <Compile Include="DateSignedTab.cs" />
     <Compile Include="DistributorCredentials.cs" />
     <Compile Include="DocuSignCredentials.cs" />
     <Compile Include="DocuSignEnvelopeInformation.cs" />
@@ -106,6 +107,8 @@
     <Compile Include="EnvelopeStatus.cs" />
     <Compile Include="Error.json.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RadioGroupTab.cs" />
+    <Compile Include="Radios.cs" />
     <Compile Include="RequestBody.cs" />
     <Compile Include="RequestBuilder.cs" />
     <Compile Include="RequestDump.cs" />

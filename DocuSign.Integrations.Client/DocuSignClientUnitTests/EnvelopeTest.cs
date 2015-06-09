@@ -266,6 +266,103 @@ namespace RestClientUnitTests
         /// <summary>
         ///A test for Create
         ///</summary>
+        [TestMethod(), DeploymentItem("Test Contract.pdf")]
+        public void EnvelopeCreateWithSmsAuthenticationDocumentTest()
+        {
+            ConfigLoader.LoadConfig();
+
+            bool expected = true;
+            bool actual = false;
+
+            Account acct = new Account();
+            acct.AccountName = Util.MakeUnique("freakin me out {unique}");
+            acct.Email = Util.MakeUnique("freakin_{unique}@gmail.com");
+            acct.Password = "docusign";
+
+            AddressInformation ai = new AddressInformation();
+            acct.Address = ai;
+            ai.address1 = "123 Main ST";
+            ai.address2 = string.Empty;
+            ai.city = "Anytown";
+            ai.country = "USA";
+            ai.postalCode = "11111";
+            ai.state = "WA";
+
+            CreditCardInformation cc = new CreditCardInformation();
+            acct.CreditCard = cc;
+            cc.cardNumber = "4111111111111111";
+            cc.cardType = "visa";
+            cc.expirationMonth = "12";
+            cc.expirationYear = "2015";
+            cc.nameOnCard = "Freak Me Out";
+
+            try
+            {
+                actual = acct.Create();
+            }
+            catch (Exception)
+            {
+            }
+
+            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(string.IsNullOrEmpty(acct.BaseUrl));
+
+            if (expected == actual)
+            {
+                Envelope target = new Envelope();
+                target.Login = acct;
+
+                // add signers to the envelope
+                target.Recipients = new Recipients()
+                {
+                    signers = new Signer[]
+                {
+                    new Signer()
+                    {
+                        email = "freakin_{unique}@gmail.com",
+                        name = "freakin",
+                        routingOrder = "1",
+                        recipientId = "1",
+                        requireIdLookup = "true",
+                        idCheckConfigurationName = "SMS Auth $",
+                        smsAuthentication = new SmsAuthentication()
+                        {
+                            senderProvidedNumbers = new string[]
+                            {
+                                String.Format("+{0} {1}", "34", "000000000")
+                            }
+                        }
+                    }
+                }
+                };
+
+                // Email subject is a required parameter when requesting signatures
+                target.EmailSubject = "Example subject";
+
+                // "sent" to send immediately, "created" to save envelope as draft
+                target.Status = "sent";
+
+                FileInfo fi = new FileInfo("./Test Contract.pdf");
+                string path = fi.FullName;
+
+                actual = false;
+
+                try
+                {
+                    actual = target.Create(path);
+                }
+                catch (ArgumentNullException)
+                {
+                }
+
+                Assert.AreEqual(expected, actual);
+                Assert.IsFalse(string.IsNullOrEmpty(target.SenderViewUrl));
+            }
+        }
+        
+        /// <summary>
+        ///A test for Create
+        ///</summary>
         [TestMethod()]
         public void EnvelopeCreateNoDocument()
         {

@@ -90,6 +90,10 @@ namespace DocuSign.Integrations.Client
         /// </summary>
         public string anchorUnits { get; set; }
         /// <summary>
+        /// True or false setting. If true, this tab is ignored if anchorString is not found in the document.
+        /// </summary>
+        public bool anchorIgnoreIfNotPresent { get; set; }
+        /// <summary>
         ///The font size used for the information in
         ///the tab. Possible values are: Size7,
         ///Size8, Size9, Size10, Size11, Size12,

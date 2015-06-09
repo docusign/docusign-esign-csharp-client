@@ -1,4 +1,4 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Envelope.json.cs" company="DocuSign, Inc.">
 // Copyright (c) DocuSign, Inc. All rights reserved.
 // </copyright>
@@ -101,7 +101,7 @@ namespace DocuSign.Integrations.Client
 
         public TemplateRole[] templateRoles { get; set; }
 
-		public Recipients carbonCopies { get; set; }
+        public Recipients carbonCopies { get; set; }
 
         public CustomFields customFields { get; set; }
 
@@ -133,14 +133,14 @@ namespace DocuSign.Integrations.Client
     [Serializable]
     public class Recipients
     {
-		/// <summary>
-		/// List of contact that needs to sign this envelope
-		/// </summary>
-		public Signer[] signers { get; set; }
-		/// <summary>
-		/// List of contacts that gets an email when this envelope is signed
-		/// </summary>
-		public Signer[] carbonCopies { get; set; }
+        /// <summary>
+        /// List of contact that needs to sign this envelope
+        /// </summary>
+        public Signer[] signers { get; set; }
+        /// <summary>
+        /// List of contacts that gets an email when this envelope is signed
+        /// </summary>
+        public Signer[] carbonCopies { get; set; }
 
         /// <summary>
         /// List of contacts that gets to view the email to complete the action
@@ -217,6 +217,22 @@ namespace DocuSign.Integrations.Client
         /// The signer's client user unique identifier (For embedded signing)
         /// </summary>
         public string clientUserId { get; set; }
+        /// <summary>
+        /// The signer's client user unique identifier (For embedded signing)
+        /// </summary>
+        public string idCheckConfigurationName { get; set; }
+        /// <summary>
+        /// This complex element contains information related to recipient ID check.
+        /// </summary>
+        public CheckInformationInput idCheckInformationInput {get; set;}
+        /// <summary>
+        /// RecipientPhone Authentication
+        /// </summary>
+        public PhoneAuthentication phoneAuthentication { get; set; }
+        /// <summary>
+        /// RecipientSMS Authentication
+        /// </summary>
+        public SmsAuthentication smsAuthentication { get; set; }
         /// <summary>
         /// Collection of tab information that is included when the recipients request URL contains the query value "include_tabs=true"
         /// </summary>
@@ -718,7 +734,50 @@ namespace DocuSign.Integrations.Client
         public Tab[] signerAttachmentTabs { get; set; }
         public RadioGroupTab[] radioGroupTabs { get; set; }
     }
-
+    /// <summary>
+    /// This complex element contains information related to recipient ID check.
+    /// </summary>
+    [Serializable]
+    public class CheckInformationInput
+    {
+        /// <summary>
+        /// This Complex type contains the following information; Street1, Street2, City, State and Zip and ZipPlus4
+        /// </summary>
+        public AddressInformationInput addressInformationInput { get; set; }
+    }
+    /// <summary>
+    /// This Complex type contains the following information; Street1, Street2, City, State and Zip and ZipPlus4
+    /// </summary>
+    [Serializable]
+    public class AddressInformationInput
+    {
+        public AddressInformation addressInformation { get; set; }
+    }
+    /// <summary>
+    /// RecipientPhone Authentication
+    /// </summary>
+    [Serializable]
+    public class PhoneAuthentication
+    {
+        /// <summary>
+        /// if true then recipient can use whatever phone number they want
+        /// </summary>
+        public string recipMayProvideNumber { get; set; }
+        /// <summary>
+        /// a list of phone numbers the recipient may use
+        /// </summary>
+        public string[] senderProvidedNumbers { get; set; }
+    }
+    /// <summary>
+    /// RecipientSMS Authentication
+    /// </summary>
+    [Serializable]
+    public class SmsAuthentication
+    {
+        /// a list of phone numbers the recipient may use
+        /// </summary>
+        public string[] senderProvidedNumbers { get; set; }
+    }
     /// <summary>
     /// Envelope Template class
     /// </summary>

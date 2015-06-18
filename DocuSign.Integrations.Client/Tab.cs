@@ -94,6 +94,10 @@ namespace DocuSign.Integrations.Client
         /// </summary>
         public bool anchorIgnoreIfNotPresent { get; set; }
         /// <summary>
+        ///When set to ‘true’, the signerAttachmentTab is optional and not required to complete the envelope.
+        /// </summary>
+        public string optional { get; set; }
+        /// <summary>
         ///The font size used for the information in
         ///the tab. Possible values are: Size7,
         ///Size8, Size9, Size10, Size11, Size12,

@@ -326,8 +326,8 @@ namespace DocuSign.Integrations.Client
             [XmlIgnore]
             public string RecipientIPAddress { get; set; }
 
-            [XmlIgnore]
-            public string CustomFields { get; set; }
+            [XmlElement]
+            public RecipientStatusCustomFields CustomFields { get; set; }
 
             [XmlIgnore]
             public string TabStatuses { get; set; }

@@ -132,6 +132,11 @@ namespace DocuSign.Integrations.Client
         public string Status { get; set; }
 
         /// <summary>
+        /// Date and time when the envelope was created
+        /// </summary>
+        public DateTime Created { get; set; }
+
+        /// <summary>
         /// Gets or sets the api error
         /// </summary>
         public Error RestError { get; private set; }
@@ -1039,6 +1044,7 @@ namespace DocuSign.Integrations.Client
                 this.Status = (string)json["status"];
                 this.EmailSubject = (string)json["emailSubject"];
                 this.EmailBlurb = (string)json["emailBlurb"];
+                this.Created = DateTime.Parse((string)json["createdDateTime"]);
 
                 return (DateTime)json["statusChangedDateTime"];
 

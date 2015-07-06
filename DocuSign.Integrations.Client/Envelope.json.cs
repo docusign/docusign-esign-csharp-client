@@ -4,14 +4,12 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
+using DocuSignClient;
+
 namespace DocuSign.Integrations.Client
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     /// <summary>
     /// Json class for envelopes
@@ -245,6 +243,17 @@ namespace DocuSign.Integrations.Client
         /// Currently envelope status with respect to the recipient
         /// </summary>
         public string status { get; set; }
+        /// <summary>
+        /// An optional complex type that has information for setting the language for the recipient’s email information
+        /// WARNING! If this is enabled for one recipient, it overrides the Envelope Subject and EmailBlurb. Also, you must enable emailNotification for all recipients.
+        /// </summary>
+        public EmailNotification emailNotification { get; set; }
+        /// <summary>
+        /// An optional array of strings that allows the sender to provide custom data about the recipient. 
+        /// This information is returned in the envelope status but otherwise not used by DocuSign. 
+        /// Each customField string can be a maximum of 100 characters.
+        /// </summary>
+        public string[] customFields { get; set; }
     }
 
     /// <summary>

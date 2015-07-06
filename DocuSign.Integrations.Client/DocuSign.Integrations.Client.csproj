@@ -97,10 +97,12 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Account.json.cs" />
+    <Compile Include="RecipientStatusCustomFields.cs" />
     <Compile Include="DateSignedTab.cs" />
     <Compile Include="DistributorCredentials.cs" />
     <Compile Include="DocuSignCredentials.cs" />
     <Compile Include="DocuSignEnvelopeInformation.cs" />
+    <Compile Include="EmailNotification.cs" />
     <Compile Include="Envelope.cs" />
     <Compile Include="Envelope.json.cs" />
     <Compile Include="EnvelopeInfoXmlTextReader.cs" />

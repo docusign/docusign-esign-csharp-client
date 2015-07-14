@@ -59,7 +59,7 @@ namespace DocuSign.Integrations.Client
         #endregion
 
         protected const string DefaultMimeType = "application/pdf";
-        private static readonly int MaxBlurbSize = 1000;
+        private static readonly int MaxBlurbSize = 10000;
 
         /// <summary>
         /// Gets or sets the Account property.  Required.  Account login must have been completed and successful.
@@ -965,7 +965,9 @@ namespace DocuSign.Integrations.Client
                 }
                 if (!String.IsNullOrEmpty(EmailBlurb))
                 {
-                    env.emailBlurb = new string(EmailBlurb.Take(MaxBlurbSize).ToArray());
+                    env.emailBlurb = env.emailBlurb.Length > MaxBlurbSize
+                        ? env.emailBlurb.Substring(0, MaxBlurbSize)
+                        : env.emailBlurb;
                 }
 
                 env.recipients = this.Recipients;

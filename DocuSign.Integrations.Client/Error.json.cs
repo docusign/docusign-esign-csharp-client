@@ -4,14 +4,12 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
+using System.Net;
+
 namespace DocuSign.Integrations.Client
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     /// <summary>
     /// Json class for error information
@@ -19,6 +17,12 @@ namespace DocuSign.Integrations.Client
     [Serializable]
     public class Error
     {
+        /// <summary>
+        /// Gets or sets the original http status code
+        /// </summary>
+        [JsonIgnore] 
+        public HttpStatusCode httpStatusCode { get; set; }
+
         /// <summary>
         /// Gets or sets the error code property
         /// </summary>

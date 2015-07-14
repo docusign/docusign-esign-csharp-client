@@ -2014,6 +2014,8 @@ namespace DocuSign.Integrations.Client
             {
                 this.RestError = new Error { message = response.ResponseText };
             }
+
+            this.RestError.httpStatusCode = response.StatusCode;
         }
 
         protected void Trace(RequestBuilder utils, ResponseInfo response)

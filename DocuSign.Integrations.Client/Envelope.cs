@@ -965,9 +965,9 @@ namespace DocuSign.Integrations.Client
                 }
                 if (!String.IsNullOrEmpty(EmailBlurb))
                 {
-                    env.emailBlurb = env.emailBlurb.Length > MaxBlurbSize
-                        ? env.emailBlurb.Substring(0, MaxBlurbSize)
-                        : env.emailBlurb;
+                    env.emailBlurb = EmailBlurb.Length > MaxBlurbSize
+                        ? EmailBlurb.Substring(0, MaxBlurbSize)
+                        : EmailBlurb;
                 }
 
                 env.recipients = this.Recipients;

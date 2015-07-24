@@ -711,12 +711,24 @@ namespace DocuSign.Integrations.Client
         //public RoleTab[] titleTabs { get; set; }
         //public RoleTab[] companyTabs { get; set; }
         //public RoleTab[] dateSignedTabs { get; set; }
-        //public RoleTab[] checkboxTabs { get; set; }
+        public CheckboxTab[] checkboxTabs { get; set; }
         //public RoleTab[] signerAttachmentTabs { get; set; }
+        public TemplateRadioGroupTab[] radioGroupTabs { get; set; }
+        public NumberTab[] numberTabs { get; set; }
     }
 
     /// <summary>
-    /// RoleTabs
+    /// RoleTab
+    /// </summary>
+    [Serializable]
+    public class RoleTab
+    {
+        public string name { get; set; }
+        public string value { get; set; }
+    }
+
+    /// <summary>
+    /// RoleTextTab
     /// </summary>
     [Serializable]
     public class RoleTextTab
@@ -725,6 +737,43 @@ namespace DocuSign.Integrations.Client
         public string value { get; set; }
     }
 
+    /// <summary>
+    /// CheckboxTab
+    /// </summary>
+    [Serializable]
+    public class CheckboxTab
+    {
+        public string tabLabel { get; set; }
+        public bool selected { get; set; }
+    }
+
+    /// <summary>
+    /// RadioGroupTab
+    /// </summary>
+    [Serializable]
+    public class TemplateRadioGroupTab
+    {
+        public string groupName { get; set; }
+        public radio[] radios { get; set; }
+    }
+
+    [Serializable]
+    public class radio
+    {
+        public string value { get; set; }
+        public bool selected { get; set; }
+    }
+
+    /// <summary>
+    /// NumberTab
+    /// </summary>
+    [Serializable]
+    public class NumberTab
+    {
+        public string tabLabel { get; set; }
+        public string value { get; set; }
+    }
+    
     /// <summary>
     /// Used for submitting for RESTAPI
     /// </summary>

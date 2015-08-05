@@ -1046,7 +1046,7 @@ namespace DocuSign.Integrations.Client
                 this.Status = (string)json["status"];
                 this.EmailSubject = (string)json["emailSubject"];
                 this.EmailBlurb = (string)json["emailBlurb"];
-                this.Created = DateTime.Parse((string)json["createdDateTime"]);
+                this.Created = DateTime.Parse(Convert.ToString(json["createdDateTime"]));
 
                 return (DateTime)json["statusChangedDateTime"];
 

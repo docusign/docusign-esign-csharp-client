@@ -103,6 +103,8 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Account.json.cs" />
+    <Compile Include="Expirations.cs" />
+    <Compile Include="Notifications.cs" />
     <Compile Include="RecipientStatusCustomFields.cs" />
     <Compile Include="DateSignedTab.cs" />
     <Compile Include="DistributorCredentials.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RadioGroupTab.cs" />
     <Compile Include="Radios.cs" />
+    <Compile Include="Reminders.cs" />
     <Compile Include="RequestBody.cs" />
     <Compile Include="RequestBuilder.cs" />
     <Compile Include="RequestDump.cs" />

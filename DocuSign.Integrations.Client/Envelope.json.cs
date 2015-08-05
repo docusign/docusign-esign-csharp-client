@@ -103,6 +103,8 @@ namespace DocuSign.Integrations.Client
 
         public CustomFields customFields { get; set; }
 
+        public Notification notification { get; set; }
+
         /// <summary>
         /// Gets or sets the Document property
         /// </summary>

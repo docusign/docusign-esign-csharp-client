@@ -1568,8 +1568,9 @@ namespace DocuSign.Integrations.Client
         /// </summary>
         /// <param name="returnUrl">URL to take user after signing is completed</param>
         /// <param name="signAndReturn">Optional - should new signing expereince show the "Sign and Return" dialog for self-signed envelopes</param>
+        /// <param name="authMethod">Optional - the main authentication method that will be listed in the envelope's certificate of completion</param>        
         /// <returns>true if successful, false otherwise</returns>
-        public bool GetRecipientView(string returnUrl, bool signAndReturn = true)
+        public bool GetRecipientView(string returnUrl, bool signAndReturn = true, string authMethod = "email")
         {
             try
             {
@@ -1605,7 +1606,7 @@ namespace DocuSign.Integrations.Client
                 rv.returnUrl = returnUrl;
                 rv.email = this.Login.Email;
                 rv.userName = this.Login.AccountName;
-                rv.authenticationMethod = "email";
+                rv.authenticationMethod = authMethod;
 
                 rb.Text = rv.Serialize();
                 requestBodies.Add(rb);
@@ -1645,8 +1646,9 @@ namespace DocuSign.Integrations.Client
         /// </summary>
         /// <param name="returnUrl">URL to take user after signing is completed</param>
         /// <param name="signer">Signer information for the person that would be signing</param>
+        /// <param name="authMethod">Optional - the main authentication method that will be listed in the envelope's certificate of completion</param>        
         /// <returns>Url for embedded signing</returns>
-        public string GetEmbeddedSignerView(string returnUrl, Signer signer)
+        public string GetEmbeddedSignerView(string returnUrl, Signer signer, string authMethod = "email")
         {
             try
             {
@@ -1679,7 +1681,7 @@ namespace DocuSign.Integrations.Client
                 rv.email = signer.email;
                 rv.userName = signer.name;
                 rv.clientUserId = signer.clientUserId;
-                rv.authenticationMethod = "email";
+                rv.authenticationMethod = authMethod;
 
                 rb.Text = rv.Serialize();
                 requestBodies.Add(rb);

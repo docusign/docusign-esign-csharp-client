@@ -465,6 +465,11 @@ namespace DocuSign.Integrations.Client
 
         public string useSoapInterface { get; set; }
 
+        /// <summary>
+        /// When set to true, messages are signed with an X509 certificate. This provides support for 2-way SSL in the envelope.
+        /// </summary>
+        public string signMessageWithX509Cert { get; set; }
+
         public string soapNameSpace { get; set; }
 
         public string includeCertificateWithSoap { get; set; }

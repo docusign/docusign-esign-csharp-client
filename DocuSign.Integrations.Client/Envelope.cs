@@ -82,6 +82,11 @@ namespace DocuSign.Integrations.Client
         public string SenderViewUrl { get; private set; }
 
         /// <summary>
+        /// An optional complex element that specifies the notification options for the envelope
+        /// </summary>
+        public Notification Notification { get; set; }
+
+        /// <summary>
         /// Gets or sets the WebProxy for Http requests
         /// </summary>
         public WebProxy Proxy { get; set; }
@@ -976,6 +981,7 @@ namespace DocuSign.Integrations.Client
                 env.status = this.Status;
                 env.templateId = this.TemplateId;
                 env.compositeTemplates = this.CompositeTemplates;
+                env.notification = this.Notification;
 
                 // documents information...
                 var docs = new List<Document>();

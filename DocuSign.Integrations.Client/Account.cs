@@ -1051,8 +1051,7 @@ namespace DocuSign.Integrations.Client
         /// <returns></returns>
         public bool IsNewUser(int seconds)
         {
-            // A bug in RESTApi causes double counting of 8 hrs offset. We offset that 8 hrs for the moment before the bug is fixed
-            return DateTime.UtcNow.Subtract(this.CreatedDateTime()).TotalSeconds + 28800 < seconds;
+            return DateTime.UtcNow.Subtract(this.CreatedDateTime()).TotalSeconds < seconds;
         }
 
         /// <summary>

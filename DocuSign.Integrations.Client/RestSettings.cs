@@ -49,6 +49,12 @@ namespace DocuSign.Integrations.Client
                     if (instance == null)
                     {
                         instance = new RestSettings();
+
+                        // default to Demo environment and latest API version (v2)
+                        instance.DocuSignAddress = "https://demo.docusign.net";
+                        instance.WebServiceUrl = RestSettings.Instance.DocuSignAddress + "/restapi/v2";
+
+                        Console.WriteLine("DEFAULT SINGLETON DATA SET!");
                     }
 
                     slim.ExitWriteLock();

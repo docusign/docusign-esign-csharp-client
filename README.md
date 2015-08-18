@@ -44,11 +44,11 @@ using DocuSign.Integrations.Client;
 
 ### Authenticate with DocuSign
 
-Users of your integration authenticate with DocuSign by making the Login API call.  This requires 3 main pieces of data: 
+Users of your integration authenticate with DocuSign by making the Login API call.  This requires 3 pieces of data: 
 
-* email address
-* password
-* Integrator Key
+* Integrator Key (aka API key)
+* Email Address 
+* Password
 
 For example, to authenticate against the DocuSign demo environment (ie _demo.docusign.net_) - which is where the DocuSign developer sandbox accounts operate in - you can use the following code:
 

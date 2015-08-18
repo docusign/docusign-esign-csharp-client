@@ -50,17 +50,15 @@ Users of your integration authenticate with DocuSign by making the Login API cal
 * password
 * Integrator Key
 
-For example, to authenticate against the DocuSign demo environment (ie _demo.docusign.net_) you can use the following code:
+For example, to authenticate against the DocuSign demo environment (ie _demo.docusign.net_) - which is where the DocuSign developer sandbox accounts operate in - you can use the following code:
 
 	// configure application's integrator key and webservice url
-	RestSettings.Instance.IntegratorKey = "<Your_Integrator_Key>";
-	RestSettings.Instance.DocuSignAddress = "http://demo.docusign.net";
-	RestSettings.Instance.WebServiceUrl = RestSettings.Instance.DocuSignAddress + "/restapi/v2";
+	RestSettings.Instance.IntegratorKey = "INTEGRATOR_KEY";
 	
 	// credentials for sending account
 	Account account = new Account();
-	account.Email = "<Email_Address>";
-	account.Password = "<Password>";
+	account.Email = "EMAIL";
+	account.Password = "PASSWORD";
 
 	// make the Login API call
 	bool result = account.Login();

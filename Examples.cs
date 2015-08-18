@@ -30,9 +30,6 @@ namespace DocuSignNuGetSamples
         // Your Integrator Key can be found in your account Preferences -> API screen.
         protected const string IntegratorKey = "***";
 
-        // update this once you move into production
-        protected const string Environment = "http://demo.docusign.net"; 
-
         static void Main(string[] args)
         {
             // Example #1...
@@ -40,8 +37,6 @@ namespace DocuSignNuGetSamples
             
             // configure application's integrator key, webservice url, and rest api version
             RestSettings.Instance.IntegratorKey = IntegratorKey;
-            RestSettings.Instance.DocuSignAddress = Environment;
-            RestSettings.Instance.WebServiceUrl = Environment + "/restapi/v2";
 
             TestProgram test = new TestProgram();
             test.SignatureRequestFromTemplate();

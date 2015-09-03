@@ -162,6 +162,7 @@ namespace DocuSign.Integrations.Client
             this.IntegratorKey = string.Empty;
             this.BaseUrl = string.Empty;
             this.RequestBody = new RequestBody[0];
+            this.Timeout = RestSettings.Instance.RequestTimeout;
         }
     }
 }

@@ -110,5 +110,9 @@ namespace DocuSign.Integrations.Client
         /// Gets or sets the DocuSign Address
         /// </summary>
         public string DocuSignAddress { get; set; }
+        /// <summary>
+        /// Timeout (in miliseconds) to use when making HttpRequests. Not providing a value would would use default
+        /// </summary>
+        public int? RequestTimeout { get; set; }
     }
 }

@@ -488,48 +488,54 @@ namespace DocuSign.Integrations.Client
         private void SetLogonCredentials()
         {
             string authStr = string.Empty;
+            string password = string.Empty;
 
-            if (this.AuthorizationFormat == AuthFormat.Xml)
+            if (string.IsNullOrEmpty(this.Request.ApiPassword) == false)
             {
-                // below fills the basic cred list
-                if (this.AuthorizationFlag == AuthOptions.IntegratorKeyOnly)
-                {
-                    authStr = string.Format("<DocuSignCredentials><Username></Username><Password></Password><IntegratorKey>{0}</IntegratorKey></DocuSignCredentials>", string.IsNullOrEmpty(this.docuSignCredentials.IntegratorKey) ? string.Empty : this.docuSignCredentials.IntegratorKey);
-                }
-                else
-                {
-                    string password = string.Empty;
-
-                    if (string.IsNullOrEmpty(this.Request.ApiPassword) == false)
-                    {
-                        password = this.Request.ApiPassword;
-                    }
-                    else
-                    {
-                        password = this.docuSignCredentials.Password;
-                    }
-
-                    authStr = string.Format(
-                        "<DocuSignCredentials><Username>{0}</Username><Password>{1}</Password><IntegratorKey>{2}</IntegratorKey></DocuSignCredentials>",
-                        string.IsNullOrEmpty(this.docuSignCredentials.Username) ? string.Empty : this.docuSignCredentials.Username,
-                        password,
-                        string.IsNullOrEmpty(this.docuSignCredentials.IntegratorKey) ? string.Empty : this.docuSignCredentials.IntegratorKey);
-                }
+                password = this.Request.ApiPassword;
             }
             else
             {
-                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(DocuSignCredentials));
-
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    ser.WriteObject(ms, this.docuSignCredentials);
-                    authStr = Encoding.UTF8.GetString(ms.ToArray());
-                }
+                password = this.docuSignCredentials.Password;
             }
-
-            if (this.AuthorizationFlag != AuthOptions.NoCreds)
+            // new oauth token mechanism
+            if (password.Length > 40)
             {
-                this.webRequest.Headers["X-DocuSign-Authentication"] = authStr;
+                this.webRequest.Headers["Authorization"] = "Bearer " + this.Request.ApiPassword;
+            }
+            else
+            {
+                if (this.AuthorizationFormat == AuthFormat.Xml)
+                {
+                    // below fills the basic cred list
+                    if (this.AuthorizationFlag == AuthOptions.IntegratorKeyOnly)
+                    {
+                        authStr = string.Format("<DocuSignCredentials><Username></Username><Password></Password><IntegratorKey>{0}</IntegratorKey></DocuSignCredentials>", string.IsNullOrEmpty(this.docuSignCredentials.IntegratorKey) ? string.Empty : this.docuSignCredentials.IntegratorKey);
+                    }
+                    else
+                    {
+                        authStr = string.Format(
+                            "<DocuSignCredentials><Username>{0}</Username><Password>{1}</Password><IntegratorKey>{2}</IntegratorKey></DocuSignCredentials>",
+                            string.IsNullOrEmpty(this.docuSignCredentials.Username) ? string.Empty : this.docuSignCredentials.Username,
+                            password,
+                            string.IsNullOrEmpty(this.docuSignCredentials.IntegratorKey) ? string.Empty : this.docuSignCredentials.IntegratorKey);
+                    }
+                }
+                else
+                {
+                    DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(DocuSignCredentials));
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        ser.WriteObject(ms, this.docuSignCredentials);
+                        authStr = Encoding.UTF8.GetString(ms.ToArray());
+                    }
+                }
+
+                if (this.AuthorizationFlag != AuthOptions.NoCreds)
+                {
+                    this.webRequest.Headers["X-DocuSign-Authentication"] = authStr;
+                }
             }
         }
 

@@ -501,7 +501,7 @@ namespace DocuSign.Integrations.Client
             // new oauth token mechanism
             if (password.Length > 40)
             {
-                this.webRequest.Headers["Authorization"] = "Bearer " + this.Request.ApiPassword;
+                this.webRequest.Headers["Authorization"] = "Bearer " + password;
             }
             else
             {

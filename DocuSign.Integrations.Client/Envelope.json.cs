@@ -302,30 +302,6 @@ namespace DocuSign.Integrations.Client
     }
 
     /// <summary>
-    /// Json class for document fields.
-    /// </summary>
-    [Serializable]
-    public class DocumentFields
-    {
-        public DocumentField[] documentFields;
-
-        public static DocumentFields FromJson(string json)
-        {
-            return JsonConvert.DeserializeObject<DocumentFields>(json);
-        }
-    }
-
-    /// <summary>
-    /// A name-value pair that provides custom data for a document.
-    /// </summary>
-    [Serializable]
-    public class DocumentField
-    {
-        public string name { get; set; }
-        public string value { get; set; }
-    }
-
-    /// <summary>
     /// Json class for documents
     /// </summary>
     [Serializable]
@@ -362,12 +338,6 @@ namespace DocuSign.Integrations.Client
         /// Gets or sets the transform pdf fields property
         /// </summary>
         public string transformPdfFields { get; set; }
-
-        /// <summary>
-        /// An optional array of name-value strings that allows the sender to provide custom data for a document. 
-        /// This information is returned in the envelope status but otherwise not used by DocuSign.
-        /// </summary>
-        public DocumentField[] documentFields { get; set; }
 
         /// <summary>
         /// Gets or sets the file extension property

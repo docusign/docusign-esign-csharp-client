@@ -209,6 +209,100 @@ namespace DocuSign.Integrations.Client
         }
 
         /// <summary>
+        /// This returns the custom document field information for an existing envelope document.
+        /// </summary>
+        /// <param name="documentId">The requested document ID.</param>
+        /// <returns>The custom document field name-value pairs for the requested document ID.</returns>
+        public DocumentFields GetDocumentFields(string documentId)
+        {
+            if (string.IsNullOrEmpty(documentId)) throw new ArgumentNullException(nameof(documentId));
+
+            try
+            {
+                var builder = new RequestBuilder();
+                var req = new RequestInfo
+                {
+                    RequestContentType = "application/json",
+                    AcceptContentType = "application/json",
+                    HttpMethod = "GET",
+                    LoginEmail = Login.Email,
+                    ApiPassword = Login.ApiPassword,
+                    DistributorCode = RestSettings.Instance.DistributorCode,
+                    DistributorPassword = RestSettings.Instance.DistributorPassword,
+                    IntegratorKey = RestSettings.Instance.IntegratorKey,
+                    Uri = $"{Login.BaseUrl}/envelopes/{EnvelopeId}/documents/{documentId}/fields"
+                };
+
+                builder.Request = req;
+                builder.Proxy = Proxy;
+
+                var response = builder.MakeRESTRequest();
+                Trace(builder, response);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                    return DocumentFields.FromJson(response.ResponseText);
+
+                ParseErrorResponse(response);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return null;
+                }
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Get information about the documents for a specific envelope
+        /// </summary>
+        /// <returns>object with information about the envelope's documents</returns>
+        public EnvelopeDocuments GetEnvelopeDocumentInfo()
+        {
+            try
+            {
+                var builder = new RequestBuilder();
+                var req = new RequestInfo();
+
+                req.RequestContentType = "application/json";
+                req.AcceptContentType = "application/json";
+                req.HttpMethod = "GET";
+                req.LoginEmail = Login.Email;
+                req.ApiPassword = Login.ApiPassword;
+                req.DistributorCode = RestSettings.Instance.DistributorCode;
+                req.DistributorPassword = RestSettings.Instance.DistributorPassword;
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+                req.Uri = $"{Login.BaseUrl}/envelopes/{EnvelopeId}/documents";
+
+                builder.Request = req;
+                builder.Proxy = Proxy;
+
+                var response = builder.MakeRESTRequest();
+                Trace(builder, response);
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                    return EnvelopeDocuments.FromJson(response.ResponseText);
+
+                ParseErrorResponse(response);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return null;
+                }
+
+                throw;
+            }
+        }
+
+        /// <summary>
         /// Get information about the documents for a specific envelope
         /// </summary>
         /// <param name="envelopeId">The envelopeId for this envelope</param>
@@ -1014,6 +1108,56 @@ namespace DocuSign.Integrations.Client
         }
 
         /// <summary>
+        /// Serializes the Json objects
+        /// </summary>
+        /// <param name="documents">List of documents to add to the envelope. Not required, may be null or empty.</param>
+        /// <returns></returns>
+        private string CreateJson(List<Document> documents)
+        {
+            try
+            {
+                var env = new EnvelopeCreate
+                {
+                    emailBlurb = RestSettings.Instance.EmailBlurb,
+                    emailSubject =
+                        string.IsNullOrEmpty(EmailSubject) ? RestSettings.Instance.EmailSubject : EmailSubject,
+                    recipients = Recipients,
+                    templateRoles = TemplateRoles,
+                    carbonCopies = CarbonCopies,
+                    status = Status,
+                    templateId = TemplateId,
+                    compositeTemplates = CompositeTemplates,
+                    notification = Notification,
+                    documents = documents.ToArray(),
+                    eventNotification = Events
+                };
+
+                if (CustomFields != null)
+                {
+                    env.customFields = CustomFields;
+                }
+                if (!string.IsNullOrEmpty(EmailBlurb))
+                {
+                    env.emailBlurb = EmailBlurb.Length > MaxBlurbSize
+                        ? EmailBlurb.Substring(0, MaxBlurbSize)
+                        : EmailBlurb;
+                }
+                var output = JsonConvert.SerializeObject(env, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                return output;
+            }
+            catch (Exception ex)
+            {
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return string.Empty;
+                }
+
+                throw;
+            }
+        }
+
+        /// <summary>
         /// Updates an envelope status
         /// </summary>
         /// <param name="envelopeId">The envelopeId for this envelope</param>
@@ -1556,6 +1700,90 @@ namespace DocuSign.Integrations.Client
             {
                 this.ParseErrorResponse(response);
             }
+
+            return response.StatusCode == HttpStatusCode.Created;
+        }
+
+        /// <summary>
+        /// Creates an envelope for the user.
+        /// </summary>
+        /// <param name="fileBytesList">Byte arrays of the files' content - in correct order.</param>
+        /// <param name="documents">Documents - in correct order</param>
+        /// <returns>true if successful, false otherwise</returns>
+        public bool Create(List<byte[]> fileBytesList, List<Document> documents)
+        {
+            if (Login == null)
+            {
+                throw new ArgumentNullException(nameof(Login));
+            }
+
+            if (string.IsNullOrEmpty(Login.BaseUrl))
+            {
+                throw new ArgumentNullException(nameof(Login.BaseUrl));
+            }
+
+            if (string.IsNullOrEmpty(Login.ApiPassword))
+            {
+                throw new ArgumentNullException(nameof(Login.ApiPassword));
+            }
+
+            if (documents?.Count != fileBytesList?.Count)
+            {
+                throw new ArgumentException("Mismatch between number of files names and files' bytes content - they must be the same");
+            }
+
+            var builder = new RequestBuilder();
+            var req = new RequestInfo();
+            var requestBodies = new List<RequestBody>();
+
+            req.RequestContentType = "multipart/form-data";
+            req.BaseUrl = Login.BaseUrl;
+            req.LoginEmail = Login.Email;
+            req.ApiPassword = Login.ApiPassword;
+            req.Uri = "/envelopes?api_password=true";
+            req.HttpMethod = "POST";
+            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+            req.IsMultipart = true;
+            req.MultipartBoundary = new Guid().ToString();
+            builder.Proxy = Proxy;
+
+            if (string.IsNullOrWhiteSpace(Login.SOBOUserId) == false)
+            {
+                req.SOBOUserId = Login.SOBOUserId;
+                builder.AuthorizationFormat = RequestBuilder.AuthFormat.Json;
+            }
+
+            RequestBody rb = new RequestBody();
+            rb.Headers.Add("Content-Type", "application/json");
+            rb.Headers.Add("Content-Disposition", "form-data");
+            rb.Text = CreateJson(documents);
+            requestBodies.Add(rb);
+
+            for (var i = 0; i < documents?.Count; i++)
+            {
+                var reqFile = new RequestBody();
+                var mime = string.IsNullOrEmpty(MimeType) ? DefaultMimeType : MimeType;
+                reqFile.Headers.Add("Content-Type", mime);
+                reqFile.Headers.Add("Content-Disposition", $"file; filename=\"{documents[i].name}\"; documentId={i + 1}");
+
+                reqFile.FileBytes = fileBytesList[i];
+                reqFile.SubstituteStrings = false;
+                requestBodies.Add(reqFile);
+            }
+
+            req.RequestBody = requestBodies.ToArray();
+            builder.Request = req;
+
+            var response = builder.MakeRESTRequest();
+            Trace(builder, response);
+
+            if (response.StatusCode == HttpStatusCode.Created)
+            {
+                ParseCreateResponse(response);
+                return GetSenderView(string.Empty);
+            }
+
+            ParseErrorResponse(response);
 
             return response.StatusCode == HttpStatusCode.Created;
         }

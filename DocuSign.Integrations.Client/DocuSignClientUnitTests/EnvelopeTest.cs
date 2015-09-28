@@ -3,6 +3,7 @@ using DocuSign.Integrations.Client;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace RestClientUnitTests
 {
@@ -16,6 +17,7 @@ namespace RestClientUnitTests
     public class EnvelopeTest
     {
 
+        private static Account _account;
 
         private TestContext testContextInstance;
 
@@ -40,10 +42,29 @@ namespace RestClientUnitTests
         //You can use the following additional attributes as you write your tests:
         //
         //Use ClassInitialize to run code before running the first test in the class
-        //[ClassInitialize()]
-        //public static void MyClassInitialize(TestContext testContext)
-        //{
-        //}
+        [ClassInitialize()]
+        public static void MyClassInitialize(TestContext testContext)
+        {
+            ConfigLoader.LoadConfig();
+            // $TODO: Add creds for known account
+            _account = new Account
+            {
+                Email = "",
+                Password = "",
+                AccountName = ""
+            };
+
+
+            try
+            {
+                if (!_account.Login())
+                    Assert.Fail("Unexpected exception during account creation part of test {0}: {1}", _account.RestError.errorCode, _account.RestError.message);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Unexpected exception during account creation part of test {0}: {1}", ex.GetType(), ex.Message);
+            }
+        }
         //
         //Use ClassCleanup to run code after all tests in a class have run
         //[ClassCleanup()]
@@ -469,6 +490,67 @@ namespace RestClientUnitTests
             Assert.AreEqual(target.Recipients.signers[2].email, "test3@docusign20154.onmicrosoft.com");
             Assert.AreEqual(target.Recipients.signers[2].name, "Test Three");
             Assert.AreEqual(target.Recipients.signers[2].status, "created");
+        }
+
+        /// <summary>
+        ///A test for Create
+        ///</summary>
+        [TestMethod(), DeploymentItem("Test Contract.pdf")]
+        public void EnvelopeCreateWithDocumentObjectsAndGetDocumentFieldsTest()
+        {
+            const bool expected = true;
+            const string expectedDocumentAttributeName = "Document Attribute Name";
+            const string expectedDocumentAttributeValue = "Document Attribute Value";
+            var actual = false;
+
+            Assert.IsFalse(string.IsNullOrEmpty(_account.BaseUrl));
+
+            var target = new Envelope { Login = _account };
+            var fi = new FileInfo("./Test Contract.pdf");
+
+            var documentCustomFields = new List<DocumentField>
+            {
+                new DocumentField {name = expectedDocumentAttributeName, value = expectedDocumentAttributeValue}
+            };
+            var documents = new List<Document>
+            {
+                new Document
+                {
+                    attachmentDescription = fi.Name.Replace(fi.Extension, string.Empty),
+                    documentId = "1",
+                    documentFields = documentCustomFields.ToArray(),
+                    fileExtension = fi.Extension,
+                    name = fi.Name
+                }
+            };
+
+            var fileBytes = new List<Byte[]> { File.ReadAllBytes(fi.FullName) };
+
+            try
+            {
+                actual = target.Create(fileBytes, documents);
+            }
+            catch (ArgumentNullException)
+            {
+            }
+
+            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(string.IsNullOrEmpty(target.SenderViewUrl));
+            var actualDocuments = target.GetDocuments();
+            Assert.AreEqual(documents.Count, actualDocuments.Count);
+            for (var i = 0; i < documents.Count; i++)
+            {
+                Assert.AreEqual(documents[i].documentId, actualDocuments[i].documentId);
+                Assert.AreEqual(documents[i].name, actualDocuments[i].name);
+
+                var fields = target.GetDocumentFields(documents[i].documentId);
+                Assert.AreEqual(documents[i].documentFields.Count(), fields.documentFields.Count());
+                for (var j = 0; j < documents[i].documentFields.Count(); j++)
+                {
+                    Assert.AreEqual(documents[i].documentFields[j].name, fields.documentFields[j].name);
+                    Assert.AreEqual(documents[i].documentFields[j].value, fields.documentFields[j].value);
+                }
+            }
         }
     }
 }

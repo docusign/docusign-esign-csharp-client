@@ -2106,7 +2106,7 @@ namespace DocuSign.Integrations.Client
             req.LoginEmail = this.Login.Email;
             //req.LoginPassword = this.Login.Password;
             req.ApiPassword = this.Login.ApiPassword;
-            req.Uri = string.Format("/envelopes/{0}/documents",EnvelopeId);
+            req.Uri = string.Format("/envelopes/{0}/documents",this.EnvelopeId);
             req.HttpMethod = "PUT";
             req.IntegratorKey = RestSettings.Instance.IntegratorKey;
             req.IsMultipart = true;
@@ -2198,7 +2198,7 @@ namespace DocuSign.Integrations.Client
             req.LoginEmail = this.Login.Email;
             //req.LoginPassword = this.Login.Password;
             req.ApiPassword = this.Login.ApiPassword;
-            req.Uri = string.Format("/envelopes/{0}/documents/",EnvelopeId);
+            req.Uri = string.Format("/envelopes/{0}/documents/", this.EnvelopeId);
             req.HttpMethod = "DELETE";
             req.IntegratorKey = RestSettings.Instance.IntegratorKey;
             builder.Proxy = this.Proxy;

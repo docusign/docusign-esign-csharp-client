@@ -230,7 +230,7 @@ namespace DocuSign.Integrations.Client
                     DistributorCode = RestSettings.Instance.DistributorCode,
                     DistributorPassword = RestSettings.Instance.DistributorPassword,
                     IntegratorKey = RestSettings.Instance.IntegratorKey,
-                    Uri = string.Format("{0}/envelopes/{1}/documents/{2}/fields", Login.BaseUrl,EnvelopeId,documentId)
+                    Uri = string.Format("{0}/envelopes/{1}/documents/{2}/fields", Login.BaseUrl, this.EnvelopeId, documentId)
                 };
 
                 builder.Request = req;
@@ -276,7 +276,7 @@ namespace DocuSign.Integrations.Client
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/documents", Login.BaseUrl, EnvelopeId);
+                req.Uri = string.Format("{0}/envelopes/{1}/documents", Login.BaseUrl, this.EnvelopeId);
 
                 builder.Request = req;
                 builder.Proxy = Proxy;
@@ -680,7 +680,7 @@ namespace DocuSign.Integrations.Client
                 req.LoginEmail = this.Login.Email;
                 req.LoginPassword = this.Login.Password;
                 req.ApiPassword = this.Login.ApiPassword;
-                req.Uri = string.Format("/envelopes/{0}/recipients/{1}/tabs", EnvelopeId, (string)(GetFirstRecipients().First())["recipientIdGuid"]);
+                req.Uri = string.Format("/envelopes/{0}/recipients/{1}/tabs", this.EnvelopeId, (string)(GetFirstRecipients().First())["recipientIdGuid"]);
                 req.HttpMethod = "POST";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
@@ -751,7 +751,7 @@ namespace DocuSign.Integrations.Client
                 req.LoginEmail = Login.Email;
                 req.LoginPassword = Login.Password;
                 req.ApiPassword = Login.ApiPassword;
-                req.Uri = String.Format("/envelopes/{0}", EnvelopeId);
+                req.Uri = String.Format("/envelopes/{0}", this.EnvelopeId);
                 req.HttpMethod = "PUT";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
@@ -806,7 +806,7 @@ namespace DocuSign.Integrations.Client
             req.LoginEmail = Login.Email;
             req.LoginPassword = Login.Password;
             req.ApiPassword = Login.ApiPassword;
-            req.Uri = String.Format("/envelopes/{0}?resend_envelope=true", EnvelopeId);
+            req.Uri = String.Format("/envelopes/{0}?resend_envelope=true", this.EnvelopeId);
             req.HttpMethod = "PUT";
             req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
@@ -849,7 +849,7 @@ namespace DocuSign.Integrations.Client
                 req.LoginEmail = Login.Email;
                 req.LoginPassword = Login.Password;
                 req.ApiPassword = Login.ApiPassword;
-                req.Uri = String.Format("/envelopes/{0}/recipients", EnvelopeId);
+                req.Uri = String.Format("/envelopes/{0}/recipients", this.EnvelopeId);
                 req.HttpMethod = "POST";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
@@ -905,7 +905,7 @@ namespace DocuSign.Integrations.Client
                 req.LoginEmail = Login.Email;
                 req.LoginPassword = Login.Password;
                 req.ApiPassword = Login.ApiPassword;
-                req.Uri = String.Format(resendEnvelope ? "/envelopes/{0}/recipients?resend_envelope=true" : "/envelopes/{0}/recipients", EnvelopeId);
+                req.Uri = String.Format(resendEnvelope ? "/envelopes/{0}/recipients?resend_envelope=true" : "/envelopes/{0}/recipients", this.EnvelopeId);
                 req.HttpMethod = "PUT";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
@@ -956,7 +956,7 @@ namespace DocuSign.Integrations.Client
                 req.LoginEmail = Login.Email;
                 req.LoginPassword = Login.Password;
                 req.ApiPassword = Login.ApiPassword;
-                req.Uri = String.Format("/envelopes/{0}/recipients", EnvelopeId);
+                req.Uri = String.Format("/envelopes/{0}/recipients", this.EnvelopeId);
                 req.HttpMethod = "GET";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
@@ -1011,7 +1011,7 @@ namespace DocuSign.Integrations.Client
                 req.LoginEmail = Login.Email;
                 req.LoginPassword = Login.Password;
                 req.ApiPassword = Login.ApiPassword;
-                req.Uri = String.Format("/envelopes/{0}/recipients?include_tabs={1}&include_extended={2}", EnvelopeId, includeTabsUrlParam, includeExtendedUrlParam);
+                req.Uri = String.Format("/envelopes/{0}/recipients?include_tabs={1}&include_extended={2}", this.EnvelopeId, includeTabsUrlParam, includeExtendedUrlParam);
                 req.HttpMethod = "GET";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
@@ -1261,7 +1261,7 @@ namespace DocuSign.Integrations.Client
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/documents", this.Login.BaseUrl, EnvelopeId);
+                req.Uri = string.Format("{0}/envelopes/{1}/documents", this.Login.BaseUrl, this.EnvelopeId);
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -1387,7 +1387,7 @@ namespace DocuSign.Integrations.Client
             req.DistributorCode = RestSettings.Instance.DistributorCode;
             req.DistributorPassword = RestSettings.Instance.DistributorPassword;
             req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-            req.Uri = string.Format("{0}/envelopes/{1}/recipients", this.Login.BaseUrl, EnvelopeId);
+            req.Uri = string.Format("{0}/envelopes/{1}/recipients", this.Login.BaseUrl, this.EnvelopeId);
 
             builder.Request = req;
             builder.Proxy = this.Proxy;
@@ -1434,7 +1434,7 @@ namespace DocuSign.Integrations.Client
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/recipients", this.Login.BaseUrl, EnvelopeId);
+                req.Uri = string.Format("{0}/envelopes/{1}/recipients", this.Login.BaseUrl, this.EnvelopeId);
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -1815,7 +1815,7 @@ namespace DocuSign.Integrations.Client
                 req.LoginEmail = this.Login.Email;
                 req.LoginPassword = this.Login.Password;
                 req.ApiPassword = this.Login.ApiPassword;
-                req.Uri = "/envelopes/" + this.EnvelopeId + "/views/recipient.json?api_password=true";
+                req.Uri = string.Format("/envelopes/{0}/views/recipient.json?api_password=true", this.EnvelopeId);
                 if (!signAndReturn)
                 {
                     req.Uri += "&disable_cc_for_selfsign=true";
@@ -1893,7 +1893,7 @@ namespace DocuSign.Integrations.Client
                 req.LoginEmail = this.Login.Email;
                 req.LoginPassword = this.Login.Password;
                 req.ApiPassword = this.Login.ApiPassword;
-                req.Uri = "/envelopes/" + this.EnvelopeId + "/views/recipient";
+                req.Uri = string.Format("/envelopes/{0}/views/recipient", this.EnvelopeId);
                 req.HttpMethod = "POST";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
@@ -1960,7 +1960,7 @@ namespace DocuSign.Integrations.Client
                 req.LoginEmail = this.Login.Email;
                 req.LoginPassword = this.Login.Password;
                 req.ApiPassword = this.Login.ApiPassword;
-                req.Uri = "/envelopes/" + this.EnvelopeId + "/views/sender.json?api_password=true";
+                req.Uri = string.Format("/envelopes/{0}/views/sender.json?api_password=true", this.EnvelopeId);
                 req.HttpMethod = "POST";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
@@ -2029,7 +2029,7 @@ namespace DocuSign.Integrations.Client
                 req.LoginEmail = Login.Email;
                 req.LoginPassword = Login.Password;
                 req.ApiPassword = Login.ApiPassword;
-                req.Uri = String.Format("/envelopes/{0}/custom_fields", EnvelopeId);
+                req.Uri = String.Format("/envelopes/{0}/custom_fields", this.EnvelopeId);
                 req.HttpMethod = "POST";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
@@ -2106,7 +2106,7 @@ namespace DocuSign.Integrations.Client
             req.LoginEmail = this.Login.Email;
             //req.LoginPassword = this.Login.Password;
             req.ApiPassword = this.Login.ApiPassword;
-            req.Uri = "/envelopes/" + EnvelopeId + "/documents";
+            req.Uri = string.Format("/envelopes/{0}/documents",this.EnvelopeId);
             req.HttpMethod = "PUT";
             req.IntegratorKey = RestSettings.Instance.IntegratorKey;
             req.IsMultipart = true;
@@ -2198,7 +2198,7 @@ namespace DocuSign.Integrations.Client
             req.LoginEmail = this.Login.Email;
             //req.LoginPassword = this.Login.Password;
             req.ApiPassword = this.Login.ApiPassword;
-            req.Uri = "/envelopes/" + EnvelopeId + "/documents/";
+            req.Uri = string.Format("/envelopes/{0}/documents/", this.EnvelopeId);
             req.HttpMethod = "DELETE";
             req.IntegratorKey = RestSettings.Instance.IntegratorKey;
             builder.Proxy = this.Proxy;

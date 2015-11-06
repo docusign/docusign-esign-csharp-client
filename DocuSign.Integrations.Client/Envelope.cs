@@ -167,9 +167,10 @@ namespace DocuSign.Integrations.Client
         /// <returns>Array of bytes for the signed document</returns>
         public byte[] GetCompletedDocument(string envelopeId, bool includeCertificate)
         {
+            CheckAPIPreRequisites();
             if (string.IsNullOrEmpty(envelopeId) == true)
             {
-                throw new ArgumentNullException("envelopeId");
+                throw new ArgumentNullException("envelopeId", "Please provide the ID of the Envelope you are querying.");
             }
 
             try
@@ -181,12 +182,13 @@ namespace DocuSign.Integrations.Client
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
                 req.HttpMethod = "GET";
+                req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/documents/combined?certificate={2}", this.Login.BaseUrl, envelopeId, includeCertificate.ToString().ToLower());
+                req.Uri = string.Format("/envelopes/{0}/documents/combined?certificate={1}", envelopeId, includeCertificate.ToString().ToLower());
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -215,8 +217,11 @@ namespace DocuSign.Integrations.Client
         /// <returns>The custom document field name-value pairs for the requested document ID.</returns>
         public DocumentFields GetDocumentFields(string documentId)
         {
-            if (string.IsNullOrEmpty(documentId)) throw new ArgumentNullException("documentId");
-
+            CheckAPIPreRequisites();
+            if (string.IsNullOrEmpty(documentId))
+            {
+                throw new ArgumentNullException("documentId", "Please provide the ID of the document you are querying.");
+            }
             try
             {
                 var builder = new RequestBuilder();
@@ -225,12 +230,13 @@ namespace DocuSign.Integrations.Client
                     RequestContentType = "application/json",
                     AcceptContentType = "application/json",
                     HttpMethod = "GET",
-                    LoginEmail = Login.Email,
-                    ApiPassword = Login.ApiPassword,
+                    BaseUrl = this.Login.BaseUrl,
+                    LoginEmail = this.Login.Email,
+                    ApiPassword = this.Login.ApiPassword,
                     DistributorCode = RestSettings.Instance.DistributorCode,
                     DistributorPassword = RestSettings.Instance.DistributorPassword,
                     IntegratorKey = RestSettings.Instance.IntegratorKey,
-                    Uri = string.Format("{0}/envelopes/{1}/documents/{2}/fields", Login.BaseUrl, this.EnvelopeId, documentId)
+                    Uri = string.Format("/envelopes/{0}/documents/{1}/fields", this.EnvelopeId, documentId)
                 };
 
                 builder.Request = req;
@@ -263,6 +269,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>object with information about the envelope's documents</returns>
         public EnvelopeDocuments GetEnvelopeDocumentInfo()
         {
+            CheckAPIPreRequisites();
             try
             {
                 var builder = new RequestBuilder();
@@ -271,12 +278,13 @@ namespace DocuSign.Integrations.Client
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
                 req.HttpMethod = "GET";
-                req.LoginEmail = Login.Email;
-                req.ApiPassword = Login.ApiPassword;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/documents", Login.BaseUrl, this.EnvelopeId);
+                req.Uri = string.Format("/envelopes/{0}/documents", this.EnvelopeId);
 
                 builder.Request = req;
                 builder.Proxy = Proxy;
@@ -310,9 +318,10 @@ namespace DocuSign.Integrations.Client
         /// <returns>object with information about the envelope's documents</returns>
         public EnvelopeDocuments GetEnvelopeDocumentInfo(string envelopeId)
         {
+            CheckAPIPreRequisites();
             if (string.IsNullOrEmpty(envelopeId) == true)
             {
-                throw new ArgumentNullException("envelopeId");
+                throw new ArgumentNullException("envelopeId", "Please provide the ID of the Envelope that you are querying.");
             }
 
             try
@@ -326,10 +335,11 @@ namespace DocuSign.Integrations.Client
                 req.HttpMethod = "GET";
                 req.LoginEmail = this.Login.Email;
                 req.ApiPassword = this.Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/documents", this.Login.BaseUrl, envelopeId);
+                req.Uri = string.Format("/envelopes/{0}/documents", envelopeId);
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -367,6 +377,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool AddTemplates(List<string> templateIds)
         {
+            CheckAPIPreRequisites();
             if (templateIds.Count == 0)
             {
                 throw new ArgumentException("Empty set of template IDs provided");
@@ -382,10 +393,11 @@ namespace DocuSign.Integrations.Client
                 req.HttpMethod = "POST";
                 req.LoginEmail = this.Login.Email;
                 req.ApiPassword = this.Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/templates", this.Login.BaseUrl, this.EnvelopeId);
+                req.Uri = string.Format("/envelopes/{0}/templates", this.EnvelopeId);
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -436,6 +448,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool AddTemplates(DocumentTemplates templates)
         {
+            CheckAPIPreRequisites();
             if (templates == null || templates.documentTemplates.Length == 0)
             {
                 throw new ArgumentException("Empty set of template IDS provided");
@@ -451,10 +464,11 @@ namespace DocuSign.Integrations.Client
                 req.HttpMethod = "POST";
                 req.LoginEmail = this.Login.Email;
                 req.ApiPassword = this.Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/templates", this.Login.BaseUrl, this.EnvelopeId);
+                req.Uri = string.Format("/envelopes/{0}/templates", this.EnvelopeId);
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -498,6 +512,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>object with information about the envelope's documents</returns>
         public EnvelopeTemplates GetEnvelopeMatchingTemplates()
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestBuilder builder = new RequestBuilder();
@@ -509,10 +524,11 @@ namespace DocuSign.Integrations.Client
                 req.HttpMethod = "GET";
                 req.LoginEmail = this.Login.Email;
                 req.ApiPassword = this.Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/templates?include=matching%2Capplied", this.Login.BaseUrl, this.EnvelopeId);
+                req.Uri = string.Format("/envelopes/{0}/templates?include=matching%2Capplied", this.EnvelopeId);
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -550,6 +566,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool GetCustomFields()
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestBuilder builder = new RequestBuilder();
@@ -559,13 +576,13 @@ namespace DocuSign.Integrations.Client
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
                 req.HttpMethod = "GET";
-                req.LoginEmail = Login.Email;
-                req.LoginPassword = Login.Password;
-                req.ApiPassword = Login.ApiPassword; 
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/custom_fields.json", this.Login.BaseUrl, this.EnvelopeId);
+                req.Uri = string.Format("/envelopes/{0}/custom_fields.json", this.EnvelopeId);
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -600,6 +617,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         private bool CreateWithoutDocument()
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestInfo req = new RequestInfo();
@@ -607,7 +625,6 @@ namespace DocuSign.Integrations.Client
                 req.AcceptContentType = "application/json";
                 req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
-                req.LoginPassword = this.Login.Password;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = "/envelopes?api_password=true";
                 req.HttpMethod = "POST";
@@ -671,6 +688,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool AddTabs(TabCollection tabs)
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestInfo req = new RequestInfo();
@@ -678,7 +696,6 @@ namespace DocuSign.Integrations.Client
                 req.AcceptContentType = "application/json";
                 req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
-                req.LoginPassword = this.Login.Password;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = string.Format("/envelopes/{0}/recipients/{1}/tabs", this.EnvelopeId, (string)(GetFirstRecipients().First())["recipientIdGuid"]);
                 req.HttpMethod = "POST";
@@ -736,6 +753,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool AddEmailInformation(string subject, string blurb)
         {
+            CheckAPIPreRequisites();
             // for now just support adding all email details. We can expand if needed.
             if (String.IsNullOrEmpty(subject) || String.IsNullOrEmpty(blurb))
             {
@@ -747,10 +765,9 @@ namespace DocuSign.Integrations.Client
                 RequestInfo req = new RequestInfo();
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
-                req.BaseUrl = Login.BaseUrl;
-                req.LoginEmail = Login.Email;
-                req.LoginPassword = Login.Password;
-                req.ApiPassword = Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = String.Format("/envelopes/{0}", this.EnvelopeId);
                 req.HttpMethod = "PUT";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
@@ -799,37 +816,50 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool SendReminder()
         {
-            RequestInfo req = new RequestInfo();
-            req.RequestContentType = "application/json";
-            req.AcceptContentType = "application/json";
-            req.BaseUrl = Login.BaseUrl;
-            req.LoginEmail = Login.Email;
-            req.LoginPassword = Login.Password;
-            req.ApiPassword = Login.ApiPassword;
-            req.Uri = String.Format("/envelopes/{0}?resend_envelope=true", this.EnvelopeId);
-            req.HttpMethod = "PUT";
-            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-
-            RequestBuilder builder = new RequestBuilder();
-            builder.Proxy = Proxy;
-            builder.Request = req;
-
-            List<RequestBody> requestBodies = new List<RequestBody>();
-            RequestBody rb = new RequestBody();
-            rb.Text = "{}";
-            requestBodies.Add(rb);
-            req.RequestBody = requestBodies.ToArray();
-            builder.Request = req;
-            ResponseInfo response = builder.MakeRESTRequest();
-            this.Trace(builder, response);
-
-            if (response.StatusCode != HttpStatusCode.OK)
+            CheckAPIPreRequisites();
+            try
             {
-                this.ParseErrorResponse(response);
-                return false;
-            }
+                RequestInfo req = new RequestInfo();
+                req.RequestContentType = "application/json";
+                req.AcceptContentType = "application/json";
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
+                req.Uri = String.Format("/envelopes/{0}?resend_envelope=true", this.EnvelopeId);
+                req.HttpMethod = "PUT";
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
 
-            return true;
+                RequestBuilder builder = new RequestBuilder();
+                builder.Proxy = Proxy;
+                builder.Request = req;
+
+                List<RequestBody> requestBodies = new List<RequestBody>();
+                RequestBody rb = new RequestBody();
+                rb.Text = "{}";
+                requestBodies.Add(rb);
+                req.RequestBody = requestBodies.ToArray();
+                builder.Request = req;
+                ResponseInfo response = builder.MakeRESTRequest();
+                this.Trace(builder, response);
+
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    this.ParseErrorResponse(response);
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return false;
+                }
+
+                throw;
+            }
         }
 
 
@@ -840,15 +870,15 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool AddRecipients(Recipients recipients)
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestInfo req = new RequestInfo();
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
-                req.BaseUrl = Login.BaseUrl;
-                req.LoginEmail = Login.Email;
-                req.LoginPassword = Login.Password;
-                req.ApiPassword = Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = String.Format("/envelopes/{0}/recipients", this.EnvelopeId);
                 req.HttpMethod = "POST";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
@@ -896,15 +926,15 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool UpdateRecipients(Recipients recipients, bool resendEnvelope = false)
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestInfo req = new RequestInfo();
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
-                req.BaseUrl = Login.BaseUrl;
-                req.LoginEmail = Login.Email;
-                req.LoginPassword = Login.Password;
-                req.ApiPassword = Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = String.Format(resendEnvelope ? "/envelopes/{0}/recipients?resend_envelope=true" : "/envelopes/{0}/recipients", this.EnvelopeId);
                 req.HttpMethod = "PUT";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
@@ -947,15 +977,15 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool GetRecipients()
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestInfo req = new RequestInfo();
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
-                req.BaseUrl = Login.BaseUrl;
-                req.LoginEmail = Login.Email;
-                req.LoginPassword = Login.Password;
-                req.ApiPassword = Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = String.Format("/envelopes/{0}/recipients", this.EnvelopeId);
                 req.HttpMethod = "GET";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
@@ -999,6 +1029,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool GetRecipients(bool includeTabs, bool includeExtended)
         {
+            CheckAPIPreRequisites();
             try
             {
                 var includeTabsUrlParam = (includeTabs) ? "true" : "false";
@@ -1007,10 +1038,9 @@ namespace DocuSign.Integrations.Client
                 RequestInfo req = new RequestInfo();
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
-                req.BaseUrl = Login.BaseUrl;
-                req.LoginEmail = Login.Email;
-                req.LoginPassword = Login.Password;
-                req.ApiPassword = Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = String.Format("/envelopes/{0}/recipients?include_tabs={1}&include_extended={2}", this.EnvelopeId, includeTabsUrlParam, includeExtendedUrlParam);
                 req.HttpMethod = "GET";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
@@ -1164,6 +1194,11 @@ namespace DocuSign.Integrations.Client
         /// <returns>Date/Time when the status was set</returns>
         public DateTime GetStatus(string envelopeId)
         {
+            CheckAPIPreRequisites();
+            if (string.IsNullOrEmpty(envelopeId) == true)
+            {
+                throw new ArgumentNullException("envelopeId", "Please provide the ID of the Envelope that you are querying.");
+            }
             try
             {
                 RequestBuilder builder = new RequestBuilder();
@@ -1173,12 +1208,13 @@ namespace DocuSign.Integrations.Client
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
                 req.HttpMethod = "GET";
+                req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}", this.Login.BaseUrl, envelopeId);
+                req.Uri = string.Format("/envelopes/{0}", envelopeId);
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -1247,6 +1283,7 @@ namespace DocuSign.Integrations.Client
         /// <returns></returns>
         public List<EnvelopeDocument> GetDocuments()
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestBuilder builder = new RequestBuilder();
@@ -1256,12 +1293,13 @@ namespace DocuSign.Integrations.Client
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
                 req.HttpMethod = "GET";
+                req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/documents", this.Login.BaseUrl, this.EnvelopeId);
+                req.Uri = string.Format("/envelopes/{0}/documents", this.EnvelopeId);
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -1304,6 +1342,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool UpdateStatus(string voidedReason = null)
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestBuilder builder = new RequestBuilder();
@@ -1313,12 +1352,13 @@ namespace DocuSign.Integrations.Client
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
                 req.HttpMethod = "PUT";
+                req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}", this.Login.BaseUrl, this.EnvelopeId);
+                req.Uri = string.Format("/envelopes/{0}", this.EnvelopeId);
 
                 RequestBody rb = new RequestBody();
 
@@ -1375,51 +1415,7 @@ namespace DocuSign.Integrations.Client
         /// <returns></returns>
         public IEnumerable<string> GetRecipientNames()
         {
-            RequestBuilder builder = new RequestBuilder();
-            RequestInfo req = new RequestInfo();
-            List<RequestBody> requestBodies = new List<RequestBody>();
-
-            req.RequestContentType = "application/json";
-            req.AcceptContentType = "application/json";
-            req.HttpMethod = "GET";
-            req.LoginEmail = this.Login.Email;
-            req.ApiPassword = this.Login.ApiPassword;
-            req.DistributorCode = RestSettings.Instance.DistributorCode;
-            req.DistributorPassword = RestSettings.Instance.DistributorPassword;
-            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-            req.Uri = string.Format("{0}/envelopes/{1}/recipients", this.Login.BaseUrl, this.EnvelopeId);
-
-            builder.Request = req;
-            builder.Proxy = this.Proxy;
-
-            ResponseInfo response = builder.MakeRESTRequest();
-            this.Trace(builder, response);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
-                this.ParseErrorResponse(response);
-                return null;
-            }
-            JObject json = JObject.Parse(response.ResponseText);
-            var names = new List<string>();
-            var signers = json["signers"];
-            foreach (var signer in signers)
-                names.Add((string)signer["name"]);
-            var ccs = json["carbonCopies"];
-            foreach (var cc in ccs)
-                names.Add((string)cc["name"]);
-            var certifiedDeliveries = json["certifiedDeliveries"];
-            foreach (var cd in certifiedDeliveries)
-                names.Add((string)cd["name"]);
-            return names;
-        }
-
-        /// <summary>
-        /// Returns all recipients that have lowest routing value (meaning they need to sign first)
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<JToken> GetFirstRecipients()
-        {
+            CheckAPIPreRequisites();
             try
             {
                 RequestBuilder builder = new RequestBuilder();
@@ -1429,12 +1425,73 @@ namespace DocuSign.Integrations.Client
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
                 req.HttpMethod = "GET";
+                req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.DistributorCode = RestSettings.Instance.DistributorCode;
                 req.DistributorPassword = RestSettings.Instance.DistributorPassword;
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-                req.Uri = string.Format("{0}/envelopes/{1}/recipients", this.Login.BaseUrl, this.EnvelopeId);
+                req.Uri = string.Format("/envelopes/{0}/recipients", this.EnvelopeId);
+
+                builder.Request = req;
+                builder.Proxy = this.Proxy;
+
+                ResponseInfo response = builder.MakeRESTRequest();
+                this.Trace(builder, response);
+
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    this.ParseErrorResponse(response);
+                    return null;
+                }
+                JObject json = JObject.Parse(response.ResponseText);
+                var names = new List<string>();
+                var signers = json["signers"];
+                foreach (var signer in signers)
+                    names.Add((string)signer["name"]);
+                var ccs = json["carbonCopies"];
+                foreach (var cc in ccs)
+                    names.Add((string)cc["name"]);
+                var certifiedDeliveries = json["certifiedDeliveries"];
+                foreach (var cd in certifiedDeliveries)
+                    names.Add((string)cd["name"]);
+                return names;
+            }
+            catch (Exception ex)
+            {
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return null;
+                }
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Returns all recipients that have lowest routing value (meaning they need to sign first)
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<JToken> GetFirstRecipients()
+        {
+            CheckAPIPreRequisites();
+            try
+            {
+                RequestBuilder builder = new RequestBuilder();
+                RequestInfo req = new RequestInfo();
+                List<RequestBody> requestBodies = new List<RequestBody>();
+
+                req.RequestContentType = "application/json";
+                req.AcceptContentType = "application/json";
+                req.HttpMethod = "GET";
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
+                req.DistributorCode = RestSettings.Instance.DistributorCode;
+                req.DistributorPassword = RestSettings.Instance.DistributorPassword;
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+                req.Uri = string.Format("/envelopes/{0}/recipients", this.EnvelopeId);
 
                 builder.Request = req;
                 builder.Proxy = this.Proxy;
@@ -1481,20 +1538,7 @@ namespace DocuSign.Integrations.Client
         /// <exception cref="ArgumentNullException">When Login or BaseUrl or ApiPassword or Path are missing</exception>
         public bool Create(string path)
         {
-            if (this.Login == null)
-            {
-                throw new ArgumentNullException("Login");
-            }
-
-            if (string.IsNullOrEmpty(this.Login.BaseUrl) == true)
-            {
-                throw new ArgumentNullException("BaseUrl");
-            }
-
-            if (string.IsNullOrEmpty(this.Login.ApiPassword) == true)
-            {
-                throw new ArgumentNullException("ApiPassword");
-            }
+            CheckAPIPreRequisites();
 
             if (string.IsNullOrEmpty(path) == true)
             {
@@ -1510,7 +1554,6 @@ namespace DocuSign.Integrations.Client
                 req.RequestContentType = "multipart/form-data";
                 req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
-                //req.LoginPassword = this.Login.Password;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = "/envelopes?api_password=true";
                 req.HttpMethod = "POST";
@@ -1618,6 +1661,23 @@ namespace DocuSign.Integrations.Client
 
 
         /// <summary>
+        /// Check if the login has occured for the API methods to succeed. Account.Login() must be called
+        /// prior to invoking any API calls that interact with the upstream service.
+        /// </summary>
+        protected virtual void CheckAPIPreRequisites()
+        {
+            if (this.Login == null)
+            {
+                throw new ArgumentNullException("Login", "Please set the Login instance for the API requests.");
+            }
+
+            if (string.IsNullOrEmpty(this.Login.BaseUrl) == true)
+            {
+                throw new ArgumentNullException("BaseUrl", "Please invoke the Account.Login method to initiate the API requests.");
+            }
+        }
+
+        /// <summary>
         /// Creates an envelope for the user.
         /// </summary>
         /// <param name="fileBytes">Byte arrays of the files' content - in correct order.</param>
@@ -1625,83 +1685,82 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool Create(List<byte[]> fileBytesList, List<string> fileNames)
         {
-            if (this.Login == null)
-            {
-                throw new ArgumentNullException("Login");
-            }
+            CheckAPIPreRequisites();
 
-            if (string.IsNullOrEmpty(this.Login.BaseUrl) == true)
-            {
-                throw new ArgumentNullException("BaseUrl");
-            }
-
-            if (string.IsNullOrEmpty(this.Login.ApiPassword) == true)
-            {
-                throw new ArgumentNullException("ApiPassword");
-            }
             if (fileNames.Count != fileBytesList.Count)
             {
                 throw new ArgumentException("Mismatch between number of files names and files' bytes content - they must be the same");
             }
-
-            RequestBuilder builder = new RequestBuilder();
-            RequestInfo req = new RequestInfo();
-            List<RequestBody> requestBodies = new List<RequestBody>();
-
-            req.RequestContentType = "multipart/form-data";
-            req.BaseUrl = this.Login.BaseUrl;
-            req.LoginEmail = this.Login.Email;
-            //req.LoginPassword = this.Login.Password;
-            req.ApiPassword = this.Login.ApiPassword;
-            req.Uri = "/envelopes?api_password=true";
-            req.HttpMethod = "POST";
-            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-            req.IsMultipart = true;
-            req.MultipartBoundary = new Guid().ToString();
-            builder.Proxy = this.Proxy;
-
-            if (string.IsNullOrWhiteSpace(this.Login.SOBOUserId) == false)
+            try
             {
-                req.SOBOUserId = this.Login.SOBOUserId;
-                builder.AuthorizationFormat = RequestBuilder.AuthFormat.Json;
+                RequestBuilder builder = new RequestBuilder();
+                RequestInfo req = new RequestInfo();
+                List<RequestBody> requestBodies = new List<RequestBody>();
+
+                req.RequestContentType = "multipart/form-data";
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
+                req.Uri = "/envelopes?api_password=true";
+                req.HttpMethod = "POST";
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+                req.IsMultipart = true;
+                req.MultipartBoundary = new Guid().ToString();
+                builder.Proxy = this.Proxy;
+
+                if (string.IsNullOrWhiteSpace(this.Login.SOBOUserId) == false)
+                {
+                    req.SOBOUserId = this.Login.SOBOUserId;
+                    builder.AuthorizationFormat = RequestBuilder.AuthFormat.Json;
+                }
+
+                RequestBody rb = new RequestBody();
+                rb.Headers.Add("Content-Type", "application/json");
+                rb.Headers.Add("Content-Disposition", "form-data");
+                rb.Text = this.CreateJson(fileNames);
+                requestBodies.Add(rb);
+
+                for (int i = 0; i < fileNames.Count; i++)
+                {
+                    var fileName = fileNames[i];
+                    RequestBody reqFile = new RequestBody();
+                    string mime = string.IsNullOrEmpty(this.MimeType) == true ? DefaultMimeType : this.MimeType;
+                    reqFile.Headers.Add("Content-Type", mime);
+                    reqFile.Headers.Add("Content-Disposition", string.Format("file; filename=\"{0}\"; documentId={1}", fileName, i + 1));
+
+                    reqFile.FileBytes = fileBytesList[i];
+                    reqFile.SubstituteStrings = false;
+                    requestBodies.Add(reqFile);
+                }
+
+                req.RequestBody = requestBodies.ToArray();
+                builder.Request = req;
+
+                ResponseInfo response = builder.MakeRESTRequest();
+                this.Trace(builder, response);
+
+                if (response.StatusCode == HttpStatusCode.Created)
+                {
+                    this.ParseCreateResponse(response);
+                    return this.GetSenderView(string.Empty);
+                }
+                else
+                {
+                    this.ParseErrorResponse(response);
+                }
+
+                return response.StatusCode == HttpStatusCode.Created;
             }
-
-            RequestBody rb = new RequestBody();
-            rb.Headers.Add("Content-Type", "application/json");
-            rb.Headers.Add("Content-Disposition", "form-data");
-            rb.Text = this.CreateJson(fileNames);
-            requestBodies.Add(rb);
-
-            for (int i = 0; i < fileNames.Count; i++)
+            catch (Exception ex)
             {
-                var fileName = fileNames[i];
-                RequestBody reqFile = new RequestBody();
-                string mime = string.IsNullOrEmpty(this.MimeType) == true ? DefaultMimeType : this.MimeType;
-                reqFile.Headers.Add("Content-Type", mime);
-                reqFile.Headers.Add("Content-Disposition", string.Format("file; filename=\"{0}\"; documentId={1}", fileName, i + 1));
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return false;
+                }
 
-                reqFile.FileBytes = fileBytesList[i];
-                reqFile.SubstituteStrings = false;
-                requestBodies.Add(reqFile);
+                throw;
             }
-
-            req.RequestBody = requestBodies.ToArray();
-            builder.Request = req;
-
-            ResponseInfo response = builder.MakeRESTRequest();
-            this.Trace(builder, response);
-
-            if (response.StatusCode == HttpStatusCode.Created)
-            {
-                this.ParseCreateResponse(response);
-                return this.GetSenderView(string.Empty);
-            }
-            else
-            {
-                this.ParseErrorResponse(response);
-            }
-
-            return response.StatusCode == HttpStatusCode.Created;
         }
 
         /// <summary>
@@ -1712,80 +1771,79 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool Create(List<byte[]> fileBytesList, List<Document> documents)
         {
-            if (Login == null)
-            {
-                throw new ArgumentNullException("Login");
-            }
-
-            if (string.IsNullOrEmpty(Login.BaseUrl))
-            {
-                throw new ArgumentNullException("Login.BaseUrl");
-            }
-
-            if (string.IsNullOrEmpty(Login.ApiPassword))
-            {
-                throw new ArgumentNullException("Login.ApiPassword");
-            }
+            CheckAPIPreRequisites();
 
             if (documents.Count != fileBytesList.Count)
             {
                 throw new ArgumentException("Mismatch between number of files names and files' bytes content - they must be the same");
             }
-
-            var builder = new RequestBuilder();
-            var req = new RequestInfo();
-            var requestBodies = new List<RequestBody>();
-
-            req.RequestContentType = "multipart/form-data";
-            req.BaseUrl = Login.BaseUrl;
-            req.LoginEmail = Login.Email;
-            req.ApiPassword = Login.ApiPassword;
-            req.Uri = "/envelopes?api_password=true";
-            req.HttpMethod = "POST";
-            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-            req.IsMultipart = true;
-            req.MultipartBoundary = new Guid().ToString();
-            builder.Proxy = Proxy;
-
-            if (string.IsNullOrWhiteSpace(Login.SOBOUserId) == false)
+            try
             {
-                req.SOBOUserId = Login.SOBOUserId;
-                builder.AuthorizationFormat = RequestBuilder.AuthFormat.Json;
+                var builder = new RequestBuilder();
+                var req = new RequestInfo();
+                var requestBodies = new List<RequestBody>();
+
+                req.RequestContentType = "multipart/form-data";
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
+                req.Uri = "/envelopes?api_password=true";
+                req.HttpMethod = "POST";
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+                req.IsMultipart = true;
+                req.MultipartBoundary = new Guid().ToString();
+                builder.Proxy = Proxy;
+
+                if (string.IsNullOrWhiteSpace(Login.SOBOUserId) == false)
+                {
+                    req.SOBOUserId = this.Login.SOBOUserId;
+                    builder.AuthorizationFormat = RequestBuilder.AuthFormat.Json;
+                }
+
+                var rb = new RequestBody();
+                rb.Headers.Add("Content-Type", "application/json");
+                rb.Headers.Add("Content-Disposition", "form-data");
+                rb.Text = CreateJson(documents);
+                requestBodies.Add(rb);
+
+                for (var i = 0; i < documents.Count; i++)
+                {
+                    var reqFile = new RequestBody();
+                    var mime = string.IsNullOrEmpty(MimeType) ? DefaultMimeType : MimeType;
+                    reqFile.Headers.Add("Content-Type", mime);
+                    reqFile.Headers.Add("Content-Disposition", string.Format("file; filename=\"{0}\"; documentId={1}", documents[i].name, i + 1));
+
+                    reqFile.FileBytes = fileBytesList[i];
+                    reqFile.SubstituteStrings = false;
+                    requestBodies.Add(reqFile);
+                }
+
+                req.RequestBody = requestBodies.ToArray();
+                builder.Request = req;
+
+                var response = builder.MakeRESTRequest();
+                Trace(builder, response);
+
+                if (response.StatusCode == HttpStatusCode.Created)
+                {
+                    ParseCreateResponse(response);
+                    return GetSenderView(string.Empty);
+                }
+
+                ParseErrorResponse(response);
+
+                return response.StatusCode == HttpStatusCode.Created;
             }
-
-            var rb = new RequestBody();
-            rb.Headers.Add("Content-Type", "application/json");
-            rb.Headers.Add("Content-Disposition", "form-data");
-            rb.Text = CreateJson(documents);
-            requestBodies.Add(rb);
-
-            for (var i = 0; i < documents.Count; i++)
+            catch (Exception ex)
             {
-                var reqFile = new RequestBody();
-                var mime = string.IsNullOrEmpty(MimeType) ? DefaultMimeType : MimeType;
-                reqFile.Headers.Add("Content-Type", mime);
-                reqFile.Headers.Add("Content-Disposition", string.Format("file; filename=\"{0}\"; documentId={1}", documents[i].name,i + 1));
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return false;
+                }
 
-                reqFile.FileBytes = fileBytesList[i];
-                reqFile.SubstituteStrings = false;
-                requestBodies.Add(reqFile);
+                throw;
             }
-
-            req.RequestBody = requestBodies.ToArray();
-            builder.Request = req;
-
-            var response = builder.MakeRESTRequest();
-            Trace(builder, response);
-
-            if (response.StatusCode == HttpStatusCode.Created)
-            {
-                ParseCreateResponse(response);
-                return GetSenderView(string.Empty);
-            }
-
-            ParseErrorResponse(response);
-
-            return response.StatusCode == HttpStatusCode.Created;
         }
 
         /// <summary>
@@ -1806,6 +1864,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool GetRecipientView(string returnUrl, bool signAndReturn = true, string authMethod = "email")
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestInfo req = new RequestInfo();
@@ -1813,7 +1872,6 @@ namespace DocuSign.Integrations.Client
                 req.AcceptContentType = "application/json";
                 req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
-                req.LoginPassword = this.Login.Password;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = string.Format("/envelopes/{0}/views/recipient.json?api_password=true", this.EnvelopeId);
                 if (!signAndReturn)
@@ -1884,6 +1942,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>Url for embedded signing</returns>
         public string GetEmbeddedSignerView(string returnUrl, Signer signer, string authMethod = "email")
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestInfo req = new RequestInfo();
@@ -1891,7 +1950,6 @@ namespace DocuSign.Integrations.Client
                 req.AcceptContentType = "application/json";
                 req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
-                req.LoginPassword = this.Login.Password;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = string.Format("/envelopes/{0}/views/recipient", this.EnvelopeId);
                 req.HttpMethod = "POST";
@@ -1951,6 +2009,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool GetSenderView(string returnUrl)
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestInfo req = new RequestInfo();
@@ -1958,7 +2017,6 @@ namespace DocuSign.Integrations.Client
                 req.AcceptContentType = "application/json";
                 req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
-                req.LoginPassword = this.Login.Password;
                 req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = string.Format("/envelopes/{0}/views/sender.json?api_password=true", this.EnvelopeId);
                 req.HttpMethod = "POST";
@@ -2020,15 +2078,15 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool AddCustomFields(Dictionary<string, object> customFields)
         {
+            CheckAPIPreRequisites();
             try
             {
                 RequestInfo req = new RequestInfo();
                 req.RequestContentType = "application/json";
                 req.AcceptContentType = "application/json";
-                req.BaseUrl = Login.BaseUrl;
-                req.LoginEmail = Login.Email;
-                req.LoginPassword = Login.Password;
-                req.ApiPassword = Login.ApiPassword;
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
                 req.Uri = String.Format("/envelopes/{0}/custom_fields", this.EnvelopeId);
                 req.HttpMethod = "POST";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
@@ -2097,58 +2155,71 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool AddDocument(List<byte[]> fileBytesList, List<string> fileNames, int index = 1)
         {
-            RequestBuilder builder = new RequestBuilder();
-            RequestInfo req = new RequestInfo();
-            List<RequestBody> requestBodies = new List<RequestBody>();
-
-            req.RequestContentType = "multipart/form-data";
-            req.BaseUrl = this.Login.BaseUrl;
-            req.LoginEmail = this.Login.Email;
-            //req.LoginPassword = this.Login.Password;
-            req.ApiPassword = this.Login.ApiPassword;
-            req.Uri = string.Format("/envelopes/{0}/documents",this.EnvelopeId);
-            req.HttpMethod = "PUT";
-            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-            req.IsMultipart = true;
-            req.MultipartBoundary = Guid.NewGuid().ToString();
-            builder.Proxy = this.Proxy;
-
-            RequestBody rb = new RequestBody();
-            rb.Text = this.CreateJson(fileNames, index);
-            rb.Headers.Add("Content-Type", "application/json");
-            rb.Headers.Add("Content-Disposition", "form-data");
-            requestBodies.Add(rb);
-
-            rb = new RequestBody();
-
-            for (int i = 0; i < fileNames.Count; i++)
+            CheckAPIPreRequisites();
+            try
             {
-                var fileName = fileNames[i];
-                RequestBody reqFile = new RequestBody();
-                string mime = string.IsNullOrEmpty(this.MimeType) == true ? DefaultMimeType : this.MimeType;
-                reqFile.Headers.Add("Content-Type", mime);
-                reqFile.Headers.Add("Content-Disposition", string.Format("file; filename=\"{0}\"; documentId={1}", fileName, index++));
+                RequestBuilder builder = new RequestBuilder();
+                RequestInfo req = new RequestInfo();
+                List<RequestBody> requestBodies = new List<RequestBody>();
 
-                reqFile.FileBytes = fileBytesList[i];
-                reqFile.SubstituteStrings = false;
-                requestBodies.Add(reqFile);
+                req.RequestContentType = "multipart/form-data";
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
+                req.Uri = string.Format("/envelopes/{0}/documents", this.EnvelopeId);
+                req.HttpMethod = "PUT";
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+                req.IsMultipart = true;
+                req.MultipartBoundary = Guid.NewGuid().ToString();
+                builder.Proxy = this.Proxy;
+
+                RequestBody rb = new RequestBody();
+                rb.Text = this.CreateJson(fileNames, index);
+                rb.Headers.Add("Content-Type", "application/json");
+                rb.Headers.Add("Content-Disposition", "form-data");
+                requestBodies.Add(rb);
+
+                rb = new RequestBody();
+
+                for (int i = 0; i < fileNames.Count; i++)
+                {
+                    var fileName = fileNames[i];
+                    RequestBody reqFile = new RequestBody();
+                    string mime = string.IsNullOrEmpty(this.MimeType) == true ? DefaultMimeType : this.MimeType;
+                    reqFile.Headers.Add("Content-Type", mime);
+                    reqFile.Headers.Add("Content-Disposition", string.Format("file; filename=\"{0}\"; documentId={1}", fileName, index++));
+
+                    reqFile.FileBytes = fileBytesList[i];
+                    reqFile.SubstituteStrings = false;
+                    requestBodies.Add(reqFile);
+                }
+
+                req.RequestBody = requestBodies.ToArray();
+                builder.Request = req;
+
+                ResponseInfo response = builder.MakeRESTRequest();
+                this.Trace(builder, response);
+
+                if ((response.StatusCode == HttpStatusCode.OK) && (!response.ResponseText.Contains("FORMAT_CONVERSION_ERROR")))
+                {
+                    this.ParseCreateResponse(response);
+                    return true;
+                }
+                else
+                {
+                    this.ParseErrorResponse(response);
+                    return false;
+                }
             }
-
-            req.RequestBody = requestBodies.ToArray();
-            builder.Request = req;
-
-            ResponseInfo response = builder.MakeRESTRequest();
-            this.Trace(builder, response);
-
-            if ((response.StatusCode == HttpStatusCode.OK) && (!response.ResponseText.Contains("FORMAT_CONVERSION_ERROR")))
+            catch (Exception ex)
             {
-                this.ParseCreateResponse(response);
-                return true;
-            }
-            else
-            {
-                this.ParseErrorResponse(response);
-                return false;
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return false;
+                }
+
+                throw;
             }
         }
 
@@ -2170,6 +2241,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>true if successful, false otherwise</returns>
         public bool RemoveDocument(List<string> docList)
         {
+            CheckAPIPreRequisites();
             if (docList == null)
             {
                 return false;
@@ -2187,38 +2259,49 @@ namespace DocuSign.Integrations.Client
                 var doc = new Document { documentId = docId };
                 docs.Add(doc);
             }
+            try
+            {
+                RequestBuilder builder = new RequestBuilder();
+                RequestInfo req = new RequestInfo();
+                List<RequestBody> requestBodies = new List<RequestBody>();
 
-            RequestBuilder builder = new RequestBuilder();
-            RequestInfo req = new RequestInfo();
-            List<RequestBody> requestBodies = new List<RequestBody>();
+                req.RequestContentType = "application/json";
+                req.AcceptContentType = "application/json";
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
+                req.Uri = string.Format("/envelopes/{0}/documents/", this.EnvelopeId);
+                req.HttpMethod = "DELETE";
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+                builder.Proxy = this.Proxy;
 
-            req.RequestContentType = "application/json";
-            req.AcceptContentType = "application/json";
-            req.BaseUrl = this.Login.BaseUrl;
-            req.LoginEmail = this.Login.Email;
-            //req.LoginPassword = this.Login.Password;
-            req.ApiPassword = this.Login.ApiPassword;
-            req.Uri = string.Format("/envelopes/{0}/documents/", this.EnvelopeId);
-            req.HttpMethod = "DELETE";
-            req.IntegratorKey = RestSettings.Instance.IntegratorKey;
-            builder.Proxy = this.Proxy;
+                RequestBody rb = new RequestBody();
+                EnvelopeCreate env = new EnvelopeCreate();
+                env.documents = docs.ToArray();
 
-            RequestBody rb = new RequestBody();
-            EnvelopeCreate env = new EnvelopeCreate();
-            env.documents = docs.ToArray();
+                JsonSerializerSettings settings = new JsonSerializerSettings();
+                settings.NullValueHandling = NullValueHandling.Ignore;
+                rb.Text = JsonConvert.SerializeObject(env, settings);
+                requestBodies.Add(rb);
 
-            JsonSerializerSettings settings = new JsonSerializerSettings();
-            settings.NullValueHandling = NullValueHandling.Ignore;
-            rb.Text = JsonConvert.SerializeObject(env, settings);
-            requestBodies.Add(rb);
+                req.RequestBody = requestBodies.ToArray();
+                builder.Request = req;
 
-            req.RequestBody = requestBodies.ToArray();
-            builder.Request = req;
+                ResponseInfo response = builder.MakeRESTRequest();
+                this.Trace(builder, response);
 
-            ResponseInfo response = builder.MakeRESTRequest();
-            this.Trace(builder, response);
+                return response.StatusCode == HttpStatusCode.OK;
+            }
+            catch (Exception ex)
+            {
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return false;
+                }
 
-            return response.StatusCode == HttpStatusCode.OK;
+                throw;
+            }
         }
 
         /// <summary>
@@ -2276,22 +2359,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>List of envelopes for this account</returns>
         public AccountEnvelopes GetAccountsEnvelopes(DateTime fromDate)
         {
-            if (this.Login == null)
-            {
-                throw new ArgumentNullException("Login");
-            }
-
-            if (string.IsNullOrEmpty(this.Login.BaseUrl) == true)
-            {
-                throw new ArgumentNullException("BaseUrl");
-            }
-
-            if (string.IsNullOrEmpty(this.Login.ApiPassword) == true)
-            {
-                throw new ArgumentNullException("ApiPassword");
-            }
-
-
+            CheckAPIPreRequisites();
             try
             {
                 RequestBuilder builder = new RequestBuilder();
@@ -2338,22 +2406,7 @@ namespace DocuSign.Integrations.Client
         /// <returns>List of envelopes for this account</returns>
         public AccountEnvelopes GetDraftEnvelopes(DateTime fromDate)
         {
-            if (this.Login == null)
-            {
-                throw new ArgumentNullException("Login");
-            }
-
-            if (string.IsNullOrEmpty(this.Login.BaseUrl) == true)
-            {
-                throw new ArgumentNullException("BaseUrl");
-            }
-
-            if (string.IsNullOrEmpty(this.Login.ApiPassword) == true)
-            {
-                throw new ArgumentNullException("ApiPassword");
-            }
-
-
+            CheckAPIPreRequisites();
             try
             {
                 RequestBuilder builder = new RequestBuilder();
@@ -2411,21 +2464,7 @@ namespace DocuSign.Integrations.Client
         /// <returns></returns>
         public int GetSearchFolderCount(string folderName, DateTime fromDate)
         {
-            if (this.Login == null)
-            {
-                throw new ArgumentNullException("Login");
-            }
-
-            if (string.IsNullOrEmpty(this.Login.BaseUrl) == true)
-            {
-                throw new ArgumentNullException("BaseUrl");
-            }
-
-            if (string.IsNullOrEmpty(this.Login.ApiPassword) == true)
-            {
-                throw new ArgumentNullException("ApiPassword");
-            }
-
+            CheckAPIPreRequisites();
 
             try
             {

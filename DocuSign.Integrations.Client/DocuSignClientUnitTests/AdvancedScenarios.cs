@@ -17,10 +17,7 @@ namespace RestClientUnitTests
         public void InitializeAccount()
         {
             ConfigLoader.LoadConfig();
-            //TODO - udpate these values with valid user/password for demo
-            string email = "";
-            string password = "";
-            _account = new Account { Email = email, Password = password };
+            _account = ConfigLoader.CreateTestAccount();
             Assert.IsTrue(_account.Login());
         }
 
@@ -78,7 +75,7 @@ namespace RestClientUnitTests
             Thread.Sleep(1000); // need to allow the system to fully create the envelope
             var accountEnvelopes = envelope.GetDraftEnvelopes(DateTime.Now.AddSeconds(-5));
             Assert.IsNull(envelope.RestError);
-            Assert.AreEqual(1, accountEnvelopes.Envelopes.Length, "We except only 1 draft envelope in the last 5 seconds that was created by this unit test");
+            Assert.AreEqual(1, accountEnvelopes.Envelopes.Length, "We expect only 1 draft envelope in the last 5 seconds that was created by this unit test");
         }
 
         [TestMethod]

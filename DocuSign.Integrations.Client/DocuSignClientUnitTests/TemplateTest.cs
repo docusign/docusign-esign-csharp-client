@@ -14,10 +14,7 @@ namespace RestClientUnitTests
         public void InitializeAccount()
         {
             ConfigLoader.LoadConfig();
-            //TODO - udpate these values with valid user/password for demo
-            string email = "";
-            string password = "";
-            _account = new Account { Email = email, Password = password };
+            _account = ConfigLoader.CreateTestAccount();
             Assert.IsTrue(_account.Login());
         }
         

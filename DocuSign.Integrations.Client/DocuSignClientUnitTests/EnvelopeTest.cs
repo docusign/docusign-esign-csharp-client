@@ -46,14 +46,7 @@ namespace RestClientUnitTests
         public static void MyClassInitialize(TestContext testContext)
         {
             ConfigLoader.LoadConfig();
-            // $TODO: Add creds for known account
-            _account = new Account
-            {
-                Email = "",
-                Password = "",
-                AccountName = ""
-            };
-
+            _account = ConfigLoader.CreateTestAccount();
 
             try
             {
@@ -437,12 +430,7 @@ namespace RestClientUnitTests
             bool expected = true;
             bool actual = true;
 
-            Account acct = new Account();
-
-            // $TODO: Add creds for known account
-            acct.Email = "";
-            acct.Password = "";
-            acct.AccountName = "";
+            Account acct = ConfigLoader.CreateTestAccount();
 
             try
             {

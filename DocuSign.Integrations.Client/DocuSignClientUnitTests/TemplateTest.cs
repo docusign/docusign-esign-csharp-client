@@ -14,7 +14,7 @@ namespace RestClientUnitTests
         public void InitializeAccount()
         {
             ConfigLoader.LoadConfig();
-            _account = ConfigLoader.CreateTestAccount();
+            _account = ConfigLoader.RetrieveTestAccount();
             Assert.IsTrue(_account.Login());
         }
         

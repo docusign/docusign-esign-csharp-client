@@ -9,7 +9,7 @@ namespace RestClientUnitTests
 {
     static class ConfigLoader
     {
-        public static Account CreateTestAccount()
+        public static Account RetrieveTestAccount()
         {
             // TODO: Add your test account information here. Get this from the
             // dashboard at: https://admindemo.docusign.com/api-integrator-key

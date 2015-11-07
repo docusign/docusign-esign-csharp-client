@@ -46,7 +46,7 @@ namespace RestClientUnitTests
         public static void MyClassInitialize(TestContext testContext)
         {
             ConfigLoader.LoadConfig();
-            _account = ConfigLoader.CreateTestAccount();
+            _account = ConfigLoader.RetrieveTestAccount();
 
             try
             {
@@ -430,7 +430,7 @@ namespace RestClientUnitTests
             bool expected = true;
             bool actual = true;
 
-            Account acct = ConfigLoader.CreateTestAccount();
+            Account acct = ConfigLoader.RetrieveTestAccount();
 
             try
             {

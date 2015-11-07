@@ -30,6 +30,7 @@ namespace RestClientUnitTests
         [TestMethod]
         public void TemplateEndToEndTest()
         {
+            Assert.IsTrue(string.IsNullOrEmpty(RestSettings.Instance.EmailSubject) == false, "Set the email subject for the envelope");
             var template = new Template { Login = _account };
             byte[] doc1 = { 36, 45, 34, 67, 121, 87, 99, 32, 32, 32, 54, 54, 55, 56, 32 };
             var names = new List<string>();

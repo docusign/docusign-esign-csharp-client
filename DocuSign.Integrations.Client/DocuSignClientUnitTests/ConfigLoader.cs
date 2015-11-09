@@ -9,6 +9,17 @@ namespace RestClientUnitTests
 {
     static class ConfigLoader
     {
+        public static Account RetrieveTestAccount()
+        {
+            // TODO: Add your test account information here. Get this from the
+            // dashboard at: https://admindemo.docusign.com/api-integrator-key
+            Account acct = new Account();
+            acct.Email = "";
+            acct.Password = "";
+            acct.AccountName = "";
+            return (acct);
+        }
+
         public static void LoadConfig()
         {
 
@@ -22,6 +33,7 @@ namespace RestClientUnitTests
             RestSettings.Instance.EmailBlurb = "";
             RestSettings.Instance.EmailSubject = "";
             RestSettings.Instance.RestTracing = true;
+            RestSettings.Instance.DocuSignAddress = "";
         }
     }
 }

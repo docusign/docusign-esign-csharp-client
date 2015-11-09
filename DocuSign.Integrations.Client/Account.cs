@@ -124,7 +124,7 @@ namespace DocuSign.Integrations.Client
         public string RestTrace { get; private set; }
 
         /// <summary>
-        /// List of accounts accosiated with this user
+        /// List of accounts associated with this user
         /// </summary>
         public Logins LoginAccounts { get; private set; }
 
@@ -140,18 +140,7 @@ namespace DocuSign.Integrations.Client
         /// <exception cref="ArgumentNullException">If password or email are missing</exception>
         public bool Login()
         {
-            if (string.IsNullOrEmpty(this.Password) == true && string.IsNullOrEmpty(this.ApiPassword))
-            {
-                if (string.IsNullOrEmpty(this.JanrainToken))
-                {
-                    throw new ArgumentNullException("Password");
-                }
-            }
-
-            if (string.IsNullOrEmpty(this.Email) == true)
-            {
-                throw new ArgumentNullException("Email");
-            }
+            CheckAPIPreRequisites();
 
             this.BaseUrl = string.Empty;
 
@@ -173,18 +162,7 @@ namespace DocuSign.Integrations.Client
         /// <exception cref="ArgumentNullException">If password or email are missing</exception>
         public bool Login(string matchingUserId)
         {
-            if (string.IsNullOrEmpty(this.Password) == true && string.IsNullOrEmpty(this.ApiPassword))
-            {
-                if (string.IsNullOrEmpty(this.JanrainToken) == true)
-                {
-                    throw new ArgumentNullException("Password");
-                }
-            }
-
-            if (string.IsNullOrEmpty(this.Email) == true)
-            {
-                throw new ArgumentNullException("Email");
-            }
+            CheckAPIPreRequisites();
 
             this.BaseUrl = string.Empty;
             this.MatchingUserId = matchingUserId;
@@ -196,6 +174,26 @@ namespace DocuSign.Integrations.Client
             else
             {
                 return this.LoginSocial();
+            }
+        }
+
+        /// <summary>
+        /// Checks the password and email fields so that at least some combination of those fields
+        /// is properly set.
+        /// </summary>
+        private void CheckAPIPreRequisites()
+        {
+            if (string.IsNullOrEmpty(this.Password) == true && string.IsNullOrEmpty(this.ApiPassword))
+            {
+                if (string.IsNullOrEmpty(this.JanrainToken))
+                {
+                    throw new ArgumentNullException("Password", "Please set the Password, ApiPassword, or JanrainToken to initiate the API requests.");
+                }
+            }
+
+            if (string.IsNullOrEmpty(this.Email) == true)
+            {
+                throw new ArgumentNullException("Email", "Please set the Email for the account to  initiate the API requests.");
             }
         }
 

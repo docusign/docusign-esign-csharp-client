@@ -540,5 +540,46 @@ namespace RestClientUnitTests
                 }
             }
         }
+
+        [TestMethod]
+        public void GetAuditEvents()
+        {
+            const string envelopeId = "83acwc73-6267-4f62-b937-04b7203d467c";
+            bool expected = true;
+            bool actual = true;
+
+            //need to add account details in LoadConfig
+            ConfigLoader.LoadConfig();
+            Account acct = ConfigLoader.RetrieveTestAccount();
+
+            try
+            {
+                actual = acct.Login();
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Unexpected exception during account creation part of test {0}: {1}", ex.GetType(), ex.Message);
+                return;
+            }
+
+            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(string.IsNullOrEmpty(acct.BaseUrl));
+
+            Envelope target = new Envelope();
+            target.Login = acct;
+
+            // $TODO: add known Envelope ID
+            target.EnvelopeId = envelopeId;
+
+            try
+            {
+                var result = target.GetEnvelopeAuditEvents(envelopeId);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Unexpected exception during test {0}: {1}", ex.GetType(), ex.Message);
+                return;
+            }
+        }
     }
 }

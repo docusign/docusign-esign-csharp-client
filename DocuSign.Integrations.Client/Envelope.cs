@@ -2504,6 +2504,58 @@ namespace DocuSign.Integrations.Client
                 throw;
             }
         }
+
+        /// <summary>
+        /// Gets the envelope info
+        /// </summary>
+        /// <param name="envelopeId"></param>
+        /// <returns></returns>
+        public EnvelopeInfo GetEnvelopeInfo(string envelopeId)
+        {
+            CheckAPIPreRequisites();
+            if (string.IsNullOrEmpty(envelopeId))
+            {
+                throw new ArgumentNullException("envelopeId", "Please provide the ID of the Envelope you are querying.");
+            }
+            var result = new EnvelopeInfo();
+            
+            try
+            {
+                RequestBuilder builder = new RequestBuilder();
+                RequestInfo req = new RequestInfo();
+                List<RequestBody> requestBodies = new List<RequestBody>();
+
+                req.RequestContentType = "application/json";
+                req.AcceptContentType = "application/json";
+                req.HttpMethod = "GET";
+                req.BaseUrl = this.Login.BaseUrl;
+                req.LoginEmail = this.Login.Email;
+                req.ApiPassword = this.Login.ApiPassword;
+                req.DistributorCode = RestSettings.Instance.DistributorCode;
+                req.DistributorPassword = RestSettings.Instance.DistributorPassword;
+                req.IntegratorKey = RestSettings.Instance.IntegratorKey;
+                req.Uri = string.Format("/envelopes/{0}", envelopeId);
+
+                builder.Request = req;
+                builder.Proxy = this.Proxy;
+
+                var response = builder.MakeRESTRequest();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    result = JsonConvert.DeserializeObject<EnvelopeInfo>(response.ResponseText);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is WebException || ex is NotSupportedException || ex is InvalidOperationException || ex is ProtocolViolationException)
+                {
+                    // Once we get the debugging logger integrated into this project, we should write a log entry here
+                    return null;
+                }
+                throw;
+            }
+            return result;
+        }
     }
 }
 

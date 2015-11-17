@@ -960,4 +960,45 @@ namespace DocuSign.Integrations.Client
         public string compositeTemplateId { get; set; }
         public ServerTemplate[] serverTemplates { get; set; }
     }
+
+    /// <summary>
+    /// AuditEvents class
+    /// </summary>
+    [Serializable]
+    public class AuditEvents
+    {
+        public AuditEvent[] auditEvents { get; set; }
+
+        /// <summary>
+        /// Deserializes Json text into the object's properties
+        /// </summary>
+        /// <param name="json">string of Json text</param>
+        /// <returns>EnvelopeCreate instance</returns>
+        public static AuditEvents FromJson(string json)
+        {
+            return JsonConvert.DeserializeObject<AuditEvents>(json);
+        }
+
+        /// <summary>
+        /// Serializes self
+        /// </summary>
+        /// <returns>serialized Json text</returns>
+        public string Serialize()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
+    }
+
+    [Serializable]
+    public class AuditEvent
+    {
+        public EventField[] EventFields { get; set; }
+    }
+
+    [Serializable]
+    public class EventField
+    {
+        public string Name { get; set; }
+        public string Value { get; set; }
+    }
 }

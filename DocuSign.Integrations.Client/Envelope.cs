@@ -2370,7 +2370,7 @@ namespace DocuSign.Integrations.Client
                 req.BaseUrl = this.Login.BaseUrl;
                 req.LoginEmail = this.Login.Email;
                 req.ApiPassword = this.Login.ApiPassword;
-                req.Uri = "/envelopes?api_password=true&from_date=" + fromDate.ToString();
+                req.Uri = "/envelopes?api_password=true&from_date=" + fromDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
                 req.HttpMethod = "GET";
                 req.IntegratorKey = RestSettings.Instance.IntegratorKey;
                 req.IsMultipart = true;

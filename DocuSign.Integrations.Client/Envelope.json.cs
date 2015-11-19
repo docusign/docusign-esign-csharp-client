@@ -256,6 +256,10 @@ namespace DocuSign.Integrations.Client
         /// Each customField string can be a maximum of 100 characters.
         /// </summary>
         public string[] customFields { get; set; }
+        /// <summary>
+        /// Sets the access code that the recipient must enter before opening the document.
+        /// </summary>
+        public string accessCode { get; set; }
     }
 
     /// <summary>

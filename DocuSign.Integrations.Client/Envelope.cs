@@ -1562,6 +1562,12 @@ namespace DocuSign.Integrations.Client
                 req.MultipartBoundary = new Guid().ToString();
                 builder.Proxy = this.Proxy;
 
+                if (string.IsNullOrWhiteSpace(this.Login.SOBOUserId) == false)
+                {
+                    req.SOBOUserId = this.Login.SOBOUserId;
+                    builder.AuthorizationFormat = RequestBuilder.AuthFormat.Json;
+                }
+
                 RequestBody rb = new RequestBody();
                 rb.Headers.Add("Content-Type", "application/json");
                 rb.Headers.Add("Content-Disposition", "form-data");

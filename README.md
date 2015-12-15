@@ -6,9 +6,6 @@ The DocuSign C# Client is a Swagger-based auo-generated library that can be used
 
   * `\sdk`:  Source code for the client 
   * `\test`:  Unit tests and sample code
-  
-**NOTE**
-  * The tests for Account Server OAuth2 Authentication are early concept and not for external use. This is pre-release software.
 
 **HOW TO USE**
 
@@ -32,3 +29,6 @@ using DocuSign.eSign.Model;
 
 * Recipes (Code Walkthroughs) are available here:  [CoreRecipes.cs](test/Recipes/CoreRecipes.cs)
 * Unit tests are available here: [/SDK Tests](test/SdkTests/SdkTests)
+
+**NOTE**
+  * The tests for Account Server OAuth2 Authentication are early concept and not for external use. This is pre-release software.

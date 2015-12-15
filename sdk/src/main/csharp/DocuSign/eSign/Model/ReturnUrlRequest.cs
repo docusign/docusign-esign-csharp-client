@@ -1,0 +1,102 @@
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+
+namespace DocuSign.eSign.Model
+{
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [DataContract]
+    public class ReturnUrlRequest : IEquatable<ReturnUrlRequest>
+    {
+        
+        /// <summary>
+        /// Identifies the return point after sending the envelope. DocuSign returns to the URL and includes an event parameter that can be used to redirect the recipient to another location. The possible event parameters returned are: \n\n* send (user sends the envelope)\n* save (user saves the envelope)\n* cancel (user cancels the sending transaction. No envelopeId is returned in this case.)\n* error (there is an error when performing the send)\n* sessionEnd (the sending session ends before the user completes another action).
+        /// </summary>
+        /// <value>Identifies the return point after sending the envelope. DocuSign returns to the URL and includes an event parameter that can be used to redirect the recipient to another location. The possible event parameters returned are: \n\n* send (user sends the envelope)\n* save (user saves the envelope)\n* cancel (user cancels the sending transaction. No envelopeId is returned in this case.)\n* error (there is an error when performing the send)\n* sessionEnd (the sending session ends before the user completes another action).</value>
+        [DataMember(Name="returnUrl", EmitDefaultValue=false)]
+        public string ReturnUrl { get; set; }
+  
+        
+  
+        /// <summary>
+        /// Returns the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ReturnUrlRequest {\n");
+            sb.Append("  ReturnUrl: ").Append(ReturnUrl).Append("\n");
+            
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+  
+        /// <summary>
+        /// Returns the JSON string presentation of the object
+        /// </summary>
+        /// <returns>JSON string presentation of the object</returns>
+        public string ToJson()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="obj">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object obj)
+        {
+            // credit: http://stackoverflow.com/a/10454552/677735
+            return this.Equals(obj as ReturnUrlRequest);
+        }
+
+        /// <summary>
+        /// Returns true if ReturnUrlRequest instances are equal
+        /// </summary>
+        /// <param name="other">Instance of ReturnUrlRequest to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(ReturnUrlRequest other)
+        {
+            // credit: http://stackoverflow.com/a/10454552/677735
+            if (other == null)
+                return false;
+
+            return 
+                (
+                    this.ReturnUrl == other.ReturnUrl ||
+                    this.ReturnUrl != null &&
+                    this.ReturnUrl.Equals(other.ReturnUrl)
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            // credit: http://stackoverflow.com/a/263416/677735
+            unchecked // Overflow is fine, just wrap
+            {
+                int hash = 41;
+                // Suitable nullity checks etc, of course :)
+                
+                if (this.ReturnUrl != null)
+                    hash = hash * 57 + this.ReturnUrl.GetHashCode();
+                
+                return hash;
+            }
+        }
+
+    }
+}

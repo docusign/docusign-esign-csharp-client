@@ -31,4 +31,4 @@ using DocuSign.eSign.Model;
 **EXAMPLES**
 
 * Recipes (Code Walkthroughs) are available here:  [CoreRecipes.cs](test/Recipes/CoreRecipes.cs)
-* Unit tests are available here: [SdkUnitTests.java](sdks\csharp\test\sdktests\sdktests\sdktests1.cs)
+* Unit tests are available here: [/SDK Tests](test/SdkTests/SdkTests)

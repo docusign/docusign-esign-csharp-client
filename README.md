@@ -30,5 +30,4 @@ using DocuSign.eSign.Model;
 * Recipes (Code Walkthroughs) are available here:  [CoreRecipes.cs](test/Recipes/CoreRecipes.cs)
 * Unit tests are available here: [/SDK Tests](test/SdkTests/SdkTests)
 
-**NOTE**
-  * The tests for Account Server OAuth2 Authentication are early concept and not for external use. This is pre-release software.
+(Note: The tests for Account Server OAuth2 Authentication are early concept and not for external use. This is pre-release software.)

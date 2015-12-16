@@ -2,7 +2,7 @@
 
 The DocuSign C# Client is a Swagger-based auto-generated library that can be used to quickly interact with the DocuSign REST API.  It provides the C# versions of REST request and response models and endpoints. This project contains the core source code for the client along with tests and a few examples showing its use.  
 
-(Looking for an older version of this repo?  See the [v1.7.2 tag](https://github.com/docusign/docusign-csharp-client/tree/v1.7.2))
+(*** Looking for an older version of this repo?  See the [v1.7.2 tag](https://github.com/docusign/docusign-csharp-client/tree/v1.7.2))
 
 **ORGANIZATION**
 

@@ -9,7 +9,7 @@ The DocuSign C# Client is a Swagger-based auo-generated library that can be used
 
 **HOW TO USE**
 
-To reference the client, add the following References to your Visual Studio project from SDKs\csharp\sdk\bin:
+Add the following References to your Visual Studio project from [sdk/bin/](sdk/bin/):
 
 ```
 DocuSign.Core.dll

@@ -70,7 +70,7 @@ See [CoreRecipes.cs](https://github.com/docusign/docusign-csharp-client/blob/mas
 Testing
 =======
 
-See unit tests.  
+Unit tests are available in the [Test](/test/SdkTests) folder. 
 
 Support
 =======

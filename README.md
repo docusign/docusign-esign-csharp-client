@@ -25,6 +25,13 @@ Copy `DocuSign.eSign.dll` file to your local machine and add reference through y
 
 Alternatively you can just copy the source code directly into your project.
 
+#### Dependencies
+
+This client has the following external dependencies: 
+
+* Newtonsoft.Json.dll
+* RestSharp.dll
+
 Usage
 =====
 

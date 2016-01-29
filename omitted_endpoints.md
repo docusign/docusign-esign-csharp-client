@@ -21,6 +21,14 @@ The following endpoints are not included in the client libraries.
 | POST | {vx}/accounts/{accountId}/brands |
 | GET | {vx}/accounts/{accountId}/bulk_envelopes |
 | GET | {vx}/accounts/{accountId}/bulk_envelopes/{batchId} |
+| GET | {vx}/accounts/{accountId}/connect |
+| POST | {vx}/accounts/{accountId}/connect |
+| PUT | {vx}/accounts/{accountId}/connect |
+| DELETE | {vx}/accounts/{accountId}/connect |
+| GET | {vx}/accounts/{accountId}/connect/{connectId} |
+| POST | {vx}/accounts/{accountId}/connect/{connectId} |
+| PUT | {vx}/accounts/{accountId}/connect/{connectId} |
+| DELETE | {vx}/accounts/{accountId}/connect/{connectId} |
 | DELETE | {vx}/accounts/{accountId}/connect/mobile_notifiers |
 | GET | {vx}/accounts/{accountId}/connect/mobile_notifiers |
 | PUT | {vx}/accounts/{accountId}/connect/mobile_notifiers |

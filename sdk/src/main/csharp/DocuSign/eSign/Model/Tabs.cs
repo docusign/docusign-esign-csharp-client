@@ -126,7 +126,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <value>Specifies a tab on the document where you want the recipient to enter a date. Date tabs are single-line fields that allow date information to be entered in any format. The tooltip for this tab recommends entering the date as MM/DD/YYYY, but this is not enforced. The format entered by the signer is retained. \n\nIf you need a particular date format enforced, DocuSign recommends using a Text tab with a Validation Pattern and Validation Message to enforce the format.</value>
         [DataMember(Name="dateTabs", EmitDefaultValue=false)]
-        public List<DateTime?> DateTabs { get; set; }
+        public List<Date> DateTabs { get; set; }
   
         
         /// <summary>

@@ -23,7 +23,7 @@ Copy `DocuSign.eSign.dll` file to your local machine and add reference through y
 
 ### Others
 
-Alternatively you can just copy the source code directly into your project.
+Alternatively you can just copy the source code directly into your project. 
 
 #### Dependencies
 

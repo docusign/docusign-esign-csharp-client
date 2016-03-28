@@ -56,7 +56,7 @@ To initialize the client and make the Login API Call:
 				ApiClient apiClient = new ApiClient("https://demo.docusign.net/restapi");
 				Configuration.Default.ApiClient = apiClient;
 
-				// configure custom authentication header
+				// configure 'X-DocuSign-Authentication' header
 				string authHeader = "{\"Username\":\"" + username + "\", \"Password\":\"" + password + "\", \"IntegratorKey\":\"" + integratorKey + "\"}";
 				Configuration.Default.AddDefaultHeader("X-DocuSign-Authentication", authHeader);
 

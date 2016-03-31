@@ -4,7 +4,7 @@ The following endpoints are not included in the client libraries.
 
 You can use these API endpoints from your application by making your own API calls to docusign.net.
 
-| Method | Endpoint |
+| HTTP Method | Endpoint |
 | --- | --- |
 | POST | {vx}/accounts |
 | DELETE | {vx}/accounts/{accountId} |

@@ -110,7 +110,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <value>Specifies a tag on the document where you want the recipient to enter a number. It uses the same parameters as a Text tab, with the validation message and pattern set for number information.\n\nWhen getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.</value>
         [DataMember(Name="numberTabs", EmitDefaultValue=false)]
-        public List<double?> NumberTabs { get; set; }
+        public List<Number> NumberTabs { get; set; }
   
         
         /// <summary>

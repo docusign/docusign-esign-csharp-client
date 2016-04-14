@@ -35,7 +35,7 @@ This client has the following external dependencies:
 Usage
 =====
 
-To initialize the client and make the Login API Call:
+To send a signature request from a template:
 
 ```csharp
 	using DocuSign.eSign.Api;
@@ -63,10 +63,45 @@ To initialize the client and make the Login API Call:
 				// we will retrieve this from the login API call
 				string accountId = null;
 
+				/////////////////////////////////////////////////////////////////////////////////////////////////////////
+				// STEP 1: LOGIN API        
+				/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 				// login call is available in the authentication api 
 				AuthenticationApi authApi = new AuthenticationApi();
 				LoginInformation loginInfo = authApi.Login();
+				
+				// parse the first account ID that is returned (user might belong to multiple accounts)
 				accountId = loginInfo.LoginAccounts[0].AccountId;
+				
+				/////////////////////////////////////////////////////////////////////////////////////////////////////////
+				// STEP 2: CREATE ENVELOPE API        
+				/////////////////////////////////////////////////////////////////////////////////////////////////////////				
+				
+				// create a new envelope which we will use to send the signature request
+				EnvelopeDefinition envDef = new EnvelopeDefinition();
+				envDef.EmailSubject = "[DocuSign C# SDK] - Sample Signature Request";
+
+				// provide a valid template ID from a template in your account
+				envDef.TemplateId = "[TEMPLATE_ID]";
+
+				// assign recipient to template role by setting name, email, and role name.  Note that the
+				// template role name must match the placeholder role name saved in your account template.  
+				TemplateRole tRole = new TemplateRole();
+				tRole.Email = "[SIGNER_EMAIL]";
+				tRole.Name = "[SIGNER_NAME]";
+				tRole.RoleName = "[ROLE_NAME]";
+
+				// add the roles list with the our single role to the envelope
+				List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
+				envDef.TemplateRoles = rolesList;
+
+				// set envelope status to "sent" to immediately send the signature request
+				envDef.Status = "sent";
+
+				// |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
+				EnvelopesApi envelopesApi = new EnvelopesApi();
+				EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(accountId, envDef);
 			}
 		}
 	}

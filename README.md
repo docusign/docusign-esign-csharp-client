@@ -1,6 +1,6 @@
 # DocuSign C# Client
 
-You can sign up for a free [developer sandbox](https://www.docusign.com/developer-center).
+You can sign up for a free [developer sandbox](https://www.docusign.com/developer-center). 
 
 Requirements
 ============

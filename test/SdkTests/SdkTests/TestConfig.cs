@@ -9,9 +9,9 @@ namespace SdkTests
 {
     class TestConfig
     {
-        public const string UserName = "dev.user@docusign.com";
-        public const string Password = "docusign";
-        public const string IntegratorKey = "ROSEY_KEY";
+        public const string UserName = "[username]";
+        public const string Password = "[pwd]";
+        public const string IntegratorKey = "[IK]";
         public const string BaseUrl = "https://localhost/restapi";
 
         public const string SignTest1File = @".../../docs/SignTest1.pdf";

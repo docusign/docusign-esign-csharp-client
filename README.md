@@ -111,7 +111,7 @@ See [CoreRecipes.cs](https://github.com/docusign/docusign-csharp-client/blob/mas
 
 # Authentication
 
-## For Service Integrations that use Legacy Header Authentication
+## Service Integrations that use Legacy Header Authentication
 
 ([Legacy Header Authentication](https://docs.docusign.com/esign/guide/authentication/legacy_auth.html) uses the X-DocuSign-Authentication header.)
 
@@ -123,7 +123,7 @@ The `baseUrl` field is part of the `loginAccount` object. See the [docs and the 
 4. Instantiate the SDK using the basePath. Eg `ApiClient apiClient = new ApiClient(basePath);`
 5. Set the authentication header as shown in the examples by using `Configuration.Default.AddDefaultHeader`
 
-## For User Applications that use OAuth Authentication
+## User Applications that use OAuth Authentication
 1. After obtaining a Bearer token, call the [OAuth: Userinfo method](https://docs.docusign.com/esign/guide/authentication/userinfo.html). Obtain the selected account's `base_uri` (server name) field.
 The url for the Userinfo method is account-d.docusign.com for the demo/developer environment, and account.docusign.com for the production environment.
 1. Combine the base_uri with "/restapi" to create the basePath. The base_uri will start with na1, na2, na3, eu1, or something else. Use the basePath for your subsequent API calls.

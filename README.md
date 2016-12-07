@@ -74,6 +74,9 @@ To send a signature request from a template:
 				// parse the first account ID that is returned (user might belong to multiple accounts)
 				accountId = loginInfo.LoginAccounts[0].AccountId;
 				
+				// Update ApiClient with the new base url from login call
+            			apiClient = new ApiClient(loginInfo.LoginAccounts[0].BaseUrl);
+	    
 				/////////////////////////////////////////////////////////////////
 				// STEP 2: CREATE ENVELOPE API        
 				/////////////////////////////////////////////////////////////////				

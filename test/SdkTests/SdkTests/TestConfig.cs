@@ -9,10 +9,10 @@ namespace SdkTests
 {
     class TestConfig
     {
-        public const string UserName = "[username]";
-        public const string Password = "[pwd]";
-        public const string IntegratorKey = "[IK]";
-        public const string BaseUrl = "https://localhost/restapi";
+        public const string UserName = "node_sdk@mailinator.com";
+        public const string Password = "{PASSWORD}";
+        public const string IntegratorKey = "SAND-7c8746af-XXXX-XXXX-XXXX-fc10861ef45b";
+        public const string BaseUrl = "https://demo.docusign.net/restapi";
 
         public const string SignTest1File = @".../../docs/SignTest1.pdf";
 

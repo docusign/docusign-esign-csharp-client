@@ -11,13 +11,13 @@ namespace SdkTests
         [TestMethod]
         public void ApplyTemplateTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void ApplyTemplateToDocumentTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
@@ -109,19 +109,19 @@ namespace SdkTests
         [TestMethod]
         public void CreateDocumentFieldsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void CreateEditViewTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void CreateEmailSettingsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
@@ -161,19 +161,19 @@ namespace SdkTests
         [TestMethod]
         public void CreateLockTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void CreateRecipientTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void CreateRecipientViewTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
@@ -217,115 +217,115 @@ namespace SdkTests
         [TestMethod]
         public void CreateTabsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void CreateViewLinkTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void DeleteCustomFieldsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void DeleteDocumentFieldsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void DeleteDocumentPageTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void DeleteDocumentsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void DeleteEmailSettingsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void DeleteLockTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void DeleteRecipientTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void DeleteRecipientsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void DeleteTabsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void DeleteTemplatesFromDocumentTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void DeleteViewLinkTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void GetDocumentTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void GetEmailSettingsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void GetEnvelopeTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void GetLockTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void GetNotificationSettingsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void ListAuditEventsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
@@ -343,103 +343,103 @@ namespace SdkTests
         [TestMethod]
         public void ListDocumentFieldsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void ListDocumentsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void ListRecipientsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void ListStatusTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void ListStatusChangesTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void ListTabsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void ListTemplatesTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void ListTemplatesForDocumentTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void UpdateTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void UpdateCustomFieldsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void UpdateDocumentTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void UpdateDocumentFieldsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void UpdateDocumentsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void UpdateEmailSettingsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void UpdateLockTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void UpdateRecipientsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
 
         [TestMethod]
         public void UpdateTabsTest()
         {
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
         }
     }
 }

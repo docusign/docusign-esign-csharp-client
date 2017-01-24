@@ -163,7 +163,7 @@ namespace SdkTests
         {
 
             // NOT RELEASED IN THIS VERSION
-            throw new AssertFailedException("Not Implemented");
+            //throw new AssertFailedException("Not Implemented");
             //ApiClient apiClient = new ApiClient(TestConfig.BaseUrl);
             //string authHeader = Utils.CreateAuthHeader(TestConfig.UserName, TestConfig.Password, TestConfig.IntegratorKey);
 

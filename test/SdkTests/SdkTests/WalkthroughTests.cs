@@ -163,7 +163,7 @@ namespace SdkTests
                 AuthenticationApiTests authTests = new AuthenticationApiTests();
                 authTests.LoginTest();
 
-                // get pre-existing template with Signer1 role
+                // get pre-existing template with template name equals to "myTemplate"
                 // since I can't upload a template right now
                 TemplatesApi templatesApi = new TemplatesApi();
                 EnvelopeTemplateResults templateResults = templatesApi.ListTemplates(TestConfig.AccountId);
@@ -172,7 +172,7 @@ namespace SdkTests
                 string templateId = null;
                 foreach (EnvelopeTemplateResult et in templateResults.EnvelopeTemplates)
                 {
-                    if (et.Name == "Test Template")
+                    if (et.Name == "myTemplate")
                     {
                         templateId = et.TemplateId;
                         break;

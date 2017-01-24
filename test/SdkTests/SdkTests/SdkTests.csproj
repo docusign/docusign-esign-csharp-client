@@ -106,7 +106,6 @@
     <Compile Include="DocuSignCredentials.cs" />
     <Compile Include="AuthenticationApiTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="OAuthFlowTests.cs" />
     <Compile Include="TestConfig.cs" />
     <Compile Include="TemplatesApiTests.cs" />
     <Compile Include="AccountsApiTests.cs" />

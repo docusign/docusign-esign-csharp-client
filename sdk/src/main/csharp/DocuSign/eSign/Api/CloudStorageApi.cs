@@ -56,11 +56,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the user authentication information for the specified cloud storage provider. The next time the user tries to access the cloud storage provider, they must pass normal authentication for this cloud storage provider.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         
         /// <returns></returns>
-        CloudStorageProviders DeleteProvider(string accountId, string serviceId, string userId);
+        CloudStorageProviders DeleteProvider(string accountId, string userId, string serviceId);
 
         /// <summary>
         /// Deletes the user authentication information for the specified cloud storage provider.
@@ -69,11 +69,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the user authentication information for the specified cloud storage provider. The next time the user tries to access the cloud storage provider, they must pass normal authentication for this cloud storage provider.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<CloudStorageProviders> DeleteProviderWithHttpInfo(string accountId, string serviceId, string userId);
+        ApiResponse<CloudStorageProviders> DeleteProviderWithHttpInfo(string accountId, string userId, string serviceId);
         /// <summary>
         /// Deletes the user authentication information for one or more cloud storage providers.
         /// </summary>
@@ -106,11 +106,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the list of cloud storage providers enabled for the account and the configuration information for the user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        CloudStorageProviders GetProvider(string accountId, string serviceId, string userId, CloudStorageApi.GetProviderOptions options = null);
+        CloudStorageProviders GetProvider(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null);
 
         /// <summary>
         /// Gets the specified Cloud Storage Provider configuration for the User.
@@ -119,11 +119,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the list of cloud storage providers enabled for the account and the configuration information for the user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<CloudStorageProviders> GetProviderWithHttpInfo(string accountId, string serviceId, string userId, CloudStorageApi.GetProviderOptions options = null);
+        ApiResponse<CloudStorageProviders> GetProviderWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null);
         /// <summary>
         /// Gets a list of all the items from the specified cloud storage provider.
         /// </summary>
@@ -131,11 +131,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in all  the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="folderId">The ID of the folder being accessed.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        ExternalFolder List(string accountId, string folderId, string serviceId, string userId, CloudStorageApi.ListOptions options = null);
+        ExternalFolder List(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null);
 
         /// <summary>
         /// Gets a list of all the items from the specified cloud storage provider.
@@ -144,11 +144,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in all  the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="folderId">The ID of the folder being accessed.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ExternalFolder> ListWithHttpInfo(string accountId, string folderId, string serviceId, string userId, CloudStorageApi.ListOptions options = null);
+        ApiResponse<ExternalFolder> ListWithHttpInfo(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null);
         /// <summary>
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider.
         /// </summary>
@@ -156,11 +156,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        ExternalFolder ListFolders(string accountId, string serviceId, string userId, CloudStorageApi.ListFoldersOptions options = null);
+        ExternalFolder ListFolders(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null);
 
         /// <summary>
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider.
@@ -169,11 +169,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ExternalFolder> ListFoldersWithHttpInfo(string accountId, string serviceId, string userId, CloudStorageApi.ListFoldersOptions options = null);
+        ApiResponse<ExternalFolder> ListFoldersWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null);
         /// <summary>
         /// Get the Cloud Storage Provider configuration for the specified user.
         /// </summary>
@@ -233,11 +233,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the user authentication information for the specified cloud storage provider. The next time the user tries to access the cloud storage provider, they must pass normal authentication for this cloud storage provider.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         
         /// <returns>Task of CloudStorageProviders</returns>
-        System.Threading.Tasks.Task<CloudStorageProviders> DeleteProviderAsync(string accountId, string serviceId, string userId);
+        System.Threading.Tasks.Task<CloudStorageProviders> DeleteProviderAsync(string accountId, string userId, string serviceId);
 
         /// <summary>
         /// Deletes the user authentication information for the specified cloud storage provider.
@@ -246,11 +246,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the user authentication information for the specified cloud storage provider. The next time the user tries to access the cloud storage provider, they must pass normal authentication for this cloud storage provider.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         
         /// <returns>Task of ApiResponse (CloudStorageProviders)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> DeleteProviderAsyncWithHttpInfo(string accountId, string serviceId, string userId);
+        System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> DeleteProviderAsyncWithHttpInfo(string accountId, string userId, string serviceId);
         /// <summary>
         /// Deletes the user authentication information for one or more cloud storage providers.
         /// </summary>
@@ -283,11 +283,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the list of cloud storage providers enabled for the account and the configuration information for the user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of CloudStorageProviders</returns>
-        System.Threading.Tasks.Task<CloudStorageProviders> GetProviderAsync(string accountId, string serviceId, string userId, CloudStorageApi.GetProviderOptions options = null);
+        System.Threading.Tasks.Task<CloudStorageProviders> GetProviderAsync(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null);
 
         /// <summary>
         /// Gets the specified Cloud Storage Provider configuration for the User.
@@ -296,11 +296,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the list of cloud storage providers enabled for the account and the configuration information for the user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (CloudStorageProviders)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> GetProviderAsyncWithHttpInfo(string accountId, string serviceId, string userId, CloudStorageApi.GetProviderOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> GetProviderAsyncWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null);
         /// <summary>
         /// Gets a list of all the items from the specified cloud storage provider.
         /// </summary>
@@ -308,11 +308,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in all  the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="folderId">The ID of the folder being accessed.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ExternalFolder</returns>
-        System.Threading.Tasks.Task<ExternalFolder> ListAsync(string accountId, string folderId, string serviceId, string userId, CloudStorageApi.ListOptions options = null);
+        System.Threading.Tasks.Task<ExternalFolder> ListAsync(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null);
 
         /// <summary>
         /// Gets a list of all the items from the specified cloud storage provider.
@@ -321,11 +321,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in all  the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="folderId">The ID of the folder being accessed.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (ExternalFolder)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListAsyncWithHttpInfo(string accountId, string folderId, string serviceId, string userId, CloudStorageApi.ListOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListAsyncWithHttpInfo(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null);
         /// <summary>
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider.
         /// </summary>
@@ -333,11 +333,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ExternalFolder</returns>
-        System.Threading.Tasks.Task<ExternalFolder> ListFoldersAsync(string accountId, string serviceId, string userId, CloudStorageApi.ListFoldersOptions options = null);
+        System.Threading.Tasks.Task<ExternalFolder> ListFoldersAsync(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null);
 
         /// <summary>
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider.
@@ -346,11 +346,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (ExternalFolder)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListFoldersAsyncWithHttpInfo(string accountId, string serviceId, string userId, CloudStorageApi.ListFoldersOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListFoldersAsyncWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null);
         /// <summary>
         /// Get the Cloud Storage Provider configuration for the specified user.
         /// </summary>
@@ -680,13 +680,13 @@ namespace DocuSign.eSign.Api
         /// Deletes the user authentication information for the specified cloud storage provider. Deletes the user authentication information for the specified cloud storage provider. The next time the user tries to access the cloud storage provider, they must pass normal authentication for this cloud storage provider.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         
         /// <returns>CloudStorageProviders</returns>
-        public CloudStorageProviders DeleteProvider(string accountId, string serviceId, string userId)
+        public CloudStorageProviders DeleteProvider(string accountId, string userId, string serviceId)
         {
-             ApiResponse<CloudStorageProviders> localVarResponse = DeleteProviderWithHttpInfo(accountId, serviceId, userId);
+             ApiResponse<CloudStorageProviders> localVarResponse = DeleteProviderWithHttpInfo(accountId, userId, serviceId);
              return localVarResponse.Data;
         }
 
@@ -694,21 +694,21 @@ namespace DocuSign.eSign.Api
         /// Deletes the user authentication information for the specified cloud storage provider. Deletes the user authentication information for the specified cloud storage provider. The next time the user tries to access the cloud storage provider, they must pass normal authentication for this cloud storage provider.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         
         /// <returns>ApiResponse of CloudStorageProviders</returns>
-        public ApiResponse<CloudStorageProviders> DeleteProviderWithHttpInfo(string accountId, string serviceId, string userId)
+        public ApiResponse<CloudStorageProviders> DeleteProviderWithHttpInfo(string accountId, string userId, string serviceId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling CloudStorageApi->DeleteProvider");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->DeleteProvider");
             // verify the required parameter 'serviceId' is set
             if (serviceId == null)
                 throw new ApiException(400, "Missing required parameter 'serviceId' when calling CloudStorageApi->DeleteProvider");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->DeleteProvider");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -735,8 +735,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
 
 
 
@@ -771,13 +771,13 @@ namespace DocuSign.eSign.Api
         /// Deletes the user authentication information for the specified cloud storage provider. Deletes the user authentication information for the specified cloud storage provider. The next time the user tries to access the cloud storage provider, they must pass normal authentication for this cloud storage provider.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         
         /// <returns>Task of CloudStorageProviders</returns>
-        public async System.Threading.Tasks.Task<CloudStorageProviders> DeleteProviderAsync(string accountId, string serviceId, string userId)
+        public async System.Threading.Tasks.Task<CloudStorageProviders> DeleteProviderAsync(string accountId, string userId, string serviceId)
         {
-             ApiResponse<CloudStorageProviders> localVarResponse = await DeleteProviderAsyncWithHttpInfo(accountId, serviceId, userId);
+             ApiResponse<CloudStorageProviders> localVarResponse = await DeleteProviderAsyncWithHttpInfo(accountId, userId, serviceId);
              return localVarResponse.Data;
 
         }
@@ -786,21 +786,21 @@ namespace DocuSign.eSign.Api
         /// Deletes the user authentication information for the specified cloud storage provider. Deletes the user authentication information for the specified cloud storage provider. The next time the user tries to access the cloud storage provider, they must pass normal authentication for this cloud storage provider.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         
         /// <returns>Task of ApiResponse (CloudStorageProviders)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> DeleteProviderAsyncWithHttpInfo(string accountId, string serviceId, string userId)
+        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> DeleteProviderAsyncWithHttpInfo(string accountId, string userId, string serviceId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling CloudStorageApi->DeleteProvider");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->DeleteProvider");
             // verify the required parameter 'serviceId' is set
             if (serviceId == null)
                 throw new ApiException(400, "Missing required parameter 'serviceId' when calling CloudStorageApi->DeleteProvider");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->DeleteProvider");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -827,8 +827,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
 
 
 
@@ -1052,13 +1052,13 @@ namespace DocuSign.eSign.Api
         /// Gets the specified Cloud Storage Provider configuration for the User. Retrieves the list of cloud storage providers enabled for the account and the configuration information for the user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>CloudStorageProviders</returns>
-        public CloudStorageProviders GetProvider(string accountId, string serviceId, string userId, CloudStorageApi.GetProviderOptions options = null)
+        public CloudStorageProviders GetProvider(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null)
         {
-             ApiResponse<CloudStorageProviders> localVarResponse = GetProviderWithHttpInfo(accountId, serviceId, userId, options);
+             ApiResponse<CloudStorageProviders> localVarResponse = GetProviderWithHttpInfo(accountId, userId, serviceId, options);
              return localVarResponse.Data;
         }
 
@@ -1066,21 +1066,21 @@ namespace DocuSign.eSign.Api
         /// Gets the specified Cloud Storage Provider configuration for the User. Retrieves the list of cloud storage providers enabled for the account and the configuration information for the user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of CloudStorageProviders</returns>
-        public ApiResponse<CloudStorageProviders> GetProviderWithHttpInfo(string accountId, string serviceId, string userId, CloudStorageApi.GetProviderOptions options = null)
+        public ApiResponse<CloudStorageProviders> GetProviderWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling CloudStorageApi->GetProvider");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->GetProvider");
             // verify the required parameter 'serviceId' is set
             if (serviceId == null)
                 throw new ApiException(400, "Missing required parameter 'serviceId' when calling CloudStorageApi->GetProvider");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->GetProvider");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1107,8 +1107,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
 
             if (options != null)
             {
@@ -1147,13 +1147,13 @@ namespace DocuSign.eSign.Api
         /// Gets the specified Cloud Storage Provider configuration for the User. Retrieves the list of cloud storage providers enabled for the account and the configuration information for the user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of CloudStorageProviders</returns>
-        public async System.Threading.Tasks.Task<CloudStorageProviders> GetProviderAsync(string accountId, string serviceId, string userId, CloudStorageApi.GetProviderOptions options = null)
+        public async System.Threading.Tasks.Task<CloudStorageProviders> GetProviderAsync(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null)
         {
-             ApiResponse<CloudStorageProviders> localVarResponse = await GetProviderAsyncWithHttpInfo(accountId, serviceId, userId, options);
+             ApiResponse<CloudStorageProviders> localVarResponse = await GetProviderAsyncWithHttpInfo(accountId, userId, serviceId, options);
              return localVarResponse.Data;
 
         }
@@ -1162,21 +1162,21 @@ namespace DocuSign.eSign.Api
         /// Gets the specified Cloud Storage Provider configuration for the User. Retrieves the list of cloud storage providers enabled for the account and the configuration information for the user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (CloudStorageProviders)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> GetProviderAsyncWithHttpInfo(string accountId, string serviceId, string userId, CloudStorageApi.GetProviderOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> GetProviderAsyncWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling CloudStorageApi->GetProvider");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->GetProvider");
             // verify the required parameter 'serviceId' is set
             if (serviceId == null)
                 throw new ApiException(400, "Missing required parameter 'serviceId' when calling CloudStorageApi->GetProvider");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->GetProvider");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1203,8 +1203,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
 
             if (options != null)
             {
@@ -1256,13 +1256,13 @@ namespace DocuSign.eSign.Api
         /// Gets a list of all the items from the specified cloud storage provider. Retrieves a list of all the items in all  the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="folderId">The ID of the folder being accessed.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ExternalFolder</returns>
-        public ExternalFolder List(string accountId, string folderId, string serviceId, string userId, CloudStorageApi.ListOptions options = null)
+        public ExternalFolder List(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null)
         {
-             ApiResponse<ExternalFolder> localVarResponse = ListWithHttpInfo(accountId, folderId, serviceId, userId, options);
+             ApiResponse<ExternalFolder> localVarResponse = ListWithHttpInfo(accountId, userId, serviceId, folderId, options);
              return localVarResponse.Data;
         }
 
@@ -1270,24 +1270,24 @@ namespace DocuSign.eSign.Api
         /// Gets a list of all the items from the specified cloud storage provider. Retrieves a list of all the items in all  the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="folderId">The ID of the folder being accessed.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of ExternalFolder</returns>
-        public ApiResponse<ExternalFolder> ListWithHttpInfo(string accountId, string folderId, string serviceId, string userId, CloudStorageApi.ListOptions options = null)
+        public ApiResponse<ExternalFolder> ListWithHttpInfo(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling CloudStorageApi->List");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->List");
-            // verify the required parameter 'serviceId' is set
-            if (serviceId == null)
-                throw new ApiException(400, "Missing required parameter 'serviceId' when calling CloudStorageApi->List");
             // verify the required parameter 'folderId' is set
             if (folderId == null)
                 throw new ApiException(400, "Missing required parameter 'folderId' when calling CloudStorageApi->List");
+            // verify the required parameter 'serviceId' is set
+            if (serviceId == null)
+                throw new ApiException(400, "Missing required parameter 'serviceId' when calling CloudStorageApi->List");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->List");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders/{folderId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1314,9 +1314,9 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (folderId != null) localVarPathParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // path parameter
-            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
+            if (folderId != null) localVarPathParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // path parameter
 
             if (options != null)
             {
@@ -1360,13 +1360,13 @@ namespace DocuSign.eSign.Api
         /// Gets a list of all the items from the specified cloud storage provider. Retrieves a list of all the items in all  the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="folderId">The ID of the folder being accessed.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ExternalFolder</returns>
-        public async System.Threading.Tasks.Task<ExternalFolder> ListAsync(string accountId, string folderId, string serviceId, string userId, CloudStorageApi.ListOptions options = null)
+        public async System.Threading.Tasks.Task<ExternalFolder> ListAsync(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null)
         {
-             ApiResponse<ExternalFolder> localVarResponse = await ListAsyncWithHttpInfo(accountId, folderId, serviceId, userId, options);
+             ApiResponse<ExternalFolder> localVarResponse = await ListAsyncWithHttpInfo(accountId, userId, serviceId, folderId, options);
              return localVarResponse.Data;
 
         }
@@ -1375,24 +1375,24 @@ namespace DocuSign.eSign.Api
         /// Gets a list of all the items from the specified cloud storage provider. Retrieves a list of all the items in all  the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="folderId">The ID of the folder being accessed.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (ExternalFolder)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListAsyncWithHttpInfo(string accountId, string folderId, string serviceId, string userId, CloudStorageApi.ListOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListAsyncWithHttpInfo(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling CloudStorageApi->List");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->List");
-            // verify the required parameter 'serviceId' is set
-            if (serviceId == null)
-                throw new ApiException(400, "Missing required parameter 'serviceId' when calling CloudStorageApi->List");
             // verify the required parameter 'folderId' is set
             if (folderId == null)
                 throw new ApiException(400, "Missing required parameter 'folderId' when calling CloudStorageApi->List");
+            // verify the required parameter 'serviceId' is set
+            if (serviceId == null)
+                throw new ApiException(400, "Missing required parameter 'serviceId' when calling CloudStorageApi->List");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->List");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders/{folderId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1419,9 +1419,9 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (folderId != null) localVarPathParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // path parameter
-            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
+            if (folderId != null) localVarPathParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // path parameter
 
             if (options != null)
             {
@@ -1478,13 +1478,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider. Retrieves a list of all the items in a specified folder from the specified cloud storage provider. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ExternalFolder</returns>
-        public ExternalFolder ListFolders(string accountId, string serviceId, string userId, CloudStorageApi.ListFoldersOptions options = null)
+        public ExternalFolder ListFolders(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null)
         {
-             ApiResponse<ExternalFolder> localVarResponse = ListFoldersWithHttpInfo(accountId, serviceId, userId, options);
+             ApiResponse<ExternalFolder> localVarResponse = ListFoldersWithHttpInfo(accountId, userId, serviceId, options);
              return localVarResponse.Data;
         }
 
@@ -1492,21 +1492,21 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider. Retrieves a list of all the items in a specified folder from the specified cloud storage provider. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of ExternalFolder</returns>
-        public ApiResponse<ExternalFolder> ListFoldersWithHttpInfo(string accountId, string serviceId, string userId, CloudStorageApi.ListFoldersOptions options = null)
+        public ApiResponse<ExternalFolder> ListFoldersWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling CloudStorageApi->ListFolders");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->ListFolders");
             // verify the required parameter 'serviceId' is set
             if (serviceId == null)
                 throw new ApiException(400, "Missing required parameter 'serviceId' when calling CloudStorageApi->ListFolders");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->ListFolders");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1533,8 +1533,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
 
             if (options != null)
             {
@@ -1578,13 +1578,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider. Retrieves a list of all the items in a specified folder from the specified cloud storage provider. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ExternalFolder</returns>
-        public async System.Threading.Tasks.Task<ExternalFolder> ListFoldersAsync(string accountId, string serviceId, string userId, CloudStorageApi.ListFoldersOptions options = null)
+        public async System.Threading.Tasks.Task<ExternalFolder> ListFoldersAsync(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null)
         {
-             ApiResponse<ExternalFolder> localVarResponse = await ListFoldersAsyncWithHttpInfo(accountId, serviceId, userId, options);
+             ApiResponse<ExternalFolder> localVarResponse = await ListFoldersAsyncWithHttpInfo(accountId, userId, serviceId, options);
              return localVarResponse.Data;
 
         }
@@ -1593,21 +1593,21 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of all the items in a specified folder from the specified cloud storage provider. Retrieves a list of all the items in a specified folder from the specified cloud storage provider. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (ExternalFolder)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListFoldersAsyncWithHttpInfo(string accountId, string serviceId, string userId, CloudStorageApi.ListFoldersOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListFoldersAsyncWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling CloudStorageApi->ListFolders");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->ListFolders");
             // verify the required parameter 'serviceId' is set
             if (serviceId == null)
                 throw new ApiException(400, "Missing required parameter 'serviceId' when calling CloudStorageApi->ListFolders");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling CloudStorageApi->ListFolders");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1634,8 +1634,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (serviceId != null) localVarPathParams.Add("serviceId", Configuration.ApiClient.ParameterToString(serviceId)); // path parameter
 
             if (options != null)
             {

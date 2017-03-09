@@ -206,11 +206,11 @@ namespace DocuSign.eSign.Api
         /// Removes the signature information for the user.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns></returns>
-        void DeleteSignature(string accountId, string signatureId, string userId);
+        void DeleteSignature(string accountId, string userId, string signatureId);
 
         /// <summary>
         /// Removes removes signature information for the specified user.
@@ -219,11 +219,11 @@ namespace DocuSign.eSign.Api
         /// Removes the signature information for the user.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteSignatureWithHttpInfo(string accountId, string signatureId, string userId);
+        ApiResponse<Object> DeleteSignatureWithHttpInfo(string accountId, string userId, string signatureId);
         /// <summary>
         /// Deletes the user initials image or the  user signature image for the specified user.
         /// </summary>
@@ -231,11 +231,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the specified initials image or signature image for the specified user.  The function deletes one or the other of the image types, to delete both the initials image and signature image you must call the endpoint twice.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns></returns>
-        UserSignature DeleteSignatureImage(string accountId, string imageType, string signatureId, string userId);
+        UserSignature DeleteSignatureImage(string accountId, string userId, string signatureId, string imageType);
 
         /// <summary>
         /// Deletes the user initials image or the  user signature image for the specified user.
@@ -244,11 +244,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the specified initials image or signature image for the specified user.  The function deletes one or the other of the image types, to delete both the initials image and signature image you must call the endpoint twice.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UserSignature> DeleteSignatureImageWithHttpInfo(string accountId, string imageType, string signatureId, string userId);
+        ApiResponse<UserSignature> DeleteSignatureImageWithHttpInfo(string accountId, string userId, string signatureId, string imageType);
         /// <summary>
         /// Gets a particular contact associated with the user&#39;s account.
         /// </summary>
@@ -381,11 +381,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the structure of a single signature with a known signature name.  The userId specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns></returns>
-        UserSignature GetSignature(string accountId, string signatureId, string userId);
+        UserSignature GetSignature(string accountId, string userId, string signatureId);
 
         /// <summary>
         /// Gets the user signature information for the specified user.
@@ -394,11 +394,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the structure of a single signature with a known signature name.  The userId specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UserSignature> GetSignatureWithHttpInfo(string accountId, string signatureId, string userId);
+        ApiResponse<UserSignature> GetSignatureWithHttpInfo(string accountId, string userId, string signatureId);
         /// <summary>
         /// Retrieves the user initials image or the  user signature image for the specified user.
         /// </summary>
@@ -406,11 +406,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the specified initials image or signature image for the specified user. The image is returned in the same format as uploaded. In the request you can specify if the chrome (the added line and identifier around the initial image) is returned with the image.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.  ###### Note: Older envelopes might only have chromed images. If getting the non-chromed image fails, try getting the chromed image.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        System.IO.Stream GetSignatureImage(string accountId, string imageType, string signatureId, string userId, UsersApi.GetSignatureImageOptions options = null);
+        System.IO.Stream GetSignatureImage(string accountId, string userId, string signatureId, string imageType, UsersApi.GetSignatureImageOptions options = null);
 
         /// <summary>
         /// Retrieves the user initials image or the  user signature image for the specified user.
@@ -419,11 +419,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the specified initials image or signature image for the specified user. The image is returned in the same format as uploaded. In the request you can specify if the chrome (the added line and identifier around the initial image) is returned with the image.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.  ###### Note: Older envelopes might only have chromed images. If getting the non-chromed image fails, try getting the chromed image.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<System.IO.Stream> GetSignatureImageWithHttpInfo(string accountId, string imageType, string signatureId, string userId, UsersApi.GetSignatureImageOptions options = null);
+        ApiResponse<System.IO.Stream> GetSignatureImageWithHttpInfo(string accountId, string userId, string signatureId, string imageType, UsersApi.GetSignatureImageOptions options = null);
         /// <summary>
         /// Retrieves the list of users for the specified account.
         /// </summary>
@@ -656,11 +656,11 @@ namespace DocuSign.eSign.Api
         /// Creates, or updates, the signature font and initials for the specified user. When creating a signature, you use this resource to create the signature name and then add the signature and initials images into the signature.  ###### Note: This will also create a default signature for the user when one does not exist.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="userSignatureDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        UserSignature UpdateSignature(string accountId, string signatureId, string userId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null);
+        UserSignature UpdateSignature(string accountId, string userId, string signatureId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null);
 
         /// <summary>
         /// Updates the user signature for a specified user.
@@ -669,11 +669,11 @@ namespace DocuSign.eSign.Api
         /// Creates, or updates, the signature font and initials for the specified user. When creating a signature, you use this resource to create the signature name and then add the signature and initials images into the signature.  ###### Note: This will also create a default signature for the user when one does not exist.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="userSignatureDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UserSignature> UpdateSignatureWithHttpInfo(string accountId, string signatureId, string userId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null);
+        ApiResponse<UserSignature> UpdateSignatureWithHttpInfo(string accountId, string userId, string signatureId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null);
         /// <summary>
         /// Updates the user signature image or user initials image for the specified user.
         /// </summary>
@@ -681,11 +681,11 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature image or user initials image for the specified user. The supported image formats for this file are: gif, png, jpeg, and bmp. The file must be less than 200K.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns></returns>
-        UserSignature UpdateSignatureImage(string accountId, string imageType, string signatureId, string userId);
+        UserSignature UpdateSignatureImage(string accountId, string userId, string signatureId, string imageType);
 
         /// <summary>
         /// Updates the user signature image or user initials image for the specified user.
@@ -694,11 +694,11 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature image or user initials image for the specified user. The supported image formats for this file are: gif, png, jpeg, and bmp. The file must be less than 200K.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UserSignature> UpdateSignatureImageWithHttpInfo(string accountId, string imageType, string signatureId, string userId);
+        ApiResponse<UserSignature> UpdateSignatureImageWithHttpInfo(string accountId, string userId, string signatureId, string imageType);
         /// <summary>
         /// Updates the specified user information.
         /// </summary>
@@ -933,11 +933,11 @@ namespace DocuSign.eSign.Api
         /// Removes the signature information for the user.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteSignatureAsync(string accountId, string signatureId, string userId);
+        System.Threading.Tasks.Task DeleteSignatureAsync(string accountId, string userId, string signatureId);
 
         /// <summary>
         /// Removes removes signature information for the specified user.
@@ -946,11 +946,11 @@ namespace DocuSign.eSign.Api
         /// Removes the signature information for the user.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSignatureAsyncWithHttpInfo(string accountId, string signatureId, string userId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSignatureAsyncWithHttpInfo(string accountId, string userId, string signatureId);
         /// <summary>
         /// Deletes the user initials image or the  user signature image for the specified user.
         /// </summary>
@@ -958,11 +958,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the specified initials image or signature image for the specified user.  The function deletes one or the other of the image types, to delete both the initials image and signature image you must call the endpoint twice.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>Task of UserSignature</returns>
-        System.Threading.Tasks.Task<UserSignature> DeleteSignatureImageAsync(string accountId, string imageType, string signatureId, string userId);
+        System.Threading.Tasks.Task<UserSignature> DeleteSignatureImageAsync(string accountId, string userId, string signatureId, string imageType);
 
         /// <summary>
         /// Deletes the user initials image or the  user signature image for the specified user.
@@ -971,11 +971,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the specified initials image or signature image for the specified user.  The function deletes one or the other of the image types, to delete both the initials image and signature image you must call the endpoint twice.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>Task of ApiResponse (UserSignature)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserSignature>> DeleteSignatureImageAsyncWithHttpInfo(string accountId, string imageType, string signatureId, string userId);
+        System.Threading.Tasks.Task<ApiResponse<UserSignature>> DeleteSignatureImageAsyncWithHttpInfo(string accountId, string userId, string signatureId, string imageType);
         /// <summary>
         /// Gets a particular contact associated with the user&#39;s account.
         /// </summary>
@@ -1108,11 +1108,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the structure of a single signature with a known signature name.  The userId specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>Task of UserSignature</returns>
-        System.Threading.Tasks.Task<UserSignature> GetSignatureAsync(string accountId, string signatureId, string userId);
+        System.Threading.Tasks.Task<UserSignature> GetSignatureAsync(string accountId, string userId, string signatureId);
 
         /// <summary>
         /// Gets the user signature information for the specified user.
@@ -1121,11 +1121,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the structure of a single signature with a known signature name.  The userId specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>Task of ApiResponse (UserSignature)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserSignature>> GetSignatureAsyncWithHttpInfo(string accountId, string signatureId, string userId);
+        System.Threading.Tasks.Task<ApiResponse<UserSignature>> GetSignatureAsyncWithHttpInfo(string accountId, string userId, string signatureId);
         /// <summary>
         /// Retrieves the user initials image or the  user signature image for the specified user.
         /// </summary>
@@ -1133,11 +1133,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the specified initials image or signature image for the specified user. The image is returned in the same format as uploaded. In the request you can specify if the chrome (the added line and identifier around the initial image) is returned with the image.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.  ###### Note: Older envelopes might only have chromed images. If getting the non-chromed image fails, try getting the chromed image.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> GetSignatureImageAsync(string accountId, string imageType, string signatureId, string userId, UsersApi.GetSignatureImageOptions options = null);
+        System.Threading.Tasks.Task<System.IO.Stream> GetSignatureImageAsync(string accountId, string userId, string signatureId, string imageType, UsersApi.GetSignatureImageOptions options = null);
 
         /// <summary>
         /// Retrieves the user initials image or the  user signature image for the specified user.
@@ -1146,11 +1146,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the specified initials image or signature image for the specified user. The image is returned in the same format as uploaded. In the request you can specify if the chrome (the added line and identifier around the initial image) is returned with the image.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.  ###### Note: Older envelopes might only have chromed images. If getting the non-chromed image fails, try getting the chromed image.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetSignatureImageAsyncWithHttpInfo(string accountId, string imageType, string signatureId, string userId, UsersApi.GetSignatureImageOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetSignatureImageAsyncWithHttpInfo(string accountId, string userId, string signatureId, string imageType, UsersApi.GetSignatureImageOptions options = null);
         /// <summary>
         /// Retrieves the list of users for the specified account.
         /// </summary>
@@ -1383,11 +1383,11 @@ namespace DocuSign.eSign.Api
         /// Creates, or updates, the signature font and initials for the specified user. When creating a signature, you use this resource to create the signature name and then add the signature and initials images into the signature.  ###### Note: This will also create a default signature for the user when one does not exist.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="userSignatureDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserSignature</returns>
-        System.Threading.Tasks.Task<UserSignature> UpdateSignatureAsync(string accountId, string signatureId, string userId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null);
+        System.Threading.Tasks.Task<UserSignature> UpdateSignatureAsync(string accountId, string userId, string signatureId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null);
 
         /// <summary>
         /// Updates the user signature for a specified user.
@@ -1396,11 +1396,11 @@ namespace DocuSign.eSign.Api
         /// Creates, or updates, the signature font and initials for the specified user. When creating a signature, you use this resource to create the signature name and then add the signature and initials images into the signature.  ###### Note: This will also create a default signature for the user when one does not exist.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="userSignatureDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserSignature)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureAsyncWithHttpInfo(string accountId, string signatureId, string userId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureAsyncWithHttpInfo(string accountId, string userId, string signatureId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null);
         /// <summary>
         /// Updates the user signature image or user initials image for the specified user.
         /// </summary>
@@ -1408,11 +1408,11 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature image or user initials image for the specified user. The supported image formats for this file are: gif, png, jpeg, and bmp. The file must be less than 200K.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>Task of UserSignature</returns>
-        System.Threading.Tasks.Task<UserSignature> UpdateSignatureImageAsync(string accountId, string imageType, string signatureId, string userId);
+        System.Threading.Tasks.Task<UserSignature> UpdateSignatureImageAsync(string accountId, string userId, string signatureId, string imageType);
 
         /// <summary>
         /// Updates the user signature image or user initials image for the specified user.
@@ -1421,11 +1421,11 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature image or user initials image for the specified user. The supported image formats for this file are: gif, png, jpeg, and bmp. The file must be less than 200K.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>Task of ApiResponse (UserSignature)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureImageAsyncWithHttpInfo(string accountId, string imageType, string signatureId, string userId);
+        System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureImageAsyncWithHttpInfo(string accountId, string userId, string signatureId, string imageType);
         /// <summary>
         /// Updates the specified user information.
         /// </summary>
@@ -2830,34 +2830,34 @@ namespace DocuSign.eSign.Api
         /// Removes removes signature information for the specified user. Removes the signature information for the user.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns></returns>
-        public void DeleteSignature(string accountId, string signatureId, string userId)
+        public void DeleteSignature(string accountId, string userId, string signatureId)
         {
-             DeleteSignatureWithHttpInfo(accountId, signatureId, userId);
+             DeleteSignatureWithHttpInfo(accountId, userId, signatureId);
         }
 
         /// <summary>
         /// Removes removes signature information for the specified user. Removes the signature information for the user.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteSignatureWithHttpInfo(string accountId, string signatureId, string userId)
+        public ApiResponse<Object> DeleteSignatureWithHttpInfo(string accountId, string userId, string signatureId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->DeleteSignature");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DeleteSignature");
             // verify the required parameter 'signatureId' is set
             if (signatureId == null)
                 throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->DeleteSignature");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DeleteSignature");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2884,8 +2884,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
 
 
 
@@ -2912,13 +2912,13 @@ namespace DocuSign.eSign.Api
         /// Removes removes signature information for the specified user. Removes the signature information for the user.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteSignatureAsync(string accountId, string signatureId, string userId)
+        public async System.Threading.Tasks.Task DeleteSignatureAsync(string accountId, string userId, string signatureId)
         {
-             await DeleteSignatureAsyncWithHttpInfo(accountId, signatureId, userId);
+             await DeleteSignatureAsyncWithHttpInfo(accountId, userId, signatureId);
 
         }
 
@@ -2926,21 +2926,21 @@ namespace DocuSign.eSign.Api
         /// Removes removes signature information for the specified user. Removes the signature information for the user.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSignatureAsyncWithHttpInfo(string accountId, string signatureId, string userId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSignatureAsyncWithHttpInfo(string accountId, string userId, string signatureId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->DeleteSignature");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DeleteSignature");
             // verify the required parameter 'signatureId' is set
             if (signatureId == null)
                 throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->DeleteSignature");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DeleteSignature");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2967,8 +2967,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
 
 
 
@@ -2998,13 +2998,13 @@ namespace DocuSign.eSign.Api
         /// Deletes the user initials image or the  user signature image for the specified user. Deletes the specified initials image or signature image for the specified user.  The function deletes one or the other of the image types, to delete both the initials image and signature image you must call the endpoint twice.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>UserSignature</returns>
-        public UserSignature DeleteSignatureImage(string accountId, string imageType, string signatureId, string userId)
+        public UserSignature DeleteSignatureImage(string accountId, string userId, string signatureId, string imageType)
         {
-             ApiResponse<UserSignature> localVarResponse = DeleteSignatureImageWithHttpInfo(accountId, imageType, signatureId, userId);
+             ApiResponse<UserSignature> localVarResponse = DeleteSignatureImageWithHttpInfo(accountId, userId, signatureId, imageType);
              return localVarResponse.Data;
         }
 
@@ -3012,24 +3012,24 @@ namespace DocuSign.eSign.Api
         /// Deletes the user initials image or the  user signature image for the specified user. Deletes the specified initials image or signature image for the specified user.  The function deletes one or the other of the image types, to delete both the initials image and signature image you must call the endpoint twice.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>ApiResponse of UserSignature</returns>
-        public ApiResponse<UserSignature> DeleteSignatureImageWithHttpInfo(string accountId, string imageType, string signatureId, string userId)
+        public ApiResponse<UserSignature> DeleteSignatureImageWithHttpInfo(string accountId, string userId, string signatureId, string imageType)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->DeleteSignatureImage");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DeleteSignatureImage");
-            // verify the required parameter 'signatureId' is set
-            if (signatureId == null)
-                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->DeleteSignatureImage");
             // verify the required parameter 'imageType' is set
             if (imageType == null)
                 throw new ApiException(400, "Missing required parameter 'imageType' when calling UsersApi->DeleteSignatureImage");
+            // verify the required parameter 'signatureId' is set
+            if (signatureId == null)
+                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->DeleteSignatureImage");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DeleteSignatureImage");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3056,9 +3056,9 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
+            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
 
 
 
@@ -3093,13 +3093,13 @@ namespace DocuSign.eSign.Api
         /// Deletes the user initials image or the  user signature image for the specified user. Deletes the specified initials image or signature image for the specified user.  The function deletes one or the other of the image types, to delete both the initials image and signature image you must call the endpoint twice.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>Task of UserSignature</returns>
-        public async System.Threading.Tasks.Task<UserSignature> DeleteSignatureImageAsync(string accountId, string imageType, string signatureId, string userId)
+        public async System.Threading.Tasks.Task<UserSignature> DeleteSignatureImageAsync(string accountId, string userId, string signatureId, string imageType)
         {
-             ApiResponse<UserSignature> localVarResponse = await DeleteSignatureImageAsyncWithHttpInfo(accountId, imageType, signatureId, userId);
+             ApiResponse<UserSignature> localVarResponse = await DeleteSignatureImageAsyncWithHttpInfo(accountId, userId, signatureId, imageType);
              return localVarResponse.Data;
 
         }
@@ -3108,24 +3108,24 @@ namespace DocuSign.eSign.Api
         /// Deletes the user initials image or the  user signature image for the specified user. Deletes the specified initials image or signature image for the specified user.  The function deletes one or the other of the image types, to delete both the initials image and signature image you must call the endpoint twice.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>Task of ApiResponse (UserSignature)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserSignature>> DeleteSignatureImageAsyncWithHttpInfo(string accountId, string imageType, string signatureId, string userId)
+        public async System.Threading.Tasks.Task<ApiResponse<UserSignature>> DeleteSignatureImageAsyncWithHttpInfo(string accountId, string userId, string signatureId, string imageType)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->DeleteSignatureImage");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DeleteSignatureImage");
-            // verify the required parameter 'signatureId' is set
-            if (signatureId == null)
-                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->DeleteSignatureImage");
             // verify the required parameter 'imageType' is set
             if (imageType == null)
                 throw new ApiException(400, "Missing required parameter 'imageType' when calling UsersApi->DeleteSignatureImage");
+            // verify the required parameter 'signatureId' is set
+            if (signatureId == null)
+                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->DeleteSignatureImage");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DeleteSignatureImage");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3152,9 +3152,9 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
+            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
 
 
 
@@ -4070,13 +4070,13 @@ namespace DocuSign.eSign.Api
         /// Gets the user signature information for the specified user. Retrieves the structure of a single signature with a known signature name.  The userId specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>UserSignature</returns>
-        public UserSignature GetSignature(string accountId, string signatureId, string userId)
+        public UserSignature GetSignature(string accountId, string userId, string signatureId)
         {
-             ApiResponse<UserSignature> localVarResponse = GetSignatureWithHttpInfo(accountId, signatureId, userId);
+             ApiResponse<UserSignature> localVarResponse = GetSignatureWithHttpInfo(accountId, userId, signatureId);
              return localVarResponse.Data;
         }
 
@@ -4084,21 +4084,21 @@ namespace DocuSign.eSign.Api
         /// Gets the user signature information for the specified user. Retrieves the structure of a single signature with a known signature name.  The userId specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>ApiResponse of UserSignature</returns>
-        public ApiResponse<UserSignature> GetSignatureWithHttpInfo(string accountId, string signatureId, string userId)
+        public ApiResponse<UserSignature> GetSignatureWithHttpInfo(string accountId, string userId, string signatureId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->GetSignature");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetSignature");
             // verify the required parameter 'signatureId' is set
             if (signatureId == null)
                 throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->GetSignature");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetSignature");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4125,8 +4125,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
 
 
 
@@ -4161,13 +4161,13 @@ namespace DocuSign.eSign.Api
         /// Gets the user signature information for the specified user. Retrieves the structure of a single signature with a known signature name.  The userId specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>Task of UserSignature</returns>
-        public async System.Threading.Tasks.Task<UserSignature> GetSignatureAsync(string accountId, string signatureId, string userId)
+        public async System.Threading.Tasks.Task<UserSignature> GetSignatureAsync(string accountId, string userId, string signatureId)
         {
-             ApiResponse<UserSignature> localVarResponse = await GetSignatureAsyncWithHttpInfo(accountId, signatureId, userId);
+             ApiResponse<UserSignature> localVarResponse = await GetSignatureAsyncWithHttpInfo(accountId, userId, signatureId);
              return localVarResponse.Data;
 
         }
@@ -4176,21 +4176,21 @@ namespace DocuSign.eSign.Api
         /// Gets the user signature information for the specified user. Retrieves the structure of a single signature with a known signature name.  The userId specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         
         
         /// <returns>Task of ApiResponse (UserSignature)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserSignature>> GetSignatureAsyncWithHttpInfo(string accountId, string signatureId, string userId)
+        public async System.Threading.Tasks.Task<ApiResponse<UserSignature>> GetSignatureAsyncWithHttpInfo(string accountId, string userId, string signatureId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->GetSignature");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetSignature");
             // verify the required parameter 'signatureId' is set
             if (signatureId == null)
                 throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->GetSignature");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetSignature");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4217,8 +4217,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
 
 
 
@@ -4256,13 +4256,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves the user initials image or the  user signature image for the specified user. Retrieves the specified initials image or signature image for the specified user. The image is returned in the same format as uploaded. In the request you can specify if the chrome (the added line and identifier around the initial image) is returned with the image.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.  ###### Note: Older envelopes might only have chromed images. If getting the non-chromed image fails, try getting the chromed image.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream GetSignatureImage(string accountId, string imageType, string signatureId, string userId, UsersApi.GetSignatureImageOptions options = null)
+        public System.IO.Stream GetSignatureImage(string accountId, string userId, string signatureId, string imageType, UsersApi.GetSignatureImageOptions options = null)
         {
-             ApiResponse<System.IO.Stream> localVarResponse = GetSignatureImageWithHttpInfo(accountId, imageType, signatureId, userId, options);
+             ApiResponse<System.IO.Stream> localVarResponse = GetSignatureImageWithHttpInfo(accountId, userId, signatureId, imageType, options);
              return localVarResponse.Data;
         }
 
@@ -4270,24 +4270,24 @@ namespace DocuSign.eSign.Api
         /// Retrieves the user initials image or the  user signature image for the specified user. Retrieves the specified initials image or signature image for the specified user. The image is returned in the same format as uploaded. In the request you can specify if the chrome (the added line and identifier around the initial image) is returned with the image.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.  ###### Note: Older envelopes might only have chromed images. If getting the non-chromed image fails, try getting the chromed image.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public ApiResponse<System.IO.Stream> GetSignatureImageWithHttpInfo(string accountId, string imageType, string signatureId, string userId, UsersApi.GetSignatureImageOptions options = null)
+        public ApiResponse<System.IO.Stream> GetSignatureImageWithHttpInfo(string accountId, string userId, string signatureId, string imageType, UsersApi.GetSignatureImageOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->GetSignatureImage");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetSignatureImage");
-            // verify the required parameter 'signatureId' is set
-            if (signatureId == null)
-                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->GetSignatureImage");
             // verify the required parameter 'imageType' is set
             if (imageType == null)
                 throw new ApiException(400, "Missing required parameter 'imageType' when calling UsersApi->GetSignatureImage");
+            // verify the required parameter 'signatureId' is set
+            if (signatureId == null)
+                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->GetSignatureImage");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetSignatureImage");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4314,9 +4314,9 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
+            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
 
             if (options != null)
             {
@@ -4355,13 +4355,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves the user initials image or the  user signature image for the specified user. Retrieves the specified initials image or signature image for the specified user. The image is returned in the same format as uploaded. In the request you can specify if the chrome (the added line and identifier around the initial image) is returned with the image.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.  ###### Note: Older envelopes might only have chromed images. If getting the non-chromed image fails, try getting the chromed image.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> GetSignatureImageAsync(string accountId, string imageType, string signatureId, string userId, UsersApi.GetSignatureImageOptions options = null)
+        public async System.Threading.Tasks.Task<System.IO.Stream> GetSignatureImageAsync(string accountId, string userId, string signatureId, string imageType, UsersApi.GetSignatureImageOptions options = null)
         {
-             ApiResponse<System.IO.Stream> localVarResponse = await GetSignatureImageAsyncWithHttpInfo(accountId, imageType, signatureId, userId, options);
+             ApiResponse<System.IO.Stream> localVarResponse = await GetSignatureImageAsyncWithHttpInfo(accountId, userId, signatureId, imageType, options);
              return localVarResponse.Data;
 
         }
@@ -4370,24 +4370,24 @@ namespace DocuSign.eSign.Api
         /// Retrieves the user initials image or the  user signature image for the specified user. Retrieves the specified initials image or signature image for the specified user. The image is returned in the same format as uploaded. In the request you can specify if the chrome (the added line and identifier around the initial image) is returned with the image.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.  ###### Note: Older envelopes might only have chromed images. If getting the non-chromed image fails, try getting the chromed image.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetSignatureImageAsyncWithHttpInfo(string accountId, string imageType, string signatureId, string userId, UsersApi.GetSignatureImageOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetSignatureImageAsyncWithHttpInfo(string accountId, string userId, string signatureId, string imageType, UsersApi.GetSignatureImageOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->GetSignatureImage");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetSignatureImage");
-            // verify the required parameter 'signatureId' is set
-            if (signatureId == null)
-                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->GetSignatureImage");
             // verify the required parameter 'imageType' is set
             if (imageType == null)
                 throw new ApiException(400, "Missing required parameter 'imageType' when calling UsersApi->GetSignatureImage");
+            // verify the required parameter 'signatureId' is set
+            if (signatureId == null)
+                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->GetSignatureImage");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetSignatureImage");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4414,9 +4414,9 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
+            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
 
             if (options != null)
             {
@@ -6070,13 +6070,13 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature for a specified user. Creates, or updates, the signature font and initials for the specified user. When creating a signature, you use this resource to create the signature name and then add the signature and initials images into the signature.  ###### Note: This will also create a default signature for the user when one does not exist.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="userSignatureDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>UserSignature</returns>
-        public UserSignature UpdateSignature(string accountId, string signatureId, string userId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null)
+        public UserSignature UpdateSignature(string accountId, string userId, string signatureId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null)
         {
-             ApiResponse<UserSignature> localVarResponse = UpdateSignatureWithHttpInfo(accountId, signatureId, userId, userSignatureDefinition, options);
+             ApiResponse<UserSignature> localVarResponse = UpdateSignatureWithHttpInfo(accountId, userId, signatureId, userSignatureDefinition, options);
              return localVarResponse.Data;
         }
 
@@ -6084,21 +6084,21 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature for a specified user. Creates, or updates, the signature font and initials for the specified user. When creating a signature, you use this resource to create the signature name and then add the signature and initials images into the signature.  ###### Note: This will also create a default signature for the user when one does not exist.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="userSignatureDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of UserSignature</returns>
-        public ApiResponse<UserSignature> UpdateSignatureWithHttpInfo(string accountId, string signatureId, string userId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null)
+        public ApiResponse<UserSignature> UpdateSignatureWithHttpInfo(string accountId, string userId, string signatureId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->UpdateSignature");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateSignature");
             // verify the required parameter 'signatureId' is set
             if (signatureId == null)
                 throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->UpdateSignature");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateSignature");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6125,8 +6125,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
 
             if (options != null)
             {
@@ -6173,13 +6173,13 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature for a specified user. Creates, or updates, the signature font and initials for the specified user. When creating a signature, you use this resource to create the signature name and then add the signature and initials images into the signature.  ###### Note: This will also create a default signature for the user when one does not exist.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="userSignatureDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserSignature</returns>
-        public async System.Threading.Tasks.Task<UserSignature> UpdateSignatureAsync(string accountId, string signatureId, string userId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null)
+        public async System.Threading.Tasks.Task<UserSignature> UpdateSignatureAsync(string accountId, string userId, string signatureId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null)
         {
-             ApiResponse<UserSignature> localVarResponse = await UpdateSignatureAsyncWithHttpInfo(accountId, signatureId, userId, userSignatureDefinition, options);
+             ApiResponse<UserSignature> localVarResponse = await UpdateSignatureAsyncWithHttpInfo(accountId, userId, signatureId, userSignatureDefinition, options);
              return localVarResponse.Data;
 
         }
@@ -6188,21 +6188,21 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature for a specified user. Creates, or updates, the signature font and initials for the specified user. When creating a signature, you use this resource to create the signature name and then add the signature and initials images into the signature.  ###### Note: This will also create a default signature for the user when one does not exist.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="userSignatureDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserSignature)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureAsyncWithHttpInfo(string accountId, string signatureId, string userId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureAsyncWithHttpInfo(string accountId, string userId, string signatureId, UserSignatureDefinition userSignatureDefinition = null, UsersApi.UpdateSignatureOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->UpdateSignature");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateSignature");
             // verify the required parameter 'signatureId' is set
             if (signatureId == null)
                 throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->UpdateSignature");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateSignature");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6229,8 +6229,8 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
 
             if (options != null)
             {
@@ -6272,13 +6272,13 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature image or user initials image for the specified user. Updates the user signature image or user initials image for the specified user. The supported image formats for this file are: gif, png, jpeg, and bmp. The file must be less than 200K.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>UserSignature</returns>
-        public UserSignature UpdateSignatureImage(string accountId, string imageType, string signatureId, string userId)
+        public UserSignature UpdateSignatureImage(string accountId, string userId, string signatureId, string imageType)
         {
-             ApiResponse<UserSignature> localVarResponse = UpdateSignatureImageWithHttpInfo(accountId, imageType, signatureId, userId);
+             ApiResponse<UserSignature> localVarResponse = UpdateSignatureImageWithHttpInfo(accountId, userId, signatureId, imageType);
              return localVarResponse.Data;
         }
 
@@ -6286,24 +6286,24 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature image or user initials image for the specified user. Updates the user signature image or user initials image for the specified user. The supported image formats for this file are: gif, png, jpeg, and bmp. The file must be less than 200K.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>ApiResponse of UserSignature</returns>
-        public ApiResponse<UserSignature> UpdateSignatureImageWithHttpInfo(string accountId, string imageType, string signatureId, string userId)
+        public ApiResponse<UserSignature> UpdateSignatureImageWithHttpInfo(string accountId, string userId, string signatureId, string imageType)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->UpdateSignatureImage");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateSignatureImage");
-            // verify the required parameter 'signatureId' is set
-            if (signatureId == null)
-                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->UpdateSignatureImage");
             // verify the required parameter 'imageType' is set
             if (imageType == null)
                 throw new ApiException(400, "Missing required parameter 'imageType' when calling UsersApi->UpdateSignatureImage");
+            // verify the required parameter 'signatureId' is set
+            if (signatureId == null)
+                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->UpdateSignatureImage");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateSignatureImage");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6330,9 +6330,9 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
+            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
 
 
 
@@ -6367,13 +6367,13 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature image or user initials image for the specified user. Updates the user signature image or user initials image for the specified user. The supported image formats for this file are: gif, png, jpeg, and bmp. The file must be less than 200K.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>Task of UserSignature</returns>
-        public async System.Threading.Tasks.Task<UserSignature> UpdateSignatureImageAsync(string accountId, string imageType, string signatureId, string userId)
+        public async System.Threading.Tasks.Task<UserSignature> UpdateSignatureImageAsync(string accountId, string userId, string signatureId, string imageType)
         {
-             ApiResponse<UserSignature> localVarResponse = await UpdateSignatureImageAsyncWithHttpInfo(accountId, imageType, signatureId, userId);
+             ApiResponse<UserSignature> localVarResponse = await UpdateSignatureImageAsyncWithHttpInfo(accountId, userId, signatureId, imageType);
              return localVarResponse.Data;
 
         }
@@ -6382,24 +6382,24 @@ namespace DocuSign.eSign.Api
         /// Updates the user signature image or user initials image for the specified user. Updates the user signature image or user initials image for the specified user. The supported image formats for this file are: gif, png, jpeg, and bmp. The file must be less than 200K.  The userId property specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>/// <param name="signatureId">The ID of the signature being accessed.</param>/// <param name="imageType">One of **signature_image** or **initials_image**.</param>
         
         
         /// <returns>Task of ApiResponse (UserSignature)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureImageAsyncWithHttpInfo(string accountId, string imageType, string signatureId, string userId)
+        public async System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureImageAsyncWithHttpInfo(string accountId, string userId, string signatureId, string imageType)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->UpdateSignatureImage");
-            // verify the required parameter 'userId' is set
-            if (userId == null)
-                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateSignatureImage");
-            // verify the required parameter 'signatureId' is set
-            if (signatureId == null)
-                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->UpdateSignatureImage");
             // verify the required parameter 'imageType' is set
             if (imageType == null)
                 throw new ApiException(400, "Missing required parameter 'imageType' when calling UsersApi->UpdateSignatureImage");
+            // verify the required parameter 'signatureId' is set
+            if (signatureId == null)
+                throw new ApiException(400, "Missing required parameter 'signatureId' when calling UsersApi->UpdateSignatureImage");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateSignatureImage");
 
             var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6426,9 +6426,9 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
-            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
-            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (signatureId != null) localVarPathParams.Add("signatureId", Configuration.ApiClient.ParameterToString(signatureId)); // path parameter
+            if (imageType != null) localVarPathParams.Add("imageType", Configuration.ApiClient.ParameterToString(imageType)); // path parameter
 
 
 

@@ -5561,40 +5561,6 @@
             <param name="accountId">The external account number (int) or account ID Guid.</param><param name="templateId">The ID of the template being accessed.</param><param name="documentId">The ID of the document being accessed.</param><param name="pageNumber">The page number being accessed.</param> <param name="pageRequest">TBD Description</param>
              <returns>4Task of ApiResponse</returns>
         </member>
-        <member name="M:DocuSign.eSign.Api.ITemplatesApi.GetDocumentPageImage(System.String,System.String,System.String,System.String)">
-            <param name="accountId">The external account number (int) or account ID Guid.</param><param name="templateId">The ID of the template being accessed.</param><param name="documentId">The ID of the document being accessed.</param><param name="pageNumber">The page number being accessed.</param>
-             <returns>1Stream</returns>
-        </member>
-        <member name="M:DocuSign.eSign.Api.ITemplatesApi.GetDocumentPageImageWithHttpInfo(System.String,System.String,System.String,System.String)">
-             <summary>
-             Gets a page image from a template for display.
-             </summary>
-             <remarks>
-             Retrieves a page image for display from the specified template.
-             </remarks>
-            <param name="accountId">The external account number (int) or account ID Guid.</param><param name="templateId">The ID of the template being accessed.</param><param name="documentId">The ID of the document being accessed.</param><param name="pageNumber">The page number being accessed.</param>
-             <returns>2ApiResponse of Stream</returns>
-        </member>
-        <member name="M:DocuSign.eSign.Api.ITemplatesApi.GetDocumentPageImageAsync(System.String,System.String,System.String,System.String)">
-             <summary>
-             Gets a page image from a template for display.
-             </summary>
-             <remarks>
-             Retrieves a page image for display from the specified template.
-             </remarks>
-            <param name="accountId">The external account number (int) or account ID Guid.</param><param name="templateId">The ID of the template being accessed.</param><param name="documentId">The ID of the document being accessed.</param><param name="pageNumber">The page number being accessed.</param>
-             <returns>3Task of Stream</returns>
-        </member>
-        <member name="M:DocuSign.eSign.Api.ITemplatesApi.GetDocumentPageImageAsyncWithHttpInfo(System.String,System.String,System.String,System.String)">
-             <summary>
-             Gets a page image from a template for display.
-             </summary>
-             <remarks>
-             Retrieves a page image for display from the specified template.
-             </remarks>
-            <param name="accountId">The external account number (int) or account ID Guid.</param><param name="templateId">The ID of the template being accessed.</param><param name="documentId">The ID of the document being accessed.</param><param name="pageNumber">The page number being accessed.</param>
-             <returns>4Task of ApiResponse (Stream)</returns>
-        </member>
         <member name="M:DocuSign.eSign.Api.ITemplatesApi.GetLock(System.String,System.String)">
             <param name="accountId">The external account number (int) or account ID Guid.</param><param name="templateId">The ID of the template being accessed.</param>
              <returns>1LockInformation</returns>
@@ -6591,34 +6557,6 @@
              </summary>
             <param name="accountId">The external account number (int) or account ID Guid.</param><param name="templateId">The ID of the template being accessed.</param><param name="documentId">The ID of the document being accessed.</param><param name="pageNumber">The page number being accessed.</param> <param name="pageRequest">TBD Description</param>
              <returns>8Task of ApiResponse</returns>
-        </member>
-        <member name="M:DocuSign.eSign.Api.TemplatesApi.GetDocumentPageImage(System.String,System.String,System.String,System.String)">
-             <summary>
-             Gets a page image from a template for display. Retrieves a page image for display from the specified template.
-             </summary>
-            <param name="accountId">The external account number (int) or account ID Guid.</param><param name="templateId">The ID of the template being accessed.</param><param name="documentId">The ID of the document being accessed.</param><param name="pageNumber">The page number being accessed.</param>
-             <returns>5Stream</returns>
-        </member>
-        <member name="M:DocuSign.eSign.Api.TemplatesApi.GetDocumentPageImageWithHttpInfo(System.String,System.String,System.String,System.String)">
-             <summary>
-             Gets a page image from a template for display. Retrieves a page image for display from the specified template.
-             </summary>
-            <param name="accountId">The external account number (int) or account ID Guid.</param><param name="templateId">The ID of the template being accessed.</param><param name="documentId">The ID of the document being accessed.</param><param name="pageNumber">The page number being accessed.</param>
-             <returns>6ApiResponse of Stream</returns>
-        </member>
-        <member name="M:DocuSign.eSign.Api.TemplatesApi.GetDocumentPageImageAsync(System.String,System.String,System.String,System.String)">
-             <summary>
-             Gets a page image from a template for display. Retrieves a page image for display from the specified template.
-             </summary>
-            <param name="accountId">The external account number (int) or account ID Guid.</param><param name="templateId">The ID of the template being accessed.</param><param name="documentId">The ID of the document being accessed.</param><param name="pageNumber">The page number being accessed.</param>
-             <returns>7Task of Stream</returns>
-        </member>
-        <member name="M:DocuSign.eSign.Api.TemplatesApi.GetDocumentPageImageAsyncWithHttpInfo(System.String,System.String,System.String,System.String)">
-             <summary>
-             Gets a page image from a template for display. Retrieves a page image for display from the specified template.
-             </summary>
-            <param name="accountId">The external account number (int) or account ID Guid.</param><param name="templateId">The ID of the template being accessed.</param><param name="documentId">The ID of the document being accessed.</param><param name="pageNumber">The page number being accessed.</param>
-             <returns>8Task of ApiResponse (Stream)</returns>
         </member>
         <member name="M:DocuSign.eSign.Api.TemplatesApi.GetLock(System.String,System.String)">
              <summary>

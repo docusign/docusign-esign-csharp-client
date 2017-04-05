@@ -120,6 +120,7 @@ namespace SdkTests
             signHere.RecipientId = "1";
             signHere.XPosition = "100";
             signHere.YPosition = "100";
+            signHere.ScaleValue = "0.5";
             signer.Tabs.SignHereTabs.Add(signHere);
 
             envDef.Recipients = new Recipients();

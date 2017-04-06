@@ -1,0 +1,1 @@
+\\Mac\dev\SDKs\csharp\sdk\src\DocuSign.eSign.Test\obj\Debug\DocuSign.eSign.Test.csprojResolveAssemblyReference.cache

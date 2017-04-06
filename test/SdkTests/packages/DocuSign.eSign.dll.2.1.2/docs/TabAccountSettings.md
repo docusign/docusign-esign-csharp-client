@@ -1,0 +1,46 @@
+# DocuSign.eSign.Model.TabAccountSettings
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**AllowTabOrder** | **string** |  | [optional] 
+**AllowTabOrderMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**ApproveDeclineTabsEnabled** | **string** |  | [optional] 
+**ApproveDeclineTabsMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**CalculatedFieldsEnabled** | **string** |  | [optional] 
+**CalculatedFieldsMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**CheckboxTabsEnabled** | **string** |  | [optional] 
+**CheckboxTabsMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**DataFieldRegexEnabled** | **string** |  | [optional] 
+**DataFieldRegexMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**DataFieldSizeEnabled** | **string** |  | [optional] 
+**DataFieldSizeMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**FirstLastEmailTabsEnabled** | **string** |  | [optional] 
+**FirstLastEmailTabsMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**ListTabsEnabled** | **string** |  | [optional] 
+**ListTabsMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**NoteTabsEnabled** | **string** |  | [optional] 
+**NoteTabsMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**RadioTabsEnabled** | **string** |  | [optional] 
+**RadioTabsMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**SavingCustomTabsEnabled** | **string** |  | [optional] 
+**SavingCustomTabsMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**SenderToChangeTabAssignmentsEnabled** | **string** |  | [optional] 
+**SenderToChangeTabAssignmentsMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**SharedCustomTabsEnabled** | **string** |  | [optional] 
+**SharedCustomTabsMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**TabDataLabelEnabled** | **string** |  | [optional] 
+**TabDataLabelMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**TabLocationEnabled** | **string** |  | [optional] 
+**TabLocationMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**TabLockingEnabled** | **string** |  | [optional] 
+**TabLockingMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**TabScaleEnabled** | **string** |  | [optional] 
+**TabScaleMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**TabTextFormattingEnabled** | **string** |  | [optional] 
+**TabTextFormattingMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+**TextTabsEnabled** | **string** |  | [optional] 
+**TextTabsMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

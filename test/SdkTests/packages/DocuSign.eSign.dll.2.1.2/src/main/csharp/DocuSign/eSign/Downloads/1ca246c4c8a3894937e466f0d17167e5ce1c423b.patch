@@ -1,0 +1,862 @@
+From 1ca246c4c8a3894937e466f0d17167e5ce1c423b Mon Sep 17 00:00:00 2001
+From: wing328 <wing328hk@gmail.com>
+Date: Sat, 23 Apr 2016 12:59:36 +0800
+Subject: [PATCH] update java version in pom for java api client
+
+---
+ .../src/main/resources/Java/libraries/feign/pom.mustache            | 6 +++---
+ .../src/main/resources/Java/libraries/jersey2/pom.mustache          | 4 ++--
+ .../src/main/resources/Java/libraries/okhttp-gson/pom.mustache      | 4 ++--
+ .../src/main/resources/Java/libraries/retrofit/pom.mustache         | 4 ++--
+ .../src/main/resources/Java/libraries/retrofit2/pom.mustache        | 3 +--
+ samples/client/petstore/java/feign/pom.xml                          | 2 +-
+ .../feign/src/main/java/io/swagger/client/FormAwareEncoder.java     | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/StringUtil.java      | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/api/PetApi.java      | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/api/StoreApi.java    | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/api/UserApi.java     | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/model/Animal.java    | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/model/Cat.java       | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/model/Category.java  | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/model/Dog.java       | 2 +-
+ .../feign/src/main/java/io/swagger/client/model/FormatTest.java     | 2 +-
+ .../src/main/java/io/swagger/client/model/Model200Response.java     | 2 +-
+ .../src/main/java/io/swagger/client/model/ModelApiResponse.java     | 2 +-
+ .../feign/src/main/java/io/swagger/client/model/ModelReturn.java    | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/model/Name.java      | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/model/Order.java     | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/model/Pet.java       | 2 +-
+ .../src/main/java/io/swagger/client/model/SpecialModelName.java     | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/model/Tag.java       | 2 +-
+ .../java/feign/src/main/java/io/swagger/client/model/User.java      | 2 +-
+ samples/client/petstore/java/jersey2/pom.xml                        | 4 ++--
+ .../java/jersey2/src/main/java/io/swagger/client/ApiException.java  | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/Configuration.java | 2 +-
+ .../petstore/java/jersey2/src/main/java/io/swagger/client/JSON.java | 2 +-
+ .../petstore/java/jersey2/src/main/java/io/swagger/client/Pair.java | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/StringUtil.java    | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/api/PetApi.java    | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/api/StoreApi.java  | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/api/UserApi.java   | 2 +-
+ .../jersey2/src/main/java/io/swagger/client/auth/ApiKeyAuth.java    | 2 +-
+ .../jersey2/src/main/java/io/swagger/client/auth/HttpBasicAuth.java | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/auth/OAuth.java    | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/model/Animal.java  | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/model/Cat.java     | 2 +-
+ .../jersey2/src/main/java/io/swagger/client/model/Category.java     | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/model/Dog.java     | 2 +-
+ .../jersey2/src/main/java/io/swagger/client/model/FormatTest.java   | 2 +-
+ .../src/main/java/io/swagger/client/model/Model200Response.java     | 2 +-
+ .../src/main/java/io/swagger/client/model/ModelApiResponse.java     | 2 +-
+ .../jersey2/src/main/java/io/swagger/client/model/ModelReturn.java  | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/model/Name.java    | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/model/Order.java   | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/model/Pet.java     | 2 +-
+ .../src/main/java/io/swagger/client/model/SpecialModelName.java     | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/model/Tag.java     | 2 +-
+ .../java/jersey2/src/main/java/io/swagger/client/model/User.java    | 2 +-
+ samples/client/petstore/java/okhttp-gson/pom.xml                    | 4 ++--
+ .../okhttp-gson/src/main/java/io/swagger/client/ApiException.java   | 2 +-
+ .../okhttp-gson/src/main/java/io/swagger/client/Configuration.java  | 2 +-
+ .../java/okhttp-gson/src/main/java/io/swagger/client/Pair.java      | 2 +-
+ .../okhttp-gson/src/main/java/io/swagger/client/StringUtil.java     | 2 +-
+ .../src/main/java/io/swagger/client/auth/ApiKeyAuth.java            | 2 +-
+ .../okhttp-gson/src/main/java/io/swagger/client/auth/OAuth.java     | 2 +-
+ samples/client/petstore/java/retrofit/pom.xml                       | 4 ++--
+ .../java/retrofit/src/main/java/io/swagger/client/StringUtil.java   | 2 +-
+ 60 files changed, 68 insertions(+), 69 deletions(-)
+
+diff --git a/modules/swagger-codegen/src/main/resources/Java/libraries/feign/pom.mustache b/modules/swagger-codegen/src/main/resources/Java/libraries/feign/pom.mustache
+index d75158d..03323a6 100644
+--- a/modules/swagger-codegen/src/main/resources/Java/libraries/feign/pom.mustache
++++ b/modules/swagger-codegen/src/main/resources/Java/libraries/feign/pom.mustache
+@@ -100,8 +100,8 @@
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>2.3.2</version>
+         <configuration>
+-          <source>1.6</source>
+-          <target>1.6</target>
++          <source>1.7</source>
++          <target>1.7</target>
+         </configuration>
+       </plugin>
+     </plugins>
+@@ -185,6 +185,6 @@
+     <jodatime-version>2.9.3</jodatime-version>
+     <junit-version>4.12</junit-version>
+     <maven-plugin-version>1.0.0</maven-plugin-version>
+-    <oltu-version>1.0.0</oltu-version>
++    <oltu-version>1.0.1</oltu-version>
+   </properties>
+ </project>
+diff --git a/modules/swagger-codegen/src/main/resources/Java/libraries/jersey2/pom.mustache b/modules/swagger-codegen/src/main/resources/Java/libraries/jersey2/pom.mustache
+index ea940cc..472bbf9 100644
+--- a/modules/swagger-codegen/src/main/resources/Java/libraries/jersey2/pom.mustache
++++ b/modules/swagger-codegen/src/main/resources/Java/libraries/jersey2/pom.mustache
+@@ -100,8 +100,8 @@
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>2.3.2</version>
+         <configuration>
+-          <source>1.6</source>
+-          <target>1.6</target>
++          <source>1.7</source>
++          <target>1.7</target>
+         </configuration>
+       </plugin>
+       <!-- For testing build.gradle -->
+diff --git a/modules/swagger-codegen/src/main/resources/Java/libraries/okhttp-gson/pom.mustache b/modules/swagger-codegen/src/main/resources/Java/libraries/okhttp-gson/pom.mustache
+index 0167254..7f08e5a 100644
+--- a/modules/swagger-codegen/src/main/resources/Java/libraries/okhttp-gson/pom.mustache
++++ b/modules/swagger-codegen/src/main/resources/Java/libraries/okhttp-gson/pom.mustache
+@@ -100,8 +100,8 @@
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>2.3.2</version>
+         <configuration>
+-          <source>1.6</source>
+-          <target>1.6</target>
++          <source>1.7</source>
++          <target>1.7</target>
+         </configuration>
+       </plugin>
+       <!-- For testing build.gradle -->
+diff --git a/modules/swagger-codegen/src/main/resources/Java/libraries/retrofit/pom.mustache b/modules/swagger-codegen/src/main/resources/Java/libraries/retrofit/pom.mustache
+index 2d416a5..9a917f1 100644
+--- a/modules/swagger-codegen/src/main/resources/Java/libraries/retrofit/pom.mustache
++++ b/modules/swagger-codegen/src/main/resources/Java/libraries/retrofit/pom.mustache
+@@ -100,8 +100,8 @@
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>2.3.2</version>
+         <configuration>
+-          <source>1.6</source>
+-          <target>1.6</target>
++          <source>1.7</source>
++          <target>1.7</target>
+         </configuration>
+       </plugin>
+     </plugins>
+diff --git a/modules/swagger-codegen/src/main/resources/Java/libraries/retrofit2/pom.mustache b/modules/swagger-codegen/src/main/resources/Java/libraries/retrofit2/pom.mustache
+index a6453d6..11bbae5 100644
+--- a/modules/swagger-codegen/src/main/resources/Java/libraries/retrofit2/pom.mustache
++++ b/modules/swagger-codegen/src/main/resources/Java/libraries/retrofit2/pom.mustache
+@@ -100,8 +100,7 @@
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>2.3.2</version>
+         <configuration>
+-            <source>
+-            1.7</source>
++            <source>1.7</source>
+             <target>1.7</target>
+         </configuration>
+       </plugin>
+diff --git a/samples/client/petstore/java/feign/pom.xml b/samples/client/petstore/java/feign/pom.xml
+index 1d862a8..164399b 100644
+--- a/samples/client/petstore/java/feign/pom.xml
++++ b/samples/client/petstore/java/feign/pom.xml
+@@ -185,6 +185,6 @@
+     <jodatime-version>2.9.3</jodatime-version>
+     <junit-version>4.12</junit-version>
+     <maven-plugin-version>1.0.0</maven-plugin-version>
+-    <oltu-version>1.0.0</oltu-version>
++    <oltu-version>1.0.1</oltu-version>
+   </properties>
+ </project>
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/FormAwareEncoder.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/FormAwareEncoder.java
+index 2df1139..5d53425 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/FormAwareEncoder.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/FormAwareEncoder.java
+@@ -14,7 +14,7 @@
+ import feign.codec.Encoder;
+ import feign.RequestTemplate;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class FormAwareEncoder implements Encoder {
+   public static final String UTF_8 = "utf-8";
+   private static final String LINE_FEED = "\r\n";
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/StringUtil.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/StringUtil.java
+index 9f79c5f..0a07276 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/StringUtil.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/StringUtil.java
+@@ -1,6 +1,6 @@
+ package io.swagger.client;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class StringUtil {
+   /**
+    * Check if the given array contains the given value (with case-insensitive comparison).
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/PetApi.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/PetApi.java
+index cfe2b47..e1a0e57 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/PetApi.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/PetApi.java
+@@ -12,7 +12,7 @@
+ import java.util.Map;
+ import feign.*;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public interface PetApi extends ApiClient.Api {
+ 
+ 
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/StoreApi.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/StoreApi.java
+index d201859..6b12476 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/StoreApi.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/StoreApi.java
+@@ -10,7 +10,7 @@
+ import java.util.Map;
+ import feign.*;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public interface StoreApi extends ApiClient.Api {
+ 
+ 
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/UserApi.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/UserApi.java
+index 82170bc..281cf2d 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/UserApi.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/api/UserApi.java
+@@ -10,7 +10,7 @@
+ import java.util.Map;
+ import feign.*;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public interface UserApi extends ApiClient.Api {
+ 
+ 
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Animal.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Animal.java
+index 506be04..6b79f42 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Animal.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Animal.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class Animal   {
+   
+   private String className = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Cat.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Cat.java
+index f86b959..09e48e2 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Cat.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Cat.java
+@@ -10,7 +10,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class Cat extends Animal  {
+   
+   private String className = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Category.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Category.java
+index a710f67..6d4ffb9 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Category.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Category.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class Category   {
+   
+   private Long id = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Dog.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Dog.java
+index cc71eeb..5ff3690 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Dog.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Dog.java
+@@ -10,7 +10,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class Dog extends Animal  {
+   
+   private String className = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/FormatTest.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/FormatTest.java
+index abf4168..ae47004 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/FormatTest.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/FormatTest.java
+@@ -11,7 +11,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class FormatTest   {
+   
+   private Integer integer = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Model200Response.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Model200Response.java
+index 4cb90f4..e3d07e1 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Model200Response.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Model200Response.java
+@@ -12,7 +12,7 @@
+  **/
+ 
+ @ApiModel(description = "Model for testing model name starting with number")
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class Model200Response   {
+   
+   private Integer name = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/ModelApiResponse.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/ModelApiResponse.java
+index c51aee2..a1ca4f7 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/ModelApiResponse.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/ModelApiResponse.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class ModelApiResponse   {
+   
+   private Integer code = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/ModelReturn.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/ModelReturn.java
+index a50bb1d..b8b35a7 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/ModelReturn.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/ModelReturn.java
+@@ -12,7 +12,7 @@
+  **/
+ 
+ @ApiModel(description = "Model for testing reserved words")
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class ModelReturn   {
+   
+   private Integer _return = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Name.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Name.java
+index 9e71150..d993ca0 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Name.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Name.java
+@@ -12,7 +12,7 @@
+  **/
+ 
+ @ApiModel(description = "Model for testing model name same as property name")
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class Name   {
+   
+   private Integer name = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Order.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Order.java
+index 8b3f9df..9004aa1 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Order.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Order.java
+@@ -11,7 +11,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class Order   {
+   
+   private Long id = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Pet.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Pet.java
+index a77e69c..f23c912 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Pet.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Pet.java
+@@ -14,7 +14,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class Pet   {
+   
+   private Long id = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/SpecialModelName.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/SpecialModelName.java
+index 4c82bbb..b2b87fa 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/SpecialModelName.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/SpecialModelName.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class SpecialModelName   {
+   
+   private Long specialPropertyName = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Tag.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Tag.java
+index d1fdd1d..55bef83 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Tag.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/Tag.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class Tag   {
+   
+   private Long id = null;
+diff --git a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/User.java b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/User.java
+index 2868b96..d8657dd 100644
+--- a/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/User.java
++++ b/samples/client/petstore/java/feign/src/main/java/io/swagger/client/model/User.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:57:42.363+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:48:24.088+08:00")
+ public class User   {
+   
+   private Long id = null;
+diff --git a/samples/client/petstore/java/jersey2/pom.xml b/samples/client/petstore/java/jersey2/pom.xml
+index 0f88531..c07ae01 100644
+--- a/samples/client/petstore/java/jersey2/pom.xml
++++ b/samples/client/petstore/java/jersey2/pom.xml
+@@ -100,8 +100,8 @@
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>2.3.2</version>
+         <configuration>
+-          <source>1.6</source>
+-          <target>1.6</target>
++          <source>1.7</source>
++          <target>1.7</target>
+         </configuration>
+       </plugin>
+       <!-- For testing build.gradle -->
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/ApiException.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/ApiException.java
+index 0cfce27..d5c0fa3 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/ApiException.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/ApiException.java
+@@ -3,7 +3,7 @@
+ import java.util.Map;
+ import java.util.List;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class ApiException extends Exception {
+   private int code = 0;
+   private Map<String, List<String>> responseHeaders = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/Configuration.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/Configuration.java
+index 0044a09..91b18d8 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/Configuration.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/Configuration.java
+@@ -1,6 +1,6 @@
+ package io.swagger.client;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class Configuration {
+   private static ApiClient defaultApiClient = new ApiClient();
+ 
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/JSON.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/JSON.java
+index 2407eb9..a6ffdc8 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/JSON.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/JSON.java
+@@ -8,7 +8,7 @@
+ 
+ import javax.ws.rs.ext.ContextResolver;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class JSON implements ContextResolver<ObjectMapper> {
+   private ObjectMapper mapper;
+ 
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/Pair.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/Pair.java
+index 0ae34f5..b353299 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/Pair.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/Pair.java
+@@ -1,6 +1,6 @@
+ package io.swagger.client;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class Pair {
+     private String name = "";
+     private String value = "";
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/StringUtil.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/StringUtil.java
+index 3536660..6409e1b 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/StringUtil.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/StringUtil.java
+@@ -1,6 +1,6 @@
+ package io.swagger.client;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class StringUtil {
+   /**
+    * Check if the given array contains the given value (with case-insensitive comparison).
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/PetApi.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/PetApi.java
+index 115a0ed..39b9775 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/PetApi.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/PetApi.java
+@@ -16,7 +16,7 @@
+ import java.util.List;
+ import java.util.Map;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class PetApi {
+   private ApiClient apiClient;
+ 
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/StoreApi.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/StoreApi.java
+index 38c2393..d2a87ef 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/StoreApi.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/StoreApi.java
+@@ -14,7 +14,7 @@
+ import java.util.List;
+ import java.util.Map;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class StoreApi {
+   private ApiClient apiClient;
+ 
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/UserApi.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/UserApi.java
+index 83ec59e..b97e235 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/UserApi.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/api/UserApi.java
+@@ -14,7 +14,7 @@
+ import java.util.List;
+ import java.util.Map;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class UserApi {
+   private ApiClient apiClient;
+ 
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/ApiKeyAuth.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/ApiKeyAuth.java
+index bcc11dd..6250618 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/ApiKeyAuth.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/ApiKeyAuth.java
+@@ -5,7 +5,7 @@
+ import java.util.Map;
+ import java.util.List;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class ApiKeyAuth implements Authentication {
+   private final String location;
+   private final String paramName;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/HttpBasicAuth.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/HttpBasicAuth.java
+index 12bf82a..65681bc 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/HttpBasicAuth.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/HttpBasicAuth.java
+@@ -9,7 +9,7 @@
+ 
+ import java.io.UnsupportedEncodingException;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class HttpBasicAuth implements Authentication {
+   private String username;
+   private String password;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/OAuth.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/OAuth.java
+index 886832f..dda7cae 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/OAuth.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/auth/OAuth.java
+@@ -5,7 +5,7 @@
+ import java.util.Map;
+ import java.util.List;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class OAuth implements Authentication {
+   private String accessToken;
+ 
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Animal.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Animal.java
+index cdb406c..a4dfdc3 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Animal.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Animal.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class Animal   {
+   
+   private String className = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Cat.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Cat.java
+index 36d6ad9..f150e8d 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Cat.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Cat.java
+@@ -10,7 +10,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class Cat extends Animal  {
+   
+   private String className = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Category.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Category.java
+index 027e28c..78f4378 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Category.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Category.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class Category   {
+   
+   private Long id = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Dog.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Dog.java
+index b68ebd6..45c8569 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Dog.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Dog.java
+@@ -10,7 +10,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class Dog extends Animal  {
+   
+   private String className = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/FormatTest.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/FormatTest.java
+index 131cc5b..774ce0e 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/FormatTest.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/FormatTest.java
+@@ -11,7 +11,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class FormatTest   {
+   
+   private Integer integer = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Model200Response.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Model200Response.java
+index 392d951..cd6a377 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Model200Response.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Model200Response.java
+@@ -12,7 +12,7 @@
+  **/
+ 
+ @ApiModel(description = "Model for testing model name starting with number")
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class Model200Response   {
+   
+   private Integer name = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/ModelApiResponse.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/ModelApiResponse.java
+index 08634a2..5a3f925 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/ModelApiResponse.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/ModelApiResponse.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class ModelApiResponse   {
+   
+   private Integer code = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/ModelReturn.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/ModelReturn.java
+index 6e4fe9e..e621486 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/ModelReturn.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/ModelReturn.java
+@@ -12,7 +12,7 @@
+  **/
+ 
+ @ApiModel(description = "Model for testing reserved words")
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class ModelReturn   {
+   
+   private Integer _return = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Name.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Name.java
+index d1eb0b2..f710f61 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Name.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Name.java
+@@ -12,7 +12,7 @@
+  **/
+ 
+ @ApiModel(description = "Model for testing model name same as property name")
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class Name   {
+   
+   private Integer name = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Order.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Order.java
+index 61a3207..c2fbdbc 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Order.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Order.java
+@@ -11,7 +11,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class Order   {
+   
+   private Long id = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Pet.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Pet.java
+index 1d90660..100c8f2 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Pet.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Pet.java
+@@ -14,7 +14,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class Pet   {
+   
+   private Long id = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/SpecialModelName.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/SpecialModelName.java
+index 580088f..fa2813e 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/SpecialModelName.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/SpecialModelName.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class SpecialModelName   {
+   
+   private Long specialPropertyName = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Tag.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Tag.java
+index 2adc217..f82159f 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Tag.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/Tag.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class Tag   {
+   
+   private Long id = null;
+diff --git a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/User.java b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/User.java
+index 22fb437..56bfb77 100644
+--- a/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/User.java
++++ b/samples/client/petstore/java/jersey2/src/main/java/io/swagger/client/model/User.java
+@@ -9,7 +9,7 @@
+ 
+ 
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T22:05:03.730+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:58:40.273+08:00")
+ public class User   {
+   
+   private Long id = null;
+diff --git a/samples/client/petstore/java/okhttp-gson/pom.xml b/samples/client/petstore/java/okhttp-gson/pom.xml
+index f160c89..6b5fb46 100644
+--- a/samples/client/petstore/java/okhttp-gson/pom.xml
++++ b/samples/client/petstore/java/okhttp-gson/pom.xml
+@@ -100,8 +100,8 @@
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>2.3.2</version>
+         <configuration>
+-          <source>1.6</source>
+-          <target>1.6</target>
++          <source>1.7</source>
++          <target>1.7</target>
+         </configuration>
+       </plugin>
+       <!-- For testing build.gradle -->
+diff --git a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/ApiException.java b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/ApiException.java
+index c1c2545..91d660b 100644
+--- a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/ApiException.java
++++ b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/ApiException.java
+@@ -3,7 +3,7 @@
+ import java.util.Map;
+ import java.util.List;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T21:38:18.907+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:54:48.271+08:00")
+ public class ApiException extends Exception {
+   private int code = 0;
+   private Map<String, List<String>> responseHeaders = null;
+diff --git a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/Configuration.java b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/Configuration.java
+index 19d6c65..cba4c9e 100644
+--- a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/Configuration.java
++++ b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/Configuration.java
+@@ -1,6 +1,6 @@
+ package io.swagger.client;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T21:38:18.907+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:54:48.271+08:00")
+ public class Configuration {
+   private static ApiClient defaultApiClient = new ApiClient();
+ 
+diff --git a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/Pair.java b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/Pair.java
+index fb7ed70..d7d9f17 100644
+--- a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/Pair.java
++++ b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/Pair.java
+@@ -1,6 +1,6 @@
+ package io.swagger.client;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T21:38:18.907+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:54:48.271+08:00")
+ public class Pair {
+     private String name = "";
+     private String value = "";
+diff --git a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/StringUtil.java b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/StringUtil.java
+index d358b60..bcd8b81 100644
+--- a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/StringUtil.java
++++ b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/StringUtil.java
+@@ -1,6 +1,6 @@
+ package io.swagger.client;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T21:38:18.907+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:54:48.271+08:00")
+ public class StringUtil {
+   /**
+    * Check if the given array contains the given value (with case-insensitive comparison).
+diff --git a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/auth/ApiKeyAuth.java b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/auth/ApiKeyAuth.java
+index 6a4080e..81c31c9 100644
+--- a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/auth/ApiKeyAuth.java
++++ b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/auth/ApiKeyAuth.java
+@@ -5,7 +5,7 @@
+ import java.util.Map;
+ import java.util.List;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T21:38:18.907+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:54:48.271+08:00")
+ public class ApiKeyAuth implements Authentication {
+   private final String location;
+   private final String paramName;
+diff --git a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/auth/OAuth.java b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/auth/OAuth.java
+index d9e49f9..b281311 100644
+--- a/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/auth/OAuth.java
++++ b/samples/client/petstore/java/okhttp-gson/src/main/java/io/swagger/client/auth/OAuth.java
+@@ -5,7 +5,7 @@
+ import java.util.Map;
+ import java.util.List;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T21:38:18.907+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:54:48.271+08:00")
+ public class OAuth implements Authentication {
+   private String accessToken;
+ 
+diff --git a/samples/client/petstore/java/retrofit/pom.xml b/samples/client/petstore/java/retrofit/pom.xml
+index a0cb2d5..2fe5ddc 100644
+--- a/samples/client/petstore/java/retrofit/pom.xml
++++ b/samples/client/petstore/java/retrofit/pom.xml
+@@ -100,8 +100,8 @@
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>2.3.2</version>
+         <configuration>
+-          <source>1.6</source>
+-          <target>1.6</target>
++          <source>1.7</source>
++          <target>1.7</target>
+         </configuration>
+       </plugin>
+     </plugins>
+diff --git a/samples/client/petstore/java/retrofit/src/main/java/io/swagger/client/StringUtil.java b/samples/client/petstore/java/retrofit/src/main/java/io/swagger/client/StringUtil.java
+index 2b49da0..8adb42d 100644
+--- a/samples/client/petstore/java/retrofit/src/main/java/io/swagger/client/StringUtil.java
++++ b/samples/client/petstore/java/retrofit/src/main/java/io/swagger/client/StringUtil.java
+@@ -1,6 +1,6 @@
+ package io.swagger.client;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-22T23:01:11.351+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-04-23T12:55:47.640+08:00")
+ public class StringUtil {
+   /**
+    * Check if the given array contains the given value (with case-insensitive comparison).

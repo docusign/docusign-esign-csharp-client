@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+DocuSign REST API
+
+The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+
+OpenAPI spec version: v2
+Contact: devcenter@docusign.com
+-->
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19F1DEBC-DE5E-4517-8062-F000CD499087}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DocuSign.eSign.Test</RootNamespace>
+    <AssemblyName>DocuSign.eSign.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=2.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.HttpListener.2.0.2\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Hosting.3.1.0\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.UnitTesting.11.0.50727.1\lib\net45\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath Condition="Exists('$(SolutionDir)\packages')">$(SolutionDir)\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath Condition="Exists('..\packages')">..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath Condition="Exists('..\..\packages')">..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath Condition="Exists('$(SolutionDir)\packages')">$(SolutionDir)\packages\RestSharpSigned.105.1.0\lib\net45\RestSharp.dll</HintPath>
+      <HintPath Condition="Exists('..\packages')">..\packages\RestSharpSigned.105.1.0\lib\net45\RestSharp.dll</HintPath>
+      <HintPath Condition="Exists('..\..\packages')">..\..\packages\RestSharpSigned.105.1.0\lib\net45\RestSharp.dll</HintPath>
+      <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\RestSharpSigned.105.1.0\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath Condition="Exists('$(SolutionDir)\packages')">$(SolutionDir)\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <HintPath Condition="Exists('..\packages')">..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <HintPath Condition="Exists('..\..\packages')">..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\AccountsApiTests.cs" />
+    <Compile Include="Api\AuthenticationApiTests.cs" />
+    <Compile Include="Api\BillingApiTests.cs" />
+    <Compile Include="Api\BulkEnvelopesApiTests.cs" />
+    <Compile Include="Api\CloudStorageApiTests.cs" />
+    <Compile Include="Api\ConnectApiTests.cs" />
+    <Compile Include="Api\CustomTabsApiTests.cs" />
+    <Compile Include="Api\DiagnosticsApiTests.cs" />
+    <Compile Include="Api\EnvelopesApiTests.cs" />
+    <Compile Include="Api\FoldersApiTests.cs" />
+    <Compile Include="Api\GroupsApiTests.cs" />
+    <Compile Include="Api\OAuthFlowTests.cs" />
+    <Compile Include="Api\PowerFormsApiTests.cs" />
+    <Compile Include="Api\SigningGroupsApiTests.cs" />
+    <Compile Include="Api\TemplatesApiTests.cs" />
+    <Compile Include="Api\UsersApiTests.cs" />
+    <Compile Include="Api\WorkspacesApiTests.cs" />
+    <Compile Include="Model\AccountAddressTests.cs" />
+    <Compile Include="Model\AccountBillingPlanResponseTests.cs" />
+    <Compile Include="Model\AccountBillingPlanTests.cs" />
+    <Compile Include="Model\AccountInformationTests.cs" />
+    <Compile Include="Model\AccountRoleSettingsTests.cs" />
+    <Compile Include="Model\AccountSettingsInformationTests.cs" />
+    <Compile Include="Model\AccountSharedAccessTests.cs" />
+    <Compile Include="Model\AccountSignatureProviderOptionTests.cs" />
+    <Compile Include="Model\AccountSignatureProvidersTests.cs" />
+    <Compile Include="Model\AccountSignatureProviderTests.cs" />
+    <Compile Include="Model\AddOnTests.cs" />
+    <Compile Include="Model\AddressInformationInputTests.cs" />
+    <Compile Include="Model\AddressInformationTests.cs" />
+    <Compile Include="Model\AddressInformationV2Tests.cs" />
+    <Compile Include="Model\AgentTests.cs" />
+    <Compile Include="Model\ApiRequestLogsResultTests.cs" />
+    <Compile Include="Model\ApiRequestLogTests.cs" />
+    <Compile Include="Model\ApproveTests.cs" />
+    <Compile Include="Model\AppStoreProductTests.cs" />
+    <Compile Include="Model\AppStoreReceiptTests.cs" />
+    <Compile Include="Model\AttachmentTests.cs" />
+    <Compile Include="Model\AuthenticationMethodTests.cs" />
+    <Compile Include="Model\AuthenticationStatusTests.cs" />
+    <Compile Include="Model\BccEmailAddressTests.cs" />
+    <Compile Include="Model\BillingChargeResponseTests.cs" />
+    <Compile Include="Model\BillingChargeTests.cs" />
+    <Compile Include="Model\BillingDiscountTests.cs" />
+    <Compile Include="Model\BillingInvoiceItemTests.cs" />
+    <Compile Include="Model\BillingInvoicesResponseTests.cs" />
+    <Compile Include="Model\BillingInvoicesSummaryTests.cs" />
+    <Compile Include="Model\BillingInvoiceTests.cs" />
+    <Compile Include="Model\BillingPaymentItemTests.cs" />
+    <Compile Include="Model\BillingPaymentRequestTests.cs" />
+    <Compile Include="Model\BillingPaymentResponseTests.cs" />
+    <Compile Include="Model\BillingPaymentsResponseTests.cs" />
+    <Compile Include="Model\BillingPaymentTests.cs" />
+    <Compile Include="Model\BillingPlanInformationTests.cs" />
+    <Compile Include="Model\BillingPlanPreviewTests.cs" />
+    <Compile Include="Model\BillingPlanResponseTests.cs" />
+    <Compile Include="Model\BillingPlansResponseTests.cs" />
+    <Compile Include="Model\BillingPlanTests.cs" />
+    <Compile Include="Model\BillingPlanUpdateResponseTests.cs" />
+    <Compile Include="Model\BillingPriceTests.cs" />
+    <Compile Include="Model\BrandEmailContentTests.cs" />
+    <Compile Include="Model\BrandLinkTests.cs" />
+    <Compile Include="Model\BrandLogosTests.cs" />
+    <Compile Include="Model\BrandRequestTests.cs" />
+    <Compile Include="Model\BrandResourcesListTests.cs" />
+    <Compile Include="Model\BrandResourcesTests.cs" />
+    <Compile Include="Model\BrandResourceUrlsTests.cs" />
+    <Compile Include="Model\BrandsRequestTests.cs" />
+    <Compile Include="Model\BrandsResponseTests.cs" />
+    <Compile Include="Model\BrandTests.cs" />
+    <Compile Include="Model\BulkEnvelopesResponseTests.cs" />
+    <Compile Include="Model\BulkEnvelopeStatusTests.cs" />
+    <Compile Include="Model\BulkEnvelopeTests.cs" />
+    <Compile Include="Model\BulkRecipientSignatureProviderTests.cs" />
+    <Compile Include="Model\BulkRecipientsRequestTests.cs" />
+    <Compile Include="Model\BulkRecipientsResponseTests.cs" />
+    <Compile Include="Model\BulkRecipientsSummaryResponseTests.cs" />
+    <Compile Include="Model\BulkRecipientsUpdateResponseTests.cs" />
+    <Compile Include="Model\BulkRecipientTabLabelTests.cs" />
+    <Compile Include="Model\BulkRecipientTests.cs" />
+    <Compile Include="Model\CaptiveRecipientInformationTests.cs" />
+    <Compile Include="Model\CaptiveRecipientTests.cs" />
+    <Compile Include="Model\CarbonCopyTests.cs" />
+    <Compile Include="Model\CertifiedDeliveryTests.cs" />
+    <Compile Include="Model\CheckboxTests.cs" />
+    <Compile Include="Model\ChunkedUploadPartTests.cs" />
+    <Compile Include="Model\ChunkedUploadRequestTests.cs" />
+    <Compile Include="Model\ChunkedUploadResponseTests.cs" />
+    <Compile Include="Model\CloudStorageProvidersTests.cs" />
+    <Compile Include="Model\CloudStorageProviderTests.cs" />
+    <Compile Include="Model\CompanyTests.cs" />
+    <Compile Include="Model\CompositeTemplateTests.cs" />
+    <Compile Include="Model\ConnectConfigResultsTests.cs" />
+    <Compile Include="Model\ConnectCustomConfigurationTests.cs" />
+    <Compile Include="Model\ConnectDebugLogTests.cs" />
+    <Compile Include="Model\ConnectFailureFilterTests.cs" />
+    <Compile Include="Model\ConnectFailureResultsTests.cs" />
+    <Compile Include="Model\ConnectFailureResultTests.cs" />
+    <Compile Include="Model\ConnectLogsTests.cs" />
+    <Compile Include="Model\ConnectLogTests.cs" />
+    <Compile Include="Model\ConsoleViewRequestTests.cs" />
+    <Compile Include="Model\ConsumerDisclosureTests.cs" />
+    <Compile Include="Model\ContactGetResponseTests.cs" />
+    <Compile Include="Model\ContactModRequestTests.cs" />
+    <Compile Include="Model\ContactTests.cs" />
+    <Compile Include="Model\ContactUpdateResponseTests.cs" />
+    <Compile Include="Model\CorrectViewRequestTests.cs" />
+    <Compile Include="Model\CountryTests.cs" />
+    <Compile Include="Model\CreditCardInformationTests.cs" />
+    <Compile Include="Model\CreditCardTypesTests.cs" />
+    <Compile Include="Model\CurrencyFeatureSetPriceTests.cs" />
+    <Compile Include="Model\CurrencyPlanPriceTests.cs" />
+    <Compile Include="Model\CustomFieldsEnvelopeTests.cs" />
+    <Compile Include="Model\CustomFieldsTests.cs" />
+    <Compile Include="Model\CustomFieldV2Tests.cs" />
+    <Compile Include="Model\CustomSettingsInformationTests.cs" />
+    <Compile Include="Model\DateSignedTests.cs" />
+    <Compile Include="Model\DateTests.cs" />
+    <Compile Include="Model\DeclineTests.cs" />
+    <Compile Include="Model\DiagnosticsSettingsInformationTests.cs" />
+    <Compile Include="Model\DobInformationInputTests.cs" />
+    <Compile Include="Model\DocumentFieldsInformationTests.cs" />
+    <Compile Include="Model\DocumentTemplateListTests.cs" />
+    <Compile Include="Model\DocumentTemplateTests.cs" />
+    <Compile Include="Model\DocumentTests.cs" />
+    <Compile Include="Model\DocumentVisibilityListTests.cs" />
+    <Compile Include="Model\DocumentVisibilityTests.cs" />
+    <Compile Include="Model\EditorTests.cs" />
+    <Compile Include="Model\EmailAddressTests.cs" />
+    <Compile Include="Model\EmailSettingsTests.cs" />
+    <Compile Include="Model\EmailTests.cs" />
+    <Compile Include="Model\ENoteConfigurationTests.cs" />
+    <Compile Include="Model\EnvelopeAttachmentsRequestTests.cs" />
+    <Compile Include="Model\EnvelopeAttachmentsResultTests.cs" />
+    <Compile Include="Model\EnvelopeAttachmentTests.cs" />
+    <Compile Include="Model\EnvelopeAuditEventResponseTests.cs" />
+    <Compile Include="Model\EnvelopeAuditEventTests.cs" />
+    <Compile Include="Model\EnvelopeDefinitionTests.cs" />
+    <Compile Include="Model\EnvelopeDocumentsResultTests.cs" />
+    <Compile Include="Model\EnvelopeDocumentTests.cs" />
+    <Compile Include="Model\EnvelopeEventTests.cs" />
+    <Compile Include="Model\EnvelopeFormDataTests.cs" />
+    <Compile Include="Model\EnvelopeIdsRequestTests.cs" />
+    <Compile Include="Model\EnvelopeIdTests.cs" />
+    <Compile Include="Model\EnvelopeNotificationRequestTests.cs" />
+    <Compile Include="Model\EnvelopesInformationTests.cs" />
+    <Compile Include="Model\EnvelopeSummaryTests.cs" />
+    <Compile Include="Model\EnvelopeTemplateDefinitionTests.cs" />
+    <Compile Include="Model\EnvelopeTemplateResultsTests.cs" />
+    <Compile Include="Model\EnvelopeTemplateResultTests.cs" />
+    <Compile Include="Model\EnvelopeTemplateTests.cs" />
+    <Compile Include="Model\EnvelopeTests.cs" />
+    <Compile Include="Model\EnvelopeTransactionStatusTests.cs" />
+    <Compile Include="Model\EnvelopeUpdateSummaryTests.cs" />
+    <Compile Include="Model\ErrorDetailsTests.cs" />
+    <Compile Include="Model\EventNotificationTests.cs" />
+    <Compile Include="Model\EventResultTests.cs" />
+    <Compile Include="Model\ExpirationsTests.cs" />
+    <Compile Include="Model\ExternalDocServiceErrorDetailsTests.cs" />
+    <Compile Include="Model\ExternalFileTests.cs" />
+    <Compile Include="Model\ExternalFolderTests.cs" />
+    <Compile Include="Model\FeatureSetTests.cs" />
+    <Compile Include="Model\FileTypeListTests.cs" />
+    <Compile Include="Model\FileTypeTests.cs" />
+    <Compile Include="Model\FilterTests.cs" />
+    <Compile Include="Model\FirstNameTests.cs" />
+    <Compile Include="Model\FolderItemResponseTests.cs" />
+    <Compile Include="Model\FolderItemsResponseTests.cs" />
+    <Compile Include="Model\FolderItemTests.cs" />
+    <Compile Include="Model\FolderItemV2Tests.cs" />
+    <Compile Include="Model\FoldersRequestTests.cs" />
+    <Compile Include="Model\FoldersResponseTests.cs" />
+    <Compile Include="Model\FolderTests.cs" />
+    <Compile Include="Model\ForgottenPasswordInformationTests.cs" />
+    <Compile Include="Model\FormulaTabTests.cs" />
+    <Compile Include="Model\FullNameTests.cs" />
+    <Compile Include="Model\GroupInformationTests.cs" />
+    <Compile Include="Model\GroupTests.cs" />
+    <Compile Include="Model\IdCheckInformationInputTests.cs" />
+    <Compile Include="Model\InitialHereTests.cs" />
+    <Compile Include="Model\InlineTemplateTests.cs" />
+    <Compile Include="Model\InPersonSignerTests.cs" />
+    <Compile Include="Model\IntegratedUserInfoListTests.cs" />
+    <Compile Include="Model\IntermediaryTests.cs" />
+    <Compile Include="Model\LastNameTests.cs" />
+    <Compile Include="Model\ListCustomFieldTests.cs" />
+    <Compile Include="Model\ListItemTests.cs" />
+    <Compile Include="Model\ListTests.cs" />
+    <Compile Include="Model\LockInformationTests.cs" />
+    <Compile Include="Model\LockRequestTests.cs" />
+    <Compile Include="Model\LoginAccountTests.cs" />
+    <Compile Include="Model\LoginInformationTests.cs" />
+    <Compile Include="Model\MatchBoxTests.cs" />
+    <Compile Include="Model\MemberGroupSharedItemTests.cs" />
+    <Compile Include="Model\MemberSharedItemsTests.cs" />
+    <Compile Include="Model\MergeFieldTests.cs" />
+    <Compile Include="Model\MobileNotifierConfigurationInformationTests.cs" />
+    <Compile Include="Model\MobileNotifierConfigurationTests.cs" />
+    <Compile Include="Model\MoneyTests.cs" />
+    <Compile Include="Model\NameValueTests.cs" />
+    <Compile Include="Model\NewAccountDefinitionTests.cs" />
+    <Compile Include="Model\NewAccountSummaryTests.cs" />
+    <Compile Include="Model\NewUsersDefinitionTests.cs" />
+    <Compile Include="Model\NewUsersSummaryTests.cs" />
+    <Compile Include="Model\NewUserTests.cs" />
+    <Compile Include="Model\NotaryHostTests.cs" />
+    <Compile Include="Model\NoteTests.cs" />
+    <Compile Include="Model\NotificationTests.cs" />
+    <Compile Include="Model\NumberTests.cs" />
+    <Compile Include="Model\OauthAccessTests.cs" />
+    <Compile Include="Model\OfflineAttributesTests.cs" />
+    <Compile Include="Model\PageImagesTests.cs" />
+    <Compile Include="Model\PageRequestTests.cs" />
+    <Compile Include="Model\PageTests.cs" />
+    <Compile Include="Model\PaymentDetailsTests.cs" />
+    <Compile Include="Model\PaymentLineItemTests.cs" />
+    <Compile Include="Model\PermissionProfileInformationTests.cs" />
+    <Compile Include="Model\PermissionProfileTests.cs" />
+    <Compile Include="Model\PlanInformationTests.cs" />
+    <Compile Include="Model\PostTransactionsRequestTests.cs" />
+    <Compile Include="Model\PostTransactionsResponseTests.cs" />
+    <Compile Include="Model\PowerFormFormDataEnvelopeTests.cs" />
+    <Compile Include="Model\PowerFormFormDataRecipientTests.cs" />
+    <Compile Include="Model\PowerFormRecipientTests.cs" />
+    <Compile Include="Model\PowerFormSendersResponseTests.cs" />
+    <Compile Include="Model\PowerFormsFormDataResponseTests.cs" />
+    <Compile Include="Model\PowerFormsRequestTests.cs" />
+    <Compile Include="Model\PowerFormsResponseTests.cs" />
+    <Compile Include="Model\PowerFormTests.cs" />
+    <Compile Include="Model\PropertyMetadataTests.cs" />
+    <Compile Include="Model\ProvinceTests.cs" />
+    <Compile Include="Model\ProvisioningInformationTests.cs" />
+    <Compile Include="Model\PurchasedEnvelopesInformationTests.cs" />
+    <Compile Include="Model\RadioGroupTests.cs" />
+    <Compile Include="Model\RadioTests.cs" />
+    <Compile Include="Model\RecipientAttachmentTests.cs" />
+    <Compile Include="Model\RecipientDomainTests.cs" />
+    <Compile Include="Model\RecipientEmailNotificationTests.cs" />
+    <Compile Include="Model\RecipientEventTests.cs" />
+    <Compile Include="Model\RecipientFormDataTests.cs" />
+    <Compile Include="Model\RecipientNamesResponseTests.cs" />
+    <Compile Include="Model\RecipientPhoneAuthenticationTests.cs" />
+    <Compile Include="Model\RecipientSAMLAuthenticationTests.cs" />
+    <Compile Include="Model\RecipientSignatureInformationTests.cs" />
+    <Compile Include="Model\RecipientSignatureProviderOptionsTests.cs" />
+    <Compile Include="Model\RecipientSignatureProviderTests.cs" />
+    <Compile Include="Model\RecipientSMSAuthenticationTests.cs" />
+    <Compile Include="Model\RecipientsTests.cs" />
+    <Compile Include="Model\RecipientsUpdateSummaryTests.cs" />
+    <Compile Include="Model\RecipientUpdateResponseTests.cs" />
+    <Compile Include="Model\RecipientViewRequestTests.cs" />
+    <Compile Include="Model\ReferralInformationTests.cs" />
+    <Compile Include="Model\RemindersTests.cs" />
+    <Compile Include="Model\ResourceInformationTests.cs" />
+    <Compile Include="Model\ReturnUrlRequestTests.cs" />
+    <Compile Include="Model\SamlAssertionAttributeTests.cs" />
+    <Compile Include="Model\SeatDiscountTests.cs" />
+    <Compile Include="Model\SenderEmailNotificationsTests.cs" />
+    <Compile Include="Model\ServerTemplateTests.cs" />
+    <Compile Include="Model\ServiceInformationTests.cs" />
+    <Compile Include="Model\ServiceVersionTests.cs" />
+    <Compile Include="Model\SettingsMetadataTests.cs" />
+    <Compile Include="Model\SharedItemTests.cs" />
+    <Compile Include="Model\SignatureProviderRequiredOptionTests.cs" />
+    <Compile Include="Model\SignatureTypeTests.cs" />
+    <Compile Include="Model\SignerAttachmentTests.cs" />
+    <Compile Include="Model\SignerEmailNotificationsTests.cs" />
+    <Compile Include="Model\SignerTests.cs" />
+    <Compile Include="Model\SignHereTests.cs" />
+    <Compile Include="Model\SigningGroupInformationTests.cs" />
+    <Compile Include="Model\SigningGroupTests.cs" />
+    <Compile Include="Model\SigningGroupUsersTests.cs" />
+    <Compile Include="Model\SigningGroupUserTests.cs" />
+    <Compile Include="Model\SocialAccountInformationTests.cs" />
+    <Compile Include="Model\SocialAuthenticationTests.cs" />
+    <Compile Include="Model\Ssn4InformationInputTests.cs" />
+    <Compile Include="Model\Ssn9InformationInputTests.cs" />
+    <Compile Include="Model\SsnTests.cs" />
+    <Compile Include="Model\TabAccountSettingsTests.cs" />
+    <Compile Include="Model\TabMetadataListTests.cs" />
+    <Compile Include="Model\TabMetadataTests.cs" />
+    <Compile Include="Model\TabsTests.cs" />
+    <Compile Include="Model\TemplateCustomFieldsTests.cs" />
+    <Compile Include="Model\TemplateDocumentsResultTests.cs" />
+    <Compile Include="Model\TemplateDocumentVisibilityListTests.cs" />
+    <Compile Include="Model\TemplateInformationTests.cs" />
+    <Compile Include="Model\TemplateMatchTests.cs" />
+    <Compile Include="Model\TemplateNotificationRequestTests.cs" />
+    <Compile Include="Model\TemplateRecipientsTests.cs" />
+    <Compile Include="Model\TemplateRoleTests.cs" />
+    <Compile Include="Model\TemplateSharedItemTests.cs" />
+    <Compile Include="Model\TemplateSummaryTests.cs" />
+    <Compile Include="Model\TemplateTabsTests.cs" />
+    <Compile Include="Model\TemplateUpdateSummaryTests.cs" />
+    <Compile Include="Model\TextCustomFieldTests.cs" />
+    <Compile Include="Model\TextTests.cs" />
+    <Compile Include="Model\TitleTests.cs" />
+    <Compile Include="Model\UsageHistoryTests.cs" />
+    <Compile Include="Model\UserAccountManagementGranularInformationTests.cs" />
+    <Compile Include="Model\UserInfoListTests.cs" />
+    <Compile Include="Model\UserInformationListTests.cs" />
+    <Compile Include="Model\UserInformationTests.cs" />
+    <Compile Include="Model\UserInfoTests.cs" />
+    <Compile Include="Model\UserPasswordInformationTests.cs" />
+    <Compile Include="Model\UserProfileTests.cs" />
+    <Compile Include="Model\UserSettingsInformationTests.cs" />
+    <Compile Include="Model\UserSharedItemTests.cs" />
+    <Compile Include="Model\UserSignatureDefinitionTests.cs" />
+    <Compile Include="Model\UserSignaturesInformationTests.cs" />
+    <Compile Include="Model\UserSignatureTests.cs" />
+    <Compile Include="Model\UserSocialIdResultTests.cs" />
+    <Compile Include="Model\UsersResponseTests.cs" />
+    <Compile Include="Model\ViewLinkRequestTests.cs" />
+    <Compile Include="Model\ViewTests.cs" />
+    <Compile Include="Model\ViewUrlTests.cs" />
+    <Compile Include="Model\WorkspaceFolderContentsTests.cs" />
+    <Compile Include="Model\WorkspaceItemListTests.cs" />
+    <Compile Include="Model\WorkspaceItemTests.cs" />
+    <Compile Include="Model\WorkspaceListTests.cs" />
+    <Compile Include="Model\WorkspaceTests.cs" />
+    <Compile Include="Model\WorkspaceUserAuthorizationTests.cs" />
+    <Compile Include="Model\WorkspaceUserTests.cs" />
+    <Compile Include="Model\ZipTests.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DocuSign.eSign\DocuSign.eSign.csproj">
+      <Project>{586bc84c-a947-43b0-902d-77fe421fd4f2}</Project>
+      <Name>DocuSign.eSign</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

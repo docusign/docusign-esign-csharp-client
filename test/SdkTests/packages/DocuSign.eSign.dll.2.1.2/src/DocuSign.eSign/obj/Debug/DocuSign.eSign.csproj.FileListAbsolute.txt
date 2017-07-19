@@ -1,7 +1,0 @@
-\\Mac\dev\SDKs\csharp\sdk\src\DocuSign.eSign\bin\Debug\DocuSign.eSign.dll
-\\Mac\dev\SDKs\csharp\sdk\src\DocuSign.eSign\bin\Debug\DocuSign.eSign.pdb
-\\Mac\dev\SDKs\csharp\sdk\src\DocuSign.eSign\bin\Debug\Newtonsoft.Json.dll
-\\Mac\dev\SDKs\csharp\sdk\src\DocuSign.eSign\bin\Debug\RestSharp.dll
-\\Mac\dev\SDKs\csharp\sdk\src\DocuSign.eSign\obj\Debug\DocuSign.eSign.csprojResolveAssemblyReference.cache
-\\Mac\dev\SDKs\csharp\sdk\src\DocuSign.eSign\obj\Debug\DocuSign.eSign.dll
-\\Mac\dev\SDKs\csharp\sdk\src\DocuSign.eSign\obj\Debug\DocuSign.eSign.pdb

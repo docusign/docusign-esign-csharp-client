@@ -1,4 +1,4 @@
-# DocuSign C# Client
+# The Official DocuSign C# Client
 
 [![Windows Test](https://ci.appveyor.com/api/projects/status/s4l72y04899q67v7?svg=true&passingText=Windows%20Test%20-%20OK&failingText=Windows%20Test%20-%20Fails)](https://ci.appveyor.com/project/mmallis87/docusign-csharp-client)
 

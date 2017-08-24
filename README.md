@@ -1,6 +1,8 @@
 # The Official DocuSign C# Client
 
-[![Windows Test](https://ci.appveyor.com/api/projects/status/s4l72y04899q67v7?svg=true&passingText=Windows%20Test%20-%20OK&failingText=Windows%20Test%20-%20Fails)](https://ci.appveyor.com/project/mmallis87/docusign-csharp-client)
+[![Nuget version][nuget-image]][nuget-url]
+[![Nuget downloads][downloads-image]][downloads-url]
+[![Build status][travis-image]][travis-url]
 
 You can sign up for a free [developer sandbox](https://www.docusign.com/developer-center). 
 
@@ -152,4 +154,11 @@ License
 =======
 
 The DocuSign CSharp Client is licensed under the following [License](LICENSE).
- 
+
+
+[nuget-image]: https://img.shields.io/nuget/v/DocuSign.eSign.dll.svg?style=flat
+[nuget-url]: https://www.nuget.org/packages/DocuSign.eSign.dll
+[downloads-image]: https://img.shields.io/nuget/dt/DocuSign.eSign.dll.svg?style=flat
+[downloads-url]: https://www.nuget.org/packages/DocuSign.eSign.dll
+[travis-image]: https://img.shields.io/travis/docusign/docusign-csharp-client.svg?style=flat
+[travis-url]: https://travis-ci.org/docusign/docusign-csharp-client

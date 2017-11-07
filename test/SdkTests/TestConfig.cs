@@ -37,9 +37,9 @@ namespace SdkTests
 
             this.ReturnUrl = (returnUrl != null) ? returnUrl : "https://www.docusign.com/devcenter";
 
-            this.UserId = "REQUIRED";
+            this.UserId = "***REMOVED***";
             this.OAuthBasePath = "account-d.docusign.com";
-            this.PrivateKeyFilename = "REQUIRED";
+            this.PrivateKeyFilename = "../../docs/private.pem";
             this.ExpiresInHours = 1;
 
             //this.Configuration = new Configuration();

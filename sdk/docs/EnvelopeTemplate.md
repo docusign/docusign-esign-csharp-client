@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **RecipientsLock** | **string** | When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope. | [optional] 
 **RecipientsUri** | **string** | Contains a URI for an endpoint that you can use to retrieve the recipients. | [optional] 
 **SentDateTime** | **string** | The date and time the envelope was sent. | [optional] 
+**SignerCanSignOnMobile** | **string** |  | [optional] 
 **SigningLocation** | **string** | Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online. | [optional] 
 **Status** | **string** | Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later. | [optional] 
 **StatusChangedDateTime** | **string** | The data and time the status changed. | [optional] 

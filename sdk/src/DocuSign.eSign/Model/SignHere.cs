@@ -56,6 +56,8 @@ namespace DocuSign.eSign.Model
         /// <param name="PageNumber">Specifies the page number on which the tab is located..</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="ScaleValue">.</param>
+        /// <param name="StampType">.</param>
+        /// <param name="StampTypeMetadata">StampTypeMetadata.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
         /// <param name="TabLabel">The label string associated with the tab..</param>
@@ -64,7 +66,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
-        public SignHere(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), MergeField MergeField = default(MergeField), string Name = default(string), string Optional = default(string), string PageNumber = default(string), string RecipientId = default(string), string ScaleValue = default(string), string Status = default(string), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string XPosition = default(string), string YPosition = default(string))
+        public SignHere(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), MergeField MergeField = default(MergeField), string Name = default(string), string Optional = default(string), string PageNumber = default(string), string RecipientId = default(string), string ScaleValue = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string Status = default(string), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string XPosition = default(string), string YPosition = default(string))
         {
             this.AnchorCaseSensitive = AnchorCaseSensitive;
             this.AnchorHorizontalAlignment = AnchorHorizontalAlignment;
@@ -85,6 +87,8 @@ namespace DocuSign.eSign.Model
             this.PageNumber = PageNumber;
             this.RecipientId = RecipientId;
             this.ScaleValue = ScaleValue;
+            this.StampType = StampType;
+            this.StampTypeMetadata = StampTypeMetadata;
             this.Status = Status;
             this.TabId = TabId;
             this.TabLabel = TabLabel;
@@ -208,6 +212,17 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="scaleValue", EmitDefaultValue=false)]
         public string ScaleValue { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="stampType", EmitDefaultValue=false)]
+        public string StampType { get; set; }
+        /// <summary>
+        /// Gets or Sets StampTypeMetadata
+        /// </summary>
+        [DataMember(Name="stampTypeMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata StampTypeMetadata { get; set; }
+        /// <summary>
         /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
         /// </summary>
         /// <value>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.</value>
@@ -282,6 +297,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
             sb.Append("  RecipientId: ").Append(RecipientId).Append("\n");
             sb.Append("  ScaleValue: ").Append(ScaleValue).Append("\n");
+            sb.Append("  StampType: ").Append(StampType).Append("\n");
+            sb.Append("  StampTypeMetadata: ").Append(StampTypeMetadata).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  TabId: ").Append(TabId).Append("\n");
             sb.Append("  TabLabel: ").Append(TabLabel).Append("\n");
@@ -422,6 +439,16 @@ namespace DocuSign.eSign.Model
                     this.ScaleValue.Equals(other.ScaleValue)
                 ) && 
                 (
+                    this.StampType == other.StampType ||
+                    this.StampType != null &&
+                    this.StampType.Equals(other.StampType)
+                ) && 
+                (
+                    this.StampTypeMetadata == other.StampTypeMetadata ||
+                    this.StampTypeMetadata != null &&
+                    this.StampTypeMetadata.Equals(other.StampTypeMetadata)
+                ) && 
+                (
                     this.Status == other.Status ||
                     this.Status != null &&
                     this.Status.Equals(other.Status)
@@ -512,6 +539,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.RecipientId.GetHashCode();
                 if (this.ScaleValue != null)
                     hash = hash * 59 + this.ScaleValue.GetHashCode();
+                if (this.StampType != null)
+                    hash = hash * 59 + this.StampType.GetHashCode();
+                if (this.StampTypeMetadata != null)
+                    hash = hash * 59 + this.StampTypeMetadata.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.TabId != null)

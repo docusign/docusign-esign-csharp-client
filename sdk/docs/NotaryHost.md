@@ -22,8 +22,6 @@ Name | Type | Description | Notes
 **IdCheckInformationInput** | [**IdCheckInformationInput**](IdCheckInformationInput.md) |  | [optional] 
 **InheritEmailNotificationConfiguration** | **string** | When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient&#39;s account.  | [optional] 
 **Name** | **string** |  | [optional] 
-**NotaryEmailMetadata** | [**PropertyMetadata**](PropertyMetadata.md) |  | [optional] 
-**NotaryNameMetadata** | [**PropertyMetadata**](PropertyMetadata.md) |  | [optional] 
 **Note** | **string** | Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters. | [optional] 
 **PhoneAuthentication** | [**RecipientPhoneAuthentication**](RecipientPhoneAuthentication.md) |  | [optional] 
 **RecipientAttachments** | [**List&lt;RecipientAttachment&gt;**](RecipientAttachment.md) | Reserved: | [optional] 

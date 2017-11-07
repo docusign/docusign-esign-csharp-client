@@ -347,8 +347,6 @@ namespace DocuSign.eSign.Api
             /// 
             public string include {get; set;}
             /// 
-            public string includeItems {get; set;}
-            /// 
             public string startPosition {get; set;}
             /// Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned. 
             public string template {get; set;}
@@ -413,7 +411,6 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.include != null) localVarQueryParams.Add("include", Configuration.ApiClient.ParameterToString(options.include)); // query parameter
-                if (options.includeItems != null) localVarQueryParams.Add("include_items", Configuration.ApiClient.ParameterToString(options.includeItems)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", Configuration.ApiClient.ParameterToString(options.startPosition)); // query parameter
                 if (options.template != null) localVarQueryParams.Add("template", Configuration.ApiClient.ParameterToString(options.template)); // query parameter
                 if (options.userFilter != null) localVarQueryParams.Add("user_filter", Configuration.ApiClient.ParameterToString(options.userFilter)); // query parameter
@@ -505,7 +502,6 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.include != null) localVarQueryParams.Add("include", Configuration.ApiClient.ParameterToString(options.include)); // query parameter
-                if (options.includeItems != null) localVarQueryParams.Add("include_items", Configuration.ApiClient.ParameterToString(options.includeItems)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", Configuration.ApiClient.ParameterToString(options.startPosition)); // query parameter
                 if (options.template != null) localVarQueryParams.Add("template", Configuration.ApiClient.ParameterToString(options.template)); // query parameter
                 if (options.userFilter != null) localVarQueryParams.Add("user_filter", Configuration.ApiClient.ParameterToString(options.userFilter)); // query parameter
@@ -540,8 +536,6 @@ namespace DocuSign.eSign.Api
         {
             ///  Only return items on or after this date. If no value is provided, the default search is the previous 30 days.  
             public string fromDate {get; set;}
-            /// 
-            public string includeItems {get; set;}
             ///  The email of the folder owner.  
             public string ownerEmail {get; set;}
             ///  The name of the folder owner.  
@@ -617,7 +611,6 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.fromDate != null) localVarQueryParams.Add("from_date", Configuration.ApiClient.ParameterToString(options.fromDate)); // query parameter
-                if (options.includeItems != null) localVarQueryParams.Add("include_items", Configuration.ApiClient.ParameterToString(options.includeItems)); // query parameter
                 if (options.ownerEmail != null) localVarQueryParams.Add("owner_email", Configuration.ApiClient.ParameterToString(options.ownerEmail)); // query parameter
                 if (options.ownerName != null) localVarQueryParams.Add("owner_name", Configuration.ApiClient.ParameterToString(options.ownerName)); // query parameter
                 if (options.searchText != null) localVarQueryParams.Add("search_text", Configuration.ApiClient.ParameterToString(options.searchText)); // query parameter
@@ -716,7 +709,6 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.fromDate != null) localVarQueryParams.Add("from_date", Configuration.ApiClient.ParameterToString(options.fromDate)); // query parameter
-                if (options.includeItems != null) localVarQueryParams.Add("include_items", Configuration.ApiClient.ParameterToString(options.includeItems)); // query parameter
                 if (options.ownerEmail != null) localVarQueryParams.Add("owner_email", Configuration.ApiClient.ParameterToString(options.ownerEmail)); // query parameter
                 if (options.ownerName != null) localVarQueryParams.Add("owner_name", Configuration.ApiClient.ParameterToString(options.ownerName)); // query parameter
                 if (options.searchText != null) localVarQueryParams.Add("search_text", Configuration.ApiClient.ParameterToString(options.searchText)); // query parameter

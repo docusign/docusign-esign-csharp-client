@@ -56,8 +56,6 @@ namespace DocuSign.eSign.Model
         /// <param name="IdCheckInformationInput">IdCheckInformationInput.</param>
         /// <param name="InheritEmailNotificationConfiguration">When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient&#39;s account. .</param>
         /// <param name="Name">.</param>
-        /// <param name="NotaryEmailMetadata">NotaryEmailMetadata.</param>
-        /// <param name="NotaryNameMetadata">NotaryNameMetadata.</param>
         /// <param name="Note">Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters..</param>
         /// <param name="PhoneAuthentication">PhoneAuthentication.</param>
         /// <param name="RecipientAttachments">Reserved:.</param>
@@ -77,7 +75,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TotalTabCount">.</param>
         /// <param name="UserId">.</param>
-        public NotaryHost(string AccessCode = default(string), string AddAccessCodeToEmail = default(string), string ClientUserId = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FaxNumber = default(string), string HostRecipientId = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string InheritEmailNotificationConfiguration = default(string), string Name = default(string), PropertyMetadata NotaryEmailMetadata = default(PropertyMetadata), PropertyMetadata NotaryNameMetadata = default(PropertyMetadata), string Note = default(string), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), string RecipientId = default(string), string RecipientIdGuid = default(string), string RequireIdLookup = default(string), string RoleName = default(string), string RoutingOrder = default(string), RecipientSAMLAuthentication SamlAuthentication = default(RecipientSAMLAuthentication), string SentDateTime = default(string), string SignedDateTime = default(string), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
+        public NotaryHost(string AccessCode = default(string), string AddAccessCodeToEmail = default(string), string ClientUserId = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FaxNumber = default(string), string HostRecipientId = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string InheritEmailNotificationConfiguration = default(string), string Name = default(string), string Note = default(string), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), string RecipientId = default(string), string RecipientIdGuid = default(string), string RequireIdLookup = default(string), string RoleName = default(string), string RoutingOrder = default(string), RecipientSAMLAuthentication SamlAuthentication = default(RecipientSAMLAuthentication), string SentDateTime = default(string), string SignedDateTime = default(string), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
         {
             this.AccessCode = AccessCode;
             this.AddAccessCodeToEmail = AddAccessCodeToEmail;
@@ -98,8 +96,6 @@ namespace DocuSign.eSign.Model
             this.IdCheckInformationInput = IdCheckInformationInput;
             this.InheritEmailNotificationConfiguration = InheritEmailNotificationConfiguration;
             this.Name = Name;
-            this.NotaryEmailMetadata = NotaryEmailMetadata;
-            this.NotaryNameMetadata = NotaryNameMetadata;
             this.Note = Note;
             this.PhoneAuthentication = PhoneAuthentication;
             this.RecipientAttachments = RecipientAttachments;
@@ -232,16 +228,6 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
-        /// <summary>
-        /// Gets or Sets NotaryEmailMetadata
-        /// </summary>
-        [DataMember(Name="notaryEmailMetadata", EmitDefaultValue=false)]
-        public PropertyMetadata NotaryEmailMetadata { get; set; }
-        /// <summary>
-        /// Gets or Sets NotaryNameMetadata
-        /// </summary>
-        [DataMember(Name="notaryNameMetadata", EmitDefaultValue=false)]
-        public PropertyMetadata NotaryNameMetadata { get; set; }
         /// <summary>
         /// Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters.
         /// </summary>
@@ -379,8 +365,6 @@ namespace DocuSign.eSign.Model
             sb.Append("  IdCheckInformationInput: ").Append(IdCheckInformationInput).Append("\n");
             sb.Append("  InheritEmailNotificationConfiguration: ").Append(InheritEmailNotificationConfiguration).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  NotaryEmailMetadata: ").Append(NotaryEmailMetadata).Append("\n");
-            sb.Append("  NotaryNameMetadata: ").Append(NotaryNameMetadata).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
             sb.Append("  PhoneAuthentication: ").Append(PhoneAuthentication).Append("\n");
             sb.Append("  RecipientAttachments: ").Append(RecipientAttachments).Append("\n");
@@ -532,16 +516,6 @@ namespace DocuSign.eSign.Model
                     this.Name.Equals(other.Name)
                 ) && 
                 (
-                    this.NotaryEmailMetadata == other.NotaryEmailMetadata ||
-                    this.NotaryEmailMetadata != null &&
-                    this.NotaryEmailMetadata.Equals(other.NotaryEmailMetadata)
-                ) && 
-                (
-                    this.NotaryNameMetadata == other.NotaryNameMetadata ||
-                    this.NotaryNameMetadata != null &&
-                    this.NotaryNameMetadata.Equals(other.NotaryNameMetadata)
-                ) && 
-                (
                     this.Note == other.Note ||
                     this.Note != null &&
                     this.Note.Equals(other.Note)
@@ -687,10 +661,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.InheritEmailNotificationConfiguration.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
-                if (this.NotaryEmailMetadata != null)
-                    hash = hash * 59 + this.NotaryEmailMetadata.GetHashCode();
-                if (this.NotaryNameMetadata != null)
-                    hash = hash * 59 + this.NotaryNameMetadata.GetHashCode();
                 if (this.Note != null)
                     hash = hash * 59 + this.Note.GetHashCode();
                 if (this.PhoneAuthentication != null)

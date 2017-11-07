@@ -325,6 +325,31 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<MobileNotifierConfigurationInformation> ListMobileNotifiersWithHttpInfo (string accountId);
         /// <summary>
+        /// Test connect configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns></returns>
+        ResourceInformation ListTests (string accountId, string connectId);
+
+        /// <summary>
+        /// Test connect configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<ResourceInformation> ListTestsWithHttpInfo (string accountId, string connectId);
+        /// <summary>
         /// Returns users from the configured Connect service.
         /// </summary>
         /// <remarks>
@@ -751,6 +776,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (MobileNotifierConfigurationInformation)</returns>
         System.Threading.Tasks.Task<ApiResponse<MobileNotifierConfigurationInformation>> ListMobileNotifiersAsyncWithHttpInfo (string accountId);
+        /// <summary>
+        /// Test connect configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>Task of ResourceInformation</returns>
+        System.Threading.Tasks.Task<ResourceInformation> ListTestsAsync (string accountId, string connectId);
+
+        /// <summary>
+        /// Test connect configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>Task of ApiResponse (ResourceInformation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ResourceInformation>> ListTestsAsyncWithHttpInfo (string accountId, string connectId);
         /// <summary>
         /// Returns users from the configured Connect service.
         /// </summary>
@@ -3017,6 +3067,176 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<MobileNotifierConfigurationInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (MobileNotifierConfigurationInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(MobileNotifierConfigurationInformation)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Test connect configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>ResourceInformation</returns>
+        public ResourceInformation ListTests (string accountId, string connectId)
+        {
+             ApiResponse<ResourceInformation> localVarResponse = ListTestsWithHttpInfo(accountId, connectId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Test connect configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>ApiResponse of ResourceInformation</returns>
+        public ApiResponse< ResourceInformation > ListTestsWithHttpInfo (string accountId, string connectId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->ListTests");
+            // verify the required parameter 'connectId' is set
+            if (connectId == null)
+                throw new ApiException(400, "Missing required parameter 'connectId' when calling ConnectApi->ListTests");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/{connectId}/tests";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (connectId != null) localVarPathParams.Add("connectId", Configuration.ApiClient.ParameterToString(connectId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListTests", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<ResourceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ResourceInformation) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ResourceInformation)));
+            }
+            else
+            {
+                return new ApiResponse<ResourceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ResourceInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResourceInformation)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Test connect configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>Task of ResourceInformation</returns>
+        public async System.Threading.Tasks.Task<ResourceInformation> ListTestsAsync (string accountId, string connectId)
+        {
+             ApiResponse<ResourceInformation> localVarResponse = await ListTestsAsyncWithHttpInfo(accountId, connectId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Test connect configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>Task of ApiResponse (ResourceInformation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ResourceInformation>> ListTestsAsyncWithHttpInfo (string accountId, string connectId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->ListTests");
+            // verify the required parameter 'connectId' is set
+            if (connectId == null)
+                throw new ApiException(400, "Missing required parameter 'connectId' when calling ConnectApi->ListTests");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/{connectId}/tests";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (connectId != null) localVarPathParams.Add("connectId", Configuration.ApiClient.ParameterToString(connectId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListTests", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ResourceInformation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ResourceInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResourceInformation)));
             
         }
 

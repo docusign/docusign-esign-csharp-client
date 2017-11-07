@@ -37,6 +37,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingPlanUpdateResponse" /> class.
         /// </summary>
+        /// <param name="AccountPaymentMethod">.</param>
         /// <param name="BillingPlanPreview">BillingPlanPreview.</param>
         /// <param name="CurrencyCode">Specifies the ISO currency code for the account..</param>
         /// <param name="IncludedSeats">The number of seats (users) included..</param>
@@ -44,8 +45,9 @@ namespace DocuSign.eSign.Model
         /// <param name="PaymentMethod">.</param>
         /// <param name="PlanId">.</param>
         /// <param name="PlanName">.</param>
-        public BillingPlanUpdateResponse(BillingPlanPreview BillingPlanPreview = default(BillingPlanPreview), string CurrencyCode = default(string), string IncludedSeats = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PlanId = default(string), string PlanName = default(string))
+        public BillingPlanUpdateResponse(string AccountPaymentMethod = default(string), BillingPlanPreview BillingPlanPreview = default(BillingPlanPreview), string CurrencyCode = default(string), string IncludedSeats = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PlanId = default(string), string PlanName = default(string))
         {
+            this.AccountPaymentMethod = AccountPaymentMethod;
             this.BillingPlanPreview = BillingPlanPreview;
             this.CurrencyCode = CurrencyCode;
             this.IncludedSeats = IncludedSeats;
@@ -55,6 +57,12 @@ namespace DocuSign.eSign.Model
             this.PlanName = PlanName;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="accountPaymentMethod", EmitDefaultValue=false)]
+        public string AccountPaymentMethod { get; set; }
         /// <summary>
         /// Gets or Sets BillingPlanPreview
         /// </summary>
@@ -104,6 +112,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BillingPlanUpdateResponse {\n");
+            sb.Append("  AccountPaymentMethod: ").Append(AccountPaymentMethod).Append("\n");
             sb.Append("  BillingPlanPreview: ").Append(BillingPlanPreview).Append("\n");
             sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
             sb.Append("  IncludedSeats: ").Append(IncludedSeats).Append("\n");
@@ -147,6 +156,11 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.AccountPaymentMethod == other.AccountPaymentMethod ||
+                    this.AccountPaymentMethod != null &&
+                    this.AccountPaymentMethod.Equals(other.AccountPaymentMethod)
+                ) && 
                 (
                     this.BillingPlanPreview == other.BillingPlanPreview ||
                     this.BillingPlanPreview != null &&
@@ -195,6 +209,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AccountPaymentMethod != null)
+                    hash = hash * 59 + this.AccountPaymentMethod.GetHashCode();
                 if (this.BillingPlanPreview != null)
                     hash = hash * 59 + this.BillingPlanPreview.GetHashCode();
                 if (this.CurrencyCode != null)

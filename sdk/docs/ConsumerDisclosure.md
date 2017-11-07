@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountEsignId** | **string** | A GUID identifying the account associated with the consumer disclosure | [optional] 
 **AllowCDWithdraw** | **string** | Indicates whether the customer can withdraw their acceptance of the consumer disclosure. | [optional] 
+**AllowCDWithdrawMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
 **ChangeEmail** | **string** |  | [optional] 
 **ChangeEmailOther** | **string** |  | [optional] 
 **CompanyName** | **string** | The name of the company associated with the consumer disclosure. | [optional] 
@@ -21,6 +22,7 @@ Name | Type | Description | Notes
 **PdfId** | **string** |  | [optional] 
 **UseBrand** | **string** |  | [optional] 
 **UseConsumerDisclosureWithinAccount** | **string** |  | [optional] 
+**UseConsumerDisclosureWithinAccountMetadata** | [**SettingsMetadata**](SettingsMetadata.md) |  | [optional] 
 **WithdrawAddressLine1** | **string** | Contains the first address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters.  | [optional] 
 **WithdrawAddressLine2** | **string** | Contains the second address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters.  | [optional] 
 **WithdrawByEmail** | **string** | Indicates whether the customer can withdraw consent by email. | [optional] 

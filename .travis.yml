@@ -11,7 +11,7 @@ before_install:
   - mkdir -p .nuget
   - wget -O .nuget/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 install:
-  - mono .nuget/nuget.exe restore SdkTests.sln -MSBuildVersion 15.0 -Verbosity detailed
+  - mono .nuget/nuget.exe restore SdkTests.sln -MSBuildVersion 14.0 -Verbosity detailed
   - mono .nuget/nuget.exe install NUnit -Version 2.6.4 -OutputDirectory packages
   - mkdir -p bin/Release && cp packages/NUnit.2.6.4/lib/nunit.framework.dll bin/Release/nunit.framework.dll
   - mono .nuget/nuget.exe install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner

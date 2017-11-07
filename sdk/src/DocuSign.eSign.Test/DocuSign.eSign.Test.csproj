@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 DocuSign REST API
 
@@ -100,17 +100,19 @@ Contact: devcenter@docusign.com
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs"/>
+    <Compile Include="**\*.cs" />
   </ItemGroup>
   <ItemGroup>
-      <None Include="packages.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-      <ProjectReference Include="..\DocuSign.eSign\DocuSign.eSign.csproj">
-          <Project>{7CC4EE29-8B29-4DA1-9B95-27C5259EED79}</Project>
-          <Name>DocuSign.eSign</Name>
-      </ProjectReference>
+    <ProjectReference Include="..\DocuSign.eSign\DocuSign.eSign.csproj">
+      <Project>{7CC4EE29-8B29-4DA1-9B95-27C5259EED79}</Project>
+      <Name>DocuSign.eSign</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
 </Project>
-

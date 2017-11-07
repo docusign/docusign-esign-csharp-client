@@ -16,8 +16,6 @@ Name | Type | Description | Notes
 **Order** | **string** |  | [optional] 
 **Pages** | **string** |  | [optional] 
 **SignerMustAcknowledge** | **string** |  | [optional] 
-**TemplateLocked** | **string** | When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients.  | [optional] 
-**TemplateRequired** | **string** | When set to **true**, the sender may not remove the recipient. Used only when working with template recipients. | [optional] 
 **Type** | **string** |  | [optional] 
 **Uri** | **string** |  | [optional] 
 

@@ -88,6 +88,7 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientsUri">Contains a URI for an endpoint that you can use to retrieve the recipients..</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
+        /// <param name="SignerCanSignOnMobile">.</param>
         /// <param name="SigningLocation">Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusChangedDateTime">The data and time the status changed..</param>
@@ -98,7 +99,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UseDisclosure">When set to **true**, the disclosure is shown to recipients in accordance with the account’s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the &#x60;useDisclosure&#x60; property is not set, then the account&#39;s normal disclosure setting is used and the value of the &#x60;useDisclosure&#x60; property is not returned in responses when getting envelope information..</param>
         /// <param name="VoidedDateTime">The date and time the envelope or template was voided..</param>
         /// <param name="VoidedReason">The reason the envelope or template was voided..</param>
-        public EnvelopeTemplateResult(string AllowMarkup = default(string), string AllowReassign = default(string), string Asynchronous = default(string), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string Description = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeUri = default(string), string FolderId = default(string), string FolderName = default(string), string FolderUri = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsSignatureProviderEnvelope = default(string), string LastModified = default(string), string LastModifiedDateTime = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), string Name = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), UserInfo Owner = default(UserInfo), int? PageCount = default(int?), string ParentFolderUri = default(string), string Password = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), string SentDateTime = default(string), string Shared = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string TemplateId = default(string), string TemplatesUri = default(string), string TransactionId = default(string), string Uri = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string))
+        public EnvelopeTemplateResult(string AllowMarkup = default(string), string AllowReassign = default(string), string Asynchronous = default(string), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string Description = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeUri = default(string), string FolderId = default(string), string FolderName = default(string), string FolderUri = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsSignatureProviderEnvelope = default(string), string LastModified = default(string), string LastModifiedDateTime = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), string Name = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), UserInfo Owner = default(UserInfo), int? PageCount = default(int?), string ParentFolderUri = default(string), string Password = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), string SentDateTime = default(string), string Shared = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string TemplateId = default(string), string TemplatesUri = default(string), string TransactionId = default(string), string Uri = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string))
         {
             this.AllowMarkup = AllowMarkup;
             this.AllowReassign = AllowReassign;
@@ -151,6 +152,7 @@ namespace DocuSign.eSign.Model
             this.RecipientsUri = RecipientsUri;
             this.SentDateTime = SentDateTime;
             this.Shared = Shared;
+            this.SignerCanSignOnMobile = SignerCanSignOnMobile;
             this.SigningLocation = SigningLocation;
             this.Status = Status;
             this.StatusChangedDateTime = StatusChangedDateTime;
@@ -464,6 +466,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shared", EmitDefaultValue=false)]
         public string Shared { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="signerCanSignOnMobile", EmitDefaultValue=false)]
+        public string SignerCanSignOnMobile { get; set; }
+        /// <summary>
         /// Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
         /// </summary>
         /// <value>Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.</value>
@@ -582,6 +590,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  RecipientsUri: ").Append(RecipientsUri).Append("\n");
             sb.Append("  SentDateTime: ").Append(SentDateTime).Append("\n");
             sb.Append("  Shared: ").Append(Shared).Append("\n");
+            sb.Append("  SignerCanSignOnMobile: ").Append(SignerCanSignOnMobile).Append("\n");
             sb.Append("  SigningLocation: ").Append(SigningLocation).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StatusChangedDateTime: ").Append(StatusChangedDateTime).Append("\n");
@@ -884,6 +893,11 @@ namespace DocuSign.eSign.Model
                     this.Shared.Equals(other.Shared)
                 ) && 
                 (
+                    this.SignerCanSignOnMobile == other.SignerCanSignOnMobile ||
+                    this.SignerCanSignOnMobile != null &&
+                    this.SignerCanSignOnMobile.Equals(other.SignerCanSignOnMobile)
+                ) && 
+                (
                     this.SigningLocation == other.SigningLocation ||
                     this.SigningLocation != null &&
                     this.SigningLocation.Equals(other.SigningLocation)
@@ -1048,6 +1062,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SentDateTime.GetHashCode();
                 if (this.Shared != null)
                     hash = hash * 59 + this.Shared.GetHashCode();
+                if (this.SignerCanSignOnMobile != null)
+                    hash = hash * 59 + this.SignerCanSignOnMobile.GetHashCode();
                 if (this.SigningLocation != null)
                     hash = hash * 59 + this.SigningLocation.GetHashCode();
                 if (this.Status != null)

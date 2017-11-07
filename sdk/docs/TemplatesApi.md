@@ -24,8 +24,11 @@ Method | HTTP request | Description
 [**Get**](TemplatesApi.md#get) | **GET** /v2/accounts/{accountId}/templates/{templateId} | Gets a list of templates for a specified account.
 [**GetDocument**](TemplatesApi.md#getdocument) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId} | Gets PDF documents from a template.
 [**GetDocumentPageImage**](TemplatesApi.md#getdocumentpageimage) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image | Gets a page image from a template for display.
+[**GetDocumentTabs**](TemplatesApi.md#getdocumenttabs) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs | Returns tabs on the document.
 [**GetLock**](TemplatesApi.md#getlock) | **GET** /v2/accounts/{accountId}/templates/{templateId}/lock | Gets template lock information.
 [**GetNotificationSettings**](TemplatesApi.md#getnotificationsettings) | **GET** /v2/accounts/{accountId}/templates/{templateId}/notification | Gets template notification information.
+[**GetPageTabs**](TemplatesApi.md#getpagetabs) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/tabs | Returns tabs on the specified page.
+[**GetPages**](TemplatesApi.md#getpages) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages | Returns document page image(s) based on input.
 [**ListBulkRecipients**](TemplatesApi.md#listbulkrecipients) | **GET** /v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients | Gets the bulk recipient file from a template.
 [**ListCustomFields**](TemplatesApi.md#listcustomfields) | **GET** /v2/accounts/{accountId}/templates/{templateId}/custom_fields | Gets the custom document fields from a template.
 [**ListDocumentFields**](TemplatesApi.md#listdocumentfields) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields | Gets the custom document fields for a an existing template document.
@@ -1394,6 +1397,72 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getdocumenttabs"></a>
+# **GetDocumentTabs**
+> Tabs GetDocumentTabs (string pageNumbers = null, string accountId, string templateId, string documentId)
+
+Returns tabs on the document.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class GetDocumentTabsExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new TemplatesApi();
+            var pageNumbers = pageNumbers_example;  // string |  (optional) 
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+            var templateId = templateId_example;  // string | The ID of the template being accessed.
+            var documentId = documentId_example;  // string | The ID of the document being accessed.
+
+            try
+            {
+                // Returns tabs on the document.
+                Tabs result = apiInstance.GetDocumentTabs(pageNumbers, accountId, templateId, documentId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TemplatesApi.GetDocumentTabs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pageNumbers** | **string**|  | [optional] 
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+ **templateId** | **string**| The ID of the template being accessed. | 
+ **documentId** | **string**| The ID of the document being accessed. | 
+
+### Return type
+
+[**Tabs**](Tabs.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getlock"></a>
 # **GetLock**
 > LockInformation GetLock (string accountId, string templateId)
@@ -1510,6 +1579,150 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Notification**](Notification.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getpagetabs"></a>
+# **GetPageTabs**
+> Tabs GetPageTabs (string accountId, string templateId, string documentId, string pageNumber)
+
+Returns tabs on the specified page.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class GetPageTabsExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new TemplatesApi();
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+            var templateId = templateId_example;  // string | The ID of the template being accessed.
+            var documentId = documentId_example;  // string | The ID of the document being accessed.
+            var pageNumber = pageNumber_example;  // string | The page number being accessed.
+
+            try
+            {
+                // Returns tabs on the specified page.
+                Tabs result = apiInstance.GetPageTabs(accountId, templateId, documentId, pageNumber);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TemplatesApi.GetPageTabs: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+ **templateId** | **string**| The ID of the template being accessed. | 
+ **documentId** | **string**| The ID of the document being accessed. | 
+ **pageNumber** | **string**| The page number being accessed. | 
+
+### Return type
+
+[**Tabs**](Tabs.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getpages"></a>
+# **GetPages**
+> PageImages GetPages (string count = null, string dpi = null, string maxHeight = null, string maxWidth = null, string nocache = null, string showChanges = null, string startPosition = null, string accountId, string templateId, string documentId)
+
+Returns document page image(s) based on input.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class GetPagesExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new TemplatesApi();
+            var count = count_example;  // string |  (optional) 
+            var dpi = dpi_example;  // string |  (optional) 
+            var maxHeight = maxHeight_example;  // string |  (optional) 
+            var maxWidth = maxWidth_example;  // string |  (optional) 
+            var nocache = nocache_example;  // string |  (optional) 
+            var showChanges = showChanges_example;  // string |  (optional) 
+            var startPosition = startPosition_example;  // string |  (optional) 
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+            var templateId = templateId_example;  // string | The ID of the template being accessed.
+            var documentId = documentId_example;  // string | The ID of the document being accessed.
+
+            try
+            {
+                // Returns document page image(s) based on input.
+                PageImages result = apiInstance.GetPages(count, dpi, maxHeight, maxWidth, nocache, showChanges, startPosition, accountId, templateId, documentId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TemplatesApi.GetPages: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **count** | **string**|  | [optional] 
+ **dpi** | **string**|  | [optional] 
+ **maxHeight** | **string**|  | [optional] 
+ **maxWidth** | **string**|  | [optional] 
+ **nocache** | **string**|  | [optional] 
+ **showChanges** | **string**|  | [optional] 
+ **startPosition** | **string**|  | [optional] 
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+ **templateId** | **string**| The ID of the template being accessed. | 
+ **documentId** | **string**| The ID of the document being accessed. | 
+
+### Return type
+
+[**PageImages**](PageImages.md)
 
 ### Authorization
 
@@ -1928,7 +2141,7 @@ No authorization required
 
 <a name="listtemplates"></a>
 # **ListTemplates**
-> EnvelopeTemplateResults ListTemplates (string count = null, string folder = null, string folderIds = null, string fromDate = null, string include = null, string order = null, string orderBy = null, string searchText = null, string shared = null, string sharedByMe = null, string startPosition = null, string toDate = null, string usedFromDate = null, string usedToDate = null, string userFilter = null, string accountId)
+> EnvelopeTemplateResults ListTemplates (string count = null, string folder = null, string folderIds = null, string fromDate = null, string include = null, string order = null, string orderBy = null, string searchText = null, string sharedByMe = null, string startPosition = null, string toDate = null, string usedFromDate = null, string usedToDate = null, string userFilter = null, string userId = null, string accountId)
 
 Gets the definition of a template.
 
@@ -1958,19 +2171,19 @@ namespace Example
             var order = order_example;  // string | Sets the direction order used to sort the list. Valid values are: -asc = ascending sort order (a to z)  -desc = descending sort order (z to a) (optional) 
             var orderBy = orderBy_example;  // string | Sets the file attribute used to sort the list. Valid values are:  -name: template name  -modified: date/time template was last modified.  -used: date/time the template was last used. (optional) 
             var searchText = searchText_example;  // string | The search text used to search the names of templates. (optional) 
-            var shared = shared_example;  // string |  (optional) 
             var sharedByMe = sharedByMe_example;  // string | If true, the response only includes templates shared by the user. If false, the response only returns template not shared by the user. If not specified, the response is not affected. (optional) 
             var startPosition = startPosition_example;  // string | The starting index for the first template shown in the response. This must be greater than or equal to 0 (zero). (optional) 
             var toDate = toDate_example;  // string | End of the search date range. Only returns templates created up to this date/time. If no value is provided, this defaults to the current date. (optional) 
             var usedFromDate = usedFromDate_example;  // string | Start of the search date range. Only returns templates used or edited on or after this date/time. If no value is specified, there is no limit on the earliest date used. (optional) 
             var usedToDate = usedToDate_example;  // string | End of the search date range. Only returns templates used or edited up to this date/time. If no value is provided, this defaults to the current date. (optional) 
             var userFilter = userFilter_example;  // string | Sets if the templates shown in the response Valid values are:  -owned_by_me: only shows templates the user owns.  -shared_with_me: only shows templates that are shared with the user.  -all: shows all templates owned or shared with the user. (optional) 
+            var userId = userId_example;  // string |  (optional) 
             var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
 
             try
             {
                 // Gets the definition of a template.
-                EnvelopeTemplateResults result = apiInstance.ListTemplates(count, folder, folderIds, fromDate, include, order, orderBy, searchText, shared, sharedByMe, startPosition, toDate, usedFromDate, usedToDate, userFilter, accountId);
+                EnvelopeTemplateResults result = apiInstance.ListTemplates(count, folder, folderIds, fromDate, include, order, orderBy, searchText, sharedByMe, startPosition, toDate, usedFromDate, usedToDate, userFilter, userId, accountId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1994,13 +2207,13 @@ Name | Type | Description  | Notes
  **order** | **string**| Sets the direction order used to sort the list. Valid values are: -asc &#x3D; ascending sort order (a to z)  -desc &#x3D; descending sort order (z to a) | [optional] 
  **orderBy** | **string**| Sets the file attribute used to sort the list. Valid values are:  -name: template name  -modified: date/time template was last modified.  -used: date/time the template was last used. | [optional] 
  **searchText** | **string**| The search text used to search the names of templates. | [optional] 
- **shared** | **string**|  | [optional] 
  **sharedByMe** | **string**| If true, the response only includes templates shared by the user. If false, the response only returns template not shared by the user. If not specified, the response is not affected. | [optional] 
  **startPosition** | **string**| The starting index for the first template shown in the response. This must be greater than or equal to 0 (zero). | [optional] 
  **toDate** | **string**| End of the search date range. Only returns templates created up to this date/time. If no value is provided, this defaults to the current date. | [optional] 
  **usedFromDate** | **string**| Start of the search date range. Only returns templates used or edited on or after this date/time. If no value is specified, there is no limit on the earliest date used. | [optional] 
  **usedToDate** | **string**| End of the search date range. Only returns templates used or edited up to this date/time. If no value is provided, this defaults to the current date. | [optional] 
  **userFilter** | **string**| Sets if the templates shown in the response Valid values are:  -owned_by_me: only shows templates the user owns.  -shared_with_me: only shows templates that are shared with the user.  -all: shows all templates owned or shared with the user. | [optional] 
+ **userId** | **string**|  | [optional] 
  **accountId** | **string**| The external account number (int) or account ID Guid. | 
 
 ### Return type

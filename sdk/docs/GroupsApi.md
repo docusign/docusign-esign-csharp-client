@@ -410,7 +410,7 @@ No authorization required
 
 <a name="listgroups"></a>
 # **ListGroups**
-> GroupInformation ListGroups (string count = null, string groupName = null, string groupType = null, string searchText = null, string startPosition = null, string accountId)
+> GroupInformation ListGroups (string count = null, string groupType = null, string searchText = null, string startPosition = null, string accountId)
 
 Gets information about groups associated with the account.
 
@@ -433,7 +433,6 @@ namespace Example
             
             var apiInstance = new GroupsApi();
             var count = count_example;  // string | Number of records to return. The number must be greater than 1 and less than or equal to 100. (optional) 
-            var groupName = groupName_example;  // string | Filters the groups returned by the group name or a sub-string of group name. (optional) 
             var groupType = groupType_example;  // string |  (optional) 
             var searchText = searchText_example;  // string |  (optional) 
             var startPosition = startPosition_example;  // string | Starting value for the list. (optional) 
@@ -442,7 +441,7 @@ namespace Example
             try
             {
                 // Gets information about groups associated with the account.
-                GroupInformation result = apiInstance.ListGroups(count, groupName, groupType, searchText, startPosition, accountId);
+                GroupInformation result = apiInstance.ListGroups(count, groupType, searchText, startPosition, accountId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -459,7 +458,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **count** | **string**| Number of records to return. The number must be greater than 1 and less than or equal to 100. | [optional] 
- **groupName** | **string**| Filters the groups returned by the group name or a sub-string of group name. | [optional] 
  **groupType** | **string**|  | [optional] 
  **searchText** | **string**|  | [optional] 
  **startPosition** | **string**| Starting value for the list. | [optional] 

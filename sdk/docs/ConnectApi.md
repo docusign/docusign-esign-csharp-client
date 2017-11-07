@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**ListEventFailureLogs**](ConnectApi.md#listeventfailurelogs) | **GET** /v2/accounts/{accountId}/connect/failures | Gets the Connect failure log information.
 [**ListEventLogs**](ConnectApi.md#listeventlogs) | **GET** /v2/accounts/{accountId}/connect/logs | Gets the Connect log.
 [**ListMobileNotifiers**](ConnectApi.md#listmobilenotifiers) | **GET** /v2/accounts/{accountId}/connect/mobile_notifiers | Reserved
+[**ListTests**](ConnectApi.md#listtests) | **GET** /v2/accounts/{accountId}/connect/{connectId}/tests | Test connect configuration.
 [**ListUsers**](ConnectApi.md#listusers) | **GET** /v2/accounts/{accountId}/connect/{connectId}/users | Returns users from the configured Connect service.
 [**RetryEventForEnvelope**](ConnectApi.md#retryeventforenvelope) | **PUT** /v2/accounts/{accountId}/connect/envelopes/{envelopeId}/retry_queue | Republishes Connect information for the specified envelope.
 [**RetryEventForEnvelopes**](ConnectApi.md#retryeventforenvelopes) | **PUT** /v2/accounts/{accountId}/connect/envelopes/retry_queue | Republishes Connect information for multiple envelopes.
@@ -775,6 +776,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MobileNotifierConfigurationInformation**](MobileNotifierConfigurationInformation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listtests"></a>
+# **ListTests**
+> ResourceInformation ListTests (string accountId, string connectId)
+
+Test connect configuration.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class ListTestsExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new ConnectApi();
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+            var connectId = connectId_example;  // string | The ID of the custom Connect configuration being accessed.
+
+            try
+            {
+                // Test connect configuration.
+                ResourceInformation result = apiInstance.ListTests(accountId, connectId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ConnectApi.ListTests: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+ **connectId** | **string**| The ID of the custom Connect configuration being accessed. | 
+
+### Return type
+
+[**ResourceInformation**](ResourceInformation.md)
 
 ### Authorization
 

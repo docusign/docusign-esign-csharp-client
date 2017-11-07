@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **FontColor** | **string** | The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White. | [optional] 
 **FontSize** | **string** | The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72. | [optional] 
 **Formula** | **string** | The Formula string contains the TabLabel for the reference tabs used in the formula and calculation operators. Each TabLabel must be contained in brackets.  Maximum Length: 2000 characters.  *Example*: Three tabs (TabLabels: Line1, Line2, and Tax) need to be added together. The formula string would be:   [Line1]+[Line2]+[Tax] | [optional] 
+**Hidden** | **string** |  | [optional] 
 **IsPaymentAmount** | **string** | When set to **true**, sets this as a payment tab. Can only be used with Text, Number, Formula, or List tabs. The value of the tab must be a number.  | [optional] 
 **Italic** | **string** | When set to **true**, the information in the tab is italic. | [optional] 
 **Locked** | **string** | When set to **true**, the signer cannot change the data of the custom tab. | [optional] 

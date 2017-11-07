@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AccountPaymentMethod** | **string** |  | [optional] 
 **BillingPlanPreview** | [**BillingPlanPreview**](BillingPlanPreview.md) |  | [optional] 
 **CurrencyCode** | **string** | Specifies the ISO currency code for the account. | [optional] 
 **IncludedSeats** | **string** | The number of seats (users) included. | [optional] 

@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ContactId** | **string** |  | [optional] 
+**ContactPhoneNumbers** | [**List&lt;ContactPhoneNumber&gt;**](ContactPhoneNumber.md) |  | [optional] 
 **ContactUri** | **string** |  | [optional] 
 **Emails** | **List&lt;string&gt;** |  | [optional] 
 **ErrorDetails** | [**ErrorDetails**](ErrorDetails.md) |  | [optional] 

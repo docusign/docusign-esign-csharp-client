@@ -39,6 +39,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AccountEsignId">A GUID identifying the account associated with the consumer disclosure.</param>
         /// <param name="AllowCDWithdraw">Indicates whether the customer can withdraw their acceptance of the consumer disclosure..</param>
+        /// <param name="AllowCDWithdrawMetadata">AllowCDWithdrawMetadata.</param>
         /// <param name="ChangeEmail">.</param>
         /// <param name="ChangeEmailOther">.</param>
         /// <param name="CompanyName">The name of the company associated with the consumer disclosure..</param>
@@ -55,6 +56,7 @@ namespace DocuSign.eSign.Model
         /// <param name="PdfId">.</param>
         /// <param name="UseBrand">.</param>
         /// <param name="UseConsumerDisclosureWithinAccount">.</param>
+        /// <param name="UseConsumerDisclosureWithinAccountMetadata">UseConsumerDisclosureWithinAccountMetadata.</param>
         /// <param name="WithdrawAddressLine1">Contains the first address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters. .</param>
         /// <param name="WithdrawAddressLine2">Contains the second address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters. .</param>
         /// <param name="WithdrawByEmail">Indicates whether the customer can withdraw consent by email..</param>
@@ -67,10 +69,11 @@ namespace DocuSign.eSign.Model
         /// <param name="WithdrawPhone">Contains the phone number which a customer can call to register consent withdrawal notification.  Maximum length: 20 characters. .</param>
         /// <param name="WithdrawPostalCode">Contains the postal code of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 20 characters. .</param>
         /// <param name="WithdrawState">Contains the state of the postal address to which a customer can send a consent withdrawal notification..</param>
-        public ConsumerDisclosure(string AccountEsignId = default(string), string AllowCDWithdraw = default(string), string ChangeEmail = default(string), string ChangeEmailOther = default(string), string CompanyName = default(string), string CompanyPhone = default(string), string CopyCostPerPage = default(string), string CopyFeeCollectionMethod = default(string), string CopyRequestEmail = default(string), string Custom = default(string), string EnableEsign = default(string), string EsignAgreement = default(string), string EsignText = default(string), string LanguageCode = default(string), string MustAgreeToEsign = default(string), string PdfId = default(string), string UseBrand = default(string), string UseConsumerDisclosureWithinAccount = default(string), string WithdrawAddressLine1 = default(string), string WithdrawAddressLine2 = default(string), string WithdrawByEmail = default(string), string WithdrawByMail = default(string), string WithdrawByPhone = default(string), string WithdrawCity = default(string), string WithdrawConsequences = default(string), string WithdrawEmail = default(string), string WithdrawOther = default(string), string WithdrawPhone = default(string), string WithdrawPostalCode = default(string), string WithdrawState = default(string))
+        public ConsumerDisclosure(string AccountEsignId = default(string), string AllowCDWithdraw = default(string), SettingsMetadata AllowCDWithdrawMetadata = default(SettingsMetadata), string ChangeEmail = default(string), string ChangeEmailOther = default(string), string CompanyName = default(string), string CompanyPhone = default(string), string CopyCostPerPage = default(string), string CopyFeeCollectionMethod = default(string), string CopyRequestEmail = default(string), string Custom = default(string), string EnableEsign = default(string), string EsignAgreement = default(string), string EsignText = default(string), string LanguageCode = default(string), string MustAgreeToEsign = default(string), string PdfId = default(string), string UseBrand = default(string), string UseConsumerDisclosureWithinAccount = default(string), SettingsMetadata UseConsumerDisclosureWithinAccountMetadata = default(SettingsMetadata), string WithdrawAddressLine1 = default(string), string WithdrawAddressLine2 = default(string), string WithdrawByEmail = default(string), string WithdrawByMail = default(string), string WithdrawByPhone = default(string), string WithdrawCity = default(string), string WithdrawConsequences = default(string), string WithdrawEmail = default(string), string WithdrawOther = default(string), string WithdrawPhone = default(string), string WithdrawPostalCode = default(string), string WithdrawState = default(string))
         {
             this.AccountEsignId = AccountEsignId;
             this.AllowCDWithdraw = AllowCDWithdraw;
+            this.AllowCDWithdrawMetadata = AllowCDWithdrawMetadata;
             this.ChangeEmail = ChangeEmail;
             this.ChangeEmailOther = ChangeEmailOther;
             this.CompanyName = CompanyName;
@@ -87,6 +90,7 @@ namespace DocuSign.eSign.Model
             this.PdfId = PdfId;
             this.UseBrand = UseBrand;
             this.UseConsumerDisclosureWithinAccount = UseConsumerDisclosureWithinAccount;
+            this.UseConsumerDisclosureWithinAccountMetadata = UseConsumerDisclosureWithinAccountMetadata;
             this.WithdrawAddressLine1 = WithdrawAddressLine1;
             this.WithdrawAddressLine2 = WithdrawAddressLine2;
             this.WithdrawByEmail = WithdrawByEmail;
@@ -113,6 +117,11 @@ namespace DocuSign.eSign.Model
         /// <value>Indicates whether the customer can withdraw their acceptance of the consumer disclosure.</value>
         [DataMember(Name="allowCDWithdraw", EmitDefaultValue=false)]
         public string AllowCDWithdraw { get; set; }
+        /// <summary>
+        /// Gets or Sets AllowCDWithdrawMetadata
+        /// </summary>
+        [DataMember(Name="allowCDWithdrawMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata AllowCDWithdrawMetadata { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -210,6 +219,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="useConsumerDisclosureWithinAccount", EmitDefaultValue=false)]
         public string UseConsumerDisclosureWithinAccount { get; set; }
         /// <summary>
+        /// Gets or Sets UseConsumerDisclosureWithinAccountMetadata
+        /// </summary>
+        [DataMember(Name="useConsumerDisclosureWithinAccountMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata UseConsumerDisclosureWithinAccountMetadata { get; set; }
+        /// <summary>
         /// Contains the first address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters. 
         /// </summary>
         /// <value>Contains the first address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters. </value>
@@ -291,6 +305,7 @@ namespace DocuSign.eSign.Model
             sb.Append("class ConsumerDisclosure {\n");
             sb.Append("  AccountEsignId: ").Append(AccountEsignId).Append("\n");
             sb.Append("  AllowCDWithdraw: ").Append(AllowCDWithdraw).Append("\n");
+            sb.Append("  AllowCDWithdrawMetadata: ").Append(AllowCDWithdrawMetadata).Append("\n");
             sb.Append("  ChangeEmail: ").Append(ChangeEmail).Append("\n");
             sb.Append("  ChangeEmailOther: ").Append(ChangeEmailOther).Append("\n");
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
@@ -307,6 +322,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  PdfId: ").Append(PdfId).Append("\n");
             sb.Append("  UseBrand: ").Append(UseBrand).Append("\n");
             sb.Append("  UseConsumerDisclosureWithinAccount: ").Append(UseConsumerDisclosureWithinAccount).Append("\n");
+            sb.Append("  UseConsumerDisclosureWithinAccountMetadata: ").Append(UseConsumerDisclosureWithinAccountMetadata).Append("\n");
             sb.Append("  WithdrawAddressLine1: ").Append(WithdrawAddressLine1).Append("\n");
             sb.Append("  WithdrawAddressLine2: ").Append(WithdrawAddressLine2).Append("\n");
             sb.Append("  WithdrawByEmail: ").Append(WithdrawByEmail).Append("\n");
@@ -364,6 +380,11 @@ namespace DocuSign.eSign.Model
                     this.AllowCDWithdraw == other.AllowCDWithdraw ||
                     this.AllowCDWithdraw != null &&
                     this.AllowCDWithdraw.Equals(other.AllowCDWithdraw)
+                ) && 
+                (
+                    this.AllowCDWithdrawMetadata == other.AllowCDWithdrawMetadata ||
+                    this.AllowCDWithdrawMetadata != null &&
+                    this.AllowCDWithdrawMetadata.Equals(other.AllowCDWithdrawMetadata)
                 ) && 
                 (
                     this.ChangeEmail == other.ChangeEmail ||
@@ -446,6 +467,11 @@ namespace DocuSign.eSign.Model
                     this.UseConsumerDisclosureWithinAccount.Equals(other.UseConsumerDisclosureWithinAccount)
                 ) && 
                 (
+                    this.UseConsumerDisclosureWithinAccountMetadata == other.UseConsumerDisclosureWithinAccountMetadata ||
+                    this.UseConsumerDisclosureWithinAccountMetadata != null &&
+                    this.UseConsumerDisclosureWithinAccountMetadata.Equals(other.UseConsumerDisclosureWithinAccountMetadata)
+                ) && 
+                (
                     this.WithdrawAddressLine1 == other.WithdrawAddressLine1 ||
                     this.WithdrawAddressLine1 != null &&
                     this.WithdrawAddressLine1.Equals(other.WithdrawAddressLine1)
@@ -522,6 +548,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AccountEsignId.GetHashCode();
                 if (this.AllowCDWithdraw != null)
                     hash = hash * 59 + this.AllowCDWithdraw.GetHashCode();
+                if (this.AllowCDWithdrawMetadata != null)
+                    hash = hash * 59 + this.AllowCDWithdrawMetadata.GetHashCode();
                 if (this.ChangeEmail != null)
                     hash = hash * 59 + this.ChangeEmail.GetHashCode();
                 if (this.ChangeEmailOther != null)
@@ -554,6 +582,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.UseBrand.GetHashCode();
                 if (this.UseConsumerDisclosureWithinAccount != null)
                     hash = hash * 59 + this.UseConsumerDisclosureWithinAccount.GetHashCode();
+                if (this.UseConsumerDisclosureWithinAccountMetadata != null)
+                    hash = hash * 59 + this.UseConsumerDisclosureWithinAccountMetadata.GetHashCode();
                 if (this.WithdrawAddressLine1 != null)
                     hash = hash * 59 + this.WithdrawAddressLine1.GetHashCode();
                 if (this.WithdrawAddressLine2 != null)

@@ -483,9 +483,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        UserSignaturesInformation ListSignatures (string accountId, string userId);
+        UserSignaturesInformation ListSignatures (string accountId, string userId, UsersApi.ListSignaturesOptions options = null);
 
         /// <summary>
         /// Retrieves a list of user signature definitions for a specified user.
@@ -496,9 +496,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UserSignaturesInformation> ListSignaturesWithHttpInfo (string accountId, string userId);
+        ApiResponse<UserSignaturesInformation> ListSignaturesWithHttpInfo (string accountId, string userId, UsersApi.ListSignaturesOptions options = null);
         /// <summary>
         /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type).
         /// </summary>
@@ -699,6 +699,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>ApiResponse of </returns>
         ApiResponse<UserSignature> UpdateSignatureImageWithHttpInfo (string accountId, string userId, string signatureId, string imageType);
+        /// <summary>
+        /// Adds/updates a user signature.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userSignaturesInformation"> (optional)</param>
+        
+        /// <returns></returns>
+        UserSignaturesInformation UpdateSignatures (string accountId, string userId, UserSignaturesInformation userSignaturesInformation = null);
+
+        /// <summary>
+        /// Adds/updates a user signature.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userSignaturesInformation"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UserSignaturesInformation> UpdateSignaturesWithHttpInfo (string accountId, string userId, UserSignaturesInformation userSignaturesInformation = null);
         /// <summary>
         /// Updates the specified user information.
         /// </summary>
@@ -1210,9 +1235,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserSignaturesInformation</returns>
-        System.Threading.Tasks.Task<UserSignaturesInformation> ListSignaturesAsync (string accountId, string userId);
+        System.Threading.Tasks.Task<UserSignaturesInformation> ListSignaturesAsync (string accountId, string userId, UsersApi.ListSignaturesOptions options = null);
 
         /// <summary>
         /// Retrieves a list of user signature definitions for a specified user.
@@ -1223,9 +1248,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserSignaturesInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserSignaturesInformation>> ListSignaturesAsyncWithHttpInfo (string accountId, string userId);
+        System.Threading.Tasks.Task<ApiResponse<UserSignaturesInformation>> ListSignaturesAsyncWithHttpInfo (string accountId, string userId, UsersApi.ListSignaturesOptions options = null);
         /// <summary>
         /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type).
         /// </summary>
@@ -1426,6 +1451,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (UserSignature)</returns>
         System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureImageAsyncWithHttpInfo (string accountId, string userId, string signatureId, string imageType);
+        /// <summary>
+        /// Adds/updates a user signature.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userSignaturesInformation"> (optional)</param>
+        
+        /// <returns>Task of UserSignaturesInformation</returns>
+        System.Threading.Tasks.Task<UserSignaturesInformation> UpdateSignaturesAsync (string accountId, string userId, UserSignaturesInformation userSignaturesInformation = null);
+
+        /// <summary>
+        /// Adds/updates a user signature.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userSignaturesInformation"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (UserSignaturesInformation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserSignaturesInformation>> UpdateSignaturesAsyncWithHttpInfo (string accountId, string userId, UserSignaturesInformation userSignaturesInformation = null);
         /// <summary>
         /// Updates the specified user information.
         /// </summary>
@@ -4461,8 +4511,6 @@ namespace DocuSign.eSign.Api
             /// Filters user records returned by one or more group Id&#39;s. 
             public string groupId {get; set;}
             /// 
-            public string includeUsersettingsForCsv {get; set;}
-            /// 
             public string loginStatus {get; set;}
             /// 
             public string notGroupId {get; set;}
@@ -4535,7 +4583,6 @@ namespace DocuSign.eSign.Api
                 if (options.email != null) localVarQueryParams.Add("email", Configuration.ApiClient.ParameterToString(options.email)); // query parameter
                 if (options.emailSubstring != null) localVarQueryParams.Add("email_substring", Configuration.ApiClient.ParameterToString(options.emailSubstring)); // query parameter
                 if (options.groupId != null) localVarQueryParams.Add("group_id", Configuration.ApiClient.ParameterToString(options.groupId)); // query parameter
-                if (options.includeUsersettingsForCsv != null) localVarQueryParams.Add("include_usersettings_for_csv", Configuration.ApiClient.ParameterToString(options.includeUsersettingsForCsv)); // query parameter
                 if (options.loginStatus != null) localVarQueryParams.Add("login_status", Configuration.ApiClient.ParameterToString(options.loginStatus)); // query parameter
                 if (options.notGroupId != null) localVarQueryParams.Add("not_group_id", Configuration.ApiClient.ParameterToString(options.notGroupId)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", Configuration.ApiClient.ParameterToString(options.startPosition)); // query parameter
@@ -4633,7 +4680,6 @@ namespace DocuSign.eSign.Api
                 if (options.email != null) localVarQueryParams.Add("email", Configuration.ApiClient.ParameterToString(options.email)); // query parameter
                 if (options.emailSubstring != null) localVarQueryParams.Add("email_substring", Configuration.ApiClient.ParameterToString(options.emailSubstring)); // query parameter
                 if (options.groupId != null) localVarQueryParams.Add("group_id", Configuration.ApiClient.ParameterToString(options.groupId)); // query parameter
-                if (options.includeUsersettingsForCsv != null) localVarQueryParams.Add("include_usersettings_for_csv", Configuration.ApiClient.ParameterToString(options.includeUsersettingsForCsv)); // query parameter
                 if (options.loginStatus != null) localVarQueryParams.Add("login_status", Configuration.ApiClient.ParameterToString(options.loginStatus)); // query parameter
                 if (options.notGroupId != null) localVarQueryParams.Add("not_group_id", Configuration.ApiClient.ParameterToString(options.notGroupId)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", Configuration.ApiClient.ParameterToString(options.startPosition)); // query parameter
@@ -4833,6 +4879,14 @@ namespace DocuSign.eSign.Api
         }
 
 
+        /// <summary>
+        /// Retrieves a list of user signature definitions for a specified user. Retrieves the signature definitions for the specified user.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
+        /// </summary>
+        public class ListSignaturesOptions
+        {
+            /// 
+            public string stampType {get; set;}
+        }
 
         /// <summary>
         /// Retrieves a list of user signature definitions for a specified user. Retrieves the signature definitions for the specified user.  The userId parameter specified in the endpoint must match the authenticated user&#39;s user ID and the user must be a member of the account.  The &#x60;signatureId&#x60; parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (&#x60;signatureId&#x60;), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.   For example encode \&quot;Bob Smith\&quot; as \&quot;Bob%20Smith\&quot;.
@@ -4840,11 +4894,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>UserSignaturesInformation</returns>
-        public UserSignaturesInformation ListSignatures (string accountId, string userId)
+        public UserSignaturesInformation ListSignatures (string accountId, string userId, UsersApi.ListSignaturesOptions options = null)
         {
-             ApiResponse<UserSignaturesInformation> localVarResponse = ListSignaturesWithHttpInfo(accountId, userId);
+             ApiResponse<UserSignaturesInformation> localVarResponse = ListSignaturesWithHttpInfo(accountId, userId, options);
              return localVarResponse.Data;
         }
 
@@ -4854,9 +4908,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of UserSignaturesInformation</returns>
-        public ApiResponse< UserSignaturesInformation > ListSignaturesWithHttpInfo (string accountId, string userId)
+        public ApiResponse< UserSignaturesInformation > ListSignaturesWithHttpInfo (string accountId, string userId, UsersApi.ListSignaturesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4892,6 +4946,10 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.stampType != null) localVarQueryParams.Add("stamp_type", Configuration.ApiClient.ParameterToString(options.stampType)); // query parameter
+            }
 
 
 
@@ -4927,11 +4985,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserSignaturesInformation</returns>
-        public async System.Threading.Tasks.Task<UserSignaturesInformation> ListSignaturesAsync (string accountId, string userId)
+        public async System.Threading.Tasks.Task<UserSignaturesInformation> ListSignaturesAsync (string accountId, string userId, UsersApi.ListSignaturesOptions options = null)
         {
-             ApiResponse<UserSignaturesInformation> localVarResponse = await ListSignaturesAsyncWithHttpInfo(accountId, userId);
+             ApiResponse<UserSignaturesInformation> localVarResponse = await ListSignaturesAsyncWithHttpInfo(accountId, userId, options);
              return localVarResponse.Data;
 
         }
@@ -4942,9 +5000,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserSignaturesInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserSignaturesInformation>> ListSignaturesAsyncWithHttpInfo (string accountId, string userId)
+        public async System.Threading.Tasks.Task<ApiResponse<UserSignaturesInformation>> ListSignaturesAsyncWithHttpInfo (string accountId, string userId, UsersApi.ListSignaturesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4980,6 +5038,10 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.stampType != null) localVarQueryParams.Add("stamp_type", Configuration.ApiClient.ParameterToString(options.stampType)); // query parameter
+            }
 
 
 
@@ -6449,6 +6511,192 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<UserSignature>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (UserSignature) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserSignature)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Adds/updates a user signature. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userSignaturesInformation"> (optional)</param>
+        
+        /// <returns>UserSignaturesInformation</returns>
+        public UserSignaturesInformation UpdateSignatures (string accountId, string userId, UserSignaturesInformation userSignaturesInformation = null)
+        {
+             ApiResponse<UserSignaturesInformation> localVarResponse = UpdateSignaturesWithHttpInfo(accountId, userId, userSignaturesInformation);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Adds/updates a user signature. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userSignaturesInformation"> (optional)</param>
+        
+        /// <returns>ApiResponse of UserSignaturesInformation</returns>
+        public ApiResponse< UserSignaturesInformation > UpdateSignaturesWithHttpInfo (string accountId, string userId, UserSignaturesInformation userSignaturesInformation = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->UpdateSignatures");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateSignatures");
+
+            var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+
+
+            if (userSignaturesInformation != null && userSignaturesInformation.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(userSignaturesInformation); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userSignaturesInformation; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateSignatures", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<UserSignaturesInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserSignaturesInformation) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UserSignaturesInformation)));
+            }
+            else
+            {
+                return new ApiResponse<UserSignaturesInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserSignaturesInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserSignaturesInformation)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Adds/updates a user signature. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userSignaturesInformation"> (optional)</param>
+        
+        /// <returns>Task of UserSignaturesInformation</returns>
+        public async System.Threading.Tasks.Task<UserSignaturesInformation> UpdateSignaturesAsync (string accountId, string userId, UserSignaturesInformation userSignaturesInformation = null)
+        {
+             ApiResponse<UserSignaturesInformation> localVarResponse = await UpdateSignaturesAsyncWithHttpInfo(accountId, userId, userSignaturesInformation);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Adds/updates a user signature. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userSignaturesInformation"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (UserSignaturesInformation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserSignaturesInformation>> UpdateSignaturesAsyncWithHttpInfo (string accountId, string userId, UserSignaturesInformation userSignaturesInformation = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->UpdateSignatures");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateSignatures");
+
+            var localVarPath = "/v2/accounts/{accountId}/users/{userId}/signatures";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+
+
+            if (userSignaturesInformation != null && userSignaturesInformation.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(userSignaturesInformation); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userSignaturesInformation; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateSignatures", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserSignaturesInformation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserSignaturesInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserSignaturesInformation)));
             
         }
 

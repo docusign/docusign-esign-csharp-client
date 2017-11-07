@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**SealName** | **string** |  | [optional] 
 **SignatureProviderName** | **string** |  | [optional] 
 **SignatureProviderOptions** | [**RecipientSignatureProviderOptions**](RecipientSignatureProviderOptions.md) |  | [optional] 
 

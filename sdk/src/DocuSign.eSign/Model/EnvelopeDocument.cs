@@ -50,11 +50,9 @@ namespace DocuSign.eSign.Model
         /// <param name="Order">.</param>
         /// <param name="Pages">.</param>
         /// <param name="SignerMustAcknowledge">.</param>
-        /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
-        /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="Type">.</param>
         /// <param name="Uri">.</param>
-        public EnvelopeDocument(string AttachmentTabId = default(string), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), string Name = default(string), string Order = default(string), string Pages = default(string), string SignerMustAcknowledge = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
+        public EnvelopeDocument(string AttachmentTabId = default(string), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), string Name = default(string), string Order = default(string), string Pages = default(string), string SignerMustAcknowledge = default(string), string Type = default(string), string Uri = default(string))
         {
             this.AttachmentTabId = AttachmentTabId;
             this.AvailableDocumentTypes = AvailableDocumentTypes;
@@ -69,8 +67,6 @@ namespace DocuSign.eSign.Model
             this.Order = Order;
             this.Pages = Pages;
             this.SignerMustAcknowledge = SignerMustAcknowledge;
-            this.TemplateLocked = TemplateLocked;
-            this.TemplateRequired = TemplateRequired;
             this.Type = Type;
             this.Uri = Uri;
         }
@@ -153,18 +149,6 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signerMustAcknowledge", EmitDefaultValue=false)]
         public string SignerMustAcknowledge { get; set; }
         /// <summary>
-        /// When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
-        /// </summary>
-        /// <value>When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. </value>
-        [DataMember(Name="templateLocked", EmitDefaultValue=false)]
-        public string TemplateLocked { get; set; }
-        /// <summary>
-        /// When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
-        /// </summary>
-        /// <value>When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.</value>
-        [DataMember(Name="templateRequired", EmitDefaultValue=false)]
-        public string TemplateRequired { get; set; }
-        /// <summary>
         /// 
         /// </summary>
         /// <value></value>
@@ -197,8 +181,6 @@ namespace DocuSign.eSign.Model
             sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  Pages: ").Append(Pages).Append("\n");
             sb.Append("  SignerMustAcknowledge: ").Append(SignerMustAcknowledge).Append("\n");
-            sb.Append("  TemplateLocked: ").Append(TemplateLocked).Append("\n");
-            sb.Append("  TemplateRequired: ").Append(TemplateRequired).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Uri: ").Append(Uri).Append("\n");
             sb.Append("}\n");
@@ -303,16 +285,6 @@ namespace DocuSign.eSign.Model
                     this.SignerMustAcknowledge.Equals(other.SignerMustAcknowledge)
                 ) && 
                 (
-                    this.TemplateLocked == other.TemplateLocked ||
-                    this.TemplateLocked != null &&
-                    this.TemplateLocked.Equals(other.TemplateLocked)
-                ) && 
-                (
-                    this.TemplateRequired == other.TemplateRequired ||
-                    this.TemplateRequired != null &&
-                    this.TemplateRequired.Equals(other.TemplateRequired)
-                ) && 
-                (
                     this.Type == other.Type ||
                     this.Type != null &&
                     this.Type.Equals(other.Type)
@@ -361,10 +333,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Pages.GetHashCode();
                 if (this.SignerMustAcknowledge != null)
                     hash = hash * 59 + this.SignerMustAcknowledge.GetHashCode();
-                if (this.TemplateLocked != null)
-                    hash = hash * 59 + this.TemplateLocked.GetHashCode();
-                if (this.TemplateRequired != null)
-                    hash = hash * 59 + this.TemplateRequired.GetHashCode();
                 if (this.Type != null)
                     hash = hash * 59 + this.Type.GetHashCode();
                 if (this.Uri != null)

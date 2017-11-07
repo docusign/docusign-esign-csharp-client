@@ -50,11 +50,12 @@ namespace DocuSign.eSign.Model
         /// <param name="OpenIDResult">OpenIDResult.</param>
         /// <param name="PhoneAuthResult">PhoneAuthResult.</param>
         /// <param name="SalesforceResult">SalesforceResult.</param>
+        /// <param name="SignatureProviderResult">SignatureProviderResult.</param>
         /// <param name="SmsAuthResult">SmsAuthResult.</param>
         /// <param name="STANPinResult">STANPinResult.</param>
         /// <param name="TwitterResult">TwitterResult.</param>
         /// <param name="YahooResult">YahooResult.</param>
-        public AuthenticationStatus(EventResult AccessCodeResult = default(EventResult), EventResult AgeVerifyResult = default(EventResult), EventResult AnySocialIDResult = default(EventResult), EventResult FacebookResult = default(EventResult), EventResult GoogleResult = default(EventResult), EventResult IdLookupResult = default(EventResult), EventResult IdQuestionsResult = default(EventResult), EventResult LinkedinResult = default(EventResult), EventResult LiveIDResult = default(EventResult), EventResult OfacResult = default(EventResult), EventResult OpenIDResult = default(EventResult), EventResult PhoneAuthResult = default(EventResult), EventResult SalesforceResult = default(EventResult), EventResult SmsAuthResult = default(EventResult), EventResult STANPinResult = default(EventResult), EventResult TwitterResult = default(EventResult), EventResult YahooResult = default(EventResult))
+        public AuthenticationStatus(EventResult AccessCodeResult = default(EventResult), EventResult AgeVerifyResult = default(EventResult), EventResult AnySocialIDResult = default(EventResult), EventResult FacebookResult = default(EventResult), EventResult GoogleResult = default(EventResult), EventResult IdLookupResult = default(EventResult), EventResult IdQuestionsResult = default(EventResult), EventResult LinkedinResult = default(EventResult), EventResult LiveIDResult = default(EventResult), EventResult OfacResult = default(EventResult), EventResult OpenIDResult = default(EventResult), EventResult PhoneAuthResult = default(EventResult), EventResult SalesforceResult = default(EventResult), EventResult SignatureProviderResult = default(EventResult), EventResult SmsAuthResult = default(EventResult), EventResult STANPinResult = default(EventResult), EventResult TwitterResult = default(EventResult), EventResult YahooResult = default(EventResult))
         {
             this.AccessCodeResult = AccessCodeResult;
             this.AgeVerifyResult = AgeVerifyResult;
@@ -69,6 +70,7 @@ namespace DocuSign.eSign.Model
             this.OpenIDResult = OpenIDResult;
             this.PhoneAuthResult = PhoneAuthResult;
             this.SalesforceResult = SalesforceResult;
+            this.SignatureProviderResult = SignatureProviderResult;
             this.SmsAuthResult = SmsAuthResult;
             this.STANPinResult = STANPinResult;
             this.TwitterResult = TwitterResult;
@@ -141,6 +143,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="salesforceResult", EmitDefaultValue=false)]
         public EventResult SalesforceResult { get; set; }
         /// <summary>
+        /// Gets or Sets SignatureProviderResult
+        /// </summary>
+        [DataMember(Name="signatureProviderResult", EmitDefaultValue=false)]
+        public EventResult SignatureProviderResult { get; set; }
+        /// <summary>
         /// Gets or Sets SmsAuthResult
         /// </summary>
         [DataMember(Name="smsAuthResult", EmitDefaultValue=false)]
@@ -181,6 +188,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  OpenIDResult: ").Append(OpenIDResult).Append("\n");
             sb.Append("  PhoneAuthResult: ").Append(PhoneAuthResult).Append("\n");
             sb.Append("  SalesforceResult: ").Append(SalesforceResult).Append("\n");
+            sb.Append("  SignatureProviderResult: ").Append(SignatureProviderResult).Append("\n");
             sb.Append("  SmsAuthResult: ").Append(SmsAuthResult).Append("\n");
             sb.Append("  STANPinResult: ").Append(STANPinResult).Append("\n");
             sb.Append("  TwitterResult: ").Append(TwitterResult).Append("\n");
@@ -287,6 +295,11 @@ namespace DocuSign.eSign.Model
                     this.SalesforceResult.Equals(other.SalesforceResult)
                 ) && 
                 (
+                    this.SignatureProviderResult == other.SignatureProviderResult ||
+                    this.SignatureProviderResult != null &&
+                    this.SignatureProviderResult.Equals(other.SignatureProviderResult)
+                ) && 
+                (
                     this.SmsAuthResult == other.SmsAuthResult ||
                     this.SmsAuthResult != null &&
                     this.SmsAuthResult.Equals(other.SmsAuthResult)
@@ -345,6 +358,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PhoneAuthResult.GetHashCode();
                 if (this.SalesforceResult != null)
                     hash = hash * 59 + this.SalesforceResult.GetHashCode();
+                if (this.SignatureProviderResult != null)
+                    hash = hash * 59 + this.SignatureProviderResult.GetHashCode();
                 if (this.SmsAuthResult != null)
                     hash = hash * 59 + this.SmsAuthResult.GetHashCode();
                 if (this.STANPinResult != null)

@@ -1734,8 +1734,6 @@ namespace DocuSign.eSign.Api
         {
             /// Number of records to return. The number must be greater than 1 and less than or equal to 100. 
             public string count {get; set;}
-            /// Filters the groups returned by the group name or a sub-string of group name. 
-            public string groupName {get; set;}
             /// 
             public string groupType {get; set;}
             /// 
@@ -1801,7 +1799,6 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", Configuration.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.groupName != null) localVarQueryParams.Add("group_name", Configuration.ApiClient.ParameterToString(options.groupName)); // query parameter
                 if (options.groupType != null) localVarQueryParams.Add("group_type", Configuration.ApiClient.ParameterToString(options.groupType)); // query parameter
                 if (options.searchText != null) localVarQueryParams.Add("search_text", Configuration.ApiClient.ParameterToString(options.searchText)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", Configuration.ApiClient.ParameterToString(options.startPosition)); // query parameter
@@ -1893,7 +1890,6 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", Configuration.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.groupName != null) localVarQueryParams.Add("group_name", Configuration.ApiClient.ParameterToString(options.groupName)); // query parameter
                 if (options.groupType != null) localVarQueryParams.Add("group_type", Configuration.ApiClient.ParameterToString(options.groupType)); // query parameter
                 if (options.searchText != null) localVarQueryParams.Add("search_text", Configuration.ApiClient.ParameterToString(options.searchText)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", Configuration.ApiClient.ParameterToString(options.startPosition)); // query parameter

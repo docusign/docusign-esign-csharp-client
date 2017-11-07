@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="list"></a>
 # **List**
-> FoldersResponse List (string include = null, string includeItems = null, string startPosition = null, string template = null, string userFilter = null, string accountId)
+> FoldersResponse List (string include = null, string startPosition = null, string template = null, string userFilter = null, string accountId)
 
 Gets a list of the folders for the account.
 
@@ -35,7 +35,6 @@ namespace Example
             
             var apiInstance = new FoldersApi();
             var include = include_example;  // string |  (optional) 
-            var includeItems = includeItems_example;  // string |  (optional) 
             var startPosition = startPosition_example;  // string |  (optional) 
             var template = template_example;  // string | Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned. (optional) 
             var userFilter = userFilter_example;  // string |  (optional) 
@@ -44,7 +43,7 @@ namespace Example
             try
             {
                 // Gets a list of the folders for the account.
-                FoldersResponse result = apiInstance.List(include, includeItems, startPosition, template, userFilter, accountId);
+                FoldersResponse result = apiInstance.List(include, startPosition, template, userFilter, accountId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -61,7 +60,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **include** | **string**|  | [optional] 
- **includeItems** | **string**|  | [optional] 
  **startPosition** | **string**|  | [optional] 
  **template** | **string**| Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned. | [optional] 
  **userFilter** | **string**|  | [optional] 
@@ -84,7 +82,7 @@ No authorization required
 
 <a name="listitems"></a>
 # **ListItems**
-> FolderItemsResponse ListItems (string fromDate = null, string includeItems = null, string ownerEmail = null, string ownerName = null, string searchText = null, string startPosition = null, string status = null, string toDate = null, string accountId, string folderId)
+> FolderItemsResponse ListItems (string fromDate = null, string ownerEmail = null, string ownerName = null, string searchText = null, string startPosition = null, string status = null, string toDate = null, string accountId, string folderId)
 
 Gets a list of the envelopes in the specified folder.
 
@@ -107,7 +105,6 @@ namespace Example
             
             var apiInstance = new FoldersApi();
             var fromDate = fromDate_example;  // string |  Only return items on or after this date. If no value is provided, the default search is the previous 30 days.  (optional) 
-            var includeItems = includeItems_example;  // string |  (optional) 
             var ownerEmail = ownerEmail_example;  // string |  The email of the folder owner.  (optional) 
             var ownerName = ownerName_example;  // string |  The name of the folder owner.  (optional) 
             var searchText = searchText_example;  // string |  The search text used to search the items of the envelope. The search looks at recipient names and emails, envelope custom fields, sender name, and subject.  (optional) 
@@ -120,7 +117,7 @@ namespace Example
             try
             {
                 // Gets a list of the envelopes in the specified folder.
-                FolderItemsResponse result = apiInstance.ListItems(fromDate, includeItems, ownerEmail, ownerName, searchText, startPosition, status, toDate, accountId, folderId);
+                FolderItemsResponse result = apiInstance.ListItems(fromDate, ownerEmail, ownerName, searchText, startPosition, status, toDate, accountId, folderId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -137,7 +134,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fromDate** | **string**|  Only return items on or after this date. If no value is provided, the default search is the previous 30 days.  | [optional] 
- **includeItems** | **string**|  | [optional] 
  **ownerEmail** | **string**|  The email of the folder owner.  | [optional] 
  **ownerName** | **string**|  The name of the folder owner.  | [optional] 
  **searchText** | **string**|  The search text used to search the items of the envelope. The search looks at recipient names and emails, envelope custom fields, sender name, and subject.  | [optional] 

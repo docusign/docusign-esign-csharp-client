@@ -50,6 +50,7 @@ namespace DocuSign.eSign.Model
         /// <param name="HomeAddress">HomeAddress.</param>
         /// <param name="InitialsImageUri">Contains the URI for an endpoint that you can use to retrieve the initials image..</param>
         /// <param name="IsAdmin">Determines if the feature set is actively set as part of the plan..</param>
+        /// <param name="JobTitle">.</param>
         /// <param name="LastLogin">Shows the date-time when the user last logged on to the system..</param>
         /// <param name="LastName">The user’s last name.  Maximum Length: 50 characters..</param>
         /// <param name="LoginStatus">Shows the current status of the user’s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  .</param>
@@ -59,6 +60,7 @@ namespace DocuSign.eSign.Model
         /// <param name="PermissionProfileId">.</param>
         /// <param name="PermissionProfileName">.</param>
         /// <param name="ProfileImageUri">.</param>
+        /// <param name="SendActivationEmail">.</param>
         /// <param name="SendActivationOnInvalidLogin">When set to **true**, specifies that an additional activation email is sent to the user if they fail a log on before activating their account. .</param>
         /// <param name="SignatureImageUri">Contains the URI for an endpoint that you can use to retrieve the signature image..</param>
         /// <param name="SuffixName">The suffix for the user&#39;s name.   Maximum Length: 50 characters. .</param>
@@ -71,7 +73,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserStatus">.</param>
         /// <param name="UserType">.</param>
         /// <param name="WorkAddress">WorkAddress.</param>
-        public UserInformation(UserAccountManagementGranularInformation AccountManagementGranular = default(UserAccountManagementGranularInformation), string ActivationAccessCode = default(string), string CreatedDateTime = default(string), List<NameValue> CustomSettings = default(List<NameValue>), string Email = default(string), string EnableConnectForUser = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FirstName = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), List<Group> GroupList = default(List<Group>), AddressInformationV2 HomeAddress = default(AddressInformationV2), string InitialsImageUri = default(string), string IsAdmin = default(string), string LastLogin = default(string), string LastName = default(string), string LoginStatus = default(string), string MiddleName = default(string), string Password = default(string), string PasswordExpiration = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string ProfileImageUri = default(string), string SendActivationOnInvalidLogin = default(string), string SignatureImageUri = default(string), string SuffixName = default(string), string Title = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserProfileLastModifiedDate = default(string), List<NameValue> UserSettings = default(List<NameValue>), string UserStatus = default(string), string UserType = default(string), AddressInformationV2 WorkAddress = default(AddressInformationV2))
+        public UserInformation(UserAccountManagementGranularInformation AccountManagementGranular = default(UserAccountManagementGranularInformation), string ActivationAccessCode = default(string), string CreatedDateTime = default(string), List<NameValue> CustomSettings = default(List<NameValue>), string Email = default(string), string EnableConnectForUser = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FirstName = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), List<Group> GroupList = default(List<Group>), AddressInformationV2 HomeAddress = default(AddressInformationV2), string InitialsImageUri = default(string), string IsAdmin = default(string), string JobTitle = default(string), string LastLogin = default(string), string LastName = default(string), string LoginStatus = default(string), string MiddleName = default(string), string Password = default(string), string PasswordExpiration = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string ProfileImageUri = default(string), string SendActivationEmail = default(string), string SendActivationOnInvalidLogin = default(string), string SignatureImageUri = default(string), string SuffixName = default(string), string Title = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserProfileLastModifiedDate = default(string), List<NameValue> UserSettings = default(List<NameValue>), string UserStatus = default(string), string UserType = default(string), AddressInformationV2 WorkAddress = default(AddressInformationV2))
         {
             this.AccountManagementGranular = AccountManagementGranular;
             this.ActivationAccessCode = ActivationAccessCode;
@@ -86,6 +88,7 @@ namespace DocuSign.eSign.Model
             this.HomeAddress = HomeAddress;
             this.InitialsImageUri = InitialsImageUri;
             this.IsAdmin = IsAdmin;
+            this.JobTitle = JobTitle;
             this.LastLogin = LastLogin;
             this.LastName = LastName;
             this.LoginStatus = LoginStatus;
@@ -95,6 +98,7 @@ namespace DocuSign.eSign.Model
             this.PermissionProfileId = PermissionProfileId;
             this.PermissionProfileName = PermissionProfileName;
             this.ProfileImageUri = ProfileImageUri;
+            this.SendActivationEmail = SendActivationEmail;
             this.SendActivationOnInvalidLogin = SendActivationOnInvalidLogin;
             this.SignatureImageUri = SignatureImageUri;
             this.SuffixName = SuffixName;
@@ -184,6 +188,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="isAdmin", EmitDefaultValue=false)]
         public string IsAdmin { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="jobTitle", EmitDefaultValue=false)]
+        public string JobTitle { get; set; }
+        /// <summary>
         /// Shows the date-time when the user last logged on to the system.
         /// </summary>
         /// <value>Shows the date-time when the user last logged on to the system.</value>
@@ -237,6 +247,12 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="profileImageUri", EmitDefaultValue=false)]
         public string ProfileImageUri { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="sendActivationEmail", EmitDefaultValue=false)]
+        public string SendActivationEmail { get; set; }
         /// <summary>
         /// When set to **true**, specifies that an additional activation email is sent to the user if they fail a log on before activating their account. 
         /// </summary>
@@ -329,6 +345,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  HomeAddress: ").Append(HomeAddress).Append("\n");
             sb.Append("  InitialsImageUri: ").Append(InitialsImageUri).Append("\n");
             sb.Append("  IsAdmin: ").Append(IsAdmin).Append("\n");
+            sb.Append("  JobTitle: ").Append(JobTitle).Append("\n");
             sb.Append("  LastLogin: ").Append(LastLogin).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  LoginStatus: ").Append(LoginStatus).Append("\n");
@@ -338,6 +355,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  PermissionProfileId: ").Append(PermissionProfileId).Append("\n");
             sb.Append("  PermissionProfileName: ").Append(PermissionProfileName).Append("\n");
             sb.Append("  ProfileImageUri: ").Append(ProfileImageUri).Append("\n");
+            sb.Append("  SendActivationEmail: ").Append(SendActivationEmail).Append("\n");
             sb.Append("  SendActivationOnInvalidLogin: ").Append(SendActivationOnInvalidLogin).Append("\n");
             sb.Append("  SignatureImageUri: ").Append(SignatureImageUri).Append("\n");
             sb.Append("  SuffixName: ").Append(SuffixName).Append("\n");
@@ -452,6 +470,11 @@ namespace DocuSign.eSign.Model
                     this.IsAdmin.Equals(other.IsAdmin)
                 ) && 
                 (
+                    this.JobTitle == other.JobTitle ||
+                    this.JobTitle != null &&
+                    this.JobTitle.Equals(other.JobTitle)
+                ) && 
+                (
                     this.LastLogin == other.LastLogin ||
                     this.LastLogin != null &&
                     this.LastLogin.Equals(other.LastLogin)
@@ -495,6 +518,11 @@ namespace DocuSign.eSign.Model
                     this.ProfileImageUri == other.ProfileImageUri ||
                     this.ProfileImageUri != null &&
                     this.ProfileImageUri.Equals(other.ProfileImageUri)
+                ) && 
+                (
+                    this.SendActivationEmail == other.SendActivationEmail ||
+                    this.SendActivationEmail != null &&
+                    this.SendActivationEmail.Equals(other.SendActivationEmail)
                 ) && 
                 (
                     this.SendActivationOnInvalidLogin == other.SendActivationOnInvalidLogin ||
@@ -595,6 +623,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.InitialsImageUri.GetHashCode();
                 if (this.IsAdmin != null)
                     hash = hash * 59 + this.IsAdmin.GetHashCode();
+                if (this.JobTitle != null)
+                    hash = hash * 59 + this.JobTitle.GetHashCode();
                 if (this.LastLogin != null)
                     hash = hash * 59 + this.LastLogin.GetHashCode();
                 if (this.LastName != null)
@@ -613,6 +643,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PermissionProfileName.GetHashCode();
                 if (this.ProfileImageUri != null)
                     hash = hash * 59 + this.ProfileImageUri.GetHashCode();
+                if (this.SendActivationEmail != null)
+                    hash = hash * 59 + this.SendActivationEmail.GetHashCode();
                 if (this.SendActivationOnInvalidLogin != null)
                     hash = hash * 59 + this.SendActivationOnInvalidLogin.GetHashCode();
                 if (this.SignatureImageUri != null)

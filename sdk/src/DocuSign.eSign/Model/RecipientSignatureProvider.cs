@@ -37,14 +37,22 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientSignatureProvider" /> class.
         /// </summary>
+        /// <param name="SealName">.</param>
         /// <param name="SignatureProviderName">.</param>
         /// <param name="SignatureProviderOptions">SignatureProviderOptions.</param>
-        public RecipientSignatureProvider(string SignatureProviderName = default(string), RecipientSignatureProviderOptions SignatureProviderOptions = default(RecipientSignatureProviderOptions))
+        public RecipientSignatureProvider(string SealName = default(string), string SignatureProviderName = default(string), RecipientSignatureProviderOptions SignatureProviderOptions = default(RecipientSignatureProviderOptions))
         {
+            this.SealName = SealName;
             this.SignatureProviderName = SignatureProviderName;
             this.SignatureProviderOptions = SignatureProviderOptions;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="sealName", EmitDefaultValue=false)]
+        public string SealName { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -64,6 +72,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class RecipientSignatureProvider {\n");
+            sb.Append("  SealName: ").Append(SealName).Append("\n");
             sb.Append("  SignatureProviderName: ").Append(SignatureProviderName).Append("\n");
             sb.Append("  SignatureProviderOptions: ").Append(SignatureProviderOptions).Append("\n");
             sb.Append("}\n");
@@ -103,6 +112,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.SealName == other.SealName ||
+                    this.SealName != null &&
+                    this.SealName.Equals(other.SealName)
+                ) && 
+                (
                     this.SignatureProviderName == other.SignatureProviderName ||
                     this.SignatureProviderName != null &&
                     this.SignatureProviderName.Equals(other.SignatureProviderName)
@@ -125,6 +139,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.SealName != null)
+                    hash = hash * 59 + this.SealName.GetHashCode();
                 if (this.SignatureProviderName != null)
                     hash = hash * 59 + this.SignatureProviderName.GetHashCode();
                 if (this.SignatureProviderOptions != null)

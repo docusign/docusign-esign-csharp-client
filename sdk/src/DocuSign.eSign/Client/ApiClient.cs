@@ -511,7 +511,7 @@ namespace DocuSign.eSign.Client
             string format = "https://{0}/oauth/auth?response_type=code&scope=all&client_id={1}&redirect_uri={2}";
             if (state != null)
             {
-                format += "&state ={3}";
+                format += "&state={3}";
             }
             return string.Format(format, DocuSignOAuthHost, clientId, redirectURI, state);
         }

@@ -26,7 +26,8 @@ namespace SdkTests
     public class JwtAuthUnitTests
     {
         TestConfig testConfig = new TestConfig();
-
+#if NUNIT
+#else
         [TestInitialize()]
         [TestMethod]
         public void JwtLoginTest()
@@ -320,5 +321,6 @@ namespace SdkTests
             Assert.IsNotNull(viewUrl);
             Assert.IsNotNull(viewUrl.Url);
         }
+#endif
     }
 }

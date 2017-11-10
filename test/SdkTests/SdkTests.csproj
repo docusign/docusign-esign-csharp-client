@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="docs\private.pem" />
     <None Include="docs\SignTest1.docx" />
     <None Include="docs\SignTest1.pdf" />
     <None Include="packages.config" />

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **DocumentId** | **string** | Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute. | [optional] 
 **EncryptedWithKeyManager** | **string** | When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.   | [optional] 
 **FileExtension** | **string** | The file extension type of the document. If the document is not a PDF it is converted to a PDF.   | [optional] 
+**FileFormatHint** | **string** |  | [optional] 
 **IncludeInDownload** | **string** |  | [optional] 
 **MatchBoxes** | [**List&lt;MatchBox&gt;**](MatchBox.md) | Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.   | [optional] 
 **Name** | **string** |  | [optional] 

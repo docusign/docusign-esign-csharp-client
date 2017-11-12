@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **InPersonSigners** | [**List&lt;InPersonSigner&gt;**](InPersonSigner.md) | Specifies a signer that is in the same physical location as a DocuSign user who will act as a Signing Host for the transaction. The recipient added is the Signing Host and new separate Signer Name field appears after Sign in person is selected. | [optional] 
 **Intermediaries** | [**List&lt;Intermediary&gt;**](Intermediary.md) | Identifies a recipient that can, but is not required to, add name and email information for recipients at the same or subsequent level in the routing order (until subsequent Agents, Editors or Intermediaries recipient types are added). | [optional] 
 **RecipientCount** | **string** |  | [optional] 
+**Seals** | [**List&lt;SealSign&gt;**](SealSign.md) |  | [optional] 
 **Signers** | [**List&lt;Signer&gt;**](Signer.md) | A complex type containing information about the Signer recipient. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

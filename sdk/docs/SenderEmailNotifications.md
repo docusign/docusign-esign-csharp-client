@@ -4,6 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChangedSigner** | **string** | When set to **true**, the sender receives notification if the signer changes. | [optional] 
+**CommentsOnlyPrivateAndMention** | **string** |  | [optional] 
+**CommentsReceiveAll** | **string** |  | [optional] 
 **DeliveryFailed** | **string** | When set to **true**, the sender receives notification if the delivery of the envelope fails. | [optional] 
 **EnvelopeComplete** | **string** | When set to **true**, the user receives notification that the envelope has been completed. | [optional] 
 **OfflineSigningFailed** | **string** | When set to **true**, the user receives notification if the offline signing failed. | [optional] 

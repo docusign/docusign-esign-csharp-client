@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DistributorCode** | **string** | The code that identifies the billing plan groups and plans for the new account. | [optional] 
 **DistributorPassword** | **string** | The password for the distributorCode. | [optional] 
 **InitialUser** | [**UserInformation**](UserInformation.md) |  | [optional] 
+**PaymentProcessorInformation** | [**PaymentProcessorInformation**](PaymentProcessorInformation.md) |  | [optional] 
 **PlanInformation** | [**PlanInformation**](PlanInformation.md) |  | [optional] 
 **ReferralInformation** | [**ReferralInformation**](ReferralInformation.md) |  | [optional] 
 **SocialAccountInformation** | [**SocialAccountInformation**](SocialAccountInformation.md) |  | [optional] 

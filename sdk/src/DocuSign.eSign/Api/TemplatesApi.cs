@@ -525,6 +525,31 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<System.IO.Stream> GetDocumentPageImageWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null);
         /// <summary>
+        /// Returns tabs on the document.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        Tabs GetDocumentTabs (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
+
+        /// <summary>
+        /// Returns tabs on the document.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<Tabs> GetDocumentTabsWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
+        /// <summary>
         /// Gets template lock information.
         /// </summary>
         /// <remarks>
@@ -574,6 +599,56 @@ namespace DocuSign.eSign.Api
         
         /// <returns>ApiResponse of </returns>
         ApiResponse<Notification> GetNotificationSettingsWithHttpInfo (string accountId, string templateId);
+        /// <summary>
+        /// Returns tabs on the specified page.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        
+        
+        /// <returns></returns>
+        Tabs GetPageTabs (string accountId, string templateId, string documentId, string pageNumber);
+
+        /// <summary>
+        /// Returns tabs on the specified page.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<Tabs> GetPageTabsWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber);
+        /// <summary>
+        /// Returns document page image(s) based on input.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        PageImages GetPages (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
+
+        /// <summary>
+        /// Returns document page image(s) based on input.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<PageImages> GetPagesWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
         /// <summary>
         /// Gets the bulk recipient file from a template.
         /// </summary>
@@ -1552,6 +1627,31 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDocumentPageImageAsyncWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null);
         /// <summary>
+        /// Returns tabs on the document.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of Tabs</returns>
+        System.Threading.Tasks.Task<Tabs> GetDocumentTabsAsync (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
+
+        /// <summary>
+        /// Returns tabs on the document.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (Tabs)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Tabs>> GetDocumentTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
+        /// <summary>
         /// Gets template lock information.
         /// </summary>
         /// <remarks>
@@ -1601,6 +1701,56 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (Notification)</returns>
         System.Threading.Tasks.Task<ApiResponse<Notification>> GetNotificationSettingsAsyncWithHttpInfo (string accountId, string templateId);
+        /// <summary>
+        /// Returns tabs on the specified page.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        
+        
+        /// <returns>Task of Tabs</returns>
+        System.Threading.Tasks.Task<Tabs> GetPageTabsAsync (string accountId, string templateId, string documentId, string pageNumber);
+
+        /// <summary>
+        /// Returns tabs on the specified page.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        
+        
+        /// <returns>Task of ApiResponse (Tabs)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Tabs>> GetPageTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber);
+        /// <summary>
+        /// Returns document page image(s) based on input.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of PageImages</returns>
+        System.Threading.Tasks.Task<PageImages> GetPagesAsync (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
+
+        /// <summary>
+        /// Returns document page image(s) based on input.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (PageImages)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PageImages>> GetPagesAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
         /// <summary>
         /// Gets the bulk recipient file from a template.
         /// </summary>
@@ -6003,6 +6153,200 @@ namespace DocuSign.eSign.Api
         }
 
 
+        /// <summary>
+        /// Returns tabs on the document. 
+        /// </summary>
+        public class GetDocumentTabsOptions
+        {
+            /// 
+            public string pageNumbers {get; set;}
+        }
+
+        /// <summary>
+        /// Returns tabs on the document. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Tabs</returns>
+        public Tabs GetDocumentTabs (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
+        {
+             ApiResponse<Tabs> localVarResponse = GetDocumentTabsWithHttpInfo(accountId, templateId, documentId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns tabs on the document. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of Tabs</returns>
+        public ApiResponse< Tabs > GetDocumentTabsWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->GetDocumentTabs");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->GetDocumentTabs");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling TemplatesApi->GetDocumentTabs");
+
+            var localVarPath = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+            if (options != null)
+            {
+                if (options.pageNumbers != null) localVarQueryParams.Add("page_numbers", Configuration.ApiClient.ParameterToString(options.pageNumbers)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetDocumentTabs", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
+            }
+            else
+            {
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Returns tabs on the document. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of Tabs</returns>
+        public async System.Threading.Tasks.Task<Tabs> GetDocumentTabsAsync (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
+        {
+             ApiResponse<Tabs> localVarResponse = await GetDocumentTabsAsyncWithHttpInfo(accountId, templateId, documentId, options);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Returns tabs on the document. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (Tabs)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> GetDocumentTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->GetDocumentTabs");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->GetDocumentTabs");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling TemplatesApi->GetDocumentTabs");
+
+            var localVarPath = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+            if (options != null)
+            {
+                if (options.pageNumbers != null) localVarQueryParams.Add("page_numbers", Configuration.ApiClient.ParameterToString(options.pageNumbers)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetDocumentTabs", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Tabs>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Tabs) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+            
+        }
+
+
 
         /// <summary>
         /// Gets template lock information. Retrieves general information about the template lock.  If the call is made by the user who has the lock and the request has the same integrator key as original, then the &#x60;X-DocuSign-Edit&#x60; header  field and additional lock information is included in the response. This allows users to recover a lost editing session token and the &#x60;X-DocuSign-Edit&#x60; header.
@@ -6339,6 +6683,410 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<Notification>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Notification) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Notification)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Returns tabs on the specified page. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        
+        
+        /// <returns>Tabs</returns>
+        public Tabs GetPageTabs (string accountId, string templateId, string documentId, string pageNumber)
+        {
+             ApiResponse<Tabs> localVarResponse = GetPageTabsWithHttpInfo(accountId, templateId, documentId, pageNumber);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns tabs on the specified page. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        
+        
+        /// <returns>ApiResponse of Tabs</returns>
+        public ApiResponse< Tabs > GetPageTabsWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->GetPageTabs");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->GetPageTabs");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling TemplatesApi->GetPageTabs");
+            // verify the required parameter 'pageNumber' is set
+            if (pageNumber == null)
+                throw new ApiException(400, "Missing required parameter 'pageNumber' when calling TemplatesApi->GetPageTabs");
+
+            var localVarPath = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/tabs";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+            if (pageNumber != null) localVarPathParams.Add("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPageTabs", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
+            }
+            else
+            {
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Returns tabs on the specified page. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        
+        
+        /// <returns>Task of Tabs</returns>
+        public async System.Threading.Tasks.Task<Tabs> GetPageTabsAsync (string accountId, string templateId, string documentId, string pageNumber)
+        {
+             ApiResponse<Tabs> localVarResponse = await GetPageTabsAsyncWithHttpInfo(accountId, templateId, documentId, pageNumber);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Returns tabs on the specified page. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        
+        
+        /// <returns>Task of ApiResponse (Tabs)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> GetPageTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->GetPageTabs");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->GetPageTabs");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling TemplatesApi->GetPageTabs");
+            // verify the required parameter 'pageNumber' is set
+            if (pageNumber == null)
+                throw new ApiException(400, "Missing required parameter 'pageNumber' when calling TemplatesApi->GetPageTabs");
+
+            var localVarPath = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/tabs";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+            if (pageNumber != null) localVarPathParams.Add("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPageTabs", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Tabs>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Tabs) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+            
+        }
+
+
+        /// <summary>
+        /// Returns document page image(s) based on input. 
+        /// </summary>
+        public class GetPagesOptions
+        {
+            /// 
+            public string count {get; set;}
+            /// 
+            public string dpi {get; set;}
+            /// 
+            public string maxHeight {get; set;}
+            /// 
+            public string maxWidth {get; set;}
+            /// 
+            public string nocache {get; set;}
+            /// 
+            public string showChanges {get; set;}
+            /// 
+            public string startPosition {get; set;}
+        }
+
+        /// <summary>
+        /// Returns document page image(s) based on input. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>PageImages</returns>
+        public PageImages GetPages (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
+        {
+             ApiResponse<PageImages> localVarResponse = GetPagesWithHttpInfo(accountId, templateId, documentId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns document page image(s) based on input. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of PageImages</returns>
+        public ApiResponse< PageImages > GetPagesWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->GetPages");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->GetPages");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling TemplatesApi->GetPages");
+
+            var localVarPath = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+            if (options != null)
+            {
+                if (options.count != null) localVarQueryParams.Add("count", Configuration.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.dpi != null) localVarQueryParams.Add("dpi", Configuration.ApiClient.ParameterToString(options.dpi)); // query parameter
+                if (options.maxHeight != null) localVarQueryParams.Add("max_height", Configuration.ApiClient.ParameterToString(options.maxHeight)); // query parameter
+                if (options.maxWidth != null) localVarQueryParams.Add("max_width", Configuration.ApiClient.ParameterToString(options.maxWidth)); // query parameter
+                if (options.nocache != null) localVarQueryParams.Add("nocache", Configuration.ApiClient.ParameterToString(options.nocache)); // query parameter
+                if (options.showChanges != null) localVarQueryParams.Add("show_changes", Configuration.ApiClient.ParameterToString(options.showChanges)); // query parameter
+                if (options.startPosition != null) localVarQueryParams.Add("start_position", Configuration.ApiClient.ParameterToString(options.startPosition)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPages", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<PageImages>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PageImages) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PageImages)));
+            }
+            else
+            {
+                return new ApiResponse<PageImages>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PageImages) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Returns document page image(s) based on input. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of PageImages</returns>
+        public async System.Threading.Tasks.Task<PageImages> GetPagesAsync (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
+        {
+             ApiResponse<PageImages> localVarResponse = await GetPagesAsyncWithHttpInfo(accountId, templateId, documentId, options);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Returns document page image(s) based on input. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (PageImages)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PageImages>> GetPagesAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->GetPages");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->GetPages");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling TemplatesApi->GetPages");
+
+            var localVarPath = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+            if (options != null)
+            {
+                if (options.count != null) localVarQueryParams.Add("count", Configuration.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.dpi != null) localVarQueryParams.Add("dpi", Configuration.ApiClient.ParameterToString(options.dpi)); // query parameter
+                if (options.maxHeight != null) localVarQueryParams.Add("max_height", Configuration.ApiClient.ParameterToString(options.maxHeight)); // query parameter
+                if (options.maxWidth != null) localVarQueryParams.Add("max_width", Configuration.ApiClient.ParameterToString(options.maxWidth)); // query parameter
+                if (options.nocache != null) localVarQueryParams.Add("nocache", Configuration.ApiClient.ParameterToString(options.nocache)); // query parameter
+                if (options.showChanges != null) localVarQueryParams.Add("show_changes", Configuration.ApiClient.ParameterToString(options.showChanges)); // query parameter
+                if (options.startPosition != null) localVarQueryParams.Add("start_position", Configuration.ApiClient.ParameterToString(options.startPosition)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPages", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PageImages>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PageImages) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
             
         }
 
@@ -7472,8 +8220,6 @@ namespace DocuSign.eSign.Api
             public string orderBy {get; set;}
             /// The search text used to search the names of templates. 
             public string searchText {get; set;}
-            /// 
-            public string shared {get; set;}
             /// If true, the response only includes templates shared by the user. If false, the response only returns template not shared by the user. If not specified, the response is not affected. 
             public string sharedByMe {get; set;}
             /// The starting index for the first template shown in the response. This must be greater than or equal to 0 (zero). 
@@ -7486,6 +8232,8 @@ namespace DocuSign.eSign.Api
             public string usedToDate {get; set;}
             /// Sets if the templates shown in the response Valid values are:  -owned_by_me: only shows templates the user owns.  -shared_with_me: only shows templates that are shared with the user.  -all: shows all templates owned or shared with the user. 
             public string userFilter {get; set;}
+            /// 
+            public string userId {get; set;}
         }
 
         /// <summary>
@@ -7552,13 +8300,13 @@ namespace DocuSign.eSign.Api
                 if (options.order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(options.order)); // query parameter
                 if (options.orderBy != null) localVarQueryParams.Add("order_by", Configuration.ApiClient.ParameterToString(options.orderBy)); // query parameter
                 if (options.searchText != null) localVarQueryParams.Add("search_text", Configuration.ApiClient.ParameterToString(options.searchText)); // query parameter
-                if (options.shared != null) localVarQueryParams.Add("shared", Configuration.ApiClient.ParameterToString(options.shared)); // query parameter
                 if (options.sharedByMe != null) localVarQueryParams.Add("shared_by_me", Configuration.ApiClient.ParameterToString(options.sharedByMe)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", Configuration.ApiClient.ParameterToString(options.startPosition)); // query parameter
                 if (options.toDate != null) localVarQueryParams.Add("to_date", Configuration.ApiClient.ParameterToString(options.toDate)); // query parameter
                 if (options.usedFromDate != null) localVarQueryParams.Add("used_from_date", Configuration.ApiClient.ParameterToString(options.usedFromDate)); // query parameter
                 if (options.usedToDate != null) localVarQueryParams.Add("used_to_date", Configuration.ApiClient.ParameterToString(options.usedToDate)); // query parameter
                 if (options.userFilter != null) localVarQueryParams.Add("user_filter", Configuration.ApiClient.ParameterToString(options.userFilter)); // query parameter
+                if (options.userId != null) localVarQueryParams.Add("user_id", Configuration.ApiClient.ParameterToString(options.userId)); // query parameter
             }
 
 
@@ -7654,13 +8402,13 @@ namespace DocuSign.eSign.Api
                 if (options.order != null) localVarQueryParams.Add("order", Configuration.ApiClient.ParameterToString(options.order)); // query parameter
                 if (options.orderBy != null) localVarQueryParams.Add("order_by", Configuration.ApiClient.ParameterToString(options.orderBy)); // query parameter
                 if (options.searchText != null) localVarQueryParams.Add("search_text", Configuration.ApiClient.ParameterToString(options.searchText)); // query parameter
-                if (options.shared != null) localVarQueryParams.Add("shared", Configuration.ApiClient.ParameterToString(options.shared)); // query parameter
                 if (options.sharedByMe != null) localVarQueryParams.Add("shared_by_me", Configuration.ApiClient.ParameterToString(options.sharedByMe)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", Configuration.ApiClient.ParameterToString(options.startPosition)); // query parameter
                 if (options.toDate != null) localVarQueryParams.Add("to_date", Configuration.ApiClient.ParameterToString(options.toDate)); // query parameter
                 if (options.usedFromDate != null) localVarQueryParams.Add("used_from_date", Configuration.ApiClient.ParameterToString(options.usedFromDate)); // query parameter
                 if (options.usedToDate != null) localVarQueryParams.Add("used_to_date", Configuration.ApiClient.ParameterToString(options.usedToDate)); // query parameter
                 if (options.userFilter != null) localVarQueryParams.Add("user_filter", Configuration.ApiClient.ParameterToString(options.userFilter)); // query parameter
+                if (options.userId != null) localVarQueryParams.Add("user_id", Configuration.ApiClient.ParameterToString(options.userId)); // query parameter
             }
 
 

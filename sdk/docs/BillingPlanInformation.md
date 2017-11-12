@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **EnableSupport** | **string** |  | [optional] 
 **IncludedSeats** | **string** | The number of seats (users) included. | [optional] 
 **IncrementalSeats** | **string** | Reserved: TBD | [optional] 
+**PaymentProcessorInformation** | [**PaymentProcessorInformation**](PaymentProcessorInformation.md) |  | [optional] 
 **PlanInformation** | [**PlanInformation**](PlanInformation.md) |  | [optional] 
 **ReferralInformation** | [**ReferralInformation**](ReferralInformation.md) |  | [optional] 
 **RenewalStatus** | **string** |  | [optional] 

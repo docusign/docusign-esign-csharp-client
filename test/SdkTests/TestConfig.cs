@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DocuSign.eSign.Client;
 
 namespace SdkTests
 {
@@ -12,8 +8,8 @@ namespace SdkTests
         public string Password { get; set; }
         public string IntegratorKey { get; set; }
         public string Host { get; set; }
-        public DocuSign.eSign.Client.ApiClient ApiCLient { get; set; }
-        public DocuSign.eSign.Client.Configuration Configuration { get; set; }
+        public ApiClient ApiClient { get; set; }
+        //public Configuration Configuration { get; set; }
         public string AccountId { get; set; }
         public string RecipientEmail { get; set; }
         public string RecipientName { get; set; }
@@ -21,6 +17,10 @@ namespace SdkTests
         public string TemplateId { get; set; }
         public string EnvelopeId { get; set; }
         public string ReturnUrl { get; set; }
+        public string UserId { get; set; }
+        public string OAuthBasePath { get; set; }
+        public string PrivateKeyFilename { get; set; }
+        public int ExpiresInHours { get; set; }
 
         public TestConfig(string username = null, string password = null, string integratorKey = null, string host = null, string recipientEmail = null, string recipientName = null, string templateRoleName = null, string templateId = null, string returnUrl = null)
         {
@@ -36,6 +36,13 @@ namespace SdkTests
             this.TemplateId = (templateId != null) ? templateId : "cf2a46c2-8d6e-4258-9d62-752547b1a419";
 
             this.ReturnUrl = (returnUrl != null) ? returnUrl : "https://www.docusign.com/devcenter";
+
+            this.UserId = "fcc5726c-cd73-4844-b580-40bbbe6ca126";
+            this.OAuthBasePath = "account-d.docusign.com";
+            this.PrivateKeyFilename = "../../docs/private.pem";
+            this.ExpiresInHours = 1;
+
+            //this.Configuration = new Configuration();
         }
     }
 }

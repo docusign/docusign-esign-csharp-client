@@ -39,10 +39,14 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AdoptedDateTime">The date and time the user adopted their signature..</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
+        /// <param name="DateStampProperties">DateStampProperties.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ExternalID">.</param>
+        /// <param name="ImageType">.</param>
         /// <param name="Initials150ImageId">.</param>
         /// <param name="InitialsImageUri">Contains the URI for an endpoint that you can use to retrieve the initials image..</param>
         /// <param name="IsDefault">.</param>
+        /// <param name="PhoneticName">.</param>
         /// <param name="Signature150ImageId">.</param>
         /// <param name="SignatureFont">The font type for the signature, if the signature is not drawn. The supported font types are:  \&quot;7_DocuSign\&quot;, \&quot;1_DocuSign\&quot;, \&quot;6_DocuSign\&quot;, \&quot;8_DocuSign\&quot;, \&quot;3_DocuSign\&quot;, \&quot;Mistral\&quot;, \&quot;4_DocuSign\&quot;, \&quot;2_DocuSign\&quot;, \&quot;5_DocuSign\&quot;, \&quot;Rage Italic\&quot; .</param>
         /// <param name="SignatureId">Specifies the signature ID associated with the signature name. You can use the signature ID in the URI in place of the signature name, and the value stored in the &#x60;signatureName&#x60; property in the body is used. This allows the use of special characters (such as \&quot;&amp;\&quot;, \&quot;&lt;\&quot;, \&quot;&gt;\&quot;) in a the signature name. Note that with each update to signatures, the returned signature ID might change, so the caller will need to trigger off the signature name to get the new signature ID..</param>
@@ -50,14 +54,22 @@ namespace DocuSign.eSign.Model
         /// <param name="SignatureInitials"> The initials associated with the signature..</param>
         /// <param name="SignatureName">Specifies the user signature name..</param>
         /// <param name="SignatureType">.</param>
-        public UserSignature(string AdoptedDateTime = default(string), string CreatedDateTime = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Initials150ImageId = default(string), string InitialsImageUri = default(string), string IsDefault = default(string), string Signature150ImageId = default(string), string SignatureFont = default(string), string SignatureId = default(string), string SignatureImageUri = default(string), string SignatureInitials = default(string), string SignatureName = default(string), string SignatureType = default(string))
+        /// <param name="StampFormat">.</param>
+        /// <param name="StampImageUri">.</param>
+        /// <param name="StampSizeMM">.</param>
+        /// <param name="StampType">.</param>
+        public UserSignature(string AdoptedDateTime = default(string), string CreatedDateTime = default(string), DateStampProperties DateStampProperties = default(DateStampProperties), ErrorDetails ErrorDetails = default(ErrorDetails), string ExternalID = default(string), string ImageType = default(string), string Initials150ImageId = default(string), string InitialsImageUri = default(string), string IsDefault = default(string), string PhoneticName = default(string), string Signature150ImageId = default(string), string SignatureFont = default(string), string SignatureId = default(string), string SignatureImageUri = default(string), string SignatureInitials = default(string), string SignatureName = default(string), string SignatureType = default(string), string StampFormat = default(string), string StampImageUri = default(string), string StampSizeMM = default(string), string StampType = default(string))
         {
             this.AdoptedDateTime = AdoptedDateTime;
             this.CreatedDateTime = CreatedDateTime;
+            this.DateStampProperties = DateStampProperties;
             this.ErrorDetails = ErrorDetails;
+            this.ExternalID = ExternalID;
+            this.ImageType = ImageType;
             this.Initials150ImageId = Initials150ImageId;
             this.InitialsImageUri = InitialsImageUri;
             this.IsDefault = IsDefault;
+            this.PhoneticName = PhoneticName;
             this.Signature150ImageId = Signature150ImageId;
             this.SignatureFont = SignatureFont;
             this.SignatureId = SignatureId;
@@ -65,6 +77,10 @@ namespace DocuSign.eSign.Model
             this.SignatureInitials = SignatureInitials;
             this.SignatureName = SignatureName;
             this.SignatureType = SignatureType;
+            this.StampFormat = StampFormat;
+            this.StampImageUri = StampImageUri;
+            this.StampSizeMM = StampSizeMM;
+            this.StampType = StampType;
         }
         
         /// <summary>
@@ -80,10 +96,27 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdDateTime", EmitDefaultValue=false)]
         public string CreatedDateTime { get; set; }
         /// <summary>
+        /// Gets or Sets DateStampProperties
+        /// </summary>
+        [DataMember(Name="dateStampProperties", EmitDefaultValue=false)]
+        public DateStampProperties DateStampProperties { get; set; }
+        /// <summary>
         /// Gets or Sets ErrorDetails
         /// </summary>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="externalID", EmitDefaultValue=false)]
+        public string ExternalID { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="imageType", EmitDefaultValue=false)]
+        public string ImageType { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -102,6 +135,12 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="isDefault", EmitDefaultValue=false)]
         public string IsDefault { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="phoneticName", EmitDefaultValue=false)]
+        public string PhoneticName { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -145,6 +184,30 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureType", EmitDefaultValue=false)]
         public string SignatureType { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="stampFormat", EmitDefaultValue=false)]
+        public string StampFormat { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="stampImageUri", EmitDefaultValue=false)]
+        public string StampImageUri { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="stampSizeMM", EmitDefaultValue=false)]
+        public string StampSizeMM { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="stampType", EmitDefaultValue=false)]
+        public string StampType { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -154,10 +217,14 @@ namespace DocuSign.eSign.Model
             sb.Append("class UserSignature {\n");
             sb.Append("  AdoptedDateTime: ").Append(AdoptedDateTime).Append("\n");
             sb.Append("  CreatedDateTime: ").Append(CreatedDateTime).Append("\n");
+            sb.Append("  DateStampProperties: ").Append(DateStampProperties).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
+            sb.Append("  ExternalID: ").Append(ExternalID).Append("\n");
+            sb.Append("  ImageType: ").Append(ImageType).Append("\n");
             sb.Append("  Initials150ImageId: ").Append(Initials150ImageId).Append("\n");
             sb.Append("  InitialsImageUri: ").Append(InitialsImageUri).Append("\n");
             sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
+            sb.Append("  PhoneticName: ").Append(PhoneticName).Append("\n");
             sb.Append("  Signature150ImageId: ").Append(Signature150ImageId).Append("\n");
             sb.Append("  SignatureFont: ").Append(SignatureFont).Append("\n");
             sb.Append("  SignatureId: ").Append(SignatureId).Append("\n");
@@ -165,6 +232,10 @@ namespace DocuSign.eSign.Model
             sb.Append("  SignatureInitials: ").Append(SignatureInitials).Append("\n");
             sb.Append("  SignatureName: ").Append(SignatureName).Append("\n");
             sb.Append("  SignatureType: ").Append(SignatureType).Append("\n");
+            sb.Append("  StampFormat: ").Append(StampFormat).Append("\n");
+            sb.Append("  StampImageUri: ").Append(StampImageUri).Append("\n");
+            sb.Append("  StampSizeMM: ").Append(StampSizeMM).Append("\n");
+            sb.Append("  StampType: ").Append(StampType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -212,9 +283,24 @@ namespace DocuSign.eSign.Model
                     this.CreatedDateTime.Equals(other.CreatedDateTime)
                 ) && 
                 (
+                    this.DateStampProperties == other.DateStampProperties ||
+                    this.DateStampProperties != null &&
+                    this.DateStampProperties.Equals(other.DateStampProperties)
+                ) && 
+                (
                     this.ErrorDetails == other.ErrorDetails ||
                     this.ErrorDetails != null &&
                     this.ErrorDetails.Equals(other.ErrorDetails)
+                ) && 
+                (
+                    this.ExternalID == other.ExternalID ||
+                    this.ExternalID != null &&
+                    this.ExternalID.Equals(other.ExternalID)
+                ) && 
+                (
+                    this.ImageType == other.ImageType ||
+                    this.ImageType != null &&
+                    this.ImageType.Equals(other.ImageType)
                 ) && 
                 (
                     this.Initials150ImageId == other.Initials150ImageId ||
@@ -230,6 +316,11 @@ namespace DocuSign.eSign.Model
                     this.IsDefault == other.IsDefault ||
                     this.IsDefault != null &&
                     this.IsDefault.Equals(other.IsDefault)
+                ) && 
+                (
+                    this.PhoneticName == other.PhoneticName ||
+                    this.PhoneticName != null &&
+                    this.PhoneticName.Equals(other.PhoneticName)
                 ) && 
                 (
                     this.Signature150ImageId == other.Signature150ImageId ||
@@ -265,6 +356,26 @@ namespace DocuSign.eSign.Model
                     this.SignatureType == other.SignatureType ||
                     this.SignatureType != null &&
                     this.SignatureType.Equals(other.SignatureType)
+                ) && 
+                (
+                    this.StampFormat == other.StampFormat ||
+                    this.StampFormat != null &&
+                    this.StampFormat.Equals(other.StampFormat)
+                ) && 
+                (
+                    this.StampImageUri == other.StampImageUri ||
+                    this.StampImageUri != null &&
+                    this.StampImageUri.Equals(other.StampImageUri)
+                ) && 
+                (
+                    this.StampSizeMM == other.StampSizeMM ||
+                    this.StampSizeMM != null &&
+                    this.StampSizeMM.Equals(other.StampSizeMM)
+                ) && 
+                (
+                    this.StampType == other.StampType ||
+                    this.StampType != null &&
+                    this.StampType.Equals(other.StampType)
                 );
         }
 
@@ -283,14 +394,22 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AdoptedDateTime.GetHashCode();
                 if (this.CreatedDateTime != null)
                     hash = hash * 59 + this.CreatedDateTime.GetHashCode();
+                if (this.DateStampProperties != null)
+                    hash = hash * 59 + this.DateStampProperties.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                if (this.ExternalID != null)
+                    hash = hash * 59 + this.ExternalID.GetHashCode();
+                if (this.ImageType != null)
+                    hash = hash * 59 + this.ImageType.GetHashCode();
                 if (this.Initials150ImageId != null)
                     hash = hash * 59 + this.Initials150ImageId.GetHashCode();
                 if (this.InitialsImageUri != null)
                     hash = hash * 59 + this.InitialsImageUri.GetHashCode();
                 if (this.IsDefault != null)
                     hash = hash * 59 + this.IsDefault.GetHashCode();
+                if (this.PhoneticName != null)
+                    hash = hash * 59 + this.PhoneticName.GetHashCode();
                 if (this.Signature150ImageId != null)
                     hash = hash * 59 + this.Signature150ImageId.GetHashCode();
                 if (this.SignatureFont != null)
@@ -305,6 +424,14 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SignatureName.GetHashCode();
                 if (this.SignatureType != null)
                     hash = hash * 59 + this.SignatureType.GetHashCode();
+                if (this.StampFormat != null)
+                    hash = hash * 59 + this.StampFormat.GetHashCode();
+                if (this.StampImageUri != null)
+                    hash = hash * 59 + this.StampImageUri.GetHashCode();
+                if (this.StampSizeMM != null)
+                    hash = hash * 59 + this.StampSizeMM.GetHashCode();
+                if (this.StampType != null)
+                    hash = hash * 59 + this.StampType.GetHashCode();
                 return hash;
             }
         }

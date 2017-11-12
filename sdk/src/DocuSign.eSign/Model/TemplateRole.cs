@@ -45,11 +45,12 @@ namespace DocuSign.eSign.Model
         /// <param name="EmbeddedRecipientStartURL">Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender’s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to &#x60;SIGN_AT_DOCUSIGN&#x60;, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient’s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets &#x60;EmbeddedRecipientStartURL&#x3D;SIGN_AT_DOCUSIGN&#x60;, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the &#x60;clientUserId&#x60; property is NOT set, and the &#x60;embeddedRecipientStartURL&#x60; is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The &#x60;customFields&#x60; property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   &#x60;http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&amp;[[mergeField3]]&#x60; .</param>
         /// <param name="InPersonSignerName">Specifies the full legal name of the signer in person signer template roles.  Maximum Length: 100 characters..</param>
         /// <param name="Name">Specifies the recipient&#39;s name..</param>
+        /// <param name="RecipientSignatureProviders">.</param>
         /// <param name="RoleName">Optional element. Specifies the role name associated with the recipient.&lt;br/&gt;&lt;br/&gt;This is required when working with template recipients..</param>
         /// <param name="RoutingOrder">Specifies the routing order of the recipient in the envelope. .</param>
         /// <param name="SigningGroupId">When set to **true** and the feature is enabled in the sender&#39;s account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once)..</param>
         /// <param name="Tabs">Tabs.</param>
-        public TemplateRole(string AccessCode = default(string), string ClientUserId = default(string), string DefaultRecipient = default(string), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), string InPersonSignerName = default(string), string Name = default(string), string RoleName = default(string), string RoutingOrder = default(string), string SigningGroupId = default(string), Tabs Tabs = default(Tabs))
+        public TemplateRole(string AccessCode = default(string), string ClientUserId = default(string), string DefaultRecipient = default(string), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), string InPersonSignerName = default(string), string Name = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RoleName = default(string), string RoutingOrder = default(string), string SigningGroupId = default(string), Tabs Tabs = default(Tabs))
         {
             this.AccessCode = AccessCode;
             this.ClientUserId = ClientUserId;
@@ -59,6 +60,7 @@ namespace DocuSign.eSign.Model
             this.EmbeddedRecipientStartURL = EmbeddedRecipientStartURL;
             this.InPersonSignerName = InPersonSignerName;
             this.Name = Name;
+            this.RecipientSignatureProviders = RecipientSignatureProviders;
             this.RoleName = RoleName;
             this.RoutingOrder = RoutingOrder;
             this.SigningGroupId = SigningGroupId;
@@ -113,6 +115,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="recipientSignatureProviders", EmitDefaultValue=false)]
+        public List<RecipientSignatureProvider> RecipientSignatureProviders { get; set; }
+        /// <summary>
         /// Optional element. Specifies the role name associated with the recipient.&lt;br/&gt;&lt;br/&gt;This is required when working with template recipients.
         /// </summary>
         /// <value>Optional element. Specifies the role name associated with the recipient.&lt;br/&gt;&lt;br/&gt;This is required when working with template recipients.</value>
@@ -151,6 +159,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  EmbeddedRecipientStartURL: ").Append(EmbeddedRecipientStartURL).Append("\n");
             sb.Append("  InPersonSignerName: ").Append(InPersonSignerName).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  RecipientSignatureProviders: ").Append(RecipientSignatureProviders).Append("\n");
             sb.Append("  RoleName: ").Append(RoleName).Append("\n");
             sb.Append("  RoutingOrder: ").Append(RoutingOrder).Append("\n");
             sb.Append("  SigningGroupId: ").Append(SigningGroupId).Append("\n");
@@ -232,6 +241,11 @@ namespace DocuSign.eSign.Model
                     this.Name.Equals(other.Name)
                 ) && 
                 (
+                    this.RecipientSignatureProviders == other.RecipientSignatureProviders ||
+                    this.RecipientSignatureProviders != null &&
+                    this.RecipientSignatureProviders.SequenceEqual(other.RecipientSignatureProviders)
+                ) && 
+                (
                     this.RoleName == other.RoleName ||
                     this.RoleName != null &&
                     this.RoleName.Equals(other.RoleName)
@@ -280,6 +294,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.InPersonSignerName.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.RecipientSignatureProviders != null)
+                    hash = hash * 59 + this.RecipientSignatureProviders.GetHashCode();
                 if (this.RoleName != null)
                     hash = hash * 59 + this.RoleName.GetHashCode();
                 if (this.RoutingOrder != null)

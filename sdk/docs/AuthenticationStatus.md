@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **OpenIDResult** | [**EventResult**](EventResult.md) |  | [optional] 
 **PhoneAuthResult** | [**EventResult**](EventResult.md) |  | [optional] 
 **SalesforceResult** | [**EventResult**](EventResult.md) |  | [optional] 
+**SignatureProviderResult** | [**EventResult**](EventResult.md) |  | [optional] 
 **SmsAuthResult** | [**EventResult**](EventResult.md) |  | [optional] 
 **STANPinResult** | [**EventResult**](EventResult.md) |  | [optional] 
 **TwitterResult** | [**EventResult**](EventResult.md) |  | [optional] 

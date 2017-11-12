@@ -18,5 +18,3 @@ install:
 script:
   - xbuild SdkTests.sln /p:Configuration=Release /p:TargetFrameworkVersion=v4.5 /p:DefineConstants="NUNIT"
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./bin/Release/SdkTests.dll
-  
-  

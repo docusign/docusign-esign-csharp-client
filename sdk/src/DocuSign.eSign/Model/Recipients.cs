@@ -46,8 +46,9 @@ namespace DocuSign.eSign.Model
         /// <param name="InPersonSigners">Specifies a signer that is in the same physical location as a DocuSign user who will act as a Signing Host for the transaction. The recipient added is the Signing Host and new separate Signer Name field appears after Sign in person is selected..</param>
         /// <param name="Intermediaries">Identifies a recipient that can, but is not required to, add name and email information for recipients at the same or subsequent level in the routing order (until subsequent Agents, Editors or Intermediaries recipient types are added)..</param>
         /// <param name="RecipientCount">.</param>
+        /// <param name="Seals">.</param>
         /// <param name="Signers">A complex type containing information about the Signer recipient..</param>
-        public Recipients(List<Agent> Agents = default(List<Agent>), List<CarbonCopy> CarbonCopies = default(List<CarbonCopy>), List<CertifiedDelivery> CertifiedDeliveries = default(List<CertifiedDelivery>), string CurrentRoutingOrder = default(string), List<Editor> Editors = default(List<Editor>), ErrorDetails ErrorDetails = default(ErrorDetails), List<InPersonSigner> InPersonSigners = default(List<InPersonSigner>), List<Intermediary> Intermediaries = default(List<Intermediary>), string RecipientCount = default(string), List<Signer> Signers = default(List<Signer>))
+        public Recipients(List<Agent> Agents = default(List<Agent>), List<CarbonCopy> CarbonCopies = default(List<CarbonCopy>), List<CertifiedDelivery> CertifiedDeliveries = default(List<CertifiedDelivery>), string CurrentRoutingOrder = default(string), List<Editor> Editors = default(List<Editor>), ErrorDetails ErrorDetails = default(ErrorDetails), List<InPersonSigner> InPersonSigners = default(List<InPersonSigner>), List<Intermediary> Intermediaries = default(List<Intermediary>), string RecipientCount = default(string), List<SealSign> Seals = default(List<SealSign>), List<Signer> Signers = default(List<Signer>))
         {
             this.Agents = Agents;
             this.CarbonCopies = CarbonCopies;
@@ -58,6 +59,7 @@ namespace DocuSign.eSign.Model
             this.InPersonSigners = InPersonSigners;
             this.Intermediaries = Intermediaries;
             this.RecipientCount = RecipientCount;
+            this.Seals = Seals;
             this.Signers = Signers;
         }
         
@@ -115,6 +117,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientCount", EmitDefaultValue=false)]
         public string RecipientCount { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="seals", EmitDefaultValue=false)]
+        public List<SealSign> Seals { get; set; }
+        /// <summary>
         /// A complex type containing information about the Signer recipient.
         /// </summary>
         /// <value>A complex type containing information about the Signer recipient.</value>
@@ -137,6 +145,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  InPersonSigners: ").Append(InPersonSigners).Append("\n");
             sb.Append("  Intermediaries: ").Append(Intermediaries).Append("\n");
             sb.Append("  RecipientCount: ").Append(RecipientCount).Append("\n");
+            sb.Append("  Seals: ").Append(Seals).Append("\n");
             sb.Append("  Signers: ").Append(Signers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -220,6 +229,11 @@ namespace DocuSign.eSign.Model
                     this.RecipientCount.Equals(other.RecipientCount)
                 ) && 
                 (
+                    this.Seals == other.Seals ||
+                    this.Seals != null &&
+                    this.Seals.SequenceEqual(other.Seals)
+                ) && 
+                (
                     this.Signers == other.Signers ||
                     this.Signers != null &&
                     this.Signers.SequenceEqual(other.Signers)
@@ -255,6 +269,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Intermediaries.GetHashCode();
                 if (this.RecipientCount != null)
                     hash = hash * 59 + this.RecipientCount.GetHashCode();
+                if (this.Seals != null)
+                    hash = hash * 59 + this.Seals.GetHashCode();
                 if (this.Signers != null)
                     hash = hash * 59 + this.Signers.GetHashCode();
                 return hash;

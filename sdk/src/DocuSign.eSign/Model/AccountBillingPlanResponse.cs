@@ -41,14 +41,16 @@ namespace DocuSign.eSign.Model
         /// <param name="BillingAddressIsCreditCardAddress">When set to **true**, the credit card address information is the same as that returned as the billing address. If false, then the billing address is considered a billing contact address, and the credit card address can be different..</param>
         /// <param name="BillingPlan">BillingPlan.</param>
         /// <param name="CreditCardInformation">CreditCardInformation.</param>
+        /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
         /// <param name="SuccessorPlans">.</param>
-        public AccountBillingPlanResponse(AccountAddress BillingAddress = default(AccountAddress), string BillingAddressIsCreditCardAddress = default(string), AccountBillingPlan BillingPlan = default(AccountBillingPlan), CreditCardInformation CreditCardInformation = default(CreditCardInformation), ReferralInformation ReferralInformation = default(ReferralInformation), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>))
+        public AccountBillingPlanResponse(AccountAddress BillingAddress = default(AccountAddress), string BillingAddressIsCreditCardAddress = default(string), AccountBillingPlan BillingPlan = default(AccountBillingPlan), CreditCardInformation CreditCardInformation = default(CreditCardInformation), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), ReferralInformation ReferralInformation = default(ReferralInformation), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>))
         {
             this.BillingAddress = BillingAddress;
             this.BillingAddressIsCreditCardAddress = BillingAddressIsCreditCardAddress;
             this.BillingPlan = BillingPlan;
             this.CreditCardInformation = CreditCardInformation;
+            this.PaymentProcessorInformation = PaymentProcessorInformation;
             this.ReferralInformation = ReferralInformation;
             this.SuccessorPlans = SuccessorPlans;
         }
@@ -75,6 +77,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="creditCardInformation", EmitDefaultValue=false)]
         public CreditCardInformation CreditCardInformation { get; set; }
         /// <summary>
+        /// Gets or Sets PaymentProcessorInformation
+        /// </summary>
+        [DataMember(Name="paymentProcessorInformation", EmitDefaultValue=false)]
+        public PaymentProcessorInformation PaymentProcessorInformation { get; set; }
+        /// <summary>
         /// Gets or Sets ReferralInformation
         /// </summary>
         [DataMember(Name="referralInformation", EmitDefaultValue=false)]
@@ -97,6 +104,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  BillingAddressIsCreditCardAddress: ").Append(BillingAddressIsCreditCardAddress).Append("\n");
             sb.Append("  BillingPlan: ").Append(BillingPlan).Append("\n");
             sb.Append("  CreditCardInformation: ").Append(CreditCardInformation).Append("\n");
+            sb.Append("  PaymentProcessorInformation: ").Append(PaymentProcessorInformation).Append("\n");
             sb.Append("  ReferralInformation: ").Append(ReferralInformation).Append("\n");
             sb.Append("  SuccessorPlans: ").Append(SuccessorPlans).Append("\n");
             sb.Append("}\n");
@@ -156,6 +164,11 @@ namespace DocuSign.eSign.Model
                     this.CreditCardInformation.Equals(other.CreditCardInformation)
                 ) && 
                 (
+                    this.PaymentProcessorInformation == other.PaymentProcessorInformation ||
+                    this.PaymentProcessorInformation != null &&
+                    this.PaymentProcessorInformation.Equals(other.PaymentProcessorInformation)
+                ) && 
+                (
                     this.ReferralInformation == other.ReferralInformation ||
                     this.ReferralInformation != null &&
                     this.ReferralInformation.Equals(other.ReferralInformation)
@@ -186,6 +199,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.BillingPlan.GetHashCode();
                 if (this.CreditCardInformation != null)
                     hash = hash * 59 + this.CreditCardInformation.GetHashCode();
+                if (this.PaymentProcessorInformation != null)
+                    hash = hash * 59 + this.PaymentProcessorInformation.GetHashCode();
                 if (this.ReferralInformation != null)
                     hash = hash * 59 + this.ReferralInformation.GetHashCode();
                 if (this.SuccessorPlans != null)

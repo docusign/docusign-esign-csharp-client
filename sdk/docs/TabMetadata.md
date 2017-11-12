@@ -36,6 +36,8 @@ Name | Type | Description | Notes
 **Required** | **string** | When set to **true**, the signer is required to fill out this tab | [optional] 
 **ScaleValue** | **string** |  | [optional] 
 **Shared** | **string** | When set to **true**, this custom tab is shared. | [optional] 
+**StampType** | **string** |  | [optional] 
+**StampTypeMetadata** | [**PropertyMetadata**](PropertyMetadata.md) |  | [optional] 
 **TabLabel** | **string** | The label string associated with the tab. | [optional] 
 **Type** | **string** | The type of this tab. Values are: Approve, CheckBox, Company, Date, DateSigned, Decline, Email, EmailAddress, EnvelopeId, FirstName, Formula, FullName, InitialHere, InitialHereOptional, LastName, List, Note, Number, Radio, SignerAttachment, SignHere, SignHereOptional, Ssn, Text, Title, Zip5, or Zip5Dash4. | [optional] 
 **Underline** | **string** | When set to **true**, the information in the tab is underlined. | [optional] 

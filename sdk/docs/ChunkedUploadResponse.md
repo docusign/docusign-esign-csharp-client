@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **ChunkedUploadUri** | **string** |  | [optional] 
 **Committed** | **string** |  | [optional] 
 **ExpirationDateTime** | **string** |  | [optional] 
+**MaxChunkedUploadParts** | **string** |  | [optional] 
+**MaxTotalSize** | **string** |  | [optional] 
 **TotalSize** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

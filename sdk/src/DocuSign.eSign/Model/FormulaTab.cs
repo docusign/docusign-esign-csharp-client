@@ -57,6 +57,7 @@ namespace DocuSign.eSign.Model
         /// <param name="FontColor">The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White..</param>
         /// <param name="FontSize">The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72..</param>
         /// <param name="Formula">The Formula string contains the TabLabel for the reference tabs used in the formula and calculation operators. Each TabLabel must be contained in brackets.  Maximum Length: 2000 characters.  *Example*: Three tabs (TabLabels: Line1, Line2, and Tax) need to be added together. The formula string would be:   [Line1]+[Line2]+[Tax].</param>
+        /// <param name="Hidden">.</param>
         /// <param name="IsPaymentAmount">When set to **true**, sets this as a payment tab. Can only be used with Text, Number, Formula, or List tabs. The value of the tab must be a number. .</param>
         /// <param name="Italic">When set to **true**, the information in the tab is italic..</param>
         /// <param name="Locked">When set to **true**, the signer cannot change the data of the custom tab..</param>
@@ -86,7 +87,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Width">Width of the tab in pixels..</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
-        public FormulaTab(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Formula = default(string), string IsPaymentAmount = default(string), string Italic = default(string), string Locked = default(string), int? MaxLength = default(int?), MergeField MergeField = default(MergeField), string Name = default(string), string OriginalValue = default(string), string PageNumber = default(string), PaymentDetails PaymentDetails = default(PaymentDetails), string RecipientId = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string RoundDecimalPlaces = default(string), string SenderRequired = default(string), string Shared = default(string), string Status = default(string), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Value = default(string), int? Width = default(int?), string XPosition = default(string), string YPosition = default(string))
+        public FormulaTab(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Formula = default(string), string Hidden = default(string), string IsPaymentAmount = default(string), string Italic = default(string), string Locked = default(string), int? MaxLength = default(int?), MergeField MergeField = default(MergeField), string Name = default(string), string OriginalValue = default(string), string PageNumber = default(string), PaymentDetails PaymentDetails = default(PaymentDetails), string RecipientId = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string RoundDecimalPlaces = default(string), string SenderRequired = default(string), string Shared = default(string), string Status = default(string), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Value = default(string), int? Width = default(int?), string XPosition = default(string), string YPosition = default(string))
         {
             this.AnchorCaseSensitive = AnchorCaseSensitive;
             this.AnchorHorizontalAlignment = AnchorHorizontalAlignment;
@@ -108,6 +109,7 @@ namespace DocuSign.eSign.Model
             this.FontColor = FontColor;
             this.FontSize = FontSize;
             this.Formula = Formula;
+            this.Hidden = Hidden;
             this.IsPaymentAmount = IsPaymentAmount;
             this.Italic = Italic;
             this.Locked = Locked;
@@ -258,6 +260,12 @@ namespace DocuSign.eSign.Model
         /// <value>The Formula string contains the TabLabel for the reference tabs used in the formula and calculation operators. Each TabLabel must be contained in brackets.  Maximum Length: 2000 characters.  *Example*: Three tabs (TabLabels: Line1, Line2, and Tax) need to be added together. The formula string would be:   [Line1]+[Line2]+[Tax]</value>
         [DataMember(Name="formula", EmitDefaultValue=false)]
         public string Formula { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="hidden", EmitDefaultValue=false)]
+        public string Hidden { get; set; }
         /// <summary>
         /// When set to **true**, sets this as a payment tab. Can only be used with Text, Number, Formula, or List tabs. The value of the tab must be a number. 
         /// </summary>
@@ -458,6 +466,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  FontColor: ").Append(FontColor).Append("\n");
             sb.Append("  FontSize: ").Append(FontSize).Append("\n");
             sb.Append("  Formula: ").Append(Formula).Append("\n");
+            sb.Append("  Hidden: ").Append(Hidden).Append("\n");
             sb.Append("  IsPaymentAmount: ").Append(IsPaymentAmount).Append("\n");
             sb.Append("  Italic: ").Append(Italic).Append("\n");
             sb.Append("  Locked: ").Append(Locked).Append("\n");
@@ -622,6 +631,11 @@ namespace DocuSign.eSign.Model
                     this.Formula == other.Formula ||
                     this.Formula != null &&
                     this.Formula.Equals(other.Formula)
+                ) && 
+                (
+                    this.Hidden == other.Hidden ||
+                    this.Hidden != null &&
+                    this.Hidden.Equals(other.Hidden)
                 ) && 
                 (
                     this.IsPaymentAmount == other.IsPaymentAmount ||
@@ -821,6 +835,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.FontSize.GetHashCode();
                 if (this.Formula != null)
                     hash = hash * 59 + this.Formula.GetHashCode();
+                if (this.Hidden != null)
+                    hash = hash * 59 + this.Hidden.GetHashCode();
                 if (this.IsPaymentAmount != null)
                     hash = hash * 59 + this.IsPaymentAmount.GetHashCode();
                 if (this.Italic != null)

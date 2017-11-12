@@ -38,6 +38,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Contact" /> class.
         /// </summary>
         /// <param name="ContactId">.</param>
+        /// <param name="ContactPhoneNumbers">.</param>
         /// <param name="ContactUri">.</param>
         /// <param name="Emails">.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
@@ -46,9 +47,10 @@ namespace DocuSign.eSign.Model
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="SigningGroup">.</param>
         /// <param name="SigningGroupName">The display name for the signing group.   Maximum Length: 100 characters. .</param>
-        public Contact(string ContactId = default(string), string ContactUri = default(string), List<string> Emails = default(List<string>), ErrorDetails ErrorDetails = default(ErrorDetails), string Name = default(string), string Organization = default(string), string Shared = default(string), string SigningGroup = default(string), string SigningGroupName = default(string))
+        public Contact(string ContactId = default(string), List<ContactPhoneNumber> ContactPhoneNumbers = default(List<ContactPhoneNumber>), string ContactUri = default(string), List<string> Emails = default(List<string>), ErrorDetails ErrorDetails = default(ErrorDetails), string Name = default(string), string Organization = default(string), string Shared = default(string), string SigningGroup = default(string), string SigningGroupName = default(string))
         {
             this.ContactId = ContactId;
+            this.ContactPhoneNumbers = ContactPhoneNumbers;
             this.ContactUri = ContactUri;
             this.Emails = Emails;
             this.ErrorDetails = ErrorDetails;
@@ -65,6 +67,12 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="contactId", EmitDefaultValue=false)]
         public string ContactId { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="contactPhoneNumbers", EmitDefaultValue=false)]
+        public List<ContactPhoneNumber> ContactPhoneNumbers { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -121,6 +129,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class Contact {\n");
             sb.Append("  ContactId: ").Append(ContactId).Append("\n");
+            sb.Append("  ContactPhoneNumbers: ").Append(ContactPhoneNumbers).Append("\n");
             sb.Append("  ContactUri: ").Append(ContactUri).Append("\n");
             sb.Append("  Emails: ").Append(Emails).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
@@ -169,6 +178,11 @@ namespace DocuSign.eSign.Model
                     this.ContactId == other.ContactId ||
                     this.ContactId != null &&
                     this.ContactId.Equals(other.ContactId)
+                ) && 
+                (
+                    this.ContactPhoneNumbers == other.ContactPhoneNumbers ||
+                    this.ContactPhoneNumbers != null &&
+                    this.ContactPhoneNumbers.SequenceEqual(other.ContactPhoneNumbers)
                 ) && 
                 (
                     this.ContactUri == other.ContactUri ||
@@ -225,6 +239,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.ContactId != null)
                     hash = hash * 59 + this.ContactId.GetHashCode();
+                if (this.ContactPhoneNumbers != null)
+                    hash = hash * 59 + this.ContactPhoneNumbers.GetHashCode();
                 if (this.ContactUri != null)
                     hash = hash * 59 + this.ContactUri.GetHashCode();
                 if (this.Emails != null)

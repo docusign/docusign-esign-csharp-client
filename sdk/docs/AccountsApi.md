@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**Create**](AccountsApi.md#create) | **POST** /v2/accounts | Creates new accounts.
 [**CreateBrand**](AccountsApi.md#createbrand) | **POST** /v2/accounts/{accountId}/brands | Creates one or more brand profile files for the account.
+[**CreateCustomField**](AccountsApi.md#createcustomfield) | **POST** /v2/accounts/{accountId}/custom_fields | Creates an acount custom field.
 [**CreateEMortgageTransaction**](AccountsApi.md#createemortgagetransaction) | **POST** /v2/accounts/{accountId}/eMortgage/transactions | Starts a new eMortgage Transaction
 [**CreatePermissionProfile**](AccountsApi.md#createpermissionprofile) | **POST** /v2/accounts/{accountId}/permission_profiles | Creates a new permission profile in the specified account.
 [**Delete**](AccountsApi.md#delete) | **DELETE** /v2/accounts/{accountId} | Deletes the specified account.
@@ -13,20 +14,28 @@ Method | HTTP request | Description
 [**DeleteBrandLogoByType**](AccountsApi.md#deletebrandlogobytype) | **DELETE** /v2/accounts/{accountId}/brands/{brandId}/logos/{logoType} | Delete one branding logo.
 [**DeleteBrands**](AccountsApi.md#deletebrands) | **DELETE** /v2/accounts/{accountId}/brands | Deletes one or more brand profiles.
 [**DeleteCaptiveRecipient**](AccountsApi.md#deletecaptiverecipient) | **DELETE** /v2/accounts/{accountId}/captive_recipients/{recipientPart} | Deletes the signature for one or more captive recipient records.
+[**DeleteCustomField**](AccountsApi.md#deletecustomfield) | **DELETE** /v2/accounts/{accountId}/custom_fields/{customFieldId} | Delete an existing account custom field.
 [**DeleteENoteConfiguration**](AccountsApi.md#deleteenoteconfiguration) | **DELETE** /v2/accounts/{accountId}/settings/enote_configuration | Deletes configuration information for the eNote eOriginal integration.
 [**DeletePermissionProfile**](AccountsApi.md#deletepermissionprofile) | **DELETE** /v2/accounts/{accountId}/permission_profiles/{permissionProfileId} | Deletes a permissions profile within the specified account.
 [**GetAccountInformation**](AccountsApi.md#getaccountinformation) | **GET** /v2/accounts/{accountId} | Retrieves the account information for the specified account.
 [**GetAccountTabSettings**](AccountsApi.md#getaccounttabsettings) | **GET** /v2/accounts/{accountId}/settings/tabs | Returns tab settings list for specified account
+[**GetAllPaymentGatewayAccounts**](AccountsApi.md#getallpaymentgatewayaccounts) | **GET** /v2/accounts/{accountId}/payment_gateway_accounts | Get all payment gateway account for the provided accountId
 [**GetBillingCharges**](AccountsApi.md#getbillingcharges) | **GET** /v2/accounts/{accountId}/billing_charges | Gets list of recurring and usage charges for the account.
 [**GetBrand**](AccountsApi.md#getbrand) | **GET** /v2/accounts/{accountId}/brands/{brandId} | Get information for a specific brand.
+[**GetBrandExportFile**](AccountsApi.md#getbrandexportfile) | **GET** /v2/accounts/{accountId}/brands/{brandId}/file | Export a specific brand.
 [**GetBrandLogoByType**](AccountsApi.md#getbrandlogobytype) | **GET** /v2/accounts/{accountId}/brands/{brandId}/logos/{logoType} | Obtains the specified image for a brand.
 [**GetBrandResources**](AccountsApi.md#getbrandresources) | **GET** /v2/accounts/{accountId}/brands/{brandId}/resources | Returns the specified account&#39;s list of branding resources (metadata).
 [**GetBrandResourcesByContentType**](AccountsApi.md#getbrandresourcesbycontenttype) | **GET** /v2/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType} | Returns the specified branding resource file.
 [**GetConsumerDisclosure**](AccountsApi.md#getconsumerdisclosure) | **GET** /v2/accounts/{accountId}/consumer_disclosure/{langCode} | Gets the Electronic Record and Signature Disclosure.
 [**GetConsumerDisclosureDefault**](AccountsApi.md#getconsumerdisclosuredefault) | **GET** /v2/accounts/{accountId}/consumer_disclosure | Gets the Electronic Record and Signature Disclosure for the account.
 [**GetENoteConfiguration**](AccountsApi.md#getenoteconfiguration) | **GET** /v2/accounts/{accountId}/settings/enote_configuration | Returns the configuration information for the eNote eOriginal integration.
+[**GetPasswordRules**](AccountsApi.md#getpasswordrules) | **GET** /v2/accounts/{accountId}/settings/password_rules | Get the password rules
+[**GetPasswordRules_0**](AccountsApi.md#getpasswordrules_0) | **GET** /v2/current_user/password_rules | Get membership account password rules
 [**GetPermissionProfile**](AccountsApi.md#getpermissionprofile) | **GET** /v2/accounts/{accountId}/permission_profiles/{permissionProfileId} | Returns a permissions profile in the specified account.
 [**GetProvisioning**](AccountsApi.md#getprovisioning) | **GET** /v2/accounts/provisioning | Retrieves the account provisioning information for the account.
+[**GetSupportedLanguages**](AccountsApi.md#getsupportedlanguages) | **GET** /v2/accounts/{accountId}/supported_languages | Gets list of supported languages for recipient language setting.
+[**GetWatermark**](AccountsApi.md#getwatermark) | **GET** /v2/accounts/{accountId}/watermark | Get watermark information.
+[**GetWatermarkPreview**](AccountsApi.md#getwatermarkpreview) | **PUT** /v2/accounts/{accountId}/watermark/preview | Get watermark preview.
 [**ListBrands**](AccountsApi.md#listbrands) | **GET** /v2/accounts/{accountId}/brands | Gets a list of brand profiles.
 [**ListCustomFields**](AccountsApi.md#listcustomfields) | **GET** /v2/accounts/{accountId}/custom_fields | Gets a list of custom fields associated with the account.
 [**ListPermissions**](AccountsApi.md#listpermissions) | **GET** /v2/accounts/{accountId}/permission_profiles | Gets a list of permission profiles.
@@ -39,10 +48,14 @@ Method | HTTP request | Description
 [**UpdateBrand**](AccountsApi.md#updatebrand) | **PUT** /v2/accounts/{accountId}/brands/{brandId} | Updates an existing brand.
 [**UpdateBrandLogoByType**](AccountsApi.md#updatebrandlogobytype) | **PUT** /v2/accounts/{accountId}/brands/{brandId}/logos/{logoType} | Put one branding logo.
 [**UpdateBrandResourcesByContentType**](AccountsApi.md#updatebrandresourcesbycontenttype) | **PUT** /v2/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType} | Uploads a branding resource file.
+[**UpdateConsumerDisclosure**](AccountsApi.md#updateconsumerdisclosure) | **PUT** /v2/accounts/{accountId}/consumer_disclosure/{langCode} | Update Consumer Disclosure.
+[**UpdateCustomField**](AccountsApi.md#updatecustomfield) | **PUT** /v2/accounts/{accountId}/custom_fields/{customFieldId} | Updates an existing account custom field.
 [**UpdateENoteConfiguration**](AccountsApi.md#updateenoteconfiguration) | **PUT** /v2/accounts/{accountId}/settings/enote_configuration | Updates configuration information for the eNote eOriginal integration.
+[**UpdatePasswordRules**](AccountsApi.md#updatepasswordrules) | **PUT** /v2/accounts/{accountId}/settings/password_rules | Update the password rules
 [**UpdatePermissionProfile**](AccountsApi.md#updatepermissionprofile) | **PUT** /v2/accounts/{accountId}/permission_profiles/{permissionProfileId} | Updates a permission profile within the specified account.
 [**UpdateSettings**](AccountsApi.md#updatesettings) | **PUT** /v2/accounts/{accountId}/settings | Updates the account settings for an account.
 [**UpdateSharedAccess**](AccountsApi.md#updatesharedaccess) | **PUT** /v2/accounts/{accountId}/shared_access | Reserved: Sets the shared access information for users.
+[**UpdateWatermark**](AccountsApi.md#updatewatermark) | **PUT** /v2/accounts/{accountId}/watermark | Update watermark information.
 
 
 <a name="create"></a>
@@ -161,6 +174,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BrandsResponse**](BrandsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createcustomfield"></a>
+# **CreateCustomField**
+> CustomFields CreateCustomField (string applyToTemplates = null, CustomField customField = null, string accountId)
+
+Creates an acount custom field.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class CreateCustomFieldExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var applyToTemplates = applyToTemplates_example;  // string |  (optional) 
+            var customField = new CustomField(); // CustomField |  (optional) 
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+
+            try
+            {
+                // Creates an acount custom field.
+                CustomFields result = apiInstance.CreateCustomField(applyToTemplates, customField, accountId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.CreateCustomField: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applyToTemplates** | **string**|  | [optional] 
+ **customField** | [**CustomField**](CustomField.md)|  | [optional] 
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+
+### Return type
+
+[**CustomFields**](CustomFields.md)
 
 ### Authorization
 
@@ -614,6 +691,69 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="deletecustomfield"></a>
+# **DeleteCustomField**
+> void DeleteCustomField (string applyToTemplates = null, string accountId, string customFieldId)
+
+Delete an existing account custom field.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class DeleteCustomFieldExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var applyToTemplates = applyToTemplates_example;  // string |  (optional) 
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+            var customFieldId = customFieldId_example;  // string | 
+
+            try
+            {
+                // Delete an existing account custom field.
+                apiInstance.DeleteCustomField(applyToTemplates, accountId, customFieldId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.DeleteCustomField: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applyToTemplates** | **string**|  | [optional] 
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+ **customFieldId** | **string**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="deleteenoteconfiguration"></a>
 # **DeleteENoteConfiguration**
 > void DeleteENoteConfiguration (string accountId)
@@ -858,6 +998,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getallpaymentgatewayaccounts"></a>
+# **GetAllPaymentGatewayAccounts**
+> PaymentGatewayAccountsInfo GetAllPaymentGatewayAccounts (string accountId)
+
+Get all payment gateway account for the provided accountId
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class GetAllPaymentGatewayAccountsExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+
+            try
+            {
+                // Get all payment gateway account for the provided accountId
+                PaymentGatewayAccountsInfo result = apiInstance.GetAllPaymentGatewayAccounts(accountId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.GetAllPaymentGatewayAccounts: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+
+### Return type
+
+[**PaymentGatewayAccountsInfo**](PaymentGatewayAccountsInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getbillingcharges"></a>
 # **GetBillingCharges**
 > BillingChargeResponse GetBillingCharges (string includeCharges = null, string accountId)
@@ -976,6 +1176,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Brand**](Brand.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getbrandexportfile"></a>
+# **GetBrandExportFile**
+> void GetBrandExportFile (string accountId, string brandId)
+
+Export a specific brand.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class GetBrandExportFileExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+            var brandId = brandId_example;  // string | The unique identifier of a brand.
+
+            try
+            {
+                // Export a specific brand.
+                apiInstance.GetBrandExportFile(accountId, brandId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.GetBrandExportFile: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+ **brandId** | **string**| The unique identifier of a brand. | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -1368,6 +1629,122 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getpasswordrules"></a>
+# **GetPasswordRules**
+> AccountPasswordRules GetPasswordRules (string accountId)
+
+Get the password rules
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class GetPasswordRulesExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+
+            try
+            {
+                // Get the password rules
+                AccountPasswordRules result = apiInstance.GetPasswordRules(accountId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.GetPasswordRules: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+
+### Return type
+
+[**AccountPasswordRules**](AccountPasswordRules.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getpasswordrules_0"></a>
+# **GetPasswordRules_0**
+> UserPasswordRules GetPasswordRules_0 ()
+
+Get membership account password rules
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class GetPasswordRules_0Example
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+
+            try
+            {
+                // Get membership account password rules
+                UserPasswordRules result = apiInstance.GetPasswordRules_0();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.GetPasswordRules_0: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserPasswordRules**](UserPasswordRules.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getpermissionprofile"></a>
 # **GetPermissionProfile**
 > PermissionProfile GetPermissionProfile (string include = null, string accountId, string permissionProfileId)
@@ -1478,6 +1855,188 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**ProvisioningInformation**](ProvisioningInformation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getsupportedlanguages"></a>
+# **GetSupportedLanguages**
+> SupportedLanguages GetSupportedLanguages (string accountId)
+
+Gets list of supported languages for recipient language setting.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class GetSupportedLanguagesExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+
+            try
+            {
+                // Gets list of supported languages for recipient language setting.
+                SupportedLanguages result = apiInstance.GetSupportedLanguages(accountId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.GetSupportedLanguages: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+
+### Return type
+
+[**SupportedLanguages**](SupportedLanguages.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getwatermark"></a>
+# **GetWatermark**
+> Watermark GetWatermark (string accountId)
+
+Get watermark information.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class GetWatermarkExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+
+            try
+            {
+                // Get watermark information.
+                Watermark result = apiInstance.GetWatermark(accountId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.GetWatermark: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+
+### Return type
+
+[**Watermark**](Watermark.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getwatermarkpreview"></a>
+# **GetWatermarkPreview**
+> Watermark GetWatermarkPreview (Watermark watermark = null, string accountId)
+
+Get watermark preview.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class GetWatermarkPreviewExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var watermark = new Watermark(); // Watermark |  (optional) 
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+
+            try
+            {
+                // Get watermark preview.
+                Watermark result = apiInstance.GetWatermarkPreview(watermark, accountId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.GetWatermarkPreview: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **watermark** | [**Watermark**](Watermark.md)|  | [optional] 
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+
+### Return type
+
+[**Watermark**](Watermark.md)
 
 ### Authorization
 
@@ -2261,6 +2820,138 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="updateconsumerdisclosure"></a>
+# **UpdateConsumerDisclosure**
+> ConsumerDisclosure UpdateConsumerDisclosure (string includeMetadata = null, ConsumerDisclosure consumerDisclosure = null, string accountId, string langCode)
+
+Update Consumer Disclosure.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class UpdateConsumerDisclosureExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var includeMetadata = includeMetadata_example;  // string |  (optional) 
+            var consumerDisclosure = new ConsumerDisclosure(); // ConsumerDisclosure |  (optional) 
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+            var langCode = langCode_example;  // string | The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to �browser� to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+
+            try
+            {
+                // Update Consumer Disclosure.
+                ConsumerDisclosure result = apiInstance.UpdateConsumerDisclosure(includeMetadata, consumerDisclosure, accountId, langCode);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.UpdateConsumerDisclosure: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **includeMetadata** | **string**|  | [optional] 
+ **consumerDisclosure** | [**ConsumerDisclosure**](ConsumerDisclosure.md)|  | [optional] 
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+ **langCode** | **string**| The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to �browser� to automatically detect the browser language being used by the viewer and display the disclosure in that language. | 
+
+### Return type
+
+[**ConsumerDisclosure**](ConsumerDisclosure.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatecustomfield"></a>
+# **UpdateCustomField**
+> CustomFields UpdateCustomField (string applyToTemplates = null, CustomField customField = null, string accountId, string customFieldId)
+
+Updates an existing account custom field.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class UpdateCustomFieldExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var applyToTemplates = applyToTemplates_example;  // string |  (optional) 
+            var customField = new CustomField(); // CustomField |  (optional) 
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+            var customFieldId = customFieldId_example;  // string | 
+
+            try
+            {
+                // Updates an existing account custom field.
+                CustomFields result = apiInstance.UpdateCustomField(applyToTemplates, customField, accountId, customFieldId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.UpdateCustomField: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **applyToTemplates** | **string**|  | [optional] 
+ **customField** | [**CustomField**](CustomField.md)|  | [optional] 
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+ **customFieldId** | **string**|  | 
+
+### Return type
+
+[**CustomFields**](CustomFields.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="updateenoteconfiguration"></a>
 # **UpdateENoteConfiguration**
 > ENoteConfiguration UpdateENoteConfiguration (ENoteConfiguration eNoteConfiguration = null, string accountId)
@@ -2311,6 +3002,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ENoteConfiguration**](ENoteConfiguration.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatepasswordrules"></a>
+# **UpdatePasswordRules**
+> AccountPasswordRules UpdatePasswordRules (AccountPasswordRules accountPasswordRules = null, string accountId)
+
+Update the password rules
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class UpdatePasswordRulesExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var accountPasswordRules = new AccountPasswordRules(); // AccountPasswordRules |  (optional) 
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+
+            try
+            {
+                // Update the password rules
+                AccountPasswordRules result = apiInstance.UpdatePasswordRules(accountPasswordRules, accountId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.UpdatePasswordRules: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountPasswordRules** | [**AccountPasswordRules**](AccountPasswordRules.md)|  | [optional] 
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+
+### Return type
+
+[**AccountPasswordRules**](AccountPasswordRules.md)
 
 ### Authorization
 
@@ -2508,6 +3261,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AccountSharedAccess**](AccountSharedAccess.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatewatermark"></a>
+# **UpdateWatermark**
+> Watermark UpdateWatermark (Watermark watermark = null, string accountId)
+
+Update watermark information.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class UpdateWatermarkExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var watermark = new Watermark(); // Watermark |  (optional) 
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+
+            try
+            {
+                // Update watermark information.
+                Watermark result = apiInstance.UpdateWatermark(watermark, accountId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.UpdateWatermark: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **watermark** | [**Watermark**](Watermark.md)|  | [optional] 
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+
+### Return type
+
+[**Watermark**](Watermark.md)
 
 ### Authorization
 

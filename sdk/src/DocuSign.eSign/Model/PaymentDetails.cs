@@ -37,20 +37,40 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentDetails" /> class.
         /// </summary>
+        /// <param name="AllowedPaymentMethods">.</param>
+        /// <param name="ChargeId">.</param>
         /// <param name="CurrencyCode">.</param>
         /// <param name="GatewayAccountId">.</param>
+        /// <param name="GatewayDisplayName">.</param>
+        /// <param name="GatewayName">.</param>
         /// <param name="LineItems">.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="Total">Total.</param>
-        public PaymentDetails(string CurrencyCode = default(string), string GatewayAccountId = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string Status = default(string), Money Total = default(Money))
+        public PaymentDetails(List<string> AllowedPaymentMethods = default(List<string>), string ChargeId = default(string), string CurrencyCode = default(string), string GatewayAccountId = default(string), string GatewayDisplayName = default(string), string GatewayName = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string Status = default(string), Money Total = default(Money))
         {
+            this.AllowedPaymentMethods = AllowedPaymentMethods;
+            this.ChargeId = ChargeId;
             this.CurrencyCode = CurrencyCode;
             this.GatewayAccountId = GatewayAccountId;
+            this.GatewayDisplayName = GatewayDisplayName;
+            this.GatewayName = GatewayName;
             this.LineItems = LineItems;
             this.Status = Status;
             this.Total = Total;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="allowedPaymentMethods", EmitDefaultValue=false)]
+        public List<string> AllowedPaymentMethods { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="chargeId", EmitDefaultValue=false)]
+        public string ChargeId { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +83,18 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="gatewayAccountId", EmitDefaultValue=false)]
         public string GatewayAccountId { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="gatewayDisplayName", EmitDefaultValue=false)]
+        public string GatewayDisplayName { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="gatewayName", EmitDefaultValue=false)]
+        public string GatewayName { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -88,8 +120,12 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PaymentDetails {\n");
+            sb.Append("  AllowedPaymentMethods: ").Append(AllowedPaymentMethods).Append("\n");
+            sb.Append("  ChargeId: ").Append(ChargeId).Append("\n");
             sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
             sb.Append("  GatewayAccountId: ").Append(GatewayAccountId).Append("\n");
+            sb.Append("  GatewayDisplayName: ").Append(GatewayDisplayName).Append("\n");
+            sb.Append("  GatewayName: ").Append(GatewayName).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
@@ -130,6 +166,16 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.AllowedPaymentMethods == other.AllowedPaymentMethods ||
+                    this.AllowedPaymentMethods != null &&
+                    this.AllowedPaymentMethods.SequenceEqual(other.AllowedPaymentMethods)
+                ) && 
+                (
+                    this.ChargeId == other.ChargeId ||
+                    this.ChargeId != null &&
+                    this.ChargeId.Equals(other.ChargeId)
+                ) && 
+                (
                     this.CurrencyCode == other.CurrencyCode ||
                     this.CurrencyCode != null &&
                     this.CurrencyCode.Equals(other.CurrencyCode)
@@ -138,6 +184,16 @@ namespace DocuSign.eSign.Model
                     this.GatewayAccountId == other.GatewayAccountId ||
                     this.GatewayAccountId != null &&
                     this.GatewayAccountId.Equals(other.GatewayAccountId)
+                ) && 
+                (
+                    this.GatewayDisplayName == other.GatewayDisplayName ||
+                    this.GatewayDisplayName != null &&
+                    this.GatewayDisplayName.Equals(other.GatewayDisplayName)
+                ) && 
+                (
+                    this.GatewayName == other.GatewayName ||
+                    this.GatewayName != null &&
+                    this.GatewayName.Equals(other.GatewayName)
                 ) && 
                 (
                     this.LineItems == other.LineItems ||
@@ -167,10 +223,18 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AllowedPaymentMethods != null)
+                    hash = hash * 59 + this.AllowedPaymentMethods.GetHashCode();
+                if (this.ChargeId != null)
+                    hash = hash * 59 + this.ChargeId.GetHashCode();
                 if (this.CurrencyCode != null)
                     hash = hash * 59 + this.CurrencyCode.GetHashCode();
                 if (this.GatewayAccountId != null)
                     hash = hash * 59 + this.GatewayAccountId.GetHashCode();
+                if (this.GatewayDisplayName != null)
+                    hash = hash * 59 + this.GatewayDisplayName.GetHashCode();
+                if (this.GatewayName != null)
+                    hash = hash * 59 + this.GatewayName.GetHashCode();
                 if (this.LineItems != null)
                     hash = hash * 59 + this.LineItems.GetHashCode();
                 if (this.Status != null)

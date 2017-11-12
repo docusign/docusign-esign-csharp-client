@@ -5,6 +5,7 @@ All URIs are relative to *https://www.docusign.net/restapi*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetBillingPlan**](BillingApi.md#getbillingplan) | **GET** /v2/billing_plans/{billingPlanId} | Get the billing plan details.
+[**GetCreditCardInfo**](BillingApi.md#getcreditcardinfo) | **GET** /v2/accounts/{accountId}/billing_plan/credit_card | Get metadata for a given credit card.
 [**GetInvoice**](BillingApi.md#getinvoice) | **GET** /v2/accounts/{accountId}/billing_invoices/{invoiceId} | Retrieves a billing invoice.
 [**GetPayment**](BillingApi.md#getpayment) | **GET** /v2/accounts/{accountId}/billing_payments/{paymentId} | Gets billing payment information for a specific payment.
 [**GetPlan**](BillingApi.md#getplan) | **GET** /v2/accounts/{accountId}/billing_plan | Get Account Billing Plan
@@ -67,6 +68,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BillingPlanResponse**](BillingPlanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getcreditcardinfo"></a>
+# **GetCreditCardInfo**
+> CreditCardInformation GetCreditCardInfo (string accountId)
+
+Get metadata for a given credit card.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class GetCreditCardInfoExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new BillingApi();
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+
+            try
+            {
+                // Get metadata for a given credit card.
+                CreditCardInformation result = apiInstance.GetCreditCardInfo(accountId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling BillingApi.GetCreditCardInfo: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+
+### Return type
+
+[**CreditCardInformation**](CreditCardInformation.md)
 
 ### Authorization
 

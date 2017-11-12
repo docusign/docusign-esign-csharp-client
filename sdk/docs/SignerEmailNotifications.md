@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 **AgentNotification** | **string** | When set to **true**, the user receives agent notification emails. | [optional] 
 **CarbonCopyNotification** | **string** | When set to **true**, the user receives notifications of carbon copy deliveries. | [optional] 
 **CertifiedDeliveryNotification** | **string** | When set to **true**, the user receives notifications of certified deliveries. | [optional] 
+**CommentsOnlyPrivateAndMention** | **string** |  | [optional] 
+**CommentsReceiveAll** | **string** |  | [optional] 
 **DocumentMarkupActivation** | **string** | When set to **true**, the user receives notification that document markup has been activated. | [optional] 
 **EnvelopeActivation** | **string** | When set to **true**, the user receives notification that the envelope has been activated. | [optional] 
 **EnvelopeComplete** | **string** | When set to **true**, the user receives notification that the envelope has been completed. | [optional] 

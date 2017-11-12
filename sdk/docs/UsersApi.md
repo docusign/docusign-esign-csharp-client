@@ -31,6 +31,7 @@ Method | HTTP request | Description
 [**UpdateSettings**](UsersApi.md#updatesettings) | **PUT** /v2/accounts/{accountId}/users/{userId}/settings | Updates the user account settings for a specified user.
 [**UpdateSignature**](UsersApi.md#updatesignature) | **PUT** /v2/accounts/{accountId}/users/{userId}/signatures/{signatureId} | Updates the user signature for a specified user.
 [**UpdateSignatureImage**](UsersApi.md#updatesignatureimage) | **PUT** /v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType} | Updates the user signature image or user initials image for the specified user.
+[**UpdateSignatures**](UsersApi.md#updatesignatures) | **PUT** /v2/accounts/{accountId}/users/{userId}/signatures | Adds/updates a user signature.
 [**UpdateUser**](UsersApi.md#updateuser) | **PUT** /v2/accounts/{accountId}/users/{userId} | Updates the specified user information.
 [**UpdateUsers**](UsersApi.md#updateusers) | **PUT** /v2/accounts/{accountId}/users | Change one or more user in the specified account.
 
@@ -1077,7 +1078,7 @@ No authorization required
 
 <a name="list"></a>
 # **List**
-> UserInformationList List (string additionalInfo = null, string count = null, string email = null, string emailSubstring = null, string groupId = null, string includeUsersettingsForCsv = null, string loginStatus = null, string notGroupId = null, string startPosition = null, string status = null, string userNameSubstring = null, string accountId)
+> UserInformationList List (string additionalInfo = null, string count = null, string email = null, string emailSubstring = null, string groupId = null, string loginStatus = null, string notGroupId = null, string startPosition = null, string status = null, string userNameSubstring = null, string accountId)
 
 Retrieves the list of users for the specified account.
 
@@ -1104,7 +1105,6 @@ namespace Example
             var email = email_example;  // string |  (optional) 
             var emailSubstring = emailSubstring_example;  // string | Filters the returned user records by the email address or a sub-string of email address. (optional) 
             var groupId = groupId_example;  // string | Filters user records returned by one or more group Id's. (optional) 
-            var includeUsersettingsForCsv = includeUsersettingsForCsv_example;  // string |  (optional) 
             var loginStatus = loginStatus_example;  // string |  (optional) 
             var notGroupId = notGroupId_example;  // string |  (optional) 
             var startPosition = startPosition_example;  // string | Starting value for the list.  (optional) 
@@ -1115,7 +1115,7 @@ namespace Example
             try
             {
                 // Retrieves the list of users for the specified account.
-                UserInformationList result = apiInstance.List(additionalInfo, count, email, emailSubstring, groupId, includeUsersettingsForCsv, loginStatus, notGroupId, startPosition, status, userNameSubstring, accountId);
+                UserInformationList result = apiInstance.List(additionalInfo, count, email, emailSubstring, groupId, loginStatus, notGroupId, startPosition, status, userNameSubstring, accountId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1136,7 +1136,6 @@ Name | Type | Description  | Notes
  **email** | **string**|  | [optional] 
  **emailSubstring** | **string**| Filters the returned user records by the email address or a sub-string of email address. | [optional] 
  **groupId** | **string**| Filters user records returned by one or more group Id&#39;s. | [optional] 
- **includeUsersettingsForCsv** | **string**|  | [optional] 
  **loginStatus** | **string**|  | [optional] 
  **notGroupId** | **string**|  | [optional] 
  **startPosition** | **string**| Starting value for the list.  | [optional] 
@@ -1225,7 +1224,7 @@ No authorization required
 
 <a name="listsignatures"></a>
 # **ListSignatures**
-> UserSignaturesInformation ListSignatures (string accountId, string userId)
+> UserSignaturesInformation ListSignatures (string stampType = null, string accountId, string userId)
 
 Retrieves a list of user signature definitions for a specified user.
 
@@ -1247,13 +1246,14 @@ namespace Example
         {
             
             var apiInstance = new UsersApi();
+            var stampType = stampType_example;  // string |  (optional) 
             var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
             var userId = userId_example;  // string | The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
 
             try
             {
                 // Retrieves a list of user signature definitions for a specified user.
-                UserSignaturesInformation result = apiInstance.ListSignatures(accountId, userId);
+                UserSignaturesInformation result = apiInstance.ListSignatures(stampType, accountId, userId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1269,6 +1269,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **stampType** | **string**|  | [optional] 
  **accountId** | **string**| The external account number (int) or account ID Guid. | 
  **userId** | **string**| The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing. | 
 
@@ -1796,6 +1797,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserSignature**](UserSignature.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatesignatures"></a>
+# **UpdateSignatures**
+> UserSignaturesInformation UpdateSignatures (UserSignaturesInformation userSignaturesInformation = null, string accountId, string userId)
+
+Adds/updates a user signature.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Model;
+
+namespace Example
+{
+    public class UpdateSignaturesExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new UsersApi();
+            var userSignaturesInformation = new UserSignaturesInformation(); // UserSignaturesInformation |  (optional) 
+            var accountId = accountId_example;  // string | The external account number (int) or account ID Guid.
+            var userId = userId_example;  // string | The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+
+            try
+            {
+                // Adds/updates a user signature.
+                UserSignaturesInformation result = apiInstance.UpdateSignatures(userSignaturesInformation, accountId, userId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.UpdateSignatures: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userSignaturesInformation** | [**UserSignaturesInformation**](UserSignaturesInformation.md)|  | [optional] 
+ **accountId** | **string**| The external account number (int) or account ID Guid. | 
+ **userId** | **string**| The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing. | 
+
+### Return type
+
+[**UserSignaturesInformation**](UserSignaturesInformation.md)
 
 ### Authorization
 

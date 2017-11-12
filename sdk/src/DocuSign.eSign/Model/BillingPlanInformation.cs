@@ -44,6 +44,7 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableSupport">.</param>
         /// <param name="IncludedSeats">The number of seats (users) included..</param>
         /// <param name="IncrementalSeats">Reserved: TBD.</param>
+        /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="PlanInformation">PlanInformation.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
         /// <param name="RenewalStatus">.</param>
@@ -52,7 +53,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SaleDiscountPercent">.</param>
         /// <param name="SaleDiscountPeriods">.</param>
         /// <param name="SaleDiscountSeatPriceOverride">.</param>
-        public BillingPlanInformation(AppStoreReceipt AppStoreReceipt = default(AppStoreReceipt), AccountAddress BillingAddress = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), string DowngradeReason = default(string), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), string RenewalStatus = default(string), string SaleDiscountAmount = default(string), string SaleDiscountFixedAmount = default(string), string SaleDiscountPercent = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountSeatPriceOverride = default(string))
+        public BillingPlanInformation(AppStoreReceipt AppStoreReceipt = default(AppStoreReceipt), AccountAddress BillingAddress = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), string DowngradeReason = default(string), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), string RenewalStatus = default(string), string SaleDiscountAmount = default(string), string SaleDiscountFixedAmount = default(string), string SaleDiscountPercent = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountSeatPriceOverride = default(string))
         {
             this.AppStoreReceipt = AppStoreReceipt;
             this.BillingAddress = BillingAddress;
@@ -61,6 +62,7 @@ namespace DocuSign.eSign.Model
             this.EnableSupport = EnableSupport;
             this.IncludedSeats = IncludedSeats;
             this.IncrementalSeats = IncrementalSeats;
+            this.PaymentProcessorInformation = PaymentProcessorInformation;
             this.PlanInformation = PlanInformation;
             this.ReferralInformation = ReferralInformation;
             this.RenewalStatus = RenewalStatus;
@@ -110,6 +112,11 @@ namespace DocuSign.eSign.Model
         /// <value>Reserved: TBD</value>
         [DataMember(Name="incrementalSeats", EmitDefaultValue=false)]
         public string IncrementalSeats { get; set; }
+        /// <summary>
+        /// Gets or Sets PaymentProcessorInformation
+        /// </summary>
+        [DataMember(Name="paymentProcessorInformation", EmitDefaultValue=false)]
+        public PaymentProcessorInformation PaymentProcessorInformation { get; set; }
         /// <summary>
         /// Gets or Sets PlanInformation
         /// </summary>
@@ -171,6 +178,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnableSupport: ").Append(EnableSupport).Append("\n");
             sb.Append("  IncludedSeats: ").Append(IncludedSeats).Append("\n");
             sb.Append("  IncrementalSeats: ").Append(IncrementalSeats).Append("\n");
+            sb.Append("  PaymentProcessorInformation: ").Append(PaymentProcessorInformation).Append("\n");
             sb.Append("  PlanInformation: ").Append(PlanInformation).Append("\n");
             sb.Append("  ReferralInformation: ").Append(ReferralInformation).Append("\n");
             sb.Append("  RenewalStatus: ").Append(RenewalStatus).Append("\n");
@@ -251,6 +259,11 @@ namespace DocuSign.eSign.Model
                     this.IncrementalSeats.Equals(other.IncrementalSeats)
                 ) && 
                 (
+                    this.PaymentProcessorInformation == other.PaymentProcessorInformation ||
+                    this.PaymentProcessorInformation != null &&
+                    this.PaymentProcessorInformation.Equals(other.PaymentProcessorInformation)
+                ) && 
+                (
                     this.PlanInformation == other.PlanInformation ||
                     this.PlanInformation != null &&
                     this.PlanInformation.Equals(other.PlanInformation)
@@ -317,6 +330,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IncludedSeats.GetHashCode();
                 if (this.IncrementalSeats != null)
                     hash = hash * 59 + this.IncrementalSeats.GetHashCode();
+                if (this.PaymentProcessorInformation != null)
+                    hash = hash * 59 + this.PaymentProcessorInformation.GetHashCode();
                 if (this.PlanInformation != null)
                     hash = hash * 59 + this.PlanInformation.GetHashCode();
                 if (this.ReferralInformation != null)

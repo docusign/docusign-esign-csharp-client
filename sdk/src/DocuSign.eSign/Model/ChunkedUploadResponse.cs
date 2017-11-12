@@ -43,8 +43,10 @@ namespace DocuSign.eSign.Model
         /// <param name="ChunkedUploadUri">.</param>
         /// <param name="Committed">.</param>
         /// <param name="ExpirationDateTime">.</param>
+        /// <param name="MaxChunkedUploadParts">.</param>
+        /// <param name="MaxTotalSize">.</param>
         /// <param name="TotalSize">.</param>
-        public ChunkedUploadResponse(string Checksum = default(string), string ChunkedUploadId = default(string), List<ChunkedUploadPart> ChunkedUploadParts = default(List<ChunkedUploadPart>), string ChunkedUploadUri = default(string), string Committed = default(string), string ExpirationDateTime = default(string), string TotalSize = default(string))
+        public ChunkedUploadResponse(string Checksum = default(string), string ChunkedUploadId = default(string), List<ChunkedUploadPart> ChunkedUploadParts = default(List<ChunkedUploadPart>), string ChunkedUploadUri = default(string), string Committed = default(string), string ExpirationDateTime = default(string), string MaxChunkedUploadParts = default(string), string MaxTotalSize = default(string), string TotalSize = default(string))
         {
             this.Checksum = Checksum;
             this.ChunkedUploadId = ChunkedUploadId;
@@ -52,6 +54,8 @@ namespace DocuSign.eSign.Model
             this.ChunkedUploadUri = ChunkedUploadUri;
             this.Committed = Committed;
             this.ExpirationDateTime = ExpirationDateTime;
+            this.MaxChunkedUploadParts = MaxChunkedUploadParts;
+            this.MaxTotalSize = MaxTotalSize;
             this.TotalSize = TotalSize;
         }
         
@@ -95,6 +99,18 @@ namespace DocuSign.eSign.Model
         /// 
         /// </summary>
         /// <value></value>
+        [DataMember(Name="maxChunkedUploadParts", EmitDefaultValue=false)]
+        public string MaxChunkedUploadParts { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="maxTotalSize", EmitDefaultValue=false)]
+        public string MaxTotalSize { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
         [DataMember(Name="totalSize", EmitDefaultValue=false)]
         public string TotalSize { get; set; }
         /// <summary>
@@ -111,6 +127,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  ChunkedUploadUri: ").Append(ChunkedUploadUri).Append("\n");
             sb.Append("  Committed: ").Append(Committed).Append("\n");
             sb.Append("  ExpirationDateTime: ").Append(ExpirationDateTime).Append("\n");
+            sb.Append("  MaxChunkedUploadParts: ").Append(MaxChunkedUploadParts).Append("\n");
+            sb.Append("  MaxTotalSize: ").Append(MaxTotalSize).Append("\n");
             sb.Append("  TotalSize: ").Append(TotalSize).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -179,6 +197,16 @@ namespace DocuSign.eSign.Model
                     this.ExpirationDateTime.Equals(other.ExpirationDateTime)
                 ) && 
                 (
+                    this.MaxChunkedUploadParts == other.MaxChunkedUploadParts ||
+                    this.MaxChunkedUploadParts != null &&
+                    this.MaxChunkedUploadParts.Equals(other.MaxChunkedUploadParts)
+                ) && 
+                (
+                    this.MaxTotalSize == other.MaxTotalSize ||
+                    this.MaxTotalSize != null &&
+                    this.MaxTotalSize.Equals(other.MaxTotalSize)
+                ) && 
+                (
                     this.TotalSize == other.TotalSize ||
                     this.TotalSize != null &&
                     this.TotalSize.Equals(other.TotalSize)
@@ -208,6 +236,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Committed.GetHashCode();
                 if (this.ExpirationDateTime != null)
                     hash = hash * 59 + this.ExpirationDateTime.GetHashCode();
+                if (this.MaxChunkedUploadParts != null)
+                    hash = hash * 59 + this.MaxChunkedUploadParts.GetHashCode();
+                if (this.MaxTotalSize != null)
+                    hash = hash * 59 + this.MaxTotalSize.GetHashCode();
                 if (this.TotalSize != null)
                     hash = hash * 59 + this.TotalSize.GetHashCode();
                 return hash;

@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **TemplateLocked** | **string** | When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients.  | [optional] 
 **TemplateRequired** | **string** | When set to **true**, the sender may not remove the recipient. Used only when working with template recipients. | [optional] 
 **Underline** | **string** | When set to **true**, the information in the tab is underlined. | [optional] 
+**Value** | **string** | Specifies the value of the tab.  | [optional] 
 **XPosition** | **string** | This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position. | [optional] 
 **YPosition** | **string** | This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position. | [optional] 
 

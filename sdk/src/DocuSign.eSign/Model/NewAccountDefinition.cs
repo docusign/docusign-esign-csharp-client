@@ -44,10 +44,11 @@ namespace DocuSign.eSign.Model
         /// <param name="DistributorCode">The code that identifies the billing plan groups and plans for the new account..</param>
         /// <param name="DistributorPassword">The password for the distributorCode..</param>
         /// <param name="InitialUser">InitialUser.</param>
+        /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="PlanInformation">PlanInformation.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
         /// <param name="SocialAccountInformation">SocialAccountInformation.</param>
-        public NewAccountDefinition(string AccountName = default(string), List<NameValue> AccountSettings = default(List<NameValue>), AccountAddress AddressInformation = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), string DistributorCode = default(string), string DistributorPassword = default(string), UserInformation InitialUser = default(UserInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), SocialAccountInformation SocialAccountInformation = default(SocialAccountInformation))
+        public NewAccountDefinition(string AccountName = default(string), List<NameValue> AccountSettings = default(List<NameValue>), AccountAddress AddressInformation = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), string DistributorCode = default(string), string DistributorPassword = default(string), UserInformation InitialUser = default(UserInformation), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), SocialAccountInformation SocialAccountInformation = default(SocialAccountInformation))
         {
             this.AccountName = AccountName;
             this.AccountSettings = AccountSettings;
@@ -56,6 +57,7 @@ namespace DocuSign.eSign.Model
             this.DistributorCode = DistributorCode;
             this.DistributorPassword = DistributorPassword;
             this.InitialUser = InitialUser;
+            this.PaymentProcessorInformation = PaymentProcessorInformation;
             this.PlanInformation = PlanInformation;
             this.ReferralInformation = ReferralInformation;
             this.SocialAccountInformation = SocialAccountInformation;
@@ -101,6 +103,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="initialUser", EmitDefaultValue=false)]
         public UserInformation InitialUser { get; set; }
         /// <summary>
+        /// Gets or Sets PaymentProcessorInformation
+        /// </summary>
+        [DataMember(Name="PaymentProcessorInformation", EmitDefaultValue=false)]
+        public PaymentProcessorInformation PaymentProcessorInformation { get; set; }
+        /// <summary>
         /// Gets or Sets PlanInformation
         /// </summary>
         [DataMember(Name="planInformation", EmitDefaultValue=false)]
@@ -130,6 +137,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DistributorCode: ").Append(DistributorCode).Append("\n");
             sb.Append("  DistributorPassword: ").Append(DistributorPassword).Append("\n");
             sb.Append("  InitialUser: ").Append(InitialUser).Append("\n");
+            sb.Append("  PaymentProcessorInformation: ").Append(PaymentProcessorInformation).Append("\n");
             sb.Append("  PlanInformation: ").Append(PlanInformation).Append("\n");
             sb.Append("  ReferralInformation: ").Append(ReferralInformation).Append("\n");
             sb.Append("  SocialAccountInformation: ").Append(SocialAccountInformation).Append("\n");
@@ -205,6 +213,11 @@ namespace DocuSign.eSign.Model
                     this.InitialUser.Equals(other.InitialUser)
                 ) && 
                 (
+                    this.PaymentProcessorInformation == other.PaymentProcessorInformation ||
+                    this.PaymentProcessorInformation != null &&
+                    this.PaymentProcessorInformation.Equals(other.PaymentProcessorInformation)
+                ) && 
+                (
                     this.PlanInformation == other.PlanInformation ||
                     this.PlanInformation != null &&
                     this.PlanInformation.Equals(other.PlanInformation)
@@ -246,6 +259,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DistributorPassword.GetHashCode();
                 if (this.InitialUser != null)
                     hash = hash * 59 + this.InitialUser.GetHashCode();
+                if (this.PaymentProcessorInformation != null)
+                    hash = hash * 59 + this.PaymentProcessorInformation.GetHashCode();
                 if (this.PlanInformation != null)
                     hash = hash * 59 + this.PlanInformation.GetHashCode();
                 if (this.ReferralInformation != null)

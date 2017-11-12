@@ -11,15 +11,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Text.RegularExpressions;
+using System.IdentityModel.Protocols.WSTrust;
+using System.IdentityModel.Tokens;
 using System.IO;
-using System.Web;
 using System.Linq;
 using System.Net;
+using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.OpenSsl;
+using Org.BouncyCastle.Security;
 using RestSharp;
+using Newtonsoft.Json.Linq;
 
 namespace DocuSign.eSign.Client
 {
@@ -83,6 +90,7 @@ namespace DocuSign.eSign.Client
 
             RestClient = new RestClient(basePath);
             Configuration = Configuration.Default;
+            Configuration.ApiClient = this;
         }
 
         /// <summary>
@@ -544,6 +552,92 @@ namespace DocuSign.eSign.Client
             this.Configuration.AddDefaultHeader("Authorization", authHeader);
 
             return tokenObj.access_token;
+        }
+
+        public void ConfigureJwtAuthorizationFlow(string clientId, string userId, string oauthBasePath, string privateKeyFilename, int expiresInHours)
+        {
+            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+
+            SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor()
+            {
+                Lifetime = new Lifetime(DateTime.UtcNow, DateTime.UtcNow.AddHours(expiresInHours)),
+            };
+
+            descriptor.Subject = new ClaimsIdentity();
+            descriptor.Subject.AddClaim(new Claim("scope", "signature"));
+            descriptor.Subject.AddClaim(new Claim("aud", oauthBasePath));
+            descriptor.Subject.AddClaim(new Claim("iss", clientId));
+
+            if (userId != null)
+            {
+                descriptor.Subject.AddClaim(new Claim("sub", userId));
+            }
+
+            if (privateKeyFilename != null)
+            {
+                string pemKey = File.ReadAllText(privateKeyFilename);
+                var rsa = CreateRSAKeyFromPem(pemKey);
+                RsaSecurityKey rsaKey = new RsaSecurityKey(rsa);
+                descriptor.SigningCredentials = new SigningCredentials(rsaKey, SecurityAlgorithms.RsaSha256Signature, SecurityAlgorithms.HmacSha256Signature);
+            }
+
+            var token = handler.CreateToken(descriptor);
+            string jwtToken = handler.WriteToken(token);
+
+            Uri baseUrl = this.RestClient.BaseUrl;
+            this.RestClient.BaseUrl = new Uri(string.Format("https://{0}", oauthBasePath));
+
+            string path = "oauth/token";
+            string contentType = "application/x-www-form-urlencoded";
+
+            Dictionary<string, string> formParams = new Dictionary<string, string>();
+            formParams.Add("grant_type", "urn:ietf:params:oauth:grant-type:jwt-bearer");
+            formParams.Add("assertion", jwtToken);
+
+            Dictionary<string, string> queryParams = new Dictionary<string, string>();
+
+            Dictionary<string, string> headerParams = new Dictionary<string, string>();
+            headerParams.Add("Content-Type", "application/x-www-form-urlencoded");
+
+            Dictionary<string, FileParameter> fileParams = new Dictionary<string, FileParameter>();
+            Dictionary<string, string> pathParams = new Dictionary<string, string>();
+
+            object postBody = null;
+
+            try
+            {
+                var response = CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, contentType);
+                TokenResponse tokenInfo = JsonConvert.DeserializeObject<TokenResponse>(((RestResponse)response).Content);
+
+                var config = Configuration.Default;
+                config.AddDefaultHeader("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+            }
+            catch (Exception ex)
+            {
+            }
+
+            this.RestClient.BaseUrl = baseUrl;
+        }
+
+        private static RSA CreateRSAKeyFromPem(string key)
+        {
+            TextReader reader = new StringReader(key);
+            PemReader pemReader = new PemReader(reader);
+
+            object result = pemReader.ReadObject();
+
+            if (result is AsymmetricCipherKeyPair)
+            {
+                AsymmetricCipherKeyPair keyPair = (AsymmetricCipherKeyPair)result;
+                return DotNetUtilities.ToRSA((RsaPrivateCrtKeyParameters)keyPair.Private);
+            }
+            else if (result is RsaKeyParameters)
+            {
+                RsaKeyParameters keyParameters = (RsaKeyParameters)result;
+                return DotNetUtilities.ToRSA(keyParameters);
+            }
+
+            throw new Exception("Unepxected PEM type");
         }
     }
 

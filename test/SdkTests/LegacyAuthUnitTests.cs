@@ -18,38 +18,30 @@ using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
 using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 namespace SdkTests
 {
     [TestClass]
-    public class UnitTests
+    public class LegacyAuthUnitTests
     {
         TestConfig testConfig = new TestConfig();
 
-        //public UnitTests()
-        //{
-        //    testConfig = new TestConfig();
-        //}
-
         [TestInitialize()]
         [TestMethod]
-        public void LoginTest()
+        public void LegacyLoginTest()
         {
             string authHeader = "{\"Username\":\"" + testConfig.Username + "\", \"Password\":\"" + testConfig.Password + "\", \"IntegratorKey\":\"" + testConfig.IntegratorKey + "\"}";
-            
-            Configuration configuration = new Configuration(new ApiClient(testConfig.Host));
-            if (configuration.DefaultHeader.ContainsKey("X-DocuSign-Authentication"))
-            {
-                configuration.DefaultHeader.Remove("X-DocuSign-Authentication");
-            }
-            configuration.AddDefaultHeader("X-DocuSign-Authentication", authHeader);
 
-            
-            testConfig.Configuration = configuration;
+            testConfig.ApiClient = new ApiClient(testConfig.Host);
+            if (testConfig.ApiClient.Configuration.DefaultHeader.ContainsKey("X-DocuSign-Authentication"))
+            {
+                testConfig.ApiClient.Configuration.DefaultHeader.Remove("X-DocuSign-Authentication");
+            }
+            testConfig.ApiClient.Configuration.AddDefaultHeader("X-DocuSign-Authentication", authHeader);
 
             // the authentication api uses the apiClient (and X-DocuSign-Authentication header) that are set in Configuration object
-            AuthenticationApi authApi = new AuthenticationApi(configuration);
+
+            AuthenticationApi authApi = new AuthenticationApi(testConfig.ApiClient.Configuration);
             LoginInformation loginInfo = authApi.Login();
 
             Assert.IsNotNull(loginInfo);
@@ -65,14 +57,14 @@ namespace SdkTests
                     string[] separatingStrings = { "/v2" };
 
                     // Update ApiClient with the new base url from login call
-                    configuration.ApiClient = new ApiClient(loginAcct.BaseUrl.Split(separatingStrings, StringSplitOptions.RemoveEmptyEntries)[0]);
+                    testConfig.ApiClient = new ApiClient(loginAcct.BaseUrl.Split(separatingStrings, StringSplitOptions.RemoveEmptyEntries)[0]);
                     break;
                 }
             }
             Assert.IsNotNull(testConfig.AccountId);
         }
 
-        private void requestSignatureOnDocumentTest(string status = "sent")
+        private void LegacyRequestSignatureOnDocumentTest(string status = "sent")
         {
             // the document (file) we want signed
             const string SignTest1File = @"../../docs/SignTest1.pdf";
@@ -119,7 +111,7 @@ namespace SdkTests
             envDef.Status = status;
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
             EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
 
             Assert.IsNotNull(envelopeSummary);
@@ -129,7 +121,7 @@ namespace SdkTests
         }
 
         [TestMethod]
-        public void requestSignatureFromTemplateTest()
+        public void LegacyRequestSignatureFromTemplateTest()
         {
             EnvelopeDefinition envDef = new EnvelopeDefinition();
             envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
@@ -151,7 +143,7 @@ namespace SdkTests
             envDef.Status = "sent";
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
             EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
 
             Assert.IsNotNull(envelopeSummary);
@@ -161,12 +153,12 @@ namespace SdkTests
         }
 
         [TestMethod]
-        public void getEnvelopeInformationTest()
+        public void LegacyGetEnvelopeInformationTest()
         {
-            requestSignatureOnDocumentTest();
+            LegacyRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes including status calls
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
             Envelope envInfo = envelopesApi.GetEnvelope(testConfig.AccountId, testConfig.EnvelopeId);
 
             Assert.IsNotNull(envInfo);
@@ -174,12 +166,12 @@ namespace SdkTests
         }
 
         [TestMethod]
-        public void listRecipientsTest()
+        public void LegacyListRecipientsTest()
         {
-            requestSignatureOnDocumentTest();
+            LegacyRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
             Recipients recips = envelopesApi.ListRecipients(testConfig.AccountId, testConfig.EnvelopeId);
 
             Assert.IsNotNull(recips);
@@ -187,7 +179,7 @@ namespace SdkTests
         }
 
         [TestMethod]
-        public void listEnvelopesTest()
+        public void LegacyListEnvelopesTest()
         {
             // This example gets statuses of all envelopes in your account going back 1 full month...
             DateTime fromDate = DateTime.UtcNow;
@@ -202,7 +194,7 @@ namespace SdkTests
             };
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
             EnvelopesInformation envelopes = envelopesApi.ListStatusChanges(testConfig.AccountId, options);
 
             Assert.IsNotNull(envelopes);
@@ -212,12 +204,12 @@ namespace SdkTests
         } // end listEnvelopesTest()
 
         [TestMethod]
-        public void listDocumentsAndDownloadTest()
+        public void LegacyListDocumentsAndDownloadTest()
         {
-            requestSignatureOnDocumentTest();
+            LegacyRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
             EnvelopeDocumentsResult docsList = envelopesApi.ListDocuments(testConfig.AccountId, testConfig.EnvelopeId);
 
             Assert.IsNotNull(docsList);
@@ -254,15 +246,15 @@ namespace SdkTests
         }
 
         [TestMethod]
-        public void createEmbeddedSendingViewTest()
+        public void LegacyCreateEmbeddedSendingViewTest()
         {
-            requestSignatureOnDocumentTest("created");
+            LegacyRequestSignatureOnDocumentTest("created");
 
             ReturnUrlRequest options = new ReturnUrlRequest();
             options.ReturnUrl = testConfig.ReturnUrl;
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
 
             // generate the embedded sending URL
             ViewUrl senderView = envelopesApi.CreateSenderView(testConfig.AccountId, testConfig.EnvelopeId, options);
@@ -276,13 +268,13 @@ namespace SdkTests
         }
 
         [TestMethod]
-        public void createEmbeddedSigningViewTest()
+        public void LegacyCreateEmbeddedSigningViewTest()
         {
-            requestSignatureOnDocumentTest();
+            LegacyRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.Configuration);
-           
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+
             RecipientViewRequest viewOptions = new RecipientViewRequest()
             {
                 ReturnUrl = testConfig.ReturnUrl,
@@ -304,12 +296,12 @@ namespace SdkTests
         }
 
         [TestMethod]
-        public void createEmbeddedConsoleViewTest()
+        public void LegacyCreateEmbeddedConsoleViewTest()
         {
-            requestSignatureOnDocumentTest();
+            LegacyRequestSignatureOnDocumentTest();
 
             // Adding the envelopeId start sthe console with the envelope open
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
 
             ConsoleViewRequest consoleViewRequest = new ConsoleViewRequest();
             consoleViewRequest.EnvelopeId = testConfig.EnvelopeId;

@@ -70,13 +70,15 @@ namespace DocuSign.eSign.Model
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
         /// <param name="ScaleValue">.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
+        /// <param name="StampType">.</param>
+        /// <param name="StampTypeMetadata">StampTypeMetadata.</param>
         /// <param name="TabLabel">The label string associated with the tab..</param>
         /// <param name="Type">The type of this tab. Values are: Approve, CheckBox, Company, Date, DateSigned, Decline, Email, EmailAddress, EnvelopeId, FirstName, Formula, FullName, InitialHere, InitialHereOptional, LastName, List, Note, Number, Radio, SignerAttachment, SignHere, SignHereOptional, Ssn, Text, Title, Zip5, or Zip5Dash4..</param>
         /// <param name="Underline">When set to **true**, the information in the tab is underlined..</param>
         /// <param name="ValidationMessage">The message displayed if the custom tab fails input validation (either custom of embedded)..</param>
         /// <param name="ValidationPattern">A regular expressionn used to validate input for the tab..</param>
         /// <param name="Width">Width of the tab in pixels..</param>
-        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), string Locked = default(string), string MaximumLength = default(string), MergeField MergeField = default(MergeField), string Name = default(string), string Required = default(string), string ScaleValue = default(string), string Shared = default(string), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Width = default(string))
+        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), string Locked = default(string), string MaximumLength = default(string), MergeField MergeField = default(MergeField), string Name = default(string), string Required = default(string), string ScaleValue = default(string), string Shared = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Width = default(string))
         {
             this.Anchor = Anchor;
             this.AnchorCaseSensitive = AnchorCaseSensitive;
@@ -111,6 +113,8 @@ namespace DocuSign.eSign.Model
             this.Required = Required;
             this.ScaleValue = ScaleValue;
             this.Shared = Shared;
+            this.StampType = StampType;
+            this.StampTypeMetadata = StampTypeMetadata;
             this.TabLabel = TabLabel;
             this.Type = Type;
             this.Underline = Underline;
@@ -317,6 +321,17 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shared", EmitDefaultValue=false)]
         public string Shared { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="stampType", EmitDefaultValue=false)]
+        public string StampType { get; set; }
+        /// <summary>
+        /// Gets or Sets StampTypeMetadata
+        /// </summary>
+        [DataMember(Name="stampTypeMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata StampTypeMetadata { get; set; }
+        /// <summary>
         /// The label string associated with the tab.
         /// </summary>
         /// <value>The label string associated with the tab.</value>
@@ -393,6 +408,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  Required: ").Append(Required).Append("\n");
             sb.Append("  ScaleValue: ").Append(ScaleValue).Append("\n");
             sb.Append("  Shared: ").Append(Shared).Append("\n");
+            sb.Append("  StampType: ").Append(StampType).Append("\n");
+            sb.Append("  StampTypeMetadata: ").Append(StampTypeMetadata).Append("\n");
             sb.Append("  TabLabel: ").Append(TabLabel).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Underline: ").Append(Underline).Append("\n");
@@ -601,6 +618,16 @@ namespace DocuSign.eSign.Model
                     this.Shared.Equals(other.Shared)
                 ) && 
                 (
+                    this.StampType == other.StampType ||
+                    this.StampType != null &&
+                    this.StampType.Equals(other.StampType)
+                ) && 
+                (
+                    this.StampTypeMetadata == other.StampTypeMetadata ||
+                    this.StampTypeMetadata != null &&
+                    this.StampTypeMetadata.Equals(other.StampTypeMetadata)
+                ) && 
+                (
                     this.TabLabel == other.TabLabel ||
                     this.TabLabel != null &&
                     this.TabLabel.Equals(other.TabLabel)
@@ -709,6 +736,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ScaleValue.GetHashCode();
                 if (this.Shared != null)
                     hash = hash * 59 + this.Shared.GetHashCode();
+                if (this.StampType != null)
+                    hash = hash * 59 + this.StampType.GetHashCode();
+                if (this.StampTypeMetadata != null)
+                    hash = hash * 59 + this.StampTypeMetadata.GetHashCode();
                 if (this.TabLabel != null)
                     hash = hash * 59 + this.TabLabel.GetHashCode();
                 if (this.Type != null)

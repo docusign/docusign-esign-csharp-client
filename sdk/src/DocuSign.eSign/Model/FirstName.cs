@@ -66,9 +66,10 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="Underline">When set to **true**, the information in the tab is underlined..</param>
+        /// <param name="Value">Specifies the value of the tab. .</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
-        public FirstName(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Italic = default(string), MergeField MergeField = default(MergeField), string Name = default(string), string PageNumber = default(string), string RecipientId = default(string), string Status = default(string), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Underline = default(string), string XPosition = default(string), string YPosition = default(string))
+        public FirstName(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Italic = default(string), MergeField MergeField = default(MergeField), string Name = default(string), string PageNumber = default(string), string RecipientId = default(string), string Status = default(string), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Underline = default(string), string Value = default(string), string XPosition = default(string), string YPosition = default(string))
         {
             this.AnchorCaseSensitive = AnchorCaseSensitive;
             this.AnchorHorizontalAlignment = AnchorHorizontalAlignment;
@@ -99,6 +100,7 @@ namespace DocuSign.eSign.Model
             this.TemplateLocked = TemplateLocked;
             this.TemplateRequired = TemplateRequired;
             this.Underline = Underline;
+            this.Value = Value;
             this.XPosition = XPosition;
             this.YPosition = YPosition;
         }
@@ -276,6 +278,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="underline", EmitDefaultValue=false)]
         public string Underline { get; set; }
         /// <summary>
+        /// Specifies the value of the tab. 
+        /// </summary>
+        /// <value>Specifies the value of the tab. </value>
+        [DataMember(Name="value", EmitDefaultValue=false)]
+        public string Value { get; set; }
+        /// <summary>
         /// This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
         /// </summary>
         /// <value>This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.</value>
@@ -324,6 +332,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  TemplateLocked: ").Append(TemplateLocked).Append("\n");
             sb.Append("  TemplateRequired: ").Append(TemplateRequired).Append("\n");
             sb.Append("  Underline: ").Append(Underline).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  XPosition: ").Append(XPosition).Append("\n");
             sb.Append("  YPosition: ").Append(YPosition).Append("\n");
             sb.Append("}\n");
@@ -508,6 +517,11 @@ namespace DocuSign.eSign.Model
                     this.Underline.Equals(other.Underline)
                 ) && 
                 (
+                    this.Value == other.Value ||
+                    this.Value != null &&
+                    this.Value.Equals(other.Value)
+                ) && 
+                (
                     this.XPosition == other.XPosition ||
                     this.XPosition != null &&
                     this.XPosition.Equals(other.XPosition)
@@ -588,6 +602,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.TemplateRequired.GetHashCode();
                 if (this.Underline != null)
                     hash = hash * 59 + this.Underline.GetHashCode();
+                if (this.Value != null)
+                    hash = hash * 59 + this.Value.GetHashCode();
                 if (this.XPosition != null)
                     hash = hash * 59 + this.XPosition.GetHashCode();
                 if (this.YPosition != null)

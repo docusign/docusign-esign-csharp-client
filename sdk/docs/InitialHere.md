@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Optional** | **string** |  | [optional] 
 **PageNumber** | **string** | Specifies the page number on which the tab is located. | [optional] 
 **RecipientId** | **string** | Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document. | [optional] 
-**ScaleValue** | [**Number**](Number.md) |  Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size. | [optional] 
+**ScaleValue** | **string** |  Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size. | [optional] 
 **Status** | **string** | Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later. | [optional] 
 **TabId** | **string** | The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].      | [optional] 
 **TabLabel** | **string** | The label string associated with the tab. | [optional] 

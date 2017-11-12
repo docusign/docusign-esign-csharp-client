@@ -98,6 +98,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**Create**](docs/AccountsApi.md#create) | **POST** /v2/accounts | Creates new accounts.
 *AccountsApi* | [**CreateBrand**](docs/AccountsApi.md#createbrand) | **POST** /v2/accounts/{accountId}/brands | Creates one or more brand profile files for the account.
+*AccountsApi* | [**CreateCustomField**](docs/AccountsApi.md#createcustomfield) | **POST** /v2/accounts/{accountId}/custom_fields | Creates an acount custom field.
 *AccountsApi* | [**CreateEMortgageTransaction**](docs/AccountsApi.md#createemortgagetransaction) | **POST** /v2/accounts/{accountId}/eMortgage/transactions | Starts a new eMortgage Transaction
 *AccountsApi* | [**CreatePermissionProfile**](docs/AccountsApi.md#createpermissionprofile) | **POST** /v2/accounts/{accountId}/permission_profiles | Creates a new permission profile in the specified account.
 *AccountsApi* | [**Delete**](docs/AccountsApi.md#delete) | **DELETE** /v2/accounts/{accountId} | Deletes the specified account.
@@ -105,20 +106,28 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**DeleteBrandLogoByType**](docs/AccountsApi.md#deletebrandlogobytype) | **DELETE** /v2/accounts/{accountId}/brands/{brandId}/logos/{logoType} | Delete one branding logo.
 *AccountsApi* | [**DeleteBrands**](docs/AccountsApi.md#deletebrands) | **DELETE** /v2/accounts/{accountId}/brands | Deletes one or more brand profiles.
 *AccountsApi* | [**DeleteCaptiveRecipient**](docs/AccountsApi.md#deletecaptiverecipient) | **DELETE** /v2/accounts/{accountId}/captive_recipients/{recipientPart} | Deletes the signature for one or more captive recipient records.
+*AccountsApi* | [**DeleteCustomField**](docs/AccountsApi.md#deletecustomfield) | **DELETE** /v2/accounts/{accountId}/custom_fields/{customFieldId} | Delete an existing account custom field.
 *AccountsApi* | [**DeleteENoteConfiguration**](docs/AccountsApi.md#deleteenoteconfiguration) | **DELETE** /v2/accounts/{accountId}/settings/enote_configuration | Deletes configuration information for the eNote eOriginal integration.
 *AccountsApi* | [**DeletePermissionProfile**](docs/AccountsApi.md#deletepermissionprofile) | **DELETE** /v2/accounts/{accountId}/permission_profiles/{permissionProfileId} | Deletes a permissions profile within the specified account.
 *AccountsApi* | [**GetAccountInformation**](docs/AccountsApi.md#getaccountinformation) | **GET** /v2/accounts/{accountId} | Retrieves the account information for the specified account.
 *AccountsApi* | [**GetAccountTabSettings**](docs/AccountsApi.md#getaccounttabsettings) | **GET** /v2/accounts/{accountId}/settings/tabs | Returns tab settings list for specified account
+*AccountsApi* | [**GetAllPaymentGatewayAccounts**](docs/AccountsApi.md#getallpaymentgatewayaccounts) | **GET** /v2/accounts/{accountId}/payment_gateway_accounts | Get all payment gateway account for the provided accountId
 *AccountsApi* | [**GetBillingCharges**](docs/AccountsApi.md#getbillingcharges) | **GET** /v2/accounts/{accountId}/billing_charges | Gets list of recurring and usage charges for the account.
 *AccountsApi* | [**GetBrand**](docs/AccountsApi.md#getbrand) | **GET** /v2/accounts/{accountId}/brands/{brandId} | Get information for a specific brand.
+*AccountsApi* | [**GetBrandExportFile**](docs/AccountsApi.md#getbrandexportfile) | **GET** /v2/accounts/{accountId}/brands/{brandId}/file | Export a specific brand.
 *AccountsApi* | [**GetBrandLogoByType**](docs/AccountsApi.md#getbrandlogobytype) | **GET** /v2/accounts/{accountId}/brands/{brandId}/logos/{logoType} | Obtains the specified image for a brand.
 *AccountsApi* | [**GetBrandResources**](docs/AccountsApi.md#getbrandresources) | **GET** /v2/accounts/{accountId}/brands/{brandId}/resources | Returns the specified account's list of branding resources (metadata).
 *AccountsApi* | [**GetBrandResourcesByContentType**](docs/AccountsApi.md#getbrandresourcesbycontenttype) | **GET** /v2/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType} | Returns the specified branding resource file.
 *AccountsApi* | [**GetConsumerDisclosure**](docs/AccountsApi.md#getconsumerdisclosure) | **GET** /v2/accounts/{accountId}/consumer_disclosure/{langCode} | Gets the Electronic Record and Signature Disclosure.
 *AccountsApi* | [**GetConsumerDisclosureDefault**](docs/AccountsApi.md#getconsumerdisclosuredefault) | **GET** /v2/accounts/{accountId}/consumer_disclosure | Gets the Electronic Record and Signature Disclosure for the account.
 *AccountsApi* | [**GetENoteConfiguration**](docs/AccountsApi.md#getenoteconfiguration) | **GET** /v2/accounts/{accountId}/settings/enote_configuration | Returns the configuration information for the eNote eOriginal integration.
+*AccountsApi* | [**GetPasswordRules**](docs/AccountsApi.md#getpasswordrules) | **GET** /v2/accounts/{accountId}/settings/password_rules | Get the password rules
+*AccountsApi* | [**GetPasswordRules_0**](docs/AccountsApi.md#getpasswordrules_0) | **GET** /v2/current_user/password_rules | Get membership account password rules
 *AccountsApi* | [**GetPermissionProfile**](docs/AccountsApi.md#getpermissionprofile) | **GET** /v2/accounts/{accountId}/permission_profiles/{permissionProfileId} | Returns a permissions profile in the specified account.
 *AccountsApi* | [**GetProvisioning**](docs/AccountsApi.md#getprovisioning) | **GET** /v2/accounts/provisioning | Retrieves the account provisioning information for the account.
+*AccountsApi* | [**GetSupportedLanguages**](docs/AccountsApi.md#getsupportedlanguages) | **GET** /v2/accounts/{accountId}/supported_languages | Gets list of supported languages for recipient language setting.
+*AccountsApi* | [**GetWatermark**](docs/AccountsApi.md#getwatermark) | **GET** /v2/accounts/{accountId}/watermark | Get watermark information.
+*AccountsApi* | [**GetWatermarkPreview**](docs/AccountsApi.md#getwatermarkpreview) | **PUT** /v2/accounts/{accountId}/watermark/preview | Get watermark preview.
 *AccountsApi* | [**ListBrands**](docs/AccountsApi.md#listbrands) | **GET** /v2/accounts/{accountId}/brands | Gets a list of brand profiles.
 *AccountsApi* | [**ListCustomFields**](docs/AccountsApi.md#listcustomfields) | **GET** /v2/accounts/{accountId}/custom_fields | Gets a list of custom fields associated with the account.
 *AccountsApi* | [**ListPermissions**](docs/AccountsApi.md#listpermissions) | **GET** /v2/accounts/{accountId}/permission_profiles | Gets a list of permission profiles.
@@ -131,10 +140,14 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**UpdateBrand**](docs/AccountsApi.md#updatebrand) | **PUT** /v2/accounts/{accountId}/brands/{brandId} | Updates an existing brand.
 *AccountsApi* | [**UpdateBrandLogoByType**](docs/AccountsApi.md#updatebrandlogobytype) | **PUT** /v2/accounts/{accountId}/brands/{brandId}/logos/{logoType} | Put one branding logo.
 *AccountsApi* | [**UpdateBrandResourcesByContentType**](docs/AccountsApi.md#updatebrandresourcesbycontenttype) | **PUT** /v2/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType} | Uploads a branding resource file.
+*AccountsApi* | [**UpdateConsumerDisclosure**](docs/AccountsApi.md#updateconsumerdisclosure) | **PUT** /v2/accounts/{accountId}/consumer_disclosure/{langCode} | Update Consumer Disclosure.
+*AccountsApi* | [**UpdateCustomField**](docs/AccountsApi.md#updatecustomfield) | **PUT** /v2/accounts/{accountId}/custom_fields/{customFieldId} | Updates an existing account custom field.
 *AccountsApi* | [**UpdateENoteConfiguration**](docs/AccountsApi.md#updateenoteconfiguration) | **PUT** /v2/accounts/{accountId}/settings/enote_configuration | Updates configuration information for the eNote eOriginal integration.
+*AccountsApi* | [**UpdatePasswordRules**](docs/AccountsApi.md#updatepasswordrules) | **PUT** /v2/accounts/{accountId}/settings/password_rules | Update the password rules
 *AccountsApi* | [**UpdatePermissionProfile**](docs/AccountsApi.md#updatepermissionprofile) | **PUT** /v2/accounts/{accountId}/permission_profiles/{permissionProfileId} | Updates a permission profile within the specified account.
 *AccountsApi* | [**UpdateSettings**](docs/AccountsApi.md#updatesettings) | **PUT** /v2/accounts/{accountId}/settings | Updates the account settings for an account.
 *AccountsApi* | [**UpdateSharedAccess**](docs/AccountsApi.md#updatesharedaccess) | **PUT** /v2/accounts/{accountId}/shared_access | Reserved: Sets the shared access information for users.
+*AccountsApi* | [**UpdateWatermark**](docs/AccountsApi.md#updatewatermark) | **PUT** /v2/accounts/{accountId}/watermark | Update watermark information.
 *AuthenticationApi* | [**DeleteSocialLogin**](docs/AuthenticationApi.md#deletesociallogin) | **DELETE** /v2/accounts/{accountId}/users/{userId}/social | Deletes user's social account.
 *AuthenticationApi* | [**GetOAuthToken**](docs/AuthenticationApi.md#getoauthtoken) | **POST** /v2/oauth2/token | Creates an authorization token.
 *AuthenticationApi* | [**ListSocialLogins**](docs/AuthenticationApi.md#listsociallogins) | **GET** /v2/accounts/{accountId}/users/{userId}/social | Gets a list of a user's social accounts.
@@ -143,6 +156,7 @@ Class | Method | HTTP request | Description
 *AuthenticationApi* | [**UpdatePassword**](docs/AuthenticationApi.md#updatepassword) | **PUT** /v2/login_information/{loginPart} | Updates the password for a specified user.
 *AuthenticationApi* | [**UpdateSocialLogin**](docs/AuthenticationApi.md#updatesociallogin) | **PUT** /v2/accounts/{accountId}/users/{userId}/social | Adds social account for a user.
 *BillingApi* | [**GetBillingPlan**](docs/BillingApi.md#getbillingplan) | **GET** /v2/billing_plans/{billingPlanId} | Get the billing plan details.
+*BillingApi* | [**GetCreditCardInfo**](docs/BillingApi.md#getcreditcardinfo) | **GET** /v2/accounts/{accountId}/billing_plan/credit_card | Get metadata for a given credit card.
 *BillingApi* | [**GetInvoice**](docs/BillingApi.md#getinvoice) | **GET** /v2/accounts/{accountId}/billing_invoices/{invoiceId} | Retrieves a billing invoice.
 *BillingApi* | [**GetPayment**](docs/BillingApi.md#getpayment) | **GET** /v2/accounts/{accountId}/billing_payments/{paymentId} | Gets billing payment information for a specific payment.
 *BillingApi* | [**GetPlan**](docs/BillingApi.md#getplan) | **GET** /v2/accounts/{accountId}/billing_plan | Get Account Billing Plan
@@ -177,6 +191,7 @@ Class | Method | HTTP request | Description
 *ConnectApi* | [**ListEventFailureLogs**](docs/ConnectApi.md#listeventfailurelogs) | **GET** /v2/accounts/{accountId}/connect/failures | Gets the Connect failure log information.
 *ConnectApi* | [**ListEventLogs**](docs/ConnectApi.md#listeventlogs) | **GET** /v2/accounts/{accountId}/connect/logs | Gets the Connect log.
 *ConnectApi* | [**ListMobileNotifiers**](docs/ConnectApi.md#listmobilenotifiers) | **GET** /v2/accounts/{accountId}/connect/mobile_notifiers | Reserved
+*ConnectApi* | [**ListTests**](docs/ConnectApi.md#listtests) | **GET** /v2/accounts/{accountId}/connect/{connectId}/tests | Test connect configuration.
 *ConnectApi* | [**ListUsers**](docs/ConnectApi.md#listusers) | **GET** /v2/accounts/{accountId}/connect/{connectId}/users | Returns users from the configured Connect service.
 *ConnectApi* | [**RetryEventForEnvelope**](docs/ConnectApi.md#retryeventforenvelope) | **PUT** /v2/accounts/{accountId}/connect/envelopes/{envelopeId}/retry_queue | Republishes Connect information for the specified envelope.
 *ConnectApi* | [**RetryEventForEnvelopes**](docs/ConnectApi.md#retryeventforenvelopes) | **PUT** /v2/accounts/{accountId}/connect/envelopes/retry_queue | Republishes Connect information for multiple envelopes.
@@ -230,11 +245,14 @@ Class | Method | HTTP request | Description
 *EnvelopesApi* | [**GetConsumerDisclosureDefault**](docs/EnvelopesApi.md#getconsumerdisclosuredefault) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/consumer_disclosure | Gets the Electronic Record and Signature Disclosure associated with the account.
 *EnvelopesApi* | [**GetDocument**](docs/EnvelopesApi.md#getdocument) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId} | Gets a document from an envelope.
 *EnvelopesApi* | [**GetDocumentPageImage**](docs/EnvelopesApi.md#getdocumentpageimage) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/page_image | Gets a page image from an envelope for display.
+*EnvelopesApi* | [**GetDocumentTabs**](docs/EnvelopesApi.md#getdocumenttabs) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs | Returns tabs on the document.
 *EnvelopesApi* | [**GetEmailSettings**](docs/EnvelopesApi.md#getemailsettings) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/email_settings | Gets the email setting overrides for an envelope.
 *EnvelopesApi* | [**GetEnvelope**](docs/EnvelopesApi.md#getenvelope) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId} | Gets the status of a envelope.
 *EnvelopesApi* | [**GetFormData**](docs/EnvelopesApi.md#getformdata) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/form_data | Returns envelope form data for an existing envelope.
 *EnvelopesApi* | [**GetLock**](docs/EnvelopesApi.md#getlock) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/lock | Gets envelope lock information.
 *EnvelopesApi* | [**GetNotificationSettings**](docs/EnvelopesApi.md#getnotificationsettings) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/notification | Gets envelope notification information.
+*EnvelopesApi* | [**GetPageTabs**](docs/EnvelopesApi.md#getpagetabs) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/tabs | Returns tabs on the specified page.
+*EnvelopesApi* | [**GetPages**](docs/EnvelopesApi.md#getpages) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages | Returns document page image(s) based on input.
 *EnvelopesApi* | [**GetRecipientDocumentVisibility**](docs/EnvelopesApi.md#getrecipientdocumentvisibility) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/document_visibility | Returns document visibility for the recipients
 *EnvelopesApi* | [**GetRecipientInitialsImage**](docs/EnvelopesApi.md#getrecipientinitialsimage) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/initials_image | Gets the initials image for a user.
 *EnvelopesApi* | [**GetRecipientSignature**](docs/EnvelopesApi.md#getrecipientsignature) | **GET** /v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/signature | Gets signature information for a signer or sign-in-person recipient.
@@ -285,6 +303,7 @@ Class | Method | HTTP request | Description
 *GroupsApi* | [**UpdateBrands**](docs/GroupsApi.md#updatebrands) | **PUT** /v2/accounts/{accountId}/groups/{groupId}/brands | Adds group brand ID information to a group.
 *GroupsApi* | [**UpdateGroupUsers**](docs/GroupsApi.md#updategroupusers) | **PUT** /v2/accounts/{accountId}/groups/{groupId}/users | Adds one or more users to an existing group.
 *GroupsApi* | [**UpdateGroups**](docs/GroupsApi.md#updategroups) | **PUT** /v2/accounts/{accountId}/groups | Updates the group information for a group.
+*NotaryApi* | [**ListNotaryJournals**](docs/NotaryApi.md#listnotaryjournals) | **GET** /v2/current_user/notary/journals | Get notary jurisdictions for a user
 *PowerFormsApi* | [**CreatePowerForm**](docs/PowerFormsApi.md#createpowerform) | **POST** /v2/accounts/{accountId}/powerforms | Creates a new PowerForm.
 *PowerFormsApi* | [**DeletePowerForm**](docs/PowerFormsApi.md#deletepowerform) | **DELETE** /v2/accounts/{accountId}/powerforms/{powerFormId} | Delete a PowerForm.
 *PowerFormsApi* | [**DeletePowerForms**](docs/PowerFormsApi.md#deletepowerforms) | **DELETE** /v2/accounts/{accountId}/powerforms | Deletes one or more PowerForms
@@ -322,8 +341,11 @@ Class | Method | HTTP request | Description
 *TemplatesApi* | [**Get**](docs/TemplatesApi.md#get) | **GET** /v2/accounts/{accountId}/templates/{templateId} | Gets a list of templates for a specified account.
 *TemplatesApi* | [**GetDocument**](docs/TemplatesApi.md#getdocument) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId} | Gets PDF documents from a template.
 *TemplatesApi* | [**GetDocumentPageImage**](docs/TemplatesApi.md#getdocumentpageimage) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image | Gets a page image from a template for display.
+*TemplatesApi* | [**GetDocumentTabs**](docs/TemplatesApi.md#getdocumenttabs) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs | Returns tabs on the document.
 *TemplatesApi* | [**GetLock**](docs/TemplatesApi.md#getlock) | **GET** /v2/accounts/{accountId}/templates/{templateId}/lock | Gets template lock information.
 *TemplatesApi* | [**GetNotificationSettings**](docs/TemplatesApi.md#getnotificationsettings) | **GET** /v2/accounts/{accountId}/templates/{templateId}/notification | Gets template notification information.
+*TemplatesApi* | [**GetPageTabs**](docs/TemplatesApi.md#getpagetabs) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/tabs | Returns tabs on the specified page.
+*TemplatesApi* | [**GetPages**](docs/TemplatesApi.md#getpages) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages | Returns document page image(s) based on input.
 *TemplatesApi* | [**ListBulkRecipients**](docs/TemplatesApi.md#listbulkrecipients) | **GET** /v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients | Gets the bulk recipient file from a template.
 *TemplatesApi* | [**ListCustomFields**](docs/TemplatesApi.md#listcustomfields) | **GET** /v2/accounts/{accountId}/templates/{templateId}/custom_fields | Gets the custom document fields from a template.
 *TemplatesApi* | [**ListDocumentFields**](docs/TemplatesApi.md#listdocumentfields) | **GET** /v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields | Gets the custom document fields for a an existing template document.
@@ -343,6 +365,11 @@ Class | Method | HTTP request | Description
 *TemplatesApi* | [**UpdateNotificationSettings**](docs/TemplatesApi.md#updatenotificationsettings) | **PUT** /v2/accounts/{accountId}/templates/{templateId}/notification | Updates the notification  structure for an existing template.
 *TemplatesApi* | [**UpdateRecipients**](docs/TemplatesApi.md#updaterecipients) | **PUT** /v2/accounts/{accountId}/templates/{templateId}/recipients | Updates recipients in a template.
 *TemplatesApi* | [**UpdateTabs**](docs/TemplatesApi.md#updatetabs) | **PUT** /v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs | Updates the tabs for a recipient.
+*TrustServiceProvidersApi* | [**CompleteSignHash**](docs/TrustServiceProvidersApi.md#completesignhash) | **POST** /v2/signature/completesignhash | Complete Sign Hash
+*TrustServiceProvidersApi* | [**GetUserInfo**](docs/TrustServiceProvidersApi.md#getuserinfo) | **GET** /v2/signature/userInfo | Get User Info To Sign Document
+*TrustServiceProvidersApi* | [**HealthCheck**](docs/TrustServiceProvidersApi.md#healthcheck) | **POST** /v2/signature/healthcheck | Report status from the TSP to DocuSign
+*TrustServiceProvidersApi* | [**SignHashSessionInfo**](docs/TrustServiceProvidersApi.md#signhashsessioninfo) | **POST** /v2/signature/signhashsessioninfo | Get Signature Session Info To Sign Document Hash
+*TrustServiceProvidersApi* | [**UpdateTransaction**](docs/TrustServiceProvidersApi.md#updatetransaction) | **POST** /v2/signature/updatetransaction | Report an error from the tsp to docusign
 *UsersApi* | [**Create**](docs/UsersApi.md#create) | **POST** /v2/accounts/{accountId}/users | Adds news user to the specified account.
 *UsersApi* | [**CreateSignatures**](docs/UsersApi.md#createsignatures) | **POST** /v2/accounts/{accountId}/users/{userId}/signatures | Adds user Signature and initials images to a Signature.
 *UsersApi* | [**Delete**](docs/UsersApi.md#delete) | **DELETE** /v2/accounts/{accountId}/users | Removes users account privileges.
@@ -370,6 +397,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**UpdateSettings**](docs/UsersApi.md#updatesettings) | **PUT** /v2/accounts/{accountId}/users/{userId}/settings | Updates the user account settings for a specified user.
 *UsersApi* | [**UpdateSignature**](docs/UsersApi.md#updatesignature) | **PUT** /v2/accounts/{accountId}/users/{userId}/signatures/{signatureId} | Updates the user signature for a specified user.
 *UsersApi* | [**UpdateSignatureImage**](docs/UsersApi.md#updatesignatureimage) | **PUT** /v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType} | Updates the user signature image or user initials image for the specified user.
+*UsersApi* | [**UpdateSignatures**](docs/UsersApi.md#updatesignatures) | **PUT** /v2/accounts/{accountId}/users/{userId}/signatures | Adds/updates a user signature.
 *UsersApi* | [**UpdateUser**](docs/UsersApi.md#updateuser) | **PUT** /v2/accounts/{accountId}/users/{userId} | Updates the specified user information.
 *UsersApi* | [**UpdateUsers**](docs/UsersApi.md#updateusers) | **PUT** /v2/accounts/{accountId}/users | Change one or more user in the specified account.
 *WorkspacesApi* | [**CreateWorkspace**](docs/WorkspacesApi.md#createworkspace) | **POST** /v2/accounts/{accountId}/workspaces | Create a Workspace
@@ -392,6 +420,15 @@ Class | Method | HTTP request | Description
  - [Model.AccountBillingPlan](docs/AccountBillingPlan.md)
  - [Model.AccountBillingPlanResponse](docs/AccountBillingPlanResponse.md)
  - [Model.AccountInformation](docs/AccountInformation.md)
+ - [Model.AccountMinimumPasswordLength](docs/AccountMinimumPasswordLength.md)
+ - [Model.AccountPasswordExpirePasswordDays](docs/AccountPasswordExpirePasswordDays.md)
+ - [Model.AccountPasswordLockoutDurationMinutes](docs/AccountPasswordLockoutDurationMinutes.md)
+ - [Model.AccountPasswordLockoutDurationType](docs/AccountPasswordLockoutDurationType.md)
+ - [Model.AccountPasswordMinimumPasswordAgeDays](docs/AccountPasswordMinimumPasswordAgeDays.md)
+ - [Model.AccountPasswordQuestionsRequired](docs/AccountPasswordQuestionsRequired.md)
+ - [Model.AccountPasswordRules](docs/AccountPasswordRules.md)
+ - [Model.AccountPasswordStrengthType](docs/AccountPasswordStrengthType.md)
+ - [Model.AccountPasswordStrengthTypeOption](docs/AccountPasswordStrengthTypeOption.md)
  - [Model.AccountRoleSettings](docs/AccountRoleSettings.md)
  - [Model.AccountSettingsInformation](docs/AccountSettingsInformation.md)
  - [Model.AccountSharedAccess](docs/AccountSharedAccess.md)
@@ -462,6 +499,8 @@ Class | Method | HTTP request | Description
  - [Model.CloudStorageProvider](docs/CloudStorageProvider.md)
  - [Model.CloudStorageProviders](docs/CloudStorageProviders.md)
  - [Model.Company](docs/Company.md)
+ - [Model.CompleteSignHashResponse](docs/CompleteSignHashResponse.md)
+ - [Model.CompleteSignRequest](docs/CompleteSignRequest.md)
  - [Model.CompositeTemplate](docs/CompositeTemplate.md)
  - [Model.ConnectConfigResults](docs/ConnectConfigResults.md)
  - [Model.ConnectCustomConfiguration](docs/ConnectCustomConfiguration.md)
@@ -476,26 +515,32 @@ Class | Method | HTTP request | Description
  - [Model.Contact](docs/Contact.md)
  - [Model.ContactGetResponse](docs/ContactGetResponse.md)
  - [Model.ContactModRequest](docs/ContactModRequest.md)
+ - [Model.ContactPhoneNumber](docs/ContactPhoneNumber.md)
  - [Model.ContactUpdateResponse](docs/ContactUpdateResponse.md)
  - [Model.CorrectViewRequest](docs/CorrectViewRequest.md)
  - [Model.Country](docs/Country.md)
+ - [Model.Credential](docs/Credential.md)
  - [Model.CreditCardInformation](docs/CreditCardInformation.md)
  - [Model.CreditCardTypes](docs/CreditCardTypes.md)
  - [Model.CurrencyFeatureSetPrice](docs/CurrencyFeatureSetPrice.md)
  - [Model.CurrencyPlanPrice](docs/CurrencyPlanPrice.md)
+ - [Model.CustomField](docs/CustomField.md)
  - [Model.CustomFieldV2](docs/CustomFieldV2.md)
  - [Model.CustomFields](docs/CustomFields.md)
  - [Model.CustomFieldsEnvelope](docs/CustomFieldsEnvelope.md)
  - [Model.CustomSettingsInformation](docs/CustomSettingsInformation.md)
  - [Model.Date](docs/Date.md)
  - [Model.DateSigned](docs/DateSigned.md)
+ - [Model.DateStampProperties](docs/DateStampProperties.md)
  - [Model.Decline](docs/Decline.md)
  - [Model.DiagnosticsSettingsInformation](docs/DiagnosticsSettingsInformation.md)
  - [Model.DobInformationInput](docs/DobInformationInput.md)
  - [Model.Document](docs/Document.md)
  - [Model.DocumentFieldsInformation](docs/DocumentFieldsInformation.md)
+ - [Model.DocumentSecurityStore](docs/DocumentSecurityStore.md)
  - [Model.DocumentTemplate](docs/DocumentTemplate.md)
  - [Model.DocumentTemplateList](docs/DocumentTemplateList.md)
+ - [Model.DocumentUpdateInfo](docs/DocumentUpdateInfo.md)
  - [Model.DocumentVisibility](docs/DocumentVisibility.md)
  - [Model.DocumentVisibilityList](docs/DocumentVisibilityList.md)
  - [Model.ENoteConfiguration](docs/ENoteConfiguration.md)
@@ -555,6 +600,7 @@ Class | Method | HTTP request | Description
  - [Model.InlineTemplate](docs/InlineTemplate.md)
  - [Model.IntegratedUserInfoList](docs/IntegratedUserInfoList.md)
  - [Model.Intermediary](docs/Intermediary.md)
+ - [Model.Jurisdiction](docs/Jurisdiction.md)
  - [Model.LastName](docs/LastName.md)
  - [Model.List](docs/List.md)
  - [Model.ListCustomField](docs/ListCustomField.md)
@@ -577,6 +623,10 @@ Class | Method | HTTP request | Description
  - [Model.NewUsersDefinition](docs/NewUsersDefinition.md)
  - [Model.NewUsersSummary](docs/NewUsersSummary.md)
  - [Model.NotaryHost](docs/NotaryHost.md)
+ - [Model.NotaryJournal](docs/NotaryJournal.md)
+ - [Model.NotaryJournalCredibleWitness](docs/NotaryJournalCredibleWitness.md)
+ - [Model.NotaryJournalList](docs/NotaryJournalList.md)
+ - [Model.NotaryJournalMetaData](docs/NotaryJournalMetaData.md)
  - [Model.Note](docs/Note.md)
  - [Model.Notification](docs/Notification.md)
  - [Model.Number](docs/Number.md)
@@ -586,7 +636,10 @@ Class | Method | HTTP request | Description
  - [Model.PageImages](docs/PageImages.md)
  - [Model.PageRequest](docs/PageRequest.md)
  - [Model.PaymentDetails](docs/PaymentDetails.md)
+ - [Model.PaymentGatewayAccount](docs/PaymentGatewayAccount.md)
+ - [Model.PaymentGatewayAccountsInfo](docs/PaymentGatewayAccountsInfo.md)
  - [Model.PaymentLineItem](docs/PaymentLineItem.md)
+ - [Model.PaymentProcessorInformation](docs/PaymentProcessorInformation.md)
  - [Model.PermissionProfile](docs/PermissionProfile.md)
  - [Model.PermissionProfileInformation](docs/PermissionProfileInformation.md)
  - [Model.PlanInformation](docs/PlanInformation.md)
@@ -626,15 +679,23 @@ Class | Method | HTTP request | Description
  - [Model.Reminders](docs/Reminders.md)
  - [Model.ResourceInformation](docs/ResourceInformation.md)
  - [Model.ReturnUrlRequest](docs/ReturnUrlRequest.md)
+ - [Model.Revision](docs/Revision.md)
  - [Model.SamlAssertionAttribute](docs/SamlAssertionAttribute.md)
+ - [Model.Seal](docs/Seal.md)
+ - [Model.SealSign](docs/SealSign.md)
  - [Model.SeatDiscount](docs/SeatDiscount.md)
+ - [Model.Sender](docs/Sender.md)
  - [Model.SenderEmailNotifications](docs/SenderEmailNotifications.md)
  - [Model.ServerTemplate](docs/ServerTemplate.md)
  - [Model.ServiceInformation](docs/ServiceInformation.md)
  - [Model.ServiceVersion](docs/ServiceVersion.md)
  - [Model.SettingsMetadata](docs/SettingsMetadata.md)
  - [Model.SharedItem](docs/SharedItem.md)
+ - [Model.SignHashDocument](docs/SignHashDocument.md)
+ - [Model.SignHashSessionInfoResponse](docs/SignHashSessionInfoResponse.md)
  - [Model.SignHere](docs/SignHere.md)
+ - [Model.SignSessionInfoRequest](docs/SignSessionInfoRequest.md)
+ - [Model.SignatureDataInfo](docs/SignatureDataInfo.md)
  - [Model.SignatureProviderRequiredOption](docs/SignatureProviderRequiredOption.md)
  - [Model.SignatureType](docs/SignatureType.md)
  - [Model.Signer](docs/Signer.md)
@@ -649,6 +710,7 @@ Class | Method | HTTP request | Description
  - [Model.Ssn](docs/Ssn.md)
  - [Model.Ssn4InformationInput](docs/Ssn4InformationInput.md)
  - [Model.Ssn9InformationInput](docs/Ssn9InformationInput.md)
+ - [Model.SupportedLanguages](docs/SupportedLanguages.md)
  - [Model.TabAccountSettings](docs/TabAccountSettings.md)
  - [Model.TabMetadata](docs/TabMetadata.md)
  - [Model.TabMetadataList](docs/TabMetadataList.md)
@@ -667,14 +729,22 @@ Class | Method | HTTP request | Description
  - [Model.TemplateUpdateSummary](docs/TemplateUpdateSummary.md)
  - [Model.Text](docs/Text.md)
  - [Model.TextCustomField](docs/TextCustomField.md)
+ - [Model.TimeStampField](docs/TimeStampField.md)
  - [Model.Title](docs/Title.md)
+ - [Model.TspHealthCheckRequest](docs/TspHealthCheckRequest.md)
+ - [Model.TspHealthCheckStatusDescription](docs/TspHealthCheckStatusDescription.md)
+ - [Model.UpdateTransactionRequest](docs/UpdateTransactionRequest.md)
+ - [Model.UpdateTransactionResponse](docs/UpdateTransactionResponse.md)
  - [Model.UsageHistory](docs/UsageHistory.md)
+ - [Model.User](docs/User.md)
  - [Model.UserAccountManagementGranularInformation](docs/UserAccountManagementGranularInformation.md)
  - [Model.UserInfo](docs/UserInfo.md)
  - [Model.UserInfoList](docs/UserInfoList.md)
+ - [Model.UserInfoResponse](docs/UserInfoResponse.md)
  - [Model.UserInformation](docs/UserInformation.md)
  - [Model.UserInformationList](docs/UserInformationList.md)
  - [Model.UserPasswordInformation](docs/UserPasswordInformation.md)
+ - [Model.UserPasswordRules](docs/UserPasswordRules.md)
  - [Model.UserProfile](docs/UserProfile.md)
  - [Model.UserSettingsInformation](docs/UserSettingsInformation.md)
  - [Model.UserSharedItem](docs/UserSharedItem.md)
@@ -686,6 +756,7 @@ Class | Method | HTTP request | Description
  - [Model.View](docs/View.md)
  - [Model.ViewLinkRequest](docs/ViewLinkRequest.md)
  - [Model.ViewUrl](docs/ViewUrl.md)
+ - [Model.Watermark](docs/Watermark.md)
  - [Model.Workspace](docs/Workspace.md)
  - [Model.WorkspaceFolderContents](docs/WorkspaceFolderContents.md)
  - [Model.WorkspaceItem](docs/WorkspaceItem.md)
@@ -699,4 +770,11 @@ Class | Method | HTTP request | Description
 <a name="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
+<a name="docusignAccessCode"></a>
+### docusignAccessCode
+
+- **Type**: OAuth
+- **Flow**: accessCode
+- **Authorization URL**: 
+- **Scopes**: N/A
+

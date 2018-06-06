@@ -41,6 +41,16 @@ namespace DocuSign.eSign.Client
         };
 
         /// <summary>
+        /// Initialize the TLS protocol for the client
+        /// </summary>
+        private void InitializeTLSProtocol()
+        {
+            //ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
+            //ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+        }
+
+        /// <summary>
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
         /// </summary>
         /// <param name="request">The RestSharp request object</param>
@@ -59,6 +69,7 @@ namespace DocuSign.eSign.Client
         /// </summary>
         public ApiClient()
         {
+            this.InitializeTLSProtocol();
             Configuration = Configuration.Default;
             RestClient = new RestClient("https://www.docusign.net/restapi");
         }
@@ -70,6 +81,8 @@ namespace DocuSign.eSign.Client
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config = null)
         {
+            this.InitializeTLSProtocol();
+
             if (config == null)
                 Configuration = Configuration.Default;
             else
@@ -85,7 +98,9 @@ namespace DocuSign.eSign.Client
         /// <param name="basePath">The base path.</param>
         public ApiClient(String basePath = "https://www.docusign.net/restapi")
         {
-           if (String.IsNullOrEmpty(basePath))
+            this.InitializeTLSProtocol();
+
+            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
 
             RestClient = new RestClient(basePath);
@@ -122,26 +137,26 @@ namespace DocuSign.eSign.Client
             var request = new RestRequest(path, method);
 
             // add path parameter, if any
-            foreach(var param in pathParams)
+            foreach (var param in pathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
 
             // DocuSign: Add DocuSign tracking headers
             request.AddHeader("X-DocuSign-SDK", "C#");
 
             // add header parameter, if any
-            foreach(var param in headerParams)
+            foreach (var param in headerParams)
                 request.AddHeader(param.Key, param.Value);
 
             // add query parameter, if any
-            foreach(var param in queryParams)
+            foreach (var param in queryParams)
                 request.AddQueryParameter(param.Key, param.Value);
 
             // add form parameter, if any
-            foreach(var param in formParams)
+            foreach (var param in formParams)
                 request.AddParameter(param.Key, param.Value);
 
             // add file parameter, if any
-            foreach(var param in fileParams)
+            foreach (var param in fileParams)
             {
                 request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
             }
@@ -193,7 +208,7 @@ namespace DocuSign.eSign.Client
             var response = RestClient.Execute(request);
             InterceptResponse(request, response);
 
-            return (Object) response;
+            return (Object)response;
         }
         /// <summary>
         /// Makes the asynchronous HTTP request.
@@ -261,13 +276,13 @@ namespace DocuSign.eSign.Client
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return ((DateTime)obj).ToString (Configuration.DateTimeFormat);
+                return ((DateTime)obj).ToString(Configuration.DateTimeFormat);
             else if (obj is DateTimeOffset)
                 // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
                 // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
                 // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
                 // For example: 2009-06-15T13:45:30.0000000
-                return ((DateTimeOffset)obj).ToString (Configuration.DateTimeFormat);
+                return ((DateTimeOffset)obj).ToString(Configuration.DateTimeFormat);
             else if (obj is IList)
             {
                 var flattenedString = new StringBuilder();
@@ -280,7 +295,7 @@ namespace DocuSign.eSign.Client
                 return flattenedString.ToString();
             }
             else
-                return Convert.ToString (obj);
+                return Convert.ToString(obj);
         }
 
         /// <summary>
@@ -322,7 +337,7 @@ namespace DocuSign.eSign.Client
 
             if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
             {
-                return DateTime.Parse(response.Content,  null, System.Globalization.DateTimeStyles.RoundtripKind);
+                return DateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
             }
 
             if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
@@ -348,14 +363,14 @@ namespace DocuSign.eSign.Client
         /// <param name="type">Object type.</param>
         /// <param name="headers"></param>
         /// <returns>Object representation of the JSON string.</returns>
-        public object Deserialize(byte[] content, Type type, IList<Parameter> headers=null)
+        public object Deserialize(byte[] content, Type type, IList<Parameter> headers = null)
         {
             if (type == typeof(Stream))
             {
                 MemoryStream ms = new MemoryStream(content);
                 return ms;
             }
-            
+
             throw new ApiException(500, "Unhandled response type.");
         }
 
@@ -442,7 +457,7 @@ namespace DocuSign.eSign.Client
         /// <returns>Byte array</returns>
         public static byte[] ReadAsBytes(Stream input)
         {
-            byte[] buffer = new byte[16*1024];
+            byte[] buffer = new byte[16 * 1024];
             using (MemoryStream ms = new MemoryStream())
             {
                 int read;

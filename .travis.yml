@@ -1,7 +1,6 @@
 branches:
   only: 
     - master
-    - bharatrele/v2.1.10
 language: csharp
 solution: test/SdkTests/SdkTests.sln
 mono: latest

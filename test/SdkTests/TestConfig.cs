@@ -26,7 +26,7 @@ namespace SdkTests
         {
             this.Host = (host != null) ? host : "https://demo.docusign.net/restapi";
             this.Username = (username != null) ? username : "node_sdk@mailinator.com";
-            this.Password = (password != null) ? password : "qweqweasd";
+            this.Password = (password != null) ? password : "qweqweasdasd";
             this.IntegratorKey = (integratorKey != null) ? integratorKey : "ae30ea4e-3959-4d1c-b867-fcb57d2dc4df";
 
             this.RecipientEmail = (recipientEmail != null) ? recipientEmail : "node_sdk@mailinator.com";

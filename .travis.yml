@@ -4,7 +4,7 @@ branches:
     - bharatrele/v2.1.10
 language: csharp
 solution: test/SdkTests/SdkTests.sln
-mono: 4.4.0
+mono: latest
 sudo: required
 dist: trusty
 before_install:

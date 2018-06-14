@@ -37,7 +37,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CompositeTemplate" /> class.
         /// </summary>
-        /// <param name="CompositeTemplateId">The identify of this composite template. It is used as a reference when adding document object information. If used, the document’s &#x60;content-disposition&#x60; must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the &#x60;documentId&#x60; property only. If no document object is specified, the composite template inherits the first document..</param>
+        /// <param name="CompositeTemplateId">The identify of this composite template. It is used as a reference when adding document object information. If used, the document&#39;s &#x60;content-disposition&#x60; must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the &#x60;documentId&#x60; property only. If no document object is specified, the composite template inherits the first document..</param>
         /// <param name="Document">Document.</param>
         /// <param name="InlineTemplates"> Zero or more inline templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value..</param>
         /// <param name="PdfMetaDataTemplateSequence">.</param>
@@ -52,9 +52,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// The identify of this composite template. It is used as a reference when adding document object information. If used, the document’s &#x60;content-disposition&#x60; must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the &#x60;documentId&#x60; property only. If no document object is specified, the composite template inherits the first document.
+        /// The identify of this composite template. It is used as a reference when adding document object information. If used, the document&#39;s &#x60;content-disposition&#x60; must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the &#x60;documentId&#x60; property only. If no document object is specified, the composite template inherits the first document.
         /// </summary>
-        /// <value>The identify of this composite template. It is used as a reference when adding document object information. If used, the document’s &#x60;content-disposition&#x60; must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the &#x60;documentId&#x60; property only. If no document object is specified, the composite template inherits the first document.</value>
+        /// <value>The identify of this composite template. It is used as a reference when adding document object information. If used, the document&#39;s &#x60;content-disposition&#x60; must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the &#x60;documentId&#x60; property only. If no document object is specified, the composite template inherits the first document.</value>
         [DataMember(Name="compositeTemplateId", EmitDefaultValue=false)]
         public string CompositeTemplateId { get; set; }
         /// <summary>

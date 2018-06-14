@@ -83,9 +83,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        UsersResponse Delete (string accountId, UserInfoList userInfoList = null);
+        UsersResponse Delete (string accountId, UserInfoList userInfoList = null, UsersApi.DeleteOptions options = null);
 
         /// <summary>
         /// Removes users account privileges.
@@ -96,9 +96,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UsersResponse> DeleteWithHttpInfo (string accountId, UserInfoList userInfoList = null);
+        ApiResponse<UsersResponse> DeleteWithHttpInfo (string accountId, UserInfoList userInfoList = null, UsersApi.DeleteOptions options = null);
         /// <summary>
         /// Replaces a particular contact associated with an account for the DocuSign service.
         /// </summary>
@@ -835,9 +835,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UsersResponse</returns>
-        System.Threading.Tasks.Task<UsersResponse> DeleteAsync (string accountId, UserInfoList userInfoList = null);
+        System.Threading.Tasks.Task<UsersResponse> DeleteAsync (string accountId, UserInfoList userInfoList = null, UsersApi.DeleteOptions options = null);
 
         /// <summary>
         /// Removes users account privileges.
@@ -848,9 +848,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UsersResponse>> DeleteAsyncWithHttpInfo (string accountId, UserInfoList userInfoList = null);
+        System.Threading.Tasks.Task<ApiResponse<UsersResponse>> DeleteAsyncWithHttpInfo (string accountId, UserInfoList userInfoList = null, UsersApi.DeleteOptions options = null);
         /// <summary>
         /// Replaces a particular contact associated with an account for the DocuSign service.
         /// </summary>
@@ -2003,6 +2003,14 @@ namespace DocuSign.eSign.Api
         }
 
 
+        /// <summary>
+        /// Removes users account privileges. This closes one or more user records in the account. Users are never deleted from an account, but closing a user prevents them from using account functions.  The response returns whether the API execution was successful (200 - OK) or  if it failed. The response contains a user structure similar to the request and includes the user changes. If an error occurred during the DELETE operation for any of the users, the response for that user contains an &#x60;errorDetails&#x60; node with &#x60;errorCode&#x60; and &#x60;message&#x60; properties.
+        /// </summary>
+        public class DeleteOptions
+        {
+            /// 
+            public string delete {get; set;}
+        }
 
         /// <summary>
         /// Removes users account privileges. This closes one or more user records in the account. Users are never deleted from an account, but closing a user prevents them from using account functions.  The response returns whether the API execution was successful (200 - OK) or  if it failed. The response contains a user structure similar to the request and includes the user changes. If an error occurred during the DELETE operation for any of the users, the response for that user contains an &#x60;errorDetails&#x60; node with &#x60;errorCode&#x60; and &#x60;message&#x60; properties.
@@ -2010,11 +2018,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>UsersResponse</returns>
-        public UsersResponse Delete (string accountId, UserInfoList userInfoList = null)
+        public UsersResponse Delete (string accountId, UserInfoList userInfoList = null, UsersApi.DeleteOptions options = null)
         {
-             ApiResponse<UsersResponse> localVarResponse = DeleteWithHttpInfo(accountId, userInfoList);
+             ApiResponse<UsersResponse> localVarResponse = DeleteWithHttpInfo(accountId, userInfoList, options);
              return localVarResponse.Data;
         }
 
@@ -2024,9 +2032,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of UsersResponse</returns>
-        public ApiResponse< UsersResponse > DeleteWithHttpInfo (string accountId, UserInfoList userInfoList = null)
+        public ApiResponse< UsersResponse > DeleteWithHttpInfo (string accountId, UserInfoList userInfoList = null, UsersApi.DeleteOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2058,6 +2066,10 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.delete != null) localVarQueryParams.Add("delete", Configuration.ApiClient.ParameterToString(options.delete)); // query parameter
+            }
 
             if (userInfoList != null && userInfoList.GetType() != typeof(byte[]))
             {
@@ -2101,11 +2113,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UsersResponse</returns>
-        public async System.Threading.Tasks.Task<UsersResponse> DeleteAsync (string accountId, UserInfoList userInfoList = null)
+        public async System.Threading.Tasks.Task<UsersResponse> DeleteAsync (string accountId, UserInfoList userInfoList = null, UsersApi.DeleteOptions options = null)
         {
-             ApiResponse<UsersResponse> localVarResponse = await DeleteAsyncWithHttpInfo(accountId, userInfoList);
+             ApiResponse<UsersResponse> localVarResponse = await DeleteAsyncWithHttpInfo(accountId, userInfoList, options);
              return localVarResponse.Data;
 
         }
@@ -2116,9 +2128,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> DeleteAsyncWithHttpInfo (string accountId, UserInfoList userInfoList = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> DeleteAsyncWithHttpInfo (string accountId, UserInfoList userInfoList = null, UsersApi.DeleteOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2150,6 +2162,10 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.delete != null) localVarQueryParams.Add("delete", Configuration.ApiClient.ParameterToString(options.delete)); // query parameter
+            }
 
             if (userInfoList != null && userInfoList.GetType() != typeof(byte[]))
             {

@@ -42,7 +42,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ConfigurationType">If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**..</param>
         /// <param name="ConnectId"> Specifies the DocuSign generated ID for the Connect configuration.  .</param>
         /// <param name="EnableLog">This turns Connect logging on or off. When set to **true**, logging is turned on..</param>
-        /// <param name="EnvelopeEvents">A comma separated list of �Envelope� related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided..</param>
+        /// <param name="EnvelopeEvents">A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided..</param>
         /// <param name="IncludeCertificateOfCompletion">When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. .</param>
         /// <param name="IncludeCertSoapHeader">.</param>
         /// <param name="IncludeDocumentFields">When set to **true**, the Document Fields associated with envelope documents are included in the data. Document Fields are optional custom name-value pairs added to documents using the API. .</param>
@@ -51,12 +51,12 @@ namespace DocuSign.eSign.Model
         /// <param name="IncludeSenderAccountasCustomField">When set to **true**, Connect will include the sender account as Custom Field in the data..</param>
         /// <param name="IncludeTimeZoneInformation">When set to **true**, Connect will include the envelope time zone information..</param>
         /// <param name="Name">The name of the Connect configuration. The name helps identify the configuration in the list..</param>
-        /// <param name="RecipientEvents">A comma separated list of �Recipient� related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded..</param>
+        /// <param name="RecipientEvents">A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded..</param>
         /// <param name="RequiresAcknowledgement">When set to **true**, and a publication message fails to be acknowledged, the message goes back into the queue and the system will retry delivery after a successful acknowledgement is received. If the delivery fails a second time, the message is not returned to the queue for sending until Connect receives a successful acknowledgement and it has been at least 24 hours since the previous retry. There is a maximum of ten retries Alternately, you can use Republish Connect Information to manually republish the envelope information..</param>
         /// <param name="SignMessageWithX509Certificate">When set to **true**, Connect messages are signed with an X509 certificate. This provides support for 2-way SSL..</param>
         /// <param name="SoapNamespace">The namespace of the SOAP interface.  The namespace value must be set if useSoapInterface is set to true..</param>
         /// <param name="UrlToPublishTo">This is the web address and name of your listener or Retrieving Service endpoint. You need to include HTTPS:// in the web address..</param>
-        /// <param name="UserIds">A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to �false� then you must provide a list of user id�s..</param>
+        /// <param name="UserIds">A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s..</param>
         /// <param name="UseSoapInterface">When set to **true**, indicates that the &#x60;urlToPublishTo&#x60; property contains a SOAP endpoint..</param>
         public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllUsers = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string EnableLog = default(string), string EnvelopeEvents = default(string), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string Name = default(string), string RecipientEvents = default(string), string RequiresAcknowledgement = default(string), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), string UserIds = default(string), string UseSoapInterface = default(string))
         {
@@ -114,9 +114,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableLog", EmitDefaultValue=false)]
         public string EnableLog { get; set; }
         /// <summary>
-        /// A comma separated list of �Envelope� related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
+        /// A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
         /// </summary>
-        /// <value>A comma separated list of �Envelope� related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.</value>
+        /// <value>A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.</value>
         [DataMember(Name="envelopeEvents", EmitDefaultValue=false)]
         public string EnvelopeEvents { get; set; }
         /// <summary>
@@ -168,9 +168,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// A comma separated list of �Recipient� related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
+        /// A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
         /// </summary>
-        /// <value>A comma separated list of �Recipient� related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.</value>
+        /// <value>A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.</value>
         [DataMember(Name="recipientEvents", EmitDefaultValue=false)]
         public string RecipientEvents { get; set; }
         /// <summary>
@@ -198,9 +198,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="urlToPublishTo", EmitDefaultValue=false)]
         public string UrlToPublishTo { get; set; }
         /// <summary>
-        /// A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to �false� then you must provide a list of user id�s.
+        /// A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s.
         /// </summary>
-        /// <value>A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to �false� then you must provide a list of user id�s.</value>
+        /// <value>A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s.</value>
         [DataMember(Name="userIds", EmitDefaultValue=false)]
         public string UserIds { get; set; }
         /// <summary>

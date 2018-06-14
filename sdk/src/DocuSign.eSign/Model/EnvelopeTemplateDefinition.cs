@@ -37,6 +37,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeTemplateDefinition" /> class.
         /// </summary>
+        /// <param name="Created">.</param>
         /// <param name="Description">.</param>
         /// <param name="FolderId">The ID for the folder..</param>
         /// <param name="FolderName"> The name of the folder in which the template is located..</param>
@@ -52,8 +53,9 @@ namespace DocuSign.eSign.Model
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
         /// <param name="Uri">.</param>
-        public EnvelopeTemplateDefinition(string Description = default(string), string FolderId = default(string), string FolderName = default(string), string FolderUri = default(string), string LastModified = default(string), UserInfo LastModifiedBy = default(UserInfo), string Name = default(string), string NewPassword = default(string), UserInfo Owner = default(UserInfo), int? PageCount = default(int?), string ParentFolderUri = default(string), string Password = default(string), string Shared = default(string), string TemplateId = default(string), string Uri = default(string))
+        public EnvelopeTemplateDefinition(string Created = default(string), string Description = default(string), string FolderId = default(string), string FolderName = default(string), string FolderUri = default(string), string LastModified = default(string), UserInfo LastModifiedBy = default(UserInfo), string Name = default(string), string NewPassword = default(string), UserInfo Owner = default(UserInfo), int? PageCount = default(int?), string ParentFolderUri = default(string), string Password = default(string), string Shared = default(string), string TemplateId = default(string), string Uri = default(string))
         {
+            this.Created = Created;
             this.Description = Description;
             this.FolderId = FolderId;
             this.FolderName = FolderName;
@@ -71,6 +73,12 @@ namespace DocuSign.eSign.Model
             this.Uri = Uri;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="created", EmitDefaultValue=false)]
+        public string Created { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -167,6 +175,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class EnvelopeTemplateDefinition {\n");
+            sb.Append("  Created: ").Append(Created).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  FolderId: ").Append(FolderId).Append("\n");
             sb.Append("  FolderName: ").Append(FolderName).Append("\n");
@@ -218,6 +227,11 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.Created == other.Created ||
+                    this.Created != null &&
+                    this.Created.Equals(other.Created)
+                ) && 
                 (
                     this.Description == other.Description ||
                     this.Description != null &&
@@ -306,6 +320,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Created != null)
+                    hash = hash * 59 + this.Created.GetHashCode();
                 if (this.Description != null)
                     hash = hash * 59 + this.Description.GetHashCode();
                 if (this.FolderId != null)

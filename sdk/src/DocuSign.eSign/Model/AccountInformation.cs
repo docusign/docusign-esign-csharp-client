@@ -56,6 +56,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DocuSignLandingUrl">.</param>
         /// <param name="EnvelopeSendingBlocked">.</param>
         /// <param name="EnvelopeUnitPrice">.</param>
+        /// <param name="ExternalAccountId">.</param>
         /// <param name="ForgottenPasswordQuestionsCount"> A complex element that contains up to four Question/Answer pairs for forgotten password information for a user..</param>
         /// <param name="IsDowngrade">.</param>
         /// <param name="PaymentMethod">.</param>
@@ -68,7 +69,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Status21CFRPart11">.</param>
         /// <param name="SuspensionDate">.</param>
         /// <param name="SuspensionStatus">.</param>
-        public AccountInformation(string AccountIdGuid = default(string), string AccountName = default(string), string AllowTransactionRooms = default(string), string BillingPeriodDaysRemaining = default(string), string BillingPeriodEndDate = default(string), string BillingPeriodEnvelopesAllowed = default(string), string BillingPeriodEnvelopesSent = default(string), string BillingPeriodStartDate = default(string), string BillingProfile = default(string), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string ConnectPermission = default(string), string CreatedDate = default(string), string CurrencyCode = default(string), string CurrentPlanId = default(string), string DistributorCode = default(string), string DocuSignLandingUrl = default(string), string EnvelopeSendingBlocked = default(string), string EnvelopeUnitPrice = default(string), string ForgottenPasswordQuestionsCount = default(string), string IsDowngrade = default(string), string PaymentMethod = default(string), string PlanClassification = default(string), string PlanEndDate = default(string), string PlanName = default(string), string PlanStartDate = default(string), string SeatsAllowed = default(string), string SeatsInUse = default(string), string Status21CFRPart11 = default(string), string SuspensionDate = default(string), string SuspensionStatus = default(string))
+        public AccountInformation(string AccountIdGuid = default(string), string AccountName = default(string), string AllowTransactionRooms = default(string), string BillingPeriodDaysRemaining = default(string), string BillingPeriodEndDate = default(string), string BillingPeriodEnvelopesAllowed = default(string), string BillingPeriodEnvelopesSent = default(string), string BillingPeriodStartDate = default(string), string BillingProfile = default(string), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string ConnectPermission = default(string), string CreatedDate = default(string), string CurrencyCode = default(string), string CurrentPlanId = default(string), string DistributorCode = default(string), string DocuSignLandingUrl = default(string), string EnvelopeSendingBlocked = default(string), string EnvelopeUnitPrice = default(string), string ExternalAccountId = default(string), string ForgottenPasswordQuestionsCount = default(string), string IsDowngrade = default(string), string PaymentMethod = default(string), string PlanClassification = default(string), string PlanEndDate = default(string), string PlanName = default(string), string PlanStartDate = default(string), string SeatsAllowed = default(string), string SeatsInUse = default(string), string Status21CFRPart11 = default(string), string SuspensionDate = default(string), string SuspensionStatus = default(string))
         {
             this.AccountIdGuid = AccountIdGuid;
             this.AccountName = AccountName;
@@ -89,6 +90,7 @@ namespace DocuSign.eSign.Model
             this.DocuSignLandingUrl = DocuSignLandingUrl;
             this.EnvelopeSendingBlocked = EnvelopeSendingBlocked;
             this.EnvelopeUnitPrice = EnvelopeUnitPrice;
+            this.ExternalAccountId = ExternalAccountId;
             this.ForgottenPasswordQuestionsCount = ForgottenPasswordQuestionsCount;
             this.IsDowngrade = IsDowngrade;
             this.PaymentMethod = PaymentMethod;
@@ -218,6 +220,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopeUnitPrice", EmitDefaultValue=false)]
         public string EnvelopeUnitPrice { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="externalAccountId", EmitDefaultValue=false)]
+        public string ExternalAccountId { get; set; }
+        /// <summary>
         ///  A complex element that contains up to four Question/Answer pairs for forgotten password information for a user.
         /// </summary>
         /// <value> A complex element that contains up to four Question/Answer pairs for forgotten password information for a user.</value>
@@ -316,6 +324,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DocuSignLandingUrl: ").Append(DocuSignLandingUrl).Append("\n");
             sb.Append("  EnvelopeSendingBlocked: ").Append(EnvelopeSendingBlocked).Append("\n");
             sb.Append("  EnvelopeUnitPrice: ").Append(EnvelopeUnitPrice).Append("\n");
+            sb.Append("  ExternalAccountId: ").Append(ExternalAccountId).Append("\n");
             sb.Append("  ForgottenPasswordQuestionsCount: ").Append(ForgottenPasswordQuestionsCount).Append("\n");
             sb.Append("  IsDowngrade: ").Append(IsDowngrade).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
@@ -460,6 +469,11 @@ namespace DocuSign.eSign.Model
                     this.EnvelopeUnitPrice.Equals(other.EnvelopeUnitPrice)
                 ) && 
                 (
+                    this.ExternalAccountId == other.ExternalAccountId ||
+                    this.ExternalAccountId != null &&
+                    this.ExternalAccountId.Equals(other.ExternalAccountId)
+                ) && 
+                (
                     this.ForgottenPasswordQuestionsCount == other.ForgottenPasswordQuestionsCount ||
                     this.ForgottenPasswordQuestionsCount != null &&
                     this.ForgottenPasswordQuestionsCount.Equals(other.ForgottenPasswordQuestionsCount)
@@ -570,6 +584,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnvelopeSendingBlocked.GetHashCode();
                 if (this.EnvelopeUnitPrice != null)
                     hash = hash * 59 + this.EnvelopeUnitPrice.GetHashCode();
+                if (this.ExternalAccountId != null)
+                    hash = hash * 59 + this.ExternalAccountId.GetHashCode();
                 if (this.ForgottenPasswordQuestionsCount != null)
                     hash = hash * 59 + this.ForgottenPasswordQuestionsCount.GetHashCode();
                 if (this.IsDowngrade != null)

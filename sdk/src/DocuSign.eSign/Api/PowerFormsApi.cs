@@ -1231,6 +1231,8 @@ namespace DocuSign.eSign.Api
         public class GetPowerFormDataOptions
         {
             /// 
+            public string dataLayout {get; set;}
+            /// 
             public string fromDate {get; set;}
             /// 
             public string toDate {get; set;}
@@ -1296,6 +1298,7 @@ namespace DocuSign.eSign.Api
 
             if (options != null)
             {
+                if (options.dataLayout != null) localVarQueryParams.Add("data_layout", Configuration.ApiClient.ParameterToString(options.dataLayout)); // query parameter
                 if (options.fromDate != null) localVarQueryParams.Add("from_date", Configuration.ApiClient.ParameterToString(options.fromDate)); // query parameter
                 if (options.toDate != null) localVarQueryParams.Add("to_date", Configuration.ApiClient.ParameterToString(options.toDate)); // query parameter
             }
@@ -1389,6 +1392,7 @@ namespace DocuSign.eSign.Api
 
             if (options != null)
             {
+                if (options.dataLayout != null) localVarQueryParams.Add("data_layout", Configuration.ApiClient.ParameterToString(options.dataLayout)); // query parameter
                 if (options.fromDate != null) localVarQueryParams.Add("from_date", Configuration.ApiClient.ParameterToString(options.fromDate)); // query parameter
                 if (options.toDate != null) localVarQueryParams.Add("to_date", Configuration.ApiClient.ParameterToString(options.toDate)); // query parameter
             }

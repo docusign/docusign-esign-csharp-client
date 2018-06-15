@@ -37,6 +37,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Jurisdiction" /> class.
         /// </summary>
+        /// <param name="AllowSystemCreatedSeal">.</param>
+        /// <param name="AllowUserUploadedSeal">.</param>
         /// <param name="CommissionIdInSeal">.</param>
         /// <param name="County">.</param>
         /// <param name="CountyInSeal">.</param>
@@ -45,8 +47,10 @@ namespace DocuSign.eSign.Model
         /// <param name="Name">.</param>
         /// <param name="NotaryPublicInSeal">.</param>
         /// <param name="StateNameInSeal">.</param>
-        public Jurisdiction(string CommissionIdInSeal = default(string), string County = default(string), string CountyInSeal = default(string), string Enabled = default(string), string JurisdictionId = default(string), string Name = default(string), string NotaryPublicInSeal = default(string), string StateNameInSeal = default(string))
+        public Jurisdiction(string AllowSystemCreatedSeal = default(string), string AllowUserUploadedSeal = default(string), string CommissionIdInSeal = default(string), string County = default(string), string CountyInSeal = default(string), string Enabled = default(string), string JurisdictionId = default(string), string Name = default(string), string NotaryPublicInSeal = default(string), string StateNameInSeal = default(string))
         {
+            this.AllowSystemCreatedSeal = AllowSystemCreatedSeal;
+            this.AllowUserUploadedSeal = AllowUserUploadedSeal;
             this.CommissionIdInSeal = CommissionIdInSeal;
             this.County = County;
             this.CountyInSeal = CountyInSeal;
@@ -57,6 +61,18 @@ namespace DocuSign.eSign.Model
             this.StateNameInSeal = StateNameInSeal;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="allowSystemCreatedSeal", EmitDefaultValue=false)]
+        public string AllowSystemCreatedSeal { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="allowUserUploadedSeal", EmitDefaultValue=false)]
+        public string AllowUserUploadedSeal { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -113,6 +129,8 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Jurisdiction {\n");
+            sb.Append("  AllowSystemCreatedSeal: ").Append(AllowSystemCreatedSeal).Append("\n");
+            sb.Append("  AllowUserUploadedSeal: ").Append(AllowUserUploadedSeal).Append("\n");
             sb.Append("  CommissionIdInSeal: ").Append(CommissionIdInSeal).Append("\n");
             sb.Append("  County: ").Append(County).Append("\n");
             sb.Append("  CountyInSeal: ").Append(CountyInSeal).Append("\n");
@@ -157,6 +175,16 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.AllowSystemCreatedSeal == other.AllowSystemCreatedSeal ||
+                    this.AllowSystemCreatedSeal != null &&
+                    this.AllowSystemCreatedSeal.Equals(other.AllowSystemCreatedSeal)
+                ) && 
+                (
+                    this.AllowUserUploadedSeal == other.AllowUserUploadedSeal ||
+                    this.AllowUserUploadedSeal != null &&
+                    this.AllowUserUploadedSeal.Equals(other.AllowUserUploadedSeal)
+                ) && 
                 (
                     this.CommissionIdInSeal == other.CommissionIdInSeal ||
                     this.CommissionIdInSeal != null &&
@@ -210,6 +238,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AllowSystemCreatedSeal != null)
+                    hash = hash * 59 + this.AllowSystemCreatedSeal.GetHashCode();
+                if (this.AllowUserUploadedSeal != null)
+                    hash = hash * 59 + this.AllowUserUploadedSeal.GetHashCode();
                 if (this.CommissionIdInSeal != null)
                     hash = hash * 59 + this.CommissionIdInSeal.GetHashCode();
                 if (this.County != null)

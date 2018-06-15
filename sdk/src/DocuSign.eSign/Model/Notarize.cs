@@ -24,18 +24,18 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Number
+    /// Notarize
     /// </summary>
     [DataContract]
-    public partial class Number :  IEquatable<Number>, IValidatableObject
+    public partial class Notarize :  IEquatable<Notarize>, IValidatableObject
     {
-        public Number()
+        public Notarize()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Number" /> class.
+        /// Initializes a new instance of the <see cref="Notarize" /> class.
         /// </summary>
         /// <param name="AnchorCaseSensitive">When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**..</param>
         /// <param name="AnchorHorizontalAlignment">Specifies the alignment of anchor tabs with anchor strings. Possible values are **left** or **right**. The default value is **left**..</param>
@@ -45,46 +45,24 @@ namespace DocuSign.eSign.Model
         /// <param name="AnchorUnits">Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches..</param>
         /// <param name="AnchorXOffset">Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString..</param>
         /// <param name="AnchorYOffset">Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString..</param>
-        /// <param name="Bold">When set to **true**, the information in the tab is bold..</param>
-        /// <param name="ConcealValueOnDocument">When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes..</param>
         /// <param name="ConditionalParentLabel">For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility..</param>
         /// <param name="ConditionalParentValue">For conditional fields, this is the value of the parent tab that controls the tab&#39;s visibility.  If the parent tab is a Checkbox, Radio button, Optional Signature, or Optional Initial use \&quot;on\&quot; as the value to show that the parent tab is active. .</param>
         /// <param name="CustomTabId">The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties..</param>
-        /// <param name="DisableAutoSize">When set to **true**, disables the auto sizing of single line text boxes in the signing screen when the signer enters data. If disabled users will only be able enter as much data as the text box can hold. By default this is false. This property only affects single line text boxes..</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Font">The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default..</param>
-        /// <param name="FontColor">The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White..</param>
-        /// <param name="FontSize">The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72..</param>
-        /// <param name="Formula">The Formula string contains the TabLabel for the reference tabs used in the formula and calculation operators. Each TabLabel must be contained in brackets.  Maximum Length: 2000 characters.  *Example*: Three tabs (TabLabels: Line1, Line2, and Tax) need to be added together. The formula string would be:   [Line1]+[Line2]+[Tax].</param>
-        /// <param name="IsPaymentAmount">When set to **true**, sets this as a payment tab. Can only be used with Text, Number, Formula, or List tabs. The value of the tab must be a number. .</param>
-        /// <param name="Italic">When set to **true**, the information in the tab is italic..</param>
         /// <param name="Locked">When set to **true**, the signer cannot change the data of the custom tab..</param>
-        /// <param name="MaxLength">An optional value that describes the maximum length of the property when the property is a string..</param>
         /// <param name="MergeField">MergeField.</param>
-        /// <param name="Name">Specifies the tool tip text for the tab..</param>
-        /// <param name="OriginalValue">The initial value of the tab when it was sent to the recipient. .</param>
         /// <param name="PageNumber">Specifies the page number on which the tab is located..</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
-        /// <param name="RequireAll">When set to **true** and shared is true, information must be entered in this field to complete the envelope. .</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
-        /// <param name="RequireInitialOnSharedChange">Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field..</param>
-        /// <param name="SenderRequired">When set to **true**, the sender must populate the tab before an envelope can be sent using the template.   This value tab can only be changed by modifying (PUT) the template.   Tabs with a &#x60;senderRequired&#x60; value of true cannot be deleted from an envelope..</param>
-        /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
-        /// <param name="TabLabel">The label string associated with the tab..</param>
         /// <param name="TabOrder">.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
-        /// <param name="Underline">When set to **true**, the information in the tab is underlined..</param>
-        /// <param name="ValidationMessage">The message displayed if the custom tab fails input validation (either custom of embedded)..</param>
-        /// <param name="ValidationPattern">A regular expression used to validate input for the tab..</param>
-        /// <param name="Value">Specifies the value of the tab. .</param>
-        /// <param name="Width">Width of the tab in pixels..</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
-        public Number(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Formula = default(string), string IsPaymentAmount = default(string), string Italic = default(string), string Locked = default(string), int? MaxLength = default(int?), MergeField MergeField = default(MergeField), string Name = default(string), string OriginalValue = default(string), string PageNumber = default(string), string RecipientId = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string SenderRequired = default(string), string Shared = default(string), string Status = default(string), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Value = default(string), int? Width = default(int?), string XPosition = default(string), string YPosition = default(string))
+        public Notarize(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Locked = default(string), MergeField MergeField = default(MergeField), string PageNumber = default(string), string RecipientId = default(string), string Required = default(string), string Status = default(string), string TabId = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string XPosition = default(string), string YPosition = default(string))
         {
             this.AnchorCaseSensitive = AnchorCaseSensitive;
             this.AnchorHorizontalAlignment = AnchorHorizontalAlignment;
@@ -94,43 +72,21 @@ namespace DocuSign.eSign.Model
             this.AnchorUnits = AnchorUnits;
             this.AnchorXOffset = AnchorXOffset;
             this.AnchorYOffset = AnchorYOffset;
-            this.Bold = Bold;
-            this.ConcealValueOnDocument = ConcealValueOnDocument;
             this.ConditionalParentLabel = ConditionalParentLabel;
             this.ConditionalParentValue = ConditionalParentValue;
             this.CustomTabId = CustomTabId;
-            this.DisableAutoSize = DisableAutoSize;
             this.DocumentId = DocumentId;
             this.ErrorDetails = ErrorDetails;
-            this.Font = Font;
-            this.FontColor = FontColor;
-            this.FontSize = FontSize;
-            this.Formula = Formula;
-            this.IsPaymentAmount = IsPaymentAmount;
-            this.Italic = Italic;
             this.Locked = Locked;
-            this.MaxLength = MaxLength;
             this.MergeField = MergeField;
-            this.Name = Name;
-            this.OriginalValue = OriginalValue;
             this.PageNumber = PageNumber;
             this.RecipientId = RecipientId;
-            this.RequireAll = RequireAll;
             this.Required = Required;
-            this.RequireInitialOnSharedChange = RequireInitialOnSharedChange;
-            this.SenderRequired = SenderRequired;
-            this.Shared = Shared;
             this.Status = Status;
             this.TabId = TabId;
-            this.TabLabel = TabLabel;
             this.TabOrder = TabOrder;
             this.TemplateLocked = TemplateLocked;
             this.TemplateRequired = TemplateRequired;
-            this.Underline = Underline;
-            this.ValidationMessage = ValidationMessage;
-            this.ValidationPattern = ValidationPattern;
-            this.Value = Value;
-            this.Width = Width;
             this.XPosition = XPosition;
             this.YPosition = YPosition;
         }
@@ -184,18 +140,6 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorYOffset", EmitDefaultValue=false)]
         public string AnchorYOffset { get; set; }
         /// <summary>
-        /// When set to **true**, the information in the tab is bold.
-        /// </summary>
-        /// <value>When set to **true**, the information in the tab is bold.</value>
-        [DataMember(Name="bold", EmitDefaultValue=false)]
-        public string Bold { get; set; }
-        /// <summary>
-        /// When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes.
-        /// </summary>
-        /// <value>When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes.</value>
-        [DataMember(Name="concealValueOnDocument", EmitDefaultValue=false)]
-        public string ConcealValueOnDocument { get; set; }
-        /// <summary>
         /// For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility.
         /// </summary>
         /// <value>For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility.</value>
@@ -214,12 +158,6 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="customTabId", EmitDefaultValue=false)]
         public string CustomTabId { get; set; }
         /// <summary>
-        /// When set to **true**, disables the auto sizing of single line text boxes in the signing screen when the signer enters data. If disabled users will only be able enter as much data as the text box can hold. By default this is false. This property only affects single line text boxes.
-        /// </summary>
-        /// <value>When set to **true**, disables the auto sizing of single line text boxes in the signing screen when the signer enters data. If disabled users will only be able enter as much data as the text box can hold. By default this is false. This property only affects single line text boxes.</value>
-        [DataMember(Name="disableAutoSize", EmitDefaultValue=false)]
-        public string DisableAutoSize { get; set; }
-        /// <summary>
         /// Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute.
         /// </summary>
         /// <value>Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute.</value>
@@ -231,70 +169,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
-        /// </summary>
-        /// <value>The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.</value>
-        [DataMember(Name="font", EmitDefaultValue=false)]
-        public string Font { get; set; }
-        /// <summary>
-        /// The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White.
-        /// </summary>
-        /// <value>The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White.</value>
-        [DataMember(Name="fontColor", EmitDefaultValue=false)]
-        public string FontColor { get; set; }
-        /// <summary>
-        /// The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72.
-        /// </summary>
-        /// <value>The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72.</value>
-        [DataMember(Name="fontSize", EmitDefaultValue=false)]
-        public string FontSize { get; set; }
-        /// <summary>
-        /// The Formula string contains the TabLabel for the reference tabs used in the formula and calculation operators. Each TabLabel must be contained in brackets.  Maximum Length: 2000 characters.  *Example*: Three tabs (TabLabels: Line1, Line2, and Tax) need to be added together. The formula string would be:   [Line1]+[Line2]+[Tax]
-        /// </summary>
-        /// <value>The Formula string contains the TabLabel for the reference tabs used in the formula and calculation operators. Each TabLabel must be contained in brackets.  Maximum Length: 2000 characters.  *Example*: Three tabs (TabLabels: Line1, Line2, and Tax) need to be added together. The formula string would be:   [Line1]+[Line2]+[Tax]</value>
-        [DataMember(Name="formula", EmitDefaultValue=false)]
-        public string Formula { get; set; }
-        /// <summary>
-        /// When set to **true**, sets this as a payment tab. Can only be used with Text, Number, Formula, or List tabs. The value of the tab must be a number. 
-        /// </summary>
-        /// <value>When set to **true**, sets this as a payment tab. Can only be used with Text, Number, Formula, or List tabs. The value of the tab must be a number. </value>
-        [DataMember(Name="isPaymentAmount", EmitDefaultValue=false)]
-        public string IsPaymentAmount { get; set; }
-        /// <summary>
-        /// When set to **true**, the information in the tab is italic.
-        /// </summary>
-        /// <value>When set to **true**, the information in the tab is italic.</value>
-        [DataMember(Name="italic", EmitDefaultValue=false)]
-        public string Italic { get; set; }
-        /// <summary>
         /// When set to **true**, the signer cannot change the data of the custom tab.
         /// </summary>
         /// <value>When set to **true**, the signer cannot change the data of the custom tab.</value>
         [DataMember(Name="locked", EmitDefaultValue=false)]
         public string Locked { get; set; }
         /// <summary>
-        /// An optional value that describes the maximum length of the property when the property is a string.
-        /// </summary>
-        /// <value>An optional value that describes the maximum length of the property when the property is a string.</value>
-        [DataMember(Name="maxLength", EmitDefaultValue=false)]
-        public int? MaxLength { get; set; }
-        /// <summary>
         /// Gets or Sets MergeField
         /// </summary>
         [DataMember(Name="mergeField", EmitDefaultValue=false)]
         public MergeField MergeField { get; set; }
-        /// <summary>
-        /// Specifies the tool tip text for the tab.
-        /// </summary>
-        /// <value>Specifies the tool tip text for the tab.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; set; }
-        /// <summary>
-        /// The initial value of the tab when it was sent to the recipient. 
-        /// </summary>
-        /// <value>The initial value of the tab when it was sent to the recipient. </value>
-        [DataMember(Name="originalValue", EmitDefaultValue=false)]
-        public string OriginalValue { get; set; }
         /// <summary>
         /// Specifies the page number on which the tab is located.
         /// </summary>
@@ -308,35 +192,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientId", EmitDefaultValue=false)]
         public string RecipientId { get; set; }
         /// <summary>
-        /// When set to **true** and shared is true, information must be entered in this field to complete the envelope. 
-        /// </summary>
-        /// <value>When set to **true** and shared is true, information must be entered in this field to complete the envelope. </value>
-        [DataMember(Name="requireAll", EmitDefaultValue=false)]
-        public string RequireAll { get; set; }
-        /// <summary>
         /// When set to **true**, the signer is required to fill out this tab
         /// </summary>
         /// <value>When set to **true**, the signer is required to fill out this tab</value>
         [DataMember(Name="required", EmitDefaultValue=false)]
         public string Required { get; set; }
-        /// <summary>
-        /// Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field.
-        /// </summary>
-        /// <value>Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field.</value>
-        [DataMember(Name="requireInitialOnSharedChange", EmitDefaultValue=false)]
-        public string RequireInitialOnSharedChange { get; set; }
-        /// <summary>
-        /// When set to **true**, the sender must populate the tab before an envelope can be sent using the template.   This value tab can only be changed by modifying (PUT) the template.   Tabs with a &#x60;senderRequired&#x60; value of true cannot be deleted from an envelope.
-        /// </summary>
-        /// <value>When set to **true**, the sender must populate the tab before an envelope can be sent using the template.   This value tab can only be changed by modifying (PUT) the template.   Tabs with a &#x60;senderRequired&#x60; value of true cannot be deleted from an envelope.</value>
-        [DataMember(Name="senderRequired", EmitDefaultValue=false)]
-        public string SenderRequired { get; set; }
-        /// <summary>
-        /// When set to **true**, this custom tab is shared.
-        /// </summary>
-        /// <value>When set to **true**, this custom tab is shared.</value>
-        [DataMember(Name="shared", EmitDefaultValue=false)]
-        public string Shared { get; set; }
         /// <summary>
         /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
         /// </summary>
@@ -349,12 +209,6 @@ namespace DocuSign.eSign.Model
         /// <value>The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     </value>
         [DataMember(Name="tabId", EmitDefaultValue=false)]
         public string TabId { get; set; }
-        /// <summary>
-        /// The label string associated with the tab.
-        /// </summary>
-        /// <value>The label string associated with the tab.</value>
-        [DataMember(Name="tabLabel", EmitDefaultValue=false)]
-        public string TabLabel { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -374,36 +228,6 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequired", EmitDefaultValue=false)]
         public string TemplateRequired { get; set; }
         /// <summary>
-        /// When set to **true**, the information in the tab is underlined.
-        /// </summary>
-        /// <value>When set to **true**, the information in the tab is underlined.</value>
-        [DataMember(Name="underline", EmitDefaultValue=false)]
-        public string Underline { get; set; }
-        /// <summary>
-        /// The message displayed if the custom tab fails input validation (either custom of embedded).
-        /// </summary>
-        /// <value>The message displayed if the custom tab fails input validation (either custom of embedded).</value>
-        [DataMember(Name="validationMessage", EmitDefaultValue=false)]
-        public string ValidationMessage { get; set; }
-        /// <summary>
-        /// A regular expression used to validate input for the tab.
-        /// </summary>
-        /// <value>A regular expression used to validate input for the tab.</value>
-        [DataMember(Name="validationPattern", EmitDefaultValue=false)]
-        public string ValidationPattern { get; set; }
-        /// <summary>
-        /// Specifies the value of the tab. 
-        /// </summary>
-        /// <value>Specifies the value of the tab. </value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
-        public string Value { get; set; }
-        /// <summary>
-        /// Width of the tab in pixels.
-        /// </summary>
-        /// <value>Width of the tab in pixels.</value>
-        [DataMember(Name="width", EmitDefaultValue=false)]
-        public int? Width { get; set; }
-        /// <summary>
         /// This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
         /// </summary>
         /// <value>This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.</value>
@@ -422,7 +246,7 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Number {\n");
+            sb.Append("class Notarize {\n");
             sb.Append("  AnchorCaseSensitive: ").Append(AnchorCaseSensitive).Append("\n");
             sb.Append("  AnchorHorizontalAlignment: ").Append(AnchorHorizontalAlignment).Append("\n");
             sb.Append("  AnchorIgnoreIfNotPresent: ").Append(AnchorIgnoreIfNotPresent).Append("\n");
@@ -431,43 +255,21 @@ namespace DocuSign.eSign.Model
             sb.Append("  AnchorUnits: ").Append(AnchorUnits).Append("\n");
             sb.Append("  AnchorXOffset: ").Append(AnchorXOffset).Append("\n");
             sb.Append("  AnchorYOffset: ").Append(AnchorYOffset).Append("\n");
-            sb.Append("  Bold: ").Append(Bold).Append("\n");
-            sb.Append("  ConcealValueOnDocument: ").Append(ConcealValueOnDocument).Append("\n");
             sb.Append("  ConditionalParentLabel: ").Append(ConditionalParentLabel).Append("\n");
             sb.Append("  ConditionalParentValue: ").Append(ConditionalParentValue).Append("\n");
             sb.Append("  CustomTabId: ").Append(CustomTabId).Append("\n");
-            sb.Append("  DisableAutoSize: ").Append(DisableAutoSize).Append("\n");
             sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
-            sb.Append("  Font: ").Append(Font).Append("\n");
-            sb.Append("  FontColor: ").Append(FontColor).Append("\n");
-            sb.Append("  FontSize: ").Append(FontSize).Append("\n");
-            sb.Append("  Formula: ").Append(Formula).Append("\n");
-            sb.Append("  IsPaymentAmount: ").Append(IsPaymentAmount).Append("\n");
-            sb.Append("  Italic: ").Append(Italic).Append("\n");
             sb.Append("  Locked: ").Append(Locked).Append("\n");
-            sb.Append("  MaxLength: ").Append(MaxLength).Append("\n");
             sb.Append("  MergeField: ").Append(MergeField).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  OriginalValue: ").Append(OriginalValue).Append("\n");
             sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
             sb.Append("  RecipientId: ").Append(RecipientId).Append("\n");
-            sb.Append("  RequireAll: ").Append(RequireAll).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
-            sb.Append("  RequireInitialOnSharedChange: ").Append(RequireInitialOnSharedChange).Append("\n");
-            sb.Append("  SenderRequired: ").Append(SenderRequired).Append("\n");
-            sb.Append("  Shared: ").Append(Shared).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  TabId: ").Append(TabId).Append("\n");
-            sb.Append("  TabLabel: ").Append(TabLabel).Append("\n");
             sb.Append("  TabOrder: ").Append(TabOrder).Append("\n");
             sb.Append("  TemplateLocked: ").Append(TemplateLocked).Append("\n");
             sb.Append("  TemplateRequired: ").Append(TemplateRequired).Append("\n");
-            sb.Append("  Underline: ").Append(Underline).Append("\n");
-            sb.Append("  ValidationMessage: ").Append(ValidationMessage).Append("\n");
-            sb.Append("  ValidationPattern: ").Append(ValidationPattern).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
-            sb.Append("  Width: ").Append(Width).Append("\n");
             sb.Append("  XPosition: ").Append(XPosition).Append("\n");
             sb.Append("  YPosition: ").Append(YPosition).Append("\n");
             sb.Append("}\n");
@@ -491,15 +293,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as Number);
+            return this.Equals(obj as Notarize);
         }
 
         /// <summary>
-        /// Returns true if Number instances are equal
+        /// Returns true if Notarize instances are equal
         /// </summary>
-        /// <param name="other">Instance of Number to be compared</param>
+        /// <param name="other">Instance of Notarize to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Number other)
+        public bool Equals(Notarize other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -547,16 +349,6 @@ namespace DocuSign.eSign.Model
                     this.AnchorYOffset.Equals(other.AnchorYOffset)
                 ) && 
                 (
-                    this.Bold == other.Bold ||
-                    this.Bold != null &&
-                    this.Bold.Equals(other.Bold)
-                ) && 
-                (
-                    this.ConcealValueOnDocument == other.ConcealValueOnDocument ||
-                    this.ConcealValueOnDocument != null &&
-                    this.ConcealValueOnDocument.Equals(other.ConcealValueOnDocument)
-                ) && 
-                (
                     this.ConditionalParentLabel == other.ConditionalParentLabel ||
                     this.ConditionalParentLabel != null &&
                     this.ConditionalParentLabel.Equals(other.ConditionalParentLabel)
@@ -572,11 +364,6 @@ namespace DocuSign.eSign.Model
                     this.CustomTabId.Equals(other.CustomTabId)
                 ) && 
                 (
-                    this.DisableAutoSize == other.DisableAutoSize ||
-                    this.DisableAutoSize != null &&
-                    this.DisableAutoSize.Equals(other.DisableAutoSize)
-                ) && 
-                (
                     this.DocumentId == other.DocumentId ||
                     this.DocumentId != null &&
                     this.DocumentId.Equals(other.DocumentId)
@@ -587,59 +374,14 @@ namespace DocuSign.eSign.Model
                     this.ErrorDetails.Equals(other.ErrorDetails)
                 ) && 
                 (
-                    this.Font == other.Font ||
-                    this.Font != null &&
-                    this.Font.Equals(other.Font)
-                ) && 
-                (
-                    this.FontColor == other.FontColor ||
-                    this.FontColor != null &&
-                    this.FontColor.Equals(other.FontColor)
-                ) && 
-                (
-                    this.FontSize == other.FontSize ||
-                    this.FontSize != null &&
-                    this.FontSize.Equals(other.FontSize)
-                ) && 
-                (
-                    this.Formula == other.Formula ||
-                    this.Formula != null &&
-                    this.Formula.Equals(other.Formula)
-                ) && 
-                (
-                    this.IsPaymentAmount == other.IsPaymentAmount ||
-                    this.IsPaymentAmount != null &&
-                    this.IsPaymentAmount.Equals(other.IsPaymentAmount)
-                ) && 
-                (
-                    this.Italic == other.Italic ||
-                    this.Italic != null &&
-                    this.Italic.Equals(other.Italic)
-                ) && 
-                (
                     this.Locked == other.Locked ||
                     this.Locked != null &&
                     this.Locked.Equals(other.Locked)
                 ) && 
                 (
-                    this.MaxLength == other.MaxLength ||
-                    this.MaxLength != null &&
-                    this.MaxLength.Equals(other.MaxLength)
-                ) && 
-                (
                     this.MergeField == other.MergeField ||
                     this.MergeField != null &&
                     this.MergeField.Equals(other.MergeField)
-                ) && 
-                (
-                    this.Name == other.Name ||
-                    this.Name != null &&
-                    this.Name.Equals(other.Name)
-                ) && 
-                (
-                    this.OriginalValue == other.OriginalValue ||
-                    this.OriginalValue != null &&
-                    this.OriginalValue.Equals(other.OriginalValue)
                 ) && 
                 (
                     this.PageNumber == other.PageNumber ||
@@ -652,29 +394,9 @@ namespace DocuSign.eSign.Model
                     this.RecipientId.Equals(other.RecipientId)
                 ) && 
                 (
-                    this.RequireAll == other.RequireAll ||
-                    this.RequireAll != null &&
-                    this.RequireAll.Equals(other.RequireAll)
-                ) && 
-                (
                     this.Required == other.Required ||
                     this.Required != null &&
                     this.Required.Equals(other.Required)
-                ) && 
-                (
-                    this.RequireInitialOnSharedChange == other.RequireInitialOnSharedChange ||
-                    this.RequireInitialOnSharedChange != null &&
-                    this.RequireInitialOnSharedChange.Equals(other.RequireInitialOnSharedChange)
-                ) && 
-                (
-                    this.SenderRequired == other.SenderRequired ||
-                    this.SenderRequired != null &&
-                    this.SenderRequired.Equals(other.SenderRequired)
-                ) && 
-                (
-                    this.Shared == other.Shared ||
-                    this.Shared != null &&
-                    this.Shared.Equals(other.Shared)
                 ) && 
                 (
                     this.Status == other.Status ||
@@ -685,11 +407,6 @@ namespace DocuSign.eSign.Model
                     this.TabId == other.TabId ||
                     this.TabId != null &&
                     this.TabId.Equals(other.TabId)
-                ) && 
-                (
-                    this.TabLabel == other.TabLabel ||
-                    this.TabLabel != null &&
-                    this.TabLabel.Equals(other.TabLabel)
                 ) && 
                 (
                     this.TabOrder == other.TabOrder ||
@@ -705,31 +422,6 @@ namespace DocuSign.eSign.Model
                     this.TemplateRequired == other.TemplateRequired ||
                     this.TemplateRequired != null &&
                     this.TemplateRequired.Equals(other.TemplateRequired)
-                ) && 
-                (
-                    this.Underline == other.Underline ||
-                    this.Underline != null &&
-                    this.Underline.Equals(other.Underline)
-                ) && 
-                (
-                    this.ValidationMessage == other.ValidationMessage ||
-                    this.ValidationMessage != null &&
-                    this.ValidationMessage.Equals(other.ValidationMessage)
-                ) && 
-                (
-                    this.ValidationPattern == other.ValidationPattern ||
-                    this.ValidationPattern != null &&
-                    this.ValidationPattern.Equals(other.ValidationPattern)
-                ) && 
-                (
-                    this.Value == other.Value ||
-                    this.Value != null &&
-                    this.Value.Equals(other.Value)
-                ) && 
-                (
-                    this.Width == other.Width ||
-                    this.Width != null &&
-                    this.Width.Equals(other.Width)
                 ) && 
                 (
                     this.XPosition == other.XPosition ||
@@ -770,80 +462,36 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AnchorXOffset.GetHashCode();
                 if (this.AnchorYOffset != null)
                     hash = hash * 59 + this.AnchorYOffset.GetHashCode();
-                if (this.Bold != null)
-                    hash = hash * 59 + this.Bold.GetHashCode();
-                if (this.ConcealValueOnDocument != null)
-                    hash = hash * 59 + this.ConcealValueOnDocument.GetHashCode();
                 if (this.ConditionalParentLabel != null)
                     hash = hash * 59 + this.ConditionalParentLabel.GetHashCode();
                 if (this.ConditionalParentValue != null)
                     hash = hash * 59 + this.ConditionalParentValue.GetHashCode();
                 if (this.CustomTabId != null)
                     hash = hash * 59 + this.CustomTabId.GetHashCode();
-                if (this.DisableAutoSize != null)
-                    hash = hash * 59 + this.DisableAutoSize.GetHashCode();
                 if (this.DocumentId != null)
                     hash = hash * 59 + this.DocumentId.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
-                if (this.Font != null)
-                    hash = hash * 59 + this.Font.GetHashCode();
-                if (this.FontColor != null)
-                    hash = hash * 59 + this.FontColor.GetHashCode();
-                if (this.FontSize != null)
-                    hash = hash * 59 + this.FontSize.GetHashCode();
-                if (this.Formula != null)
-                    hash = hash * 59 + this.Formula.GetHashCode();
-                if (this.IsPaymentAmount != null)
-                    hash = hash * 59 + this.IsPaymentAmount.GetHashCode();
-                if (this.Italic != null)
-                    hash = hash * 59 + this.Italic.GetHashCode();
                 if (this.Locked != null)
                     hash = hash * 59 + this.Locked.GetHashCode();
-                if (this.MaxLength != null)
-                    hash = hash * 59 + this.MaxLength.GetHashCode();
                 if (this.MergeField != null)
                     hash = hash * 59 + this.MergeField.GetHashCode();
-                if (this.Name != null)
-                    hash = hash * 59 + this.Name.GetHashCode();
-                if (this.OriginalValue != null)
-                    hash = hash * 59 + this.OriginalValue.GetHashCode();
                 if (this.PageNumber != null)
                     hash = hash * 59 + this.PageNumber.GetHashCode();
                 if (this.RecipientId != null)
                     hash = hash * 59 + this.RecipientId.GetHashCode();
-                if (this.RequireAll != null)
-                    hash = hash * 59 + this.RequireAll.GetHashCode();
                 if (this.Required != null)
                     hash = hash * 59 + this.Required.GetHashCode();
-                if (this.RequireInitialOnSharedChange != null)
-                    hash = hash * 59 + this.RequireInitialOnSharedChange.GetHashCode();
-                if (this.SenderRequired != null)
-                    hash = hash * 59 + this.SenderRequired.GetHashCode();
-                if (this.Shared != null)
-                    hash = hash * 59 + this.Shared.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.TabId != null)
                     hash = hash * 59 + this.TabId.GetHashCode();
-                if (this.TabLabel != null)
-                    hash = hash * 59 + this.TabLabel.GetHashCode();
                 if (this.TabOrder != null)
                     hash = hash * 59 + this.TabOrder.GetHashCode();
                 if (this.TemplateLocked != null)
                     hash = hash * 59 + this.TemplateLocked.GetHashCode();
                 if (this.TemplateRequired != null)
                     hash = hash * 59 + this.TemplateRequired.GetHashCode();
-                if (this.Underline != null)
-                    hash = hash * 59 + this.Underline.GetHashCode();
-                if (this.ValidationMessage != null)
-                    hash = hash * 59 + this.ValidationMessage.GetHashCode();
-                if (this.ValidationPattern != null)
-                    hash = hash * 59 + this.ValidationPattern.GetHashCode();
-                if (this.Value != null)
-                    hash = hash * 59 + this.Value.GetHashCode();
-                if (this.Width != null)
-                    hash = hash * 59 + this.Width.GetHashCode();
                 if (this.XPosition != null)
                     hash = hash * 59 + this.XPosition.GetHashCode();
                 if (this.YPosition != null)

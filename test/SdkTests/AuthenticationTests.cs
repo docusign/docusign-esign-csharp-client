@@ -1,12 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using DocuSign.eSign.Api;
-using DocuSign.eSign.Client;
-using DocuSign.eSign.Client.Auth;
-using DocuSign.eSign.Model;
+
+#if NUNIT
+using TestClass = NUnit.Framework.TestFixtureAttribute;
+using TestMethod = NUnit.Framework.TestAttribute;
+using TestCleanup = NUnit.Framework.TearDownAttribute;
+using TestInitialize = NUnit.Framework.SetUpAttribute;
+using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
+using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
+using Assert = NUnit.Framework.Assert;
+#else
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using static DocuSign.eSign.Client.Auth.OAuth;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+#endif
+
+using DocuSign.eSign.Model;
+using DocuSign.eSign.Client;
+using DocuSign.eSign.Api;
+using System.IO;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using DocuSign.eSign.Client.Auth;
 
 namespace SdkTests
 {
@@ -17,6 +30,9 @@ namespace SdkTests
         public const string RestApiUrl = "https://demo.docusign.net/restapi";
 
         TestConfig testConfig = new TestConfig();
+
+#if NUNIT
+#else
 
         // This is an application-specific param that may be passed around during the OAuth
         // flow. It allows the app to track its flow, in addition to more security.
@@ -176,7 +192,7 @@ namespace SdkTests
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             string privateKey = File.ReadAllText(testConfig.PrivateKeyFilename);
-            OAuthToken tokenInfo = testConfig.ApiClient.ConfigureJwtAuthorizationFlowByKey(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKey, testConfig.ExpiresInHours);
+            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.ConfigureJwtAuthorizationFlowByKey(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKey, testConfig.ExpiresInHours);
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             // STEP 2: Get the Access Token 
@@ -268,5 +284,6 @@ namespace SdkTests
 
             testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
         }
+#endif
     }
 }

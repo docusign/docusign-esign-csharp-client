@@ -18,13 +18,6 @@ namespace SdkTests
 
         TestConfig testConfig = new TestConfig();
 
-
-        // These items are all registered at the DocuSign Admin console and are required 
-        // to perform the OAuth flow.
-        public string client_id = "***REMOVED***";
-        public string client_secret = "6696ae7f-xxxx-xxxx-xxxx-26d40f79c0cb";
-        public string redirect_uri = "http://localhost:3000";
-
         // This is an application-specific param that may be passed around during the OAuth
         // flow. It allows the app to track its flow, in addition to more security.
         public const string stateOptional = "testState";
@@ -32,11 +25,12 @@ namespace SdkTests
         [TestMethod]
         public void AuthorizationCodeGrantTest()
         {
+          /*  Code example
             // These items are all registered at the DocuSign Admin console and are required 
             // to perform the OAuth flow.
-            client_id = "***REMOVED***";
-            client_secret = "6696ae7f-xxxx-xxxx-xxxx-26d40f79c0cb";
-            redirect_uri = "http://localhost:3000";
+            string client_id = "[YOUR_CLIENT_ID]";
+            string client_secret = "[YOUR_CLIENT_SECRET]";
+            string redirect_uri = "[YOUR_REDIRECT_URL]";
 
             // Instantiating a client.
             ApiClient apiClient = new ApiClient(RestApiUrl);
@@ -52,18 +46,20 @@ namespace SdkTests
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             Uri oauthLoginUrl = apiClient.GetAuthorizationUri(client_id, scopes, redirect_uri, OAuth.CODE, stateOptional);
-            // System.Diagnostics.Process.Start(oauthLoginUrl.AbsoluteUri);
+            System.Diagnostics.Process.Start(oauthLoginUrl.AbsoluteUri);
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             // STEP 2: Get the code - Login to the browser and get the code from the url and paste it below 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            string code = "eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQgAAAABAAYABwCAjlsEKcvVSAgAgBriSynL1UgCAIJ68LfViMZCseKsUbNdP9wVAAEAAAAYAAEAAAAFAAAADQAkAAAAY2Y1NzdkODQtZTc3MS00OTA4LWExMWYtMjkyOTA5NGU0NmY2MAAASWqvJcvVSA.WjsA2qj4QE0GeEpQuplXI2v1hzQuCRtE5hGHcfwBnWlhDqqjj1Ru7JRcdOUld5wbDDxYyw5aWeFTPZNx7CqRKpSTcHi_y_q_ENwog-OmHYvb51YOl6ZetnqNPq9hj8nt8-4FpWYHt0Ft2t7h8LdwYT0rp_dP8Dh9fmQxakHADnMo30cGd7upA0RNwnL9rsG1HZo6jY2I7IrbnahVrQ46uSqXSD4gpVtYDAPtMV8In0LESjRf6LrgosW38rTGb-6iAQ2dhQ4q8Ui7UQEsNa67UMuv7Rggtx-VowuyIloY-OEpmizCv1J-jQwSrvdyxSyhykBIh1YxqdqfMjwzAH_5zw;";
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////
+            string code = "[CODE_FROM_ABOVE_STEP]";
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
             // STEP 3: Get the token 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             OAuth.OAuthToken oAuthToken = apiClient.GenerateAccessToken(client_id, client_secret, code);
+
             Assert.IsNotNull(oAuthToken);
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,18 +70,17 @@ namespace SdkTests
             // DocuSign APIs
             OAuth.UserInfo userInfo = apiClient.GetUserInfo(oAuthToken.access_token);
 
-            // ASSERT
-            Assert.IsNotNull(userInfo);
-            Assert.AreEqual("bharat rele", userInfo.GetName().ToLower());
-            Assert.IsNotNull(userInfo.GetAccounts());
-            Assert.AreEqual("BharatRele", userInfo.GetAccounts()[0].GetAccountName());
-            string accountId = string.Empty;
+            // ASSERT - Uncomment Below Lines
+            // Assert.IsNotNull(userInfo);
+            // Assert.AreEqual("[YOUR_USER_NAME]", userInfo.GetName().ToLower());
+            // Assert.IsNotNull(userInfo.GetAccounts());
+            // Assert.AreEqual("[YOUR_ACCOUNT_NAME]", userInfo.GetAccounts()[0].GetAccountName());
 
             foreach (var item in userInfo.GetAccounts())
             {
                 if (item.GetIsDefault() == "true")
                 {
-                    accountId = item.AccountId();
+                    testConfig.AccountId = item.AccountId();
                     apiClient = new ApiClient(item.GetBaseUri() + "/restapi");
                     break;
                 }
@@ -97,33 +92,35 @@ namespace SdkTests
             // assign recipient to template role by setting name, email, and role name.  Note that the
             // template role name must match the placeholder role name saved in your account template.  
             TemplateRole tRole = new TemplateRole();
-            tRole.Email = "aparnapai22@gmail.com";
-            tRole.Name = "Aparna Rele";
-            tRole.RoleName = "Role";
+            tRole.Email = testConfig.RecipientEmail;
+            tRole.Name = testConfig.RecipientName;
+            tRole.RoleName = testConfig.TemplateRoleName;
             List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
 
             // add the role to the envelope and assign valid templateId from your account
             envDef.TemplateRoles = rolesList;
-            envDef.TemplateId = "3e148cc9-664c-46ab-862a-54ef073d3e5e";
+            envDef.TemplateId = testConfig.TemplateId;
 
             // set envelope status to "sent" to immediately send the signature request
             envDef.Status = "sent";
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
             EnvelopesApi envelopesApi = new EnvelopesApi(apiClient.Configuration);
-            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(accountId, envDef);
+            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
+            
+             */
         }
 
         [TestMethod]
         public void ImplicitCodeGrantTest()
         {
-
+            /*  Code example
             // These items are all registered at the DocuSign Admin console and are required 
             // to perform the OAuth flow.
-            client_id = "46168e79-48ed-42aa-b3d5-efca05b01843"; // "[YOUR_CLIENT_ID]";
+            string client_id = "[YOUR_CLIENT_ID]";
             // here client secret should be mobile app secret
-            client_secret = "80ef2d11-xxxx-xxxx-xxxx-b9b0c9cd1207"; // "[YOUR_CLIENT_SECRET]";
-            redirect_uri = "http://localhost:3000";
+            string client_secret = "[YOUR_CLIENT_SECRET]";
+            string redirect_uri = "[YOUR_REDIRECT_URL]";
 
             //Initialize a client
             ApiClient apiClient = new ApiClient(RestApiUrl);
@@ -141,8 +138,7 @@ namespace SdkTests
             // STEP 2: Get the Token from the Uri paste it below...       
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            string token = "eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQkAAAABAAUABwCA6FG1DMjVSAgAgCh1w0_I1UgCAIJ68LfViMZCseKsUbNdP9wVAAEAAAAYAAEAAAAFAAAADQAkAAAANDYxNjhlNzktNDhlZC00MmFhLWIzZDUtZWZjYTA1YjAxODQzMACA6FG1DMjVSBIAAQAAAAsAAABpbnRlcmFjdGl2ZQ.mrYj5ktHqS4fu2TAOhPSFag8QffI0FqGxBL0lEjdyW6lEkuLNYQqOl-Y4uFLFerESm410b8jXYUNjnsbOQhaPAB7ExA3zm3u8F642hXPLzwpIEktAneXzZMSanE-mJC75fo59JqDb_76MP0R4708aGPVsQo_NZk315uvjojfM6JpDAFyl1h4QL75jZYx9mmxrI0C3Nkv_EzHq5NMj2kLN3ZWrDYfAW84v1Md0gBxzHOixOLL0In2AkDSasy5tDKYUKPylii5sW34qEpb0w9fIFlxH0n-Njixna6EoLBEr8Ao0aVgERkIgrR3bN-_El-y596Zx8Bcs8O-CEVa1-_Xzg";
-            //"[GET_THIS_FROM_LOGING_IN_USING_THE_ABOVE_URL]";
+            string token = "[GET_THIS_FROM_LOGING_IN_USING_THE_ABOVE_URL]";
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             // STEP 3: Get the User Info       
@@ -151,11 +147,13 @@ namespace SdkTests
             // DocuSign APIs
             OAuth.UserInfo userInfo = apiClient.GetUserInfo(token);
 
-            Assert.IsNotNull(userInfo);
-            Assert.AreEqual("bharat rele", userInfo.GetName().ToLower());
-            Assert.IsNotNull(userInfo.GetAccounts());
-            Assert.AreEqual("BharatRele", userInfo.GetAccounts()[0].GetAccountName());
-        }
+            // ASSERT - Uncomment Below Lines
+            // Assert.IsNotNull(userInfo);
+            // Assert.AreEqual("[YOUR_USER_NAME]", userInfo.GetName().ToLower());
+            // Assert.IsNotNull(userInfo.GetAccounts());
+            // Assert.AreEqual("[YOUR_ACCOUNT_NAME]", userInfo.GetAccounts()[0].GetAccountName());
+            */    
+    }
 
         [TestInitialize]
         [TestMethod]

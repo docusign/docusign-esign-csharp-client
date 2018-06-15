@@ -81,6 +81,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationTests.cs" />
     <Compile Include="TestConfig.cs" />
     <Compile Include="JwtAuthUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

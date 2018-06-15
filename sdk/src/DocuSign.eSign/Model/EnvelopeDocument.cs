@@ -38,6 +38,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="EnvelopeDocument" /> class.
         /// </summary>
         /// <param name="AttachmentTabId">.</param>
+        /// <param name="AuthoritativeCopy">Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled..</param>
         /// <param name="AvailableDocumentTypes">.</param>
         /// <param name="ContainsPdfFormFields">.</param>
         /// <param name="Display">.</param>
@@ -52,9 +53,10 @@ namespace DocuSign.eSign.Model
         /// <param name="SignerMustAcknowledge">.</param>
         /// <param name="Type">.</param>
         /// <param name="Uri">.</param>
-        public EnvelopeDocument(string AttachmentTabId = default(string), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), string Name = default(string), string Order = default(string), string Pages = default(string), string SignerMustAcknowledge = default(string), string Type = default(string), string Uri = default(string))
+        public EnvelopeDocument(string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), string Name = default(string), string Order = default(string), string Pages = default(string), string SignerMustAcknowledge = default(string), string Type = default(string), string Uri = default(string))
         {
             this.AttachmentTabId = AttachmentTabId;
+            this.AuthoritativeCopy = AuthoritativeCopy;
             this.AvailableDocumentTypes = AvailableDocumentTypes;
             this.ContainsPdfFormFields = ContainsPdfFormFields;
             this.Display = Display;
@@ -77,6 +79,12 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="attachmentTabId", EmitDefaultValue=false)]
         public string AttachmentTabId { get; set; }
+        /// <summary>
+        /// Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+        /// </summary>
+        /// <value>Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.</value>
+        [DataMember(Name="authoritativeCopy", EmitDefaultValue=false)]
+        public string AuthoritativeCopy { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -169,6 +177,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class EnvelopeDocument {\n");
             sb.Append("  AttachmentTabId: ").Append(AttachmentTabId).Append("\n");
+            sb.Append("  AuthoritativeCopy: ").Append(AuthoritativeCopy).Append("\n");
             sb.Append("  AvailableDocumentTypes: ").Append(AvailableDocumentTypes).Append("\n");
             sb.Append("  ContainsPdfFormFields: ").Append(ContainsPdfFormFields).Append("\n");
             sb.Append("  Display: ").Append(Display).Append("\n");
@@ -223,6 +232,11 @@ namespace DocuSign.eSign.Model
                     this.AttachmentTabId == other.AttachmentTabId ||
                     this.AttachmentTabId != null &&
                     this.AttachmentTabId.Equals(other.AttachmentTabId)
+                ) && 
+                (
+                    this.AuthoritativeCopy == other.AuthoritativeCopy ||
+                    this.AuthoritativeCopy != null &&
+                    this.AuthoritativeCopy.Equals(other.AuthoritativeCopy)
                 ) && 
                 (
                     this.AvailableDocumentTypes == other.AvailableDocumentTypes ||
@@ -309,6 +323,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.AttachmentTabId != null)
                     hash = hash * 59 + this.AttachmentTabId.GetHashCode();
+                if (this.AuthoritativeCopy != null)
+                    hash = hash * 59 + this.AuthoritativeCopy.GetHashCode();
                 if (this.AvailableDocumentTypes != null)
                     hash = hash * 59 + this.AvailableDocumentTypes.GetHashCode();
                 if (this.ContainsPdfFormFields != null)

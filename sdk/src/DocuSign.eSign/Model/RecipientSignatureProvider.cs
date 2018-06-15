@@ -37,16 +37,24 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientSignatureProvider" /> class.
         /// </summary>
+        /// <param name="SealDocumentsWithTabsOnly">.</param>
         /// <param name="SealName">.</param>
         /// <param name="SignatureProviderName">.</param>
         /// <param name="SignatureProviderOptions">SignatureProviderOptions.</param>
-        public RecipientSignatureProvider(string SealName = default(string), string SignatureProviderName = default(string), RecipientSignatureProviderOptions SignatureProviderOptions = default(RecipientSignatureProviderOptions))
+        public RecipientSignatureProvider(string SealDocumentsWithTabsOnly = default(string), string SealName = default(string), string SignatureProviderName = default(string), RecipientSignatureProviderOptions SignatureProviderOptions = default(RecipientSignatureProviderOptions))
         {
+            this.SealDocumentsWithTabsOnly = SealDocumentsWithTabsOnly;
             this.SealName = SealName;
             this.SignatureProviderName = SignatureProviderName;
             this.SignatureProviderOptions = SignatureProviderOptions;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="sealDocumentsWithTabsOnly", EmitDefaultValue=false)]
+        public string SealDocumentsWithTabsOnly { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -72,6 +80,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class RecipientSignatureProvider {\n");
+            sb.Append("  SealDocumentsWithTabsOnly: ").Append(SealDocumentsWithTabsOnly).Append("\n");
             sb.Append("  SealName: ").Append(SealName).Append("\n");
             sb.Append("  SignatureProviderName: ").Append(SignatureProviderName).Append("\n");
             sb.Append("  SignatureProviderOptions: ").Append(SignatureProviderOptions).Append("\n");
@@ -112,6 +121,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.SealDocumentsWithTabsOnly == other.SealDocumentsWithTabsOnly ||
+                    this.SealDocumentsWithTabsOnly != null &&
+                    this.SealDocumentsWithTabsOnly.Equals(other.SealDocumentsWithTabsOnly)
+                ) && 
+                (
                     this.SealName == other.SealName ||
                     this.SealName != null &&
                     this.SealName.Equals(other.SealName)
@@ -139,6 +153,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.SealDocumentsWithTabsOnly != null)
+                    hash = hash * 59 + this.SealDocumentsWithTabsOnly.GetHashCode();
                 if (this.SealName != null)
                     hash = hash * 59 + this.SealName.GetHashCode();
                 if (this.SignatureProviderName != null)

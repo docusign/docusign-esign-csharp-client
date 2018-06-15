@@ -19,6 +19,7 @@ using DocuSign.eSign.Api;
 using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using DocuSign.eSign.Client.Auth;
 
 namespace SdkTests
 {
@@ -33,30 +34,25 @@ namespace SdkTests
         public void JwtLoginTest()
         {
             testConfig.ApiClient = new ApiClient(testConfig.Host);
-            testConfig.ApiClient.ConfigureJwtAuthorizationFlow(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, testConfig.PrivateKeyFilename, testConfig.ExpiresInHours);
+            string privateKey = File.ReadAllText(testConfig.PrivateKeyFilename);
+            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.ConfigureJwtAuthorizationFlowByKey(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKey, testConfig.ExpiresInHours);
 
             // the authentication api uses the apiClient (and X-DocuSign-Authentication header) that are set in Configuration object
-            AuthenticationApi authApi = new AuthenticationApi(testConfig.ApiClient.Configuration);
-            LoginInformation loginInfo = authApi.Login();
+            OAuth.UserInfo userInfo = testConfig.ApiClient.GetUserInfo(tokenInfo.access_token);
 
-            Assert.IsNotNull(loginInfo);
-            Assert.IsNotNull(loginInfo.LoginAccounts);
-
-            // find the default account for this user
-            foreach (LoginAccount loginAcct in loginInfo.LoginAccounts)
+            Assert.IsNotNull(userInfo);
+            Assert.IsNotNull(userInfo.GetAccounts());
+            
+            foreach (var item in userInfo.GetAccounts())
             {
-                if (loginAcct.IsDefault == "true" || testConfig.AccountId == null)
+                if (item.GetIsDefault() == "true")
                 {
-                    testConfig.AccountId = loginAcct.AccountId;
-
-                    string[] separatingStrings = { "/v2" };
-
-                    // Update ApiClient with the new base url from login call
-                    testConfig.ApiClient = new ApiClient(loginAcct.BaseUrl.Split(separatingStrings, StringSplitOptions.RemoveEmptyEntries)[0]);
-                    //testConfig.Configuration = config;
+                    testConfig.AccountId = item.AccountId();
+                    testConfig.ApiClient = new ApiClient(item.GetBaseUri() + "/restapi");
                     break;
                 }
             }
+
             Assert.IsNotNull(testConfig.AccountId);
         }
 

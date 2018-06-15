@@ -24,31 +24,31 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// DocumentFieldsInformation
+    /// AccountSeals
     /// </summary>
     [DataContract]
-    public partial class DocumentFieldsInformation :  IEquatable<DocumentFieldsInformation>, IValidatableObject
+    public partial class AccountSeals :  IEquatable<AccountSeals>, IValidatableObject
     {
-        public DocumentFieldsInformation()
+        public AccountSeals()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentFieldsInformation" /> class.
+        /// Initializes a new instance of the <see cref="AccountSeals" /> class.
         /// </summary>
-        /// <param name="DocumentFields">The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements:   * name - A string that can be a maximum of 50 characters.  * value - A string that can be a maximum of 200 characters.  *IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.  .</param>
-        public DocumentFieldsInformation(List<NameValue> DocumentFields = default(List<NameValue>))
+        /// <param name="Seals">.</param>
+        public AccountSeals(List<SealIdentifier> Seals = default(List<SealIdentifier>))
         {
-            this.DocumentFields = DocumentFields;
+            this.Seals = Seals;
         }
         
         /// <summary>
-        /// The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements:   * name - A string that can be a maximum of 50 characters.  * value - A string that can be a maximum of 200 characters.  *IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.  
+        /// 
         /// </summary>
-        /// <value>The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements:   * name - A string that can be a maximum of 50 characters.  * value - A string that can be a maximum of 200 characters.  *IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.  </value>
-        [DataMember(Name="documentFields", EmitDefaultValue=false)]
-        public List<NameValue> DocumentFields { get; set; }
+        /// <value></value>
+        [DataMember(Name="seals", EmitDefaultValue=false)]
+        public List<SealIdentifier> Seals { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -56,8 +56,8 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DocumentFieldsInformation {\n");
-            sb.Append("  DocumentFields: ").Append(DocumentFields).Append("\n");
+            sb.Append("class AccountSeals {\n");
+            sb.Append("  Seals: ").Append(Seals).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,15 +79,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as DocumentFieldsInformation);
+            return this.Equals(obj as AccountSeals);
         }
 
         /// <summary>
-        /// Returns true if DocumentFieldsInformation instances are equal
+        /// Returns true if AccountSeals instances are equal
         /// </summary>
-        /// <param name="other">Instance of DocumentFieldsInformation to be compared</param>
+        /// <param name="other">Instance of AccountSeals to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DocumentFieldsInformation other)
+        public bool Equals(AccountSeals other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -95,9 +95,9 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.DocumentFields == other.DocumentFields ||
-                    this.DocumentFields != null &&
-                    this.DocumentFields.SequenceEqual(other.DocumentFields)
+                    this.Seals == other.Seals ||
+                    this.Seals != null &&
+                    this.Seals.SequenceEqual(other.Seals)
                 );
         }
 
@@ -112,8 +112,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.DocumentFields != null)
-                    hash = hash * 59 + this.DocumentFields.GetHashCode();
+                if (this.Seals != null)
+                    hash = hash * 59 + this.Seals.GetHashCode();
                 return hash;
             }
         }

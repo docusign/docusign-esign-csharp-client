@@ -26,7 +26,7 @@ using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
 using RestSharp;
-using Newtonsoft.Json.Linq;
+using DocuSign.eSign.Client.Auth;
 
 namespace DocuSign.eSign.Client
 {
@@ -35,20 +35,12 @@ namespace DocuSign.eSign.Client
     /// </summary>
     public partial class ApiClient
     {
+        private string basePath = "https://www.docusign.net/restapi";
+
         private JsonSerializerSettings serializerSettings = new JsonSerializerSettings
         {
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
         };
-
-        /// <summary>
-        /// Initialize the TLS protocol for the client
-        /// </summary>
-        private void InitializeTLSProtocol()
-        {
-            //ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
-            //ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
-        }
 
         /// <summary>
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
@@ -98,14 +90,20 @@ namespace DocuSign.eSign.Client
         /// <param name="basePath">The base path.</param>
         public ApiClient(String basePath = "https://www.docusign.net/restapi")
         {
-            this.InitializeTLSProtocol();
-
             if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
 
+            this.InitializeTLSProtocol();
+
+            this.basePath = basePath;
             RestClient = new RestClient(basePath);
             Configuration = Configuration.Default;
             Configuration.ApiClient = this;
+        }
+
+        private void InitializeTLSProtocol()
+        {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
         }
 
         /// <summary>
@@ -539,37 +537,213 @@ namespace DocuSign.eSign.Client
             return string.Format(format, DocuSignOAuthHost, clientId, redirectURI, state);
         }
 
-        public string GetOAuthToken(string clientId, string clientSecret, Boolean isSandbox, string accessCode)
+        public Uri GetAuthorizationUri(string clientId, List<string> scopes, string redirectUri, string responseType)
         {
-            // The Authentication is completed, so now echange a code returned for
-            // the access_token and refresh_token.
-            var webClient = new WebClient();
-
-            webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
-
-            // Add the Authorization header with client_id and client_secret as base64
-            string codeAuth = clientId + ":" + clientSecret;
-            byte[] codeAuthBytes = Encoding.UTF8.GetBytes(codeAuth);
-            string codeAuthBase64 = Convert.ToBase64String(codeAuthBytes);
-            webClient.Headers.Add("Authorization", "Basic " + codeAuthBase64);
-
-            // Add the code returned from the authentication site
-            string tokenGrantAndCode = string.Format("grant_type=authorization_code&code={0}", accessCode);
-
-            // Call the token endpoint to exchange the code for an access_token
-            string DocuSignOAuthHost = isSandbox ? "account-d.docusign.com" : "account.docusign.com";
-            string tokenEndpoint = string.Format("https://{0}/oauth/token", DocuSignOAuthHost);
-            string tokenResponse = webClient.UploadString(tokenEndpoint, tokenGrantAndCode);
-            TokenResponse tokenObj = JsonConvert.DeserializeObject<TokenResponse>(tokenResponse);
-
-            // Add the token to this ApiClient
-            string authHeader = "Bearer " + tokenObj.access_token;
-            this.Configuration.AddDefaultHeader("Authorization", authHeader);
-
-            return tokenObj.access_token;
+            return GetAuthorizationUri(clientId, scopes, redirectUri, responseType, null);
         }
 
-        public void ConfigureJwtAuthorizationFlow(string clientId, string userId, string oauthBasePath, string privateKeyFilename, int expiresInHours)
+        /// <summary>
+        /// Helper method to configure the OAuth accessCode/implicit flow parameters
+        /// </summary>
+        /// <param name="clientId">OAuth2 client ID: Identifies the client making the request.</param>
+        /// <param name="scopes">the list of requested scopes.  Client applications may be scoped to a limited set of system access.</param>
+        /// <param name="redirectUri">this determines where to deliver the response containing the authorization code or access token.</param>
+        /// <param name="responseType">determines the response type of the authorization request.
+        /// <br><i>Note</i>: these response types are mutually exclusive for a client application.
+        /// A public/native client application may only request a response type of "token";
+        /// a private/trusted client application may only request a response type of "code".</param>
+        /// <param name="state">Allows for arbitrary state that may be useful to your application.
+        /// The value in this parameter will be round-tripped along with the response so you can make sure it didn't change.</param>
+        /// <returns></returns>
+        public Uri GetAuthorizationUri(string clientId, List<string> scopes, string redirectUri, string responseType, string state)
+        {
+            string formattedScopes = (scopes == null || scopes.Count < 1) ? "" : scopes[0];
+            StringBuilder scopesSb = new StringBuilder(formattedScopes);
+            for (int i = 1; i < scopes.Count; i++)
+            {
+                scopesSb.Append("%20" + scopes[i]);
+            }
+
+            UriBuilder builder = new UriBuilder(GetOAuthBasePath())
+            {
+                Scheme = "https",
+                Path = "/oauth/auth",
+                Port = 443,
+                Query = BuildQueryString(clientId, scopesSb.ToString(), redirectUri, responseType, state)
+            };
+            return builder.Uri;
+        }
+
+        /// <summary>
+        /// Builds a QueryString with the given parameters
+        /// </summary>
+        /// <param name="clientId"></param>
+        /// <param name="scopes"></param>
+        /// <param name="redirectUri"></param>
+        /// <param name="responseType"></param>
+        /// <param name="state"></param>
+        /// <returns>Formatted Query String</returns>
+        private string BuildQueryString(string clientId, string scopes, string redirectUri, string responseType, string state)
+        {
+            StringBuilder queryParams = new StringBuilder();
+            if (!string.IsNullOrEmpty(responseType) || responseType != null)
+            {
+                queryParams.Append("response_type=" + responseType);
+            }
+            if (!string.IsNullOrEmpty(scopes) || scopes != null)
+            {
+                queryParams.Append("&scope=" + scopes);
+            }
+            if (!string.IsNullOrEmpty(clientId) || clientId != null)
+            {
+                queryParams.Append("&client_id=" + clientId);
+            }
+            if (!string.IsNullOrEmpty(redirectUri) || redirectUri != null)
+            {
+                queryParams.Append("&redirect_uri=" + redirectUri);
+            }
+            if (!string.IsNullOrEmpty(state) || state != null)
+            {
+                queryParams.Append("&state=" + state);
+            }
+
+            return queryParams.ToString();
+        }
+
+        /// <summary>
+        /// GetOAuthBasePath
+        /// </summary>
+        /// <returns></returns>
+        private string GetOAuthBasePath()
+        {
+            return (this.basePath == null || this.basePath.StartsWith("https://demo") || this.basePath.StartsWith("http://demo")) ? "account-d.docusign.com" : "account.docusign.com";
+        }
+
+        /// <summary>
+        /// Use this methods to Set Base Path
+        /// </summary>
+        /// <param name="basePath"></param>
+        public void SetBasePath(string basePath)
+        {
+            this.basePath = basePath;
+        }
+
+        /// <summary>
+        /// GenerateAccessToken
+        /// </summary>
+        /// <param name="clientId">OAuth2 client ID: Identifies the client making the request.</param>
+        /// <param name="clientSecret">the secret key you generated when you set up the integration in DocuSign Admin console.</param>
+        /// <param name="code">The authorization code that you received from the <i> GetAuthorizationUri </i> callback.</param>
+        /// <returns> OAuth.OAuthToken object.
+        /// ApiException if the HTTP call status is different than 2xx.
+        /// IOException  if there is a problem while parsing the reponse object.
+        /// </returns>
+        /// <see cref=""/>
+        public OAuth.OAuthToken GenerateAccessToken(string clientId, string clientSecret, string code)
+        {
+            string baseUri = string.Format("https://{0}/", GetOAuthBasePath());
+
+            string codeAuth = (clientId ?? "") + ":" + (clientSecret ?? "");
+            byte[] codeAuthBytes = Encoding.UTF8.GetBytes(codeAuth);
+            string codeAuthBase64 = Convert.ToBase64String(codeAuthBytes);
+
+            RestClient restClient = new RestClient(baseUri);
+            RestRequest request = new RestRequest("oauth/token", Method.POST);
+
+            request.AddHeader("Authorization", "Basic " + codeAuthBase64);
+            request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            Dictionary<string, string> formParams = new Dictionary<string, string>
+            {
+                { "grant_type", "authorization_code" },
+                { "code", code }
+            };
+
+            foreach (var item in formParams)
+                request.AddParameter(item.Key, item.Value);
+
+            try
+            {
+                IRestResponse restResponse = restClient.Execute(request);
+                OAuth.OAuthToken tokenObj = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)restResponse).Content);
+
+                // Add the token to this ApiClient
+                string authHeader = "Bearer " + tokenObj.access_token;
+                this.Configuration.AddDefaultHeader("Authorization", authHeader);
+
+                return tokenObj;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error: " + e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Get User Info method
+        /// </summary>
+        /// <param name="accessToken"></param>
+        /// <returns>The User Info model.</returns>
+        public OAuth.UserInfo GetUserInfo(string accessToken)
+        {
+            if (string.IsNullOrEmpty(accessToken))
+            {
+                throw new ArgumentException("Cannot find a valid access token. Make sure OAuth is configured before you try again.");
+            }
+
+            string baseUri = string.Format("https://{0}/", GetOAuthBasePath());
+
+            RestClient restClient = new RestClient(baseUri);
+            RestRequest request = new RestRequest("oauth/userinfo", Method.GET);
+            request.AddHeader("Authorization", "Bearer " + accessToken);
+
+            try
+            {
+                IRestResponse response = restClient.Execute(request);
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    throw new ApiException(int.Parse(response.StatusCode.ToString()),
+                            "Error while requesting server, received a non successful HTTP code "
+                            + response.ResponseStatus + " with response Body: '" + response.Content + "'"
+                            + response.Headers, response.Content);
+                }
+                OAuth.UserInfo userInfo = JsonConvert.DeserializeObject<OAuth.UserInfo>(response.Content);
+                return userInfo;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error while fecthing user info: " + ex.Message);
+            }
+        }
+
+        public string GetOAuthToken(string clientId, string clientSecret, Boolean isSandbox, string accessCode)
+        {
+            if (string.IsNullOrEmpty(accessCode))
+            {
+                throw new ArgumentException("Cannot find a valid access code.");
+            }
+
+            if (string.IsNullOrEmpty(clientId))
+                throw new ArgumentNullException();
+
+            if (string.IsNullOrEmpty(clientSecret))
+                throw new ArgumentNullException();
+
+            return this.GenerateAccessToken(clientId, clientId, accessCode).access_token;
+        }
+
+        public void ConfigureJwtAuthorizationFlow(string clientId, string userId, string oauthBasePath, string privateKeyFilename, int expiresInHours, List<string> scopes = null)
+        {
+            string privateKey = string.Empty;
+            if (!string.IsNullOrEmpty(privateKeyFilename))
+            {
+                privateKey = File.ReadAllText(privateKeyFilename);
+            }
+            
+            ConfigureJwtAuthorizationFlowByKey(clientId, userId, oauthBasePath, privateKey, expiresInHours, scopes);
+        }
+
+        public OAuth.OAuthToken ConfigureJwtAuthorizationFlowByKey(string clientId, string userId, string oauthBasePath, string privateKey, int expiresInHours, List<string> scopes = null)
         {
             JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
 
@@ -578,22 +752,34 @@ namespace DocuSign.eSign.Client
                 Lifetime = new Lifetime(DateTime.UtcNow, DateTime.UtcNow.AddHours(expiresInHours)),
             };
 
+            if (scopes == null)
+            {
+                scopes = new List<string>
+                {
+                    OAuth.Scope_SIGNATURE,
+                    OAuth.Scope_IMPERSONATION
+                };
+            }
+
             descriptor.Subject = new ClaimsIdentity();
-            descriptor.Subject.AddClaim(new Claim("scope", "signature"));
+            descriptor.Subject.AddClaim(new Claim("scope", String.Join(" ", scopes)));
             descriptor.Subject.AddClaim(new Claim("aud", oauthBasePath));
             descriptor.Subject.AddClaim(new Claim("iss", clientId));
 
-            if (userId != null)
+            if (!string.IsNullOrEmpty(userId))
             {
                 descriptor.Subject.AddClaim(new Claim("sub", userId));
             }
-
-            if (privateKeyFilename != null)
+            
+            if (!string.IsNullOrEmpty(privateKey))
             {
-                string pemKey = File.ReadAllText(privateKeyFilename);
-                var rsa = CreateRSAKeyFromPem(pemKey);
+                var rsa = CreateRSAKeyFromPem(privateKey);
                 RsaSecurityKey rsaKey = new RsaSecurityKey(rsa);
                 descriptor.SigningCredentials = new SigningCredentials(rsaKey, SecurityAlgorithms.RsaSha256Signature, SecurityAlgorithms.HmacSha256Signature);
+            }
+            else
+            {
+                throw new ApiException(400, "Private key not supplied or is invalid!");
             }
 
             var token = handler.CreateToken(descriptor);
@@ -622,16 +808,19 @@ namespace DocuSign.eSign.Client
             try
             {
                 var response = CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, contentType);
-                TokenResponse tokenInfo = JsonConvert.DeserializeObject<TokenResponse>(((RestResponse)response).Content);
+                OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
 
                 var config = Configuration.Default;
                 config.AddDefaultHeader("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+
+                this.RestClient.BaseUrl = baseUrl;
+
+                return tokenInfo;
             }
             catch (Exception ex)
             {
+                throw new Exception(ex.Message);
             }
-
-            this.RestClient.BaseUrl = baseUrl;
         }
 
         private static RSA CreateRSAKeyFromPem(string key)

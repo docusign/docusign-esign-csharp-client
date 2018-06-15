@@ -37,7 +37,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DobInformationInput" /> class.
         /// </summary>
-        /// <param name="DateOfBirth">Specifies the recipient’s date, month, and year of birth..</param>
+        /// <param name="DateOfBirth">Specifies the recipient&#39;s date, month, and year of birth..</param>
         /// <param name="DisplayLevelCode">Specifies the display level for the recipient.  Valid values are:   * ReadOnly * Editable * DoNotDisplay.</param>
         /// <param name="ReceiveInResponse">When set to **true**, the information needs to be returned in the response..</param>
         public DobInformationInput(string DateOfBirth = default(string), string DisplayLevelCode = default(string), string ReceiveInResponse = default(string))
@@ -48,9 +48,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Specifies the recipient’s date, month, and year of birth.
+        /// Specifies the recipient&#39;s date, month, and year of birth.
         /// </summary>
-        /// <value>Specifies the recipient’s date, month, and year of birth.</value>
+        /// <value>Specifies the recipient&#39;s date, month, and year of birth.</value>
         [DataMember(Name="dateOfBirth", EmitDefaultValue=false)]
         public string DateOfBirth { get; set; }
         /// <summary>

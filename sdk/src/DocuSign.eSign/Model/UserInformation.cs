@@ -44,17 +44,17 @@ namespace DocuSign.eSign.Model
         /// <param name="Email">.</param>
         /// <param name="EnableConnectForUser">Specifies whether the user is enabled for updates from DocuSign Connect. Valid values: true or false..</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="FirstName">The user’s first name.  Maximum Length: 50 characters..</param>
+        /// <param name="FirstName">The user&#39;s first name.  Maximum Length: 50 characters..</param>
         /// <param name="ForgottenPasswordInfo">ForgottenPasswordInfo.</param>
-        /// <param name="GroupList">A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId – The DocuSign group ID for the group. * groupName – The name of the group * permissionProfileId – The ID of the permission profile associated with the group. * groupType – The group type. .</param>
+        /// <param name="GroupList">A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. .</param>
         /// <param name="HomeAddress">HomeAddress.</param>
         /// <param name="InitialsImageUri">Contains the URI for an endpoint that you can use to retrieve the initials image..</param>
         /// <param name="IsAdmin">Determines if the feature set is actively set as part of the plan..</param>
         /// <param name="JobTitle">.</param>
         /// <param name="LastLogin">Shows the date-time when the user last logged on to the system..</param>
-        /// <param name="LastName">The user’s last name.  Maximum Length: 50 characters..</param>
-        /// <param name="LoginStatus">Shows the current status of the user’s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  .</param>
-        /// <param name="MiddleName">The user’s middle name.  Maximum Length: 50 characters..</param>
+        /// <param name="LastName">The user&#39;s last name.  Maximum Length: 50 characters..</param>
+        /// <param name="LoginStatus">Shows the current status of the user&#39;s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  .</param>
+        /// <param name="MiddleName">The user&#39;s middle name.  Maximum Length: 50 characters..</param>
         /// <param name="Password">.</param>
         /// <param name="PasswordExpiration">.</param>
         /// <param name="PermissionProfileId">.</param>
@@ -154,9 +154,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// The user’s first name.  Maximum Length: 50 characters.
+        /// The user&#39;s first name.  Maximum Length: 50 characters.
         /// </summary>
-        /// <value>The user’s first name.  Maximum Length: 50 characters.</value>
+        /// <value>The user&#39;s first name.  Maximum Length: 50 characters.</value>
         [DataMember(Name="firstName", EmitDefaultValue=false)]
         public string FirstName { get; set; }
         /// <summary>
@@ -165,9 +165,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="forgottenPasswordInfo", EmitDefaultValue=false)]
         public ForgottenPasswordInformation ForgottenPasswordInfo { get; set; }
         /// <summary>
-        /// A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId – The DocuSign group ID for the group. * groupName – The name of the group * permissionProfileId – The ID of the permission profile associated with the group. * groupType – The group type. 
+        /// A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. 
         /// </summary>
-        /// <value>A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId – The DocuSign group ID for the group. * groupName – The name of the group * permissionProfileId – The ID of the permission profile associated with the group. * groupType – The group type. </value>
+        /// <value>A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. </value>
         [DataMember(Name="groupList", EmitDefaultValue=false)]
         public List<Group> GroupList { get; set; }
         /// <summary>
@@ -200,21 +200,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lastLogin", EmitDefaultValue=false)]
         public string LastLogin { get; set; }
         /// <summary>
-        /// The user’s last name.  Maximum Length: 50 characters.
+        /// The user&#39;s last name.  Maximum Length: 50 characters.
         /// </summary>
-        /// <value>The user’s last name.  Maximum Length: 50 characters.</value>
+        /// <value>The user&#39;s last name.  Maximum Length: 50 characters.</value>
         [DataMember(Name="lastName", EmitDefaultValue=false)]
         public string LastName { get; set; }
         /// <summary>
-        /// Shows the current status of the user’s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
+        /// Shows the current status of the user&#39;s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
         /// </summary>
-        /// <value>Shows the current status of the user’s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  </value>
+        /// <value>Shows the current status of the user&#39;s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  </value>
         [DataMember(Name="loginStatus", EmitDefaultValue=false)]
         public string LoginStatus { get; set; }
         /// <summary>
-        /// The user’s middle name.  Maximum Length: 50 characters.
+        /// The user&#39;s middle name.  Maximum Length: 50 characters.
         /// </summary>
-        /// <value>The user’s middle name.  Maximum Length: 50 characters.</value>
+        /// <value>The user&#39;s middle name.  Maximum Length: 50 characters.</value>
         [DataMember(Name="middleName", EmitDefaultValue=false)]
         public string MiddleName { get; set; }
         /// <summary>

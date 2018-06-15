@@ -46,7 +46,9 @@ namespace DocuSign.eSign.Model
         /// <param name="RequireAll">When set to **true** and shared is true, information must be entered in this field to complete the envelope. .</param>
         /// <param name="RequireInitialOnSharedChange">Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
-        public RadioGroup(string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string DocumentId = default(string), string GroupName = default(string), List<Radio> Radios = default(List<Radio>), string RecipientId = default(string), string RequireAll = default(string), string RequireInitialOnSharedChange = default(string), string Shared = default(string))
+        /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
+        /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
+        public RadioGroup(string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string DocumentId = default(string), string GroupName = default(string), List<Radio> Radios = default(List<Radio>), string RecipientId = default(string), string RequireAll = default(string), string RequireInitialOnSharedChange = default(string), string Shared = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string))
         {
             this.ConditionalParentLabel = ConditionalParentLabel;
             this.ConditionalParentValue = ConditionalParentValue;
@@ -57,6 +59,8 @@ namespace DocuSign.eSign.Model
             this.RequireAll = RequireAll;
             this.RequireInitialOnSharedChange = RequireInitialOnSharedChange;
             this.Shared = Shared;
+            this.TemplateLocked = TemplateLocked;
+            this.TemplateRequired = TemplateRequired;
         }
         
         /// <summary>
@@ -114,6 +118,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shared", EmitDefaultValue=false)]
         public string Shared { get; set; }
         /// <summary>
+        /// When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
+        /// </summary>
+        /// <value>When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. </value>
+        [DataMember(Name="templateLocked", EmitDefaultValue=false)]
+        public string TemplateLocked { get; set; }
+        /// <summary>
+        /// When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
+        /// </summary>
+        /// <value>When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.</value>
+        [DataMember(Name="templateRequired", EmitDefaultValue=false)]
+        public string TemplateRequired { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -130,6 +146,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  RequireAll: ").Append(RequireAll).Append("\n");
             sb.Append("  RequireInitialOnSharedChange: ").Append(RequireInitialOnSharedChange).Append("\n");
             sb.Append("  Shared: ").Append(Shared).Append("\n");
+            sb.Append("  TemplateLocked: ").Append(TemplateLocked).Append("\n");
+            sb.Append("  TemplateRequired: ").Append(TemplateRequired).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -210,6 +228,16 @@ namespace DocuSign.eSign.Model
                     this.Shared == other.Shared ||
                     this.Shared != null &&
                     this.Shared.Equals(other.Shared)
+                ) && 
+                (
+                    this.TemplateLocked == other.TemplateLocked ||
+                    this.TemplateLocked != null &&
+                    this.TemplateLocked.Equals(other.TemplateLocked)
+                ) && 
+                (
+                    this.TemplateRequired == other.TemplateRequired ||
+                    this.TemplateRequired != null &&
+                    this.TemplateRequired.Equals(other.TemplateRequired)
                 );
         }
 
@@ -242,6 +270,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.RequireInitialOnSharedChange.GetHashCode();
                 if (this.Shared != null)
                     hash = hash * 59 + this.Shared.GetHashCode();
+                if (this.TemplateLocked != null)
+                    hash = hash * 59 + this.TemplateLocked.GetHashCode();
+                if (this.TemplateRequired != null)
+                    hash = hash * 59 + this.TemplateRequired.GetHashCode();
                 return hash;
             }
         }

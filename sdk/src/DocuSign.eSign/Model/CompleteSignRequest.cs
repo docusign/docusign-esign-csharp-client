@@ -38,10 +38,12 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="CompleteSignRequest" /> class.
         /// </summary>
         /// <param name="DocumentUpdateInfos">.</param>
+        /// <param name="SigningLocation">Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online..</param>
         /// <param name="TransactionId"> Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The &#x60;transactionId&#x60; property can be used determine an envelope&#39;s status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned..</param>
-        public CompleteSignRequest(List<DocumentUpdateInfo> DocumentUpdateInfos = default(List<DocumentUpdateInfo>), string TransactionId = default(string))
+        public CompleteSignRequest(List<DocumentUpdateInfo> DocumentUpdateInfos = default(List<DocumentUpdateInfo>), string SigningLocation = default(string), string TransactionId = default(string))
         {
             this.DocumentUpdateInfos = DocumentUpdateInfos;
+            this.SigningLocation = SigningLocation;
             this.TransactionId = TransactionId;
         }
         
@@ -51,6 +53,12 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="documentUpdateInfos", EmitDefaultValue=false)]
         public List<DocumentUpdateInfo> DocumentUpdateInfos { get; set; }
+        /// <summary>
+        /// Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
+        /// </summary>
+        /// <value>Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.</value>
+        [DataMember(Name="signingLocation", EmitDefaultValue=false)]
+        public string SigningLocation { get; set; }
         /// <summary>
         ///  Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The &#x60;transactionId&#x60; property can be used determine an envelope&#39;s status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
         /// </summary>
@@ -66,6 +74,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class CompleteSignRequest {\n");
             sb.Append("  DocumentUpdateInfos: ").Append(DocumentUpdateInfos).Append("\n");
+            sb.Append("  SigningLocation: ").Append(SigningLocation).Append("\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -109,6 +118,11 @@ namespace DocuSign.eSign.Model
                     this.DocumentUpdateInfos.SequenceEqual(other.DocumentUpdateInfos)
                 ) && 
                 (
+                    this.SigningLocation == other.SigningLocation ||
+                    this.SigningLocation != null &&
+                    this.SigningLocation.Equals(other.SigningLocation)
+                ) && 
+                (
                     this.TransactionId == other.TransactionId ||
                     this.TransactionId != null &&
                     this.TransactionId.Equals(other.TransactionId)
@@ -128,6 +142,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.DocumentUpdateInfos != null)
                     hash = hash * 59 + this.DocumentUpdateInfos.GetHashCode();
+                if (this.SigningLocation != null)
+                    hash = hash * 59 + this.SigningLocation.GetHashCode();
                 if (this.TransactionId != null)
                     hash = hash * 59 + this.TransactionId.GetHashCode();
                 return hash;

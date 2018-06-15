@@ -39,10 +39,12 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Certificate">.</param>
         /// <param name="ReturnFormat">.</param>
-        public SignSessionInfoRequest(string Certificate = default(string), string ReturnFormat = default(string))
+        /// <param name="SigningLocation">Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online..</param>
+        public SignSessionInfoRequest(string Certificate = default(string), string ReturnFormat = default(string), string SigningLocation = default(string))
         {
             this.Certificate = Certificate;
             this.ReturnFormat = ReturnFormat;
+            this.SigningLocation = SigningLocation;
         }
         
         /// <summary>
@@ -58,6 +60,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="returnFormat", EmitDefaultValue=false)]
         public string ReturnFormat { get; set; }
         /// <summary>
+        /// Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
+        /// </summary>
+        /// <value>Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.</value>
+        [DataMember(Name="signingLocation", EmitDefaultValue=false)]
+        public string SigningLocation { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -67,6 +75,7 @@ namespace DocuSign.eSign.Model
             sb.Append("class SignSessionInfoRequest {\n");
             sb.Append("  Certificate: ").Append(Certificate).Append("\n");
             sb.Append("  ReturnFormat: ").Append(ReturnFormat).Append("\n");
+            sb.Append("  SigningLocation: ").Append(SigningLocation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,6 +121,11 @@ namespace DocuSign.eSign.Model
                     this.ReturnFormat == other.ReturnFormat ||
                     this.ReturnFormat != null &&
                     this.ReturnFormat.Equals(other.ReturnFormat)
+                ) && 
+                (
+                    this.SigningLocation == other.SigningLocation ||
+                    this.SigningLocation != null &&
+                    this.SigningLocation.Equals(other.SigningLocation)
                 );
         }
 
@@ -130,6 +144,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Certificate.GetHashCode();
                 if (this.ReturnFormat != null)
                     hash = hash * 59 + this.ReturnFormat.GetHashCode();
+                if (this.SigningLocation != null)
+                    hash = hash * 59 + this.SigningLocation.GetHashCode();
                 return hash;
             }
         }

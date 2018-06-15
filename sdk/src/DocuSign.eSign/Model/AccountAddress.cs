@@ -43,7 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Country">Specifies the country associated with the address..</param>
         /// <param name="Email">.</param>
         /// <param name="Fax">.</param>
-        /// <param name="FirstName">The user’s first name.  Maximum Length: 50 characters..</param>
+        /// <param name="FirstName">The user&#39;s first name.  Maximum Length: 50 characters..</param>
         /// <param name="LastName">.</param>
         /// <param name="Phone">.</param>
         /// <param name="PostalCode">.</param>
@@ -102,9 +102,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="fax", EmitDefaultValue=false)]
         public string Fax { get; set; }
         /// <summary>
-        /// The user’s first name.  Maximum Length: 50 characters.
+        /// The user&#39;s first name.  Maximum Length: 50 characters.
         /// </summary>
-        /// <value>The user’s first name.  Maximum Length: 50 characters.</value>
+        /// <value>The user&#39;s first name.  Maximum Length: 50 characters.</value>
         [DataMember(Name="firstName", EmitDefaultValue=false)]
         public string FirstName { get; set; }
         /// <summary>

@@ -37,6 +37,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PowerForm" /> class.
         /// </summary>
+        /// <param name="CreatedBy">.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="EmailBody">Specifies the email body of the message sent to the recipient.   Maximum length: 10000 characters. .</param>
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
@@ -61,8 +62,9 @@ namespace DocuSign.eSign.Model
         /// <param name="TimesUsed">.</param>
         /// <param name="Uri">.</param>
         /// <param name="UsesRemaining">.</param>
-        public PowerForm(string CreatedDateTime = default(string), string EmailBody = default(string), string EmailSubject = default(string), List<Envelope> Envelopes = default(List<Envelope>), ErrorDetails ErrorDetails = default(ErrorDetails), string Instructions = default(string), string IsActive = default(string), string LastUsed = default(string), string LimitUseInterval = default(string), string LimitUseIntervalEnabled = default(string), string LimitUseIntervalUnits = default(string), string MaxUseEnabled = default(string), string Name = default(string), string PowerFormId = default(string), string PowerFormUrl = default(string), List<PowerFormRecipient> Recipients = default(List<PowerFormRecipient>), string SenderName = default(string), string SenderUserId = default(string), string SigningMode = default(string), string TemplateId = default(string), string TemplateName = default(string), string TimesUsed = default(string), string Uri = default(string), string UsesRemaining = default(string))
+        public PowerForm(string CreatedBy = default(string), string CreatedDateTime = default(string), string EmailBody = default(string), string EmailSubject = default(string), List<Envelope> Envelopes = default(List<Envelope>), ErrorDetails ErrorDetails = default(ErrorDetails), string Instructions = default(string), string IsActive = default(string), string LastUsed = default(string), string LimitUseInterval = default(string), string LimitUseIntervalEnabled = default(string), string LimitUseIntervalUnits = default(string), string MaxUseEnabled = default(string), string Name = default(string), string PowerFormId = default(string), string PowerFormUrl = default(string), List<PowerFormRecipient> Recipients = default(List<PowerFormRecipient>), string SenderName = default(string), string SenderUserId = default(string), string SigningMode = default(string), string TemplateId = default(string), string TemplateName = default(string), string TimesUsed = default(string), string Uri = default(string), string UsesRemaining = default(string))
         {
+            this.CreatedBy = CreatedBy;
             this.CreatedDateTime = CreatedDateTime;
             this.EmailBody = EmailBody;
             this.EmailSubject = EmailSubject;
@@ -89,6 +91,12 @@ namespace DocuSign.eSign.Model
             this.UsesRemaining = UsesRemaining;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="createdBy", EmitDefaultValue=false)]
+        public string CreatedBy { get; set; }
         /// <summary>
         /// Indicates the date and time the item was created.
         /// </summary>
@@ -240,6 +248,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PowerForm {\n");
+            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  CreatedDateTime: ").Append(CreatedDateTime).Append("\n");
             sb.Append("  EmailBody: ").Append(EmailBody).Append("\n");
             sb.Append("  EmailSubject: ").Append(EmailSubject).Append("\n");
@@ -300,6 +309,11 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.CreatedBy == other.CreatedBy ||
+                    this.CreatedBy != null &&
+                    this.CreatedBy.Equals(other.CreatedBy)
+                ) && 
                 (
                     this.CreatedDateTime == other.CreatedDateTime ||
                     this.CreatedDateTime != null &&
@@ -433,6 +447,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.CreatedBy != null)
+                    hash = hash * 59 + this.CreatedBy.GetHashCode();
                 if (this.CreatedDateTime != null)
                     hash = hash * 59 + this.CreatedDateTime.GetHashCode();
                 if (this.EmailBody != null)

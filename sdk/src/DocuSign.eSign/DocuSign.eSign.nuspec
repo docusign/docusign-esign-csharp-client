@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
 	      <id>DocuSign.eSign.dll</id>
-	      <version>2.1.10</version>
+	      <version>2.2.0</version>
 	      <title>DocuSign.eSign</title>
 	      <authors>DocuSign</authors>
 	      <owners>DocuSign</owners>
@@ -12,7 +12,7 @@
 	      <iconUrl>http://26c9d06e414e60fc3a18-f03eeda740093cbe74371aff89dec8d1.r69.cf2.rackcdn.com/icon32x32.png</iconUrl>
 	      <projectUrl>http://www.docusign.com/developer-center</projectUrl>
 	      <licenseUrl>https://raw.githubusercontent.com/docusign/docusign-csharp-client/master/LICENSE</licenseUrl>
-	      <copyright>Copyright 2017</copyright>
+	      <copyright>Copyright 2018</copyright>
 	      <tags>DocuSign.eSign</tags>
 	      <dependencies>
 		        <dependency id="Newtonsoft.Json" version="8.0.3" />

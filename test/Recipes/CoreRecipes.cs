@@ -9,13 +9,29 @@ using Newtonsoft.Json;
 using DocuSign.eSign.Api;
 using DocuSign.eSign.Model;
 using DocuSign.eSign.Client;
+using DocuSign.eSign.Client.Auth;
 
 namespace TestProj
 {
     class CoreRecipes
     {
+
+        // Enter your DocuSign API information and credentials below.  
+        // Note: You only need a DocuSign account to SEND documents,
+        // signing is always free and signers do not need an account.
+
+        //Base Path for the demo account
+        private readonly string BASE_URL = "https://demo.docusign.net/restapi";
         // Integrator Key (aka API key) is needed to authenticate your API calls.  This is an application-wide key
-        private string INTEGRATOR_KEY = "[INTEGRATOR_KEY]";
+        private readonly string INTEGRATOR_KEY = "[INTEGRATOR_KEY]";
+        // User ID (aka APIUserName)
+        private readonly string USER_ID = "[USER_ID]";
+        // Redirect URI - this is where the user will be redirected once Authentication steps succeeds.
+        private readonly string REDIRECT_URI = "[REDIRECT_URL]";
+        //Private Key - paste the entire PRIVATE Key here
+        private readonly string PRIVATE_KEY = "[PRIVATE_KEY]";
+        //Optional State  - state which you want to return
+        private readonly string STATE = "";
 
         //////////////////////////////////////////////////////////
         // Main()
@@ -23,7 +39,7 @@ namespace TestProj
         static void Main(string[] args)
         {
             CoreRecipes recipes = new CoreRecipes();
-            
+
             //*** TEST 1 - Request Signature (on local document)            
             EnvelopeSummary envSummary = recipes.requestSignatureOnDocumentTest();
 
@@ -57,11 +73,6 @@ namespace TestProj
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public EnvelopeSummary requestSignatureOnDocumentTest()
         {
-            // Enter your DocuSign credentials below.  Note: You only need a DocuSign account to SEND documents,
-            // signing is always free and signers do not need an account.
-            string username = "[EMAIL]";
-            string password = "[PASSWORD]";
-
             // Enter recipient (signer) name and email address
             string recipientName = "[RECIPIENT_NAME]";
             string recipientEmail = "[RECIPIENT_EMAIL]";
@@ -70,14 +81,14 @@ namespace TestProj
             const string SignTest1File = @"[PATH/TO/DOCUMENT/TEST.PDF]";
 
             // instantiate api client with appropriate environment (for production change to www.docusign.net/restapi)
-            configureApiClient("https://demo.docusign.net/restapi");
+            configureApiClient(BASE_URL);
 
             //===========================================================
-            // Step 1: Login()
+            // Step 1:JWT Login()
             //===========================================================
 
-            // call the Login() API which sets the user's baseUrl and returns their accountId
-            string accountId = loginApi(username, password);
+            // call the JWT Configure and UserInfo API API which sets the user's baseUrl and returns their accountId
+            string accountId = JWTAuthLogin();
 
             //===========================================================
             // Step 2: Signature Request (AKA create & send Envelope)
@@ -136,11 +147,6 @@ namespace TestProj
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public EnvelopeSummary requestSignatureFromTemplateTest()
         {
-            // Enter your DocuSign credentials below.  Note: You only need a DocuSign account to SEND documents,
-            // signing is always free and signers do not need an account.
-            string username = "[EMAIL]";
-            string password = "[PASSWORD]";
-
             // Enter recipient (signer) name and email address
             string recipientName = "[RECIPIENT_NAME]";
             string recipientEmail = "[RECIPIENT_EMAIL]";
@@ -150,14 +156,14 @@ namespace TestProj
             string templateRoleName = "[TEMPLATE_ROLE_NAME]";
 
             // instantiate api client with appropriate environment (for production change to www.docusign.net/restapi)
-            configureApiClient("https://demo.docusign.net/restapi");
+            configureApiClient(BASE_URL);
 
             //===========================================================
-            // Step 1: Login()
+            // Step 1:JWT Login()
             //===========================================================
 
-            // call the Login() API which sets the user's baseUrl and returns their accountId
-            string accountId = loginApi(username, password);
+            // call the JWT Configure and UserInfo API which sets the user's baseUrl and returns their accountId
+            string accountId = JWTAuthLogin();
 
             //===========================================================
             // Step 2: Signature Request from Template 
@@ -196,23 +202,18 @@ namespace TestProj
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public Envelope getEnvelopeInformationTest()
         {
-            // Enter your DocuSign credentials below.  Note: You only need a DocuSign account to SEND documents,
-            // signing is always free and signers do not need an account.
-            string username = "[EMAIL]";
-            string password = "[PASSWORD]";
-
             // provide a valid envelope ID from your account.  
             string envelopeId = "[ENVELOPE_ID]]";
 
             // instantiate api client with appropriate environment (for production change to www.docusign.net/restapi)
-            configureApiClient("https://demo.docusign.net/restapi");
+            configureApiClient(BASE_URL);
 
             //===========================================================
-            // Step 1: Login()
+            // Step 1:JWT Login()
             //===========================================================
 
-            // call the Login() API which sets the user's baseUrl and returns their accountId
-            string accountId = loginApi(username, password);
+            // call the JWT Configure and UserInfo API which sets the user's baseUrl and returns their accountId
+            string accountId = JWTAuthLogin();
 
             //===========================================================
             // Step 2: Get Envelope Information
@@ -231,23 +232,18 @@ namespace TestProj
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public Recipients listRecipientsTest()
         {
-            // Enter your DocuSign credentials below.  Note: You only need a DocuSign account to SEND documents,
-            // signing is always free and signers do not need an account.
-            string username = "[EMAIL]";
-            string password = "[PASSWORD]";
-
             // provide a valid envelope ID from your account.  
             string envelopeId = "[ENVELOPE_ID]";
 
             // instantiate api client with appropriate environment (for production change to www.docusign.net/restapi)
-            configureApiClient("https://demo.docusign.net/restapi");
+            configureApiClient(BASE_URL);
 
             //===========================================================
-            // Step 1: Login()
+            // Step 1:JWT Login()
             //===========================================================
 
-            // call the Login() API which sets the user's baseUrl and returns their accountId
-            string accountId = loginApi(username, password);
+            // call the JWT Configure and UserInfo API which sets the user's baseUrl and returns their accountId
+            string accountId = JWTAuthLogin();
 
             //===========================================================
             // Step 2: List Envelope Recipients
@@ -267,20 +263,15 @@ namespace TestProj
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public EnvelopesInformation listEnvelopesTest()
         {
-            // Enter your DocuSign credentials below.  Note: You only need a DocuSign account to SEND documents,
-            // signing is always free and signers do not need an account.
-            string username = "[EMAIL]";
-            string password = "[PASSWORD]";
-
             // instantiate api client with appropriate environment (for production change to www.docusign.net/restapi)
-            configureApiClient("https://demo.docusign.net/restapi");
+            configureApiClient(BASE_URL);
 
             //===========================================================
-            // Step 1: Login()
+            // Step 1: JWT Login()
             //===========================================================
 
-            // call the Login() API which sets the user's baseUrl and returns their accountId
-            string accountId = loginApi(username, password);
+            // call the JWT Configure and UserInfo API which sets the user's baseUrl and returns their accountId
+            string accountId = JWTAuthLogin();
 
             //===========================================================
             // Step 2: List Envelopes (using filters)
@@ -312,23 +303,18 @@ namespace TestProj
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public void listDocumentsAndDownloadTest()
         {
-            // Enter your DocuSign credentials below.  Note: You only need a DocuSign account to SEND documents,
-            // signing is always free and signers do not need an account.
-            string username = "[EMAIL]";
-            string password = "[PASSWORD]";
-
             // provide a valid envelope ID from your account.  
             string envelopeId = "[ENVELOPE_ID]]";
 
             // instantiate api client with appropriate environment (for production change to www.docusign.net/restapi)
-            configureApiClient("https://demo.docusign.net/restapi");
+            configureApiClient(BASE_URL);
 
             //===========================================================
-            // Step 1: Login()
+            // Step 1:JWT Login()
             //===========================================================
 
-            // call the Login() API which sets the user's baseUrl and returns their accountId
-            string accountId = loginApi(username, password);
+            // call the JWT Configure and UserInfo API which sets the user's baseUrl and returns their accountId
+            string accountId = JWTAuthLogin();
 
             //===========================================================
             // Step 2: List Envelope Document(s)
@@ -369,11 +355,6 @@ namespace TestProj
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public ViewUrl createEmbeddedSendingViewTest()
         {
-            // Enter your DocuSign credentials below.  Note: You only need a DocuSign account to SEND documents,
-            // signing is always free and signers do not need an account.
-            string username = "[EMAIL]";
-            string password = "[PASSWORD]";
-
             // Enter recipient (signer) name and email address
             string recipientName = "[RECIPIENT_NAME]";
             string recipientEmail = "[RECIPIENT_EMAIL]";
@@ -382,14 +363,14 @@ namespace TestProj
             const string SignTest1File = @"[PATH/TO/DOCUMENT/TEST.PDF]";
 
             // instantiate api client with appropriate environment (for production change to www.docusign.net/restapi)
-            configureApiClient("https://demo.docusign.net/restapi");
+            configureApiClient(BASE_URL);
 
             //===========================================================
-            // Step 1: Login()
+            // Step 1:JWT Login()
             //===========================================================
 
-            // call the Login() API which sets the user's baseUrl and returns their accountId
-            string accountId = loginApi(username, password);
+            // call the JWT Configure and UserInfo API which sets the user's baseUrl and returns their accountId
+            string accountId = JWTAuthLogin();
 
             //===========================================================
             // Step 2: Create A Draft Envelope
@@ -458,15 +439,9 @@ namespace TestProj
 
         } // end createEmbeddedSendingViewTest()
 
-
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public ViewUrl createEmbeddedSigningViewTest()
         {
-            // Enter your DocuSign credentials below.  Note: You only need a DocuSign account to SEND documents,
-            // signing is always free and signers do not need an account.
-            string username = "[EMAIL]";
-            string password = "[PASSWORD]";
-
             // Enter recipient (signer) name and email address
             string recipientName = "[RECIPIENT_NAME]";
             string recipientEmail = "[RECIPIENT_EMAIL]";
@@ -475,14 +450,14 @@ namespace TestProj
             const string SignTest1File = @"[PATH/TO/DOCUMENT/TEST.PDF]";
 
             // instantiate api client with appropriate environment (for production change to www.docusign.net/restapi)
-            configureApiClient("https://demo.docusign.net/restapi");
+            configureApiClient(BASE_URL);
 
             //===========================================================
-            // Step 1: Login()
+            // Step 1:JWT Login()
             //===========================================================
 
-            // call the Login() API which sets the user's baseUrl and returns their accountId
-            string accountId = loginApi(username, password);
+            // call the JWT Configure and UserInfo API which sets the user's baseUrl and returns their accountId
+            string accountId = JWTAuthLogin();
 
             //===========================================================
             // Step 2: Create and Send an Envelope with Embedded Recipient
@@ -561,20 +536,15 @@ namespace TestProj
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public ViewUrl createEmbeddedConsoleViewTest()
         {
-            // Enter your DocuSign credentials below.  Note: You only need a DocuSign account to SEND documents,
-            // signing is always free and signers do not need an account.
-            string username = "[EMAIL]";
-            string password = "[PASSWORD]";
-
             // instantiate api client with appropriate environment (for production change to www.docusign.net/restapi)
-            configureApiClient("https://demo.docusign.net/restapi");
+            configureApiClient(BASE_URL);
 
             //===========================================================
-            // Step 1: Login()
+            // Step 1:JWT Login()
             //===========================================================
 
-            // call the Login() API which sets the user's baseUrl and returns their accountId
-            string accountId = loginApi(username, password);
+            // call the JWT Configure and UserInfo API which sets the user's baseUrl and returns their accountId
+            string accountId = JWTAuthLogin();
 
             //===========================================================
             // Step 2: Create Embedded Console View (URL)
@@ -596,7 +566,6 @@ namespace TestProj
 
 
 
-
         //**********************************************************************************************************************
         //**********************************************************************************************************************
         //*  HELPER FUNCTIONS
@@ -611,35 +580,57 @@ namespace TestProj
             Configuration.Default.ApiClient = apiClient;
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public string loginApi(string usr, string pwd)
+        public string JWTAuthLogin()
         {
             // we set the api client in global config when we configured the client 
             ApiClient apiClient = Configuration.Default.ApiClient;
-            string authHeader = "{\"Username\":\"" + usr + "\", \"Password\":\"" + pwd + "\", \"IntegratorKey\":\"" + INTEGRATOR_KEY + "\"}";
-            Configuration.Default.AddDefaultHeader("X-DocuSign-Authentication", authHeader);
 
-            // we will retrieve this from the login() results
-            string accountId = null;
+            // ONE TIME STEP for granting consent
+            // Update and Run the below Uri with your INTEGRATOR_KEY and REDIRECT_URI
+            // Example authorization URI -> https://account-d.docusign.com/oauth/auth?
+            // response_type =code&scope=signature%20impersonation&client_id=$INTEGRATOR_KEY&redirect_uri=$REDIRECT_URI"
 
-            // the authentication api uses the apiClient (and X-DocuSign-Authentication header) that are set in Configuration object
-            AuthenticationApi authApi = new AuthenticationApi();
-            LoginInformation loginInfo = authApi.Login();
+            // OR Run the below method to get your app specific Uri generated for you...
+            // string oauthLoginUrl = GetAuthorizationURLforConsent();
+            // Once you give consent (one-time only) then you can continue with futher requests...
 
-            // find the default account for this user
-            foreach (LoginAccount loginAcct in loginInfo.LoginAccounts)
+            string oAuthBasePath = "account-d.docusign.com"; // for demo the base path would have "-d"
+
+            OAuth.OAuthToken tokenInfo = apiClient.ConfigureJwtAuthorizationFlowByKey(INTEGRATOR_KEY, USER_ID, oAuthBasePath, PRIVATE_KEY, 1);
+
+            OAuth.UserInfo userInfo = apiClient.GetUserInfo(tokenInfo.access_token);
+
+            string accountId = string.Empty;
+
+            foreach (var item in userInfo.GetAccounts())
             {
-                if (loginAcct.IsDefault == "true")
+                if (item.GetIsDefault() == "true")
                 {
-                    accountId = loginAcct.AccountId;
+                    accountId = item.AccountId();
+                    apiClient = new ApiClient(item.GetBaseUri() + "/restapi");
                     break;
                 }
             }
-            if (accountId == null)
-            { // if no default found set to first account
-                accountId = loginInfo.LoginAccounts[0].AccountId;
-            }
+
             return accountId;
+        }
+
+        private string GetAuthorizationURLforConsent()
+        {
+            // we set the api client in global config when we configured the client 
+            ApiClient apiClient = Configuration.Default.ApiClient;
+
+            // Give consent to your app
+            // Adding signature as out scope.
+            List<string> scopes = new List<string>
+            {
+                OAuth.Scope_SIGNATURE,
+                OAuth.Scope_IMPERSONATION
+            };
+
+            Uri oauthLoginUrl = apiClient.GetAuthorizationUri(INTEGRATOR_KEY, scopes, REDIRECT_URI, OAuth.CODE, STATE);
+
+            return oauthLoginUrl.AbsoluteUri;
         }
 
     } // end class

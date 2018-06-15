@@ -43,8 +43,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AnchorMatchWholeWord">When set to **true**, the anchor string in this tab matches whole words only (strings embedded in other strings are ignored.) The default value is **true**..</param>
         /// <param name="AnchorString">Anchor text information for a radio button..</param>
         /// <param name="AnchorUnits">Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches..</param>
-        /// <param name="AnchorXOffset">Specifies the X axis location of the tab, in achorUnits, relative to the anchorString..</param>
-        /// <param name="AnchorYOffset">Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString..</param>
+        /// <param name="AnchorXOffset">Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString..</param>
+        /// <param name="AnchorYOffset">Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString..</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="Locked">When set to **true**, the signer cannot change the data of the custom tab..</param>
         /// <param name="PageNumber">Specifies the page number on which the tab is located..</param>
@@ -114,15 +114,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorUnits", EmitDefaultValue=false)]
         public string AnchorUnits { get; set; }
         /// <summary>
-        /// Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
+        /// Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
         /// </summary>
-        /// <value>Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.</value>
+        /// <value>Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.</value>
         [DataMember(Name="anchorXOffset", EmitDefaultValue=false)]
         public string AnchorXOffset { get; set; }
         /// <summary>
-        /// Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
+        /// Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
         /// </summary>
-        /// <value>Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.</value>
+        /// <value>Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.</value>
         [DataMember(Name="anchorYOffset", EmitDefaultValue=false)]
         public string AnchorYOffset { get; set; }
         /// <summary>

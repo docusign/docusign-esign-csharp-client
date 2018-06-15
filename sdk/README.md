@@ -366,6 +366,7 @@ Class | Method | HTTP request | Description
 *TemplatesApi* | [**UpdateRecipients**](docs/TemplatesApi.md#updaterecipients) | **PUT** /v2/accounts/{accountId}/templates/{templateId}/recipients | Updates recipients in a template.
 *TemplatesApi* | [**UpdateTabs**](docs/TemplatesApi.md#updatetabs) | **PUT** /v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs | Updates the tabs for a recipient.
 *TrustServiceProvidersApi* | [**CompleteSignHash**](docs/TrustServiceProvidersApi.md#completesignhash) | **POST** /v2/signature/completesignhash | Complete Sign Hash
+*TrustServiceProvidersApi* | [**GetSealProviders**](docs/TrustServiceProvidersApi.md#getsealproviders) | **GET** /v2/accounts/{accountId}/seals | Returns Account available seals for specified account.
 *TrustServiceProvidersApi* | [**GetUserInfo**](docs/TrustServiceProvidersApi.md#getuserinfo) | **GET** /v2/signature/userInfo | Get User Info To Sign Document
 *TrustServiceProvidersApi* | [**HealthCheck**](docs/TrustServiceProvidersApi.md#healthcheck) | **POST** /v2/signature/healthcheck | Report status from the TSP to DocuSign
 *TrustServiceProvidersApi* | [**SignHashSessionInfo**](docs/TrustServiceProvidersApi.md#signhashsessioninfo) | **POST** /v2/signature/signhashsessioninfo | Get Signature Session Info To Sign Document Hash
@@ -430,6 +431,7 @@ Class | Method | HTTP request | Description
  - [Model.AccountPasswordStrengthType](docs/AccountPasswordStrengthType.md)
  - [Model.AccountPasswordStrengthTypeOption](docs/AccountPasswordStrengthTypeOption.md)
  - [Model.AccountRoleSettings](docs/AccountRoleSettings.md)
+ - [Model.AccountSeals](docs/AccountSeals.md)
  - [Model.AccountSettingsInformation](docs/AccountSettingsInformation.md)
  - [Model.AccountSharedAccess](docs/AccountSharedAccess.md)
  - [Model.AccountSignatureProvider](docs/AccountSignatureProvider.md)
@@ -622,6 +624,7 @@ Class | Method | HTTP request | Description
  - [Model.NewUser](docs/NewUser.md)
  - [Model.NewUsersDefinition](docs/NewUsersDefinition.md)
  - [Model.NewUsersSummary](docs/NewUsersSummary.md)
+ - [Model.Notarize](docs/Notarize.md)
  - [Model.NotaryHost](docs/NotaryHost.md)
  - [Model.NotaryJournal](docs/NotaryJournal.md)
  - [Model.NotaryJournalCredibleWitness](docs/NotaryJournalCredibleWitness.md)
@@ -682,6 +685,7 @@ Class | Method | HTTP request | Description
  - [Model.Revision](docs/Revision.md)
  - [Model.SamlAssertionAttribute](docs/SamlAssertionAttribute.md)
  - [Model.Seal](docs/Seal.md)
+ - [Model.SealIdentifier](docs/SealIdentifier.md)
  - [Model.SealSign](docs/SealSign.md)
  - [Model.SeatDiscount](docs/SeatDiscount.md)
  - [Model.Sender](docs/Sender.md)

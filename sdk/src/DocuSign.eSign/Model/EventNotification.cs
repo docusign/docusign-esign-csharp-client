@@ -50,7 +50,7 @@ namespace DocuSign.eSign.Model
         /// <param name="RequireAcknowledgment">When set to **true**, the DocuSign Connect service checks that the message was received and retries on failures. .</param>
         /// <param name="SignMessageWithX509Cert">When set to **true**, messages are signed with an X509 certificate. This provides support for 2-way SSL in the envelope. .</param>
         /// <param name="SoapNameSpace">This lists the namespace in the SOAP listener provided..</param>
-        /// <param name="Url">Specifies the endpoint to which envelope updates are sent. Udpates are sent as XML unless &#x60;useSoapInterface&#x60; property is set to **true**..</param>
+        /// <param name="Url">Specifies the endpoint to which envelope updates are sent. Updates are sent as XML unless &#x60;useSoapInterface&#x60; property is set to **true**..</param>
         /// <param name="UseSoapInterface">When set to **true**, this tells the Connect service that the user&#39;s endpoint has implemented a SOAP interface. .</param>
         public EventNotification(List<EnvelopeEvent> EnvelopeEvents = default(List<EnvelopeEvent>), string IncludeCertificateOfCompletion = default(string), string IncludeCertificateWithSoap = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeSenderAccountAsCustomField = default(string), string IncludeTimeZone = default(string), string LoggingEnabled = default(string), List<RecipientEvent> RecipientEvents = default(List<RecipientEvent>), string RequireAcknowledgment = default(string), string SignMessageWithX509Cert = default(string), string SoapNameSpace = default(string), string Url = default(string), string UseSoapInterface = default(string))
         {
@@ -150,9 +150,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="soapNameSpace", EmitDefaultValue=false)]
         public string SoapNameSpace { get; set; }
         /// <summary>
-        /// Specifies the endpoint to which envelope updates are sent. Udpates are sent as XML unless &#x60;useSoapInterface&#x60; property is set to **true**.
+        /// Specifies the endpoint to which envelope updates are sent. Updates are sent as XML unless &#x60;useSoapInterface&#x60; property is set to **true**.
         /// </summary>
-        /// <value>Specifies the endpoint to which envelope updates are sent. Udpates are sent as XML unless &#x60;useSoapInterface&#x60; property is set to **true**.</value>
+        /// <value>Specifies the endpoint to which envelope updates are sent. Updates are sent as XML unless &#x60;useSoapInterface&#x60; property is set to **true**.</value>
         [DataMember(Name="url", EmitDefaultValue=false)]
         public string Url { get; set; }
         /// <summary>

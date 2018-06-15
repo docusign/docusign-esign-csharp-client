@@ -31,6 +31,9 @@ namespace SdkTests
 
         TestConfig testConfig = new TestConfig();
 
+#if NUNIT
+#else
+
         // This is an application-specific param that may be passed around during the OAuth
         // flow. It allows the app to track its flow, in addition to more security.
         public const string stateOptional = "testState";
@@ -281,5 +284,6 @@ namespace SdkTests
 
             testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
         }
+#endif
     }
 }

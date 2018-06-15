@@ -43,8 +43,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AnchorMatchWholeWord">When set to **true**, the anchor string in this tab matches whole words only (strings embedded in other strings are ignored.) The default value is **true**..</param>
         /// <param name="AnchorString">Anchor text information for a radio button..</param>
         /// <param name="AnchorUnits">Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches..</param>
-        /// <param name="AnchorXOffset">Specifies the X axis location of the tab, in achorUnits, relative to the anchorString..</param>
-        /// <param name="AnchorYOffset">Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString..</param>
+        /// <param name="AnchorXOffset">Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString..</param>
+        /// <param name="AnchorYOffset">Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString..</param>
         /// <param name="Bold">When set to **true**, the information in the tab is bold..</param>
         /// <param name="ConcealValueOnDocument">When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes..</param>
         /// <param name="ConditionalParentLabel">For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility..</param>
@@ -156,15 +156,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorUnits", EmitDefaultValue=false)]
         public string AnchorUnits { get; set; }
         /// <summary>
-        /// Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
+        /// Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
         /// </summary>
-        /// <value>Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.</value>
+        /// <value>Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.</value>
         [DataMember(Name="anchorXOffset", EmitDefaultValue=false)]
         public string AnchorXOffset { get; set; }
         /// <summary>
-        /// Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
+        /// Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
         /// </summary>
-        /// <value>Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.</value>
+        /// <value>Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.</value>
         [DataMember(Name="anchorYOffset", EmitDefaultValue=false)]
         public string AnchorYOffset { get; set; }
         /// <summary>

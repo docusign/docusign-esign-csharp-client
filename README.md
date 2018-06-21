@@ -59,14 +59,12 @@ namespace DocuSignSample
 			string userId = "[USER_ID]"; // use your userId (guid), not email address
 			string oauthBasePath = "[OAUTH_BASE_PATH]";
 			string integratorKey = "[INTEGRATOR_KEY]";
-			string privateKeyFilename = "[PRIVATE_KEY_FILENAME]";
+			string privateKey = "[PRIVATE_KEY]";
 			int expiresInHours = 1;
 			string host = "https://demo.docusign.net/restapi";
 
-			string accountId = string.Empty;
-
 			ApiClient apiClient = new ApiClient(host);
-			OAuth.OauthToken tokenInfo = apiClient.ConfigureJwtAuthorizationFlowByKey(integratorKey, userId, oauthBasePath, privateKey, expiresInHours);
+			OAuth.OAuthToken tokenInfo = apiClient.ConfigureJwtAuthorizationFlowByKey(integratorKey, userId, oauthBasePath, privateKey, expiresInHours);
 
 			/////////////////////////////////////////////////////////////////
 			// STEP 1: Get User Info   

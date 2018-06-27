@@ -857,7 +857,7 @@ namespace DocuSign.eSign.Client
                 return DotNetUtilities.ToRSA(keyParameters);
             }
 
-            throw new Exception("Unepxected PEM type");
+            throw new Exception("Unexpected PEM type");
         }
     }
 

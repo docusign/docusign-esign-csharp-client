@@ -52,66 +52,66 @@ using DocuSign.eSign.Client.Auth;
 
 namespace DocuSignSample
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			string userId = "[USER_ID]"; // use your userId (guid), not email address
-			string oauthBasePath = "[OAUTH_BASE_PATH]";
-			string integratorKey = "[INTEGRATOR_KEY]";
-			string privateKey = "[PRIVATE_KEY]";
-			int expiresInHours = 1;
-			string host = "https://demo.docusign.net/restapi";
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string userId = "[USER_ID]"; // use your userId (guid), not email address
+            string oauthBasePath = "[OAUTH_BASE_PATH]";
+            string integratorKey = "[INTEGRATOR_KEY]";
+            string privateKey = "[PRIVATE_KEY_FILENAME]";
+            int expiresInHours = 1;
+            string host = "https://demo.docusign.net/restapi";
 
-			ApiClient apiClient = new ApiClient(host);
-			OAuth.OAuthToken tokenInfo = apiClient.ConfigureJwtAuthorizationFlowByKey(integratorKey, userId, oauthBasePath, privateKey, expiresInHours);
+            string accountId = string.Empty;
 
-			/////////////////////////////////////////////////////////////////
-			// STEP 1: Get User Info   
-			// now that the API client has an OAuth token, let's use it in all// DocuSign APIs
-			/////////////////////////////////////////////////////////////////
-			
-			OAuth.UserInfo userInfo = testConfig.ApiClient.GetUserInfo(tokenInfo.access_token);
+            ApiClient apiClient = new ApiClient(host);
+            OAuth.OAuthToken tokenInfo = apiClient.ConfigureJwtAuthorizationFlowByKey(integratorKey, userId, oauthBasePath, privateKey, expiresInHours);
 
-			string accountId = string.Empty;
+            /////////////////////////////////////////////////////////////////
+            // STEP 1: Get User Info   
+            // now that the API client has an OAuth token, let's use it in all// DocuSign APIs
+            /////////////////////////////////////////////////////////////////
 
-			foreach (var item in userInfo.GetAccounts())
-			{
-				if(item.GetIsDefault() == "true")
-				{
-					accountId = item.AccountId();
-					apiClient = new ApiClient(item.GetBaseUri() + "/restapi");
-					break;
-				}
-			}
+            OAuth.UserInfo userInfo = apiClient.GetUserInfo(tokenInfo.access_token);
+            
+            foreach (var item in userInfo.GetAccounts())
+            {
+                if (item.GetIsDefault() == "true")
+                {
+                    accountId = item.AccountId();
+                    apiClient = new ApiClient(item.GetBaseUri() + "/restapi");
+                    break;
+                }
+            }
 
-			/////////////////////////////////////////////////////////////////
-			// STEP 2: CREATE ENVELOPE API        
-			/////////////////////////////////////////////////////////////////				
+            /////////////////////////////////////////////////////////////////
+            // STEP 2: CREATE ENVELOPE API        
+            /////////////////////////////////////////////////////////////////
 
-			EnvelopeDefinition envDef = new EnvelopeDefinition();
-			envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
+            EnvelopeDefinition envDef = new EnvelopeDefinition();
+            envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
 
-			// assign recipient to template role by setting name, email, and role name.  Note that the
-			// template role name must match the placeholder role name saved in your account template.  
-			TemplateRole tRole = new TemplateRole();
-			tRole.Email = "[SIGNER_EMAIL]";
-			tRole.Name = "[SIGNER_NAME]";
-			tRole.RoleName = "[ROLE_NAME]";
-			List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
+            // assign recipient to template role by setting name, email, and role name.  Note that the
+            // template role name must match the placeholder role name saved in your account template.  
+            TemplateRole tRole = new TemplateRole();
+            tRole.Email = "[SIGNER_EMAIL]";
+            tRole.Name = "[SIGNER_NAME]";
+            tRole.RoleName = "[ROLE_NAME]";
+            List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
 
-			// add the role to the envelope and assign valid templateId from your account
-			envDef.TemplateRoles = rolesList;
-			envDef.TemplateId = "[TEMPLATE_ID]";
+            // add the role to the envelope and assign valid templateId from your account
+            envDef.TemplateRoles = rolesList;
+            envDef.TemplateId = "[TEMPLATE_ID]";
 
-			// set envelope status to "sent" to immediately send the signature request
-			envDef.Status = "sent";
+            // set envelope status to "sent" to immediately send the signature request
+            envDef.Status = "sent";
 
-			// |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-			EnvelopesApi envelopesApi = new EnvelopesApi(apiClient.Configuration);
-			EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(accountId, envDef);
-		}
-	}
+            // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
+            EnvelopesApi envelopesApi = new EnvelopesApi(apiClient.Configuration);
+            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(accountId, envDef);
+        }
+    }
 }
 ```
 

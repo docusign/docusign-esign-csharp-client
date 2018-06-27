@@ -521,13 +521,11 @@ namespace DocuSign.eSign.Client
             }
         }
 
-        [Obsolete("This method signature is deprecated. Please use 'GetAuthorizationUri' which returns an Uri instead.", false)]
         public string GetAuthorizationUri(string clientId, string redirectURI, Boolean isSandbox)
         {
             return this.GetAuthorizationUri(clientId, redirectURI, isSandbox, null);
         }
 
-        [Obsolete("This method signature is deprecated. Please use 'GetAuthorizationUri' which returns an Uri instead.", false)]
         public string GetAuthorizationUri(string clientId, string redirectURI, Boolean isSandbox, string state)
         {
             string DocuSignOAuthHost = isSandbox ? "account-d.docusign.com" : "account.docusign.com";
@@ -537,6 +535,11 @@ namespace DocuSign.eSign.Client
                 format += "&state ={3}";
             }
             return string.Format(format, DocuSignOAuthHost, clientId, redirectURI, state);
+        }
+
+        public Uri GetAuthorizationUri(string clientId, List<string> scopes, string redirectUri, string responseType)
+        {
+            return GetAuthorizationUri(clientId, scopes, redirectUri, responseType, null);
         }
 
         /// <summary>
@@ -552,7 +555,7 @@ namespace DocuSign.eSign.Client
         /// <param name="state">Allows for arbitrary state that may be useful to your application.
         /// The value in this parameter will be round-tripped along with the response so you can make sure it didn't change.</param>
         /// <returns></returns>
-        public Uri GetAuthorizationUri(string clientId, List<string> scopes, string redirectUri, string responseType, string state = null)
+        public Uri GetAuthorizationUri(string clientId, List<string> scopes, string redirectUri, string responseType, string state)
         {
             string formattedScopes = (scopes == null || scopes.Count < 1) ? "" : scopes[0];
             StringBuilder scopesSb = new StringBuilder(formattedScopes);
@@ -608,9 +611,9 @@ namespace DocuSign.eSign.Client
         }
 
         /// <summary>
-        /// GetOAuthBasePath sets the basePath for the user account.
+        /// GetOAuthBasePath
         /// </summary>
-        /// <returns>If the current base path is demo then it sets the demo account as the basePath, else it sets the Production account as the basePath.</returns>
+        /// <returns></returns>
         private string GetOAuthBasePath()
         {
             return (this.basePath == null || this.basePath.StartsWith("https://demo") || this.basePath.StartsWith("http://demo")) ? "account-d.docusign.com" : "account.docusign.com";
@@ -626,7 +629,7 @@ namespace DocuSign.eSign.Client
         }
 
         /// <summary>
-        /// GenerateAccessToken will exchange the authorization code for an access token and refresh tokens.
+        /// GenerateAccessToken
         /// </summary>
         /// <param name="clientId">OAuth2 client ID: Identifies the client making the request.</param>
         /// <param name="clientSecret">the secret key you generated when you set up the integration in DocuSign Admin console.</param>
@@ -635,6 +638,7 @@ namespace DocuSign.eSign.Client
         /// ApiException if the HTTP call status is different than 2xx.
         /// IOException  if there is a problem while parsing the reponse object.
         /// </returns>
+        /// <see cref=""/>
         public OAuth.OAuthToken GenerateAccessToken(string clientId, string clientSecret, string code)
         {
             string baseUri = string.Format("https://{0}/", GetOAuthBasePath());
@@ -676,7 +680,7 @@ namespace DocuSign.eSign.Client
         }
 
         /// <summary>
-        /// Get User Info method takes the accessToken to retrieve User Account Data.
+        /// Get User Info method
         /// </summary>
         /// <param name="accessToken"></param>
         /// <returns>The User Info model.</returns>
@@ -712,7 +716,6 @@ namespace DocuSign.eSign.Client
             }
         }
 
-        [Obsolete("This method is deprecated. Please use 'GenerateAccessToken' instead.", false)]
         public string GetOAuthToken(string clientId, string clientSecret, Boolean isSandbox, string accessCode)
         {
             if (string.IsNullOrEmpty(accessCode))
@@ -726,19 +729,9 @@ namespace DocuSign.eSign.Client
             if (string.IsNullOrEmpty(clientSecret))
                 throw new ArgumentNullException();
 
-            return this.GenerateAccessToken(clientId, clientSecret, accessCode).access_token;
+            return this.GenerateAccessToken(clientId, clientId, accessCode).access_token;
         }
 
-        /// <summary>
-        /// ConfigureJwtAuthorizationFlow
-        /// </summary>
-        /// <param name="clientId"></param>
-        /// <param name="userId"></param>
-        /// <param name="oauthBasePath"></param>
-        /// <param name="privateKeyFilename"></param>
-        /// <param name="expiresInHours"></param>
-        /// <param name="scopes"></param>
-        [Obsolete("This method is deprecated. Please use 'ConfigureJwtAuthorizationFlowByKey' instead.", false)]
         public void ConfigureJwtAuthorizationFlow(string clientId, string userId, string oauthBasePath, string privateKeyFilename, int expiresInHours, List<string> scopes = null)
         {
             string privateKey = string.Empty;
@@ -750,16 +743,6 @@ namespace DocuSign.eSign.Client
             ConfigureJwtAuthorizationFlowByKey(clientId, userId, oauthBasePath, privateKey, expiresInHours, scopes);
         }
 
-        /// <summary>
-        /// ConfigureJwtAuthorizationFlowByKey which performs JWT authentication using the private key. 
-        /// </summary>
-        /// <param name="clientId"></param>
-        /// <param name="userId"></param>
-        /// <param name="oauthBasePath"></param>
-        /// <param name="privateKey"></param>
-        /// <param name="expiresInHours"></param>
-        /// <param name="scopes"></param>
-        /// <returns>If Successful, returns the OAuthToken object model which consist of an access token and expiration time.</returns>
         public OAuth.OAuthToken ConfigureJwtAuthorizationFlowByKey(string clientId, string userId, string oauthBasePath, string privateKey, int expiresInHours, List<string> scopes = null)
         {
             JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
@@ -773,7 +756,8 @@ namespace DocuSign.eSign.Client
             {
                 scopes = new List<string>
                 {
-                    OAuth.Scope_SIGNATURE
+                    OAuth.Scope_SIGNATURE,
+                    OAuth.Scope_IMPERSONATION
                 };
             }
 
@@ -857,7 +841,7 @@ namespace DocuSign.eSign.Client
                 return DotNetUtilities.ToRSA(keyParameters);
             }
 
-            throw new Exception("Unepxected PEM type");
+            throw new Exception("Unexpected PEM type");
         }
     }
 

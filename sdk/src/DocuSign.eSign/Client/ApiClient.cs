@@ -839,6 +839,11 @@ namespace DocuSign.eSign.Client
             }
         }
 
+        /// <summary>
+        /// Creates an RSA Key from the given PEM key.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>RSACryptoServiceProvider using the "key"</returns>
         private static RSA CreateRSAKeyFromPem(string key)
         {
             TextReader reader = new StringReader(key);
@@ -846,20 +851,29 @@ namespace DocuSign.eSign.Client
 
             object result = pemReader.ReadObject();
 
-            if (result is AsymmetricCipherKeyPair)
+            var cspParameters = new CspParameters
             {
-                AsymmetricCipherKeyPair keyPair = (AsymmetricCipherKeyPair)result;
-                return DotNetUtilities.ToRSA((RsaPrivateCrtKeyParameters)keyPair.Private);
+                Flags = CspProviderFlags.UseMachineKeyStore,
+            };
+
+            var provider = new RSACryptoServiceProvider(cspParameters);
+
+            if (result is AsymmetricCipherKeyPair keyPair)
+            {
+                var rsaParams = DotNetUtilities.ToRSAParameters((RsaPrivateCrtKeyParameters)keyPair.Private);
+                provider.ImportParameters(rsaParams);
+                return provider;
             }
-            else if (result is RsaKeyParameters)
+            else if (result is RsaKeyParameters keyParameters)
             {
-                RsaKeyParameters keyParameters = (RsaKeyParameters)result;
-                return DotNetUtilities.ToRSA(keyParameters);
+                var rsaParams = DotNetUtilities.ToRSAParameters(keyParameters);
+                provider.ImportParameters(rsaParams);
+                return provider;
             }
 
             throw new Exception("Unexpected PEM type");
         }
-    }
+}
 
     // response object from the OAuth token endpoint. This is used
     // to obtain access_tokens for making API calls and refresh_tokens for getting a new

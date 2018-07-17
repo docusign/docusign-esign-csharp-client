@@ -1,5 +1,9 @@
 # DocuSign C# Client Changelog
 
+## [v2.2.1] - eSignature API v18.1.02 - 7/16/2018
+### Fixed 
+* Fixed a problem with the CreateRSAKeyFromPem method that would cause the ConfigureJwtAuthorizationFlow method to fail with a CryptographicException error when deploying to Azure Web Apps. (DCM-2363)
+
 ## [v2.2.0] - eSignature API v18.1.02 - 6/28/2018
 ### Added
 * New SDK methods have been implemented that continue to improve the OAuth experience:
@@ -28,6 +32,7 @@
 
 ## [v2.1.10] - eSignature API v18.1.02 - 6/13/2018
 ### Added
+* Added support for TLS 1.2, enabling your applications built with the C# SDK to be compatible with TLS 1.2 by default.
 * New SDK methods have been implemented to improve OAuth support:
     * `ConfigureJwtAuthorizationFlowByKey`, which performs JWT Bearer Grant OAuth authentication using the provided values and private key. If successful, it returns an access token and the amount of time that it is valid, in seconds.
     * `GetAuthorizationUri`, a helper method which returns a authorization URI. You can redirect the user's browser to this URI to begin the OAuth Authorization Code Grant authentication flow.

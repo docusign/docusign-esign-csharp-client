@@ -2,11 +2,13 @@ branches:
   only: 
     - master
 language: csharp
-solution: DocuSign.eSign.sln
+solution: sdk/DocuSign.eSign.sln
 mono: none
 sudo: required
 dist: trusty
 dotnet: 1.1.5
+
+before_install: cd project
 
 install:
   - dotnet restore

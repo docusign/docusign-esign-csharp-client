@@ -8,12 +8,13 @@ sudo: required
 dist: trusty
 dotnet: 1.1.5
 
-before_install: cd docusign-csharp-client
+before-install:
+  - cd sdk   
 
 install:
   - dotnet restore
   - dotnet build --framework netstandard2.0 src/DocuSign.eSign/DocuSign.eSign.csproj
-  - dotnet build --framework netcoreapp2.0 test/SdkNetCoreTest/SdkNetCoreTest.csproj
+  - dotnet build --framework netcoreapp2.0 ../test/SdkNetCoreTest/SdkNetCoreTest.csproj
 
 script:
-  - dotnet run --framework netcoreapp2.0 --project test/SdkNetCoreTest/SdkNetCoreTest.csproj
+  - dotnet run --framework netcoreapp2.0 --project ../test/SdkNetCoreTest/SdkNetCoreTest.csproj

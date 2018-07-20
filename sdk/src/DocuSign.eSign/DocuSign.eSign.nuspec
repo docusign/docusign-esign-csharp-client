@@ -1,28 +1,39 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-    <metadata>
-	      <id>DocuSign.eSign.dll</id>
-	      <version>2.2.0</version>
-	      <title>DocuSign.eSign</title>
-	      <authors>DocuSign</authors>
-	      <owners>DocuSign</owners>
-	      <requireLicenseAcceptance>false</requireLicenseAcceptance>
-	      <developmentDependency>false</developmentDependency>
-	      <description>The DocuSign NuGet Package makes integrating DocuSign into your apps and websites a super fast and painless process.The library is open sourced on GitHub, look for the docusign-csharp-client repository. Join the eSign revolution!</description>
-	      <iconUrl>http://26c9d06e414e60fc3a18-f03eeda740093cbe74371aff89dec8d1.r69.cf2.rackcdn.com/icon32x32.png</iconUrl>
-	      <projectUrl>http://www.docusign.com/developer-center</projectUrl>
-	      <licenseUrl>https://raw.githubusercontent.com/docusign/docusign-csharp-client/master/LICENSE</licenseUrl>
-	      <copyright>Copyright 2018</copyright>
-	      <tags>DocuSign.eSign</tags>
-	      <dependencies>
-		        <dependency id="Newtonsoft.Json" version="8.0.3" />
-		        <dependency id="RestSharpSigned" version="105.2.3" />
-		</dependencies>
-	</metadata>
-    <files>
-
-        <!-- A readme.txt will be displayed when the package is installed -->
-        <file src="..\..\README.md" target="" />
-        <file src="..\..\docs\**\*.*" target="docs" />
-    </files>
+  <metadata>
+    <id>DocuSign.eSign.dll</id>
+    <version>3.0.0-rc</version>
+    <title>DocuSign.eSign</title>
+    <authors>DocuSign</authors>
+    <owners>DocuSign</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <developmentDependency>false</developmentDependency>
+    <description>The DocuSign NuGet Package makes integrating DocuSign into your apps and websites a super fast and painless process.The library is open sourced on GitHub, look for the docusign-csharp-client repository. Join the eSign revolution!</description>
+    <iconUrl>http://26c9d06e414e60fc3a18-f03eeda740093cbe74371aff89dec8d1.r69.cf2.rackcdn.com/icon32x32.png</iconUrl>
+    <projectUrl>https://developers.docusign.com/</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/docusign/docusign-csharp-client/master/LICENSE</licenseUrl>
+    <copyright>Copyright 2018</copyright>
+    <tags>DocuSign.eSign REST eSignature DocuSign eSign api digital transaction</tags>
+    <dependencies>
+      <group targetFramework="net45">
+        <dependency id="BouncyCastle" version="1.8.1" />
+        <dependency id="Newtonsoft.Json" version="8.0.3" />
+        <dependency id="RestSharpSigned" version="105.2.3" />
+        <dependency id="System.IdentityModel.Token.Jwt" version="4.0.2.206221351" />
+      </group>
+      <group targetFramework="netstandard2.0">
+        <dependency id="Portable.BouncyCastle" version="1.8.2" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" />
+        <dependency id="RestSharp" version="106.3.1" />
+        <dependency id="System.IdentityModel.Token.Jwt" version="5.2.2" />
+        <dependency id="Microsoft.IdentityModel.Protocols" version="5.2.2" />
+        <dependency id="System.ComponentModel.Annotations" version="4.5.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- A readme.txt will be displayed when the package is installed -->
+    <file src="..\..\README.md" target="" />
+    <file src="..\..\docs\**\*.*" target="docs" />
+  </files>
 </package>

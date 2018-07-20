@@ -1,4 +1,4 @@
-# The Official DocuSign C# Client
+# The Official DocuSign C# Client 
 
 [![Nuget version][nuget-image]][nuget-url]
 [![Nuget downloads][downloads-image]][downloads-url]
@@ -6,10 +6,23 @@
 
 You can sign up for a free [developer sandbox](https://developers.docusign.com/). 
 
+Recent Update
+============
+The current DocuSign C# SDK release, v3.0.0-rc, is being released as a preliminary update that provides support for .NET Standard 2.0, .NET Core 2.0, and .NET Framework 4.5 or later. You can go back to use the previous, non-RC version of the DocuSign C# SDK [here](https://github.com/docusign/docusign-csharp-client/tree/v2.2.1).
+
+
 Requirements
 ============
 
 Microsoft .NET version 4.5 or later.
+
+Compatibility
+============
+
+* .NET Standard 2.0. See [.NET Standard Selector](http://immo.landwerth.net/netstandard-versions/#) for details on versioning for the individual components in .NET Standard.
+* .NET Core 2.0
+* .NET Framework 4.5 or later
+* TLS 1.2
 
 Installation
 ============

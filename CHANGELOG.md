@@ -1,5 +1,9 @@
 # DocuSign C# Client Changelog
 
+## [v3.0.0-rc] - eSignature API v18.1.02 - 7/19/2018
+### Added
+* Added support for .Net Standard 2.0. Applications built with the DocuSign C# SDK are now compatible with .NET Core 2.0 along with .NET Framework 4.5 or later.
+
 ## [v2.2.1] - eSignature API v18.1.02 - 7/16/2018
 ### Fixed 
 * Fixed a problem with the CreateRSAKeyFromPem method that would cause the ConfigureJwtAuthorizationFlow method to fail with a CryptographicException error when deploying to Azure Web Apps. (DCM-2363)

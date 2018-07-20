@@ -1,0 +1,17 @@
+
+*.suo
+*.user
+*.sln.docstates
+
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+/SdkNetCoreTests/bin
+/SdkNetCoreTests/obj
+/SdkTests/bin
+/SdkTests/obj
+/SdkTests/packages

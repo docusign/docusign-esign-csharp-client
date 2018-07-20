@@ -11,8 +11,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+#if NETSTANDARD2_0
+using Microsoft.IdentityModel.Protocols;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+#else 
 using System.IdentityModel.Protocols.WSTrust;
 using System.IdentityModel.Tokens;
+#endif
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -156,7 +162,11 @@ namespace DocuSign.eSign.Client
             // add file parameter, if any
             foreach (var param in fileParams)
             {
-                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
+#if NETSTANDARD2_0
+                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentLength, param.Value.ContentType);
+#else
+                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName);
+#endif
             }
 
             if (postBody != null) // http body (model or byte[]) parameter
@@ -548,7 +558,7 @@ namespace DocuSign.eSign.Client
         /// <param name="responseType">determines the response type of the authorization request.
         /// <br><i>Note</i>: these response types are mutually exclusive for a client application.
         /// A public/native client application may only request a response type of "token";
-        /// a private/trusted client application may only request a response type of "code".</param>
+        /// a private/trusted client application may only request a response type of "code".</br></param>
         /// <param name="state">Allows for arbitrary state that may be useful to your application.
         /// The value in this parameter will be round-tripped along with the response so you can make sure it didn't change.</param>
         /// <returns></returns>
@@ -766,7 +776,11 @@ namespace DocuSign.eSign.Client
 
             SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor()
             {
+#if NETSTANDARD2_0
+                Expires = DateTime.UtcNow.AddHours(expiresInHours),
+#else
                 Lifetime = new Lifetime(DateTime.UtcNow, DateTime.UtcNow.AddHours(expiresInHours)),
+#endif
             };
 
             if (scopes == null)

@@ -13,4 +13,4 @@ install:
   - dotnet build --framework netcoreapp2.0 test/SdkTests/SdkNetCoreTests.csproj
 
 script:
-  - dotnet run --framework net45 --project test/SdkTests/SdkNetCoreTests.csproj
+  - dotnet run --framework netcoreapp2.0 --project test/SdkTests/SdkNetCoreTests.csproj

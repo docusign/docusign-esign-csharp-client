@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SdkTests", "SdkTests\SdkTests.csproj", "{603F7955-D911-4DF1-AE58-DFC3D015D3B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SdkNetCoreTests", "SdkNetCoreTests\SdkNetCoreTests.csproj", "{9AB776C7-A1C3-4047-ABAB-C7B89D939EC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{603F7955-D911-4DF1-AE58-DFC3D015D3B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{603F7955-D911-4DF1-AE58-DFC3D015D3B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{603F7955-D911-4DF1-AE58-DFC3D015D3B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{603F7955-D911-4DF1-AE58-DFC3D015D3B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AB776C7-A1C3-4047-ABAB-C7B89D939EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB776C7-A1C3-4047-ABAB-C7B89D939EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AB776C7-A1C3-4047-ABAB-C7B89D939EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB776C7-A1C3-4047-ABAB-C7B89D939EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10DCC3EC-815B-4DE3-A9E8-C4AADE9AB546}
+	EndGlobalSection
+EndGlobal

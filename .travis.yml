@@ -8,7 +8,7 @@ sudo: required
 dist: trusty
 dotnet: 1.1.5
 
-before_install: cd project
+before_install: cd docusign-csharp-client
 
 install:
   - dotnet restore

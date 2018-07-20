@@ -1,16 +1,20 @@
 branches:
   only: 
-    - bharat.rele/v3.0.0-rc
+    - master
 language: csharp
-solution: sdk/DocuSign.eSign.sln
-mono: none
+solution: test/SdkTests/SdkTests.sln
+mono: latest
 sudo: required
 dist: trusty
-
+before_install:
+  - cd test/SdkTests
+  - mkdir -p .nuget
+  - wget -O .nuget/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 install:
-  - dotnet restore
-  - dotnet --framework netstandard2.0 src/DocuSign.eSign/DocuSign.eSign.csproj
-  - dotnet build --framework netcoreapp2.0 test/SdkTests/SdkNetCoreTests.csproj
-
+  - mono .nuget/nuget.exe restore SdkTests.sln -MSBuildVersion 14.0 -Verbosity detailed
+  - mono .nuget/nuget.exe install NUnit -Version 2.6.4 -OutputDirectory packages
+  - mkdir -p bin/Release && cp packages/NUnit.2.6.4/lib/nunit.framework.dll bin/Release/nunit.framework.dll
+  - mono .nuget/nuget.exe install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
-  - dotnet run --framework netcoreapp2.0 --project test/SdkTests/SdkNetCoreTests.csproj
+  - xbuild SdkTests.sln /p:Configuration=Release /p:TargetFrameworkVersion=v4.5 /p:DefineConstants="NUNIT"
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./bin/Release/SdkTests.dll

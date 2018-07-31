@@ -6,15 +6,10 @@ solution: sdk/DocuSign.eSign.sln
 mono: none
 sudo: required
 dist: trusty
-dotnet: 1.1.5
-
-before-install:
-  - cd sdk   
+dotnet: 2.1.2
 
 install:
-  - dotnet restore
-  - dotnet build --framework netstandard2.0 src/DocuSign.eSign/DocuSign.eSign.csproj
-  - dotnet build --framework netcoreapp2.0 ../test/SdkNetCoreTest/SdkNetCoreTest.csproj
+  - dotnet restore ./sdk/src/DocuSign.eSign/DocuSign.eSign.csproj
 
 script:
-  - dotnet run --framework netcoreapp2.0 --project ../test/SdkNetCoreTest/SdkNetCoreTest.csproj
+  - dotnet build --framework netstandard2.0 ./sdk/src/DocuSign.eSign/DocuSign.eSign.csproj

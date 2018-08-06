@@ -1,0 +1,18 @@
+version: 3.0.0.{build}
+image: Visual Studio 2017
+branches:
+  only:
+    - master
+build_script:
+- ps: . ./csharp-build.ps1
+test_script:
+- ps: >- 
+    nuget install ./test/SdkTests/packages.config -OutputDirectory ./test/packages
+
+    dotnet build --framework net45 ./test/SdkTests/SdkTests.csproj
+
+    dotnet build --framework netcoreapp2.0 ./test/SdkNetCoreTests/SdkNetCoreTests.csproj
+
+    dotnet test ./test/SdkTests/SdkTests.csproj
+
+    dotnet test ./test/SdkNetCoreTests/SdkNetCoreTests.csproj

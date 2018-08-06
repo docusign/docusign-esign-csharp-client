@@ -1,6 +1,6 @@
 # DocuSign C# Client Changelog
 
-## [v3.0.0-rc] - eSignature API v18.1.02 - 7/19/2018
+## [v3.0.0] - eSignature API v18.1.02 - 8/6/2018
 ### Added
 * Added support for .Net Standard 2.0. Applications built with the DocuSign C# SDK are now compatible with .NET Core 2.0 along with .NET Framework 4.5 or later.
 

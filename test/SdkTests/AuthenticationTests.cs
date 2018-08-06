@@ -1,25 +1,12 @@
 ﻿using System;
-
-#if NUNIT
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-using TestCleanup = NUnit.Framework.TearDownAttribute;
-using TestInitialize = NUnit.Framework.SetUpAttribute;
-using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
-using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
-using Assert = NUnit.Framework.Assert;
-#else
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-#endif
-
-using DocuSign.eSign.Model;
-using DocuSign.eSign.Client;
-using DocuSign.eSign.Api;
-using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.IO;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Client;
 using DocuSign.eSign.Client.Auth;
+using DocuSign.eSign.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static DocuSign.eSign.Client.Auth.OAuth;
 
 namespace SdkTests
 {
@@ -30,10 +17,7 @@ namespace SdkTests
         public const string RestApiUrl = "https://demo.docusign.net/restapi";
 
         TestConfig testConfig = new TestConfig();
-
-#if NUNIT
-#else
-
+        
         // This is an application-specific param that may be passed around during the OAuth
         // flow. It allows the app to track its flow, in addition to more security.
         public const string stateOptional = "testState";
@@ -41,95 +25,78 @@ namespace SdkTests
         [TestMethod]
         public void AuthorizationCodeGrantTest()
         {
-          /*  Code example
-            // These items are all registered at the DocuSign Admin console and are required 
-            // to perform the OAuth flow.
-            string client_id = "[YOUR_CLIENT_ID]";
-            string client_secret = "[YOUR_CLIENT_SECRET]";
-            string redirect_uri = "[YOUR_REDIRECT_URL]";
+            /*  Code example
+          // These items are all registered at the DocuSign Admin console and are required 
+          // to perform the OAuth flow.
+          string client_id = "[YOUR_CLIENT_ID]";
+          string client_secret = "[YOUR_CLIENT_SECRET]";
+          string redirect_uri = "[YOUR_REDIRECT_URL]";
+          // Instantiating a client.
+          ApiClient apiClient = new ApiClient(RestApiUrl);
+          // Adding signature as out scope.
+          List<string> scopes = new List<string>
+          {
+              OAuth.Scope_SIGNATURE
+          };
+          /////////////////////////////////////////////////////////////////////////////////////////////////////////
+          // STEP 1: Get the Auth URI          
+          /////////////////////////////////////////////////////////////////////////////////////////////////////////
+          Uri oauthLoginUrl = apiClient.GetAuthorizationUri(client_id, scopes, redirect_uri, OAuth.CODE, stateOptional);
+          System.Diagnostics.Process.Start(oauthLoginUrl.AbsoluteUri);
+          /////////////////////////////////////////////////////////////////////////////////////////////////////////
+          // STEP 2: Get the code - Login to the browser and get the code from the url and paste it below 
+          /////////////////////////////////////////////////////////////////////////////////////////////////////////
+          string code = "[CODE_FROM_ABOVE_STEP]";
+          ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+          // STEP 3: Get the token 
+          /////////////////////////////////////////////////////////////////////////////////////////////////////////
+          OAuth.OAuthToken oAuthToken = apiClient.GenerateAccessToken(client_id, client_secret, code);
+          Assert.IsNotNull(oAuthToken);
+          /////////////////////////////////////////////////////////////////////////////////////////////////////////
+          // STEP 4: Get User Info -> send the accessToken retrieved from the above call...
+          /////////////////////////////////////////////////////////////////////////////////////////////////////////
+          // now that the API client has an OAuth token, let's use it in all
+          // DocuSign APIs
+          OAuth.UserInfo userInfo = apiClient.GetUserInfo(oAuthToken.access_token);
+          // ASSERT - Uncomment Below Lines
+          // Assert.IsNotNull(userInfo);
+          // Assert.AreEqual("[YOUR_USER_NAME]", userInfo.GetName().ToLower());
+          // Assert.IsNotNull(userInfo.GetAccounts());
+          // Assert.AreEqual("[YOUR_ACCOUNT_NAME]", userInfo.GetAccounts()[0].GetAccountName());
+          foreach (var item in userInfo.GetAccounts())
+          {
+              if (item.GetIsDefault() == "true")
+              {
+                  testConfig.AccountId = item.AccountId();
+                  apiClient = new ApiClient(item.GetBaseUri() + "/restapi");
+                  break;
+              }
+          }
+          EnvelopeDefinition envDef = new EnvelopeDefinition();
+          envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
+          // assign recipient to template role by setting name, email, and role name.  Note that the
+          // template role name must match the placeholder role name saved in your account template.  
+          TemplateRole tRole = new TemplateRole();
+          tRole.Email = testConfig.RecipientEmail;
+          tRole.Name = testConfig.RecipientName;
+          tRole.RoleName = testConfig.TemplateRoleName;
+          List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
+          // add the role to the envelope and assign valid templateId from your account
+          envDef.TemplateRoles = rolesList;
+          envDef.TemplateId = testConfig.TemplateId;
+          // set envelope status to "sent" to immediately send the signature request
+          envDef.Status = "sent";
+          // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
+          EnvelopesApi envelopesApi = new EnvelopesApi(apiClient.Configuration);
+          EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
 
-            // Instantiating a client.
-            ApiClient apiClient = new ApiClient(RestApiUrl);
-
-            // Adding signature as out scope.
-            List<string> scopes = new List<string>
-            {
-                OAuth.Scope_SIGNATURE
-            };
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // STEP 1: Get the Auth URI          
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            Uri oauthLoginUrl = apiClient.GetAuthorizationUri(client_id, scopes, redirect_uri, OAuth.CODE, stateOptional);
-            System.Diagnostics.Process.Start(oauthLoginUrl.AbsoluteUri);
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // STEP 2: Get the code - Login to the browser and get the code from the url and paste it below 
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            string code = "[CODE_FROM_ABOVE_STEP]";
-
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // STEP 3: Get the token 
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            OAuth.OAuthToken oAuthToken = apiClient.GenerateAccessToken(client_id, client_secret, code);
-
-            Assert.IsNotNull(oAuthToken);
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // STEP 4: Get User Info -> send the accessToken retrieved from the above call...
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            // now that the API client has an OAuth token, let's use it in all
-            // DocuSign APIs
-            OAuth.UserInfo userInfo = apiClient.GetUserInfo(oAuthToken.access_token);
-
-            // ASSERT - Uncomment Below Lines
-            // Assert.IsNotNull(userInfo);
-            // Assert.AreEqual("[YOUR_USER_NAME]", userInfo.GetName().ToLower());
-            // Assert.IsNotNull(userInfo.GetAccounts());
-            // Assert.AreEqual("[YOUR_ACCOUNT_NAME]", userInfo.GetAccounts()[0].GetAccountName());
-
-            foreach (var item in userInfo.GetAccounts())
-            {
-                if (item.GetIsDefault() == "true")
-                {
-                    testConfig.AccountId = item.AccountId();
-                    apiClient = new ApiClient(item.GetBaseUri() + "/restapi");
-                    break;
-                }
-            }
-
-            EnvelopeDefinition envDef = new EnvelopeDefinition();
-            envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
-
-            // assign recipient to template role by setting name, email, and role name.  Note that the
-            // template role name must match the placeholder role name saved in your account template.  
-            TemplateRole tRole = new TemplateRole();
-            tRole.Email = testConfig.RecipientEmail;
-            tRole.Name = testConfig.RecipientName;
-            tRole.RoleName = testConfig.TemplateRoleName;
-            List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
-
-            // add the role to the envelope and assign valid templateId from your account
-            envDef.TemplateRoles = rolesList;
-            envDef.TemplateId = testConfig.TemplateId;
-
-            // set envelope status to "sent" to immediately send the signature request
-            envDef.Status = "sent";
-
-            // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(apiClient.Configuration);
-            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
-            
-             */
+           */
         }
 
         [TestMethod]
         public void ImplicitCodeGrantTest()
         {
+
             /*  Code example
             // These items are all registered at the DocuSign Admin console and are required 
             // to perform the OAuth flow.
@@ -137,39 +104,32 @@ namespace SdkTests
             // here client secret should be mobile app secret
             string client_secret = "[YOUR_CLIENT_SECRET]";
             string redirect_uri = "[YOUR_REDIRECT_URL]";
-
             //Initialize a client
             ApiClient apiClient = new ApiClient(RestApiUrl);
-
             List<string> scopes = new List<string>();
             scopes.Add(OAuth.Scope_SIGNATURE);
-
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             // STEP 1: Get the Uri       
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             Uri oauthLoginUrl = apiClient.GetAuthorizationUri(client_id, scopes, redirect_uri, OAuth.TOKEN, stateOptional);
             System.Diagnostics.Process.Start(oauthLoginUrl.AbsoluteUri);
-
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             // STEP 2: Get the Token from the Uri paste it below...       
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
             string token = "[GET_THIS_FROM_LOGING_IN_USING_THE_ABOVE_URL]";
-
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             // STEP 3: Get the User Info       
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             // now that the API client has an OAuth token, let's use it in all
             // DocuSign APIs
             OAuth.UserInfo userInfo = apiClient.GetUserInfo(token);
-
             // ASSERT - Uncomment Below Lines
             // Assert.IsNotNull(userInfo);
             // Assert.AreEqual("[YOUR_USER_NAME]", userInfo.GetName().ToLower());
             // Assert.IsNotNull(userInfo.GetAccounts());
             // Assert.AreEqual("[YOUR_ACCOUNT_NAME]", userInfo.GetAccounts()[0].GetAccountName());
-            */    
-    }
+            */
+        }
 
         [TestInitialize]
         [TestMethod]
@@ -192,7 +152,7 @@ namespace SdkTests
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             string privateKey = File.ReadAllText(testConfig.PrivateKeyFilename);
-            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.ConfigureJwtAuthorizationFlowByKey(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKey, testConfig.ExpiresInHours);
+            OAuthToken tokenInfo = testConfig.ApiClient.ConfigureJwtAuthorizationFlowByKey(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKey, testConfig.ExpiresInHours);
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             // STEP 2: Get the Access Token 
@@ -284,6 +244,5 @@ namespace SdkTests
 
             testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
         }
-#endif
     }
 }

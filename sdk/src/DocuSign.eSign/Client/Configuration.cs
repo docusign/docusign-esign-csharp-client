@@ -81,7 +81,7 @@ namespace DocuSign.eSign.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "3.0.0-rc";
+        public const string Version = "3.0.0";
 
         /// <summary>
         /// Gets or sets the default Configuration.
@@ -322,7 +322,7 @@ namespace DocuSign.eSign.Client
                      .GetReferencedAssemblies()
                      .Where(x => x.Name == "System.Core").First().Version.ToString()  + "\n";
             report += "    Version of the API: v2\n";
-            report += "    SDK Package Version: 3.0.0-rc\n";
+            report += "    SDK Package Version: 3.0.0\n";
 
             return report;
         }

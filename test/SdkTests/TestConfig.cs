@@ -1,5 +1,4 @@
 ﻿using DocuSign.eSign.Client;
-
 namespace SdkTests
 {
     class TestConfig

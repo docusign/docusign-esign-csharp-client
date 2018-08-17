@@ -647,13 +647,21 @@ namespace DocuSign.eSign.Client
         /// </returns>
         public OAuth.OAuthToken GenerateAccessToken(string clientId, string clientSecret, string code)
         {
+            if (string.IsNullOrEmpty(clientId) || string.IsNullOrEmpty(clientSecret) || string.IsNullOrEmpty(code))
+            {
+                throw new ArgumentNullException();
+            }
+
             string baseUri = string.Format("https://{0}/", GetOAuthBasePath());
 
             string codeAuth = (clientId ?? "") + ":" + (clientSecret ?? "");
             byte[] codeAuthBytes = Encoding.UTF8.GetBytes(codeAuth);
             string codeAuthBase64 = Convert.ToBase64String(codeAuthBytes);
-
+            
             RestClient restClient = new RestClient(baseUri);
+            restClient.Timeout = Configuration.Timeout;
+            restClient.UserAgent = Configuration.UserAgent;
+
             RestRequest request = new RestRequest("oauth/token", Method.POST);
 
             request.AddHeader("Authorization", "Basic " + codeAuthBase64);
@@ -668,20 +676,22 @@ namespace DocuSign.eSign.Client
             foreach (var item in formParams)
                 request.AddParameter(item.Key, item.Value);
 
-            try
+            IRestResponse response = restClient.Execute(request);
+
+            if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
             {
-                IRestResponse restResponse = restClient.Execute(request);
-                OAuth.OAuthToken tokenObj = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)restResponse).Content);
+                OAuth.OAuthToken tokenObj = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
 
                 // Add the token to this ApiClient
                 string authHeader = "Bearer " + tokenObj.access_token;
                 this.Configuration.AddDefaultHeader("Authorization", authHeader);
-
                 return tokenObj;
             }
-            catch (Exception e)
+            else
             {
-                throw new Exception("Error: " + e.Message);
+                throw new ApiException((int)response.StatusCode,
+                  "Error while requesting server, received a non successful HTTP code "
+                  + response.ResponseStatus + " with response Body: '" + response.Content + "'");
             }
         }
 
@@ -700,25 +710,24 @@ namespace DocuSign.eSign.Client
             string baseUri = string.Format("https://{0}/", GetOAuthBasePath());
 
             RestClient restClient = new RestClient(baseUri);
+            restClient.Timeout = Configuration.Timeout;
+            restClient.UserAgent = Configuration.UserAgent;
+
             RestRequest request = new RestRequest("oauth/userinfo", Method.GET);
+            
             request.AddHeader("Authorization", "Bearer " + accessToken);
 
-            try
+            IRestResponse response = restClient.Execute(request);
+            if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
             {
-                IRestResponse response = restClient.Execute(request);
-                if (response.StatusCode != HttpStatusCode.OK)
-                {
-                    throw new ApiException(int.Parse(response.StatusCode.ToString()),
-                            "Error while requesting server, received a non successful HTTP code "
-                            + response.ResponseStatus + " with response Body: '" + response.Content + "'"
-                            + response.Headers, response.Content);
-                }
                 OAuth.UserInfo userInfo = JsonConvert.DeserializeObject<OAuth.UserInfo>(response.Content);
                 return userInfo;
             }
-            catch (Exception ex)
+            else
             {
-                throw new Exception("Error while fecthing user info: " + ex.Message);
+                throw new ApiException((int)response.StatusCode,
+                      "Error while requesting server, received a non successful HTTP code "
+                      + response.ResponseStatus + " with response Body: '" + response.Content + "'");
             }
         }
 
@@ -815,8 +824,10 @@ namespace DocuSign.eSign.Client
             var token = handler.CreateToken(descriptor);
             string jwtToken = handler.WriteToken(token);
 
-            Uri baseUrl = this.RestClient.BaseUrl;
-            this.RestClient.BaseUrl = new Uri(string.Format("https://{0}", oauthBasePath));
+            string baseUri = string.Format("https://{0}/", oauthBasePath);
+            RestClient restClient = new RestClient(baseUri);
+            restClient.Timeout = Configuration.Timeout;
+            restClient.UserAgent = Configuration.UserAgent;
 
             string path = "oauth/token";
             string contentType = "application/x-www-form-urlencoded";
@@ -835,21 +846,22 @@ namespace DocuSign.eSign.Client
 
             object postBody = null;
 
-            try
-            {
-                var response = CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, contentType);
-                OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
+            RestRequest request = PrepareRequest(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, contentType);
 
+            IRestResponse response = restClient.Execute(request);
+
+            if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
+            {
+                OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
                 var config = Configuration.Default;
                 config.AddDefaultHeader("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
-
-                this.RestClient.BaseUrl = baseUrl;
-
                 return tokenInfo;
             }
-            catch (Exception ex)
+            else
             {
-                throw new Exception(ex.Message);
+                throw new ApiException((int)response.StatusCode,
+                      "Error while requesting server, received a non successful HTTP code "
+                      + response.ResponseStatus + " with response Body: '" + response.Content + "'");
             }
         }
 
@@ -887,11 +899,12 @@ namespace DocuSign.eSign.Client
 
             throw new Exception("Unexpected PEM type");
         }
-}
+    }
 
     // response object from the OAuth token endpoint. This is used
     // to obtain access_tokens for making API calls and refresh_tokens for getting a new
     // access token after a token expires.
+    [Obsolete("This class is deprecated. Please use 'OAuth.OAuthToken' instead.", false)]
     public class TokenResponse
     {
         public string access_token { get; set; }

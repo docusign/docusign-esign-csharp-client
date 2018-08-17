@@ -15,8 +15,6 @@ namespace DocuSign.eSign.Client.Auth
 {
     public class OAuth
     {
-        static readonly int MILLIS_PER_SECOND = 1000;
-
         //  OAuth Scope constants
         //  create and send envelopes, and obtain links for starting signing sessions.
         public static string Scope_SIGNATURE = "signature";
@@ -30,9 +28,6 @@ namespace DocuSign.eSign.Client.Auth
         public static string CODE = "code";
         //  used by private/trusted client application.
         public static string TOKEN = "token";
-
-        private readonly string accessToken;
-        private readonly long expirationTimeMillis;
 
         //    /**
         //	 * 
@@ -54,12 +49,11 @@ namespace DocuSign.eSign.Client.Auth
             /**
              * 
              * Account model with the following properties:
-             * <br><b>accountId</b>: the account ID GUID.
-             * <br><b>isDefault</b>: whether this is the default account, when the user has access to multiple accounts.
-             * <br><b>accountName</b>: the human-readable name of the account.
-             * <br><b>baseUri</b>: the base URI associated with this account.
+             * <b>accountId</b>: the account ID GUID.
+             * <b>isDefault</b>: whether this is the default account, when the user has access to multiple accounts.
+             * <b>accountName</b>: the human-readable name of the account.
+             * <b>baseUri</b>: the base URI associated with this account.
              * It also tells which DocuSign data center the account is hosted on.
-             *
              */
             [DataContract]
             public class Account : IEquatable<Account>, IValidatableObject

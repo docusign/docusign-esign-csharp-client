@@ -41,7 +41,17 @@ namespace DocuSign.eSign.Client
     /// </summary>
     public partial class ApiClient
     {
-        private string basePath = "https://www.docusign.net/restapi";
+        // Rest API base path constants
+        // Live/Production base path
+        public const string Production_REST_BasePath = "https://www.docusign.net/restapi";
+        // Sandbox/Demo base path 
+        public const string Demo_REST_BasePath = "https://demo.docusign.net/restapi";
+        // Stage base path
+        public const string Stage_REST_BasePath = "https://stage.docusign.net/restapi";
+
+        private string basePath = Production_REST_BasePath;
+        
+        private string oAuthBasePath = OAuth.Production_OAuth_BasePath;
 
         private JsonSerializerSettings serializerSettings = new JsonSerializerSettings
         {
@@ -102,6 +112,31 @@ namespace DocuSign.eSign.Client
             this.InitializeTLSProtocol();
 
             this.basePath = basePath;
+            this.SetOAuthBasePath();
+
+            RestClient = new RestClient(basePath);
+            Configuration = Configuration.Default;
+            Configuration.ApiClient = this;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiClient" /> class
+        /// with default configuration.
+        /// </summary>
+        /// <param name="basePath">The base path.</param>
+        /// <param name="oAuthBasePath">The oAuth base path.</param>
+        public ApiClient(String basePath, String oAuthBasePath)
+        {
+            if (String.IsNullOrEmpty(basePath))
+                throw new ArgumentException("basePath cannot be empty");
+            if (String.IsNullOrEmpty(oAuthBasePath))
+                throw new ArgumentException("oAuthBasePath cannot be empty");
+
+            this.InitializeTLSProtocol();
+
+            this.basePath = basePath;
+            this.SetOAuthBasePath(oAuthBasePath);
+
             RestClient = new RestClient(basePath);
             Configuration = Configuration.Default;
             Configuration.ApiClient = this;
@@ -109,7 +144,21 @@ namespace DocuSign.eSign.Client
 
         private void InitializeTLSProtocol()
         {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
+#if NETSTANDARD2_0
+            // No-op, OS should decide which is the secure TLS protocol
+#else
+            SecurityProtocolType protocolVersions = new SecurityProtocolType();
+
+            foreach (SecurityProtocolType securityProtocolType in
+                Enum.GetValues(typeof(SecurityProtocolType)))
+            {
+                protocolVersions |= securityProtocolType;
+            }
+
+            protocolVersions &= ~SecurityProtocolType.Ssl3;
+            protocolVersions &= ~SecurityProtocolType.Tls;
+            ServicePointManager.SecurityProtocol = protocolVersions;
+#endif
         }
 
         /// <summary>
@@ -623,16 +672,48 @@ namespace DocuSign.eSign.Client
         /// <returns>If the current base path is demo then it sets the demo account as the basePath, else it sets the Production account as the basePath.</returns>
         private string GetOAuthBasePath()
         {
-            return (this.basePath == null || this.basePath.StartsWith("https://demo") || this.basePath.StartsWith("http://demo")) ? "account-d.docusign.com" : "account.docusign.com";
+            if (string.IsNullOrEmpty(this.oAuthBasePath))
+            {
+                this.SetOAuthBasePath();
+            }
+            return this.oAuthBasePath;
         }
 
         /// <summary>
-        /// Use this methods to Set Base Path
+        /// Use this method to Set Base Path
         /// </summary>
         /// <param name="basePath"></param>
         public void SetBasePath(string basePath)
         {
             this.basePath = basePath;
+        }
+
+        /// <summary>
+        /// Use this method to set custom OAuth Base Path.
+        /// </summary>
+        /// <param name="oAuthBasePath">Optional custom base path value. If not provided we will derive it according to the ApiClient basePath value.</param>
+        public void SetOAuthBasePath(string oAuthBasePath = null)
+        {
+            //Set Custom Base path
+            if (!string.IsNullOrEmpty(oAuthBasePath))
+            {
+                this.oAuthBasePath = oAuthBasePath;
+                return;
+            }
+
+            //Derive OAuth Base Path if not given.
+            if (this.basePath.StartsWith("https://demo") || this.basePath.StartsWith("http://demo"))
+            {
+                this.oAuthBasePath = OAuth.Demo_OAuth_BasePath;
+            }
+            else if (this.basePath.StartsWith("https://stage") || this.basePath.StartsWith("http://stage"))
+            {
+                this.oAuthBasePath = OAuth.Stage_OAuth_BasePath;
+            }
+            else
+            {
+                this.oAuthBasePath = OAuth.Production_OAuth_BasePath;
+            }
         }
 
         /// <summary>
@@ -647,6 +728,11 @@ namespace DocuSign.eSign.Client
         /// </returns>
         public OAuth.OAuthToken GenerateAccessToken(string clientId, string clientSecret, string code)
         {
+            if (string.IsNullOrEmpty(clientId) || string.IsNullOrEmpty(clientSecret) || string.IsNullOrEmpty(code))
+            {
+                throw new ArgumentNullException();
+            }
+
             string baseUri = string.Format("https://{0}/", GetOAuthBasePath());
 
             string codeAuth = (clientId ?? "") + ":" + (clientSecret ?? "");
@@ -654,6 +740,9 @@ namespace DocuSign.eSign.Client
             string codeAuthBase64 = Convert.ToBase64String(codeAuthBytes);
 
             RestClient restClient = new RestClient(baseUri);
+            restClient.Timeout = Configuration.Timeout;
+            restClient.UserAgent = Configuration.UserAgent;
+
             RestRequest request = new RestRequest("oauth/token", Method.POST);
 
             request.AddHeader("Authorization", "Basic " + codeAuthBase64);
@@ -668,20 +757,22 @@ namespace DocuSign.eSign.Client
             foreach (var item in formParams)
                 request.AddParameter(item.Key, item.Value);
 
-            try
+            IRestResponse response = restClient.Execute(request);
+
+            if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
             {
-                IRestResponse restResponse = restClient.Execute(request);
-                OAuth.OAuthToken tokenObj = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)restResponse).Content);
+                OAuth.OAuthToken tokenObj = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
 
                 // Add the token to this ApiClient
                 string authHeader = "Bearer " + tokenObj.access_token;
                 this.Configuration.AddDefaultHeader("Authorization", authHeader);
-
                 return tokenObj;
             }
-            catch (Exception e)
+            else
             {
-                throw new Exception("Error: " + e.Message);
+                throw new ApiException((int)response.StatusCode,
+                  "Error while requesting server, received a non successful HTTP code "
+                  + response.ResponseStatus + " with response Body: '" + response.Content + "'");
             }
         }
 
@@ -700,25 +791,24 @@ namespace DocuSign.eSign.Client
             string baseUri = string.Format("https://{0}/", GetOAuthBasePath());
 
             RestClient restClient = new RestClient(baseUri);
+            restClient.Timeout = Configuration.Timeout;
+            restClient.UserAgent = Configuration.UserAgent;
+
             RestRequest request = new RestRequest("oauth/userinfo", Method.GET);
+
             request.AddHeader("Authorization", "Bearer " + accessToken);
 
-            try
+            IRestResponse response = restClient.Execute(request);
+            if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
             {
-                IRestResponse response = restClient.Execute(request);
-                if (response.StatusCode != HttpStatusCode.OK)
-                {
-                    throw new ApiException(int.Parse(response.StatusCode.ToString()),
-                            "Error while requesting server, received a non successful HTTP code "
-                            + response.ResponseStatus + " with response Body: '" + response.Content + "'"
-                            + response.Headers, response.Content);
-                }
                 OAuth.UserInfo userInfo = JsonConvert.DeserializeObject<OAuth.UserInfo>(response.Content);
                 return userInfo;
             }
-            catch (Exception ex)
+            else
             {
-                throw new Exception("Error while fecthing user info: " + ex.Message);
+                throw new ApiException((int)response.StatusCode,
+                      "Error while requesting server, received a non successful HTTP code "
+                      + response.ResponseStatus + " with response Body: '" + response.Content + "'");
             }
         }
 
@@ -748,16 +838,18 @@ namespace DocuSign.eSign.Client
         /// <param name="privateKeyFilename"></param>
         /// <param name="expiresInHours"></param>
         /// <param name="scopes"></param>
-        [Obsolete("This method is deprecated. Please use 'ConfigureJwtAuthorizationFlowByKey' instead.", false)]
+        [Obsolete("This method is deprecated. Please use 'RequestJWTUserToken' instead.", false)]
         public void ConfigureJwtAuthorizationFlow(string clientId, string userId, string oauthBasePath, string privateKeyFilename, int expiresInHours, List<string> scopes = null)
         {
-            string privateKey = string.Empty;
             if (!string.IsNullOrEmpty(privateKeyFilename))
             {
-                privateKey = File.ReadAllText(privateKeyFilename);
+                byte[] privateKeyBytes = File.ReadAllBytes(privateKeyFilename);
+                this.RequestJWTUserToken(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes);
             }
-
-            ConfigureJwtAuthorizationFlowByKey(clientId, userId, oauthBasePath, privateKey, expiresInHours, scopes);
+            else
+            {
+                throw new ApiException(400, "Private key not supplied or is invalid!");
+            }
         }
 
         /// <summary>
@@ -770,87 +862,15 @@ namespace DocuSign.eSign.Client
         /// <param name="expiresInHours"></param>
         /// <param name="scopes"></param>
         /// <returns>If Successful, returns the OAuthToken object model which consist of an access token and expiration time.</returns>
+        [Obsolete("This method is deprecated. Please use 'RequestJWTUserToken' instead.", false)]
         public OAuth.OAuthToken ConfigureJwtAuthorizationFlowByKey(string clientId, string userId, string oauthBasePath, string privateKey, int expiresInHours, List<string> scopes = null)
         {
-            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
-
-            SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor()
-            {
-#if NETSTANDARD2_0
-                Expires = DateTime.UtcNow.AddHours(expiresInHours),
-#else
-                Lifetime = new Lifetime(DateTime.UtcNow, DateTime.UtcNow.AddHours(expiresInHours)),
-#endif
-            };
-
-            if (scopes == null)
-            {
-                scopes = new List<string>
-                {
-                    OAuth.Scope_SIGNATURE
-                };
-            }
-
-            descriptor.Subject = new ClaimsIdentity();
-            descriptor.Subject.AddClaim(new Claim("scope", String.Join(" ", scopes)));
-            descriptor.Subject.AddClaim(new Claim("aud", oauthBasePath));
-            descriptor.Subject.AddClaim(new Claim("iss", clientId));
-
-            if (!string.IsNullOrEmpty(userId))
-            {
-                descriptor.Subject.AddClaim(new Claim("sub", userId));
-            }
-
             if (!string.IsNullOrEmpty(privateKey))
             {
-                var rsa = CreateRSAKeyFromPem(privateKey);
-                RsaSecurityKey rsaKey = new RsaSecurityKey(rsa);
-                descriptor.SigningCredentials = new SigningCredentials(rsaKey, SecurityAlgorithms.RsaSha256Signature, SecurityAlgorithms.HmacSha256Signature);
+                byte[] privateKeyBytes = Encoding.UTF8.GetBytes(privateKey);
+                return this.RequestJWTUserToken(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes);
             }
-            else
-            {
-                throw new ApiException(400, "Private key not supplied or is invalid!");
-            }
-
-            var token = handler.CreateToken(descriptor);
-            string jwtToken = handler.WriteToken(token);
-
-            Uri baseUrl = this.RestClient.BaseUrl;
-            this.RestClient.BaseUrl = new Uri(string.Format("https://{0}", oauthBasePath));
-
-            string path = "oauth/token";
-            string contentType = "application/x-www-form-urlencoded";
-
-            Dictionary<string, string> formParams = new Dictionary<string, string>();
-            formParams.Add("grant_type", "urn:ietf:params:oauth:grant-type:jwt-bearer");
-            formParams.Add("assertion", jwtToken);
-
-            Dictionary<string, string> queryParams = new Dictionary<string, string>();
-
-            Dictionary<string, string> headerParams = new Dictionary<string, string>();
-            headerParams.Add("Content-Type", "application/x-www-form-urlencoded");
-
-            Dictionary<string, FileParameter> fileParams = new Dictionary<string, FileParameter>();
-            Dictionary<string, string> pathParams = new Dictionary<string, string>();
-
-            object postBody = null;
-
-            try
-            {
-                var response = CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, contentType);
-                OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
-
-                var config = Configuration.Default;
-                config.AddDefaultHeader("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
-
-                this.RestClient.BaseUrl = baseUrl;
-
-                return tokenInfo;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            throw new ApiException(400, "Private key not supplied or is invalid!");
         }
 
         /// <summary>
@@ -887,11 +907,249 @@ namespace DocuSign.eSign.Client
 
             throw new Exception("Unexpected PEM type");
         }
-}
+
+        /// <summary>
+        /// Request JWT User Token
+        /// Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign
+        /// </summary>
+        /// <param name="clientId">DocuSign OAuth Client Id(AKA Integrator Key)</param>
+        /// <param name="userId">DocuSign user Id to be impersonated(This is a UUID)</param>
+        /// <param name="oauthBasePath"> DocuSign OAuth base path
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
+        /// </param>
+        /// <param name="privateKeyStream">The Stream of the RSA private key</param>
+        /// <param name="expiresInHours">number of seconds remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to)
+        /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
+        /// </param>
+        /// <returns>The JWT user token</returns>
+        public OAuth.OAuthToken RequestJWTUserToken(string clientId, string userId, string oauthBasePath, Stream privateKeyStream, int expiresInHours, List<string> scopes = null)
+        {
+            using (StreamReader sr = new StreamReader(privateKeyStream))
+            {
+                if (sr != null && sr.Peek() > 0)
+                {
+                    byte[] privateKeyBytes = ReadAsBytes(privateKeyStream);
+                    return this.RequestJWTUserToken(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes);
+                }
+                else
+                {
+                    throw new ApiException(400, "Private key stream not supplied or is invalid!");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Request JWT User Token
+        /// Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign
+        /// </summary>
+        /// <param name="clientId">DocuSign OAuth Client Id(AKA Integrator Key)</param>
+        /// <param name="userId">DocuSign user Id to be impersonated(This is a UUID)</param>
+        /// <param name="oauthBasePath"> DocuSign OAuth base path
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
+        /// </param>
+        /// <param name="privateKeyBytes">the byte contents of the RSA private key</param>
+        /// <param name="expiresInHours">number of seconds remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to) You can also pass any advanced scope.
+        /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
+        /// </param>
+        /// <returns>The JWT user token</returns>
+        public OAuth.OAuthToken RequestJWTUserToken(string clientId, string userId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null)
+        {
+            string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
+
+            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+
+            SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor()
+            {
+#if NETSTANDARD2_0
+                Expires = DateTime.UtcNow.AddHours(expiresInHours),
+#else
+                Lifetime = new Lifetime(DateTime.UtcNow, DateTime.UtcNow.AddHours(expiresInHours)),
+#endif
+            };
+
+            if (scopes == null)
+            {
+                scopes = new List<string>
+                {
+                    OAuth.Scope_SIGNATURE
+                };
+            }
+
+            descriptor.Subject = new ClaimsIdentity();
+            descriptor.Subject.AddClaim(new Claim("scope", String.Join(" ", scopes)));
+            descriptor.Subject.AddClaim(new Claim("aud", oauthBasePath));
+            descriptor.Subject.AddClaim(new Claim("iss", clientId));
+
+            if (!string.IsNullOrEmpty(userId))
+            {
+                descriptor.Subject.AddClaim(new Claim("sub", userId));
+            }
+            else
+            {
+                throw new ApiException(400, "User Id not supplied or is invalid!");
+            }
+
+            if (!string.IsNullOrEmpty(privateKey))
+            {
+                var rsa = CreateRSAKeyFromPem(privateKey);
+                RsaSecurityKey rsaKey = new RsaSecurityKey(rsa);
+                descriptor.SigningCredentials = new SigningCredentials(rsaKey, SecurityAlgorithms.RsaSha256Signature, SecurityAlgorithms.HmacSha256Signature);
+            }
+            else
+            {
+                throw new ApiException(400, "Private key not supplied or is invalid!");
+            }
+
+            var token = handler.CreateToken(descriptor);
+            string jwtToken = handler.WriteToken(token);
+
+            string baseUri = string.Format("https://{0}/", oauthBasePath);
+            RestClient restClient = new RestClient(baseUri);
+            restClient.Timeout = Configuration.Timeout;
+            restClient.UserAgent = Configuration.UserAgent;
+
+            string path = "oauth/token";
+            string contentType = "application/x-www-form-urlencoded";
+
+            Dictionary<string, string> formParams = new Dictionary<string, string>();
+            formParams.Add("grant_type", OAuth.Grant_Type_JWT);
+            formParams.Add("assertion", jwtToken);
+
+            Dictionary<string, string> queryParams = new Dictionary<string, string>();
+
+            Dictionary<string, string> headerParams = new Dictionary<string, string>();
+            headerParams.Add("Content-Type", "application/x-www-form-urlencoded");
+
+            Dictionary<string, FileParameter> fileParams = new Dictionary<string, FileParameter>();
+            Dictionary<string, string> pathParams = new Dictionary<string, string>();
+
+            object postBody = null;
+
+            RestRequest request = PrepareRequest(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, contentType);
+
+            IRestResponse response = restClient.Execute(request);
+
+            if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
+            {
+                OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
+                var config = Configuration.Default;
+                config.AddDefaultHeader("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+                return tokenInfo;
+            }
+            else
+            {
+                throw new ApiException((int)response.StatusCode,
+                      "Error while requesting server, received a non successful HTTP code "
+                      + response.ResponseStatus + " with response Body: '" + response.Content + "'");
+            }
+        }
+
+        /// <summary>
+        /// *RESERVED FOR PARTNERS* Request JWT Application Token
+        /// </summary>
+        /// <param name="clientId">DocuSign OAuth Client Id(AKA Integrator Key)</param>
+        /// <param name="oauthBasePath"> DocuSign OAuth base path
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
+        /// </param>
+        /// <param name="privateKeyBytes">the byte contents of the RSA private key</param>
+        /// <param name="expiresInHours">number of seconds remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to) You can also pass any advanced scope.
+        /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
+        /// </param>
+        /// <returns>The JWT application token</returns>
+        public OAuth.OAuthToken RequestJWTApplicationToken(string clientId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null)
+        {
+            string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
+
+            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+
+            SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor()
+            {
+#if NETSTANDARD2_0
+                Expires = DateTime.UtcNow.AddHours(expiresInHours),
+#else
+                Lifetime = new Lifetime(DateTime.UtcNow, DateTime.UtcNow.AddHours(expiresInHours)),
+#endif
+            };
+
+            if (scopes == null)
+            {
+                scopes = new List<string>
+                {
+                    OAuth.Scope_SIGNATURE
+                };
+            }
+
+            descriptor.Subject = new ClaimsIdentity();
+            descriptor.Subject.AddClaim(new Claim("scope", String.Join(" ", scopes)));
+            descriptor.Subject.AddClaim(new Claim("aud", oauthBasePath));
+            descriptor.Subject.AddClaim(new Claim("iss", clientId));
+
+            if (!string.IsNullOrEmpty(privateKey))
+            {
+                var rsa = CreateRSAKeyFromPem(privateKey);
+                RsaSecurityKey rsaKey = new RsaSecurityKey(rsa);
+                descriptor.SigningCredentials = new SigningCredentials(rsaKey, SecurityAlgorithms.RsaSha256Signature, SecurityAlgorithms.HmacSha256Signature);
+            }
+            else
+            {
+                throw new ApiException(400, "Private key not supplied or is invalid!");
+            }
+
+            var token = handler.CreateToken(descriptor);
+            string jwtToken = handler.WriteToken(token);
+
+            string baseUri = string.Format("https://{0}/", oauthBasePath);
+            RestClient restClient = new RestClient(baseUri);
+            restClient.Timeout = Configuration.Timeout;
+            restClient.UserAgent = Configuration.UserAgent;
+
+            string path = "oauth/token";
+            string contentType = "application/x-www-form-urlencoded";
+
+            Dictionary<string, string> formParams = new Dictionary<string, string>();
+            formParams.Add("grant_type", OAuth.Grant_Type_JWT);
+            formParams.Add("assertion", jwtToken);
+
+            Dictionary<string, string> queryParams = new Dictionary<string, string>();
+
+            Dictionary<string, string> headerParams = new Dictionary<string, string>();
+            headerParams.Add("Content-Type", "application/x-www-form-urlencoded");
+
+            Dictionary<string, FileParameter> fileParams = new Dictionary<string, FileParameter>();
+            Dictionary<string, string> pathParams = new Dictionary<string, string>();
+
+            object postBody = null;
+
+            RestRequest request = PrepareRequest(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, contentType);
+
+            IRestResponse response = restClient.Execute(request);
+
+            if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
+            {
+                OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
+                var config = Configuration.Default;
+                config.AddDefaultHeader("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+                return tokenInfo;
+            }
+            else
+            {
+                throw new ApiException((int)response.StatusCode,
+                      "Error while requesting server, received a non successful HTTP code "
+                      + response.ResponseStatus + " with response Body: '" + response.Content + "'");
+            }
+        }
+    }
 
     // response object from the OAuth token endpoint. This is used
     // to obtain access_tokens for making API calls and refresh_tokens for getting a new
     // access token after a token expires.
+    [Obsolete("This class is deprecated. Please use 'OAuth.OAuthToken' instead.", false)]
     public class TokenResponse
     {
         public string access_token { get; set; }

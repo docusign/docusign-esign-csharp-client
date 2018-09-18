@@ -1,29 +1,12 @@
 # DocuSign C# Client Changelog
 
-## [v3.1.0-rc] - eSignature API v18.3.00 - 9/12/2018
-### Breaking
-* The AccountId() method has been removed from the SDK and replaced with by a settable AccountId property in the OAuth.UserInfo.Account object. Existing implementations that use the AccountId() method must be updated to use the AccountId property instead. Attempting to call AccountId() will result in the following error: `CS1955  Non-invocable member 'OAuth.UserInfo.Account.AccountId' cannot be used like a method.` (DCM-2636) 
-### Changed
-* The base path for OAuth authentication is now a property of the ApiClient object. 
-* Updated the TLS logic to disable older, unsecure TLS versions. [Open Source contribution](https://github.com/docusign/docusign-csharp-client/pull/180).
-* This release of the C# SDK is [Strong-Named](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/strong-named-assemblies). (DCM-2784)
-* Updated the format of the response returned GetUserInfo method to now contain information on the user's organization, if they are part of one. (DCM-2385)
-### Added
-* Added a new method, RequestJWTUserToken. This method is passed a user's client id, user id, requested scopes, and their private key in byte array format, performs JWT authentication for the specified user, and returns an access token. (DCM-2762)
-* Added a new method, RequestJWTApplicationToken. This is a reserved method that is only enabled by partners and resellers, which obtains an access token that makes requests on behalf of an application rather than a user. It is passed a user's client id, requested scopes, and a private key in byte array format, then returns an access token. (DCM-2762)
-* SetOauthBasePath, which can be used to set the OAuth base path for your ApiClient. (DCM-2692)
-### Deprecated
-* The ConfigureJwtAuthorizationFlowByKey method is now deprecated. Please use the RequestJWTUserToken method instead, which improves security by accepting the private key as a byte array or stream. (DCM-2762)
-* The GetIsDefault method has been deprecated and replaced with by a settable IsDefault property in the ApiClient object. (DCM-2636)
-* The GetBaseUri method has been deprecated and replaced with by a settable BaseUri property in the ApiClient object. (DCM-2636)
-* The GetAccounts method has been deprecated and replaced with by a settable Accounts property in the ApiClient object. (DCM-2636)
-
 ## [v3.0.1] - eSignature API v18.1.02 - 8/16/2018
 ### Fixed
 * Fixed a problem with multi-threaded environments that could intermittently route ConfigureJwtAuthorizationFlowByKey, GetUserInfo, and GenerateAccessToken method calls to the OAuth endpoint rather than the API endpoint. 
 * Fixed a problem that would cause the ConfigureJwtAuthorizationFlowByKey, GetUserInfo, and GenerateAccessToken methods to return null when encountering errors, rather than an error code. 
 ## Deprecated
 * The TokenResponse class has been deprecated. Please use the OAuth.OAuthToken class instead.
+
 
 ## [v3.0.0] - eSignature API v18.1.02 - 8/6/2018
 ### Added

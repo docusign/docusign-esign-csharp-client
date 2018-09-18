@@ -30,6 +30,8 @@ namespace TestProj
         private readonly string REDIRECT_URI = "[REDIRECT_URL]";
         //Private Key - paste the entire PRIVATE Key here
         private readonly string PRIVATE_KEY = "[PRIVATE_KEY]";
+        //Private Key Stream - add the stream for your PRIVATE Key here
+        private readonly string PRIVATE_KEY_BYTES = "[PRIVATE_KEY_BYTES]";
         //Optional State  - state which you want to return
         private readonly string STATE = "";
 
@@ -596,18 +598,18 @@ namespace TestProj
 
             string oAuthBasePath = "account-d.docusign.com"; // for demo the base path would have "-d"
 
-            OAuth.OAuthToken tokenInfo = apiClient.ConfigureJwtAuthorizationFlowByKey(INTEGRATOR_KEY, USER_ID, oAuthBasePath, PRIVATE_KEY, 1);
+            OAuth.OAuthToken tokenInfo = apiClient.RequestJWTUserToken(INTEGRATOR_KEY, USER_ID, oAuthBasePath, PRIVATE_KEY_BYTES, 1);
 
             OAuth.UserInfo userInfo = apiClient.GetUserInfo(tokenInfo.access_token);
 
             string accountId = string.Empty;
 
-            foreach (var item in userInfo.GetAccounts())
+            foreach (var item in userInfo.Accounts)
             {
-                if (item.GetIsDefault() == "true")
+                if (item.IsDefault == "true")
                 {
-                    accountId = item.AccountId();
-                    apiClient = new ApiClient(item.GetBaseUri() + "/restapi");
+                    accountId = item.AccountId;
+                    apiClient = new ApiClient(item.BaseUri + "/restapi");
                     break;
                 }
             }

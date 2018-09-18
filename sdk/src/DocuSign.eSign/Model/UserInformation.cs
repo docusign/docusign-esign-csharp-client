@@ -39,6 +39,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AccountManagementGranular">AccountManagementGranular.</param>
         /// <param name="ActivationAccessCode">The activation code the new user must enter when activating their account..</param>
+        /// <param name="CountryCode">.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="CustomSettings">The name/value pair information for the user custom setting..</param>
         /// <param name="Email">.</param>
@@ -63,6 +64,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SendActivationEmail">.</param>
         /// <param name="SendActivationOnInvalidLogin">When set to **true**, specifies that an additional activation email is sent to the user if they fail a log on before activating their account. .</param>
         /// <param name="SignatureImageUri">Contains the URI for an endpoint that you can use to retrieve the signature image..</param>
+        /// <param name="Subscribe">.</param>
         /// <param name="SuffixName">The suffix for the user&#39;s name.   Maximum Length: 50 characters. .</param>
         /// <param name="Title">The title of the user..</param>
         /// <param name="Uri">.</param>
@@ -73,10 +75,11 @@ namespace DocuSign.eSign.Model
         /// <param name="UserStatus">.</param>
         /// <param name="UserType">.</param>
         /// <param name="WorkAddress">WorkAddress.</param>
-        public UserInformation(UserAccountManagementGranularInformation AccountManagementGranular = default(UserAccountManagementGranularInformation), string ActivationAccessCode = default(string), string CreatedDateTime = default(string), List<NameValue> CustomSettings = default(List<NameValue>), string Email = default(string), string EnableConnectForUser = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FirstName = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), List<Group> GroupList = default(List<Group>), AddressInformationV2 HomeAddress = default(AddressInformationV2), string InitialsImageUri = default(string), string IsAdmin = default(string), string JobTitle = default(string), string LastLogin = default(string), string LastName = default(string), string LoginStatus = default(string), string MiddleName = default(string), string Password = default(string), string PasswordExpiration = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string ProfileImageUri = default(string), string SendActivationEmail = default(string), string SendActivationOnInvalidLogin = default(string), string SignatureImageUri = default(string), string SuffixName = default(string), string Title = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserProfileLastModifiedDate = default(string), List<NameValue> UserSettings = default(List<NameValue>), string UserStatus = default(string), string UserType = default(string), AddressInformationV2 WorkAddress = default(AddressInformationV2))
+        public UserInformation(UserAccountManagementGranularInformation AccountManagementGranular = default(UserAccountManagementGranularInformation), string ActivationAccessCode = default(string), string CountryCode = default(string), string CreatedDateTime = default(string), List<NameValue> CustomSettings = default(List<NameValue>), string Email = default(string), string EnableConnectForUser = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FirstName = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), List<Group> GroupList = default(List<Group>), AddressInformationV2 HomeAddress = default(AddressInformationV2), string InitialsImageUri = default(string), string IsAdmin = default(string), string JobTitle = default(string), string LastLogin = default(string), string LastName = default(string), string LoginStatus = default(string), string MiddleName = default(string), string Password = default(string), string PasswordExpiration = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string ProfileImageUri = default(string), string SendActivationEmail = default(string), string SendActivationOnInvalidLogin = default(string), string SignatureImageUri = default(string), string Subscribe = default(string), string SuffixName = default(string), string Title = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserProfileLastModifiedDate = default(string), List<NameValue> UserSettings = default(List<NameValue>), string UserStatus = default(string), string UserType = default(string), AddressInformationV2 WorkAddress = default(AddressInformationV2))
         {
             this.AccountManagementGranular = AccountManagementGranular;
             this.ActivationAccessCode = ActivationAccessCode;
+            this.CountryCode = CountryCode;
             this.CreatedDateTime = CreatedDateTime;
             this.CustomSettings = CustomSettings;
             this.Email = Email;
@@ -101,6 +104,7 @@ namespace DocuSign.eSign.Model
             this.SendActivationEmail = SendActivationEmail;
             this.SendActivationOnInvalidLogin = SendActivationOnInvalidLogin;
             this.SignatureImageUri = SignatureImageUri;
+            this.Subscribe = Subscribe;
             this.SuffixName = SuffixName;
             this.Title = Title;
             this.Uri = Uri;
@@ -124,6 +128,12 @@ namespace DocuSign.eSign.Model
         /// <value>The activation code the new user must enter when activating their account.</value>
         [DataMember(Name="activationAccessCode", EmitDefaultValue=false)]
         public string ActivationAccessCode { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        public string CountryCode { get; set; }
         /// <summary>
         /// Indicates the date and time the item was created.
         /// </summary>
@@ -266,6 +276,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureImageUri", EmitDefaultValue=false)]
         public string SignatureImageUri { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="subscribe", EmitDefaultValue=false)]
+        public string Subscribe { get; set; }
+        /// <summary>
         /// The suffix for the user&#39;s name.   Maximum Length: 50 characters. 
         /// </summary>
         /// <value>The suffix for the user&#39;s name.   Maximum Length: 50 characters. </value>
@@ -334,6 +350,7 @@ namespace DocuSign.eSign.Model
             sb.Append("class UserInformation {\n");
             sb.Append("  AccountManagementGranular: ").Append(AccountManagementGranular).Append("\n");
             sb.Append("  ActivationAccessCode: ").Append(ActivationAccessCode).Append("\n");
+            sb.Append("  CountryCode: ").Append(CountryCode).Append("\n");
             sb.Append("  CreatedDateTime: ").Append(CreatedDateTime).Append("\n");
             sb.Append("  CustomSettings: ").Append(CustomSettings).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
@@ -358,6 +375,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SendActivationEmail: ").Append(SendActivationEmail).Append("\n");
             sb.Append("  SendActivationOnInvalidLogin: ").Append(SendActivationOnInvalidLogin).Append("\n");
             sb.Append("  SignatureImageUri: ").Append(SignatureImageUri).Append("\n");
+            sb.Append("  Subscribe: ").Append(Subscribe).Append("\n");
             sb.Append("  SuffixName: ").Append(SuffixName).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Uri: ").Append(Uri).Append("\n");
@@ -413,6 +431,11 @@ namespace DocuSign.eSign.Model
                     this.ActivationAccessCode == other.ActivationAccessCode ||
                     this.ActivationAccessCode != null &&
                     this.ActivationAccessCode.Equals(other.ActivationAccessCode)
+                ) && 
+                (
+                    this.CountryCode == other.CountryCode ||
+                    this.CountryCode != null &&
+                    this.CountryCode.Equals(other.CountryCode)
                 ) && 
                 (
                     this.CreatedDateTime == other.CreatedDateTime ||
@@ -535,6 +558,11 @@ namespace DocuSign.eSign.Model
                     this.SignatureImageUri.Equals(other.SignatureImageUri)
                 ) && 
                 (
+                    this.Subscribe == other.Subscribe ||
+                    this.Subscribe != null &&
+                    this.Subscribe.Equals(other.Subscribe)
+                ) && 
+                (
                     this.SuffixName == other.SuffixName ||
                     this.SuffixName != null &&
                     this.SuffixName.Equals(other.SuffixName)
@@ -601,6 +629,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AccountManagementGranular.GetHashCode();
                 if (this.ActivationAccessCode != null)
                     hash = hash * 59 + this.ActivationAccessCode.GetHashCode();
+                if (this.CountryCode != null)
+                    hash = hash * 59 + this.CountryCode.GetHashCode();
                 if (this.CreatedDateTime != null)
                     hash = hash * 59 + this.CreatedDateTime.GetHashCode();
                 if (this.CustomSettings != null)
@@ -649,6 +679,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SendActivationOnInvalidLogin.GetHashCode();
                 if (this.SignatureImageUri != null)
                     hash = hash * 59 + this.SignatureImageUri.GetHashCode();
+                if (this.Subscribe != null)
+                    hash = hash * 59 + this.Subscribe.GetHashCode();
                 if (this.SuffixName != null)
                     hash = hash * 59 + this.SuffixName.GetHashCode();
                 if (this.Title != null)

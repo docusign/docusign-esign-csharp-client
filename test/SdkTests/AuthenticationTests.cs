@@ -145,14 +145,14 @@ namespace SdkTests
             };
 
             // If this is the first time logging in - Get Consent from the user - this is a onetime step.
-            // Uri oauthURI = testConfig.ApiClient.GetAuthorizationUri(testConfig.IntegratorKey, scopes, testConfig.ReturnUrl, OAuth.CODE, stateOptional);
+            //Uri oauthURI = testConfig.ApiClient.GetAuthorizationUri(testConfig.IntegratorKey, scopes, testConfig.ReturnUrl, OAuth.CODE, stateOptional);
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // STEP 1: ConfigureJwtAuthorizationFlow      
+            // STEP 1: RequestJWTUserToken      
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            string privateKey = File.ReadAllText(testConfig.PrivateKeyFilename);
-            OAuthToken tokenInfo = testConfig.ApiClient.ConfigureJwtAuthorizationFlowByKey(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKey, testConfig.ExpiresInHours);
+            byte[] privateKeyStream = File.ReadAllBytes(testConfig.PrivateKeyFilename);
+            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours);
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             // STEP 2: Get the Access Token 
@@ -162,16 +162,16 @@ namespace SdkTests
             OAuth.UserInfo userInfo = testConfig.ApiClient.GetUserInfo(tokenInfo.access_token);
 
             Assert.IsNotNull(userInfo);
-            Assert.IsNotNull(userInfo.GetAccounts());
+            Assert.IsNotNull(userInfo.Accounts);
 
             string accountId = string.Empty;
 
-            foreach (var item in userInfo.GetAccounts())
+            foreach (var item in userInfo.Accounts)
             {
-                if (item.GetIsDefault() == "true")
+                if (item.IsDefault == "true")
                 {
-                    testConfig.AccountId = item.AccountId();
-                    testConfig.ApiClient = new ApiClient(item.GetBaseUri() + "/restapi");
+                    testConfig.AccountId = item.AccountId;
+                    testConfig.ApiClient = new ApiClient(item.BaseUri + "/restapi");
                     break;
                 }
             }

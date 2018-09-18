@@ -23,8 +23,8 @@ Contact: devcenter@docusign.com
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>3.0.1</VersionPrefix>
-    <VersionSuffix></VersionSuffix>
+    <VersionPrefix>3.1.0</VersionPrefix>
+    <VersionSuffix>rc</VersionSuffix>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>DocuSign.eSign;REST;eSign;docusign;eSignature;api</PackageTags>
@@ -34,9 +34,11 @@ Contact: devcenter@docusign.com
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>
-      [v3.0.1] - eSignature API v18.1.02 - 8/16/2018
+      [v3.1.0-rc] - eSignature API v18.3.00 - 9/12/2018
       https://github.com/docusign/docusign-csharp-client/blob/master/CHANGELOG.md
     </PackageReleaseNotes>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>DocuSignClient.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -93,6 +95,7 @@ Contact: devcenter@docusign.com
   </ItemGroup>
   
   <ItemGroup>
+    <None Include="DocuSignClient.snk" />
     <None Include="packages.config" />
   </ItemGroup>
 </Project>

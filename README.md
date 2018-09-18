@@ -67,14 +67,15 @@ namespace DocuSignSample
             string userId = "[USER_ID]"; // use your userId (guid), not email address
             string oauthBasePath = "[OAUTH_BASE_PATH]";
             string integratorKey = "[INTEGRATOR_KEY]";
-            string privateKey = "[PRIVATE_KEY]";
+            byte[] privateKeyBytes = "[PRIVATE_KEY_BYTES] For Eg. File.ReadAllBytes("RSA_Key_File")"; // Create a byte array
             int expiresInHours = 1;
             string host = "https://demo.docusign.net/restapi";
 
             string accountId = string.Empty;
 
             ApiClient apiClient = new ApiClient(host);
-            OAuth.OAuthToken tokenInfo = apiClient.ConfigureJwtAuthorizationFlowByKey(integratorKey, userId, oauthBasePath, privateKey, expiresInHours);
+
+            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(integratorKey, userId, oauthBasePath, privateKeyBytes, expiresInHours);  
 
             /////////////////////////////////////////////////////////////////
             // STEP 1: Get User Info   
@@ -83,12 +84,12 @@ namespace DocuSignSample
 
             OAuth.UserInfo userInfo = apiClient.GetUserInfo(tokenInfo.access_token);
             
-            foreach (var item in userInfo.GetAccounts())
+            foreach (var item in userInfo.Accounts)
             {
-                if (item.GetIsDefault() == "true")
+                if (item.IsDefault == "true")
                 {
-                    accountId = item.AccountId();
-                    apiClient = new ApiClient(item.GetBaseUri() + "/restapi");
+                    accountId = item.AccountId;
+                    apiClient = new ApiClient(item.BaseUri + "/restapi");
                     break;
                 }
             }

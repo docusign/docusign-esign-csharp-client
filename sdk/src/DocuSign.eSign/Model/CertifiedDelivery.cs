@@ -39,6 +39,8 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AccessCode">If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account&#39;s access code format setting.  If blank, but the signer &#x60;accessCode&#x60; property is set in the envelope, then that value is used.  If blank and the signer &#x60;accessCode&#x60; property is not set, then the access code is not required..</param>
         /// <param name="AddAccessCodeToEmail">This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient..</param>
+        /// <param name="AgentCanEditEmail">.</param>
+        /// <param name="AgentCanEditName">.</param>
         /// <param name="ClientUserId">Specifies whether the recipient is embedded or remote.   If the &#x60;clientUserId&#x60; property is not null then the recipient is embedded. Note that if the &#x60;ClientUserId&#x60; property is set and either &#x60;SignerMustHaveAccount&#x60; or &#x60;SignerMustLoginToSign&#x60; property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. .</param>
         /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
         /// <param name="DeclinedDateTime">The date and time the recipient declined the document..</param>
@@ -79,10 +81,12 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TotalTabCount">.</param>
         /// <param name="UserId">.</param>
-        public CertifiedDelivery(string AccessCode = default(string), string AddAccessCodeToEmail = default(string), string ClientUserId = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmailRecipientPostSigningURL = default(string), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<string> ExcludedDocuments = default(List<string>), string FaxNumber = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string InheritEmailNotificationConfiguration = default(string), string Name = default(string), string Note = default(string), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), string RecipientId = default(string), string RecipientIdGuid = default(string), string RequireIdLookup = default(string), string RoleName = default(string), string RoutingOrder = default(string), RecipientSAMLAuthentication SamlAuthentication = default(RecipientSAMLAuthentication), string SentDateTime = default(string), string SignedDateTime = default(string), string SigningGroupId = default(string), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
+        public CertifiedDelivery(string AccessCode = default(string), string AddAccessCodeToEmail = default(string), string AgentCanEditEmail = default(string), string AgentCanEditName = default(string), string ClientUserId = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmailRecipientPostSigningURL = default(string), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<string> ExcludedDocuments = default(List<string>), string FaxNumber = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string InheritEmailNotificationConfiguration = default(string), string Name = default(string), string Note = default(string), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), string RecipientId = default(string), string RecipientIdGuid = default(string), string RequireIdLookup = default(string), string RoleName = default(string), string RoutingOrder = default(string), RecipientSAMLAuthentication SamlAuthentication = default(RecipientSAMLAuthentication), string SentDateTime = default(string), string SignedDateTime = default(string), string SigningGroupId = default(string), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
         {
             this.AccessCode = AccessCode;
             this.AddAccessCodeToEmail = AddAccessCodeToEmail;
+            this.AgentCanEditEmail = AgentCanEditEmail;
+            this.AgentCanEditName = AgentCanEditName;
             this.ClientUserId = ClientUserId;
             this.CustomFields = CustomFields;
             this.DeclinedDateTime = DeclinedDateTime;
@@ -137,6 +141,18 @@ namespace DocuSign.eSign.Model
         /// <value>This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient.</value>
         [DataMember(Name="addAccessCodeToEmail", EmitDefaultValue=false)]
         public string AddAccessCodeToEmail { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="agentCanEditEmail", EmitDefaultValue=false)]
+        public string AgentCanEditEmail { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="agentCanEditName", EmitDefaultValue=false)]
+        public string AgentCanEditName { get; set; }
         /// <summary>
         /// Specifies whether the recipient is embedded or remote.   If the &#x60;clientUserId&#x60; property is not null then the recipient is embedded. Note that if the &#x60;ClientUserId&#x60; property is set and either &#x60;SignerMustHaveAccount&#x60; or &#x60;SignerMustLoginToSign&#x60; property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
         /// </summary>
@@ -380,6 +396,8 @@ namespace DocuSign.eSign.Model
             sb.Append("class CertifiedDelivery {\n");
             sb.Append("  AccessCode: ").Append(AccessCode).Append("\n");
             sb.Append("  AddAccessCodeToEmail: ").Append(AddAccessCodeToEmail).Append("\n");
+            sb.Append("  AgentCanEditEmail: ").Append(AgentCanEditEmail).Append("\n");
+            sb.Append("  AgentCanEditName: ").Append(AgentCanEditName).Append("\n");
             sb.Append("  ClientUserId: ").Append(ClientUserId).Append("\n");
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  DeclinedDateTime: ").Append(DeclinedDateTime).Append("\n");
@@ -465,6 +483,16 @@ namespace DocuSign.eSign.Model
                     this.AddAccessCodeToEmail == other.AddAccessCodeToEmail ||
                     this.AddAccessCodeToEmail != null &&
                     this.AddAccessCodeToEmail.Equals(other.AddAccessCodeToEmail)
+                ) && 
+                (
+                    this.AgentCanEditEmail == other.AgentCanEditEmail ||
+                    this.AgentCanEditEmail != null &&
+                    this.AgentCanEditEmail.Equals(other.AgentCanEditEmail)
+                ) && 
+                (
+                    this.AgentCanEditName == other.AgentCanEditName ||
+                    this.AgentCanEditName != null &&
+                    this.AgentCanEditName.Equals(other.AgentCanEditName)
                 ) && 
                 (
                     this.ClientUserId == other.ClientUserId ||
@@ -683,6 +711,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AccessCode.GetHashCode();
                 if (this.AddAccessCodeToEmail != null)
                     hash = hash * 59 + this.AddAccessCodeToEmail.GetHashCode();
+                if (this.AgentCanEditEmail != null)
+                    hash = hash * 59 + this.AgentCanEditEmail.GetHashCode();
+                if (this.AgentCanEditName != null)
+                    hash = hash * 59 + this.AgentCanEditName.GetHashCode();
                 if (this.ClientUserId != null)
                     hash = hash * 59 + this.ClientUserId.GetHashCode();
                 if (this.CustomFields != null)

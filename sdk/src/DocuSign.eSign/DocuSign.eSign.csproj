@@ -37,8 +37,6 @@ Contact: devcenter@docusign.com
       [v3.1.0-rc] - eSignature API v18.3.00 - 9/12/2018
       https://github.com/docusign/docusign-csharp-client/blob/master/CHANGELOG.md
     </PackageReleaseNotes>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>DocuSignClient.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,7 +55,7 @@ Contact: devcenter@docusign.com
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
- 
+
   <!-- .NET 4.5 references, compilation flags and build options -->
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <Reference Include="System" />
@@ -78,7 +76,7 @@ Contact: devcenter@docusign.com
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45'">
     <DefineConstants>NET45</DefineConstants>
   </PropertyGroup>
-  
+
   <!-- .NET Standard 2.0 compilation flags and build options -->
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
     <DefineConstants>NETSTANDARD2_0</DefineConstants>
@@ -93,9 +91,8 @@ Contact: devcenter@docusign.com
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.2" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <None Include="DocuSignClient.snk" />
     <None Include="packages.config" />
   </ItemGroup>
 </Project>

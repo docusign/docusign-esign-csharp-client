@@ -67,6 +67,9 @@ namespace DocuSign.eSign.Model
         /// <param name="MaximumLength">The maximum number of entry characters supported by the custom tab..</param>
         /// <param name="MergeField">MergeField.</param>
         /// <param name="Name">.</param>
+        /// <param name="PaymentItemCode">.</param>
+        /// <param name="PaymentItemDescription">.</param>
+        /// <param name="PaymentItemName">.</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
         /// <param name="ScaleValue">.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
@@ -78,7 +81,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ValidationMessage">The message displayed if the custom tab fails input validation (either custom of embedded)..</param>
         /// <param name="ValidationPattern">A regular expression used to validate input for the tab..</param>
         /// <param name="Width">Width of the tab in pixels..</param>
-        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), string Locked = default(string), string MaximumLength = default(string), MergeField MergeField = default(MergeField), string Name = default(string), string Required = default(string), string ScaleValue = default(string), string Shared = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Width = default(string))
+        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), string Locked = default(string), string MaximumLength = default(string), MergeField MergeField = default(MergeField), string Name = default(string), string PaymentItemCode = default(string), string PaymentItemDescription = default(string), string PaymentItemName = default(string), string Required = default(string), string ScaleValue = default(string), string Shared = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Width = default(string))
         {
             this.Anchor = Anchor;
             this.AnchorCaseSensitive = AnchorCaseSensitive;
@@ -110,6 +113,9 @@ namespace DocuSign.eSign.Model
             this.MaximumLength = MaximumLength;
             this.MergeField = MergeField;
             this.Name = Name;
+            this.PaymentItemCode = PaymentItemCode;
+            this.PaymentItemDescription = PaymentItemDescription;
+            this.PaymentItemName = PaymentItemName;
             this.Required = Required;
             this.ScaleValue = ScaleValue;
             this.Shared = Shared;
@@ -303,6 +309,24 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="paymentItemCode", EmitDefaultValue=false)]
+        public string PaymentItemCode { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="paymentItemDescription", EmitDefaultValue=false)]
+        public string PaymentItemDescription { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="paymentItemName", EmitDefaultValue=false)]
+        public string PaymentItemName { get; set; }
+        /// <summary>
         /// When set to **true**, the signer is required to fill out this tab
         /// </summary>
         /// <value>When set to **true**, the signer is required to fill out this tab</value>
@@ -405,6 +429,9 @@ namespace DocuSign.eSign.Model
             sb.Append("  MaximumLength: ").Append(MaximumLength).Append("\n");
             sb.Append("  MergeField: ").Append(MergeField).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  PaymentItemCode: ").Append(PaymentItemCode).Append("\n");
+            sb.Append("  PaymentItemDescription: ").Append(PaymentItemDescription).Append("\n");
+            sb.Append("  PaymentItemName: ").Append(PaymentItemName).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
             sb.Append("  ScaleValue: ").Append(ScaleValue).Append("\n");
             sb.Append("  Shared: ").Append(Shared).Append("\n");
@@ -603,6 +630,21 @@ namespace DocuSign.eSign.Model
                     this.Name.Equals(other.Name)
                 ) && 
                 (
+                    this.PaymentItemCode == other.PaymentItemCode ||
+                    this.PaymentItemCode != null &&
+                    this.PaymentItemCode.Equals(other.PaymentItemCode)
+                ) && 
+                (
+                    this.PaymentItemDescription == other.PaymentItemDescription ||
+                    this.PaymentItemDescription != null &&
+                    this.PaymentItemDescription.Equals(other.PaymentItemDescription)
+                ) && 
+                (
+                    this.PaymentItemName == other.PaymentItemName ||
+                    this.PaymentItemName != null &&
+                    this.PaymentItemName.Equals(other.PaymentItemName)
+                ) && 
+                (
                     this.Required == other.Required ||
                     this.Required != null &&
                     this.Required.Equals(other.Required)
@@ -730,6 +772,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.MergeField.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.PaymentItemCode != null)
+                    hash = hash * 59 + this.PaymentItemCode.GetHashCode();
+                if (this.PaymentItemDescription != null)
+                    hash = hash * 59 + this.PaymentItemDescription.GetHashCode();
+                if (this.PaymentItemName != null)
+                    hash = hash * 59 + this.PaymentItemName.GetHashCode();
                 if (this.Required != null)
                     hash = hash * 59 + this.Required.GetHashCode();
                 if (this.ScaleValue != null)

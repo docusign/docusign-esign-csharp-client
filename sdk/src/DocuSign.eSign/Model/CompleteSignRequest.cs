@@ -37,16 +37,24 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CompleteSignRequest" /> class.
         /// </summary>
+        /// <param name="CorrelationId">.</param>
         /// <param name="DocumentUpdateInfos">.</param>
         /// <param name="SigningLocation">Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online..</param>
         /// <param name="TransactionId"> Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The &#x60;transactionId&#x60; property can be used determine an envelope&#39;s status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned..</param>
-        public CompleteSignRequest(List<DocumentUpdateInfo> DocumentUpdateInfos = default(List<DocumentUpdateInfo>), string SigningLocation = default(string), string TransactionId = default(string))
+        public CompleteSignRequest(string CorrelationId = default(string), List<DocumentUpdateInfo> DocumentUpdateInfos = default(List<DocumentUpdateInfo>), string SigningLocation = default(string), string TransactionId = default(string))
         {
+            this.CorrelationId = CorrelationId;
             this.DocumentUpdateInfos = DocumentUpdateInfos;
             this.SigningLocation = SigningLocation;
             this.TransactionId = TransactionId;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="correlationId", EmitDefaultValue=false)]
+        public string CorrelationId { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -73,6 +81,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CompleteSignRequest {\n");
+            sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
             sb.Append("  DocumentUpdateInfos: ").Append(DocumentUpdateInfos).Append("\n");
             sb.Append("  SigningLocation: ").Append(SigningLocation).Append("\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
@@ -113,6 +122,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.CorrelationId == other.CorrelationId ||
+                    this.CorrelationId != null &&
+                    this.CorrelationId.Equals(other.CorrelationId)
+                ) && 
+                (
                     this.DocumentUpdateInfos == other.DocumentUpdateInfos ||
                     this.DocumentUpdateInfos != null &&
                     this.DocumentUpdateInfos.SequenceEqual(other.DocumentUpdateInfos)
@@ -140,6 +154,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.CorrelationId != null)
+                    hash = hash * 59 + this.CorrelationId.GetHashCode();
                 if (this.DocumentUpdateInfos != null)
                     hash = hash * 59 + this.DocumentUpdateInfos.GetHashCode();
                 if (this.SigningLocation != null)

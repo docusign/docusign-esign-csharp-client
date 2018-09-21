@@ -20,21 +20,24 @@ namespace SdkNetCoreTests
         public void JwtLoginTest()
         {
             testConfig.ApiClient = new ApiClient(testConfig.Host);
-            string privateKey = File.ReadAllText(testConfig.PrivateKeyFilename);
-            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.ConfigureJwtAuthorizationFlowByKey(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKey, testConfig.ExpiresInHours);
 
+            // Create a stream of bytes... 
+            byte[] privateKeyStream = File.ReadAllBytes(testConfig.PrivateKeyFilename);
+            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours);
+            // Disposing the stream...
+            
             // the authentication api uses the apiClient (and X-DocuSign-Authentication header) that are set in Configuration object
             OAuth.UserInfo userInfo = testConfig.ApiClient.GetUserInfo(tokenInfo.access_token);
 
             Assert.IsNotNull(userInfo);
-            Assert.IsNotNull(userInfo.GetAccounts());
+            Assert.IsNotNull(userInfo.Accounts);
 
-            foreach (var item in userInfo.GetAccounts())
+            foreach (var item in userInfo.Accounts)
             {
-                if (item.GetIsDefault() == "true")
+                if (item.IsDefault == "true")
                 {
-                    testConfig.AccountId = item.AccountId();
-                    testConfig.ApiClient = new ApiClient(item.GetBaseUri() + "/restapi");
+                    testConfig.AccountId = item.AccountId;
+                    testConfig.ApiClient = new ApiClient(item.BaseUri + "/restapi");
                     break;
                 }
             }

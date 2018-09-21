@@ -23,11 +23,23 @@ namespace DocuSign.eSign.Client.Auth
         //  obtain access to the user’s account when the user is not present.
         public static string Scope_IMPERSONATION = "impersonation";
 
+        //  OAuth Base path constants
+        //  Demo server base path
+        public static string Demo_OAuth_BasePath = "account-d.docusign.com";
+        // Production server base path
+        public static string Production_OAuth_BasePath = "account.docusign.com";
+        // Stage server base path
+        public static string Stage_OAuth_BasePath = "account-s.docusign.com";
+
         //  OAuth ResponseType constants
         //  used by public/native client applications.
         public static string CODE = "code";
         //  used by private/trusted client application.
         public static string TOKEN = "token";
+
+        // OAuth Grant Types
+        // JWT Grant Type
+        public const string Grant_Type_JWT = "urn:ietf:params:oauth:grant-type:jwt-bearer";
 
         //    /**
         //	 * 
@@ -46,15 +58,14 @@ namespace DocuSign.eSign.Client.Auth
         [DataContract]
         public class UserInfo : IEquatable<UserInfo>, IValidatableObject
         {
-            /**
-             * 
-             * Account model with the following properties:
-             * <b>accountId</b>: the account ID GUID.
-             * <b>isDefault</b>: whether this is the default account, when the user has access to multiple accounts.
-             * <b>accountName</b>: the human-readable name of the account.
-             * <b>baseUri</b>: the base URI associated with this account.
-             * It also tells which DocuSign data center the account is hosted on.
-             */
+            /// <summary>
+            /// Account model with the following properties:
+            /// accountId: the account ID GUID.
+            /// isDefault: whether this is the default account, when the user has access to multiple accounts.
+            /// accountName: the human-readable name of the account.
+            /// baseUri: the base URI associated with this account.
+            /// It also tells which DocuSign data center the account is hosted on.
+            /// </summary>
             [DataContract]
             public class Account : IEquatable<Account>, IValidatableObject
             {
@@ -68,90 +79,51 @@ namespace DocuSign.eSign.Client.Auth
                 private string account_name { get; set; }
 
                 [DataMember(Name = "base_uri", EmitDefaultValue = false)]
-                private string base_uri = null;
+                private string base_uri { get; set; }
 
-                public Account AccountId(string account_id)
+                [DataMember(Name = "organization", EmitDefaultValue = false)]
+                private Organization organization { get; set; }
+
+                public string AccountId
                 {
-                    this.account_id = account_id;
-                    return this;
+                    get { return this.account_id; }
+                    set { this.account_id = value; }
                 }
 
-                /**
-                 * Get accountId
-                 *
-                 * @return accountId
-                 **/
-                public string AccountId()
+                public string IsDefault
                 {
-                    return account_id;
+                    get { return this.is_default; }
+                    set { this.is_default = value; }
                 }
 
-                public void SetAccountId(string account_id)
-                {
-                    this.account_id = account_id;
-                }
-
-                public Account IsDefault(string is_default)
-                {
-                    this.is_default = is_default;
-                    return this;
-                }
-
-                /**
-                 * Get isDefault
-                 *
-                 * @return isDefault
-                 **/
+                [Obsolete("This method is deprecated. Use IsDefault property instead", false)]
                 public string GetIsDefault()
                 {
-                    return is_default;
+                    return this.is_default;
                 }
 
-                public void SetIsDefault(string is_default)
+                public string AccountName
                 {
-                    this.is_default = is_default;
+                    get { return this.account_name; }
+                    set { this.account_name = value; }
                 }
 
-                public Account AccountName(string account_name)
+                public string BaseUri
                 {
-                    this.account_name = account_name;
-                    return this;
+                    get { return this.base_uri; }
+                    set { this.base_uri = value; }
                 }
 
-                /**
-                 * Get accountName
-                 * 
-                 * @return accountName
-                 **/
-                public string GetAccountName()
-                {
-                    return account_name;
-                }
-
-                public void SetAccountName(string account_name)
-                {
-                    this.account_name = account_name;
-                }
-
-                public Account BaseUri(string base_uri)
-                {
-                    this.base_uri = base_uri;
-                    return this;
-                }
-
-                /**
-                 * Get baseUri
-                 * 
-                 * @return baseUri
-                 **/
+                [Obsolete("This method is deprecated. Use BaseUri property instead", false)]
                 public string GetBaseUri()
                 {
-                    return base_uri;
+                    return this.base_uri;
                 }
 
-                public void SetBaseUri(string base_uri)
+                public Organization Organization
                 {
-                    this.base_uri = base_uri;
+                    get { return this.organization; }
+                    set { this.organization = value; }
                 }
 
                 public override bool Equals(object obj)
@@ -172,6 +144,8 @@ namespace DocuSign.eSign.Client.Auth
                             hash = hash * 59 + this.account_name.GetHashCode();
                         if (base_uri != null)
                             hash = hash * 59 + this.base_uri.GetHashCode();
+                        if (organization != null)
+                            hash = hash * 59 + this.organization.GetHashCode();
                         return hash;
                     }
                 }
@@ -185,6 +159,7 @@ namespace DocuSign.eSign.Client.Auth
                     sb.Append("    is_default: ").Append(ToIndentedString(is_default)).Append("\n");
                     sb.Append("    account_name: ").Append(ToIndentedString(account_name)).Append("\n");
                     sb.Append("    base_uri: ").Append(ToIndentedString(base_uri)).Append("\n");
+                    sb.Append("    organization: ").Append(ToIndentedString(organization)).Append("\n");
                     return sb.ToString();
                 }
 
@@ -226,6 +201,215 @@ namespace DocuSign.eSign.Client.Auth
                       this.base_uri == other.base_uri ||
                       this.base_uri != null &&
                       this.base_uri.Equals(other.base_uri)
+                  ) &&
+                  (
+                      this.organization == other.organization ||
+                      this.organization != null &&
+                      this.organization.Equals(other.organization)
+                  ); ;
+                }
+
+                /// <summary>
+                /// Returns the JSON string presentation of the object
+                /// </summary>
+                /// <returns>JSON string presentation of the object</returns>
+                public string ToJson()
+                {
+                    return JsonConvert.SerializeObject(this, Formatting.Indented);
+                }
+
+                public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+                {
+                    yield break;
+                }
+            }
+
+            /// <summary>
+            /// Organization model with the following properties:
+            /// organizationId: the organization ID GUID if DocuSign Org Admin is enabled.
+            /// links: this is list of organization direct links associated with the DocuSign account.
+            /// </summary>
+            [DataContract]
+            public class Organization : IEquatable<Organization>, IValidatableObject
+            {
+                [DataMember(Name = "organization_id", EmitDefaultValue = false)]
+                private string organization_id { get; set; }
+
+                [DataMember(Name = "links", EmitDefaultValue = false)]
+                private List<Link> links { get; set; } = new List<Link>();
+
+                public string OrganizationId
+                {
+                    get { return this.organization_id; }
+                    set { this.organization_id = value; }
+                }
+
+                public List<Link> Links
+                {
+                    get
+                    {
+                        if (this.links == null)
+                        {
+                            this.links = new List<Link>();
+                        }
+                        return this.links;
+                    }
+                }
+
+                public void AddLinks(Link link)
+                {
+                    if (this.links == null) { this.links = new List<Link>(); }
+                    this.links.Add(link);
+                }
+
+                public override bool Equals(object obj)
+                {
+                    return this.Equals(obj as Organization);
+                }
+
+                public override int GetHashCode()
+                {
+                    unchecked // Overflow is fine, just wrap
+                    {
+                        int hash = 41;
+                        if (this.organization_id != null)
+                            hash = hash * 59 + this.organization_id.GetHashCode();
+                        if (links != null)
+                            hash = hash * 59 + this.links.GetHashCode();
+                        return hash;
+                    }
+                }
+
+                public override string ToString()
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("class Link {\n");
+
+                    sb.Append("    organization_id: ").Append(ToIndentedString(organization_id)).Append("\n");
+                    sb.Append("    links: ").Append(ToIndentedString(links)).Append("\n");
+                    return sb.ToString();
+                }
+
+                private string ToIndentedString(object o)
+                {
+                    if (o == null)
+                    {
+                        return "null";
+                    }
+                    return o.ToString().Replace("\n", "\n    ");
+                }
+
+                public bool Equals(Organization other)
+                {
+                    if (other == null)
+                        return false;
+
+                    return
+                  (
+                      this.organization_id == other.organization_id ||
+                      this.organization_id != null &&
+                      this.organization_id.Equals(other.organization_id)
+                  ) &&
+                  (
+                      this.links == other.links ||
+                      this.links != null &&
+                      this.links.Equals(other.links)
+                  );
+                }
+
+                /// <summary>
+                /// Returns the JSON string presentation of the object
+                /// </summary>
+                /// <returns>JSON string presentation of the object</returns>
+                public string ToJson()
+                {
+                    return JsonConvert.SerializeObject(this, Formatting.Indented);
+                }
+
+                public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+                {
+                    yield break;
+                }
+            }
+
+            /// <summary>
+            /// Link model with the following properties:
+            /// rel: currently the only value is "self".
+            /// href: the direct link of the organization.
+            /// </summary>
+            [DataContract]
+            public class Link : IEquatable<Link>, IValidatableObject
+            {
+                [DataMember(Name = "rel", EmitDefaultValue = false)]
+                private string rel { get; set; }
+
+                [DataMember(Name = "href", EmitDefaultValue = false)]
+                private string href { get; set; }
+
+                public string Rel
+                {
+                    get { return this.rel; }
+                    set { this.rel = value; }
+                }
+
+                public string Href
+                {
+                    get { return this.href; }
+                    set { this.href = value; }
+                }
+
+                public override bool Equals(object obj)
+                {
+                    return this.Equals(obj as Link);
+                }
+
+                public override int GetHashCode()
+                {
+                    unchecked // Overflow is fine, just wrap
+                    {
+                        int hash = 41;
+                        if (this.rel != null)
+                            hash = hash * 59 + this.rel.GetHashCode();
+                        if (href != null)
+                            hash = hash * 59 + this.href.GetHashCode();
+                        return hash;
+                    }
+                }
+
+                public override string ToString()
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("class Link {\n");
+
+                    sb.Append("    rel: ").Append(ToIndentedString(rel)).Append("\n");
+                    sb.Append("    href: ").Append(ToIndentedString(href)).Append("\n");
+                    return sb.ToString();
+                }
+
+                private string ToIndentedString(object o)
+                {
+                    if (o == null)
+                    {
+                        return "null";
+                    }
+                    return o.ToString().Replace("\n", "\n    ");
+                }
+
+                public bool Equals(Link other)
+                {
+                    if (other == null)
+                        return false;
+
+                    return
+                  (
+                      this.rel == other.rel ||
+                      this.rel != null &&
+                      this.rel.Equals(other.rel)
+                  ) &&
+                  (
+                      this.href == other.href ||
+                      this.href != null &&
+                      this.href.Equals(other.href)
                   );
                 }
 
@@ -245,178 +429,78 @@ namespace DocuSign.eSign.Client.Auth
             }
 
             [DataMember(Name = "sub", EmitDefaultValue = false)]
-            private string sub = null;
+            private string sub { get; set; }
 
             [DataMember(Name = "email", EmitDefaultValue = false)]
-            private string email = null;
+            private string email { get; set; }
 
             [DataMember(Name = "accounts", EmitDefaultValue = false)]
-            private List<Account> accounts = new List<Account>();
+            private List<Account> accounts { get; set; } = new List<Account>();
 
             [DataMember(Name = "name", EmitDefaultValue = false)]
-            private string name = null;
+            private string name { get; set; }
 
             [DataMember(Name = "givenName", EmitDefaultValue = false)]
-            private string givenName = null;
+            private string givenName { get; set; }
 
             [DataMember(Name = "familyName", EmitDefaultValue = false)]
-            private string familyName = null;
+            private string familyName { get; set; }
 
             [DataMember(Name = "created", EmitDefaultValue = false)]
-            private string created = null;
+            private string created { get; set; }
 
-            public UserInfo Sub(string sub)
+            public string Sub
             {
-                this.sub = sub;
-                return this;
+                get { return this.sub; }
+                set { this.sub = value; }
             }
 
-            /**
-             * Get sub
-             *
-             * @return sub
-             **/
-            public string GetSub()
+            public string Email
             {
-                return sub;
+                get { return this.email; }
+                set { this.email = value; }
             }
 
-            public void SetSub(String sub)
+            public List<Account> Accounts
             {
-                this.sub = sub;
+                get { return this.accounts; }
             }
 
-            public UserInfo Email(string email)
+            public void AddAccount(Account account)
             {
-                this.email = email;
-                return this;
+                if (this.accounts == null) { this.accounts = new List<Account>(); }
+                this.accounts.Add(account);
             }
 
-            /**
-             * Get email
-             *
-             * @return email
-             **/
-            public string GetEmail()
-            {
-                return email;
-            }
-
-            public void SetEmail(string email)
-            {
-                this.email = email;
-            }
-
-            public UserInfo Accounts(List<Account> accounts)
-            {
-                this.accounts = accounts;
-                return this;
-            }
-
-            public UserInfo AddAccountsItem(Account accountsItem)
-            {
-                this.accounts.Add(accountsItem);
-                return this;
-            }
-
-            /**
-             * Get accounts
-             * 
-             * @return accounts
-             **/
+            [Obsolete("This method is deprecated. Use Accounts property instead", false)]
             public List<Account> GetAccounts()
             {
-                return accounts;
+                if (this.accounts == null) { this.accounts = new List<Account>(); }
+                return this.accounts;
             }
 
-            public void SetAccounts(List<Account> accounts)
+            public string Name
             {
-                this.accounts = accounts;
+                get { return this.name; }
+                set { this.name = value; }
             }
 
-            public UserInfo Name(string name)
+            public string GivenName
             {
-                this.name = name;
-                return this;
+                get { return this.givenName; }
+                set { this.givenName = value; }
             }
 
-            /**
-             * Get name
-             *
-             * @return name
-             **/
-            public String GetName()
+            public string FamilyName
             {
-                return name;
+                get { return this.familyName; }
+                set { this.familyName = value; }
             }
 
-            public void SetName(string name)
+            public string Created
             {
-                this.name = name;
-            }
-
-            public UserInfo GivenName(string givenName)
-            {
-                this.givenName = givenName;
-                return this;
-            }
-
-            /**
-             * Get givenName
-             *
-             * @return givenName
-             **/
-
-            public String GetGivenName()
-            {
-                return givenName;
-            }
-
-            public void setGivenName(string givenName)
-            {
-                this.givenName = givenName;
-            }
-
-            public UserInfo FamilyName(string familyName)
-            {
-                this.familyName = familyName;
-                return this;
-            }
-
-            /**
-             * Get familyName
-             *
-             * @return familyName
-             **/
-            public string GetFamilyName()
-            {
-                return familyName;
-            }
-
-            public void SetFamilyName(string familyName)
-            {
-                this.familyName = familyName;
-            }
-
-            public UserInfo Created(string created)
-            {
-                this.created = created;
-                return this;
-            }
-
-            /**
-             * Get created
-             *
-             * @return created
-             **/
-            public string GetCreated()
-            {
-                return created;
-            }
-
-            public void SetCreated(string created)
-            {
-                this.created = created;
+                get { return this.created; }
+                set { this.created = value; }
             }
 
             public override bool Equals(object o)
@@ -462,10 +546,6 @@ namespace DocuSign.eSign.Client.Auth
                 return sb.ToString();
             }
 
-            /**
-             * Convert the given object to string with each line indented by 4 spaces
-             * (except the first line).
-             */
             private string ToIndentedString(object o)
             {
                 if (o == null)

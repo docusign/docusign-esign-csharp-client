@@ -44,8 +44,8 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="DocuSign.eSign, Version=3.1.0.0, Culture=neutral, PublicKeyToken=7fca6fcbbc219ede, processorArchitecture=MSIL">
-      <HintPath>..\packages\DocuSign.eSign.dll.3.1.0-rc\lib\net45\DocuSign.eSign.dll</HintPath>
+    <Reference Include="DocuSign.eSign, Version=3.1.1.0, Culture=neutral, PublicKeyToken=7fca6fcbbc219ede, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocuSign.eSign.dll.3.1.1-rc\lib\net45\DocuSign.eSign.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">

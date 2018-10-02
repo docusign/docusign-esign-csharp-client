@@ -23,8 +23,6 @@ Contact: devcenter@docusign.com
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>3.1.0</VersionPrefix>
-    <VersionSuffix>rc</VersionSuffix>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>DocuSign.eSign;REST;eSign;docusign;eSignature;api</PackageTags>
@@ -33,10 +31,11 @@ Contact: devcenter@docusign.com
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <Version>3.1.1-rc</Version>
     <PackageReleaseNotes>
-      [v3.1.0-rc] - eSignature API v18.3.00 - 9/12/2018
+      [v3.1.1-rc] - eSignature API v18.3.00 - 10/2/2018
       https://github.com/docusign/docusign-csharp-client/blob/master/CHANGELOG.md
-    </PackageReleaseNotes>
+</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

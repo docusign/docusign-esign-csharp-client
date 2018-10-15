@@ -31,9 +31,9 @@ Contact: devcenter@docusign.com
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>3.1.1-rc</Version>
+    <Version>3.1.1</Version>
     <PackageReleaseNotes>
-      [v3.1.1-rc] - eSignature API v18.3.00 - 10/2/2018
+      [v3.1.1] - eSignature API v18.3.00 - 10/15/2018
       https://github.com/docusign/docusign-csharp-client/blob/master/CHANGELOG.md
 </PackageReleaseNotes>
   </PropertyGroup>

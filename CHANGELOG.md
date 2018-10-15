@@ -1,5 +1,9 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v3.1.1] - eSignature API v18.3.00 - 10/15/2018
+### Updated
+* SDK Release Version updated.
+
 ## [v3.1.1-rc] - eSignature API v18.3.00 - 10/2/2018
 ### Added
 * The C# .NET Standard SDK can now be implemented by projects in Mac and Linux environments. (DCM-2837)

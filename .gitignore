@@ -2,6 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+/.vs/esign-csharp-sdk/v15/.suo
 /.vs
-/test/.vs
+/test/.vs/SdkTests
 /test/packages

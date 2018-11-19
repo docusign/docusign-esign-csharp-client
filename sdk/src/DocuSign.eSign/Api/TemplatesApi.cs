@@ -200,7 +200,7 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<TemplateSummary> CreateTemplateWithHttpInfo (string accountId, EnvelopeTemplate envelopeTemplate = null);
         /// <summary>
-        /// Get Responsive HTML Preview for a document in a template.
+        /// Post Responsive HTML Preview for a document in a template.
         /// </summary>
         /// <remarks>
         /// 
@@ -213,7 +213,7 @@ namespace DocuSign.eSign.Api
         DocumentHtmlDefinitions CreateTemplateDocumentResponsiveHtmlPreview (string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null);
 
         /// <summary>
-        /// Get Responsive HTML Preview for a document in a template.
+        /// Post Responsive HTML Preview for a document in a template.
         /// </summary>
         /// <remarks>
         /// 
@@ -850,6 +850,56 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<Tabs> ListTabsWithHttpInfo (string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null);
         /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        
+        /// <returns></returns>
+        DocumentHtmlDefinitionOriginals ListTemplateDocumentResponsiveHtmlPreview (string accountId, string templateId, string documentId);
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<DocumentHtmlDefinitionOriginals> ListTemplateDocumentResponsiveHtmlPreviewWithHttpInfo (string accountId, string templateId, string documentId);
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for the template.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        
+        
+        /// <returns></returns>
+        DocumentHtmlDefinitionOriginals ListTemplateResponsiveHtmlPreview (string accountId, string templateId);
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for the template.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<DocumentHtmlDefinitionOriginals> ListTemplateResponsiveHtmlPreviewWithHttpInfo (string accountId, string templateId);
+        /// <summary>
         /// Gets the definition of a template.
         /// </summary>
         /// <remarks>
@@ -1352,7 +1402,7 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (TemplateSummary)</returns>
         System.Threading.Tasks.Task<ApiResponse<TemplateSummary>> CreateTemplateAsyncWithHttpInfo (string accountId, EnvelopeTemplate envelopeTemplate = null);
         /// <summary>
-        /// Get Responsive HTML Preview for a document in a template.
+        /// Post Responsive HTML Preview for a document in a template.
         /// </summary>
         /// <remarks>
         /// 
@@ -1365,7 +1415,7 @@ namespace DocuSign.eSign.Api
         System.Threading.Tasks.Task<DocumentHtmlDefinitions> CreateTemplateDocumentResponsiveHtmlPreviewAsync (string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null);
 
         /// <summary>
-        /// Get Responsive HTML Preview for a document in a template.
+        /// Post Responsive HTML Preview for a document in a template.
         /// </summary>
         /// <remarks>
         /// 
@@ -2001,6 +2051,56 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Tabs)</returns>
         System.Threading.Tasks.Task<ApiResponse<Tabs>> ListTabsAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null);
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        
+        /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
+        System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> ListTemplateDocumentResponsiveHtmlPreviewAsync (string accountId, string templateId, string documentId);
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        
+        /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> ListTemplateDocumentResponsiveHtmlPreviewAsyncWithHttpInfo (string accountId, string templateId, string documentId);
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for the template.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        
+        
+        /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
+        System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> ListTemplateResponsiveHtmlPreviewAsync (string accountId, string templateId);
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for the template.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        
+        
+        /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> ListTemplateResponsiveHtmlPreviewAsyncWithHttpInfo (string accountId, string templateId);
         /// <summary>
         /// Gets the definition of a template.
         /// </summary>
@@ -3767,7 +3867,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get Responsive HTML Preview for a document in a template. 
+        /// Post Responsive HTML Preview for a document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
@@ -3781,7 +3881,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get Responsive HTML Preview for a document in a template. 
+        /// Post Responsive HTML Preview for a document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
@@ -3866,7 +3966,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get Responsive HTML Preview for a document in a template. 
+        /// Post Responsive HTML Preview for a document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
@@ -3881,7 +3981,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get Responsive HTML Preview for a document in a template. 
+        /// Post Responsive HTML Preview for a document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
@@ -8675,6 +8775,354 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<Tabs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Tabs) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        
+        /// <returns>DocumentHtmlDefinitionOriginals</returns>
+        public DocumentHtmlDefinitionOriginals ListTemplateDocumentResponsiveHtmlPreview (string accountId, string templateId, string documentId)
+        {
+             ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = ListTemplateDocumentResponsiveHtmlPreviewWithHttpInfo(accountId, templateId, documentId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        
+        /// <returns>ApiResponse of DocumentHtmlDefinitionOriginals</returns>
+        public ApiResponse< DocumentHtmlDefinitionOriginals > ListTemplateDocumentResponsiveHtmlPreviewWithHttpInfo (string accountId, string templateId, string documentId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->ListTemplateDocumentResponsiveHtmlPreview");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->ListTemplateDocumentResponsiveHtmlPreview");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling TemplatesApi->ListTemplateDocumentResponsiveHtmlPreview");
+
+            var localVarPath = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/responsive_html_preview";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListTemplateDocumentResponsiveHtmlPreview", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitionOriginals)));
+            }
+            else
+            {
+                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        
+        /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
+        public async System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> ListTemplateDocumentResponsiveHtmlPreviewAsync (string accountId, string templateId, string documentId)
+        {
+             ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = await ListTemplateDocumentResponsiveHtmlPreviewAsyncWithHttpInfo(accountId, templateId, documentId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        
+        
+        /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> ListTemplateDocumentResponsiveHtmlPreviewAsyncWithHttpInfo (string accountId, string templateId, string documentId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->ListTemplateDocumentResponsiveHtmlPreview");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->ListTemplateDocumentResponsiveHtmlPreview");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling TemplatesApi->ListTemplateDocumentResponsiveHtmlPreview");
+
+            var localVarPath = "/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/responsive_html_preview";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListTemplateDocumentResponsiveHtmlPreview", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DocumentHtmlDefinitionOriginals) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for the template. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        
+        
+        /// <returns>DocumentHtmlDefinitionOriginals</returns>
+        public DocumentHtmlDefinitionOriginals ListTemplateResponsiveHtmlPreview (string accountId, string templateId)
+        {
+             ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = ListTemplateResponsiveHtmlPreviewWithHttpInfo(accountId, templateId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for the template. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        
+        
+        /// <returns>ApiResponse of DocumentHtmlDefinitionOriginals</returns>
+        public ApiResponse< DocumentHtmlDefinitionOriginals > ListTemplateResponsiveHtmlPreviewWithHttpInfo (string accountId, string templateId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->ListTemplateResponsiveHtmlPreview");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->ListTemplateResponsiveHtmlPreview");
+
+            var localVarPath = "/v2/accounts/{accountId}/templates/{templateId}/responsive_html_preview";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListTemplateResponsiveHtmlPreview", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitionOriginals)));
+            }
+            else
+            {
+                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for the template. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        
+        
+        /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
+        public async System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> ListTemplateResponsiveHtmlPreviewAsync (string accountId, string templateId)
+        {
+             ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = await ListTemplateResponsiveHtmlPreviewAsyncWithHttpInfo(accountId, templateId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the Original HTML Definition used to generate the Responsive HTML for the template. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        
+        
+        /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> ListTemplateResponsiveHtmlPreviewAsyncWithHttpInfo (string accountId, string templateId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->ListTemplateResponsiveHtmlPreview");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->ListTemplateResponsiveHtmlPreview");
+
+            var localVarPath = "/v2/accounts/{accountId}/templates/{templateId}/responsive_html_preview";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListTemplateResponsiveHtmlPreview", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DocumentHtmlDefinitionOriginals) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
             
         }
 

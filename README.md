@@ -75,7 +75,7 @@ namespace DocuSignSample
 
             ApiClient apiClient = new ApiClient(host);
 
-            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(integratorKey, userId, oauthBasePath, privateKeyBytes, expiresInHours);  
+            OAuth.OAuthToken tokenInfo = apiClient.RequestJWTUserToken(integratorKey, userId, oauthBasePath, privateKeyBytes, expiresInHours);  
 
             /////////////////////////////////////////////////////////////////
             // STEP 1: Get User Info   

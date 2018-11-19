@@ -12,7 +12,7 @@ Contact: devcenter@docusign.com
     <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
     <IsPackable>true</IsPackable>
     <PackageId>DocuSign.eSign.dll</PackageId>
-    <Description>The DocuSign NuGet package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-charp-client repository. Join the eSign revolution!</Description>
+    <Description>The DocuSign NuGet package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-csharp-client repository. Join the eSign revolution!</Description>
     <Company>DocuSign Inc.</Company>
     <Owners>DocuSign</Owners>
     <Copyright>Copyright © DocuSign 2018</Copyright>

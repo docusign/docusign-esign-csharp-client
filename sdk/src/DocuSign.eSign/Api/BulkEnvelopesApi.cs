@@ -1190,6 +1190,7 @@ namespace DocuSign.eSign.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "text/csv"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1211,7 +1212,7 @@ namespace DocuSign.eSign.Api
 
             if (bulkRecipientsRequest != null && bulkRecipientsRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(bulkRecipientsRequest); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(bulkRecipientsRequest, localVarHttpContentType); // http body (model) parameter
             }
             else
             {
@@ -1290,6 +1291,7 @@ namespace DocuSign.eSign.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "text/csv"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1311,7 +1313,7 @@ namespace DocuSign.eSign.Api
 
             if (bulkRecipientsRequest != null && bulkRecipientsRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(bulkRecipientsRequest); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(bulkRecipientsRequest, localVarHttpContentType); // http body (model) parameter
             }
             else
             {

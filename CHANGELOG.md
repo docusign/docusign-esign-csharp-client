@@ -1,5 +1,16 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v3.1.2-rc] - eSignature API v18.3.02 - 11/19/2018
+### Changed
+* The SDK now supports version 18.3.02 of the DocuSign eSignature API.
+* SDK Release Version updated.
+* Net Framework v4.5 Dependencies upgraded to gracefully support framework v4.5 SDK dependency issues with other versions.
+### Fixed
+* Fixed a problem with the EnvelopesApi.ListStatus and EnvelopesApi.ListStatusChanges methods that could cause them to ignore sets of envelope IDs passed in to get statuses for specific envelopes. (DCM-2748)
+* Fixed a problem with the BulkEnvelopesApi.UpdateRecipients method that could cause it to return a "Value cannot be null.\r\nParameter name: stream" error rather than add bulk recipients to an envelope. (DCM-2862)
+* Removed a unnecessary prefix from a line of the Usage Example. (DCM-3005)
+* Fixed a dependency issue with other libraries in v4.5 framework that could cause integration problems. (DCM-2999 and DCM-2942)
+
 ## [v3.1.1] - eSignature API v18.3.00 - 10/15/2018
 ### Updated
 * SDK Release Version updated.

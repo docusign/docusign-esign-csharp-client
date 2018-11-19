@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using Owin;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
@@ -69,10 +70,17 @@ namespace SdkTests
             ApiClient apiClient = new ApiClient(BaseUrl);
             DocuSign.eSign.Client.Configuration.Default.ApiClient = apiClient;
 
+            List<string> scopes = new List<string>
+            {
+                "signature"
+            };
+
+            string response_type = "CODE";
+
             // Initiate the browser session to the Authentication server
             // so the user can login.
-            string accountServerAuthUrl = apiClient.GetAuthorizationUri(client_id, redirect_url, true, stateOptional);
-            System.Diagnostics.Process.Start(accountServerAuthUrl);
+            Uri accountServerAuthUrl = apiClient.GetAuthorizationUri(client_id, scopes, redirect_url, response_type, stateOptional);
+            System.Diagnostics.Process.Start(accountServerAuthUrl.AbsolutePath);
 
             WaitForCallbackEvent = new ManualResetEvent(false);
 
@@ -90,9 +98,9 @@ namespace SdkTests
             }
             Assert.IsNotNull(AccessCode);
 
-            string accessToken = apiClient.GetOAuthToken(client_id, client_secret, true, AccessCode);
-            Assert.IsNotNull(accessToken);
-            Trace.WriteLine("Access_token: " + accessToken);
+            DocuSign.eSign.Client.Auth.OAuth.OAuthToken oAuthToken = apiClient.GenerateAccessToken(client_id, client_secret, AccessCode);
+            Assert.IsNotNull(oAuthToken);
+            Trace.WriteLine("Access_token: " + oAuthToken.access_token);
 
             // we will retrieve this from the login API call
             string accountId = null;
@@ -175,7 +183,7 @@ namespace SdkTests
     }
 
     // API Controller and action called via the redirect_url registered for thie client_id
-    public class callbackController : ApiController
+    public class CallbackController : ApiController
     {
         // GET auth/callback 
         public HttpResponseMessage Get()
@@ -185,9 +193,11 @@ namespace SdkTests
             // state is app-specific string that may be passed around for validation.
             OAuthFlowTests.StateValue = Request.RequestUri.ParseQueryString()["state"];
 
-            HttpResponseMessage response = new HttpResponseMessage();
-            response.Content = new StringContent("Redirect Completed");
-            response.StatusCode = HttpStatusCode.OK;
+            HttpResponseMessage response = new HttpResponseMessage
+            {
+                Content = new StringContent("Redirect Completed"),
+                StatusCode = HttpStatusCode.OK
+            };
 
             // Signal the main test that the response has been received.
             OAuthFlowTests.WaitForCallbackEvent.Set();

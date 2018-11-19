@@ -111,6 +111,14 @@ namespace SdkNetCoreTests
             testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
         }
 
+        private void GetSampleEnvelopeIds()
+        {
+            if (testConfig.EnvelopeIdsList.Count <= 0)
+            {
+                JwtListEnvelopesTest();
+            }
+        }
+
         [TestMethod]
         public void JwtRequestSignatureFromTemplateTest()
         {
@@ -192,7 +200,160 @@ namespace SdkNetCoreTests
             Assert.IsNotNull(envelopes.Envelopes);
             Assert.IsNotNull(envelopes.Envelopes[0].EnvelopeId);
 
+            foreach (var envelopeslist in envelopes.Envelopes)
+            {
+                testConfig.EnvelopeIdsList.Add(envelopeslist.EnvelopeId);
+            }
         } // end listEnvelopesTest()
+
+        [TestMethod]
+        public void JwtListEnvelopesWithSpecifiedEnvelopeIdsInQueryParameterTest()
+        {
+            GetSampleEnvelopeIds();
+            // This example gets statuses of all envelopes listed in envelopeIds comma separated
+            var envIds = string.Join(", ", testConfig.EnvelopeIdsList);
+
+            // set a filter for the envelopes we want returned using the envelopeIds property in the query parameter
+            EnvelopesApi.ListStatusChangesOptions options = new EnvelopesApi.ListStatusChangesOptions()
+            {
+                envelopeIds = envIds
+            };
+
+            // |EnvelopesApi| contains methods related to envelopes and envelope recipients
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+
+            EnvelopesInformation envelopes = envelopesApi.ListStatusChanges(testConfig.AccountId, options);
+
+            Assert.IsNotNull(envelopes);
+            Assert.IsNotNull(envelopes.Envelopes);
+            Assert.IsNotNull(envelopes.Envelopes[0].EnvelopeId);
+            Assert.IsNotNull(envelopes.Envelopes[0].Status);
+        }
+
+        [TestMethod]
+        public void JwtListEnvelopesWithSpecifiedEnvelopeIdsInRequestBodyTest()
+        {
+            GetSampleEnvelopeIds();
+            // This example gets statuses of all envelopes listed in envelopeIds comma separated
+            EnvelopeIdsRequest envIdsRequest = new EnvelopeIdsRequest(testConfig.EnvelopeIdsList);
+
+            // set a filter for the envelopes we want returned - we will ask the API to let the List of Envelope Ids from request body
+            EnvelopesApi.ListStatusOptions options = new EnvelopesApi.ListStatusOptions()
+            {
+                envelopeIds = "request_body"
+            };
+
+            // |EnvelopesApi| contains methods related to envelopes and envelope recipients
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+
+            EnvelopesInformation envelopes = envelopesApi.ListStatus(testConfig.AccountId, envIdsRequest, options);
+
+            Assert.IsNotNull(envelopes);
+            Assert.IsNotNull(envelopes.Envelopes);
+            Assert.IsNotNull(envelopes.Envelopes[0].EnvelopeId);
+            Assert.IsNotNull(envelopes.Envelopes[0].Status);
+        }
+
+        private BulkRecipientsSummaryResponse MockBulkRecipientsSummaryResponse()
+        {
+            BulkRecipient bulkRecipient1 = new BulkRecipient(
+                Email: "john.jay.rele@mailinator.com",
+                Name: "John Jay"
+                );
+            BulkRecipient bulkRecipient2 = new BulkRecipient(
+                Email: "jon.jon@mailinator.com",
+                Name: "jon jon"
+                );
+            BulkRecipient bulkRecipient3 = new BulkRecipient(
+                Email: "tom.tom@mailinator.com",
+                Name: "tom tom",
+                AccessCode: "123"
+                );
+
+            List<BulkRecipient> bulkRecipients = new List<BulkRecipient> { bulkRecipient1, bulkRecipient2, bulkRecipient3 };
+
+            BulkRecipientsRequest bulkRecipientsRequest = new BulkRecipientsRequest(bulkRecipients);
+
+            BulkEnvelopesApi bulkEnvelopesApi = new BulkEnvelopesApi();
+
+            return bulkEnvelopesApi.UpdateRecipients(testConfig.AccountId, testConfig.EnvelopeId, "1", bulkRecipientsRequest);
+        }
+
+        [TestMethod]
+        public void JwtBulkEnvelopesApiTest()
+        {
+            #region Envelope Creation - with BulkRecipient Flag
+            // the document (file) we want signed
+            const string SignTest1File = @"../../../docs/SignTest1.pdf";
+
+            // Read a file from disk to use as a document.
+            byte[] fileBytes = File.ReadAllBytes(SignTest1File);
+
+            EnvelopeDefinition envDef = new EnvelopeDefinition();
+            envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
+
+            // Add a document to the envelope
+            Document doc = new Document();
+            doc.DocumentBase64 = System.Convert.ToBase64String(fileBytes);
+            doc.Name = "TestFile.pdf";
+            doc.DocumentId = "1";
+            // doc.FileExtension = System.IO.Path.GetExtension(SignTest1File);
+
+            envDef.Documents = new List<Document>();
+            envDef.Documents.Add(doc);
+
+            // Add a recipient to sign the documeent
+            Signer signer = new Signer();
+            signer.RecipientId = "1";
+            signer.IsBulkRecipient = "true";
+
+            // Create a |SignHere| tab somewhere on the document for the recipient to sign
+            signer.Tabs = new Tabs();
+            signer.Tabs.SignHereTabs = new List<SignHere>();
+            SignHere signHere = new SignHere();
+            signHere.DocumentId = "1";
+            signHere.PageNumber = "1";
+            signHere.RecipientId = "1";
+            signHere.XPosition = "100";
+            signHere.YPosition = "100";
+            signHere.ScaleValue = ".5";
+            signer.Tabs.SignHereTabs.Add(signHere);
+
+            envDef.Recipients = new Recipients();
+            envDef.Recipients.Signers = new List<Signer>();
+            envDef.Recipients.Signers.Add(signer);
+
+
+            TemplateTabs templateTabs = new TemplateTabs();
+            templateTabs.DateTabs = new List<Date>();
+
+            Tabs tabs = new Tabs();
+            tabs.DateTabs = new List<Date>();
+
+            SignerAttachment signerAttachment = new SignerAttachment();
+            signerAttachment.ScaleValue = "";
+
+            // set envelope status to "sent" to immediately send the signature request
+            envDef.Status = "created";
+
+            // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
+
+            testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
+            #endregion
+            var response = MockBulkRecipientsSummaryResponse();
+
+            // update the status of the enve
+            Envelope envelope = new Envelope();
+            envelope.Status = "sent";
+
+            envelopesApi.Update(testConfig.AccountId, testConfig.EnvelopeId, envelope);
+
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.BulkRecipientsUri);
+            Assert.IsNotNull(response.BulkRecipientsCount);
+        }
 
         [TestMethod]
         public void JwtListDocumentsAndDownloadTest()

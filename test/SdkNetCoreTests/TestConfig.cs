@@ -1,4 +1,6 @@
 using DocuSign.eSign.Client;
+using System.Collections.Generic;
+
 namespace SdkNetCoreTests
 {
     class TestConfig
@@ -21,6 +23,12 @@ namespace SdkNetCoreTests
         public string PrivateKeyFilename { get; set; }
         public int ExpiresInHours { get; set; }
 
+        public List<string> EnvelopeIdsList { get; set; }
+
+        public string IntegratorKeyNoConsent { get; set; }
+
+        public string PrivateKeyNoConsentFilename { get; set; }
+
         public TestConfig(string username = null, string password = null, string integratorKey = null, string host = null, string recipientEmail = null, string recipientName = null, string templateRoleName = null, string templateId = null, string returnUrl = null)
         {
             this.Host = (host != null) ? host : "https://demo.docusign.net/restapi";
@@ -41,6 +49,10 @@ namespace SdkNetCoreTests
             this.PrivateKeyFilename = "../../../docs/private.pem";
             this.ExpiresInHours = 1;
 
+            this.EnvelopeIdsList = new List<string>();
+
+            this.IntegratorKeyNoConsent = "66750331-xxxx-xxxx-xxxx-6c1a413a6096";
+            this.PrivateKeyNoConsentFilename = "../../../docs/privateKeyConsentReq.pem";
             //this.Configuration = new Configuration();
         }
     }

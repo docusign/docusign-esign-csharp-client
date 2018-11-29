@@ -24,39 +24,31 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// PostTransactionsResponse
+    /// DocumentHtmlDefinitionOriginals
     /// </summary>
     [DataContract]
-    public partial class PostTransactionsResponse :  IEquatable<PostTransactionsResponse>, IValidatableObject
+    public partial class DocumentHtmlDefinitionOriginals :  IEquatable<DocumentHtmlDefinitionOriginals>, IValidatableObject
     {
-        public PostTransactionsResponse()
+        public DocumentHtmlDefinitionOriginals()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PostTransactionsResponse" /> class.
+        /// Initializes a new instance of the <see cref="DocumentHtmlDefinitionOriginals" /> class.
         /// </summary>
-        /// <param name="DocumentData">.</param>
-        /// <param name="TransactionSid">.</param>
-        public PostTransactionsResponse(string DocumentData = default(string), string TransactionSid = default(string))
+        /// <param name="HtmlDefinitions">.</param>
+        public DocumentHtmlDefinitionOriginals(List<DocumentHtmlDefinitionOriginal> HtmlDefinitions = default(List<DocumentHtmlDefinitionOriginal>))
         {
-            this.DocumentData = DocumentData;
-            this.TransactionSid = TransactionSid;
+            this.HtmlDefinitions = HtmlDefinitions;
         }
         
         /// <summary>
         /// 
         /// </summary>
         /// <value></value>
-        [DataMember(Name="documentData", EmitDefaultValue=false)]
-        public string DocumentData { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="transactionSid", EmitDefaultValue=false)]
-        public string TransactionSid { get; set; }
+        [DataMember(Name="htmlDefinitions", EmitDefaultValue=false)]
+        public List<DocumentHtmlDefinitionOriginal> HtmlDefinitions { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -64,9 +56,8 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class PostTransactionsResponse {\n");
-            sb.Append("  DocumentData: ").Append(DocumentData).Append("\n");
-            sb.Append("  TransactionSid: ").Append(TransactionSid).Append("\n");
+            sb.Append("class DocumentHtmlDefinitionOriginals {\n");
+            sb.Append("  HtmlDefinitions: ").Append(HtmlDefinitions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,15 +79,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as PostTransactionsResponse);
+            return this.Equals(obj as DocumentHtmlDefinitionOriginals);
         }
 
         /// <summary>
-        /// Returns true if PostTransactionsResponse instances are equal
+        /// Returns true if DocumentHtmlDefinitionOriginals instances are equal
         /// </summary>
-        /// <param name="other">Instance of PostTransactionsResponse to be compared</param>
+        /// <param name="other">Instance of DocumentHtmlDefinitionOriginals to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PostTransactionsResponse other)
+        public bool Equals(DocumentHtmlDefinitionOriginals other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -104,14 +95,9 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.DocumentData == other.DocumentData ||
-                    this.DocumentData != null &&
-                    this.DocumentData.Equals(other.DocumentData)
-                ) && 
-                (
-                    this.TransactionSid == other.TransactionSid ||
-                    this.TransactionSid != null &&
-                    this.TransactionSid.Equals(other.TransactionSid)
+                    this.HtmlDefinitions == other.HtmlDefinitions ||
+                    this.HtmlDefinitions != null &&
+                    this.HtmlDefinitions.SequenceEqual(other.HtmlDefinitions)
                 );
         }
 
@@ -126,10 +112,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.DocumentData != null)
-                    hash = hash * 59 + this.DocumentData.GetHashCode();
-                if (this.TransactionSid != null)
-                    hash = hash * 59 + this.TransactionSid.GetHashCode();
+                if (this.HtmlDefinitions != null)
+                    hash = hash * 59 + this.HtmlDefinitions.GetHashCode();
                 return hash;
             }
         }

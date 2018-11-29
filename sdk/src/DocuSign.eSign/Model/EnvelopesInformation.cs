@@ -37,19 +37,23 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopesInformation" /> class.
         /// </summary>
+        /// <param name="ContinuationToken">.</param>
         /// <param name="EndPosition">The last position in the result set. .</param>
         /// <param name="Envelopes">.</param>
         /// <param name="EnvelopeTransactionStatuses">.</param>
+        /// <param name="LastQueriedDateTime">.</param>
         /// <param name="NextUri">The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. .</param>
         /// <param name="PreviousUri">The postal code for the billing address..</param>
         /// <param name="ResultSetSize">The number of results returned in this response. .</param>
         /// <param name="StartPosition">Starting position of the current result set..</param>
         /// <param name="TotalSetSize">The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response..</param>
-        public EnvelopesInformation(string EndPosition = default(string), List<Envelope> Envelopes = default(List<Envelope>), List<EnvelopeTransactionStatus> EnvelopeTransactionStatuses = default(List<EnvelopeTransactionStatus>), string NextUri = default(string), string PreviousUri = default(string), string ResultSetSize = default(string), string StartPosition = default(string), string TotalSetSize = default(string))
+        public EnvelopesInformation(string ContinuationToken = default(string), string EndPosition = default(string), List<Envelope> Envelopes = default(List<Envelope>), List<EnvelopeTransactionStatus> EnvelopeTransactionStatuses = default(List<EnvelopeTransactionStatus>), string LastQueriedDateTime = default(string), string NextUri = default(string), string PreviousUri = default(string), string ResultSetSize = default(string), string StartPosition = default(string), string TotalSetSize = default(string))
         {
+            this.ContinuationToken = ContinuationToken;
             this.EndPosition = EndPosition;
             this.Envelopes = Envelopes;
             this.EnvelopeTransactionStatuses = EnvelopeTransactionStatuses;
+            this.LastQueriedDateTime = LastQueriedDateTime;
             this.NextUri = NextUri;
             this.PreviousUri = PreviousUri;
             this.ResultSetSize = ResultSetSize;
@@ -57,6 +61,12 @@ namespace DocuSign.eSign.Model
             this.TotalSetSize = TotalSetSize;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="continuationToken", EmitDefaultValue=false)]
+        public string ContinuationToken { get; set; }
         /// <summary>
         /// The last position in the result set. 
         /// </summary>
@@ -75,6 +85,12 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="envelopeTransactionStatuses", EmitDefaultValue=false)]
         public List<EnvelopeTransactionStatus> EnvelopeTransactionStatuses { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="lastQueriedDateTime", EmitDefaultValue=false)]
+        public string LastQueriedDateTime { get; set; }
         /// <summary>
         /// The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
         /// </summary>
@@ -113,9 +129,11 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class EnvelopesInformation {\n");
+            sb.Append("  ContinuationToken: ").Append(ContinuationToken).Append("\n");
             sb.Append("  EndPosition: ").Append(EndPosition).Append("\n");
             sb.Append("  Envelopes: ").Append(Envelopes).Append("\n");
             sb.Append("  EnvelopeTransactionStatuses: ").Append(EnvelopeTransactionStatuses).Append("\n");
+            sb.Append("  LastQueriedDateTime: ").Append(LastQueriedDateTime).Append("\n");
             sb.Append("  NextUri: ").Append(NextUri).Append("\n");
             sb.Append("  PreviousUri: ").Append(PreviousUri).Append("\n");
             sb.Append("  ResultSetSize: ").Append(ResultSetSize).Append("\n");
@@ -158,6 +176,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.ContinuationToken == other.ContinuationToken ||
+                    this.ContinuationToken != null &&
+                    this.ContinuationToken.Equals(other.ContinuationToken)
+                ) && 
+                (
                     this.EndPosition == other.EndPosition ||
                     this.EndPosition != null &&
                     this.EndPosition.Equals(other.EndPosition)
@@ -171,6 +194,11 @@ namespace DocuSign.eSign.Model
                     this.EnvelopeTransactionStatuses == other.EnvelopeTransactionStatuses ||
                     this.EnvelopeTransactionStatuses != null &&
                     this.EnvelopeTransactionStatuses.SequenceEqual(other.EnvelopeTransactionStatuses)
+                ) && 
+                (
+                    this.LastQueriedDateTime == other.LastQueriedDateTime ||
+                    this.LastQueriedDateTime != null &&
+                    this.LastQueriedDateTime.Equals(other.LastQueriedDateTime)
                 ) && 
                 (
                     this.NextUri == other.NextUri ||
@@ -210,12 +238,16 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.ContinuationToken != null)
+                    hash = hash * 59 + this.ContinuationToken.GetHashCode();
                 if (this.EndPosition != null)
                     hash = hash * 59 + this.EndPosition.GetHashCode();
                 if (this.Envelopes != null)
                     hash = hash * 59 + this.Envelopes.GetHashCode();
                 if (this.EnvelopeTransactionStatuses != null)
                     hash = hash * 59 + this.EnvelopeTransactionStatuses.GetHashCode();
+                if (this.LastQueriedDateTime != null)
+                    hash = hash * 59 + this.LastQueriedDateTime.GetHashCode();
                 if (this.NextUri != null)
                     hash = hash * 59 + this.NextUri.GetHashCode();
                 if (this.PreviousUri != null)

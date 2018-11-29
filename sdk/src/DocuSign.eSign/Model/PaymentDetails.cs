@@ -44,9 +44,10 @@ namespace DocuSign.eSign.Model
         /// <param name="GatewayDisplayName">.</param>
         /// <param name="GatewayName">.</param>
         /// <param name="LineItems">.</param>
+        /// <param name="PaymentOption">.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="Total">Total.</param>
-        public PaymentDetails(List<string> AllowedPaymentMethods = default(List<string>), string ChargeId = default(string), string CurrencyCode = default(string), string GatewayAccountId = default(string), string GatewayDisplayName = default(string), string GatewayName = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string Status = default(string), Money Total = default(Money))
+        public PaymentDetails(List<string> AllowedPaymentMethods = default(List<string>), string ChargeId = default(string), string CurrencyCode = default(string), string GatewayAccountId = default(string), string GatewayDisplayName = default(string), string GatewayName = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string PaymentOption = default(string), string Status = default(string), Money Total = default(Money))
         {
             this.AllowedPaymentMethods = AllowedPaymentMethods;
             this.ChargeId = ChargeId;
@@ -55,6 +56,7 @@ namespace DocuSign.eSign.Model
             this.GatewayDisplayName = GatewayDisplayName;
             this.GatewayName = GatewayName;
             this.LineItems = LineItems;
+            this.PaymentOption = PaymentOption;
             this.Status = Status;
             this.Total = Total;
         }
@@ -102,6 +104,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lineItems", EmitDefaultValue=false)]
         public List<PaymentLineItem> LineItems { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="paymentOption", EmitDefaultValue=false)]
+        public string PaymentOption { get; set; }
+        /// <summary>
         /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
         /// </summary>
         /// <value>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.</value>
@@ -127,6 +135,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  GatewayDisplayName: ").Append(GatewayDisplayName).Append("\n");
             sb.Append("  GatewayName: ").Append(GatewayName).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
+            sb.Append("  PaymentOption: ").Append(PaymentOption).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
             sb.Append("}\n");
@@ -201,6 +210,11 @@ namespace DocuSign.eSign.Model
                     this.LineItems.SequenceEqual(other.LineItems)
                 ) && 
                 (
+                    this.PaymentOption == other.PaymentOption ||
+                    this.PaymentOption != null &&
+                    this.PaymentOption.Equals(other.PaymentOption)
+                ) && 
+                (
                     this.Status == other.Status ||
                     this.Status != null &&
                     this.Status.Equals(other.Status)
@@ -237,6 +251,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.GatewayName.GetHashCode();
                 if (this.LineItems != null)
                     hash = hash * 59 + this.LineItems.GetHashCode();
+                if (this.PaymentOption != null)
+                    hash = hash * 59 + this.PaymentOption.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.Total != null)

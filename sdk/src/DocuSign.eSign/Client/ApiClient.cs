@@ -847,7 +847,7 @@ namespace DocuSign.eSign.Client
             {
                 throw new ApiException((int)response.StatusCode,
                   "Error while requesting server, received a non successful HTTP code "
-                  + response.ResponseStatus + " with response Body: '" + response.Content + "'");
+                  + response.ResponseStatus + " with response Body: " + response.Content, response.Content);
             }
         }
 
@@ -883,7 +883,7 @@ namespace DocuSign.eSign.Client
             {
                 throw new ApiException((int)response.StatusCode,
                       "Error while requesting server, received a non successful HTTP code "
-                      + response.ResponseStatus + " with response Body: '" + response.Content + "'");
+                      + response.ResponseStatus + " with response Body: " + response.Content, response.Content);
             }
         }
 
@@ -1119,7 +1119,7 @@ namespace DocuSign.eSign.Client
             {
                 throw new ApiException((int)response.StatusCode,
                       "Error while requesting server, received a non successful HTTP code "
-                      + response.ResponseStatus + " with response Body: '" + response.Content + "'");
+                      + response.ResponseStatus + " with response Body: " + response.Content, response.Content);
             }
         }
 
@@ -1212,7 +1212,7 @@ namespace DocuSign.eSign.Client
             {
                 throw new ApiException((int)response.StatusCode,
                       "Error while requesting server, received a non successful HTTP code "
-                      + response.ResponseStatus + " with response Body: '" + response.Content + "'");
+                      + response.ResponseStatus + " with response Body: " + response.Content, response.Content);
             }
         }
     }

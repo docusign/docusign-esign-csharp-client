@@ -468,5 +468,79 @@ namespace SdkTests
             Assert.IsNotNull(viewUrl);
             Assert.IsNotNull(viewUrl.Url);
         }
+
+        [TestMethod]
+        public void JwtCreateEnvelopeWithHttpInfoRateLimitHeadersTest()
+        {
+            var envDef = new EnvelopeDefinition();
+
+            // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+
+            ApiResponse<EnvelopeSummary> envelopeSummary = envelopesApi.CreateEnvelopeWithHttpInfo(testConfig.AccountId, envDef);
+
+            Assert.IsNotNull(envelopeSummary);
+            Assert.IsNotNull(envelopeSummary.Headers);
+            Assert.IsNotNull(envelopeSummary.Data);
+            Assert.IsNotNull(envelopeSummary.Data.EnvelopeId);
+
+            //Test the Http Response Headers
+            var headers = envelopeSummary.Headers;
+            var x_RateLimit_Remaining_Header = headers["X-RateLimit-Remaining"];
+            var x_RateLimit_Limit_Header = headers["X-RateLimit-Limit"];
+
+            Assert.IsNotNull(x_RateLimit_Remaining_Header);
+            Assert.IsNotNull(x_RateLimit_Limit_Header);
+        }
+
+        [TestMethod]
+        public void JwtUnexpectedPEMTypeTest()
+        {
+            var rsaKey = "---Invalid private key---";
+            // Create a stream of bytes... 
+            byte[] privateKeyStream = System.Text.Encoding.UTF8.GetBytes(rsaKey);
+
+            Exception ex = Assert.ThrowsException<Exception>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
+
+            Assert.IsNotNull(ex);
+            Assert.AreEqual(ex.Message, "Unexpected PEM type");
+        }
+
+        [TestMethod]
+        public void JwtInvalidGrantTest()
+        {
+            // Adding a WRONG PEM key 
+            byte[] privateKeyStream = File.ReadAllBytes(testConfig.PrivateKeyFilename);
+
+            ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
+
+            Assert.IsNotNull(ex);
+            Assert.AreEqual(ex.ErrorContent, "{\"error\":\"invalid_grant\"}");
+        }
+
+        [TestMethod]
+        public void JwtConsentRequiredTest()
+        {
+            // Adding a Correct PEM key - no consent granted
+            byte[] pkey = System.Text.Encoding.UTF8.GetBytes(File.ReadAllText(testConfig.PrivateKeyNoConsentFilename));
+            ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, pkey, testConfig.ExpiresInHours));
+
+            Assert.IsNotNull(ex);
+            Assert.AreEqual(ex.ErrorContent, "{\"error\":\"consent_required\"}");
+        }
+
+        [TestMethod]
+        public void JwtInvalidAccessToken_Unauthorized_Test()
+        {
+            string access_token = "---Invalid-Access-Token---";
+
+            ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.GetUserInfo(access_token));
+
+            Assert.IsNotNull(ex);
+            Assert.IsNotNull(ex.ErrorContent);
+
+            int unauthorizedStatusCode = 401;
+            Assert.AreEqual(ex.ErrorCode, unauthorizedStatusCode);
+        }
     }
 }

@@ -25,6 +25,10 @@ namespace SdkTests
 
         public List<string> EnvelopeIdsList { get; set; }
 
+        public string IntegratorKeyNoConsent { get; set; }
+
+        public string PrivateKeyNoConsentFilename { get; set; }
+
         public TestConfig(string username = null, string password = null, string integratorKey = null, string host = null, string recipientEmail = null, string recipientName = null, string templateRoleName = null, string templateId = null, string returnUrl = null)
         {
             this.Host = (host != null) ? host : "https://demo.docusign.net/restapi";
@@ -46,6 +50,9 @@ namespace SdkTests
             this.ExpiresInHours = 1;
 
             this.EnvelopeIdsList = new List<string>();
+
+            this.IntegratorKeyNoConsent = "***REMOVED***";
+            this.PrivateKeyNoConsentFilename = "../../docs/privateKeyConsentReq.pem";
             //this.Configuration = new Configuration();
         }
     }

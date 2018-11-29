@@ -11,14 +11,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-#if NETSTANDARD2_0
-using Microsoft.IdentityModel.Protocols;
-using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-#else 
-using System.IdentityModel.Protocols.WSTrust;
-using System.IdentityModel.Tokens;
-#endif
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -33,6 +26,8 @@ using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
 using RestSharp;
 using DocuSign.eSign.Client.Auth;
+using Microsoft.IdentityModel.Tokens;
+using System.Runtime.Serialization;
 
 namespace DocuSign.eSign.Client
 {
@@ -50,7 +45,7 @@ namespace DocuSign.eSign.Client
         public const string Stage_REST_BasePath = "https://stage.docusign.net/restapi";
 
         private string basePath = Production_REST_BasePath;
-        
+
         private string oAuthBasePath = OAuth.Production_OAuth_BasePath;
 
         private JsonSerializerSettings serializerSettings = new JsonSerializerSettings
@@ -220,11 +215,12 @@ namespace DocuSign.eSign.Client
 
             if (postBody != null) // http body (model or byte[]) parameter
             {
-                if (postBody.GetType() == typeof(String))
+                if (String.IsNullOrEmpty(contentType))
                 {
-                    request.AddParameter("application/json", postBody, ParameterType.RequestBody);
+                    contentType = "application/json";
                 }
-                else if (postBody.GetType() == typeof(byte[]))
+
+                if (postBody.GetType() == typeof(String) || postBody.GetType() == typeof(byte[]))
                 {
                     request.AddParameter(contentType, postBody, ParameterType.RequestBody);
                 }
@@ -435,17 +431,96 @@ namespace DocuSign.eSign.Client
         /// Serialize an input (model) into JSON string
         /// </summary>
         /// <param name="obj">Object.</param>
+        /// <param name="contentType"></param>
         /// <returns>JSON string.</returns>
-        public String Serialize(object obj)
+        public String Serialize(object obj, string contentType = "application/json")
         {
             try
             {
+                if (contentType == "text/csv")
+                {
+                    return obj != null ? SerializeCsvToString(obj) : null;
+                }
+
                 return obj != null ? JsonConvert.SerializeObject(obj) : null;
             }
             catch (Exception e)
             {
                 throw new ApiException(500, e.Message);
             }
+        }
+
+        /// <summary>
+        /// SerializeCsvToString - Interim method to Serialize the Request Object to CSV format
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static String SerializeCsvToString(object obj)
+        {
+            if (obj == null || obj.GetType() == typeof(String))
+                return null;
+
+            StringBuilder sb = new StringBuilder();
+
+            // We expect this object to be a List
+            // Get the List Object which resids inside the RequestObject - needs improvement
+            var requestObjList = obj.GetType().GetProperties()
+                .Select(n => n.GetValue(obj))
+                .ToList()
+                .FirstOrDefault();
+
+            //for this iteration, we only support BulkRecipient request object 
+            sb.Append(SerializeCsvToString((List<Model.BulkRecipient>)requestObjList));
+
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// SerializeCsvToString - Interim method to Serialize the Request Object to CSV format
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static String SerializeCsvToString<T>(List<T> obj) where T : class
+        {
+            if (obj == null || obj.GetType() == typeof(String))
+                return null;
+
+            string output = string.Empty;
+            string csv = ",";
+
+            var properties = typeof(T).GetProperties();
+
+            using (var sw = new StringWriter())
+            {
+                // Do this only once - get the DataMember name for each property
+                var headerRow = new StringBuilder();
+
+                foreach (var property in properties)
+                {
+                    var dataMembers = property.GetCustomAttributes(typeof(DataMemberAttribute), true);
+                    foreach (DataMemberAttribute attr in dataMembers)
+                    {
+                        headerRow.Append(attr.Name + csv);
+                    }
+                }
+                headerRow.Remove(headerRow.Length - 1, 1);
+                sw.WriteLine(headerRow);
+
+                foreach (var item in obj)
+                {
+                    // Get values of each in the given object
+                    var row = properties
+                        .Select(x => x.GetValue(item, null))
+                        .Select(x => x == null ? "" : x.ToString())
+                        .Aggregate((a, b) => a + csv + b);
+
+                    sw.WriteLine(row);
+                }
+
+                output = sw.ToString();
+            }
+            return output;
         }
 
         /// <summary>
@@ -772,7 +847,7 @@ namespace DocuSign.eSign.Client
             {
                 throw new ApiException((int)response.StatusCode,
                   "Error while requesting server, received a non successful HTTP code "
-                  + response.ResponseStatus + " with response Body: '" + response.Content + "'");
+                  + response.ResponseStatus + " with response Body: " + response.Content, response.Content);
             }
         }
 
@@ -808,7 +883,7 @@ namespace DocuSign.eSign.Client
             {
                 throw new ApiException((int)response.StatusCode,
                       "Error while requesting server, received a non successful HTTP code "
-                      + response.ResponseStatus + " with response Body: '" + response.Content + "'");
+                      + response.ResponseStatus + " with response Body: " + response.Content, response.Content);
             }
         }
 
@@ -968,11 +1043,7 @@ namespace DocuSign.eSign.Client
 
             SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor()
             {
-#if NETSTANDARD2_0
                 Expires = DateTime.UtcNow.AddHours(expiresInHours),
-#else
-                Lifetime = new Lifetime(DateTime.UtcNow, DateTime.UtcNow.AddHours(expiresInHours)),
-#endif
             };
 
             if (scopes == null)
@@ -1001,7 +1072,7 @@ namespace DocuSign.eSign.Client
             {
                 var rsa = CreateRSAKeyFromPem(privateKey);
                 RsaSecurityKey rsaKey = new RsaSecurityKey(rsa);
-                descriptor.SigningCredentials = new SigningCredentials(rsaKey, SecurityAlgorithms.RsaSha256Signature, SecurityAlgorithms.HmacSha256Signature);
+                descriptor.SigningCredentials = new SigningCredentials(rsaKey, SecurityAlgorithms.RsaSha256Signature);
             }
             else
             {
@@ -1048,7 +1119,7 @@ namespace DocuSign.eSign.Client
             {
                 throw new ApiException((int)response.StatusCode,
                       "Error while requesting server, received a non successful HTTP code "
-                      + response.ResponseStatus + " with response Body: '" + response.Content + "'");
+                      + response.ResponseStatus + " with response Body: " + response.Content, response.Content);
             }
         }
 
@@ -1074,11 +1145,7 @@ namespace DocuSign.eSign.Client
 
             SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor()
             {
-#if NETSTANDARD2_0
                 Expires = DateTime.UtcNow.AddHours(expiresInHours),
-#else
-                Lifetime = new Lifetime(DateTime.UtcNow, DateTime.UtcNow.AddHours(expiresInHours)),
-#endif
             };
 
             if (scopes == null)
@@ -1098,7 +1165,7 @@ namespace DocuSign.eSign.Client
             {
                 var rsa = CreateRSAKeyFromPem(privateKey);
                 RsaSecurityKey rsaKey = new RsaSecurityKey(rsa);
-                descriptor.SigningCredentials = new SigningCredentials(rsaKey, SecurityAlgorithms.RsaSha256Signature, SecurityAlgorithms.HmacSha256Signature);
+                descriptor.SigningCredentials = new SigningCredentials(rsaKey, SecurityAlgorithms.RsaSha256Signature);
             }
             else
             {
@@ -1145,7 +1212,7 @@ namespace DocuSign.eSign.Client
             {
                 throw new ApiException((int)response.StatusCode,
                       "Error while requesting server, received a non successful HTTP code "
-                      + response.ResponseStatus + " with response Body: '" + response.Content + "'");
+                      + response.ResponseStatus + " with response Body: " + response.Content, response.Content);
             }
         }
     }

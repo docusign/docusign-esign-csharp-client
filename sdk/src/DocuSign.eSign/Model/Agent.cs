@@ -53,9 +53,12 @@ namespace DocuSign.eSign.Model
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="ExcludedDocuments">Specifies the documents that are not visible to this recipient. Document Visibility must be enabled for the account and the &#x60;enforceSignerVisibility&#x60; property must be set to **true** for the envelope to use this.  When enforce signer visibility is enabled, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent..</param>
         /// <param name="FaxNumber">Reserved:.</param>
+        /// <param name="FirstName">The user&#39;s first name.  Maximum Length: 50 characters..</param>
+        /// <param name="FullName">.</param>
         /// <param name="IdCheckConfigurationName">Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node..</param>
         /// <param name="IdCheckInformationInput">IdCheckInformationInput.</param>
         /// <param name="InheritEmailNotificationConfiguration">When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient&#39;s account. .</param>
+        /// <param name="LastName">.</param>
         /// <param name="Name">.</param>
         /// <param name="Note">Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters..</param>
         /// <param name="PhoneAuthentication">PhoneAuthentication.</param>
@@ -79,7 +82,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TotalTabCount">.</param>
         /// <param name="UserId">.</param>
-        public Agent(string AccessCode = default(string), string AddAccessCodeToEmail = default(string), string ClientUserId = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmailRecipientPostSigningURL = default(string), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<string> ExcludedDocuments = default(List<string>), string FaxNumber = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string InheritEmailNotificationConfiguration = default(string), string Name = default(string), string Note = default(string), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), string RecipientId = default(string), string RecipientIdGuid = default(string), string RequireIdLookup = default(string), string RoleName = default(string), string RoutingOrder = default(string), RecipientSAMLAuthentication SamlAuthentication = default(RecipientSAMLAuthentication), string SentDateTime = default(string), string SignedDateTime = default(string), string SigningGroupId = default(string), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
+        public Agent(string AccessCode = default(string), string AddAccessCodeToEmail = default(string), string ClientUserId = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmailRecipientPostSigningURL = default(string), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<string> ExcludedDocuments = default(List<string>), string FaxNumber = default(string), string FirstName = default(string), string FullName = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string InheritEmailNotificationConfiguration = default(string), string LastName = default(string), string Name = default(string), string Note = default(string), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), string RecipientId = default(string), string RecipientIdGuid = default(string), string RequireIdLookup = default(string), string RoleName = default(string), string RoutingOrder = default(string), RecipientSAMLAuthentication SamlAuthentication = default(RecipientSAMLAuthentication), string SentDateTime = default(string), string SignedDateTime = default(string), string SigningGroupId = default(string), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
         {
             this.AccessCode = AccessCode;
             this.AddAccessCodeToEmail = AddAccessCodeToEmail;
@@ -97,9 +100,12 @@ namespace DocuSign.eSign.Model
             this.ErrorDetails = ErrorDetails;
             this.ExcludedDocuments = ExcludedDocuments;
             this.FaxNumber = FaxNumber;
+            this.FirstName = FirstName;
+            this.FullName = FullName;
             this.IdCheckConfigurationName = IdCheckConfigurationName;
             this.IdCheckInformationInput = IdCheckInformationInput;
             this.InheritEmailNotificationConfiguration = InheritEmailNotificationConfiguration;
+            this.LastName = LastName;
             this.Name = Name;
             this.Note = Note;
             this.PhoneAuthentication = PhoneAuthentication;
@@ -220,6 +226,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="faxNumber", EmitDefaultValue=false)]
         public string FaxNumber { get; set; }
         /// <summary>
+        /// The user&#39;s first name.  Maximum Length: 50 characters.
+        /// </summary>
+        /// <value>The user&#39;s first name.  Maximum Length: 50 characters.</value>
+        [DataMember(Name="firstName", EmitDefaultValue=false)]
+        public string FirstName { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="fullName", EmitDefaultValue=false)]
+        public string FullName { get; set; }
+        /// <summary>
         /// Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node.
         /// </summary>
         /// <value>Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node.</value>
@@ -236,6 +254,12 @@ namespace DocuSign.eSign.Model
         /// <value>When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient&#39;s account. </value>
         [DataMember(Name="inheritEmailNotificationConfiguration", EmitDefaultValue=false)]
         public string InheritEmailNotificationConfiguration { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="lastName", EmitDefaultValue=false)]
+        public string LastName { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -394,9 +418,12 @@ namespace DocuSign.eSign.Model
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("  ExcludedDocuments: ").Append(ExcludedDocuments).Append("\n");
             sb.Append("  FaxNumber: ").Append(FaxNumber).Append("\n");
+            sb.Append("  FirstName: ").Append(FirstName).Append("\n");
+            sb.Append("  FullName: ").Append(FullName).Append("\n");
             sb.Append("  IdCheckConfigurationName: ").Append(IdCheckConfigurationName).Append("\n");
             sb.Append("  IdCheckInformationInput: ").Append(IdCheckInformationInput).Append("\n");
             sb.Append("  InheritEmailNotificationConfiguration: ").Append(InheritEmailNotificationConfiguration).Append("\n");
+            sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
             sb.Append("  PhoneAuthentication: ").Append(PhoneAuthentication).Append("\n");
@@ -537,6 +564,16 @@ namespace DocuSign.eSign.Model
                     this.FaxNumber.Equals(other.FaxNumber)
                 ) && 
                 (
+                    this.FirstName == other.FirstName ||
+                    this.FirstName != null &&
+                    this.FirstName.Equals(other.FirstName)
+                ) && 
+                (
+                    this.FullName == other.FullName ||
+                    this.FullName != null &&
+                    this.FullName.Equals(other.FullName)
+                ) && 
+                (
                     this.IdCheckConfigurationName == other.IdCheckConfigurationName ||
                     this.IdCheckConfigurationName != null &&
                     this.IdCheckConfigurationName.Equals(other.IdCheckConfigurationName)
@@ -550,6 +587,11 @@ namespace DocuSign.eSign.Model
                     this.InheritEmailNotificationConfiguration == other.InheritEmailNotificationConfiguration ||
                     this.InheritEmailNotificationConfiguration != null &&
                     this.InheritEmailNotificationConfiguration.Equals(other.InheritEmailNotificationConfiguration)
+                ) && 
+                (
+                    this.LastName == other.LastName ||
+                    this.LastName != null &&
+                    this.LastName.Equals(other.LastName)
                 ) && 
                 (
                     this.Name == other.Name ||
@@ -711,12 +753,18 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ExcludedDocuments.GetHashCode();
                 if (this.FaxNumber != null)
                     hash = hash * 59 + this.FaxNumber.GetHashCode();
+                if (this.FirstName != null)
+                    hash = hash * 59 + this.FirstName.GetHashCode();
+                if (this.FullName != null)
+                    hash = hash * 59 + this.FullName.GetHashCode();
                 if (this.IdCheckConfigurationName != null)
                     hash = hash * 59 + this.IdCheckConfigurationName.GetHashCode();
                 if (this.IdCheckInformationInput != null)
                     hash = hash * 59 + this.IdCheckInformationInput.GetHashCode();
                 if (this.InheritEmailNotificationConfiguration != null)
                     hash = hash * 59 + this.InheritEmailNotificationConfiguration.GetHashCode();
+                if (this.LastName != null)
+                    hash = hash * 59 + this.LastName.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Note != null)

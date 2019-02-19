@@ -4,6 +4,8 @@
 ### Changed
 * The SDK now supports version 18.4.02 of the DocuSign eSignature API.
 * SDK Release Version updated.
+### Fixed
+* Fixed a problem with the  AccountsApi.UpdateBrandLogoByType method that prevented it from uploading brand logos.
 
 ## [v3.1.3] - eSignature API v18.3.02 - 11/29/2018
 ### Changed

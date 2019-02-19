@@ -542,5 +542,79 @@ namespace SdkTests
             int unauthorizedStatusCode = 401;
             Assert.AreEqual(ex.ErrorCode, unauthorizedStatusCode);
         }
+
+        [TestMethod]
+        public void JwtListBrandTest()
+        {
+            AccountsApi accApi = new AccountsApi();
+            var brandsResponse = accApi.ListBrands(testConfig.AccountId);
+
+            Assert.IsNotNull(brandsResponse);
+        }
+
+        [TestMethod]
+        public void JwtUploadBrandLogoTest()
+        {
+            AccountsApi accApi = new AccountsApi();
+
+            if (string.IsNullOrEmpty(testConfig.BrandId))
+            {
+                CreateBrandTest();
+            }
+
+            try
+            {
+                byte[] brandLogoByteArray = Convert.FromBase64String(testConfig.BrandLogo);
+                accApi.UpdateBrandLogoByType(testConfig.AccountId, testConfig.BrandId, "primary", brandLogoByteArray);
+                Assert.IsTrue(true);
+            }
+            catch
+            {
+                Assert.IsTrue(false);
+            }
+        }
+
+        [TestMethod]
+        public void JwtGetBrandLogoByBrandIdTest()
+        {
+            AccountsApi accApi = new AccountsApi();
+            if (string.IsNullOrEmpty(testConfig.BrandId))
+            {
+                CreateBrandTest();
+            }
+
+            byte[] brandLogoByteArray = Convert.FromBase64String(testConfig.BrandLogo);
+
+            //Check if C# png just got uploaded
+            Stream stream = accApi.GetBrandLogoByType(testConfig.AccountId, testConfig.BrandId, "primary");
+
+            Assert.IsNotNull(stream);
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                stream.CopyTo(ms);
+                byte[] brandLogofromApi = ms.ToArray();
+                Assert.AreEqual(Convert.ToBase64String(brandLogoByteArray), Convert.ToBase64String(brandLogofromApi));
+            }
+        }
+
+        private void CreateBrandTest()
+        {
+            AccountsApi accApi = new AccountsApi();
+            Brand brand = new Brand
+            {
+                BrandName = "C# Brand"
+            };
+
+            var brands = accApi.CreateBrand(testConfig.AccountId, brand);
+
+            foreach (var brnds in brands.Brands)
+            {
+                if (brnds.BrandName == brand.BrandName)
+                {
+                    testConfig.BrandId = brnds.BrandId;
+                }
+            }
+        }
     }
 }

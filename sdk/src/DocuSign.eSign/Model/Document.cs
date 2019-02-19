@@ -47,6 +47,7 @@ namespace DocuSign.eSign.Model
         /// <param name="EncryptedWithKeyManager">When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.  .</param>
         /// <param name="FileExtension">The file extension type of the document. If the document is not a PDF it is converted to a PDF.  .</param>
         /// <param name="FileFormatHint">.</param>
+        /// <param name="HtmlDefinition">HtmlDefinition.</param>
         /// <param name="IncludeInDownload">.</param>
         /// <param name="MatchBoxes">Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  .</param>
         /// <param name="Name">.</param>
@@ -59,7 +60,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TransformPdfFields">When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs. .</param>
         /// <param name="Uri">.</param>
-        public Document(string ApplyAnchorTabs = default(string), bool? AuthoritativeCopy = default(bool?), string Display = default(string), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), string IncludeInDownload = default(string), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), string Order = default(string), string Pages = default(string), string Password = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
+        public Document(string ApplyAnchorTabs = default(string), bool? AuthoritativeCopy = default(bool?), string Display = default(string), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), string Order = default(string), string Pages = default(string), string Password = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
         {
             this.ApplyAnchorTabs = ApplyAnchorTabs;
             this.AuthoritativeCopy = AuthoritativeCopy;
@@ -71,6 +72,7 @@ namespace DocuSign.eSign.Model
             this.EncryptedWithKeyManager = EncryptedWithKeyManager;
             this.FileExtension = FileExtension;
             this.FileFormatHint = FileFormatHint;
+            this.HtmlDefinition = HtmlDefinition;
             this.IncludeInDownload = IncludeInDownload;
             this.MatchBoxes = MatchBoxes;
             this.Name = Name;
@@ -145,6 +147,11 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="fileFormatHint", EmitDefaultValue=false)]
         public string FileFormatHint { get; set; }
+        /// <summary>
+        /// Gets or Sets HtmlDefinition
+        /// </summary>
+        [DataMember(Name="htmlDefinition", EmitDefaultValue=false)]
+        public DocumentHtmlDefinition HtmlDefinition { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -235,6 +242,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  EncryptedWithKeyManager: ").Append(EncryptedWithKeyManager).Append("\n");
             sb.Append("  FileExtension: ").Append(FileExtension).Append("\n");
             sb.Append("  FileFormatHint: ").Append(FileFormatHint).Append("\n");
+            sb.Append("  HtmlDefinition: ").Append(HtmlDefinition).Append("\n");
             sb.Append("  IncludeInDownload: ").Append(IncludeInDownload).Append("\n");
             sb.Append("  MatchBoxes: ").Append(MatchBoxes).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -334,6 +342,11 @@ namespace DocuSign.eSign.Model
                     this.FileFormatHint.Equals(other.FileFormatHint)
                 ) && 
                 (
+                    this.HtmlDefinition == other.HtmlDefinition ||
+                    this.HtmlDefinition != null &&
+                    this.HtmlDefinition.Equals(other.HtmlDefinition)
+                ) && 
+                (
                     this.IncludeInDownload == other.IncludeInDownload ||
                     this.IncludeInDownload != null &&
                     this.IncludeInDownload.Equals(other.IncludeInDownload)
@@ -426,6 +439,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.FileExtension.GetHashCode();
                 if (this.FileFormatHint != null)
                     hash = hash * 59 + this.FileFormatHint.GetHashCode();
+                if (this.HtmlDefinition != null)
+                    hash = hash * 59 + this.HtmlDefinition.GetHashCode();
                 if (this.IncludeInDownload != null)
                     hash = hash * 59 + this.IncludeInDownload.GetHashCode();
                 if (this.MatchBoxes != null)

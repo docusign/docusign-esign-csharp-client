@@ -4,7 +4,7 @@
 [![Nuget downloads][downloads-image]][downloads-url]
 [![Build status][appveyor-image]][appveyor-url]
 
-You can sign up for a free [developer sandbox](https://developers.docusign.com/).
+You can sign up for a free [developer sandbox](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531).
 
 Requirements
 ============

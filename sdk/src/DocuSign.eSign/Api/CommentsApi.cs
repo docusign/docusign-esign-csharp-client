@@ -21,76 +21,76 @@ namespace DocuSign.eSign.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ITrustServiceProvidersApi : IApiAccessor
+    public interface ICommentsApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Returns Account available seals for specified account.
+        /// Gets comment transcript for envelope and user
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        AccountSeals GetSealProviders (string accountId);
+        System.IO.Stream GetCommentsTranscript (string accountId, string envelopeId, CommentsApi.GetCommentsTranscriptOptions options = null);
 
         /// <summary>
-        /// Returns Account available seals for specified account.
+        /// Gets comment transcript for envelope and user
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<AccountSeals> GetSealProvidersWithHttpInfo (string accountId);
+        ApiResponse<System.IO.Stream> GetCommentsTranscriptWithHttpInfo (string accountId, string envelopeId, CommentsApi.GetCommentsTranscriptOptions options = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Returns Account available seals for specified account.
+        /// Gets comment transcript for envelope and user
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         
-        
-        /// <returns>Task of AccountSeals</returns>
-        System.Threading.Tasks.Task<AccountSeals> GetSealProvidersAsync (string accountId);
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> GetCommentsTranscriptAsync (string accountId, string envelopeId, CommentsApi.GetCommentsTranscriptOptions options = null);
 
         /// <summary>
-        /// Returns Account available seals for specified account.
+        /// Gets comment transcript for envelope and user
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         
-        
-        /// <returns>Task of ApiResponse (AccountSeals)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountSeals>> GetSealProvidersAsyncWithHttpInfo (string accountId);
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetCommentsTranscriptAsyncWithHttpInfo (string accountId, string envelopeId, CommentsApi.GetCommentsTranscriptOptions options = null);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class TrustServiceProvidersApi : ITrustServiceProvidersApi
+    public partial class CommentsApi : ICommentsApi
     {
         private DocuSign.eSign.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TrustServiceProvidersApi"/> class.
+        /// Initializes a new instance of the <see cref="CommentsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public TrustServiceProvidersApi(String basePath)
+        public CommentsApi(String basePath)
         {
             this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -104,12 +104,12 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TrustServiceProvidersApi"/> class
+        /// Initializes a new instance of the <see cref="CommentsApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public TrustServiceProvidersApi(Configuration configuration = null)
+        public CommentsApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -189,36 +189,47 @@ namespace DocuSign.eSign.Api
         }
 
 
+        /// <summary>
+        /// Gets comment transcript for envelope and user 
+        /// </summary>
+        public class GetCommentsTranscriptOptions
+        {
+            /// 
+            public string encoding {get; set;}
+        }
 
         /// <summary>
-        /// Returns Account available seals for specified account. 
+        /// Gets comment transcript for envelope and user 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         
-        
-        /// <returns>AccountSeals</returns>
-        public AccountSeals GetSealProviders (string accountId)
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream GetCommentsTranscript (string accountId, string envelopeId, CommentsApi.GetCommentsTranscriptOptions options = null)
         {
-             ApiResponse<AccountSeals> localVarResponse = GetSealProvidersWithHttpInfo(accountId);
+             ApiResponse<System.IO.Stream> localVarResponse = GetCommentsTranscriptWithHttpInfo(accountId, envelopeId, options);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Returns Account available seals for specified account. 
+        /// Gets comment transcript for envelope and user 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         
-        
-        /// <returns>ApiResponse of AccountSeals</returns>
-        public ApiResponse< AccountSeals > GetSealProvidersWithHttpInfo (string accountId)
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public ApiResponse< System.IO.Stream > GetCommentsTranscriptWithHttpInfo (string accountId, string envelopeId, CommentsApi.GetCommentsTranscriptOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling TrustServiceProvidersApi->GetSealProviders");
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling CommentsApi->GetCommentsTranscript");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling CommentsApi->GetCommentsTranscript");
 
-            var localVarPath = "/v2/accounts/{accountId}/seals";
+            var localVarPath = "/v2/accounts/{accountId}/envelopes/{envelopeId}/comments/transcript";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -233,7 +244,7 @@ namespace DocuSign.eSign.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "application/pdf"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -243,7 +254,12 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", Configuration.ApiClient.ParameterToString(envelopeId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.encoding != null) localVarQueryParams.Add("encoding", Configuration.ApiClient.ParameterToString(options.encoding)); // query parameter
+            }
 
 
 
@@ -256,7 +272,7 @@ namespace DocuSign.eSign.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetSealProviders", localVarResponse);
+                Exception exception = ExceptionFactory("GetCommentsTranscript", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -264,45 +280,48 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<AccountSeals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AccountSeals) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(AccountSeals)));
+                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(System.IO.Stream)));
             }
             else
             {
-                return new ApiResponse<AccountSeals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AccountSeals) Configuration.ApiClient.Deserialize(localVarResponse, typeof(AccountSeals)));
+                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream) Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
             }
             
         }
 
         /// <summary>
-        /// Returns Account available seals for specified account. 
+        /// Gets comment transcript for envelope and user 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         
-        
-        /// <returns>Task of AccountSeals</returns>
-        public async System.Threading.Tasks.Task<AccountSeals> GetSealProvidersAsync (string accountId)
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> GetCommentsTranscriptAsync (string accountId, string envelopeId, CommentsApi.GetCommentsTranscriptOptions options = null)
         {
-             ApiResponse<AccountSeals> localVarResponse = await GetSealProvidersAsyncWithHttpInfo(accountId);
+             ApiResponse<System.IO.Stream> localVarResponse = await GetCommentsTranscriptAsyncWithHttpInfo(accountId, envelopeId, options);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Returns Account available seals for specified account. 
+        /// Gets comment transcript for envelope and user 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         
-        
-        /// <returns>Task of ApiResponse (AccountSeals)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AccountSeals>> GetSealProvidersAsyncWithHttpInfo (string accountId)
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetCommentsTranscriptAsyncWithHttpInfo (string accountId, string envelopeId, CommentsApi.GetCommentsTranscriptOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling TrustServiceProvidersApi->GetSealProviders");
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling CommentsApi->GetCommentsTranscript");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling CommentsApi->GetCommentsTranscript");
 
-            var localVarPath = "/v2/accounts/{accountId}/seals";
+            var localVarPath = "/v2/accounts/{accountId}/envelopes/{envelopeId}/comments/transcript";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -317,7 +336,7 @@ namespace DocuSign.eSign.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
+                "application/pdf"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -327,7 +346,12 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", Configuration.ApiClient.ParameterToString(envelopeId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.encoding != null) localVarQueryParams.Add("encoding", Configuration.ApiClient.ParameterToString(options.encoding)); // query parameter
+            }
 
 
 
@@ -340,13 +364,13 @@ namespace DocuSign.eSign.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetSealProviders", localVarResponse);
+                Exception exception = ExceptionFactory("GetCommentsTranscript", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<AccountSeals>(localVarStatusCode,
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AccountSeals) Configuration.ApiClient.Deserialize(localVarResponse, typeof(AccountSeals)));
+                (System.IO.Stream) Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
             
         }
 

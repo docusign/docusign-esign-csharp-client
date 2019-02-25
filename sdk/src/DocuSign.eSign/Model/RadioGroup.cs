@@ -48,7 +48,8 @@ namespace DocuSign.eSign.Model
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
-        public RadioGroup(string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string DocumentId = default(string), string GroupName = default(string), List<Radio> Radios = default(List<Radio>), string RecipientId = default(string), string RequireAll = default(string), string RequireInitialOnSharedChange = default(string), string Shared = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string))
+        /// <param name="Tooltip">.</param>
+        public RadioGroup(string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string DocumentId = default(string), string GroupName = default(string), List<Radio> Radios = default(List<Radio>), string RecipientId = default(string), string RequireAll = default(string), string RequireInitialOnSharedChange = default(string), string Shared = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Tooltip = default(string))
         {
             this.ConditionalParentLabel = ConditionalParentLabel;
             this.ConditionalParentValue = ConditionalParentValue;
@@ -61,6 +62,7 @@ namespace DocuSign.eSign.Model
             this.Shared = Shared;
             this.TemplateLocked = TemplateLocked;
             this.TemplateRequired = TemplateRequired;
+            this.Tooltip = Tooltip;
         }
         
         /// <summary>
@@ -130,6 +132,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequired", EmitDefaultValue=false)]
         public string TemplateRequired { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="tooltip", EmitDefaultValue=false)]
+        public string Tooltip { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -148,6 +156,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Shared: ").Append(Shared).Append("\n");
             sb.Append("  TemplateLocked: ").Append(TemplateLocked).Append("\n");
             sb.Append("  TemplateRequired: ").Append(TemplateRequired).Append("\n");
+            sb.Append("  Tooltip: ").Append(Tooltip).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -238,6 +247,11 @@ namespace DocuSign.eSign.Model
                     this.TemplateRequired == other.TemplateRequired ||
                     this.TemplateRequired != null &&
                     this.TemplateRequired.Equals(other.TemplateRequired)
+                ) && 
+                (
+                    this.Tooltip == other.Tooltip ||
+                    this.Tooltip != null &&
+                    this.Tooltip.Equals(other.Tooltip)
                 );
         }
 
@@ -274,6 +288,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.TemplateLocked.GetHashCode();
                 if (this.TemplateRequired != null)
                     hash = hash * 59 + this.TemplateRequired.GetHashCode();
+                if (this.Tooltip != null)
+                    hash = hash * 59 + this.Tooltip.GetHashCode();
                 return hash;
             }
         }

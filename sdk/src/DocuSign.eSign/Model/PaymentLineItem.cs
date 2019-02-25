@@ -38,14 +38,12 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="PaymentLineItem" /> class.
         /// </summary>
         /// <param name="AmountReference">.</param>
-        /// <param name="CustomMessage">.</param>
         /// <param name="Description">.</param>
         /// <param name="ItemCode">.</param>
         /// <param name="Name">.</param>
-        public PaymentLineItem(string AmountReference = default(string), string CustomMessage = default(string), string Description = default(string), string ItemCode = default(string), string Name = default(string))
+        public PaymentLineItem(string AmountReference = default(string), string Description = default(string), string ItemCode = default(string), string Name = default(string))
         {
             this.AmountReference = AmountReference;
-            this.CustomMessage = CustomMessage;
             this.Description = Description;
             this.ItemCode = ItemCode;
             this.Name = Name;
@@ -57,12 +55,6 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="amountReference", EmitDefaultValue=false)]
         public string AmountReference { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="customMessage", EmitDefaultValue=false)]
-        public string CustomMessage { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -90,7 +82,6 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class PaymentLineItem {\n");
             sb.Append("  AmountReference: ").Append(AmountReference).Append("\n");
-            sb.Append("  CustomMessage: ").Append(CustomMessage).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  ItemCode: ").Append(ItemCode).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -136,11 +127,6 @@ namespace DocuSign.eSign.Model
                     this.AmountReference.Equals(other.AmountReference)
                 ) && 
                 (
-                    this.CustomMessage == other.CustomMessage ||
-                    this.CustomMessage != null &&
-                    this.CustomMessage.Equals(other.CustomMessage)
-                ) && 
-                (
                     this.Description == other.Description ||
                     this.Description != null &&
                     this.Description.Equals(other.Description)
@@ -170,8 +156,6 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.AmountReference != null)
                     hash = hash * 59 + this.AmountReference.GetHashCode();
-                if (this.CustomMessage != null)
-                    hash = hash * 59 + this.CustomMessage.GetHashCode();
                 if (this.Description != null)
                     hash = hash * 59 + this.Description.GetHashCode();
                 if (this.ItemCode != null)

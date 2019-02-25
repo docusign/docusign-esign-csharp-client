@@ -75,6 +75,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TabOrder">.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
+        /// <param name="Tooltip">.</param>
         /// <param name="Underline">When set to **true**, the information in the tab is underlined..</param>
         /// <param name="UseDash4">.</param>
         /// <param name="ValidationMessage">The message displayed if the custom tab fails input validation (either custom of embedded)..</param>
@@ -83,7 +84,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Width">Width of the tab in pixels..</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
-        public Zip(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Italic = default(string), string Locked = default(string), int? MaxLength = default(int?), MergeField MergeField = default(MergeField), string Name = default(string), string OriginalValue = default(string), string PageNumber = default(string), string RecipientId = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string SenderRequired = default(string), string Shared = default(string), string Status = default(string), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Underline = default(string), string UseDash4 = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Value = default(string), int? Width = default(int?), string XPosition = default(string), string YPosition = default(string))
+        public Zip(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Italic = default(string), string Locked = default(string), int? MaxLength = default(int?), MergeField MergeField = default(MergeField), string Name = default(string), string OriginalValue = default(string), string PageNumber = default(string), string RecipientId = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string SenderRequired = default(string), string Shared = default(string), string Status = default(string), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Tooltip = default(string), string Underline = default(string), string UseDash4 = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Value = default(string), int? Width = default(int?), string XPosition = default(string), string YPosition = default(string))
         {
             this.AnchorCaseSensitive = AnchorCaseSensitive;
             this.AnchorHorizontalAlignment = AnchorHorizontalAlignment;
@@ -123,6 +124,7 @@ namespace DocuSign.eSign.Model
             this.TabOrder = TabOrder;
             this.TemplateLocked = TemplateLocked;
             this.TemplateRequired = TemplateRequired;
+            this.Tooltip = Tooltip;
             this.Underline = Underline;
             this.UseDash4 = UseDash4;
             this.ValidationMessage = ValidationMessage;
@@ -360,6 +362,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequired", EmitDefaultValue=false)]
         public string TemplateRequired { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="tooltip", EmitDefaultValue=false)]
+        public string Tooltip { get; set; }
+        /// <summary>
         /// When set to **true**, the information in the tab is underlined.
         /// </summary>
         /// <value>When set to **true**, the information in the tab is underlined.</value>
@@ -453,6 +461,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  TabOrder: ").Append(TabOrder).Append("\n");
             sb.Append("  TemplateLocked: ").Append(TemplateLocked).Append("\n");
             sb.Append("  TemplateRequired: ").Append(TemplateRequired).Append("\n");
+            sb.Append("  Tooltip: ").Append(Tooltip).Append("\n");
             sb.Append("  Underline: ").Append(Underline).Append("\n");
             sb.Append("  UseDash4: ").Append(UseDash4).Append("\n");
             sb.Append("  ValidationMessage: ").Append(ValidationMessage).Append("\n");
@@ -688,6 +697,11 @@ namespace DocuSign.eSign.Model
                     this.TemplateRequired.Equals(other.TemplateRequired)
                 ) && 
                 (
+                    this.Tooltip == other.Tooltip ||
+                    this.Tooltip != null &&
+                    this.Tooltip.Equals(other.Tooltip)
+                ) && 
+                (
                     this.Underline == other.Underline ||
                     this.Underline != null &&
                     this.Underline.Equals(other.Underline)
@@ -816,6 +830,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.TemplateLocked.GetHashCode();
                 if (this.TemplateRequired != null)
                     hash = hash * 59 + this.TemplateRequired.GetHashCode();
+                if (this.Tooltip != null)
+                    hash = hash * 59 + this.Tooltip.GetHashCode();
                 if (this.Underline != null)
                     hash = hash * 59 + this.Underline.GetHashCode();
                 if (this.UseDash4 != null)

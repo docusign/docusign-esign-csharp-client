@@ -59,12 +59,11 @@ namespace DocuSign.eSign.Model
         /// <param name="SignerAttachmentTabs">Specifies a tag on the document when you want the recipient to add supporting documents to an envelope..</param>
         /// <param name="SignHereTabs">A complex type the contains information about the tag that specifies where the recipient places their signature in the document. The \&quot;optional\&quot; parameter sets if the signature is required or optional. .</param>
         /// <param name="SsnTabs">Specifies a tag on the document where you want the recipient to enter a Social Security Number (SSN). A SSN can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for SSN information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
-        /// <param name="TabGroups">.</param>
         /// <param name="TextTabs">Specifies a that that is an adaptable field that allows the recipient to enter different text information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
         /// <param name="TitleTabs">Specifies a tag on the document where you want the recipient&#39;s title to appear.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
         /// <param name="ViewTabs">.</param>
         /// <param name="ZipTabs">Specifies a tag on the document where you want the recipient to enter a ZIP code. The ZIP code can be a five numbers or the ZIP+4 format with nine numbers. The zip code can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for ZIP code information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
-        public TemplateTabs(List<Approve> ApproveTabs = default(List<Approve>), List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<Company> CompanyTabs = default(List<Company>), List<DateSigned> DateSignedTabs = default(List<DateSigned>), List<DocuSign.eSign.Model.Date> DateTabs = default(List<DocuSign.eSign.Model.Date>), List<Decline> DeclineTabs = default(List<Decline>), List<EmailAddress> EmailAddressTabs = default(List<EmailAddress>), List<Email> EmailTabs = default(List<Email>), List<EnvelopeId> EnvelopeIdTabs = default(List<EnvelopeId>), List<FirstName> FirstNameTabs = default(List<FirstName>), List<FormulaTab> FormulaTabs = default(List<FormulaTab>), List<FullName> FullNameTabs = default(List<FullName>), List<InitialHere> InitialHereTabs = default(List<InitialHere>), List<LastName> LastNameTabs = default(List<LastName>), List<List> ListTabs = default(List<List>), List<Notarize> NotarizeTabs = default(List<Notarize>), List<Note> NoteTabs = default(List<Note>), List<Number> NumberTabs = default(List<Number>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SignerAttachment> SignerAttachmentTabs = default(List<SignerAttachment>), List<SignHere> SignHereTabs = default(List<SignHere>), List<Ssn> SsnTabs = default(List<Ssn>), List<TabGroup> TabGroups = default(List<TabGroup>), List<Text> TextTabs = default(List<Text>), List<Title> TitleTabs = default(List<Title>), List<View> ViewTabs = default(List<View>), List<Zip> ZipTabs = default(List<Zip>))
+        public TemplateTabs(List<Approve> ApproveTabs = default(List<Approve>), List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<Company> CompanyTabs = default(List<Company>), List<DateSigned> DateSignedTabs = default(List<DateSigned>), List<DocuSign.eSign.Model.Date> DateTabs = default(List<DocuSign.eSign.Model.Date>), List<Decline> DeclineTabs = default(List<Decline>), List<EmailAddress> EmailAddressTabs = default(List<EmailAddress>), List<Email> EmailTabs = default(List<Email>), List<EnvelopeId> EnvelopeIdTabs = default(List<EnvelopeId>), List<FirstName> FirstNameTabs = default(List<FirstName>), List<FormulaTab> FormulaTabs = default(List<FormulaTab>), List<FullName> FullNameTabs = default(List<FullName>), List<InitialHere> InitialHereTabs = default(List<InitialHere>), List<LastName> LastNameTabs = default(List<LastName>), List<List> ListTabs = default(List<List>), List<Notarize> NotarizeTabs = default(List<Notarize>), List<Note> NoteTabs = default(List<Note>), List<Number> NumberTabs = default(List<Number>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SignerAttachment> SignerAttachmentTabs = default(List<SignerAttachment>), List<SignHere> SignHereTabs = default(List<SignHere>), List<Ssn> SsnTabs = default(List<Ssn>), List<Text> TextTabs = default(List<Text>), List<Title> TitleTabs = default(List<Title>), List<View> ViewTabs = default(List<View>), List<Zip> ZipTabs = default(List<Zip>))
         {
             this.ApproveTabs = ApproveTabs;
             this.CheckboxTabs = CheckboxTabs;
@@ -88,7 +87,6 @@ namespace DocuSign.eSign.Model
             this.SignerAttachmentTabs = SignerAttachmentTabs;
             this.SignHereTabs = SignHereTabs;
             this.SsnTabs = SsnTabs;
-            this.TabGroups = TabGroups;
             this.TextTabs = TextTabs;
             this.TitleTabs = TitleTabs;
             this.ViewTabs = ViewTabs;
@@ -228,12 +226,6 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="ssnTabs", EmitDefaultValue=false)]
         public List<Ssn> SsnTabs { get; set; }
         /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="tabGroups", EmitDefaultValue=false)]
-        public List<TabGroup> TabGroups { get; set; }
-        /// <summary>
         /// Specifies a that that is an adaptable field that allows the recipient to enter different text information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
         /// </summary>
         /// <value>Specifies a that that is an adaptable field that allows the recipient to enter different text information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.</value>
@@ -287,7 +279,6 @@ namespace DocuSign.eSign.Model
             sb.Append("  SignerAttachmentTabs: ").Append(SignerAttachmentTabs).Append("\n");
             sb.Append("  SignHereTabs: ").Append(SignHereTabs).Append("\n");
             sb.Append("  SsnTabs: ").Append(SsnTabs).Append("\n");
-            sb.Append("  TabGroups: ").Append(TabGroups).Append("\n");
             sb.Append("  TextTabs: ").Append(TextTabs).Append("\n");
             sb.Append("  TitleTabs: ").Append(TitleTabs).Append("\n");
             sb.Append("  ViewTabs: ").Append(ViewTabs).Append("\n");
@@ -439,11 +430,6 @@ namespace DocuSign.eSign.Model
                     this.SsnTabs.SequenceEqual(other.SsnTabs)
                 ) && 
                 (
-                    this.TabGroups == other.TabGroups ||
-                    this.TabGroups != null &&
-                    this.TabGroups.SequenceEqual(other.TabGroups)
-                ) && 
-                (
                     this.TextTabs == other.TextTabs ||
                     this.TextTabs != null &&
                     this.TextTabs.SequenceEqual(other.TextTabs)
@@ -520,8 +506,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SignHereTabs.GetHashCode();
                 if (this.SsnTabs != null)
                     hash = hash * 59 + this.SsnTabs.GetHashCode();
-                if (this.TabGroups != null)
-                    hash = hash * 59 + this.TabGroups.GetHashCode();
                 if (this.TextTabs != null)
                     hash = hash * 59 + this.TextTabs.GetHashCode();
                 if (this.TitleTabs != null)

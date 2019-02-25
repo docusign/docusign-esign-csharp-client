@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>DocuSign.eSign.dll</id>
-    <version>3.1.3</version>
+    <version>3.1.4</version>
     <title>DocuSign.eSign</title>
     <authors>DocuSign</authors>
     <owners>DocuSign</owners>
@@ -11,8 +11,8 @@
     <description>The DocuSign NuGet Package makes integrating DocuSign into your apps and websites a super fast and painless process.The library is open sourced on GitHub, look for the docusign-csharp-client repository. Join the eSign revolution!</description>
     <iconUrl>http://26c9d06e414e60fc3a18-f03eeda740093cbe74371aff89dec8d1.r69.cf2.rackcdn.com/icon32x32.png</iconUrl>
     <projectUrl>https://developers.docusign.com/</projectUrl>
-    <licenseUrl>https://raw.githubusercontent.com/docusign/docusign-csharp-client/master/LICENSE</licenseUrl>
-    <copyright>Copyright 2018</copyright>
+    <license>https://raw.githubusercontent.com/docusign/docusign-csharp-client/master/LICENSE</license>
+    <copyright>Copyright 2019</copyright>
     <tags>DocuSign.eSign REST eSignature DocuSign eSign api digital transaction</tags>
     <dependencies>
       <group targetFramework="net45">

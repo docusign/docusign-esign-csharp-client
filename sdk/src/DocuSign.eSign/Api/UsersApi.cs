@@ -5840,6 +5840,7 @@ namespace DocuSign.eSign.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "image/gif"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -5919,6 +5920,7 @@ namespace DocuSign.eSign.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "image/gif"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -6393,6 +6395,7 @@ namespace DocuSign.eSign.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "image/gif"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -6489,6 +6492,7 @@ namespace DocuSign.eSign.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "image/gif"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

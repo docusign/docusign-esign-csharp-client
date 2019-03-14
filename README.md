@@ -23,7 +23,7 @@ This open-source SDK is provided for cases where you would like to make addition
 ### NuGet Package Manager:
 
 1. Create a new C# project, or open an existing one.
-2. Click **Tools** -\&gt; **NuGet Package Manager** -\&gt; **Manage NuGet Packages for Solution**.
+2. Click **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**.
 3. Search for **DocuSign**.
 4. Select **DocuSign.eSign.dll**.
 5. Click the check box next to your project name.
@@ -34,7 +34,7 @@ This open-source SDK is provided for cases where you would like to make addition
 1. Open or create a new C# project.
 2. Open the **Package Manager Console** by either:
   1. Clicking **Package Manager Console** along the bottom of Visual Studio
-  2. Clicking **Tools** -\&gt; **NuGet Package Manager** -\&gt; **Package Manager Console**
+  2. Clicking **Tools** -> **NuGet Package Manager** -> **Package Manager Console**
 3. In the **Package Manager Console** , type: **Install-Package DocuSign.eSign.dll**
 
 ### Manual install:
@@ -47,32 +47,32 @@ This client has the following external dependencies:
 
 ### .NET Standard v2 and .NET Core:
 
-- CSharp v4.5.0
-- IdentityModel.Protocols v5.2.2
-- Json 11.0.2
-- BouncyCastle v1.8.2
-- RestSharp v106.3.1
-- ComponentModel.Annotations v4.5.0
-- IdentityModel.tokens.Jwt v5.2.2
+- Microsoft.CSharp v4.5.0 
+- Microsoft.IdentityModel.Protocols v5.2.2 
+- Newtonsoft.Json 11.0.2 
+- Portable.BouncyCastle v1.8.2 
+- RestSharp v106.3.1 
+- System.ComponentModel.Annotations v4.5.0 
+- System.IdentityModel.Tokens.Jwt v5.2.2 
 
 ### .NET Framework, version 4.5:
 
 - BouncyCastle v1.8.1
-- Identity.Model.Logging v1.1.4
-- IdentityModel.Tokens v5.1.14.
-- Json v10.0.0.1
+- Microsoft.Identity.Model.Logging v1.1.4
+- Microsoft.IdentityModel.Tokens v5.1.14
+- Newtonsoft.Json v10.0.0.1
 - RestSharpSigned v105.2.3
-- IdentityModel.Tokens.Jwt v5.1.4
+- System.IdentityModel.Tokens.Jwt v5.1.4
 
 ## Code Examples
 
 ### Launchers
 
-DocuSign provides a sample application referred to as a [Launcher](https://github.com/docusign/eg-03-csharp-auth-code-grant-core). The Launcher contains a set of 14 common use cases and associated source files. These examples use DocuSign&#39;s [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) flow.
+DocuSign provides a sample application referred to as a [Launcher](https://github.com/docusign/eg-03-csharp-auth-code-grant-core). The Launcher contains a set of 14 common use cases and associated source files. These examples use DocuSign's [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) flow.
 
 ### Proof-of-concept applications
 
-If your goal is to create a proof-of-concept application, DocuSign provides a set of [Quick Start](https://developers.docusign.com/esign-rest-api/code-examples/quickstart-overview) examples. The Quick Startexamples are meant to be used with DocuSign&#39;s [OAuth Token Generator](https://developers.docusign.com/oauth-token-generator), which will allow you to generate tokens for the Demo/Sandbox environment only. These tokens last for eight hours and will enable you to build your proof-of-concept application without the need to fully implement an OAuth solution.
+If your goal is to create a proof-of-concept application, DocuSign provides a set of [Quick Start](https://developers.docusign.com/esign-rest-api/code-examples/quickstart-overview) examples. The Quick Startexamples are meant to be used with DocuSign's [OAuth Token Generator](https://developers.docusign.com/oauth-token-generator), which will allow you to generate tokens for the Demo/Sandbox environment only. These tokens last for eight hours and will enable you to build your proof-of-concept application without the need to fully implement an OAuth solution.
 
 ## OAuth Implementations
 

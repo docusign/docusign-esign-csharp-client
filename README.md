@@ -1,90 +1,161 @@
-﻿# The Official DocuSign C# Client
+# The Official DocuSign C# Client
 
-## Requirements
+[![Nuget version][nuget-image]][nuget-url]
+[![Nuget downloads][downloads-image]][downloads-url]
+[![Build status][appveyor-image]][appveyor-url]
 
-- Microsoft .NET version 4.5+ (4.6.1 recommended)
-- Free [Developer Sandbox](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
+You can sign up for a free [developer sandbox](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531).
 
-## Compatibility
+Requirements
+============
 
-- .NET Standard 2.0. See [.NET Standard Selector](http://immo.landwerth.net/netstandard-versions/) for details on versioning for the individual components in .NET Standard
-- .NET Core 2.0
-- Microsoft .NET version 4.5+
-- TLS 1.2
+Microsoft .NET version 4.5 or later.
 
-## Note
+Compatibility
+============
 
-This open-source SDK is provided for cases where you would like to make additional changes that the SDK does not provide out-of-the-box. If you simply want to use the SDK with any of the examples shown in the [Developer Center](https://developers.docusign.com/esign-rest-api/code-examples), follow the installation instructions below.
+* .NET Standard 2.0. See [.NET Standard Selector](http://immo.landwerth.net/netstandard-versions/#) for details on versioning for the individual components in .NET Standard.
+* .NET Core 2.0
+* .NET Framework 4.5 or later
+* TLS 1.2
 
-## Installation
+Installation
+============
 
-### NuGet Package Manager:
+### NuGet Package Manager
 
-1. Create a new C# project, or open an existing one.
-2. Click **Tools** -\&gt; **NuGet Package Manager** -\&gt; **Manage NuGet Packages for Solution**.
-3. Search for **DocuSign**.
-4. Select **DocuSign.eSign.dll**.
-5. Click the check box next to your project name.
-6. Click **Install**.
+To add to a new or existing Visual Studio project:  
 
-### Package Manager Console:
+	1. Open project and go to Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution.
+	2. Search for "DocuSign", select the DocuSign.eSign package, and click Install.  
 
-1. Open or create a new C# project.
-2. Open the **Package Manager Console** by either:
-  1. Clicking **Package Manager Console** along the bottom of Visual Studio
-  2. Clicking **Tools** -\&gt; **NuGet Package Manager** -\&gt; **Package Manager Console**
-3. In the **Package Manager Console** , type: **Install-Package DocuSign.eSign.dll**
+### Manual Install 
 
-## Dependencies
+Copy `DocuSign.eSign.dll` file to your local machine and add reference through your project settings.
 
-This client has the following external dependencies:
+### Others
 
-### .NET Standard v2 and .NET Core:
+Alternatively you can just copy the source code directly into your project. 
 
-- Microsoft.CSharp v4.5.0
-- Microsoft.IdentityModel.Protocols v5.2.2
-- Newtonsoft.Json 11.0.2
-- Portable.BouncyCastle v1.8.2
-- RestSharp v106.3.1
-- System.ComponentModel.Annotations v4.5.0
-- System.IdentityModel.tokens.Jwt v5.2.2
+#### Dependencies
+
+This client has the following external dependencies: 
+
+* Newtonsoft.Json.dll
+* RestSharp.dll
+* BouncyCastle
+* System.IdentityModel.Tokens.Jwt
+
+Usage
+=====
+
+To send a signature request from a template using OAuth JWT authentication:
+
+```csharp
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Model;
+using DocuSign.eSign.Client;
+using System.Collections.Generic;
+using DocuSign.eSign.Client.Auth;
+
+namespace DocuSignSample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string userId = "[USER_ID]"; // use your userId (guid), not email address
+            string oauthBasePath = "[OAUTH_BASE_PATH]";
+            string integratorKey = "[INTEGRATOR_KEY]";
+            byte[] privateKeyBytes = "[PRIVATE_KEY_BYTES] For Eg. File.ReadAllBytes("RSA_Key_File")"; // Create a byte array
+            int expiresInHours = 1;
+            string host = "https://demo.docusign.net/restapi";
+
+            string accountId = string.Empty;
+
+            ApiClient apiClient = new ApiClient(host);
+
+            OAuth.OAuthToken tokenInfo = apiClient.RequestJWTUserToken(integratorKey, userId, oauthBasePath, privateKeyBytes, expiresInHours);  
+
+            /////////////////////////////////////////////////////////////////
+            // STEP 1: Get User Info   
+            // now that the API client has an OAuth token, let's use it in all// DocuSign APIs
+            /////////////////////////////////////////////////////////////////
+
+            OAuth.UserInfo userInfo = apiClient.GetUserInfo(tokenInfo.access_token);
+            
+            foreach (var item in userInfo.Accounts)
+            {
+                if (item.IsDefault == "true")
+                {
+                    accountId = item.AccountId;
+                    apiClient = new ApiClient(item.BaseUri + "/restapi");
+                    break;
+                }
+            }
+
+            /////////////////////////////////////////////////////////////////
+            // STEP 2: CREATE ENVELOPE API        
+            /////////////////////////////////////////////////////////////////
+
+            EnvelopeDefinition envDef = new EnvelopeDefinition();
+            envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
+
+            // assign recipient to template role by setting name, email, and role name.  Note that the
+            // template role name must match the placeholder role name saved in your account template.  
+            TemplateRole tRole = new TemplateRole();
+            tRole.Email = "[SIGNER_EMAIL]";
+            tRole.Name = "[SIGNER_NAME]";
+            tRole.RoleName = "[ROLE_NAME]";
+            List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
+
+            // add the role to the envelope and assign valid templateId from your account
+            envDef.TemplateRoles = rolesList;
+            envDef.TemplateId = "[TEMPLATE_ID]";
+
+            // set envelope status to "sent" to immediately send the signature request
+            envDef.Status = "sent";
+
+            // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
+            EnvelopesApi envelopesApi = new EnvelopesApi(apiClient.Configuration);
+            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(accountId, envDef);
+        }
+    }
+}
+```
+
+See [CoreRecipes.cs](https://github.com/docusign/docusign-csharp-client/blob/master/test/Recipes/CoreRecipes.cs) for more examples.
+
+# Authentication
+
+## User Applications that use OAuth Authentication
+1. After obtaining a Bearer token, call the [OAuth: Userinfo method](https://developers.docusign.com/esign-rest-api/guides/authentication/user-info-endpoints). Obtain the selected account's `base_uri` (server name) field.
+The url for the Userinfo method is account-d.docusign.com for the demo/developer environment, and account.docusign.com for the production environment.
+1. Combine the base_uri with "/restapi" to create the basePath. The base_uri will start with na1, na2, na3, eu1, or something else. Use the basePath for your subsequent API calls.
+4. Instantiate the SDK using the basePath. Eg `ApiClient apiClient = new ApiClient(basePath);`
+5. Create the `authentication_value` by combining the `token_type` and `access_token` fields you receive from either an [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) or [Implicit Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-implicit) OAuth flow. 
+5. Set the authentication header by using `Configuration.Default.AddDefaultHeader('Authorization', authentication_value)`
 
 
-### .NET Framework, version 4.5:
+Testing
+=======
 
-- BouncyCastle v1.8.1
-- Microsoft.Identity.Model.Logging v1.1.4
-- Microsoft.IdentityModel.Tokens v5.1.14
-- Newtonsoft.Json v10.0.0.1
-- RestSharpSigned v105.2.3
-- System.IdentityModel.Tokens.Jwt v5.1.4
+Unit tests are available in the [Test](/test/SdkTests) folder. 
+
+Support
+=======
+
+Feel free to log issues against this client through GitHub.  We also have an active developer community on Stack Overflow, search the [DocuSignAPI](http://stackoverflow.com/questions/tagged/docusignapi) tag.
+
+License
+=======
+
+The DocuSign CSharp Client is licensed under the following [License](LICENSE).
 
 
-## Code Examples
-
-### Launchers
-
-DocuSign provides a sample application referred to as a [Launcher](https://github.com/docusign/eg-03-csharp-auth-code-grant-core). The Launcher contains a set of 14 common use cases and associated source files. These examples use DocuSign&#39;s [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) flow.
-
-### Proof-of-concept applications
-
-If your goal is to create a proof-of-concept application, DocuSign provides a set of [Quick Start](https://developers.docusign.com/esign-rest-api/code-examples/quickstart-overview) examples. The Quick Startexamples are meant to be used with DocuSign&#39;s [OAuth Token Generator](https://developers.docusign.com/oauth-token-generator), which will allow you to generate tokens for the Demo/Sandbox environment only. These tokens last for eight hours and will enable you to build your proof-of-concept application without the need to fully implement an OAuth solution.
-
-## OAuth Implementations
-
-For details regarding which type of OAuth grant will work best for your DocuSign integration, see the [REST API Authentication Overview](https://developers.docusign.com/esign-rest-api/guides/authentication) guide located on the [DocuSign Developer Center](https://developers.docusign.com/).
-
-For security purposes, DocuSign recommends using the [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) flow.
-
-There are other use-case scenarios, such as  **single-page applications** (SPA) that use  **Cross-Origin Resource Sharing** (CORS), or where there may not be a user to interact with your Service Account. For these use cases, DocuSign also supports [JWT](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken) and [Implicit](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-implicit) grants. For Code Examples, see the links below:
-
-- [JWT (JSON Web Token)](https://github.com/docusign/eg-01-csharp-jwt-core)
-- Implicit Grant (coming soon)
-
-## Support
-
-Log issues against this client through GitHub. We also have an [active developer community on Stack Overflow](http://stackoverflow.com/questions/tagged/docusignapi).
-
-## License
-
-The DocuSign C# Client is licensed under the [MIT License](https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE).
+[nuget-image]: https://img.shields.io/nuget/v/DocuSign.eSign.dll.svg?style=flat
+[nuget-url]: https://www.nuget.org/packages/DocuSign.eSign.dll
+[downloads-image]: https://img.shields.io/nuget/dt/DocuSign.eSign.dll.svg?style=flat
+[downloads-url]: https://www.nuget.org/packages/DocuSign.eSign.dll
+[appveyor-image]:https://ci.appveyor.com/api/projects/status/m5a02n1vp3ma6qec?svg=true
+[appveyor-url]:https://ci.appveyor.com/project/RajRele/docusign-csharp-client

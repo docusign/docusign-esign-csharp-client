@@ -25,7 +25,7 @@ This open-source SDK is provided for cases where you would like to make addition
 ### NuGet Package Manager:
 
 1. Create a new C# project, or open an existing one.
-2. Click **Tools** -\&gt; **NuGet Package Manager** -\&gt; **Manage NuGet Packages for Solution**.
+2. Click **Tools** -&gt; **NuGet Package Manager** -&gt; **Manage NuGet Packages for Solution**.
 3. Search for **DocuSign**.
 4. Select **DocuSign.eSign.dll**.
 5. Click the check box next to your project name.
@@ -36,7 +36,7 @@ This open-source SDK is provided for cases where you would like to make addition
 1. Open or create a new C# project.
 2. Open the **Package Manager Console** by either:
   1. Clicking **Package Manager Console** along the bottom of Visual Studio
-  2. Clicking **Tools** -\&gt; **NuGet Package Manager** -\&gt; **Package Manager Console**
+  2. Clicking **Tools** -&gt; **NuGet Package Manager** -&gt; **Package Manager Console**
 3. In the **Package Manager Console** , type: **Install-Package DocuSign.eSign.dll**
 
 ## Dependencies

@@ -1,8 +1,8 @@
+# The Official DocuSign C# Client
+
 [![Nuget version][nuget-image]][nuget-url]  
 [![Nuget downloads][downloads-image]][downloads-url]  
 [![Build status][appveyor-image]][appveyor-url]
-
-# The Official DocuSign C# Client
 
 ## Requirements
 

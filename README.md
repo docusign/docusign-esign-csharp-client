@@ -1,4 +1,8 @@
-?# The Official DocuSign C# Client
+[![Nuget version][nuget-image]][nuget-url]  
+[![Nuget downloads][downloads-image]][downloads-url]  
+[![Build status][appveyor-image]][appveyor-url]
+
+# The Official DocuSign C# Client
 
 ## Requirements
 
@@ -88,3 +92,11 @@ Log issues against this client through GitHub. We also have an [active developer
 ## License
 
 The DocuSign C# Client is licensed under the [MIT License](https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE).
+
+
+[nuget-image]: https://img.shields.io/nuget/v/DocuSign.eSign.dll.svg?style=flat
+[nuget-url]: https://www.nuget.org/packages/DocuSign.eSign.dll
+[downloads-image]: https://img.shields.io/nuget/dt/DocuSign.eSign.dll.svg?style=flat
+[downloads-url]: https://www.nuget.org/packages/DocuSign.eSign.dll
+[appveyor-image]:https://ci.appveyor.com/api/projects/status/m5a02n1vp3ma6qec?svg=true
+[appveyor-url]:https://ci.appveyor.com/project/RajRele/docusign-csharp-client

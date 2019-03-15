@@ -37,7 +37,7 @@ This open-source SDK is provided for cases where you would like to make addition
 2. Open the **Package Manager Console** by either:
   1. Clicking **Package Manager Console** along the bottom of Visual Studio
   2. Clicking **Tools** -&gt; **NuGet Package Manager** -&gt; **Package Manager Console**
-3. In the **Package Manager Console** , type: **Install-Package DocuSign.eSign.dll**
+3. In the **Package Manager Console**, type: **Install-Package DocuSign.eSign.dll**
 
 ## Dependencies
 

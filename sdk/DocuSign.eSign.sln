@@ -2,9 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSign.eSign", "src\DocuSign.eSign\DocuSign.eSign.csproj", "{311056DF-354B-4ECC-856B-451A214F8AAD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSign.eSign.Test", "src\DocuSign.eSign.Test\DocuSign.eSign.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocuSign.eSign", "src\DocuSign.eSign\DocuSign.eSign.csproj", "{311056DF-354B-4ECC-856B-451A214F8AAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,12 +14,11 @@ Global
 		{311056DF-354B-4ECC-856B-451A214F8AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{311056DF-354B-4ECC-856B-451A214F8AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{311056DF-354B-4ECC-856B-451A214F8AAD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA72ADE0-C8DB-470D-8174-E613AAE44A8B}
 	EndGlobalSection
 EndGlobal

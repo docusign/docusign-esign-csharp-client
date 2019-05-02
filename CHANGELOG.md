@@ -1,5 +1,14 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v3.1.5-rc] - eSignature API v19.1.02 - 05/01/2019
+### Changed
+* The SDK now supports version 19.1.02 of the DocuSign eSignature API.
+* SDK Release Version updated.
+### Added
+* Cache control header to the oauth calls.
+### Fixed
+* Fixed a problem with the FoldersApi
+
 ## [v3.1.4] - eSignature API v18.4.02 - 02/25/2019
 ### Changed
 * The SDK now supports version 18.4.02 of the DocuSign eSignature API.

@@ -48,6 +48,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IncludeDocumentFields">When set to **true**, the Document Fields associated with envelope documents are included in the data. Document Fields are optional custom name-value pairs added to documents using the API. .</param>
         /// <param name="IncludeDocuments">When set to **true**, Connect will send the PDF document along with the update XML..</param>
         /// <param name="IncludeEnvelopeVoidReason">When set to **true**, Connect will include the voidedReason for voided envelopes..</param>
+        /// <param name="IncludeHMAC">.</param>
         /// <param name="IncludeSenderAccountasCustomField">When set to **true**, Connect will include the sender account as Custom Field in the data..</param>
         /// <param name="IncludeTimeZoneInformation">When set to **true**, Connect will include the envelope time zone information..</param>
         /// <param name="Name">The name of the Connect configuration. The name helps identify the configuration in the list..</param>
@@ -58,7 +59,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UrlToPublishTo">This is the web address and name of your listener or Retrieving Service endpoint. You need to include HTTPS:// in the web address..</param>
         /// <param name="UserIds">A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to Ã¯Â¿Â½falseÃ¯Â¿Â½ then you must provide a list of user idÃ¯Â¿Â½s..</param>
         /// <param name="UseSoapInterface">When set to **true**, indicates that the &#x60;urlToPublishTo&#x60; property contains a SOAP endpoint..</param>
-        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllUsers = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string EnableLog = default(string), string EnvelopeEvents = default(string), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string Name = default(string), string RecipientEvents = default(string), string RequiresAcknowledgement = default(string), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), string UserIds = default(string), string UseSoapInterface = default(string))
+        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllUsers = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string EnableLog = default(string), string EnvelopeEvents = default(string), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string Name = default(string), string RecipientEvents = default(string), string RequiresAcknowledgement = default(string), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), string UserIds = default(string), string UseSoapInterface = default(string))
         {
             this.AllowEnvelopePublish = AllowEnvelopePublish;
             this.AllUsers = AllUsers;
@@ -71,6 +72,7 @@ namespace DocuSign.eSign.Model
             this.IncludeDocumentFields = IncludeDocumentFields;
             this.IncludeDocuments = IncludeDocuments;
             this.IncludeEnvelopeVoidReason = IncludeEnvelopeVoidReason;
+            this.IncludeHMAC = IncludeHMAC;
             this.IncludeSenderAccountasCustomField = IncludeSenderAccountasCustomField;
             this.IncludeTimeZoneInformation = IncludeTimeZoneInformation;
             this.Name = Name;
@@ -150,6 +152,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includeEnvelopeVoidReason", EmitDefaultValue=false)]
         public string IncludeEnvelopeVoidReason { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="includeHMAC", EmitDefaultValue=false)]
+        public string IncludeHMAC { get; set; }
+        /// <summary>
         /// When set to **true**, Connect will include the sender account as Custom Field in the data.
         /// </summary>
         /// <value>When set to **true**, Connect will include the sender account as Custom Field in the data.</value>
@@ -228,6 +236,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IncludeDocumentFields: ").Append(IncludeDocumentFields).Append("\n");
             sb.Append("  IncludeDocuments: ").Append(IncludeDocuments).Append("\n");
             sb.Append("  IncludeEnvelopeVoidReason: ").Append(IncludeEnvelopeVoidReason).Append("\n");
+            sb.Append("  IncludeHMAC: ").Append(IncludeHMAC).Append("\n");
             sb.Append("  IncludeSenderAccountasCustomField: ").Append(IncludeSenderAccountasCustomField).Append("\n");
             sb.Append("  IncludeTimeZoneInformation: ").Append(IncludeTimeZoneInformation).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -330,6 +339,11 @@ namespace DocuSign.eSign.Model
                     this.IncludeEnvelopeVoidReason.Equals(other.IncludeEnvelopeVoidReason)
                 ) && 
                 (
+                    this.IncludeHMAC == other.IncludeHMAC ||
+                    this.IncludeHMAC != null &&
+                    this.IncludeHMAC.Equals(other.IncludeHMAC)
+                ) && 
+                (
                     this.IncludeSenderAccountasCustomField == other.IncludeSenderAccountasCustomField ||
                     this.IncludeSenderAccountasCustomField != null &&
                     this.IncludeSenderAccountasCustomField.Equals(other.IncludeSenderAccountasCustomField)
@@ -414,6 +428,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IncludeDocuments.GetHashCode();
                 if (this.IncludeEnvelopeVoidReason != null)
                     hash = hash * 59 + this.IncludeEnvelopeVoidReason.GetHashCode();
+                if (this.IncludeHMAC != null)
+                    hash = hash * 59 + this.IncludeHMAC.GetHashCode();
                 if (this.IncludeSenderAccountasCustomField != null)
                     hash = hash * 59 + this.IncludeSenderAccountasCustomField.GetHashCode();
                 if (this.IncludeTimeZoneInformation != null)

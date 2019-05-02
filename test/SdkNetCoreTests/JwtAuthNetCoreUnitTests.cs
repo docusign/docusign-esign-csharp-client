@@ -618,5 +618,46 @@ namespace SdkNetCoreTests
                 }
             }
         }
+
+        [TestMethod]
+        public void JwtMoveEnvelopesTest()
+        {
+            JwtRequestSignatureOnDocumentTest("sent");
+
+            FoldersApi foldersApi = new FoldersApi(testConfig.ApiClient.Configuration);
+
+            FoldersRequest foldersRequest = new FoldersRequest(EnvelopeIds: new List<string> { testConfig.EnvelopeId }, FromFolderId: "sentitems");
+
+            string ToFolderId = "draft";
+
+            try
+            {
+                foldersApi.MoveEnvelopes(testConfig.AccountId, ToFolderId, foldersRequest);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Expected no exception, Actual error message: " + ex.Message);
+            }
+
+            // Test if we moved the envelope to the correct folder
+            FoldersApi.ListItemsOptions searchOptions = new FoldersApi.ListItemsOptions();
+            searchOptions.status = "sent";
+
+            var listfromDraftsFolder = foldersApi.ListItems(testConfig.AccountId, ToFolderId, searchOptions);
+
+            Assert.IsNotNull(listfromDraftsFolder);
+
+            bool doesExists = false;
+            foreach (var item in listfromDraftsFolder.FolderItems)
+            {
+                if (item.EnvelopeId == testConfig.EnvelopeId)
+                {
+                    doesExists = true;
+                    break;
+                }
+            }
+
+            Assert.IsTrue(doesExists);
+        }
     }
 }

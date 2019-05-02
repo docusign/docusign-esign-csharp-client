@@ -44,8 +44,8 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="DocuSign.eSign, Version=3.1.4.0, Culture=neutral, PublicKeyToken=7fca6fcbbc219ede, processorArchitecture=MSIL">
-      <HintPath>..\packages\DocuSign.eSign.dll.3.1.4\lib\net45\DocuSign.eSign.dll</HintPath>
+    <Reference Include="DocuSign.eSign, Version=3.1.5.0, Culture=neutral, PublicKeyToken=7fca6fcbbc219ede, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocuSign.eSign.dll.3.1.5-rc\lib\net45\DocuSign.eSign.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -92,7 +92,6 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthenticationTests.cs" />
     <Compile Include="TestConfig.cs" />
     <Compile Include="JwtAuthUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

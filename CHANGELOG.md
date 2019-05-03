@@ -5,9 +5,13 @@
 * The SDK now supports version 19.1.02 of the DocuSign eSignature API.
 * SDK Release Version updated.
 ### Added
-* Cache control header to the oauth calls.
+* Added new Cache-Control and Pragma headers to OAuth server request calls. (DCM-2243)
+* Added a new *TabGroupLabels* field to all Tabs models
+* Added a new *Witnesses* field to all Recipients models
+* Implemented models for Smart Sections feature
+* Implemented initial support of HMAC for DocuSign Connect
 ### Fixed
-* Fixed a problem with the FoldersApi
+* A bug with that could cause the *MoveEnvelopes* method call to return a response without a *Content-Type* header. (DCM-3084)
 
 ## [v3.1.4] - eSignature API v18.4.02 - 02/25/2019
 ### Changed

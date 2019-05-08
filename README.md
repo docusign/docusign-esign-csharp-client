@@ -11,7 +11,7 @@
 
 ## Compatibility
 
-- .NET Standard 2.0. See [.NET Standard Selector](http://immo.landwerth.net/netstandard-versions/) for details on versioning for the individual components in .NET Standard
+- .NET Standard 2.0. See [.NET Standard Selector](https://immo.landwerth.net/netstandard-versions/) for details on versioning for the individual components in .NET Standard
 - .NET Core 2.0
 - Microsoft .NET version 4.5+
 - TLS 1.2
@@ -87,7 +87,7 @@ There are other use-case scenarios, such as  **single-page applications** (SPA) 
 
 ## Support
 
-Log issues against this client through GitHub. We also have an [active developer community on Stack Overflow](http://stackoverflow.com/questions/tagged/docusignapi).
+Log issues against this client through GitHub. We also have an [active developer community on Stack Overflow](https://stackoverflow.com/questions/tagged/docusignapi).
 
 ## License
 

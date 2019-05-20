@@ -48,7 +48,8 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientCount">The list of recipient event statuses that will trigger Connect to send updates to the url. It can be a two-part list with:  * recipientEventStatusCode - The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded. * includeDocuments - When set to **true**, the envelope time zone information is included in the message..</param>
         /// <param name="Seals">.</param>
         /// <param name="Signers">A complex type containing information about the Signer recipient..</param>
-        public TemplateRecipients(List<Agent> Agents = default(List<Agent>), List<CarbonCopy> CarbonCopies = default(List<CarbonCopy>), List<CertifiedDelivery> CertifiedDeliveries = default(List<CertifiedDelivery>), string CurrentRoutingOrder = default(string), List<Editor> Editors = default(List<Editor>), ErrorDetails ErrorDetails = default(ErrorDetails), List<InPersonSigner> InPersonSigners = default(List<InPersonSigner>), List<Intermediary> Intermediaries = default(List<Intermediary>), string RecipientCount = default(string), List<SealSign> Seals = default(List<SealSign>), List<Signer> Signers = default(List<Signer>))
+        /// <param name="Witnesses">.</param>
+        public TemplateRecipients(List<Agent> Agents = default(List<Agent>), List<CarbonCopy> CarbonCopies = default(List<CarbonCopy>), List<CertifiedDelivery> CertifiedDeliveries = default(List<CertifiedDelivery>), string CurrentRoutingOrder = default(string), List<Editor> Editors = default(List<Editor>), ErrorDetails ErrorDetails = default(ErrorDetails), List<InPersonSigner> InPersonSigners = default(List<InPersonSigner>), List<Intermediary> Intermediaries = default(List<Intermediary>), string RecipientCount = default(string), List<SealSign> Seals = default(List<SealSign>), List<Signer> Signers = default(List<Signer>), List<Witness> Witnesses = default(List<Witness>))
         {
             this.Agents = Agents;
             this.CarbonCopies = CarbonCopies;
@@ -61,6 +62,7 @@ namespace DocuSign.eSign.Model
             this.RecipientCount = RecipientCount;
             this.Seals = Seals;
             this.Signers = Signers;
+            this.Witnesses = Witnesses;
         }
         
         /// <summary>
@@ -129,6 +131,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signers", EmitDefaultValue=false)]
         public List<Signer> Signers { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="witnesses", EmitDefaultValue=false)]
+        public List<Witness> Witnesses { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -147,6 +155,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  RecipientCount: ").Append(RecipientCount).Append("\n");
             sb.Append("  Seals: ").Append(Seals).Append("\n");
             sb.Append("  Signers: ").Append(Signers).Append("\n");
+            sb.Append("  Witnesses: ").Append(Witnesses).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -237,6 +246,11 @@ namespace DocuSign.eSign.Model
                     this.Signers == other.Signers ||
                     this.Signers != null &&
                     this.Signers.SequenceEqual(other.Signers)
+                ) && 
+                (
+                    this.Witnesses == other.Witnesses ||
+                    this.Witnesses != null &&
+                    this.Witnesses.SequenceEqual(other.Witnesses)
                 );
         }
 
@@ -273,6 +287,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Seals.GetHashCode();
                 if (this.Signers != null)
                     hash = hash * 59 + this.Signers.GetHashCode();
+                if (this.Witnesses != null)
+                    hash = hash * 59 + this.Witnesses.GetHashCode();
                 return hash;
             }
         }

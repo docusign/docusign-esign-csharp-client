@@ -70,6 +70,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SenderRequired">When set to **true**, the sender must populate the tab before an envelope can be sent using the template.   This value tab can only be changed by modifying (PUT) the template.   Tabs with a &#x60;senderRequired&#x60; value of true cannot be deleted from an envelope..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
+        /// <param name="TabGroupLabels">.</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
         /// <param name="TabLabel">The label string associated with the tab..</param>
         /// <param name="TabOrder">.</param>
@@ -84,7 +85,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Width">Width of the tab in pixels..</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
-        public Zip(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Italic = default(string), string Locked = default(string), int? MaxLength = default(int?), MergeField MergeField = default(MergeField), string Name = default(string), string OriginalValue = default(string), string PageNumber = default(string), string RecipientId = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string SenderRequired = default(string), string Shared = default(string), string Status = default(string), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Tooltip = default(string), string Underline = default(string), string UseDash4 = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Value = default(string), int? Width = default(int?), string XPosition = default(string), string YPosition = default(string))
+        public Zip(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Italic = default(string), string Locked = default(string), int? MaxLength = default(int?), MergeField MergeField = default(MergeField), string Name = default(string), string OriginalValue = default(string), string PageNumber = default(string), string RecipientId = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string SenderRequired = default(string), string Shared = default(string), string Status = default(string), List<string> TabGroupLabels = default(List<string>), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Tooltip = default(string), string Underline = default(string), string UseDash4 = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Value = default(string), int? Width = default(int?), string XPosition = default(string), string YPosition = default(string))
         {
             this.AnchorCaseSensitive = AnchorCaseSensitive;
             this.AnchorHorizontalAlignment = AnchorHorizontalAlignment;
@@ -119,6 +120,7 @@ namespace DocuSign.eSign.Model
             this.SenderRequired = SenderRequired;
             this.Shared = Shared;
             this.Status = Status;
+            this.TabGroupLabels = TabGroupLabels;
             this.TabId = TabId;
             this.TabLabel = TabLabel;
             this.TabOrder = TabOrder;
@@ -332,6 +334,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="tabGroupLabels", EmitDefaultValue=false)]
+        public List<string> TabGroupLabels { get; set; }
+        /// <summary>
         /// The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     
         /// </summary>
         /// <value>The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     </value>
@@ -456,6 +464,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SenderRequired: ").Append(SenderRequired).Append("\n");
             sb.Append("  Shared: ").Append(Shared).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  TabGroupLabels: ").Append(TabGroupLabels).Append("\n");
             sb.Append("  TabId: ").Append(TabId).Append("\n");
             sb.Append("  TabLabel: ").Append(TabLabel).Append("\n");
             sb.Append("  TabOrder: ").Append(TabOrder).Append("\n");
@@ -672,6 +681,11 @@ namespace DocuSign.eSign.Model
                     this.Status.Equals(other.Status)
                 ) && 
                 (
+                    this.TabGroupLabels == other.TabGroupLabels ||
+                    this.TabGroupLabels != null &&
+                    this.TabGroupLabels.SequenceEqual(other.TabGroupLabels)
+                ) && 
+                (
                     this.TabId == other.TabId ||
                     this.TabId != null &&
                     this.TabId.Equals(other.TabId)
@@ -820,6 +834,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Shared.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
+                if (this.TabGroupLabels != null)
+                    hash = hash * 59 + this.TabGroupLabels.GetHashCode();
                 if (this.TabId != null)
                     hash = hash * 59 + this.TabId.GetHashCode();
                 if (this.TabLabel != null)

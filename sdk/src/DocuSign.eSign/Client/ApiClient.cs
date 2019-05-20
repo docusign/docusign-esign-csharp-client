@@ -822,6 +822,9 @@ namespace DocuSign.eSign.Client
 
             request.AddHeader("Authorization", "Basic " + codeAuthBase64);
             request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+            // Don't cache authentication requests
+            request.AddHeader("Cache-Control", "no-store");
+            request.AddHeader("Pragma", "no-cache");
 
             Dictionary<string, string> formParams = new Dictionary<string, string>
             {
@@ -872,6 +875,9 @@ namespace DocuSign.eSign.Client
             RestRequest request = new RestRequest("oauth/userinfo", Method.GET);
 
             request.AddHeader("Authorization", "Bearer " + accessToken);
+            // Don't cache authentication requests
+            request.AddHeader("Cache-Control", "no-store");
+            request.AddHeader("Pragma", "no-cache");
 
             IRestResponse response = restClient.Execute(request);
             if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
@@ -1098,6 +1104,9 @@ namespace DocuSign.eSign.Client
 
             Dictionary<string, string> headerParams = new Dictionary<string, string>();
             headerParams.Add("Content-Type", "application/x-www-form-urlencoded");
+            // Don't cache authentication requests
+            headerParams.Add("Cache-Control", "no-store");
+            headerParams.Add("Pragma", "no-cache");
 
             Dictionary<string, FileParameter> fileParams = new Dictionary<string, FileParameter>();
             Dictionary<string, string> pathParams = new Dictionary<string, string>();
@@ -1191,6 +1200,9 @@ namespace DocuSign.eSign.Client
 
             Dictionary<string, string> headerParams = new Dictionary<string, string>();
             headerParams.Add("Content-Type", "application/x-www-form-urlencoded");
+            // Don't cache authentication requests
+            headerParams.Add("Cache-Control", "no-store");
+            headerParams.Add("Pragma", "no-cache");
 
             Dictionary<string, FileParameter> fileParams = new Dictionary<string, FileParameter>();
             Dictionary<string, string> pathParams = new Dictionary<string, string>();

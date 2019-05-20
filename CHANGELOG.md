@@ -1,5 +1,18 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v3.1.5] - eSignature API v19.1.02 - 05/20/2019
+### Changed
+* The SDK now supports version 19.1.02 of the DocuSign eSignature API.
+* SDK Release Version updated.
+### Added
+* Added new Cache-Control and Pragma headers to OAuth server request calls. (DCM-2243)
+* Added a new *TabGroupLabels* field to all Tabs models
+* Added a new *Witnesses* field to all Recipients models
+* Implemented models for Smart Sections feature
+* Implemented initial support of HMAC for DocuSign Connect
+### Fixed
+* A bug with that could cause the *MoveEnvelopes* method call to return a response without a *Content-Type* header. (DCM-3084)
+
 ## [v3.1.5-rc] - eSignature API v19.1.02 - 05/01/2019
 ### Changed
 * The SDK now supports version 19.1.02 of the DocuSign eSignature API.

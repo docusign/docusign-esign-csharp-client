@@ -641,7 +641,7 @@ namespace SdkTests
             FoldersApi.ListItemsOptions searchOptions = new FoldersApi.ListItemsOptions();
             searchOptions.status = "sent";
 
-            var listfromDraftsFolder = foldersApi.ListItems(testConfig.AccountId, ToFolderId, searchOptions);
+            var listfromDraftsFolder = foldersApi.ListItems(testConfig.AccountId, ToFolderId);
 
             Assert.IsNotNull(listfromDraftsFolder);
 

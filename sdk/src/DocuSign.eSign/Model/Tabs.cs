@@ -58,12 +58,13 @@ namespace DocuSign.eSign.Model
         /// <param name="RadioGroupTabs">Specifies a tag on the document in a location where the recipient can select one option from a group of options using a radio button. The radio buttons do not have to be on the same page in a document..</param>
         /// <param name="SignerAttachmentTabs">Specifies a tag on the document when you want the recipient to add supporting documents to an envelope..</param>
         /// <param name="SignHereTabs">A complex type the contains information about the tag that specifies where the recipient places their signature in the document. The \&quot;optional\&quot; parameter sets if the signature is required or optional. .</param>
+        /// <param name="SmartSectionTabs">.</param>
         /// <param name="SsnTabs">Specifies a tag on the document where you want the recipient to enter a Social Security Number (SSN). A SSN can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for SSN information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
         /// <param name="TextTabs">Specifies a that that is an adaptable field that allows the recipient to enter different text information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
         /// <param name="TitleTabs">Specifies a tag on the document where you want the recipient&#39;s title to appear.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
         /// <param name="ViewTabs">.</param>
         /// <param name="ZipTabs">Specifies a tag on the document where you want the recipient to enter a ZIP code. The ZIP code can be a five numbers or the ZIP+4 format with nine numbers. The zip code can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for ZIP code information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
-        public Tabs(List<Approve> ApproveTabs = default(List<Approve>), List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<Company> CompanyTabs = default(List<Company>), List<DateSigned> DateSignedTabs = default(List<DateSigned>), List<DocuSign.eSign.Model.Date> DateTabs = default(List<DocuSign.eSign.Model.Date>), List<Decline> DeclineTabs = default(List<Decline>), List<EmailAddress> EmailAddressTabs = default(List<EmailAddress>), List<Email> EmailTabs = default(List<Email>), List<EnvelopeId> EnvelopeIdTabs = default(List<EnvelopeId>), List<FirstName> FirstNameTabs = default(List<FirstName>), List<FormulaTab> FormulaTabs = default(List<FormulaTab>), List<FullName> FullNameTabs = default(List<FullName>), List<InitialHere> InitialHereTabs = default(List<InitialHere>), List<LastName> LastNameTabs = default(List<LastName>), List<List> ListTabs = default(List<List>), List<Notarize> NotarizeTabs = default(List<Notarize>), List<Note> NoteTabs = default(List<Note>), List<Number> NumberTabs = default(List<Number>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SignerAttachment> SignerAttachmentTabs = default(List<SignerAttachment>), List<SignHere> SignHereTabs = default(List<SignHere>), List<Ssn> SsnTabs = default(List<Ssn>), List<Text> TextTabs = default(List<Text>), List<Title> TitleTabs = default(List<Title>), List<View> ViewTabs = default(List<View>), List<Zip> ZipTabs = default(List<Zip>))
+        public Tabs(List<Approve> ApproveTabs = default(List<Approve>), List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<Company> CompanyTabs = default(List<Company>), List<DateSigned> DateSignedTabs = default(List<DateSigned>), List<DocuSign.eSign.Model.Date> DateTabs = default(List<DocuSign.eSign.Model.Date>), List<Decline> DeclineTabs = default(List<Decline>), List<EmailAddress> EmailAddressTabs = default(List<EmailAddress>), List<Email> EmailTabs = default(List<Email>), List<EnvelopeId> EnvelopeIdTabs = default(List<EnvelopeId>), List<FirstName> FirstNameTabs = default(List<FirstName>), List<FormulaTab> FormulaTabs = default(List<FormulaTab>), List<FullName> FullNameTabs = default(List<FullName>), List<InitialHere> InitialHereTabs = default(List<InitialHere>), List<LastName> LastNameTabs = default(List<LastName>), List<List> ListTabs = default(List<List>), List<Notarize> NotarizeTabs = default(List<Notarize>), List<Note> NoteTabs = default(List<Note>), List<Number> NumberTabs = default(List<Number>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SignerAttachment> SignerAttachmentTabs = default(List<SignerAttachment>), List<SignHere> SignHereTabs = default(List<SignHere>), List<SmartSection> SmartSectionTabs = default(List<SmartSection>), List<Ssn> SsnTabs = default(List<Ssn>), List<Text> TextTabs = default(List<Text>), List<Title> TitleTabs = default(List<Title>), List<View> ViewTabs = default(List<View>), List<Zip> ZipTabs = default(List<Zip>))
         {
             this.ApproveTabs = ApproveTabs;
             this.CheckboxTabs = CheckboxTabs;
@@ -86,6 +87,7 @@ namespace DocuSign.eSign.Model
             this.RadioGroupTabs = RadioGroupTabs;
             this.SignerAttachmentTabs = SignerAttachmentTabs;
             this.SignHereTabs = SignHereTabs;
+            this.SmartSectionTabs = SmartSectionTabs;
             this.SsnTabs = SsnTabs;
             this.TextTabs = TextTabs;
             this.TitleTabs = TitleTabs;
@@ -220,6 +222,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signHereTabs", EmitDefaultValue=false)]
         public List<SignHere> SignHereTabs { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="smartSectionTabs", EmitDefaultValue=false)]
+        public List<SmartSection> SmartSectionTabs { get; set; }
+        /// <summary>
         /// Specifies a tag on the document where you want the recipient to enter a Social Security Number (SSN). A SSN can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for SSN information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
         /// </summary>
         /// <value>Specifies a tag on the document where you want the recipient to enter a Social Security Number (SSN). A SSN can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for SSN information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.</value>
@@ -278,6 +286,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  RadioGroupTabs: ").Append(RadioGroupTabs).Append("\n");
             sb.Append("  SignerAttachmentTabs: ").Append(SignerAttachmentTabs).Append("\n");
             sb.Append("  SignHereTabs: ").Append(SignHereTabs).Append("\n");
+            sb.Append("  SmartSectionTabs: ").Append(SmartSectionTabs).Append("\n");
             sb.Append("  SsnTabs: ").Append(SsnTabs).Append("\n");
             sb.Append("  TextTabs: ").Append(TextTabs).Append("\n");
             sb.Append("  TitleTabs: ").Append(TitleTabs).Append("\n");
@@ -425,6 +434,11 @@ namespace DocuSign.eSign.Model
                     this.SignHereTabs.SequenceEqual(other.SignHereTabs)
                 ) && 
                 (
+                    this.SmartSectionTabs == other.SmartSectionTabs ||
+                    this.SmartSectionTabs != null &&
+                    this.SmartSectionTabs.SequenceEqual(other.SmartSectionTabs)
+                ) && 
+                (
                     this.SsnTabs == other.SsnTabs ||
                     this.SsnTabs != null &&
                     this.SsnTabs.SequenceEqual(other.SsnTabs)
@@ -504,6 +518,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SignerAttachmentTabs.GetHashCode();
                 if (this.SignHereTabs != null)
                     hash = hash * 59 + this.SignHereTabs.GetHashCode();
+                if (this.SmartSectionTabs != null)
+                    hash = hash * 59 + this.SmartSectionTabs.GetHashCode();
                 if (this.SsnTabs != null)
                     hash = hash * 59 + this.SsnTabs.GetHashCode();
                 if (this.TextTabs != null)

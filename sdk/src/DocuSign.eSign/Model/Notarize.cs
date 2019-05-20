@@ -56,6 +56,7 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
+        /// <param name="TabGroupLabels">.</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
         /// <param name="TabOrder">.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
@@ -63,7 +64,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Tooltip">.</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
-        public Notarize(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Locked = default(string), MergeField MergeField = default(MergeField), string PageNumber = default(string), string RecipientId = default(string), string Required = default(string), string Status = default(string), string TabId = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Tooltip = default(string), string XPosition = default(string), string YPosition = default(string))
+        public Notarize(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Locked = default(string), MergeField MergeField = default(MergeField), string PageNumber = default(string), string RecipientId = default(string), string Required = default(string), string Status = default(string), List<string> TabGroupLabels = default(List<string>), string TabId = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Tooltip = default(string), string XPosition = default(string), string YPosition = default(string))
         {
             this.AnchorCaseSensitive = AnchorCaseSensitive;
             this.AnchorHorizontalAlignment = AnchorHorizontalAlignment;
@@ -84,6 +85,7 @@ namespace DocuSign.eSign.Model
             this.RecipientId = RecipientId;
             this.Required = Required;
             this.Status = Status;
+            this.TabGroupLabels = TabGroupLabels;
             this.TabId = TabId;
             this.TabOrder = TabOrder;
             this.TemplateLocked = TemplateLocked;
@@ -206,6 +208,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="tabGroupLabels", EmitDefaultValue=false)]
+        public List<string> TabGroupLabels { get; set; }
+        /// <summary>
         /// The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     
         /// </summary>
         /// <value>The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     </value>
@@ -274,6 +282,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  RecipientId: ").Append(RecipientId).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  TabGroupLabels: ").Append(TabGroupLabels).Append("\n");
             sb.Append("  TabId: ").Append(TabId).Append("\n");
             sb.Append("  TabOrder: ").Append(TabOrder).Append("\n");
             sb.Append("  TemplateLocked: ").Append(TemplateLocked).Append("\n");
@@ -413,6 +422,11 @@ namespace DocuSign.eSign.Model
                     this.Status.Equals(other.Status)
                 ) && 
                 (
+                    this.TabGroupLabels == other.TabGroupLabels ||
+                    this.TabGroupLabels != null &&
+                    this.TabGroupLabels.SequenceEqual(other.TabGroupLabels)
+                ) && 
+                (
                     this.TabId == other.TabId ||
                     this.TabId != null &&
                     this.TabId.Equals(other.TabId)
@@ -498,6 +512,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Required.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
+                if (this.TabGroupLabels != null)
+                    hash = hash * 59 + this.TabGroupLabels.GetHashCode();
                 if (this.TabId != null)
                     hash = hash * 59 + this.TabId.GetHashCode();
                 if (this.TabOrder != null)

@@ -1,5 +1,10 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v4.0.0-rc] - eSignature API v2.1 - 06/07/2019
+### Changed
+* The SDK now supports API v2.1-19.1.02 of the DocuSign eSignature API.
+* SDK Release Version updated.
+
 ## [v3.1.5] - eSignature API v19.1.02 - 05/20/2019
 ### Changed
 * The SDK now supports version 19.1.02 of the DocuSign eSignature API.
@@ -25,6 +30,7 @@
 * Implemented initial support of HMAC for DocuSign Connect
 ### Fixed
 * A bug with that could cause the *MoveEnvelopes* method call to return a response without a *Content-Type* header. (DCM-3084)
+
 
 ## [v3.1.4] - eSignature API v18.4.02 - 02/25/2019
 ### Changed

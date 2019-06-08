@@ -627,10 +627,11 @@ namespace SdkTests
             FoldersRequest foldersRequest = new FoldersRequest(EnvelopeIds: new List<string> { testConfig.EnvelopeId }, FromFolderId: "sentitems");
             
             string ToFolderId = "draft";
+            FoldersResponse foldersResponse;
 
             try
             {
-                foldersApi.MoveEnvelopes(testConfig.AccountId, ToFolderId, foldersRequest);
+                foldersResponse = foldersApi.MoveEnvelopes(testConfig.AccountId, ToFolderId, foldersRequest);
             }
             catch (Exception ex)
             {
@@ -639,19 +640,22 @@ namespace SdkTests
 
             // Test if we moved the envelope to the correct folder
             FoldersApi.ListItemsOptions searchOptions = new FoldersApi.ListItemsOptions();
-            searchOptions.status = "sent";
+            searchOptions.includeItems = "true";
 
-            var listfromDraftsFolder = foldersApi.ListItems(testConfig.AccountId, ToFolderId);
+            var listfromDraftsFolder = foldersApi.ListItems(testConfig.AccountId, ToFolderId, searchOptions);
 
             Assert.IsNotNull(listfromDraftsFolder);
 
             bool doesExists = false;
-            foreach (var item in listfromDraftsFolder.FolderItems)
+            foreach (var folders in listfromDraftsFolder.Folders)
             {
-                if(item.EnvelopeId == testConfig.EnvelopeId)
+                foreach (var item in folders.FolderItems)
                 {
-                    doesExists = true;
-                    break;
+                    if (item.EnvelopeId == testConfig.EnvelopeId)
+                    {
+                        doesExists = true;
+                        break;
+                    }
                 }
             }
 

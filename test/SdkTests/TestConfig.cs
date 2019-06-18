@@ -1,4 +1,5 @@
 using DocuSign.eSign.Client;
+using System;
 using System.Collections.Generic;
 
 namespace SdkTests
@@ -35,6 +36,13 @@ namespace SdkTests
 
         public TestConfig(string username = null, string password = null, string integratorKey = null, string host = null, string recipientEmail = null, string recipientName = null, string templateRoleName = null, string templateId = null, string returnUrl = null)
         {
+            string APPVEYOR = Environment.GetEnvironmentVariable("APPVEYOR");
+            string userIdFromEnv = Environment.GetEnvironmentVariable("UserId");
+            string integratorKeyFromEnv = Environment.GetEnvironmentVariable("IntegratorKey");
+            string templateIdFromEnv = Environment.GetEnvironmentVariable("TemplateId");
+            string integratorKeyNoConsentFromEnv = Environment.GetEnvironmentVariable("IntegratorKeyNoConsent");
+            string brandIdfromEnv = Environment.GetEnvironmentVariable("BrandId");
+
             this.Host = (host != null) ? host : "https://demo.docusign.net/restapi";
             this.Username = (username != null) ? username : "node_sdk@mailinator.com";
             this.Password = (password != null) ? password : "{PASSWORD}";

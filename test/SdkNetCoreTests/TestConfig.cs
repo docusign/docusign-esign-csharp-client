@@ -37,7 +37,7 @@ namespace SdkNetCoreTests
         {
             this.Host = (host != null) ? host : "https://demo.docusign.net/restapi";
             this.Username = (username != null) ? username : "node_sdk@mailinator.com";
-            this.Password = (password != null) ? password : "{PASSWORD}";
+            this.Password = (password != null) ? password : "[PASSWORD]";
             this.IntegratorKey = (integratorKey != null) ? integratorKey : "ae30ea4e-xxxx-xxxx-xxxx-fcb57d2dc4df";
 
             this.RecipientEmail = (recipientEmail != null) ? recipientEmail : "node_sdk@mailinator.com";

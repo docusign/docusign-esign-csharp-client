@@ -6,3 +6,5 @@
 /.vs
 /test/.vs/SdkTests
 /test/packages
+/test/.vs/config
+/test

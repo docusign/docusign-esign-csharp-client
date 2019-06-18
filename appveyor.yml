@@ -1,18 +1,25 @@
-version: 3.0.0.{build}
+version: 4.0.0.{build}
 image: Visual Studio 2017
 branches:
   only:
     - master
+environment:
+  userid:
+    secure: Qo/l0CXFLBY361cFs0ELS/MbYt/usvmKlwEaCYEa5mNMDvbuvu+oQYGbYkUErFXv
+  integratorkey:
+    secure: xR4vzAw7owbkmR7Mebo08WhQn/RnMtTcBYvNVq6bG1o6Q5Ewjz4YSw5PeLsKJ+J0
+  integratorkeynoconsent:
+    secure: JvXCFyKNGxHV340r55kvoGzIC8A07eFIrMveqxK05R7+pbHIC5F+TssPz+mk0NaM
+  templateid:
+    secure: s7ijEs3pjkMHz1KHsflevEiqN74ourbbLSH8d5932cteR58/Yol115reJiheorQm
+  brandid:
+    secure: pXbTL8lsoqYS+0VSznXeXuxhWEc/I5kmmMekT3LWtimXaMz8YqLIfi/ECvJ7hqoZ
 build_script:
 - ps: . ./csharp-build.ps1
 test_script:
 - ps: >- 
     nuget install ./test/SdkTests/packages.config -OutputDirectory ./test/packages
-
     dotnet build --framework net45 ./test/SdkTests/SdkTests.csproj
-
     dotnet build --framework netcoreapp2.0 ./test/SdkNetCoreTests/SdkNetCoreTests.csproj
-
     dotnet test ./test/SdkTests/SdkTests.csproj
-
     dotnet test ./test/SdkNetCoreTests/SdkNetCoreTests.csproj

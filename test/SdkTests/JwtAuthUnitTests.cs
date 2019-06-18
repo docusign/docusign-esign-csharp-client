@@ -20,6 +20,7 @@ namespace SdkTests
         public void JwtLoginTest()
         {
             testConfig.ApiClient = new ApiClient(testConfig.Host);
+            Console.WriteLine(testConfig.IntegratorKey);
 
             byte[] privateKeyStream = File.ReadAllBytes(testConfig.PrivateKeyFilename);
             OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours);

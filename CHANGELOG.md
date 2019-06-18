@@ -1,7 +1,7 @@
 ﻿# DocuSign C# Client Changelog
 
 ## [v4.0.0-rc] - eSignature API v2.1 - 06/07/2019
-### Changed
+### BREAKING
 * The SDK now supports API v2.1-19.1.02 of the DocuSign eSignature API.
 * SDK Release Version updated.
 
@@ -79,7 +79,7 @@
 * The C# .NET Standard SDK can now be implemented by projects in Mac and Linux environments. (DCM-2837)
 
 ## [v3.1.0-rc] - eSignature API v18.3.00 - 9/12/2018
-### Breaking
+### BREAKING
 * The AccountId() method has been removed from the SDK and replaced with by a settable AccountId property in the OAuth.UserInfo.Account object. Existing implementations that use the AccountId() method must be updated to use the AccountId property instead. Attempting to call AccountId() will result in the following error: `CS1955  Non-invocable member 'OAuth.UserInfo.Account.AccountId' cannot be used like a method.` (DCM-2636) 
 ### Changed
 * The base path for OAuth authentication is now a property of the ApiClient object. 

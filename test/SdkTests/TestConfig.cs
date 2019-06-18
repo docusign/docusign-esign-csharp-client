@@ -37,6 +37,12 @@ namespace SdkTests
         public TestConfig(string username = null, string password = null, string integratorKey = null, string host = null, string recipientEmail = null, string recipientName = null, string templateRoleName = null, string templateId = null, string returnUrl = null)
         {
             string APPVEYOR = Environment.GetEnvironmentVariable("APPVEYOR");
+
+            if (string.IsNullOrEmpty(APPVEYOR) || APPVEYOR == "false")
+            {
+                Console.WriteLine("Apprveyor environment variable failed!");
+            }
+
             string userIdFromEnv = Environment.GetEnvironmentVariable("UserId");
             string integratorKeyFromEnv = Environment.GetEnvironmentVariable("IntegratorKey");
             string templateIdFromEnv = Environment.GetEnvironmentVariable("TemplateId");

@@ -43,11 +43,11 @@ namespace SdkTests
                 Console.WriteLine("Apprveyor environment variable failed!");
             }
 
-            string userIdFromEnv = Environment.GetEnvironmentVariable("UserId");
-            string integratorKeyFromEnv = Environment.GetEnvironmentVariable("IntegratorKey");
-            string templateIdFromEnv = Environment.GetEnvironmentVariable("TemplateId");
-            string integratorKeyNoConsentFromEnv = Environment.GetEnvironmentVariable("IntegratorKeyNoConsent");
-            string brandIdfromEnv = Environment.GetEnvironmentVariable("BrandId");
+            string userIdFromEnv = Environment.GetEnvironmentVariable("userid");
+            string integratorKeyFromEnv = Environment.GetEnvironmentVariable("integratorkey");
+            string templateIdFromEnv = Environment.GetEnvironmentVariable("templateid");
+            string integratorKeyNoConsentFromEnv = Environment.GetEnvironmentVariable("integratorkeynoconsent");
+            string brandIdfromEnv = Environment.GetEnvironmentVariable("brandid");
 
             this.Host = (host != null) ? host : "https://demo.docusign.net/restapi";
             this.Username = (username != null) ? username : "node_sdk@mailinator.com";

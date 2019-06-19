@@ -3,18 +3,6 @@ image: Visual Studio 2017
 branches:
   only:
     - master
-environment:
-  global:
-    userid:
-      secure: QRJOq66vGwoi2OMuG/b+ipWWwrXX9vJR8gzmYaujmG7SV4HxkGpOxWuYQqVdmVsP
-    integratorkey:
-      secure: 8kB3FEZMBkjNnrfYw/Xf0Cv04HG5k7AWE6XyV+9hodEDX5Csa5VzprSMYMWxdnND
-    integratorkeynoconsent:
-      secure: v1QQC8jAuHg8DpBA4YL/uIwIPEj+tEX/TGYVKTN1cTckLLxChkEm4C4cgCHz0ojv
-    templateid:
-      secure: aXiY8PMOK/V9atkbXhfQHeccNorWCbKgIVwoJCOamCk6JvnqXc3+0PP2YbhfvuqX
-    brandid:
-      secure: J/a3HhnqS2tBIUQeMFs/wvt/uwa/gSmNJa7GjjrqG90R4yZE4EbDC6DbHRBC5jiK
 build_script:
 - ps: . ./csharp-build.ps1
 test_script:

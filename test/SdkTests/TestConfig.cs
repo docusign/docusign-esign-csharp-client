@@ -50,17 +50,17 @@ namespace SdkTests
             string brandIdfromEnv = Environment.GetEnvironmentVariable("brandid");
 
             this.Host = (host != null) ? host : "https://demo.docusign.net/restapi";
-            this.Username = (username != null) ? username : "node_sdk@mailinator.com";
+            this.Username = (username != null) ? username : "docusignsdktest@mailinator.com";
             this.Password = (password != null) ? password : "[PASSWORD]";
             this.IntegratorKey = (integratorKey != null) ? integratorKey : integratorKeyFromEnv; // "ae30ea4e-xxxx-xxxx-xxxx-fcb57d2dc4df";
 
-            this.RecipientEmail = (recipientEmail != null) ? recipientEmail : "node_sdk@mailinator.com";
+            this.RecipientEmail = (recipientEmail != null) ? recipientEmail : "docusignsdktest@mailinator.com";
             this.RecipientName = (recipientName != null) ? recipientName : "Pat Developer";
 
             this.TemplateRoleName = (templateRoleName != null) ? templateRoleName : "bob";
             this.TemplateId = (templateId != null) ? templateId : templateIdFromEnv; // "cf2a46c2-xxxx-xxxx-xxxx-752547b1a419";
 
-            this.ReturnUrl = (returnUrl != null) ? returnUrl : "https://www.docusign.com/devcenter";
+            this.ReturnUrl = (returnUrl != null) ? returnUrl : "https://www.docusign.com/api";
 
             this.UserId = userIdFromEnv; // "fcc5726c-xxxx-xxxx-xxxx-40bbbe6ca126";
             this.OAuthBasePath = "account-d.docusign.com";

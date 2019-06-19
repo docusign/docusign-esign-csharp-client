@@ -519,7 +519,7 @@ namespace SdkNetCoreTests
             ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
-            Assert.AreEqual(ex.ErrorContent, "{\"error\":\"invalid_grant\"}");
+            Assert.AreEqual("{\"error\":\"invalid_grant\"}", ex.ErrorContent);
         }
 
         [TestMethod]
@@ -530,7 +530,7 @@ namespace SdkNetCoreTests
             ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, pkey, testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
-            Assert.AreEqual(ex.ErrorContent, "{\"error\":\"consent_required\"}");
+            Assert.AreEqual("{\"error\":\"consent_required\"}", ex.ErrorContent);
         }
 
         [TestMethod]
@@ -544,7 +544,7 @@ namespace SdkNetCoreTests
             Assert.IsNotNull(ex.ErrorContent);
 
             int unauthorizedStatusCode = 401;
-            Assert.AreEqual(ex.ErrorCode, unauthorizedStatusCode);
+            Assert.AreEqual(unauthorizedStatusCode, ex.ErrorCode);
         }
 
         [TestMethod]

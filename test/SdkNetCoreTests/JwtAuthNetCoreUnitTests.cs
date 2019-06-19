@@ -526,7 +526,7 @@ namespace SdkNetCoreTests
         public void JwtConsentRequiredTest()
         {
             // Adding a Correct PEM key - no consent granted
-            byte[] pkey = System.Text.Encoding.UTF8.GetBytes(File.ReadAllText(testConfig.PrivateKeyNoConsent));
+            byte[] pkey = Convert.FromBase64String(testConfig.PrivateKeyNoConsent);
             ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, pkey, testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);

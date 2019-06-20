@@ -43,8 +43,6 @@ namespace SdkTests
             string brandIdfromEnv = Environment.GetEnvironmentVariable("brandid");
 
             this.Host = (host != null) ? host : "https://demo.docusign.net/restapi";
-            this.Username = (username != null) ? username : "docusignsdktest@mailinator.com";
-            this.Password = (password != null) ? password: "";
             this.IntegratorKey = (integratorKey != null) ? integratorKey : integratorKeyFromEnv;
 
             this.RecipientEmail = (recipientEmail != null) ? recipientEmail : "docusignsdktest@mailinator.com";

@@ -6,8 +6,6 @@ namespace SdkTests
 {
     class TestConfig
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
         public string IntegratorKey { get; set; }
         public string Host { get; set; }
         public ApiClient ApiClient { get; set; }
@@ -34,7 +32,7 @@ namespace SdkTests
 
         public string BrandId { get; set; }
 
-        public TestConfig(string username = null, string password = null, string integratorKey = null, string host = null, string recipientEmail = null, string recipientName = null, string templateRoleName = null, string templateId = null, string returnUrl = null)
+        public TestConfig(string integratorKey = null, string host = null, string recipientEmail = null, string recipientName = null, string templateRoleName = null, string templateId = null, string returnUrl = null)
         {
             string userIdFromEnv = Environment.GetEnvironmentVariable("userid");
             string integratorKeyFromEnv = Environment.GetEnvironmentVariable("integratorkey");

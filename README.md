@@ -4,7 +4,7 @@
 [![Nuget downloads][downloads-image]][downloads-url]
 [![Build status][appveyor-image]][appveyor-url]
 
-<p><h3>&#x26A0;&#xFE0F; The current release is <code>the first version to use <a href=“https://developers.docusign.com/esign-rest-api“>eSignature API v2.1</a></code>. The GA version will be released soon.</h3></p><p><h3>All previous releases use eSignature API v2 and they no longer will be actively maintained.</p>
+<p><h3>&#x26A0;&#xFE0F; The current release is <code>the first version to use <a href=â€œhttps://developers.docusign.com/esign-rest-apiâ€œ>eSignature API v2.1</a></code>. The GA version will be released soon.</h3></p><p><h3>All previous releases use eSignature API v2 and they no longer will be actively maintained.</p>
 
 ## Requirements
 
@@ -101,4 +101,4 @@ The DocuSign C# Client is licensed under the [MIT License](https://github.com/do
 [downloads-image]: https://img.shields.io/nuget/dt/DocuSign.eSign.dll.svg?style=flat
 [downloads-url]: https://www.nuget.org/packages/DocuSign.eSign.dll
 [appveyor-image]:https://ci.appveyor.com/api/projects/status/m5a02n1vp3ma6qec?svg=true
-[appveyor-url]:https://ci.appveyor.com/project/RajRele/docusign-csharp-client
+[appveyor-url]:https://ci.appveyor.com/project/DocuSign/docusign-csharp-client

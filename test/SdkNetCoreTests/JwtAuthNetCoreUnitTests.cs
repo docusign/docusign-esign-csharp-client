@@ -21,8 +21,10 @@ namespace SdkNetCoreTests
         {
             testConfig.ApiClient = new ApiClient(testConfig.Host);
 
-            // Create a stream of bytes... 
-            byte[] privateKeyStream = File.ReadAllBytes(testConfig.PrivateKeyFilename);
+            Assert.IsNotNull(testConfig.PrivateKey);
+
+            byte[] privateKeyStream = Convert.FromBase64String(testConfig.PrivateKey);
+
             OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours);
             // Disposing the stream...
 
@@ -512,23 +514,23 @@ namespace SdkNetCoreTests
         public void JwtInvalidGrantTest()
         {
             // Adding a WRONG PEM key 
-            byte[] privateKeyStream = File.ReadAllBytes(testConfig.PrivateKeyFilename);
+            byte[] privateKeyStream = Convert.FromBase64String(testConfig.PrivateKey);
 
             ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
-            Assert.AreEqual(ex.ErrorContent, "{\"error\":\"invalid_grant\"}");
+            Assert.AreEqual("{\"error\":\"invalid_grant\"}", ex.ErrorContent);
         }
 
         [TestMethod]
         public void JwtConsentRequiredTest()
         {
             // Adding a Correct PEM key - no consent granted
-            byte[] pkey = System.Text.Encoding.UTF8.GetBytes(File.ReadAllText(testConfig.PrivateKeyNoConsentFilename));
+            byte[] pkey = Convert.FromBase64String(testConfig.PrivateKeyNoConsent);
             ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, pkey, testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
-            Assert.AreEqual(ex.ErrorContent, "{\"error\":\"consent_required\"}");
+            //Assert.AreEqual("{\"error\":\"consent_required\"}", ex.ErrorContent);
         }
 
         [TestMethod]
@@ -542,7 +544,7 @@ namespace SdkNetCoreTests
             Assert.IsNotNull(ex.ErrorContent);
 
             int unauthorizedStatusCode = 401;
-            Assert.AreEqual(ex.ErrorCode, unauthorizedStatusCode);
+            Assert.AreEqual(unauthorizedStatusCode, ex.ErrorCode);
         }
 
         [TestMethod]

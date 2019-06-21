@@ -21,7 +21,10 @@ namespace SdkTests
         {
             testConfig.ApiClient = new ApiClient(testConfig.Host);
 
-            byte[] privateKeyStream = File.ReadAllBytes(testConfig.PrivateKeyFilename);
+            Assert.IsNotNull(testConfig.PrivateKey);
+
+            byte[] privateKeyStream = Convert.FromBase64String(testConfig.PrivateKey);
+
             OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours);
 
             // the authentication api uses the apiClient (and X-DocuSign-Authentication header) that are set in Configuration object
@@ -510,8 +513,7 @@ namespace SdkTests
         public void JwtInvalidGrantTest()
         {
             // Adding a WRONG PEM key 
-            byte[] privateKeyStream = File.ReadAllBytes(testConfig.PrivateKeyFilename);
-
+            byte[] privateKeyStream = Convert.FromBase64String(testConfig.PrivateKey);
             ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
@@ -522,7 +524,7 @@ namespace SdkTests
         public void JwtConsentRequiredTest()
         {
             // Adding a Correct PEM key - no consent granted
-            byte[] pkey = System.Text.Encoding.UTF8.GetBytes(File.ReadAllText(testConfig.PrivateKeyNoConsentFilename));
+            byte[] pkey = Convert.FromBase64String(testConfig.PrivateKeyNoConsent);
             ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, pkey, testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);

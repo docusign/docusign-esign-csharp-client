@@ -627,7 +627,7 @@ namespace SdkTests
             FoldersApi foldersApi = new FoldersApi(testConfig.ApiClient.Configuration);
 
             FoldersRequest foldersRequest = new FoldersRequest(EnvelopeIds: new List<string> { testConfig.EnvelopeId }, FromFolderId: "sentitems");
-            
+
             string ToFolderId = "draft";
             FoldersResponse foldersResponse;
 

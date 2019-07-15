@@ -1,5 +1,10 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v4.0.0] - eSignature API v2.1 - 07/12/2019
+### BREAKING
+* The SDK now supports API v2.1-19.1.02 of the DocuSign eSignature API.
+* SDK Release Version updated.
+
 ## [v4.0.0-rc] - eSignature API v2.1 - 06/07/2019
 ### BREAKING
 * The SDK now supports API v2.1-19.1.02 of the DocuSign eSignature API.

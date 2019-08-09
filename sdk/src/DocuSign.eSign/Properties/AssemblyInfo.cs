@@ -22,5 +22,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 internal class AssemblyInformation
 {
-    public const string AssemblyInformationalVersion = "4.0.0-rc";
+    public const string AssemblyInformationalVersion = "4.0.1-rc";
 }

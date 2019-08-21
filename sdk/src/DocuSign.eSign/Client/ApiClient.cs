@@ -966,16 +966,7 @@ namespace DocuSign.eSign.Client
 
             object result = pemReader.ReadObject();
 
-#if NETSTANDARD2_0
-           var provider = new RSACryptoServiceProvider();
-#else
-            var cspParameters = new CspParameters
-            {
-                Flags = CspProviderFlags.UseMachineKeyStore,
-            };
-
-            var provider = new RSACryptoServiceProvider(cspParameters);
-#endif
+            var provider = RSA.Create(); 
 
             if (result is AsymmetricCipherKeyPair keyPair)
             {

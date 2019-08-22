@@ -1,5 +1,28 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v4.0.4] - eSignature API v2.1 - 08/21/2019
+### Changed
+* The SDK now supports API v2.1-19.2.02 of the DocuSign eSignature API.
+* SDK Release Version updated.
+### Fixed
+* A bug with DocuSign .Net Core SDK which threw an error in a Linux based Docker container (DCM-3073)
+* Documentation with 'expiresInHours' parameter fixed (DCM-3319)
+* Updated the request claims added when we create the JWT Token by adding 'iat' suppressing the default time added on 'nbf' claim (DCM-3232)
+
+## [v4.0.3-rc] - eSignature API v2.1 - 08/16/2019
+### Fixed
+* A bug with DocuSign .Net Core SDK which threw an error in a Linux based Docker container (DCM-3073)
+* Documentation with 'expiresInHours' parameter fixed (DCM-3319)
+* Updated the request claims added when we create the JWT Token by adding 'iat' suppressing the default time added on 'nbf' claim (DCM-3232)
+### Changed
+* SDK Release Version updated.
+
+## [v4.0.1-rc] - eSignature API v2.1 - 08/08/2019
+### Fixed
+* A bug with DocuSign .Net Core SDK which threw an error in a Linux based Docker container (DCM-3073)
+### Changed
+* SDK Release Version updated.
+
 ## [v4.0.0] - eSignature API v2.1 - 07/12/2019
 ### BREAKING
 * The SDK now supports API v2.1-19.1.02 of the DocuSign eSignature API.

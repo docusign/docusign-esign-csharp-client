@@ -7,6 +7,7 @@ using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
+using System.Text;
 
 namespace SdkNetCoreTests
 {
@@ -258,23 +259,8 @@ namespace SdkNetCoreTests
 
         private BulkRecipientsSummaryResponse MockBulkRecipientsSummaryResponse()
         {
-            BulkRecipient bulkRecipient1 = new BulkRecipient(
-                Email: "john.jay.rele@mailinator.com",
-                Name: "John Jay"
-                );
-            BulkRecipient bulkRecipient2 = new BulkRecipient(
-                Email: "jon.jon@mailinator.com",
-                Name: "jon jon"
-                );
-            BulkRecipient bulkRecipient3 = new BulkRecipient(
-                Email: "tom.tom@mailinator.com",
-                Name: "tom tom",
-                AccessCode: "123"
-                );
-
-            List<BulkRecipient> bulkRecipients = new List<BulkRecipient> { bulkRecipient1, bulkRecipient2, bulkRecipient3 };
-
-            BulkRecipientsRequest bulkRecipientsRequest = new BulkRecipientsRequest(bulkRecipients);
+            string bulkRecipientsCSV = "name,email\n" + "John Doe,john.doe@mailinator.com\n" + "Jane Doe,jane.doe@mailinator.com";
+            byte[] bulkRecipientsRequest = Encoding.ASCII.GetBytes(bulkRecipientsCSV);
 
             BulkEnvelopesApi bulkEnvelopesApi = new BulkEnvelopesApi();
 
@@ -620,8 +606,7 @@ namespace SdkNetCoreTests
                 }
             }
         }
-
-        [TestMethod]
+        
         public void JwtMoveEnvelopesTest()
         {
             JwtRequestSignatureOnDocumentTest("sent");

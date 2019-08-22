@@ -88,6 +88,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ItalicMetadata">ItalicMetadata.</param>
         /// <param name="LocalePolicy">LocalePolicy.</param>
         /// <param name="MergeField">MergeField.</param>
+        /// <param name="MergeFieldXml">.</param>
         /// <param name="PageNumber">Specifies the page number on which the tab is located..</param>
         /// <param name="PageNumberMetadata">PageNumberMetadata.</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
@@ -120,7 +121,7 @@ namespace DocuSign.eSign.Model
         /// <param name="XPositionMetadata">XPositionMetadata.</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPositionMetadata">YPositionMetadata.</param>
-        public Decline(string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string ButtonText = default(string), PropertyMetadata ButtonTextMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DeclineReason = default(string), PropertyMetadata DeclineReasonMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), LocalePolicyTab LocalePolicy = default(LocalePolicyTab), MergeField MergeField = default(MergeField), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabLabel = default(string), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
+        public Decline(string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string ButtonText = default(string), PropertyMetadata ButtonTextMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DeclineReason = default(string), PropertyMetadata DeclineReasonMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), LocalePolicyTab LocalePolicy = default(LocalePolicyTab), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabLabel = default(string), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
             this.AnchorCaseSensitive = AnchorCaseSensitive;
             this.AnchorCaseSensitiveMetadata = AnchorCaseSensitiveMetadata;
@@ -173,6 +174,7 @@ namespace DocuSign.eSign.Model
             this.ItalicMetadata = ItalicMetadata;
             this.LocalePolicy = LocalePolicy;
             this.MergeField = MergeField;
+            this.MergeFieldXml = MergeFieldXml;
             this.PageNumber = PageNumber;
             this.PageNumberMetadata = PageNumberMetadata;
             this.RecipientId = RecipientId;
@@ -487,6 +489,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="mergeField", EmitDefaultValue=false)]
         public MergeField MergeField { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="mergeFieldXml", EmitDefaultValue=false)]
+        public string MergeFieldXml { get; set; }
+        /// <summary>
         /// Specifies the page number on which the tab is located.
         /// </summary>
         /// <value>Specifies the page number on which the tab is located.</value>
@@ -721,6 +729,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ItalicMetadata: ").Append(ItalicMetadata).Append("\n");
             sb.Append("  LocalePolicy: ").Append(LocalePolicy).Append("\n");
             sb.Append("  MergeField: ").Append(MergeField).Append("\n");
+            sb.Append("  MergeFieldXml: ").Append(MergeFieldXml).Append("\n");
             sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
             sb.Append("  PageNumberMetadata: ").Append(PageNumberMetadata).Append("\n");
             sb.Append("  RecipientId: ").Append(RecipientId).Append("\n");
@@ -1045,6 +1054,11 @@ namespace DocuSign.eSign.Model
                     this.MergeField.Equals(other.MergeField)
                 ) && 
                 (
+                    this.MergeFieldXml == other.MergeFieldXml ||
+                    this.MergeFieldXml != null &&
+                    this.MergeFieldXml.Equals(other.MergeFieldXml)
+                ) && 
+                (
                     this.PageNumber == other.PageNumber ||
                     this.PageNumber != null &&
                     this.PageNumber.Equals(other.PageNumber)
@@ -1319,6 +1333,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.LocalePolicy.GetHashCode();
                 if (this.MergeField != null)
                     hash = hash * 59 + this.MergeField.GetHashCode();
+                if (this.MergeFieldXml != null)
+                    hash = hash * 59 + this.MergeFieldXml.GetHashCode();
                 if (this.PageNumber != null)
                     hash = hash * 59 + this.PageNumber.GetHashCode();
                 if (this.PageNumberMetadata != null)

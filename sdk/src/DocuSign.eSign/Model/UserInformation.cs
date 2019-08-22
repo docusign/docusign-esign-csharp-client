@@ -49,7 +49,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="FirstName">The user&#39;s first name.  Maximum Length: 50 characters..</param>
         /// <param name="ForgottenPasswordInfo">ForgottenPasswordInfo.</param>
-        /// <param name="GroupList">A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. .</param>
+        /// <param name="GroupList">A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId Ã¢â¬â The DocuSign group ID for the group. * groupName Ã¢â¬â The name of the group * permissionProfileId Ã¢â¬â The ID of the permission profile associated with the group. * groupType Ã¢â¬â The group type. .</param>
         /// <param name="HomeAddress">HomeAddress.</param>
         /// <param name="InitialsImageUri">Contains the URI for an endpoint that you can use to retrieve the initials image..</param>
         /// <param name="IsAdmin">Determines if the feature set is actively set as part of the plan..</param>
@@ -196,9 +196,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="forgottenPasswordInfo", EmitDefaultValue=false)]
         public ForgottenPasswordInformation ForgottenPasswordInfo { get; set; }
         /// <summary>
-        /// A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. 
+        /// A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId Ã¢â¬â The DocuSign group ID for the group. * groupName Ã¢â¬â The name of the group * permissionProfileId Ã¢â¬â The ID of the permission profile associated with the group. * groupType Ã¢â¬â The group type. 
         /// </summary>
-        /// <value>A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. </value>
+        /// <value>A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId Ã¢â¬â The DocuSign group ID for the group. * groupName Ã¢â¬â The name of the group * permissionProfileId Ã¢â¬â The ID of the permission profile associated with the group. * groupType Ã¢â¬â The group type. </value>
         [DataMember(Name="groupList", EmitDefaultValue=false)]
         public List<Group> GroupList { get; set; }
         /// <summary>

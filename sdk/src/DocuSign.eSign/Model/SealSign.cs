@@ -83,12 +83,13 @@ namespace DocuSign.eSign.Model
         /// <param name="SocialAuthentications"> Lists the social ID type that can be used for recipient authentication..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusCode">.</param>
+        /// <param name="SuppressEmails">.</param>
         /// <param name="Tabs">Tabs.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TotalTabCount">.</param>
         /// <param name="UserId">.</param>
-        public SealSign(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), string ClientUserId = default(string), string CompletedCount = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string InheritEmailNotificationConfiguration = default(string), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), string SignedDateTime = default(string), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
+        public SealSign(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), string ClientUserId = default(string), string CompletedCount = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string InheritEmailNotificationConfiguration = default(string), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), string SignedDateTime = default(string), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), string SuppressEmails = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
         {
             this.AccessCode = AccessCode;
             this.AccessCodeMetadata = AccessCodeMetadata;
@@ -136,6 +137,7 @@ namespace DocuSign.eSign.Model
             this.SocialAuthentications = SocialAuthentications;
             this.Status = Status;
             this.StatusCode = StatusCode;
+            this.SuppressEmails = SuppressEmails;
             this.Tabs = Tabs;
             this.TemplateLocked = TemplateLocked;
             this.TemplateRequired = TemplateRequired;
@@ -406,6 +408,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="statusCode", EmitDefaultValue=false)]
         public string StatusCode { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="suppressEmails", EmitDefaultValue=false)]
+        public string SuppressEmails { get; set; }
+        /// <summary>
         /// Gets or Sets Tabs
         /// </summary>
         [DataMember(Name="tabs", EmitDefaultValue=false)]
@@ -488,6 +496,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SocialAuthentications: ").Append(SocialAuthentications).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StatusCode: ").Append(StatusCode).Append("\n");
+            sb.Append("  SuppressEmails: ").Append(SuppressEmails).Append("\n");
             sb.Append("  Tabs: ").Append(Tabs).Append("\n");
             sb.Append("  TemplateLocked: ").Append(TemplateLocked).Append("\n");
             sb.Append("  TemplateRequired: ").Append(TemplateRequired).Append("\n");
@@ -760,6 +769,11 @@ namespace DocuSign.eSign.Model
                     this.StatusCode.Equals(other.StatusCode)
                 ) && 
                 (
+                    this.SuppressEmails == other.SuppressEmails ||
+                    this.SuppressEmails != null &&
+                    this.SuppressEmails.Equals(other.SuppressEmails)
+                ) && 
+                (
                     this.Tabs == other.Tabs ||
                     this.Tabs != null &&
                     this.Tabs.Equals(other.Tabs)
@@ -889,6 +903,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.StatusCode != null)
                     hash = hash * 59 + this.StatusCode.GetHashCode();
+                if (this.SuppressEmails != null)
+                    hash = hash * 59 + this.SuppressEmails.GetHashCode();
                 if (this.Tabs != null)
                     hash = hash * 59 + this.Tabs.GetHashCode();
                 if (this.TemplateLocked != null)

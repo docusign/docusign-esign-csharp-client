@@ -37,6 +37,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentGatewayAccount" /> class.
         /// </summary>
+        /// <param name="AllowCustomMetadata">.</param>
         /// <param name="Config">Config.</param>
         /// <param name="DisplayName">.</param>
         /// <param name="IsEnabled">.</param>
@@ -49,8 +50,9 @@ namespace DocuSign.eSign.Model
         /// <param name="SupportedCurrencies">.</param>
         /// <param name="SupportedPaymentMethods">.</param>
         /// <param name="SupportedPaymentMethodsWithOptions">.</param>
-        public PaymentGatewayAccount(PaymentGatewayAccountSetting Config = default(PaymentGatewayAccountSetting), string DisplayName = default(string), string IsEnabled = default(string), string IsLegacy = default(string), string LastModified = default(string), string PaymentGateway = default(string), string PaymentGatewayAccountId = default(string), string PaymentGatewayDisplayName = default(string), PayPalLegacySettings PayPalLegacySettings = default(PayPalLegacySettings), List<string> SupportedCurrencies = default(List<string>), List<string> SupportedPaymentMethods = default(List<string>), List<PaymentMethodWithOptions> SupportedPaymentMethodsWithOptions = default(List<PaymentMethodWithOptions>))
+        public PaymentGatewayAccount(bool? AllowCustomMetadata = default(bool?), PaymentGatewayAccountSetting Config = default(PaymentGatewayAccountSetting), string DisplayName = default(string), string IsEnabled = default(string), string IsLegacy = default(string), string LastModified = default(string), string PaymentGateway = default(string), string PaymentGatewayAccountId = default(string), string PaymentGatewayDisplayName = default(string), PayPalLegacySettings PayPalLegacySettings = default(PayPalLegacySettings), List<string> SupportedCurrencies = default(List<string>), List<string> SupportedPaymentMethods = default(List<string>), List<PaymentMethodWithOptions> SupportedPaymentMethodsWithOptions = default(List<PaymentMethodWithOptions>))
         {
+            this.AllowCustomMetadata = AllowCustomMetadata;
             this.Config = Config;
             this.DisplayName = DisplayName;
             this.IsEnabled = IsEnabled;
@@ -65,6 +67,12 @@ namespace DocuSign.eSign.Model
             this.SupportedPaymentMethodsWithOptions = SupportedPaymentMethodsWithOptions;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="allowCustomMetadata", EmitDefaultValue=false)]
+        public bool? AllowCustomMetadata { get; set; }
         /// <summary>
         /// Gets or Sets Config
         /// </summary>
@@ -143,6 +151,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PaymentGatewayAccount {\n");
+            sb.Append("  AllowCustomMetadata: ").Append(AllowCustomMetadata).Append("\n");
             sb.Append("  Config: ").Append(Config).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  IsEnabled: ").Append(IsEnabled).Append("\n");
@@ -191,6 +200,11 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.AllowCustomMetadata == other.AllowCustomMetadata ||
+                    this.AllowCustomMetadata != null &&
+                    this.AllowCustomMetadata.Equals(other.AllowCustomMetadata)
+                ) && 
                 (
                     this.Config == other.Config ||
                     this.Config != null &&
@@ -264,6 +278,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AllowCustomMetadata != null)
+                    hash = hash * 59 + this.AllowCustomMetadata.GetHashCode();
                 if (this.Config != null)
                     hash = hash * 59 + this.Config.GetHashCode();
                 if (this.DisplayName != null)

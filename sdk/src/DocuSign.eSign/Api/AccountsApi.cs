@@ -650,6 +650,56 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<ENoteConfiguration> GetENoteConfigurationWithHttpInfo (string accountId);
         /// <summary>
+        /// Select envelope purge configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns></returns>
+        EnvelopePurgeConfiguration GetEnvelopePurgeConfiguration (string accountId);
+
+        /// <summary>
+        /// Select envelope purge configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<EnvelopePurgeConfiguration> GetEnvelopePurgeConfigurationWithHttpInfo (string accountId);
+        /// <summary>
+        /// Retrieves the list of favorited templates for this caller
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns></returns>
+        FavoriteTemplatesInfo GetFavoriteTemplates (string accountId);
+
+        /// <summary>
+        /// Retrieves the list of favorited templates for this caller
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<FavoriteTemplatesInfo> GetFavoriteTemplatesWithHttpInfo (string accountId);
+        /// <summary>
         /// Returns default user level settings for a specified account
         /// </summary>
         /// <remarks>
@@ -1050,6 +1100,31 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<FileTypeList> ListUnsupportedFileTypesWithHttpInfo (string accountId);
         /// <summary>
+        /// Unfavorite a template
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns></returns>
+        FavoriteTemplatesInfo UnFavoriteTemplate (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null);
+
+        /// <summary>
+        /// Unfavorite a template
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<FavoriteTemplatesInfo> UnFavoriteTemplateWithHttpInfo (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null);
+        /// <summary>
         /// Modifies tab settings for specified account
         /// </summary>
         /// <remarks>
@@ -1106,7 +1181,7 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The unique identifier for a brand. This property is used to apply branding to an envelope.</param>/// <param name="logoType">One of **Primary**, **Secondary** or **Email**.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="logoType">The type of logo. Valid values are:  - &#x60;primary&#x60;  - &#x60;secondary&#x60;  - &#x60;email&#x60;</param>
         /// <param name="logoFileBytes">Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places</param>
         
         /// <returns></returns>
@@ -1119,7 +1194,7 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The unique identifier for a brand. This property is used to apply branding to an envelope.</param>/// <param name="logoType">One of **Primary**, **Secondary** or **Email**.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="logoType">The type of logo. Valid values are:  - &#x60;primary&#x60;  - &#x60;secondary&#x60;  - &#x60;email&#x60;</param>
         /// <param name="logoFileBytes">Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -1224,6 +1299,56 @@ namespace DocuSign.eSign.Api
         
         /// <returns>ApiResponse of </returns>
         ApiResponse<ENoteConfiguration> UpdateENoteConfigurationWithHttpInfo (string accountId, ENoteConfiguration eNoteConfiguration = null);
+        /// <summary>
+        /// Updates envelope purge configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopePurgeConfiguration"> (optional)</param>
+        
+        /// <returns></returns>
+        EnvelopePurgeConfiguration UpdateEnvelopePurgeConfiguration (string accountId, EnvelopePurgeConfiguration envelopePurgeConfiguration = null);
+
+        /// <summary>
+        /// Updates envelope purge configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopePurgeConfiguration"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<EnvelopePurgeConfiguration> UpdateEnvelopePurgeConfigurationWithHttpInfo (string accountId, EnvelopePurgeConfiguration envelopePurgeConfiguration = null);
+        /// <summary>
+        /// Favorites a template
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns></returns>
+        FavoriteTemplatesInfo UpdateFavoriteTemplate (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null);
+
+        /// <summary>
+        /// Favorites a template
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<FavoriteTemplatesInfo> UpdateFavoriteTemplateWithHttpInfo (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null);
         /// <summary>
         /// Updates default user level settings for a specified account
         /// </summary>
@@ -2002,6 +2127,56 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (ENoteConfiguration)</returns>
         System.Threading.Tasks.Task<ApiResponse<ENoteConfiguration>> GetENoteConfigurationAsyncWithHttpInfo (string accountId);
         /// <summary>
+        /// Select envelope purge configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of EnvelopePurgeConfiguration</returns>
+        System.Threading.Tasks.Task<EnvelopePurgeConfiguration> GetEnvelopePurgeConfigurationAsync (string accountId);
+
+        /// <summary>
+        /// Select envelope purge configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse (EnvelopePurgeConfiguration)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EnvelopePurgeConfiguration>> GetEnvelopePurgeConfigurationAsyncWithHttpInfo (string accountId);
+        /// <summary>
+        /// Retrieves the list of favorited templates for this caller
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of FavoriteTemplatesInfo</returns>
+        System.Threading.Tasks.Task<FavoriteTemplatesInfo> GetFavoriteTemplatesAsync (string accountId);
+
+        /// <summary>
+        /// Retrieves the list of favorited templates for this caller
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse (FavoriteTemplatesInfo)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FavoriteTemplatesInfo>> GetFavoriteTemplatesAsyncWithHttpInfo (string accountId);
+        /// <summary>
         /// Returns default user level settings for a specified account
         /// </summary>
         /// <remarks>
@@ -2402,6 +2577,31 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (FileTypeList)</returns>
         System.Threading.Tasks.Task<ApiResponse<FileTypeList>> ListUnsupportedFileTypesAsyncWithHttpInfo (string accountId);
         /// <summary>
+        /// Unfavorite a template
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>Task of FavoriteTemplatesInfo</returns>
+        System.Threading.Tasks.Task<FavoriteTemplatesInfo> UnFavoriteTemplateAsync (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null);
+
+        /// <summary>
+        /// Unfavorite a template
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (FavoriteTemplatesInfo)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FavoriteTemplatesInfo>> UnFavoriteTemplateAsyncWithHttpInfo (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null);
+        /// <summary>
         /// Modifies tab settings for specified account
         /// </summary>
         /// <remarks>
@@ -2458,7 +2658,7 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The unique identifier for a brand. This property is used to apply branding to an envelope.</param>/// <param name="logoType">One of **Primary**, **Secondary** or **Email**.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="logoType">The type of logo. Valid values are:  - &#x60;primary&#x60;  - &#x60;secondary&#x60;  - &#x60;email&#x60;</param>
         /// <param name="logoFileBytes">Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places</param>
         
         /// <returns>Task of void</returns>
@@ -2471,7 +2671,7 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The unique identifier for a brand. This property is used to apply branding to an envelope.</param>/// <param name="logoType">One of **Primary**, **Secondary** or **Email**.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="logoType">The type of logo. Valid values are:  - &#x60;primary&#x60;  - &#x60;secondary&#x60;  - &#x60;email&#x60;</param>
         /// <param name="logoFileBytes">Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -2576,6 +2776,56 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (ENoteConfiguration)</returns>
         System.Threading.Tasks.Task<ApiResponse<ENoteConfiguration>> UpdateENoteConfigurationAsyncWithHttpInfo (string accountId, ENoteConfiguration eNoteConfiguration = null);
+        /// <summary>
+        /// Updates envelope purge configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopePurgeConfiguration"> (optional)</param>
+        
+        /// <returns>Task of EnvelopePurgeConfiguration</returns>
+        System.Threading.Tasks.Task<EnvelopePurgeConfiguration> UpdateEnvelopePurgeConfigurationAsync (string accountId, EnvelopePurgeConfiguration envelopePurgeConfiguration = null);
+
+        /// <summary>
+        /// Updates envelope purge configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopePurgeConfiguration"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (EnvelopePurgeConfiguration)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EnvelopePurgeConfiguration>> UpdateEnvelopePurgeConfigurationAsyncWithHttpInfo (string accountId, EnvelopePurgeConfiguration envelopePurgeConfiguration = null);
+        /// <summary>
+        /// Favorites a template
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>Task of FavoriteTemplatesInfo</returns>
+        System.Threading.Tasks.Task<FavoriteTemplatesInfo> UpdateFavoriteTemplateAsync (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null);
+
+        /// <summary>
+        /// Favorites a template
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (FavoriteTemplatesInfo)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FavoriteTemplatesInfo>> UpdateFavoriteTemplateAsyncWithHttpInfo (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null);
         /// <summary>
         /// Updates default user level settings for a specified account
         /// </summary>
@@ -7163,6 +7413,330 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
+        /// Select envelope purge configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>EnvelopePurgeConfiguration</returns>
+        public EnvelopePurgeConfiguration GetEnvelopePurgeConfiguration (string accountId)
+        {
+             ApiResponse<EnvelopePurgeConfiguration> localVarResponse = GetEnvelopePurgeConfigurationWithHttpInfo(accountId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Select envelope purge configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of EnvelopePurgeConfiguration</returns>
+        public ApiResponse< EnvelopePurgeConfiguration > GetEnvelopePurgeConfigurationWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetEnvelopePurgeConfiguration");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/settings/envelope_purge_configuration";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetEnvelopePurgeConfiguration", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<EnvelopePurgeConfiguration>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopePurgeConfiguration) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(EnvelopePurgeConfiguration)));
+            }
+            else
+            {
+                return new ApiResponse<EnvelopePurgeConfiguration>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopePurgeConfiguration) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EnvelopePurgeConfiguration)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Select envelope purge configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of EnvelopePurgeConfiguration</returns>
+        public async System.Threading.Tasks.Task<EnvelopePurgeConfiguration> GetEnvelopePurgeConfigurationAsync (string accountId)
+        {
+             ApiResponse<EnvelopePurgeConfiguration> localVarResponse = await GetEnvelopePurgeConfigurationAsyncWithHttpInfo(accountId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Select envelope purge configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse (EnvelopePurgeConfiguration)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopePurgeConfiguration>> GetEnvelopePurgeConfigurationAsyncWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetEnvelopePurgeConfiguration");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/settings/envelope_purge_configuration";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetEnvelopePurgeConfiguration", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopePurgeConfiguration>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (EnvelopePurgeConfiguration) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EnvelopePurgeConfiguration)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the list of favorited templates for this caller 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>FavoriteTemplatesInfo</returns>
+        public FavoriteTemplatesInfo GetFavoriteTemplates (string accountId)
+        {
+             ApiResponse<FavoriteTemplatesInfo> localVarResponse = GetFavoriteTemplatesWithHttpInfo(accountId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieves the list of favorited templates for this caller 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of FavoriteTemplatesInfo</returns>
+        public ApiResponse< FavoriteTemplatesInfo > GetFavoriteTemplatesWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetFavoriteTemplates");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/favorite_templates";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetFavoriteTemplates", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<FavoriteTemplatesInfo>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FavoriteTemplatesInfo) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FavoriteTemplatesInfo)));
+            }
+            else
+            {
+                return new ApiResponse<FavoriteTemplatesInfo>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FavoriteTemplatesInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(FavoriteTemplatesInfo)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Retrieves the list of favorited templates for this caller 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of FavoriteTemplatesInfo</returns>
+        public async System.Threading.Tasks.Task<FavoriteTemplatesInfo> GetFavoriteTemplatesAsync (string accountId)
+        {
+             ApiResponse<FavoriteTemplatesInfo> localVarResponse = await GetFavoriteTemplatesAsyncWithHttpInfo(accountId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Retrieves the list of favorited templates for this caller 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse (FavoriteTemplatesInfo)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<FavoriteTemplatesInfo>> GetFavoriteTemplatesAsyncWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetFavoriteTemplates");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/favorite_templates";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetFavoriteTemplates", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<FavoriteTemplatesInfo>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (FavoriteTemplatesInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(FavoriteTemplatesInfo)));
+            
+        }
+
+
+
+        /// <summary>
         /// Returns default user level settings for a specified account 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
@@ -9875,6 +10449,184 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
+        /// Unfavorite a template 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>FavoriteTemplatesInfo</returns>
+        public FavoriteTemplatesInfo UnFavoriteTemplate (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null)
+        {
+             ApiResponse<FavoriteTemplatesInfo> localVarResponse = UnFavoriteTemplateWithHttpInfo(accountId, favoriteTemplatesInfo);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Unfavorite a template 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>ApiResponse of FavoriteTemplatesInfo</returns>
+        public ApiResponse< FavoriteTemplatesInfo > UnFavoriteTemplateWithHttpInfo (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->UnFavoriteTemplate");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/favorite_templates";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (favoriteTemplatesInfo != null && favoriteTemplatesInfo.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(favoriteTemplatesInfo); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = favoriteTemplatesInfo; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UnFavoriteTemplate", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<FavoriteTemplatesInfo>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FavoriteTemplatesInfo) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FavoriteTemplatesInfo)));
+            }
+            else
+            {
+                return new ApiResponse<FavoriteTemplatesInfo>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FavoriteTemplatesInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(FavoriteTemplatesInfo)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Unfavorite a template 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>Task of FavoriteTemplatesInfo</returns>
+        public async System.Threading.Tasks.Task<FavoriteTemplatesInfo> UnFavoriteTemplateAsync (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null)
+        {
+             ApiResponse<FavoriteTemplatesInfo> localVarResponse = await UnFavoriteTemplateAsyncWithHttpInfo(accountId, favoriteTemplatesInfo);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Unfavorite a template 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (FavoriteTemplatesInfo)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<FavoriteTemplatesInfo>> UnFavoriteTemplateAsyncWithHttpInfo (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->UnFavoriteTemplate");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/favorite_templates";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (favoriteTemplatesInfo != null && favoriteTemplatesInfo.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(favoriteTemplatesInfo); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = favoriteTemplatesInfo; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UnFavoriteTemplate", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<FavoriteTemplatesInfo>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (FavoriteTemplatesInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(FavoriteTemplatesInfo)));
+            
+        }
+
+
+
+        /// <summary>
         /// Modifies tab settings for specified account 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
@@ -10242,7 +10994,7 @@ namespace DocuSign.eSign.Api
         /// Put one branding logo. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The unique identifier for a brand. This property is used to apply branding to an envelope.</param>/// <param name="logoType">One of **Primary**, **Secondary** or **Email**.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="logoType">The type of logo. Valid values are:  - &#x60;primary&#x60;  - &#x60;secondary&#x60;  - &#x60;email&#x60;</param>
         /// <param name="logoFileBytes">Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places</param>
         
         /// <returns></returns>
@@ -10255,7 +11007,7 @@ namespace DocuSign.eSign.Api
         /// Put one branding logo. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The unique identifier for a brand. This property is used to apply branding to an envelope.</param>/// <param name="logoType">One of **Primary**, **Secondary** or **Email**.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="logoType">The type of logo. Valid values are:  - &#x60;primary&#x60;  - &#x60;secondary&#x60;  - &#x60;email&#x60;</param>
         /// <param name="logoFileBytes">Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places</param>
         
         /// <returns>ApiResponse of Object(void)</returns>
@@ -10336,7 +11088,7 @@ namespace DocuSign.eSign.Api
         /// Put one branding logo. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The unique identifier for a brand. This property is used to apply branding to an envelope.</param>/// <param name="logoType">One of **Primary**, **Secondary** or **Email**.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="logoType">The type of logo. Valid values are:  - &#x60;primary&#x60;  - &#x60;secondary&#x60;  - &#x60;email&#x60;</param>
         /// <param name="logoFileBytes">Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places</param>
         
         /// <returns>Task of void</returns>
@@ -10350,7 +11102,7 @@ namespace DocuSign.eSign.Api
         /// Put one branding logo. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The unique identifier for a brand. This property is used to apply branding to an envelope.</param>/// <param name="logoType">One of **Primary**, **Secondary** or **Email**.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="logoType">The type of logo. Valid values are:  - &#x60;primary&#x60;  - &#x60;secondary&#x60;  - &#x60;email&#x60;</param>
         /// <param name="logoFileBytes">Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places</param>
         
         /// <returns>Task of ApiResponse</returns>
@@ -11185,6 +11937,362 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<ENoteConfiguration>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ENoteConfiguration) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ENoteConfiguration)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Updates envelope purge configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopePurgeConfiguration"> (optional)</param>
+        
+        /// <returns>EnvelopePurgeConfiguration</returns>
+        public EnvelopePurgeConfiguration UpdateEnvelopePurgeConfiguration (string accountId, EnvelopePurgeConfiguration envelopePurgeConfiguration = null)
+        {
+             ApiResponse<EnvelopePurgeConfiguration> localVarResponse = UpdateEnvelopePurgeConfigurationWithHttpInfo(accountId, envelopePurgeConfiguration);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Updates envelope purge configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopePurgeConfiguration"> (optional)</param>
+        
+        /// <returns>ApiResponse of EnvelopePurgeConfiguration</returns>
+        public ApiResponse< EnvelopePurgeConfiguration > UpdateEnvelopePurgeConfigurationWithHttpInfo (string accountId, EnvelopePurgeConfiguration envelopePurgeConfiguration = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->UpdateEnvelopePurgeConfiguration");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/settings/envelope_purge_configuration";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (envelopePurgeConfiguration != null && envelopePurgeConfiguration.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(envelopePurgeConfiguration); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopePurgeConfiguration; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateEnvelopePurgeConfiguration", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<EnvelopePurgeConfiguration>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopePurgeConfiguration) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(EnvelopePurgeConfiguration)));
+            }
+            else
+            {
+                return new ApiResponse<EnvelopePurgeConfiguration>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopePurgeConfiguration) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EnvelopePurgeConfiguration)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Updates envelope purge configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopePurgeConfiguration"> (optional)</param>
+        
+        /// <returns>Task of EnvelopePurgeConfiguration</returns>
+        public async System.Threading.Tasks.Task<EnvelopePurgeConfiguration> UpdateEnvelopePurgeConfigurationAsync (string accountId, EnvelopePurgeConfiguration envelopePurgeConfiguration = null)
+        {
+             ApiResponse<EnvelopePurgeConfiguration> localVarResponse = await UpdateEnvelopePurgeConfigurationAsyncWithHttpInfo(accountId, envelopePurgeConfiguration);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Updates envelope purge configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopePurgeConfiguration"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (EnvelopePurgeConfiguration)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopePurgeConfiguration>> UpdateEnvelopePurgeConfigurationAsyncWithHttpInfo (string accountId, EnvelopePurgeConfiguration envelopePurgeConfiguration = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->UpdateEnvelopePurgeConfiguration");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/settings/envelope_purge_configuration";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (envelopePurgeConfiguration != null && envelopePurgeConfiguration.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(envelopePurgeConfiguration); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopePurgeConfiguration; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateEnvelopePurgeConfiguration", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopePurgeConfiguration>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (EnvelopePurgeConfiguration) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EnvelopePurgeConfiguration)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Favorites a template 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>FavoriteTemplatesInfo</returns>
+        public FavoriteTemplatesInfo UpdateFavoriteTemplate (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null)
+        {
+             ApiResponse<FavoriteTemplatesInfo> localVarResponse = UpdateFavoriteTemplateWithHttpInfo(accountId, favoriteTemplatesInfo);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Favorites a template 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>ApiResponse of FavoriteTemplatesInfo</returns>
+        public ApiResponse< FavoriteTemplatesInfo > UpdateFavoriteTemplateWithHttpInfo (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->UpdateFavoriteTemplate");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/favorite_templates";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (favoriteTemplatesInfo != null && favoriteTemplatesInfo.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(favoriteTemplatesInfo); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = favoriteTemplatesInfo; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateFavoriteTemplate", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<FavoriteTemplatesInfo>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FavoriteTemplatesInfo) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FavoriteTemplatesInfo)));
+            }
+            else
+            {
+                return new ApiResponse<FavoriteTemplatesInfo>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FavoriteTemplatesInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(FavoriteTemplatesInfo)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Favorites a template 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>Task of FavoriteTemplatesInfo</returns>
+        public async System.Threading.Tasks.Task<FavoriteTemplatesInfo> UpdateFavoriteTemplateAsync (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null)
+        {
+             ApiResponse<FavoriteTemplatesInfo> localVarResponse = await UpdateFavoriteTemplateAsyncWithHttpInfo(accountId, favoriteTemplatesInfo);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Favorites a template 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="favoriteTemplatesInfo"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (FavoriteTemplatesInfo)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<FavoriteTemplatesInfo>> UpdateFavoriteTemplateAsyncWithHttpInfo (string accountId, FavoriteTemplatesInfo favoriteTemplatesInfo = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->UpdateFavoriteTemplate");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/favorite_templates";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (favoriteTemplatesInfo != null && favoriteTemplatesInfo.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(favoriteTemplatesInfo); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = favoriteTemplatesInfo; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateFavoriteTemplate", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<FavoriteTemplatesInfo>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (FavoriteTemplatesInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(FavoriteTemplatesInfo)));
             
         }
 

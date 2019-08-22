@@ -966,7 +966,7 @@ namespace DocuSign.eSign.Client
 
             object result = pemReader.ReadObject();
 
-            var provider = RSA.Create(); 
+            RSA provider = RSA.Create();
 
             if (result is AsymmetricCipherKeyPair keyPair)
             {
@@ -995,7 +995,7 @@ namespace DocuSign.eSign.Client
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
         /// <param name="privateKeyStream">The Stream of the RSA private key</param>
-        /// <param name="expiresInHours">number of seconds remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="expiresInHours">Number of hours remaining before the JWT assertion is considered as invalid</param>
         /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to)
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
@@ -1026,8 +1026,8 @@ namespace DocuSign.eSign.Client
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
-        /// <param name="privateKeyBytes">the byte contents of the RSA private key</param>
-        /// <param name="expiresInHours">number of seconds remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="privateKeyBytes">The byte contents of the RSA private key</param>
+        /// <param name="expiresInHours">Number of hours remaining before the JWT assertion is considered as invalid</param>
         /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to) You can also pass any advanced scope.
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
@@ -1036,20 +1036,18 @@ namespace DocuSign.eSign.Client
         {
             string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
 
-            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler
+            {
+                SetDefaultTimesOnTokenCreation = false
+            };
 
             SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor()
             {
                 Expires = DateTime.UtcNow.AddHours(expiresInHours),
+                IssuedAt = DateTime.UtcNow,
             };
 
-            if (scopes == null)
-            {
-                scopes = new List<string>
-                {
-                    OAuth.Scope_SIGNATURE
-                };
-            }
+            scopes = scopes ?? new List<string> { OAuth.Scope_SIGNATURE };
 
             descriptor.Subject = new ClaimsIdentity();
             descriptor.Subject.AddClaim(new Claim("scope", String.Join(" ", scopes)));
@@ -1131,8 +1129,8 @@ namespace DocuSign.eSign.Client
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
-        /// <param name="privateKeyBytes">the byte contents of the RSA private key</param>
-        /// <param name="expiresInHours">number of seconds remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="privateKeyBytes">The byte contents of the RSA private key</param>
+        /// <param name="expiresInHours">Number of hours remaining before the JWT assertion is considered as invalid</param>
         /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to) You can also pass any advanced scope.
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>

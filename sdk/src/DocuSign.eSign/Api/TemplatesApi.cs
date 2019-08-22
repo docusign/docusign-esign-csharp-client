@@ -250,6 +250,31 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<Tabs> CreateTemplateDocumentTabsWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
         /// <summary>
+        /// Provides a URL to start a recipient view of the Envelope UI
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientPreviewRequest"> (optional)</param>
+        
+        /// <returns></returns>
+        ViewUrl CreateTemplateRecipientPreview (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
+
+        /// <summary>
+        /// Provides a URL to start a recipient view of the Envelope UI
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientPreviewRequest"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<ViewUrl> CreateTemplateRecipientPreviewWithHttpInfo (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
+        /// <summary>
         /// Get Responsive HTML Preview for all documents in a template.
         /// </summary>
         /// <remarks>
@@ -1526,6 +1551,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (Tabs)</returns>
         System.Threading.Tasks.Task<ApiResponse<Tabs>> CreateTemplateDocumentTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        /// <summary>
+        /// Provides a URL to start a recipient view of the Envelope UI
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientPreviewRequest"> (optional)</param>
+        
+        /// <returns>Task of ViewUrl</returns>
+        System.Threading.Tasks.Task<ViewUrl> CreateTemplateRecipientPreviewAsync (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
+
+        /// <summary>
+        /// Provides a URL to start a recipient view of the Envelope UI
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientPreviewRequest"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (ViewUrl)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateTemplateRecipientPreviewAsyncWithHttpInfo (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
         /// <summary>
         /// Get Responsive HTML Preview for all documents in a template.
         /// </summary>
@@ -4399,6 +4449,192 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<Tabs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Tabs) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Provides a URL to start a recipient view of the Envelope UI 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientPreviewRequest"> (optional)</param>
+        
+        /// <returns>ViewUrl</returns>
+        public ViewUrl CreateTemplateRecipientPreview (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
+        {
+             ApiResponse<ViewUrl> localVarResponse = CreateTemplateRecipientPreviewWithHttpInfo(accountId, templateId, recipientPreviewRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Provides a URL to start a recipient view of the Envelope UI 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientPreviewRequest"> (optional)</param>
+        
+        /// <returns>ApiResponse of ViewUrl</returns>
+        public ApiResponse< ViewUrl > CreateTemplateRecipientPreviewWithHttpInfo (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->CreateTemplateRecipientPreview");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->CreateTemplateRecipientPreview");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/templates/{templateId}/views/recipient_preview";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+
+
+            if (recipientPreviewRequest != null && recipientPreviewRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(recipientPreviewRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = recipientPreviewRequest; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateTemplateRecipientPreview", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<ViewUrl>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ViewUrl) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ViewUrl)));
+            }
+            else
+            {
+                return new ApiResponse<ViewUrl>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ViewUrl) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ViewUrl)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Provides a URL to start a recipient view of the Envelope UI 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientPreviewRequest"> (optional)</param>
+        
+        /// <returns>Task of ViewUrl</returns>
+        public async System.Threading.Tasks.Task<ViewUrl> CreateTemplateRecipientPreviewAsync (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
+        {
+             ApiResponse<ViewUrl> localVarResponse = await CreateTemplateRecipientPreviewAsyncWithHttpInfo(accountId, templateId, recipientPreviewRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Provides a URL to start a recipient view of the Envelope UI 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientPreviewRequest"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (ViewUrl)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateTemplateRecipientPreviewAsyncWithHttpInfo (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->CreateTemplateRecipientPreview");
+            // verify the required parameter 'templateId' is set
+            if (templateId == null)
+                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->CreateTemplateRecipientPreview");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/templates/{templateId}/views/recipient_preview";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (templateId != null) localVarPathParams.Add("templateId", Configuration.ApiClient.ParameterToString(templateId)); // path parameter
+
+
+            if (recipientPreviewRequest != null && recipientPreviewRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(recipientPreviewRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = recipientPreviewRequest; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateTemplateRecipientPreview", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ViewUrl>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ViewUrl) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ViewUrl)));
             
         }
 

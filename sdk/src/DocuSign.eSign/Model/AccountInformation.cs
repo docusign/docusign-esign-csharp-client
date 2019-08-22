@@ -54,6 +54,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CurrentPlanId">Identifies the plan that was used create this account..</param>
         /// <param name="DistributorCode">The code that identifies the billing plan groups and plans for the new account..</param>
         /// <param name="DocuSignLandingUrl">.</param>
+        /// <param name="DssValues">.</param>
         /// <param name="EnvelopeSendingBlocked">.</param>
         /// <param name="EnvelopeUnitPrice">.</param>
         /// <param name="ExternalAccountId">.</param>
@@ -70,7 +71,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Status21CFRPart11">.</param>
         /// <param name="SuspensionDate">.</param>
         /// <param name="SuspensionStatus">.</param>
-        public AccountInformation(string AccountIdGuid = default(string), string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), string AllowTransactionRooms = default(string), string BillingPeriodDaysRemaining = default(string), string BillingPeriodEndDate = default(string), string BillingPeriodEnvelopesAllowed = default(string), string BillingPeriodEnvelopesSent = default(string), string BillingPeriodStartDate = default(string), string BillingProfile = default(string), string CanUpgrade = default(string), string ConnectPermission = default(string), string CreatedDate = default(string), string CurrencyCode = default(string), string CurrentPlanId = default(string), string DistributorCode = default(string), string DocuSignLandingUrl = default(string), string EnvelopeSendingBlocked = default(string), string EnvelopeUnitPrice = default(string), string ExternalAccountId = default(string), string ForgottenPasswordQuestionsCount = default(string), string IsDowngrade = default(string), string PaymentMethod = default(string), string PlanClassification = default(string), string PlanEndDate = default(string), string PlanName = default(string), string PlanStartDate = default(string), List<RecipientDomain> RecipientDomains = default(List<RecipientDomain>), string SeatsAllowed = default(string), string SeatsInUse = default(string), string Status21CFRPart11 = default(string), string SuspensionDate = default(string), string SuspensionStatus = default(string))
+        public AccountInformation(string AccountIdGuid = default(string), string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), string AllowTransactionRooms = default(string), string BillingPeriodDaysRemaining = default(string), string BillingPeriodEndDate = default(string), string BillingPeriodEnvelopesAllowed = default(string), string BillingPeriodEnvelopesSent = default(string), string BillingPeriodStartDate = default(string), string BillingProfile = default(string), string CanUpgrade = default(string), string ConnectPermission = default(string), string CreatedDate = default(string), string CurrencyCode = default(string), string CurrentPlanId = default(string), string DistributorCode = default(string), string DocuSignLandingUrl = default(string), Dictionary<string, string> DssValues = default(Dictionary<string, string>), string EnvelopeSendingBlocked = default(string), string EnvelopeUnitPrice = default(string), string ExternalAccountId = default(string), string ForgottenPasswordQuestionsCount = default(string), string IsDowngrade = default(string), string PaymentMethod = default(string), string PlanClassification = default(string), string PlanEndDate = default(string), string PlanName = default(string), string PlanStartDate = default(string), List<RecipientDomain> RecipientDomains = default(List<RecipientDomain>), string SeatsAllowed = default(string), string SeatsInUse = default(string), string Status21CFRPart11 = default(string), string SuspensionDate = default(string), string SuspensionStatus = default(string))
         {
             this.AccountIdGuid = AccountIdGuid;
             this.AccountName = AccountName;
@@ -89,6 +90,7 @@ namespace DocuSign.eSign.Model
             this.CurrentPlanId = CurrentPlanId;
             this.DistributorCode = DistributorCode;
             this.DocuSignLandingUrl = DocuSignLandingUrl;
+            this.DssValues = DssValues;
             this.EnvelopeSendingBlocked = EnvelopeSendingBlocked;
             this.EnvelopeUnitPrice = EnvelopeUnitPrice;
             this.ExternalAccountId = ExternalAccountId;
@@ -212,6 +214,12 @@ namespace DocuSign.eSign.Model
         /// 
         /// </summary>
         /// <value></value>
+        [DataMember(Name="dssValues", EmitDefaultValue=false)]
+        public Dictionary<string, string> DssValues { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
         [DataMember(Name="envelopeSendingBlocked", EmitDefaultValue=false)]
         public string EnvelopeSendingBlocked { get; set; }
         /// <summary>
@@ -329,6 +337,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  CurrentPlanId: ").Append(CurrentPlanId).Append("\n");
             sb.Append("  DistributorCode: ").Append(DistributorCode).Append("\n");
             sb.Append("  DocuSignLandingUrl: ").Append(DocuSignLandingUrl).Append("\n");
+            sb.Append("  DssValues: ").Append(DssValues).Append("\n");
             sb.Append("  EnvelopeSendingBlocked: ").Append(EnvelopeSendingBlocked).Append("\n");
             sb.Append("  EnvelopeUnitPrice: ").Append(EnvelopeUnitPrice).Append("\n");
             sb.Append("  ExternalAccountId: ").Append(ExternalAccountId).Append("\n");
@@ -467,6 +476,11 @@ namespace DocuSign.eSign.Model
                     this.DocuSignLandingUrl.Equals(other.DocuSignLandingUrl)
                 ) && 
                 (
+                    this.DssValues == other.DssValues ||
+                    this.DssValues != null &&
+                    this.DssValues.SequenceEqual(other.DssValues)
+                ) && 
+                (
                     this.EnvelopeSendingBlocked == other.EnvelopeSendingBlocked ||
                     this.EnvelopeSendingBlocked != null &&
                     this.EnvelopeSendingBlocked.Equals(other.EnvelopeSendingBlocked)
@@ -593,6 +607,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DistributorCode.GetHashCode();
                 if (this.DocuSignLandingUrl != null)
                     hash = hash * 59 + this.DocuSignLandingUrl.GetHashCode();
+                if (this.DssValues != null)
+                    hash = hash * 59 + this.DssValues.GetHashCode();
                 if (this.EnvelopeSendingBlocked != null)
                     hash = hash * 59 + this.EnvelopeSendingBlocked.GetHashCode();
                 if (this.EnvelopeUnitPrice != null)

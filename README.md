@@ -6,14 +6,14 @@
 
 ## Requirements
 
-- Microsoft .NET version 4.5+ (4.6.1 recommended)
+- Microsoft .NET version 4.5.2+ (4.6.1 recommended)
 - Free [Developer Sandbox](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
 
 ## Compatibility
 
 - .NET Standard 2.0. See [.NET Standard Selector](https://immo.landwerth.net/netstandard-versions/) for details on versioning for the individual components in .NET Standard
 - .NET Core 2.0
-- Microsoft .NET version 4.5+
+- Microsoft .NET version 4.5.2+ We no longer support [version 4.5.1](https://devblogs.microsoft.com/dotnet/support-ending-for-the-net-framework-4-4-5-and-4-5-1/)
 - TLS 1.2
 
 ## Note
@@ -45,7 +45,7 @@ This client has the following external dependencies:
 
 ### .NET Standard v2 and .NET Core:
 
-- Microsoft.CSharp v4.5.0
+- Microsoft.CSharp v4.5.2
 - Microsoft.IdentityModel.Protocols v5.4.0
 - Newtonsoft.Json 11.0.2
 - Portable.BouncyCastle v1.8.2

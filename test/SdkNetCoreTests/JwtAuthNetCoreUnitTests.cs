@@ -400,11 +400,6 @@ namespace SdkNetCoreTests
             ViewUrl senderView = envelopesApi.CreateSenderView(testConfig.AccountId, testConfig.EnvelopeId, options);
 
             Assert.IsNotNull(senderView);
-
-            // Start the embedded sending session
-            //System.Diagnostics.Process.Start(senderView.Url);
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {senderView.Url}"));
-
             Assert.IsNotNull(senderView.Url);
         }
 
@@ -432,7 +427,7 @@ namespace SdkNetCoreTests
 
             // Start the embedded signing session
             //System.Diagnostics.Process.Start(recipientView.Url);
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {recipientView.Url}"));
+            //System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {recipientView.Url}"));
 
             Assert.IsNotNull(recipientView.Url);
         }
@@ -453,7 +448,7 @@ namespace SdkNetCoreTests
 
             // Start the embedded signing session.
             //System.Diagnostics.Process.Start(viewUrl.Url);
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {viewUrl.Url}"));
+            //System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {viewUrl.Url}"));
 
             Assert.IsNotNull(viewUrl);
             Assert.IsNotNull(viewUrl.Url);

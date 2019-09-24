@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Net;
 
 namespace DocuSign.eSign.Client
 {
@@ -46,7 +47,7 @@ namespace DocuSign.eSign.Client
                              string tempFolderPath = null,
                              string dateTimeFormat = null,
                              int timeout = 100000,
-                             string userAgent = "Swagger-Codegen/4.0.4/csharp"
+                             string userAgent = "Swagger-Codegen/4.1.1-rc/csharp"
                             )
         {
             setApiClientUsingDefault(apiClient);
@@ -81,7 +82,7 @@ namespace DocuSign.eSign.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "4.0.4";
+        public const string Version = "4.1.1-rc";
 
         /// <summary>
         /// Gets or sets the default Configuration.
@@ -94,7 +95,7 @@ namespace DocuSign.eSign.Client
         /// </summary>
         public static readonly ExceptionFactory DefaultExceptionFactory = (methodName, response) =>
         {
-            int status = (int) response.StatusCode;
+            int status = (int)response.StatusCode;
             if (status >= 400) return new ApiException(status, String.Format("Error calling {0}: {1}", methodName, response.Content), response.Content);
             if (status == 0) return new ApiException(status, String.Format("Error calling {0}: {1}", methodName, response.ErrorMessage), response.ErrorMessage);
             return null;
@@ -116,6 +117,27 @@ namespace DocuSign.eSign.Client
         }
 
         /// <summary>
+        /// Gets or sets the Proxy of ApiClient. Default to null
+        /// </summary>
+        /// <value>Timeout.</value>
+        public IWebProxy Proxy
+        {
+            get
+            {
+                if (ApiClient == null || ApiClient.RestClient == null)
+                    return null;
+
+                return ApiClient.RestClient.Proxy;
+            }
+
+            set
+            {
+                if (ApiClient != null && ApiClient.RestClient != null)
+                    ApiClient.RestClient.Proxy = value;
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the default API client for making HTTP calls.
         /// </summary>
         /// <value>The API client.</value>
@@ -126,7 +148,7 @@ namespace DocuSign.eSign.Client
         /// </summary>
         /// <param name="apiClient">An instance of ApiClient.</param>
         /// <returns></returns>
-        public void setApiClientUsingDefault (ApiClient apiClient = null)
+        public void setApiClientUsingDefault(ApiClient apiClient = null)
         {
             if (apiClient == null)
             {
@@ -232,12 +254,12 @@ namespace DocuSign.eSign.Client
         /// </summary>
         /// <param name="apiKeyIdentifier">API key identifier (authentication scheme).</param>
         /// <returns>API key with prefix.</returns>
-        public string GetApiKeyWithPrefix (string apiKeyIdentifier)
+        public string GetApiKeyWithPrefix(string apiKeyIdentifier)
         {
             var apiKeyValue = "";
-            ApiKey.TryGetValue (apiKeyIdentifier, out apiKeyValue);
+            ApiKey.TryGetValue(apiKeyIdentifier, out apiKeyValue);
             var apiKeyPrefix = "";
-            if (ApiKeyPrefix.TryGetValue (apiKeyIdentifier, out apiKeyPrefix))
+            if (ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out apiKeyPrefix))
                 return apiKeyPrefix + " " + apiKeyValue;
             else
                 return apiKeyValue;
@@ -269,7 +291,7 @@ namespace DocuSign.eSign.Client
                 if (value[value.Length - 1] == Path.DirectorySeparatorChar)
                     _tempFolderPath = value;
                 else
-                    _tempFolderPath = value  + Path.DirectorySeparatorChar;
+                    _tempFolderPath = value + Path.DirectorySeparatorChar;
             }
         }
 
@@ -320,9 +342,9 @@ namespace DocuSign.eSign.Client
             report += "    .NET Framework Version: " + Assembly
                      .GetExecutingAssembly()
                      .GetReferencedAssemblies()
-                     .Where(x => x.Name == "System.Core").First().Version.ToString()  + "\n";
+                     .Where(x => x.Name == "System.Core").First().Version.ToString() + "\n";
             report += "    Version of the API: v2.1\n";
-            report += "    SDK Package Version: 4.0.4\n";
+            report += "    SDK Package Version: 4.1.1-rc\n";
 
             return report;
         }

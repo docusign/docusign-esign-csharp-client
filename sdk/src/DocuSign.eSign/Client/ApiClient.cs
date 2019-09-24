@@ -44,6 +44,8 @@ namespace DocuSign.eSign.Client
         // Stage base path
         public const string Stage_REST_BasePath = "https://stage.docusign.net/restapi";
 
+        private IWebProxy Proxy { get; set; } = null;
+
         private string basePath = Production_REST_BasePath;
 
         private string oAuthBasePath = OAuth.Production_OAuth_BasePath;
@@ -92,6 +94,12 @@ namespace DocuSign.eSign.Client
                 Configuration = config;
 
             RestClient = new RestClient("https://www.docusign.net/restapi");
+
+            if (Configuration.Proxy != null)
+            {
+                RestClient.Proxy = Configuration.Proxy;
+                Proxy = Configuration.Proxy;
+            }
         }
 
         /// <summary>
@@ -99,7 +107,8 @@ namespace DocuSign.eSign.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "https://www.docusign.net/restapi")
+        /// <param name="proxy">An optional WebProxy instance.</param>
+        public ApiClient(String basePath = "https://www.docusign.net/restapi", WebProxy proxy = null)
         {
             if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
@@ -109,7 +118,8 @@ namespace DocuSign.eSign.Client
             this.basePath = basePath;
             this.SetOAuthBasePath();
 
-            RestClient = new RestClient(basePath);
+            this.Proxy = proxy;
+            RestClient = new RestClient(basePath) { Proxy = proxy };
             Configuration = Configuration.Default;
             Configuration.ApiClient = this;
         }
@@ -120,7 +130,8 @@ namespace DocuSign.eSign.Client
         /// </summary>
         /// <param name="basePath">The base path.</param>
         /// <param name="oAuthBasePath">The oAuth base path.</param>
-        public ApiClient(String basePath, String oAuthBasePath)
+        ///  /// <param name="proxy">An optional WebProxy instance.</param>
+        public ApiClient(String basePath, String oAuthBasePath, WebProxy proxy = null)
         {
             if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
@@ -132,7 +143,8 @@ namespace DocuSign.eSign.Client
             this.basePath = basePath;
             this.SetOAuthBasePath(oAuthBasePath);
 
-            RestClient = new RestClient(basePath);
+            this.Proxy = proxy;
+            RestClient = new RestClient(basePath) { Proxy = proxy };
             Configuration = Configuration.Default;
             Configuration.ApiClient = this;
         }
@@ -206,11 +218,7 @@ namespace DocuSign.eSign.Client
             // add file parameter, if any
             foreach (var param in fileParams)
             {
-#if NETSTANDARD2_0
                 request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentLength, param.Value.ContentType);
-#else
-                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName);
-#endif
             }
 
             if (postBody != null) // http body (model or byte[]) parameter
@@ -655,24 +663,6 @@ namespace DocuSign.eSign.Client
             }
         }
 
-        [Obsolete("This method signature is deprecated. Please use 'GetAuthorizationUri' which returns an Uri instead.", false)]
-        public string GetAuthorizationUri(string clientId, string redirectURI, Boolean isSandbox)
-        {
-            return this.GetAuthorizationUri(clientId, redirectURI, isSandbox, null);
-        }
-
-        [Obsolete("This method signature is deprecated. Please use 'GetAuthorizationUri' which returns an Uri instead.", false)]
-        public string GetAuthorizationUri(string clientId, string redirectURI, Boolean isSandbox, string state)
-        {
-            string DocuSignOAuthHost = isSandbox ? "account-d.docusign.com" : "account.docusign.com";
-            string format = "https://{0}/oauth/auth?response_type=code&scope=all&client_id={1}&redirect_uri={2}";
-            if (state != null)
-            {
-                format += "&state ={3}";
-            }
-            return string.Format(format, DocuSignOAuthHost, clientId, redirectURI, state);
-        }
-
         /// <summary>
         /// Helper method to configure the OAuth accessCode/implicit flow parameters
         /// </summary>
@@ -817,6 +807,7 @@ namespace DocuSign.eSign.Client
             RestClient restClient = new RestClient(baseUri);
             restClient.Timeout = Configuration.Timeout;
             restClient.UserAgent = Configuration.UserAgent;
+            restClient.Proxy = Proxy;
 
             RestRequest request = new RestRequest("oauth/token", Method.POST);
 
@@ -871,6 +862,7 @@ namespace DocuSign.eSign.Client
             RestClient restClient = new RestClient(baseUri);
             restClient.Timeout = Configuration.Timeout;
             restClient.UserAgent = Configuration.UserAgent;
+            restClient.Proxy = Proxy;
 
             RestRequest request = new RestRequest("oauth/userinfo", Method.GET);
 
@@ -892,68 +884,7 @@ namespace DocuSign.eSign.Client
                       + response.ResponseStatus + " with response Body: " + response.Content, response.Content);
             }
         }
-
-        [Obsolete("This method is deprecated. Please use 'GenerateAccessToken' instead.", false)]
-        public string GetOAuthToken(string clientId, string clientSecret, Boolean isSandbox, string accessCode)
-        {
-            if (string.IsNullOrEmpty(accessCode))
-            {
-                throw new ArgumentException("Cannot find a valid access code.");
-            }
-
-            if (string.IsNullOrEmpty(clientId))
-                throw new ArgumentNullException();
-
-            if (string.IsNullOrEmpty(clientSecret))
-                throw new ArgumentNullException();
-
-            return this.GenerateAccessToken(clientId, clientSecret, accessCode).access_token;
-        }
-
-        /// <summary>
-        /// ConfigureJwtAuthorizationFlow
-        /// </summary>
-        /// <param name="clientId"></param>
-        /// <param name="userId"></param>
-        /// <param name="oauthBasePath"></param>
-        /// <param name="privateKeyFilename"></param>
-        /// <param name="expiresInHours"></param>
-        /// <param name="scopes"></param>
-        [Obsolete("This method is deprecated. Please use 'RequestJWTUserToken' instead.", false)]
-        public void ConfigureJwtAuthorizationFlow(string clientId, string userId, string oauthBasePath, string privateKeyFilename, int expiresInHours, List<string> scopes = null)
-        {
-            if (!string.IsNullOrEmpty(privateKeyFilename))
-            {
-                byte[] privateKeyBytes = File.ReadAllBytes(privateKeyFilename);
-                this.RequestJWTUserToken(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes);
-            }
-            else
-            {
-                throw new ApiException(400, "Private key not supplied or is invalid!");
-            }
-        }
-
-        /// <summary>
-        /// ConfigureJwtAuthorizationFlowByKey which performs JWT authentication using the private key. 
-        /// </summary>
-        /// <param name="clientId"></param>
-        /// <param name="userId"></param>
-        /// <param name="oauthBasePath"></param>
-        /// <param name="privateKey"></param>
-        /// <param name="expiresInHours"></param>
-        /// <param name="scopes"></param>
-        /// <returns>If Successful, returns the OAuthToken object model which consist of an access token and expiration time.</returns>
-        [Obsolete("This method is deprecated. Please use 'RequestJWTUserToken' instead.", false)]
-        public OAuth.OAuthToken ConfigureJwtAuthorizationFlowByKey(string clientId, string userId, string oauthBasePath, string privateKey, int expiresInHours, List<string> scopes = null)
-        {
-            if (!string.IsNullOrEmpty(privateKey))
-            {
-                byte[] privateKeyBytes = Encoding.UTF8.GetBytes(privateKey);
-                return this.RequestJWTUserToken(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes);
-            }
-            throw new ApiException(400, "Private key not supplied or is invalid!");
-        }
-
+ 
         /// <summary>
         /// Creates an RSA Key from the given PEM key.
         /// </summary>
@@ -1081,6 +1012,7 @@ namespace DocuSign.eSign.Client
             RestClient restClient = new RestClient(baseUri);
             restClient.Timeout = Configuration.Timeout;
             restClient.UserAgent = Configuration.UserAgent;
+            restClient.Proxy = Proxy;
 
             string path = "oauth/token";
             string contentType = "application/x-www-form-urlencoded";
@@ -1177,6 +1109,7 @@ namespace DocuSign.eSign.Client
             RestClient restClient = new RestClient(baseUri);
             restClient.Timeout = Configuration.Timeout;
             restClient.UserAgent = Configuration.UserAgent;
+            restClient.Proxy = Proxy;
 
             string path = "oauth/token";
             string contentType = "application/x-www-form-urlencoded";
@@ -1217,20 +1150,4 @@ namespace DocuSign.eSign.Client
             }
         }
     }
-
-    // response object from the OAuth token endpoint. This is used
-    // to obtain access_tokens for making API calls and refresh_tokens for getting a new
-    // access token after a token expires.
-    [Obsolete("This class is deprecated. Please use 'OAuth.OAuthToken' instead.", false)]
-    public class TokenResponse
-    {
-        public string access_token { get; set; }
-
-        public string token_type { get; set; }
-
-        public string refresh_token { get; set; }
-
-        public int? expires_in { get; set; }
-    }
-
 }

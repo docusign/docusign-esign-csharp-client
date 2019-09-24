@@ -13,7 +13,7 @@
 
 - .NET Standard 2.0. See [.NET Standard Selector](https://immo.landwerth.net/netstandard-versions/) for details on versioning for the individual components in .NET Standard
 - .NET Core 2.0
-- Microsoft .NET version 4.5.2+
+- Microsoft .NET version 4.5.2+ We no longer support [version 4.5.1](https://devblogs.microsoft.com/dotnet/support-ending-for-the-net-framework-4-4-5-and-4-5-1/)
 - TLS 1.2
 
 ## Note

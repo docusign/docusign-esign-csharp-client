@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
 using System.Text;
 
-namespace SdkTests
+namespace SdkTestsNet462
 {
     [TestClass]
     public class JwtAuthUnitTests
@@ -425,9 +425,6 @@ namespace SdkTests
             ViewUrl recipientView = envelopesApi.CreateRecipientView(testConfig.AccountId, testConfig.EnvelopeId, viewOptions);
 
             Assert.IsNotNull(recipientView);
-
-            // Start the embedded signing session
-            System.Diagnostics.Process.Start(recipientView.Url);
 
             Assert.IsNotNull(recipientView.Url);
         }

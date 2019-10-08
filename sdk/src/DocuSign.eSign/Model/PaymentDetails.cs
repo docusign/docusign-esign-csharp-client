@@ -40,23 +40,31 @@ namespace DocuSign.eSign.Model
         /// <param name="AllowedPaymentMethods">.</param>
         /// <param name="ChargeId">.</param>
         /// <param name="CurrencyCode">.</param>
+        /// <param name="CustomerId">.</param>
+        /// <param name="CustomMetadata">.</param>
+        /// <param name="CustomMetadataRequired">.</param>
         /// <param name="GatewayAccountId">.</param>
         /// <param name="GatewayDisplayName">.</param>
         /// <param name="GatewayName">.</param>
         /// <param name="LineItems">.</param>
         /// <param name="PaymentOption">.</param>
+        /// <param name="PaymentSourceId">.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="Total">Total.</param>
-        public PaymentDetails(List<string> AllowedPaymentMethods = default(List<string>), string ChargeId = default(string), string CurrencyCode = default(string), string GatewayAccountId = default(string), string GatewayDisplayName = default(string), string GatewayName = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string PaymentOption = default(string), string Status = default(string), Money Total = default(Money))
+        public PaymentDetails(List<string> AllowedPaymentMethods = default(List<string>), string ChargeId = default(string), string CurrencyCode = default(string), string CustomerId = default(string), string CustomMetadata = default(string), bool? CustomMetadataRequired = default(bool?), string GatewayAccountId = default(string), string GatewayDisplayName = default(string), string GatewayName = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string PaymentOption = default(string), string PaymentSourceId = default(string), string Status = default(string), Money Total = default(Money))
         {
             this.AllowedPaymentMethods = AllowedPaymentMethods;
             this.ChargeId = ChargeId;
             this.CurrencyCode = CurrencyCode;
+            this.CustomerId = CustomerId;
+            this.CustomMetadata = CustomMetadata;
+            this.CustomMetadataRequired = CustomMetadataRequired;
             this.GatewayAccountId = GatewayAccountId;
             this.GatewayDisplayName = GatewayDisplayName;
             this.GatewayName = GatewayName;
             this.LineItems = LineItems;
             this.PaymentOption = PaymentOption;
+            this.PaymentSourceId = PaymentSourceId;
             this.Status = Status;
             this.Total = Total;
         }
@@ -79,6 +87,24 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="currencyCode", EmitDefaultValue=false)]
         public string CurrencyCode { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="customerId", EmitDefaultValue=false)]
+        public string CustomerId { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="customMetadata", EmitDefaultValue=false)]
+        public string CustomMetadata { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="customMetadataRequired", EmitDefaultValue=false)]
+        public bool? CustomMetadataRequired { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -110,6 +136,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="paymentOption", EmitDefaultValue=false)]
         public string PaymentOption { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="paymentSourceId", EmitDefaultValue=false)]
+        public string PaymentSourceId { get; set; }
+        /// <summary>
         /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
         /// </summary>
         /// <value>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.</value>
@@ -131,11 +163,15 @@ namespace DocuSign.eSign.Model
             sb.Append("  AllowedPaymentMethods: ").Append(AllowedPaymentMethods).Append("\n");
             sb.Append("  ChargeId: ").Append(ChargeId).Append("\n");
             sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
+            sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
+            sb.Append("  CustomMetadata: ").Append(CustomMetadata).Append("\n");
+            sb.Append("  CustomMetadataRequired: ").Append(CustomMetadataRequired).Append("\n");
             sb.Append("  GatewayAccountId: ").Append(GatewayAccountId).Append("\n");
             sb.Append("  GatewayDisplayName: ").Append(GatewayDisplayName).Append("\n");
             sb.Append("  GatewayName: ").Append(GatewayName).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  PaymentOption: ").Append(PaymentOption).Append("\n");
+            sb.Append("  PaymentSourceId: ").Append(PaymentSourceId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
             sb.Append("}\n");
@@ -190,6 +226,21 @@ namespace DocuSign.eSign.Model
                     this.CurrencyCode.Equals(other.CurrencyCode)
                 ) && 
                 (
+                    this.CustomerId == other.CustomerId ||
+                    this.CustomerId != null &&
+                    this.CustomerId.Equals(other.CustomerId)
+                ) && 
+                (
+                    this.CustomMetadata == other.CustomMetadata ||
+                    this.CustomMetadata != null &&
+                    this.CustomMetadata.Equals(other.CustomMetadata)
+                ) && 
+                (
+                    this.CustomMetadataRequired == other.CustomMetadataRequired ||
+                    this.CustomMetadataRequired != null &&
+                    this.CustomMetadataRequired.Equals(other.CustomMetadataRequired)
+                ) && 
+                (
                     this.GatewayAccountId == other.GatewayAccountId ||
                     this.GatewayAccountId != null &&
                     this.GatewayAccountId.Equals(other.GatewayAccountId)
@@ -213,6 +264,11 @@ namespace DocuSign.eSign.Model
                     this.PaymentOption == other.PaymentOption ||
                     this.PaymentOption != null &&
                     this.PaymentOption.Equals(other.PaymentOption)
+                ) && 
+                (
+                    this.PaymentSourceId == other.PaymentSourceId ||
+                    this.PaymentSourceId != null &&
+                    this.PaymentSourceId.Equals(other.PaymentSourceId)
                 ) && 
                 (
                     this.Status == other.Status ||
@@ -243,6 +299,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ChargeId.GetHashCode();
                 if (this.CurrencyCode != null)
                     hash = hash * 59 + this.CurrencyCode.GetHashCode();
+                if (this.CustomerId != null)
+                    hash = hash * 59 + this.CustomerId.GetHashCode();
+                if (this.CustomMetadata != null)
+                    hash = hash * 59 + this.CustomMetadata.GetHashCode();
+                if (this.CustomMetadataRequired != null)
+                    hash = hash * 59 + this.CustomMetadataRequired.GetHashCode();
                 if (this.GatewayAccountId != null)
                     hash = hash * 59 + this.GatewayAccountId.GetHashCode();
                 if (this.GatewayDisplayName != null)
@@ -253,6 +315,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.LineItems.GetHashCode();
                 if (this.PaymentOption != null)
                     hash = hash * 59 + this.PaymentOption.GetHashCode();
+                if (this.PaymentSourceId != null)
+                    hash = hash * 59 + this.PaymentSourceId.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.Total != null)

@@ -47,6 +47,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AllowApiSendingOnBehalfOfOthersMetadata">AllowApiSendingOnBehalfOfOthersMetadata.</param>
         /// <param name="AllowApiSequentialSigning">.</param>
         /// <param name="AllowApiSequentialSigningMetadata">AllowApiSequentialSigningMetadata.</param>
+        /// <param name="AllowAutoTagging">.</param>
+        /// <param name="AllowAutoTaggingMetadata">AllowAutoTaggingMetadata.</param>
         /// <param name="AllowBulkSending">.</param>
         /// <param name="AllowBulkSendingMetadata">AllowBulkSendingMetadata.</param>
         /// <param name="AllowDocuSignDesktopClient">.</param>
@@ -105,7 +107,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UseNewSendingInterfaceMetadata">UseNewSendingInterfaceMetadata.</param>
         /// <param name="VaultingMode">.</param>
         /// <param name="VaultingModeMetadata">VaultingModeMetadata.</param>
-        public AccountRoleSettings(string AllowAccountManagement = default(string), SettingsMetadata AllowAccountManagementMetadata = default(SettingsMetadata), string AllowApiAccess = default(string), SettingsMetadata AllowApiAccessMetadata = default(SettingsMetadata), string AllowApiAccessToAccount = default(string), SettingsMetadata AllowApiAccessToAccountMetadata = default(SettingsMetadata), string AllowApiSendingOnBehalfOfOthers = default(string), SettingsMetadata AllowApiSendingOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowApiSequentialSigning = default(string), SettingsMetadata AllowApiSequentialSigningMetadata = default(SettingsMetadata), string AllowBulkSending = default(string), SettingsMetadata AllowBulkSendingMetadata = default(SettingsMetadata), string AllowDocuSignDesktopClient = default(string), SettingsMetadata AllowDocuSignDesktopClientMetadata = default(SettingsMetadata), string AllowedAddressBookAccess = default(string), SettingsMetadata AllowedAddressBookAccessMetadata = default(SettingsMetadata), string AllowedTemplateAccess = default(string), SettingsMetadata AllowedTemplateAccessMetadata = default(SettingsMetadata), string AllowedToBeEnvelopeTransferRecipient = default(string), SettingsMetadata AllowedToBeEnvelopeTransferRecipientMetadata = default(SettingsMetadata), string AllowEnvelopeSending = default(string), SettingsMetadata AllowEnvelopeSendingMetadata = default(SettingsMetadata), string AllowESealRecipients = default(string), SettingsMetadata AllowESealRecipientsMetadata = default(SettingsMetadata), string AllowPowerFormsAdminToAccessAllPowerFormEnvelopes = default(string), SettingsMetadata AllowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata = default(SettingsMetadata), string AllowSendersToSetRecipientEmailLanguage = default(string), SettingsMetadata AllowSendersToSetRecipientEmailLanguageMetadata = default(SettingsMetadata), string AllowSignerAttachments = default(string), SettingsMetadata AllowSignerAttachmentsMetadata = default(SettingsMetadata), string AllowSupplementalDocuments = default(string), SettingsMetadata AllowSupplementalDocumentsMetadata = default(SettingsMetadata), string AllowTaggingInSendAndCorrect = default(string), SettingsMetadata AllowTaggingInSendAndCorrectMetadata = default(SettingsMetadata), string AllowVaulting = default(string), SettingsMetadata AllowVaultingMetadata = default(SettingsMetadata), string AllowWetSigningOverride = default(string), SettingsMetadata AllowWetSigningOverrideMetadata = default(SettingsMetadata), string CanCreateWorkspaces = default(string), SettingsMetadata CanCreateWorkspacesMetadata = default(SettingsMetadata), string DisableDocumentUpload = default(string), SettingsMetadata DisableDocumentUploadMetadata = default(SettingsMetadata), string DisableOtherActions = default(string), SettingsMetadata DisableOtherActionsMetadata = default(SettingsMetadata), string EnableApiRequestLogging = default(string), SettingsMetadata EnableApiRequestLoggingMetadata = default(SettingsMetadata), string EnableRecipientViewingNotifications = default(string), SettingsMetadata EnableRecipientViewingNotificationsMetadata = default(SettingsMetadata), string EnableSequentialSigningInterface = default(string), SettingsMetadata EnableSequentialSigningInterfaceMetadata = default(SettingsMetadata), string EnableTransactionPointIntegration = default(string), SettingsMetadata EnableTransactionPointIntegrationMetadata = default(SettingsMetadata), string PowerFormRole = default(string), SettingsMetadata PowerFormRoleMetadata = default(SettingsMetadata), string ReceiveCompletedSelfSignedDocumentsAsEmailLinks = default(string), SettingsMetadata ReceiveCompletedSelfSignedDocumentsAsEmailLinksMetadata = default(SettingsMetadata), string SupplementalDocumentsMustAccept = default(string), SettingsMetadata SupplementalDocumentsMustAcceptMetadata = default(SettingsMetadata), string SupplementalDocumentsMustRead = default(string), SettingsMetadata SupplementalDocumentsMustReadMetadata = default(SettingsMetadata), string SupplementalDocumentsMustView = default(string), SettingsMetadata SupplementalDocumentsMustViewMetadata = default(SettingsMetadata), string UseNewDocuSignExperienceInterface = default(string), SettingsMetadata UseNewDocuSignExperienceInterfaceMetadata = default(SettingsMetadata), string UseNewSendingInterface = default(string), SettingsMetadata UseNewSendingInterfaceMetadata = default(SettingsMetadata), string VaultingMode = default(string), SettingsMetadata VaultingModeMetadata = default(SettingsMetadata))
+        public AccountRoleSettings(string AllowAccountManagement = default(string), SettingsMetadata AllowAccountManagementMetadata = default(SettingsMetadata), string AllowApiAccess = default(string), SettingsMetadata AllowApiAccessMetadata = default(SettingsMetadata), string AllowApiAccessToAccount = default(string), SettingsMetadata AllowApiAccessToAccountMetadata = default(SettingsMetadata), string AllowApiSendingOnBehalfOfOthers = default(string), SettingsMetadata AllowApiSendingOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowApiSequentialSigning = default(string), SettingsMetadata AllowApiSequentialSigningMetadata = default(SettingsMetadata), string AllowAutoTagging = default(string), SettingsMetadata AllowAutoTaggingMetadata = default(SettingsMetadata), string AllowBulkSending = default(string), SettingsMetadata AllowBulkSendingMetadata = default(SettingsMetadata), string AllowDocuSignDesktopClient = default(string), SettingsMetadata AllowDocuSignDesktopClientMetadata = default(SettingsMetadata), string AllowedAddressBookAccess = default(string), SettingsMetadata AllowedAddressBookAccessMetadata = default(SettingsMetadata), string AllowedTemplateAccess = default(string), SettingsMetadata AllowedTemplateAccessMetadata = default(SettingsMetadata), string AllowedToBeEnvelopeTransferRecipient = default(string), SettingsMetadata AllowedToBeEnvelopeTransferRecipientMetadata = default(SettingsMetadata), string AllowEnvelopeSending = default(string), SettingsMetadata AllowEnvelopeSendingMetadata = default(SettingsMetadata), string AllowESealRecipients = default(string), SettingsMetadata AllowESealRecipientsMetadata = default(SettingsMetadata), string AllowPowerFormsAdminToAccessAllPowerFormEnvelopes = default(string), SettingsMetadata AllowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata = default(SettingsMetadata), string AllowSendersToSetRecipientEmailLanguage = default(string), SettingsMetadata AllowSendersToSetRecipientEmailLanguageMetadata = default(SettingsMetadata), string AllowSignerAttachments = default(string), SettingsMetadata AllowSignerAttachmentsMetadata = default(SettingsMetadata), string AllowSupplementalDocuments = default(string), SettingsMetadata AllowSupplementalDocumentsMetadata = default(SettingsMetadata), string AllowTaggingInSendAndCorrect = default(string), SettingsMetadata AllowTaggingInSendAndCorrectMetadata = default(SettingsMetadata), string AllowVaulting = default(string), SettingsMetadata AllowVaultingMetadata = default(SettingsMetadata), string AllowWetSigningOverride = default(string), SettingsMetadata AllowWetSigningOverrideMetadata = default(SettingsMetadata), string CanCreateWorkspaces = default(string), SettingsMetadata CanCreateWorkspacesMetadata = default(SettingsMetadata), string DisableDocumentUpload = default(string), SettingsMetadata DisableDocumentUploadMetadata = default(SettingsMetadata), string DisableOtherActions = default(string), SettingsMetadata DisableOtherActionsMetadata = default(SettingsMetadata), string EnableApiRequestLogging = default(string), SettingsMetadata EnableApiRequestLoggingMetadata = default(SettingsMetadata), string EnableRecipientViewingNotifications = default(string), SettingsMetadata EnableRecipientViewingNotificationsMetadata = default(SettingsMetadata), string EnableSequentialSigningInterface = default(string), SettingsMetadata EnableSequentialSigningInterfaceMetadata = default(SettingsMetadata), string EnableTransactionPointIntegration = default(string), SettingsMetadata EnableTransactionPointIntegrationMetadata = default(SettingsMetadata), string PowerFormRole = default(string), SettingsMetadata PowerFormRoleMetadata = default(SettingsMetadata), string ReceiveCompletedSelfSignedDocumentsAsEmailLinks = default(string), SettingsMetadata ReceiveCompletedSelfSignedDocumentsAsEmailLinksMetadata = default(SettingsMetadata), string SupplementalDocumentsMustAccept = default(string), SettingsMetadata SupplementalDocumentsMustAcceptMetadata = default(SettingsMetadata), string SupplementalDocumentsMustRead = default(string), SettingsMetadata SupplementalDocumentsMustReadMetadata = default(SettingsMetadata), string SupplementalDocumentsMustView = default(string), SettingsMetadata SupplementalDocumentsMustViewMetadata = default(SettingsMetadata), string UseNewDocuSignExperienceInterface = default(string), SettingsMetadata UseNewDocuSignExperienceInterfaceMetadata = default(SettingsMetadata), string UseNewSendingInterface = default(string), SettingsMetadata UseNewSendingInterfaceMetadata = default(SettingsMetadata), string VaultingMode = default(string), SettingsMetadata VaultingModeMetadata = default(SettingsMetadata))
         {
             this.AllowAccountManagement = AllowAccountManagement;
             this.AllowAccountManagementMetadata = AllowAccountManagementMetadata;
@@ -117,6 +119,8 @@ namespace DocuSign.eSign.Model
             this.AllowApiSendingOnBehalfOfOthersMetadata = AllowApiSendingOnBehalfOfOthersMetadata;
             this.AllowApiSequentialSigning = AllowApiSequentialSigning;
             this.AllowApiSequentialSigningMetadata = AllowApiSequentialSigningMetadata;
+            this.AllowAutoTagging = AllowAutoTagging;
+            this.AllowAutoTaggingMetadata = AllowAutoTaggingMetadata;
             this.AllowBulkSending = AllowBulkSending;
             this.AllowBulkSendingMetadata = AllowBulkSendingMetadata;
             this.AllowDocuSignDesktopClient = AllowDocuSignDesktopClient;
@@ -232,6 +236,17 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="allowApiSequentialSigningMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowApiSequentialSigningMetadata { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="allowAutoTagging", EmitDefaultValue=false)]
+        public string AllowAutoTagging { get; set; }
+        /// <summary>
+        /// Gets or Sets AllowAutoTaggingMetadata
+        /// </summary>
+        [DataMember(Name="allowAutoTaggingMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata AllowAutoTaggingMetadata { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -569,6 +584,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  AllowApiSendingOnBehalfOfOthersMetadata: ").Append(AllowApiSendingOnBehalfOfOthersMetadata).Append("\n");
             sb.Append("  AllowApiSequentialSigning: ").Append(AllowApiSequentialSigning).Append("\n");
             sb.Append("  AllowApiSequentialSigningMetadata: ").Append(AllowApiSequentialSigningMetadata).Append("\n");
+            sb.Append("  AllowAutoTagging: ").Append(AllowAutoTagging).Append("\n");
+            sb.Append("  AllowAutoTaggingMetadata: ").Append(AllowAutoTaggingMetadata).Append("\n");
             sb.Append("  AllowBulkSending: ").Append(AllowBulkSending).Append("\n");
             sb.Append("  AllowBulkSendingMetadata: ").Append(AllowBulkSendingMetadata).Append("\n");
             sb.Append("  AllowDocuSignDesktopClient: ").Append(AllowDocuSignDesktopClient).Append("\n");
@@ -712,6 +729,16 @@ namespace DocuSign.eSign.Model
                     this.AllowApiSequentialSigningMetadata == other.AllowApiSequentialSigningMetadata ||
                     this.AllowApiSequentialSigningMetadata != null &&
                     this.AllowApiSequentialSigningMetadata.Equals(other.AllowApiSequentialSigningMetadata)
+                ) && 
+                (
+                    this.AllowAutoTagging == other.AllowAutoTagging ||
+                    this.AllowAutoTagging != null &&
+                    this.AllowAutoTagging.Equals(other.AllowAutoTagging)
+                ) && 
+                (
+                    this.AllowAutoTaggingMetadata == other.AllowAutoTaggingMetadata ||
+                    this.AllowAutoTaggingMetadata != null &&
+                    this.AllowAutoTaggingMetadata.Equals(other.AllowAutoTaggingMetadata)
                 ) && 
                 (
                     this.AllowBulkSending == other.AllowBulkSending ||
@@ -1036,6 +1063,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AllowApiSequentialSigning.GetHashCode();
                 if (this.AllowApiSequentialSigningMetadata != null)
                     hash = hash * 59 + this.AllowApiSequentialSigningMetadata.GetHashCode();
+                if (this.AllowAutoTagging != null)
+                    hash = hash * 59 + this.AllowAutoTagging.GetHashCode();
+                if (this.AllowAutoTaggingMetadata != null)
+                    hash = hash * 59 + this.AllowAutoTaggingMetadata.GetHashCode();
                 if (this.AllowBulkSending != null)
                     hash = hash * 59 + this.AllowBulkSending.GetHashCode();
                 if (this.AllowBulkSendingMetadata != null)

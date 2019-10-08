@@ -64,6 +64,7 @@ namespace DocuSign.eSign.Model
         /// <param name="FullName">.</param>
         /// <param name="IdCheckConfigurationName">Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node..</param>
         /// <param name="IdCheckInformationInput">IdCheckInformationInput.</param>
+        /// <param name="IdentityVerification">IdentityVerification.</param>
         /// <param name="InheritEmailNotificationConfiguration">When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient&#39;s account. .</param>
         /// <param name="IsBulkRecipient">.</param>
         /// <param name="LastName">.</param>
@@ -100,7 +101,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserId">.</param>
         /// <param name="WitnessFor">.</param>
         /// <param name="WitnessForGuid">.</param>
-        public Witness(string AccessCode = default(string), string AddAccessCodeToEmail = default(string), string AgentCanEditEmail = default(string), string AgentCanEditName = default(string), string AutoNavigation = default(string), string BulkRecipientsUri = default(string), string CanSignOffline = default(string), string ClientUserId = default(string), string CreationReason = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DefaultRecipient = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmailRecipientPostSigningURL = default(string), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<string> ExcludedDocuments = default(List<string>), string FaxNumber = default(string), string FirstName = default(string), string FullName = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string InheritEmailNotificationConfiguration = default(string), string IsBulkRecipient = default(string), string LastName = default(string), string Name = default(string), string Note = default(string), OfflineAttributes OfflineAttributes = default(OfflineAttributes), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), string RecipientId = default(string), string RecipientIdGuid = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RecipientSuppliesTabs = default(string), string RequireIdLookup = default(string), string RequireSignerCertificate = default(string), string RequireSignOnPaper = default(string), string RoleName = default(string), string RoutingOrder = default(string), RecipientSAMLAuthentication SamlAuthentication = default(RecipientSAMLAuthentication), string SentDateTime = default(string), RecipientSignatureInformation SignatureInfo = default(RecipientSignatureInformation), string SignedDateTime = default(string), string SignInEachLocation = default(string), string SigningGroupId = default(string), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string), string WitnessFor = default(string), string WitnessForGuid = default(string))
+        public Witness(string AccessCode = default(string), string AddAccessCodeToEmail = default(string), string AgentCanEditEmail = default(string), string AgentCanEditName = default(string), string AutoNavigation = default(string), string BulkRecipientsUri = default(string), string CanSignOffline = default(string), string ClientUserId = default(string), string CreationReason = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DefaultRecipient = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmailRecipientPostSigningURL = default(string), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<string> ExcludedDocuments = default(List<string>), string FaxNumber = default(string), string FirstName = default(string), string FullName = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string InheritEmailNotificationConfiguration = default(string), string IsBulkRecipient = default(string), string LastName = default(string), string Name = default(string), string Note = default(string), OfflineAttributes OfflineAttributes = default(OfflineAttributes), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), string RecipientId = default(string), string RecipientIdGuid = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RecipientSuppliesTabs = default(string), string RequireIdLookup = default(string), string RequireSignerCertificate = default(string), string RequireSignOnPaper = default(string), string RoleName = default(string), string RoutingOrder = default(string), RecipientSAMLAuthentication SamlAuthentication = default(RecipientSAMLAuthentication), string SentDateTime = default(string), RecipientSignatureInformation SignatureInfo = default(RecipientSignatureInformation), string SignedDateTime = default(string), string SignInEachLocation = default(string), string SigningGroupId = default(string), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string), string WitnessFor = default(string), string WitnessForGuid = default(string))
         {
             this.AccessCode = AccessCode;
             this.AddAccessCodeToEmail = AddAccessCodeToEmail;
@@ -129,6 +130,7 @@ namespace DocuSign.eSign.Model
             this.FullName = FullName;
             this.IdCheckConfigurationName = IdCheckConfigurationName;
             this.IdCheckInformationInput = IdCheckInformationInput;
+            this.IdentityVerification = IdentityVerification;
             this.InheritEmailNotificationConfiguration = InheritEmailNotificationConfiguration;
             this.IsBulkRecipient = IsBulkRecipient;
             this.LastName = LastName;
@@ -326,6 +328,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="idCheckInformationInput", EmitDefaultValue=false)]
         public IdCheckInformationInput IdCheckInformationInput { get; set; }
+        /// <summary>
+        /// Gets or Sets IdentityVerification
+        /// </summary>
+        [DataMember(Name="identityVerification", EmitDefaultValue=false)]
+        public RecipientIdentityVerification IdentityVerification { get; set; }
         /// <summary>
         /// When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient&#39;s account. 
         /// </summary>
@@ -570,6 +577,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  FullName: ").Append(FullName).Append("\n");
             sb.Append("  IdCheckConfigurationName: ").Append(IdCheckConfigurationName).Append("\n");
             sb.Append("  IdCheckInformationInput: ").Append(IdCheckInformationInput).Append("\n");
+            sb.Append("  IdentityVerification: ").Append(IdentityVerification).Append("\n");
             sb.Append("  InheritEmailNotificationConfiguration: ").Append(InheritEmailNotificationConfiguration).Append("\n");
             sb.Append("  IsBulkRecipient: ").Append(IsBulkRecipient).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
@@ -776,6 +784,11 @@ namespace DocuSign.eSign.Model
                     this.IdCheckInformationInput == other.IdCheckInformationInput ||
                     this.IdCheckInformationInput != null &&
                     this.IdCheckInformationInput.Equals(other.IdCheckInformationInput)
+                ) && 
+                (
+                    this.IdentityVerification == other.IdentityVerification ||
+                    this.IdentityVerification != null &&
+                    this.IdentityVerification.Equals(other.IdentityVerification)
                 ) && 
                 (
                     this.InheritEmailNotificationConfiguration == other.InheritEmailNotificationConfiguration ||
@@ -1024,6 +1037,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IdCheckConfigurationName.GetHashCode();
                 if (this.IdCheckInformationInput != null)
                     hash = hash * 59 + this.IdCheckInformationInput.GetHashCode();
+                if (this.IdentityVerification != null)
+                    hash = hash * 59 + this.IdentityVerification.GetHashCode();
                 if (this.InheritEmailNotificationConfiguration != null)
                     hash = hash * 59 + this.InheritEmailNotificationConfiguration.GetHashCode();
                 if (this.IsBulkRecipient != null)

@@ -42,6 +42,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AnySocialIDResult">AnySocialIDResult.</param>
         /// <param name="FacebookResult">FacebookResult.</param>
         /// <param name="GoogleResult">GoogleResult.</param>
+        /// <param name="IdentityVerificationResult">IdentityVerificationResult.</param>
         /// <param name="IdLookupResult">IdLookupResult.</param>
         /// <param name="IdQuestionsResult">IdQuestionsResult.</param>
         /// <param name="LinkedinResult">LinkedinResult.</param>
@@ -55,13 +56,14 @@ namespace DocuSign.eSign.Model
         /// <param name="STANPinResult">STANPinResult.</param>
         /// <param name="TwitterResult">TwitterResult.</param>
         /// <param name="YahooResult">YahooResult.</param>
-        public AuthenticationStatus(EventResult AccessCodeResult = default(EventResult), EventResult AgeVerifyResult = default(EventResult), EventResult AnySocialIDResult = default(EventResult), EventResult FacebookResult = default(EventResult), EventResult GoogleResult = default(EventResult), EventResult IdLookupResult = default(EventResult), EventResult IdQuestionsResult = default(EventResult), EventResult LinkedinResult = default(EventResult), EventResult LiveIDResult = default(EventResult), EventResult OfacResult = default(EventResult), EventResult OpenIDResult = default(EventResult), EventResult PhoneAuthResult = default(EventResult), EventResult SalesforceResult = default(EventResult), EventResult SignatureProviderResult = default(EventResult), EventResult SmsAuthResult = default(EventResult), EventResult STANPinResult = default(EventResult), EventResult TwitterResult = default(EventResult), EventResult YahooResult = default(EventResult))
+        public AuthenticationStatus(EventResult AccessCodeResult = default(EventResult), EventResult AgeVerifyResult = default(EventResult), EventResult AnySocialIDResult = default(EventResult), EventResult FacebookResult = default(EventResult), EventResult GoogleResult = default(EventResult), EventResult IdentityVerificationResult = default(EventResult), EventResult IdLookupResult = default(EventResult), EventResult IdQuestionsResult = default(EventResult), EventResult LinkedinResult = default(EventResult), EventResult LiveIDResult = default(EventResult), EventResult OfacResult = default(EventResult), EventResult OpenIDResult = default(EventResult), EventResult PhoneAuthResult = default(EventResult), EventResult SalesforceResult = default(EventResult), EventResult SignatureProviderResult = default(EventResult), EventResult SmsAuthResult = default(EventResult), EventResult STANPinResult = default(EventResult), EventResult TwitterResult = default(EventResult), EventResult YahooResult = default(EventResult))
         {
             this.AccessCodeResult = AccessCodeResult;
             this.AgeVerifyResult = AgeVerifyResult;
             this.AnySocialIDResult = AnySocialIDResult;
             this.FacebookResult = FacebookResult;
             this.GoogleResult = GoogleResult;
+            this.IdentityVerificationResult = IdentityVerificationResult;
             this.IdLookupResult = IdLookupResult;
             this.IdQuestionsResult = IdQuestionsResult;
             this.LinkedinResult = LinkedinResult;
@@ -102,6 +104,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="googleResult", EmitDefaultValue=false)]
         public EventResult GoogleResult { get; set; }
+        /// <summary>
+        /// Gets or Sets IdentityVerificationResult
+        /// </summary>
+        [DataMember(Name="identityVerificationResult", EmitDefaultValue=false)]
+        public EventResult IdentityVerificationResult { get; set; }
         /// <summary>
         /// Gets or Sets IdLookupResult
         /// </summary>
@@ -180,6 +187,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AnySocialIDResult: ").Append(AnySocialIDResult).Append("\n");
             sb.Append("  FacebookResult: ").Append(FacebookResult).Append("\n");
             sb.Append("  GoogleResult: ").Append(GoogleResult).Append("\n");
+            sb.Append("  IdentityVerificationResult: ").Append(IdentityVerificationResult).Append("\n");
             sb.Append("  IdLookupResult: ").Append(IdLookupResult).Append("\n");
             sb.Append("  IdQuestionsResult: ").Append(IdQuestionsResult).Append("\n");
             sb.Append("  LinkedinResult: ").Append(LinkedinResult).Append("\n");
@@ -253,6 +261,11 @@ namespace DocuSign.eSign.Model
                     this.GoogleResult == other.GoogleResult ||
                     this.GoogleResult != null &&
                     this.GoogleResult.Equals(other.GoogleResult)
+                ) && 
+                (
+                    this.IdentityVerificationResult == other.IdentityVerificationResult ||
+                    this.IdentityVerificationResult != null &&
+                    this.IdentityVerificationResult.Equals(other.IdentityVerificationResult)
                 ) && 
                 (
                     this.IdLookupResult == other.IdLookupResult ||
@@ -342,6 +355,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.FacebookResult.GetHashCode();
                 if (this.GoogleResult != null)
                     hash = hash * 59 + this.GoogleResult.GetHashCode();
+                if (this.IdentityVerificationResult != null)
+                    hash = hash * 59 + this.IdentityVerificationResult.GetHashCode();
                 if (this.IdLookupResult != null)
                     hash = hash * 59 + this.IdLookupResult.GetHashCode();
                 if (this.IdQuestionsResult != null)

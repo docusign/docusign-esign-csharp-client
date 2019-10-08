@@ -655,24 +655,6 @@ namespace DocuSign.eSign.Client
             }
         }
 
-        [Obsolete("This method signature is deprecated. Please use 'GetAuthorizationUri' which returns an Uri instead.", false)]
-        public string GetAuthorizationUri(string clientId, string redirectURI, Boolean isSandbox)
-        {
-            return this.GetAuthorizationUri(clientId, redirectURI, isSandbox, null);
-        }
-
-        [Obsolete("This method signature is deprecated. Please use 'GetAuthorizationUri' which returns an Uri instead.", false)]
-        public string GetAuthorizationUri(string clientId, string redirectURI, Boolean isSandbox, string state)
-        {
-            string DocuSignOAuthHost = isSandbox ? "account-d.docusign.com" : "account.docusign.com";
-            string format = "https://{0}/oauth/auth?response_type=code&scope=all&client_id={1}&redirect_uri={2}";
-            if (state != null)
-            {
-                format += "&state ={3}";
-            }
-            return string.Format(format, DocuSignOAuthHost, clientId, redirectURI, state);
-        }
-
         /// <summary>
         /// Helper method to configure the OAuth accessCode/implicit flow parameters
         /// </summary>
@@ -893,67 +875,6 @@ namespace DocuSign.eSign.Client
             }
         }
 
-        [Obsolete("This method is deprecated. Please use 'GenerateAccessToken' instead.", false)]
-        public string GetOAuthToken(string clientId, string clientSecret, Boolean isSandbox, string accessCode)
-        {
-            if (string.IsNullOrEmpty(accessCode))
-            {
-                throw new ArgumentException("Cannot find a valid access code.");
-            }
-
-            if (string.IsNullOrEmpty(clientId))
-                throw new ArgumentNullException();
-
-            if (string.IsNullOrEmpty(clientSecret))
-                throw new ArgumentNullException();
-
-            return this.GenerateAccessToken(clientId, clientSecret, accessCode).access_token;
-        }
-
-        /// <summary>
-        /// ConfigureJwtAuthorizationFlow
-        /// </summary>
-        /// <param name="clientId"></param>
-        /// <param name="userId"></param>
-        /// <param name="oauthBasePath"></param>
-        /// <param name="privateKeyFilename"></param>
-        /// <param name="expiresInHours"></param>
-        /// <param name="scopes"></param>
-        [Obsolete("This method is deprecated. Please use 'RequestJWTUserToken' instead.", false)]
-        public void ConfigureJwtAuthorizationFlow(string clientId, string userId, string oauthBasePath, string privateKeyFilename, int expiresInHours, List<string> scopes = null)
-        {
-            if (!string.IsNullOrEmpty(privateKeyFilename))
-            {
-                byte[] privateKeyBytes = File.ReadAllBytes(privateKeyFilename);
-                this.RequestJWTUserToken(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes);
-            }
-            else
-            {
-                throw new ApiException(400, "Private key not supplied or is invalid!");
-            }
-        }
-
-        /// <summary>
-        /// ConfigureJwtAuthorizationFlowByKey which performs JWT authentication using the private key. 
-        /// </summary>
-        /// <param name="clientId"></param>
-        /// <param name="userId"></param>
-        /// <param name="oauthBasePath"></param>
-        /// <param name="privateKey"></param>
-        /// <param name="expiresInHours"></param>
-        /// <param name="scopes"></param>
-        /// <returns>If Successful, returns the OAuthToken object model which consist of an access token and expiration time.</returns>
-        [Obsolete("This method is deprecated. Please use 'RequestJWTUserToken' instead.", false)]
-        public OAuth.OAuthToken ConfigureJwtAuthorizationFlowByKey(string clientId, string userId, string oauthBasePath, string privateKey, int expiresInHours, List<string> scopes = null)
-        {
-            if (!string.IsNullOrEmpty(privateKey))
-            {
-                byte[] privateKeyBytes = Encoding.UTF8.GetBytes(privateKey);
-                return this.RequestJWTUserToken(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes);
-            }
-            throw new ApiException(400, "Private key not supplied or is invalid!");
-        }
-
         /// <summary>
         /// Creates an RSA Key from the given PEM key.
         /// </summary>
@@ -966,16 +887,7 @@ namespace DocuSign.eSign.Client
 
             object result = pemReader.ReadObject();
 
-#if NETSTANDARD2_0
-           var provider = new RSACryptoServiceProvider();
-#else
-            var cspParameters = new CspParameters
-            {
-                Flags = CspProviderFlags.UseMachineKeyStore,
-            };
-
-            var provider = new RSACryptoServiceProvider(cspParameters);
-#endif
+            RSA provider = RSA.Create();
 
             if (result is AsymmetricCipherKeyPair keyPair)
             {
@@ -1004,7 +916,7 @@ namespace DocuSign.eSign.Client
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
         /// <param name="privateKeyStream">The Stream of the RSA private key</param>
-        /// <param name="expiresInHours">number of seconds remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="expiresInHours">Number of hours remaining before the JWT assertion is considered as invalid</param>
         /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to)
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
@@ -1035,8 +947,8 @@ namespace DocuSign.eSign.Client
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
-        /// <param name="privateKeyBytes">the byte contents of the RSA private key</param>
-        /// <param name="expiresInHours">number of seconds remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="privateKeyBytes">The byte contents of the RSA private key</param>
+        /// <param name="expiresInHours">Number of hours remaining before the JWT assertion is considered as invalid</param>
         /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to) You can also pass any advanced scope.
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
@@ -1045,20 +957,18 @@ namespace DocuSign.eSign.Client
         {
             string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
 
-            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler
+            {
+                SetDefaultTimesOnTokenCreation = false
+            };
 
             SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor()
             {
                 Expires = DateTime.UtcNow.AddHours(expiresInHours),
+                IssuedAt = DateTime.UtcNow,
             };
 
-            if (scopes == null)
-            {
-                scopes = new List<string>
-                {
-                    OAuth.Scope_SIGNATURE
-                };
-            }
+            scopes = scopes ?? new List<string> { OAuth.Scope_SIGNATURE };
 
             descriptor.Subject = new ClaimsIdentity();
             descriptor.Subject.AddClaim(new Claim("scope", String.Join(" ", scopes)));
@@ -1140,8 +1050,8 @@ namespace DocuSign.eSign.Client
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
-        /// <param name="privateKeyBytes">the byte contents of the RSA private key</param>
-        /// <param name="expiresInHours">number of seconds remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="privateKeyBytes">The byte contents of the RSA private key</param>
+        /// <param name="expiresInHours">Number of hours remaining before the JWT assertion is considered as invalid</param>
         /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to) You can also pass any advanced scope.
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
@@ -1228,20 +1138,4 @@ namespace DocuSign.eSign.Client
             }
         }
     }
-
-    // response object from the OAuth token endpoint. This is used
-    // to obtain access_tokens for making API calls and refresh_tokens for getting a new
-    // access token after a token expires.
-    [Obsolete("This class is deprecated. Please use 'OAuth.OAuthToken' instead.", false)]
-    public class TokenResponse
-    {
-        public string access_token { get; set; }
-
-        public string token_type { get; set; }
-
-        public string refresh_token { get; set; }
-
-        public int? expires_in { get; set; }
-    }
-
 }

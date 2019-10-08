@@ -46,12 +46,12 @@ This client has the following external dependencies:
 ### .NET Standard v2 and .NET Core:
 
 - Microsoft.CSharp v4.5.0
-- Microsoft.IdentityModel.Protocols v5.2.2
+- Microsoft.IdentityModel.Protocols v5.4.0
 - Newtonsoft.Json 11.0.2
 - Portable.BouncyCastle v1.8.2
 - RestSharp v106.3.1
 - System.ComponentModel.Annotations v4.5.0
-- System.IdentityModel.tokens.Jwt v5.2.2
+- System.IdentityModel.tokens.Jwt v5.4.0
 
 
 ### .NET Framework, version 4.5:
@@ -99,4 +99,4 @@ The DocuSign C# Client is licensed under the [MIT License](https://github.com/do
 [downloads-image]: https://img.shields.io/nuget/dt/DocuSign.eSign.dll.svg?style=flat
 [downloads-url]: https://www.nuget.org/packages/DocuSign.eSign.dll
 [appveyor-image]:https://ci.appveyor.com/api/projects/status/m5a02n1vp3ma6qec?svg=true
-[appveyor-url]:https://ci.appveyor.com/project/RajRele/docusign-csharp-client
+[appveyor-url]:https://ci.appveyor.com/project/DocuSign/docusign-csharp-client

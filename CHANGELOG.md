@@ -1,4 +1,24 @@
-﻿# DocuSign C# Client Changelog
+﻿# DocuSign C# Client Changelog - eSignature API v2
+
+## [v3.1.6] - eSignature API v2-19.2.02 - 09/18/2019
+### Changed
+* The SDK now supports API v2-19.2.02 of the DocuSign eSignature API.
+* SDK Release Version updated
+### Fixed
+* A bug with DocuSign .Net Core SDK which threw an error in a Linux based Docker container (DCM-3073)
+* Documentation with 'expiresInHours' parameter fixed (DCM-3319)
+* Updated the request claims added when we create the JWT Token by adding 'iat' suppressing the default time added on 'nbf' claim (DCM-3232)
+* Updated *CreateEnvelope* Method summary which would cause Visual Studio intellisense to crash (DCM-2747) 
+
+## [v3.1.6-rc] - eSignature API v2 - 08/22/2019
+### Changed
+* The SDK now supports API v2-19.2.02 of the DocuSign eSignature API.
+* SDK Release Version updated
+### Fixed
+* A bug with DocuSign .Net Core SDK which threw an error in a Linux based Docker container (DCM-3073)
+* Documentation with 'expiresInHours' parameter fixed (DCM-3319)
+* Updated the request claims added when we create the JWT Token by adding 'iat' suppressing the default time added on 'nbf' claim (DCM-3232)
+* Updated *CreateEnvelope* Method summary which would cause Visual Studio intellisense to crash (DCM-2747) 
 
 ## [v3.1.5] - eSignature API v19.1.02 - 05/20/2019
 ### Changed
@@ -25,6 +45,7 @@
 * Implemented initial support of HMAC for DocuSign Connect
 ### Fixed
 * A bug with that could cause the *MoveEnvelopes* method call to return a response without a *Content-Type* header. (DCM-3084)
+
 
 ## [v3.1.4] - eSignature API v18.4.02 - 02/25/2019
 ### Changed
@@ -73,7 +94,7 @@
 * The C# .NET Standard SDK can now be implemented by projects in Mac and Linux environments. (DCM-2837)
 
 ## [v3.1.0-rc] - eSignature API v18.3.00 - 9/12/2018
-### Breaking
+### BREAKING
 * The AccountId() method has been removed from the SDK and replaced with by a settable AccountId property in the OAuth.UserInfo.Account object. Existing implementations that use the AccountId() method must be updated to use the AccountId property instead. Attempting to call AccountId() will result in the following error: `CS1955  Non-invocable member 'OAuth.UserInfo.Account.AccountId' cannot be used like a method.` (DCM-2636) 
 ### Changed
 * The base path for OAuth authentication is now a property of the ApiClient object. 

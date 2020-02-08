@@ -66,7 +66,8 @@ namespace DocuSign.eSign.Model
         /// <param name="StampImageUri">.</param>
         /// <param name="StampSizeMM">.</param>
         /// <param name="StampType">.</param>
-        public UserSignature(string AdoptedDateTime = default(string), string CreatedDateTime = default(string), string CustomField = default(string), DateStampProperties DateStampProperties = default(DateStampProperties), string DisallowUserResizeStamp = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string ExternalID = default(string), string ImageBase64 = default(string), string ImageType = default(string), string Initials150ImageId = default(string), string InitialsImageUri = default(string), string IsDefault = default(string), string LastModifiedDateTime = default(string), string NrdsId = default(string), string NrdsLastName = default(string), string NrdsStatus = default(string), string PhoneticName = default(string), string Signature150ImageId = default(string), string SignatureFont = default(string), string SignatureId = default(string), string SignatureImageUri = default(string), string SignatureInitials = default(string), string SignatureName = default(string), string SignatureRights = default(string), string SignatureType = default(string), string StampFormat = default(string), string StampImageUri = default(string), string StampSizeMM = default(string), string StampType = default(string))
+        /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
+        public UserSignature(string AdoptedDateTime = default(string), string CreatedDateTime = default(string), string CustomField = default(string), DateStampProperties DateStampProperties = default(DateStampProperties), string DisallowUserResizeStamp = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string ExternalID = default(string), string ImageBase64 = default(string), string ImageType = default(string), string Initials150ImageId = default(string), string InitialsImageUri = default(string), string IsDefault = default(string), string LastModifiedDateTime = default(string), string NrdsId = default(string), string NrdsLastName = default(string), string NrdsStatus = default(string), string PhoneticName = default(string), string Signature150ImageId = default(string), string SignatureFont = default(string), string SignatureId = default(string), string SignatureImageUri = default(string), string SignatureInitials = default(string), string SignatureName = default(string), string SignatureRights = default(string), string SignatureType = default(string), string StampFormat = default(string), string StampImageUri = default(string), string StampSizeMM = default(string), string StampType = default(string), string Status = default(string))
         {
             this.AdoptedDateTime = AdoptedDateTime;
             this.CreatedDateTime = CreatedDateTime;
@@ -97,6 +98,7 @@ namespace DocuSign.eSign.Model
             this.StampImageUri = StampImageUri;
             this.StampSizeMM = StampSizeMM;
             this.StampType = StampType;
+            this.Status = Status;
         }
         
         /// <summary>
@@ -272,6 +274,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="stampType", EmitDefaultValue=false)]
         public string StampType { get; set; }
         /// <summary>
+        /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+        /// </summary>
+        /// <value>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.</value>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public string Status { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -308,6 +316,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  StampImageUri: ").Append(StampImageUri).Append("\n");
             sb.Append("  StampSizeMM: ").Append(StampSizeMM).Append("\n");
             sb.Append("  StampType: ").Append(StampType).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -488,6 +497,11 @@ namespace DocuSign.eSign.Model
                     this.StampType == other.StampType ||
                     this.StampType != null &&
                     this.StampType.Equals(other.StampType)
+                ) && 
+                (
+                    this.Status == other.Status ||
+                    this.Status != null &&
+                    this.Status.Equals(other.Status)
                 );
         }
 
@@ -560,6 +574,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.StampSizeMM.GetHashCode();
                 if (this.StampType != null)
                     hash = hash * 59 + this.StampType.GetHashCode();
+                if (this.Status != null)
+                    hash = hash * 59 + this.Status.GetHashCode();
                 return hash;
             }
         }

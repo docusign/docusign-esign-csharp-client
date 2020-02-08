@@ -4,7 +4,7 @@ DocuSign REST API
 
 The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
 
-OpenAPI spec version: v2
+OpenAPI spec version: v2.1
 Contact: devcenter@docusign.com
 -->
 <Project Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -15,7 +15,7 @@ Contact: devcenter@docusign.com
     <Description>The DocuSign NuGet package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-csharp-client repository. Join the eSign revolution!</Description>
     <Company>DocuSign Inc.</Company>
     <Owners>DocuSign</Owners>
-    <Copyright>Copyright © DocuSign 2019</Copyright>
+    <Copyright>Copyright © DocuSign 2020</Copyright>
     <AssemblyTitle>DocuSign.eSign</AssemblyTitle>
     <Authors>DocuSign</Authors>
     <OutputType>Library</OutputType>
@@ -24,7 +24,7 @@ Contact: devcenter@docusign.com
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>4.1.1</VersionPrefix>
+    <VersionPrefix>4.2.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -34,7 +34,7 @@ Contact: devcenter@docusign.com
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v4.1.1] - eSignature API v2.1-19.2.02 - 10/08/2019</PackageReleaseNotes>
+    <PackageReleaseNotes>[v4.2.0] - eSignature API v2.1-19.4.01 - 01/31/2020</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,7 +54,7 @@ Contact: devcenter@docusign.com
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
-  <!-- .NET Standard 2.0 compilation flags and build options -->
+  <!-- .NET Framework 4.5.2 compilation flags and build options -->
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net452'">
     <DefineConstants>NET452</DefineConstants>
   </PropertyGroup>

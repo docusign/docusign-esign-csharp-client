@@ -58,11 +58,12 @@ namespace DocuSign.eSign.Model
         /// <param name="Pages">.</param>
         /// <param name="SignerMustAcknowledge">.</param>
         /// <param name="SignerMustAcknowledgeMetadata">SignerMustAcknowledgeMetadata.</param>
+        /// <param name="SizeBytes">.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="Type">.</param>
         /// <param name="Uri">.</param>
-        public EnvelopeDocument(List<string> AddedRecipientIds = default(List<string>), string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), PropertyMetadata AuthoritativeCopyMetadata = default(PropertyMetadata), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), PropertyMetadata DisplayMetadata = default(PropertyMetadata), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), string DocumentIdGuid = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), PropertyMetadata IncludeInDownloadMetadata = default(PropertyMetadata), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Order = default(string), List<Page> Pages = default(List<Page>), string SignerMustAcknowledge = default(string), PropertyMetadata SignerMustAcknowledgeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
+        public EnvelopeDocument(List<string> AddedRecipientIds = default(List<string>), string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), PropertyMetadata AuthoritativeCopyMetadata = default(PropertyMetadata), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), PropertyMetadata DisplayMetadata = default(PropertyMetadata), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), string DocumentIdGuid = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), PropertyMetadata IncludeInDownloadMetadata = default(PropertyMetadata), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Order = default(string), List<Page> Pages = default(List<Page>), string SignerMustAcknowledge = default(string), PropertyMetadata SignerMustAcknowledgeMetadata = default(PropertyMetadata), string SizeBytes = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
         {
             this.AddedRecipientIds = AddedRecipientIds;
             this.AttachmentTabId = AttachmentTabId;
@@ -85,6 +86,7 @@ namespace DocuSign.eSign.Model
             this.Pages = Pages;
             this.SignerMustAcknowledge = SignerMustAcknowledge;
             this.SignerMustAcknowledgeMetadata = SignerMustAcknowledgeMetadata;
+            this.SizeBytes = SizeBytes;
             this.TemplateLocked = TemplateLocked;
             this.TemplateRequired = TemplateRequired;
             this.Type = Type;
@@ -212,6 +214,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signerMustAcknowledgeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SignerMustAcknowledgeMetadata { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="sizeBytes", EmitDefaultValue=false)]
+        public string SizeBytes { get; set; }
+        /// <summary>
         /// When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
         /// </summary>
         /// <value>When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. </value>
@@ -264,6 +272,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Pages: ").Append(Pages).Append("\n");
             sb.Append("  SignerMustAcknowledge: ").Append(SignerMustAcknowledge).Append("\n");
             sb.Append("  SignerMustAcknowledgeMetadata: ").Append(SignerMustAcknowledgeMetadata).Append("\n");
+            sb.Append("  SizeBytes: ").Append(SizeBytes).Append("\n");
             sb.Append("  TemplateLocked: ").Append(TemplateLocked).Append("\n");
             sb.Append("  TemplateRequired: ").Append(TemplateRequired).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -410,6 +419,11 @@ namespace DocuSign.eSign.Model
                     this.SignerMustAcknowledgeMetadata.Equals(other.SignerMustAcknowledgeMetadata)
                 ) && 
                 (
+                    this.SizeBytes == other.SizeBytes ||
+                    this.SizeBytes != null &&
+                    this.SizeBytes.Equals(other.SizeBytes)
+                ) && 
+                (
                     this.TemplateLocked == other.TemplateLocked ||
                     this.TemplateLocked != null &&
                     this.TemplateLocked.Equals(other.TemplateLocked)
@@ -484,6 +498,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SignerMustAcknowledge.GetHashCode();
                 if (this.SignerMustAcknowledgeMetadata != null)
                     hash = hash * 59 + this.SignerMustAcknowledgeMetadata.GetHashCode();
+                if (this.SizeBytes != null)
+                    hash = hash * 59 + this.SizeBytes.GetHashCode();
                 if (this.TemplateLocked != null)
                     hash = hash * 59 + this.TemplateLocked.GetHashCode();
                 if (this.TemplateRequired != null)

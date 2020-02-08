@@ -37,6 +37,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountUISettings" /> class.
         /// </summary>
+        /// <param name="AdminMessage">AdminMessage.</param>
+        /// <param name="AskAnAdmin">AskAnAdmin.</param>
+        /// <param name="EnableAdminMessage">.</param>
+        /// <param name="EnableAdminMessageMetadata">EnableAdminMessageMetadata.</param>
         /// <param name="EnableEasySignCanUseMultiTemplateApply">.</param>
         /// <param name="EnableEasySignCanUseMultiTemplateApplyMetadata">EnableEasySignCanUseMultiTemplateApplyMetadata.</param>
         /// <param name="EnableEasySignTemplateUpload">.</param>
@@ -53,8 +57,14 @@ namespace DocuSign.eSign.Model
         /// <param name="RemoveEnvelopeForwardingMetadata">RemoveEnvelopeForwardingMetadata.</param>
         /// <param name="ShouldRedactAccessCode">.</param>
         /// <param name="ShouldRedactAccessCodeMetadata">ShouldRedactAccessCodeMetadata.</param>
-        public AccountUISettings(string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata))
+        /// <param name="UploadNewImageToSignOrInitial">.</param>
+        /// <param name="UploadNewImageToSignOrInitialMetadata">UploadNewImageToSignOrInitialMetadata.</param>
+        public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
         {
+            this.AdminMessage = AdminMessage;
+            this.AskAnAdmin = AskAnAdmin;
+            this.EnableAdminMessage = EnableAdminMessage;
+            this.EnableAdminMessageMetadata = EnableAdminMessageMetadata;
             this.EnableEasySignCanUseMultiTemplateApply = EnableEasySignCanUseMultiTemplateApply;
             this.EnableEasySignCanUseMultiTemplateApplyMetadata = EnableEasySignCanUseMultiTemplateApplyMetadata;
             this.EnableEasySignTemplateUpload = EnableEasySignTemplateUpload;
@@ -71,8 +81,31 @@ namespace DocuSign.eSign.Model
             this.RemoveEnvelopeForwardingMetadata = RemoveEnvelopeForwardingMetadata;
             this.ShouldRedactAccessCode = ShouldRedactAccessCode;
             this.ShouldRedactAccessCodeMetadata = ShouldRedactAccessCodeMetadata;
+            this.UploadNewImageToSignOrInitial = UploadNewImageToSignOrInitial;
+            this.UploadNewImageToSignOrInitialMetadata = UploadNewImageToSignOrInitialMetadata;
         }
         
+        /// <summary>
+        /// Gets or Sets AdminMessage
+        /// </summary>
+        [DataMember(Name="adminMessage", EmitDefaultValue=false)]
+        public AdminMessage AdminMessage { get; set; }
+        /// <summary>
+        /// Gets or Sets AskAnAdmin
+        /// </summary>
+        [DataMember(Name="askAnAdmin", EmitDefaultValue=false)]
+        public AskAnAdmin AskAnAdmin { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="enableAdminMessage", EmitDefaultValue=false)]
+        public string EnableAdminMessage { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableAdminMessageMetadata
+        /// </summary>
+        [DataMember(Name="enableAdminMessageMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableAdminMessageMetadata { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -162,6 +195,17 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shouldRedactAccessCodeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ShouldRedactAccessCodeMetadata { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="uploadNewImageToSignOrInitial", EmitDefaultValue=false)]
+        public string UploadNewImageToSignOrInitial { get; set; }
+        /// <summary>
+        /// Gets or Sets UploadNewImageToSignOrInitialMetadata
+        /// </summary>
+        [DataMember(Name="uploadNewImageToSignOrInitialMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata UploadNewImageToSignOrInitialMetadata { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -169,6 +213,10 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AccountUISettings {\n");
+            sb.Append("  AdminMessage: ").Append(AdminMessage).Append("\n");
+            sb.Append("  AskAnAdmin: ").Append(AskAnAdmin).Append("\n");
+            sb.Append("  EnableAdminMessage: ").Append(EnableAdminMessage).Append("\n");
+            sb.Append("  EnableAdminMessageMetadata: ").Append(EnableAdminMessageMetadata).Append("\n");
             sb.Append("  EnableEasySignCanUseMultiTemplateApply: ").Append(EnableEasySignCanUseMultiTemplateApply).Append("\n");
             sb.Append("  EnableEasySignCanUseMultiTemplateApplyMetadata: ").Append(EnableEasySignCanUseMultiTemplateApplyMetadata).Append("\n");
             sb.Append("  EnableEasySignTemplateUpload: ").Append(EnableEasySignTemplateUpload).Append("\n");
@@ -185,6 +233,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  RemoveEnvelopeForwardingMetadata: ").Append(RemoveEnvelopeForwardingMetadata).Append("\n");
             sb.Append("  ShouldRedactAccessCode: ").Append(ShouldRedactAccessCode).Append("\n");
             sb.Append("  ShouldRedactAccessCodeMetadata: ").Append(ShouldRedactAccessCodeMetadata).Append("\n");
+            sb.Append("  UploadNewImageToSignOrInitial: ").Append(UploadNewImageToSignOrInitial).Append("\n");
+            sb.Append("  UploadNewImageToSignOrInitialMetadata: ").Append(UploadNewImageToSignOrInitialMetadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -221,6 +271,26 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.AdminMessage == other.AdminMessage ||
+                    this.AdminMessage != null &&
+                    this.AdminMessage.Equals(other.AdminMessage)
+                ) && 
+                (
+                    this.AskAnAdmin == other.AskAnAdmin ||
+                    this.AskAnAdmin != null &&
+                    this.AskAnAdmin.Equals(other.AskAnAdmin)
+                ) && 
+                (
+                    this.EnableAdminMessage == other.EnableAdminMessage ||
+                    this.EnableAdminMessage != null &&
+                    this.EnableAdminMessage.Equals(other.EnableAdminMessage)
+                ) && 
+                (
+                    this.EnableAdminMessageMetadata == other.EnableAdminMessageMetadata ||
+                    this.EnableAdminMessageMetadata != null &&
+                    this.EnableAdminMessageMetadata.Equals(other.EnableAdminMessageMetadata)
+                ) && 
                 (
                     this.EnableEasySignCanUseMultiTemplateApply == other.EnableEasySignCanUseMultiTemplateApply ||
                     this.EnableEasySignCanUseMultiTemplateApply != null &&
@@ -300,6 +370,16 @@ namespace DocuSign.eSign.Model
                     this.ShouldRedactAccessCodeMetadata == other.ShouldRedactAccessCodeMetadata ||
                     this.ShouldRedactAccessCodeMetadata != null &&
                     this.ShouldRedactAccessCodeMetadata.Equals(other.ShouldRedactAccessCodeMetadata)
+                ) && 
+                (
+                    this.UploadNewImageToSignOrInitial == other.UploadNewImageToSignOrInitial ||
+                    this.UploadNewImageToSignOrInitial != null &&
+                    this.UploadNewImageToSignOrInitial.Equals(other.UploadNewImageToSignOrInitial)
+                ) && 
+                (
+                    this.UploadNewImageToSignOrInitialMetadata == other.UploadNewImageToSignOrInitialMetadata ||
+                    this.UploadNewImageToSignOrInitialMetadata != null &&
+                    this.UploadNewImageToSignOrInitialMetadata.Equals(other.UploadNewImageToSignOrInitialMetadata)
                 );
         }
 
@@ -314,6 +394,14 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AdminMessage != null)
+                    hash = hash * 59 + this.AdminMessage.GetHashCode();
+                if (this.AskAnAdmin != null)
+                    hash = hash * 59 + this.AskAnAdmin.GetHashCode();
+                if (this.EnableAdminMessage != null)
+                    hash = hash * 59 + this.EnableAdminMessage.GetHashCode();
+                if (this.EnableAdminMessageMetadata != null)
+                    hash = hash * 59 + this.EnableAdminMessageMetadata.GetHashCode();
                 if (this.EnableEasySignCanUseMultiTemplateApply != null)
                     hash = hash * 59 + this.EnableEasySignCanUseMultiTemplateApply.GetHashCode();
                 if (this.EnableEasySignCanUseMultiTemplateApplyMetadata != null)
@@ -346,6 +434,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ShouldRedactAccessCode.GetHashCode();
                 if (this.ShouldRedactAccessCodeMetadata != null)
                     hash = hash * 59 + this.ShouldRedactAccessCodeMetadata.GetHashCode();
+                if (this.UploadNewImageToSignOrInitial != null)
+                    hash = hash * 59 + this.UploadNewImageToSignOrInitial.GetHashCode();
+                if (this.UploadNewImageToSignOrInitialMetadata != null)
+                    hash = hash * 59 + this.UploadNewImageToSignOrInitialMetadata.GetHashCode();
                 return hash;
             }
         }

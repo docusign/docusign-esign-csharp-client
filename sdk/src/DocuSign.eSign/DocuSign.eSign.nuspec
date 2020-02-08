@@ -2,18 +2,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>DocuSign.eSign.dll</id>
-    <version>4.1.1</version>
+    <version>4.2.0</version>
     <title>DocuSign.eSign</title>
     <authors>DocuSign</authors>
     <owners>DocuSign</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>false</developmentDependency>
-    <description>The DocuSign NuGet Package makes integrating DocuSign into your apps and websites a super fast and painless process.The library is open sourced on GitHub, look for the docusign-csharp-client repository. Join the eSign revolution!</description>
-    <iconUrl>http://26c9d06e414e60fc3a18-f03eeda740093cbe74371aff89dec8d1.r69.cf2.rackcdn.com/icon32x32.png</iconUrl>
-    <projectUrl>https://developers.docusign.com/</projectUrl>
-    <license>https://raw.githubusercontent.com/docusign/docusign-csharp-client/master/LICENSE</license>
-    <copyright>Copyright 2019</copyright>
-    <tags>DocuSign.eSign REST eSignature DocuSign eSign api digital transaction</tags>
+    <description>The DocuSign NuGet package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-csharp-client repository. Join the eSign revolution!</description>
+    <iconUrl>https://www.docusign.com/sites/all/themes/custom/docusign/favicons/favicon-32x32.png}</iconUrl>
+    <projectUrl>https://github.com/docusign/docusign-csharp-client</projectUrl>
+    <license>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</license>
+    <copyright>Copyright © DocuSign 2020</copyright>
+    <tags>DocuSign.eSign;REST;eSign;docusign;eSignature;api</tags>
     <dependencies>
       <group targetFramework="net452">
         <dependency id="BouncyCastle" version="1.8.1" />

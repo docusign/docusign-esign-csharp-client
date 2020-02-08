@@ -1,5 +1,15 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v4.2.0] - eSignature API v2.1 - 02/07/2020
+### Changed
+* The SDK now supports API v2.1-19.4.01 of the DocuSign eSignature API.
+* SDK Release Version updated.
+
+## [v4.2.0-rc] - eSignature API v2.1 - 01/03/2020
+### Changed
+* The SDK now supports API v2.1-19.4.01 of the DocuSign eSignature API.
+* SDK Release Version updated.
+
 ## [v4.1.1] - eSignature API v2.1 - 10/08/2019
 ### Added
 * Added support for WebProxy, integrations can now initialize the ApiClient by providing their proxy details. (DCM-3321)

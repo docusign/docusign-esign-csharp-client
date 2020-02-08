@@ -37,6 +37,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Radio" /> class.
         /// </summary>
+        /// <param name="AnchorAllowWhiteSpaceInCharacters">.</param>
+        /// <param name="AnchorAllowWhiteSpaceInCharactersMetadata">AnchorAllowWhiteSpaceInCharactersMetadata.</param>
         /// <param name="AnchorCaseSensitive">When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**..</param>
         /// <param name="AnchorCaseSensitiveMetadata">AnchorCaseSensitiveMetadata.</param>
         /// <param name="AnchorHorizontalAlignment">Specifies the alignment of anchor tabs with anchor strings. Possible values are **left** or **right**. The default value is **left**..</param>
@@ -88,8 +90,10 @@ namespace DocuSign.eSign.Model
         /// <param name="XPositionMetadata">XPositionMetadata.</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPositionMetadata">YPositionMetadata.</param>
-        public Radio(string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
+        public Radio(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
+            this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
+            this.AnchorAllowWhiteSpaceInCharactersMetadata = AnchorAllowWhiteSpaceInCharactersMetadata;
             this.AnchorCaseSensitive = AnchorCaseSensitive;
             this.AnchorCaseSensitiveMetadata = AnchorCaseSensitiveMetadata;
             this.AnchorHorizontalAlignment = AnchorHorizontalAlignment;
@@ -143,6 +147,17 @@ namespace DocuSign.eSign.Model
             this.YPositionMetadata = YPositionMetadata;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="anchorAllowWhiteSpaceInCharacters", EmitDefaultValue=false)]
+        public string AnchorAllowWhiteSpaceInCharacters { get; set; }
+        /// <summary>
+        /// Gets or Sets AnchorAllowWhiteSpaceInCharactersMetadata
+        /// </summary>
+        [DataMember(Name="anchorAllowWhiteSpaceInCharactersMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata { get; set; }
         /// <summary>
         /// When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
         /// </summary>
@@ -431,6 +446,8 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Radio {\n");
+            sb.Append("  AnchorAllowWhiteSpaceInCharacters: ").Append(AnchorAllowWhiteSpaceInCharacters).Append("\n");
+            sb.Append("  AnchorAllowWhiteSpaceInCharactersMetadata: ").Append(AnchorAllowWhiteSpaceInCharactersMetadata).Append("\n");
             sb.Append("  AnchorCaseSensitive: ").Append(AnchorCaseSensitive).Append("\n");
             sb.Append("  AnchorCaseSensitiveMetadata: ").Append(AnchorCaseSensitiveMetadata).Append("\n");
             sb.Append("  AnchorHorizontalAlignment: ").Append(AnchorHorizontalAlignment).Append("\n");
@@ -518,6 +535,16 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.AnchorAllowWhiteSpaceInCharacters == other.AnchorAllowWhiteSpaceInCharacters ||
+                    this.AnchorAllowWhiteSpaceInCharacters != null &&
+                    this.AnchorAllowWhiteSpaceInCharacters.Equals(other.AnchorAllowWhiteSpaceInCharacters)
+                ) && 
+                (
+                    this.AnchorAllowWhiteSpaceInCharactersMetadata == other.AnchorAllowWhiteSpaceInCharactersMetadata ||
+                    this.AnchorAllowWhiteSpaceInCharactersMetadata != null &&
+                    this.AnchorAllowWhiteSpaceInCharactersMetadata.Equals(other.AnchorAllowWhiteSpaceInCharactersMetadata)
+                ) && 
                 (
                     this.AnchorCaseSensitive == other.AnchorCaseSensitive ||
                     this.AnchorCaseSensitive != null &&
@@ -786,6 +813,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AnchorAllowWhiteSpaceInCharacters != null)
+                    hash = hash * 59 + this.AnchorAllowWhiteSpaceInCharacters.GetHashCode();
+                if (this.AnchorAllowWhiteSpaceInCharactersMetadata != null)
+                    hash = hash * 59 + this.AnchorAllowWhiteSpaceInCharactersMetadata.GetHashCode();
                 if (this.AnchorCaseSensitive != null)
                     hash = hash * 59 + this.AnchorCaseSensitive.GetHashCode();
                 if (this.AnchorCaseSensitiveMetadata != null)

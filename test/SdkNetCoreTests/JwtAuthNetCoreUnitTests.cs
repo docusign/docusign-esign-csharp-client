@@ -400,11 +400,6 @@ namespace SdkNetCoreTests
             ViewUrl senderView = envelopesApi.CreateSenderView(testConfig.AccountId, testConfig.EnvelopeId, options);
 
             Assert.IsNotNull(senderView);
-
-            // Start the embedded sending session
-            //System.Diagnostics.Process.Start(senderView.Url);
-            //System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {senderView.Url}"));
-
             Assert.IsNotNull(senderView.Url);
         }
 
@@ -505,7 +500,7 @@ namespace SdkNetCoreTests
             ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
-            Assert.AreEqual("{\"error\":\"invalid_grant\"}", ex.ErrorContent);
+            Assert.AreEqual("{\"error\":\"invalid_grant\",\"error_description\":\"no_valid_keys_or_signatures\"}", ex.ErrorContent);
         }
 
         [TestMethod]
@@ -639,8 +634,11 @@ namespace SdkNetCoreTests
             {
                 if (item.EnvelopeId == testConfig.EnvelopeId)
                 {
-                    doesExists = true;
-                    break;
+                    if (item.EnvelopeId == testConfig.EnvelopeId)
+                    {
+                        doesExists = true;
+                        break;
+                    }
                 }
             }
 

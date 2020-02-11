@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Net;
 
 namespace DocuSign.eSign.Client
 {
@@ -46,7 +47,7 @@ namespace DocuSign.eSign.Client
                              string tempFolderPath = null,
                              string dateTimeFormat = null,
                              int timeout = 100000,
-                             string userAgent = "Swagger-Codegen/3.1.6/csharp"
+                             string userAgent = "Swagger-Codegen/3.2.0/csharp"
                             )
         {
             setApiClientUsingDefault(apiClient);
@@ -81,7 +82,7 @@ namespace DocuSign.eSign.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "3.1.6";
+        public const string Version = "3.2.0";
 
         /// <summary>
         /// Gets or sets the default Configuration.
@@ -112,6 +113,27 @@ namespace DocuSign.eSign.Client
             {
                 if (ApiClient != null)
                     ApiClient.RestClient.Timeout = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the Proxy of ApiClient. Default to null
+        /// </summary>
+        /// <value>Timeout.</value>
+        public IWebProxy Proxy
+        {
+            get
+            {
+                if (ApiClient == null || ApiClient.RestClient == null)
+                    return null;
+
+                  return ApiClient.RestClient.Proxy;
+            }
+
+            set
+            {
+                if (ApiClient != null && ApiClient.RestClient != null)
+                    ApiClient.RestClient.Proxy = value;
             }
         }
 
@@ -320,9 +342,9 @@ namespace DocuSign.eSign.Client
             report += "    .NET Framework Version: " + Assembly
                      .GetExecutingAssembly()
                      .GetReferencedAssemblies()
-                     .Where(x => x.Name == "System.Core").First().Version.ToString()  + "\n";
+                     .Where(x => x.Name == "System.Core").First().Version.ToString() + "\n";
             report += "    Version of the API: v2\n";
-            report += "    SDK Package Version: 3.1.6\n";
+            report += "    SDK Package Version: 3.2.0\n";
 
             return report;
         }

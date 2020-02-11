@@ -40,8 +40,5 @@ csharp-build.ps1
 mono_nunit_test.sh
 
 # Specific src and test files
-src/DocuSign.eSign/DocuSign.eSign.csproj
-src/DocuSign.eSign/DocuSign.eSign.nuspec
-src/DocuSign.eSign/Properties/AssemblyInfo.cs
 src/DocuSign.eSign/packages.config
-src/DocuSign.eSign/Client/
+src/DocuSign.eSign/Api/EnvelopesApi.cs

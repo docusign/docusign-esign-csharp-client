@@ -44,6 +44,8 @@ namespace DocuSign.eSign.Client
         // Stage base path
         public const string Stage_REST_BasePath = "https://stage.docusign.net/restapi";
 
+        private IWebProxy Proxy { get; set; } = null;
+
         private string basePath = Production_REST_BasePath;
 
         private string oAuthBasePath = OAuth.Production_OAuth_BasePath;
@@ -92,6 +94,12 @@ namespace DocuSign.eSign.Client
                 Configuration = config;
 
             RestClient = new RestClient("https://www.docusign.net/restapi");
+
+            if (Configuration.Proxy != null)
+            {
+                RestClient.Proxy = Configuration.Proxy;
+                Proxy = Configuration.Proxy;
+            }
         }
 
         /// <summary>
@@ -99,7 +107,8 @@ namespace DocuSign.eSign.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "https://www.docusign.net/restapi")
+        /// <param name="proxy">An optional WebProxy instance.</param>
+        public ApiClient(String basePath = "https://www.docusign.net/restapi", WebProxy proxy = null)
         {
             if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
@@ -109,7 +118,8 @@ namespace DocuSign.eSign.Client
             this.basePath = basePath;
             this.SetOAuthBasePath();
 
-            RestClient = new RestClient(basePath);
+            this.Proxy = proxy;
+            RestClient = new RestClient(basePath) { Proxy = proxy };
             Configuration = Configuration.Default;
             Configuration.ApiClient = this;
         }
@@ -120,7 +130,8 @@ namespace DocuSign.eSign.Client
         /// </summary>
         /// <param name="basePath">The base path.</param>
         /// <param name="oAuthBasePath">The oAuth base path.</param>
-        public ApiClient(String basePath, String oAuthBasePath)
+        /// <param name="proxy">An optional WebProxy instance.</param>
+        public ApiClient(String basePath, String oAuthBasePath, WebProxy proxy = null)
         {
             if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
@@ -132,7 +143,8 @@ namespace DocuSign.eSign.Client
             this.basePath = basePath;
             this.SetOAuthBasePath(oAuthBasePath);
 
-            RestClient = new RestClient(basePath);
+            this.Proxy = proxy;
+            RestClient = new RestClient(basePath) { Proxy = proxy };
             Configuration = Configuration.Default;
             Configuration.ApiClient = this;
         }
@@ -206,11 +218,7 @@ namespace DocuSign.eSign.Client
             // add file parameter, if any
             foreach (var param in fileParams)
             {
-#if NETSTANDARD2_0
                 request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentLength, param.Value.ContentType);
-#else
-                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName);
-#endif
             }
 
             if (postBody != null) // http body (model or byte[]) parameter
@@ -799,6 +807,7 @@ namespace DocuSign.eSign.Client
             RestClient restClient = new RestClient(baseUri);
             restClient.Timeout = Configuration.Timeout;
             restClient.UserAgent = Configuration.UserAgent;
+            restClient.Proxy = Proxy;
 
             RestRequest request = new RestRequest("oauth/token", Method.POST);
 
@@ -853,6 +862,7 @@ namespace DocuSign.eSign.Client
             RestClient restClient = new RestClient(baseUri);
             restClient.Timeout = Configuration.Timeout;
             restClient.UserAgent = Configuration.UserAgent;
+            restClient.Proxy = Proxy;
 
             RestRequest request = new RestRequest("oauth/userinfo", Method.GET);
 
@@ -1002,6 +1012,7 @@ namespace DocuSign.eSign.Client
             RestClient restClient = new RestClient(baseUri);
             restClient.Timeout = Configuration.Timeout;
             restClient.UserAgent = Configuration.UserAgent;
+            restClient.Proxy = Proxy;
 
             string path = "oauth/token";
             string contentType = "application/x-www-form-urlencoded";
@@ -1067,13 +1078,7 @@ namespace DocuSign.eSign.Client
                 Expires = DateTime.UtcNow.AddHours(expiresInHours),
             };
 
-            if (scopes == null)
-            {
-                scopes = new List<string>
-                {
-                    OAuth.Scope_SIGNATURE
-                };
-            }
+            scopes = scopes ?? new List<string> { OAuth.Scope_SIGNATURE };
 
             descriptor.Subject = new ClaimsIdentity();
             descriptor.Subject.AddClaim(new Claim("scope", String.Join(" ", scopes)));
@@ -1098,6 +1103,7 @@ namespace DocuSign.eSign.Client
             RestClient restClient = new RestClient(baseUri);
             restClient.Timeout = Configuration.Timeout;
             restClient.UserAgent = Configuration.UserAgent;
+            restClient.Proxy = Proxy;
 
             string path = "oauth/token";
             string contentType = "application/x-www-form-urlencoded";

@@ -46,9 +46,10 @@ namespace DocuSign.eSign.Model
         /// <param name="HideLabelWhenOpened">.</param>
         /// <param name="InlineOuterStyle">.</param>
         /// <param name="LabelWhenOpened">.</param>
+        /// <param name="PreLabel">.</param>
         /// <param name="ScrollToTopWhenOpened">.</param>
         /// <param name="TableStyle">.</param>
-        public DocumentHtmlDisplaySettings(string CellStyle = default(string), DocumentHtmlCollapsibleDisplaySettings CollapsibleSettings = default(DocumentHtmlCollapsibleDisplaySettings), string Display = default(string), string DisplayLabel = default(string), int? DisplayOrder = default(int?), int? DisplayPageNumber = default(int?), bool? HideLabelWhenOpened = default(bool?), string InlineOuterStyle = default(string), string LabelWhenOpened = default(string), bool? ScrollToTopWhenOpened = default(bool?), string TableStyle = default(string))
+        public DocumentHtmlDisplaySettings(string CellStyle = default(string), DocumentHtmlCollapsibleDisplaySettings CollapsibleSettings = default(DocumentHtmlCollapsibleDisplaySettings), string Display = default(string), string DisplayLabel = default(string), int? DisplayOrder = default(int?), int? DisplayPageNumber = default(int?), bool? HideLabelWhenOpened = default(bool?), string InlineOuterStyle = default(string), string LabelWhenOpened = default(string), string PreLabel = default(string), bool? ScrollToTopWhenOpened = default(bool?), string TableStyle = default(string))
         {
             this.CellStyle = CellStyle;
             this.CollapsibleSettings = CollapsibleSettings;
@@ -59,6 +60,7 @@ namespace DocuSign.eSign.Model
             this.HideLabelWhenOpened = HideLabelWhenOpened;
             this.InlineOuterStyle = InlineOuterStyle;
             this.LabelWhenOpened = LabelWhenOpened;
+            this.PreLabel = PreLabel;
             this.ScrollToTopWhenOpened = ScrollToTopWhenOpened;
             this.TableStyle = TableStyle;
         }
@@ -120,6 +122,12 @@ namespace DocuSign.eSign.Model
         /// 
         /// </summary>
         /// <value></value>
+        [DataMember(Name="preLabel", EmitDefaultValue=false)]
+        public string PreLabel { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
         [DataMember(Name="scrollToTopWhenOpened", EmitDefaultValue=false)]
         public bool? ScrollToTopWhenOpened { get; set; }
         /// <summary>
@@ -145,6 +153,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  HideLabelWhenOpened: ").Append(HideLabelWhenOpened).Append("\n");
             sb.Append("  InlineOuterStyle: ").Append(InlineOuterStyle).Append("\n");
             sb.Append("  LabelWhenOpened: ").Append(LabelWhenOpened).Append("\n");
+            sb.Append("  PreLabel: ").Append(PreLabel).Append("\n");
             sb.Append("  ScrollToTopWhenOpened: ").Append(ScrollToTopWhenOpened).Append("\n");
             sb.Append("  TableStyle: ").Append(TableStyle).Append("\n");
             sb.Append("}\n");
@@ -229,6 +238,11 @@ namespace DocuSign.eSign.Model
                     this.LabelWhenOpened.Equals(other.LabelWhenOpened)
                 ) && 
                 (
+                    this.PreLabel == other.PreLabel ||
+                    this.PreLabel != null &&
+                    this.PreLabel.Equals(other.PreLabel)
+                ) && 
+                (
                     this.ScrollToTopWhenOpened == other.ScrollToTopWhenOpened ||
                     this.ScrollToTopWhenOpened != null &&
                     this.ScrollToTopWhenOpened.Equals(other.ScrollToTopWhenOpened)
@@ -269,6 +283,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.InlineOuterStyle.GetHashCode();
                 if (this.LabelWhenOpened != null)
                     hash = hash * 59 + this.LabelWhenOpened.GetHashCode();
+                if (this.PreLabel != null)
+                    hash = hash * 59 + this.PreLabel.GetHashCode();
                 if (this.ScrollToTopWhenOpened != null)
                     hash = hash * 59 + this.ScrollToTopWhenOpened.GetHashCode();
                 if (this.TableStyle != null)

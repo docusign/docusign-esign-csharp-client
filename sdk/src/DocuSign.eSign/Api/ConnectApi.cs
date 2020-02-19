@@ -50,6 +50,31 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<ConnectCustomConfiguration> CreateConfigurationWithHttpInfo (string accountId, ConnectCustomConfiguration connectCustomConfiguration = null);
         /// <summary>
+        /// Generates a new connect HMAC Secret.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns></returns>
+        void CreateConnectSecret (string accountId);
+
+        /// <summary>
+        /// Generates a new connect HMAC Secret.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> CreateConnectSecretWithHttpInfo (string accountId);
+        /// <summary>
         /// Deletes the specified connect configuration.
         /// </summary>
         /// <remarks>
@@ -74,6 +99,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteConfigurationWithHttpInfo (string accountId, string connectId);
+        /// <summary>
+        /// Delete the connect HMAC Secret for AccountID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="keyId"></param>
+        
+        
+        /// <returns></returns>
+        void DeleteConnectSecret (string accountId, string keyId);
+
+        /// <summary>
+        /// Delete the connect HMAC Secret for AccountID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="keyId"></param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteConnectSecretWithHttpInfo (string accountId, string keyId);
         /// <summary>
         /// Deletes a Connect failure log entry.
         /// </summary>
@@ -150,6 +200,56 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteEventLogsWithHttpInfo (string accountId);
         /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns></returns>
+        MobileNotifierConfigurationInformation DeleteMobileNotifiers (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null);
+
+        /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<MobileNotifierConfigurationInformation> DeleteMobileNotifiersWithHttpInfo (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null);
+        /// <summary>
+        /// Generates a new connect HMAC Secret.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns></returns>
+        void GenerateConnectSecret (string accountId);
+
+        /// <summary>
+        /// Generates a new connect HMAC Secret.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> GenerateConnectSecretWithHttpInfo (string accountId);
+        /// <summary>
         /// Get a Connect Configuration Information
         /// </summary>
         /// <remarks>
@@ -174,6 +274,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>ApiResponse of </returns>
         ApiResponse<ConnectConfigResults> GetConfigurationWithHttpInfo (string accountId, string connectId);
+        /// <summary>
+        /// Get the connect HMAC Secrets for AccountID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns></returns>
+        void GetConnectSecrets (string accountId);
+
+        /// <summary>
+        /// Get the connect HMAC Secrets for AccountID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> GetConnectSecretsWithHttpInfo (string accountId);
         /// <summary>
         /// Get the specified Connect log entry.
         /// </summary>
@@ -275,6 +400,56 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<ConnectLogs> ListEventLogsWithHttpInfo (string accountId, ConnectApi.ListEventLogsOptions options = null);
         /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns></returns>
+        MobileNotifierConfigurationInformation ListMobileNotifiers (string accountId);
+
+        /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<MobileNotifierConfigurationInformation> ListMobileNotifiersWithHttpInfo (string accountId);
+        /// <summary>
+        /// Test connect configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns></returns>
+        ResourceInformation ListTests (string accountId, string connectId);
+
+        /// <summary>
+        /// Test connect configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<ResourceInformation> ListTestsWithHttpInfo (string accountId, string connectId);
+        /// <summary>
         /// Returns users from the configured Connect service.
         /// </summary>
         /// <remarks>
@@ -374,6 +549,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>ApiResponse of </returns>
         ApiResponse<ConnectCustomConfiguration> UpdateConfigurationWithHttpInfo (string accountId, ConnectCustomConfiguration connectCustomConfiguration = null);
+        /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns></returns>
+        MobileNotifierConfigurationInformation UpdateMobileNotifiers (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null);
+
+        /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<MobileNotifierConfigurationInformation> UpdateMobileNotifiersWithHttpInfo (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -402,6 +602,31 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (ConnectCustomConfiguration)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConnectCustomConfiguration>> CreateConfigurationAsyncWithHttpInfo (string accountId, ConnectCustomConfiguration connectCustomConfiguration = null);
         /// <summary>
+        /// Generates a new connect HMAC Secret.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task CreateConnectSecretAsync (string accountId);
+
+        /// <summary>
+        /// Generates a new connect HMAC Secret.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateConnectSecretAsyncWithHttpInfo (string accountId);
+        /// <summary>
         /// Deletes the specified connect configuration.
         /// </summary>
         /// <remarks>
@@ -426,6 +651,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteConfigurationAsyncWithHttpInfo (string accountId, string connectId);
+        /// <summary>
+        /// Delete the connect HMAC Secret for AccountID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="keyId"></param>
+        
+        
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteConnectSecretAsync (string accountId, string keyId);
+
+        /// <summary>
+        /// Delete the connect HMAC Secret for AccountID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="keyId"></param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteConnectSecretAsyncWithHttpInfo (string accountId, string keyId);
         /// <summary>
         /// Deletes a Connect failure log entry.
         /// </summary>
@@ -502,6 +752,56 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEventLogsAsyncWithHttpInfo (string accountId);
         /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>Task of MobileNotifierConfigurationInformation</returns>
+        System.Threading.Tasks.Task<MobileNotifierConfigurationInformation> DeleteMobileNotifiersAsync (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null);
+
+        /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (MobileNotifierConfigurationInformation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<MobileNotifierConfigurationInformation>> DeleteMobileNotifiersAsyncWithHttpInfo (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null);
+        /// <summary>
+        /// Generates a new connect HMAC Secret.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task GenerateConnectSecretAsync (string accountId);
+
+        /// <summary>
+        /// Generates a new connect HMAC Secret.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> GenerateConnectSecretAsyncWithHttpInfo (string accountId);
+        /// <summary>
         /// Get a Connect Configuration Information
         /// </summary>
         /// <remarks>
@@ -526,6 +826,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (ConnectConfigResults)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConnectConfigResults>> GetConfigurationAsyncWithHttpInfo (string accountId, string connectId);
+        /// <summary>
+        /// Get the connect HMAC Secrets for AccountID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task GetConnectSecretsAsync (string accountId);
+
+        /// <summary>
+        /// Get the connect HMAC Secrets for AccountID
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetConnectSecretsAsyncWithHttpInfo (string accountId);
         /// <summary>
         /// Get the specified Connect log entry.
         /// </summary>
@@ -627,6 +952,56 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (ConnectLogs)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConnectLogs>> ListEventLogsAsyncWithHttpInfo (string accountId, ConnectApi.ListEventLogsOptions options = null);
         /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of MobileNotifierConfigurationInformation</returns>
+        System.Threading.Tasks.Task<MobileNotifierConfigurationInformation> ListMobileNotifiersAsync (string accountId);
+
+        /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse (MobileNotifierConfigurationInformation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<MobileNotifierConfigurationInformation>> ListMobileNotifiersAsyncWithHttpInfo (string accountId);
+        /// <summary>
+        /// Test connect configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>Task of ResourceInformation</returns>
+        System.Threading.Tasks.Task<ResourceInformation> ListTestsAsync (string accountId, string connectId);
+
+        /// <summary>
+        /// Test connect configuration.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>Task of ApiResponse (ResourceInformation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ResourceInformation>> ListTestsAsyncWithHttpInfo (string accountId, string connectId);
+        /// <summary>
         /// Returns users from the configured Connect service.
         /// </summary>
         /// <remarks>
@@ -726,6 +1101,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (ConnectCustomConfiguration)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConnectCustomConfiguration>> UpdateConfigurationAsyncWithHttpInfo (string accountId, ConnectCustomConfiguration connectCustomConfiguration = null);
+        /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>Task of MobileNotifierConfigurationInformation</returns>
+        System.Threading.Tasks.Task<MobileNotifierConfigurationInformation> UpdateMobileNotifiersAsync (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null);
+
+        /// <summary>
+        /// Reserved
+        /// </summary>
+        /// <remarks>
+        /// Reserved:
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (MobileNotifierConfigurationInformation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<MobileNotifierConfigurationInformation>> UpdateMobileNotifiersAsyncWithHttpInfo (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null);
         #endregion Asynchronous Operations
     }
 
@@ -1019,6 +1419,158 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
+        /// Generates a new connect HMAC Secret. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns></returns>
+        public void CreateConnectSecret (string accountId)
+        {
+             CreateConnectSecretWithHttpInfo(accountId);
+        }
+
+        /// <summary>
+        /// Generates a new connect HMAC Secret. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> CreateConnectSecretWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->CreateConnectSecret");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/secret";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateConnectSecret", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Generates a new connect HMAC Secret. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task CreateConnectSecretAsync (string accountId)
+        {
+             await CreateConnectSecretAsyncWithHttpInfo(accountId);
+
+        }
+
+        /// <summary>
+        /// Generates a new connect HMAC Secret. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> CreateConnectSecretAsyncWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->CreateConnectSecret");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/secret";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateConnectSecret", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+
+
+        /// <summary>
         /// Deletes the specified connect configuration. Deletes the specified DocuSign Connect configuration.  ###### Note: Connect must be enabled for your account to use this function.    
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1167,6 +1719,166 @@ namespace DocuSign.eSign.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("DeleteConfiguration", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+
+
+        /// <summary>
+        /// Delete the connect HMAC Secret for AccountID 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="keyId"></param>
+        
+        
+        /// <returns></returns>
+        public void DeleteConnectSecret (string accountId, string keyId)
+        {
+             DeleteConnectSecretWithHttpInfo(accountId, keyId);
+        }
+
+        /// <summary>
+        /// Delete the connect HMAC Secret for AccountID 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="keyId"></param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DeleteConnectSecretWithHttpInfo (string accountId, string keyId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->DeleteConnectSecret");
+            // verify the required parameter 'keyId' is set
+            if (keyId == null)
+                throw new ApiException(400, "Missing required parameter 'keyId' when calling ConnectApi->DeleteConnectSecret");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/secret/{keyId}/delete";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (keyId != null) localVarPathParams.Add("keyId", Configuration.ApiClient.ParameterToString(keyId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteConnectSecret", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Delete the connect HMAC Secret for AccountID 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="keyId"></param>
+        
+        
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteConnectSecretAsync (string accountId, string keyId)
+        {
+             await DeleteConnectSecretAsyncWithHttpInfo(accountId, keyId);
+
+        }
+
+        /// <summary>
+        /// Delete the connect HMAC Secret for AccountID 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="keyId"></param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteConnectSecretAsyncWithHttpInfo (string accountId, string keyId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->DeleteConnectSecret");
+            // verify the required parameter 'keyId' is set
+            if (keyId == null)
+                throw new ApiException(400, "Missing required parameter 'keyId' when calling ConnectApi->DeleteConnectSecret");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/secret/{keyId}/delete";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (keyId != null) localVarPathParams.Add("keyId", Configuration.ApiClient.ParameterToString(keyId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteConnectSecret", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1651,6 +2363,336 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>MobileNotifierConfigurationInformation</returns>
+        public MobileNotifierConfigurationInformation DeleteMobileNotifiers (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null)
+        {
+             ApiResponse<MobileNotifierConfigurationInformation> localVarResponse = DeleteMobileNotifiersWithHttpInfo(accountId, mobileNotifierConfigurationInformation);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>ApiResponse of MobileNotifierConfigurationInformation</returns>
+        public ApiResponse< MobileNotifierConfigurationInformation > DeleteMobileNotifiersWithHttpInfo (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->DeleteMobileNotifiers");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/mobile_notifiers";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (mobileNotifierConfigurationInformation != null && mobileNotifierConfigurationInformation.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(mobileNotifierConfigurationInformation); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = mobileNotifierConfigurationInformation; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteMobileNotifiers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<MobileNotifierConfigurationInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (MobileNotifierConfigurationInformation) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(MobileNotifierConfigurationInformation)));
+            }
+            else
+            {
+                return new ApiResponse<MobileNotifierConfigurationInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (MobileNotifierConfigurationInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(MobileNotifierConfigurationInformation)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>Task of MobileNotifierConfigurationInformation</returns>
+        public async System.Threading.Tasks.Task<MobileNotifierConfigurationInformation> DeleteMobileNotifiersAsync (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null)
+        {
+             ApiResponse<MobileNotifierConfigurationInformation> localVarResponse = await DeleteMobileNotifiersAsyncWithHttpInfo(accountId, mobileNotifierConfigurationInformation);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (MobileNotifierConfigurationInformation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<MobileNotifierConfigurationInformation>> DeleteMobileNotifiersAsyncWithHttpInfo (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->DeleteMobileNotifiers");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/mobile_notifiers";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (mobileNotifierConfigurationInformation != null && mobileNotifierConfigurationInformation.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(mobileNotifierConfigurationInformation); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = mobileNotifierConfigurationInformation; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteMobileNotifiers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<MobileNotifierConfigurationInformation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (MobileNotifierConfigurationInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(MobileNotifierConfigurationInformation)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Generates a new connect HMAC Secret. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns></returns>
+        public void GenerateConnectSecret (string accountId)
+        {
+             GenerateConnectSecretWithHttpInfo(accountId);
+        }
+
+        /// <summary>
+        /// Generates a new connect HMAC Secret. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> GenerateConnectSecretWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->GenerateConnectSecret");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/secret";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GenerateConnectSecret", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Generates a new connect HMAC Secret. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task GenerateConnectSecretAsync (string accountId)
+        {
+             await GenerateConnectSecretAsyncWithHttpInfo(accountId);
+
+        }
+
+        /// <summary>
+        /// Generates a new connect HMAC Secret. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GenerateConnectSecretAsyncWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->GenerateConnectSecret");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/secret";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GenerateConnectSecret", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+
+
+        /// <summary>
         /// Get a Connect Configuration Information Retrieves the information for the specified DocuSign Connect configuration.  ###### Note: Connect must be enabled for your account to use this function. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1816,6 +2858,158 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ConnectConfigResults) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectConfigResults)));
             
+        }
+
+
+
+        /// <summary>
+        /// Get the connect HMAC Secrets for AccountID 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns></returns>
+        public void GetConnectSecrets (string accountId)
+        {
+             GetConnectSecretsWithHttpInfo(accountId);
+        }
+
+        /// <summary>
+        /// Get the connect HMAC Secrets for AccountID 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> GetConnectSecretsWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->GetConnectSecrets");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/secrets";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetConnectSecrets", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Get the connect HMAC Secrets for AccountID 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task GetConnectSecretsAsync (string accountId)
+        {
+             await GetConnectSecretsAsyncWithHttpInfo(accountId);
+
+        }
+
+        /// <summary>
+        /// Get the connect HMAC Secrets for AccountID 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetConnectSecretsAsyncWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->GetConnectSecrets");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/secrets";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetConnectSecrets", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
 
@@ -2527,6 +3721,338 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<ConnectLogs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ConnectLogs) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectLogs)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>MobileNotifierConfigurationInformation</returns>
+        public MobileNotifierConfigurationInformation ListMobileNotifiers (string accountId)
+        {
+             ApiResponse<MobileNotifierConfigurationInformation> localVarResponse = ListMobileNotifiersWithHttpInfo(accountId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of MobileNotifierConfigurationInformation</returns>
+        public ApiResponse< MobileNotifierConfigurationInformation > ListMobileNotifiersWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->ListMobileNotifiers");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/mobile_notifiers";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListMobileNotifiers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<MobileNotifierConfigurationInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (MobileNotifierConfigurationInformation) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(MobileNotifierConfigurationInformation)));
+            }
+            else
+            {
+                return new ApiResponse<MobileNotifierConfigurationInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (MobileNotifierConfigurationInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(MobileNotifierConfigurationInformation)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of MobileNotifierConfigurationInformation</returns>
+        public async System.Threading.Tasks.Task<MobileNotifierConfigurationInformation> ListMobileNotifiersAsync (string accountId)
+        {
+             ApiResponse<MobileNotifierConfigurationInformation> localVarResponse = await ListMobileNotifiersAsyncWithHttpInfo(accountId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse (MobileNotifierConfigurationInformation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<MobileNotifierConfigurationInformation>> ListMobileNotifiersAsyncWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->ListMobileNotifiers");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/mobile_notifiers";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListMobileNotifiers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<MobileNotifierConfigurationInformation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (MobileNotifierConfigurationInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(MobileNotifierConfigurationInformation)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Test connect configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>ResourceInformation</returns>
+        public ResourceInformation ListTests (string accountId, string connectId)
+        {
+             ApiResponse<ResourceInformation> localVarResponse = ListTestsWithHttpInfo(accountId, connectId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Test connect configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>ApiResponse of ResourceInformation</returns>
+        public ApiResponse< ResourceInformation > ListTestsWithHttpInfo (string accountId, string connectId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->ListTests");
+            // verify the required parameter 'connectId' is set
+            if (connectId == null)
+                throw new ApiException(400, "Missing required parameter 'connectId' when calling ConnectApi->ListTests");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/{connectId}/tests";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (connectId != null) localVarPathParams.Add("connectId", Configuration.ApiClient.ParameterToString(connectId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListTests", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<ResourceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ResourceInformation) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ResourceInformation)));
+            }
+            else
+            {
+                return new ApiResponse<ResourceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ResourceInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResourceInformation)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Test connect configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>Task of ResourceInformation</returns>
+        public async System.Threading.Tasks.Task<ResourceInformation> ListTestsAsync (string accountId, string connectId)
+        {
+             ApiResponse<ResourceInformation> localVarResponse = await ListTestsAsyncWithHttpInfo(accountId, connectId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Test connect configuration. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        
+        /// <returns>Task of ApiResponse (ResourceInformation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ResourceInformation>> ListTestsAsyncWithHttpInfo (string accountId, string connectId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->ListTests");
+            // verify the required parameter 'connectId' is set
+            if (connectId == null)
+                throw new ApiException(400, "Missing required parameter 'connectId' when calling ConnectApi->ListTests");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/{connectId}/tests";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (connectId != null) localVarPathParams.Add("connectId", Configuration.ApiClient.ParameterToString(connectId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListTests", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ResourceInformation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ResourceInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResourceInformation)));
             
         }
 
@@ -3259,6 +4785,184 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<ConnectCustomConfiguration>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ConnectCustomConfiguration) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ConnectCustomConfiguration)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>MobileNotifierConfigurationInformation</returns>
+        public MobileNotifierConfigurationInformation UpdateMobileNotifiers (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null)
+        {
+             ApiResponse<MobileNotifierConfigurationInformation> localVarResponse = UpdateMobileNotifiersWithHttpInfo(accountId, mobileNotifierConfigurationInformation);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>ApiResponse of MobileNotifierConfigurationInformation</returns>
+        public ApiResponse< MobileNotifierConfigurationInformation > UpdateMobileNotifiersWithHttpInfo (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->UpdateMobileNotifiers");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/mobile_notifiers";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (mobileNotifierConfigurationInformation != null && mobileNotifierConfigurationInformation.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(mobileNotifierConfigurationInformation); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = mobileNotifierConfigurationInformation; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateMobileNotifiers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<MobileNotifierConfigurationInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (MobileNotifierConfigurationInformation) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(MobileNotifierConfigurationInformation)));
+            }
+            else
+            {
+                return new ApiResponse<MobileNotifierConfigurationInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (MobileNotifierConfigurationInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(MobileNotifierConfigurationInformation)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>Task of MobileNotifierConfigurationInformation</returns>
+        public async System.Threading.Tasks.Task<MobileNotifierConfigurationInformation> UpdateMobileNotifiersAsync (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null)
+        {
+             ApiResponse<MobileNotifierConfigurationInformation> localVarResponse = await UpdateMobileNotifiersAsyncWithHttpInfo(accountId, mobileNotifierConfigurationInformation);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Reserved Reserved:
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="mobileNotifierConfigurationInformation"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (MobileNotifierConfigurationInformation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<MobileNotifierConfigurationInformation>> UpdateMobileNotifiersAsyncWithHttpInfo (string accountId, MobileNotifierConfigurationInformation mobileNotifierConfigurationInformation = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->UpdateMobileNotifiers");
+
+            var localVarPath = "/v2/accounts/{accountId}/connect/mobile_notifiers";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (mobileNotifierConfigurationInformation != null && mobileNotifierConfigurationInformation.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(mobileNotifierConfigurationInformation); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = mobileNotifierConfigurationInformation; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateMobileNotifiers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<MobileNotifierConfigurationInformation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (MobileNotifierConfigurationInformation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(MobileNotifierConfigurationInformation)));
             
         }
 

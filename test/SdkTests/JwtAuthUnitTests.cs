@@ -401,9 +401,6 @@ namespace SdkTests
 
             Assert.IsNotNull(senderView);
 
-            // Start the embedded sending session
-            System.Diagnostics.Process.Start(senderView.Url);
-
             Assert.IsNotNull(senderView.Url);
         }
 
@@ -448,9 +445,6 @@ namespace SdkTests
             consoleViewRequest.ReturnUrl = testConfig.ReturnUrl;
 
             ViewUrl viewUrl = envelopesApi.CreateConsoleView(testConfig.AccountId, consoleViewRequest);
-
-            // Start the embedded signing session.
-            System.Diagnostics.Process.Start(viewUrl.Url);
 
             Assert.IsNotNull(viewUrl);
             Assert.IsNotNull(viewUrl.Url);
@@ -501,7 +495,7 @@ namespace SdkTests
             ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
-            Assert.AreEqual(ex.ErrorContent, "{\"error\":\"invalid_grant\"}");
+            Assert.AreEqual("{\"error\":\"invalid_grant\",\"error_description\":\"no_valid_keys_or_signatures\"}", ex.ErrorContent);
         }
 
         [TestMethod]
@@ -615,7 +609,7 @@ namespace SdkTests
 
             try
             {
-                foldersApi.MoveEnvelopes(testConfig.AccountId, ToFolderId, foldersRequest);
+               foldersApi.MoveEnvelopes(testConfig.AccountId, ToFolderId, foldersRequest);
             }
             catch (Exception ex)
             {
@@ -635,8 +629,11 @@ namespace SdkTests
             {
                 if (item.EnvelopeId == testConfig.EnvelopeId)
                 {
-                    doesExists = true;
-                    break;
+                    if (item.EnvelopeId == testConfig.EnvelopeId)
+                    {
+                        doesExists = true;
+                        break;
+                    }
                 }
             }
 

@@ -43,12 +43,13 @@ namespace DocuSign.eSign.Model
         /// <param name="CreditCardInformation">CreditCardInformation.</param>
         /// <param name="DistributorCode">The code that identifies the billing plan groups and plans for the new account..</param>
         /// <param name="DistributorPassword">The password for the distributorCode..</param>
+        /// <param name="EnvelopePartitionId">.</param>
         /// <param name="InitialUser">InitialUser.</param>
         /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="PlanInformation">PlanInformation.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
         /// <param name="SocialAccountInformation">SocialAccountInformation.</param>
-        public NewAccountDefinition(string AccountName = default(string), List<NameValue> AccountSettings = default(List<NameValue>), AccountAddress AddressInformation = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), string DistributorCode = default(string), string DistributorPassword = default(string), UserInformation InitialUser = default(UserInformation), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), SocialAccountInformation SocialAccountInformation = default(SocialAccountInformation))
+        public NewAccountDefinition(string AccountName = default(string), List<NameValue> AccountSettings = default(List<NameValue>), AccountAddress AddressInformation = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), string DistributorCode = default(string), string DistributorPassword = default(string), string EnvelopePartitionId = default(string), UserInformation InitialUser = default(UserInformation), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), SocialAccountInformation SocialAccountInformation = default(SocialAccountInformation))
         {
             this.AccountName = AccountName;
             this.AccountSettings = AccountSettings;
@@ -56,6 +57,7 @@ namespace DocuSign.eSign.Model
             this.CreditCardInformation = CreditCardInformation;
             this.DistributorCode = DistributorCode;
             this.DistributorPassword = DistributorPassword;
+            this.EnvelopePartitionId = EnvelopePartitionId;
             this.InitialUser = InitialUser;
             this.PaymentProcessorInformation = PaymentProcessorInformation;
             this.PlanInformation = PlanInformation;
@@ -98,6 +100,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="distributorPassword", EmitDefaultValue=false)]
         public string DistributorPassword { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="envelopePartitionId", EmitDefaultValue=false)]
+        public string EnvelopePartitionId { get; set; }
+        /// <summary>
         /// Gets or Sets InitialUser
         /// </summary>
         [DataMember(Name="initialUser", EmitDefaultValue=false)]
@@ -136,6 +144,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  CreditCardInformation: ").Append(CreditCardInformation).Append("\n");
             sb.Append("  DistributorCode: ").Append(DistributorCode).Append("\n");
             sb.Append("  DistributorPassword: ").Append(DistributorPassword).Append("\n");
+            sb.Append("  EnvelopePartitionId: ").Append(EnvelopePartitionId).Append("\n");
             sb.Append("  InitialUser: ").Append(InitialUser).Append("\n");
             sb.Append("  PaymentProcessorInformation: ").Append(PaymentProcessorInformation).Append("\n");
             sb.Append("  PlanInformation: ").Append(PlanInformation).Append("\n");
@@ -208,6 +217,11 @@ namespace DocuSign.eSign.Model
                     this.DistributorPassword.Equals(other.DistributorPassword)
                 ) && 
                 (
+                    this.EnvelopePartitionId == other.EnvelopePartitionId ||
+                    this.EnvelopePartitionId != null &&
+                    this.EnvelopePartitionId.Equals(other.EnvelopePartitionId)
+                ) && 
+                (
                     this.InitialUser == other.InitialUser ||
                     this.InitialUser != null &&
                     this.InitialUser.Equals(other.InitialUser)
@@ -257,6 +271,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DistributorCode.GetHashCode();
                 if (this.DistributorPassword != null)
                     hash = hash * 59 + this.DistributorPassword.GetHashCode();
+                if (this.EnvelopePartitionId != null)
+                    hash = hash * 59 + this.EnvelopePartitionId.GetHashCode();
                 if (this.InitialUser != null)
                     hash = hash * 59 + this.InitialUser.GetHashCode();
                 if (this.PaymentProcessorInformation != null)

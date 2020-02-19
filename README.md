@@ -6,14 +6,14 @@
 
 ## Requirements
 
-- Microsoft .NET version 4.5+ (4.6.1 recommended)
+- Microsoft .NET version 4.5.2+ (4.7 recommended)
 - Free [Developer Sandbox](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
 
 ## Compatibility
 
 - .NET Standard 2.0. See [.NET Standard Selector](https://immo.landwerth.net/netstandard-versions/) for details on versioning for the individual components in .NET Standard
 - .NET Core 2.0
-- Microsoft .NET version 4.5+
+- Microsoft .NET version 4.5.2+
 - TLS 1.2
 
 ## Note
@@ -54,14 +54,15 @@ This client has the following external dependencies:
 - System.IdentityModel.tokens.Jwt v5.4.0
 
 
-### .NET Framework, version 4.5:
+### .NET Framework, version 4.5.2:
 
 - BouncyCastle v1.8.1
-- Microsoft.Identity.Model.Logging v1.1.4
-- Microsoft.IdentityModel.Tokens v5.1.14
-- Newtonsoft.Json v10.0.0.1
-- RestSharpSigned v105.2.3
-- System.IdentityModel.Tokens.Jwt v5.1.4
+- Microsoft.CSharp v4.5.0
+- Microsoft.IdentityModel.Protocols v5.4.0
+- Newtonsoft.Json 11.0.2
+- RestSharp v106.3.1
+- System.ComponentModel.Annotations v4.5.0
+- System.IdentityModel.tokens.Jwt v5.4.0
 
 
 ## Code Examples

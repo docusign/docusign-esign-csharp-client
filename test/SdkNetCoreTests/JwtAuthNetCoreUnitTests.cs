@@ -500,7 +500,7 @@ namespace SdkNetCoreTests
             ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
-            Assert.AreEqual("{\"error\":\"invalid_grant\"}", ex.ErrorContent);
+            Assert.AreEqual("{\"error\":\"invalid_grant\",\"error_description\":\"no_valid_keys_or_signatures\"}", ex.ErrorContent);
         }
 
         [TestMethod]

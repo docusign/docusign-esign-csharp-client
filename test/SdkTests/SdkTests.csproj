@@ -16,6 +16,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <ReferencePath>$(ProgramFiles)\Microsoft Visual Studio 14.0\Common7\IDE\PublicAssemblies</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
+    <IsTestProject>true</IsTestProject>
     <TestProjectType>UnitTest</TestProjectType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>

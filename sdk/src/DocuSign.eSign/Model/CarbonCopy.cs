@@ -50,6 +50,8 @@ namespace DocuSign.eSign.Model
         /// <param name="DeliveredDateTime">Reserved: For DocuSign use only..</param>
         /// <param name="DeliveryMethod">Reserved: For DocuSign use only..</param>
         /// <param name="DeliveryMethodMetadata">DeliveryMethodMetadata.</param>
+        /// <param name="DesignatorId">.</param>
+        /// <param name="DesignatorIdGuid">.</param>
         /// <param name="DocumentVisibility">.</param>
         /// <param name="Email">Email id of the recipient. Notification of the document to sign is sent to this email id.   Maximum length: 100 characters. .</param>
         /// <param name="EmailMetadata">EmailMetadata.</param>
@@ -66,6 +68,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IdCheckConfigurationName">Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node..</param>
         /// <param name="IdCheckConfigurationNameMetadata">IdCheckConfigurationNameMetadata.</param>
         /// <param name="IdCheckInformationInput">IdCheckInformationInput.</param>
+        /// <param name="IdentityVerification">IdentityVerification.</param>
         /// <param name="InheritEmailNotificationConfiguration">When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient&#39;s account. .</param>
         /// <param name="LastName">.</param>
         /// <param name="LastNameMetadata">LastNameMetadata.</param>
@@ -76,6 +79,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Note">Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters..</param>
         /// <param name="NoteMetadata">NoteMetadata.</param>
         /// <param name="PhoneAuthentication">PhoneAuthentication.</param>
+        /// <param name="ProofFile">ProofFile.</param>
         /// <param name="RecipientAttachments">Reserved:.</param>
         /// <param name="RecipientAuthenticationStatus">RecipientAuthenticationStatus.</param>
         /// <param name="RecipientFeatureMetadata">.</param>
@@ -104,7 +108,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TotalTabCount">.</param>
         /// <param name="UserId">.</param>
-        public CarbonCopy(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), string AgentCanEditEmail = default(string), string AgentCanEditName = default(string), string ClientUserId = default(string), string CompletedCount = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), PropertyMetadata EmailMetadata = default(PropertyMetadata), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<string> ExcludedDocuments = default(List<string>), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string FirstName = default(string), PropertyMetadata FirstNameMetadata = default(PropertyMetadata), string FullName = default(string), PropertyMetadata FullNameMetadata = default(PropertyMetadata), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string InheritEmailNotificationConfiguration = default(string), string LastName = default(string), PropertyMetadata LastNameMetadata = default(PropertyMetadata), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), string SignedDateTime = default(string), string SigningGroupId = default(string), PropertyMetadata SigningGroupIdMetadata = default(PropertyMetadata), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), string SuppressEmails = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
+        public CarbonCopy(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), string AgentCanEditEmail = default(string), string AgentCanEditName = default(string), string ClientUserId = default(string), string CompletedCount = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), string DesignatorId = default(string), string DesignatorIdGuid = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), PropertyMetadata EmailMetadata = default(PropertyMetadata), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<string> ExcludedDocuments = default(List<string>), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string FirstName = default(string), PropertyMetadata FirstNameMetadata = default(PropertyMetadata), string FullName = default(string), PropertyMetadata FullNameMetadata = default(PropertyMetadata), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string InheritEmailNotificationConfiguration = default(string), string LastName = default(string), PropertyMetadata LastNameMetadata = default(PropertyMetadata), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), RecipientProofFile ProofFile = default(RecipientProofFile), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), string SignedDateTime = default(string), string SigningGroupId = default(string), PropertyMetadata SigningGroupIdMetadata = default(PropertyMetadata), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), string SuppressEmails = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
         {
             this.AccessCode = AccessCode;
             this.AccessCodeMetadata = AccessCodeMetadata;
@@ -119,6 +123,8 @@ namespace DocuSign.eSign.Model
             this.DeliveredDateTime = DeliveredDateTime;
             this.DeliveryMethod = DeliveryMethod;
             this.DeliveryMethodMetadata = DeliveryMethodMetadata;
+            this.DesignatorId = DesignatorId;
+            this.DesignatorIdGuid = DesignatorIdGuid;
             this.DocumentVisibility = DocumentVisibility;
             this.Email = Email;
             this.EmailMetadata = EmailMetadata;
@@ -135,6 +141,7 @@ namespace DocuSign.eSign.Model
             this.IdCheckConfigurationName = IdCheckConfigurationName;
             this.IdCheckConfigurationNameMetadata = IdCheckConfigurationNameMetadata;
             this.IdCheckInformationInput = IdCheckInformationInput;
+            this.IdentityVerification = IdentityVerification;
             this.InheritEmailNotificationConfiguration = InheritEmailNotificationConfiguration;
             this.LastName = LastName;
             this.LastNameMetadata = LastNameMetadata;
@@ -145,6 +152,7 @@ namespace DocuSign.eSign.Model
             this.Note = Note;
             this.NoteMetadata = NoteMetadata;
             this.PhoneAuthentication = PhoneAuthentication;
+            this.ProofFile = ProofFile;
             this.RecipientAttachments = RecipientAttachments;
             this.RecipientAuthenticationStatus = RecipientAuthenticationStatus;
             this.RecipientFeatureMetadata = RecipientFeatureMetadata;
@@ -255,6 +263,18 @@ namespace DocuSign.eSign.Model
         /// 
         /// </summary>
         /// <value></value>
+        [DataMember(Name="designatorId", EmitDefaultValue=false)]
+        public string DesignatorId { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="designatorIdGuid", EmitDefaultValue=false)]
+        public string DesignatorIdGuid { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
         [DataMember(Name="documentVisibility", EmitDefaultValue=false)]
         public List<DocumentVisibility> DocumentVisibility { get; set; }
         /// <summary>
@@ -340,6 +360,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="idCheckInformationInput", EmitDefaultValue=false)]
         public IdCheckInformationInput IdCheckInformationInput { get; set; }
         /// <summary>
+        /// Gets or Sets IdentityVerification
+        /// </summary>
+        [DataMember(Name="identityVerification", EmitDefaultValue=false)]
+        public RecipientIdentityVerification IdentityVerification { get; set; }
+        /// <summary>
         /// When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient&#39;s account. 
         /// </summary>
         /// <value>When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient&#39;s account. </value>
@@ -395,6 +420,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="phoneAuthentication", EmitDefaultValue=false)]
         public RecipientPhoneAuthentication PhoneAuthentication { get; set; }
+        /// <summary>
+        /// Gets or Sets ProofFile
+        /// </summary>
+        [DataMember(Name="proofFile", EmitDefaultValue=false)]
+        public RecipientProofFile ProofFile { get; set; }
         /// <summary>
         /// Reserved:
         /// </summary>
@@ -577,6 +607,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  DeliveredDateTime: ").Append(DeliveredDateTime).Append("\n");
             sb.Append("  DeliveryMethod: ").Append(DeliveryMethod).Append("\n");
             sb.Append("  DeliveryMethodMetadata: ").Append(DeliveryMethodMetadata).Append("\n");
+            sb.Append("  DesignatorId: ").Append(DesignatorId).Append("\n");
+            sb.Append("  DesignatorIdGuid: ").Append(DesignatorIdGuid).Append("\n");
             sb.Append("  DocumentVisibility: ").Append(DocumentVisibility).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  EmailMetadata: ").Append(EmailMetadata).Append("\n");
@@ -593,6 +625,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IdCheckConfigurationName: ").Append(IdCheckConfigurationName).Append("\n");
             sb.Append("  IdCheckConfigurationNameMetadata: ").Append(IdCheckConfigurationNameMetadata).Append("\n");
             sb.Append("  IdCheckInformationInput: ").Append(IdCheckInformationInput).Append("\n");
+            sb.Append("  IdentityVerification: ").Append(IdentityVerification).Append("\n");
             sb.Append("  InheritEmailNotificationConfiguration: ").Append(InheritEmailNotificationConfiguration).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  LastNameMetadata: ").Append(LastNameMetadata).Append("\n");
@@ -603,6 +636,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Note: ").Append(Note).Append("\n");
             sb.Append("  NoteMetadata: ").Append(NoteMetadata).Append("\n");
             sb.Append("  PhoneAuthentication: ").Append(PhoneAuthentication).Append("\n");
+            sb.Append("  ProofFile: ").Append(ProofFile).Append("\n");
             sb.Append("  RecipientAttachments: ").Append(RecipientAttachments).Append("\n");
             sb.Append("  RecipientAuthenticationStatus: ").Append(RecipientAuthenticationStatus).Append("\n");
             sb.Append("  RecipientFeatureMetadata: ").Append(RecipientFeatureMetadata).Append("\n");
@@ -733,6 +767,16 @@ namespace DocuSign.eSign.Model
                     this.DeliveryMethodMetadata.Equals(other.DeliveryMethodMetadata)
                 ) && 
                 (
+                    this.DesignatorId == other.DesignatorId ||
+                    this.DesignatorId != null &&
+                    this.DesignatorId.Equals(other.DesignatorId)
+                ) && 
+                (
+                    this.DesignatorIdGuid == other.DesignatorIdGuid ||
+                    this.DesignatorIdGuid != null &&
+                    this.DesignatorIdGuid.Equals(other.DesignatorIdGuid)
+                ) && 
+                (
                     this.DocumentVisibility == other.DocumentVisibility ||
                     this.DocumentVisibility != null &&
                     this.DocumentVisibility.SequenceEqual(other.DocumentVisibility)
@@ -813,6 +857,11 @@ namespace DocuSign.eSign.Model
                     this.IdCheckInformationInput.Equals(other.IdCheckInformationInput)
                 ) && 
                 (
+                    this.IdentityVerification == other.IdentityVerification ||
+                    this.IdentityVerification != null &&
+                    this.IdentityVerification.Equals(other.IdentityVerification)
+                ) && 
+                (
                     this.InheritEmailNotificationConfiguration == other.InheritEmailNotificationConfiguration ||
                     this.InheritEmailNotificationConfiguration != null &&
                     this.InheritEmailNotificationConfiguration.Equals(other.InheritEmailNotificationConfiguration)
@@ -861,6 +910,11 @@ namespace DocuSign.eSign.Model
                     this.PhoneAuthentication == other.PhoneAuthentication ||
                     this.PhoneAuthentication != null &&
                     this.PhoneAuthentication.Equals(other.PhoneAuthentication)
+                ) && 
+                (
+                    this.ProofFile == other.ProofFile ||
+                    this.ProofFile != null &&
+                    this.ProofFile.Equals(other.ProofFile)
                 ) && 
                 (
                     this.RecipientAttachments == other.RecipientAttachments ||
@@ -1041,6 +1095,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DeliveryMethod.GetHashCode();
                 if (this.DeliveryMethodMetadata != null)
                     hash = hash * 59 + this.DeliveryMethodMetadata.GetHashCode();
+                if (this.DesignatorId != null)
+                    hash = hash * 59 + this.DesignatorId.GetHashCode();
+                if (this.DesignatorIdGuid != null)
+                    hash = hash * 59 + this.DesignatorIdGuid.GetHashCode();
                 if (this.DocumentVisibility != null)
                     hash = hash * 59 + this.DocumentVisibility.GetHashCode();
                 if (this.Email != null)
@@ -1073,6 +1131,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IdCheckConfigurationNameMetadata.GetHashCode();
                 if (this.IdCheckInformationInput != null)
                     hash = hash * 59 + this.IdCheckInformationInput.GetHashCode();
+                if (this.IdentityVerification != null)
+                    hash = hash * 59 + this.IdentityVerification.GetHashCode();
                 if (this.InheritEmailNotificationConfiguration != null)
                     hash = hash * 59 + this.InheritEmailNotificationConfiguration.GetHashCode();
                 if (this.LastName != null)
@@ -1093,6 +1153,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.NoteMetadata.GetHashCode();
                 if (this.PhoneAuthentication != null)
                     hash = hash * 59 + this.PhoneAuthentication.GetHashCode();
+                if (this.ProofFile != null)
+                    hash = hash * 59 + this.ProofFile.GetHashCode();
                 if (this.RecipientAttachments != null)
                     hash = hash * 59 + this.RecipientAttachments.GetHashCode();
                 if (this.RecipientAuthenticationStatus != null)

@@ -37,6 +37,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Text" /> class.
         /// </summary>
+        /// <param name="AnchorAllowWhiteSpaceInCharacters">.</param>
+        /// <param name="AnchorAllowWhiteSpaceInCharactersMetadata">AnchorAllowWhiteSpaceInCharactersMetadata.</param>
         /// <param name="AnchorCaseSensitive">When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**..</param>
         /// <param name="AnchorCaseSensitiveMetadata">AnchorCaseSensitiveMetadata.</param>
         /// <param name="AnchorHorizontalAlignment">Specifies the alignment of anchor tabs with anchor strings. Possible values are **left** or **right**. The default value is **left**..</param>
@@ -117,6 +119,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SenderRequiredMetadata">SenderRequiredMetadata.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="SharedMetadata">SharedMetadata.</param>
+        /// <param name="SmartContractInformation">SmartContractInformation.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusMetadata">StatusMetadata.</param>
         /// <param name="TabGroupLabels">.</param>
@@ -149,8 +152,10 @@ namespace DocuSign.eSign.Model
         /// <param name="XPositionMetadata">XPositionMetadata.</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPositionMetadata">YPositionMetadata.</param>
-        public Text(string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string ConcealValueOnDocument = default(string), PropertyMetadata ConcealValueOnDocumentMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DisableAutoSize = default(string), PropertyMetadata DisableAutoSizeMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Formula = default(string), PropertyMetadata FormulaMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string IsPaymentAmount = default(string), PropertyMetadata IsPaymentAmountMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), LocalePolicyTab LocalePolicy = default(LocalePolicyTab), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string MaxLength = default(string), PropertyMetadata MaxLengthMetadata = default(PropertyMetadata), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string OriginalValue = default(string), PropertyMetadata OriginalValueMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string RequireAll = default(string), PropertyMetadata RequireAllMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string RequireInitialOnSharedChange = default(string), PropertyMetadata RequireInitialOnSharedChangeMetadata = default(PropertyMetadata), string SenderRequired = default(string), PropertyMetadata SenderRequiredMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabLabel = default(string), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string ValidationMessage = default(string), PropertyMetadata ValidationMessageMetadata = default(PropertyMetadata), string ValidationPattern = default(string), PropertyMetadata ValidationPatternMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
+        public Text(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string ConcealValueOnDocument = default(string), PropertyMetadata ConcealValueOnDocumentMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DisableAutoSize = default(string), PropertyMetadata DisableAutoSizeMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Formula = default(string), PropertyMetadata FormulaMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string IsPaymentAmount = default(string), PropertyMetadata IsPaymentAmountMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), LocalePolicyTab LocalePolicy = default(LocalePolicyTab), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string MaxLength = default(string), PropertyMetadata MaxLengthMetadata = default(PropertyMetadata), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string OriginalValue = default(string), PropertyMetadata OriginalValueMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string RequireAll = default(string), PropertyMetadata RequireAllMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string RequireInitialOnSharedChange = default(string), PropertyMetadata RequireInitialOnSharedChangeMetadata = default(PropertyMetadata), string SenderRequired = default(string), PropertyMetadata SenderRequiredMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), SmartContractInformation SmartContractInformation = default(SmartContractInformation), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabLabel = default(string), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string ValidationMessage = default(string), PropertyMetadata ValidationMessageMetadata = default(PropertyMetadata), string ValidationPattern = default(string), PropertyMetadata ValidationPatternMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
+            this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
+            this.AnchorAllowWhiteSpaceInCharactersMetadata = AnchorAllowWhiteSpaceInCharactersMetadata;
             this.AnchorCaseSensitive = AnchorCaseSensitive;
             this.AnchorCaseSensitiveMetadata = AnchorCaseSensitiveMetadata;
             this.AnchorHorizontalAlignment = AnchorHorizontalAlignment;
@@ -231,6 +236,7 @@ namespace DocuSign.eSign.Model
             this.SenderRequiredMetadata = SenderRequiredMetadata;
             this.Shared = Shared;
             this.SharedMetadata = SharedMetadata;
+            this.SmartContractInformation = SmartContractInformation;
             this.Status = Status;
             this.StatusMetadata = StatusMetadata;
             this.TabGroupLabels = TabGroupLabels;
@@ -265,6 +271,17 @@ namespace DocuSign.eSign.Model
             this.YPositionMetadata = YPositionMetadata;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="anchorAllowWhiteSpaceInCharacters", EmitDefaultValue=false)]
+        public string AnchorAllowWhiteSpaceInCharacters { get; set; }
+        /// <summary>
+        /// Gets or Sets AnchorAllowWhiteSpaceInCharactersMetadata
+        /// </summary>
+        [DataMember(Name="anchorAllowWhiteSpaceInCharactersMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata { get; set; }
         /// <summary>
         /// When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
         /// </summary>
@@ -705,6 +722,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="sharedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SharedMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets SmartContractInformation
+        /// </summary>
+        [DataMember(Name="smartContractInformation", EmitDefaultValue=false)]
+        public SmartContractInformation SmartContractInformation { get; set; }
+        /// <summary>
         /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
         /// </summary>
         /// <value>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.</value>
@@ -888,6 +910,8 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Text {\n");
+            sb.Append("  AnchorAllowWhiteSpaceInCharacters: ").Append(AnchorAllowWhiteSpaceInCharacters).Append("\n");
+            sb.Append("  AnchorAllowWhiteSpaceInCharactersMetadata: ").Append(AnchorAllowWhiteSpaceInCharactersMetadata).Append("\n");
             sb.Append("  AnchorCaseSensitive: ").Append(AnchorCaseSensitive).Append("\n");
             sb.Append("  AnchorCaseSensitiveMetadata: ").Append(AnchorCaseSensitiveMetadata).Append("\n");
             sb.Append("  AnchorHorizontalAlignment: ").Append(AnchorHorizontalAlignment).Append("\n");
@@ -968,6 +992,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SenderRequiredMetadata: ").Append(SenderRequiredMetadata).Append("\n");
             sb.Append("  Shared: ").Append(Shared).Append("\n");
             sb.Append("  SharedMetadata: ").Append(SharedMetadata).Append("\n");
+            sb.Append("  SmartContractInformation: ").Append(SmartContractInformation).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StatusMetadata: ").Append(StatusMetadata).Append("\n");
             sb.Append("  TabGroupLabels: ").Append(TabGroupLabels).Append("\n");
@@ -1036,6 +1061,16 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.AnchorAllowWhiteSpaceInCharacters == other.AnchorAllowWhiteSpaceInCharacters ||
+                    this.AnchorAllowWhiteSpaceInCharacters != null &&
+                    this.AnchorAllowWhiteSpaceInCharacters.Equals(other.AnchorAllowWhiteSpaceInCharacters)
+                ) && 
+                (
+                    this.AnchorAllowWhiteSpaceInCharactersMetadata == other.AnchorAllowWhiteSpaceInCharactersMetadata ||
+                    this.AnchorAllowWhiteSpaceInCharactersMetadata != null &&
+                    this.AnchorAllowWhiteSpaceInCharactersMetadata.Equals(other.AnchorAllowWhiteSpaceInCharactersMetadata)
+                ) && 
                 (
                     this.AnchorCaseSensitive == other.AnchorCaseSensitive ||
                     this.AnchorCaseSensitive != null &&
@@ -1437,6 +1472,11 @@ namespace DocuSign.eSign.Model
                     this.SharedMetadata.Equals(other.SharedMetadata)
                 ) && 
                 (
+                    this.SmartContractInformation == other.SmartContractInformation ||
+                    this.SmartContractInformation != null &&
+                    this.SmartContractInformation.Equals(other.SmartContractInformation)
+                ) && 
+                (
                     this.Status == other.Status ||
                     this.Status != null &&
                     this.Status.Equals(other.Status)
@@ -1609,6 +1649,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AnchorAllowWhiteSpaceInCharacters != null)
+                    hash = hash * 59 + this.AnchorAllowWhiteSpaceInCharacters.GetHashCode();
+                if (this.AnchorAllowWhiteSpaceInCharactersMetadata != null)
+                    hash = hash * 59 + this.AnchorAllowWhiteSpaceInCharactersMetadata.GetHashCode();
                 if (this.AnchorCaseSensitive != null)
                     hash = hash * 59 + this.AnchorCaseSensitive.GetHashCode();
                 if (this.AnchorCaseSensitiveMetadata != null)
@@ -1769,6 +1813,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Shared.GetHashCode();
                 if (this.SharedMetadata != null)
                     hash = hash * 59 + this.SharedMetadata.GetHashCode();
+                if (this.SmartContractInformation != null)
+                    hash = hash * 59 + this.SmartContractInformation.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.StatusMetadata != null)

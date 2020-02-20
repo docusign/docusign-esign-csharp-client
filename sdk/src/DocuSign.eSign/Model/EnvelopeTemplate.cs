@@ -121,7 +121,6 @@ namespace DocuSign.eSign.Model
         /// <param name="Sender">Sender.</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
-        /// <param name="SharedWithMe">.</param>
         /// <param name="SignerCanSignOnMobile">.</param>
         /// <param name="SigningLocation">Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
@@ -134,7 +133,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UseDisclosure">When set to **true**, the disclosure is shown to recipients in accordance with the account&#39;s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the &#x60;useDisclosure&#x60; property is not set, then the account&#39;s normal disclosure setting is used and the value of the &#x60;useDisclosure&#x60; property is not returned in responses when getting envelope information..</param>
         /// <param name="VoidedDateTime">The date and time the envelope or template was voided..</param>
         /// <param name="VoidedReason">The reason the envelope or template was voided..</param>
-        public EnvelopeTemplate(string AccessControlListBase64 = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string Asynchronous = default(string), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoMatch = default(string), string AutoMatchSpecifiedByUser = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), string Created = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string Description = default(string), string DisableResponsiveDocument = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), string FavoritedByMe = default(string), string FolderId = default(string), List<string> FolderIds = default(List<string>), string FolderName = default(string), List<Folder> Folders = default(List<Folder>), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string LastModified = default(string), UserInfo LastModifiedBy = default(UserInfo), string LastModifiedDateTime = default(string), string LastUsed = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), string Name = default(string), string NewPassword = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), UserInfo Owner = default(UserInfo), string PageCount = default(string), string Password = default(string), string PasswordProtected = default(string), PowerForm PowerForm = default(PowerForm), List<PowerForm> PowerForms = default(List<PowerForm>), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string Shared = default(string), string SharedWithMe = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string StatusDateTime = default(string), string TemplateId = default(string), string TemplatesUri = default(string), string TransactionId = default(string), string Uri = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string))
+        public EnvelopeTemplate(string AccessControlListBase64 = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string Asynchronous = default(string), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoMatch = default(string), string AutoMatchSpecifiedByUser = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), string Created = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string Description = default(string), string DisableResponsiveDocument = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), string FavoritedByMe = default(string), string FolderId = default(string), List<string> FolderIds = default(List<string>), string FolderName = default(string), List<Folder> Folders = default(List<Folder>), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string LastModified = default(string), UserInfo LastModifiedBy = default(UserInfo), string LastModifiedDateTime = default(string), string LastUsed = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), string Name = default(string), string NewPassword = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), UserInfo Owner = default(UserInfo), string PageCount = default(string), string Password = default(string), string PasswordProtected = default(string), PowerForm PowerForm = default(PowerForm), List<PowerForm> PowerForms = default(List<PowerForm>), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string Shared = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string StatusDateTime = default(string), string TemplateId = default(string), string TemplatesUri = default(string), string TransactionId = default(string), string Uri = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string))
         {
             this.AccessControlListBase64 = AccessControlListBase64;
             this.AllowComments = AllowComments;
@@ -220,7 +219,6 @@ namespace DocuSign.eSign.Model
             this.Sender = Sender;
             this.SentDateTime = SentDateTime;
             this.Shared = Shared;
-            this.SharedWithMe = SharedWithMe;
             this.SignerCanSignOnMobile = SignerCanSignOnMobile;
             this.SigningLocation = SigningLocation;
             this.Status = Status;
@@ -733,12 +731,6 @@ namespace DocuSign.eSign.Model
         /// 
         /// </summary>
         /// <value></value>
-        [DataMember(Name="sharedWithMe", EmitDefaultValue=false)]
-        public string SharedWithMe { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
         [DataMember(Name="signerCanSignOnMobile", EmitDefaultValue=false)]
         public string SignerCanSignOnMobile { get; set; }
         /// <summary>
@@ -899,7 +891,6 @@ namespace DocuSign.eSign.Model
             sb.Append("  Sender: ").Append(Sender).Append("\n");
             sb.Append("  SentDateTime: ").Append(SentDateTime).Append("\n");
             sb.Append("  Shared: ").Append(Shared).Append("\n");
-            sb.Append("  SharedWithMe: ").Append(SharedWithMe).Append("\n");
             sb.Append("  SignerCanSignOnMobile: ").Append(SignerCanSignOnMobile).Append("\n");
             sb.Append("  SigningLocation: ").Append(SigningLocation).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -1369,11 +1360,6 @@ namespace DocuSign.eSign.Model
                     this.Shared.Equals(other.Shared)
                 ) && 
                 (
-                    this.SharedWithMe == other.SharedWithMe ||
-                    this.SharedWithMe != null &&
-                    this.SharedWithMe.Equals(other.SharedWithMe)
-                ) && 
-                (
                     this.SignerCanSignOnMobile == other.SignerCanSignOnMobile ||
                     this.SignerCanSignOnMobile != null &&
                     this.SignerCanSignOnMobile.Equals(other.SignerCanSignOnMobile)
@@ -1614,8 +1600,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SentDateTime.GetHashCode();
                 if (this.Shared != null)
                     hash = hash * 59 + this.Shared.GetHashCode();
-                if (this.SharedWithMe != null)
-                    hash = hash * 59 + this.SharedWithMe.GetHashCode();
                 if (this.SignerCanSignOnMobile != null)
                     hash = hash * 59 + this.SignerCanSignOnMobile.GetHashCode();
                 if (this.SigningLocation != null)

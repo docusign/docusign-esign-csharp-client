@@ -25,6 +25,181 @@ namespace DocuSign.eSign.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Add a notary to the system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns></returns>
+        Notary CreateNotary (Notary notary = null);
+
+        /// <summary>
+        /// Add a notary to the system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<Notary> CreateNotaryWithHttpInfo (Notary notary = null);
+        /// <summary>
+        /// Add a notary jurisdiction to the system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns></returns>
+        NotaryJurisdiction CreateNotaryJurisdictions (NotaryJurisdiction notaryJurisdiction = null);
+
+        /// <summary>
+        /// Add a notary jurisdiction to the system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<NotaryJurisdiction> CreateNotaryJurisdictionsWithHttpInfo (NotaryJurisdiction notaryJurisdiction = null);
+        /// <summary>
+        /// Delete a notary jurisdiction a specified user.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns></returns>
+        void DeleteNotaryJurisdiction (string jurisdictionId);
+
+        /// <summary>
+        /// Delete a notary jurisdiction a specified user.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteNotaryJurisdictionWithHttpInfo (string jurisdictionId);
+        /// <summary>
+        /// Get notary settings for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        NotaryResult GetNotary (NotaryApi.GetNotaryOptions options = null);
+
+        /// <summary>
+        /// Get notary settings for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<NotaryResult> GetNotaryWithHttpInfo (NotaryApi.GetNotaryOptions options = null);
+        /// <summary>
+        /// Get notary a jurisdiction for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns></returns>
+        NotaryJurisdiction GetNotaryJurisdiction (string jurisdictionId);
+
+        /// <summary>
+        /// Get notary a jurisdiction for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<NotaryJurisdiction> GetNotaryJurisdictionWithHttpInfo (string jurisdictionId);
+        /// <summary>
+        /// Get notary seal for a jurisdiction
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns></returns>
+        void GetNotaryJurisdictionSeal (string jurisdictionId);
+
+        /// <summary>
+        /// Get notary seal for a jurisdiction
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> GetNotaryJurisdictionSealWithHttpInfo (string jurisdictionId);
+        /// <summary>
+        /// Get notary jurisdictions for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        
+        /// <returns></returns>
+        NotaryJurisdictionList GetNotaryJurisdictions ();
+
+        /// <summary>
+        /// Get notary jurisdictions for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<NotaryJurisdictionList> GetNotaryJurisdictionsWithHttpInfo ();
+        /// <summary>
         /// Get notary jurisdictions for a user
         /// </summary>
         /// <remarks>
@@ -49,8 +224,233 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<NotaryJournalList> ListNotaryJournalsWithHttpInfo (NotaryApi.ListNotaryJournalsOptions options = null);
+        /// <summary>
+        /// Update a notary
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns></returns>
+        Notary UpdateNotary (Notary notary = null);
+
+        /// <summary>
+        /// Update a notary
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<Notary> UpdateNotaryWithHttpInfo (Notary notary = null);
+        /// <summary>
+        /// Update a notary jurisdiction
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns></returns>
+        NotaryJurisdiction UpdateNotaryJurisdiction (string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null);
+
+        /// <summary>
+        /// Update a notary jurisdiction
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<NotaryJurisdiction> UpdateNotaryJurisdictionWithHttpInfo (string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
+        /// <summary>
+        /// Add a notary to the system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>Task of Notary</returns>
+        System.Threading.Tasks.Task<Notary> CreateNotaryAsync (Notary notary = null);
+
+        /// <summary>
+        /// Add a notary to the system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (Notary)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Notary>> CreateNotaryAsyncWithHttpInfo (Notary notary = null);
+        /// <summary>
+        /// Add a notary jurisdiction to the system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>Task of NotaryJurisdiction</returns>
+        System.Threading.Tasks.Task<NotaryJurisdiction> CreateNotaryJurisdictionsAsync (NotaryJurisdiction notaryJurisdiction = null);
+
+        /// <summary>
+        /// Add a notary jurisdiction to the system
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (NotaryJurisdiction)</returns>
+        System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> CreateNotaryJurisdictionsAsyncWithHttpInfo (NotaryJurisdiction notaryJurisdiction = null);
+        /// <summary>
+        /// Delete a notary jurisdiction a specified user.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteNotaryJurisdictionAsync (string jurisdictionId);
+
+        /// <summary>
+        /// Delete a notary jurisdiction a specified user.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteNotaryJurisdictionAsyncWithHttpInfo (string jurisdictionId);
+        /// <summary>
+        /// Get notary settings for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of NotaryResult</returns>
+        System.Threading.Tasks.Task<NotaryResult> GetNotaryAsync (NotaryApi.GetNotaryOptions options = null);
+
+        /// <summary>
+        /// Get notary settings for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (NotaryResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<NotaryResult>> GetNotaryAsyncWithHttpInfo (NotaryApi.GetNotaryOptions options = null);
+        /// <summary>
+        /// Get notary a jurisdiction for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of NotaryJurisdiction</returns>
+        System.Threading.Tasks.Task<NotaryJurisdiction> GetNotaryJurisdictionAsync (string jurisdictionId);
+
+        /// <summary>
+        /// Get notary a jurisdiction for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of ApiResponse (NotaryJurisdiction)</returns>
+        System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> GetNotaryJurisdictionAsyncWithHttpInfo (string jurisdictionId);
+        /// <summary>
+        /// Get notary seal for a jurisdiction
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task GetNotaryJurisdictionSealAsync (string jurisdictionId);
+
+        /// <summary>
+        /// Get notary seal for a jurisdiction
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetNotaryJurisdictionSealAsyncWithHttpInfo (string jurisdictionId);
+        /// <summary>
+        /// Get notary jurisdictions for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        
+        /// <returns>Task of NotaryJurisdictionList</returns>
+        System.Threading.Tasks.Task<NotaryJurisdictionList> GetNotaryJurisdictionsAsync ();
+
+        /// <summary>
+        /// Get notary jurisdictions for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        
+        /// <returns>Task of ApiResponse (NotaryJurisdictionList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<NotaryJurisdictionList>> GetNotaryJurisdictionsAsyncWithHttpInfo ();
         /// <summary>
         /// Get notary jurisdictions for a user
         /// </summary>
@@ -76,6 +476,56 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (NotaryJournalList)</returns>
         System.Threading.Tasks.Task<ApiResponse<NotaryJournalList>> ListNotaryJournalsAsyncWithHttpInfo (NotaryApi.ListNotaryJournalsOptions options = null);
+        /// <summary>
+        /// Update a notary
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>Task of Notary</returns>
+        System.Threading.Tasks.Task<Notary> UpdateNotaryAsync (Notary notary = null);
+
+        /// <summary>
+        /// Update a notary
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (Notary)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Notary>> UpdateNotaryAsyncWithHttpInfo (Notary notary = null);
+        /// <summary>
+        /// Update a notary jurisdiction
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>Task of NotaryJurisdiction</returns>
+        System.Threading.Tasks.Task<NotaryJurisdiction> UpdateNotaryJurisdictionAsync (string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null);
+
+        /// <summary>
+        /// Update a notary jurisdiction
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (NotaryJurisdiction)</returns>
+        System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> UpdateNotaryJurisdictionAsyncWithHttpInfo (string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null);
         #endregion Asynchronous Operations
     }
 
@@ -186,6 +636,1136 @@ namespace DocuSign.eSign.Api
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
+        }
+
+
+
+        /// <summary>
+        /// Add a notary to the system 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>Notary</returns>
+        public Notary CreateNotary (Notary notary = null)
+        {
+             ApiResponse<Notary> localVarResponse = CreateNotaryWithHttpInfo(notary);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add a notary to the system 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>ApiResponse of Notary</returns>
+        public ApiResponse< Notary > CreateNotaryWithHttpInfo (Notary notary = null)
+        {
+
+            var localVarPath = "/v2.1/current_user/notary";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+
+            if (notary != null && notary.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(notary); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = notary; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateNotary", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<Notary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notary) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Notary)));
+            }
+            else
+            {
+                return new ApiResponse<Notary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notary) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Notary)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Add a notary to the system 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>Task of Notary</returns>
+        public async System.Threading.Tasks.Task<Notary> CreateNotaryAsync (Notary notary = null)
+        {
+             ApiResponse<Notary> localVarResponse = await CreateNotaryAsyncWithHttpInfo(notary);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Add a notary to the system 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (Notary)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Notary>> CreateNotaryAsyncWithHttpInfo (Notary notary = null)
+        {
+
+            var localVarPath = "/v2.1/current_user/notary";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+
+            if (notary != null && notary.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(notary); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = notary; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateNotary", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Notary>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Notary) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Notary)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Add a notary jurisdiction to the system 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>NotaryJurisdiction</returns>
+        public NotaryJurisdiction CreateNotaryJurisdictions (NotaryJurisdiction notaryJurisdiction = null)
+        {
+             ApiResponse<NotaryJurisdiction> localVarResponse = CreateNotaryJurisdictionsWithHttpInfo(notaryJurisdiction);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add a notary jurisdiction to the system 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>ApiResponse of NotaryJurisdiction</returns>
+        public ApiResponse< NotaryJurisdiction > CreateNotaryJurisdictionsWithHttpInfo (NotaryJurisdiction notaryJurisdiction = null)
+        {
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+
+            if (notaryJurisdiction != null && notaryJurisdiction.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(notaryJurisdiction); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = notaryJurisdiction; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateNotaryJurisdictions", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<NotaryJurisdiction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NotaryJurisdiction) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(NotaryJurisdiction)));
+            }
+            else
+            {
+                return new ApiResponse<NotaryJurisdiction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NotaryJurisdiction) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotaryJurisdiction)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Add a notary jurisdiction to the system 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>Task of NotaryJurisdiction</returns>
+        public async System.Threading.Tasks.Task<NotaryJurisdiction> CreateNotaryJurisdictionsAsync (NotaryJurisdiction notaryJurisdiction = null)
+        {
+             ApiResponse<NotaryJurisdiction> localVarResponse = await CreateNotaryJurisdictionsAsyncWithHttpInfo(notaryJurisdiction);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Add a notary jurisdiction to the system 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (NotaryJurisdiction)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> CreateNotaryJurisdictionsAsyncWithHttpInfo (NotaryJurisdiction notaryJurisdiction = null)
+        {
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+
+            if (notaryJurisdiction != null && notaryJurisdiction.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(notaryJurisdiction); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = notaryJurisdiction; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateNotaryJurisdictions", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<NotaryJurisdiction>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (NotaryJurisdiction) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotaryJurisdiction)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Delete a notary jurisdiction a specified user. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns></returns>
+        public void DeleteNotaryJurisdiction (string jurisdictionId)
+        {
+             DeleteNotaryJurisdictionWithHttpInfo(jurisdictionId);
+        }
+
+        /// <summary>
+        /// Delete a notary jurisdiction a specified user. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DeleteNotaryJurisdictionWithHttpInfo (string jurisdictionId)
+        {
+            // verify the required parameter 'jurisdictionId' is set
+            if (jurisdictionId == null)
+                throw new ApiException(400, "Missing required parameter 'jurisdictionId' when calling NotaryApi->DeleteNotaryJurisdiction");
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions/{jurisdictionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (jurisdictionId != null) localVarPathParams.Add("jurisdictionId", Configuration.ApiClient.ParameterToString(jurisdictionId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteNotaryJurisdiction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Delete a notary jurisdiction a specified user. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteNotaryJurisdictionAsync (string jurisdictionId)
+        {
+             await DeleteNotaryJurisdictionAsyncWithHttpInfo(jurisdictionId);
+
+        }
+
+        /// <summary>
+        /// Delete a notary jurisdiction a specified user. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteNotaryJurisdictionAsyncWithHttpInfo (string jurisdictionId)
+        {
+            // verify the required parameter 'jurisdictionId' is set
+            if (jurisdictionId == null)
+                throw new ApiException(400, "Missing required parameter 'jurisdictionId' when calling NotaryApi->DeleteNotaryJurisdiction");
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions/{jurisdictionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (jurisdictionId != null) localVarPathParams.Add("jurisdictionId", Configuration.ApiClient.ParameterToString(jurisdictionId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteNotaryJurisdiction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+
+        /// <summary>
+        /// Get notary settings for a user 
+        /// </summary>
+        public class GetNotaryOptions
+        {
+            /// 
+            public string includeJurisdictions {get; set;}
+        }
+
+        /// <summary>
+        /// Get notary settings for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>NotaryResult</returns>
+        public NotaryResult GetNotary (NotaryApi.GetNotaryOptions options = null)
+        {
+             ApiResponse<NotaryResult> localVarResponse = GetNotaryWithHttpInfo(options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get notary settings for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of NotaryResult</returns>
+        public ApiResponse< NotaryResult > GetNotaryWithHttpInfo (NotaryApi.GetNotaryOptions options = null)
+        {
+
+            var localVarPath = "/v2.1/current_user/notary";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            if (options != null)
+            {
+                if (options.includeJurisdictions != null) localVarQueryParams.Add("include_jurisdictions", Configuration.ApiClient.ParameterToString(options.includeJurisdictions)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetNotary", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<NotaryResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NotaryResult) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(NotaryResult)));
+            }
+            else
+            {
+                return new ApiResponse<NotaryResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NotaryResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotaryResult)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Get notary settings for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of NotaryResult</returns>
+        public async System.Threading.Tasks.Task<NotaryResult> GetNotaryAsync (NotaryApi.GetNotaryOptions options = null)
+        {
+             ApiResponse<NotaryResult> localVarResponse = await GetNotaryAsyncWithHttpInfo(options);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get notary settings for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (NotaryResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<NotaryResult>> GetNotaryAsyncWithHttpInfo (NotaryApi.GetNotaryOptions options = null)
+        {
+
+            var localVarPath = "/v2.1/current_user/notary";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            if (options != null)
+            {
+                if (options.includeJurisdictions != null) localVarQueryParams.Add("include_jurisdictions", Configuration.ApiClient.ParameterToString(options.includeJurisdictions)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetNotary", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<NotaryResult>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (NotaryResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotaryResult)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Get notary a jurisdiction for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>NotaryJurisdiction</returns>
+        public NotaryJurisdiction GetNotaryJurisdiction (string jurisdictionId)
+        {
+             ApiResponse<NotaryJurisdiction> localVarResponse = GetNotaryJurisdictionWithHttpInfo(jurisdictionId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get notary a jurisdiction for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>ApiResponse of NotaryJurisdiction</returns>
+        public ApiResponse< NotaryJurisdiction > GetNotaryJurisdictionWithHttpInfo (string jurisdictionId)
+        {
+            // verify the required parameter 'jurisdictionId' is set
+            if (jurisdictionId == null)
+                throw new ApiException(400, "Missing required parameter 'jurisdictionId' when calling NotaryApi->GetNotaryJurisdiction");
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions/{jurisdictionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (jurisdictionId != null) localVarPathParams.Add("jurisdictionId", Configuration.ApiClient.ParameterToString(jurisdictionId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetNotaryJurisdiction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<NotaryJurisdiction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NotaryJurisdiction) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(NotaryJurisdiction)));
+            }
+            else
+            {
+                return new ApiResponse<NotaryJurisdiction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NotaryJurisdiction) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotaryJurisdiction)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Get notary a jurisdiction for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of NotaryJurisdiction</returns>
+        public async System.Threading.Tasks.Task<NotaryJurisdiction> GetNotaryJurisdictionAsync (string jurisdictionId)
+        {
+             ApiResponse<NotaryJurisdiction> localVarResponse = await GetNotaryJurisdictionAsyncWithHttpInfo(jurisdictionId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get notary a jurisdiction for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of ApiResponse (NotaryJurisdiction)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> GetNotaryJurisdictionAsyncWithHttpInfo (string jurisdictionId)
+        {
+            // verify the required parameter 'jurisdictionId' is set
+            if (jurisdictionId == null)
+                throw new ApiException(400, "Missing required parameter 'jurisdictionId' when calling NotaryApi->GetNotaryJurisdiction");
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions/{jurisdictionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (jurisdictionId != null) localVarPathParams.Add("jurisdictionId", Configuration.ApiClient.ParameterToString(jurisdictionId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetNotaryJurisdiction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<NotaryJurisdiction>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (NotaryJurisdiction) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotaryJurisdiction)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Get notary seal for a jurisdiction 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns></returns>
+        public void GetNotaryJurisdictionSeal (string jurisdictionId)
+        {
+             GetNotaryJurisdictionSealWithHttpInfo(jurisdictionId);
+        }
+
+        /// <summary>
+        /// Get notary seal for a jurisdiction 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> GetNotaryJurisdictionSealWithHttpInfo (string jurisdictionId)
+        {
+            // verify the required parameter 'jurisdictionId' is set
+            if (jurisdictionId == null)
+                throw new ApiException(400, "Missing required parameter 'jurisdictionId' when calling NotaryApi->GetNotaryJurisdictionSeal");
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions/{jurisdictionId}/seal";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (jurisdictionId != null) localVarPathParams.Add("jurisdictionId", Configuration.ApiClient.ParameterToString(jurisdictionId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetNotaryJurisdictionSeal", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Get notary seal for a jurisdiction 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task GetNotaryJurisdictionSealAsync (string jurisdictionId)
+        {
+             await GetNotaryJurisdictionSealAsyncWithHttpInfo(jurisdictionId);
+
+        }
+
+        /// <summary>
+        /// Get notary seal for a jurisdiction 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetNotaryJurisdictionSealAsyncWithHttpInfo (string jurisdictionId)
+        {
+            // verify the required parameter 'jurisdictionId' is set
+            if (jurisdictionId == null)
+                throw new ApiException(400, "Missing required parameter 'jurisdictionId' when calling NotaryApi->GetNotaryJurisdictionSeal");
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions/{jurisdictionId}/seal";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (jurisdictionId != null) localVarPathParams.Add("jurisdictionId", Configuration.ApiClient.ParameterToString(jurisdictionId)); // path parameter
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetNotaryJurisdictionSeal", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+
+
+        /// <summary>
+        /// Get notary jurisdictions for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        
+        /// <returns>NotaryJurisdictionList</returns>
+        public NotaryJurisdictionList GetNotaryJurisdictions ()
+        {
+             ApiResponse<NotaryJurisdictionList> localVarResponse = GetNotaryJurisdictionsWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get notary jurisdictions for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        
+        /// <returns>ApiResponse of NotaryJurisdictionList</returns>
+        public ApiResponse< NotaryJurisdictionList > GetNotaryJurisdictionsWithHttpInfo ()
+        {
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetNotaryJurisdictions", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<NotaryJurisdictionList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NotaryJurisdictionList) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(NotaryJurisdictionList)));
+            }
+            else
+            {
+                return new ApiResponse<NotaryJurisdictionList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NotaryJurisdictionList) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotaryJurisdictionList)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Get notary jurisdictions for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        
+        /// <returns>Task of NotaryJurisdictionList</returns>
+        public async System.Threading.Tasks.Task<NotaryJurisdictionList> GetNotaryJurisdictionsAsync ()
+        {
+             ApiResponse<NotaryJurisdictionList> localVarResponse = await GetNotaryJurisdictionsAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get notary jurisdictions for a user 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        
+        
+        /// <returns>Task of ApiResponse (NotaryJurisdictionList)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdictionList>> GetNotaryJurisdictionsAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetNotaryJurisdictions", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<NotaryJurisdictionList>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (NotaryJurisdictionList) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotaryJurisdictionList)));
+            
         }
 
 
@@ -363,6 +1943,354 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<NotaryJournalList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (NotaryJournalList) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotaryJournalList)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Update a notary 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>Notary</returns>
+        public Notary UpdateNotary (Notary notary = null)
+        {
+             ApiResponse<Notary> localVarResponse = UpdateNotaryWithHttpInfo(notary);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update a notary 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>ApiResponse of Notary</returns>
+        public ApiResponse< Notary > UpdateNotaryWithHttpInfo (Notary notary = null)
+        {
+
+            var localVarPath = "/v2.1/current_user/notary";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+
+            if (notary != null && notary.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(notary); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = notary; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateNotary", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<Notary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notary) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Notary)));
+            }
+            else
+            {
+                return new ApiResponse<Notary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notary) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Notary)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Update a notary 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>Task of Notary</returns>
+        public async System.Threading.Tasks.Task<Notary> UpdateNotaryAsync (Notary notary = null)
+        {
+             ApiResponse<Notary> localVarResponse = await UpdateNotaryAsyncWithHttpInfo(notary);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update a notary 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        
+        /// <param name="notary"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (Notary)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Notary>> UpdateNotaryAsyncWithHttpInfo (Notary notary = null)
+        {
+
+            var localVarPath = "/v2.1/current_user/notary";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+
+            if (notary != null && notary.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(notary); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = notary; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateNotary", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Notary>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Notary) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Notary)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Update a notary jurisdiction 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>NotaryJurisdiction</returns>
+        public NotaryJurisdiction UpdateNotaryJurisdiction (string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null)
+        {
+             ApiResponse<NotaryJurisdiction> localVarResponse = UpdateNotaryJurisdictionWithHttpInfo(jurisdictionId, notaryJurisdiction);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update a notary jurisdiction 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>ApiResponse of NotaryJurisdiction</returns>
+        public ApiResponse< NotaryJurisdiction > UpdateNotaryJurisdictionWithHttpInfo (string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null)
+        {
+            // verify the required parameter 'jurisdictionId' is set
+            if (jurisdictionId == null)
+                throw new ApiException(400, "Missing required parameter 'jurisdictionId' when calling NotaryApi->UpdateNotaryJurisdiction");
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions/{jurisdictionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (jurisdictionId != null) localVarPathParams.Add("jurisdictionId", Configuration.ApiClient.ParameterToString(jurisdictionId)); // path parameter
+
+
+            if (notaryJurisdiction != null && notaryJurisdiction.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(notaryJurisdiction); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = notaryJurisdiction; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateNotaryJurisdiction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<NotaryJurisdiction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NotaryJurisdiction) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(NotaryJurisdiction)));
+            }
+            else
+            {
+                return new ApiResponse<NotaryJurisdiction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NotaryJurisdiction) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotaryJurisdiction)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Update a notary jurisdiction 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>Task of NotaryJurisdiction</returns>
+        public async System.Threading.Tasks.Task<NotaryJurisdiction> UpdateNotaryJurisdictionAsync (string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null)
+        {
+             ApiResponse<NotaryJurisdiction> localVarResponse = await UpdateNotaryJurisdictionAsyncWithHttpInfo(jurisdictionId, notaryJurisdiction);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update a notary jurisdiction 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="jurisdictionId"></param>
+        /// <param name="notaryJurisdiction"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (NotaryJurisdiction)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> UpdateNotaryJurisdictionAsyncWithHttpInfo (string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null)
+        {
+            // verify the required parameter 'jurisdictionId' is set
+            if (jurisdictionId == null)
+                throw new ApiException(400, "Missing required parameter 'jurisdictionId' when calling NotaryApi->UpdateNotaryJurisdiction");
+
+            var localVarPath = "/v2.1/current_user/notary/jurisdictions/{jurisdictionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (jurisdictionId != null) localVarPathParams.Add("jurisdictionId", Configuration.ApiClient.ParameterToString(jurisdictionId)); // path parameter
+
+
+            if (notaryJurisdiction != null && notaryJurisdiction.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(notaryJurisdiction); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = notaryJurisdiction; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateNotaryJurisdiction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<NotaryJurisdiction>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (NotaryJurisdiction) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotaryJurisdiction)));
             
         }
 

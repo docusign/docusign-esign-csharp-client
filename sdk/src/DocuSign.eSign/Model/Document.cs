@@ -48,14 +48,19 @@ namespace DocuSign.eSign.Model
         /// <param name="FileFormatHint">.</param>
         /// <param name="HtmlDefinition">HtmlDefinition.</param>
         /// <param name="IncludeInDownload">.</param>
+        /// <param name="IsDynamicXfa">.</param>
+        /// <param name="IsStaticXfa">.</param>
         /// <param name="MatchBoxes">Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  .</param>
         /// <param name="Name">.</param>
+        /// <param name="OcrRequests">.</param>
         /// <param name="Order">.</param>
         /// <param name="PageCount">.</param>
         /// <param name="Pages">.</param>
         /// <param name="PageSizes">.</param>
         /// <param name="Password">.</param>
+        /// <param name="PdfFieldsData">.</param>
         /// <param name="PdfFormFieldOption">.</param>
+        /// <param name="PdfWidgetsBase64">.</param>
         /// <param name="RemoteUrl">The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}]. .</param>
         /// <param name="SignerMustAcknowledge">.</param>
         /// <param name="Tabs">Tabs.</param>
@@ -63,7 +68,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TransformPdfFields">When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs. .</param>
         /// <param name="Uri">.</param>
-        public Document(string ApplyAnchorTabs = default(string), string Display = default(string), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), string Order = default(string), string PageCount = default(string), string Pages = default(string), List<PageSize> PageSizes = default(List<PageSize>), string Password = default(string), string PdfFormFieldOption = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
+        public Document(string ApplyAnchorTabs = default(string), string Display = default(string), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), bool? IsDynamicXfa = default(bool?), bool? IsStaticXfa = default(bool?), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), List<OcrRequest> OcrRequests = default(List<OcrRequest>), string Order = default(string), string PageCount = default(string), string Pages = default(string), List<PageSize> PageSizes = default(List<PageSize>), string Password = default(string), string PdfFieldsData = default(string), string PdfFormFieldOption = default(string), string PdfWidgetsBase64 = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
         {
             this.ApplyAnchorTabs = ApplyAnchorTabs;
             this.Display = Display;
@@ -76,14 +81,19 @@ namespace DocuSign.eSign.Model
             this.FileFormatHint = FileFormatHint;
             this.HtmlDefinition = HtmlDefinition;
             this.IncludeInDownload = IncludeInDownload;
+            this.IsDynamicXfa = IsDynamicXfa;
+            this.IsStaticXfa = IsStaticXfa;
             this.MatchBoxes = MatchBoxes;
             this.Name = Name;
+            this.OcrRequests = OcrRequests;
             this.Order = Order;
             this.PageCount = PageCount;
             this.Pages = Pages;
             this.PageSizes = PageSizes;
             this.Password = Password;
+            this.PdfFieldsData = PdfFieldsData;
             this.PdfFormFieldOption = PdfFormFieldOption;
+            this.PdfWidgetsBase64 = PdfWidgetsBase64;
             this.RemoteUrl = RemoteUrl;
             this.SignerMustAcknowledge = SignerMustAcknowledge;
             this.Tabs = Tabs;
@@ -159,6 +169,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includeInDownload", EmitDefaultValue=false)]
         public string IncludeInDownload { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="isDynamicXfa", EmitDefaultValue=false)]
+        public bool? IsDynamicXfa { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="isStaticXfa", EmitDefaultValue=false)]
+        public bool? IsStaticXfa { get; set; }
+        /// <summary>
         /// Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  
         /// </summary>
         /// <value>Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  </value>
@@ -170,6 +192,12 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="ocrRequests", EmitDefaultValue=false)]
+        public List<OcrRequest> OcrRequests { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -204,8 +232,20 @@ namespace DocuSign.eSign.Model
         /// 
         /// </summary>
         /// <value></value>
+        [DataMember(Name="pdfFieldsData", EmitDefaultValue=false)]
+        public string PdfFieldsData { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
         [DataMember(Name="pdfFormFieldOption", EmitDefaultValue=false)]
         public string PdfFormFieldOption { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="pdfWidgetsBase64", EmitDefaultValue=false)]
+        public string PdfWidgetsBase64 { get; set; }
         /// <summary>
         /// The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}]. 
         /// </summary>
@@ -266,14 +306,19 @@ namespace DocuSign.eSign.Model
             sb.Append("  FileFormatHint: ").Append(FileFormatHint).Append("\n");
             sb.Append("  HtmlDefinition: ").Append(HtmlDefinition).Append("\n");
             sb.Append("  IncludeInDownload: ").Append(IncludeInDownload).Append("\n");
+            sb.Append("  IsDynamicXfa: ").Append(IsDynamicXfa).Append("\n");
+            sb.Append("  IsStaticXfa: ").Append(IsStaticXfa).Append("\n");
             sb.Append("  MatchBoxes: ").Append(MatchBoxes).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  OcrRequests: ").Append(OcrRequests).Append("\n");
             sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  PageCount: ").Append(PageCount).Append("\n");
             sb.Append("  Pages: ").Append(Pages).Append("\n");
             sb.Append("  PageSizes: ").Append(PageSizes).Append("\n");
             sb.Append("  Password: ").Append(Password).Append("\n");
+            sb.Append("  PdfFieldsData: ").Append(PdfFieldsData).Append("\n");
             sb.Append("  PdfFormFieldOption: ").Append(PdfFormFieldOption).Append("\n");
+            sb.Append("  PdfWidgetsBase64: ").Append(PdfWidgetsBase64).Append("\n");
             sb.Append("  RemoteUrl: ").Append(RemoteUrl).Append("\n");
             sb.Append("  SignerMustAcknowledge: ").Append(SignerMustAcknowledge).Append("\n");
             sb.Append("  Tabs: ").Append(Tabs).Append("\n");
@@ -373,6 +418,16 @@ namespace DocuSign.eSign.Model
                     this.IncludeInDownload.Equals(other.IncludeInDownload)
                 ) && 
                 (
+                    this.IsDynamicXfa == other.IsDynamicXfa ||
+                    this.IsDynamicXfa != null &&
+                    this.IsDynamicXfa.Equals(other.IsDynamicXfa)
+                ) && 
+                (
+                    this.IsStaticXfa == other.IsStaticXfa ||
+                    this.IsStaticXfa != null &&
+                    this.IsStaticXfa.Equals(other.IsStaticXfa)
+                ) && 
+                (
                     this.MatchBoxes == other.MatchBoxes ||
                     this.MatchBoxes != null &&
                     this.MatchBoxes.SequenceEqual(other.MatchBoxes)
@@ -381,6 +436,11 @@ namespace DocuSign.eSign.Model
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
+                ) && 
+                (
+                    this.OcrRequests == other.OcrRequests ||
+                    this.OcrRequests != null &&
+                    this.OcrRequests.SequenceEqual(other.OcrRequests)
                 ) && 
                 (
                     this.Order == other.Order ||
@@ -408,9 +468,19 @@ namespace DocuSign.eSign.Model
                     this.Password.Equals(other.Password)
                 ) && 
                 (
+                    this.PdfFieldsData == other.PdfFieldsData ||
+                    this.PdfFieldsData != null &&
+                    this.PdfFieldsData.Equals(other.PdfFieldsData)
+                ) && 
+                (
                     this.PdfFormFieldOption == other.PdfFormFieldOption ||
                     this.PdfFormFieldOption != null &&
                     this.PdfFormFieldOption.Equals(other.PdfFormFieldOption)
+                ) && 
+                (
+                    this.PdfWidgetsBase64 == other.PdfWidgetsBase64 ||
+                    this.PdfWidgetsBase64 != null &&
+                    this.PdfWidgetsBase64.Equals(other.PdfWidgetsBase64)
                 ) && 
                 (
                     this.RemoteUrl == other.RemoteUrl ||
@@ -482,10 +552,16 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.HtmlDefinition.GetHashCode();
                 if (this.IncludeInDownload != null)
                     hash = hash * 59 + this.IncludeInDownload.GetHashCode();
+                if (this.IsDynamicXfa != null)
+                    hash = hash * 59 + this.IsDynamicXfa.GetHashCode();
+                if (this.IsStaticXfa != null)
+                    hash = hash * 59 + this.IsStaticXfa.GetHashCode();
                 if (this.MatchBoxes != null)
                     hash = hash * 59 + this.MatchBoxes.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.OcrRequests != null)
+                    hash = hash * 59 + this.OcrRequests.GetHashCode();
                 if (this.Order != null)
                     hash = hash * 59 + this.Order.GetHashCode();
                 if (this.PageCount != null)
@@ -496,8 +572,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PageSizes.GetHashCode();
                 if (this.Password != null)
                     hash = hash * 59 + this.Password.GetHashCode();
+                if (this.PdfFieldsData != null)
+                    hash = hash * 59 + this.PdfFieldsData.GetHashCode();
                 if (this.PdfFormFieldOption != null)
                     hash = hash * 59 + this.PdfFormFieldOption.GetHashCode();
+                if (this.PdfWidgetsBase64 != null)
+                    hash = hash * 59 + this.PdfWidgetsBase64.GetHashCode();
                 if (this.RemoteUrl != null)
                     hash = hash * 59 + this.RemoteUrl.GetHashCode();
                 if (this.SignerMustAcknowledge != null)

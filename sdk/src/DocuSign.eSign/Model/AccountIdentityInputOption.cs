@@ -24,39 +24,47 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientIdentityVerification
+    /// AccountIdentityInputOption
     /// </summary>
     [DataContract]
-    public partial class RecipientIdentityVerification :  IEquatable<RecipientIdentityVerification>, IValidatableObject
+    public partial class AccountIdentityInputOption :  IEquatable<AccountIdentityInputOption>, IValidatableObject
     {
-        public RecipientIdentityVerification()
+        public AccountIdentityInputOption()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RecipientIdentityVerification" /> class.
+        /// Initializes a new instance of the <see cref="AccountIdentityInputOption" /> class.
         /// </summary>
-        /// <param name="InputOptions">.</param>
-        /// <param name="WorkflowId">.</param>
-        public RecipientIdentityVerification(List<RecipientIdentityInputOption> InputOptions = default(List<RecipientIdentityInputOption>), string WorkflowId = default(string))
+        /// <param name="IsRequired">.</param>
+        /// <param name="OptionName">.</param>
+        /// <param name="ValueType">.</param>
+        public AccountIdentityInputOption(bool? IsRequired = default(bool?), string OptionName = default(string), string ValueType = default(string))
         {
-            this.InputOptions = InputOptions;
-            this.WorkflowId = WorkflowId;
+            this.IsRequired = IsRequired;
+            this.OptionName = OptionName;
+            this.ValueType = ValueType;
         }
         
         /// <summary>
         /// 
         /// </summary>
         /// <value></value>
-        [DataMember(Name="inputOptions", EmitDefaultValue=false)]
-        public List<RecipientIdentityInputOption> InputOptions { get; set; }
+        [DataMember(Name="isRequired", EmitDefaultValue=false)]
+        public bool? IsRequired { get; set; }
         /// <summary>
         /// 
         /// </summary>
         /// <value></value>
-        [DataMember(Name="workflowId", EmitDefaultValue=false)]
-        public string WorkflowId { get; set; }
+        [DataMember(Name="optionName", EmitDefaultValue=false)]
+        public string OptionName { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="valueType", EmitDefaultValue=false)]
+        public string ValueType { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -64,9 +72,10 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RecipientIdentityVerification {\n");
-            sb.Append("  InputOptions: ").Append(InputOptions).Append("\n");
-            sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
+            sb.Append("class AccountIdentityInputOption {\n");
+            sb.Append("  IsRequired: ").Append(IsRequired).Append("\n");
+            sb.Append("  OptionName: ").Append(OptionName).Append("\n");
+            sb.Append("  ValueType: ").Append(ValueType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,15 +97,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as RecipientIdentityVerification);
+            return this.Equals(obj as AccountIdentityInputOption);
         }
 
         /// <summary>
-        /// Returns true if RecipientIdentityVerification instances are equal
+        /// Returns true if AccountIdentityInputOption instances are equal
         /// </summary>
-        /// <param name="other">Instance of RecipientIdentityVerification to be compared</param>
+        /// <param name="other">Instance of AccountIdentityInputOption to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RecipientIdentityVerification other)
+        public bool Equals(AccountIdentityInputOption other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -104,14 +113,19 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.InputOptions == other.InputOptions ||
-                    this.InputOptions != null &&
-                    this.InputOptions.SequenceEqual(other.InputOptions)
+                    this.IsRequired == other.IsRequired ||
+                    this.IsRequired != null &&
+                    this.IsRequired.Equals(other.IsRequired)
                 ) && 
                 (
-                    this.WorkflowId == other.WorkflowId ||
-                    this.WorkflowId != null &&
-                    this.WorkflowId.Equals(other.WorkflowId)
+                    this.OptionName == other.OptionName ||
+                    this.OptionName != null &&
+                    this.OptionName.Equals(other.OptionName)
+                ) && 
+                (
+                    this.ValueType == other.ValueType ||
+                    this.ValueType != null &&
+                    this.ValueType.Equals(other.ValueType)
                 );
         }
 
@@ -126,10 +140,12 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.InputOptions != null)
-                    hash = hash * 59 + this.InputOptions.GetHashCode();
-                if (this.WorkflowId != null)
-                    hash = hash * 59 + this.WorkflowId.GetHashCode();
+                if (this.IsRequired != null)
+                    hash = hash * 59 + this.IsRequired.GetHashCode();
+                if (this.OptionName != null)
+                    hash = hash * 59 + this.OptionName.GetHashCode();
+                if (this.ValueType != null)
+                    hash = hash * 59 + this.ValueType.GetHashCode();
                 return hash;
             }
         }

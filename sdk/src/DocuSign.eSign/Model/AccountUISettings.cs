@@ -45,6 +45,8 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableEasySignCanUseMultiTemplateApplyMetadata">EnableEasySignCanUseMultiTemplateApplyMetadata.</param>
         /// <param name="EnableEasySignTemplateUpload">.</param>
         /// <param name="EnableEasySignTemplateUploadMetadata">EnableEasySignTemplateUploadMetadata.</param>
+        /// <param name="EnableEnvelopeCopyWithData">.</param>
+        /// <param name="EnableEnvelopeCopyWithDataMetadata">EnableEnvelopeCopyWithDataMetadata.</param>
         /// <param name="HideSendAnEnvelope">.</param>
         /// <param name="HideSendAnEnvelopeMetadata">HideSendAnEnvelopeMetadata.</param>
         /// <param name="HideUseATemplate">.</param>
@@ -59,7 +61,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ShouldRedactAccessCodeMetadata">ShouldRedactAccessCodeMetadata.</param>
         /// <param name="UploadNewImageToSignOrInitial">.</param>
         /// <param name="UploadNewImageToSignOrInitialMetadata">UploadNewImageToSignOrInitialMetadata.</param>
-        public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
+        public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string EnableEnvelopeCopyWithData = default(string), SettingsMetadata EnableEnvelopeCopyWithDataMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
         {
             this.AdminMessage = AdminMessage;
             this.AskAnAdmin = AskAnAdmin;
@@ -69,6 +71,8 @@ namespace DocuSign.eSign.Model
             this.EnableEasySignCanUseMultiTemplateApplyMetadata = EnableEasySignCanUseMultiTemplateApplyMetadata;
             this.EnableEasySignTemplateUpload = EnableEasySignTemplateUpload;
             this.EnableEasySignTemplateUploadMetadata = EnableEasySignTemplateUploadMetadata;
+            this.EnableEnvelopeCopyWithData = EnableEnvelopeCopyWithData;
+            this.EnableEnvelopeCopyWithDataMetadata = EnableEnvelopeCopyWithDataMetadata;
             this.HideSendAnEnvelope = HideSendAnEnvelope;
             this.HideSendAnEnvelopeMetadata = HideSendAnEnvelopeMetadata;
             this.HideUseATemplate = HideUseATemplate;
@@ -128,6 +132,17 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="enableEasySignTemplateUploadMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableEasySignTemplateUploadMetadata { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="enableEnvelopeCopyWithData", EmitDefaultValue=false)]
+        public string EnableEnvelopeCopyWithData { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableEnvelopeCopyWithDataMetadata
+        /// </summary>
+        [DataMember(Name="enableEnvelopeCopyWithDataMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableEnvelopeCopyWithDataMetadata { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -221,6 +236,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnableEasySignCanUseMultiTemplateApplyMetadata: ").Append(EnableEasySignCanUseMultiTemplateApplyMetadata).Append("\n");
             sb.Append("  EnableEasySignTemplateUpload: ").Append(EnableEasySignTemplateUpload).Append("\n");
             sb.Append("  EnableEasySignTemplateUploadMetadata: ").Append(EnableEasySignTemplateUploadMetadata).Append("\n");
+            sb.Append("  EnableEnvelopeCopyWithData: ").Append(EnableEnvelopeCopyWithData).Append("\n");
+            sb.Append("  EnableEnvelopeCopyWithDataMetadata: ").Append(EnableEnvelopeCopyWithDataMetadata).Append("\n");
             sb.Append("  HideSendAnEnvelope: ").Append(HideSendAnEnvelope).Append("\n");
             sb.Append("  HideSendAnEnvelopeMetadata: ").Append(HideSendAnEnvelopeMetadata).Append("\n");
             sb.Append("  HideUseATemplate: ").Append(HideUseATemplate).Append("\n");
@@ -310,6 +327,16 @@ namespace DocuSign.eSign.Model
                     this.EnableEasySignTemplateUploadMetadata == other.EnableEasySignTemplateUploadMetadata ||
                     this.EnableEasySignTemplateUploadMetadata != null &&
                     this.EnableEasySignTemplateUploadMetadata.Equals(other.EnableEasySignTemplateUploadMetadata)
+                ) && 
+                (
+                    this.EnableEnvelopeCopyWithData == other.EnableEnvelopeCopyWithData ||
+                    this.EnableEnvelopeCopyWithData != null &&
+                    this.EnableEnvelopeCopyWithData.Equals(other.EnableEnvelopeCopyWithData)
+                ) && 
+                (
+                    this.EnableEnvelopeCopyWithDataMetadata == other.EnableEnvelopeCopyWithDataMetadata ||
+                    this.EnableEnvelopeCopyWithDataMetadata != null &&
+                    this.EnableEnvelopeCopyWithDataMetadata.Equals(other.EnableEnvelopeCopyWithDataMetadata)
                 ) && 
                 (
                     this.HideSendAnEnvelope == other.HideSendAnEnvelope ||
@@ -410,6 +437,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnableEasySignTemplateUpload.GetHashCode();
                 if (this.EnableEasySignTemplateUploadMetadata != null)
                     hash = hash * 59 + this.EnableEasySignTemplateUploadMetadata.GetHashCode();
+                if (this.EnableEnvelopeCopyWithData != null)
+                    hash = hash * 59 + this.EnableEnvelopeCopyWithData.GetHashCode();
+                if (this.EnableEnvelopeCopyWithDataMetadata != null)
+                    hash = hash * 59 + this.EnableEnvelopeCopyWithDataMetadata.GetHashCode();
                 if (this.HideSendAnEnvelope != null)
                     hash = hash * 59 + this.HideSendAnEnvelope.GetHashCode();
                 if (this.HideSendAnEnvelopeMetadata != null)

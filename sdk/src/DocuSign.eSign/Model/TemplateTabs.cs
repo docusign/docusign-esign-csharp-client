@@ -44,6 +44,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DateSignedTabs">Specifies a tab on the document where the date the document was signed will automatically appear..</param>
         /// <param name="DateTabs">Specifies a tab on the document where you want the recipient to enter a date. Date tabs are single-line fields that allow date information to be entered in any format. The tooltip for this tab recommends entering the date as MM/DD/YYYY, but this is not enforced. The format entered by the signer is retained.   If you need a particular date format enforced, DocuSign recommends using a Text tab with a Validation Pattern and Validation Message to enforce the format..</param>
         /// <param name="DeclineTabs">Specifies a tag on the document where you want to give the recipient the option of declining an envelope. If the recipient clicks the Decline tag during the signing process, the envelope is voided..</param>
+        /// <param name="DrawTabs">.</param>
         /// <param name="EmailAddressTabs">Specifies a location on the document where you want where you want the recipient&#39;s email, as entered in the recipient information, to display..</param>
         /// <param name="EmailTabs">Specifies a tag on the document where you want the recipient to enter an email. Email tags are single-line fields that accept any characters. The system checks that a valid email format (i.e. xxx@yyy.zzz) is entered in the tag. It uses the same parameters as a Text tab, with the validation message and pattern set for email information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
         /// <param name="EnvelopeIdTabs">Specifies a tag on the document where you want the envelope ID for to appear. Recipients cannot enter or change the information in this tab, it is for informational purposes only..</param>
@@ -67,7 +68,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TitleTabs">Specifies a tag on the document where you want the recipient&#39;s title to appear.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
         /// <param name="ViewTabs">.</param>
         /// <param name="ZipTabs">Specifies a tag on the document where you want the recipient to enter a ZIP code. The ZIP code can be a five numbers or the ZIP+4 format with nine numbers. The zip code can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for ZIP code information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
-        public TemplateTabs(List<Approve> ApproveTabs = default(List<Approve>), List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<CommentThread> CommentThreadTabs = default(List<CommentThread>), List<Company> CompanyTabs = default(List<Company>), List<DateSigned> DateSignedTabs = default(List<DateSigned>), List<DocuSign.eSign.Model.Date> DateTabs = default(List<DocuSign.eSign.Model.Date>), List<Decline> DeclineTabs = default(List<Decline>), List<EmailAddress> EmailAddressTabs = default(List<EmailAddress>), List<Email> EmailTabs = default(List<Email>), List<EnvelopeId> EnvelopeIdTabs = default(List<EnvelopeId>), List<FirstName> FirstNameTabs = default(List<FirstName>), List<FormulaTab> FormulaTabs = default(List<FormulaTab>), List<FullName> FullNameTabs = default(List<FullName>), List<InitialHere> InitialHereTabs = default(List<InitialHere>), List<LastName> LastNameTabs = default(List<LastName>), List<List> ListTabs = default(List<List>), List<Notarize> NotarizeTabs = default(List<Notarize>), List<Note> NoteTabs = default(List<Note>), List<Number> NumberTabs = default(List<Number>), List<PolyLineOverlay> PolyLineOverlayTabs = default(List<PolyLineOverlay>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SignerAttachment> SignerAttachmentTabs = default(List<SignerAttachment>), List<SignHere> SignHereTabs = default(List<SignHere>), List<SmartSection> SmartSectionTabs = default(List<SmartSection>), List<Ssn> SsnTabs = default(List<Ssn>), List<TabGroup> TabGroups = default(List<TabGroup>), List<Text> TextTabs = default(List<Text>), List<Title> TitleTabs = default(List<Title>), List<View> ViewTabs = default(List<View>), List<Zip> ZipTabs = default(List<Zip>))
+        public TemplateTabs(List<Approve> ApproveTabs = default(List<Approve>), List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<CommentThread> CommentThreadTabs = default(List<CommentThread>), List<Company> CompanyTabs = default(List<Company>), List<DateSigned> DateSignedTabs = default(List<DateSigned>), List<DocuSign.eSign.Model.Date> DateTabs = default(List<DocuSign.eSign.Model.Date>), List<Decline> DeclineTabs = default(List<Decline>), List<Draw> DrawTabs = default(List<Draw>), List<EmailAddress> EmailAddressTabs = default(List<EmailAddress>), List<Email> EmailTabs = default(List<Email>), List<EnvelopeId> EnvelopeIdTabs = default(List<EnvelopeId>), List<FirstName> FirstNameTabs = default(List<FirstName>), List<FormulaTab> FormulaTabs = default(List<FormulaTab>), List<FullName> FullNameTabs = default(List<FullName>), List<InitialHere> InitialHereTabs = default(List<InitialHere>), List<LastName> LastNameTabs = default(List<LastName>), List<List> ListTabs = default(List<List>), List<Notarize> NotarizeTabs = default(List<Notarize>), List<Note> NoteTabs = default(List<Note>), List<Number> NumberTabs = default(List<Number>), List<PolyLineOverlay> PolyLineOverlayTabs = default(List<PolyLineOverlay>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SignerAttachment> SignerAttachmentTabs = default(List<SignerAttachment>), List<SignHere> SignHereTabs = default(List<SignHere>), List<SmartSection> SmartSectionTabs = default(List<SmartSection>), List<Ssn> SsnTabs = default(List<Ssn>), List<TabGroup> TabGroups = default(List<TabGroup>), List<Text> TextTabs = default(List<Text>), List<Title> TitleTabs = default(List<Title>), List<View> ViewTabs = default(List<View>), List<Zip> ZipTabs = default(List<Zip>))
         {
             this.ApproveTabs = ApproveTabs;
             this.CheckboxTabs = CheckboxTabs;
@@ -76,6 +77,7 @@ namespace DocuSign.eSign.Model
             this.DateSignedTabs = DateSignedTabs;
             this.DateTabs = DateTabs;
             this.DeclineTabs = DeclineTabs;
+            this.DrawTabs = DrawTabs;
             this.EmailAddressTabs = EmailAddressTabs;
             this.EmailTabs = EmailTabs;
             this.EnvelopeIdTabs = EnvelopeIdTabs;
@@ -143,6 +145,12 @@ namespace DocuSign.eSign.Model
         /// <value>Specifies a tag on the document where you want to give the recipient the option of declining an envelope. If the recipient clicks the Decline tag during the signing process, the envelope is voided.</value>
         [DataMember(Name="declineTabs", EmitDefaultValue=false)]
         public List<Decline> DeclineTabs { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="drawTabs", EmitDefaultValue=false)]
+        public List<Draw> DrawTabs { get; set; }
         /// <summary>
         /// Specifies a location on the document where you want where you want the recipient&#39;s email, as entered in the recipient information, to display.
         /// </summary>
@@ -296,6 +304,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DateSignedTabs: ").Append(DateSignedTabs).Append("\n");
             sb.Append("  DateTabs: ").Append(DateTabs).Append("\n");
             sb.Append("  DeclineTabs: ").Append(DeclineTabs).Append("\n");
+            sb.Append("  DrawTabs: ").Append(DrawTabs).Append("\n");
             sb.Append("  EmailAddressTabs: ").Append(EmailAddressTabs).Append("\n");
             sb.Append("  EmailTabs: ").Append(EmailTabs).Append("\n");
             sb.Append("  EnvelopeIdTabs: ").Append(EnvelopeIdTabs).Append("\n");
@@ -389,6 +398,11 @@ namespace DocuSign.eSign.Model
                     this.DeclineTabs == other.DeclineTabs ||
                     this.DeclineTabs != null &&
                     this.DeclineTabs.SequenceEqual(other.DeclineTabs)
+                ) && 
+                (
+                    this.DrawTabs == other.DrawTabs ||
+                    this.DrawTabs != null &&
+                    this.DrawTabs.SequenceEqual(other.DrawTabs)
                 ) && 
                 (
                     this.EmailAddressTabs == other.EmailAddressTabs ||
@@ -532,6 +546,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DateTabs.GetHashCode();
                 if (this.DeclineTabs != null)
                     hash = hash * 59 + this.DeclineTabs.GetHashCode();
+                if (this.DrawTabs != null)
+                    hash = hash * 59 + this.DrawTabs.GetHashCode();
                 if (this.EmailAddressTabs != null)
                     hash = hash * 59 + this.EmailAddressTabs.GetHashCode();
                 if (this.EmailTabs != null)

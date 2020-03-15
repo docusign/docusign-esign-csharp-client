@@ -24,39 +24,47 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientIdentityVerification
+    /// ConnectEventData
     /// </summary>
     [DataContract]
-    public partial class RecipientIdentityVerification :  IEquatable<RecipientIdentityVerification>, IValidatableObject
+    public partial class ConnectEventData :  IEquatable<ConnectEventData>, IValidatableObject
     {
-        public RecipientIdentityVerification()
+        public ConnectEventData()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RecipientIdentityVerification" /> class.
+        /// Initializes a new instance of the <see cref="ConnectEventData" /> class.
         /// </summary>
-        /// <param name="InputOptions">.</param>
-        /// <param name="WorkflowId">.</param>
-        public RecipientIdentityVerification(List<RecipientIdentityInputOption> InputOptions = default(List<RecipientIdentityInputOption>), string WorkflowId = default(string))
+        /// <param name="Format">.</param>
+        /// <param name="IncludeData">.</param>
+        /// <param name="Version">.</param>
+        public ConnectEventData(string Format = default(string), List<string> IncludeData = default(List<string>), string Version = default(string))
         {
-            this.InputOptions = InputOptions;
-            this.WorkflowId = WorkflowId;
+            this.Format = Format;
+            this.IncludeData = IncludeData;
+            this.Version = Version;
         }
         
         /// <summary>
         /// 
         /// </summary>
         /// <value></value>
-        [DataMember(Name="inputOptions", EmitDefaultValue=false)]
-        public List<RecipientIdentityInputOption> InputOptions { get; set; }
+        [DataMember(Name="format", EmitDefaultValue=false)]
+        public string Format { get; set; }
         /// <summary>
         /// 
         /// </summary>
         /// <value></value>
-        [DataMember(Name="workflowId", EmitDefaultValue=false)]
-        public string WorkflowId { get; set; }
+        [DataMember(Name="includeData", EmitDefaultValue=false)]
+        public List<string> IncludeData { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="version", EmitDefaultValue=false)]
+        public string Version { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -64,9 +72,10 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RecipientIdentityVerification {\n");
-            sb.Append("  InputOptions: ").Append(InputOptions).Append("\n");
-            sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
+            sb.Append("class ConnectEventData {\n");
+            sb.Append("  Format: ").Append(Format).Append("\n");
+            sb.Append("  IncludeData: ").Append(IncludeData).Append("\n");
+            sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,15 +97,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as RecipientIdentityVerification);
+            return this.Equals(obj as ConnectEventData);
         }
 
         /// <summary>
-        /// Returns true if RecipientIdentityVerification instances are equal
+        /// Returns true if ConnectEventData instances are equal
         /// </summary>
-        /// <param name="other">Instance of RecipientIdentityVerification to be compared</param>
+        /// <param name="other">Instance of ConnectEventData to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RecipientIdentityVerification other)
+        public bool Equals(ConnectEventData other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -104,14 +113,19 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.InputOptions == other.InputOptions ||
-                    this.InputOptions != null &&
-                    this.InputOptions.SequenceEqual(other.InputOptions)
+                    this.Format == other.Format ||
+                    this.Format != null &&
+                    this.Format.Equals(other.Format)
                 ) && 
                 (
-                    this.WorkflowId == other.WorkflowId ||
-                    this.WorkflowId != null &&
-                    this.WorkflowId.Equals(other.WorkflowId)
+                    this.IncludeData == other.IncludeData ||
+                    this.IncludeData != null &&
+                    this.IncludeData.SequenceEqual(other.IncludeData)
+                ) && 
+                (
+                    this.Version == other.Version ||
+                    this.Version != null &&
+                    this.Version.Equals(other.Version)
                 );
         }
 
@@ -126,10 +140,12 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.InputOptions != null)
-                    hash = hash * 59 + this.InputOptions.GetHashCode();
-                if (this.WorkflowId != null)
-                    hash = hash * 59 + this.WorkflowId.GetHashCode();
+                if (this.Format != null)
+                    hash = hash * 59 + this.Format.GetHashCode();
+                if (this.IncludeData != null)
+                    hash = hash * 59 + this.IncludeData.GetHashCode();
+                if (this.Version != null)
+                    hash = hash * 59 + this.Version.GetHashCode();
                 return hash;
             }
         }

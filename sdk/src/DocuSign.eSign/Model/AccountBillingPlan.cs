@@ -41,6 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CanCancelRenewal">Reserved: TBD.</param>
         /// <param name="CanUpgrade">When set to **true**, specifies that you can upgrade the account through the API..</param>
         /// <param name="CurrencyCode">Specifies the ISO currency code for the account..</param>
+        /// <param name="DowngradePlanInformation">DowngradePlanInformation.</param>
         /// <param name="EnableSupport">When set to **true**, then customer support is provided as part of the account plan..</param>
         /// <param name="IncludedSeats">The number of seats (users) included..</param>
         /// <param name="IncrementalSeats">Reserved: TBD.</param>
@@ -57,12 +58,13 @@ namespace DocuSign.eSign.Model
         /// <param name="SeatDiscounts"> A complex type that contains any seat discount information.  Values are: BeginSeatCount, EndSeatCount, and SeatDiscountPercent.  .</param>
         /// <param name="SupportIncidentFee">The support incident fee charged for each support incident..</param>
         /// <param name="SupportPlanFee">The support plan fee charged for this plan..</param>
-        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
+        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
         {
             this.AddOns = AddOns;
             this.CanCancelRenewal = CanCancelRenewal;
             this.CanUpgrade = CanUpgrade;
             this.CurrencyCode = CurrencyCode;
+            this.DowngradePlanInformation = DowngradePlanInformation;
             this.EnableSupport = EnableSupport;
             this.IncludedSeats = IncludedSeats;
             this.IncrementalSeats = IncrementalSeats;
@@ -105,6 +107,11 @@ namespace DocuSign.eSign.Model
         /// <value>Specifies the ISO currency code for the account.</value>
         [DataMember(Name="currencyCode", EmitDefaultValue=false)]
         public string CurrencyCode { get; set; }
+        /// <summary>
+        /// Gets or Sets DowngradePlanInformation
+        /// </summary>
+        [DataMember(Name="downgradePlanInformation", EmitDefaultValue=false)]
+        public DowngradePlanUpdateResponse DowngradePlanInformation { get; set; }
         /// <summary>
         /// When set to **true**, then customer support is provided as part of the account plan.
         /// </summary>
@@ -213,6 +220,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  CanCancelRenewal: ").Append(CanCancelRenewal).Append("\n");
             sb.Append("  CanUpgrade: ").Append(CanUpgrade).Append("\n");
             sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
+            sb.Append("  DowngradePlanInformation: ").Append(DowngradePlanInformation).Append("\n");
             sb.Append("  EnableSupport: ").Append(EnableSupport).Append("\n");
             sb.Append("  IncludedSeats: ").Append(IncludedSeats).Append("\n");
             sb.Append("  IncrementalSeats: ").Append(IncrementalSeats).Append("\n");
@@ -284,6 +292,11 @@ namespace DocuSign.eSign.Model
                     this.CurrencyCode == other.CurrencyCode ||
                     this.CurrencyCode != null &&
                     this.CurrencyCode.Equals(other.CurrencyCode)
+                ) && 
+                (
+                    this.DowngradePlanInformation == other.DowngradePlanInformation ||
+                    this.DowngradePlanInformation != null &&
+                    this.DowngradePlanInformation.Equals(other.DowngradePlanInformation)
                 ) && 
                 (
                     this.EnableSupport == other.EnableSupport ||
@@ -386,6 +399,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CanUpgrade.GetHashCode();
                 if (this.CurrencyCode != null)
                     hash = hash * 59 + this.CurrencyCode.GetHashCode();
+                if (this.DowngradePlanInformation != null)
+                    hash = hash * 59 + this.DowngradePlanInformation.GetHashCode();
                 if (this.EnableSupport != null)
                     hash = hash * 59 + this.EnableSupport.GetHashCode();
                 if (this.IncludedSeats != null)

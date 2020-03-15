@@ -24,31 +24,47 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// DocumentFieldsInformation
+    /// RecipientIdentityPhoneNumber
     /// </summary>
     [DataContract]
-    public partial class DocumentFieldsInformation :  IEquatable<DocumentFieldsInformation>, IValidatableObject
+    public partial class RecipientIdentityPhoneNumber :  IEquatable<RecipientIdentityPhoneNumber>, IValidatableObject
     {
-        public DocumentFieldsInformation()
+        public RecipientIdentityPhoneNumber()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentFieldsInformation" /> class.
+        /// Initializes a new instance of the <see cref="RecipientIdentityPhoneNumber" /> class.
         /// </summary>
-        /// <param name="DocumentFields">The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements:   * name - A string that can be a maximum of 50 characters.  * value - A string that can be a maximum of 200 characters.  *IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.  .</param>
-        public DocumentFieldsInformation(List<NameValue> DocumentFields = default(List<NameValue>))
+        /// <param name="CountryCode">.</param>
+        /// <param name="Extension">.</param>
+        /// <param name="Number">.</param>
+        public RecipientIdentityPhoneNumber(string CountryCode = default(string), string Extension = default(string), string Number = default(string))
         {
-            this.DocumentFields = DocumentFields;
+            this.CountryCode = CountryCode;
+            this.Extension = Extension;
+            this.Number = Number;
         }
         
         /// <summary>
-        /// The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements:   * name - A string that can be a maximum of 50 characters.  * value - A string that can be a maximum of 200 characters.  *IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.  
+        /// 
         /// </summary>
-        /// <value>The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements:   * name - A string that can be a maximum of 50 characters.  * value - A string that can be a maximum of 200 characters.  *IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.  </value>
-        [DataMember(Name="documentFields", EmitDefaultValue=false)]
-        public List<NameValue> DocumentFields { get; set; }
+        /// <value></value>
+        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        public string CountryCode { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="extension", EmitDefaultValue=false)]
+        public string Extension { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="number", EmitDefaultValue=false)]
+        public string Number { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -56,8 +72,10 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DocumentFieldsInformation {\n");
-            sb.Append("  DocumentFields: ").Append(DocumentFields).Append("\n");
+            sb.Append("class RecipientIdentityPhoneNumber {\n");
+            sb.Append("  CountryCode: ").Append(CountryCode).Append("\n");
+            sb.Append("  Extension: ").Append(Extension).Append("\n");
+            sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,15 +97,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as DocumentFieldsInformation);
+            return this.Equals(obj as RecipientIdentityPhoneNumber);
         }
 
         /// <summary>
-        /// Returns true if DocumentFieldsInformation instances are equal
+        /// Returns true if RecipientIdentityPhoneNumber instances are equal
         /// </summary>
-        /// <param name="other">Instance of DocumentFieldsInformation to be compared</param>
+        /// <param name="other">Instance of RecipientIdentityPhoneNumber to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DocumentFieldsInformation other)
+        public bool Equals(RecipientIdentityPhoneNumber other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -95,9 +113,19 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.DocumentFields == other.DocumentFields ||
-                    this.DocumentFields != null &&
-                    this.DocumentFields.SequenceEqual(other.DocumentFields)
+                    this.CountryCode == other.CountryCode ||
+                    this.CountryCode != null &&
+                    this.CountryCode.Equals(other.CountryCode)
+                ) && 
+                (
+                    this.Extension == other.Extension ||
+                    this.Extension != null &&
+                    this.Extension.Equals(other.Extension)
+                ) && 
+                (
+                    this.Number == other.Number ||
+                    this.Number != null &&
+                    this.Number.Equals(other.Number)
                 );
         }
 
@@ -112,8 +140,12 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.DocumentFields != null)
-                    hash = hash * 59 + this.DocumentFields.GetHashCode();
+                if (this.CountryCode != null)
+                    hash = hash * 59 + this.CountryCode.GetHashCode();
+                if (this.Extension != null)
+                    hash = hash * 59 + this.Extension.GetHashCode();
+                if (this.Number != null)
+                    hash = hash * 59 + this.Number.GetHashCode();
                 return hash;
             }
         }

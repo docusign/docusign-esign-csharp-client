@@ -49,6 +49,7 @@ namespace DocuSign.eSign.Model
         /// <param name="BrandLock">.</param>
         /// <param name="CertificateUri">Retrieves a URI for an endpoint that allows you to easily retrieve certificate information..</param>
         /// <param name="CompletedDateTime">Specifies the date and time this item was completed..</param>
+        /// <param name="CopyRecipientData">.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="CustomFields">CustomFields.</param>
         /// <param name="CustomFieldsUri">Contains a URI for an endpoint that you can use to retrieve the custom fields..</param>
@@ -88,7 +89,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UseDisclosure">When set to **true**, the disclosure is shown to recipients in accordance with the account&#39;s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the &#x60;useDisclosure&#x60; property is not set, then the account&#39;s normal disclosure setting is used and the value of the &#x60;useDisclosure&#x60; property is not returned in responses when getting envelope information..</param>
         /// <param name="VoidedDateTime">The date and time the envelope or template was voided..</param>
         /// <param name="VoidedReason">The reason the envelope or template was voided..</param>
-        public Envelope(string AllowMarkup = default(string), string AllowReassign = default(string), string AllowViewHistory = default(string), string Asynchronous = default(string), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeUri = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsSignatureProviderEnvelope = default(string), string LastModifiedDateTime = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string))
+        public Envelope(string AllowMarkup = default(string), string AllowReassign = default(string), string AllowViewHistory = default(string), string Asynchronous = default(string), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), string CopyRecipientData = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeUri = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsSignatureProviderEnvelope = default(string), string LastModifiedDateTime = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string))
         {
             this.AllowMarkup = AllowMarkup;
             this.AllowReassign = AllowReassign;
@@ -102,6 +103,7 @@ namespace DocuSign.eSign.Model
             this.BrandLock = BrandLock;
             this.CertificateUri = CertificateUri;
             this.CompletedDateTime = CompletedDateTime;
+            this.CopyRecipientData = CopyRecipientData;
             this.CreatedDateTime = CreatedDateTime;
             this.CustomFields = CustomFields;
             this.CustomFieldsUri = CustomFieldsUri;
@@ -215,6 +217,12 @@ namespace DocuSign.eSign.Model
         /// <value>Specifies the date and time this item was completed.</value>
         [DataMember(Name="completedDateTime", EmitDefaultValue=false)]
         public string CompletedDateTime { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="copyRecipientData", EmitDefaultValue=false)]
+        public string CopyRecipientData { get; set; }
         /// <summary>
         /// Indicates the date and time the item was created.
         /// </summary>
@@ -464,6 +472,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  BrandLock: ").Append(BrandLock).Append("\n");
             sb.Append("  CertificateUri: ").Append(CertificateUri).Append("\n");
             sb.Append("  CompletedDateTime: ").Append(CompletedDateTime).Append("\n");
+            sb.Append("  CopyRecipientData: ").Append(CopyRecipientData).Append("\n");
             sb.Append("  CreatedDateTime: ").Append(CreatedDateTime).Append("\n");
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  CustomFieldsUri: ").Append(CustomFieldsUri).Append("\n");
@@ -598,6 +607,11 @@ namespace DocuSign.eSign.Model
                     this.CompletedDateTime == other.CompletedDateTime ||
                     this.CompletedDateTime != null &&
                     this.CompletedDateTime.Equals(other.CompletedDateTime)
+                ) && 
+                (
+                    this.CopyRecipientData == other.CopyRecipientData ||
+                    this.CopyRecipientData != null &&
+                    this.CopyRecipientData.Equals(other.CopyRecipientData)
                 ) && 
                 (
                     this.CreatedDateTime == other.CreatedDateTime ||
@@ -831,6 +845,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CertificateUri.GetHashCode();
                 if (this.CompletedDateTime != null)
                     hash = hash * 59 + this.CompletedDateTime.GetHashCode();
+                if (this.CopyRecipientData != null)
+                    hash = hash * 59 + this.CopyRecipientData.GetHashCode();
                 if (this.CreatedDateTime != null)
                     hash = hash * 59 + this.CreatedDateTime.GetHashCode();
                 if (this.CustomFields != null)

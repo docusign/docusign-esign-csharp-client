@@ -300,6 +300,31 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> PurchaseEnvelopesWithHttpInfo (string accountId, PurchasedEnvelopesInformation purchasedEnvelopesInformation = null);
         /// <summary>
+        /// Queues downgrade billing plan request for an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="downgradeBillingPlanInformation"> (optional)</param>
+        
+        /// <returns></returns>
+        DowngradePlanUpdateResponse UpdateDowngradeAccountBillingPlan (string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null);
+
+        /// <summary>
+        /// Queues downgrade billing plan request for an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="downgradeBillingPlanInformation"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<DowngradePlanUpdateResponse> UpdateDowngradeAccountBillingPlanWithHttpInfo (string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null);
+        /// <summary>
         /// Updates the account billing plan.
         /// </summary>
         /// <remarks>
@@ -601,6 +626,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> PurchaseEnvelopesAsyncWithHttpInfo (string accountId, PurchasedEnvelopesInformation purchasedEnvelopesInformation = null);
+        /// <summary>
+        /// Queues downgrade billing plan request for an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="downgradeBillingPlanInformation"> (optional)</param>
+        
+        /// <returns>Task of DowngradePlanUpdateResponse</returns>
+        System.Threading.Tasks.Task<DowngradePlanUpdateResponse> UpdateDowngradeAccountBillingPlanAsync (string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null);
+
+        /// <summary>
+        /// Queues downgrade billing plan request for an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="downgradeBillingPlanInformation"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (DowngradePlanUpdateResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DowngradePlanUpdateResponse>> UpdateDowngradeAccountBillingPlanAsyncWithHttpInfo (string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null);
         /// <summary>
         /// Updates the account billing plan.
         /// </summary>
@@ -2612,6 +2662,184 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
+        }
+
+
+
+        /// <summary>
+        /// Queues downgrade billing plan request for an account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="downgradeBillingPlanInformation"> (optional)</param>
+        
+        /// <returns>DowngradePlanUpdateResponse</returns>
+        public DowngradePlanUpdateResponse UpdateDowngradeAccountBillingPlan (string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null)
+        {
+             ApiResponse<DowngradePlanUpdateResponse> localVarResponse = UpdateDowngradeAccountBillingPlanWithHttpInfo(accountId, downgradeBillingPlanInformation);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Queues downgrade billing plan request for an account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="downgradeBillingPlanInformation"> (optional)</param>
+        
+        /// <returns>ApiResponse of DowngradePlanUpdateResponse</returns>
+        public ApiResponse< DowngradePlanUpdateResponse > UpdateDowngradeAccountBillingPlanWithHttpInfo (string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling BillingApi->UpdateDowngradeAccountBillingPlan");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/billing_plan/downgrade";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (downgradeBillingPlanInformation != null && downgradeBillingPlanInformation.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(downgradeBillingPlanInformation); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = downgradeBillingPlanInformation; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateDowngradeAccountBillingPlan", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<DowngradePlanUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DowngradePlanUpdateResponse) Configuration.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DowngradePlanUpdateResponse)));
+            }
+            else
+            {
+                return new ApiResponse<DowngradePlanUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DowngradePlanUpdateResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DowngradePlanUpdateResponse)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Queues downgrade billing plan request for an account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="downgradeBillingPlanInformation"> (optional)</param>
+        
+        /// <returns>Task of DowngradePlanUpdateResponse</returns>
+        public async System.Threading.Tasks.Task<DowngradePlanUpdateResponse> UpdateDowngradeAccountBillingPlanAsync (string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null)
+        {
+             ApiResponse<DowngradePlanUpdateResponse> localVarResponse = await UpdateDowngradeAccountBillingPlanAsyncWithHttpInfo(accountId, downgradeBillingPlanInformation);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Queues downgrade billing plan request for an account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="downgradeBillingPlanInformation"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (DowngradePlanUpdateResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DowngradePlanUpdateResponse>> UpdateDowngradeAccountBillingPlanAsyncWithHttpInfo (string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling BillingApi->UpdateDowngradeAccountBillingPlan");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/billing_plan/downgrade";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (downgradeBillingPlanInformation != null && downgradeBillingPlanInformation.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(downgradeBillingPlanInformation); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = downgradeBillingPlanInformation; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateDowngradeAccountBillingPlan", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DowngradePlanUpdateResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DowngradePlanUpdateResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DowngradePlanUpdateResponse)));
+            
         }
 
 

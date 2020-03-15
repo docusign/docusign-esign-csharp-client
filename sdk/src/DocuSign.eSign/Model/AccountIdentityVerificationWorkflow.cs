@@ -39,14 +39,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="DefaultDescription">.</param>
         /// <param name="DefaultName">.</param>
+        /// <param name="InputOptions">.</param>
         /// <param name="SignatureProvider">SignatureProvider.</param>
         /// <param name="Steps">.</param>
         /// <param name="WorkflowId">.</param>
         /// <param name="WorkflowResourceKey">.</param>
-        public AccountIdentityVerificationWorkflow(string DefaultDescription = default(string), string DefaultName = default(string), AccountSignatureProvider SignatureProvider = default(AccountSignatureProvider), List<AccountIdentityVerificationStep> Steps = default(List<AccountIdentityVerificationStep>), string WorkflowId = default(string), string WorkflowResourceKey = default(string))
+        public AccountIdentityVerificationWorkflow(string DefaultDescription = default(string), string DefaultName = default(string), List<AccountIdentityInputOption> InputOptions = default(List<AccountIdentityInputOption>), AccountSignatureProvider SignatureProvider = default(AccountSignatureProvider), List<AccountIdentityVerificationStep> Steps = default(List<AccountIdentityVerificationStep>), string WorkflowId = default(string), string WorkflowResourceKey = default(string))
         {
             this.DefaultDescription = DefaultDescription;
             this.DefaultName = DefaultName;
+            this.InputOptions = InputOptions;
             this.SignatureProvider = SignatureProvider;
             this.Steps = Steps;
             this.WorkflowId = WorkflowId;
@@ -65,6 +67,12 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="defaultName", EmitDefaultValue=false)]
         public string DefaultName { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="inputOptions", EmitDefaultValue=false)]
+        public List<AccountIdentityInputOption> InputOptions { get; set; }
         /// <summary>
         /// Gets or Sets SignatureProvider
         /// </summary>
@@ -98,6 +106,7 @@ namespace DocuSign.eSign.Model
             sb.Append("class AccountIdentityVerificationWorkflow {\n");
             sb.Append("  DefaultDescription: ").Append(DefaultDescription).Append("\n");
             sb.Append("  DefaultName: ").Append(DefaultName).Append("\n");
+            sb.Append("  InputOptions: ").Append(InputOptions).Append("\n");
             sb.Append("  SignatureProvider: ").Append(SignatureProvider).Append("\n");
             sb.Append("  Steps: ").Append(Steps).Append("\n");
             sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
@@ -149,6 +158,11 @@ namespace DocuSign.eSign.Model
                     this.DefaultName.Equals(other.DefaultName)
                 ) && 
                 (
+                    this.InputOptions == other.InputOptions ||
+                    this.InputOptions != null &&
+                    this.InputOptions.SequenceEqual(other.InputOptions)
+                ) && 
+                (
                     this.SignatureProvider == other.SignatureProvider ||
                     this.SignatureProvider != null &&
                     this.SignatureProvider.Equals(other.SignatureProvider)
@@ -185,6 +199,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DefaultDescription.GetHashCode();
                 if (this.DefaultName != null)
                     hash = hash * 59 + this.DefaultName.GetHashCode();
+                if (this.InputOptions != null)
+                    hash = hash * 59 + this.InputOptions.GetHashCode();
                 if (this.SignatureProvider != null)
                     hash = hash * 59 + this.SignatureProvider.GetHashCode();
                 if (this.Steps != null)

@@ -24,39 +24,38 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientIdentityVerification
+    /// DowngradeBillingPlanInformation
     /// </summary>
     [DataContract]
-    public partial class RecipientIdentityVerification :  IEquatable<RecipientIdentityVerification>, IValidatableObject
+    public partial class DowngradeBillingPlanInformation :  IEquatable<DowngradeBillingPlanInformation>, IValidatableObject
     {
-        public RecipientIdentityVerification()
+        public DowngradeBillingPlanInformation()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RecipientIdentityVerification" /> class.
+        /// Initializes a new instance of the <see cref="DowngradeBillingPlanInformation" /> class.
         /// </summary>
-        /// <param name="InputOptions">.</param>
-        /// <param name="WorkflowId">.</param>
-        public RecipientIdentityVerification(List<RecipientIdentityInputOption> InputOptions = default(List<RecipientIdentityInputOption>), string WorkflowId = default(string))
+        /// <param name="DowngradeEventType">.</param>
+        /// <param name="PlanInformation">PlanInformation.</param>
+        public DowngradeBillingPlanInformation(string DowngradeEventType = default(string), PlanInformation PlanInformation = default(PlanInformation))
         {
-            this.InputOptions = InputOptions;
-            this.WorkflowId = WorkflowId;
+            this.DowngradeEventType = DowngradeEventType;
+            this.PlanInformation = PlanInformation;
         }
         
         /// <summary>
         /// 
         /// </summary>
         /// <value></value>
-        [DataMember(Name="inputOptions", EmitDefaultValue=false)]
-        public List<RecipientIdentityInputOption> InputOptions { get; set; }
+        [DataMember(Name="downgradeEventType", EmitDefaultValue=false)]
+        public string DowngradeEventType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PlanInformation
         /// </summary>
-        /// <value></value>
-        [DataMember(Name="workflowId", EmitDefaultValue=false)]
-        public string WorkflowId { get; set; }
+        [DataMember(Name="planInformation", EmitDefaultValue=false)]
+        public PlanInformation PlanInformation { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -64,9 +63,9 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RecipientIdentityVerification {\n");
-            sb.Append("  InputOptions: ").Append(InputOptions).Append("\n");
-            sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
+            sb.Append("class DowngradeBillingPlanInformation {\n");
+            sb.Append("  DowngradeEventType: ").Append(DowngradeEventType).Append("\n");
+            sb.Append("  PlanInformation: ").Append(PlanInformation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,15 +87,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as RecipientIdentityVerification);
+            return this.Equals(obj as DowngradeBillingPlanInformation);
         }
 
         /// <summary>
-        /// Returns true if RecipientIdentityVerification instances are equal
+        /// Returns true if DowngradeBillingPlanInformation instances are equal
         /// </summary>
-        /// <param name="other">Instance of RecipientIdentityVerification to be compared</param>
+        /// <param name="other">Instance of DowngradeBillingPlanInformation to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RecipientIdentityVerification other)
+        public bool Equals(DowngradeBillingPlanInformation other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -104,14 +103,14 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.InputOptions == other.InputOptions ||
-                    this.InputOptions != null &&
-                    this.InputOptions.SequenceEqual(other.InputOptions)
+                    this.DowngradeEventType == other.DowngradeEventType ||
+                    this.DowngradeEventType != null &&
+                    this.DowngradeEventType.Equals(other.DowngradeEventType)
                 ) && 
                 (
-                    this.WorkflowId == other.WorkflowId ||
-                    this.WorkflowId != null &&
-                    this.WorkflowId.Equals(other.WorkflowId)
+                    this.PlanInformation == other.PlanInformation ||
+                    this.PlanInformation != null &&
+                    this.PlanInformation.Equals(other.PlanInformation)
                 );
         }
 
@@ -126,10 +125,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.InputOptions != null)
-                    hash = hash * 59 + this.InputOptions.GetHashCode();
-                if (this.WorkflowId != null)
-                    hash = hash * 59 + this.WorkflowId.GetHashCode();
+                if (this.DowngradeEventType != null)
+                    hash = hash * 59 + this.DowngradeEventType.GetHashCode();
+                if (this.PlanInformation != null)
+                    hash = hash * 59 + this.PlanInformation.GetHashCode();
                 return hash;
             }
         }

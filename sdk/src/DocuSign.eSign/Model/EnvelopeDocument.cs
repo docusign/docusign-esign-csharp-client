@@ -46,7 +46,6 @@ namespace DocuSign.eSign.Model
         /// <param name="Display">.</param>
         /// <param name="DisplayMetadata">DisplayMetadata.</param>
         /// <param name="DocumentFields">.</param>
-        /// <param name="DocumentGroup">.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdGuid">.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
@@ -63,7 +62,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="Type">.</param>
         /// <param name="Uri">.</param>
-        public EnvelopeDocument(List<string> AddedRecipientIds = default(List<string>), string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), PropertyMetadata AuthoritativeCopyMetadata = default(PropertyMetadata), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), PropertyMetadata DisplayMetadata = default(PropertyMetadata), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), string DocumentIdGuid = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), PropertyMetadata IncludeInDownloadMetadata = default(PropertyMetadata), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Order = default(string), List<Page> Pages = default(List<Page>), string SignerMustAcknowledge = default(string), PropertyMetadata SignerMustAcknowledgeMetadata = default(PropertyMetadata), string SizeBytes = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
+        public EnvelopeDocument(List<string> AddedRecipientIds = default(List<string>), string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), PropertyMetadata AuthoritativeCopyMetadata = default(PropertyMetadata), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), PropertyMetadata DisplayMetadata = default(PropertyMetadata), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string DocumentIdGuid = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), PropertyMetadata IncludeInDownloadMetadata = default(PropertyMetadata), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Order = default(string), List<Page> Pages = default(List<Page>), string SignerMustAcknowledge = default(string), PropertyMetadata SignerMustAcknowledgeMetadata = default(PropertyMetadata), string SizeBytes = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
         {
             this.AddedRecipientIds = AddedRecipientIds;
             this.AttachmentTabId = AttachmentTabId;
@@ -74,7 +73,6 @@ namespace DocuSign.eSign.Model
             this.Display = Display;
             this.DisplayMetadata = DisplayMetadata;
             this.DocumentFields = DocumentFields;
-            this.DocumentGroup = DocumentGroup;
             this.DocumentId = DocumentId;
             this.DocumentIdGuid = DocumentIdGuid;
             this.ErrorDetails = ErrorDetails;
@@ -145,12 +143,6 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="documentFields", EmitDefaultValue=false)]
         public List<NameValue> DocumentFields { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="documentGroup", EmitDefaultValue=false)]
-        public string DocumentGroup { get; set; }
         /// <summary>
         /// Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute.
         /// </summary>
@@ -260,7 +252,6 @@ namespace DocuSign.eSign.Model
             sb.Append("  Display: ").Append(Display).Append("\n");
             sb.Append("  DisplayMetadata: ").Append(DisplayMetadata).Append("\n");
             sb.Append("  DocumentFields: ").Append(DocumentFields).Append("\n");
-            sb.Append("  DocumentGroup: ").Append(DocumentGroup).Append("\n");
             sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
             sb.Append("  DocumentIdGuid: ").Append(DocumentIdGuid).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
@@ -357,11 +348,6 @@ namespace DocuSign.eSign.Model
                     this.DocumentFields == other.DocumentFields ||
                     this.DocumentFields != null &&
                     this.DocumentFields.SequenceEqual(other.DocumentFields)
-                ) && 
-                (
-                    this.DocumentGroup == other.DocumentGroup ||
-                    this.DocumentGroup != null &&
-                    this.DocumentGroup.Equals(other.DocumentGroup)
                 ) && 
                 (
                     this.DocumentId == other.DocumentId ||
@@ -474,8 +460,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DisplayMetadata.GetHashCode();
                 if (this.DocumentFields != null)
                     hash = hash * 59 + this.DocumentFields.GetHashCode();
-                if (this.DocumentGroup != null)
-                    hash = hash * 59 + this.DocumentGroup.GetHashCode();
                 if (this.DocumentId != null)
                     hash = hash * 59 + this.DocumentId.GetHashCode();
                 if (this.DocumentIdGuid != null)

@@ -56,6 +56,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CertificateUri">Retrieves a URI for an endpoint that allows you to easily retrieve certificate information..</param>
         /// <param name="CompletedDateTime">Specifies the date and time this item was completed..</param>
         /// <param name="CompositeTemplates">A complex type that can be added to create envelopes from a combination of DocuSign templates and PDF forms. The basic envelope remains the same, while the Composite Template adds new document and template overlays into the envelope. There can be any number of Composite Template structures in the envelope..</param>
+        /// <param name="CopyRecipientData">.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="CustomFields">CustomFields.</param>
         /// <param name="CustomFieldsUri">Contains a URI for an endpoint that you can use to retrieve the custom fields..</param>
@@ -121,7 +122,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UseDisclosure">When set to **true**, the disclosure is shown to recipients in accordance with the account&#39;s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the &#x60;useDisclosure&#x60; property is not set, then the account&#39;s normal disclosure setting is used and the value of the &#x60;useDisclosure&#x60; property is not returned in responses when getting envelope information..</param>
         /// <param name="VoidedDateTime">The date and time the envelope or template was voided..</param>
         /// <param name="VoidedReason">The reason the envelope or template was voided..</param>
-        public EnvelopeDefinition(string AccessControlListBase64 = default(string), string Accessibility = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowRecipientRecursion = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string Asynchronous = default(string), List<Attachment> Attachments = default(List<Attachment>), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), List<CompositeTemplate> CompositeTemplates = default(List<CompositeTemplate>), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), EventNotification EventNotification = default(EventNotification), List<EventNotification> EventNotifications = default(List<EventNotification>), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), List<Folder> Folders = default(List<Folder>), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string LastModifiedDateTime = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), string Password = default(string), PowerForm PowerForm = default(PowerForm), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string StatusDateTime = default(string), string TemplateId = default(string), List<TemplateRole> TemplateRoles = default(List<TemplateRole>), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string))
+        public EnvelopeDefinition(string AccessControlListBase64 = default(string), string Accessibility = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowRecipientRecursion = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string Asynchronous = default(string), List<Attachment> Attachments = default(List<Attachment>), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), List<CompositeTemplate> CompositeTemplates = default(List<CompositeTemplate>), string CopyRecipientData = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), EventNotification EventNotification = default(EventNotification), List<EventNotification> EventNotifications = default(List<EventNotification>), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), List<Folder> Folders = default(List<Folder>), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string LastModifiedDateTime = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), string Password = default(string), PowerForm PowerForm = default(PowerForm), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string StatusDateTime = default(string), string TemplateId = default(string), List<TemplateRole> TemplateRoles = default(List<TemplateRole>), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string))
         {
             this.AccessControlListBase64 = AccessControlListBase64;
             this.Accessibility = Accessibility;
@@ -142,6 +143,7 @@ namespace DocuSign.eSign.Model
             this.CertificateUri = CertificateUri;
             this.CompletedDateTime = CompletedDateTime;
             this.CompositeTemplates = CompositeTemplates;
+            this.CopyRecipientData = CopyRecipientData;
             this.CreatedDateTime = CreatedDateTime;
             this.CustomFields = CustomFields;
             this.CustomFieldsUri = CustomFieldsUri;
@@ -323,6 +325,12 @@ namespace DocuSign.eSign.Model
         /// <value>A complex type that can be added to create envelopes from a combination of DocuSign templates and PDF forms. The basic envelope remains the same, while the Composite Template adds new document and template overlays into the envelope. There can be any number of Composite Template structures in the envelope.</value>
         [DataMember(Name="compositeTemplates", EmitDefaultValue=false)]
         public List<CompositeTemplate> CompositeTemplates { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="copyRecipientData", EmitDefaultValue=false)]
+        public string CopyRecipientData { get; set; }
         /// <summary>
         /// Indicates the date and time the item was created.
         /// </summary>
@@ -731,6 +739,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  CertificateUri: ").Append(CertificateUri).Append("\n");
             sb.Append("  CompletedDateTime: ").Append(CompletedDateTime).Append("\n");
             sb.Append("  CompositeTemplates: ").Append(CompositeTemplates).Append("\n");
+            sb.Append("  CopyRecipientData: ").Append(CopyRecipientData).Append("\n");
             sb.Append("  CreatedDateTime: ").Append(CreatedDateTime).Append("\n");
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  CustomFieldsUri: ").Append(CustomFieldsUri).Append("\n");
@@ -926,6 +935,11 @@ namespace DocuSign.eSign.Model
                     this.CompositeTemplates == other.CompositeTemplates ||
                     this.CompositeTemplates != null &&
                     this.CompositeTemplates.SequenceEqual(other.CompositeTemplates)
+                ) && 
+                (
+                    this.CopyRecipientData == other.CopyRecipientData ||
+                    this.CopyRecipientData != null &&
+                    this.CopyRecipientData.Equals(other.CopyRecipientData)
                 ) && 
                 (
                     this.CreatedDateTime == other.CreatedDateTime ||
@@ -1303,6 +1317,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CompletedDateTime.GetHashCode();
                 if (this.CompositeTemplates != null)
                     hash = hash * 59 + this.CompositeTemplates.GetHashCode();
+                if (this.CopyRecipientData != null)
+                    hash = hash * 59 + this.CopyRecipientData.GetHashCode();
                 if (this.CreatedDateTime != null)
                     hash = hash * 59 + this.CreatedDateTime.GetHashCode();
                 if (this.CustomFields != null)

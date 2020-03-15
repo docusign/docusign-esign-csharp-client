@@ -41,7 +41,6 @@ namespace DocuSign.eSign.Model
         /// <param name="Display">.</param>
         /// <param name="DocumentBase64">The document&#39;s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding..</param>
         /// <param name="DocumentFields">.</param>
-        /// <param name="DocumentGroup">.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="EncryptedWithKeyManager">When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.  .</param>
         /// <param name="FileExtension">The file extension type of the document. If the document is not a PDF it is converted to a PDF.  .</param>
@@ -63,18 +62,18 @@ namespace DocuSign.eSign.Model
         /// <param name="PdfWidgetsBase64">.</param>
         /// <param name="RemoteUrl">The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}]. .</param>
         /// <param name="SignerMustAcknowledge">.</param>
+        /// <param name="SignerMustAcknowledgeUseAccountDefault">.</param>
         /// <param name="Tabs">Tabs.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TransformPdfFields">When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs. .</param>
         /// <param name="Uri">.</param>
-        public Document(string ApplyAnchorTabs = default(string), string Display = default(string), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), bool? IsDynamicXfa = default(bool?), bool? IsStaticXfa = default(bool?), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), List<OcrRequest> OcrRequests = default(List<OcrRequest>), string Order = default(string), string PageCount = default(string), string Pages = default(string), List<PageSize> PageSizes = default(List<PageSize>), string Password = default(string), string PdfFieldsData = default(string), string PdfFormFieldOption = default(string), string PdfWidgetsBase64 = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
+        public Document(string ApplyAnchorTabs = default(string), string Display = default(string), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), bool? IsDynamicXfa = default(bool?), bool? IsStaticXfa = default(bool?), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), List<OcrRequest> OcrRequests = default(List<OcrRequest>), string Order = default(string), string PageCount = default(string), string Pages = default(string), List<PageSize> PageSizes = default(List<PageSize>), string Password = default(string), string PdfFieldsData = default(string), string PdfFormFieldOption = default(string), string PdfWidgetsBase64 = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), bool? SignerMustAcknowledgeUseAccountDefault = default(bool?), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
         {
             this.ApplyAnchorTabs = ApplyAnchorTabs;
             this.Display = Display;
             this.DocumentBase64 = DocumentBase64;
             this.DocumentFields = DocumentFields;
-            this.DocumentGroup = DocumentGroup;
             this.DocumentId = DocumentId;
             this.EncryptedWithKeyManager = EncryptedWithKeyManager;
             this.FileExtension = FileExtension;
@@ -96,6 +95,7 @@ namespace DocuSign.eSign.Model
             this.PdfWidgetsBase64 = PdfWidgetsBase64;
             this.RemoteUrl = RemoteUrl;
             this.SignerMustAcknowledge = SignerMustAcknowledge;
+            this.SignerMustAcknowledgeUseAccountDefault = SignerMustAcknowledgeUseAccountDefault;
             this.Tabs = Tabs;
             this.TemplateLocked = TemplateLocked;
             this.TemplateRequired = TemplateRequired;
@@ -127,12 +127,6 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="documentFields", EmitDefaultValue=false)]
         public List<NameValue> DocumentFields { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="documentGroup", EmitDefaultValue=false)]
-        public string DocumentGroup { get; set; }
         /// <summary>
         /// Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute.
         /// </summary>
@@ -259,6 +253,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signerMustAcknowledge", EmitDefaultValue=false)]
         public string SignerMustAcknowledge { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <value></value>
+        [DataMember(Name="signerMustAcknowledgeUseAccountDefault", EmitDefaultValue=false)]
+        public bool? SignerMustAcknowledgeUseAccountDefault { get; set; }
+        /// <summary>
         /// Gets or Sets Tabs
         /// </summary>
         [DataMember(Name="tabs", EmitDefaultValue=false)]
@@ -299,7 +299,6 @@ namespace DocuSign.eSign.Model
             sb.Append("  Display: ").Append(Display).Append("\n");
             sb.Append("  DocumentBase64: ").Append(DocumentBase64).Append("\n");
             sb.Append("  DocumentFields: ").Append(DocumentFields).Append("\n");
-            sb.Append("  DocumentGroup: ").Append(DocumentGroup).Append("\n");
             sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
             sb.Append("  EncryptedWithKeyManager: ").Append(EncryptedWithKeyManager).Append("\n");
             sb.Append("  FileExtension: ").Append(FileExtension).Append("\n");
@@ -321,6 +320,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  PdfWidgetsBase64: ").Append(PdfWidgetsBase64).Append("\n");
             sb.Append("  RemoteUrl: ").Append(RemoteUrl).Append("\n");
             sb.Append("  SignerMustAcknowledge: ").Append(SignerMustAcknowledge).Append("\n");
+            sb.Append("  SignerMustAcknowledgeUseAccountDefault: ").Append(SignerMustAcknowledgeUseAccountDefault).Append("\n");
             sb.Append("  Tabs: ").Append(Tabs).Append("\n");
             sb.Append("  TemplateLocked: ").Append(TemplateLocked).Append("\n");
             sb.Append("  TemplateRequired: ").Append(TemplateRequired).Append("\n");
@@ -381,11 +381,6 @@ namespace DocuSign.eSign.Model
                     this.DocumentFields == other.DocumentFields ||
                     this.DocumentFields != null &&
                     this.DocumentFields.SequenceEqual(other.DocumentFields)
-                ) && 
-                (
-                    this.DocumentGroup == other.DocumentGroup ||
-                    this.DocumentGroup != null &&
-                    this.DocumentGroup.Equals(other.DocumentGroup)
                 ) && 
                 (
                     this.DocumentId == other.DocumentId ||
@@ -493,6 +488,11 @@ namespace DocuSign.eSign.Model
                     this.SignerMustAcknowledge.Equals(other.SignerMustAcknowledge)
                 ) && 
                 (
+                    this.SignerMustAcknowledgeUseAccountDefault == other.SignerMustAcknowledgeUseAccountDefault ||
+                    this.SignerMustAcknowledgeUseAccountDefault != null &&
+                    this.SignerMustAcknowledgeUseAccountDefault.Equals(other.SignerMustAcknowledgeUseAccountDefault)
+                ) && 
+                (
                     this.Tabs == other.Tabs ||
                     this.Tabs != null &&
                     this.Tabs.Equals(other.Tabs)
@@ -538,8 +538,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DocumentBase64.GetHashCode();
                 if (this.DocumentFields != null)
                     hash = hash * 59 + this.DocumentFields.GetHashCode();
-                if (this.DocumentGroup != null)
-                    hash = hash * 59 + this.DocumentGroup.GetHashCode();
                 if (this.DocumentId != null)
                     hash = hash * 59 + this.DocumentId.GetHashCode();
                 if (this.EncryptedWithKeyManager != null)
@@ -582,6 +580,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.RemoteUrl.GetHashCode();
                 if (this.SignerMustAcknowledge != null)
                     hash = hash * 59 + this.SignerMustAcknowledge.GetHashCode();
+                if (this.SignerMustAcknowledgeUseAccountDefault != null)
+                    hash = hash * 59 + this.SignerMustAcknowledgeUseAccountDefault.GetHashCode();
                 if (this.Tabs != null)
                     hash = hash * 59 + this.Tabs.GetHashCode();
                 if (this.TemplateLocked != null)

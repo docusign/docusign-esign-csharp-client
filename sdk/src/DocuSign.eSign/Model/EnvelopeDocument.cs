@@ -43,7 +43,6 @@ namespace DocuSign.eSign.Model
         /// <param name="ContainsPdfFormFields">.</param>
         /// <param name="Display">.</param>
         /// <param name="DocumentFields">.</param>
-        /// <param name="DocumentGroup">.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="IncludeInDownload">.</param>
@@ -54,7 +53,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SizeBytes">.</param>
         /// <param name="Type">.</param>
         /// <param name="Uri">.</param>
-        public EnvelopeDocument(string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentGroup = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), string Name = default(string), string Order = default(string), string Pages = default(string), string SignerMustAcknowledge = default(string), string SizeBytes = default(string), string Type = default(string), string Uri = default(string))
+        public EnvelopeDocument(string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), string Name = default(string), string Order = default(string), string Pages = default(string), string SignerMustAcknowledge = default(string), string SizeBytes = default(string), string Type = default(string), string Uri = default(string))
         {
             this.AttachmentTabId = AttachmentTabId;
             this.AuthoritativeCopy = AuthoritativeCopy;
@@ -62,7 +61,6 @@ namespace DocuSign.eSign.Model
             this.ContainsPdfFormFields = ContainsPdfFormFields;
             this.Display = Display;
             this.DocumentFields = DocumentFields;
-            this.DocumentGroup = DocumentGroup;
             this.DocumentId = DocumentId;
             this.ErrorDetails = ErrorDetails;
             this.IncludeInDownload = IncludeInDownload;
@@ -111,12 +109,6 @@ namespace DocuSign.eSign.Model
         /// <value></value>
         [DataMember(Name="documentFields", EmitDefaultValue=false)]
         public List<NameValue> DocumentFields { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="documentGroup", EmitDefaultValue=false)]
-        public string DocumentGroup { get; set; }
         /// <summary>
         /// Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute.
         /// </summary>
@@ -190,7 +182,6 @@ namespace DocuSign.eSign.Model
             sb.Append("  ContainsPdfFormFields: ").Append(ContainsPdfFormFields).Append("\n");
             sb.Append("  Display: ").Append(Display).Append("\n");
             sb.Append("  DocumentFields: ").Append(DocumentFields).Append("\n");
-            sb.Append("  DocumentGroup: ").Append(DocumentGroup).Append("\n");
             sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("  IncludeInDownload: ").Append(IncludeInDownload).Append("\n");
@@ -268,11 +259,6 @@ namespace DocuSign.eSign.Model
                     this.DocumentFields.SequenceEqual(other.DocumentFields)
                 ) && 
                 (
-                    this.DocumentGroup == other.DocumentGroup ||
-                    this.DocumentGroup != null &&
-                    this.DocumentGroup.Equals(other.DocumentGroup)
-                ) && 
-                (
                     this.DocumentId == other.DocumentId ||
                     this.DocumentId != null &&
                     this.DocumentId.Equals(other.DocumentId)
@@ -347,8 +333,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Display.GetHashCode();
                 if (this.DocumentFields != null)
                     hash = hash * 59 + this.DocumentFields.GetHashCode();
-                if (this.DocumentGroup != null)
-                    hash = hash * 59 + this.DocumentGroup.GetHashCode();
                 if (this.DocumentId != null)
                     hash = hash * 59 + this.DocumentId.GetHashCode();
                 if (this.ErrorDetails != null)

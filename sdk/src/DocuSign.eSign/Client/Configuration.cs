@@ -47,7 +47,7 @@ namespace DocuSign.eSign.Client
                              string tempFolderPath = null,
                              string dateTimeFormat = null,
                              int timeout = 100000,
-                             string userAgent = "Swagger-Codegen/3.2.0/csharp"
+                             string userAgent = "Swagger-Codegen/3.3.0-rc/csharp"
                             )
         {
             setApiClientUsingDefault(apiClient);
@@ -82,7 +82,7 @@ namespace DocuSign.eSign.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "3.2.0";
+        public const string Version = "3.3.0-rc";
 
         /// <summary>
         /// Gets or sets the default Configuration.
@@ -344,7 +344,7 @@ namespace DocuSign.eSign.Client
                      .GetReferencedAssemblies()
                      .Where(x => x.Name == "System.Core").First().Version.ToString() + "\n";
             report += "    Version of the API: v2\n";
-            report += "    SDK Package Version: 3.2.0\n";
+            report += "    SDK Package Version: 3.3.0-rc\n";
 
             return report;
         }

@@ -3,6 +3,7 @@ image: Visual Studio 2017
 branches:
   only:
     - master
+    - v2-master
 build_script:
 - ps: . ./csharp-build.ps1
 test_script:

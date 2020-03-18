@@ -1,6 +1,7 @@
 branches:
   only: 
     - master
+    - v2-master
 language: csharp
 solution: sdk/DocuSign.eSign.sln
 mono: none

@@ -4,8 +4,8 @@ Write-Host "`nCleaning DocuSign.eSign!" -ForegroundColor Yellow
 msbuild ./sdk/src/DocuSign.eSign/DocuSign.eSign.csproj /t:clean /verbosity:minimal
 if ($lastExitCode -ne 0) { exit $lastExitCode }
 
-Write-Host "Restore DocuSign.eSign" -ForegroundColor Yellow
-msbuild ./sdk/src/DocuSign.eSign/DocuSign.eSign.csproj /t:restore /p:TargetFramework=net45 /verbosity:minimal
+Write-Host "Restore DocuSign.eSign for Net452" -ForegroundColor Yellow
+msbuild ./sdk/src/DocuSign.eSign/DocuSign.eSign.csproj /t:restore /p:TargetFramework=net452 /verbosity:minimal
 if ($lastExitCode -ne 0) { exit $lastExitCode }
 
 Write-Host "`nBuilding DocuSign.eSign for Net452" -ForegroundColor Yellow

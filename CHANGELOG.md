@@ -1,5 +1,17 @@
 ﻿# DocuSign C# Client Changelog - eSignature API v2
 
+## [v3.3.0] - eSignature API v2-20.1.00 - 04/01/2020
+### Changed
+*   Added support for version v2.1-20.1.00 of the DocuSign eSignature API.
+*   Updated the SDK release version.
+
+### Added
+*   Added the new property `CopyRecipientData` to envelopes. When set to **true**, the information that recipients enter is retained when you clone an envelope. For example, if you resend an envelope that was declined or voided after one or more recipients entered data, that data is retained. Note that this functionality must be enabled for the account.
+*   Added `RecipientIdentityInputOption` and `InputOptions` to `RecipientIdentityVerification`: Reserved for DocuSign.
+
+### Deleted
+*   Deleted the GET methods for account seals providers, which returned the seals for an account.
+
 ## [v3.3.0-rc] - eSignature API v20.1.00 - 03/13/2020
 ### Changed
 * The SDK now supports version 20.1.00 of the DocuSign eSignature API.

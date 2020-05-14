@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="ApiRequestLog" /> class.
         /// </summary>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
-        /// <param name="Description">.</param>
-        /// <param name="RequestLogId">.</param>
+        /// <param name="Description">Description.</param>
+        /// <param name="RequestLogId">RequestLogId.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         public ApiRequestLog(string CreatedDateTime = default(string), string Description = default(string), string RequestLogId = default(string), string Status = default(string))
         {
@@ -56,15 +57,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdDateTime", EmitDefaultValue=false)]
         public string CreatedDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Description
         /// </summary>
-        /// <value></value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RequestLogId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="requestLogId", EmitDefaultValue=false)]
         public string RequestLogId { get; set; }
         /// <summary>
@@ -171,5 +170,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

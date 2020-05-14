@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -41,7 +42,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ConfigUrl">Reserved: TBD.</param>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        /// <param name="StatusMessage">.</param>
+        /// <param name="StatusMessage">StatusMessage.</param>
         public ConnectFailureResult(string ConfigId = default(string), string ConfigUrl = default(string), string EnvelopeId = default(string), string Status = default(string), string StatusMessage = default(string))
         {
             this.ConfigId = ConfigId;
@@ -76,9 +77,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StatusMessage
         /// </summary>
-        /// <value></value>
         [DataMember(Name="statusMessage", EmitDefaultValue=false)]
         public string StatusMessage { get; set; }
         /// <summary>
@@ -187,5 +187,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

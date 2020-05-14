@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountIdentityInputOption" /> class.
         /// </summary>
-        /// <param name="IsRequired">.</param>
-        /// <param name="OptionName">.</param>
-        /// <param name="ValueType">.</param>
+        /// <param name="IsRequired">IsRequired.</param>
+        /// <param name="OptionName">OptionName.</param>
+        /// <param name="ValueType">ValueType.</param>
         public AccountIdentityInputOption(bool? IsRequired = default(bool?), string OptionName = default(string), string ValueType = default(string))
         {
             this.IsRequired = IsRequired;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets IsRequired
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isRequired", EmitDefaultValue=false)]
         public bool? IsRequired { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OptionName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="optionName", EmitDefaultValue=false)]
         public string OptionName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ValueType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="valueType", EmitDefaultValue=false)]
         public string ValueType { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Workspace" /> class.
         /// </summary>
-        /// <param name="BillableAccountId">.</param>
+        /// <param name="BillableAccountId">BillableAccountId.</param>
         /// <param name="CallerInformation">CallerInformation.</param>
-        /// <param name="Created">.</param>
+        /// <param name="Created">Created.</param>
         /// <param name="CreatedByInformation">CreatedByInformation.</param>
         /// <param name="LastModified">Utc date and time the comment was last updated (can only be done by creator.).</param>
         /// <param name="LastModifiedByInformation">LastModifiedByInformation.</param>
@@ -68,9 +69,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets BillableAccountId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="billableAccountId", EmitDefaultValue=false)]
         public string BillableAccountId { get; set; }
         /// <summary>
@@ -79,9 +79,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="callerInformation", EmitDefaultValue=false)]
         public WorkspaceUser CallerInformation { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Created
         /// </summary>
-        /// <value></value>
         [DataMember(Name="created", EmitDefaultValue=false)]
         public string Created { get; set; }
         /// <summary>
@@ -311,5 +310,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

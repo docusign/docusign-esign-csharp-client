@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentGatewayAccountsInfo" /> class.
         /// </summary>
-        /// <param name="PaymentGatewayAccounts">.</param>
+        /// <param name="PaymentGatewayAccounts">PaymentGatewayAccounts.</param>
         public PaymentGatewayAccountsInfo(List<PaymentGatewayAccount> PaymentGatewayAccounts = default(List<PaymentGatewayAccount>))
         {
             this.PaymentGatewayAccounts = PaymentGatewayAccounts;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentGatewayAccounts
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentGatewayAccounts", EmitDefaultValue=false)]
         public List<PaymentGatewayAccount> PaymentGatewayAccounts { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SmartContractInformation" /> class.
         /// </summary>
-        /// <param name="Code">.</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Code">Code.</param>
+        /// <param name="Uri">Uri.</param>
         public SmartContractInformation(string Code = default(string), string Uri = default(string))
         {
             this.Code = Code;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Code
         /// </summary>
-        /// <value></value>
         [DataMember(Name="code", EmitDefaultValue=false)]
         public string Code { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

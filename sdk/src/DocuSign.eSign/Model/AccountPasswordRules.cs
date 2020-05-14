@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,25 +38,25 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountPasswordRules" /> class.
         /// </summary>
-        /// <param name="ExpirePassword">.</param>
-        /// <param name="ExpirePasswordDays">.</param>
+        /// <param name="ExpirePassword">ExpirePassword.</param>
+        /// <param name="ExpirePasswordDays">ExpirePasswordDays.</param>
         /// <param name="ExpirePasswordDaysMetadata">ExpirePasswordDaysMetadata.</param>
-        /// <param name="LockoutDurationMinutes">.</param>
+        /// <param name="LockoutDurationMinutes">LockoutDurationMinutes.</param>
         /// <param name="LockoutDurationMinutesMetadata">LockoutDurationMinutesMetadata.</param>
-        /// <param name="LockoutDurationType">.</param>
+        /// <param name="LockoutDurationType">LockoutDurationType.</param>
         /// <param name="LockoutDurationTypeMetadata">LockoutDurationTypeMetadata.</param>
-        /// <param name="MinimumPasswordAgeDays">.</param>
+        /// <param name="MinimumPasswordAgeDays">MinimumPasswordAgeDays.</param>
         /// <param name="MinimumPasswordAgeDaysMetadata">MinimumPasswordAgeDaysMetadata.</param>
-        /// <param name="MinimumPasswordLength">.</param>
+        /// <param name="MinimumPasswordLength">MinimumPasswordLength.</param>
         /// <param name="MinimumPasswordLengthMetadata">MinimumPasswordLengthMetadata.</param>
-        /// <param name="PasswordIncludeDigit">.</param>
-        /// <param name="PasswordIncludeDigitOrSpecialCharacter">.</param>
-        /// <param name="PasswordIncludeLowerCase">.</param>
-        /// <param name="PasswordIncludeSpecialCharacter">.</param>
-        /// <param name="PasswordIncludeUpperCase">.</param>
-        /// <param name="PasswordStrengthType">.</param>
+        /// <param name="PasswordIncludeDigit">PasswordIncludeDigit.</param>
+        /// <param name="PasswordIncludeDigitOrSpecialCharacter">PasswordIncludeDigitOrSpecialCharacter.</param>
+        /// <param name="PasswordIncludeLowerCase">PasswordIncludeLowerCase.</param>
+        /// <param name="PasswordIncludeSpecialCharacter">PasswordIncludeSpecialCharacter.</param>
+        /// <param name="PasswordIncludeUpperCase">PasswordIncludeUpperCase.</param>
+        /// <param name="PasswordStrengthType">PasswordStrengthType.</param>
         /// <param name="PasswordStrengthTypeMetadata">PasswordStrengthTypeMetadata.</param>
-        /// <param name="QuestionsRequired">.</param>
+        /// <param name="QuestionsRequired">QuestionsRequired.</param>
         /// <param name="QuestionsRequiredMetadata">QuestionsRequiredMetadata.</param>
         public AccountPasswordRules(string ExpirePassword = default(string), string ExpirePasswordDays = default(string), AccountPasswordExpirePasswordDays ExpirePasswordDaysMetadata = default(AccountPasswordExpirePasswordDays), string LockoutDurationMinutes = default(string), AccountPasswordLockoutDurationMinutes LockoutDurationMinutesMetadata = default(AccountPasswordLockoutDurationMinutes), string LockoutDurationType = default(string), AccountPasswordLockoutDurationType LockoutDurationTypeMetadata = default(AccountPasswordLockoutDurationType), string MinimumPasswordAgeDays = default(string), AccountPasswordMinimumPasswordAgeDays MinimumPasswordAgeDaysMetadata = default(AccountPasswordMinimumPasswordAgeDays), string MinimumPasswordLength = default(string), AccountMinimumPasswordLength MinimumPasswordLengthMetadata = default(AccountMinimumPasswordLength), string PasswordIncludeDigit = default(string), string PasswordIncludeDigitOrSpecialCharacter = default(string), string PasswordIncludeLowerCase = default(string), string PasswordIncludeSpecialCharacter = default(string), string PasswordIncludeUpperCase = default(string), string PasswordStrengthType = default(string), AccountPasswordStrengthType PasswordStrengthTypeMetadata = default(AccountPasswordStrengthType), string QuestionsRequired = default(string), AccountPasswordQuestionsRequired QuestionsRequiredMetadata = default(AccountPasswordQuestionsRequired))
         {
@@ -82,15 +83,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets ExpirePassword
         /// </summary>
-        /// <value></value>
         [DataMember(Name="expirePassword", EmitDefaultValue=false)]
         public string ExpirePassword { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ExpirePasswordDays
         /// </summary>
-        /// <value></value>
         [DataMember(Name="expirePasswordDays", EmitDefaultValue=false)]
         public string ExpirePasswordDays { get; set; }
         /// <summary>
@@ -99,9 +98,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="expirePasswordDaysMetadata", EmitDefaultValue=false)]
         public AccountPasswordExpirePasswordDays ExpirePasswordDaysMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LockoutDurationMinutes
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lockoutDurationMinutes", EmitDefaultValue=false)]
         public string LockoutDurationMinutes { get; set; }
         /// <summary>
@@ -110,9 +108,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lockoutDurationMinutesMetadata", EmitDefaultValue=false)]
         public AccountPasswordLockoutDurationMinutes LockoutDurationMinutesMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LockoutDurationType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lockoutDurationType", EmitDefaultValue=false)]
         public string LockoutDurationType { get; set; }
         /// <summary>
@@ -121,9 +118,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lockoutDurationTypeMetadata", EmitDefaultValue=false)]
         public AccountPasswordLockoutDurationType LockoutDurationTypeMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MinimumPasswordAgeDays
         /// </summary>
-        /// <value></value>
         [DataMember(Name="minimumPasswordAgeDays", EmitDefaultValue=false)]
         public string MinimumPasswordAgeDays { get; set; }
         /// <summary>
@@ -132,9 +128,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="minimumPasswordAgeDaysMetadata", EmitDefaultValue=false)]
         public AccountPasswordMinimumPasswordAgeDays MinimumPasswordAgeDaysMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MinimumPasswordLength
         /// </summary>
-        /// <value></value>
         [DataMember(Name="minimumPasswordLength", EmitDefaultValue=false)]
         public string MinimumPasswordLength { get; set; }
         /// <summary>
@@ -143,39 +138,33 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="minimumPasswordLengthMetadata", EmitDefaultValue=false)]
         public AccountMinimumPasswordLength MinimumPasswordLengthMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordIncludeDigit
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordIncludeDigit", EmitDefaultValue=false)]
         public string PasswordIncludeDigit { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordIncludeDigitOrSpecialCharacter
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordIncludeDigitOrSpecialCharacter", EmitDefaultValue=false)]
         public string PasswordIncludeDigitOrSpecialCharacter { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordIncludeLowerCase
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordIncludeLowerCase", EmitDefaultValue=false)]
         public string PasswordIncludeLowerCase { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordIncludeSpecialCharacter
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordIncludeSpecialCharacter", EmitDefaultValue=false)]
         public string PasswordIncludeSpecialCharacter { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordIncludeUpperCase
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordIncludeUpperCase", EmitDefaultValue=false)]
         public string PasswordIncludeUpperCase { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordStrengthType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordStrengthType", EmitDefaultValue=false)]
         public string PasswordStrengthType { get; set; }
         /// <summary>
@@ -184,9 +173,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="passwordStrengthTypeMetadata", EmitDefaultValue=false)]
         public AccountPasswordStrengthType PasswordStrengthTypeMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets QuestionsRequired
         /// </summary>
-        /// <value></value>
         [DataMember(Name="questionsRequired", EmitDefaultValue=false)]
         public string QuestionsRequired { get; set; }
         /// <summary>
@@ -420,5 +408,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,12 +40,12 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Applied">Reserved: TBD.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
-        /// <param name="DocumentName">.</param>
+        /// <param name="DocumentName">DocumentName.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Name">.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
         /// <param name="TemplateMatch">TemplateMatch.</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Uri">Uri.</param>
         public TemplateSummary(string Applied = default(string), string DocumentId = default(string), string DocumentName = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Name = default(string), string TemplateId = default(string), TemplateMatch TemplateMatch = default(TemplateMatch), string Uri = default(string))
         {
             this.Applied = Applied;
@@ -70,9 +71,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentId", EmitDefaultValue=false)]
         public string DocumentId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentName", EmitDefaultValue=false)]
         public string DocumentName { get; set; }
         /// <summary>
@@ -81,9 +81,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -98,9 +97,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateMatch", EmitDefaultValue=false)]
         public TemplateMatch TemplateMatch { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -233,5 +231,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

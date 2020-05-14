@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountPasswordQuestionsRequired" /> class.
         /// </summary>
-        /// <param name="MaximumQuestions">.</param>
-        /// <param name="MinimumQuestions">.</param>
+        /// <param name="MaximumQuestions">MaximumQuestions.</param>
+        /// <param name="MinimumQuestions">MinimumQuestions.</param>
         public AccountPasswordQuestionsRequired(string MaximumQuestions = default(string), string MinimumQuestions = default(string))
         {
             this.MaximumQuestions = MaximumQuestions;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets MaximumQuestions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maximumQuestions", EmitDefaultValue=false)]
         public string MaximumQuestions { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MinimumQuestions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="minimumQuestions", EmitDefaultValue=false)]
         public string MinimumQuestions { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

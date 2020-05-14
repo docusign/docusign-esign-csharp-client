@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TemplateDocumentVisibilityList" /> class.
         /// </summary>
-        /// <param name="DocumentVisibility">.</param>
+        /// <param name="DocumentVisibility">DocumentVisibility.</param>
         public TemplateDocumentVisibilityList(List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>))
         {
             this.DocumentVisibility = DocumentVisibility;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentVisibility
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentVisibility", EmitDefaultValue=false)]
         public List<DocumentVisibility> DocumentVisibility { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

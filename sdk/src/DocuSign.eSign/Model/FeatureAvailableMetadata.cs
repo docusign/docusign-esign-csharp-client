@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FeatureAvailableMetadata" /> class.
         /// </summary>
-        /// <param name="Availabilty">.</param>
-        /// <param name="FeatureName">.</param>
+        /// <param name="Availabilty">Availabilty.</param>
+        /// <param name="FeatureName">FeatureName.</param>
         public FeatureAvailableMetadata(string Availabilty = default(string), string FeatureName = default(string))
         {
             this.Availabilty = Availabilty;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Availabilty
         /// </summary>
-        /// <value></value>
         [DataMember(Name="availabilty", EmitDefaultValue=false)]
         public string Availabilty { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FeatureName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="featureName", EmitDefaultValue=false)]
         public string FeatureName { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

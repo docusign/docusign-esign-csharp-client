@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PolyLine" /> class.
         /// </summary>
-        /// <param name="X1">.</param>
-        /// <param name="X2">.</param>
-        /// <param name="Y1">.</param>
-        /// <param name="Y2">.</param>
+        /// <param name="X1">X1.</param>
+        /// <param name="X2">X2.</param>
+        /// <param name="Y1">Y1.</param>
+        /// <param name="Y2">Y2.</param>
         public PolyLine(string X1 = default(string), string X2 = default(string), string Y1 = default(string), string Y2 = default(string))
         {
             this.X1 = X1;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets X1
         /// </summary>
-        /// <value></value>
         [DataMember(Name="x1", EmitDefaultValue=false)]
         public string X1 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets X2
         /// </summary>
-        /// <value></value>
         [DataMember(Name="x2", EmitDefaultValue=false)]
         public string X2 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Y1
         /// </summary>
-        /// <value></value>
         [DataMember(Name="y1", EmitDefaultValue=false)]
         public string Y1 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Y2
         /// </summary>
-        /// <value></value>
         [DataMember(Name="y2", EmitDefaultValue=false)]
         public string Y2 { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

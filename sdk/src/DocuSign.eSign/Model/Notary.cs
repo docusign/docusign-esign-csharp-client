@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Notary" /> class.
         /// </summary>
-        /// <param name="CreatedDate">.</param>
-        /// <param name="Enabled">.</param>
-        /// <param name="Searchable">.</param>
+        /// <param name="CreatedDate">CreatedDate.</param>
+        /// <param name="Enabled">Enabled.</param>
+        /// <param name="Searchable">Searchable.</param>
         /// <param name="UserInfo">UserInfo.</param>
         public Notary(string CreatedDate = default(string), string Enabled = default(string), string Searchable = default(string), UserInformation UserInfo = default(UserInformation))
         {
@@ -50,21 +51,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CreatedDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
         public string CreatedDate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Enabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enabled", EmitDefaultValue=false)]
         public string Enabled { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Searchable
         /// </summary>
-        /// <value></value>
         [DataMember(Name="searchable", EmitDefaultValue=false)]
         public string Searchable { get; set; }
         /// <summary>
@@ -170,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

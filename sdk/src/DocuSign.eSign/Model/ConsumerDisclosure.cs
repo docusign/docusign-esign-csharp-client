@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,22 +41,22 @@ namespace DocuSign.eSign.Model
         /// <param name="AccountEsignId">A GUID identifying the account associated with the consumer disclosure.</param>
         /// <param name="AllowCDWithdraw">Indicates whether the customer can withdraw their acceptance of the consumer disclosure..</param>
         /// <param name="AllowCDWithdrawMetadata">AllowCDWithdrawMetadata.</param>
-        /// <param name="ChangeEmail">.</param>
-        /// <param name="ChangeEmailOther">.</param>
+        /// <param name="ChangeEmail">ChangeEmail.</param>
+        /// <param name="ChangeEmailOther">ChangeEmailOther.</param>
         /// <param name="CompanyName">The name of the company associated with the consumer disclosure..</param>
         /// <param name="CompanyPhone">The phone number of the company associated with the consumer disclosure..</param>
-        /// <param name="CopyCostPerPage">.</param>
+        /// <param name="CopyCostPerPage">CopyCostPerPage.</param>
         /// <param name="CopyFeeCollectionMethod">Specifies the fee collection method for cases in which the customer requires paper copies of the document.  Maximum Length: 255 characters.</param>
-        /// <param name="CopyRequestEmail">.</param>
-        /// <param name="Custom">.</param>
-        /// <param name="EnableEsign">.</param>
+        /// <param name="CopyRequestEmail">CopyRequestEmail.</param>
+        /// <param name="Custom">Custom.</param>
+        /// <param name="EnableEsign">EnableEsign.</param>
         /// <param name="EsignAgreement">The Electronic Record and Signature Disclosure text. The disclosure text includes the html formatting..</param>
-        /// <param name="EsignText">.</param>
-        /// <param name="LanguageCode">.</param>
-        /// <param name="MustAgreeToEsign">.</param>
-        /// <param name="PdfId">.</param>
-        /// <param name="UseBrand">.</param>
-        /// <param name="UseConsumerDisclosureWithinAccount">.</param>
+        /// <param name="EsignText">EsignText.</param>
+        /// <param name="LanguageCode">LanguageCode.</param>
+        /// <param name="MustAgreeToEsign">MustAgreeToEsign.</param>
+        /// <param name="PdfId">PdfId.</param>
+        /// <param name="UseBrand">UseBrand.</param>
+        /// <param name="UseConsumerDisclosureWithinAccount">UseConsumerDisclosureWithinAccount.</param>
         /// <param name="UseConsumerDisclosureWithinAccountMetadata">UseConsumerDisclosureWithinAccountMetadata.</param>
         /// <param name="WithdrawAddressLine1">Contains the first address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters. .</param>
         /// <param name="WithdrawAddressLine2">Contains the second address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters. .</param>
@@ -123,15 +124,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowCDWithdrawMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowCDWithdrawMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ChangeEmail
         /// </summary>
-        /// <value></value>
         [DataMember(Name="changeEmail", EmitDefaultValue=false)]
         public string ChangeEmail { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ChangeEmailOther
         /// </summary>
-        /// <value></value>
         [DataMember(Name="changeEmailOther", EmitDefaultValue=false)]
         public string ChangeEmailOther { get; set; }
         /// <summary>
@@ -147,9 +146,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="companyPhone", EmitDefaultValue=false)]
         public string CompanyPhone { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CopyCostPerPage
         /// </summary>
-        /// <value></value>
         [DataMember(Name="copyCostPerPage", EmitDefaultValue=false)]
         public string CopyCostPerPage { get; set; }
         /// <summary>
@@ -159,21 +157,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="copyFeeCollectionMethod", EmitDefaultValue=false)]
         public string CopyFeeCollectionMethod { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CopyRequestEmail
         /// </summary>
-        /// <value></value>
         [DataMember(Name="copyRequestEmail", EmitDefaultValue=false)]
         public string CopyRequestEmail { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Custom
         /// </summary>
-        /// <value></value>
         [DataMember(Name="custom", EmitDefaultValue=false)]
         public string Custom { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnableEsign
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enableEsign", EmitDefaultValue=false)]
         public string EnableEsign { get; set; }
         /// <summary>
@@ -183,39 +178,33 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="esignAgreement", EmitDefaultValue=false)]
         public string EsignAgreement { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EsignText
         /// </summary>
-        /// <value></value>
         [DataMember(Name="esignText", EmitDefaultValue=false)]
         public string EsignText { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LanguageCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="languageCode", EmitDefaultValue=false)]
         public string LanguageCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MustAgreeToEsign
         /// </summary>
-        /// <value></value>
         [DataMember(Name="mustAgreeToEsign", EmitDefaultValue=false)]
         public string MustAgreeToEsign { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PdfId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pdfId", EmitDefaultValue=false)]
         public string PdfId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UseBrand
         /// </summary>
-        /// <value></value>
         [DataMember(Name="useBrand", EmitDefaultValue=false)]
         public string UseBrand { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UseConsumerDisclosureWithinAccount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="useConsumerDisclosureWithinAccount", EmitDefaultValue=false)]
         public string UseConsumerDisclosureWithinAccount { get; set; }
         /// <summary>
@@ -617,5 +606,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProofServiceResourceToken" /> class.
         /// </summary>
-        /// <param name="ResourceToken">.</param>
+        /// <param name="ResourceToken">ResourceToken.</param>
         public ProofServiceResourceToken(string ResourceToken = default(string))
         {
             this.ResourceToken = ResourceToken;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets ResourceToken
         /// </summary>
-        /// <value></value>
         [DataMember(Name="ResourceToken", EmitDefaultValue=false)]
         public string ResourceToken { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

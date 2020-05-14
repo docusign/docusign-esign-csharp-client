@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -46,6 +47,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AnchorXOffset">Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString..</param>
         /// <param name="AnchorYOffset">Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString..</param>
         /// <param name="Bold">When set to **true**, the information in the tab is bold..</param>
+        /// <param name="Collaborative">Collaborative.</param>
         /// <param name="ConcealValueOnDocument">When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes..</param>
         /// <param name="CreatedByDisplayName">The user name of the DocuSign user who created this object..</param>
         /// <param name="CreatedByUserId">The userId of the DocuSign user who created this object..</param>
@@ -66,15 +68,15 @@ namespace DocuSign.eSign.Model
         /// <param name="Locked">When set to **true**, the signer cannot change the data of the custom tab..</param>
         /// <param name="MaximumLength">The maximum number of entry characters supported by the custom tab..</param>
         /// <param name="MergeField">MergeField.</param>
-        /// <param name="Name">.</param>
-        /// <param name="PaymentItemCode">.</param>
-        /// <param name="PaymentItemDescription">.</param>
-        /// <param name="PaymentItemName">.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="PaymentItemCode">PaymentItemCode.</param>
+        /// <param name="PaymentItemDescription">PaymentItemDescription.</param>
+        /// <param name="PaymentItemName">PaymentItemName.</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
-        /// <param name="ScaleValue">.</param>
-        /// <param name="Selected">.</param>
+        /// <param name="ScaleValue">ScaleValue.</param>
+        /// <param name="Selected">Selected.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
-        /// <param name="StampType">.</param>
+        /// <param name="StampType">StampType.</param>
         /// <param name="StampTypeMetadata">StampTypeMetadata.</param>
         /// <param name="TabLabel">The label string associated with the tab..</param>
         /// <param name="Type">The type of this tab. Values are: Approve, CheckBox, Company, Date, DateSigned, Decline, Email, EmailAddress, EnvelopeId, FirstName, Formula, FullName, InitialHere, InitialHereOptional, LastName, List, Note, Number, Radio, SignerAttachment, SignHere, SignHereOptional, Ssn, Text, Title, Zip5, or Zip5Dash4..</param>
@@ -82,7 +84,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ValidationMessage">The message displayed if the custom tab fails input validation (either custom of embedded)..</param>
         /// <param name="ValidationPattern">A regular expression used to validate input for the tab..</param>
         /// <param name="Width">Width of the tab in pixels..</param>
-        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), string Locked = default(string), string MaximumLength = default(string), MergeField MergeField = default(MergeField), string Name = default(string), string PaymentItemCode = default(string), string PaymentItemDescription = default(string), string PaymentItemName = default(string), string Required = default(string), string ScaleValue = default(string), string Selected = default(string), string Shared = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Width = default(string))
+        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string Collaborative = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), string Locked = default(string), string MaximumLength = default(string), MergeField MergeField = default(MergeField), string Name = default(string), string PaymentItemCode = default(string), string PaymentItemDescription = default(string), string PaymentItemName = default(string), string Required = default(string), string ScaleValue = default(string), string Selected = default(string), string Shared = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Width = default(string))
         {
             this.Anchor = Anchor;
             this.AnchorCaseSensitive = AnchorCaseSensitive;
@@ -93,6 +95,7 @@ namespace DocuSign.eSign.Model
             this.AnchorXOffset = AnchorXOffset;
             this.AnchorYOffset = AnchorYOffset;
             this.Bold = Bold;
+            this.Collaborative = Collaborative;
             this.ConcealValueOnDocument = ConcealValueOnDocument;
             this.CreatedByDisplayName = CreatedByDisplayName;
             this.CreatedByUserId = CreatedByUserId;
@@ -185,6 +188,11 @@ namespace DocuSign.eSign.Model
         /// <value>When set to **true**, the information in the tab is bold.</value>
         [DataMember(Name="bold", EmitDefaultValue=false)]
         public string Bold { get; set; }
+        /// <summary>
+        /// Gets or Sets Collaborative
+        /// </summary>
+        [DataMember(Name="collaborative", EmitDefaultValue=false)]
+        public string Collaborative { get; set; }
         /// <summary>
         /// When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes.
         /// </summary>
@@ -305,27 +313,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="mergeField", EmitDefaultValue=false)]
         public MergeField MergeField { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentItemCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentItemCode", EmitDefaultValue=false)]
         public string PaymentItemCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentItemDescription
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentItemDescription", EmitDefaultValue=false)]
         public string PaymentItemDescription { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentItemName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentItemName", EmitDefaultValue=false)]
         public string PaymentItemName { get; set; }
         /// <summary>
@@ -335,15 +339,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="required", EmitDefaultValue=false)]
         public string Required { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ScaleValue
         /// </summary>
-        /// <value></value>
         [DataMember(Name="scaleValue", EmitDefaultValue=false)]
         public string ScaleValue { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Selected
         /// </summary>
-        /// <value></value>
         [DataMember(Name="selected", EmitDefaultValue=false)]
         public string Selected { get; set; }
         /// <summary>
@@ -353,9 +355,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shared", EmitDefaultValue=false)]
         public string Shared { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StampType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="stampType", EmitDefaultValue=false)]
         public string StampType { get; set; }
         /// <summary>
@@ -416,6 +417,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AnchorXOffset: ").Append(AnchorXOffset).Append("\n");
             sb.Append("  AnchorYOffset: ").Append(AnchorYOffset).Append("\n");
             sb.Append("  Bold: ").Append(Bold).Append("\n");
+            sb.Append("  Collaborative: ").Append(Collaborative).Append("\n");
             sb.Append("  ConcealValueOnDocument: ").Append(ConcealValueOnDocument).Append("\n");
             sb.Append("  CreatedByDisplayName: ").Append(CreatedByDisplayName).Append("\n");
             sb.Append("  CreatedByUserId: ").Append(CreatedByUserId).Append("\n");
@@ -532,6 +534,11 @@ namespace DocuSign.eSign.Model
                     this.Bold == other.Bold ||
                     this.Bold != null &&
                     this.Bold.Equals(other.Bold)
+                ) && 
+                (
+                    this.Collaborative == other.Collaborative ||
+                    this.Collaborative != null &&
+                    this.Collaborative.Equals(other.Collaborative)
                 ) && 
                 (
                     this.ConcealValueOnDocument == other.ConcealValueOnDocument ||
@@ -744,6 +751,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AnchorYOffset.GetHashCode();
                 if (this.Bold != null)
                     hash = hash * 59 + this.Bold.GetHashCode();
+                if (this.Collaborative != null)
+                    hash = hash * 59 + this.Collaborative.GetHashCode();
                 if (this.ConcealValueOnDocument != null)
                     hash = hash * 59 + this.ConcealValueOnDocument.GetHashCode();
                 if (this.CreatedByDisplayName != null)
@@ -825,5 +834,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

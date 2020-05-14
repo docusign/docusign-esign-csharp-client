@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TemplateMatch" /> class.
         /// </summary>
-        /// <param name="DocumentEndPage">.</param>
-        /// <param name="DocumentStartPage">.</param>
-        /// <param name="MatchPercentage">.</param>
+        /// <param name="DocumentEndPage">DocumentEndPage.</param>
+        /// <param name="DocumentStartPage">DocumentStartPage.</param>
+        /// <param name="MatchPercentage">MatchPercentage.</param>
         public TemplateMatch(string DocumentEndPage = default(string), string DocumentStartPage = default(string), string MatchPercentage = default(string))
         {
             this.DocumentEndPage = DocumentEndPage;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentEndPage
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentEndPage", EmitDefaultValue=false)]
         public string DocumentEndPage { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentStartPage
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentStartPage", EmitDefaultValue=false)]
         public string DocumentStartPage { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MatchPercentage
         /// </summary>
-        /// <value></value>
         [DataMember(Name="matchPercentage", EmitDefaultValue=false)]
         public string MatchPercentage { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

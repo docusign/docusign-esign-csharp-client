@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkSendTestResponse" /> class.
         /// </summary>
-        /// <param name="CanBeSent">.</param>
-        /// <param name="ValidationErrorDetails">.</param>
-        /// <param name="ValidationErrors">.</param>
+        /// <param name="CanBeSent">CanBeSent.</param>
+        /// <param name="ValidationErrorDetails">ValidationErrorDetails.</param>
+        /// <param name="ValidationErrors">ValidationErrors.</param>
         public BulkSendTestResponse(bool? CanBeSent = default(bool?), List<string> ValidationErrorDetails = default(List<string>), List<string> ValidationErrors = default(List<string>))
         {
             this.CanBeSent = CanBeSent;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CanBeSent
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canBeSent", EmitDefaultValue=false)]
         public bool? CanBeSent { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ValidationErrorDetails
         /// </summary>
-        /// <value></value>
         [DataMember(Name="validationErrorDetails", EmitDefaultValue=false)]
         public List<string> ValidationErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ValidationErrors
         /// </summary>
-        /// <value></value>
         [DataMember(Name="validationErrors", EmitDefaultValue=false)]
         public List<string> ValidationErrors { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Expirations">Expirations.</param>
         /// <param name="Reminders">Reminders.</param>
-        /// <param name="UserOverrideEnabled">.</param>
+        /// <param name="UserOverrideEnabled">UserOverrideEnabled.</param>
         public AccountNotification(Expirations Expirations = default(Expirations), Reminders Reminders = default(Reminders), string UserOverrideEnabled = default(string))
         {
             this.Expirations = Expirations;
@@ -58,9 +59,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="reminders", EmitDefaultValue=false)]
         public Reminders Reminders { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserOverrideEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userOverrideEnabled", EmitDefaultValue=false)]
         public string UserOverrideEnabled { get; set; }
         /// <summary>
@@ -153,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

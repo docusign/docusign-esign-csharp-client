@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -42,6 +43,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AuthenticationMethod">A sender created value that indicates the convention used to authenticate the signer. This information is included in the Certificate of Completion..</param>
         /// <param name="ClientUserId">A sender created value that shows the recipient is embedded (captive).   Maximum length: 100 characters..</param>
         /// <param name="Email">Specifies the email of the recipient. You can use either email and userName or userId to identify the recipient..</param>
+        /// <param name="FrameAncestors">FrameAncestors.</param>
+        /// <param name="MessageOrigins">MessageOrigins.</param>
         /// <param name="PingFrequency">Only used if pingUrl is specified. This is the interval, in seconds, between pings on the pingUrl.  The default is 300 seconds. Valid values are 60-1200 seconds..</param>
         /// <param name="PingUrl">A client Url to be pinged by the DocuSign Signing experience to indicate to the client that Signing is active. An HTTP Get is executed against the client. The response from the client is ignored. The intent is for the client to reset it&#39;s session timer when the request is received..</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
@@ -49,15 +52,17 @@ namespace DocuSign.eSign.Model
         /// <param name="SecurityDomain">The domain in which the user authenticated..</param>
         /// <param name="UserId">Specifies the user ID of the recipient. You can use with user ID or email and user name to identify the recipient. If user ID is used and a client user ID is provided, the value in the &#x60;userId&#x60; property must match a recipient ID (which can be retrieved with a GET recipients call) for the envelope. If a user ID is used and a clientUser ID is not provided, the user ID match the user ID of the authenticating user..</param>
         /// <param name="UserName">Specifies the username of the recipient. You can use either email and userName or userId to identify the recipient..</param>
-        /// <param name="XFrameOptions">.</param>
-        /// <param name="XFrameOptionsAllowFromUrl">.</param>
-        public RecipientViewRequest(string AssertionId = default(string), string AuthenticationInstant = default(string), string AuthenticationMethod = default(string), string ClientUserId = default(string), string Email = default(string), string PingFrequency = default(string), string PingUrl = default(string), string RecipientId = default(string), string ReturnUrl = default(string), string SecurityDomain = default(string), string UserId = default(string), string UserName = default(string), string XFrameOptions = default(string), string XFrameOptionsAllowFromUrl = default(string))
+        /// <param name="XFrameOptions">XFrameOptions.</param>
+        /// <param name="XFrameOptionsAllowFromUrl">XFrameOptionsAllowFromUrl.</param>
+        public RecipientViewRequest(string AssertionId = default(string), string AuthenticationInstant = default(string), string AuthenticationMethod = default(string), string ClientUserId = default(string), string Email = default(string), List<string> FrameAncestors = default(List<string>), List<string> MessageOrigins = default(List<string>), string PingFrequency = default(string), string PingUrl = default(string), string RecipientId = default(string), string ReturnUrl = default(string), string SecurityDomain = default(string), string UserId = default(string), string UserName = default(string), string XFrameOptions = default(string), string XFrameOptionsAllowFromUrl = default(string))
         {
             this.AssertionId = AssertionId;
             this.AuthenticationInstant = AuthenticationInstant;
             this.AuthenticationMethod = AuthenticationMethod;
             this.ClientUserId = ClientUserId;
             this.Email = Email;
+            this.FrameAncestors = FrameAncestors;
+            this.MessageOrigins = MessageOrigins;
             this.PingFrequency = PingFrequency;
             this.PingUrl = PingUrl;
             this.RecipientId = RecipientId;
@@ -99,6 +104,16 @@ namespace DocuSign.eSign.Model
         /// <value>Specifies the email of the recipient. You can use either email and userName or userId to identify the recipient.</value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
+        /// <summary>
+        /// Gets or Sets FrameAncestors
+        /// </summary>
+        [DataMember(Name="frameAncestors", EmitDefaultValue=false)]
+        public List<string> FrameAncestors { get; set; }
+        /// <summary>
+        /// Gets or Sets MessageOrigins
+        /// </summary>
+        [DataMember(Name="messageOrigins", EmitDefaultValue=false)]
+        public List<string> MessageOrigins { get; set; }
         /// <summary>
         /// Only used if pingUrl is specified. This is the interval, in seconds, between pings on the pingUrl.  The default is 300 seconds. Valid values are 60-1200 seconds.
         /// </summary>
@@ -142,15 +157,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="userName", EmitDefaultValue=false)]
         public string UserName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets XFrameOptions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="xFrameOptions", EmitDefaultValue=false)]
         public string XFrameOptions { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets XFrameOptionsAllowFromUrl
         /// </summary>
-        /// <value></value>
         [DataMember(Name="xFrameOptionsAllowFromUrl", EmitDefaultValue=false)]
         public string XFrameOptionsAllowFromUrl { get; set; }
         /// <summary>
@@ -166,6 +179,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  AuthenticationMethod: ").Append(AuthenticationMethod).Append("\n");
             sb.Append("  ClientUserId: ").Append(ClientUserId).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
+            sb.Append("  FrameAncestors: ").Append(FrameAncestors).Append("\n");
+            sb.Append("  MessageOrigins: ").Append(MessageOrigins).Append("\n");
             sb.Append("  PingFrequency: ").Append(PingFrequency).Append("\n");
             sb.Append("  PingUrl: ").Append(PingUrl).Append("\n");
             sb.Append("  RecipientId: ").Append(RecipientId).Append("\n");
@@ -237,6 +252,16 @@ namespace DocuSign.eSign.Model
                     this.Email.Equals(other.Email)
                 ) && 
                 (
+                    this.FrameAncestors == other.FrameAncestors ||
+                    this.FrameAncestors != null &&
+                    this.FrameAncestors.SequenceEqual(other.FrameAncestors)
+                ) && 
+                (
+                    this.MessageOrigins == other.MessageOrigins ||
+                    this.MessageOrigins != null &&
+                    this.MessageOrigins.SequenceEqual(other.MessageOrigins)
+                ) && 
+                (
                     this.PingFrequency == other.PingFrequency ||
                     this.PingFrequency != null &&
                     this.PingFrequency.Equals(other.PingFrequency)
@@ -304,6 +329,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ClientUserId.GetHashCode();
                 if (this.Email != null)
                     hash = hash * 59 + this.Email.GetHashCode();
+                if (this.FrameAncestors != null)
+                    hash = hash * 59 + this.FrameAncestors.GetHashCode();
+                if (this.MessageOrigins != null)
+                    hash = hash * 59 + this.MessageOrigins.GetHashCode();
                 if (this.PingFrequency != null)
                     hash = hash * 59 + this.PingFrequency.GetHashCode();
                 if (this.PingUrl != null)
@@ -331,5 +360,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

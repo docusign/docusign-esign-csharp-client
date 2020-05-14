@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -43,10 +44,10 @@ namespace DocuSign.eSign.Model
         /// <param name="CreditCardInformation">CreditCardInformation.</param>
         /// <param name="DirectDebitProcessorInformation">DirectDebitProcessorInformation.</param>
         /// <param name="DowngradePlanInformation">DowngradePlanInformation.</param>
-        /// <param name="PaymentMethod">.</param>
+        /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
-        /// <param name="SuccessorPlans">.</param>
+        /// <param name="SuccessorPlans">SuccessorPlans.</param>
         public AccountBillingPlanResponse(AccountAddress BillingAddress = default(AccountAddress), string BillingAddressIsCreditCardAddress = default(string), AccountBillingPlan BillingPlan = default(AccountBillingPlan), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), ReferralInformation ReferralInformation = default(ReferralInformation), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>))
         {
             this.BillingAddress = BillingAddress;
@@ -93,9 +94,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="downgradePlanInformation", EmitDefaultValue=false)]
         public DowngradePlanUpdateResponse DowngradePlanInformation { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentMethod
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
         public string PaymentMethod { get; set; }
         /// <summary>
@@ -109,9 +109,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="referralInformation", EmitDefaultValue=false)]
         public ReferralInformation ReferralInformation { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SuccessorPlans
         /// </summary>
-        /// <value></value>
         [DataMember(Name="successorPlans", EmitDefaultValue=false)]
         public List<BillingPlan> SuccessorPlans { get; set; }
         /// <summary>
@@ -260,5 +259,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

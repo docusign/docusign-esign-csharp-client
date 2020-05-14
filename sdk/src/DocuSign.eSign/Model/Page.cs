@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,10 +41,10 @@ namespace DocuSign.eSign.Model
         /// <param name="Dpi">The number of dots per inch used for the page image..</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="Height">Height of the tab in pixels..</param>
-        /// <param name="ImageBytes">.</param>
-        /// <param name="MimeType">.</param>
-        /// <param name="PageId">.</param>
-        /// <param name="Sequence">.</param>
+        /// <param name="ImageBytes">ImageBytes.</param>
+        /// <param name="MimeType">MimeType.</param>
+        /// <param name="PageId">PageId.</param>
+        /// <param name="Sequence">Sequence.</param>
         /// <param name="Width">Width of the tab in pixels..</param>
         public Page(string Dpi = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Height = default(string), string ImageBytes = default(string), string MimeType = default(string), string PageId = default(string), string Sequence = default(string), string Width = default(string))
         {
@@ -75,27 +76,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="height", EmitDefaultValue=false)]
         public string Height { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ImageBytes
         /// </summary>
-        /// <value></value>
         [DataMember(Name="imageBytes", EmitDefaultValue=false)]
         public string ImageBytes { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MimeType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="mimeType", EmitDefaultValue=false)]
         public string MimeType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PageId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pageId", EmitDefaultValue=false)]
         public string PageId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Sequence
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sequence", EmitDefaultValue=false)]
         public string Sequence { get; set; }
         /// <summary>
@@ -234,5 +231,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

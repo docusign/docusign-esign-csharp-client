@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkSendingListSummary" /> class.
         /// </summary>
-        /// <param name="BulkSendListId">.</param>
-        /// <param name="CreatedByUser">.</param>
-        /// <param name="CreatedDate">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="BulkSendListId">BulkSendListId.</param>
+        /// <param name="CreatedByUser">CreatedByUser.</param>
+        /// <param name="CreatedDate">CreatedDate.</param>
+        /// <param name="Name">Name.</param>
         public BulkSendingListSummary(string BulkSendListId = default(string), string CreatedByUser = default(string), string CreatedDate = default(string), string Name = default(string))
         {
             this.BulkSendListId = BulkSendListId;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets BulkSendListId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bulkSendListId", EmitDefaultValue=false)]
         public string BulkSendListId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CreatedByUser
         /// </summary>
-        /// <value></value>
         [DataMember(Name="createdByUser", EmitDefaultValue=false)]
         public string CreatedByUser { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CreatedDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
         public string CreatedDate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

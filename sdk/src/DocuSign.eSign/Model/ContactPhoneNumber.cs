@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactPhoneNumber" /> class.
         /// </summary>
-        /// <param name="PhoneNumber">.</param>
-        /// <param name="PhoneType">.</param>
+        /// <param name="PhoneNumber">PhoneNumber.</param>
+        /// <param name="PhoneType">PhoneType.</param>
         public ContactPhoneNumber(string PhoneNumber = default(string), string PhoneType = default(string))
         {
             this.PhoneNumber = PhoneNumber;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets PhoneNumber
         /// </summary>
-        /// <value></value>
         [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PhoneType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="phoneType", EmitDefaultValue=false)]
         public string PhoneType { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

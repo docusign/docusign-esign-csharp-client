@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeAttachmentsRequest" /> class.
         /// </summary>
-        /// <param name="Attachments">.</param>
+        /// <param name="Attachments">Attachments.</param>
         public EnvelopeAttachmentsRequest(List<Attachment> Attachments = default(List<Attachment>))
         {
             this.Attachments = Attachments;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Attachments
         /// </summary>
-        /// <value></value>
         [DataMember(Name="attachments", EmitDefaultValue=false)]
         public List<Attachment> Attachments { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

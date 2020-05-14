@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AppStoreProduct" /> class.
         /// </summary>
-        /// <param name="MarketPlace">.</param>
+        /// <param name="MarketPlace">MarketPlace.</param>
         /// <param name="ProductId">The Product ID from the AppStore..</param>
         public AppStoreProduct(string MarketPlace = default(string), string ProductId = default(string))
         {
@@ -46,9 +47,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets MarketPlace
         /// </summary>
-        /// <value></value>
         [DataMember(Name="marketPlace", EmitDefaultValue=false)]
         public string MarketPlace { get; set; }
         /// <summary>
@@ -139,5 +139,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

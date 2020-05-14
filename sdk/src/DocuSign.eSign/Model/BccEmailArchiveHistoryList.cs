@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BccEmailArchiveHistoryList" /> class.
         /// </summary>
-        /// <param name="BccEmailArchiveHistory">.</param>
+        /// <param name="BccEmailArchiveHistory">BccEmailArchiveHistory.</param>
         /// <param name="EndPosition">The last position in the result set. .</param>
         /// <param name="NextUri">The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. .</param>
         /// <param name="PreviousUri">The postal code for the billing address..</param>
@@ -56,9 +57,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets BccEmailArchiveHistory
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bccEmailArchiveHistory", EmitDefaultValue=false)]
         public List<BccEmailArchiveHistory> BccEmailArchiveHistory { get; set; }
         /// <summary>
@@ -219,5 +219,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkspaceSettings" /> class.
         /// </summary>
-        /// <param name="CommentsAllowed">.</param>
+        /// <param name="CommentsAllowed">CommentsAllowed.</param>
         public WorkspaceSettings(string CommentsAllowed = default(string))
         {
             this.CommentsAllowed = CommentsAllowed;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CommentsAllowed
         /// </summary>
-        /// <value></value>
         [DataMember(Name="commentsAllowed", EmitDefaultValue=false)]
         public string CommentsAllowed { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

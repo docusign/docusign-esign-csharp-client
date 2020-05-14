@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,9 +39,9 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BccEmailArchiveHistory" /> class.
         /// </summary>
         /// <param name="AccountId">The account ID associated with the envelope..</param>
-        /// <param name="Action">.</param>
-        /// <param name="Email">.</param>
-        /// <param name="Modified">.</param>
+        /// <param name="Action">Action.</param>
+        /// <param name="Email">Email.</param>
+        /// <param name="Modified">Modified.</param>
         /// <param name="ModifiedBy">ModifiedBy.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         public BccEmailArchiveHistory(string AccountId = default(string), string Action = default(string), string Email = default(string), string Modified = default(string), UserInfo ModifiedBy = default(UserInfo), string Status = default(string))
@@ -60,21 +61,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="accountId", EmitDefaultValue=false)]
         public string AccountId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Action
         /// </summary>
-        /// <value></value>
         [DataMember(Name="action", EmitDefaultValue=false)]
         public string Action { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Modified
         /// </summary>
-        /// <value></value>
         [DataMember(Name="modified", EmitDefaultValue=false)]
         public string Modified { get; set; }
         /// <summary>
@@ -202,5 +200,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

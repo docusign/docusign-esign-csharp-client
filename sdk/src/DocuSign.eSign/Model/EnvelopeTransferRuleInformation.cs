@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="EnvelopeTransferRuleInformation" /> class.
         /// </summary>
         /// <param name="EndPosition">The last position in the result set. .</param>
-        /// <param name="EnvelopeTransferRules">.</param>
+        /// <param name="EnvelopeTransferRules">EnvelopeTransferRules.</param>
         /// <param name="NextUri">The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. .</param>
         /// <param name="PreviousUri">The postal code for the billing address..</param>
         /// <param name="ResultSetSize">The number of results returned in this response. .</param>
@@ -62,9 +63,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="endPosition", EmitDefaultValue=false)]
         public string EndPosition { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopeTransferRules
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopeTransferRules", EmitDefaultValue=false)]
         public List<EnvelopeTransferRule> EnvelopeTransferRules { get; set; }
         /// <summary>
@@ -219,5 +219,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

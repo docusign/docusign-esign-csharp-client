@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountMinimumPasswordLength" /> class.
         /// </summary>
-        /// <param name="MaximumLength">.</param>
-        /// <param name="MinimumLength">.</param>
+        /// <param name="MaximumLength">MaximumLength.</param>
+        /// <param name="MinimumLength">MinimumLength.</param>
         public AccountMinimumPasswordLength(string MaximumLength = default(string), string MinimumLength = default(string))
         {
             this.MaximumLength = MaximumLength;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets MaximumLength
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maximumLength", EmitDefaultValue=false)]
         public string MaximumLength { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MinimumLength
         /// </summary>
-        /// <value></value>
         [DataMember(Name="minimumLength", EmitDefaultValue=false)]
         public string MinimumLength { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

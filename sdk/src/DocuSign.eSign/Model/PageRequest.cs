@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PageRequest" /> class.
         /// </summary>
-        /// <param name="Password">.</param>
+        /// <param name="Password">Password.</param>
         /// <param name="Rotate">Sets the direction the page image is rotated. The possible settings are: left or right.</param>
         public PageRequest(string Password = default(string), string Rotate = default(string))
         {
@@ -46,9 +47,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Password
         /// </summary>
-        /// <value></value>
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
@@ -139,5 +139,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

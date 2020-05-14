@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="ConnectConfigResults" /> class.
         /// </summary>
         /// <param name="Configurations">Reserved: TBD.</param>
-        /// <param name="TotalRecords">.</param>
+        /// <param name="TotalRecords">TotalRecords.</param>
         public ConnectConfigResults(List<ConnectCustomConfiguration> Configurations = default(List<ConnectCustomConfiguration>), string TotalRecords = default(string))
         {
             this.Configurations = Configurations;
@@ -52,9 +53,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="configurations", EmitDefaultValue=false)]
         public List<ConnectCustomConfiguration> Configurations { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TotalRecords
         /// </summary>
-        /// <value></value>
         [DataMember(Name="totalRecords", EmitDefaultValue=false)]
         public string TotalRecords { get; set; }
         /// <summary>
@@ -139,5 +139,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

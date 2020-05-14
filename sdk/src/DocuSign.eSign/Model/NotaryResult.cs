@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NotaryResult" /> class.
         /// </summary>
-        /// <param name="Jurisdictions">.</param>
+        /// <param name="Jurisdictions">Jurisdictions.</param>
         /// <param name="Notary">Notary.</param>
         public NotaryResult(List<Jurisdiction> Jurisdictions = default(List<Jurisdiction>), Notary Notary = default(Notary))
         {
@@ -46,9 +47,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Jurisdictions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="jurisdictions", EmitDefaultValue=false)]
         public List<Jurisdiction> Jurisdictions { get; set; }
         /// <summary>
@@ -138,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

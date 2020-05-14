@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Ssn" /> class.
         /// </summary>
-        /// <param name="AnchorAllowWhiteSpaceInCharacters">.</param>
+        /// <param name="AnchorAllowWhiteSpaceInCharacters">AnchorAllowWhiteSpaceInCharacters.</param>
         /// <param name="AnchorAllowWhiteSpaceInCharactersMetadata">AnchorAllowWhiteSpaceInCharactersMetadata.</param>
         /// <param name="AnchorCaseSensitive">When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**..</param>
         /// <param name="AnchorCaseSensitiveMetadata">AnchorCaseSensitiveMetadata.</param>
@@ -49,7 +50,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AnchorMatchWholeWordMetadata">AnchorMatchWholeWordMetadata.</param>
         /// <param name="AnchorString">Anchor text information for a radio button..</param>
         /// <param name="AnchorStringMetadata">AnchorStringMetadata.</param>
-        /// <param name="AnchorTabProcessorVersion">.</param>
+        /// <param name="AnchorTabProcessorVersion">AnchorTabProcessorVersion.</param>
         /// <param name="AnchorTabProcessorVersionMetadata">AnchorTabProcessorVersionMetadata.</param>
         /// <param name="AnchorUnits">Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches..</param>
         /// <param name="AnchorUnitsMetadata">AnchorUnitsMetadata.</param>
@@ -78,11 +79,11 @@ namespace DocuSign.eSign.Model
         /// <param name="FontMetadata">FontMetadata.</param>
         /// <param name="FontSize">The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72..</param>
         /// <param name="FontSizeMetadata">FontSizeMetadata.</param>
-        /// <param name="FormOrder">.</param>
+        /// <param name="FormOrder">FormOrder.</param>
         /// <param name="FormOrderMetadata">FormOrderMetadata.</param>
-        /// <param name="FormPageLabel">.</param>
+        /// <param name="FormPageLabel">FormPageLabel.</param>
         /// <param name="FormPageLabelMetadata">FormPageLabelMetadata.</param>
-        /// <param name="FormPageNumber">.</param>
+        /// <param name="FormPageNumber">FormPageNumber.</param>
         /// <param name="FormPageNumberMetadata">FormPageNumberMetadata.</param>
         /// <param name="Height">Height of the tab in pixels..</param>
         /// <param name="HeightMetadata">HeightMetadata.</param>
@@ -94,7 +95,7 @@ namespace DocuSign.eSign.Model
         /// <param name="MaxLength">An optional value that describes the maximum length of the property when the property is a string..</param>
         /// <param name="MaxLengthMetadata">MaxLengthMetadata.</param>
         /// <param name="MergeField">MergeField.</param>
-        /// <param name="MergeFieldXml">.</param>
+        /// <param name="MergeFieldXml">MergeFieldXml.</param>
         /// <param name="Name">Specifies the tool tip text for the tab..</param>
         /// <param name="NameMetadata">NameMetadata.</param>
         /// <param name="OriginalValue">The initial value of the tab when it was sent to the recipient. .</param>
@@ -102,7 +103,7 @@ namespace DocuSign.eSign.Model
         /// <param name="PageNumber">Specifies the page number on which the tab is located..</param>
         /// <param name="PageNumberMetadata">PageNumberMetadata.</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
-        /// <param name="RecipientIdGuid">.</param>
+        /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
         /// <param name="RecipientIdGuidMetadata">RecipientIdGuidMetadata.</param>
         /// <param name="RecipientIdMetadata">RecipientIdMetadata.</param>
         /// <param name="RequireAll">When set to **true** and shared is true, information must be entered in this field to complete the envelope. .</param>
@@ -118,21 +119,21 @@ namespace DocuSign.eSign.Model
         /// <param name="SmartContractInformation">SmartContractInformation.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusMetadata">StatusMetadata.</param>
-        /// <param name="TabGroupLabels">.</param>
+        /// <param name="TabGroupLabels">TabGroupLabels.</param>
         /// <param name="TabGroupLabelsMetadata">TabGroupLabelsMetadata.</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
         /// <param name="TabIdMetadata">TabIdMetadata.</param>
         /// <param name="TabLabel">The label string associated with the tab..</param>
         /// <param name="TabLabelMetadata">TabLabelMetadata.</param>
-        /// <param name="TabOrder">.</param>
+        /// <param name="TabOrder">TabOrder.</param>
         /// <param name="TabOrderMetadata">TabOrderMetadata.</param>
-        /// <param name="TabType">.</param>
+        /// <param name="TabType">TabType.</param>
         /// <param name="TabTypeMetadata">TabTypeMetadata.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateLockedMetadata">TemplateLockedMetadata.</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TemplateRequiredMetadata">TemplateRequiredMetadata.</param>
-        /// <param name="Tooltip">.</param>
+        /// <param name="Tooltip">Tooltip.</param>
         /// <param name="ToolTipMetadata">ToolTipMetadata.</param>
         /// <param name="Underline">When set to **true**, the information in the tab is underlined..</param>
         /// <param name="UnderlineMetadata">UnderlineMetadata.</param>
@@ -264,9 +265,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AnchorAllowWhiteSpaceInCharacters
         /// </summary>
-        /// <value></value>
         [DataMember(Name="anchorAllowWhiteSpaceInCharacters", EmitDefaultValue=false)]
         public string AnchorAllowWhiteSpaceInCharacters { get; set; }
         /// <summary>
@@ -330,9 +330,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorStringMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorStringMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AnchorTabProcessorVersion
         /// </summary>
-        /// <value></value>
         [DataMember(Name="anchorTabProcessorVersion", EmitDefaultValue=false)]
         public string AnchorTabProcessorVersion { get; set; }
         /// <summary>
@@ -489,9 +488,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="fontSizeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FontSizeMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FormOrder
         /// </summary>
-        /// <value></value>
         [DataMember(Name="formOrder", EmitDefaultValue=false)]
         public string FormOrder { get; set; }
         /// <summary>
@@ -500,9 +498,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="formOrderMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FormOrderMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FormPageLabel
         /// </summary>
-        /// <value></value>
         [DataMember(Name="formPageLabel", EmitDefaultValue=false)]
         public string FormPageLabel { get; set; }
         /// <summary>
@@ -511,9 +508,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="formPageLabelMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FormPageLabelMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FormPageNumber
         /// </summary>
-        /// <value></value>
         [DataMember(Name="formPageNumber", EmitDefaultValue=false)]
         public string FormPageNumber { get; set; }
         /// <summary>
@@ -576,9 +572,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="mergeField", EmitDefaultValue=false)]
         public MergeField MergeField { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MergeFieldXml
         /// </summary>
-        /// <value></value>
         [DataMember(Name="mergeFieldXml", EmitDefaultValue=false)]
         public string MergeFieldXml { get; set; }
         /// <summary>
@@ -621,9 +616,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientId", EmitDefaultValue=false)]
         public string RecipientId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientIdGuid
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientIdGuid", EmitDefaultValue=false)]
         public string RecipientIdGuid { get; set; }
         /// <summary>
@@ -708,9 +702,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="statusMetadata", EmitDefaultValue=false)]
         public PropertyMetadata StatusMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabGroupLabels
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabGroupLabels", EmitDefaultValue=false)]
         public List<string> TabGroupLabels { get; set; }
         /// <summary>
@@ -741,9 +734,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabLabelMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TabLabelMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabOrder
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabOrder", EmitDefaultValue=false)]
         public string TabOrder { get; set; }
         /// <summary>
@@ -752,9 +744,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabOrderMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TabOrderMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabType", EmitDefaultValue=false)]
         public string TabType { get; set; }
         /// <summary>
@@ -785,9 +776,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequiredMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TemplateRequiredMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Tooltip
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tooltip", EmitDefaultValue=false)]
         public string Tooltip { get; set; }
         /// <summary>
@@ -1826,5 +1816,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

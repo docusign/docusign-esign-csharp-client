@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,48 +38,48 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LocalePolicy" /> class.
         /// </summary>
-        /// <param name="AddressFormat">.</param>
+        /// <param name="AddressFormat">AddressFormat.</param>
         /// <param name="AddressFormatMetadata">AddressFormatMetadata.</param>
-        /// <param name="AllowRegion">.</param>
-        /// <param name="CalendarType">.</param>
+        /// <param name="AllowRegion">AllowRegion.</param>
+        /// <param name="CalendarType">CalendarType.</param>
         /// <param name="CalendarTypeMetadata">CalendarTypeMetadata.</param>
-        /// <param name="CultureName">.</param>
+        /// <param name="CultureName">CultureName.</param>
         /// <param name="CultureNameMetadata">CultureNameMetadata.</param>
-        /// <param name="CurrencyCode">.</param>
+        /// <param name="CurrencyCode">CurrencyCode.</param>
         /// <param name="CurrencyCodeMetadata">CurrencyCodeMetadata.</param>
-        /// <param name="CurrencyNegativeFormat">.</param>
+        /// <param name="CurrencyNegativeFormat">CurrencyNegativeFormat.</param>
         /// <param name="CurrencyNegativeFormatMetadata">CurrencyNegativeFormatMetadata.</param>
-        /// <param name="CurrencyPositiveFormat">.</param>
+        /// <param name="CurrencyPositiveFormat">CurrencyPositiveFormat.</param>
         /// <param name="CurrencyPositiveFormatMetadata">CurrencyPositiveFormatMetadata.</param>
-        /// <param name="CustomDateFormat">.</param>
-        /// <param name="CustomSignDateFormat">.</param>
-        /// <param name="CustomSignTimeFormat">.</param>
-        /// <param name="CustomTimeFormat">.</param>
-        /// <param name="DateFormat">.</param>
+        /// <param name="CustomDateFormat">CustomDateFormat.</param>
+        /// <param name="CustomSignDateFormat">CustomSignDateFormat.</param>
+        /// <param name="CustomSignTimeFormat">CustomSignTimeFormat.</param>
+        /// <param name="CustomTimeFormat">CustomTimeFormat.</param>
+        /// <param name="DateFormat">DateFormat.</param>
         /// <param name="DateFormatMetadata">DateFormatMetadata.</param>
-        /// <param name="EffectiveAddressFormat">.</param>
-        /// <param name="EffectiveCalendarType">.</param>
-        /// <param name="EffectiveCurrencyCode">.</param>
-        /// <param name="EffectiveCurrencyNegativeFormat">.</param>
-        /// <param name="EffectiveCurrencyPositiveFormat">.</param>
-        /// <param name="EffectiveCustomDateFormat">.</param>
-        /// <param name="EffectiveCustomTimeFormat">.</param>
-        /// <param name="EffectiveDateFormat">.</param>
-        /// <param name="EffectiveInitialFormat">.</param>
-        /// <param name="EffectiveNameFormat">.</param>
-        /// <param name="EffectiveTimeFormat">.</param>
-        /// <param name="EffectiveTimeZone">.</param>
-        /// <param name="InitialFormat">.</param>
+        /// <param name="EffectiveAddressFormat">EffectiveAddressFormat.</param>
+        /// <param name="EffectiveCalendarType">EffectiveCalendarType.</param>
+        /// <param name="EffectiveCurrencyCode">EffectiveCurrencyCode.</param>
+        /// <param name="EffectiveCurrencyNegativeFormat">EffectiveCurrencyNegativeFormat.</param>
+        /// <param name="EffectiveCurrencyPositiveFormat">EffectiveCurrencyPositiveFormat.</param>
+        /// <param name="EffectiveCustomDateFormat">EffectiveCustomDateFormat.</param>
+        /// <param name="EffectiveCustomTimeFormat">EffectiveCustomTimeFormat.</param>
+        /// <param name="EffectiveDateFormat">EffectiveDateFormat.</param>
+        /// <param name="EffectiveInitialFormat">EffectiveInitialFormat.</param>
+        /// <param name="EffectiveNameFormat">EffectiveNameFormat.</param>
+        /// <param name="EffectiveTimeFormat">EffectiveTimeFormat.</param>
+        /// <param name="EffectiveTimeZone">EffectiveTimeZone.</param>
+        /// <param name="InitialFormat">InitialFormat.</param>
         /// <param name="InitialFormatMetadata">InitialFormatMetadata.</param>
-        /// <param name="NameFormat">.</param>
+        /// <param name="NameFormat">NameFormat.</param>
         /// <param name="NameFormatMetadata">NameFormatMetadata.</param>
-        /// <param name="SignDateFormat">.</param>
+        /// <param name="SignDateFormat">SignDateFormat.</param>
         /// <param name="SignDateFormatMetadata">SignDateFormatMetadata.</param>
-        /// <param name="SignTimeFormat">.</param>
+        /// <param name="SignTimeFormat">SignTimeFormat.</param>
         /// <param name="SignTimeFormatMetadata">SignTimeFormatMetadata.</param>
-        /// <param name="TimeFormat">.</param>
+        /// <param name="TimeFormat">TimeFormat.</param>
         /// <param name="TimeFormatMetadata">TimeFormatMetadata.</param>
-        /// <param name="TimeZone">.</param>
+        /// <param name="TimeZone">TimeZone.</param>
         /// <param name="TimeZoneMetadata">TimeZoneMetadata.</param>
         public LocalePolicy(string AddressFormat = default(string), SettingsMetadata AddressFormatMetadata = default(SettingsMetadata), string AllowRegion = default(string), string CalendarType = default(string), SettingsMetadata CalendarTypeMetadata = default(SettingsMetadata), string CultureName = default(string), SettingsMetadata CultureNameMetadata = default(SettingsMetadata), string CurrencyCode = default(string), SettingsMetadata CurrencyCodeMetadata = default(SettingsMetadata), string CurrencyNegativeFormat = default(string), SettingsMetadata CurrencyNegativeFormatMetadata = default(SettingsMetadata), string CurrencyPositiveFormat = default(string), SettingsMetadata CurrencyPositiveFormatMetadata = default(SettingsMetadata), string CustomDateFormat = default(string), string CustomSignDateFormat = default(string), string CustomSignTimeFormat = default(string), string CustomTimeFormat = default(string), string DateFormat = default(string), SettingsMetadata DateFormatMetadata = default(SettingsMetadata), string EffectiveAddressFormat = default(string), string EffectiveCalendarType = default(string), string EffectiveCurrencyCode = default(string), string EffectiveCurrencyNegativeFormat = default(string), string EffectiveCurrencyPositiveFormat = default(string), string EffectiveCustomDateFormat = default(string), string EffectiveCustomTimeFormat = default(string), string EffectiveDateFormat = default(string), string EffectiveInitialFormat = default(string), string EffectiveNameFormat = default(string), string EffectiveTimeFormat = default(string), string EffectiveTimeZone = default(string), string InitialFormat = default(string), SettingsMetadata InitialFormatMetadata = default(SettingsMetadata), string NameFormat = default(string), SettingsMetadata NameFormatMetadata = default(SettingsMetadata), string SignDateFormat = default(string), SettingsMetadata SignDateFormatMetadata = default(SettingsMetadata), string SignTimeFormat = default(string), SettingsMetadata SignTimeFormatMetadata = default(SettingsMetadata), string TimeFormat = default(string), SettingsMetadata TimeFormatMetadata = default(SettingsMetadata), string TimeZone = default(string), SettingsMetadata TimeZoneMetadata = default(SettingsMetadata))
         {
@@ -128,9 +129,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AddressFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="addressFormat", EmitDefaultValue=false)]
         public string AddressFormat { get; set; }
         /// <summary>
@@ -139,15 +139,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="addressFormatMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AddressFormatMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AllowRegion
         /// </summary>
-        /// <value></value>
         [DataMember(Name="allowRegion", EmitDefaultValue=false)]
         public string AllowRegion { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CalendarType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="calendarType", EmitDefaultValue=false)]
         public string CalendarType { get; set; }
         /// <summary>
@@ -156,9 +154,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="calendarTypeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CalendarTypeMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CultureName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="cultureName", EmitDefaultValue=false)]
         public string CultureName { get; set; }
         /// <summary>
@@ -167,9 +164,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="cultureNameMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CultureNameMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CurrencyCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="currencyCode", EmitDefaultValue=false)]
         public string CurrencyCode { get; set; }
         /// <summary>
@@ -178,9 +174,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="currencyCodeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CurrencyCodeMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CurrencyNegativeFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="currencyNegativeFormat", EmitDefaultValue=false)]
         public string CurrencyNegativeFormat { get; set; }
         /// <summary>
@@ -189,9 +184,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="currencyNegativeFormatMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CurrencyNegativeFormatMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CurrencyPositiveFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="currencyPositiveFormat", EmitDefaultValue=false)]
         public string CurrencyPositiveFormat { get; set; }
         /// <summary>
@@ -200,33 +194,28 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="currencyPositiveFormatMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CurrencyPositiveFormatMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CustomDateFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customDateFormat", EmitDefaultValue=false)]
         public string CustomDateFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CustomSignDateFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customSignDateFormat", EmitDefaultValue=false)]
         public string CustomSignDateFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CustomSignTimeFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customSignTimeFormat", EmitDefaultValue=false)]
         public string CustomSignTimeFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CustomTimeFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customTimeFormat", EmitDefaultValue=false)]
         public string CustomTimeFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DateFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dateFormat", EmitDefaultValue=false)]
         public string DateFormat { get; set; }
         /// <summary>
@@ -235,81 +224,68 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dateFormatMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DateFormatMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveAddressFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveAddressFormat", EmitDefaultValue=false)]
         public string EffectiveAddressFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveCalendarType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveCalendarType", EmitDefaultValue=false)]
         public string EffectiveCalendarType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveCurrencyCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveCurrencyCode", EmitDefaultValue=false)]
         public string EffectiveCurrencyCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveCurrencyNegativeFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveCurrencyNegativeFormat", EmitDefaultValue=false)]
         public string EffectiveCurrencyNegativeFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveCurrencyPositiveFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveCurrencyPositiveFormat", EmitDefaultValue=false)]
         public string EffectiveCurrencyPositiveFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveCustomDateFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveCustomDateFormat", EmitDefaultValue=false)]
         public string EffectiveCustomDateFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveCustomTimeFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveCustomTimeFormat", EmitDefaultValue=false)]
         public string EffectiveCustomTimeFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveDateFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveDateFormat", EmitDefaultValue=false)]
         public string EffectiveDateFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveInitialFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveInitialFormat", EmitDefaultValue=false)]
         public string EffectiveInitialFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveNameFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveNameFormat", EmitDefaultValue=false)]
         public string EffectiveNameFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveTimeFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveTimeFormat", EmitDefaultValue=false)]
         public string EffectiveTimeFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EffectiveTimeZone
         /// </summary>
-        /// <value></value>
         [DataMember(Name="effectiveTimeZone", EmitDefaultValue=false)]
         public string EffectiveTimeZone { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets InitialFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="initialFormat", EmitDefaultValue=false)]
         public string InitialFormat { get; set; }
         /// <summary>
@@ -318,9 +294,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="initialFormatMetadata", EmitDefaultValue=false)]
         public SettingsMetadata InitialFormatMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets NameFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="nameFormat", EmitDefaultValue=false)]
         public string NameFormat { get; set; }
         /// <summary>
@@ -329,9 +304,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="nameFormatMetadata", EmitDefaultValue=false)]
         public SettingsMetadata NameFormatMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignDateFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signDateFormat", EmitDefaultValue=false)]
         public string SignDateFormat { get; set; }
         /// <summary>
@@ -340,9 +314,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signDateFormatMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SignDateFormatMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignTimeFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signTimeFormat", EmitDefaultValue=false)]
         public string SignTimeFormat { get; set; }
         /// <summary>
@@ -351,9 +324,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signTimeFormatMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SignTimeFormatMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TimeFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="timeFormat", EmitDefaultValue=false)]
         public string TimeFormat { get; set; }
         /// <summary>
@@ -362,9 +334,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="timeFormatMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TimeFormatMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TimeZone
         /// </summary>
-        /// <value></value>
         [DataMember(Name="timeZone", EmitDefaultValue=false)]
         public string TimeZone { get; set; }
         /// <summary>
@@ -782,5 +753,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

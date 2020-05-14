@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,13 +38,13 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountIdentityVerificationWorkflow" /> class.
         /// </summary>
-        /// <param name="DefaultDescription">.</param>
-        /// <param name="DefaultName">.</param>
-        /// <param name="InputOptions">.</param>
+        /// <param name="DefaultDescription">DefaultDescription.</param>
+        /// <param name="DefaultName">DefaultName.</param>
+        /// <param name="InputOptions">InputOptions.</param>
         /// <param name="SignatureProvider">SignatureProvider.</param>
-        /// <param name="Steps">.</param>
-        /// <param name="WorkflowId">.</param>
-        /// <param name="WorkflowResourceKey">.</param>
+        /// <param name="Steps">Steps.</param>
+        /// <param name="WorkflowId">WorkflowId.</param>
+        /// <param name="WorkflowResourceKey">WorkflowResourceKey.</param>
         public AccountIdentityVerificationWorkflow(string DefaultDescription = default(string), string DefaultName = default(string), List<AccountIdentityInputOption> InputOptions = default(List<AccountIdentityInputOption>), AccountSignatureProvider SignatureProvider = default(AccountSignatureProvider), List<AccountIdentityVerificationStep> Steps = default(List<AccountIdentityVerificationStep>), string WorkflowId = default(string), string WorkflowResourceKey = default(string))
         {
             this.DefaultDescription = DefaultDescription;
@@ -56,21 +57,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DefaultDescription
         /// </summary>
-        /// <value></value>
         [DataMember(Name="defaultDescription", EmitDefaultValue=false)]
         public string DefaultDescription { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DefaultName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="defaultName", EmitDefaultValue=false)]
         public string DefaultName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets InputOptions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="inputOptions", EmitDefaultValue=false)]
         public List<AccountIdentityInputOption> InputOptions { get; set; }
         /// <summary>
@@ -79,21 +77,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureProvider", EmitDefaultValue=false)]
         public AccountSignatureProvider SignatureProvider { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Steps
         /// </summary>
-        /// <value></value>
         [DataMember(Name="steps", EmitDefaultValue=false)]
         public List<AccountIdentityVerificationStep> Steps { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets WorkflowId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="workflowId", EmitDefaultValue=false)]
         public string WorkflowId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets WorkflowResourceKey
         /// </summary>
-        /// <value></value>
         [DataMember(Name="workflowResourceKey", EmitDefaultValue=false)]
         public string WorkflowResourceKey { get; set; }
         /// <summary>
@@ -218,5 +213,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

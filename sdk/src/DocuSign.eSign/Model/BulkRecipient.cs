@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -44,8 +45,8 @@ namespace DocuSign.eSign.Model
         /// <param name="Name">Specifies the recipient&#39;s name.   Maximum length: 50 characters..</param>
         /// <param name="Note">Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters..</param>
         /// <param name="PhoneNumber">This is only used if the Identification field value is Phone or SMS. The value for this field can be a valid telephone number or, if Phone, usersupplied (SMS authentication cannot use a user supplied number). Parenthesis and dashes can be used in the telephone number.  If &#x60;usersupplied&#x60; is used, the signer supplies his or her own telephone number..</param>
-        /// <param name="RecipientSignatureProviderInfo">.</param>
-        /// <param name="RowNumber">.</param>
+        /// <param name="RecipientSignatureProviderInfo">RecipientSignatureProviderInfo.</param>
+        /// <param name="RowNumber">RowNumber.</param>
         /// <param name="TabLabels">Specifies values used to populate recipient tabs with information. This allows each bulk recipient signer to have different values for their associated tabs. Any number of &#x60;tabLabel&#x60; columns can be added to the bulk recipient file.  The information used in the bulk recipient file header must be the same as the &#x60;tabLabel&#x60; for the tab.  The values entered in this column are automatically inserted into the corresponding tab for the recipient in the same row.  Note that this option cannot be used for tabs that do not have data or that are automatically populated data such as Signature, Full Name, Email Address, Company, Title, and Date Signed tabs..</param>
         public BulkRecipient(string AccessCode = default(string), string Email = default(string), List<ErrorDetails> ErrorDetails = default(List<ErrorDetails>), string Identification = default(string), string Name = default(string), string Note = default(string), string PhoneNumber = default(string), List<BulkRecipientSignatureProvider> RecipientSignatureProviderInfo = default(List<BulkRecipientSignatureProvider>), string RowNumber = default(string), List<BulkRecipientTabLabel> TabLabels = default(List<BulkRecipientTabLabel>))
         {
@@ -104,15 +105,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientSignatureProviderInfo
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientSignatureProviderInfo", EmitDefaultValue=false)]
         public List<BulkRecipientSignatureProvider> RecipientSignatureProviderInfo { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RowNumber
         /// </summary>
-        /// <value></value>
         [DataMember(Name="rowNumber", EmitDefaultValue=false)]
         public string RowNumber { get; set; }
         /// <summary>
@@ -267,5 +266,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

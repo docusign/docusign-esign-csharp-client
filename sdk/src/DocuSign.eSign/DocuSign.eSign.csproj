@@ -24,17 +24,17 @@ Contact: devcenter@docusign.com
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>4.3.0</VersionPrefix>
+    <VersionPrefix>4.4.0-rc</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>DocuSign.eSign;REST;eSign;docusign;eSignature;api</PackageTags>
-    <PackageIconUrl>https://www.docusign.com/sites/all/themes/custom/docusign/favicons/favicon-32x32.png</PackageIconUrl>
+    <PackageIconUrl>https://docucdn-a.akamaihd.net/olive/images/2.17.0/favicons/favicon-32x32.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/docusign/docusign-csharp-client</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v4.3.0] - eSignature API v2.1-20.1.00 - 04/01/2020</PackageReleaseNotes>
+    <PackageReleaseNotes>[v4.4.0-rc] - eSignature API v2.1-20.1.02 - 05/14/2020</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

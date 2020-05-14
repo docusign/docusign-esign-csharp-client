@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,19 +40,19 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="Filter">Filter.</param>
-        /// <param name="FolderId">.</param>
+        /// <param name="FolderId">FolderId.</param>
         /// <param name="FolderItems">A list of the envelopes in the specified folder or folders. .</param>
         /// <param name="Folders">A collection of folder objects returned in a response..</param>
-        /// <param name="HasAccess">.</param>
-        /// <param name="HasSubFolders">.</param>
-        /// <param name="ItemCount">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="HasAccess">HasAccess.</param>
+        /// <param name="HasSubFolders">HasSubFolders.</param>
+        /// <param name="ItemCount">ItemCount.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="Owner">Owner.</param>
-        /// <param name="ParentFolderId">.</param>
-        /// <param name="ParentFolderUri">.</param>
-        /// <param name="SubFolderCount">.</param>
-        /// <param name="Type">.</param>
-        /// <param name="Uri">.</param>
+        /// <param name="ParentFolderId">ParentFolderId.</param>
+        /// <param name="ParentFolderUri">ParentFolderUri.</param>
+        /// <param name="SubFolderCount">SubFolderCount.</param>
+        /// <param name="Type">Type.</param>
+        /// <param name="Uri">Uri.</param>
         public Folder(ErrorDetails ErrorDetails = default(ErrorDetails), Filter Filter = default(Filter), string FolderId = default(string), List<FolderItemV2> FolderItems = default(List<FolderItemV2>), List<Folder> Folders = default(List<Folder>), string HasAccess = default(string), string HasSubFolders = default(string), string ItemCount = default(string), string Name = default(string), UserInfo Owner = default(UserInfo), string ParentFolderId = default(string), string ParentFolderUri = default(string), string SubFolderCount = default(string), string Type = default(string), string Uri = default(string))
         {
             this.ErrorDetails = ErrorDetails;
@@ -82,9 +83,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="filter", EmitDefaultValue=false)]
         public Filter Filter { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FolderId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="folderId", EmitDefaultValue=false)]
         public string FolderId { get; set; }
         /// <summary>
@@ -100,27 +100,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="folders", EmitDefaultValue=false)]
         public List<Folder> Folders { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets HasAccess
         /// </summary>
-        /// <value></value>
         [DataMember(Name="hasAccess", EmitDefaultValue=false)]
         public string HasAccess { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets HasSubFolders
         /// </summary>
-        /// <value></value>
         [DataMember(Name="hasSubFolders", EmitDefaultValue=false)]
         public string HasSubFolders { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ItemCount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="itemCount", EmitDefaultValue=false)]
         public string ItemCount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -129,33 +125,28 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="owner", EmitDefaultValue=false)]
         public UserInfo Owner { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ParentFolderId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="parentFolderId", EmitDefaultValue=false)]
         public string ParentFolderId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ParentFolderUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="parentFolderUri", EmitDefaultValue=false)]
         public string ParentFolderUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SubFolderCount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="subFolderCount", EmitDefaultValue=false)]
         public string SubFolderCount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Type
         /// </summary>
-        /// <value></value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -344,5 +335,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,15 +39,15 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BccEmailArchive" /> class.
         /// </summary>
         /// <param name="AccountId">The account ID associated with the envelope..</param>
-        /// <param name="BccEmailArchiveId">.</param>
-        /// <param name="Created">.</param>
+        /// <param name="BccEmailArchiveId">BccEmailArchiveId.</param>
+        /// <param name="Created">Created.</param>
         /// <param name="CreatedBy">CreatedBy.</param>
-        /// <param name="Email">.</param>
-        /// <param name="EmailNotificationId">.</param>
-        /// <param name="Modified">.</param>
+        /// <param name="Email">Email.</param>
+        /// <param name="EmailNotificationId">EmailNotificationId.</param>
+        /// <param name="Modified">Modified.</param>
         /// <param name="ModifiedBy">ModifiedBy.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Uri">Uri.</param>
         public BccEmailArchive(string AccountId = default(string), string BccEmailArchiveId = default(string), string Created = default(string), UserInfo CreatedBy = default(UserInfo), string Email = default(string), string EmailNotificationId = default(string), string Modified = default(string), UserInfo ModifiedBy = default(UserInfo), string Status = default(string), string Uri = default(string))
         {
             this.AccountId = AccountId;
@@ -68,15 +69,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="accountId", EmitDefaultValue=false)]
         public string AccountId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets BccEmailArchiveId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bccEmailArchiveId", EmitDefaultValue=false)]
         public string BccEmailArchiveId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Created
         /// </summary>
-        /// <value></value>
         [DataMember(Name="created", EmitDefaultValue=false)]
         public string Created { get; set; }
         /// <summary>
@@ -85,21 +84,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdBy", EmitDefaultValue=false)]
         public UserInfo CreatedBy { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EmailNotificationId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="emailNotificationId", EmitDefaultValue=false)]
         public string EmailNotificationId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Modified
         /// </summary>
-        /// <value></value>
         [DataMember(Name="modified", EmitDefaultValue=false)]
         public string Modified { get; set; }
         /// <summary>
@@ -114,9 +110,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -265,5 +260,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

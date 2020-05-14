@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BillingInvoicesSummary" /> class.
         /// </summary>
         /// <param name="BillingInvoices">Reserved: TBD.</param>
-        /// <param name="PastDueBalance">.</param>
-        /// <param name="PaymentAllowed">.</param>
+        /// <param name="PastDueBalance">PastDueBalance.</param>
+        /// <param name="PaymentAllowed">PaymentAllowed.</param>
         public BillingInvoicesSummary(List<BillingInvoice> BillingInvoices = default(List<BillingInvoice>), string PastDueBalance = default(string), string PaymentAllowed = default(string))
         {
             this.BillingInvoices = BillingInvoices;
@@ -54,15 +55,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="billingInvoices", EmitDefaultValue=false)]
         public List<BillingInvoice> BillingInvoices { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PastDueBalance
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pastDueBalance", EmitDefaultValue=false)]
         public string PastDueBalance { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentAllowed
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentAllowed", EmitDefaultValue=false)]
         public string PaymentAllowed { get; set; }
         /// <summary>
@@ -155,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

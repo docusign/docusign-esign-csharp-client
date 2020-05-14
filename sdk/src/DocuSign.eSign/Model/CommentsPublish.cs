@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CommentsPublish" /> class.
         /// </summary>
-        /// <param name="CommentsToPublish">.</param>
+        /// <param name="CommentsToPublish">CommentsToPublish.</param>
         public CommentsPublish(List<CommentPublish> CommentsToPublish = default(List<CommentPublish>))
         {
             this.CommentsToPublish = CommentsToPublish;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CommentsToPublish
         /// </summary>
-        /// <value></value>
         [DataMember(Name="commentsToPublish", EmitDefaultValue=false)]
         public List<CommentPublish> CommentsToPublish { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

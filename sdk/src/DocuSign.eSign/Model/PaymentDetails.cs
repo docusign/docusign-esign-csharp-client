@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,20 +38,20 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentDetails" /> class.
         /// </summary>
-        /// <param name="AllowedPaymentMethods">.</param>
-        /// <param name="ChargeId">.</param>
-        /// <param name="CurrencyCode">.</param>
+        /// <param name="AllowedPaymentMethods">AllowedPaymentMethods.</param>
+        /// <param name="ChargeId">ChargeId.</param>
+        /// <param name="CurrencyCode">CurrencyCode.</param>
         /// <param name="CurrencyCodeMetadata">CurrencyCodeMetadata.</param>
-        /// <param name="CustomerId">.</param>
-        /// <param name="CustomMetadata">.</param>
-        /// <param name="CustomMetadataRequired">.</param>
-        /// <param name="GatewayAccountId">.</param>
+        /// <param name="CustomerId">CustomerId.</param>
+        /// <param name="CustomMetadata">CustomMetadata.</param>
+        /// <param name="CustomMetadataRequired">CustomMetadataRequired.</param>
+        /// <param name="GatewayAccountId">GatewayAccountId.</param>
         /// <param name="GatewayAccountIdMetadata">GatewayAccountIdMetadata.</param>
-        /// <param name="GatewayDisplayName">.</param>
-        /// <param name="GatewayName">.</param>
-        /// <param name="LineItems">.</param>
-        /// <param name="PaymentOption">.</param>
-        /// <param name="PaymentSourceId">.</param>
+        /// <param name="GatewayDisplayName">GatewayDisplayName.</param>
+        /// <param name="GatewayName">GatewayName.</param>
+        /// <param name="LineItems">LineItems.</param>
+        /// <param name="PaymentOption">PaymentOption.</param>
+        /// <param name="PaymentSourceId">PaymentSourceId.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="Total">Total.</param>
         public PaymentDetails(List<string> AllowedPaymentMethods = default(List<string>), string ChargeId = default(string), string CurrencyCode = default(string), PropertyMetadata CurrencyCodeMetadata = default(PropertyMetadata), string CustomerId = default(string), string CustomMetadata = default(string), bool? CustomMetadataRequired = default(bool?), string GatewayAccountId = default(string), PropertyMetadata GatewayAccountIdMetadata = default(PropertyMetadata), string GatewayDisplayName = default(string), string GatewayName = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string PaymentOption = default(string), string PaymentSourceId = default(string), string Status = default(string), Money Total = default(Money))
@@ -74,21 +75,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AllowedPaymentMethods
         /// </summary>
-        /// <value></value>
         [DataMember(Name="allowedPaymentMethods", EmitDefaultValue=false)]
         public List<string> AllowedPaymentMethods { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ChargeId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="chargeId", EmitDefaultValue=false)]
         public string ChargeId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CurrencyCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="currencyCode", EmitDefaultValue=false)]
         public string CurrencyCode { get; set; }
         /// <summary>
@@ -97,27 +95,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="currencyCodeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata CurrencyCodeMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CustomerId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customerId", EmitDefaultValue=false)]
         public string CustomerId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CustomMetadata
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customMetadata", EmitDefaultValue=false)]
         public string CustomMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CustomMetadataRequired
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customMetadataRequired", EmitDefaultValue=false)]
         public bool? CustomMetadataRequired { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets GatewayAccountId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="gatewayAccountId", EmitDefaultValue=false)]
         public string GatewayAccountId { get; set; }
         /// <summary>
@@ -126,33 +120,28 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="gatewayAccountIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata GatewayAccountIdMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets GatewayDisplayName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="gatewayDisplayName", EmitDefaultValue=false)]
         public string GatewayDisplayName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets GatewayName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="gatewayName", EmitDefaultValue=false)]
         public string GatewayName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LineItems
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lineItems", EmitDefaultValue=false)]
         public List<PaymentLineItem> LineItems { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentOption
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentOption", EmitDefaultValue=false)]
         public string PaymentOption { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentSourceId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentSourceId", EmitDefaultValue=false)]
         public string PaymentSourceId { get; set; }
         /// <summary>
@@ -360,5 +349,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

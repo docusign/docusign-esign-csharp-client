@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeIdsRequest" /> class.
         /// </summary>
-        /// <param name="EnvelopeIds">.</param>
+        /// <param name="EnvelopeIds">EnvelopeIds.</param>
         /// <param name="TransactionIds"> A list of transaction Id&#39;s used to determining the status of envelopes sent asynchronously. See **transactionId** property on envelopes..</param>
         public EnvelopeIdsRequest(List<string> EnvelopeIds = default(List<string>), List<string> TransactionIds = default(List<string>))
         {
@@ -46,9 +47,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopeIds
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopeIds", EmitDefaultValue=false)]
         public List<string> EnvelopeIds { get; set; }
         /// <summary>
@@ -139,5 +139,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

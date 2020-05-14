@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,18 +39,18 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="PowerFormRecipient" /> class.
         /// </summary>
         /// <param name="AccessCode">If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account&#39;s access code format setting.  If blank, but the signer &#x60;accessCode&#x60; property is set in the envelope, then that value is used.  If blank and the signer &#x60;accessCode&#x60; property is not set, then the access code is not required..</param>
-        /// <param name="AccessCodeLocked">.</param>
-        /// <param name="AccessCodeRequired">.</param>
-        /// <param name="Email">.</param>
-        /// <param name="EmailLocked">.</param>
+        /// <param name="AccessCodeLocked">AccessCodeLocked.</param>
+        /// <param name="AccessCodeRequired">AccessCodeRequired.</param>
+        /// <param name="Email">Email.</param>
+        /// <param name="EmailLocked">EmailLocked.</param>
         /// <param name="IdCheckConfigurationName">Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node..</param>
-        /// <param name="IdCheckRequired">.</param>
-        /// <param name="Name">.</param>
-        /// <param name="RecipientType">.</param>
+        /// <param name="IdCheckRequired">IdCheckRequired.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="RecipientType">RecipientType.</param>
         /// <param name="RoleName">Optional element. Specifies the role name associated with the recipient.&lt;br/&gt;&lt;br/&gt;This is required when working with template recipients..</param>
         /// <param name="RoutingOrder">Specifies the routing order of the recipient in the envelope. .</param>
-        /// <param name="TemplateRequiresIdLookup">.</param>
-        /// <param name="UserNameLocked">.</param>
+        /// <param name="TemplateRequiresIdLookup">TemplateRequiresIdLookup.</param>
+        /// <param name="UserNameLocked">UserNameLocked.</param>
         public PowerFormRecipient(string AccessCode = default(string), string AccessCodeLocked = default(string), string AccessCodeRequired = default(string), string Email = default(string), string EmailLocked = default(string), string IdCheckConfigurationName = default(string), string IdCheckRequired = default(string), string Name = default(string), string RecipientType = default(string), string RoleName = default(string), string RoutingOrder = default(string), string TemplateRequiresIdLookup = default(string), string UserNameLocked = default(string))
         {
             this.AccessCode = AccessCode;
@@ -74,27 +75,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="accessCode", EmitDefaultValue=false)]
         public string AccessCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AccessCodeLocked
         /// </summary>
-        /// <value></value>
         [DataMember(Name="accessCodeLocked", EmitDefaultValue=false)]
         public string AccessCodeLocked { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AccessCodeRequired
         /// </summary>
-        /// <value></value>
         [DataMember(Name="accessCodeRequired", EmitDefaultValue=false)]
         public string AccessCodeRequired { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EmailLocked
         /// </summary>
-        /// <value></value>
         [DataMember(Name="emailLocked", EmitDefaultValue=false)]
         public string EmailLocked { get; set; }
         /// <summary>
@@ -104,21 +101,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="idCheckConfigurationName", EmitDefaultValue=false)]
         public string IdCheckConfigurationName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IdCheckRequired
         /// </summary>
-        /// <value></value>
         [DataMember(Name="idCheckRequired", EmitDefaultValue=false)]
         public string IdCheckRequired { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientType", EmitDefaultValue=false)]
         public string RecipientType { get; set; }
         /// <summary>
@@ -134,15 +128,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="routingOrder", EmitDefaultValue=false)]
         public string RoutingOrder { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TemplateRequiresIdLookup
         /// </summary>
-        /// <value></value>
         [DataMember(Name="templateRequiresIdLookup", EmitDefaultValue=false)]
         public string TemplateRequiresIdLookup { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserNameLocked
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userNameLocked", EmitDefaultValue=false)]
         public string UserNameLocked { get; set; }
         /// <summary>
@@ -315,5 +307,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkSendRequest" /> class.
         /// </summary>
-        /// <param name="EnvelopeOrTemplateId">.</param>
+        /// <param name="EnvelopeOrTemplateId">EnvelopeOrTemplateId.</param>
         public BulkSendRequest(string EnvelopeOrTemplateId = default(string))
         {
             this.EnvelopeOrTemplateId = EnvelopeOrTemplateId;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopeOrTemplateId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopeOrTemplateId", EmitDefaultValue=false)]
         public string EnvelopeOrTemplateId { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

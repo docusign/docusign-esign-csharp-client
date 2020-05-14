@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkSendingListSummaries" /> class.
         /// </summary>
-        /// <param name="BulkListSummaries">.</param>
+        /// <param name="BulkListSummaries">BulkListSummaries.</param>
         public BulkSendingListSummaries(List<BulkSendingListSummary> BulkListSummaries = default(List<BulkSendingListSummary>))
         {
             this.BulkListSummaries = BulkListSummaries;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets BulkListSummaries
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bulkListSummaries", EmitDefaultValue=false)]
         public List<BulkSendingListSummary> BulkListSummaries { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

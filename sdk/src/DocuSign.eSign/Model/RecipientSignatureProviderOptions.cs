@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,13 +38,13 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientSignatureProviderOptions" /> class.
         /// </summary>
-        /// <param name="CpfNumber">.</param>
+        /// <param name="CpfNumber">CpfNumber.</param>
         /// <param name="CpfNumberMetadata">CpfNumberMetadata.</param>
-        /// <param name="OneTimePassword">.</param>
+        /// <param name="OneTimePassword">OneTimePassword.</param>
         /// <param name="OneTimePasswordMetadata">OneTimePasswordMetadata.</param>
-        /// <param name="SignerRole">.</param>
+        /// <param name="SignerRole">SignerRole.</param>
         /// <param name="SignerRoleMetadata">SignerRoleMetadata.</param>
-        /// <param name="Sms">.</param>
+        /// <param name="Sms">Sms.</param>
         /// <param name="SmsMetadata">SmsMetadata.</param>
         public RecipientSignatureProviderOptions(string CpfNumber = default(string), PropertyMetadata CpfNumberMetadata = default(PropertyMetadata), string OneTimePassword = default(string), PropertyMetadata OneTimePasswordMetadata = default(PropertyMetadata), string SignerRole = default(string), PropertyMetadata SignerRoleMetadata = default(PropertyMetadata), string Sms = default(string), PropertyMetadata SmsMetadata = default(PropertyMetadata))
         {
@@ -58,9 +59,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CpfNumber
         /// </summary>
-        /// <value></value>
         [DataMember(Name="cpfNumber", EmitDefaultValue=false)]
         public string CpfNumber { get; set; }
         /// <summary>
@@ -69,9 +69,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="cpfNumberMetadata", EmitDefaultValue=false)]
         public PropertyMetadata CpfNumberMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OneTimePassword
         /// </summary>
-        /// <value></value>
         [DataMember(Name="oneTimePassword", EmitDefaultValue=false)]
         public string OneTimePassword { get; set; }
         /// <summary>
@@ -80,9 +79,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="oneTimePasswordMetadata", EmitDefaultValue=false)]
         public PropertyMetadata OneTimePasswordMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignerRole
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signerRole", EmitDefaultValue=false)]
         public string SignerRole { get; set; }
         /// <summary>
@@ -91,9 +89,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signerRoleMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SignerRoleMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Sms
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sms", EmitDefaultValue=false)]
         public string Sms { get; set; }
         /// <summary>
@@ -231,5 +228,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,8 +40,8 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="EndPosition">The last position in the result set. .</param>
         /// <param name="Folder">Folder.</param>
-        /// <param name="Items">.</param>
-        /// <param name="ParentFolders">.</param>
+        /// <param name="Items">Items.</param>
+        /// <param name="ParentFolders">ParentFolders.</param>
         /// <param name="ResultSetSize">The number of results returned in this response. .</param>
         /// <param name="StartPosition">Starting position of the current result set..</param>
         /// <param name="TotalSetSize">The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response..</param>
@@ -69,15 +70,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="folder", EmitDefaultValue=false)]
         public WorkspaceItem Folder { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Items
         /// </summary>
-        /// <value></value>
         [DataMember(Name="items", EmitDefaultValue=false)]
         public List<WorkspaceItem> Items { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ParentFolders
         /// </summary>
-        /// <value></value>
         [DataMember(Name="parentFolders", EmitDefaultValue=false)]
         public List<WorkspaceItem> ParentFolders { get; set; }
         /// <summary>
@@ -234,5 +233,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

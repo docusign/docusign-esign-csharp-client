@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Money" /> class.
         /// </summary>
-        /// <param name="AmountInBaseUnit">.</param>
-        /// <param name="Currency">.</param>
-        /// <param name="DisplayAmount">.</param>
+        /// <param name="AmountInBaseUnit">AmountInBaseUnit.</param>
+        /// <param name="Currency">Currency.</param>
+        /// <param name="DisplayAmount">DisplayAmount.</param>
         public Money(string AmountInBaseUnit = default(string), string Currency = default(string), string DisplayAmount = default(string))
         {
             this.AmountInBaseUnit = AmountInBaseUnit;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AmountInBaseUnit
         /// </summary>
-        /// <value></value>
         [DataMember(Name="amountInBaseUnit", EmitDefaultValue=false)]
         public string AmountInBaseUnit { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Currency
         /// </summary>
-        /// <value></value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
         public string Currency { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayAmount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayAmount", EmitDefaultValue=false)]
         public string DisplayAmount { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

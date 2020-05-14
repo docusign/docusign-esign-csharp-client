@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="FormDataItem" /> class.
         /// </summary>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="ListSelectedValue">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="ListSelectedValue">ListSelectedValue.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="OriginalValue">The initial value of the tab when it was sent to the recipient. .</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
         public FormDataItem(ErrorDetails ErrorDetails = default(ErrorDetails), string ListSelectedValue = default(string), string Name = default(string), string OriginalValue = default(string), string Value = default(string))
@@ -57,15 +58,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ListSelectedValue
         /// </summary>
-        /// <value></value>
         [DataMember(Name="listSelectedValue", EmitDefaultValue=false)]
         public string ListSelectedValue { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -186,5 +185,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

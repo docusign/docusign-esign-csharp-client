@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,26 +39,26 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Comment" /> class.
         /// </summary>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
-        /// <param name="Hmac">.</param>
-        /// <param name="Id">.</param>
-        /// <param name="Mentions">.</param>
-        /// <param name="Read">.</param>
-        /// <param name="SentByEmail">.</param>
-        /// <param name="SentByFullName">.</param>
-        /// <param name="SentByImageId">.</param>
-        /// <param name="SentByInitials">.</param>
-        /// <param name="SentByRecipientId">.</param>
-        /// <param name="SentByUserId">.</param>
+        /// <param name="Hmac">Hmac.</param>
+        /// <param name="Id">Id.</param>
+        /// <param name="Mentions">Mentions.</param>
+        /// <param name="Read">Read.</param>
+        /// <param name="SentByEmail">SentByEmail.</param>
+        /// <param name="SentByFullName">SentByFullName.</param>
+        /// <param name="SentByImageId">SentByImageId.</param>
+        /// <param name="SentByInitials">SentByInitials.</param>
+        /// <param name="SentByRecipientId">SentByRecipientId.</param>
+        /// <param name="SentByUserId">SentByUserId.</param>
         /// <param name="SigningGroupId">When set to **true** and the feature is enabled in the sender&#39;s account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once)..</param>
         /// <param name="SigningGroupName">The display name for the signing group.   Maximum Length: 100 characters. .</param>
-        /// <param name="Subject">.</param>
+        /// <param name="Subject">Subject.</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
-        /// <param name="Text">.</param>
-        /// <param name="ThreadId">.</param>
-        /// <param name="ThreadOriginatorId">.</param>
-        /// <param name="Timestamp">.</param>
-        /// <param name="TimeStampFormatted">.</param>
-        /// <param name="VisibleTo">.</param>
+        /// <param name="Text">Text.</param>
+        /// <param name="ThreadId">ThreadId.</param>
+        /// <param name="ThreadOriginatorId">ThreadOriginatorId.</param>
+        /// <param name="Timestamp">Timestamp.</param>
+        /// <param name="TimeStampFormatted">TimeStampFormatted.</param>
+        /// <param name="VisibleTo">VisibleTo.</param>
         public Comment(string EnvelopeId = default(string), string Hmac = default(string), string Id = default(string), List<string> Mentions = default(List<string>), bool? Read = default(bool?), string SentByEmail = default(string), string SentByFullName = default(string), string SentByImageId = default(string), string SentByInitials = default(string), string SentByRecipientId = default(string), string SentByUserId = default(string), string SigningGroupId = default(string), string SigningGroupName = default(string), string Subject = default(string), string TabId = default(string), string Text = default(string), string ThreadId = default(string), string ThreadOriginatorId = default(string), string Timestamp = default(string), string TimeStampFormatted = default(string), List<string> VisibleTo = default(List<string>))
         {
             this.EnvelopeId = EnvelopeId;
@@ -90,63 +91,53 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopeId", EmitDefaultValue=false)]
         public string EnvelopeId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Hmac
         /// </summary>
-        /// <value></value>
         [DataMember(Name="hmac", EmitDefaultValue=false)]
         public string Hmac { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Id
         /// </summary>
-        /// <value></value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Mentions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="mentions", EmitDefaultValue=false)]
         public List<string> Mentions { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Read
         /// </summary>
-        /// <value></value>
         [DataMember(Name="read", EmitDefaultValue=false)]
         public bool? Read { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SentByEmail
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sentByEmail", EmitDefaultValue=false)]
         public string SentByEmail { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SentByFullName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sentByFullName", EmitDefaultValue=false)]
         public string SentByFullName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SentByImageId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sentByImageId", EmitDefaultValue=false)]
         public string SentByImageId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SentByInitials
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sentByInitials", EmitDefaultValue=false)]
         public string SentByInitials { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SentByRecipientId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sentByRecipientId", EmitDefaultValue=false)]
         public string SentByRecipientId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SentByUserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sentByUserId", EmitDefaultValue=false)]
         public string SentByUserId { get; set; }
         /// <summary>
@@ -162,9 +153,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signingGroupName", EmitDefaultValue=false)]
         public string SigningGroupName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Subject
         /// </summary>
-        /// <value></value>
         [DataMember(Name="subject", EmitDefaultValue=false)]
         public string Subject { get; set; }
         /// <summary>
@@ -174,39 +164,33 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabId", EmitDefaultValue=false)]
         public string TabId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Text
         /// </summary>
-        /// <value></value>
         [DataMember(Name="text", EmitDefaultValue=false)]
         public string Text { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ThreadId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="threadId", EmitDefaultValue=false)]
         public string ThreadId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ThreadOriginatorId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="threadOriginatorId", EmitDefaultValue=false)]
         public string ThreadOriginatorId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Timestamp
         /// </summary>
-        /// <value></value>
         [DataMember(Name="timestamp", EmitDefaultValue=false)]
         public string Timestamp { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TimeStampFormatted
         /// </summary>
-        /// <value></value>
         [DataMember(Name="timeStampFormatted", EmitDefaultValue=false)]
         public string TimeStampFormatted { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets VisibleTo
         /// </summary>
-        /// <value></value>
         [DataMember(Name="visibleTo", EmitDefaultValue=false)]
         public List<string> VisibleTo { get; set; }
         /// <summary>
@@ -443,5 +427,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

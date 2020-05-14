@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="DocumentHtmlDefinitionOriginal" /> class.
         /// </summary>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
-        /// <param name="DocumentIdGuid">.</param>
+        /// <param name="DocumentIdGuid">DocumentIdGuid.</param>
         /// <param name="HtmlDefinition">HtmlDefinition.</param>
         public DocumentHtmlDefinitionOriginal(string DocumentId = default(string), string DocumentIdGuid = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition))
         {
@@ -54,9 +55,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentId", EmitDefaultValue=false)]
         public string DocumentId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentIdGuid
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentIdGuid", EmitDefaultValue=false)]
         public string DocumentIdGuid { get; set; }
         /// <summary>
@@ -154,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

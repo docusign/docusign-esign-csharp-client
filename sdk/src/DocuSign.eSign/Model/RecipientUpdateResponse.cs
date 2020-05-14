@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientUpdateResponse" /> class.
         /// </summary>
-        /// <param name="Combined">.</param>
+        /// <param name="Combined">Combined.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
-        /// <param name="RecipientIdGuid">.</param>
+        /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
         /// <param name="Tabs">Tabs.</param>
         public RecipientUpdateResponse(string Combined = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string RecipientId = default(string), string RecipientIdGuid = default(string), Tabs Tabs = default(Tabs))
         {
@@ -52,9 +53,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Combined
         /// </summary>
-        /// <value></value>
         [DataMember(Name="combined", EmitDefaultValue=false)]
         public string Combined { get; set; }
         /// <summary>
@@ -69,9 +69,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientId", EmitDefaultValue=false)]
         public string RecipientId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientIdGuid
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientIdGuid", EmitDefaultValue=false)]
         public string RecipientIdGuid { get; set; }
         /// <summary>
@@ -185,5 +184,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

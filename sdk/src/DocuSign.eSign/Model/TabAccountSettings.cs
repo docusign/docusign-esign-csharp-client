@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,45 +38,45 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TabAccountSettings" /> class.
         /// </summary>
-        /// <param name="AllowTabOrder">.</param>
+        /// <param name="AllowTabOrder">AllowTabOrder.</param>
         /// <param name="AllowTabOrderMetadata">AllowTabOrderMetadata.</param>
-        /// <param name="ApproveDeclineTabsEnabled">.</param>
+        /// <param name="ApproveDeclineTabsEnabled">ApproveDeclineTabsEnabled.</param>
         /// <param name="ApproveDeclineTabsMetadata">ApproveDeclineTabsMetadata.</param>
-        /// <param name="CalculatedFieldsEnabled">.</param>
+        /// <param name="CalculatedFieldsEnabled">CalculatedFieldsEnabled.</param>
         /// <param name="CalculatedFieldsMetadata">CalculatedFieldsMetadata.</param>
-        /// <param name="CheckboxTabsEnabled">.</param>
+        /// <param name="CheckboxTabsEnabled">CheckboxTabsEnabled.</param>
         /// <param name="CheckBoxTabsMetadata">CheckBoxTabsMetadata.</param>
-        /// <param name="DataFieldRegexEnabled">.</param>
+        /// <param name="DataFieldRegexEnabled">DataFieldRegexEnabled.</param>
         /// <param name="DataFieldRegexMetadata">DataFieldRegexMetadata.</param>
-        /// <param name="DataFieldSizeEnabled">.</param>
+        /// <param name="DataFieldSizeEnabled">DataFieldSizeEnabled.</param>
         /// <param name="DataFieldSizeMetadata">DataFieldSizeMetadata.</param>
-        /// <param name="DrawTabsEnabled">.</param>
+        /// <param name="DrawTabsEnabled">DrawTabsEnabled.</param>
         /// <param name="DrawTabsMetadata">DrawTabsMetadata.</param>
-        /// <param name="FirstLastEmailTabsEnabled">.</param>
+        /// <param name="FirstLastEmailTabsEnabled">FirstLastEmailTabsEnabled.</param>
         /// <param name="FirstLastEmailTabsMetadata">FirstLastEmailTabsMetadata.</param>
-        /// <param name="ListTabsEnabled">.</param>
+        /// <param name="ListTabsEnabled">ListTabsEnabled.</param>
         /// <param name="ListTabsMetadata">ListTabsMetadata.</param>
-        /// <param name="NoteTabsEnabled">.</param>
+        /// <param name="NoteTabsEnabled">NoteTabsEnabled.</param>
         /// <param name="NoteTabsMetadata">NoteTabsMetadata.</param>
-        /// <param name="RadioTabsEnabled">.</param>
+        /// <param name="RadioTabsEnabled">RadioTabsEnabled.</param>
         /// <param name="RadioTabsMetadata">RadioTabsMetadata.</param>
-        /// <param name="SavingCustomTabsEnabled">.</param>
+        /// <param name="SavingCustomTabsEnabled">SavingCustomTabsEnabled.</param>
         /// <param name="SavingCustomTabsMetadata">SavingCustomTabsMetadata.</param>
-        /// <param name="SenderToChangeTabAssignmentsEnabled">.</param>
+        /// <param name="SenderToChangeTabAssignmentsEnabled">SenderToChangeTabAssignmentsEnabled.</param>
         /// <param name="SenderToChangeTabAssignmentsMetadata">SenderToChangeTabAssignmentsMetadata.</param>
-        /// <param name="SharedCustomTabsEnabled">.</param>
+        /// <param name="SharedCustomTabsEnabled">SharedCustomTabsEnabled.</param>
         /// <param name="SharedCustomTabsMetadata">SharedCustomTabsMetadata.</param>
-        /// <param name="TabDataLabelEnabled">.</param>
+        /// <param name="TabDataLabelEnabled">TabDataLabelEnabled.</param>
         /// <param name="TabDataLabelMetadata">TabDataLabelMetadata.</param>
-        /// <param name="TabLocationEnabled">.</param>
+        /// <param name="TabLocationEnabled">TabLocationEnabled.</param>
         /// <param name="TabLocationMetadata">TabLocationMetadata.</param>
-        /// <param name="TabLockingEnabled">.</param>
+        /// <param name="TabLockingEnabled">TabLockingEnabled.</param>
         /// <param name="TabLockingMetadata">TabLockingMetadata.</param>
-        /// <param name="TabScaleEnabled">.</param>
+        /// <param name="TabScaleEnabled">TabScaleEnabled.</param>
         /// <param name="TabScaleMetadata">TabScaleMetadata.</param>
-        /// <param name="TabTextFormattingEnabled">.</param>
+        /// <param name="TabTextFormattingEnabled">TabTextFormattingEnabled.</param>
         /// <param name="TabTextFormattingMetadata">TabTextFormattingMetadata.</param>
-        /// <param name="TextTabsEnabled">.</param>
+        /// <param name="TextTabsEnabled">TextTabsEnabled.</param>
         /// <param name="TextTabsMetadata">TextTabsMetadata.</param>
         public TabAccountSettings(string AllowTabOrder = default(string), SettingsMetadata AllowTabOrderMetadata = default(SettingsMetadata), string ApproveDeclineTabsEnabled = default(string), SettingsMetadata ApproveDeclineTabsMetadata = default(SettingsMetadata), string CalculatedFieldsEnabled = default(string), SettingsMetadata CalculatedFieldsMetadata = default(SettingsMetadata), string CheckboxTabsEnabled = default(string), SettingsMetadata CheckBoxTabsMetadata = default(SettingsMetadata), string DataFieldRegexEnabled = default(string), SettingsMetadata DataFieldRegexMetadata = default(SettingsMetadata), string DataFieldSizeEnabled = default(string), SettingsMetadata DataFieldSizeMetadata = default(SettingsMetadata), string DrawTabsEnabled = default(string), SettingsMetadata DrawTabsMetadata = default(SettingsMetadata), string FirstLastEmailTabsEnabled = default(string), SettingsMetadata FirstLastEmailTabsMetadata = default(SettingsMetadata), string ListTabsEnabled = default(string), SettingsMetadata ListTabsMetadata = default(SettingsMetadata), string NoteTabsEnabled = default(string), SettingsMetadata NoteTabsMetadata = default(SettingsMetadata), string RadioTabsEnabled = default(string), SettingsMetadata RadioTabsMetadata = default(SettingsMetadata), string SavingCustomTabsEnabled = default(string), SettingsMetadata SavingCustomTabsMetadata = default(SettingsMetadata), string SenderToChangeTabAssignmentsEnabled = default(string), SettingsMetadata SenderToChangeTabAssignmentsMetadata = default(SettingsMetadata), string SharedCustomTabsEnabled = default(string), SettingsMetadata SharedCustomTabsMetadata = default(SettingsMetadata), string TabDataLabelEnabled = default(string), SettingsMetadata TabDataLabelMetadata = default(SettingsMetadata), string TabLocationEnabled = default(string), SettingsMetadata TabLocationMetadata = default(SettingsMetadata), string TabLockingEnabled = default(string), SettingsMetadata TabLockingMetadata = default(SettingsMetadata), string TabScaleEnabled = default(string), SettingsMetadata TabScaleMetadata = default(SettingsMetadata), string TabTextFormattingEnabled = default(string), SettingsMetadata TabTextFormattingMetadata = default(SettingsMetadata), string TextTabsEnabled = default(string), SettingsMetadata TextTabsMetadata = default(SettingsMetadata))
         {
@@ -122,9 +123,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AllowTabOrder
         /// </summary>
-        /// <value></value>
         [DataMember(Name="allowTabOrder", EmitDefaultValue=false)]
         public string AllowTabOrder { get; set; }
         /// <summary>
@@ -133,9 +133,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowTabOrderMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowTabOrderMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ApproveDeclineTabsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="approveDeclineTabsEnabled", EmitDefaultValue=false)]
         public string ApproveDeclineTabsEnabled { get; set; }
         /// <summary>
@@ -144,9 +143,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="approveDeclineTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ApproveDeclineTabsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CalculatedFieldsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="calculatedFieldsEnabled", EmitDefaultValue=false)]
         public string CalculatedFieldsEnabled { get; set; }
         /// <summary>
@@ -155,9 +153,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="calculatedFieldsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CalculatedFieldsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CheckboxTabsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="checkboxTabsEnabled", EmitDefaultValue=false)]
         public string CheckboxTabsEnabled { get; set; }
         /// <summary>
@@ -166,9 +163,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="checkBoxTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CheckBoxTabsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DataFieldRegexEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dataFieldRegexEnabled", EmitDefaultValue=false)]
         public string DataFieldRegexEnabled { get; set; }
         /// <summary>
@@ -177,9 +173,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dataFieldRegexMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DataFieldRegexMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DataFieldSizeEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dataFieldSizeEnabled", EmitDefaultValue=false)]
         public string DataFieldSizeEnabled { get; set; }
         /// <summary>
@@ -188,9 +183,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dataFieldSizeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DataFieldSizeMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DrawTabsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="drawTabsEnabled", EmitDefaultValue=false)]
         public string DrawTabsEnabled { get; set; }
         /// <summary>
@@ -199,9 +193,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="drawTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DrawTabsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FirstLastEmailTabsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="firstLastEmailTabsEnabled", EmitDefaultValue=false)]
         public string FirstLastEmailTabsEnabled { get; set; }
         /// <summary>
@@ -210,9 +203,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="firstLastEmailTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata FirstLastEmailTabsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ListTabsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="listTabsEnabled", EmitDefaultValue=false)]
         public string ListTabsEnabled { get; set; }
         /// <summary>
@@ -221,9 +213,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="listTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ListTabsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets NoteTabsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="noteTabsEnabled", EmitDefaultValue=false)]
         public string NoteTabsEnabled { get; set; }
         /// <summary>
@@ -232,9 +223,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="noteTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata NoteTabsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RadioTabsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="radioTabsEnabled", EmitDefaultValue=false)]
         public string RadioTabsEnabled { get; set; }
         /// <summary>
@@ -243,9 +233,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="radioTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata RadioTabsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SavingCustomTabsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="savingCustomTabsEnabled", EmitDefaultValue=false)]
         public string SavingCustomTabsEnabled { get; set; }
         /// <summary>
@@ -254,9 +243,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="savingCustomTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SavingCustomTabsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SenderToChangeTabAssignmentsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="senderToChangeTabAssignmentsEnabled", EmitDefaultValue=false)]
         public string SenderToChangeTabAssignmentsEnabled { get; set; }
         /// <summary>
@@ -265,9 +253,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="senderToChangeTabAssignmentsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SenderToChangeTabAssignmentsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SharedCustomTabsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sharedCustomTabsEnabled", EmitDefaultValue=false)]
         public string SharedCustomTabsEnabled { get; set; }
         /// <summary>
@@ -276,9 +263,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="sharedCustomTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SharedCustomTabsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabDataLabelEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabDataLabelEnabled", EmitDefaultValue=false)]
         public string TabDataLabelEnabled { get; set; }
         /// <summary>
@@ -287,9 +273,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabDataLabelMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TabDataLabelMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabLocationEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabLocationEnabled", EmitDefaultValue=false)]
         public string TabLocationEnabled { get; set; }
         /// <summary>
@@ -298,9 +283,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabLocationMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TabLocationMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabLockingEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabLockingEnabled", EmitDefaultValue=false)]
         public string TabLockingEnabled { get; set; }
         /// <summary>
@@ -309,9 +293,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabLockingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TabLockingMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabScaleEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabScaleEnabled", EmitDefaultValue=false)]
         public string TabScaleEnabled { get; set; }
         /// <summary>
@@ -320,9 +303,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabScaleMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TabScaleMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabTextFormattingEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabTextFormattingEnabled", EmitDefaultValue=false)]
         public string TabTextFormattingEnabled { get; set; }
         /// <summary>
@@ -331,9 +313,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabTextFormattingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TabTextFormattingMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TextTabsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="textTabsEnabled", EmitDefaultValue=false)]
         public string TextTabsEnabled { get; set; }
         /// <summary>
@@ -727,5 +708,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

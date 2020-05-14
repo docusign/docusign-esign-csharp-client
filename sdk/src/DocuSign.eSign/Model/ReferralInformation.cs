@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,22 +40,22 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AdvertisementId">A complex type that contains the following information for entering referral and discount information. The following items are included in the referral information (all string content): enableSupport, includedSeats, saleDiscountPercent, saleDiscountAmount, saleDiscountFixedAmount, saleDiscountPeriods, saleDiscountSeatPriceOverride, planStartMonth, referralCode, referrerName, advertisementId, publisherId, shopperId, promoCode, groupMemberId, idType, and industry.  ###### Note: saleDiscountPercent, saleDiscountAmount, saleDiscountFixedAmount, saleDiscountPeriods, and saleDiscountSeatPriceOverride are reserved for DoucSign use only.  .</param>
         /// <param name="EnableSupport">When set to **true**, then customer support is provided as part of the account plan..</param>
-        /// <param name="ExternalOrgId">.</param>
-        /// <param name="GroupMemberId">.</param>
-        /// <param name="IdType">.</param>
+        /// <param name="ExternalOrgId">ExternalOrgId.</param>
+        /// <param name="GroupMemberId">GroupMemberId.</param>
+        /// <param name="IdType">IdType.</param>
         /// <param name="IncludedSeats">The number of seats (users) included..</param>
-        /// <param name="Industry">.</param>
-        /// <param name="PlanStartMonth">.</param>
-        /// <param name="PromoCode">.</param>
-        /// <param name="PublisherId">.</param>
-        /// <param name="ReferralCode">.</param>
-        /// <param name="ReferrerName">.</param>
+        /// <param name="Industry">Industry.</param>
+        /// <param name="PlanStartMonth">PlanStartMonth.</param>
+        /// <param name="PromoCode">PromoCode.</param>
+        /// <param name="PublisherId">PublisherId.</param>
+        /// <param name="ReferralCode">ReferralCode.</param>
+        /// <param name="ReferrerName">ReferrerName.</param>
         /// <param name="SaleDiscountAmount">Reserved for DocuSign use only..</param>
         /// <param name="SaleDiscountFixedAmount">Reserved for DocuSign use only..</param>
         /// <param name="SaleDiscountPercent">Reserved for DocuSign use only..</param>
         /// <param name="SaleDiscountPeriods">Reserved for DocuSign use only..</param>
         /// <param name="SaleDiscountSeatPriceOverride">Reserved for DocuSign use only..</param>
-        /// <param name="ShopperId">.</param>
+        /// <param name="ShopperId">ShopperId.</param>
         public ReferralInformation(string AdvertisementId = default(string), string EnableSupport = default(string), string ExternalOrgId = default(string), string GroupMemberId = default(string), string IdType = default(string), string IncludedSeats = default(string), string Industry = default(string), string PlanStartMonth = default(string), string PromoCode = default(string), string PublisherId = default(string), string ReferralCode = default(string), string ReferrerName = default(string), string SaleDiscountAmount = default(string), string SaleDiscountFixedAmount = default(string), string SaleDiscountPercent = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountSeatPriceOverride = default(string), string ShopperId = default(string))
         {
             this.AdvertisementId = AdvertisementId;
@@ -90,21 +91,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableSupport", EmitDefaultValue=false)]
         public string EnableSupport { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ExternalOrgId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="externalOrgId", EmitDefaultValue=false)]
         public string ExternalOrgId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets GroupMemberId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="groupMemberId", EmitDefaultValue=false)]
         public string GroupMemberId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IdType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="idType", EmitDefaultValue=false)]
         public string IdType { get; set; }
         /// <summary>
@@ -114,39 +112,33 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includedSeats", EmitDefaultValue=false)]
         public string IncludedSeats { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Industry
         /// </summary>
-        /// <value></value>
         [DataMember(Name="industry", EmitDefaultValue=false)]
         public string Industry { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PlanStartMonth
         /// </summary>
-        /// <value></value>
         [DataMember(Name="planStartMonth", EmitDefaultValue=false)]
         public string PlanStartMonth { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PromoCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="promoCode", EmitDefaultValue=false)]
         public string PromoCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PublisherId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="publisherId", EmitDefaultValue=false)]
         public string PublisherId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ReferralCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="referralCode", EmitDefaultValue=false)]
         public string ReferralCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ReferrerName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="referrerName", EmitDefaultValue=false)]
         public string ReferrerName { get; set; }
         /// <summary>
@@ -180,9 +172,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="saleDiscountSeatPriceOverride", EmitDefaultValue=false)]
         public string SaleDiscountSeatPriceOverride { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ShopperId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="shopperId", EmitDefaultValue=false)]
         public string ShopperId { get; set; }
         /// <summary>
@@ -395,5 +386,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

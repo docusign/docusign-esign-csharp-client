@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="FavoriteTemplatesInfo" /> class.
         /// </summary>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="FavoriteTemplates">.</param>
-        /// <param name="TemplatesUpdatedCount">.</param>
+        /// <param name="FavoriteTemplates">FavoriteTemplates.</param>
+        /// <param name="TemplatesUpdatedCount">TemplatesUpdatedCount.</param>
         public FavoriteTemplatesInfo(ErrorDetails ErrorDetails = default(ErrorDetails), List<FavoriteTemplatesContentItem> FavoriteTemplates = default(List<FavoriteTemplatesContentItem>), int? TemplatesUpdatedCount = default(int?))
         {
             this.ErrorDetails = ErrorDetails;
@@ -53,15 +54,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FavoriteTemplates
         /// </summary>
-        /// <value></value>
         [DataMember(Name="favoriteTemplates", EmitDefaultValue=false)]
         public List<FavoriteTemplatesContentItem> FavoriteTemplates { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TemplatesUpdatedCount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="templatesUpdatedCount", EmitDefaultValue=false)]
         public int? TemplatesUpdatedCount { get; set; }
         /// <summary>
@@ -154,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

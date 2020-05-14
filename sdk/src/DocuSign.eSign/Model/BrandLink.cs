@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BrandLink" /> class.
         /// </summary>
-        /// <param name="LinkText">.</param>
-        /// <param name="LinkType">.</param>
-        /// <param name="ShowLink">.</param>
-        /// <param name="UrlOrMailTo">.</param>
+        /// <param name="LinkText">LinkText.</param>
+        /// <param name="LinkType">LinkType.</param>
+        /// <param name="ShowLink">ShowLink.</param>
+        /// <param name="UrlOrMailTo">UrlOrMailTo.</param>
         public BrandLink(string LinkText = default(string), string LinkType = default(string), string ShowLink = default(string), string UrlOrMailTo = default(string))
         {
             this.LinkText = LinkText;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets LinkText
         /// </summary>
-        /// <value></value>
         [DataMember(Name="linkText", EmitDefaultValue=false)]
         public string LinkText { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LinkType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="linkType", EmitDefaultValue=false)]
         public string LinkType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ShowLink
         /// </summary>
-        /// <value></value>
         [DataMember(Name="showLink", EmitDefaultValue=false)]
         public string ShowLink { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UrlOrMailTo
         /// </summary>
-        /// <value></value>
         [DataMember(Name="urlOrMailTo", EmitDefaultValue=false)]
         public string UrlOrMailTo { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

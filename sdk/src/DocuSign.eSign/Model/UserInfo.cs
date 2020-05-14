@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,18 +39,18 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="UserInfo" /> class.
         /// </summary>
         /// <param name="AccountId">The account ID associated with the envelope..</param>
-        /// <param name="AccountName">.</param>
-        /// <param name="ActivationAccessCode">.</param>
-        /// <param name="Email">.</param>
+        /// <param name="AccountName">AccountName.</param>
+        /// <param name="ActivationAccessCode">ActivationAccessCode.</param>
+        /// <param name="Email">Email.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="LoginStatus">.</param>
-        /// <param name="MembershipId">.</param>
-        /// <param name="SendActivationEmail">.</param>
-        /// <param name="Uri">.</param>
-        /// <param name="UserId">.</param>
-        /// <param name="UserName">.</param>
-        /// <param name="UserStatus">.</param>
-        /// <param name="UserType">.</param>
+        /// <param name="LoginStatus">LoginStatus.</param>
+        /// <param name="MembershipId">MembershipId.</param>
+        /// <param name="SendActivationEmail">SendActivationEmail.</param>
+        /// <param name="Uri">Uri.</param>
+        /// <param name="UserId">UserId.</param>
+        /// <param name="UserName">UserName.</param>
+        /// <param name="UserStatus">UserStatus.</param>
+        /// <param name="UserType">UserType.</param>
         public UserInfo(string AccountId = default(string), string AccountName = default(string), string ActivationAccessCode = default(string), string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string LoginStatus = default(string), string MembershipId = default(string), string SendActivationEmail = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserStatus = default(string), string UserType = default(string))
         {
             this.AccountId = AccountId;
@@ -74,21 +75,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="accountId", EmitDefaultValue=false)]
         public string AccountId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AccountName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="accountName", EmitDefaultValue=false)]
         public string AccountName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ActivationAccessCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="activationAccessCode", EmitDefaultValue=false)]
         public string ActivationAccessCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
@@ -97,51 +95,43 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LoginStatus
         /// </summary>
-        /// <value></value>
         [DataMember(Name="loginStatus", EmitDefaultValue=false)]
         public string LoginStatus { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MembershipId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="membershipId", EmitDefaultValue=false)]
         public string MembershipId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SendActivationEmail
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sendActivationEmail", EmitDefaultValue=false)]
         public string SendActivationEmail { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userName", EmitDefaultValue=false)]
         public string UserName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserStatus
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userStatus", EmitDefaultValue=false)]
         public string UserStatus { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userType", EmitDefaultValue=false)]
         public string UserType { get; set; }
         /// <summary>
@@ -314,5 +304,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

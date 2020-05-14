@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -42,7 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ConfigurationType">If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**..</param>
         /// <param name="ConfigurationTypeMetadata">ConfigurationTypeMetadata.</param>
         /// <param name="Path">Sets the object associated with the custom tab. Currently this is the Salesforce Object..</param>
-        /// <param name="PathExtended">.</param>
+        /// <param name="PathExtended">PathExtended.</param>
         /// <param name="PathExtendedMetadata">PathExtendedMetadata.</param>
         /// <param name="PathMetadata">PathMetadata.</param>
         /// <param name="Row">Specifies the row number in a Salesforce table that the merge field value corresponds to..</param>
@@ -94,9 +95,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="path", EmitDefaultValue=false)]
         public string Path { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PathExtended
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pathExtended", EmitDefaultValue=false)]
         public List<PathExtendedElement> PathExtended { get; set; }
         /// <summary>
@@ -293,5 +293,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

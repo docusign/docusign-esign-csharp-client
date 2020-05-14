@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountIdentityVerificationResponse" /> class.
         /// </summary>
-        /// <param name="IdentityVerification">.</param>
+        /// <param name="IdentityVerification">IdentityVerification.</param>
         public AccountIdentityVerificationResponse(List<AccountIdentityVerificationWorkflow> IdentityVerification = default(List<AccountIdentityVerificationWorkflow>))
         {
             this.IdentityVerification = IdentityVerification;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets IdentityVerification
         /// </summary>
-        /// <value></value>
         [DataMember(Name="identityVerification", EmitDefaultValue=false)]
         public List<AccountIdentityVerificationWorkflow> IdentityVerification { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

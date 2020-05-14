@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,11 +38,11 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PayPalLegacySettings" /> class.
         /// </summary>
-        /// <param name="Currency">.</param>
-        /// <param name="Partner">.</param>
-        /// <param name="Password">.</param>
-        /// <param name="UserName">.</param>
-        /// <param name="Vendor">.</param>
+        /// <param name="Currency">Currency.</param>
+        /// <param name="Partner">Partner.</param>
+        /// <param name="Password">Password.</param>
+        /// <param name="UserName">UserName.</param>
+        /// <param name="Vendor">Vendor.</param>
         public PayPalLegacySettings(string Currency = default(string), string Partner = default(string), string Password = default(string), string UserName = default(string), string Vendor = default(string))
         {
             this.Currency = Currency;
@@ -52,33 +53,28 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Currency
         /// </summary>
-        /// <value></value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
         public string Currency { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Partner
         /// </summary>
-        /// <value></value>
         [DataMember(Name="partner", EmitDefaultValue=false)]
         public string Partner { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Password
         /// </summary>
-        /// <value></value>
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userName", EmitDefaultValue=false)]
         public string UserName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Vendor
         /// </summary>
-        /// <value></value>
         [DataMember(Name="vendor", EmitDefaultValue=false)]
         public string Vendor { get; set; }
         /// <summary>
@@ -187,5 +183,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

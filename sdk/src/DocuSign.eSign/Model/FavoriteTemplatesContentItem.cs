@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="FavoriteTemplatesContentItem" /> class.
         /// </summary>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="FavoritedDate">.</param>
+        /// <param name="FavoritedDate">FavoritedDate.</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
         public FavoriteTemplatesContentItem(ErrorDetails ErrorDetails = default(ErrorDetails), string FavoritedDate = default(string), string TemplateId = default(string))
         {
@@ -53,9 +54,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FavoritedDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="favoritedDate", EmitDefaultValue=false)]
         public string FavoritedDate { get; set; }
         /// <summary>
@@ -154,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

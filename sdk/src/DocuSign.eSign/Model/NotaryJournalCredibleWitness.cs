@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NotaryJournalCredibleWitness" /> class.
         /// </summary>
-        /// <param name="Address">.</param>
-        /// <param name="Name">.</param>
-        /// <param name="SignatureImage">.</param>
+        /// <param name="Address">Address.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="SignatureImage">SignatureImage.</param>
         public NotaryJournalCredibleWitness(string Address = default(string), string Name = default(string), string SignatureImage = default(string))
         {
             this.Address = Address;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Address
         /// </summary>
-        /// <value></value>
         [DataMember(Name="address", EmitDefaultValue=false)]
         public string Address { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureImage
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureImage", EmitDefaultValue=false)]
         public string SignatureImage { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

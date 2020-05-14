@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,15 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Watermark" /> class.
         /// </summary>
-        /// <param name="DisplayAngle">.</param>
-        /// <param name="Enabled">.</param>
+        /// <param name="DisplayAngle">DisplayAngle.</param>
+        /// <param name="Enabled">Enabled.</param>
         /// <param name="Font">The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default..</param>
         /// <param name="FontColor">The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White..</param>
         /// <param name="FontSize">The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72..</param>
-        /// <param name="Id">.</param>
-        /// <param name="ImageBase64">.</param>
-        /// <param name="Transparency">.</param>
-        /// <param name="WatermarkText">.</param>
+        /// <param name="Id">Id.</param>
+        /// <param name="ImageBase64">ImageBase64.</param>
+        /// <param name="Transparency">Transparency.</param>
+        /// <param name="WatermarkText">WatermarkText.</param>
         public Watermark(string DisplayAngle = default(string), string Enabled = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Id = default(string), string ImageBase64 = default(string), string Transparency = default(string), string WatermarkText = default(string))
         {
             this.DisplayAngle = DisplayAngle;
@@ -60,15 +61,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayAngle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayAngle", EmitDefaultValue=false)]
         public string DisplayAngle { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Enabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enabled", EmitDefaultValue=false)]
         public string Enabled { get; set; }
         /// <summary>
@@ -90,27 +89,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="fontSize", EmitDefaultValue=false)]
         public string FontSize { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Id
         /// </summary>
-        /// <value></value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ImageBase64
         /// </summary>
-        /// <value></value>
         [DataMember(Name="imageBase64", EmitDefaultValue=false)]
         public string ImageBase64 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Transparency
         /// </summary>
-        /// <value></value>
         [DataMember(Name="transparency", EmitDefaultValue=false)]
         public string Transparency { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets WatermarkText
         /// </summary>
-        /// <value></value>
         [DataMember(Name="watermarkText", EmitDefaultValue=false)]
         public string WatermarkText { get; set; }
         /// <summary>
@@ -251,5 +246,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

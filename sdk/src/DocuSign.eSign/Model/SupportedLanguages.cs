@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SupportedLanguages" /> class.
         /// </summary>
-        /// <param name="Languages">.</param>
+        /// <param name="Languages">Languages.</param>
         public SupportedLanguages(List<NameValue> Languages = default(List<NameValue>))
         {
             this.Languages = Languages;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Languages
         /// </summary>
-        /// <value></value>
         [DataMember(Name="languages", EmitDefaultValue=false)]
         public List<NameValue> Languages { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

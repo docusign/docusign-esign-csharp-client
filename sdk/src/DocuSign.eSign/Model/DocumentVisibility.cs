@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,8 +41,8 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
-        /// <param name="Rights">.</param>
-        /// <param name="Visible">.</param>
+        /// <param name="Rights">Rights.</param>
+        /// <param name="Visible">Visible.</param>
         public DocumentVisibility(string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string RecipientId = default(string), string Rights = default(string), string Visible = default(string))
         {
             this.DocumentId = DocumentId;
@@ -69,15 +70,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientId", EmitDefaultValue=false)]
         public string RecipientId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Rights
         /// </summary>
-        /// <value></value>
         [DataMember(Name="rights", EmitDefaultValue=false)]
         public string Rights { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Visible
         /// </summary>
-        /// <value></value>
         [DataMember(Name="visible", EmitDefaultValue=false)]
         public string Visible { get; set; }
         /// <summary>
@@ -186,5 +185,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

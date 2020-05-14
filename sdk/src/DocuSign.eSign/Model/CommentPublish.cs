@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,12 +38,12 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CommentPublish" /> class.
         /// </summary>
-        /// <param name="Id">.</param>
-        /// <param name="Mentions">.</param>
-        /// <param name="Text">.</param>
-        /// <param name="ThreadAnchorKeys">.</param>
-        /// <param name="ThreadId">.</param>
-        /// <param name="VisibleTo">.</param>
+        /// <param name="Id">Id.</param>
+        /// <param name="Mentions">Mentions.</param>
+        /// <param name="Text">Text.</param>
+        /// <param name="ThreadAnchorKeys">ThreadAnchorKeys.</param>
+        /// <param name="ThreadId">ThreadId.</param>
+        /// <param name="VisibleTo">VisibleTo.</param>
         public CommentPublish(string Id = default(string), List<string> Mentions = default(List<string>), string Text = default(string), Dictionary<string, string> ThreadAnchorKeys = default(Dictionary<string, string>), string ThreadId = default(string), List<string> VisibleTo = default(List<string>))
         {
             this.Id = Id;
@@ -54,39 +55,33 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Id
         /// </summary>
-        /// <value></value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Mentions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="mentions", EmitDefaultValue=false)]
         public List<string> Mentions { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Text
         /// </summary>
-        /// <value></value>
         [DataMember(Name="text", EmitDefaultValue=false)]
         public string Text { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ThreadAnchorKeys
         /// </summary>
-        /// <value></value>
         [DataMember(Name="threadAnchorKeys", EmitDefaultValue=false)]
         public Dictionary<string, string> ThreadAnchorKeys { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ThreadId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="threadId", EmitDefaultValue=false)]
         public string ThreadId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets VisibleTo
         /// </summary>
-        /// <value></value>
         [DataMember(Name="visibleTo", EmitDefaultValue=false)]
         public List<string> VisibleTo { get; set; }
         /// <summary>
@@ -203,5 +198,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,33 +40,33 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AdoptedDateTime">The date and time the user adopted their signature..</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
-        /// <param name="CustomField">.</param>
+        /// <param name="CustomField">CustomField.</param>
         /// <param name="DateStampProperties">DateStampProperties.</param>
-        /// <param name="DisallowUserResizeStamp">.</param>
+        /// <param name="DisallowUserResizeStamp">DisallowUserResizeStamp.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="ExternalID">.</param>
-        /// <param name="ImageBase64">.</param>
-        /// <param name="ImageType">.</param>
-        /// <param name="Initials150ImageId">.</param>
+        /// <param name="ExternalID">ExternalID.</param>
+        /// <param name="ImageBase64">ImageBase64.</param>
+        /// <param name="ImageType">ImageType.</param>
+        /// <param name="Initials150ImageId">Initials150ImageId.</param>
         /// <param name="InitialsImageUri">Contains the URI for an endpoint that you can use to retrieve the initials image..</param>
-        /// <param name="IsDefault">.</param>
+        /// <param name="IsDefault">IsDefault.</param>
         /// <param name="LastModifiedDateTime">The date and time the item was last modified..</param>
-        /// <param name="NrdsId">.</param>
-        /// <param name="NrdsLastName">.</param>
-        /// <param name="NrdsStatus">.</param>
-        /// <param name="PhoneticName">.</param>
-        /// <param name="Signature150ImageId">.</param>
+        /// <param name="NrdsId">NrdsId.</param>
+        /// <param name="NrdsLastName">NrdsLastName.</param>
+        /// <param name="NrdsStatus">NrdsStatus.</param>
+        /// <param name="PhoneticName">PhoneticName.</param>
+        /// <param name="Signature150ImageId">Signature150ImageId.</param>
         /// <param name="SignatureFont">The font type for the signature, if the signature is not drawn. The supported font types are:  \&quot;7_DocuSign\&quot;, \&quot;1_DocuSign\&quot;, \&quot;6_DocuSign\&quot;, \&quot;8_DocuSign\&quot;, \&quot;3_DocuSign\&quot;, \&quot;Mistral\&quot;, \&quot;4_DocuSign\&quot;, \&quot;2_DocuSign\&quot;, \&quot;5_DocuSign\&quot;, \&quot;Rage Italic\&quot; .</param>
         /// <param name="SignatureId">Specifies the signature ID associated with the signature name. You can use the signature ID in the URI in place of the signature name, and the value stored in the &#x60;signatureName&#x60; property in the body is used. This allows the use of special characters (such as \&quot;&amp;\&quot;, \&quot;&lt;\&quot;, \&quot;&gt;\&quot;) in a the signature name. Note that with each update to signatures, the returned signature ID might change, so the caller will need to trigger off the signature name to get the new signature ID..</param>
         /// <param name="SignatureImageUri">Contains the URI for an endpoint that you can use to retrieve the signature image..</param>
         /// <param name="SignatureInitials"> The initials associated with the signature..</param>
         /// <param name="SignatureName">Specifies the user signature name..</param>
-        /// <param name="SignatureRights">.</param>
-        /// <param name="SignatureType">.</param>
-        /// <param name="StampFormat">.</param>
-        /// <param name="StampImageUri">.</param>
-        /// <param name="StampSizeMM">.</param>
-        /// <param name="StampType">.</param>
+        /// <param name="SignatureRights">SignatureRights.</param>
+        /// <param name="SignatureType">SignatureType.</param>
+        /// <param name="StampFormat">StampFormat.</param>
+        /// <param name="StampImageUri">StampImageUri.</param>
+        /// <param name="StampSizeMM">StampSizeMM.</param>
+        /// <param name="StampType">StampType.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         public UserSignature(string AdoptedDateTime = default(string), string CreatedDateTime = default(string), string CustomField = default(string), DateStampProperties DateStampProperties = default(DateStampProperties), string DisallowUserResizeStamp = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string ExternalID = default(string), string ImageBase64 = default(string), string ImageType = default(string), string Initials150ImageId = default(string), string InitialsImageUri = default(string), string IsDefault = default(string), string LastModifiedDateTime = default(string), string NrdsId = default(string), string NrdsLastName = default(string), string NrdsStatus = default(string), string PhoneticName = default(string), string Signature150ImageId = default(string), string SignatureFont = default(string), string SignatureId = default(string), string SignatureImageUri = default(string), string SignatureInitials = default(string), string SignatureName = default(string), string SignatureRights = default(string), string SignatureType = default(string), string StampFormat = default(string), string StampImageUri = default(string), string StampSizeMM = default(string), string StampType = default(string), string Status = default(string))
         {
@@ -114,9 +115,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdDateTime", EmitDefaultValue=false)]
         public string CreatedDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CustomField
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customField", EmitDefaultValue=false)]
         public string CustomField { get; set; }
         /// <summary>
@@ -125,9 +125,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dateStampProperties", EmitDefaultValue=false)]
         public DateStampProperties DateStampProperties { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisallowUserResizeStamp
         /// </summary>
-        /// <value></value>
         [DataMember(Name="disallowUserResizeStamp", EmitDefaultValue=false)]
         public string DisallowUserResizeStamp { get; set; }
         /// <summary>
@@ -136,27 +135,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ExternalID
         /// </summary>
-        /// <value></value>
         [DataMember(Name="externalID", EmitDefaultValue=false)]
         public string ExternalID { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ImageBase64
         /// </summary>
-        /// <value></value>
         [DataMember(Name="imageBase64", EmitDefaultValue=false)]
         public string ImageBase64 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ImageType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="imageType", EmitDefaultValue=false)]
         public string ImageType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Initials150ImageId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="initials150ImageId", EmitDefaultValue=false)]
         public string Initials150ImageId { get; set; }
         /// <summary>
@@ -166,9 +161,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="initialsImageUri", EmitDefaultValue=false)]
         public string InitialsImageUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsDefault
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isDefault", EmitDefaultValue=false)]
         public string IsDefault { get; set; }
         /// <summary>
@@ -178,33 +172,28 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lastModifiedDateTime", EmitDefaultValue=false)]
         public string LastModifiedDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets NrdsId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="nrdsId", EmitDefaultValue=false)]
         public string NrdsId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets NrdsLastName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="nrdsLastName", EmitDefaultValue=false)]
         public string NrdsLastName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets NrdsStatus
         /// </summary>
-        /// <value></value>
         [DataMember(Name="nrdsStatus", EmitDefaultValue=false)]
         public string NrdsStatus { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PhoneticName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="phoneticName", EmitDefaultValue=false)]
         public string PhoneticName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Signature150ImageId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signature150ImageId", EmitDefaultValue=false)]
         public string Signature150ImageId { get; set; }
         /// <summary>
@@ -238,39 +227,33 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureName", EmitDefaultValue=false)]
         public string SignatureName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureRights
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureRights", EmitDefaultValue=false)]
         public string SignatureRights { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureType", EmitDefaultValue=false)]
         public string SignatureType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StampFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="stampFormat", EmitDefaultValue=false)]
         public string StampFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StampImageUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="stampImageUri", EmitDefaultValue=false)]
         public string StampImageUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StampSizeMM
         /// </summary>
-        /// <value></value>
         [DataMember(Name="stampSizeMM", EmitDefaultValue=false)]
         public string StampSizeMM { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StampType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="stampType", EmitDefaultValue=false)]
         public string StampType { get; set; }
         /// <summary>
@@ -585,5 +568,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

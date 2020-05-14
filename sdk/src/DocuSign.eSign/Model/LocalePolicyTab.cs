@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,18 +38,18 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LocalePolicyTab" /> class.
         /// </summary>
-        /// <param name="AddressFormat">.</param>
-        /// <param name="CalendarType">.</param>
-        /// <param name="CultureName">.</param>
-        /// <param name="CurrencyNegativeFormat">.</param>
-        /// <param name="CurrencyPositiveFormat">.</param>
-        /// <param name="CustomDateFormat">.</param>
-        /// <param name="CustomTimeFormat">.</param>
-        /// <param name="DateFormat">.</param>
-        /// <param name="InitialFormat">.</param>
-        /// <param name="NameFormat">.</param>
-        /// <param name="TimeFormat">.</param>
-        /// <param name="TimeZone">.</param>
+        /// <param name="AddressFormat">AddressFormat.</param>
+        /// <param name="CalendarType">CalendarType.</param>
+        /// <param name="CultureName">CultureName.</param>
+        /// <param name="CurrencyNegativeFormat">CurrencyNegativeFormat.</param>
+        /// <param name="CurrencyPositiveFormat">CurrencyPositiveFormat.</param>
+        /// <param name="CustomDateFormat">CustomDateFormat.</param>
+        /// <param name="CustomTimeFormat">CustomTimeFormat.</param>
+        /// <param name="DateFormat">DateFormat.</param>
+        /// <param name="InitialFormat">InitialFormat.</param>
+        /// <param name="NameFormat">NameFormat.</param>
+        /// <param name="TimeFormat">TimeFormat.</param>
+        /// <param name="TimeZone">TimeZone.</param>
         public LocalePolicyTab(string AddressFormat = default(string), string CalendarType = default(string), string CultureName = default(string), string CurrencyNegativeFormat = default(string), string CurrencyPositiveFormat = default(string), string CustomDateFormat = default(string), string CustomTimeFormat = default(string), string DateFormat = default(string), string InitialFormat = default(string), string NameFormat = default(string), string TimeFormat = default(string), string TimeZone = default(string))
         {
             this.AddressFormat = AddressFormat;
@@ -66,75 +67,63 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AddressFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="addressFormat", EmitDefaultValue=false)]
         public string AddressFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CalendarType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="calendarType", EmitDefaultValue=false)]
         public string CalendarType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CultureName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="cultureName", EmitDefaultValue=false)]
         public string CultureName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CurrencyNegativeFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="currencyNegativeFormat", EmitDefaultValue=false)]
         public string CurrencyNegativeFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CurrencyPositiveFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="currencyPositiveFormat", EmitDefaultValue=false)]
         public string CurrencyPositiveFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CustomDateFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customDateFormat", EmitDefaultValue=false)]
         public string CustomDateFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CustomTimeFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customTimeFormat", EmitDefaultValue=false)]
         public string CustomTimeFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DateFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dateFormat", EmitDefaultValue=false)]
         public string DateFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets InitialFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="initialFormat", EmitDefaultValue=false)]
         public string InitialFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets NameFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="nameFormat", EmitDefaultValue=false)]
         public string NameFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TimeFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="timeFormat", EmitDefaultValue=false)]
         public string TimeFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TimeZone
         /// </summary>
-        /// <value></value>
         [DataMember(Name="timeZone", EmitDefaultValue=false)]
         public string TimeZone { get; set; }
         /// <summary>
@@ -299,5 +288,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

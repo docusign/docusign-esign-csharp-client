@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,18 +38,18 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentHtmlDisplaySettings" /> class.
         /// </summary>
-        /// <param name="CellStyle">.</param>
+        /// <param name="CellStyle">CellStyle.</param>
         /// <param name="CollapsibleSettings">CollapsibleSettings.</param>
-        /// <param name="Display">.</param>
-        /// <param name="DisplayLabel">.</param>
-        /// <param name="DisplayOrder">.</param>
-        /// <param name="DisplayPageNumber">.</param>
-        /// <param name="HideLabelWhenOpened">.</param>
-        /// <param name="InlineOuterStyle">.</param>
-        /// <param name="LabelWhenOpened">.</param>
-        /// <param name="PreLabel">.</param>
-        /// <param name="ScrollToTopWhenOpened">.</param>
-        /// <param name="TableStyle">.</param>
+        /// <param name="Display">Display.</param>
+        /// <param name="DisplayLabel">DisplayLabel.</param>
+        /// <param name="DisplayOrder">DisplayOrder.</param>
+        /// <param name="DisplayPageNumber">DisplayPageNumber.</param>
+        /// <param name="HideLabelWhenOpened">HideLabelWhenOpened.</param>
+        /// <param name="InlineOuterStyle">InlineOuterStyle.</param>
+        /// <param name="LabelWhenOpened">LabelWhenOpened.</param>
+        /// <param name="PreLabel">PreLabel.</param>
+        /// <param name="ScrollToTopWhenOpened">ScrollToTopWhenOpened.</param>
+        /// <param name="TableStyle">TableStyle.</param>
         public DocumentHtmlDisplaySettings(string CellStyle = default(string), DocumentHtmlCollapsibleDisplaySettings CollapsibleSettings = default(DocumentHtmlCollapsibleDisplaySettings), string Display = default(string), string DisplayLabel = default(string), int? DisplayOrder = default(int?), int? DisplayPageNumber = default(int?), bool? HideLabelWhenOpened = default(bool?), string InlineOuterStyle = default(string), string LabelWhenOpened = default(string), string PreLabel = default(string), bool? ScrollToTopWhenOpened = default(bool?), string TableStyle = default(string))
         {
             this.CellStyle = CellStyle;
@@ -66,9 +67,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CellStyle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="cellStyle", EmitDefaultValue=false)]
         public string CellStyle { get; set; }
         /// <summary>
@@ -77,63 +77,53 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="collapsibleSettings", EmitDefaultValue=false)]
         public DocumentHtmlCollapsibleDisplaySettings CollapsibleSettings { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Display
         /// </summary>
-        /// <value></value>
         [DataMember(Name="display", EmitDefaultValue=false)]
         public string Display { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayLabel
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayLabel", EmitDefaultValue=false)]
         public string DisplayLabel { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayOrder
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayOrder", EmitDefaultValue=false)]
         public int? DisplayOrder { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayPageNumber
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayPageNumber", EmitDefaultValue=false)]
         public int? DisplayPageNumber { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets HideLabelWhenOpened
         /// </summary>
-        /// <value></value>
         [DataMember(Name="hideLabelWhenOpened", EmitDefaultValue=false)]
         public bool? HideLabelWhenOpened { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets InlineOuterStyle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="inlineOuterStyle", EmitDefaultValue=false)]
         public string InlineOuterStyle { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LabelWhenOpened
         /// </summary>
-        /// <value></value>
         [DataMember(Name="labelWhenOpened", EmitDefaultValue=false)]
         public string LabelWhenOpened { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PreLabel
         /// </summary>
-        /// <value></value>
         [DataMember(Name="preLabel", EmitDefaultValue=false)]
         public string PreLabel { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ScrollToTopWhenOpened
         /// </summary>
-        /// <value></value>
         [DataMember(Name="scrollToTopWhenOpened", EmitDefaultValue=false)]
         public bool? ScrollToTopWhenOpened { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TableStyle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tableStyle", EmitDefaultValue=false)]
         public string TableStyle { get; set; }
         /// <summary>
@@ -298,5 +288,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

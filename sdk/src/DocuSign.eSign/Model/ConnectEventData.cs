@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectEventData" /> class.
         /// </summary>
-        /// <param name="Format">.</param>
-        /// <param name="IncludeData">.</param>
-        /// <param name="Version">.</param>
+        /// <param name="Format">Format.</param>
+        /// <param name="IncludeData">IncludeData.</param>
+        /// <param name="Version">Version.</param>
         public ConnectEventData(string Format = default(string), List<string> IncludeData = default(List<string>), string Version = default(string))
         {
             this.Format = Format;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Format
         /// </summary>
-        /// <value></value>
         [DataMember(Name="format", EmitDefaultValue=false)]
         public string Format { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IncludeData
         /// </summary>
-        /// <value></value>
         [DataMember(Name="includeData", EmitDefaultValue=false)]
         public List<string> IncludeData { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Version
         /// </summary>
-        /// <value></value>
         [DataMember(Name="version", EmitDefaultValue=false)]
         public string Version { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

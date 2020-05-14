@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,12 +38,12 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentHtmlDisplayAnchor" /> class.
         /// </summary>
-        /// <param name="CaseSensitive">.</param>
+        /// <param name="CaseSensitive">CaseSensitive.</param>
         /// <param name="DisplaySettings">DisplaySettings.</param>
-        /// <param name="EndAnchor">.</param>
-        /// <param name="RemoveEndAnchor">.</param>
-        /// <param name="RemoveStartAnchor">.</param>
-        /// <param name="StartAnchor">.</param>
+        /// <param name="EndAnchor">EndAnchor.</param>
+        /// <param name="RemoveEndAnchor">RemoveEndAnchor.</param>
+        /// <param name="RemoveStartAnchor">RemoveStartAnchor.</param>
+        /// <param name="StartAnchor">StartAnchor.</param>
         public DocumentHtmlDisplayAnchor(bool? CaseSensitive = default(bool?), DocumentHtmlDisplaySettings DisplaySettings = default(DocumentHtmlDisplaySettings), string EndAnchor = default(string), bool? RemoveEndAnchor = default(bool?), bool? RemoveStartAnchor = default(bool?), string StartAnchor = default(string))
         {
             this.CaseSensitive = CaseSensitive;
@@ -54,9 +55,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CaseSensitive
         /// </summary>
-        /// <value></value>
         [DataMember(Name="caseSensitive", EmitDefaultValue=false)]
         public bool? CaseSensitive { get; set; }
         /// <summary>
@@ -65,27 +65,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="displaySettings", EmitDefaultValue=false)]
         public DocumentHtmlDisplaySettings DisplaySettings { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EndAnchor
         /// </summary>
-        /// <value></value>
         [DataMember(Name="endAnchor", EmitDefaultValue=false)]
         public string EndAnchor { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RemoveEndAnchor
         /// </summary>
-        /// <value></value>
         [DataMember(Name="removeEndAnchor", EmitDefaultValue=false)]
         public bool? RemoveEndAnchor { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RemoveStartAnchor
         /// </summary>
-        /// <value></value>
         [DataMember(Name="removeStartAnchor", EmitDefaultValue=false)]
         public bool? RemoveStartAnchor { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StartAnchor
         /// </summary>
-        /// <value></value>
         [DataMember(Name="startAnchor", EmitDefaultValue=false)]
         public string StartAnchor { get; set; }
         /// <summary>
@@ -202,5 +198,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

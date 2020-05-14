@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,16 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientPreviewRequest" /> class.
         /// </summary>
-        /// <param name="AssertionId">.</param>
-        /// <param name="AuthenticationInstant">.</param>
-        /// <param name="AuthenticationMethod">.</param>
-        /// <param name="PingFrequency">.</param>
-        /// <param name="PingUrl">.</param>
+        /// <param name="AssertionId">AssertionId.</param>
+        /// <param name="AuthenticationInstant">AuthenticationInstant.</param>
+        /// <param name="AuthenticationMethod">AuthenticationMethod.</param>
+        /// <param name="PingFrequency">PingFrequency.</param>
+        /// <param name="PingUrl">PingUrl.</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
-        /// <param name="ReturnUrl">.</param>
-        /// <param name="SecurityDomain">.</param>
-        /// <param name="XFrameOptions">.</param>
-        /// <param name="XFrameOptionsAllowFromUrl">.</param>
+        /// <param name="ReturnUrl">ReturnUrl.</param>
+        /// <param name="SecurityDomain">SecurityDomain.</param>
+        /// <param name="XFrameOptions">XFrameOptions.</param>
+        /// <param name="XFrameOptionsAllowFromUrl">XFrameOptionsAllowFromUrl.</param>
         public RecipientPreviewRequest(string AssertionId = default(string), string AuthenticationInstant = default(string), string AuthenticationMethod = default(string), string PingFrequency = default(string), string PingUrl = default(string), string RecipientId = default(string), string ReturnUrl = default(string), string SecurityDomain = default(string), string XFrameOptions = default(string), string XFrameOptionsAllowFromUrl = default(string))
         {
             this.AssertionId = AssertionId;
@@ -62,33 +63,28 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AssertionId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="assertionId", EmitDefaultValue=false)]
         public string AssertionId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AuthenticationInstant
         /// </summary>
-        /// <value></value>
         [DataMember(Name="authenticationInstant", EmitDefaultValue=false)]
         public string AuthenticationInstant { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AuthenticationMethod
         /// </summary>
-        /// <value></value>
         [DataMember(Name="authenticationMethod", EmitDefaultValue=false)]
         public string AuthenticationMethod { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PingFrequency
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pingFrequency", EmitDefaultValue=false)]
         public string PingFrequency { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PingUrl
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pingUrl", EmitDefaultValue=false)]
         public string PingUrl { get; set; }
         /// <summary>
@@ -98,27 +94,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientId", EmitDefaultValue=false)]
         public string RecipientId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ReturnUrl
         /// </summary>
-        /// <value></value>
         [DataMember(Name="returnUrl", EmitDefaultValue=false)]
         public string ReturnUrl { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SecurityDomain
         /// </summary>
-        /// <value></value>
         [DataMember(Name="securityDomain", EmitDefaultValue=false)]
         public string SecurityDomain { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets XFrameOptions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="xFrameOptions", EmitDefaultValue=false)]
         public string XFrameOptions { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets XFrameOptionsAllowFromUrl
         /// </summary>
-        /// <value></value>
         [DataMember(Name="xFrameOptionsAllowFromUrl", EmitDefaultValue=false)]
         public string XFrameOptionsAllowFromUrl { get; set; }
         /// <summary>
@@ -267,5 +259,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

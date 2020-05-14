@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,14 +38,14 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalFile" /> class.
         /// </summary>
-        /// <param name="Date">.</param>
-        /// <param name="Id">.</param>
-        /// <param name="Img">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="Date">Date.</param>
+        /// <param name="Id">Id.</param>
+        /// <param name="Img">Img.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="Size">Reserved: TBD.</param>
-        /// <param name="Supported">.</param>
-        /// <param name="Type">.</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Supported">Supported.</param>
+        /// <param name="Type">Type.</param>
+        /// <param name="Uri">Uri.</param>
         public ExternalFile(string Date = default(string), string Id = default(string), string Img = default(string), string Name = default(string), string Size = default(string), string Supported = default(string), string Type = default(string), string Uri = default(string))
         {
             this.Date = Date;
@@ -58,27 +59,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Date
         /// </summary>
-        /// <value></value>
         [DataMember(Name="date", EmitDefaultValue=false)]
         public string Date { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Id
         /// </summary>
-        /// <value></value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Img
         /// </summary>
-        /// <value></value>
         [DataMember(Name="img", EmitDefaultValue=false)]
         public string Img { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -88,21 +85,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="size", EmitDefaultValue=false)]
         public string Size { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Supported
         /// </summary>
-        /// <value></value>
         [DataMember(Name="supported", EmitDefaultValue=false)]
         public string Supported { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Type
         /// </summary>
-        /// <value></value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -235,5 +229,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

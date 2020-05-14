@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,13 +38,13 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeTransferRule" /> class.
         /// </summary>
-        /// <param name="CarbonCopyOriginalOwner">.</param>
-        /// <param name="Enabled">.</param>
-        /// <param name="EnvelopeTransferRuleId">.</param>
-        /// <param name="EventType">.</param>
+        /// <param name="CarbonCopyOriginalOwner">CarbonCopyOriginalOwner.</param>
+        /// <param name="Enabled">Enabled.</param>
+        /// <param name="EnvelopeTransferRuleId">EnvelopeTransferRuleId.</param>
+        /// <param name="EventType">EventType.</param>
         /// <param name="FromGroup">FromGroup.</param>
         /// <param name="FromUser">FromUser.</param>
-        /// <param name="ModifiedDate">.</param>
+        /// <param name="ModifiedDate">ModifiedDate.</param>
         /// <param name="ModifiedUser">ModifiedUser.</param>
         /// <param name="ToFolder">ToFolder.</param>
         /// <param name="ToUser">ToUser.</param>
@@ -62,27 +63,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CarbonCopyOriginalOwner
         /// </summary>
-        /// <value></value>
         [DataMember(Name="carbonCopyOriginalOwner", EmitDefaultValue=false)]
         public string CarbonCopyOriginalOwner { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Enabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enabled", EmitDefaultValue=false)]
         public string Enabled { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopeTransferRuleId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopeTransferRuleId", EmitDefaultValue=false)]
         public string EnvelopeTransferRuleId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EventType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="eventType", EmitDefaultValue=false)]
         public string EventType { get; set; }
         /// <summary>
@@ -96,9 +93,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="fromUser", EmitDefaultValue=false)]
         public UserInformation FromUser { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="modifiedDate", EmitDefaultValue=false)]
         public string ModifiedDate { get; set; }
         /// <summary>
@@ -262,5 +258,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

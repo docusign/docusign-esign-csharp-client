@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -43,7 +44,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ResultSetSize">The number of results returned in this response. .</param>
         /// <param name="StartPosition">Starting position of the current result set..</param>
         /// <param name="TotalSetSize">The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response..</param>
-        /// <param name="Users">.</param>
+        /// <param name="Users">Users.</param>
         public UserInformationList(string EndPosition = default(string), string NextUri = default(string), string PreviousUri = default(string), string ResultSetSize = default(string), string StartPosition = default(string), string TotalSetSize = default(string), List<UserInformation> Users = default(List<UserInformation>))
         {
             this.EndPosition = EndPosition;
@@ -92,9 +93,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="totalSetSize", EmitDefaultValue=false)]
         public string TotalSetSize { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Users
         /// </summary>
-        /// <value></value>
         [DataMember(Name="users", EmitDefaultValue=false)]
         public List<UserInformation> Users { get; set; }
         /// <summary>
@@ -219,5 +219,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

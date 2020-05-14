@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BrandResourceUrls" /> class.
         /// </summary>
-        /// <param name="Email">.</param>
-        /// <param name="Sending">.</param>
-        /// <param name="Signing">.</param>
-        /// <param name="SigningCaptive">.</param>
+        /// <param name="Email">Email.</param>
+        /// <param name="Sending">Sending.</param>
+        /// <param name="Signing">Signing.</param>
+        /// <param name="SigningCaptive">SigningCaptive.</param>
         public BrandResourceUrls(string Email = default(string), string Sending = default(string), string Signing = default(string), string SigningCaptive = default(string))
         {
             this.Email = Email;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Sending
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sending", EmitDefaultValue=false)]
         public string Sending { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Signing
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signing", EmitDefaultValue=false)]
         public string Signing { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SigningCaptive
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signingCaptive", EmitDefaultValue=false)]
         public string SigningCaptive { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

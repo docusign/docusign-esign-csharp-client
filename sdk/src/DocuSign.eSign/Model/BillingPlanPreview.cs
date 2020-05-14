@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,10 +40,10 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="CurrencyCode">Specifies the ISO currency code for the account..</param>
         /// <param name="Invoice">Invoice.</param>
-        /// <param name="IsProrated">.</param>
-        /// <param name="SubtotalAmount">.</param>
-        /// <param name="TaxAmount">.</param>
-        /// <param name="TotalAmount">.</param>
+        /// <param name="IsProrated">IsProrated.</param>
+        /// <param name="SubtotalAmount">SubtotalAmount.</param>
+        /// <param name="TaxAmount">TaxAmount.</param>
+        /// <param name="TotalAmount">TotalAmount.</param>
         public BillingPlanPreview(string CurrencyCode = default(string), BillingInvoice Invoice = default(BillingInvoice), string IsProrated = default(string), string SubtotalAmount = default(string), string TaxAmount = default(string), string TotalAmount = default(string))
         {
             this.CurrencyCode = CurrencyCode;
@@ -65,27 +66,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="invoice", EmitDefaultValue=false)]
         public BillingInvoice Invoice { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsProrated
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isProrated", EmitDefaultValue=false)]
         public string IsProrated { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SubtotalAmount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="subtotalAmount", EmitDefaultValue=false)]
         public string SubtotalAmount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TaxAmount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="taxAmount", EmitDefaultValue=false)]
         public string TaxAmount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TotalAmount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="totalAmount", EmitDefaultValue=false)]
         public string TotalAmount { get; set; }
         /// <summary>
@@ -202,5 +199,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -44,11 +45,11 @@ namespace DocuSign.eSign.Model
         /// <param name="DisplayPersonalInfo">When set to **true**, the user&#39;s Address and Phone number are shown on the ID card..</param>
         /// <param name="DisplayProfile">When set to **true**, the user&#39;s ID card can be viewed from signed documents and envelope history..</param>
         /// <param name="DisplayUsageHistory">When set to **true**, the user&#39;s usage information is shown on the ID card..</param>
-        /// <param name="ProfileImageUri">.</param>
-        /// <param name="Title">.</param>
+        /// <param name="ProfileImageUri">ProfileImageUri.</param>
+        /// <param name="Title">Title.</param>
         /// <param name="UsageHistory">UsageHistory.</param>
         /// <param name="UserDetails">UserDetails.</param>
-        /// <param name="UserProfileLastModifiedDate">.</param>
+        /// <param name="UserProfileLastModifiedDate">UserProfileLastModifiedDate.</param>
         public UserProfile(AddressInformationV2 Address = default(AddressInformationV2), List<AuthenticationMethod> AuthenticationMethods = default(List<AuthenticationMethod>), string CompanyName = default(string), string DisplayOrganizationInfo = default(string), string DisplayPersonalInfo = default(string), string DisplayProfile = default(string), string DisplayUsageHistory = default(string), string ProfileImageUri = default(string), string Title = default(string), UsageHistory UsageHistory = default(UsageHistory), UserInformation UserDetails = default(UserInformation), string UserProfileLastModifiedDate = default(string))
         {
             this.Address = Address;
@@ -107,15 +108,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="displayUsageHistory", EmitDefaultValue=false)]
         public string DisplayUsageHistory { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ProfileImageUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="profileImageUri", EmitDefaultValue=false)]
         public string ProfileImageUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Title
         /// </summary>
-        /// <value></value>
         [DataMember(Name="title", EmitDefaultValue=false)]
         public string Title { get; set; }
         /// <summary>
@@ -129,9 +128,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="userDetails", EmitDefaultValue=false)]
         public UserInformation UserDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserProfileLastModifiedDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userProfileLastModifiedDate", EmitDefaultValue=false)]
         public string UserProfileLastModifiedDate { get; set; }
         /// <summary>
@@ -296,5 +294,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

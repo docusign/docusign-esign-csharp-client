@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,14 +39,14 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Filter" /> class.
         /// </summary>
         /// <param name="ActionRequired">Access token information..</param>
-        /// <param name="Expires">.</param>
-        /// <param name="FolderIds">.</param>
-        /// <param name="FromDateTime">.</param>
-        /// <param name="IsTemplate">.</param>
-        /// <param name="Order">.</param>
-        /// <param name="OrderBy">.</param>
-        /// <param name="SearchTarget">.</param>
-        /// <param name="SearchText">.</param>
+        /// <param name="Expires">Expires.</param>
+        /// <param name="FolderIds">FolderIds.</param>
+        /// <param name="FromDateTime">FromDateTime.</param>
+        /// <param name="IsTemplate">IsTemplate.</param>
+        /// <param name="Order">Order.</param>
+        /// <param name="OrderBy">OrderBy.</param>
+        /// <param name="SearchTarget">SearchTarget.</param>
+        /// <param name="SearchText">SearchText.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="ToDateTime">Must be set to \&quot;bearer\&quot;..</param>
         public Filter(string ActionRequired = default(string), string Expires = default(string), string FolderIds = default(string), string FromDateTime = default(string), string IsTemplate = default(string), string Order = default(string), string OrderBy = default(string), string SearchTarget = default(string), string SearchText = default(string), string Status = default(string), string ToDateTime = default(string))
@@ -70,51 +71,43 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="actionRequired", EmitDefaultValue=false)]
         public string ActionRequired { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Expires
         /// </summary>
-        /// <value></value>
         [DataMember(Name="expires", EmitDefaultValue=false)]
         public string Expires { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FolderIds
         /// </summary>
-        /// <value></value>
         [DataMember(Name="folderIds", EmitDefaultValue=false)]
         public string FolderIds { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FromDateTime
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fromDateTime", EmitDefaultValue=false)]
         public string FromDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsTemplate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isTemplate", EmitDefaultValue=false)]
         public string IsTemplate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Order
         /// </summary>
-        /// <value></value>
         [DataMember(Name="order", EmitDefaultValue=false)]
         public string Order { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OrderBy
         /// </summary>
-        /// <value></value>
         [DataMember(Name="orderBy", EmitDefaultValue=false)]
         public string OrderBy { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SearchTarget
         /// </summary>
-        /// <value></value>
         [DataMember(Name="searchTarget", EmitDefaultValue=false)]
         public string SearchTarget { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SearchText
         /// </summary>
-        /// <value></value>
         [DataMember(Name="searchText", EmitDefaultValue=false)]
         public string SearchText { get; set; }
         /// <summary>
@@ -283,5 +276,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

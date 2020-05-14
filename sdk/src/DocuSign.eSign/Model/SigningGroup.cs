@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,16 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SigningGroup" /> class.
         /// </summary>
-        /// <param name="Created">.</param>
-        /// <param name="CreatedBy">.</param>
+        /// <param name="Created">Created.</param>
+        /// <param name="CreatedBy">CreatedBy.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="GroupEmail">.</param>
+        /// <param name="GroupEmail">GroupEmail.</param>
         /// <param name="GroupName">The name of the group..</param>
-        /// <param name="GroupType">.</param>
-        /// <param name="Modified">.</param>
-        /// <param name="ModifiedBy">.</param>
+        /// <param name="GroupType">GroupType.</param>
+        /// <param name="Modified">Modified.</param>
+        /// <param name="ModifiedBy">ModifiedBy.</param>
         /// <param name="SigningGroupId">When set to **true** and the feature is enabled in the sender&#39;s account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once)..</param>
-        /// <param name="Users">.</param>
+        /// <param name="Users">Users.</param>
         public SigningGroup(string Created = default(string), string CreatedBy = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string GroupEmail = default(string), string GroupName = default(string), string GroupType = default(string), string Modified = default(string), string ModifiedBy = default(string), string SigningGroupId = default(string), List<SigningGroupUser> Users = default(List<SigningGroupUser>))
         {
             this.Created = Created;
@@ -62,15 +63,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Created
         /// </summary>
-        /// <value></value>
         [DataMember(Name="created", EmitDefaultValue=false)]
         public string Created { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CreatedBy
         /// </summary>
-        /// <value></value>
         [DataMember(Name="createdBy", EmitDefaultValue=false)]
         public string CreatedBy { get; set; }
         /// <summary>
@@ -79,9 +78,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets GroupEmail
         /// </summary>
-        /// <value></value>
         [DataMember(Name="groupEmail", EmitDefaultValue=false)]
         public string GroupEmail { get; set; }
         /// <summary>
@@ -91,21 +89,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="groupName", EmitDefaultValue=false)]
         public string GroupName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets GroupType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="groupType", EmitDefaultValue=false)]
         public string GroupType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Modified
         /// </summary>
-        /// <value></value>
         [DataMember(Name="modified", EmitDefaultValue=false)]
         public string Modified { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ModifiedBy
         /// </summary>
-        /// <value></value>
         [DataMember(Name="modifiedBy", EmitDefaultValue=false)]
         public string ModifiedBy { get; set; }
         /// <summary>
@@ -115,9 +110,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signingGroupId", EmitDefaultValue=false)]
         public string SigningGroupId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Users
         /// </summary>
-        /// <value></value>
         [DataMember(Name="users", EmitDefaultValue=false)]
         public List<SigningGroupUser> Users { get; set; }
         /// <summary>
@@ -266,5 +260,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,11 +39,11 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="OauthAccess" /> class.
         /// </summary>
         /// <param name="AccessToken">Access token information..</param>
-        /// <param name="Data">.</param>
-        /// <param name="ExpiresIn">.</param>
-        /// <param name="RefreshToken">.</param>
+        /// <param name="Data">Data.</param>
+        /// <param name="ExpiresIn">ExpiresIn.</param>
+        /// <param name="RefreshToken">RefreshToken.</param>
         /// <param name="Scope">Must be set to \&quot;api\&quot;..</param>
-        /// <param name="TokenType">.</param>
+        /// <param name="TokenType">TokenType.</param>
         public OauthAccess(string AccessToken = default(string), List<NameValue> Data = default(List<NameValue>), string ExpiresIn = default(string), string RefreshToken = default(string), string Scope = default(string), string TokenType = default(string))
         {
             this.AccessToken = AccessToken;
@@ -60,21 +61,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="access_token", EmitDefaultValue=false)]
         public string AccessToken { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Data
         /// </summary>
-        /// <value></value>
         [DataMember(Name="data", EmitDefaultValue=false)]
         public List<NameValue> Data { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ExpiresIn
         /// </summary>
-        /// <value></value>
         [DataMember(Name="expires_in", EmitDefaultValue=false)]
         public string ExpiresIn { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RefreshToken
         /// </summary>
-        /// <value></value>
         [DataMember(Name="refresh_token", EmitDefaultValue=false)]
         public string RefreshToken { get; set; }
         /// <summary>
@@ -84,9 +82,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="scope", EmitDefaultValue=false)]
         public string Scope { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TokenType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="token_type", EmitDefaultValue=false)]
         public string TokenType { get; set; }
         /// <summary>
@@ -203,5 +200,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

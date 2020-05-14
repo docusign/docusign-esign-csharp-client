@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserSignatureDefinition" /> class.
         /// </summary>
-        /// <param name="SignatureFont">.</param>
+        /// <param name="SignatureFont">SignatureFont.</param>
         /// <param name="SignatureId">Specifies the signature ID associated with the signature name. You can use the signature ID in the URI in place of the signature name, and the value stored in the &#x60;signatureName&#x60; property in the body is used. This allows the use of special characters (such as \&quot;&amp;\&quot;, \&quot;&lt;\&quot;, \&quot;&gt;\&quot;) in a the signature name. Note that with each update to signatures, the returned signature ID might change, so the caller will need to trigger off the signature name to get the new signature ID..</param>
-        /// <param name="SignatureInitials">.</param>
+        /// <param name="SignatureInitials">SignatureInitials.</param>
         /// <param name="SignatureName">Specifies the user signature name..</param>
         public UserSignatureDefinition(string SignatureFont = default(string), string SignatureId = default(string), string SignatureInitials = default(string), string SignatureName = default(string))
         {
@@ -50,9 +51,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureFont
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureFont", EmitDefaultValue=false)]
         public string SignatureFont { get; set; }
         /// <summary>
@@ -62,9 +62,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureId", EmitDefaultValue=false)]
         public string SignatureId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureInitials
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureInitials", EmitDefaultValue=false)]
         public string SignatureInitials { get; set; }
         /// <summary>
@@ -171,5 +170,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

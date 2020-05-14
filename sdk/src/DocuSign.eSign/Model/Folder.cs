@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,16 +40,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="Filter">Filter.</param>
-        /// <param name="FolderId">.</param>
+        /// <param name="FolderId">FolderId.</param>
         /// <param name="Folders">A collection of folder objects returned in a response..</param>
-        /// <param name="Name">.</param>
-        /// <param name="OwnerEmail">.</param>
-        /// <param name="OwnerUserId">.</param>
-        /// <param name="OwnerUserName">.</param>
-        /// <param name="ParentFolderId">.</param>
-        /// <param name="ParentFolderUri">.</param>
-        /// <param name="Type">.</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="OwnerEmail">OwnerEmail.</param>
+        /// <param name="OwnerUserId">OwnerUserId.</param>
+        /// <param name="OwnerUserName">OwnerUserName.</param>
+        /// <param name="ParentFolderId">ParentFolderId.</param>
+        /// <param name="ParentFolderUri">ParentFolderUri.</param>
+        /// <param name="Type">Type.</param>
+        /// <param name="Uri">Uri.</param>
         public Folder(ErrorDetails ErrorDetails = default(ErrorDetails), Filter Filter = default(Filter), string FolderId = default(string), List<Folder> Folders = default(List<Folder>), string Name = default(string), string OwnerEmail = default(string), string OwnerUserId = default(string), string OwnerUserName = default(string), string ParentFolderId = default(string), string ParentFolderUri = default(string), string Type = default(string), string Uri = default(string))
         {
             this.ErrorDetails = ErrorDetails;
@@ -76,9 +77,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="filter", EmitDefaultValue=false)]
         public Filter Filter { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FolderId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="folderId", EmitDefaultValue=false)]
         public string FolderId { get; set; }
         /// <summary>
@@ -88,51 +88,43 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="folders", EmitDefaultValue=false)]
         public List<Folder> Folders { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OwnerEmail
         /// </summary>
-        /// <value></value>
         [DataMember(Name="ownerEmail", EmitDefaultValue=false)]
         public string OwnerEmail { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OwnerUserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="ownerUserId", EmitDefaultValue=false)]
         public string OwnerUserId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OwnerUserName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="ownerUserName", EmitDefaultValue=false)]
         public string OwnerUserName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ParentFolderId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="parentFolderId", EmitDefaultValue=false)]
         public string ParentFolderId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ParentFolderUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="parentFolderUri", EmitDefaultValue=false)]
         public string ParentFolderUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Type
         /// </summary>
-        /// <value></value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -297,5 +289,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

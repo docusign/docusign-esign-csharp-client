@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeDocumentsResult" /> class.
         /// </summary>
-        /// <param name="EnvelopeDocuments">.</param>
+        /// <param name="EnvelopeDocuments">EnvelopeDocuments.</param>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
         public EnvelopeDocumentsResult(List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string))
         {
@@ -46,9 +47,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopeDocuments
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopeDocuments", EmitDefaultValue=false)]
         public List<EnvelopeDocument> EnvelopeDocuments { get; set; }
         /// <summary>
@@ -139,5 +139,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

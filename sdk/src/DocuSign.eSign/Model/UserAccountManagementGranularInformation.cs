@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,23 +38,25 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserAccountManagementGranularInformation" /> class.
         /// </summary>
-        /// <param name="CanManageAccountSecuritySettings">.</param>
+        /// <param name="CanManageAccountSecuritySettings">CanManageAccountSecuritySettings.</param>
         /// <param name="CanManageAccountSecuritySettingsMetadata">CanManageAccountSecuritySettingsMetadata.</param>
-        /// <param name="CanManageAccountSettings">.</param>
+        /// <param name="CanManageAccountSettings">CanManageAccountSettings.</param>
         /// <param name="CanManageAccountSettingsMetadata">CanManageAccountSettingsMetadata.</param>
-        /// <param name="CanManageAdmins">.</param>
+        /// <param name="CanManageAdmins">CanManageAdmins.</param>
         /// <param name="CanManageAdminsMetadata">CanManageAdminsMetadata.</param>
-        /// <param name="CanManageGroups">.</param>
+        /// <param name="CanManageGroups">CanManageGroups.</param>
         /// <param name="CanManageGroupsMetadata">CanManageGroupsMetadata.</param>
-        /// <param name="CanManageReporting">.</param>
+        /// <param name="CanManageReporting">CanManageReporting.</param>
         /// <param name="CanManageReportingMetadata">CanManageReportingMetadata.</param>
-        /// <param name="CanManageSharing">.</param>
+        /// <param name="CanManageSharing">CanManageSharing.</param>
         /// <param name="CanManageSharingMetadata">CanManageSharingMetadata.</param>
-        /// <param name="CanManageSigningGroups">.</param>
+        /// <param name="CanManageSigningGroups">CanManageSigningGroups.</param>
         /// <param name="CanManageSigningGroupsMetadata">CanManageSigningGroupsMetadata.</param>
-        /// <param name="CanManageUsers">.</param>
+        /// <param name="CanManageUsers">CanManageUsers.</param>
         /// <param name="CanManageUsersMetadata">CanManageUsersMetadata.</param>
-        public UserAccountManagementGranularInformation(string CanManageAccountSecuritySettings = default(string), SettingsMetadata CanManageAccountSecuritySettingsMetadata = default(SettingsMetadata), string CanManageAccountSettings = default(string), SettingsMetadata CanManageAccountSettingsMetadata = default(SettingsMetadata), string CanManageAdmins = default(string), SettingsMetadata CanManageAdminsMetadata = default(SettingsMetadata), string CanManageGroups = default(string), SettingsMetadata CanManageGroupsMetadata = default(SettingsMetadata), string CanManageReporting = default(string), SettingsMetadata CanManageReportingMetadata = default(SettingsMetadata), string CanManageSharing = default(string), SettingsMetadata CanManageSharingMetadata = default(SettingsMetadata), string CanManageSigningGroups = default(string), SettingsMetadata CanManageSigningGroupsMetadata = default(SettingsMetadata), string CanManageUsers = default(string), SettingsMetadata CanManageUsersMetadata = default(SettingsMetadata))
+        /// <param name="CanViewUsers">CanViewUsers.</param>
+        /// <param name="CanViewUsersMetadata">CanViewUsersMetadata.</param>
+        public UserAccountManagementGranularInformation(string CanManageAccountSecuritySettings = default(string), SettingsMetadata CanManageAccountSecuritySettingsMetadata = default(SettingsMetadata), string CanManageAccountSettings = default(string), SettingsMetadata CanManageAccountSettingsMetadata = default(SettingsMetadata), string CanManageAdmins = default(string), SettingsMetadata CanManageAdminsMetadata = default(SettingsMetadata), string CanManageGroups = default(string), SettingsMetadata CanManageGroupsMetadata = default(SettingsMetadata), string CanManageReporting = default(string), SettingsMetadata CanManageReportingMetadata = default(SettingsMetadata), string CanManageSharing = default(string), SettingsMetadata CanManageSharingMetadata = default(SettingsMetadata), string CanManageSigningGroups = default(string), SettingsMetadata CanManageSigningGroupsMetadata = default(SettingsMetadata), string CanManageUsers = default(string), SettingsMetadata CanManageUsersMetadata = default(SettingsMetadata), string CanViewUsers = default(string), SettingsMetadata CanViewUsersMetadata = default(SettingsMetadata))
         {
             this.CanManageAccountSecuritySettings = CanManageAccountSecuritySettings;
             this.CanManageAccountSecuritySettingsMetadata = CanManageAccountSecuritySettingsMetadata;
@@ -71,12 +74,13 @@ namespace DocuSign.eSign.Model
             this.CanManageSigningGroupsMetadata = CanManageSigningGroupsMetadata;
             this.CanManageUsers = CanManageUsers;
             this.CanManageUsersMetadata = CanManageUsersMetadata;
+            this.CanViewUsers = CanViewUsers;
+            this.CanViewUsersMetadata = CanViewUsersMetadata;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CanManageAccountSecuritySettings
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canManageAccountSecuritySettings", EmitDefaultValue=false)]
         public string CanManageAccountSecuritySettings { get; set; }
         /// <summary>
@@ -85,9 +89,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageAccountSecuritySettingsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageAccountSecuritySettingsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CanManageAccountSettings
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canManageAccountSettings", EmitDefaultValue=false)]
         public string CanManageAccountSettings { get; set; }
         /// <summary>
@@ -96,9 +99,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageAccountSettingsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageAccountSettingsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CanManageAdmins
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canManageAdmins", EmitDefaultValue=false)]
         public string CanManageAdmins { get; set; }
         /// <summary>
@@ -107,9 +109,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageAdminsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageAdminsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CanManageGroups
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canManageGroups", EmitDefaultValue=false)]
         public string CanManageGroups { get; set; }
         /// <summary>
@@ -118,9 +119,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageGroupsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageGroupsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CanManageReporting
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canManageReporting", EmitDefaultValue=false)]
         public string CanManageReporting { get; set; }
         /// <summary>
@@ -129,9 +129,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageReportingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageReportingMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CanManageSharing
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canManageSharing", EmitDefaultValue=false)]
         public string CanManageSharing { get; set; }
         /// <summary>
@@ -140,9 +139,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageSharingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageSharingMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CanManageSigningGroups
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canManageSigningGroups", EmitDefaultValue=false)]
         public string CanManageSigningGroups { get; set; }
         /// <summary>
@@ -151,9 +149,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageSigningGroupsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageSigningGroupsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CanManageUsers
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canManageUsers", EmitDefaultValue=false)]
         public string CanManageUsers { get; set; }
         /// <summary>
@@ -161,6 +158,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="canManageUsersMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageUsersMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets CanViewUsers
+        /// </summary>
+        [DataMember(Name="canViewUsers", EmitDefaultValue=false)]
+        public string CanViewUsers { get; set; }
+        /// <summary>
+        /// Gets or Sets CanViewUsersMetadata
+        /// </summary>
+        [DataMember(Name="canViewUsersMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata CanViewUsersMetadata { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -185,6 +192,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  CanManageSigningGroupsMetadata: ").Append(CanManageSigningGroupsMetadata).Append("\n");
             sb.Append("  CanManageUsers: ").Append(CanManageUsers).Append("\n");
             sb.Append("  CanManageUsersMetadata: ").Append(CanManageUsersMetadata).Append("\n");
+            sb.Append("  CanViewUsers: ").Append(CanViewUsers).Append("\n");
+            sb.Append("  CanViewUsersMetadata: ").Append(CanViewUsersMetadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -300,6 +309,16 @@ namespace DocuSign.eSign.Model
                     this.CanManageUsersMetadata == other.CanManageUsersMetadata ||
                     this.CanManageUsersMetadata != null &&
                     this.CanManageUsersMetadata.Equals(other.CanManageUsersMetadata)
+                ) && 
+                (
+                    this.CanViewUsers == other.CanViewUsers ||
+                    this.CanViewUsers != null &&
+                    this.CanViewUsers.Equals(other.CanViewUsers)
+                ) && 
+                (
+                    this.CanViewUsersMetadata == other.CanViewUsersMetadata ||
+                    this.CanViewUsersMetadata != null &&
+                    this.CanViewUsersMetadata.Equals(other.CanViewUsersMetadata)
                 );
         }
 
@@ -346,6 +365,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CanManageUsers.GetHashCode();
                 if (this.CanManageUsersMetadata != null)
                     hash = hash * 59 + this.CanManageUsersMetadata.GetHashCode();
+                if (this.CanViewUsers != null)
+                    hash = hash * 59 + this.CanViewUsers.GetHashCode();
+                if (this.CanViewUsersMetadata != null)
+                    hash = hash * 59 + this.CanViewUsersMetadata.GetHashCode();
                 return hash;
             }
         }
@@ -355,5 +378,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

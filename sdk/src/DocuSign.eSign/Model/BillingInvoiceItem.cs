@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ChargeAmount">Reserved: TBD.</param>
         /// <param name="ChargeName">Reserved: TBD.</param>
         /// <param name="InvoiceItemId">Reserved: TBD.</param>
-        /// <param name="Quantity">.</param>
+        /// <param name="Quantity">Quantity.</param>
         /// <param name="UnitPrice">Reserved: TBD.</param>
         public BillingInvoiceItem(string ChargeAmount = default(string), string ChargeName = default(string), string InvoiceItemId = default(string), string Quantity = default(string), string UnitPrice = default(string))
         {
@@ -70,9 +71,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="invoiceItemId", EmitDefaultValue=false)]
         public string InvoiceItemId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Quantity
         /// </summary>
-        /// <value></value>
         [DataMember(Name="quantity", EmitDefaultValue=false)]
         public string Quantity { get; set; }
         /// <summary>
@@ -187,5 +187,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,14 +40,14 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ApiPassword">Contains a token that can be used for authentication in API calls instead of using the user name and password..</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
-        /// <param name="Email">.</param>
+        /// <param name="Email">Email.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="PermissionProfileId">.</param>
-        /// <param name="PermissionProfileName">.</param>
-        /// <param name="Uri">.</param>
+        /// <param name="PermissionProfileId">PermissionProfileId.</param>
+        /// <param name="PermissionProfileName">PermissionProfileName.</param>
+        /// <param name="Uri">Uri.</param>
         /// <param name="UserId">Specifies the user ID for the new user..</param>
-        /// <param name="UserName">.</param>
-        /// <param name="UserStatus">.</param>
+        /// <param name="UserName">UserName.</param>
+        /// <param name="UserStatus">UserStatus.</param>
         public NewUser(string ApiPassword = default(string), string CreatedDateTime = default(string), string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserStatus = default(string))
         {
             this.ApiPassword = ApiPassword;
@@ -74,9 +75,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdDateTime", EmitDefaultValue=false)]
         public string CreatedDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
@@ -85,21 +85,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PermissionProfileId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="permissionProfileId", EmitDefaultValue=false)]
         public string PermissionProfileId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PermissionProfileName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="permissionProfileName", EmitDefaultValue=false)]
         public string PermissionProfileName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -109,15 +106,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userName", EmitDefaultValue=false)]
         public string UserName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserStatus
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userStatus", EmitDefaultValue=false)]
         public string UserStatus { get; set; }
         /// <summary>
@@ -266,5 +261,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

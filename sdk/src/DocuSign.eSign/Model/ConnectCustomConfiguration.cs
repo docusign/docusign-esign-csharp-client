@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -44,11 +45,11 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableLog">This turns Connect logging on or off. When set to **true**, logging is turned on..</param>
         /// <param name="EnvelopeEvents">A comma separated list of Ã¯Â¿Â½EnvelopeÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided..</param>
         /// <param name="IncludeCertificateOfCompletion">When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. .</param>
-        /// <param name="IncludeCertSoapHeader">.</param>
+        /// <param name="IncludeCertSoapHeader">IncludeCertSoapHeader.</param>
         /// <param name="IncludeDocumentFields">When set to **true**, the Document Fields associated with envelope documents are included in the data. Document Fields are optional custom name-value pairs added to documents using the API. .</param>
         /// <param name="IncludeDocuments">When set to **true**, Connect will send the PDF document along with the update XML..</param>
         /// <param name="IncludeEnvelopeVoidReason">When set to **true**, Connect will include the voidedReason for voided envelopes..</param>
-        /// <param name="IncludeHMAC">.</param>
+        /// <param name="IncludeHMAC">IncludeHMAC.</param>
         /// <param name="IncludeSenderAccountasCustomField">When set to **true**, Connect will include the sender account as Custom Field in the data..</param>
         /// <param name="IncludeTimeZoneInformation">When set to **true**, Connect will include the envelope time zone information..</param>
         /// <param name="Name">The name of the Connect configuration. The name helps identify the configuration in the list..</param>
@@ -128,9 +129,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includeCertificateOfCompletion", EmitDefaultValue=false)]
         public string IncludeCertificateOfCompletion { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IncludeCertSoapHeader
         /// </summary>
-        /// <value></value>
         [DataMember(Name="includeCertSoapHeader", EmitDefaultValue=false)]
         public string IncludeCertSoapHeader { get; set; }
         /// <summary>
@@ -152,9 +152,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includeEnvelopeVoidReason", EmitDefaultValue=false)]
         public string IncludeEnvelopeVoidReason { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IncludeHMAC
         /// </summary>
-        /// <value></value>
         [DataMember(Name="includeHMAC", EmitDefaultValue=false)]
         public string IncludeHMAC { get; set; }
         /// <summary>
@@ -459,5 +458,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

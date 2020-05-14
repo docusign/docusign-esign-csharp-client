@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -42,14 +43,14 @@ namespace DocuSign.eSign.Model
         /// <param name="ChargeName">Provides information on what services the charge item is for.  The following table provides a description of the different chargeName values available at this time.  | chargeName | Description | | - -- | - -- | | id_check | IDÃÂ Check Charge | | in_person_signing | In Person Signing charge | | envelopes Included | Sent Envelopes for the account | | age_verify | Age verification check | | ofac | OFAC Check | | id_confirm | ID confirmation check | | student_authentication | STAN PIN authentication check | | wet_sign_fax | Pages for returning signed documents by fax | | attachment_fax | Pages for returning attachments by fax | | phone_authentication | Phone authentication charge | | powerforms | PowerForm envelopes sent | | signer_payments | Payment processing charge | | outbound_fax | Send by fax charge | | bulk_recipient_envelopes | Bulk Recipient Envelopes sent | | sms_authentications | SMS authentication charge | | saml_authentications | SAML authentication charge | | express_signer_certificate | DocuSign Express Certificate charge | | personal_signer_certificate | Personal Signer Certificate charge | | safe_certificate | SAFE BioPharma Signer Certificate charge | | seats | Included active seats charge | | open_trust_certificate | OpenTrust Signer Certificate charge |.</param>
         /// <param name="ChargeType">Reserved: TBD.</param>
         /// <param name="ChargeUnitOfMeasure">Reserved: TBD.</param>
-        /// <param name="Discounts">.</param>
-        /// <param name="FirstEffectiveDate">.</param>
-        /// <param name="IncludedQuantity">.</param>
+        /// <param name="Discounts">Discounts.</param>
+        /// <param name="FirstEffectiveDate">FirstEffectiveDate.</param>
+        /// <param name="IncludedQuantity">IncludedQuantity.</param>
         /// <param name="IncrementalQuantity">Reserved: TBD.</param>
-        /// <param name="LastEffectiveDate">.</param>
-        /// <param name="Prices">.</param>
+        /// <param name="LastEffectiveDate">LastEffectiveDate.</param>
+        /// <param name="Prices">Prices.</param>
         /// <param name="UnitPrice">Reserved: TBD.</param>
-        /// <param name="UsedQuantity">.</param>
+        /// <param name="UsedQuantity">UsedQuantity.</param>
         public BillingCharge(string AllowedQuantity = default(string), string Blocked = default(string), string ChargeName = default(string), string ChargeType = default(string), string ChargeUnitOfMeasure = default(string), List<BillingDiscount> Discounts = default(List<BillingDiscount>), string FirstEffectiveDate = default(string), string IncludedQuantity = default(string), string IncrementalQuantity = default(string), string LastEffectiveDate = default(string), List<BillingPrice> Prices = default(List<BillingPrice>), string UnitPrice = default(string), string UsedQuantity = default(string))
         {
             this.AllowedQuantity = AllowedQuantity;
@@ -98,21 +99,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="chargeUnitOfMeasure", EmitDefaultValue=false)]
         public string ChargeUnitOfMeasure { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Discounts
         /// </summary>
-        /// <value></value>
         [DataMember(Name="discounts", EmitDefaultValue=false)]
         public List<BillingDiscount> Discounts { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FirstEffectiveDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="firstEffectiveDate", EmitDefaultValue=false)]
         public string FirstEffectiveDate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IncludedQuantity
         /// </summary>
-        /// <value></value>
         [DataMember(Name="includedQuantity", EmitDefaultValue=false)]
         public string IncludedQuantity { get; set; }
         /// <summary>
@@ -122,15 +120,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="incrementalQuantity", EmitDefaultValue=false)]
         public string IncrementalQuantity { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LastEffectiveDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lastEffectiveDate", EmitDefaultValue=false)]
         public string LastEffectiveDate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Prices
         /// </summary>
-        /// <value></value>
         [DataMember(Name="prices", EmitDefaultValue=false)]
         public List<BillingPrice> Prices { get; set; }
         /// <summary>
@@ -140,9 +136,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="unitPrice", EmitDefaultValue=false)]
         public string UnitPrice { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UsedQuantity
         /// </summary>
-        /// <value></value>
         [DataMember(Name="usedQuantity", EmitDefaultValue=false)]
         public string UsedQuantity { get; set; }
         /// <summary>
@@ -315,5 +310,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

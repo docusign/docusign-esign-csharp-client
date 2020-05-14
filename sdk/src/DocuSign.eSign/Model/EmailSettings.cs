@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="EmailSettings" /> class.
         /// </summary>
         /// <param name="BccEmailAddresses">A list of email addresses that receive a copy of all email communications for an envelope. You can use this for archiving purposes..</param>
-        /// <param name="ReplyEmailAddressOverride">.</param>
-        /// <param name="ReplyEmailNameOverride">.</param>
+        /// <param name="ReplyEmailAddressOverride">ReplyEmailAddressOverride.</param>
+        /// <param name="ReplyEmailNameOverride">ReplyEmailNameOverride.</param>
         public EmailSettings(List<BccEmailAddress> BccEmailAddresses = default(List<BccEmailAddress>), string ReplyEmailAddressOverride = default(string), string ReplyEmailNameOverride = default(string))
         {
             this.BccEmailAddresses = BccEmailAddresses;
@@ -54,15 +55,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="bccEmailAddresses", EmitDefaultValue=false)]
         public List<BccEmailAddress> BccEmailAddresses { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ReplyEmailAddressOverride
         /// </summary>
-        /// <value></value>
         [DataMember(Name="replyEmailAddressOverride", EmitDefaultValue=false)]
         public string ReplyEmailAddressOverride { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ReplyEmailNameOverride
         /// </summary>
-        /// <value></value>
         [DataMember(Name="replyEmailNameOverride", EmitDefaultValue=false)]
         public string ReplyEmailNameOverride { get; set; }
         /// <summary>
@@ -155,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

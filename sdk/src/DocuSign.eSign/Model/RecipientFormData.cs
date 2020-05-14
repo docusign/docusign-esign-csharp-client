@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,14 +38,14 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientFormData" /> class.
         /// </summary>
-        /// <param name="DeclinedTime">.</param>
-        /// <param name="DeliveredTime">.</param>
-        /// <param name="Email">.</param>
-        /// <param name="FormData">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="DeclinedTime">DeclinedTime.</param>
+        /// <param name="DeliveredTime">DeliveredTime.</param>
+        /// <param name="Email">Email.</param>
+        /// <param name="FormData">FormData.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
-        /// <param name="SentTime">.</param>
-        /// <param name="SignedTime">.</param>
+        /// <param name="SentTime">SentTime.</param>
+        /// <param name="SignedTime">SignedTime.</param>
         public RecipientFormData(string DeclinedTime = default(string), string DeliveredTime = default(string), string Email = default(string), List<NameValue> FormData = default(List<NameValue>), string Name = default(string), string RecipientId = default(string), string SentTime = default(string), string SignedTime = default(string))
         {
             this.DeclinedTime = DeclinedTime;
@@ -58,33 +59,28 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DeclinedTime
         /// </summary>
-        /// <value></value>
         [DataMember(Name="declinedTime", EmitDefaultValue=false)]
         public string DeclinedTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DeliveredTime
         /// </summary>
-        /// <value></value>
         [DataMember(Name="deliveredTime", EmitDefaultValue=false)]
         public string DeliveredTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FormData
         /// </summary>
-        /// <value></value>
         [DataMember(Name="formData", EmitDefaultValue=false)]
         public List<NameValue> FormData { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -94,15 +90,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientId", EmitDefaultValue=false)]
         public string RecipientId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SentTime
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sentTime", EmitDefaultValue=false)]
         public string SentTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignedTime
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signedTime", EmitDefaultValue=false)]
         public string SignedTime { get; set; }
         /// <summary>
@@ -235,5 +229,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

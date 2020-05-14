@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FileType" /> class.
         /// </summary>
-        /// <param name="FileExtension">.</param>
+        /// <param name="FileExtension">FileExtension.</param>
         /// <param name="MimeType">The mime-type of a file type listed in a fileTypes collection..</param>
         public FileType(string FileExtension = default(string), string MimeType = default(string))
         {
@@ -46,9 +47,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets FileExtension
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fileExtension", EmitDefaultValue=false)]
         public string FileExtension { get; set; }
         /// <summary>
@@ -139,5 +139,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

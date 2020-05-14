@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientDomain" /> class.
         /// </summary>
-        /// <param name="Active">.</param>
-        /// <param name="DomainCode">.</param>
-        /// <param name="DomainName">.</param>
-        /// <param name="RecipientDomainId">.</param>
+        /// <param name="Active">Active.</param>
+        /// <param name="DomainCode">DomainCode.</param>
+        /// <param name="DomainName">DomainName.</param>
+        /// <param name="RecipientDomainId">RecipientDomainId.</param>
         public RecipientDomain(string Active = default(string), string DomainCode = default(string), string DomainName = default(string), string RecipientDomainId = default(string))
         {
             this.Active = Active;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Active
         /// </summary>
-        /// <value></value>
         [DataMember(Name="active", EmitDefaultValue=false)]
         public string Active { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DomainCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="domainCode", EmitDefaultValue=false)]
         public string DomainCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DomainName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="domainName", EmitDefaultValue=false)]
         public string DomainName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientDomainId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientDomainId", EmitDefaultValue=false)]
         public string RecipientDomainId { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountPasswordMinimumPasswordAgeDays" /> class.
         /// </summary>
-        /// <param name="MaximumAge">.</param>
-        /// <param name="MinimumAge">.</param>
+        /// <param name="MaximumAge">MaximumAge.</param>
+        /// <param name="MinimumAge">MinimumAge.</param>
         public AccountPasswordMinimumPasswordAgeDays(string MaximumAge = default(string), string MinimumAge = default(string))
         {
             this.MaximumAge = MaximumAge;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets MaximumAge
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maximumAge", EmitDefaultValue=false)]
         public string MaximumAge { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MinimumAge
         /// </summary>
-        /// <value></value>
         [DataMember(Name="minimumAge", EmitDefaultValue=false)]
         public string MinimumAge { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

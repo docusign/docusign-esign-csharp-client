@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,20 +40,20 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AccountId">The account ID associated with the envelope..</param>
         /// <param name="AccountName">The name of the account that the workspace user belongs to..</param>
-        /// <param name="ActiveSince">.</param>
+        /// <param name="ActiveSince">ActiveSince.</param>
         /// <param name="Created">The UTC DateTime when the workspace user was created..</param>
-        /// <param name="CreatedById">.</param>
-        /// <param name="Email">.</param>
+        /// <param name="CreatedById">CreatedById.</param>
+        /// <param name="Email">Email.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="LastModified">Utc date and time the comment was last updated (can only be done by creator.).</param>
-        /// <param name="LastModifiedById">.</param>
+        /// <param name="LastModifiedById">LastModifiedById.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="Type">Type of the user. Valid values: type_owner, type_participant..</param>
-        /// <param name="UserId">.</param>
-        /// <param name="UserName">.</param>
-        /// <param name="WorkspaceId">.</param>
+        /// <param name="UserId">UserId.</param>
+        /// <param name="UserName">UserName.</param>
+        /// <param name="WorkspaceId">WorkspaceId.</param>
         /// <param name="WorkspaceUserBaseUrl">The relative URI that may be used to access a workspace user..</param>
-        /// <param name="WorkspaceUserId">.</param>
+        /// <param name="WorkspaceUserId">WorkspaceUserId.</param>
         public WorkspaceUser(string AccountId = default(string), string AccountName = default(string), string ActiveSince = default(string), string Created = default(string), string CreatedById = default(string), string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string LastModified = default(string), string LastModifiedById = default(string), string Status = default(string), string Type = default(string), string UserId = default(string), string UserName = default(string), string WorkspaceId = default(string), string WorkspaceUserBaseUrl = default(string), string WorkspaceUserId = default(string))
         {
             this.AccountId = AccountId;
@@ -86,9 +87,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="accountName", EmitDefaultValue=false)]
         public string AccountName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ActiveSince
         /// </summary>
-        /// <value></value>
         [DataMember(Name="activeSince", EmitDefaultValue=false)]
         public string ActiveSince { get; set; }
         /// <summary>
@@ -98,15 +98,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="created", EmitDefaultValue=false)]
         public string Created { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CreatedById
         /// </summary>
-        /// <value></value>
         [DataMember(Name="createdById", EmitDefaultValue=false)]
         public string CreatedById { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
@@ -121,9 +119,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lastModified", EmitDefaultValue=false)]
         public string LastModified { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LastModifiedById
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lastModifiedById", EmitDefaultValue=false)]
         public string LastModifiedById { get; set; }
         /// <summary>
@@ -139,21 +136,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userName", EmitDefaultValue=false)]
         public string UserName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets WorkspaceId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="workspaceId", EmitDefaultValue=false)]
         public string WorkspaceId { get; set; }
         /// <summary>
@@ -163,9 +157,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="workspaceUserBaseUrl", EmitDefaultValue=false)]
         public string WorkspaceUserBaseUrl { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets WorkspaceUserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="workspaceUserId", EmitDefaultValue=false)]
         public string WorkspaceUserId { get; set; }
         /// <summary>
@@ -362,5 +355,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

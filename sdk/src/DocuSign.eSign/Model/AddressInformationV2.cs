@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,11 +40,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Address1">First Line of the address. Maximum length: 100 characters..</param>
         /// <param name="Address2">Second Line of the address. Maximum length: 100 characters..</param>
-        /// <param name="City">.</param>
+        /// <param name="City">City.</param>
         /// <param name="Country">Specifies the country associated with the address..</param>
-        /// <param name="Fax">.</param>
-        /// <param name="Phone">.</param>
-        /// <param name="PostalCode">.</param>
+        /// <param name="Fax">Fax.</param>
+        /// <param name="Phone">Phone.</param>
+        /// <param name="PostalCode">PostalCode.</param>
         /// <param name="StateOrProvince">The state or province associated with the address..</param>
         public AddressInformationV2(string Address1 = default(string), string Address2 = default(string), string City = default(string), string Country = default(string), string Fax = default(string), string Phone = default(string), string PostalCode = default(string), string StateOrProvince = default(string))
         {
@@ -70,9 +71,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="address2", EmitDefaultValue=false)]
         public string Address2 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets City
         /// </summary>
-        /// <value></value>
         [DataMember(Name="city", EmitDefaultValue=false)]
         public string City { get; set; }
         /// <summary>
@@ -82,21 +82,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="country", EmitDefaultValue=false)]
         public string Country { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Fax
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fax", EmitDefaultValue=false)]
         public string Fax { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Phone
         /// </summary>
-        /// <value></value>
         [DataMember(Name="phone", EmitDefaultValue=false)]
         public string Phone { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PostalCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="postalCode", EmitDefaultValue=false)]
         public string PostalCode { get; set; }
         /// <summary>
@@ -235,5 +232,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PowerFormsRequest" /> class.
         /// </summary>
-        /// <param name="PowerForms">.</param>
+        /// <param name="PowerForms">PowerForms.</param>
         public PowerFormsRequest(List<PowerForm> PowerForms = default(List<PowerForm>))
         {
             this.PowerForms = PowerForms;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets PowerForms
         /// </summary>
-        /// <value></value>
         [DataMember(Name="powerForms", EmitDefaultValue=false)]
         public List<PowerForm> PowerForms { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

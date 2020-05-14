@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SignatureProviderRequiredOption" /> class.
         /// </summary>
-        /// <param name="RequiredSignatureProviderOptionIds">.</param>
-        /// <param name="SignerType">.</param>
+        /// <param name="RequiredSignatureProviderOptionIds">RequiredSignatureProviderOptionIds.</param>
+        /// <param name="SignerType">SignerType.</param>
         public SignatureProviderRequiredOption(List<string> RequiredSignatureProviderOptionIds = default(List<string>), string SignerType = default(string))
         {
             this.RequiredSignatureProviderOptionIds = RequiredSignatureProviderOptionIds;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets RequiredSignatureProviderOptionIds
         /// </summary>
-        /// <value></value>
         [DataMember(Name="requiredSignatureProviderOptionIds", EmitDefaultValue=false)]
         public List<string> RequiredSignatureProviderOptionIds { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignerType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signerType", EmitDefaultValue=false)]
         public string SignerType { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

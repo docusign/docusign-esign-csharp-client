@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BrandEmailContent" /> class.
         /// </summary>
-        /// <param name="Content">.</param>
-        /// <param name="EmailContentType">.</param>
-        /// <param name="EmailToLink">.</param>
-        /// <param name="LinkText">.</param>
+        /// <param name="Content">Content.</param>
+        /// <param name="EmailContentType">EmailContentType.</param>
+        /// <param name="EmailToLink">EmailToLink.</param>
+        /// <param name="LinkText">LinkText.</param>
         public BrandEmailContent(string Content = default(string), string EmailContentType = default(string), string EmailToLink = default(string), string LinkText = default(string))
         {
             this.Content = Content;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Content
         /// </summary>
-        /// <value></value>
         [DataMember(Name="content", EmitDefaultValue=false)]
         public string Content { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EmailContentType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="emailContentType", EmitDefaultValue=false)]
         public string EmailContentType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EmailToLink
         /// </summary>
-        /// <value></value>
         [DataMember(Name="emailToLink", EmitDefaultValue=false)]
         public string EmailToLink { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LinkText
         /// </summary>
-        /// <value></value>
         [DataMember(Name="linkText", EmitDefaultValue=false)]
         public string LinkText { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

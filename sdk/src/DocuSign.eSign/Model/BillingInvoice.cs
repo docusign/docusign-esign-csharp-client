@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -44,9 +45,9 @@ namespace DocuSign.eSign.Model
         /// <param name="InvoiceItems">Reserved: TBD.</param>
         /// <param name="InvoiceNumber">Reserved: TBD.</param>
         /// <param name="InvoiceUri">Contains a URI for an endpoint that you can use to retrieve invoice information..</param>
-        /// <param name="NonTaxableAmount">.</param>
-        /// <param name="PdfAvailable">.</param>
-        /// <param name="TaxableAmount">.</param>
+        /// <param name="NonTaxableAmount">NonTaxableAmount.</param>
+        /// <param name="PdfAvailable">PdfAvailable.</param>
+        /// <param name="TaxableAmount">TaxableAmount.</param>
         public BillingInvoice(string Amount = default(string), string Balance = default(string), string DueDate = default(string), string InvoiceId = default(string), List<BillingInvoiceItem> InvoiceItems = default(List<BillingInvoiceItem>), string InvoiceNumber = default(string), string InvoiceUri = default(string), string NonTaxableAmount = default(string), string PdfAvailable = default(string), string TaxableAmount = default(string))
         {
             this.Amount = Amount;
@@ -104,21 +105,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="invoiceUri", EmitDefaultValue=false)]
         public string InvoiceUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets NonTaxableAmount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="nonTaxableAmount", EmitDefaultValue=false)]
         public string NonTaxableAmount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PdfAvailable
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pdfAvailable", EmitDefaultValue=false)]
         public string PdfAvailable { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TaxableAmount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="taxableAmount", EmitDefaultValue=false)]
         public string TaxableAmount { get; set; }
         /// <summary>
@@ -267,5 +265,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

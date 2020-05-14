@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AppStoreReceipt" /> class.
         /// </summary>
-        /// <param name="ProductId">.</param>
+        /// <param name="ProductId">ProductId.</param>
         /// <param name="ReceiptData">Reserved: TBD.</param>
         public AppStoreReceipt(string ProductId = default(string), string ReceiptData = default(string))
         {
@@ -46,9 +47,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets ProductId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="productId", EmitDefaultValue=false)]
         public string ProductId { get; set; }
         /// <summary>
@@ -139,5 +139,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

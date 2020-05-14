@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,15 +41,15 @@ namespace DocuSign.eSign.Model
         /// <param name="Agents">A complex type defining the management and access rights of a recipient assigned assigned as an agent on the document..</param>
         /// <param name="CarbonCopies">A complex type containing information about recipients who should receive a copy of the envelope, but does not need to sign it..</param>
         /// <param name="CertifiedDeliveries">A complex type containing information on a recipient the must receive the completed documents for the envelope to be completed, but the recipient does not need to sign, initial, date, or add information to any of the documents..</param>
-        /// <param name="CurrentRoutingOrder">.</param>
-        /// <param name="Editors">.</param>
+        /// <param name="CurrentRoutingOrder">CurrentRoutingOrder.</param>
+        /// <param name="Editors">Editors.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="InPersonSigners">Specifies a signer that is in the same physical location as a DocuSign user who will act as a Signing Host for the transaction. The recipient added is the Signing Host and new separate Signer Name field appears after Sign in person is selected..</param>
         /// <param name="Intermediaries">Identifies a recipient that can, but is not required to, add name and email information for recipients at the same or subsequent level in the routing order (until subsequent Agents, Editors or Intermediaries recipient types are added)..</param>
         /// <param name="RecipientCount">The list of recipient event statuses that will trigger Connect to send updates to the url. It can be a two-part list with:  * recipientEventStatusCode - The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded. * includeDocuments - When set to **true**, the envelope time zone information is included in the message..</param>
-        /// <param name="Seals">.</param>
+        /// <param name="Seals">Seals.</param>
         /// <param name="Signers">A complex type containing information about the Signer recipient..</param>
-        /// <param name="Witnesses">.</param>
+        /// <param name="Witnesses">Witnesses.</param>
         public TemplateRecipients(List<Agent> Agents = default(List<Agent>), List<CarbonCopy> CarbonCopies = default(List<CarbonCopy>), List<CertifiedDelivery> CertifiedDeliveries = default(List<CertifiedDelivery>), string CurrentRoutingOrder = default(string), List<Editor> Editors = default(List<Editor>), ErrorDetails ErrorDetails = default(ErrorDetails), List<InPersonSigner> InPersonSigners = default(List<InPersonSigner>), List<Intermediary> Intermediaries = default(List<Intermediary>), string RecipientCount = default(string), List<SealSign> Seals = default(List<SealSign>), List<Signer> Signers = default(List<Signer>), List<Witness> Witnesses = default(List<Witness>))
         {
             this.Agents = Agents;
@@ -84,15 +85,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="certifiedDeliveries", EmitDefaultValue=false)]
         public List<CertifiedDelivery> CertifiedDeliveries { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CurrentRoutingOrder
         /// </summary>
-        /// <value></value>
         [DataMember(Name="currentRoutingOrder", EmitDefaultValue=false)]
         public string CurrentRoutingOrder { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Editors
         /// </summary>
-        /// <value></value>
         [DataMember(Name="editors", EmitDefaultValue=false)]
         public List<Editor> Editors { get; set; }
         /// <summary>
@@ -119,9 +118,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientCount", EmitDefaultValue=false)]
         public string RecipientCount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Seals
         /// </summary>
-        /// <value></value>
         [DataMember(Name="seals", EmitDefaultValue=false)]
         public List<SealSign> Seals { get; set; }
         /// <summary>
@@ -131,9 +129,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signers", EmitDefaultValue=false)]
         public List<Signer> Signers { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Witnesses
         /// </summary>
-        /// <value></value>
         [DataMember(Name="witnesses", EmitDefaultValue=false)]
         public List<Witness> Witnesses { get; set; }
         /// <summary>
@@ -298,5 +295,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

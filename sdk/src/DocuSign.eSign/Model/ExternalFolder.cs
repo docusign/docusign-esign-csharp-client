@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,9 +40,9 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="EndPosition">The last position in the result set. .</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Id">.</param>
-        /// <param name="Items">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="Id">Id.</param>
+        /// <param name="Items">Items.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="NextUri">The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. .</param>
         /// <param name="PreviousUri">The postal code for the billing address..</param>
         /// <param name="ResultSetSize">The number of results returned in this response. .</param>
@@ -73,21 +74,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ExternalDocServiceErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Id
         /// </summary>
-        /// <value></value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Items
         /// </summary>
-        /// <value></value>
         [DataMember(Name="items", EmitDefaultValue=false)]
         public List<ExternalFile> Items { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -266,5 +264,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

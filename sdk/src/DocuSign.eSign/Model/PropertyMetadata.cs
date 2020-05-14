@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PropertyMetadata" /> class.
         /// </summary>
-        /// <param name="Options">.</param>
-        /// <param name="Rights">.</param>
+        /// <param name="Options">Options.</param>
+        /// <param name="Rights">Rights.</param>
         public PropertyMetadata(List<string> Options = default(List<string>), string Rights = default(string))
         {
             this.Options = Options;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Options
         /// </summary>
-        /// <value></value>
         [DataMember(Name="options", EmitDefaultValue=false)]
         public List<string> Options { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Rights
         /// </summary>
-        /// <value></value>
         [DataMember(Name="rights", EmitDefaultValue=false)]
         public string Rights { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

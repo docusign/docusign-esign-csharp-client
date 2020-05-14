@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,26 +40,26 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ApplyAnchorTabs">Reserved: TBD.</param>
         /// <param name="AuthoritativeCopy">Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled..</param>
-        /// <param name="Display">.</param>
+        /// <param name="Display">Display.</param>
         /// <param name="DocumentBase64">The document&#39;s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding..</param>
-        /// <param name="DocumentFields">.</param>
+        /// <param name="DocumentFields">DocumentFields.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="EncryptedWithKeyManager">When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.  .</param>
         /// <param name="FileExtension">The file extension type of the document. If the document is not a PDF it is converted to a PDF.  .</param>
-        /// <param name="FileFormatHint">.</param>
+        /// <param name="FileFormatHint">FileFormatHint.</param>
         /// <param name="HtmlDefinition">HtmlDefinition.</param>
-        /// <param name="IncludeInDownload">.</param>
+        /// <param name="IncludeInDownload">IncludeInDownload.</param>
         /// <param name="MatchBoxes">Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  .</param>
-        /// <param name="Name">.</param>
-        /// <param name="Order">.</param>
-        /// <param name="Pages">.</param>
-        /// <param name="Password">.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="Order">Order.</param>
+        /// <param name="Pages">Pages.</param>
+        /// <param name="Password">Password.</param>
         /// <param name="RemoteUrl">The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}]. .</param>
-        /// <param name="SignerMustAcknowledge">.</param>
+        /// <param name="SignerMustAcknowledge">SignerMustAcknowledge.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TransformPdfFields">When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs. .</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Uri">Uri.</param>
         public Document(string ApplyAnchorTabs = default(string), bool? AuthoritativeCopy = default(bool?), string Display = default(string), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), string Order = default(string), string Pages = default(string), string Password = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
         {
             this.ApplyAnchorTabs = ApplyAnchorTabs;
@@ -98,9 +99,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="authoritativeCopy", EmitDefaultValue=false)]
         public bool? AuthoritativeCopy { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Display
         /// </summary>
-        /// <value></value>
         [DataMember(Name="display", EmitDefaultValue=false)]
         public string Display { get; set; }
         /// <summary>
@@ -110,9 +110,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentBase64", EmitDefaultValue=false)]
         public string DocumentBase64 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentFields
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentFields", EmitDefaultValue=false)]
         public List<NameValue> DocumentFields { get; set; }
         /// <summary>
@@ -134,9 +133,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="fileExtension", EmitDefaultValue=false)]
         public string FileExtension { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FileFormatHint
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fileFormatHint", EmitDefaultValue=false)]
         public string FileFormatHint { get; set; }
         /// <summary>
@@ -145,9 +143,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="htmlDefinition", EmitDefaultValue=false)]
         public DocumentHtmlDefinition HtmlDefinition { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IncludeInDownload
         /// </summary>
-        /// <value></value>
         [DataMember(Name="includeInDownload", EmitDefaultValue=false)]
         public string IncludeInDownload { get; set; }
         /// <summary>
@@ -157,27 +154,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="matchBoxes", EmitDefaultValue=false)]
         public List<MatchBox> MatchBoxes { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Order
         /// </summary>
-        /// <value></value>
         [DataMember(Name="order", EmitDefaultValue=false)]
         public string Order { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Pages
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pages", EmitDefaultValue=false)]
         public string Pages { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Password
         /// </summary>
-        /// <value></value>
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
@@ -187,9 +180,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="remoteUrl", EmitDefaultValue=false)]
         public string RemoteUrl { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignerMustAcknowledge
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signerMustAcknowledge", EmitDefaultValue=false)]
         public string SignerMustAcknowledge { get; set; }
         /// <summary>
@@ -211,9 +203,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="transformPdfFields", EmitDefaultValue=false)]
         public string TransformPdfFields { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -458,5 +449,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

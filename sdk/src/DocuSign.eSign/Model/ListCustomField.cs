@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ConfigurationType">If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**..</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="FieldId">An ID used to specify a custom field..</param>
-        /// <param name="ListItems">.</param>
+        /// <param name="ListItems">ListItems.</param>
         /// <param name="Name">The name of the custom field..</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
         /// <param name="Show">A boolean indicating if the value should be displayed..</param>
@@ -75,9 +76,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="fieldId", EmitDefaultValue=false)]
         public string FieldId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ListItems
         /// </summary>
-        /// <value></value>
         [DataMember(Name="listItems", EmitDefaultValue=false)]
         public List<string> ListItems { get; set; }
         /// <summary>
@@ -234,5 +234,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

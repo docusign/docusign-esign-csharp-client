@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MobileNotifierConfigurationInformation" /> class.
         /// </summary>
-        /// <param name="MobileNotifierConfigurations">.</param>
+        /// <param name="MobileNotifierConfigurations">MobileNotifierConfigurations.</param>
         public MobileNotifierConfigurationInformation(List<MobileNotifierConfiguration> MobileNotifierConfigurations = default(List<MobileNotifierConfiguration>))
         {
             this.MobileNotifierConfigurations = MobileNotifierConfigurations;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets MobileNotifierConfigurations
         /// </summary>
-        /// <value></value>
         [DataMember(Name="mobileNotifierConfigurations", EmitDefaultValue=false)]
         public List<MobileNotifierConfiguration> MobileNotifierConfigurations { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -41,15 +42,15 @@ namespace DocuSign.eSign.Model
         /// <param name="CurrencyPlanPrices">Contains the currencyCode and currencySymbol for the alternate currency values for envelopeFee, fixedFee, and seatFee that are configured for this plan feature set..</param>
         /// <param name="EnableSupport">When set to **true**, then customer support is provided as part of the account plan..</param>
         /// <param name="IncludedSeats">The number of seats (users) included..</param>
-        /// <param name="OtherDiscountPercent">.</param>
+        /// <param name="OtherDiscountPercent">OtherDiscountPercent.</param>
         /// <param name="PaymentCycle"> The payment cycle associated with the plan. The possible values are: Monthly or Annually. .</param>
-        /// <param name="PaymentMethod">.</param>
+        /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PerSeatPrice">The per seat price for the plan..</param>
         /// <param name="PlanClassification">Identifies the type of plan. Examples include Business, Corporate, Enterprise, Free..</param>
-        /// <param name="PlanFeatureSets">.</param>
-        /// <param name="PlanId">.</param>
+        /// <param name="PlanFeatureSets">PlanFeatureSets.</param>
+        /// <param name="PlanId">PlanId.</param>
         /// <param name="PlanName">The name of the Billing Plan..</param>
-        /// <param name="SeatDiscounts">.</param>
+        /// <param name="SeatDiscounts">SeatDiscounts.</param>
         /// <param name="SupportIncidentFee">The support incident fee charged for each support incident..</param>
         /// <param name="SupportPlanFee">The support plan fee charged for this plan..</param>
         public BillingPlan(List<AppStoreProduct> AppStoreProducts = default(List<AppStoreProduct>), List<CurrencyPlanPrice> CurrencyPlanPrices = default(List<CurrencyPlanPrice>), string EnableSupport = default(string), string IncludedSeats = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
@@ -96,9 +97,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includedSeats", EmitDefaultValue=false)]
         public string IncludedSeats { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OtherDiscountPercent
         /// </summary>
-        /// <value></value>
         [DataMember(Name="otherDiscountPercent", EmitDefaultValue=false)]
         public string OtherDiscountPercent { get; set; }
         /// <summary>
@@ -108,9 +108,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="paymentCycle", EmitDefaultValue=false)]
         public string PaymentCycle { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentMethod
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
         public string PaymentMethod { get; set; }
         /// <summary>
@@ -126,15 +125,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="planClassification", EmitDefaultValue=false)]
         public string PlanClassification { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PlanFeatureSets
         /// </summary>
-        /// <value></value>
         [DataMember(Name="planFeatureSets", EmitDefaultValue=false)]
         public List<FeatureSet> PlanFeatureSets { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PlanId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="planId", EmitDefaultValue=false)]
         public string PlanId { get; set; }
         /// <summary>
@@ -144,9 +141,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="planName", EmitDefaultValue=false)]
         public string PlanName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SeatDiscounts
         /// </summary>
-        /// <value></value>
         [DataMember(Name="seatDiscounts", EmitDefaultValue=false)]
         public List<SeatDiscount> SeatDiscounts { get; set; }
         /// <summary>
@@ -347,5 +343,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

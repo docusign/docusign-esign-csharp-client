@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectFailureResults" /> class.
         /// </summary>
-        /// <param name="RetryQueue">.</param>
+        /// <param name="RetryQueue">RetryQueue.</param>
         public ConnectFailureResults(List<ConnectFailureResult> RetryQueue = default(List<ConnectFailureResult>))
         {
             this.RetryQueue = RetryQueue;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets RetryQueue
         /// </summary>
-        /// <value></value>
         [DataMember(Name="retryQueue", EmitDefaultValue=false)]
         public List<ConnectFailureResult> RetryQueue { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

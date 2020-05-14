@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountSeals" /> class.
         /// </summary>
-        /// <param name="Seals">.</param>
+        /// <param name="Seals">Seals.</param>
         public AccountSeals(List<SealIdentifier> Seals = default(List<SealIdentifier>))
         {
             this.Seals = Seals;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Seals
         /// </summary>
-        /// <value></value>
         [DataMember(Name="seals", EmitDefaultValue=false)]
         public List<SealIdentifier> Seals { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

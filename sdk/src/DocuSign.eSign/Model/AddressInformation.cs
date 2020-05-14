@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -45,7 +46,8 @@ namespace DocuSign.eSign.Model
         /// <param name="Street1">The first line of the address..</param>
         /// <param name="Street2">The second line of the address (optional)..</param>
         /// <param name="Zip">The zip or postal code associated with the address..</param>
-        public AddressInformation(string City = default(string), string Country = default(string), string Fax = default(string), string Phone = default(string), string State = default(string), string Street1 = default(string), string Street2 = default(string), string Zip = default(string))
+        /// <param name="ZipPlus4">ZipPlus4.</param>
+        public AddressInformation(string City = default(string), string Country = default(string), string Fax = default(string), string Phone = default(string), string State = default(string), string Street1 = default(string), string Street2 = default(string), string Zip = default(string), string ZipPlus4 = default(string))
         {
             this.City = City;
             this.Country = Country;
@@ -55,6 +57,7 @@ namespace DocuSign.eSign.Model
             this.Street1 = Street1;
             this.Street2 = Street2;
             this.Zip = Zip;
+            this.ZipPlus4 = ZipPlus4;
         }
         
         /// <summary>
@@ -106,6 +109,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="zip", EmitDefaultValue=false)]
         public string Zip { get; set; }
         /// <summary>
+        /// Gets or Sets ZipPlus4
+        /// </summary>
+        [DataMember(Name="zipPlus4", EmitDefaultValue=false)]
+        public string ZipPlus4 { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -121,6 +129,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Street1: ").Append(Street1).Append("\n");
             sb.Append("  Street2: ").Append(Street2).Append("\n");
             sb.Append("  Zip: ").Append(Zip).Append("\n");
+            sb.Append("  ZipPlus4: ").Append(ZipPlus4).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -196,6 +205,11 @@ namespace DocuSign.eSign.Model
                     this.Zip == other.Zip ||
                     this.Zip != null &&
                     this.Zip.Equals(other.Zip)
+                ) && 
+                (
+                    this.ZipPlus4 == other.ZipPlus4 ||
+                    this.ZipPlus4 != null &&
+                    this.ZipPlus4.Equals(other.ZipPlus4)
                 );
         }
 
@@ -226,6 +240,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Street2.GetHashCode();
                 if (this.Zip != null)
                     hash = hash * 59 + this.Zip.GetHashCode();
+                if (this.ZipPlus4 != null)
+                    hash = hash * 59 + this.ZipPlus4.GetHashCode();
                 return hash;
             }
         }
@@ -235,5 +251,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

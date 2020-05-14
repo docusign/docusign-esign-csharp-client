@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,13 +38,13 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountPasswordStrengthTypeOption" /> class.
         /// </summary>
-        /// <param name="MinimumLength">.</param>
-        /// <param name="Name">.</param>
-        /// <param name="PasswordIncludeDigit">.</param>
-        /// <param name="PasswordIncludeDigitOrSpecialCharacter">.</param>
-        /// <param name="PasswordIncludeLowerCase">.</param>
-        /// <param name="PasswordIncludeSpecialCharacter">.</param>
-        /// <param name="PasswordIncludeUpperCase">.</param>
+        /// <param name="MinimumLength">MinimumLength.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="PasswordIncludeDigit">PasswordIncludeDigit.</param>
+        /// <param name="PasswordIncludeDigitOrSpecialCharacter">PasswordIncludeDigitOrSpecialCharacter.</param>
+        /// <param name="PasswordIncludeLowerCase">PasswordIncludeLowerCase.</param>
+        /// <param name="PasswordIncludeSpecialCharacter">PasswordIncludeSpecialCharacter.</param>
+        /// <param name="PasswordIncludeUpperCase">PasswordIncludeUpperCase.</param>
         public AccountPasswordStrengthTypeOption(string MinimumLength = default(string), string Name = default(string), string PasswordIncludeDigit = default(string), string PasswordIncludeDigitOrSpecialCharacter = default(string), string PasswordIncludeLowerCase = default(string), string PasswordIncludeSpecialCharacter = default(string), string PasswordIncludeUpperCase = default(string))
         {
             this.MinimumLength = MinimumLength;
@@ -56,45 +57,38 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets MinimumLength
         /// </summary>
-        /// <value></value>
         [DataMember(Name="minimumLength", EmitDefaultValue=false)]
         public string MinimumLength { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordIncludeDigit
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordIncludeDigit", EmitDefaultValue=false)]
         public string PasswordIncludeDigit { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordIncludeDigitOrSpecialCharacter
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordIncludeDigitOrSpecialCharacter", EmitDefaultValue=false)]
         public string PasswordIncludeDigitOrSpecialCharacter { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordIncludeLowerCase
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordIncludeLowerCase", EmitDefaultValue=false)]
         public string PasswordIncludeLowerCase { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordIncludeSpecialCharacter
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordIncludeSpecialCharacter", EmitDefaultValue=false)]
         public string PasswordIncludeSpecialCharacter { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordIncludeUpperCase
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordIncludeUpperCase", EmitDefaultValue=false)]
         public string PasswordIncludeUpperCase { get; set; }
         /// <summary>
@@ -219,5 +213,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

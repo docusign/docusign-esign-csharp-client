@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientsUpdateSummary" /> class.
         /// </summary>
-        /// <param name="RecipientUpdateResults">.</param>
+        /// <param name="RecipientUpdateResults">RecipientUpdateResults.</param>
         public RecipientsUpdateSummary(List<RecipientUpdateResponse> RecipientUpdateResults = default(List<RecipientUpdateResponse>))
         {
             this.RecipientUpdateResults = RecipientUpdateResults;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientUpdateResults
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientUpdateResults", EmitDefaultValue=false)]
         public List<RecipientUpdateResponse> RecipientUpdateResults { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

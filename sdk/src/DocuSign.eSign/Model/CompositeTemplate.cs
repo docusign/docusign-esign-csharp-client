@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CompositeTemplateId">The identify of this composite template. It is used as a reference when adding document object information. If used, the document&#39;s &#x60;content-disposition&#x60; must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the &#x60;documentId&#x60; property only. If no document object is specified, the composite template inherits the first document..</param>
         /// <param name="Document">Document.</param>
         /// <param name="InlineTemplates"> Zero or more inline templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value..</param>
-        /// <param name="PdfMetaDataTemplateSequence">.</param>
+        /// <param name="PdfMetaDataTemplateSequence">PdfMetaDataTemplateSequence.</param>
         /// <param name="ServerTemplates">0 or more server-side templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value.</param>
         public CompositeTemplate(string CompositeTemplateId = default(string), Document Document = default(Document), List<InlineTemplate> InlineTemplates = default(List<InlineTemplate>), string PdfMetaDataTemplateSequence = default(string), List<ServerTemplate> ServerTemplates = default(List<ServerTemplate>))
         {
@@ -69,9 +70,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="inlineTemplates", EmitDefaultValue=false)]
         public List<InlineTemplate> InlineTemplates { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PdfMetaDataTemplateSequence
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pdfMetaDataTemplateSequence", EmitDefaultValue=false)]
         public string PdfMetaDataTemplateSequence { get; set; }
         /// <summary>
@@ -186,5 +186,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

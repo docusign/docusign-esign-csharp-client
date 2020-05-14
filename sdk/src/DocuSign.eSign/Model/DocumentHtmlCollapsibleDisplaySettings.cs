@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,16 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentHtmlCollapsibleDisplaySettings" /> class.
         /// </summary>
-        /// <param name="ArrowClosed">.</param>
-        /// <param name="ArrowColor">.</param>
-        /// <param name="ArrowLocation">.</param>
-        /// <param name="ArrowOpen">.</param>
-        /// <param name="ArrowSize">.</param>
-        /// <param name="ArrowStyle">.</param>
-        /// <param name="ContainerStyle">.</param>
-        /// <param name="LabelStyle">.</param>
-        /// <param name="OnlyArrowIsClickable">.</param>
-        /// <param name="OuterLabelAndArrowStyle">.</param>
+        /// <param name="ArrowClosed">ArrowClosed.</param>
+        /// <param name="ArrowColor">ArrowColor.</param>
+        /// <param name="ArrowLocation">ArrowLocation.</param>
+        /// <param name="ArrowOpen">ArrowOpen.</param>
+        /// <param name="ArrowSize">ArrowSize.</param>
+        /// <param name="ArrowStyle">ArrowStyle.</param>
+        /// <param name="ContainerStyle">ContainerStyle.</param>
+        /// <param name="LabelStyle">LabelStyle.</param>
+        /// <param name="OnlyArrowIsClickable">OnlyArrowIsClickable.</param>
+        /// <param name="OuterLabelAndArrowStyle">OuterLabelAndArrowStyle.</param>
         public DocumentHtmlCollapsibleDisplaySettings(string ArrowClosed = default(string), string ArrowColor = default(string), string ArrowLocation = default(string), string ArrowOpen = default(string), string ArrowSize = default(string), string ArrowStyle = default(string), string ContainerStyle = default(string), string LabelStyle = default(string), bool? OnlyArrowIsClickable = default(bool?), string OuterLabelAndArrowStyle = default(string))
         {
             this.ArrowClosed = ArrowClosed;
@@ -62,63 +63,53 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets ArrowClosed
         /// </summary>
-        /// <value></value>
         [DataMember(Name="arrowClosed", EmitDefaultValue=false)]
         public string ArrowClosed { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ArrowColor
         /// </summary>
-        /// <value></value>
         [DataMember(Name="arrowColor", EmitDefaultValue=false)]
         public string ArrowColor { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ArrowLocation
         /// </summary>
-        /// <value></value>
         [DataMember(Name="arrowLocation", EmitDefaultValue=false)]
         public string ArrowLocation { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ArrowOpen
         /// </summary>
-        /// <value></value>
         [DataMember(Name="arrowOpen", EmitDefaultValue=false)]
         public string ArrowOpen { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ArrowSize
         /// </summary>
-        /// <value></value>
         [DataMember(Name="arrowSize", EmitDefaultValue=false)]
         public string ArrowSize { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ArrowStyle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="arrowStyle", EmitDefaultValue=false)]
         public string ArrowStyle { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ContainerStyle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="containerStyle", EmitDefaultValue=false)]
         public string ContainerStyle { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LabelStyle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="labelStyle", EmitDefaultValue=false)]
         public string LabelStyle { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OnlyArrowIsClickable
         /// </summary>
-        /// <value></value>
         [DataMember(Name="onlyArrowIsClickable", EmitDefaultValue=false)]
         public bool? OnlyArrowIsClickable { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OuterLabelAndArrowStyle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="outerLabelAndArrowStyle", EmitDefaultValue=false)]
         public string OuterLabelAndArrowStyle { get; set; }
         /// <summary>
@@ -267,5 +258,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

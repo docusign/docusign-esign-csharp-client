@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,16 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkspaceUserAuthorization" /> class.
         /// </summary>
-        /// <param name="CanDelete">.</param>
-        /// <param name="CanMove">.</param>
-        /// <param name="CanTransact">.</param>
-        /// <param name="CanView">.</param>
+        /// <param name="CanDelete">CanDelete.</param>
+        /// <param name="CanMove">CanMove.</param>
+        /// <param name="CanTransact">CanTransact.</param>
+        /// <param name="CanView">CanView.</param>
         /// <param name="Created">The UTC DateTime when the workspace user authorization was created..</param>
-        /// <param name="CreatedById">.</param>
+        /// <param name="CreatedById">CreatedById.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Modified">.</param>
-        /// <param name="ModifiedById">.</param>
-        /// <param name="WorkspaceUserId">.</param>
+        /// <param name="Modified">Modified.</param>
+        /// <param name="ModifiedById">ModifiedById.</param>
+        /// <param name="WorkspaceUserId">WorkspaceUserId.</param>
         /// <param name="WorkspaceUserInformation">WorkspaceUserInformation.</param>
         public WorkspaceUserAuthorization(string CanDelete = default(string), string CanMove = default(string), string CanTransact = default(string), string CanView = default(string), string Created = default(string), string CreatedById = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Modified = default(string), string ModifiedById = default(string), string WorkspaceUserId = default(string), WorkspaceUser WorkspaceUserInformation = default(WorkspaceUser))
         {
@@ -64,27 +65,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CanDelete
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canDelete", EmitDefaultValue=false)]
         public string CanDelete { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CanMove
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canMove", EmitDefaultValue=false)]
         public string CanMove { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CanTransact
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canTransact", EmitDefaultValue=false)]
         public string CanTransact { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CanView
         /// </summary>
-        /// <value></value>
         [DataMember(Name="canView", EmitDefaultValue=false)]
         public string CanView { get; set; }
         /// <summary>
@@ -94,9 +91,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="created", EmitDefaultValue=false)]
         public string Created { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CreatedById
         /// </summary>
-        /// <value></value>
         [DataMember(Name="createdById", EmitDefaultValue=false)]
         public string CreatedById { get; set; }
         /// <summary>
@@ -105,21 +101,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Modified
         /// </summary>
-        /// <value></value>
         [DataMember(Name="modified", EmitDefaultValue=false)]
         public string Modified { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ModifiedById
         /// </summary>
-        /// <value></value>
         [DataMember(Name="modifiedById", EmitDefaultValue=false)]
         public string ModifiedById { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets WorkspaceUserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="workspaceUserId", EmitDefaultValue=false)]
         public string WorkspaceUserId { get; set; }
         /// <summary>
@@ -281,5 +274,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

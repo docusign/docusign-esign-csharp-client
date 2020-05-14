@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,24 +39,24 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="WorkspaceItem" /> class.
         /// </summary>
         /// <param name="CallerAuthorization">CallerAuthorization.</param>
-        /// <param name="ContentType">.</param>
+        /// <param name="ContentType">ContentType.</param>
         /// <param name="Created">The UTC DateTime when the workspace item was created..</param>
-        /// <param name="CreatedById">.</param>
+        /// <param name="CreatedById">CreatedById.</param>
         /// <param name="CreatedByInformation">CreatedByInformation.</param>
-        /// <param name="Extension">.</param>
-        /// <param name="FileSize">.</param>
-        /// <param name="FileUri">.</param>
-        /// <param name="Id">.</param>
+        /// <param name="Extension">Extension.</param>
+        /// <param name="FileSize">FileSize.</param>
+        /// <param name="FileUri">FileUri.</param>
+        /// <param name="Id">Id.</param>
         /// <param name="IsPublic"> If true, this supersedes need for bit mask permission with workspaceUserAuthorization.</param>
-        /// <param name="LastModified">.</param>
+        /// <param name="LastModified">LastModified.</param>
         /// <param name="LastModifiedById">Utc date and time the comment was last updated (can only be done by creator).</param>
         /// <param name="LastModifiedByInformation">LastModifiedByInformation.</param>
         /// <param name="Name">A simple string description of the item, such as a file name or a folder name..</param>
-        /// <param name="PageCount">.</param>
+        /// <param name="PageCount">PageCount.</param>
         /// <param name="ParentFolderId">The ID of the parent folder. This is the GUID of the parent folder, or the special value &#39;root&#39; for the root folder..</param>
-        /// <param name="ParentFolderUri">.</param>
+        /// <param name="ParentFolderUri">ParentFolderUri.</param>
         /// <param name="Type">The type of the workspace item. Valid values are file, folder..</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Uri">Uri.</param>
         public WorkspaceItem(WorkspaceUserAuthorization CallerAuthorization = default(WorkspaceUserAuthorization), string ContentType = default(string), string Created = default(string), string CreatedById = default(string), WorkspaceUser CreatedByInformation = default(WorkspaceUser), string Extension = default(string), string FileSize = default(string), string FileUri = default(string), string Id = default(string), string IsPublic = default(string), string LastModified = default(string), string LastModifiedById = default(string), WorkspaceUser LastModifiedByInformation = default(WorkspaceUser), string Name = default(string), string PageCount = default(string), string ParentFolderId = default(string), string ParentFolderUri = default(string), string Type = default(string), string Uri = default(string))
         {
             this.CallerAuthorization = CallerAuthorization;
@@ -85,9 +86,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="callerAuthorization", EmitDefaultValue=false)]
         public WorkspaceUserAuthorization CallerAuthorization { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ContentType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="contentType", EmitDefaultValue=false)]
         public string ContentType { get; set; }
         /// <summary>
@@ -97,9 +97,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="created", EmitDefaultValue=false)]
         public string Created { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CreatedById
         /// </summary>
-        /// <value></value>
         [DataMember(Name="createdById", EmitDefaultValue=false)]
         public string CreatedById { get; set; }
         /// <summary>
@@ -108,27 +107,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdByInformation", EmitDefaultValue=false)]
         public WorkspaceUser CreatedByInformation { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Extension
         /// </summary>
-        /// <value></value>
         [DataMember(Name="extension", EmitDefaultValue=false)]
         public string Extension { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FileSize
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fileSize", EmitDefaultValue=false)]
         public string FileSize { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FileUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fileUri", EmitDefaultValue=false)]
         public string FileUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Id
         /// </summary>
-        /// <value></value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
@@ -138,9 +133,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="isPublic", EmitDefaultValue=false)]
         public string IsPublic { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LastModified
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lastModified", EmitDefaultValue=false)]
         public string LastModified { get; set; }
         /// <summary>
@@ -161,9 +155,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PageCount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pageCount", EmitDefaultValue=false)]
         public string PageCount { get; set; }
         /// <summary>
@@ -173,9 +166,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="parentFolderId", EmitDefaultValue=false)]
         public string ParentFolderId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ParentFolderUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="parentFolderUri", EmitDefaultValue=false)]
         public string ParentFolderUri { get; set; }
         /// <summary>
@@ -185,9 +177,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -408,5 +399,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -43,7 +44,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IncludeDocumentFields">When set to **true**, the Document Fields associated with envelope documents are included in the data. Document Fields are optional custom name-value pairs added to documents using the API. .</param>
         /// <param name="IncludeDocuments">When set to **true**, the PDF documents are included in the message along with the updated XML. .</param>
         /// <param name="IncludeEnvelopeVoidReason">When set to **true**, this tells the Connect Service to include the void reason, as entered by the person that voided the envelope, in the message. .</param>
-        /// <param name="IncludeHMAC">.</param>
+        /// <param name="IncludeHMAC">IncludeHMAC.</param>
         /// <param name="IncludeSenderAccountAsCustomField">When set to **true**, the sender account ID is included as a envelope custom field in the data. .</param>
         /// <param name="IncludeTimeZone">When set to **true**, the envelope time zone information is included in the message. .</param>
         /// <param name="LoggingEnabled">When set to **true**, logging is turned on for envelope events on the Web Console Connect page. .</param>
@@ -110,9 +111,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includeEnvelopeVoidReason", EmitDefaultValue=false)]
         public string IncludeEnvelopeVoidReason { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IncludeHMAC
         /// </summary>
-        /// <value></value>
         [DataMember(Name="includeHMAC", EmitDefaultValue=false)]
         public string IncludeHMAC { get; set; }
         /// <summary>
@@ -363,5 +363,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

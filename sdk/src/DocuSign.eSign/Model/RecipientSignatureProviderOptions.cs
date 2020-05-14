@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientSignatureProviderOptions" /> class.
         /// </summary>
-        /// <param name="CpfNumber">.</param>
-        /// <param name="OneTimePassword">.</param>
-        /// <param name="SignerRole">.</param>
-        /// <param name="Sms">.</param>
+        /// <param name="CpfNumber">CpfNumber.</param>
+        /// <param name="OneTimePassword">OneTimePassword.</param>
+        /// <param name="SignerRole">SignerRole.</param>
+        /// <param name="Sms">Sms.</param>
         public RecipientSignatureProviderOptions(string CpfNumber = default(string), string OneTimePassword = default(string), string SignerRole = default(string), string Sms = default(string))
         {
             this.CpfNumber = CpfNumber;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CpfNumber
         /// </summary>
-        /// <value></value>
         [DataMember(Name="cpfNumber", EmitDefaultValue=false)]
         public string CpfNumber { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OneTimePassword
         /// </summary>
-        /// <value></value>
         [DataMember(Name="oneTimePassword", EmitDefaultValue=false)]
         public string OneTimePassword { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignerRole
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signerRole", EmitDefaultValue=false)]
         public string SignerRole { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Sms
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sms", EmitDefaultValue=false)]
         public string Sms { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

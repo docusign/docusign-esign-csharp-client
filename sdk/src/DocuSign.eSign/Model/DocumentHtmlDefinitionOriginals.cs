@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentHtmlDefinitionOriginals" /> class.
         /// </summary>
-        /// <param name="HtmlDefinitions">.</param>
+        /// <param name="HtmlDefinitions">HtmlDefinitions.</param>
         public DocumentHtmlDefinitionOriginals(List<DocumentHtmlDefinitionOriginal> HtmlDefinitions = default(List<DocumentHtmlDefinitionOriginal>))
         {
             this.HtmlDefinitions = HtmlDefinitions;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets HtmlDefinitions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="htmlDefinitions", EmitDefaultValue=false)]
         public List<DocumentHtmlDefinitionOriginal> HtmlDefinitions { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

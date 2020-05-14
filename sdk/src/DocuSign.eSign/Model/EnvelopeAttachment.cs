@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,12 +38,12 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeAttachment" /> class.
         /// </summary>
-        /// <param name="AccessControl">.</param>
-        /// <param name="AttachmentId">.</param>
-        /// <param name="AttachmentType">.</param>
+        /// <param name="AccessControl">AccessControl.</param>
+        /// <param name="AttachmentId">AttachmentId.</param>
+        /// <param name="AttachmentType">AttachmentType.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Label">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="Label">Label.</param>
+        /// <param name="Name">Name.</param>
         public EnvelopeAttachment(string AccessControl = default(string), string AttachmentId = default(string), string AttachmentType = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Label = default(string), string Name = default(string))
         {
             this.AccessControl = AccessControl;
@@ -54,21 +55,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AccessControl
         /// </summary>
-        /// <value></value>
         [DataMember(Name="accessControl", EmitDefaultValue=false)]
         public string AccessControl { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AttachmentId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="attachmentId", EmitDefaultValue=false)]
         public string AttachmentId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AttachmentType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="attachmentType", EmitDefaultValue=false)]
         public string AttachmentType { get; set; }
         /// <summary>
@@ -77,15 +75,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Label
         /// </summary>
-        /// <value></value>
         [DataMember(Name="label", EmitDefaultValue=false)]
         public string Label { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -202,5 +198,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

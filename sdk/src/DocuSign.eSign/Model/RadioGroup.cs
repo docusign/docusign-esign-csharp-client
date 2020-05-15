@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -47,7 +48,7 @@ namespace DocuSign.eSign.Model
         /// <param name="GroupNameMetadata">GroupNameMetadata.</param>
         /// <param name="Radios">Specifies the locations and status for radio buttons that are grouped together..</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
-        /// <param name="RecipientIdGuid">.</param>
+        /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
         /// <param name="RecipientIdGuidMetadata">RecipientIdGuidMetadata.</param>
         /// <param name="RecipientIdMetadata">RecipientIdMetadata.</param>
         /// <param name="RequireAll">When set to **true** and shared is true, information must be entered in this field to complete the envelope. .</param>
@@ -56,13 +57,13 @@ namespace DocuSign.eSign.Model
         /// <param name="RequireInitialOnSharedChangeMetadata">RequireInitialOnSharedChangeMetadata.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="SharedMetadata">SharedMetadata.</param>
-        /// <param name="TabType">.</param>
+        /// <param name="TabType">TabType.</param>
         /// <param name="TabTypeMetadata">TabTypeMetadata.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateLockedMetadata">TemplateLockedMetadata.</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TemplateRequiredMetadata">TemplateRequiredMetadata.</param>
-        /// <param name="Tooltip">.</param>
+        /// <param name="Tooltip">Tooltip.</param>
         /// <param name="TooltipMetadata">TooltipMetadata.</param>
         public RadioGroup(string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), string GroupName = default(string), PropertyMetadata GroupNameMetadata = default(PropertyMetadata), List<Radio> Radios = default(List<Radio>), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string RequireAll = default(string), PropertyMetadata RequireAllMetadata = default(PropertyMetadata), string RequireInitialOnSharedChange = default(string), PropertyMetadata RequireInitialOnSharedChangeMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata TooltipMetadata = default(PropertyMetadata))
         {
@@ -152,9 +153,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientId", EmitDefaultValue=false)]
         public string RecipientId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientIdGuid
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientIdGuid", EmitDefaultValue=false)]
         public string RecipientIdGuid { get; set; }
         /// <summary>
@@ -201,9 +201,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="sharedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SharedMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabType", EmitDefaultValue=false)]
         public string TabType { get; set; }
         /// <summary>
@@ -234,9 +233,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequiredMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TemplateRequiredMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Tooltip
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tooltip", EmitDefaultValue=false)]
         public string Tooltip { get; set; }
         /// <summary>
@@ -526,5 +524,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

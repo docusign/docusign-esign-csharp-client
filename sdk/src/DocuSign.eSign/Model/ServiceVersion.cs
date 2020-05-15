@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="ServiceVersion" /> class.
         /// </summary>
         /// <param name="Version">The version of the rest API..</param>
-        /// <param name="VersionUrl">.</param>
+        /// <param name="VersionUrl">VersionUrl.</param>
         public ServiceVersion(string Version = default(string), string VersionUrl = default(string))
         {
             this.Version = Version;
@@ -52,9 +53,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="version", EmitDefaultValue=false)]
         public string Version { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets VersionUrl
         /// </summary>
-        /// <value></value>
         [DataMember(Name="versionUrl", EmitDefaultValue=false)]
         public string VersionUrl { get; set; }
         /// <summary>
@@ -139,5 +139,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

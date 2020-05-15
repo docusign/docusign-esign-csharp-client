@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,14 +38,14 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectSalesforceField" /> class.
         /// </summary>
-        /// <param name="DsAttribute">.</param>
-        /// <param name="DsLink">.</param>
-        /// <param name="DsNode">.</param>
-        /// <param name="Id">.</param>
-        /// <param name="SfField">.</param>
-        /// <param name="SfFieldName">.</param>
-        /// <param name="SfFolder">.</param>
-        /// <param name="SfLockedValue">.</param>
+        /// <param name="DsAttribute">DsAttribute.</param>
+        /// <param name="DsLink">DsLink.</param>
+        /// <param name="DsNode">DsNode.</param>
+        /// <param name="Id">Id.</param>
+        /// <param name="SfField">SfField.</param>
+        /// <param name="SfFieldName">SfFieldName.</param>
+        /// <param name="SfFolder">SfFolder.</param>
+        /// <param name="SfLockedValue">SfLockedValue.</param>
         public ConnectSalesforceField(string DsAttribute = default(string), string DsLink = default(string), string DsNode = default(string), string Id = default(string), string SfField = default(string), string SfFieldName = default(string), string SfFolder = default(string), string SfLockedValue = default(string))
         {
             this.DsAttribute = DsAttribute;
@@ -58,51 +59,43 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DsAttribute
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dsAttribute", EmitDefaultValue=false)]
         public string DsAttribute { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DsLink
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dsLink", EmitDefaultValue=false)]
         public string DsLink { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DsNode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dsNode", EmitDefaultValue=false)]
         public string DsNode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Id
         /// </summary>
-        /// <value></value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SfField
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sfField", EmitDefaultValue=false)]
         public string SfField { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SfFieldName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sfFieldName", EmitDefaultValue=false)]
         public string SfFieldName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SfFolder
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sfFolder", EmitDefaultValue=false)]
         public string SfFolder { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SfLockedValue
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sfLockedValue", EmitDefaultValue=false)]
         public string SfLockedValue { get; set; }
         /// <summary>
@@ -235,5 +228,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

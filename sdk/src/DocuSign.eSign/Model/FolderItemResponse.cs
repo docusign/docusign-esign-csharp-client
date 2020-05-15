@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -43,7 +44,7 @@ namespace DocuSign.eSign.Model
         /// <param name="PreviousUri">The postal code for the billing address..</param>
         /// <param name="ResultSetSize">The number of results returned in this response. .</param>
         /// <param name="StartPosition">Starting position of the current result set..</param>
-        /// <param name="TotalRows">.</param>
+        /// <param name="TotalRows">TotalRows.</param>
         public FolderItemResponse(string EndPosition = default(string), List<FolderItemV2> FolderItems = default(List<FolderItemV2>), string NextUri = default(string), string PreviousUri = default(string), string ResultSetSize = default(string), string StartPosition = default(string), string TotalRows = default(string))
         {
             this.EndPosition = EndPosition;
@@ -92,9 +93,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="startPosition", EmitDefaultValue=false)]
         public string StartPosition { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TotalRows
         /// </summary>
-        /// <value></value>
         [DataMember(Name="totalRows", EmitDefaultValue=false)]
         public string TotalRows { get; set; }
         /// <summary>
@@ -219,5 +219,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

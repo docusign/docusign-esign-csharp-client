@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,12 +40,12 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="Owner">Owner.</param>
-        /// <param name="Password">.</param>
+        /// <param name="Password">Password.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
-        /// <param name="SharedGroups">.</param>
-        /// <param name="SharedUsers">.</param>
+        /// <param name="SharedGroups">SharedGroups.</param>
+        /// <param name="SharedUsers">SharedUsers.</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
-        /// <param name="TemplateName">.</param>
+        /// <param name="TemplateName">TemplateName.</param>
         public TemplateSharedItem(ErrorDetails ErrorDetails = default(ErrorDetails), UserInfo Owner = default(UserInfo), string Password = default(string), string Shared = default(string), List<MemberGroupSharedItem> SharedGroups = default(List<MemberGroupSharedItem>), List<UserSharedItem> SharedUsers = default(List<UserSharedItem>), string TemplateId = default(string), string TemplateName = default(string))
         {
             this.ErrorDetails = ErrorDetails;
@@ -68,9 +69,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="owner", EmitDefaultValue=false)]
         public UserInfo Owner { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Password
         /// </summary>
-        /// <value></value>
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
@@ -80,15 +80,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shared", EmitDefaultValue=false)]
         public string Shared { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SharedGroups
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sharedGroups", EmitDefaultValue=false)]
         public List<MemberGroupSharedItem> SharedGroups { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SharedUsers
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sharedUsers", EmitDefaultValue=false)]
         public List<UserSharedItem> SharedUsers { get; set; }
         /// <summary>
@@ -98,9 +96,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateId", EmitDefaultValue=false)]
         public string TemplateId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TemplateName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="templateName", EmitDefaultValue=false)]
         public string TemplateName { get; set; }
         /// <summary>
@@ -233,5 +230,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

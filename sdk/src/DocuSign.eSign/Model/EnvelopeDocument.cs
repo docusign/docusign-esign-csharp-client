@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,31 +38,31 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeDocument" /> class.
         /// </summary>
-        /// <param name="AddedRecipientIds">.</param>
-        /// <param name="AttachmentTabId">.</param>
+        /// <param name="AddedRecipientIds">AddedRecipientIds.</param>
+        /// <param name="AttachmentTabId">AttachmentTabId.</param>
         /// <param name="AuthoritativeCopy">Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled..</param>
         /// <param name="AuthoritativeCopyMetadata">AuthoritativeCopyMetadata.</param>
-        /// <param name="AvailableDocumentTypes">.</param>
-        /// <param name="ContainsPdfFormFields">.</param>
-        /// <param name="Display">.</param>
+        /// <param name="AvailableDocumentTypes">AvailableDocumentTypes.</param>
+        /// <param name="ContainsPdfFormFields">ContainsPdfFormFields.</param>
+        /// <param name="Display">Display.</param>
         /// <param name="DisplayMetadata">DisplayMetadata.</param>
-        /// <param name="DocumentFields">.</param>
+        /// <param name="DocumentFields">DocumentFields.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
-        /// <param name="DocumentIdGuid">.</param>
+        /// <param name="DocumentIdGuid">DocumentIdGuid.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="IncludeInDownload">.</param>
+        /// <param name="IncludeInDownload">IncludeInDownload.</param>
         /// <param name="IncludeInDownloadMetadata">IncludeInDownloadMetadata.</param>
-        /// <param name="Name">.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="NameMetadata">NameMetadata.</param>
-        /// <param name="Order">.</param>
-        /// <param name="Pages">.</param>
-        /// <param name="SignerMustAcknowledge">.</param>
+        /// <param name="Order">Order.</param>
+        /// <param name="Pages">Pages.</param>
+        /// <param name="SignerMustAcknowledge">SignerMustAcknowledge.</param>
         /// <param name="SignerMustAcknowledgeMetadata">SignerMustAcknowledgeMetadata.</param>
-        /// <param name="SizeBytes">.</param>
+        /// <param name="SizeBytes">SizeBytes.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
-        /// <param name="Type">.</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Type">Type.</param>
+        /// <param name="Uri">Uri.</param>
         public EnvelopeDocument(List<string> AddedRecipientIds = default(List<string>), string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), PropertyMetadata AuthoritativeCopyMetadata = default(PropertyMetadata), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), PropertyMetadata DisplayMetadata = default(PropertyMetadata), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string DocumentIdGuid = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), PropertyMetadata IncludeInDownloadMetadata = default(PropertyMetadata), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Order = default(string), List<Page> Pages = default(List<Page>), string SignerMustAcknowledge = default(string), PropertyMetadata SignerMustAcknowledgeMetadata = default(PropertyMetadata), string SizeBytes = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
         {
             this.AddedRecipientIds = AddedRecipientIds;
@@ -92,15 +93,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AddedRecipientIds
         /// </summary>
-        /// <value></value>
         [DataMember(Name="addedRecipientIds", EmitDefaultValue=false)]
         public List<string> AddedRecipientIds { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AttachmentTabId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="attachmentTabId", EmitDefaultValue=false)]
         public string AttachmentTabId { get; set; }
         /// <summary>
@@ -115,21 +114,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="authoritativeCopyMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AuthoritativeCopyMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AvailableDocumentTypes
         /// </summary>
-        /// <value></value>
         [DataMember(Name="availableDocumentTypes", EmitDefaultValue=false)]
         public List<SignatureType> AvailableDocumentTypes { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ContainsPdfFormFields
         /// </summary>
-        /// <value></value>
         [DataMember(Name="containsPdfFormFields", EmitDefaultValue=false)]
         public string ContainsPdfFormFields { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Display
         /// </summary>
-        /// <value></value>
         [DataMember(Name="display", EmitDefaultValue=false)]
         public string Display { get; set; }
         /// <summary>
@@ -138,9 +134,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="displayMetadata", EmitDefaultValue=false)]
         public PropertyMetadata DisplayMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentFields
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentFields", EmitDefaultValue=false)]
         public List<NameValue> DocumentFields { get; set; }
         /// <summary>
@@ -150,9 +145,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentId", EmitDefaultValue=false)]
         public string DocumentId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentIdGuid
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentIdGuid", EmitDefaultValue=false)]
         public string DocumentIdGuid { get; set; }
         /// <summary>
@@ -161,9 +155,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IncludeInDownload
         /// </summary>
-        /// <value></value>
         [DataMember(Name="includeInDownload", EmitDefaultValue=false)]
         public string IncludeInDownload { get; set; }
         /// <summary>
@@ -172,9 +165,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includeInDownloadMetadata", EmitDefaultValue=false)]
         public PropertyMetadata IncludeInDownloadMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -183,21 +175,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="nameMetadata", EmitDefaultValue=false)]
         public PropertyMetadata NameMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Order
         /// </summary>
-        /// <value></value>
         [DataMember(Name="order", EmitDefaultValue=false)]
         public string Order { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Pages
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pages", EmitDefaultValue=false)]
         public List<Page> Pages { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignerMustAcknowledge
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signerMustAcknowledge", EmitDefaultValue=false)]
         public string SignerMustAcknowledge { get; set; }
         /// <summary>
@@ -206,9 +195,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signerMustAcknowledgeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SignerMustAcknowledgeMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SizeBytes
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sizeBytes", EmitDefaultValue=false)]
         public string SizeBytes { get; set; }
         /// <summary>
@@ -224,15 +212,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequired", EmitDefaultValue=false)]
         public string TemplateRequired { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Type
         /// </summary>
-        /// <value></value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -501,5 +487,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

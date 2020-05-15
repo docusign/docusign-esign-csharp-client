@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BulkSendingCopy" /> class.
         /// </summary>
         /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
-        /// <param name="EmailBlurb">.</param>
+        /// <param name="EmailBlurb">EmailBlurb.</param>
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
         /// <param name="Recipients">An array of powerform recipients..</param>
         public BulkSendingCopy(List<BulkSendingCopyCustomField> CustomFields = default(List<BulkSendingCopyCustomField>), string EmailBlurb = default(string), string EmailSubject = default(string), List<BulkSendingCopyRecipient> Recipients = default(List<BulkSendingCopyRecipient>))
@@ -56,9 +57,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="customFields", EmitDefaultValue=false)]
         public List<BulkSendingCopyCustomField> CustomFields { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EmailBlurb
         /// </summary>
-        /// <value></value>
         [DataMember(Name="emailBlurb", EmitDefaultValue=false)]
         public string EmailBlurb { get; set; }
         /// <summary>
@@ -171,5 +171,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

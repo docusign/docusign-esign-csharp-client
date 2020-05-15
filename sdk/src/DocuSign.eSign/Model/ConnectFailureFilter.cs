@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectFailureFilter" /> class.
         /// </summary>
-        /// <param name="EnvelopeIds">.</param>
-        /// <param name="Synchronous">.</param>
+        /// <param name="EnvelopeIds">EnvelopeIds.</param>
+        /// <param name="Synchronous">Synchronous.</param>
         public ConnectFailureFilter(List<string> EnvelopeIds = default(List<string>), string Synchronous = default(string))
         {
             this.EnvelopeIds = EnvelopeIds;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopeIds
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopeIds", EmitDefaultValue=false)]
         public List<string> EnvelopeIds { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Synchronous
         /// </summary>
-        /// <value></value>
         [DataMember(Name="synchronous", EmitDefaultValue=false)]
         public string Synchronous { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

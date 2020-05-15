@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GraphicsContext" /> class.
         /// </summary>
-        /// <param name="FillColor">.</param>
-        /// <param name="LineColor">.</param>
-        /// <param name="LineWeight">.</param>
+        /// <param name="FillColor">FillColor.</param>
+        /// <param name="LineColor">LineColor.</param>
+        /// <param name="LineWeight">LineWeight.</param>
         public GraphicsContext(string FillColor = default(string), string LineColor = default(string), string LineWeight = default(string))
         {
             this.FillColor = FillColor;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets FillColor
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fillColor", EmitDefaultValue=false)]
         public string FillColor { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LineColor
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lineColor", EmitDefaultValue=false)]
         public string LineColor { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LineWeight
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lineWeight", EmitDefaultValue=false)]
         public string LineWeight { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentGatewayAccountSetting" /> class.
         /// </summary>
-        /// <param name="ApiFields">.</param>
-        /// <param name="AuthorizationCode">.</param>
-        /// <param name="CredentialStatus">.</param>
-        /// <param name="MerchantId">.</param>
+        /// <param name="ApiFields">ApiFields.</param>
+        /// <param name="AuthorizationCode">AuthorizationCode.</param>
+        /// <param name="CredentialStatus">CredentialStatus.</param>
+        /// <param name="MerchantId">MerchantId.</param>
         public PaymentGatewayAccountSetting(string ApiFields = default(string), string AuthorizationCode = default(string), string CredentialStatus = default(string), string MerchantId = default(string))
         {
             this.ApiFields = ApiFields;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets ApiFields
         /// </summary>
-        /// <value></value>
         [DataMember(Name="apiFields", EmitDefaultValue=false)]
         public string ApiFields { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AuthorizationCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="authorizationCode", EmitDefaultValue=false)]
         public string AuthorizationCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CredentialStatus
         /// </summary>
-        /// <value></value>
         [DataMember(Name="credentialStatus", EmitDefaultValue=false)]
         public string CredentialStatus { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MerchantId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="merchantId", EmitDefaultValue=false)]
         public string MerchantId { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

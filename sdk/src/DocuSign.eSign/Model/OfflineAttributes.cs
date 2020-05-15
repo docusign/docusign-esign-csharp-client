@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -42,7 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DeviceName">A string containing information about the type of device used for offline signing..</param>
         /// <param name="GpsLatitude">A string containing the latitude of the device location at the time of signing..</param>
         /// <param name="GpsLongitude">A string containing the longitude of the device location at the time of signing..</param>
-        /// <param name="OfflineSigningHash">.</param>
+        /// <param name="OfflineSigningHash">OfflineSigningHash.</param>
         public OfflineAttributes(string AccountEsignId = default(string), string DeviceModel = default(string), string DeviceName = default(string), string GpsLatitude = default(string), string GpsLongitude = default(string), string OfflineSigningHash = default(string))
         {
             this.AccountEsignId = AccountEsignId;
@@ -84,9 +85,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="gpsLongitude", EmitDefaultValue=false)]
         public string GpsLongitude { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OfflineSigningHash
         /// </summary>
-        /// <value></value>
         [DataMember(Name="offlineSigningHash", EmitDefaultValue=false)]
         public string OfflineSigningHash { get; set; }
         /// <summary>
@@ -203,5 +203,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FoldersRequest" /> class.
         /// </summary>
-        /// <param name="EnvelopeIds">.</param>
-        /// <param name="Folders">.</param>
+        /// <param name="EnvelopeIds">EnvelopeIds.</param>
+        /// <param name="Folders">Folders.</param>
         /// <param name="FromFolderId"> The folder ID the envelope is being moved from..</param>
         public FoldersRequest(List<string> EnvelopeIds = default(List<string>), List<Folder> Folders = default(List<Folder>), string FromFolderId = default(string))
         {
@@ -48,15 +49,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopeIds
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopeIds", EmitDefaultValue=false)]
         public List<string> EnvelopeIds { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Folders
         /// </summary>
-        /// <value></value>
         [DataMember(Name="folders", EmitDefaultValue=false)]
         public List<Folder> Folders { get; set; }
         /// <summary>
@@ -155,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

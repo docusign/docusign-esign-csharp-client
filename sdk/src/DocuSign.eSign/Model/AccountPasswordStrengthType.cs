@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountPasswordStrengthType" /> class.
         /// </summary>
-        /// <param name="Options">.</param>
+        /// <param name="Options">Options.</param>
         public AccountPasswordStrengthType(List<AccountPasswordStrengthTypeOption> Options = default(List<AccountPasswordStrengthTypeOption>))
         {
             this.Options = Options;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Options
         /// </summary>
-        /// <value></value>
         [DataMember(Name="options", EmitDefaultValue=false)]
         public List<AccountPasswordStrengthTypeOption> Options { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

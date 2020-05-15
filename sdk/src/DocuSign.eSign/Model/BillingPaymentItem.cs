@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,9 +39,9 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BillingPaymentItem" /> class.
         /// </summary>
         /// <param name="Amount">Reserved: TBD.</param>
-        /// <param name="Description">.</param>
-        /// <param name="PaymentDate">.</param>
-        /// <param name="PaymentId">.</param>
+        /// <param name="Description">Description.</param>
+        /// <param name="PaymentDate">PaymentDate.</param>
+        /// <param name="PaymentId">PaymentId.</param>
         /// <param name="PaymentNumber">When set to **true**, a PDF version of the invoice is available.   To get the PDF, make the call again and change \&quot;Accept:\&quot; in the header to \&quot;Accept: application/pdf\&quot;..</param>
         public BillingPaymentItem(string Amount = default(string), string Description = default(string), string PaymentDate = default(string), string PaymentId = default(string), string PaymentNumber = default(string))
         {
@@ -58,21 +59,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="amount", EmitDefaultValue=false)]
         public string Amount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Description
         /// </summary>
-        /// <value></value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentDate", EmitDefaultValue=false)]
         public string PaymentDate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentId", EmitDefaultValue=false)]
         public string PaymentId { get; set; }
         /// <summary>
@@ -187,5 +185,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

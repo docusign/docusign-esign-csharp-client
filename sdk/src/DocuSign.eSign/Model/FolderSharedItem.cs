@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,15 +39,15 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="FolderSharedItem" /> class.
         /// </summary>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="FolderId">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="FolderId">FolderId.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="Owner">Owner.</param>
-        /// <param name="ParentFolderId">.</param>
-        /// <param name="ParentFolderUri">.</param>
+        /// <param name="ParentFolderId">ParentFolderId.</param>
+        /// <param name="ParentFolderUri">ParentFolderUri.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
-        /// <param name="SharedGroups">.</param>
-        /// <param name="SharedUsers">.</param>
-        /// <param name="Uri">.</param>
+        /// <param name="SharedGroups">SharedGroups.</param>
+        /// <param name="SharedUsers">SharedUsers.</param>
+        /// <param name="Uri">Uri.</param>
         /// <param name="User">User.</param>
         public FolderSharedItem(ErrorDetails ErrorDetails = default(ErrorDetails), string FolderId = default(string), string Name = default(string), UserInfo Owner = default(UserInfo), string ParentFolderId = default(string), string ParentFolderUri = default(string), string Shared = default(string), List<MemberGroupSharedItem> SharedGroups = default(List<MemberGroupSharedItem>), List<UserSharedItem> SharedUsers = default(List<UserSharedItem>), string Uri = default(string), UserInfo User = default(UserInfo))
         {
@@ -69,15 +70,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FolderId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="folderId", EmitDefaultValue=false)]
         public string FolderId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -86,15 +85,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="owner", EmitDefaultValue=false)]
         public UserInfo Owner { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ParentFolderId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="parentFolderId", EmitDefaultValue=false)]
         public string ParentFolderId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ParentFolderUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="parentFolderUri", EmitDefaultValue=false)]
         public string ParentFolderUri { get; set; }
         /// <summary>
@@ -104,21 +101,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shared", EmitDefaultValue=false)]
         public string Shared { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SharedGroups
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sharedGroups", EmitDefaultValue=false)]
         public List<MemberGroupSharedItem> SharedGroups { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SharedUsers
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sharedUsers", EmitDefaultValue=false)]
         public List<UserSharedItem> SharedUsers { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -280,5 +274,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

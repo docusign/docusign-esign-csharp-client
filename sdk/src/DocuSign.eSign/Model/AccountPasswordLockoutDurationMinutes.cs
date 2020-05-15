@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountPasswordLockoutDurationMinutes" /> class.
         /// </summary>
-        /// <param name="MaximumMinutes">.</param>
-        /// <param name="MinimumMinutes">.</param>
+        /// <param name="MaximumMinutes">MaximumMinutes.</param>
+        /// <param name="MinimumMinutes">MinimumMinutes.</param>
         public AccountPasswordLockoutDurationMinutes(string MaximumMinutes = default(string), string MinimumMinutes = default(string))
         {
             this.MaximumMinutes = MaximumMinutes;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets MaximumMinutes
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maximumMinutes", EmitDefaultValue=false)]
         public string MaximumMinutes { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MinimumMinutes
         /// </summary>
-        /// <value></value>
         [DataMember(Name="minimumMinutes", EmitDefaultValue=false)]
         public string MinimumMinutes { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

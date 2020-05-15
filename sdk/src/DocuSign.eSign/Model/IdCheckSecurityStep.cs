@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="IdCheckSecurityStep" /> class.
         /// </summary>
-        /// <param name="AuthType">.</param>
+        /// <param name="AuthType">AuthType.</param>
         public IdCheckSecurityStep(string AuthType = default(string))
         {
             this.AuthType = AuthType;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AuthType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="authType", EmitDefaultValue=false)]
         public string AuthType { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

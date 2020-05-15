@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeAuditEvent" /> class.
         /// </summary>
-        /// <param name="EventFields">.</param>
+        /// <param name="EventFields">EventFields.</param>
         public EnvelopeAuditEvent(List<NameValue> EventFields = default(List<NameValue>))
         {
             this.EventFields = EventFields;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets EventFields
         /// </summary>
-        /// <value></value>
         [DataMember(Name="eventFields", EmitDefaultValue=false)]
         public List<NameValue> EventFields { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,18 +38,18 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Contact" /> class.
         /// </summary>
-        /// <param name="CloudProvider">.</param>
-        /// <param name="CloudProviderContainerId">.</param>
-        /// <param name="ContactId">.</param>
-        /// <param name="ContactPhoneNumbers">.</param>
-        /// <param name="ContactUri">.</param>
-        /// <param name="Emails">.</param>
+        /// <param name="CloudProvider">CloudProvider.</param>
+        /// <param name="CloudProviderContainerId">CloudProviderContainerId.</param>
+        /// <param name="ContactId">ContactId.</param>
+        /// <param name="ContactPhoneNumbers">ContactPhoneNumbers.</param>
+        /// <param name="ContactUri">ContactUri.</param>
+        /// <param name="Emails">Emails.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="IsOwner">.</param>
-        /// <param name="Name">.</param>
-        /// <param name="Organization">.</param>
+        /// <param name="IsOwner">IsOwner.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="Organization">Organization.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
-        /// <param name="SigningGroup">.</param>
+        /// <param name="SigningGroup">SigningGroup.</param>
         /// <param name="SigningGroupName">The display name for the signing group.   Maximum Length: 100 characters. .</param>
         public Contact(string CloudProvider = default(string), string CloudProviderContainerId = default(string), string ContactId = default(string), List<ContactPhoneNumber> ContactPhoneNumbers = default(List<ContactPhoneNumber>), string ContactUri = default(string), List<string> Emails = default(List<string>), ErrorDetails ErrorDetails = default(ErrorDetails), bool? IsOwner = default(bool?), string Name = default(string), string Organization = default(string), string Shared = default(string), string SigningGroup = default(string), string SigningGroupName = default(string))
         {
@@ -68,39 +69,33 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CloudProvider
         /// </summary>
-        /// <value></value>
         [DataMember(Name="cloudProvider", EmitDefaultValue=false)]
         public string CloudProvider { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CloudProviderContainerId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="cloudProviderContainerId", EmitDefaultValue=false)]
         public string CloudProviderContainerId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ContactId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="contactId", EmitDefaultValue=false)]
         public string ContactId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ContactPhoneNumbers
         /// </summary>
-        /// <value></value>
         [DataMember(Name="contactPhoneNumbers", EmitDefaultValue=false)]
         public List<ContactPhoneNumber> ContactPhoneNumbers { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ContactUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="contactUri", EmitDefaultValue=false)]
         public string ContactUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Emails
         /// </summary>
-        /// <value></value>
         [DataMember(Name="emails", EmitDefaultValue=false)]
         public List<string> Emails { get; set; }
         /// <summary>
@@ -109,21 +104,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsOwner
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isOwner", EmitDefaultValue=false)]
         public bool? IsOwner { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Organization
         /// </summary>
-        /// <value></value>
         [DataMember(Name="organization", EmitDefaultValue=false)]
         public string Organization { get; set; }
         /// <summary>
@@ -133,9 +125,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shared", EmitDefaultValue=false)]
         public string Shared { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SigningGroup
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signingGroup", EmitDefaultValue=false)]
         public string SigningGroup { get; set; }
         /// <summary>
@@ -314,5 +305,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

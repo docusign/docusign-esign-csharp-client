@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SignatureType" /> class.
         /// </summary>
-        /// <param name="IsDefault">.</param>
-        /// <param name="Type">.</param>
+        /// <param name="IsDefault">IsDefault.</param>
+        /// <param name="Type">Type.</param>
         public SignatureType(string IsDefault = default(string), string Type = default(string))
         {
             this.IsDefault = IsDefault;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets IsDefault
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isDefault", EmitDefaultValue=false)]
         public string IsDefault { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Type
         /// </summary>
-        /// <value></value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,13 +39,13 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BrandResources" /> class.
         /// </summary>
         /// <param name="CreatedByUserInfo">CreatedByUserInfo.</param>
-        /// <param name="CreatedDate">.</param>
-        /// <param name="DataNotSavedNotInMaster">.</param>
+        /// <param name="CreatedDate">CreatedDate.</param>
+        /// <param name="DataNotSavedNotInMaster">DataNotSavedNotInMaster.</param>
         /// <param name="ModifiedByUserInfo">ModifiedByUserInfo.</param>
-        /// <param name="ModifiedDate">.</param>
-        /// <param name="ModifiedTemplates">.</param>
-        /// <param name="ResourcesContentType">.</param>
-        /// <param name="ResourcesContentUri">.</param>
+        /// <param name="ModifiedDate">ModifiedDate.</param>
+        /// <param name="ModifiedTemplates">ModifiedTemplates.</param>
+        /// <param name="ResourcesContentType">ResourcesContentType.</param>
+        /// <param name="ResourcesContentUri">ResourcesContentUri.</param>
         public BrandResources(UserInfo CreatedByUserInfo = default(UserInfo), string CreatedDate = default(string), List<string> DataNotSavedNotInMaster = default(List<string>), UserInfo ModifiedByUserInfo = default(UserInfo), string ModifiedDate = default(string), List<string> ModifiedTemplates = default(List<string>), string ResourcesContentType = default(string), string ResourcesContentUri = default(string))
         {
             this.CreatedByUserInfo = CreatedByUserInfo;
@@ -63,15 +64,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdByUserInfo", EmitDefaultValue=false)]
         public UserInfo CreatedByUserInfo { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CreatedDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
         public string CreatedDate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DataNotSavedNotInMaster
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dataNotSavedNotInMaster", EmitDefaultValue=false)]
         public List<string> DataNotSavedNotInMaster { get; set; }
         /// <summary>
@@ -80,27 +79,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="modifiedByUserInfo", EmitDefaultValue=false)]
         public UserInfo ModifiedByUserInfo { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ModifiedDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="modifiedDate", EmitDefaultValue=false)]
         public string ModifiedDate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ModifiedTemplates
         /// </summary>
-        /// <value></value>
         [DataMember(Name="modifiedTemplates", EmitDefaultValue=false)]
         public List<string> ModifiedTemplates { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ResourcesContentType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="resourcesContentType", EmitDefaultValue=false)]
         public string ResourcesContentType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ResourcesContentUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="resourcesContentUri", EmitDefaultValue=false)]
         public string ResourcesContentUri { get; set; }
         /// <summary>
@@ -233,5 +228,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

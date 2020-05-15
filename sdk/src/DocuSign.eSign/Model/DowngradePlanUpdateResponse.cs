@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,13 +38,13 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DowngradePlanUpdateResponse" /> class.
         /// </summary>
-        /// <param name="AccountPaymentMethod">.</param>
-        /// <param name="DowngradeEffectiveDate">.</param>
-        /// <param name="DowngradePaymentCycle">.</param>
-        /// <param name="DowngradePlanId">.</param>
-        /// <param name="DowngradePlanName">.</param>
-        /// <param name="DowngradeRequestStatus">.</param>
-        /// <param name="Message">.</param>
+        /// <param name="AccountPaymentMethod">AccountPaymentMethod.</param>
+        /// <param name="DowngradeEffectiveDate">DowngradeEffectiveDate.</param>
+        /// <param name="DowngradePaymentCycle">DowngradePaymentCycle.</param>
+        /// <param name="DowngradePlanId">DowngradePlanId.</param>
+        /// <param name="DowngradePlanName">DowngradePlanName.</param>
+        /// <param name="DowngradeRequestStatus">DowngradeRequestStatus.</param>
+        /// <param name="Message">Message.</param>
         public DowngradePlanUpdateResponse(string AccountPaymentMethod = default(string), string DowngradeEffectiveDate = default(string), string DowngradePaymentCycle = default(string), string DowngradePlanId = default(string), string DowngradePlanName = default(string), string DowngradeRequestStatus = default(string), string Message = default(string))
         {
             this.AccountPaymentMethod = AccountPaymentMethod;
@@ -56,45 +57,38 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AccountPaymentMethod
         /// </summary>
-        /// <value></value>
         [DataMember(Name="accountPaymentMethod", EmitDefaultValue=false)]
         public string AccountPaymentMethod { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DowngradeEffectiveDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="downgradeEffectiveDate", EmitDefaultValue=false)]
         public string DowngradeEffectiveDate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DowngradePaymentCycle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="downgradePaymentCycle", EmitDefaultValue=false)]
         public string DowngradePaymentCycle { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DowngradePlanId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="downgradePlanId", EmitDefaultValue=false)]
         public string DowngradePlanId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DowngradePlanName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="downgradePlanName", EmitDefaultValue=false)]
         public string DowngradePlanName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DowngradeRequestStatus
         /// </summary>
-        /// <value></value>
         [DataMember(Name="downgradeRequestStatus", EmitDefaultValue=false)]
         public string DowngradeRequestStatus { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Message
         /// </summary>
-        /// <value></value>
         [DataMember(Name="message", EmitDefaultValue=false)]
         public string Message { get; set; }
         /// <summary>
@@ -219,5 +213,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

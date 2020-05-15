@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -44,9 +45,9 @@ namespace DocuSign.eSign.Model
         /// <param name="DirectDebitProcessorInformation">DirectDebitProcessorInformation.</param>
         /// <param name="DistributorCode">The code that identifies the billing plan groups and plans for the new account..</param>
         /// <param name="DistributorPassword">The password for the distributorCode..</param>
-        /// <param name="EnvelopePartitionId">.</param>
+        /// <param name="EnvelopePartitionId">EnvelopePartitionId.</param>
         /// <param name="InitialUser">InitialUser.</param>
-        /// <param name="PaymentMethod">.</param>
+        /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="PlanInformation">PlanInformation.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
@@ -108,9 +109,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="distributorPassword", EmitDefaultValue=false)]
         public string DistributorPassword { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopePartitionId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopePartitionId", EmitDefaultValue=false)]
         public string EnvelopePartitionId { get; set; }
         /// <summary>
@@ -119,9 +119,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="initialUser", EmitDefaultValue=false)]
         public UserInformation InitialUser { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentMethod
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
         public string PaymentMethod { get; set; }
         /// <summary>
@@ -322,5 +321,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientSignatureProvider" /> class.
         /// </summary>
-        /// <param name="SealDocumentsWithTabsOnly">.</param>
-        /// <param name="SealName">.</param>
-        /// <param name="SignatureProviderName">.</param>
+        /// <param name="SealDocumentsWithTabsOnly">SealDocumentsWithTabsOnly.</param>
+        /// <param name="SealName">SealName.</param>
+        /// <param name="SignatureProviderName">SignatureProviderName.</param>
         /// <param name="SignatureProviderNameMetadata">SignatureProviderNameMetadata.</param>
         /// <param name="SignatureProviderOptions">SignatureProviderOptions.</param>
         public RecipientSignatureProvider(string SealDocumentsWithTabsOnly = default(string), string SealName = default(string), string SignatureProviderName = default(string), PropertyMetadata SignatureProviderNameMetadata = default(PropertyMetadata), RecipientSignatureProviderOptions SignatureProviderOptions = default(RecipientSignatureProviderOptions))
@@ -52,21 +53,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets SealDocumentsWithTabsOnly
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sealDocumentsWithTabsOnly", EmitDefaultValue=false)]
         public string SealDocumentsWithTabsOnly { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SealName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sealName", EmitDefaultValue=false)]
         public string SealName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureProviderName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureProviderName", EmitDefaultValue=false)]
         public string SignatureProviderName { get; set; }
         /// <summary>
@@ -185,5 +183,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

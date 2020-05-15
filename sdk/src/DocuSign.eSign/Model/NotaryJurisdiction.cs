@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,13 +38,13 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NotaryJurisdiction" /> class.
         /// </summary>
-        /// <param name="CommissionExpiration">.</param>
-        /// <param name="CommissionId">.</param>
-        /// <param name="County">.</param>
+        /// <param name="CommissionExpiration">CommissionExpiration.</param>
+        /// <param name="CommissionId">CommissionId.</param>
+        /// <param name="County">County.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="Jurisdiction">Jurisdiction.</param>
-        /// <param name="RegisteredName">.</param>
-        /// <param name="SealType">.</param>
+        /// <param name="RegisteredName">RegisteredName.</param>
+        /// <param name="SealType">SealType.</param>
         public NotaryJurisdiction(string CommissionExpiration = default(string), string CommissionId = default(string), string County = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), Jurisdiction Jurisdiction = default(Jurisdiction), string RegisteredName = default(string), string SealType = default(string))
         {
             this.CommissionExpiration = CommissionExpiration;
@@ -56,21 +57,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CommissionExpiration
         /// </summary>
-        /// <value></value>
         [DataMember(Name="commissionExpiration", EmitDefaultValue=false)]
         public string CommissionExpiration { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CommissionId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="commissionId", EmitDefaultValue=false)]
         public string CommissionId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets County
         /// </summary>
-        /// <value></value>
         [DataMember(Name="county", EmitDefaultValue=false)]
         public string County { get; set; }
         /// <summary>
@@ -84,15 +82,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="jurisdiction", EmitDefaultValue=false)]
         public Jurisdiction Jurisdiction { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RegisteredName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="registeredName", EmitDefaultValue=false)]
         public string RegisteredName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SealType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sealType", EmitDefaultValue=false)]
         public string SealType { get; set; }
         /// <summary>
@@ -217,5 +213,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

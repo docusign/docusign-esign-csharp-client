@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkSendingList" /> class.
         /// </summary>
-        /// <param name="BulkCopies">.</param>
-        /// <param name="ListId">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="BulkCopies">BulkCopies.</param>
+        /// <param name="ListId">ListId.</param>
+        /// <param name="Name">Name.</param>
         public BulkSendingList(List<BulkSendingCopy> BulkCopies = default(List<BulkSendingCopy>), string ListId = default(string), string Name = default(string))
         {
             this.BulkCopies = BulkCopies;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets BulkCopies
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bulkCopies", EmitDefaultValue=false)]
         public List<BulkSendingCopy> BulkCopies { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ListId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="listId", EmitDefaultValue=false)]
         public string ListId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

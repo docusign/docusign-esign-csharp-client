@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="LockDurationInSeconds">The number of seconds to lock the envelope for editing.  Must be greater than 0 seconds..</param>
         /// <param name="LockedByApp">A friendly name of the application used to lock the envelope.  Will be used in error messages to the user when lock conflicts occur..</param>
         /// <param name="LockType">The type of envelope lock.  Currently \&quot;edit\&quot; is the only supported type..</param>
-        /// <param name="TemplatePassword">.</param>
+        /// <param name="TemplatePassword">TemplatePassword.</param>
         /// <param name="UseScratchPad">Reserved for future use.  Indicates whether a scratchpad is used for editing information.  .</param>
         public LockRequest(string LockDurationInSeconds = default(string), string LockedByApp = default(string), string LockType = default(string), string TemplatePassword = default(string), string UseScratchPad = default(string))
         {
@@ -70,9 +71,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lockType", EmitDefaultValue=false)]
         public string LockType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TemplatePassword
         /// </summary>
-        /// <value></value>
         [DataMember(Name="templatePassword", EmitDefaultValue=false)]
         public string TemplatePassword { get; set; }
         /// <summary>
@@ -187,5 +187,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

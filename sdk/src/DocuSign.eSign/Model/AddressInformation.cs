@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -43,9 +44,10 @@ namespace DocuSign.eSign.Model
         /// <param name="Country">Specifies the country associated with the address..</param>
         /// <param name="Fax">A Fax number associated with the address if one is available..</param>
         /// <param name="Phone">A phone number associated with the address..</param>
-        /// <param name="PostalCode">.</param>
-        /// <param name="StateOrProvince">.</param>
-        public AddressInformation(string Address1 = default(string), string Address2 = default(string), string City = default(string), string Country = default(string), string Fax = default(string), string Phone = default(string), string PostalCode = default(string), string StateOrProvince = default(string))
+        /// <param name="PostalCode">PostalCode.</param>
+        /// <param name="StateOrProvince">StateOrProvince.</param>
+        /// <param name="ZipPlus4">ZipPlus4.</param>
+        public AddressInformation(string Address1 = default(string), string Address2 = default(string), string City = default(string), string Country = default(string), string Fax = default(string), string Phone = default(string), string PostalCode = default(string), string StateOrProvince = default(string), string ZipPlus4 = default(string))
         {
             this.Address1 = Address1;
             this.Address2 = Address2;
@@ -55,6 +57,7 @@ namespace DocuSign.eSign.Model
             this.Phone = Phone;
             this.PostalCode = PostalCode;
             this.StateOrProvince = StateOrProvince;
+            this.ZipPlus4 = ZipPlus4;
         }
         
         /// <summary>
@@ -94,17 +97,20 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="phone", EmitDefaultValue=false)]
         public string Phone { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PostalCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="postalCode", EmitDefaultValue=false)]
         public string PostalCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StateOrProvince
         /// </summary>
-        /// <value></value>
         [DataMember(Name="stateOrProvince", EmitDefaultValue=false)]
         public string StateOrProvince { get; set; }
+        /// <summary>
+        /// Gets or Sets ZipPlus4
+        /// </summary>
+        [DataMember(Name="zipPlus4", EmitDefaultValue=false)]
+        public string ZipPlus4 { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -121,6 +127,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  PostalCode: ").Append(PostalCode).Append("\n");
             sb.Append("  StateOrProvince: ").Append(StateOrProvince).Append("\n");
+            sb.Append("  ZipPlus4: ").Append(ZipPlus4).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -196,6 +203,11 @@ namespace DocuSign.eSign.Model
                     this.StateOrProvince == other.StateOrProvince ||
                     this.StateOrProvince != null &&
                     this.StateOrProvince.Equals(other.StateOrProvince)
+                ) && 
+                (
+                    this.ZipPlus4 == other.ZipPlus4 ||
+                    this.ZipPlus4 != null &&
+                    this.ZipPlus4.Equals(other.ZipPlus4)
                 );
         }
 
@@ -226,6 +238,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PostalCode.GetHashCode();
                 if (this.StateOrProvince != null)
                     hash = hash * 59 + this.StateOrProvince.GetHashCode();
+                if (this.ZipPlus4 != null)
+                    hash = hash * 59 + this.ZipPlus4.GetHashCode();
                 return hash;
             }
         }
@@ -235,5 +249,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

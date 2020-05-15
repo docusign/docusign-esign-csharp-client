@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,8 +41,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AgentNotification">When set to **true**, the user receives agent notification emails..</param>
         /// <param name="CarbonCopyNotification">When set to **true**, the user receives notifications of carbon copy deliveries..</param>
         /// <param name="CertifiedDeliveryNotification">When set to **true**, the user receives notifications of certified deliveries..</param>
-        /// <param name="CommentsOnlyPrivateAndMention">.</param>
-        /// <param name="CommentsReceiveAll">.</param>
+        /// <param name="CommentsOnlyPrivateAndMention">CommentsOnlyPrivateAndMention.</param>
+        /// <param name="CommentsReceiveAll">CommentsReceiveAll.</param>
         /// <param name="DocumentMarkupActivation">When set to **true**, the user receives notification that document markup has been activated..</param>
         /// <param name="EnvelopeActivation">When set to **true**, the user receives notification that the envelope has been activated..</param>
         /// <param name="EnvelopeComplete">When set to **true**, the user receives notification that the envelope has been completed..</param>
@@ -52,7 +53,7 @@ namespace DocuSign.eSign.Model
         /// <param name="OfflineSigningFailed">When set to **true**, the user receives notification if the offline signing failed..</param>
         /// <param name="PurgeDocuments">When set to **true**, the user receives notification of document purges..</param>
         /// <param name="ReassignedSigner">When set to **true**, the user receives notification that the envelope has been reassigned..</param>
-        /// <param name="WhenSigningGroupMember">.</param>
+        /// <param name="WhenSigningGroupMember">WhenSigningGroupMember.</param>
         public SignerEmailNotifications(string AgentNotification = default(string), string CarbonCopyNotification = default(string), string CertifiedDeliveryNotification = default(string), string CommentsOnlyPrivateAndMention = default(string), string CommentsReceiveAll = default(string), string DocumentMarkupActivation = default(string), string EnvelopeActivation = default(string), string EnvelopeComplete = default(string), string EnvelopeCorrected = default(string), string EnvelopeDeclined = default(string), string EnvelopeVoided = default(string), string FaxReceived = default(string), string OfflineSigningFailed = default(string), string PurgeDocuments = default(string), string ReassignedSigner = default(string), string WhenSigningGroupMember = default(string))
         {
             this.AgentNotification = AgentNotification;
@@ -92,15 +93,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="certifiedDeliveryNotification", EmitDefaultValue=false)]
         public string CertifiedDeliveryNotification { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CommentsOnlyPrivateAndMention
         /// </summary>
-        /// <value></value>
         [DataMember(Name="commentsOnlyPrivateAndMention", EmitDefaultValue=false)]
         public string CommentsOnlyPrivateAndMention { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CommentsReceiveAll
         /// </summary>
-        /// <value></value>
         [DataMember(Name="commentsReceiveAll", EmitDefaultValue=false)]
         public string CommentsReceiveAll { get; set; }
         /// <summary>
@@ -164,9 +163,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="reassignedSigner", EmitDefaultValue=false)]
         public string ReassignedSigner { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets WhenSigningGroupMember
         /// </summary>
-        /// <value></value>
         [DataMember(Name="whenSigningGroupMember", EmitDefaultValue=false)]
         public string WhenSigningGroupMember { get; set; }
         /// <summary>
@@ -363,5 +361,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

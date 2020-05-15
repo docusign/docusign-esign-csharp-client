@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="ExternalDocServiceErrorDetails" /> class.
         /// </summary>
         /// <param name="AuthenticationUrl">Reserved: TBD.</param>
-        /// <param name="ErrorCode">.</param>
-        /// <param name="Message">.</param>
+        /// <param name="ErrorCode">ErrorCode.</param>
+        /// <param name="Message">Message.</param>
         public ExternalDocServiceErrorDetails(string AuthenticationUrl = default(string), string ErrorCode = default(string), string Message = default(string))
         {
             this.AuthenticationUrl = AuthenticationUrl;
@@ -54,15 +55,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="authenticationUrl", EmitDefaultValue=false)]
         public string AuthenticationUrl { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ErrorCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="errorCode", EmitDefaultValue=false)]
         public string ErrorCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Message
         /// </summary>
-        /// <value></value>
         [DataMember(Name="message", EmitDefaultValue=false)]
         public string Message { get; set; }
         /// <summary>
@@ -155,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

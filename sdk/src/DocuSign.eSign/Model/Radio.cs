@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Radio" /> class.
         /// </summary>
-        /// <param name="AnchorAllowWhiteSpaceInCharacters">.</param>
+        /// <param name="AnchorAllowWhiteSpaceInCharacters">AnchorAllowWhiteSpaceInCharacters.</param>
         /// <param name="AnchorAllowWhiteSpaceInCharactersMetadata">AnchorAllowWhiteSpaceInCharactersMetadata.</param>
         /// <param name="AnchorCaseSensitive">When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**..</param>
         /// <param name="AnchorCaseSensitiveMetadata">AnchorCaseSensitiveMetadata.</param>
@@ -49,7 +50,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AnchorMatchWholeWordMetadata">AnchorMatchWholeWordMetadata.</param>
         /// <param name="AnchorString">Anchor text information for a radio button..</param>
         /// <param name="AnchorStringMetadata">AnchorStringMetadata.</param>
-        /// <param name="AnchorTabProcessorVersion">.</param>
+        /// <param name="AnchorTabProcessorVersion">AnchorTabProcessorVersion.</param>
         /// <param name="AnchorTabProcessorVersionMetadata">AnchorTabProcessorVersionMetadata.</param>
         /// <param name="AnchorUnits">Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches..</param>
         /// <param name="AnchorUnitsMetadata">AnchorUnitsMetadata.</param>
@@ -80,7 +81,7 @@ namespace DocuSign.eSign.Model
         /// <param name="StatusMetadata">StatusMetadata.</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
         /// <param name="TabIdMetadata">TabIdMetadata.</param>
-        /// <param name="TabOrder">.</param>
+        /// <param name="TabOrder">TabOrder.</param>
         /// <param name="TabOrderMetadata">TabOrderMetadata.</param>
         /// <param name="Underline">When set to **true**, the information in the tab is underlined..</param>
         /// <param name="UnderlineMetadata">UnderlineMetadata.</param>
@@ -148,9 +149,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AnchorAllowWhiteSpaceInCharacters
         /// </summary>
-        /// <value></value>
         [DataMember(Name="anchorAllowWhiteSpaceInCharacters", EmitDefaultValue=false)]
         public string AnchorAllowWhiteSpaceInCharacters { get; set; }
         /// <summary>
@@ -214,9 +214,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorStringMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorStringMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AnchorTabProcessorVersion
         /// </summary>
-        /// <value></value>
         [DataMember(Name="anchorTabProcessorVersion", EmitDefaultValue=false)]
         public string AnchorTabProcessorVersion { get; set; }
         /// <summary>
@@ -384,9 +383,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TabIdMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabOrder
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabOrder", EmitDefaultValue=false)]
         public string TabOrder { get; set; }
         /// <summary>
@@ -928,5 +926,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

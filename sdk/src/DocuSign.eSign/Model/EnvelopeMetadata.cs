@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeMetadata" /> class.
         /// </summary>
-        /// <param name="AllowAdvancedCorrect">.</param>
-        /// <param name="AllowCorrect">.</param>
-        /// <param name="EnableSignWithNotary">.</param>
+        /// <param name="AllowAdvancedCorrect">AllowAdvancedCorrect.</param>
+        /// <param name="AllowCorrect">AllowCorrect.</param>
+        /// <param name="EnableSignWithNotary">EnableSignWithNotary.</param>
         public EnvelopeMetadata(string AllowAdvancedCorrect = default(string), string AllowCorrect = default(string), string EnableSignWithNotary = default(string))
         {
             this.AllowAdvancedCorrect = AllowAdvancedCorrect;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AllowAdvancedCorrect
         /// </summary>
-        /// <value></value>
         [DataMember(Name="allowAdvancedCorrect", EmitDefaultValue=false)]
         public string AllowAdvancedCorrect { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AllowCorrect
         /// </summary>
-        /// <value></value>
         [DataMember(Name="allowCorrect", EmitDefaultValue=false)]
         public string AllowCorrect { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnableSignWithNotary
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enableSignWithNotary", EmitDefaultValue=false)]
         public string EnableSignWithNotary { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

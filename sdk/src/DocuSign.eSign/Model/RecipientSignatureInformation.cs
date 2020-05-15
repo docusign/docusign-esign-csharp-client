@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientSignatureInformation" /> class.
         /// </summary>
-        /// <param name="FontStyle">.</param>
-        /// <param name="SignatureInitials">.</param>
+        /// <param name="FontStyle">FontStyle.</param>
+        /// <param name="SignatureInitials">SignatureInitials.</param>
         /// <param name="SignatureName">Specifies the user signature name..</param>
         public RecipientSignatureInformation(string FontStyle = default(string), string SignatureInitials = default(string), string SignatureName = default(string))
         {
@@ -48,15 +49,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets FontStyle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fontStyle", EmitDefaultValue=false)]
         public string FontStyle { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureInitials
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureInitials", EmitDefaultValue=false)]
         public string SignatureInitials { get; set; }
         /// <summary>
@@ -155,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

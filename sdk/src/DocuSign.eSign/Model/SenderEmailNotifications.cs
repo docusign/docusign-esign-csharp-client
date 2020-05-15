@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,14 +39,14 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="SenderEmailNotifications" /> class.
         /// </summary>
         /// <param name="ChangedSigner">When set to **true**, the sender receives notification if the signer changes..</param>
-        /// <param name="CommentsOnlyPrivateAndMention">.</param>
-        /// <param name="CommentsReceiveAll">.</param>
+        /// <param name="CommentsOnlyPrivateAndMention">CommentsOnlyPrivateAndMention.</param>
+        /// <param name="CommentsReceiveAll">CommentsReceiveAll.</param>
         /// <param name="DeliveryFailed">When set to **true**, the sender receives notification if the delivery of the envelope fails..</param>
         /// <param name="EnvelopeComplete">When set to **true**, the user receives notification that the envelope has been completed..</param>
         /// <param name="OfflineSigningFailed">When set to **true**, the user receives notification if the offline signing failed..</param>
-        /// <param name="PurgeDocuments">.</param>
+        /// <param name="PurgeDocuments">PurgeDocuments.</param>
         /// <param name="RecipientViewed">When set to **true**, the sender receives notification that the recipient viewed the enveloper..</param>
-        /// <param name="SenderEnvelopeDeclined">.</param>
+        /// <param name="SenderEnvelopeDeclined">SenderEnvelopeDeclined.</param>
         /// <param name="WithdrawnConsent">When set to **true**, the user receives notification if consent is withdrawn..</param>
         public SenderEmailNotifications(string ChangedSigner = default(string), string CommentsOnlyPrivateAndMention = default(string), string CommentsReceiveAll = default(string), string DeliveryFailed = default(string), string EnvelopeComplete = default(string), string OfflineSigningFailed = default(string), string PurgeDocuments = default(string), string RecipientViewed = default(string), string SenderEnvelopeDeclined = default(string), string WithdrawnConsent = default(string))
         {
@@ -68,15 +69,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="changedSigner", EmitDefaultValue=false)]
         public string ChangedSigner { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CommentsOnlyPrivateAndMention
         /// </summary>
-        /// <value></value>
         [DataMember(Name="commentsOnlyPrivateAndMention", EmitDefaultValue=false)]
         public string CommentsOnlyPrivateAndMention { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CommentsReceiveAll
         /// </summary>
-        /// <value></value>
         [DataMember(Name="commentsReceiveAll", EmitDefaultValue=false)]
         public string CommentsReceiveAll { get; set; }
         /// <summary>
@@ -98,9 +97,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="offlineSigningFailed", EmitDefaultValue=false)]
         public string OfflineSigningFailed { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PurgeDocuments
         /// </summary>
-        /// <value></value>
         [DataMember(Name="purgeDocuments", EmitDefaultValue=false)]
         public string PurgeDocuments { get; set; }
         /// <summary>
@@ -110,9 +108,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientViewed", EmitDefaultValue=false)]
         public string RecipientViewed { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SenderEnvelopeDeclined
         /// </summary>
-        /// <value></value>
         [DataMember(Name="senderEnvelopeDeclined", EmitDefaultValue=false)]
         public string SenderEnvelopeDeclined { get; set; }
         /// <summary>
@@ -267,5 +264,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

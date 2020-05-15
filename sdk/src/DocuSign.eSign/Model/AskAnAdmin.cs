@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AskAnAdmin" /> class.
         /// </summary>
-        /// <param name="Email">.</param>
-        /// <param name="Message">.</param>
-        /// <param name="Name">.</param>
-        /// <param name="Phone">.</param>
+        /// <param name="Email">Email.</param>
+        /// <param name="Message">Message.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="Phone">Phone.</param>
         public AskAnAdmin(string Email = default(string), string Message = default(string), string Name = default(string), string Phone = default(string))
         {
             this.Email = Email;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Message
         /// </summary>
-        /// <value></value>
         [DataMember(Name="message", EmitDefaultValue=false)]
         public string Message { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Phone
         /// </summary>
-        /// <value></value>
         [DataMember(Name="phone", EmitDefaultValue=false)]
         public string Phone { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

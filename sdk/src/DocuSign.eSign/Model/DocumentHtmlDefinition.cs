@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,17 +38,17 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentHtmlDefinition" /> class.
         /// </summary>
-        /// <param name="DisplayAnchorPrefix">.</param>
-        /// <param name="DisplayAnchors">.</param>
-        /// <param name="DisplayOrder">.</param>
-        /// <param name="DisplayPageNumber">.</param>
-        /// <param name="DocumentGuid">.</param>
+        /// <param name="DisplayAnchorPrefix">DisplayAnchorPrefix.</param>
+        /// <param name="DisplayAnchors">DisplayAnchors.</param>
+        /// <param name="DisplayOrder">DisplayOrder.</param>
+        /// <param name="DisplayPageNumber">DisplayPageNumber.</param>
+        /// <param name="DocumentGuid">DocumentGuid.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
-        /// <param name="HeaderLabel">.</param>
-        /// <param name="MaxScreenWidth">.</param>
-        /// <param name="RemoveEmptyTags">.</param>
-        /// <param name="ShowMobileOptimizedToggle">.</param>
-        /// <param name="Source">.</param>
+        /// <param name="HeaderLabel">HeaderLabel.</param>
+        /// <param name="MaxScreenWidth">MaxScreenWidth.</param>
+        /// <param name="RemoveEmptyTags">RemoveEmptyTags.</param>
+        /// <param name="ShowMobileOptimizedToggle">ShowMobileOptimizedToggle.</param>
+        /// <param name="Source">Source.</param>
         public DocumentHtmlDefinition(string DisplayAnchorPrefix = default(string), List<DocumentHtmlDisplayAnchor> DisplayAnchors = default(List<DocumentHtmlDisplayAnchor>), string DisplayOrder = default(string), string DisplayPageNumber = default(string), string DocumentGuid = default(string), string DocumentId = default(string), string HeaderLabel = default(string), string MaxScreenWidth = default(string), string RemoveEmptyTags = default(string), string ShowMobileOptimizedToggle = default(string), string Source = default(string))
         {
             this.DisplayAnchorPrefix = DisplayAnchorPrefix;
@@ -64,33 +65,28 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayAnchorPrefix
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayAnchorPrefix", EmitDefaultValue=false)]
         public string DisplayAnchorPrefix { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayAnchors
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayAnchors", EmitDefaultValue=false)]
         public List<DocumentHtmlDisplayAnchor> DisplayAnchors { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayOrder
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayOrder", EmitDefaultValue=false)]
         public string DisplayOrder { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayPageNumber
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayPageNumber", EmitDefaultValue=false)]
         public string DisplayPageNumber { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentGuid
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentGuid", EmitDefaultValue=false)]
         public string DocumentGuid { get; set; }
         /// <summary>
@@ -100,33 +96,28 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentId", EmitDefaultValue=false)]
         public string DocumentId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets HeaderLabel
         /// </summary>
-        /// <value></value>
         [DataMember(Name="headerLabel", EmitDefaultValue=false)]
         public string HeaderLabel { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MaxScreenWidth
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maxScreenWidth", EmitDefaultValue=false)]
         public string MaxScreenWidth { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RemoveEmptyTags
         /// </summary>
-        /// <value></value>
         [DataMember(Name="removeEmptyTags", EmitDefaultValue=false)]
         public string RemoveEmptyTags { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ShowMobileOptimizedToggle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="showMobileOptimizedToggle", EmitDefaultValue=false)]
         public string ShowMobileOptimizedToggle { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Source
         /// </summary>
-        /// <value></value>
         [DataMember(Name="source", EmitDefaultValue=false)]
         public string Source { get; set; }
         /// <summary>
@@ -283,5 +274,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

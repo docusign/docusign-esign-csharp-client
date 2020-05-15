@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,15 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalDocumentSources" /> class.
         /// </summary>
-        /// <param name="BoxnetEnabled">.</param>
+        /// <param name="BoxnetEnabled">BoxnetEnabled.</param>
         /// <param name="BoxnetMetadata">BoxnetMetadata.</param>
-        /// <param name="DropboxEnabled">.</param>
+        /// <param name="DropboxEnabled">DropboxEnabled.</param>
         /// <param name="DropboxMetadata">DropboxMetadata.</param>
-        /// <param name="GoogleDriveEnabled">.</param>
+        /// <param name="GoogleDriveEnabled">GoogleDriveEnabled.</param>
         /// <param name="GoogleDriveMetadata">GoogleDriveMetadata.</param>
-        /// <param name="OneDriveEnabled">.</param>
+        /// <param name="OneDriveEnabled">OneDriveEnabled.</param>
         /// <param name="OneDriveMetadata">OneDriveMetadata.</param>
-        /// <param name="SalesforceEnabled">.</param>
+        /// <param name="SalesforceEnabled">SalesforceEnabled.</param>
         /// <param name="SalesforceMetadata">SalesforceMetadata.</param>
         public ExternalDocumentSources(string BoxnetEnabled = default(string), SettingsMetadata BoxnetMetadata = default(SettingsMetadata), string DropboxEnabled = default(string), SettingsMetadata DropboxMetadata = default(SettingsMetadata), string GoogleDriveEnabled = default(string), SettingsMetadata GoogleDriveMetadata = default(SettingsMetadata), string OneDriveEnabled = default(string), SettingsMetadata OneDriveMetadata = default(SettingsMetadata), string SalesforceEnabled = default(string), SettingsMetadata SalesforceMetadata = default(SettingsMetadata))
         {
@@ -62,9 +63,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets BoxnetEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="boxnetEnabled", EmitDefaultValue=false)]
         public string BoxnetEnabled { get; set; }
         /// <summary>
@@ -73,9 +73,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="boxnetMetadata", EmitDefaultValue=false)]
         public SettingsMetadata BoxnetMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DropboxEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dropboxEnabled", EmitDefaultValue=false)]
         public string DropboxEnabled { get; set; }
         /// <summary>
@@ -84,9 +83,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dropboxMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DropboxMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets GoogleDriveEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="googleDriveEnabled", EmitDefaultValue=false)]
         public string GoogleDriveEnabled { get; set; }
         /// <summary>
@@ -95,9 +93,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="googleDriveMetadata", EmitDefaultValue=false)]
         public SettingsMetadata GoogleDriveMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OneDriveEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="oneDriveEnabled", EmitDefaultValue=false)]
         public string OneDriveEnabled { get; set; }
         /// <summary>
@@ -106,9 +103,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="oneDriveMetadata", EmitDefaultValue=false)]
         public SettingsMetadata OneDriveMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SalesforceEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="salesforceEnabled", EmitDefaultValue=false)]
         public string SalesforceEnabled { get; set; }
         /// <summary>
@@ -262,5 +258,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,15 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectSalesforceObject" /> class.
         /// </summary>
-        /// <param name="Active">.</param>
-        /// <param name="Description">.</param>
-        /// <param name="Id">.</param>
-        /// <param name="Insert">.</param>
-        /// <param name="OnCompleteOnly">.</param>
-        /// <param name="SelectFields">.</param>
-        /// <param name="SfObject">.</param>
-        /// <param name="SfObjectName">.</param>
-        /// <param name="UpdateFields">.</param>
+        /// <param name="Active">Active.</param>
+        /// <param name="Description">Description.</param>
+        /// <param name="Id">Id.</param>
+        /// <param name="Insert">Insert.</param>
+        /// <param name="OnCompleteOnly">OnCompleteOnly.</param>
+        /// <param name="SelectFields">SelectFields.</param>
+        /// <param name="SfObject">SfObject.</param>
+        /// <param name="SfObjectName">SfObjectName.</param>
+        /// <param name="UpdateFields">UpdateFields.</param>
         public ConnectSalesforceObject(string Active = default(string), string Description = default(string), string Id = default(string), string Insert = default(string), string OnCompleteOnly = default(string), List<ConnectSalesforceField> SelectFields = default(List<ConnectSalesforceField>), string SfObject = default(string), string SfObjectName = default(string), List<ConnectSalesforceField> UpdateFields = default(List<ConnectSalesforceField>))
         {
             this.Active = Active;
@@ -60,57 +61,48 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Active
         /// </summary>
-        /// <value></value>
         [DataMember(Name="active", EmitDefaultValue=false)]
         public string Active { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Description
         /// </summary>
-        /// <value></value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Id
         /// </summary>
-        /// <value></value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Insert
         /// </summary>
-        /// <value></value>
         [DataMember(Name="insert", EmitDefaultValue=false)]
         public string Insert { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OnCompleteOnly
         /// </summary>
-        /// <value></value>
         [DataMember(Name="onCompleteOnly", EmitDefaultValue=false)]
         public string OnCompleteOnly { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SelectFields
         /// </summary>
-        /// <value></value>
         [DataMember(Name="selectFields", EmitDefaultValue=false)]
         public List<ConnectSalesforceField> SelectFields { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SfObject
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sfObject", EmitDefaultValue=false)]
         public string SfObject { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SfObjectName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sfObjectName", EmitDefaultValue=false)]
         public string SfObjectName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UpdateFields
         /// </summary>
-        /// <value></value>
         [DataMember(Name="updateFields", EmitDefaultValue=false)]
         public List<ConnectSalesforceField> UpdateFields { get; set; }
         /// <summary>
@@ -251,5 +243,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

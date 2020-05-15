@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -42,7 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusDateTime">The DateTime that the envelope changed status (i.e. was created or sent.).</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Uri">Uri.</param>
         public EnvelopeSummary(BulkEnvelopeStatus BulkEnvelopeStatus = default(BulkEnvelopeStatus), string EnvelopeId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Status = default(string), string StatusDateTime = default(string), string Uri = default(string))
         {
             this.BulkEnvelopeStatus = BulkEnvelopeStatus;
@@ -82,9 +83,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="statusDateTime", EmitDefaultValue=false)]
         public string StatusDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -201,5 +201,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

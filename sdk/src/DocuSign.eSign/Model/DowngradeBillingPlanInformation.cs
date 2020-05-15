@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DowngradeBillingPlanInformation" /> class.
         /// </summary>
-        /// <param name="DowngradeEventType">.</param>
+        /// <param name="DowngradeEventType">DowngradeEventType.</param>
         /// <param name="PlanInformation">PlanInformation.</param>
         public DowngradeBillingPlanInformation(string DowngradeEventType = default(string), PlanInformation PlanInformation = default(PlanInformation))
         {
@@ -46,9 +47,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DowngradeEventType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="downgradeEventType", EmitDefaultValue=false)]
         public string DowngradeEventType { get; set; }
         /// <summary>
@@ -138,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

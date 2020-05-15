@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Address">Address.</param>
         /// <param name="CardNumber">The number on the credit card..</param>
         /// <param name="CardType">The credit card type. Valid values are: visa, mastercard, or amex..</param>
-        /// <param name="CvNumber">.</param>
+        /// <param name="CvNumber">CvNumber.</param>
         /// <param name="ExpirationMonth">The month that the credit card expires (1-12)..</param>
         /// <param name="ExpirationYear">The year 4 digit year in which the credit card expires..</param>
         /// <param name="NameOnCard">The exact name printed on the credit card..</param>
@@ -73,9 +74,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="cardType", EmitDefaultValue=false)]
         public string CardType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CvNumber
         /// </summary>
-        /// <value></value>
         [DataMember(Name="cvNumber", EmitDefaultValue=false)]
         public string CvNumber { get; set; }
         /// <summary>
@@ -218,5 +218,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AdminMessage" /> class.
         /// </summary>
-        /// <param name="BaseMessage">.</param>
-        /// <param name="MoreInformation">.</param>
+        /// <param name="BaseMessage">BaseMessage.</param>
+        /// <param name="MoreInformation">MoreInformation.</param>
         public AdminMessage(string BaseMessage = default(string), string MoreInformation = default(string))
         {
             this.BaseMessage = BaseMessage;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets BaseMessage
         /// </summary>
-        /// <value></value>
         [DataMember(Name="baseMessage", EmitDefaultValue=false)]
         public string BaseMessage { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MoreInformation
         /// </summary>
-        /// <value></value>
         [DataMember(Name="moreInformation", EmitDefaultValue=false)]
         public string MoreInformation { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

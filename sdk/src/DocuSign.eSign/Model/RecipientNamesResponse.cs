@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="RecipientNamesResponse" /> class.
         /// </summary>
         /// <param name="MultipleUsers">Indicates whether email address is used by more than one user..</param>
-        /// <param name="RecipientNames">.</param>
-        /// <param name="ReservedRecipientEmail">.</param>
+        /// <param name="RecipientNames">RecipientNames.</param>
+        /// <param name="ReservedRecipientEmail">ReservedRecipientEmail.</param>
         public RecipientNamesResponse(string MultipleUsers = default(string), List<string> RecipientNames = default(List<string>), string ReservedRecipientEmail = default(string))
         {
             this.MultipleUsers = MultipleUsers;
@@ -54,15 +55,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="multipleUsers", EmitDefaultValue=false)]
         public string MultipleUsers { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientNames
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientNames", EmitDefaultValue=false)]
         public List<string> RecipientNames { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ReservedRecipientEmail
         /// </summary>
-        /// <value></value>
         [DataMember(Name="reservedRecipientEmail", EmitDefaultValue=false)]
         public string ReservedRecipientEmail { get; set; }
         /// <summary>
@@ -155,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Province" /> class.
         /// </summary>
-        /// <param name="IsoCode">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="IsoCode">IsoCode.</param>
+        /// <param name="Name">Name.</param>
         public Province(string IsoCode = default(string), string Name = default(string))
         {
             this.IsoCode = IsoCode;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets IsoCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isoCode", EmitDefaultValue=false)]
         public string IsoCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

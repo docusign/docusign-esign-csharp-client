@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopePurgeConfiguration" /> class.
         /// </summary>
-        /// <param name="PurgeEnvelopes">.</param>
-        /// <param name="RedactPII">.</param>
-        /// <param name="RemoveTabsAndEnvelopeAttachments">.</param>
-        /// <param name="RetentionDays">.</param>
+        /// <param name="PurgeEnvelopes">PurgeEnvelopes.</param>
+        /// <param name="RedactPII">RedactPII.</param>
+        /// <param name="RemoveTabsAndEnvelopeAttachments">RemoveTabsAndEnvelopeAttachments.</param>
+        /// <param name="RetentionDays">RetentionDays.</param>
         public EnvelopePurgeConfiguration(string PurgeEnvelopes = default(string), string RedactPII = default(string), string RemoveTabsAndEnvelopeAttachments = default(string), string RetentionDays = default(string))
         {
             this.PurgeEnvelopes = PurgeEnvelopes;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets PurgeEnvelopes
         /// </summary>
-        /// <value></value>
         [DataMember(Name="purgeEnvelopes", EmitDefaultValue=false)]
         public string PurgeEnvelopes { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RedactPII
         /// </summary>
-        /// <value></value>
         [DataMember(Name="redactPII", EmitDefaultValue=false)]
         public string RedactPII { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RemoveTabsAndEnvelopeAttachments
         /// </summary>
-        /// <value></value>
         [DataMember(Name="removeTabsAndEnvelopeAttachments", EmitDefaultValue=false)]
         public string RemoveTabsAndEnvelopeAttachments { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RetentionDays
         /// </summary>
-        /// <value></value>
         [DataMember(Name="retentionDays", EmitDefaultValue=false)]
         public string RetentionDays { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

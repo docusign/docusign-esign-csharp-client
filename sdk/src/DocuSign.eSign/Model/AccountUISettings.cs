@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,27 +40,27 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AdminMessage">AdminMessage.</param>
         /// <param name="AskAnAdmin">AskAnAdmin.</param>
-        /// <param name="EnableAdminMessage">.</param>
+        /// <param name="EnableAdminMessage">EnableAdminMessage.</param>
         /// <param name="EnableAdminMessageMetadata">EnableAdminMessageMetadata.</param>
-        /// <param name="EnableEasySignCanUseMultiTemplateApply">.</param>
+        /// <param name="EnableEasySignCanUseMultiTemplateApply">EnableEasySignCanUseMultiTemplateApply.</param>
         /// <param name="EnableEasySignCanUseMultiTemplateApplyMetadata">EnableEasySignCanUseMultiTemplateApplyMetadata.</param>
-        /// <param name="EnableEasySignTemplateUpload">.</param>
+        /// <param name="EnableEasySignTemplateUpload">EnableEasySignTemplateUpload.</param>
         /// <param name="EnableEasySignTemplateUploadMetadata">EnableEasySignTemplateUploadMetadata.</param>
-        /// <param name="EnableEnvelopeCopyWithData">.</param>
+        /// <param name="EnableEnvelopeCopyWithData">EnableEnvelopeCopyWithData.</param>
         /// <param name="EnableEnvelopeCopyWithDataMetadata">EnableEnvelopeCopyWithDataMetadata.</param>
-        /// <param name="HideSendAnEnvelope">.</param>
+        /// <param name="HideSendAnEnvelope">HideSendAnEnvelope.</param>
         /// <param name="HideSendAnEnvelopeMetadata">HideSendAnEnvelopeMetadata.</param>
-        /// <param name="HideUseATemplate">.</param>
-        /// <param name="HideUseATemplateInPrepare">.</param>
+        /// <param name="HideUseATemplate">HideUseATemplate.</param>
+        /// <param name="HideUseATemplateInPrepare">HideUseATemplateInPrepare.</param>
         /// <param name="HideUseATemplateInPrepareMetadata">HideUseATemplateInPrepareMetadata.</param>
         /// <param name="HideUseATemplateMetadata">HideUseATemplateMetadata.</param>
-        /// <param name="OrderBasedRecipientIdGeneration">.</param>
+        /// <param name="OrderBasedRecipientIdGeneration">OrderBasedRecipientIdGeneration.</param>
         /// <param name="OrderBasedRecipientIdGenerationMetadata">OrderBasedRecipientIdGenerationMetadata.</param>
-        /// <param name="RemoveEnvelopeForwarding">.</param>
+        /// <param name="RemoveEnvelopeForwarding">RemoveEnvelopeForwarding.</param>
         /// <param name="RemoveEnvelopeForwardingMetadata">RemoveEnvelopeForwardingMetadata.</param>
-        /// <param name="ShouldRedactAccessCode">.</param>
+        /// <param name="ShouldRedactAccessCode">ShouldRedactAccessCode.</param>
         /// <param name="ShouldRedactAccessCodeMetadata">ShouldRedactAccessCodeMetadata.</param>
-        /// <param name="UploadNewImageToSignOrInitial">.</param>
+        /// <param name="UploadNewImageToSignOrInitial">UploadNewImageToSignOrInitial.</param>
         /// <param name="UploadNewImageToSignOrInitialMetadata">UploadNewImageToSignOrInitialMetadata.</param>
         public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string EnableEnvelopeCopyWithData = default(string), SettingsMetadata EnableEnvelopeCopyWithDataMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
         {
@@ -100,9 +101,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="askAnAdmin", EmitDefaultValue=false)]
         public AskAnAdmin AskAnAdmin { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnableAdminMessage
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enableAdminMessage", EmitDefaultValue=false)]
         public string EnableAdminMessage { get; set; }
         /// <summary>
@@ -111,9 +111,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableAdminMessageMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableAdminMessageMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnableEasySignCanUseMultiTemplateApply
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enableEasySignCanUseMultiTemplateApply", EmitDefaultValue=false)]
         public string EnableEasySignCanUseMultiTemplateApply { get; set; }
         /// <summary>
@@ -122,9 +121,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableEasySignCanUseMultiTemplateApplyMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnableEasySignTemplateUpload
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enableEasySignTemplateUpload", EmitDefaultValue=false)]
         public string EnableEasySignTemplateUpload { get; set; }
         /// <summary>
@@ -133,9 +131,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableEasySignTemplateUploadMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableEasySignTemplateUploadMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnableEnvelopeCopyWithData
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enableEnvelopeCopyWithData", EmitDefaultValue=false)]
         public string EnableEnvelopeCopyWithData { get; set; }
         /// <summary>
@@ -144,9 +141,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableEnvelopeCopyWithDataMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableEnvelopeCopyWithDataMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets HideSendAnEnvelope
         /// </summary>
-        /// <value></value>
         [DataMember(Name="hideSendAnEnvelope", EmitDefaultValue=false)]
         public string HideSendAnEnvelope { get; set; }
         /// <summary>
@@ -155,15 +151,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="hideSendAnEnvelopeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata HideSendAnEnvelopeMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets HideUseATemplate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="hideUseATemplate", EmitDefaultValue=false)]
         public string HideUseATemplate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets HideUseATemplateInPrepare
         /// </summary>
-        /// <value></value>
         [DataMember(Name="hideUseATemplateInPrepare", EmitDefaultValue=false)]
         public string HideUseATemplateInPrepare { get; set; }
         /// <summary>
@@ -177,9 +171,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="hideUseATemplateMetadata", EmitDefaultValue=false)]
         public SettingsMetadata HideUseATemplateMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets OrderBasedRecipientIdGeneration
         /// </summary>
-        /// <value></value>
         [DataMember(Name="orderBasedRecipientIdGeneration", EmitDefaultValue=false)]
         public string OrderBasedRecipientIdGeneration { get; set; }
         /// <summary>
@@ -188,9 +181,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="orderBasedRecipientIdGenerationMetadata", EmitDefaultValue=false)]
         public SettingsMetadata OrderBasedRecipientIdGenerationMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RemoveEnvelopeForwarding
         /// </summary>
-        /// <value></value>
         [DataMember(Name="removeEnvelopeForwarding", EmitDefaultValue=false)]
         public string RemoveEnvelopeForwarding { get; set; }
         /// <summary>
@@ -199,9 +191,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="removeEnvelopeForwardingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata RemoveEnvelopeForwardingMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ShouldRedactAccessCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="shouldRedactAccessCode", EmitDefaultValue=false)]
         public string ShouldRedactAccessCode { get; set; }
         /// <summary>
@@ -210,9 +201,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shouldRedactAccessCodeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ShouldRedactAccessCodeMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UploadNewImageToSignOrInitial
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uploadNewImageToSignOrInitial", EmitDefaultValue=false)]
         public string UploadNewImageToSignOrInitial { get; set; }
         /// <summary>
@@ -478,5 +468,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

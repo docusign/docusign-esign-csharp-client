@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="IdCheckConfiguration" /> class.
         /// </summary>
-        /// <param name="AuthSteps">.</param>
-        /// <param name="IsDefault">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="AuthSteps">AuthSteps.</param>
+        /// <param name="IsDefault">IsDefault.</param>
+        /// <param name="Name">Name.</param>
         public IdCheckConfiguration(List<IdCheckSecurityStep> AuthSteps = default(List<IdCheckSecurityStep>), string IsDefault = default(string), string Name = default(string))
         {
             this.AuthSteps = AuthSteps;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AuthSteps
         /// </summary>
-        /// <value></value>
         [DataMember(Name="authSteps", EmitDefaultValue=false)]
         public List<IdCheckSecurityStep> AuthSteps { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsDefault
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isDefault", EmitDefaultValue=false)]
         public string IsDefault { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

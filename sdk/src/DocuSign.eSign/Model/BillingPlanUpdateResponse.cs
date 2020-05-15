@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,14 +38,14 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingPlanUpdateResponse" /> class.
         /// </summary>
-        /// <param name="AccountPaymentMethod">.</param>
+        /// <param name="AccountPaymentMethod">AccountPaymentMethod.</param>
         /// <param name="BillingPlanPreview">BillingPlanPreview.</param>
         /// <param name="CurrencyCode">Specifies the ISO currency code for the account..</param>
         /// <param name="IncludedSeats">The number of seats (users) included..</param>
-        /// <param name="PaymentCycle">.</param>
-        /// <param name="PaymentMethod">.</param>
-        /// <param name="PlanId">.</param>
-        /// <param name="PlanName">.</param>
+        /// <param name="PaymentCycle">PaymentCycle.</param>
+        /// <param name="PaymentMethod">PaymentMethod.</param>
+        /// <param name="PlanId">PlanId.</param>
+        /// <param name="PlanName">PlanName.</param>
         public BillingPlanUpdateResponse(string AccountPaymentMethod = default(string), BillingPlanPreview BillingPlanPreview = default(BillingPlanPreview), string CurrencyCode = default(string), string IncludedSeats = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PlanId = default(string), string PlanName = default(string))
         {
             this.AccountPaymentMethod = AccountPaymentMethod;
@@ -58,9 +59,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AccountPaymentMethod
         /// </summary>
-        /// <value></value>
         [DataMember(Name="accountPaymentMethod", EmitDefaultValue=false)]
         public string AccountPaymentMethod { get; set; }
         /// <summary>
@@ -81,27 +81,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includedSeats", EmitDefaultValue=false)]
         public string IncludedSeats { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentCycle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentCycle", EmitDefaultValue=false)]
         public string PaymentCycle { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentMethod
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
         public string PaymentMethod { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PlanId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="planId", EmitDefaultValue=false)]
         public string PlanId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PlanName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="planName", EmitDefaultValue=false)]
         public string PlanName { get; set; }
         /// <summary>
@@ -234,5 +230,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

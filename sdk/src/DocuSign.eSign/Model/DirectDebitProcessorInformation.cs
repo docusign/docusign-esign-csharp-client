@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,18 +38,18 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DirectDebitProcessorInformation" /> class.
         /// </summary>
-        /// <param name="BankBranchCode">.</param>
-        /// <param name="BankCheckDigit">.</param>
-        /// <param name="BankCode">.</param>
-        /// <param name="BankName">.</param>
-        /// <param name="BankTransferAccountName">.</param>
-        /// <param name="BankTransferAccountNumber">.</param>
-        /// <param name="BankTransferType">.</param>
+        /// <param name="BankBranchCode">BankBranchCode.</param>
+        /// <param name="BankCheckDigit">BankCheckDigit.</param>
+        /// <param name="BankCode">BankCode.</param>
+        /// <param name="BankName">BankName.</param>
+        /// <param name="BankTransferAccountName">BankTransferAccountName.</param>
+        /// <param name="BankTransferAccountNumber">BankTransferAccountNumber.</param>
+        /// <param name="BankTransferType">BankTransferType.</param>
         /// <param name="Country">Specifies the country associated with the address..</param>
-        /// <param name="Email">.</param>
+        /// <param name="Email">Email.</param>
         /// <param name="FirstName">The user&#39;s first name.  Maximum Length: 50 characters..</param>
-        /// <param name="IBAN">.</param>
-        /// <param name="LastName">.</param>
+        /// <param name="IBAN">IBAN.</param>
+        /// <param name="LastName">LastName.</param>
         public DirectDebitProcessorInformation(string BankBranchCode = default(string), string BankCheckDigit = default(string), string BankCode = default(string), string BankName = default(string), string BankTransferAccountName = default(string), string BankTransferAccountNumber = default(string), string BankTransferType = default(string), string Country = default(string), string Email = default(string), string FirstName = default(string), string IBAN = default(string), string LastName = default(string))
         {
             this.BankBranchCode = BankBranchCode;
@@ -66,45 +67,38 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets BankBranchCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bankBranchCode", EmitDefaultValue=false)]
         public string BankBranchCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets BankCheckDigit
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bankCheckDigit", EmitDefaultValue=false)]
         public string BankCheckDigit { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets BankCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bankCode", EmitDefaultValue=false)]
         public string BankCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets BankName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bankName", EmitDefaultValue=false)]
         public string BankName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets BankTransferAccountName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bankTransferAccountName", EmitDefaultValue=false)]
         public string BankTransferAccountName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets BankTransferAccountNumber
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bankTransferAccountNumber", EmitDefaultValue=false)]
         public string BankTransferAccountNumber { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets BankTransferType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="bankTransferType", EmitDefaultValue=false)]
         public string BankTransferType { get; set; }
         /// <summary>
@@ -114,9 +108,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="country", EmitDefaultValue=false)]
         public string Country { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
@@ -126,15 +119,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="firstName", EmitDefaultValue=false)]
         public string FirstName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IBAN
         /// </summary>
-        /// <value></value>
         [DataMember(Name="iBAN", EmitDefaultValue=false)]
         public string IBAN { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LastName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lastName", EmitDefaultValue=false)]
         public string LastName { get; set; }
         /// <summary>
@@ -299,5 +290,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

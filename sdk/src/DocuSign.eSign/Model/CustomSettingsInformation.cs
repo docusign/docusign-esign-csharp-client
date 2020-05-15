@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomSettingsInformation" /> class.
         /// </summary>
-        /// <param name="CustomSettings">.</param>
+        /// <param name="CustomSettings">CustomSettings.</param>
         public CustomSettingsInformation(List<NameValue> CustomSettings = default(List<NameValue>))
         {
             this.CustomSettings = CustomSettings;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CustomSettings
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customSettings", EmitDefaultValue=false)]
         public List<NameValue> CustomSettings { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

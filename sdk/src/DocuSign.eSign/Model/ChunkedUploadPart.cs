@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChunkedUploadPart" /> class.
         /// </summary>
-        /// <param name="Sequence">.</param>
-        /// <param name="Size">.</param>
+        /// <param name="Sequence">Sequence.</param>
+        /// <param name="Size">Size.</param>
         public ChunkedUploadPart(string Sequence = default(string), string Size = default(string))
         {
             this.Sequence = Sequence;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Sequence
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sequence", EmitDefaultValue=false)]
         public string Sequence { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Size
         /// </summary>
-        /// <value></value>
         [DataMember(Name="size", EmitDefaultValue=false)]
         public string Size { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

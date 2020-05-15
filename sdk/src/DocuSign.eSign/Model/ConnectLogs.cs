@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,8 +40,8 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Failures">An array of containing failure information from the Connect failure log..</param>
         /// <param name="Logs">A complex type containing Connect log information. It is divided into two sections, one for regular logs and one for Connect failures. .</param>
-        /// <param name="TotalRecords">.</param>
-        /// <param name="Type">.</param>
+        /// <param name="TotalRecords">TotalRecords.</param>
+        /// <param name="Type">Type.</param>
         public ConnectLogs(List<ConnectLog> Failures = default(List<ConnectLog>), List<ConnectLog> Logs = default(List<ConnectLog>), string TotalRecords = default(string), string Type = default(string))
         {
             this.Failures = Failures;
@@ -62,15 +63,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="logs", EmitDefaultValue=false)]
         public List<ConnectLog> Logs { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TotalRecords
         /// </summary>
-        /// <value></value>
         [DataMember(Name="totalRecords", EmitDefaultValue=false)]
         public string TotalRecords { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Type
         /// </summary>
-        /// <value></value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
@@ -171,5 +170,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

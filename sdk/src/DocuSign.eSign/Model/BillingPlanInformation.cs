@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -41,20 +42,20 @@ namespace DocuSign.eSign.Model
         /// <param name="BillingAddress">BillingAddress.</param>
         /// <param name="CreditCardInformation">CreditCardInformation.</param>
         /// <param name="DirectDebitProcessorInformation">DirectDebitProcessorInformation.</param>
-        /// <param name="DowngradeReason">.</param>
-        /// <param name="EnableSupport">.</param>
+        /// <param name="DowngradeReason">DowngradeReason.</param>
+        /// <param name="EnableSupport">EnableSupport.</param>
         /// <param name="IncludedSeats">The number of seats (users) included..</param>
         /// <param name="IncrementalSeats">Reserved: TBD.</param>
-        /// <param name="PaymentMethod">.</param>
+        /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="PlanInformation">PlanInformation.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
-        /// <param name="RenewalStatus">.</param>
-        /// <param name="SaleDiscountAmount">.</param>
-        /// <param name="SaleDiscountFixedAmount">.</param>
-        /// <param name="SaleDiscountPercent">.</param>
-        /// <param name="SaleDiscountPeriods">.</param>
-        /// <param name="SaleDiscountSeatPriceOverride">.</param>
+        /// <param name="RenewalStatus">RenewalStatus.</param>
+        /// <param name="SaleDiscountAmount">SaleDiscountAmount.</param>
+        /// <param name="SaleDiscountFixedAmount">SaleDiscountFixedAmount.</param>
+        /// <param name="SaleDiscountPercent">SaleDiscountPercent.</param>
+        /// <param name="SaleDiscountPeriods">SaleDiscountPeriods.</param>
+        /// <param name="SaleDiscountSeatPriceOverride">SaleDiscountSeatPriceOverride.</param>
         public BillingPlanInformation(AppStoreReceipt AppStoreReceipt = default(AppStoreReceipt), AccountAddress BillingAddress = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DowngradeReason = default(string), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), string RenewalStatus = default(string), string SaleDiscountAmount = default(string), string SaleDiscountFixedAmount = default(string), string SaleDiscountPercent = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountSeatPriceOverride = default(string))
         {
             this.AppStoreReceipt = AppStoreReceipt;
@@ -98,15 +99,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="directDebitProcessorInformation", EmitDefaultValue=false)]
         public DirectDebitProcessorInformation DirectDebitProcessorInformation { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DowngradeReason
         /// </summary>
-        /// <value></value>
         [DataMember(Name="downgradeReason", EmitDefaultValue=false)]
         public string DowngradeReason { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnableSupport
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enableSupport", EmitDefaultValue=false)]
         public string EnableSupport { get; set; }
         /// <summary>
@@ -122,9 +121,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="incrementalSeats", EmitDefaultValue=false)]
         public string IncrementalSeats { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentMethod
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
         public string PaymentMethod { get; set; }
         /// <summary>
@@ -143,39 +141,33 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="referralInformation", EmitDefaultValue=false)]
         public ReferralInformation ReferralInformation { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RenewalStatus
         /// </summary>
-        /// <value></value>
         [DataMember(Name="renewalStatus", EmitDefaultValue=false)]
         public string RenewalStatus { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SaleDiscountAmount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="saleDiscountAmount", EmitDefaultValue=false)]
         public string SaleDiscountAmount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SaleDiscountFixedAmount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="saleDiscountFixedAmount", EmitDefaultValue=false)]
         public string SaleDiscountFixedAmount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SaleDiscountPercent
         /// </summary>
-        /// <value></value>
         [DataMember(Name="saleDiscountPercent", EmitDefaultValue=false)]
         public string SaleDiscountPercent { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SaleDiscountPeriods
         /// </summary>
-        /// <value></value>
         [DataMember(Name="saleDiscountPeriods", EmitDefaultValue=false)]
         public string SaleDiscountPeriods { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SaleDiscountSeatPriceOverride
         /// </summary>
-        /// <value></value>
         [DataMember(Name="saleDiscountSeatPriceOverride", EmitDefaultValue=false)]
         public string SaleDiscountSeatPriceOverride { get; set; }
         /// <summary>
@@ -388,5 +380,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

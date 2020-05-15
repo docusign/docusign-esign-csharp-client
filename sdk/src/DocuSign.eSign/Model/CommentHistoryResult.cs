@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CommentHistoryResult" /> class.
         /// </summary>
-        /// <param name="Comments">.</param>
-        /// <param name="Count">.</param>
-        /// <param name="EndTimetoken">.</param>
-        /// <param name="StartTimetoken">.</param>
+        /// <param name="Comments">Comments.</param>
+        /// <param name="Count">Count.</param>
+        /// <param name="EndTimetoken">EndTimetoken.</param>
+        /// <param name="StartTimetoken">StartTimetoken.</param>
         public CommentHistoryResult(List<Comment> Comments = default(List<Comment>), int? Count = default(int?), string EndTimetoken = default(string), string StartTimetoken = default(string))
         {
             this.Comments = Comments;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Comments
         /// </summary>
-        /// <value></value>
         [DataMember(Name="comments", EmitDefaultValue=false)]
         public List<Comment> Comments { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Count
         /// </summary>
-        /// <value></value>
         [DataMember(Name="count", EmitDefaultValue=false)]
         public int? Count { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EndTimetoken
         /// </summary>
-        /// <value></value>
         [DataMember(Name="endTimetoken", EmitDefaultValue=false)]
         public string EndTimetoken { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StartTimetoken
         /// </summary>
-        /// <value></value>
         [DataMember(Name="startTimetoken", EmitDefaultValue=false)]
         public string StartTimetoken { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

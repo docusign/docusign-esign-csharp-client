@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountPasswordExpirePasswordDays" /> class.
         /// </summary>
-        /// <param name="MaximumDays">.</param>
-        /// <param name="MinimumDays">.</param>
+        /// <param name="MaximumDays">MaximumDays.</param>
+        /// <param name="MinimumDays">MinimumDays.</param>
         public AccountPasswordExpirePasswordDays(string MaximumDays = default(string), string MinimumDays = default(string))
         {
             this.MaximumDays = MaximumDays;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets MaximumDays
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maximumDays", EmitDefaultValue=false)]
         public string MaximumDays { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MinimumDays
         /// </summary>
-        /// <value></value>
         [DataMember(Name="minimumDays", EmitDefaultValue=false)]
         public string MinimumDays { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

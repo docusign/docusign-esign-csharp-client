@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,21 +38,21 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Stamp" /> class.
         /// </summary>
-        /// <param name="AdoptedDateTime">.</param>
+        /// <param name="AdoptedDateTime">AdoptedDateTime.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
-        /// <param name="CustomField">.</param>
+        /// <param name="CustomField">CustomField.</param>
         /// <param name="DateStampProperties">DateStampProperties.</param>
-        /// <param name="DisallowUserResizeStamp">.</param>
+        /// <param name="DisallowUserResizeStamp">DisallowUserResizeStamp.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="ExternalID">.</param>
-        /// <param name="ImageBase64">.</param>
-        /// <param name="ImageType">.</param>
+        /// <param name="ExternalID">ExternalID.</param>
+        /// <param name="ImageBase64">ImageBase64.</param>
+        /// <param name="ImageType">ImageType.</param>
         /// <param name="LastModifiedDateTime">The date and time the item was last modified..</param>
-        /// <param name="PhoneticName">.</param>
+        /// <param name="PhoneticName">PhoneticName.</param>
         /// <param name="SignatureName">Specifies the user signature name..</param>
-        /// <param name="StampFormat">.</param>
-        /// <param name="StampImageUri">.</param>
-        /// <param name="StampSizeMM">.</param>
+        /// <param name="StampFormat">StampFormat.</param>
+        /// <param name="StampImageUri">StampImageUri.</param>
+        /// <param name="StampSizeMM">StampSizeMM.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         public Stamp(string AdoptedDateTime = default(string), string CreatedDateTime = default(string), string CustomField = default(string), DateStampProperties DateStampProperties = default(DateStampProperties), string DisallowUserResizeStamp = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string ExternalID = default(string), string ImageBase64 = default(string), string ImageType = default(string), string LastModifiedDateTime = default(string), string PhoneticName = default(string), string SignatureName = default(string), string StampFormat = default(string), string StampImageUri = default(string), string StampSizeMM = default(string), string Status = default(string))
         {
@@ -74,9 +75,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AdoptedDateTime
         /// </summary>
-        /// <value></value>
         [DataMember(Name="adoptedDateTime", EmitDefaultValue=false)]
         public string AdoptedDateTime { get; set; }
         /// <summary>
@@ -86,9 +86,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdDateTime", EmitDefaultValue=false)]
         public string CreatedDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CustomField
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customField", EmitDefaultValue=false)]
         public string CustomField { get; set; }
         /// <summary>
@@ -97,9 +96,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dateStampProperties", EmitDefaultValue=false)]
         public DateStampProperties DateStampProperties { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisallowUserResizeStamp
         /// </summary>
-        /// <value></value>
         [DataMember(Name="disallowUserResizeStamp", EmitDefaultValue=false)]
         public string DisallowUserResizeStamp { get; set; }
         /// <summary>
@@ -108,21 +106,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ExternalID
         /// </summary>
-        /// <value></value>
         [DataMember(Name="externalID", EmitDefaultValue=false)]
         public string ExternalID { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ImageBase64
         /// </summary>
-        /// <value></value>
         [DataMember(Name="imageBase64", EmitDefaultValue=false)]
         public string ImageBase64 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ImageType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="imageType", EmitDefaultValue=false)]
         public string ImageType { get; set; }
         /// <summary>
@@ -132,9 +127,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lastModifiedDateTime", EmitDefaultValue=false)]
         public string LastModifiedDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PhoneticName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="phoneticName", EmitDefaultValue=false)]
         public string PhoneticName { get; set; }
         /// <summary>
@@ -144,21 +138,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureName", EmitDefaultValue=false)]
         public string SignatureName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StampFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="stampFormat", EmitDefaultValue=false)]
         public string StampFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StampImageUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="stampImageUri", EmitDefaultValue=false)]
         public string StampImageUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StampSizeMM
         /// </summary>
-        /// <value></value>
         [DataMember(Name="stampSizeMM", EmitDefaultValue=false)]
         public string StampSizeMM { get; set; }
         /// <summary>
@@ -361,5 +352,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

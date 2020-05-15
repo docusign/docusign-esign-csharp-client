@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,13 +38,13 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomField" /> class.
         /// </summary>
-        /// <param name="CustomFieldType">.</param>
+        /// <param name="CustomFieldType">CustomFieldType.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="FieldId">.</param>
-        /// <param name="ListItems">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="FieldId">FieldId.</param>
+        /// <param name="ListItems">ListItems.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
-        /// <param name="Show">.</param>
+        /// <param name="Show">Show.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
         public CustomField(string CustomFieldType = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FieldId = default(string), List<string> ListItems = default(List<string>), string Name = default(string), string Required = default(string), string Show = default(string), string Value = default(string))
         {
@@ -58,9 +59,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CustomFieldType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="customFieldType", EmitDefaultValue=false)]
         public string CustomFieldType { get; set; }
         /// <summary>
@@ -69,21 +69,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FieldId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fieldId", EmitDefaultValue=false)]
         public string FieldId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ListItems
         /// </summary>
-        /// <value></value>
         [DataMember(Name="listItems", EmitDefaultValue=false)]
         public List<string> ListItems { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -93,9 +90,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="required", EmitDefaultValue=false)]
         public string Required { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Show
         /// </summary>
-        /// <value></value>
         [DataMember(Name="show", EmitDefaultValue=false)]
         public string Show { get; set; }
         /// <summary>
@@ -234,5 +230,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

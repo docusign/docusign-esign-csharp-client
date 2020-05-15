@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MemberSharedItems" /> class.
         /// </summary>
-        /// <param name="Envelopes">.</param>
+        /// <param name="Envelopes">Envelopes.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Folders">.</param>
-        /// <param name="Templates">.</param>
+        /// <param name="Folders">Folders.</param>
+        /// <param name="Templates">Templates.</param>
         /// <param name="User">User.</param>
         public MemberSharedItems(List<SharedItem> Envelopes = default(List<SharedItem>), ErrorDetails ErrorDetails = default(ErrorDetails), List<FolderSharedItem> Folders = default(List<FolderSharedItem>), List<TemplateSharedItem> Templates = default(List<TemplateSharedItem>), UserInfo User = default(UserInfo))
         {
@@ -52,9 +53,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Envelopes
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopes", EmitDefaultValue=false)]
         public List<SharedItem> Envelopes { get; set; }
         /// <summary>
@@ -63,15 +63,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Folders
         /// </summary>
-        /// <value></value>
         [DataMember(Name="folders", EmitDefaultValue=false)]
         public List<FolderSharedItem> Folders { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Templates
         /// </summary>
-        /// <value></value>
         [DataMember(Name="templates", EmitDefaultValue=false)]
         public List<TemplateSharedItem> Templates { get; set; }
         /// <summary>
@@ -185,5 +183,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

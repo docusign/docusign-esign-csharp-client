@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,10 +39,10 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="ConnectUserObject" /> class.
         /// </summary>
         /// <param name="Configurationtype">If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**..</param>
-        /// <param name="ConnectId">.</param>
-        /// <param name="Enabled">.</param>
-        /// <param name="HasAccess">.</param>
-        /// <param name="SenderSearchableItems">.</param>
+        /// <param name="ConnectId">ConnectId.</param>
+        /// <param name="Enabled">Enabled.</param>
+        /// <param name="HasAccess">HasAccess.</param>
+        /// <param name="SenderSearchableItems">SenderSearchableItems.</param>
         public ConnectUserObject(string Configurationtype = default(string), string ConnectId = default(string), string Enabled = default(string), string HasAccess = default(string), List<string> SenderSearchableItems = default(List<string>))
         {
             this.Configurationtype = Configurationtype;
@@ -58,27 +59,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="configurationtype", EmitDefaultValue=false)]
         public string Configurationtype { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ConnectId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="connectId", EmitDefaultValue=false)]
         public string ConnectId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Enabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enabled", EmitDefaultValue=false)]
         public string Enabled { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets HasAccess
         /// </summary>
-        /// <value></value>
         [DataMember(Name="hasAccess", EmitDefaultValue=false)]
         public string HasAccess { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SenderSearchableItems
         /// </summary>
-        /// <value></value>
         [DataMember(Name="senderSearchableItems", EmitDefaultValue=false)]
         public List<string> SenderSearchableItems { get; set; }
         /// <summary>
@@ -187,5 +184,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

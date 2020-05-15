@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProofServiceViewLink" /> class.
         /// </summary>
-        /// <param name="ViewLink">.</param>
+        /// <param name="ViewLink">ViewLink.</param>
         public ProofServiceViewLink(string ViewLink = default(string))
         {
             this.ViewLink = ViewLink;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets ViewLink
         /// </summary>
-        /// <value></value>
         [DataMember(Name="ViewLink", EmitDefaultValue=false)]
         public string ViewLink { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

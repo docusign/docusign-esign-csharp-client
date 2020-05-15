@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,20 +38,21 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentGatewayAccount" /> class.
         /// </summary>
-        /// <param name="AllowCustomMetadata">.</param>
+        /// <param name="AllowCustomMetadata">AllowCustomMetadata.</param>
         /// <param name="Config">Config.</param>
-        /// <param name="DisplayName">.</param>
-        /// <param name="IsEnabled">.</param>
-        /// <param name="IsLegacy">.</param>
-        /// <param name="LastModified">.</param>
-        /// <param name="PaymentGateway">.</param>
-        /// <param name="PaymentGatewayAccountId">.</param>
-        /// <param name="PaymentGatewayDisplayName">.</param>
+        /// <param name="DisplayName">DisplayName.</param>
+        /// <param name="IsEnabled">IsEnabled.</param>
+        /// <param name="IsLegacy">IsLegacy.</param>
+        /// <param name="LastModified">LastModified.</param>
+        /// <param name="PaymentGateway">PaymentGateway.</param>
+        /// <param name="PaymentGatewayAccountId">PaymentGatewayAccountId.</param>
+        /// <param name="PaymentGatewayDisplayName">PaymentGatewayDisplayName.</param>
         /// <param name="PayPalLegacySettings">PayPalLegacySettings.</param>
-        /// <param name="SupportedCurrencies">.</param>
-        /// <param name="SupportedPaymentMethods">.</param>
-        /// <param name="SupportedPaymentMethodsWithOptions">.</param>
-        public PaymentGatewayAccount(bool? AllowCustomMetadata = default(bool?), PaymentGatewayAccountSetting Config = default(PaymentGatewayAccountSetting), string DisplayName = default(string), string IsEnabled = default(string), string IsLegacy = default(string), string LastModified = default(string), string PaymentGateway = default(string), string PaymentGatewayAccountId = default(string), string PaymentGatewayDisplayName = default(string), PayPalLegacySettings PayPalLegacySettings = default(PayPalLegacySettings), List<string> SupportedCurrencies = default(List<string>), List<string> SupportedPaymentMethods = default(List<string>), List<PaymentMethodWithOptions> SupportedPaymentMethodsWithOptions = default(List<PaymentMethodWithOptions>))
+        /// <param name="SupportedCurrencies">SupportedCurrencies.</param>
+        /// <param name="SupportedPaymentMethods">SupportedPaymentMethods.</param>
+        /// <param name="SupportedPaymentMethodsWithOptions">SupportedPaymentMethodsWithOptions.</param>
+        /// <param name="ZeroDecimalCurrencies">ZeroDecimalCurrencies.</param>
+        public PaymentGatewayAccount(bool? AllowCustomMetadata = default(bool?), PaymentGatewayAccountSetting Config = default(PaymentGatewayAccountSetting), string DisplayName = default(string), string IsEnabled = default(string), string IsLegacy = default(string), string LastModified = default(string), string PaymentGateway = default(string), string PaymentGatewayAccountId = default(string), string PaymentGatewayDisplayName = default(string), PayPalLegacySettings PayPalLegacySettings = default(PayPalLegacySettings), List<string> SupportedCurrencies = default(List<string>), List<string> SupportedPaymentMethods = default(List<string>), List<PaymentMethodWithOptions> SupportedPaymentMethodsWithOptions = default(List<PaymentMethodWithOptions>), List<string> ZeroDecimalCurrencies = default(List<string>))
         {
             this.AllowCustomMetadata = AllowCustomMetadata;
             this.Config = Config;
@@ -65,12 +67,12 @@ namespace DocuSign.eSign.Model
             this.SupportedCurrencies = SupportedCurrencies;
             this.SupportedPaymentMethods = SupportedPaymentMethods;
             this.SupportedPaymentMethodsWithOptions = SupportedPaymentMethodsWithOptions;
+            this.ZeroDecimalCurrencies = ZeroDecimalCurrencies;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AllowCustomMetadata
         /// </summary>
-        /// <value></value>
         [DataMember(Name="allowCustomMetadata", EmitDefaultValue=false)]
         public bool? AllowCustomMetadata { get; set; }
         /// <summary>
@@ -79,45 +81,38 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="config", EmitDefaultValue=false)]
         public PaymentGatewayAccountSetting Config { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayName", EmitDefaultValue=false)]
         public string DisplayName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isEnabled", EmitDefaultValue=false)]
         public string IsEnabled { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsLegacy
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isLegacy", EmitDefaultValue=false)]
         public string IsLegacy { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LastModified
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lastModified", EmitDefaultValue=false)]
         public string LastModified { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentGateway
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentGateway", EmitDefaultValue=false)]
         public string PaymentGateway { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentGatewayAccountId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentGatewayAccountId", EmitDefaultValue=false)]
         public string PaymentGatewayAccountId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentGatewayDisplayName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentGatewayDisplayName", EmitDefaultValue=false)]
         public string PaymentGatewayDisplayName { get; set; }
         /// <summary>
@@ -126,23 +121,25 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="payPalLegacySettings", EmitDefaultValue=false)]
         public PayPalLegacySettings PayPalLegacySettings { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SupportedCurrencies
         /// </summary>
-        /// <value></value>
         [DataMember(Name="supportedCurrencies", EmitDefaultValue=false)]
         public List<string> SupportedCurrencies { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SupportedPaymentMethods
         /// </summary>
-        /// <value></value>
         [DataMember(Name="supportedPaymentMethods", EmitDefaultValue=false)]
         public List<string> SupportedPaymentMethods { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SupportedPaymentMethodsWithOptions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="supportedPaymentMethodsWithOptions", EmitDefaultValue=false)]
         public List<PaymentMethodWithOptions> SupportedPaymentMethodsWithOptions { get; set; }
+        /// <summary>
+        /// Gets or Sets ZeroDecimalCurrencies
+        /// </summary>
+        [DataMember(Name="zeroDecimalCurrencies", EmitDefaultValue=false)]
+        public List<string> ZeroDecimalCurrencies { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -164,6 +161,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SupportedCurrencies: ").Append(SupportedCurrencies).Append("\n");
             sb.Append("  SupportedPaymentMethods: ").Append(SupportedPaymentMethods).Append("\n");
             sb.Append("  SupportedPaymentMethodsWithOptions: ").Append(SupportedPaymentMethodsWithOptions).Append("\n");
+            sb.Append("  ZeroDecimalCurrencies: ").Append(ZeroDecimalCurrencies).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -264,6 +262,11 @@ namespace DocuSign.eSign.Model
                     this.SupportedPaymentMethodsWithOptions == other.SupportedPaymentMethodsWithOptions ||
                     this.SupportedPaymentMethodsWithOptions != null &&
                     this.SupportedPaymentMethodsWithOptions.SequenceEqual(other.SupportedPaymentMethodsWithOptions)
+                ) && 
+                (
+                    this.ZeroDecimalCurrencies == other.ZeroDecimalCurrencies ||
+                    this.ZeroDecimalCurrencies != null &&
+                    this.ZeroDecimalCurrencies.SequenceEqual(other.ZeroDecimalCurrencies)
                 );
         }
 
@@ -304,6 +307,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SupportedPaymentMethods.GetHashCode();
                 if (this.SupportedPaymentMethodsWithOptions != null)
                     hash = hash * 59 + this.SupportedPaymentMethodsWithOptions.GetHashCode();
+                if (this.ZeroDecimalCurrencies != null)
+                    hash = hash * 59 + this.ZeroDecimalCurrencies.GetHashCode();
                 return hash;
             }
         }
@@ -313,5 +318,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

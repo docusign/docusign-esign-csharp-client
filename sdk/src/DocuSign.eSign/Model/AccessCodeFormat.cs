@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,15 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccessCodeFormat" /> class.
         /// </summary>
-        /// <param name="FormatRequired">.</param>
+        /// <param name="FormatRequired">FormatRequired.</param>
         /// <param name="FormatRequiredMetadata">FormatRequiredMetadata.</param>
-        /// <param name="LetterRequired">.</param>
+        /// <param name="LetterRequired">LetterRequired.</param>
         /// <param name="LetterRequiredMetadata">LetterRequiredMetadata.</param>
-        /// <param name="MinimumLength">.</param>
+        /// <param name="MinimumLength">MinimumLength.</param>
         /// <param name="MinimumLengthMetadata">MinimumLengthMetadata.</param>
-        /// <param name="NumberRequired">.</param>
+        /// <param name="NumberRequired">NumberRequired.</param>
         /// <param name="NumberRequiredMetadata">NumberRequiredMetadata.</param>
-        /// <param name="SpecialCharacterRequired">.</param>
+        /// <param name="SpecialCharacterRequired">SpecialCharacterRequired.</param>
         /// <param name="SpecialCharacterRequiredMetadata">SpecialCharacterRequiredMetadata.</param>
         public AccessCodeFormat(string FormatRequired = default(string), SettingsMetadata FormatRequiredMetadata = default(SettingsMetadata), string LetterRequired = default(string), SettingsMetadata LetterRequiredMetadata = default(SettingsMetadata), string MinimumLength = default(string), SettingsMetadata MinimumLengthMetadata = default(SettingsMetadata), string NumberRequired = default(string), SettingsMetadata NumberRequiredMetadata = default(SettingsMetadata), string SpecialCharacterRequired = default(string), SettingsMetadata SpecialCharacterRequiredMetadata = default(SettingsMetadata))
         {
@@ -62,9 +63,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets FormatRequired
         /// </summary>
-        /// <value></value>
         [DataMember(Name="formatRequired", EmitDefaultValue=false)]
         public string FormatRequired { get; set; }
         /// <summary>
@@ -73,9 +73,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="formatRequiredMetadata", EmitDefaultValue=false)]
         public SettingsMetadata FormatRequiredMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LetterRequired
         /// </summary>
-        /// <value></value>
         [DataMember(Name="letterRequired", EmitDefaultValue=false)]
         public string LetterRequired { get; set; }
         /// <summary>
@@ -84,9 +83,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="letterRequiredMetadata", EmitDefaultValue=false)]
         public SettingsMetadata LetterRequiredMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MinimumLength
         /// </summary>
-        /// <value></value>
         [DataMember(Name="minimumLength", EmitDefaultValue=false)]
         public string MinimumLength { get; set; }
         /// <summary>
@@ -95,9 +93,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="minimumLengthMetadata", EmitDefaultValue=false)]
         public SettingsMetadata MinimumLengthMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets NumberRequired
         /// </summary>
-        /// <value></value>
         [DataMember(Name="numberRequired", EmitDefaultValue=false)]
         public string NumberRequired { get; set; }
         /// <summary>
@@ -106,9 +103,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="numberRequiredMetadata", EmitDefaultValue=false)]
         public SettingsMetadata NumberRequiredMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SpecialCharacterRequired
         /// </summary>
-        /// <value></value>
         [DataMember(Name="specialCharacterRequired", EmitDefaultValue=false)]
         public string SpecialCharacterRequired { get; set; }
         /// <summary>
@@ -262,5 +258,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkSendResponse" /> class.
         /// </summary>
-        /// <param name="BatchId">.</param>
-        /// <param name="EnvelopeOrTemplateId">.</param>
+        /// <param name="BatchId">BatchId.</param>
+        /// <param name="EnvelopeOrTemplateId">EnvelopeOrTemplateId.</param>
         /// <param name="ErrorDetails">Array or errors..</param>
-        /// <param name="Errors">.</param>
+        /// <param name="Errors">Errors.</param>
         public BulkSendResponse(string BatchId = default(string), string EnvelopeOrTemplateId = default(string), List<string> ErrorDetails = default(List<string>), List<string> Errors = default(List<string>))
         {
             this.BatchId = BatchId;
@@ -50,15 +51,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets BatchId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="batchId", EmitDefaultValue=false)]
         public string BatchId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopeOrTemplateId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopeOrTemplateId", EmitDefaultValue=false)]
         public string EnvelopeOrTemplateId { get; set; }
         /// <summary>
@@ -68,9 +67,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public List<string> ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Errors
         /// </summary>
-        /// <value></value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<string> Errors { get; set; }
         /// <summary>
@@ -171,5 +169,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

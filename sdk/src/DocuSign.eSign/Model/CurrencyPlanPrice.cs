@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="CurrencyCode">Specifies the ISO currency code for the account..</param>
         /// <param name="CurrencySymbol">Specifies the currency symbol for the account..</param>
-        /// <param name="PerSeatPrice">.</param>
+        /// <param name="PerSeatPrice">PerSeatPrice.</param>
         /// <param name="SupportedCardTypes">SupportedCardTypes.</param>
         /// <param name="SupportIncidentFee">The support incident fee charged for each support incident..</param>
         /// <param name="SupportPlanFee">The support plan fee charged for this plan..</param>
@@ -66,9 +67,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="currencySymbol", EmitDefaultValue=false)]
         public string CurrencySymbol { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PerSeatPrice
         /// </summary>
-        /// <value></value>
         [DataMember(Name="perSeatPrice", EmitDefaultValue=false)]
         public string PerSeatPrice { get; set; }
         /// <summary>
@@ -202,5 +202,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

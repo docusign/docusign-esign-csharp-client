@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,13 +38,13 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PermissionProfile" /> class.
         /// </summary>
-        /// <param name="ModifiedByUsername">.</param>
-        /// <param name="ModifiedDateTime">.</param>
-        /// <param name="PermissionProfileId">.</param>
-        /// <param name="PermissionProfileName">.</param>
+        /// <param name="ModifiedByUsername">ModifiedByUsername.</param>
+        /// <param name="ModifiedDateTime">ModifiedDateTime.</param>
+        /// <param name="PermissionProfileId">PermissionProfileId.</param>
+        /// <param name="PermissionProfileName">PermissionProfileName.</param>
         /// <param name="Settings">Settings.</param>
-        /// <param name="UserCount">.</param>
-        /// <param name="Users">.</param>
+        /// <param name="UserCount">UserCount.</param>
+        /// <param name="Users">Users.</param>
         public PermissionProfile(string ModifiedByUsername = default(string), string ModifiedDateTime = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), AccountRoleSettings Settings = default(AccountRoleSettings), string UserCount = default(string), List<UserInformation> Users = default(List<UserInformation>))
         {
             this.ModifiedByUsername = ModifiedByUsername;
@@ -56,27 +57,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets ModifiedByUsername
         /// </summary>
-        /// <value></value>
         [DataMember(Name="modifiedByUsername", EmitDefaultValue=false)]
         public string ModifiedByUsername { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ModifiedDateTime
         /// </summary>
-        /// <value></value>
         [DataMember(Name="modifiedDateTime", EmitDefaultValue=false)]
         public string ModifiedDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PermissionProfileId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="permissionProfileId", EmitDefaultValue=false)]
         public string PermissionProfileId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PermissionProfileName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="permissionProfileName", EmitDefaultValue=false)]
         public string PermissionProfileName { get; set; }
         /// <summary>
@@ -85,15 +82,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="settings", EmitDefaultValue=false)]
         public AccountRoleSettings Settings { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserCount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userCount", EmitDefaultValue=false)]
         public string UserCount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Users
         /// </summary>
-        /// <value></value>
         [DataMember(Name="users", EmitDefaultValue=false)]
         public List<UserInformation> Users { get; set; }
         /// <summary>
@@ -218,5 +213,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

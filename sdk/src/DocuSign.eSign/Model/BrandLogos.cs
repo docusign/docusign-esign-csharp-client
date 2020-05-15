@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BrandLogos" /> class.
         /// </summary>
-        /// <param name="Email">.</param>
-        /// <param name="Primary">.</param>
-        /// <param name="Secondary">.</param>
+        /// <param name="Email">Email.</param>
+        /// <param name="Primary">Primary.</param>
+        /// <param name="Secondary">Secondary.</param>
         public BrandLogos(string Email = default(string), string Primary = default(string), string Secondary = default(string))
         {
             this.Email = Email;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Primary
         /// </summary>
-        /// <value></value>
         [DataMember(Name="primary", EmitDefaultValue=false)]
         public string Primary { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Secondary
         /// </summary>
-        /// <value></value>
         [DataMember(Name="secondary", EmitDefaultValue=false)]
         public string Secondary { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

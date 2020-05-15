@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -42,7 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="FreeTrialDaysOverride">Reserved for DocuSign use only..</param>
         /// <param name="PlanFeatureSets">A complex type that sets the feature sets for the account..</param>
         /// <param name="PlanId">The DocuSign Plan ID for the account..</param>
-        /// <param name="RecipientDomains">.</param>
+        /// <param name="RecipientDomains">RecipientDomains.</param>
         public PlanInformation(List<AddOn> AddOns = default(List<AddOn>), string CurrencyCode = default(string), string FreeTrialDaysOverride = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), List<RecipientDomain> RecipientDomains = default(List<RecipientDomain>))
         {
             this.AddOns = AddOns;
@@ -84,9 +85,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="planId", EmitDefaultValue=false)]
         public string PlanId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientDomains
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientDomains", EmitDefaultValue=false)]
         public List<RecipientDomain> RecipientDomains { get; set; }
         /// <summary>
@@ -203,5 +203,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,11 +39,11 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="SettingsMetadata" /> class.
         /// </summary>
         /// <param name="Is21CFRPart11">When set to **true**, indicates that this module is enabled on the account..</param>
-        /// <param name="Options">.</param>
-        /// <param name="Rights">.</param>
-        /// <param name="UiHint">.</param>
-        /// <param name="UiOrder">.</param>
-        /// <param name="UiType">.</param>
+        /// <param name="Options">Options.</param>
+        /// <param name="Rights">Rights.</param>
+        /// <param name="UiHint">UiHint.</param>
+        /// <param name="UiOrder">UiOrder.</param>
+        /// <param name="UiType">UiType.</param>
         public SettingsMetadata(string Is21CFRPart11 = default(string), List<string> Options = default(List<string>), string Rights = default(string), string UiHint = default(string), string UiOrder = default(string), string UiType = default(string))
         {
             this.Is21CFRPart11 = Is21CFRPart11;
@@ -60,33 +61,28 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="is21CFRPart11", EmitDefaultValue=false)]
         public string Is21CFRPart11 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Options
         /// </summary>
-        /// <value></value>
         [DataMember(Name="options", EmitDefaultValue=false)]
         public List<string> Options { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Rights
         /// </summary>
-        /// <value></value>
         [DataMember(Name="rights", EmitDefaultValue=false)]
         public string Rights { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UiHint
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uiHint", EmitDefaultValue=false)]
         public string UiHint { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UiOrder
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uiOrder", EmitDefaultValue=false)]
         public string UiOrder { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UiType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uiType", EmitDefaultValue=false)]
         public string UiType { get; set; }
         /// <summary>
@@ -203,5 +199,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

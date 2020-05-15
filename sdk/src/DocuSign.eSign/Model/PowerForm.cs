@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,31 +38,31 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PowerForm" /> class.
         /// </summary>
-        /// <param name="CreatedBy">.</param>
+        /// <param name="CreatedBy">CreatedBy.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="EmailBody">Specifies the email body of the message sent to the recipient.   Maximum length: 10000 characters. .</param>
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
-        /// <param name="Envelopes">.</param>
+        /// <param name="Envelopes">Envelopes.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Instructions">.</param>
-        /// <param name="IsActive">.</param>
-        /// <param name="LastUsed">.</param>
-        /// <param name="LimitUseInterval">.</param>
-        /// <param name="LimitUseIntervalEnabled">.</param>
-        /// <param name="LimitUseIntervalUnits">.</param>
-        /// <param name="MaxUseEnabled">.</param>
-        /// <param name="Name">.</param>
-        /// <param name="PowerFormId">.</param>
-        /// <param name="PowerFormUrl">.</param>
+        /// <param name="Instructions">Instructions.</param>
+        /// <param name="IsActive">IsActive.</param>
+        /// <param name="LastUsed">LastUsed.</param>
+        /// <param name="LimitUseInterval">LimitUseInterval.</param>
+        /// <param name="LimitUseIntervalEnabled">LimitUseIntervalEnabled.</param>
+        /// <param name="LimitUseIntervalUnits">LimitUseIntervalUnits.</param>
+        /// <param name="MaxUseEnabled">MaxUseEnabled.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="PowerFormId">PowerFormId.</param>
+        /// <param name="PowerFormUrl">PowerFormUrl.</param>
         /// <param name="Recipients">An array of powerform recipients..</param>
-        /// <param name="SenderName">.</param>
-        /// <param name="SenderUserId">.</param>
-        /// <param name="SigningMode">.</param>
+        /// <param name="SenderName">SenderName.</param>
+        /// <param name="SenderUserId">SenderUserId.</param>
+        /// <param name="SigningMode">SigningMode.</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
-        /// <param name="TemplateName">.</param>
-        /// <param name="TimesUsed">.</param>
-        /// <param name="Uri">.</param>
-        /// <param name="UsesRemaining">.</param>
+        /// <param name="TemplateName">TemplateName.</param>
+        /// <param name="TimesUsed">TimesUsed.</param>
+        /// <param name="Uri">Uri.</param>
+        /// <param name="UsesRemaining">UsesRemaining.</param>
         public PowerForm(string CreatedBy = default(string), string CreatedDateTime = default(string), string EmailBody = default(string), string EmailSubject = default(string), List<Envelope> Envelopes = default(List<Envelope>), ErrorDetails ErrorDetails = default(ErrorDetails), string Instructions = default(string), string IsActive = default(string), string LastUsed = default(string), string LimitUseInterval = default(string), string LimitUseIntervalEnabled = default(string), string LimitUseIntervalUnits = default(string), string MaxUseEnabled = default(string), string Name = default(string), string PowerFormId = default(string), string PowerFormUrl = default(string), List<PowerFormRecipient> Recipients = default(List<PowerFormRecipient>), string SenderName = default(string), string SenderUserId = default(string), string SigningMode = default(string), string TemplateId = default(string), string TemplateName = default(string), string TimesUsed = default(string), string Uri = default(string), string UsesRemaining = default(string))
         {
             this.CreatedBy = CreatedBy;
@@ -92,9 +93,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CreatedBy
         /// </summary>
-        /// <value></value>
         [DataMember(Name="createdBy", EmitDefaultValue=false)]
         public string CreatedBy { get; set; }
         /// <summary>
@@ -116,9 +116,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="emailSubject", EmitDefaultValue=false)]
         public string EmailSubject { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Envelopes
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopes", EmitDefaultValue=false)]
         public List<Envelope> Envelopes { get; set; }
         /// <summary>
@@ -127,63 +126,53 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Instructions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="instructions", EmitDefaultValue=false)]
         public string Instructions { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsActive
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isActive", EmitDefaultValue=false)]
         public string IsActive { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LastUsed
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lastUsed", EmitDefaultValue=false)]
         public string LastUsed { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LimitUseInterval
         /// </summary>
-        /// <value></value>
         [DataMember(Name="limitUseInterval", EmitDefaultValue=false)]
         public string LimitUseInterval { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LimitUseIntervalEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="limitUseIntervalEnabled", EmitDefaultValue=false)]
         public string LimitUseIntervalEnabled { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LimitUseIntervalUnits
         /// </summary>
-        /// <value></value>
         [DataMember(Name="limitUseIntervalUnits", EmitDefaultValue=false)]
         public string LimitUseIntervalUnits { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MaxUseEnabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maxUseEnabled", EmitDefaultValue=false)]
         public string MaxUseEnabled { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PowerFormId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="powerFormId", EmitDefaultValue=false)]
         public string PowerFormId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PowerFormUrl
         /// </summary>
-        /// <value></value>
         [DataMember(Name="powerFormUrl", EmitDefaultValue=false)]
         public string PowerFormUrl { get; set; }
         /// <summary>
@@ -193,21 +182,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipients", EmitDefaultValue=false)]
         public List<PowerFormRecipient> Recipients { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SenderName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="senderName", EmitDefaultValue=false)]
         public string SenderName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SenderUserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="senderUserId", EmitDefaultValue=false)]
         public string SenderUserId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SigningMode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signingMode", EmitDefaultValue=false)]
         public string SigningMode { get; set; }
         /// <summary>
@@ -217,27 +203,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateId", EmitDefaultValue=false)]
         public string TemplateId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TemplateName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="templateName", EmitDefaultValue=false)]
         public string TemplateName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TimesUsed
         /// </summary>
-        /// <value></value>
         [DataMember(Name="timesUsed", EmitDefaultValue=false)]
         public string TimesUsed { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UsesRemaining
         /// </summary>
-        /// <value></value>
         [DataMember(Name="usesRemaining", EmitDefaultValue=false)]
         public string UsesRemaining { get; set; }
         /// <summary>
@@ -506,5 +488,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

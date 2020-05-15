@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,11 +38,11 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ENoteConfiguration" /> class.
         /// </summary>
-        /// <param name="ConnectConfigured">.</param>
-        /// <param name="ENoteConfigured">.</param>
-        /// <param name="Organization">.</param>
-        /// <param name="Password">.</param>
-        /// <param name="UserName">.</param>
+        /// <param name="ConnectConfigured">ConnectConfigured.</param>
+        /// <param name="ENoteConfigured">ENoteConfigured.</param>
+        /// <param name="Organization">Organization.</param>
+        /// <param name="Password">Password.</param>
+        /// <param name="UserName">UserName.</param>
         public ENoteConfiguration(string ConnectConfigured = default(string), string ENoteConfigured = default(string), string Organization = default(string), string Password = default(string), string UserName = default(string))
         {
             this.ConnectConfigured = ConnectConfigured;
@@ -52,33 +53,28 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets ConnectConfigured
         /// </summary>
-        /// <value></value>
         [DataMember(Name="connectConfigured", EmitDefaultValue=false)]
         public string ConnectConfigured { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ENoteConfigured
         /// </summary>
-        /// <value></value>
         [DataMember(Name="eNoteConfigured", EmitDefaultValue=false)]
         public string ENoteConfigured { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Organization
         /// </summary>
-        /// <value></value>
         [DataMember(Name="organization", EmitDefaultValue=false)]
         public string Organization { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Password
         /// </summary>
-        /// <value></value>
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userName", EmitDefaultValue=false)]
         public string UserName { get; set; }
         /// <summary>
@@ -187,5 +183,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

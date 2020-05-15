@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FoldersResponse" /> class.
         /// </summary>
-        /// <param name="Folders">.</param>
+        /// <param name="Folders">Folders.</param>
         public FoldersResponse(List<Folder> Folders = default(List<Folder>))
         {
             this.Folders = Folders;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Folders
         /// </summary>
-        /// <value></value>
         [DataMember(Name="folders", EmitDefaultValue=false)]
         public List<Folder> Folders { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

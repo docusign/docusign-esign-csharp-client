@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,22 +38,22 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeTemplateDefinition" /> class.
         /// </summary>
-        /// <param name="Created">.</param>
-        /// <param name="Description">.</param>
+        /// <param name="Created">Created.</param>
+        /// <param name="Description">Description.</param>
         /// <param name="FolderId">The ID for the folder..</param>
         /// <param name="FolderName"> The name of the folder in which the template is located..</param>
         /// <param name="FolderUri">The URI of the folder..</param>
-        /// <param name="LastModified">.</param>
+        /// <param name="LastModified">LastModified.</param>
         /// <param name="LastModifiedBy">LastModifiedBy.</param>
-        /// <param name="Name">.</param>
-        /// <param name="NewPassword">.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="NewPassword">NewPassword.</param>
         /// <param name="Owner">Owner.</param>
         /// <param name="PageCount">An integer value specifying the number of document pages in the template. Omit this property if not submitting a page count..</param>
-        /// <param name="ParentFolderUri">.</param>
-        /// <param name="Password">.</param>
+        /// <param name="ParentFolderUri">ParentFolderUri.</param>
+        /// <param name="Password">Password.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Uri">Uri.</param>
         public EnvelopeTemplateDefinition(string Created = default(string), string Description = default(string), string FolderId = default(string), string FolderName = default(string), string FolderUri = default(string), string LastModified = default(string), UserInfo LastModifiedBy = default(UserInfo), string Name = default(string), string NewPassword = default(string), UserInfo Owner = default(UserInfo), int? PageCount = default(int?), string ParentFolderUri = default(string), string Password = default(string), string Shared = default(string), string TemplateId = default(string), string Uri = default(string))
         {
             this.Created = Created;
@@ -74,15 +75,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Created
         /// </summary>
-        /// <value></value>
         [DataMember(Name="created", EmitDefaultValue=false)]
         public string Created { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Description
         /// </summary>
-        /// <value></value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
@@ -104,9 +103,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="folderUri", EmitDefaultValue=false)]
         public string FolderUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LastModified
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lastModified", EmitDefaultValue=false)]
         public string LastModified { get; set; }
         /// <summary>
@@ -115,15 +113,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lastModifiedBy", EmitDefaultValue=false)]
         public UserInfo LastModifiedBy { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets NewPassword
         /// </summary>
-        /// <value></value>
         [DataMember(Name="newPassword", EmitDefaultValue=false)]
         public string NewPassword { get; set; }
         /// <summary>
@@ -138,15 +134,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="pageCount", EmitDefaultValue=false)]
         public int? PageCount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ParentFolderUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="parentFolderUri", EmitDefaultValue=false)]
         public string ParentFolderUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Password
         /// </summary>
-        /// <value></value>
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
@@ -162,9 +156,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateId", EmitDefaultValue=false)]
         public string TemplateId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -361,5 +354,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

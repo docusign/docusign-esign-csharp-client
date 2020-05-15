@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="SamlAssertionAttribute" /> class.
         /// </summary>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Name">.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="OriginalValue">The initial value of the tab when it was sent to the recipient. .</param>
         /// <param name="Value">The value associated with the named SAML assertion attribute.</param>
         public SamlAssertionAttribute(ErrorDetails ErrorDetails = default(ErrorDetails), string Name = default(string), string OriginalValue = default(string), string Value = default(string))
@@ -55,9 +56,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -170,5 +170,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

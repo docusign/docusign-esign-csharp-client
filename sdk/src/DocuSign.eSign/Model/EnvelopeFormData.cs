@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,8 +40,8 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
-        /// <param name="FormData">.</param>
-        /// <param name="RecipientFormData">.</param>
+        /// <param name="FormData">FormData.</param>
+        /// <param name="RecipientFormData">RecipientFormData.</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         public EnvelopeFormData(string EmailSubject = default(string), string EnvelopeId = default(string), List<NameValue> FormData = default(List<NameValue>), List<RecipientFormData> RecipientFormData = default(List<RecipientFormData>), string SentDateTime = default(string), string Status = default(string))
@@ -66,15 +67,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopeId", EmitDefaultValue=false)]
         public string EnvelopeId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FormData
         /// </summary>
-        /// <value></value>
         [DataMember(Name="formData", EmitDefaultValue=false)]
         public List<NameValue> FormData { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientFormData
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientFormData", EmitDefaultValue=false)]
         public List<RecipientFormData> RecipientFormData { get; set; }
         /// <summary>
@@ -203,5 +202,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

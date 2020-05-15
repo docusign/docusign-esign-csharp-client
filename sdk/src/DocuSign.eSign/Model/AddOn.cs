@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Active">Reserved:.</param>
         /// <param name="AddOnId">Reserved:.</param>
-        /// <param name="Id">.</param>
+        /// <param name="Id">Id.</param>
         /// <param name="Name">Reserved:.</param>
         public AddOn(string Active = default(string), string AddOnId = default(string), string Id = default(string), string Name = default(string))
         {
@@ -62,9 +63,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="addOnId", EmitDefaultValue=false)]
         public string AddOnId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Id
         /// </summary>
-        /// <value></value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
@@ -171,5 +171,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

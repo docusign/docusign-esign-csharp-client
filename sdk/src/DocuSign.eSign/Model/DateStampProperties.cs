@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DateStampProperties" /> class.
         /// </summary>
-        /// <param name="DateAreaHeight">.</param>
-        /// <param name="DateAreaWidth">.</param>
-        /// <param name="DateAreaX">.</param>
-        /// <param name="DateAreaY">.</param>
+        /// <param name="DateAreaHeight">DateAreaHeight.</param>
+        /// <param name="DateAreaWidth">DateAreaWidth.</param>
+        /// <param name="DateAreaX">DateAreaX.</param>
+        /// <param name="DateAreaY">DateAreaY.</param>
         public DateStampProperties(string DateAreaHeight = default(string), string DateAreaWidth = default(string), string DateAreaX = default(string), string DateAreaY = default(string))
         {
             this.DateAreaHeight = DateAreaHeight;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DateAreaHeight
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dateAreaHeight", EmitDefaultValue=false)]
         public string DateAreaHeight { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DateAreaWidth
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dateAreaWidth", EmitDefaultValue=false)]
         public string DateAreaWidth { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DateAreaX
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dateAreaX", EmitDefaultValue=false)]
         public string DateAreaX { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DateAreaY
         /// </summary>
-        /// <value></value>
         [DataMember(Name="dateAreaY", EmitDefaultValue=false)]
         public string DateAreaY { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

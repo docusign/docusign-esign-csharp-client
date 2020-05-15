@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkRecipientSignatureProvider" /> class.
         /// </summary>
-        /// <param name="Name">.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
         public BulkRecipientSignatureProvider(string Name = default(string), string Value = default(string))
         {
@@ -46,9 +47,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -139,5 +139,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

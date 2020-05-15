@@ -131,7 +131,7 @@ namespace DocuSign.eSign.Api
         /// Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">The &#x60;recipientId&#x60; used when the envelope or template was created.</param>
+        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
         /// <param name="bulkRecipientsRequest"></param>
         
         /// <returns></returns>
@@ -144,7 +144,7 @@ namespace DocuSign.eSign.Api
         /// Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">The &#x60;recipientId&#x60; used when the envelope or template was created.</param>
+        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
         /// <param name="bulkRecipientsRequest"></param>
         
         /// <returns>ApiResponse of </returns>
@@ -258,7 +258,7 @@ namespace DocuSign.eSign.Api
         /// Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">The &#x60;recipientId&#x60; used when the envelope or template was created.</param>
+        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
         /// <param name="bulkRecipientsRequest"></param>
         
         /// <returns>Task of BulkRecipientsSummaryResponse</returns>
@@ -271,7 +271,7 @@ namespace DocuSign.eSign.Api
         /// Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">The &#x60;recipientId&#x60; used when the envelope or template was created.</param>
+        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
         /// <param name="bulkRecipientsRequest"></param>
         
         /// <returns>Task of ApiResponse (BulkRecipientsSummaryResponse)</returns>
@@ -454,6 +454,12 @@ namespace DocuSign.eSign.Api
 
 
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -546,6 +552,12 @@ namespace DocuSign.eSign.Api
 
 
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -646,6 +658,12 @@ namespace DocuSign.eSign.Api
             }
 
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -740,6 +758,12 @@ namespace DocuSign.eSign.Api
             }
 
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -841,6 +865,12 @@ namespace DocuSign.eSign.Api
             }
 
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -938,6 +968,12 @@ namespace DocuSign.eSign.Api
             }
 
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -1034,6 +1070,12 @@ namespace DocuSign.eSign.Api
             }
 
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1124,6 +1166,12 @@ namespace DocuSign.eSign.Api
             }
 
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -1150,7 +1198,7 @@ namespace DocuSign.eSign.Api
         /// Adds or replaces envelope bulk recipients. Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">The &#x60;recipientId&#x60; used when the envelope or template was created.</param>
+        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
         /// <param name="bulkRecipientsRequest"></param>
         
         /// <returns>BulkRecipientsSummaryResponse</returns>
@@ -1164,15 +1212,12 @@ namespace DocuSign.eSign.Api
         /// Adds or replaces envelope bulk recipients. Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">The &#x60;recipientId&#x60; used when the envelope or template was created.</param>
+        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
         /// <param name="bulkRecipientsRequest"></param>
         
         /// <returns>ApiResponse of BulkRecipientsSummaryResponse</returns>
         public ApiResponse< BulkRecipientsSummaryResponse > UpdateRecipientsWithHttpInfo (string accountId, string envelopeId, string recipientId, byte[] bulkRecipientsRequest)
         {
-            // verify the required parameter 'bulkRecipientsRequest' is set
-            if (bulkRecipientsRequest == null)
-                throw new ApiException(400, "Missing required parameter 'bulkRecipientsRequest' when calling BulkEnvelopesApi->UpdateRecipients");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->UpdateRecipients");
@@ -1182,6 +1227,9 @@ namespace DocuSign.eSign.Api
             // verify the required parameter 'recipientId' is set
             if (recipientId == null)
                 throw new ApiException(400, "Missing required parameter 'recipientId' when calling BulkEnvelopesApi->UpdateRecipients");
+            // verify the required parameter 'bulkRecipientsRequest' is set
+            if (bulkRecipientsRequest == null)
+                throw new ApiException(400, "Missing required parameter 'bulkRecipientsRequest' when calling BulkEnvelopesApi->UpdateRecipients");
 
             var localVarPath = "/v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1215,13 +1263,19 @@ namespace DocuSign.eSign.Api
 
             if (bulkRecipientsRequest != null && bulkRecipientsRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(bulkRecipientsRequest, localVarHttpContentType); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(bulkRecipientsRequest); // http body (model) parameter
             }
             else
             {
                 localVarPostBody = bulkRecipientsRequest; // byte array
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1253,7 +1307,7 @@ namespace DocuSign.eSign.Api
         /// Adds or replaces envelope bulk recipients. Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">The &#x60;recipientId&#x60; used when the envelope or template was created.</param>
+        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
         /// <param name="bulkRecipientsRequest"></param>
         
         /// <returns>Task of BulkRecipientsSummaryResponse</returns>
@@ -1268,15 +1322,12 @@ namespace DocuSign.eSign.Api
         /// Adds or replaces envelope bulk recipients. Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">The &#x60;recipientId&#x60; used when the envelope or template was created.</param>
+        /// <param name="accountId">The external account number (int) or account id GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
         /// <param name="bulkRecipientsRequest"></param>
         
         /// <returns>Task of ApiResponse (BulkRecipientsSummaryResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<BulkRecipientsSummaryResponse>> UpdateRecipientsAsyncWithHttpInfo (string accountId, string envelopeId, string recipientId, byte[] bulkRecipientsRequest)
         {
-            // verify the required parameter 'bulkRecipientsRequest' is set
-            if (bulkRecipientsRequest == null)
-                throw new ApiException(400, "Missing required parameter 'bulkRecipientsRequest' when calling BulkEnvelopesApi->UpdateRecipients");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->UpdateRecipients");
@@ -1286,6 +1337,9 @@ namespace DocuSign.eSign.Api
             // verify the required parameter 'recipientId' is set
             if (recipientId == null)
                 throw new ApiException(400, "Missing required parameter 'recipientId' when calling BulkEnvelopesApi->UpdateRecipients");
+            // verify the required parameter 'bulkRecipientsRequest' is set
+            if (bulkRecipientsRequest == null)
+                throw new ApiException(400, "Missing required parameter 'bulkRecipientsRequest' when calling BulkEnvelopesApi->UpdateRecipients");
 
             var localVarPath = "/v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1319,13 +1373,19 @@ namespace DocuSign.eSign.Api
 
             if (bulkRecipientsRequest != null && bulkRecipientsRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(bulkRecipientsRequest, localVarHttpContentType); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(bulkRecipientsRequest); // http body (model) parameter
             }
             else
             {
                 localVarPostBody = bulkRecipientsRequest; // byte array
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,10 +40,10 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AccountManagementGranular">AccountManagementGranular.</param>
         /// <param name="ActivationAccessCode">The activation code the new user must enter when activating their account..</param>
-        /// <param name="CountryCode">.</param>
+        /// <param name="CountryCode">CountryCode.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="CustomSettings">The name/value pair information for the user custom setting..</param>
-        /// <param name="Email">.</param>
+        /// <param name="Email">Email.</param>
         /// <param name="EnableConnectForUser">Specifies whether the user is enabled for updates from DocuSign Connect. Valid values: true or false..</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="FirstName">The user&#39;s first name.  Maximum Length: 50 characters..</param>
@@ -51,29 +52,29 @@ namespace DocuSign.eSign.Model
         /// <param name="HomeAddress">HomeAddress.</param>
         /// <param name="InitialsImageUri">Contains the URI for an endpoint that you can use to retrieve the initials image..</param>
         /// <param name="IsAdmin">Determines if the feature set is actively set as part of the plan..</param>
-        /// <param name="JobTitle">.</param>
+        /// <param name="JobTitle">JobTitle.</param>
         /// <param name="LastLogin">Shows the date-time when the user last logged on to the system..</param>
         /// <param name="LastName">The user&#39;s last name.  Maximum Length: 50 characters..</param>
         /// <param name="LoginStatus">Shows the current status of the user&#39;s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  .</param>
         /// <param name="MiddleName">The user&#39;s middle name.  Maximum Length: 50 characters..</param>
-        /// <param name="Password">.</param>
-        /// <param name="PasswordExpiration">.</param>
-        /// <param name="PermissionProfileId">.</param>
-        /// <param name="PermissionProfileName">.</param>
-        /// <param name="ProfileImageUri">.</param>
-        /// <param name="SendActivationEmail">.</param>
+        /// <param name="Password">Password.</param>
+        /// <param name="PasswordExpiration">PasswordExpiration.</param>
+        /// <param name="PermissionProfileId">PermissionProfileId.</param>
+        /// <param name="PermissionProfileName">PermissionProfileName.</param>
+        /// <param name="ProfileImageUri">ProfileImageUri.</param>
+        /// <param name="SendActivationEmail">SendActivationEmail.</param>
         /// <param name="SendActivationOnInvalidLogin">When set to **true**, specifies that an additional activation email is sent to the user if they fail a log on before activating their account. .</param>
         /// <param name="SignatureImageUri">Contains the URI for an endpoint that you can use to retrieve the signature image..</param>
-        /// <param name="Subscribe">.</param>
+        /// <param name="Subscribe">Subscribe.</param>
         /// <param name="SuffixName">The suffix for the user&#39;s name.   Maximum Length: 50 characters. .</param>
         /// <param name="Title">The title of the user..</param>
-        /// <param name="Uri">.</param>
-        /// <param name="UserId">.</param>
-        /// <param name="UserName">.</param>
-        /// <param name="UserProfileLastModifiedDate">.</param>
+        /// <param name="Uri">Uri.</param>
+        /// <param name="UserId">UserId.</param>
+        /// <param name="UserName">UserName.</param>
+        /// <param name="UserProfileLastModifiedDate">UserProfileLastModifiedDate.</param>
         /// <param name="UserSettings"> The name/value pair information for user settings. These determine the actions that a user can take in the account. The &#x60;[ML:userSettings]&#x60; are listed and described below..</param>
-        /// <param name="UserStatus">.</param>
-        /// <param name="UserType">.</param>
+        /// <param name="UserStatus">UserStatus.</param>
+        /// <param name="UserType">UserType.</param>
         /// <param name="WorkAddress">WorkAddress.</param>
         public UserInformation(UserAccountManagementGranularInformation AccountManagementGranular = default(UserAccountManagementGranularInformation), string ActivationAccessCode = default(string), string CountryCode = default(string), string CreatedDateTime = default(string), List<NameValue> CustomSettings = default(List<NameValue>), string Email = default(string), string EnableConnectForUser = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FirstName = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), List<Group> GroupList = default(List<Group>), AddressInformationV2 HomeAddress = default(AddressInformationV2), string InitialsImageUri = default(string), string IsAdmin = default(string), string JobTitle = default(string), string LastLogin = default(string), string LastName = default(string), string LoginStatus = default(string), string MiddleName = default(string), string Password = default(string), string PasswordExpiration = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string ProfileImageUri = default(string), string SendActivationEmail = default(string), string SendActivationOnInvalidLogin = default(string), string SignatureImageUri = default(string), string Subscribe = default(string), string SuffixName = default(string), string Title = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserProfileLastModifiedDate = default(string), List<NameValue> UserSettings = default(List<NameValue>), string UserStatus = default(string), string UserType = default(string), AddressInformationV2 WorkAddress = default(AddressInformationV2))
         {
@@ -129,9 +130,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="activationAccessCode", EmitDefaultValue=false)]
         public string ActivationAccessCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CountryCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="countryCode", EmitDefaultValue=false)]
         public string CountryCode { get; set; }
         /// <summary>
@@ -147,9 +147,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="customSettings", EmitDefaultValue=false)]
         public List<NameValue> CustomSettings { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
@@ -198,9 +197,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="isAdmin", EmitDefaultValue=false)]
         public string IsAdmin { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets JobTitle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="jobTitle", EmitDefaultValue=false)]
         public string JobTitle { get; set; }
         /// <summary>
@@ -228,39 +226,33 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="middleName", EmitDefaultValue=false)]
         public string MiddleName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Password
         /// </summary>
-        /// <value></value>
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordExpiration
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordExpiration", EmitDefaultValue=false)]
         public string PasswordExpiration { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PermissionProfileId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="permissionProfileId", EmitDefaultValue=false)]
         public string PermissionProfileId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PermissionProfileName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="permissionProfileName", EmitDefaultValue=false)]
         public string PermissionProfileName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ProfileImageUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="profileImageUri", EmitDefaultValue=false)]
         public string ProfileImageUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SendActivationEmail
         /// </summary>
-        /// <value></value>
         [DataMember(Name="sendActivationEmail", EmitDefaultValue=false)]
         public string SendActivationEmail { get; set; }
         /// <summary>
@@ -276,9 +268,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureImageUri", EmitDefaultValue=false)]
         public string SignatureImageUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Subscribe
         /// </summary>
-        /// <value></value>
         [DataMember(Name="subscribe", EmitDefaultValue=false)]
         public string Subscribe { get; set; }
         /// <summary>
@@ -294,27 +285,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="title", EmitDefaultValue=false)]
         public string Title { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userName", EmitDefaultValue=false)]
         public string UserName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserProfileLastModifiedDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userProfileLastModifiedDate", EmitDefaultValue=false)]
         public string UserProfileLastModifiedDate { get; set; }
         /// <summary>
@@ -324,15 +311,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="userSettings", EmitDefaultValue=false)]
         public List<NameValue> UserSettings { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserStatus
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userStatus", EmitDefaultValue=false)]
         public string UserStatus { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userType", EmitDefaultValue=false)]
         public string UserType { get; set; }
         /// <summary>
@@ -710,5 +695,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

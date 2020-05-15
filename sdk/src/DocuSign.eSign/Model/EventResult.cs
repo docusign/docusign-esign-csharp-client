@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EventResult" /> class.
         /// </summary>
-        /// <param name="EventTimestamp">.</param>
-        /// <param name="FailureDescription">.</param>
+        /// <param name="EventTimestamp">EventTimestamp.</param>
+        /// <param name="FailureDescription">FailureDescription.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        /// <param name="VendorFailureStatusCode">.</param>
+        /// <param name="VendorFailureStatusCode">VendorFailureStatusCode.</param>
         public EventResult(string EventTimestamp = default(string), string FailureDescription = default(string), string Status = default(string), string VendorFailureStatusCode = default(string))
         {
             this.EventTimestamp = EventTimestamp;
@@ -50,15 +51,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets EventTimestamp
         /// </summary>
-        /// <value></value>
         [DataMember(Name="eventTimestamp", EmitDefaultValue=false)]
         public string EventTimestamp { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FailureDescription
         /// </summary>
-        /// <value></value>
         [DataMember(Name="failureDescription", EmitDefaultValue=false)]
         public string FailureDescription { get; set; }
         /// <summary>
@@ -68,9 +67,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets VendorFailureStatusCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="vendorFailureStatusCode", EmitDefaultValue=false)]
         public string VendorFailureStatusCode { get; set; }
         /// <summary>
@@ -171,5 +169,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

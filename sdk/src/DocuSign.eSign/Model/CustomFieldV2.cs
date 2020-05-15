@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,10 +40,10 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ConfigurationType">If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**..</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="FieldId">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="FieldId">FieldId.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
-        /// <param name="Show">.</param>
+        /// <param name="Show">Show.</param>
         /// <param name="Value">The value of the custom field..</param>
         public CustomFieldV2(string ConfigurationType = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FieldId = default(string), string Name = default(string), string Required = default(string), string Show = default(string), string Value = default(string))
         {
@@ -67,15 +68,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FieldId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fieldId", EmitDefaultValue=false)]
         public string FieldId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -85,9 +84,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="required", EmitDefaultValue=false)]
         public string Required { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Show
         /// </summary>
-        /// <value></value>
         [DataMember(Name="show", EmitDefaultValue=false)]
         public string Show { get; set; }
         /// <summary>
@@ -218,5 +216,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

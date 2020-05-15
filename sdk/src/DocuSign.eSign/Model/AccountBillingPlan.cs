@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -44,14 +45,14 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableSupport">When set to **true**, then customer support is provided as part of the account plan..</param>
         /// <param name="IncludedSeats">The number of seats (users) included..</param>
         /// <param name="IncrementalSeats">Reserved: TBD.</param>
-        /// <param name="IsDowngrade">.</param>
+        /// <param name="IsDowngrade">IsDowngrade.</param>
         /// <param name="OtherDiscountPercent"> Any other percentage discount for the plan. .</param>
-        /// <param name="PaymentCycle">.</param>
+        /// <param name="PaymentCycle">PaymentCycle.</param>
         /// <param name="PaymentMethod"> The payment method used with the plan. The possible values are: CreditCard, PurchaseOrder, Premium, or Freemium. .</param>
-        /// <param name="PerSeatPrice">.</param>
+        /// <param name="PerSeatPrice">PerSeatPrice.</param>
         /// <param name="PlanClassification">Identifies the type of plan. Examples include Business, Corporate, Enterprise, Free..</param>
         /// <param name="PlanFeatureSets">A complex type that sets the feature sets for the account. It contains the following information (all string content):  * currencyFeatureSetPrices - Contains the currencyCode and currencySymbol for the alternate currency values for envelopeFee, fixedFee, seatFee that are configured for this plan feature set. * envelopeFee - An incremental envelope cost for plans with envelope overages (when isEnabled&#x3D;true). * featureSetId - A unique ID for the feature set. * fixedFee - A one-time fee associated with the plan (when isEnabled&#x3D;true). * isActive - Specifies whether the feature set is actively set as part of the plan. * isEnabled - Specifies whether the feature set is actively enabled as part of the plan. * name - The name of the feature set. * seatFee - An incremental seat cost for seat-based plans (when isEnabled&#x3D;true). .</param>
-        /// <param name="PlanId">.</param>
+        /// <param name="PlanId">PlanId.</param>
         /// <param name="PlanName">The name of the Billing Plan..</param>
         /// <param name="RenewalStatus">The renewal status for the account. The acceptable values are:  * auto: The account automatically renews. * queued_for_close: Account will be closed at the billingPeriodEndDate. * queued_for_downgrade: Account will be downgraded at the billingPeriodEndDate..</param>
         /// <param name="SeatDiscounts"> A complex type that contains any seat discount information.  Values are: BeginSeatCount, EndSeatCount, and SeatDiscountPercent.  .</param>
@@ -124,9 +125,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="incrementalSeats", EmitDefaultValue=false)]
         public string IncrementalSeats { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsDowngrade
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isDowngrade", EmitDefaultValue=false)]
         public string IsDowngrade { get; set; }
         /// <summary>
@@ -136,9 +136,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="otherDiscountPercent", EmitDefaultValue=false)]
         public string OtherDiscountPercent { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentCycle
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentCycle", EmitDefaultValue=false)]
         public string PaymentCycle { get; set; }
         /// <summary>
@@ -148,9 +147,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
         public string PaymentMethod { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PerSeatPrice
         /// </summary>
-        /// <value></value>
         [DataMember(Name="perSeatPrice", EmitDefaultValue=false)]
         public string PerSeatPrice { get; set; }
         /// <summary>
@@ -166,9 +164,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="planFeatureSets", EmitDefaultValue=false)]
         public List<FeatureSet> PlanFeatureSets { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PlanId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="planId", EmitDefaultValue=false)]
         public string PlanId { get; set; }
         /// <summary>
@@ -427,5 +424,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

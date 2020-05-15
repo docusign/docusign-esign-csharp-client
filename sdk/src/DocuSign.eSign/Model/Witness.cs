@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,36 +40,36 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AccessCode">If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account&#39;s access code format setting.  If blank, but the signer &#x60;accessCode&#x60; property is set in the envelope, then that value is used.  If blank and the signer &#x60;accessCode&#x60; property is not set, then the access code is not required..</param>
         /// <param name="AddAccessCodeToEmail">This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient..</param>
-        /// <param name="AgentCanEditEmail">.</param>
-        /// <param name="AgentCanEditName">.</param>
-        /// <param name="AutoNavigation">.</param>
+        /// <param name="AgentCanEditEmail">AgentCanEditEmail.</param>
+        /// <param name="AgentCanEditName">AgentCanEditName.</param>
+        /// <param name="AutoNavigation">AutoNavigation.</param>
         /// <param name="BulkRecipientsUri">Contains a URI for an endpoint that allows you to easily retrieve bulk recipient information..</param>
         /// <param name="CanSignOffline">When set to **true**, specifies that the signer can perform the signing ceremony offline..</param>
         /// <param name="ClientUserId">Specifies whether the recipient is embedded or remote.   If the &#x60;clientUserId&#x60; property is not null then the recipient is embedded. Note that if the &#x60;ClientUserId&#x60; property is set and either &#x60;SignerMustHaveAccount&#x60; or &#x60;SignerMustLoginToSign&#x60; property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. .</param>
-        /// <param name="CreationReason">.</param>
+        /// <param name="CreationReason">CreationReason.</param>
         /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
         /// <param name="DeclinedDateTime">The date and time the recipient declined the document..</param>
         /// <param name="DeclinedReason">The reason the recipient declined the document..</param>
-        /// <param name="DefaultRecipient">.</param>
+        /// <param name="DefaultRecipient">DefaultRecipient.</param>
         /// <param name="DeliveredDateTime">Reserved: For DocuSign use only..</param>
         /// <param name="DeliveryMethod">Reserved: For DocuSign use only..</param>
-        /// <param name="DocumentVisibility">.</param>
-        /// <param name="Email">.</param>
+        /// <param name="DocumentVisibility">DocumentVisibility.</param>
+        /// <param name="Email">Email.</param>
         /// <param name="EmailNotification">EmailNotification.</param>
-        /// <param name="EmailRecipientPostSigningURL">.</param>
+        /// <param name="EmailRecipientPostSigningURL">EmailRecipientPostSigningURL.</param>
         /// <param name="EmbeddedRecipientStartURL">Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender&#39;s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to &#x60;SIGN_AT_DOCUSIGN&#x60;, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient&#39;s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets &#x60;EmbeddedRecipientStartURL&#x3D;SIGN_AT_DOCUSIGN&#x60;, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the &#x60;clientUserId&#x60; property is NOT set, and the &#x60;embeddedRecipientStartURL&#x60; is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The &#x60;customFields&#x60; property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   &#x60;http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&amp;[[mergeField3]]&#x60; .</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="ExcludedDocuments">Specifies the documents that are not visible to this recipient. Document Visibility must be enabled for the account and the &#x60;enforceSignerVisibility&#x60; property must be set to **true** for the envelope to use this.  When enforce signer visibility is enabled, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent..</param>
         /// <param name="FaxNumber">Reserved:.</param>
         /// <param name="FirstName">The user&#39;s first name.  Maximum Length: 50 characters..</param>
-        /// <param name="FullName">.</param>
+        /// <param name="FullName">FullName.</param>
         /// <param name="IdCheckConfigurationName">Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node..</param>
         /// <param name="IdCheckInformationInput">IdCheckInformationInput.</param>
         /// <param name="IdentityVerification">IdentityVerification.</param>
         /// <param name="InheritEmailNotificationConfiguration">When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient&#39;s account. .</param>
-        /// <param name="IsBulkRecipient">.</param>
-        /// <param name="LastName">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="IsBulkRecipient">IsBulkRecipient.</param>
+        /// <param name="LastName">LastName.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="Note">Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters..</param>
         /// <param name="OfflineAttributes">OfflineAttributes.</param>
         /// <param name="PhoneAuthentication">PhoneAuthentication.</param>
@@ -76,12 +77,12 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientAttachments">Reserved:.</param>
         /// <param name="RecipientAuthenticationStatus">RecipientAuthenticationStatus.</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
-        /// <param name="RecipientIdGuid">.</param>
-        /// <param name="RecipientSignatureProviders">.</param>
-        /// <param name="RecipientSuppliesTabs">.</param>
+        /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
+        /// <param name="RecipientSignatureProviders">RecipientSignatureProviders.</param>
+        /// <param name="RecipientSuppliesTabs">RecipientSuppliesTabs.</param>
         /// <param name="RequireIdLookup">When set to **true**, the recipient is required to use the specified ID check method (including Phone and SMS authentication) to validate their identity. .</param>
-        /// <param name="RequireSignerCertificate">.</param>
-        /// <param name="RequireSignOnPaper">.</param>
+        /// <param name="RequireSignerCertificate">RequireSignerCertificate.</param>
+        /// <param name="RequireSignOnPaper">RequireSignOnPaper.</param>
         /// <param name="RoleName">Optional element. Specifies the role name associated with the recipient.&lt;br/&gt;&lt;br/&gt;This is required when working with template recipients..</param>
         /// <param name="RoutingOrder">Specifies the routing order of the recipient in the envelope. .</param>
         /// <param name="SamlAuthentication">SamlAuthentication.</param>
@@ -98,10 +99,10 @@ namespace DocuSign.eSign.Model
         /// <param name="Tabs">Tabs.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
-        /// <param name="TotalTabCount">.</param>
-        /// <param name="UserId">.</param>
-        /// <param name="WitnessFor">.</param>
-        /// <param name="WitnessForGuid">.</param>
+        /// <param name="TotalTabCount">TotalTabCount.</param>
+        /// <param name="UserId">UserId.</param>
+        /// <param name="WitnessFor">WitnessFor.</param>
+        /// <param name="WitnessForGuid">WitnessForGuid.</param>
         public Witness(string AccessCode = default(string), string AddAccessCodeToEmail = default(string), string AgentCanEditEmail = default(string), string AgentCanEditName = default(string), string AutoNavigation = default(string), string BulkRecipientsUri = default(string), string CanSignOffline = default(string), string ClientUserId = default(string), string CreationReason = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DefaultRecipient = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmailRecipientPostSigningURL = default(string), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<string> ExcludedDocuments = default(List<string>), string FaxNumber = default(string), string FirstName = default(string), string FullName = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string InheritEmailNotificationConfiguration = default(string), string IsBulkRecipient = default(string), string LastName = default(string), string Name = default(string), string Note = default(string), OfflineAttributes OfflineAttributes = default(OfflineAttributes), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), RecipientProofFile ProofFile = default(RecipientProofFile), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), string RecipientId = default(string), string RecipientIdGuid = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RecipientSuppliesTabs = default(string), string RequireIdLookup = default(string), string RequireSignerCertificate = default(string), string RequireSignOnPaper = default(string), string RoleName = default(string), string RoutingOrder = default(string), RecipientSAMLAuthentication SamlAuthentication = default(RecipientSAMLAuthentication), string SentDateTime = default(string), RecipientSignatureInformation SignatureInfo = default(RecipientSignatureInformation), string SignedDateTime = default(string), string SignInEachLocation = default(string), string SigningGroupId = default(string), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string), string WitnessFor = default(string), string WitnessForGuid = default(string))
         {
             this.AccessCode = AccessCode;
@@ -184,21 +185,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="addAccessCodeToEmail", EmitDefaultValue=false)]
         public string AddAccessCodeToEmail { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AgentCanEditEmail
         /// </summary>
-        /// <value></value>
         [DataMember(Name="agentCanEditEmail", EmitDefaultValue=false)]
         public string AgentCanEditEmail { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AgentCanEditName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="agentCanEditName", EmitDefaultValue=false)]
         public string AgentCanEditName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AutoNavigation
         /// </summary>
-        /// <value></value>
         [DataMember(Name="autoNavigation", EmitDefaultValue=false)]
         public string AutoNavigation { get; set; }
         /// <summary>
@@ -220,9 +218,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="clientUserId", EmitDefaultValue=false)]
         public string ClientUserId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CreationReason
         /// </summary>
-        /// <value></value>
         [DataMember(Name="creationReason", EmitDefaultValue=false)]
         public string CreationReason { get; set; }
         /// <summary>
@@ -244,9 +241,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="declinedReason", EmitDefaultValue=false)]
         public string DeclinedReason { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DefaultRecipient
         /// </summary>
-        /// <value></value>
         [DataMember(Name="defaultRecipient", EmitDefaultValue=false)]
         public string DefaultRecipient { get; set; }
         /// <summary>
@@ -262,15 +258,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="deliveryMethod", EmitDefaultValue=false)]
         public string DeliveryMethod { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentVisibility
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentVisibility", EmitDefaultValue=false)]
         public List<DocumentVisibility> DocumentVisibility { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
@@ -279,9 +273,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="emailNotification", EmitDefaultValue=false)]
         public RecipientEmailNotification EmailNotification { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EmailRecipientPostSigningURL
         /// </summary>
-        /// <value></value>
         [DataMember(Name="emailRecipientPostSigningURL", EmitDefaultValue=false)]
         public string EmailRecipientPostSigningURL { get; set; }
         /// <summary>
@@ -314,9 +307,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="firstName", EmitDefaultValue=false)]
         public string FirstName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FullName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fullName", EmitDefaultValue=false)]
         public string FullName { get; set; }
         /// <summary>
@@ -342,21 +334,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="inheritEmailNotificationConfiguration", EmitDefaultValue=false)]
         public string InheritEmailNotificationConfiguration { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsBulkRecipient
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isBulkRecipient", EmitDefaultValue=false)]
         public string IsBulkRecipient { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LastName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lastName", EmitDefaultValue=false)]
         public string LastName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -398,21 +387,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientId", EmitDefaultValue=false)]
         public string RecipientId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientIdGuid
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientIdGuid", EmitDefaultValue=false)]
         public string RecipientIdGuid { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientSignatureProviders
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientSignatureProviders", EmitDefaultValue=false)]
         public List<RecipientSignatureProvider> RecipientSignatureProviders { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientSuppliesTabs
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientSuppliesTabs", EmitDefaultValue=false)]
         public string RecipientSuppliesTabs { get; set; }
         /// <summary>
@@ -422,15 +408,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="requireIdLookup", EmitDefaultValue=false)]
         public string RequireIdLookup { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RequireSignerCertificate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="requireSignerCertificate", EmitDefaultValue=false)]
         public string RequireSignerCertificate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RequireSignOnPaper
         /// </summary>
-        /// <value></value>
         [DataMember(Name="requireSignOnPaper", EmitDefaultValue=false)]
         public string RequireSignOnPaper { get; set; }
         /// <summary>
@@ -526,27 +510,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequired", EmitDefaultValue=false)]
         public string TemplateRequired { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TotalTabCount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="totalTabCount", EmitDefaultValue=false)]
         public string TotalTabCount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets WitnessFor
         /// </summary>
-        /// <value></value>
         [DataMember(Name="witnessFor", EmitDefaultValue=false)]
         public string WitnessFor { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets WitnessForGuid
         /// </summary>
-        /// <value></value>
         [DataMember(Name="witnessForGuid", EmitDefaultValue=false)]
         public string WitnessForGuid { get; set; }
         /// <summary>
@@ -1135,5 +1115,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

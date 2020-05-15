@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientIdentityVerification" /> class.
         /// </summary>
-        /// <param name="InputOptions">.</param>
-        /// <param name="WorkflowId">.</param>
+        /// <param name="InputOptions">InputOptions.</param>
+        /// <param name="WorkflowId">WorkflowId.</param>
         public RecipientIdentityVerification(List<RecipientIdentityInputOption> InputOptions = default(List<RecipientIdentityInputOption>), string WorkflowId = default(string))
         {
             this.InputOptions = InputOptions;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets InputOptions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="inputOptions", EmitDefaultValue=false)]
         public List<RecipientIdentityInputOption> InputOptions { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets WorkflowId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="workflowId", EmitDefaultValue=false)]
         public string WorkflowId { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

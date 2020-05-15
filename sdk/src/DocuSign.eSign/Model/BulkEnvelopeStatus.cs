@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -49,7 +50,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ResultSetSize">The number of results returned in this response. .</param>
         /// <param name="Sent">The number of entries with a status of sent..</param>
         /// <param name="StartPosition">Starting position of the current result set..</param>
-        /// <param name="SubmittedDate">.</param>
+        /// <param name="SubmittedDate">SubmittedDate.</param>
         /// <param name="TotalSetSize">The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response..</param>
         public BulkEnvelopeStatus(string BatchId = default(string), string BatchSize = default(string), List<BulkEnvelope> BulkEnvelopes = default(List<BulkEnvelope>), string BulkEnvelopesBatchUri = default(string), string EndPosition = default(string), string Failed = default(string), string NextUri = default(string), string PreviousUri = default(string), string Queued = default(string), string ResultSetSize = default(string), string Sent = default(string), string StartPosition = default(string), string SubmittedDate = default(string), string TotalSetSize = default(string))
         {
@@ -142,9 +143,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="startPosition", EmitDefaultValue=false)]
         public string StartPosition { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SubmittedDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="submittedDate", EmitDefaultValue=false)]
         public string SubmittedDate { get; set; }
         /// <summary>
@@ -331,5 +331,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

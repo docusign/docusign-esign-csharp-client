@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountIdentityVerificationWorkflow" /> class.
         /// </summary>
-        /// <param name="DefaultName">.</param>
-        /// <param name="Steps">.</param>
-        /// <param name="WorkflowId">.</param>
+        /// <param name="DefaultName">DefaultName.</param>
+        /// <param name="Steps">Steps.</param>
+        /// <param name="WorkflowId">WorkflowId.</param>
         public AccountIdentityVerificationWorkflow(string DefaultName = default(string), List<AccountIdentityVerificationStep> Steps = default(List<AccountIdentityVerificationStep>), string WorkflowId = default(string))
         {
             this.DefaultName = DefaultName;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DefaultName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="defaultName", EmitDefaultValue=false)]
         public string DefaultName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Steps
         /// </summary>
-        /// <value></value>
         [DataMember(Name="steps", EmitDefaultValue=false)]
         public List<AccountIdentityVerificationStep> Steps { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets WorkflowId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="workflowId", EmitDefaultValue=false)]
         public string WorkflowId { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

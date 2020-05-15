@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -46,7 +47,7 @@ namespace DocuSign.eSign.Model
         /// <param name="LoginUserSettings">A list of user-level settings that indicate what user-specific features are available..</param>
         /// <param name="Name">The name associated with the account..</param>
         /// <param name="SiteDescription">An optional descirption of the site that hosts the account..</param>
-        /// <param name="UserId">.</param>
+        /// <param name="UserId">UserId.</param>
         /// <param name="UserName">The name of this user as defined by the account..</param>
         public LoginAccount(string AccountId = default(string), string AccountIdGuid = default(string), string BaseUrl = default(string), string Email = default(string), string IsDefault = default(string), List<NameValue> LoginAccountSettings = default(List<NameValue>), List<NameValue> LoginUserSettings = default(List<NameValue>), string Name = default(string), string SiteDescription = default(string), string UserId = default(string), string UserName = default(string))
         {
@@ -118,9 +119,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="siteDescription", EmitDefaultValue=false)]
         public string SiteDescription { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>
@@ -283,5 +283,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

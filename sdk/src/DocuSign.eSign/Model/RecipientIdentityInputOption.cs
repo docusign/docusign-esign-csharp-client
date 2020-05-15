@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientIdentityInputOption" /> class.
         /// </summary>
-        /// <param name="Name">.</param>
-        /// <param name="PhoneNumberList">.</param>
-        /// <param name="ValueType">.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="PhoneNumberList">PhoneNumberList.</param>
+        /// <param name="ValueType">ValueType.</param>
         public RecipientIdentityInputOption(string Name = default(string), List<RecipientIdentityPhoneNumber> PhoneNumberList = default(List<RecipientIdentityPhoneNumber>), string ValueType = default(string))
         {
             this.Name = Name;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PhoneNumberList
         /// </summary>
-        /// <value></value>
         [DataMember(Name="phoneNumberList", EmitDefaultValue=false)]
         public List<RecipientIdentityPhoneNumber> PhoneNumberList { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ValueType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="valueType", EmitDefaultValue=false)]
         public string ValueType { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

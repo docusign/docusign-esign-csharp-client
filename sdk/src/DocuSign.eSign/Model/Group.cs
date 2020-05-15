@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -42,7 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="GroupName">The name of the group..</param>
         /// <param name="GroupType">The group type..</param>
         /// <param name="PermissionProfileId">The ID of the permission profile associated with the group..</param>
-        /// <param name="Users">.</param>
+        /// <param name="Users">Users.</param>
         public Group(ErrorDetails ErrorDetails = default(ErrorDetails), string GroupId = default(string), string GroupName = default(string), string GroupType = default(string), string PermissionProfileId = default(string), List<UserInfo> Users = default(List<UserInfo>))
         {
             this.ErrorDetails = ErrorDetails;
@@ -83,9 +84,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="permissionProfileId", EmitDefaultValue=false)]
         public string PermissionProfileId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Users
         /// </summary>
-        /// <value></value>
         [DataMember(Name="users", EmitDefaultValue=false)]
         public List<UserInfo> Users { get; set; }
         /// <summary>
@@ -202,5 +202,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,14 +41,14 @@ namespace DocuSign.eSign.Model
         /// <param name="BrandCompany">The name of the company associated with this brand..</param>
         /// <param name="BrandId">The ID used to identify a specific brand in API calls..</param>
         /// <param name="BrandName">The name of the brand..</param>
-        /// <param name="Colors">.</param>
-        /// <param name="EmailContent">.</param>
+        /// <param name="Colors">Colors.</param>
+        /// <param name="EmailContent">EmailContent.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="IsOverridingCompanyName">.</param>
-        /// <param name="IsSendingDefault">.</param>
-        /// <param name="IsSigningDefault">.</param>
-        /// <param name="LandingPages">.</param>
-        /// <param name="Links">.</param>
+        /// <param name="IsOverridingCompanyName">IsOverridingCompanyName.</param>
+        /// <param name="IsSendingDefault">IsSendingDefault.</param>
+        /// <param name="IsSigningDefault">IsSigningDefault.</param>
+        /// <param name="LandingPages">LandingPages.</param>
+        /// <param name="Links">Links.</param>
         /// <param name="Logos">Logos.</param>
         /// <param name="Resources">Resources.</param>
         public Brand(string BrandCompany = default(string), string BrandId = default(string), string BrandName = default(string), List<NameValue> Colors = default(List<NameValue>), List<BrandEmailContent> EmailContent = default(List<BrandEmailContent>), ErrorDetails ErrorDetails = default(ErrorDetails), string IsOverridingCompanyName = default(string), string IsSendingDefault = default(string), string IsSigningDefault = default(string), List<NameValue> LandingPages = default(List<NameValue>), List<BrandLink> Links = default(List<BrandLink>), BrandLogos Logos = default(BrandLogos), BrandResourceUrls Resources = default(BrandResourceUrls))
@@ -86,15 +87,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="brandName", EmitDefaultValue=false)]
         public string BrandName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Colors
         /// </summary>
-        /// <value></value>
         [DataMember(Name="colors", EmitDefaultValue=false)]
         public List<NameValue> Colors { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EmailContent
         /// </summary>
-        /// <value></value>
         [DataMember(Name="emailContent", EmitDefaultValue=false)]
         public List<BrandEmailContent> EmailContent { get; set; }
         /// <summary>
@@ -103,33 +102,28 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsOverridingCompanyName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isOverridingCompanyName", EmitDefaultValue=false)]
         public string IsOverridingCompanyName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsSendingDefault
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isSendingDefault", EmitDefaultValue=false)]
         public string IsSendingDefault { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsSigningDefault
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isSigningDefault", EmitDefaultValue=false)]
         public string IsSigningDefault { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LandingPages
         /// </summary>
-        /// <value></value>
         [DataMember(Name="landingPages", EmitDefaultValue=false)]
         public List<NameValue> LandingPages { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Links
         /// </summary>
-        /// <value></value>
         [DataMember(Name="links", EmitDefaultValue=false)]
         public List<BrandLink> Links { get; set; }
         /// <summary>
@@ -312,5 +306,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

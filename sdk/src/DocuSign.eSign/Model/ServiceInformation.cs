@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -41,8 +42,8 @@ namespace DocuSign.eSign.Model
         /// <param name="BuildBranchDeployedDateTime">Reserved: TBD.</param>
         /// <param name="BuildSHA">Reserved: TBD.</param>
         /// <param name="BuildVersion">Reserved: TBD.</param>
-        /// <param name="LinkedSites">.</param>
-        /// <param name="ServiceVersions">.</param>
+        /// <param name="LinkedSites">LinkedSites.</param>
+        /// <param name="ServiceVersions">ServiceVersions.</param>
         public ServiceInformation(string BuildBranch = default(string), string BuildBranchDeployedDateTime = default(string), string BuildSHA = default(string), string BuildVersion = default(string), List<string> LinkedSites = default(List<string>), List<ServiceVersion> ServiceVersions = default(List<ServiceVersion>))
         {
             this.BuildBranch = BuildBranch;
@@ -78,15 +79,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="buildVersion", EmitDefaultValue=false)]
         public string BuildVersion { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LinkedSites
         /// </summary>
-        /// <value></value>
         [DataMember(Name="linkedSites", EmitDefaultValue=false)]
         public List<string> LinkedSites { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ServiceVersions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="serviceVersions", EmitDefaultValue=false)]
         public List<ServiceVersion> ServiceVersions { get; set; }
         /// <summary>
@@ -203,5 +202,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

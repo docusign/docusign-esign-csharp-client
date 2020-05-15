@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountSignatureProviderOption" /> class.
         /// </summary>
-        /// <param name="SignatureProviderOptionDisplayName">.</param>
-        /// <param name="SignatureProviderOptionId">.</param>
-        /// <param name="SignatureProviderOptionName">.</param>
+        /// <param name="SignatureProviderOptionDisplayName">SignatureProviderOptionDisplayName.</param>
+        /// <param name="SignatureProviderOptionId">SignatureProviderOptionId.</param>
+        /// <param name="SignatureProviderOptionName">SignatureProviderOptionName.</param>
         public AccountSignatureProviderOption(string SignatureProviderOptionDisplayName = default(string), string SignatureProviderOptionId = default(string), string SignatureProviderOptionName = default(string))
         {
             this.SignatureProviderOptionDisplayName = SignatureProviderOptionDisplayName;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureProviderOptionDisplayName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureProviderOptionDisplayName", EmitDefaultValue=false)]
         public string SignatureProviderOptionDisplayName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureProviderOptionId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureProviderOptionId", EmitDefaultValue=false)]
         public string SignatureProviderOptionId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureProviderOptionName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureProviderOptionName", EmitDefaultValue=false)]
         public string SignatureProviderOptionName { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

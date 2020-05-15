@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -48,7 +49,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
-        /// <param name="Tooltip">.</param>
+        /// <param name="Tooltip">Tooltip.</param>
         public RadioGroup(string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string DocumentId = default(string), string GroupName = default(string), List<Radio> Radios = default(List<Radio>), string RecipientId = default(string), string RequireAll = default(string), string RequireInitialOnSharedChange = default(string), string Shared = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Tooltip = default(string))
         {
             this.ConditionalParentLabel = ConditionalParentLabel;
@@ -132,9 +133,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequired", EmitDefaultValue=false)]
         public string TemplateRequired { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Tooltip
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tooltip", EmitDefaultValue=false)]
         public string Tooltip { get; set; }
         /// <summary>
@@ -299,5 +299,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

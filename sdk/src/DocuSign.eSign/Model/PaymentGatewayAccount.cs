@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentGatewayAccount" /> class.
         /// </summary>
-        /// <param name="DisplayName">.</param>
-        /// <param name="PaymentGateway">.</param>
-        /// <param name="PaymentGatewayAccountId">.</param>
-        /// <param name="PaymentGatewayDisplayName">.</param>
+        /// <param name="DisplayName">DisplayName.</param>
+        /// <param name="PaymentGateway">PaymentGateway.</param>
+        /// <param name="PaymentGatewayAccountId">PaymentGatewayAccountId.</param>
+        /// <param name="PaymentGatewayDisplayName">PaymentGatewayDisplayName.</param>
         public PaymentGatewayAccount(string DisplayName = default(string), string PaymentGateway = default(string), string PaymentGatewayAccountId = default(string), string PaymentGatewayDisplayName = default(string))
         {
             this.DisplayName = DisplayName;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayName", EmitDefaultValue=false)]
         public string DisplayName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentGateway
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentGateway", EmitDefaultValue=false)]
         public string PaymentGateway { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentGatewayAccountId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentGatewayAccountId", EmitDefaultValue=false)]
         public string PaymentGatewayAccountId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentGatewayDisplayName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentGatewayDisplayName", EmitDefaultValue=false)]
         public string PaymentGatewayDisplayName { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,15 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChunkedUploadResponse" /> class.
         /// </summary>
-        /// <param name="Checksum">.</param>
-        /// <param name="ChunkedUploadId">.</param>
-        /// <param name="ChunkedUploadParts">.</param>
-        /// <param name="ChunkedUploadUri">.</param>
-        /// <param name="Committed">.</param>
-        /// <param name="ExpirationDateTime">.</param>
-        /// <param name="MaxChunkedUploadParts">.</param>
-        /// <param name="MaxTotalSize">.</param>
-        /// <param name="TotalSize">.</param>
+        /// <param name="Checksum">Checksum.</param>
+        /// <param name="ChunkedUploadId">ChunkedUploadId.</param>
+        /// <param name="ChunkedUploadParts">ChunkedUploadParts.</param>
+        /// <param name="ChunkedUploadUri">ChunkedUploadUri.</param>
+        /// <param name="Committed">Committed.</param>
+        /// <param name="ExpirationDateTime">ExpirationDateTime.</param>
+        /// <param name="MaxChunkedUploadParts">MaxChunkedUploadParts.</param>
+        /// <param name="MaxTotalSize">MaxTotalSize.</param>
+        /// <param name="TotalSize">TotalSize.</param>
         public ChunkedUploadResponse(string Checksum = default(string), string ChunkedUploadId = default(string), List<ChunkedUploadPart> ChunkedUploadParts = default(List<ChunkedUploadPart>), string ChunkedUploadUri = default(string), string Committed = default(string), string ExpirationDateTime = default(string), string MaxChunkedUploadParts = default(string), string MaxTotalSize = default(string), string TotalSize = default(string))
         {
             this.Checksum = Checksum;
@@ -60,57 +61,48 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Checksum
         /// </summary>
-        /// <value></value>
         [DataMember(Name="checksum", EmitDefaultValue=false)]
         public string Checksum { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ChunkedUploadId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="chunkedUploadId", EmitDefaultValue=false)]
         public string ChunkedUploadId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ChunkedUploadParts
         /// </summary>
-        /// <value></value>
         [DataMember(Name="chunkedUploadParts", EmitDefaultValue=false)]
         public List<ChunkedUploadPart> ChunkedUploadParts { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ChunkedUploadUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="chunkedUploadUri", EmitDefaultValue=false)]
         public string ChunkedUploadUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Committed
         /// </summary>
-        /// <value></value>
         [DataMember(Name="committed", EmitDefaultValue=false)]
         public string Committed { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ExpirationDateTime
         /// </summary>
-        /// <value></value>
         [DataMember(Name="expirationDateTime", EmitDefaultValue=false)]
         public string ExpirationDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MaxChunkedUploadParts
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maxChunkedUploadParts", EmitDefaultValue=false)]
         public string MaxChunkedUploadParts { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MaxTotalSize
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maxTotalSize", EmitDefaultValue=false)]
         public string MaxTotalSize { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TotalSize
         /// </summary>
-        /// <value></value>
         [DataMember(Name="totalSize", EmitDefaultValue=false)]
         public string TotalSize { get; set; }
         /// <summary>
@@ -251,5 +243,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

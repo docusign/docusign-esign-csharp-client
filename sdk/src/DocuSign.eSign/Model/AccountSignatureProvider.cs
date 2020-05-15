@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,13 +38,13 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountSignatureProvider" /> class.
         /// </summary>
-        /// <param name="IsRequired">.</param>
-        /// <param name="Priority">.</param>
-        /// <param name="SignatureProviderDisplayName">.</param>
-        /// <param name="SignatureProviderId">.</param>
-        /// <param name="SignatureProviderName">.</param>
-        /// <param name="SignatureProviderOptionsMetadata">.</param>
-        /// <param name="SignatureProviderRequiredOptions">.</param>
+        /// <param name="IsRequired">IsRequired.</param>
+        /// <param name="Priority">Priority.</param>
+        /// <param name="SignatureProviderDisplayName">SignatureProviderDisplayName.</param>
+        /// <param name="SignatureProviderId">SignatureProviderId.</param>
+        /// <param name="SignatureProviderName">SignatureProviderName.</param>
+        /// <param name="SignatureProviderOptionsMetadata">SignatureProviderOptionsMetadata.</param>
+        /// <param name="SignatureProviderRequiredOptions">SignatureProviderRequiredOptions.</param>
         public AccountSignatureProvider(string IsRequired = default(string), string Priority = default(string), string SignatureProviderDisplayName = default(string), string SignatureProviderId = default(string), string SignatureProviderName = default(string), List<AccountSignatureProviderOption> SignatureProviderOptionsMetadata = default(List<AccountSignatureProviderOption>), List<SignatureProviderRequiredOption> SignatureProviderRequiredOptions = default(List<SignatureProviderRequiredOption>))
         {
             this.IsRequired = IsRequired;
@@ -56,45 +57,38 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets IsRequired
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isRequired", EmitDefaultValue=false)]
         public string IsRequired { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Priority
         /// </summary>
-        /// <value></value>
         [DataMember(Name="priority", EmitDefaultValue=false)]
         public string Priority { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureProviderDisplayName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureProviderDisplayName", EmitDefaultValue=false)]
         public string SignatureProviderDisplayName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureProviderId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureProviderId", EmitDefaultValue=false)]
         public string SignatureProviderId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureProviderName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureProviderName", EmitDefaultValue=false)]
         public string SignatureProviderName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureProviderOptionsMetadata
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureProviderOptionsMetadata", EmitDefaultValue=false)]
         public List<AccountSignatureProviderOption> SignatureProviderOptionsMetadata { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureProviderRequiredOptions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureProviderRequiredOptions", EmitDefaultValue=false)]
         public List<SignatureProviderRequiredOption> SignatureProviderRequiredOptions { get; set; }
         /// <summary>
@@ -219,5 +213,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

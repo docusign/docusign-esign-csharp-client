@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SigningGroupUser" /> class.
         /// </summary>
-        /// <param name="Email">.</param>
+        /// <param name="Email">Email.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="UserName">The name of the group member.   Maximum Length: 100 characters. .</param>
         public SigningGroupUser(string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string UserName = default(string))
@@ -48,9 +49,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
@@ -154,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

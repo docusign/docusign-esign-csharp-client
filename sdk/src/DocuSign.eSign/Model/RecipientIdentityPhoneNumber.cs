@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientIdentityPhoneNumber" /> class.
         /// </summary>
-        /// <param name="CountryCode">.</param>
-        /// <param name="Extension">.</param>
-        /// <param name="Number">.</param>
+        /// <param name="CountryCode">CountryCode.</param>
+        /// <param name="Extension">Extension.</param>
+        /// <param name="Number">Number.</param>
         public RecipientIdentityPhoneNumber(string CountryCode = default(string), string Extension = default(string), string Number = default(string))
         {
             this.CountryCode = CountryCode;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CountryCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="countryCode", EmitDefaultValue=false)]
         public string CountryCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Extension
         /// </summary>
-        /// <value></value>
         [DataMember(Name="extension", EmitDefaultValue=false)]
         public string Extension { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Number
         /// </summary>
-        /// <value></value>
         [DataMember(Name="number", EmitDefaultValue=false)]
         public string Number { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

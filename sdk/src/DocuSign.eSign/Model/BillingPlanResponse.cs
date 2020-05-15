@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BillingPlanResponse" /> class.
         /// </summary>
         /// <param name="BillingPlan">BillingPlan.</param>
-        /// <param name="SuccessorPlans">.</param>
+        /// <param name="SuccessorPlans">SuccessorPlans.</param>
         public BillingPlanResponse(BillingPlan BillingPlan = default(BillingPlan), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>))
         {
             this.BillingPlan = BillingPlan;
@@ -51,9 +52,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="billingPlan", EmitDefaultValue=false)]
         public BillingPlan BillingPlan { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SuccessorPlans
         /// </summary>
-        /// <value></value>
         [DataMember(Name="successorPlans", EmitDefaultValue=false)]
         public List<BillingPlan> SuccessorPlans { get; set; }
         /// <summary>
@@ -138,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

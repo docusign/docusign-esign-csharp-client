@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MobileNotifierConfiguration" /> class.
         /// </summary>
-        /// <param name="DeviceId">.</param>
+        /// <param name="DeviceId">DeviceId.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Platform">.</param>
+        /// <param name="Platform">Platform.</param>
         public MobileNotifierConfiguration(string DeviceId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Platform = default(string))
         {
             this.DeviceId = DeviceId;
@@ -48,9 +49,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DeviceId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="deviceId", EmitDefaultValue=false)]
         public string DeviceId { get; set; }
         /// <summary>
@@ -59,9 +59,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Platform
         /// </summary>
-        /// <value></value>
         [DataMember(Name="platform", EmitDefaultValue=false)]
         public string Platform { get; set; }
         /// <summary>
@@ -154,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

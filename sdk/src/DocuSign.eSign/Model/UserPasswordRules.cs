@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="UserPasswordRules" /> class.
         /// </summary>
         /// <param name="PasswordRules">PasswordRules.</param>
-        /// <param name="UserId">.</param>
+        /// <param name="UserId">UserId.</param>
         public UserPasswordRules(AccountPasswordRules PasswordRules = default(AccountPasswordRules), string UserId = default(string))
         {
             this.PasswordRules = PasswordRules;
@@ -51,9 +52,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="passwordRules", EmitDefaultValue=false)]
         public AccountPasswordRules PasswordRules { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>
@@ -138,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

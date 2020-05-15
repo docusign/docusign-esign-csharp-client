@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentLineItem" /> class.
         /// </summary>
-        /// <param name="AmountReference">.</param>
-        /// <param name="Description">.</param>
-        /// <param name="ItemCode">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="AmountReference">AmountReference.</param>
+        /// <param name="Description">Description.</param>
+        /// <param name="ItemCode">ItemCode.</param>
+        /// <param name="Name">Name.</param>
         public PaymentLineItem(string AmountReference = default(string), string Description = default(string), string ItemCode = default(string), string Name = default(string))
         {
             this.AmountReference = AmountReference;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AmountReference
         /// </summary>
-        /// <value></value>
         [DataMember(Name="amountReference", EmitDefaultValue=false)]
         public string AmountReference { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Description
         /// </summary>
-        /// <value></value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ItemCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="itemCode", EmitDefaultValue=false)]
         public string ItemCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

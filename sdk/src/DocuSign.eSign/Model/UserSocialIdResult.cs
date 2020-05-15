@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="UserSocialIdResult" /> class.
         /// </summary>
         /// <param name="SocialAccountInformation">Contains properties that map a DocuSign user to a social account (Facebook, Yahoo, etc.).</param>
-        /// <param name="UserId">.</param>
+        /// <param name="UserId">UserId.</param>
         public UserSocialIdResult(List<SocialAccountInformation> SocialAccountInformation = default(List<SocialAccountInformation>), string UserId = default(string))
         {
             this.SocialAccountInformation = SocialAccountInformation;
@@ -52,9 +53,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="socialAccountInformation", EmitDefaultValue=false)]
         public List<SocialAccountInformation> SocialAccountInformation { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>
@@ -139,5 +139,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

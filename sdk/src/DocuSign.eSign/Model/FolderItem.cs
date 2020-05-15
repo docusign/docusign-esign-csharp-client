@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,24 +41,24 @@ namespace DocuSign.eSign.Model
         /// <param name="CompletedDateTime">Specifies the date and time this item was completed..</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
-        /// <param name="Description">.</param>
+        /// <param name="Description">Description.</param>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
         /// <param name="EnvelopeUri">Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes..</param>
         /// <param name="Is21CFRPart11">When set to **true**, indicates that this module is enabled on the account..</param>
-        /// <param name="IsSignatureProviderEnvelope">.</param>
-        /// <param name="LastModified">.</param>
-        /// <param name="Name">.</param>
+        /// <param name="IsSignatureProviderEnvelope">IsSignatureProviderEnvelope.</param>
+        /// <param name="LastModified">LastModified.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="OwnerName">Name of the envelope owner..</param>
-        /// <param name="PageCount">.</param>
-        /// <param name="Password">.</param>
-        /// <param name="SenderEmail">.</param>
+        /// <param name="PageCount">PageCount.</param>
+        /// <param name="Password">Password.</param>
+        /// <param name="SenderEmail">SenderEmail.</param>
         /// <param name="SenderName">Name of the envelope sender..</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        /// <param name="Subject">.</param>
+        /// <param name="Subject">Subject.</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Uri">Uri.</param>
         public FolderItem(string CompletedDateTime = default(string), string CreatedDateTime = default(string), List<CustomFieldV2> CustomFields = default(List<CustomFieldV2>), string Description = default(string), string EnvelopeId = default(string), string EnvelopeUri = default(string), string Is21CFRPart11 = default(string), string IsSignatureProviderEnvelope = default(string), string LastModified = default(string), string Name = default(string), string OwnerName = default(string), int? PageCount = default(int?), string Password = default(string), string SenderEmail = default(string), string SenderName = default(string), string SentDateTime = default(string), string Shared = default(string), string Status = default(string), string Subject = default(string), string TemplateId = default(string), string Uri = default(string))
         {
             this.CompletedDateTime = CompletedDateTime;
@@ -102,9 +103,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="customFields", EmitDefaultValue=false)]
         public List<CustomFieldV2> CustomFields { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Description
         /// </summary>
-        /// <value></value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
@@ -126,21 +126,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="is21CFRPart11", EmitDefaultValue=false)]
         public string Is21CFRPart11 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsSignatureProviderEnvelope
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isSignatureProviderEnvelope", EmitDefaultValue=false)]
         public string IsSignatureProviderEnvelope { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LastModified
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lastModified", EmitDefaultValue=false)]
         public string LastModified { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -150,21 +147,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="ownerName", EmitDefaultValue=false)]
         public string OwnerName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PageCount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pageCount", EmitDefaultValue=false)]
         public int? PageCount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Password
         /// </summary>
-        /// <value></value>
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SenderEmail
         /// </summary>
-        /// <value></value>
         [DataMember(Name="senderEmail", EmitDefaultValue=false)]
         public string SenderEmail { get; set; }
         /// <summary>
@@ -192,9 +186,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Subject
         /// </summary>
-        /// <value></value>
         [DataMember(Name="subject", EmitDefaultValue=false)]
         public string Subject { get; set; }
         /// <summary>
@@ -204,9 +197,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateId", EmitDefaultValue=false)]
         public string TemplateId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -443,5 +435,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

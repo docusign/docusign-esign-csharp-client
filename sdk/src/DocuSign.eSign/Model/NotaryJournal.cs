@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,12 +38,12 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NotaryJournal" /> class.
         /// </summary>
-        /// <param name="CreatedDate">.</param>
-        /// <param name="DocumentName">.</param>
+        /// <param name="CreatedDate">CreatedDate.</param>
+        /// <param name="DocumentName">DocumentName.</param>
         /// <param name="Jurisdiction">Jurisdiction.</param>
-        /// <param name="NotaryJournalId">.</param>
+        /// <param name="NotaryJournalId">NotaryJournalId.</param>
         /// <param name="NotaryJournalMetaData">NotaryJournalMetaData.</param>
-        /// <param name="SignerName">.</param>
+        /// <param name="SignerName">SignerName.</param>
         public NotaryJournal(string CreatedDate = default(string), string DocumentName = default(string), Jurisdiction Jurisdiction = default(Jurisdiction), string NotaryJournalId = default(string), NotaryJournalMetaData NotaryJournalMetaData = default(NotaryJournalMetaData), string SignerName = default(string))
         {
             this.CreatedDate = CreatedDate;
@@ -54,15 +55,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CreatedDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
         public string CreatedDate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentName", EmitDefaultValue=false)]
         public string DocumentName { get; set; }
         /// <summary>
@@ -71,9 +70,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="jurisdiction", EmitDefaultValue=false)]
         public Jurisdiction Jurisdiction { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets NotaryJournalId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="notaryJournalId", EmitDefaultValue=false)]
         public string NotaryJournalId { get; set; }
         /// <summary>
@@ -82,9 +80,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="notaryJournalMetaData", EmitDefaultValue=false)]
         public NotaryJournalMetaData NotaryJournalMetaData { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignerName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signerName", EmitDefaultValue=false)]
         public string SignerName { get; set; }
         /// <summary>
@@ -201,5 +198,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

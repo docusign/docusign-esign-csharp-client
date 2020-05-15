@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -52,18 +53,18 @@ namespace DocuSign.eSign.Model
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="MergeField">MergeField.</param>
         /// <param name="Name">Specifies the tool tip text for the tab..</param>
-        /// <param name="Optional">.</param>
+        /// <param name="Optional">Optional.</param>
         /// <param name="PageNumber">Specifies the page number on which the tab is located..</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="ScaleValue"> Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        /// <param name="TabGroupLabels">.</param>
+        /// <param name="TabGroupLabels">TabGroupLabels.</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
         /// <param name="TabLabel">The label string associated with the tab..</param>
-        /// <param name="TabOrder">.</param>
+        /// <param name="TabOrder">TabOrder.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
-        /// <param name="Tooltip">.</param>
+        /// <param name="Tooltip">Tooltip.</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         public InitialHere(string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorString = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string ConditionalParentLabel = default(string), string ConditionalParentValue = default(string), string CustomTabId = default(string), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), MergeField MergeField = default(MergeField), string Name = default(string), string Optional = default(string), string PageNumber = default(string), string RecipientId = default(string), string ScaleValue = default(string), string Status = default(string), List<string> TabGroupLabels = default(List<string>), string TabId = default(string), string TabLabel = default(string), string TabOrder = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Tooltip = default(string), string XPosition = default(string), string YPosition = default(string))
@@ -188,9 +189,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Optional
         /// </summary>
-        /// <value></value>
         [DataMember(Name="optional", EmitDefaultValue=false)]
         public string Optional { get; set; }
         /// <summary>
@@ -218,9 +218,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabGroupLabels
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabGroupLabels", EmitDefaultValue=false)]
         public List<string> TabGroupLabels { get; set; }
         /// <summary>
@@ -236,9 +235,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabLabel", EmitDefaultValue=false)]
         public string TabLabel { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabOrder
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabOrder", EmitDefaultValue=false)]
         public string TabOrder { get; set; }
         /// <summary>
@@ -254,9 +252,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequired", EmitDefaultValue=false)]
         public string TemplateRequired { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Tooltip
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tooltip", EmitDefaultValue=false)]
         public string Tooltip { get; set; }
         /// <summary>
@@ -569,5 +566,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

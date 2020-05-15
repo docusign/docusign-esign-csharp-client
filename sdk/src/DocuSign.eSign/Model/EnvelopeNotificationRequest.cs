@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Expirations">Expirations.</param>
         /// <param name="Reminders">Reminders.</param>
-        /// <param name="UseAccountDefaults">.</param>
+        /// <param name="UseAccountDefaults">UseAccountDefaults.</param>
         public EnvelopeNotificationRequest(Expirations Expirations = default(Expirations), Reminders Reminders = default(Reminders), string UseAccountDefaults = default(string))
         {
             this.Expirations = Expirations;
@@ -58,9 +59,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="reminders", EmitDefaultValue=false)]
         public Reminders Reminders { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UseAccountDefaults
         /// </summary>
-        /// <value></value>
         [DataMember(Name="useAccountDefaults", EmitDefaultValue=false)]
         public string UseAccountDefaults { get; set; }
         /// <summary>
@@ -153,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

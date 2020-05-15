@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,30 +40,30 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AllowMarkup">When set to **true**, Document Markup is enabled for envelope. Account must have Document Markup enabled to use this.</param>
         /// <param name="AllowReassign">When set to **true**, the recipient can redirect an envelope to a more appropriate recipient..</param>
-        /// <param name="AllowViewHistory">.</param>
+        /// <param name="AllowViewHistory">AllowViewHistory.</param>
         /// <param name="Asynchronous">When set to **true**, the envelope is queued for processing and the value of the &#x60;status&#x60; property is set to &#39;Processing&#39;. Additionally, get status calls return &#39;Processing&#39; until completed..</param>
-        /// <param name="AttachmentsUri">.</param>
+        /// <param name="AttachmentsUri">AttachmentsUri.</param>
         /// <param name="AuthoritativeCopy">Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled..</param>
-        /// <param name="AuthoritativeCopyDefault">.</param>
-        /// <param name="AutoNavigation">.</param>
-        /// <param name="BrandId">.</param>
-        /// <param name="BrandLock">.</param>
+        /// <param name="AuthoritativeCopyDefault">AuthoritativeCopyDefault.</param>
+        /// <param name="AutoNavigation">AutoNavigation.</param>
+        /// <param name="BrandId">BrandId.</param>
+        /// <param name="BrandLock">BrandLock.</param>
         /// <param name="CertificateUri">Retrieves a URI for an endpoint that allows you to easily retrieve certificate information..</param>
         /// <param name="CompletedDateTime">Specifies the date and time this item was completed..</param>
-        /// <param name="CopyRecipientData">.</param>
-        /// <param name="Created">.</param>
+        /// <param name="CopyRecipientData">CopyRecipientData.</param>
+        /// <param name="Created">Created.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="CustomFields">CustomFields.</param>
         /// <param name="CustomFieldsUri">Contains a URI for an endpoint that you can use to retrieve the custom fields..</param>
         /// <param name="DeclinedDateTime">The date and time the recipient declined the document..</param>
         /// <param name="DeletedDateTime">Specifies the data and time the item was deleted..</param>
         /// <param name="DeliveredDateTime">Reserved: For DocuSign use only..</param>
-        /// <param name="Description">.</param>
-        /// <param name="DisableResponsiveDocument">.</param>
+        /// <param name="Description">Description.</param>
+        /// <param name="DisableResponsiveDocument">DisableResponsiveDocument.</param>
         /// <param name="Documents">Complex element contains the details on the documents in the envelope..</param>
-        /// <param name="DocumentsCombinedUri">.</param>
+        /// <param name="DocumentsCombinedUri">DocumentsCombinedUri.</param>
         /// <param name="DocumentsUri">Contains a URI for an endpoint that you can use to retrieve the documents..</param>
-        /// <param name="EmailBlurb">.</param>
+        /// <param name="EmailBlurb">EmailBlurb.</param>
         /// <param name="EmailSettings">EmailSettings.</param>
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
         /// <param name="EnableWetSign">When set to **true**, the signer is allowed to print the document and sign it on paper..</param>
@@ -70,37 +71,37 @@ namespace DocuSign.eSign.Model
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
         /// <param name="EnvelopeIdStamping">When set to **true**, Envelope ID Stamping is enabled..</param>
         /// <param name="EnvelopeUri">Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes..</param>
-        /// <param name="FolderId">.</param>
-        /// <param name="FolderName">.</param>
-        /// <param name="FolderUri">.</param>
-        /// <param name="InitialSentDateTime">.</param>
+        /// <param name="FolderId">FolderId.</param>
+        /// <param name="FolderName">FolderName.</param>
+        /// <param name="FolderUri">FolderUri.</param>
+        /// <param name="InitialSentDateTime">InitialSentDateTime.</param>
         /// <param name="Is21CFRPart11">When set to **true**, indicates that this module is enabled on the account..</param>
-        /// <param name="IsSignatureProviderEnvelope">.</param>
-        /// <param name="LastModified">.</param>
+        /// <param name="IsSignatureProviderEnvelope">IsSignatureProviderEnvelope.</param>
+        /// <param name="LastModified">LastModified.</param>
         /// <param name="LastModifiedDateTime">The date and time the item was last modified..</param>
         /// <param name="LockInformation">LockInformation.</param>
         /// <param name="MessageLock">When set to **true**, prevents senders from changing the contents of &#x60;emailBlurb&#x60; and &#x60;emailSubject&#x60; properties for the envelope.   Additionally, this prevents users from making changes to the contents of &#x60;emailBlurb&#x60; and &#x60;emailSubject&#x60; properties when correcting envelopes.   However, if the &#x60;messageLock&#x60; node is set to true**** and the &#x60;emailSubject&#x60; property is empty, senders and correctors are able to add a subject to the envelope..</param>
-        /// <param name="Name">.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="Notification">Notification.</param>
         /// <param name="NotificationUri">Contains a URI for an endpoint that you can use to retrieve the notifications..</param>
         /// <param name="Owner">Owner.</param>
-        /// <param name="PageCount">.</param>
-        /// <param name="ParentFolderUri">.</param>
-        /// <param name="Password">.</param>
-        /// <param name="PurgeState">.</param>
+        /// <param name="PageCount">PageCount.</param>
+        /// <param name="ParentFolderUri">ParentFolderUri.</param>
+        /// <param name="Password">Password.</param>
+        /// <param name="PurgeState">PurgeState.</param>
         /// <param name="Recipients">Recipients.</param>
         /// <param name="RecipientsLock">When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope..</param>
         /// <param name="RecipientsUri">Contains a URI for an endpoint that you can use to retrieve the recipients..</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
-        /// <param name="SignerCanSignOnMobile">.</param>
+        /// <param name="SignerCanSignOnMobile">SignerCanSignOnMobile.</param>
         /// <param name="SigningLocation">Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusChangedDateTime">The data and time the status changed..</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
         /// <param name="TemplatesUri">Contains a URI for an endpoint which you can use to retrieve the templates..</param>
         /// <param name="TransactionId"> Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The &#x60;transactionId&#x60; property can be used determine an envelope&#39;s status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned..</param>
-        /// <param name="Uri">.</param>
+        /// <param name="Uri">Uri.</param>
         /// <param name="UseDisclosure">When set to **true**, the disclosure is shown to recipients in accordance with the account&#39;s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the &#x60;useDisclosure&#x60; property is not set, then the account&#39;s normal disclosure setting is used and the value of the &#x60;useDisclosure&#x60; property is not returned in responses when getting envelope information..</param>
         /// <param name="VoidedDateTime">The date and time the envelope or template was voided..</param>
         /// <param name="VoidedReason">The reason the envelope or template was voided..</param>
@@ -188,9 +189,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowReassign", EmitDefaultValue=false)]
         public string AllowReassign { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AllowViewHistory
         /// </summary>
-        /// <value></value>
         [DataMember(Name="allowViewHistory", EmitDefaultValue=false)]
         public string AllowViewHistory { get; set; }
         /// <summary>
@@ -200,9 +200,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="asynchronous", EmitDefaultValue=false)]
         public string Asynchronous { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AttachmentsUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="attachmentsUri", EmitDefaultValue=false)]
         public string AttachmentsUri { get; set; }
         /// <summary>
@@ -212,27 +211,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="authoritativeCopy", EmitDefaultValue=false)]
         public string AuthoritativeCopy { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AuthoritativeCopyDefault
         /// </summary>
-        /// <value></value>
         [DataMember(Name="authoritativeCopyDefault", EmitDefaultValue=false)]
         public string AuthoritativeCopyDefault { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AutoNavigation
         /// </summary>
-        /// <value></value>
         [DataMember(Name="autoNavigation", EmitDefaultValue=false)]
         public string AutoNavigation { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets BrandId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="brandId", EmitDefaultValue=false)]
         public string BrandId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets BrandLock
         /// </summary>
-        /// <value></value>
         [DataMember(Name="brandLock", EmitDefaultValue=false)]
         public string BrandLock { get; set; }
         /// <summary>
@@ -248,15 +243,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="completedDateTime", EmitDefaultValue=false)]
         public string CompletedDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CopyRecipientData
         /// </summary>
-        /// <value></value>
         [DataMember(Name="copyRecipientData", EmitDefaultValue=false)]
         public string CopyRecipientData { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Created
         /// </summary>
-        /// <value></value>
         [DataMember(Name="created", EmitDefaultValue=false)]
         public string Created { get; set; }
         /// <summary>
@@ -295,15 +288,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="deliveredDateTime", EmitDefaultValue=false)]
         public string DeliveredDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Description
         /// </summary>
-        /// <value></value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisableResponsiveDocument
         /// </summary>
-        /// <value></value>
         [DataMember(Name="disableResponsiveDocument", EmitDefaultValue=false)]
         public string DisableResponsiveDocument { get; set; }
         /// <summary>
@@ -313,9 +304,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documents", EmitDefaultValue=false)]
         public List<Document> Documents { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentsCombinedUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentsCombinedUri", EmitDefaultValue=false)]
         public string DocumentsCombinedUri { get; set; }
         /// <summary>
@@ -325,9 +315,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentsUri", EmitDefaultValue=false)]
         public string DocumentsUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EmailBlurb
         /// </summary>
-        /// <value></value>
         [DataMember(Name="emailBlurb", EmitDefaultValue=false)]
         public string EmailBlurb { get; set; }
         /// <summary>
@@ -372,27 +361,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopeUri", EmitDefaultValue=false)]
         public string EnvelopeUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FolderId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="folderId", EmitDefaultValue=false)]
         public string FolderId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FolderName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="folderName", EmitDefaultValue=false)]
         public string FolderName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FolderUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="folderUri", EmitDefaultValue=false)]
         public string FolderUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets InitialSentDateTime
         /// </summary>
-        /// <value></value>
         [DataMember(Name="initialSentDateTime", EmitDefaultValue=false)]
         public string InitialSentDateTime { get; set; }
         /// <summary>
@@ -402,15 +387,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="is21CFRPart11", EmitDefaultValue=false)]
         public string Is21CFRPart11 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsSignatureProviderEnvelope
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isSignatureProviderEnvelope", EmitDefaultValue=false)]
         public string IsSignatureProviderEnvelope { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets LastModified
         /// </summary>
-        /// <value></value>
         [DataMember(Name="lastModified", EmitDefaultValue=false)]
         public string LastModified { get; set; }
         /// <summary>
@@ -431,9 +414,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="messageLock", EmitDefaultValue=false)]
         public string MessageLock { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -453,27 +435,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="owner", EmitDefaultValue=false)]
         public UserInfo Owner { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PageCount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="pageCount", EmitDefaultValue=false)]
         public int? PageCount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ParentFolderUri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="parentFolderUri", EmitDefaultValue=false)]
         public string ParentFolderUri { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Password
         /// </summary>
-        /// <value></value>
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PurgeState
         /// </summary>
-        /// <value></value>
         [DataMember(Name="purgeState", EmitDefaultValue=false)]
         public string PurgeState { get; set; }
         /// <summary>
@@ -506,9 +484,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shared", EmitDefaultValue=false)]
         public string Shared { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignerCanSignOnMobile
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signerCanSignOnMobile", EmitDefaultValue=false)]
         public string SignerCanSignOnMobile { get; set; }
         /// <summary>
@@ -548,9 +525,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="transactionId", EmitDefaultValue=false)]
         public string TransactionId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Uri
         /// </summary>
-        /// <value></value>
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
@@ -1173,5 +1149,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

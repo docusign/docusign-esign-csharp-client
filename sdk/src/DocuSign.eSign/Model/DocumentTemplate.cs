@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentTemplate" /> class.
         /// </summary>
-        /// <param name="DocumentEndPage">.</param>
+        /// <param name="DocumentEndPage">DocumentEndPage.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
-        /// <param name="DocumentStartPage">.</param>
+        /// <param name="DocumentStartPage">DocumentStartPage.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
         public DocumentTemplate(string DocumentEndPage = default(string), string DocumentId = default(string), string DocumentStartPage = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string TemplateId = default(string))
@@ -52,9 +53,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentEndPage
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentEndPage", EmitDefaultValue=false)]
         public string DocumentEndPage { get; set; }
         /// <summary>
@@ -64,9 +64,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentId", EmitDefaultValue=false)]
         public string DocumentId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentStartPage
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentStartPage", EmitDefaultValue=false)]
         public string DocumentStartPage { get; set; }
         /// <summary>
@@ -186,5 +185,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

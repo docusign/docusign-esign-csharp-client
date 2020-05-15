@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,11 +38,11 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectDebugLog" /> class.
         /// </summary>
-        /// <param name="ConnectConfig">.</param>
+        /// <param name="ConnectConfig">ConnectConfig.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="EventDateTime">.</param>
-        /// <param name="EventDescription">.</param>
-        /// <param name="Payload">.</param>
+        /// <param name="EventDateTime">EventDateTime.</param>
+        /// <param name="EventDescription">EventDescription.</param>
+        /// <param name="Payload">Payload.</param>
         public ConnectDebugLog(string ConnectConfig = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string EventDateTime = default(string), string EventDescription = default(string), string Payload = default(string))
         {
             this.ConnectConfig = ConnectConfig;
@@ -52,9 +53,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets ConnectConfig
         /// </summary>
-        /// <value></value>
         [DataMember(Name="connectConfig", EmitDefaultValue=false)]
         public string ConnectConfig { get; set; }
         /// <summary>
@@ -63,21 +63,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EventDateTime
         /// </summary>
-        /// <value></value>
         [DataMember(Name="eventDateTime", EmitDefaultValue=false)]
         public string EventDateTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EventDescription
         /// </summary>
-        /// <value></value>
         [DataMember(Name="eventDescription", EmitDefaultValue=false)]
         public string EventDescription { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Payload
         /// </summary>
-        /// <value></value>
         [DataMember(Name="payload", EmitDefaultValue=false)]
         public string Payload { get; set; }
         /// <summary>
@@ -186,5 +183,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

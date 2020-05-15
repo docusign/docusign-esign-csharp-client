@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,13 +38,13 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProvisioningInformation" /> class.
         /// </summary>
-        /// <param name="DefaultConnectionId">.</param>
-        /// <param name="DefaultPlanId">.</param>
+        /// <param name="DefaultConnectionId">DefaultConnectionId.</param>
+        /// <param name="DefaultPlanId">DefaultPlanId.</param>
         /// <param name="DistributorCode">The code that identifies the billing plan groups and plans for the new account..</param>
         /// <param name="DistributorPassword">The password for the distributorCode..</param>
-        /// <param name="PasswordRuleText">.</param>
-        /// <param name="PlanPromotionText">.</param>
-        /// <param name="PurchaseOrderOrPromAllowed">.</param>
+        /// <param name="PasswordRuleText">PasswordRuleText.</param>
+        /// <param name="PlanPromotionText">PlanPromotionText.</param>
+        /// <param name="PurchaseOrderOrPromAllowed">PurchaseOrderOrPromAllowed.</param>
         public ProvisioningInformation(string DefaultConnectionId = default(string), string DefaultPlanId = default(string), string DistributorCode = default(string), string DistributorPassword = default(string), string PasswordRuleText = default(string), string PlanPromotionText = default(string), string PurchaseOrderOrPromAllowed = default(string))
         {
             this.DefaultConnectionId = DefaultConnectionId;
@@ -56,15 +57,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets DefaultConnectionId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="defaultConnectionId", EmitDefaultValue=false)]
         public string DefaultConnectionId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DefaultPlanId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="defaultPlanId", EmitDefaultValue=false)]
         public string DefaultPlanId { get; set; }
         /// <summary>
@@ -80,21 +79,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="distributorPassword", EmitDefaultValue=false)]
         public string DistributorPassword { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PasswordRuleText
         /// </summary>
-        /// <value></value>
         [DataMember(Name="passwordRuleText", EmitDefaultValue=false)]
         public string PasswordRuleText { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PlanPromotionText
         /// </summary>
-        /// <value></value>
         [DataMember(Name="planPromotionText", EmitDefaultValue=false)]
         public string PlanPromotionText { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PurchaseOrderOrPromAllowed
         /// </summary>
-        /// <value></value>
         [DataMember(Name="purchaseOrderOrPromAllowed", EmitDefaultValue=false)]
         public string PurchaseOrderOrPromAllowed { get; set; }
         /// <summary>
@@ -219,5 +215,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

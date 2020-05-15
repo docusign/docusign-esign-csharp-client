@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -70,13 +71,13 @@ namespace DocuSign.eSign.Model
         /// <param name="SenderRequired">When set to **true**, the sender must populate the tab before an envelope can be sent using the template.   This value tab can only be changed by modifying (PUT) the template.   Tabs with a &#x60;senderRequired&#x60; value of true cannot be deleted from an envelope..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        /// <param name="TabGroupLabels">.</param>
+        /// <param name="TabGroupLabels">TabGroupLabels.</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
         /// <param name="TabLabel">The label string associated with the tab..</param>
-        /// <param name="TabOrder">.</param>
+        /// <param name="TabOrder">TabOrder.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
-        /// <param name="Tooltip">.</param>
+        /// <param name="Tooltip">Tooltip.</param>
         /// <param name="Underline">When set to **true**, the information in the tab is underlined..</param>
         /// <param name="ValidationMessage">The message displayed if the custom tab fails input validation (either custom of embedded)..</param>
         /// <param name="ValidationPattern">A regular expression used to validate input for the tab..</param>
@@ -332,9 +333,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabGroupLabels
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabGroupLabels", EmitDefaultValue=false)]
         public List<string> TabGroupLabels { get; set; }
         /// <summary>
@@ -350,9 +350,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabLabel", EmitDefaultValue=false)]
         public string TabLabel { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TabOrder
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tabOrder", EmitDefaultValue=false)]
         public string TabOrder { get; set; }
         /// <summary>
@@ -368,9 +367,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequired", EmitDefaultValue=false)]
         public string TemplateRequired { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Tooltip
         /// </summary>
-        /// <value></value>
         [DataMember(Name="tooltip", EmitDefaultValue=false)]
         public string Tooltip { get; set; }
         /// <summary>
@@ -857,5 +855,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AccountManagementGranular">AccountManagementGranular.</param>
         /// <param name="SenderEmailNotifications">SenderEmailNotifications.</param>
         /// <param name="SignerEmailNotifications">SignerEmailNotifications.</param>
-        /// <param name="UserSettings">.</param>
+        /// <param name="UserSettings">UserSettings.</param>
         public UserSettingsInformation(UserAccountManagementGranularInformation AccountManagementGranular = default(UserAccountManagementGranularInformation), SenderEmailNotifications SenderEmailNotifications = default(SenderEmailNotifications), SignerEmailNotifications SignerEmailNotifications = default(SignerEmailNotifications), List<NameValue> UserSettings = default(List<NameValue>))
         {
             this.AccountManagementGranular = AccountManagementGranular;
@@ -65,9 +66,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signerEmailNotifications", EmitDefaultValue=false)]
         public SignerEmailNotifications SignerEmailNotifications { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets UserSettings
         /// </summary>
-        /// <value></value>
         [DataMember(Name="userSettings", EmitDefaultValue=false)]
         public List<NameValue> UserSettings { get; set; }
         /// <summary>
@@ -168,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

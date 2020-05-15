@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BillingDiscount" /> class.
         /// </summary>
         /// <param name="BeginQuantity">Reserved: TBD.</param>
-        /// <param name="Discount">.</param>
-        /// <param name="EndQuantity">.</param>
+        /// <param name="Discount">Discount.</param>
+        /// <param name="EndQuantity">EndQuantity.</param>
         public BillingDiscount(string BeginQuantity = default(string), string Discount = default(string), string EndQuantity = default(string))
         {
             this.BeginQuantity = BeginQuantity;
@@ -54,15 +55,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="beginQuantity", EmitDefaultValue=false)]
         public string BeginQuantity { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Discount
         /// </summary>
-        /// <value></value>
         [DataMember(Name="discount", EmitDefaultValue=false)]
         public string Discount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EndQuantity
         /// </summary>
-        /// <value></value>
         [DataMember(Name="endQuantity", EmitDefaultValue=false)]
         public string EndQuantity { get; set; }
         /// <summary>
@@ -155,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="SeatDiscount" /> class.
         /// </summary>
         /// <param name="BeginSeatCount">Reserved: TBD.</param>
-        /// <param name="DiscountPercent">.</param>
+        /// <param name="DiscountPercent">DiscountPercent.</param>
         /// <param name="EndSeatCount">Reserved: TBD.</param>
         public SeatDiscount(string BeginSeatCount = default(string), string DiscountPercent = default(string), string EndSeatCount = default(string))
         {
@@ -54,9 +55,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="beginSeatCount", EmitDefaultValue=false)]
         public string BeginSeatCount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DiscountPercent
         /// </summary>
-        /// <value></value>
         [DataMember(Name="discountPercent", EmitDefaultValue=false)]
         public string DiscountPercent { get; set; }
         /// <summary>
@@ -155,5 +155,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

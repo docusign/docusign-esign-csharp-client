@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -48,27 +49,27 @@ namespace DocuSign.eSign.Model
         /// <param name="BillingProfile">Reserved: TBD.</param>
         /// <param name="CanCancelRenewal">Reserved: TBD.</param>
         /// <param name="CanUpgrade">When set to **true**, specifies that you can upgrade the account through the API..</param>
-        /// <param name="ConnectPermission">.</param>
-        /// <param name="CreatedDate">.</param>
+        /// <param name="ConnectPermission">ConnectPermission.</param>
+        /// <param name="CreatedDate">CreatedDate.</param>
         /// <param name="CurrencyCode">Specifies the ISO currency code for the account..</param>
         /// <param name="CurrentPlanId">Identifies the plan that was used create this account..</param>
         /// <param name="DistributorCode">The code that identifies the billing plan groups and plans for the new account..</param>
-        /// <param name="DocuSignLandingUrl">.</param>
-        /// <param name="EnvelopeSendingBlocked">.</param>
-        /// <param name="EnvelopeUnitPrice">.</param>
-        /// <param name="ExternalAccountId">.</param>
+        /// <param name="DocuSignLandingUrl">DocuSignLandingUrl.</param>
+        /// <param name="EnvelopeSendingBlocked">EnvelopeSendingBlocked.</param>
+        /// <param name="EnvelopeUnitPrice">EnvelopeUnitPrice.</param>
+        /// <param name="ExternalAccountId">ExternalAccountId.</param>
         /// <param name="ForgottenPasswordQuestionsCount"> A complex element that contains up to four Question/Answer pairs for forgotten password information for a user..</param>
-        /// <param name="IsDowngrade">.</param>
-        /// <param name="PaymentMethod">.</param>
+        /// <param name="IsDowngrade">IsDowngrade.</param>
+        /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PlanClassification">Identifies the type of plan. Examples include Business, Corporate, Enterprise, Free..</param>
         /// <param name="PlanEndDate">The date that the current plan will end..</param>
         /// <param name="PlanName">The name of the Billing Plan..</param>
         /// <param name="PlanStartDate">The date that the Account started using the current plan..</param>
-        /// <param name="SeatsAllowed">.</param>
-        /// <param name="SeatsInUse">.</param>
-        /// <param name="Status21CFRPart11">.</param>
-        /// <param name="SuspensionDate">.</param>
-        /// <param name="SuspensionStatus">.</param>
+        /// <param name="SeatsAllowed">SeatsAllowed.</param>
+        /// <param name="SeatsInUse">SeatsInUse.</param>
+        /// <param name="Status21CFRPart11">Status21CFRPart11.</param>
+        /// <param name="SuspensionDate">SuspensionDate.</param>
+        /// <param name="SuspensionStatus">SuspensionStatus.</param>
         public AccountInformation(string AccountIdGuid = default(string), string AccountName = default(string), string AllowTransactionRooms = default(string), string BillingPeriodDaysRemaining = default(string), string BillingPeriodEndDate = default(string), string BillingPeriodEnvelopesAllowed = default(string), string BillingPeriodEnvelopesSent = default(string), string BillingPeriodStartDate = default(string), string BillingProfile = default(string), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string ConnectPermission = default(string), string CreatedDate = default(string), string CurrencyCode = default(string), string CurrentPlanId = default(string), string DistributorCode = default(string), string DocuSignLandingUrl = default(string), string EnvelopeSendingBlocked = default(string), string EnvelopeUnitPrice = default(string), string ExternalAccountId = default(string), string ForgottenPasswordQuestionsCount = default(string), string IsDowngrade = default(string), string PaymentMethod = default(string), string PlanClassification = default(string), string PlanEndDate = default(string), string PlanName = default(string), string PlanStartDate = default(string), string SeatsAllowed = default(string), string SeatsInUse = default(string), string Status21CFRPart11 = default(string), string SuspensionDate = default(string), string SuspensionStatus = default(string))
         {
             this.AccountIdGuid = AccountIdGuid;
@@ -172,15 +173,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canUpgrade", EmitDefaultValue=false)]
         public string CanUpgrade { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ConnectPermission
         /// </summary>
-        /// <value></value>
         [DataMember(Name="connectPermission", EmitDefaultValue=false)]
         public string ConnectPermission { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CreatedDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
         public string CreatedDate { get; set; }
         /// <summary>
@@ -202,27 +201,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="distributorCode", EmitDefaultValue=false)]
         public string DistributorCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocuSignLandingUrl
         /// </summary>
-        /// <value></value>
         [DataMember(Name="docuSignLandingUrl", EmitDefaultValue=false)]
         public string DocuSignLandingUrl { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopeSendingBlocked
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopeSendingBlocked", EmitDefaultValue=false)]
         public string EnvelopeSendingBlocked { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopeUnitPrice
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopeUnitPrice", EmitDefaultValue=false)]
         public string EnvelopeUnitPrice { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ExternalAccountId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="externalAccountId", EmitDefaultValue=false)]
         public string ExternalAccountId { get; set; }
         /// <summary>
@@ -232,15 +227,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="forgottenPasswordQuestionsCount", EmitDefaultValue=false)]
         public string ForgottenPasswordQuestionsCount { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsDowngrade
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isDowngrade", EmitDefaultValue=false)]
         public string IsDowngrade { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets PaymentMethod
         /// </summary>
-        /// <value></value>
         [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
         public string PaymentMethod { get; set; }
         /// <summary>
@@ -268,33 +261,28 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="planStartDate", EmitDefaultValue=false)]
         public string PlanStartDate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SeatsAllowed
         /// </summary>
-        /// <value></value>
         [DataMember(Name="seatsAllowed", EmitDefaultValue=false)]
         public string SeatsAllowed { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SeatsInUse
         /// </summary>
-        /// <value></value>
         [DataMember(Name="seatsInUse", EmitDefaultValue=false)]
         public string SeatsInUse { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Status21CFRPart11
         /// </summary>
-        /// <value></value>
         [DataMember(Name="status21CFRPart11", EmitDefaultValue=false)]
         public string Status21CFRPart11 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SuspensionDate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="suspensionDate", EmitDefaultValue=false)]
         public string SuspensionDate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SuspensionStatus
         /// </summary>
-        /// <value></value>
         [DataMember(Name="suspensionStatus", EmitDefaultValue=false)]
         public string SuspensionStatus { get; set; }
         /// <summary>
@@ -619,5 +607,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

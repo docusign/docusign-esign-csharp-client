@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="PaymentProcessorInformation" /> class.
         /// </summary>
         /// <param name="Address">Address.</param>
-        /// <param name="BillingAgreementId">.</param>
-        /// <param name="Email">.</param>
+        /// <param name="BillingAgreementId">BillingAgreementId.</param>
+        /// <param name="Email">Email.</param>
         public PaymentProcessorInformation(AddressInformation Address = default(AddressInformation), string BillingAgreementId = default(string), string Email = default(string))
         {
             this.Address = Address;
@@ -53,15 +54,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="address", EmitDefaultValue=false)]
         public AddressInformation Address { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets BillingAgreementId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="billingAgreementId", EmitDefaultValue=false)]
         public string BillingAgreementId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
@@ -154,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

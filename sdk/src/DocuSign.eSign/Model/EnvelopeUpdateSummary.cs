@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,11 +41,11 @@ namespace DocuSign.eSign.Model
         /// <param name="BulkEnvelopeStatus">BulkEnvelopeStatus.</param>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="ListCustomFieldUpdateResults">.</param>
+        /// <param name="ListCustomFieldUpdateResults">ListCustomFieldUpdateResults.</param>
         /// <param name="LockInformation">LockInformation.</param>
-        /// <param name="RecipientUpdateResults">.</param>
+        /// <param name="RecipientUpdateResults">RecipientUpdateResults.</param>
         /// <param name="TabUpdateResults">TabUpdateResults.</param>
-        /// <param name="TextCustomFieldUpdateResults">.</param>
+        /// <param name="TextCustomFieldUpdateResults">TextCustomFieldUpdateResults.</param>
         public EnvelopeUpdateSummary(BulkEnvelopeStatus BulkEnvelopeStatus = default(BulkEnvelopeStatus), string EnvelopeId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<ListCustomField> ListCustomFieldUpdateResults = default(List<ListCustomField>), LockInformation LockInformation = default(LockInformation), List<RecipientUpdateResponse> RecipientUpdateResults = default(List<RecipientUpdateResponse>), Tabs TabUpdateResults = default(Tabs), List<TextCustomField> TextCustomFieldUpdateResults = default(List<TextCustomField>))
         {
             this.BulkEnvelopeStatus = BulkEnvelopeStatus;
@@ -74,9 +75,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ListCustomFieldUpdateResults
         /// </summary>
-        /// <value></value>
         [DataMember(Name="listCustomFieldUpdateResults", EmitDefaultValue=false)]
         public List<ListCustomField> ListCustomFieldUpdateResults { get; set; }
         /// <summary>
@@ -85,9 +85,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lockInformation", EmitDefaultValue=false)]
         public LockInformation LockInformation { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RecipientUpdateResults
         /// </summary>
-        /// <value></value>
         [DataMember(Name="recipientUpdateResults", EmitDefaultValue=false)]
         public List<RecipientUpdateResponse> RecipientUpdateResults { get; set; }
         /// <summary>
@@ -96,9 +95,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabUpdateResults", EmitDefaultValue=false)]
         public Tabs TabUpdateResults { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TextCustomFieldUpdateResults
         /// </summary>
-        /// <value></value>
         [DataMember(Name="textCustomFieldUpdateResults", EmitDefaultValue=false)]
         public List<TextCustomField> TextCustomFieldUpdateResults { get; set; }
         /// <summary>
@@ -231,5 +229,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

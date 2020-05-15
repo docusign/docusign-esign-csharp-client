@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NotaryJournalMetaData" /> class.
         /// </summary>
-        /// <param name="Comment">.</param>
-        /// <param name="CredibleWitnesses">.</param>
-        /// <param name="SignatureImage">.</param>
-        /// <param name="SignerIdType">.</param>
+        /// <param name="Comment">Comment.</param>
+        /// <param name="CredibleWitnesses">CredibleWitnesses.</param>
+        /// <param name="SignatureImage">SignatureImage.</param>
+        /// <param name="SignerIdType">SignerIdType.</param>
         public NotaryJournalMetaData(string Comment = default(string), List<NotaryJournalCredibleWitness> CredibleWitnesses = default(List<NotaryJournalCredibleWitness>), string SignatureImage = default(string), string SignerIdType = default(string))
         {
             this.Comment = Comment;
@@ -50,27 +51,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Comment
         /// </summary>
-        /// <value></value>
         [DataMember(Name="comment", EmitDefaultValue=false)]
         public string Comment { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CredibleWitnesses
         /// </summary>
-        /// <value></value>
         [DataMember(Name="credibleWitnesses", EmitDefaultValue=false)]
         public List<NotaryJournalCredibleWitness> CredibleWitnesses { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureImage
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureImage", EmitDefaultValue=false)]
         public string SignatureImage { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignerIdType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signerIdType", EmitDefaultValue=false)]
         public string SignerIdType { get; set; }
         /// <summary>
@@ -171,5 +168,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

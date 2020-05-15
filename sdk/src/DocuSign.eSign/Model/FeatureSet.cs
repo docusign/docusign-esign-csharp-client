@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,13 +39,13 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="FeatureSet" /> class.
         /// </summary>
         /// <param name="CurrencyFeatureSetPrices">A complex type that contains alternate currency values that are configured for this plan feature set..</param>
-        /// <param name="EnvelopeFee">.</param>
+        /// <param name="EnvelopeFee">EnvelopeFee.</param>
         /// <param name="FeatureSetId">A unique ID for the feature set..</param>
-        /// <param name="FixedFee">.</param>
+        /// <param name="FixedFee">FixedFee.</param>
         /// <param name="Is21CFRPart11">When set to **true**, indicates that this module is enabled on the account..</param>
-        /// <param name="IsActive">.</param>
+        /// <param name="IsActive">IsActive.</param>
         /// <param name="IsEnabled">Specifies whether the feature set is actively enabled as part of the plan..</param>
-        /// <param name="Name">.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="SeatFee">An incremental seat cost for seat-based plans. Only valid when isEnabled for the feature set is set to true..</param>
         public FeatureSet(List<CurrencyFeatureSetPrice> CurrencyFeatureSetPrices = default(List<CurrencyFeatureSetPrice>), string EnvelopeFee = default(string), string FeatureSetId = default(string), string FixedFee = default(string), string Is21CFRPart11 = default(string), string IsActive = default(string), string IsEnabled = default(string), string Name = default(string), string SeatFee = default(string))
         {
@@ -66,9 +67,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="currencyFeatureSetPrices", EmitDefaultValue=false)]
         public List<CurrencyFeatureSetPrice> CurrencyFeatureSetPrices { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets EnvelopeFee
         /// </summary>
-        /// <value></value>
         [DataMember(Name="envelopeFee", EmitDefaultValue=false)]
         public string EnvelopeFee { get; set; }
         /// <summary>
@@ -78,9 +78,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="featureSetId", EmitDefaultValue=false)]
         public string FeatureSetId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FixedFee
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fixedFee", EmitDefaultValue=false)]
         public string FixedFee { get; set; }
         /// <summary>
@@ -90,9 +89,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="is21CFRPart11", EmitDefaultValue=false)]
         public string Is21CFRPart11 { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets IsActive
         /// </summary>
-        /// <value></value>
         [DataMember(Name="isActive", EmitDefaultValue=false)]
         public string IsActive { get; set; }
         /// <summary>
@@ -102,9 +100,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="isEnabled", EmitDefaultValue=false)]
         public string IsEnabled { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -251,5 +248,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

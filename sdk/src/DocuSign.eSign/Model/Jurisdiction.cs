@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,16 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Jurisdiction" /> class.
         /// </summary>
-        /// <param name="AllowSystemCreatedSeal">.</param>
-        /// <param name="AllowUserUploadedSeal">.</param>
-        /// <param name="CommissionIdInSeal">.</param>
-        /// <param name="County">.</param>
-        /// <param name="CountyInSeal">.</param>
-        /// <param name="Enabled">.</param>
-        /// <param name="JurisdictionId">.</param>
-        /// <param name="Name">.</param>
-        /// <param name="NotaryPublicInSeal">.</param>
-        /// <param name="StateNameInSeal">.</param>
+        /// <param name="AllowSystemCreatedSeal">AllowSystemCreatedSeal.</param>
+        /// <param name="AllowUserUploadedSeal">AllowUserUploadedSeal.</param>
+        /// <param name="CommissionIdInSeal">CommissionIdInSeal.</param>
+        /// <param name="County">County.</param>
+        /// <param name="CountyInSeal">CountyInSeal.</param>
+        /// <param name="Enabled">Enabled.</param>
+        /// <param name="JurisdictionId">JurisdictionId.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="NotaryPublicInSeal">NotaryPublicInSeal.</param>
+        /// <param name="StateNameInSeal">StateNameInSeal.</param>
         public Jurisdiction(string AllowSystemCreatedSeal = default(string), string AllowUserUploadedSeal = default(string), string CommissionIdInSeal = default(string), string County = default(string), string CountyInSeal = default(string), string Enabled = default(string), string JurisdictionId = default(string), string Name = default(string), string NotaryPublicInSeal = default(string), string StateNameInSeal = default(string))
         {
             this.AllowSystemCreatedSeal = AllowSystemCreatedSeal;
@@ -62,63 +63,53 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AllowSystemCreatedSeal
         /// </summary>
-        /// <value></value>
         [DataMember(Name="allowSystemCreatedSeal", EmitDefaultValue=false)]
         public string AllowSystemCreatedSeal { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets AllowUserUploadedSeal
         /// </summary>
-        /// <value></value>
         [DataMember(Name="allowUserUploadedSeal", EmitDefaultValue=false)]
         public string AllowUserUploadedSeal { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CommissionIdInSeal
         /// </summary>
-        /// <value></value>
         [DataMember(Name="commissionIdInSeal", EmitDefaultValue=false)]
         public string CommissionIdInSeal { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets County
         /// </summary>
-        /// <value></value>
         [DataMember(Name="county", EmitDefaultValue=false)]
         public string County { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CountyInSeal
         /// </summary>
-        /// <value></value>
         [DataMember(Name="countyInSeal", EmitDefaultValue=false)]
         public string CountyInSeal { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Enabled
         /// </summary>
-        /// <value></value>
         [DataMember(Name="enabled", EmitDefaultValue=false)]
         public string Enabled { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets JurisdictionId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="jurisdictionId", EmitDefaultValue=false)]
         public string JurisdictionId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets NotaryPublicInSeal
         /// </summary>
-        /// <value></value>
         [DataMember(Name="notaryPublicInSeal", EmitDefaultValue=false)]
         public string NotaryPublicInSeal { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StateNameInSeal
         /// </summary>
-        /// <value></value>
         [DataMember(Name="stateNameInSeal", EmitDefaultValue=false)]
         public string StateNameInSeal { get; set; }
         /// <summary>
@@ -267,5 +258,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

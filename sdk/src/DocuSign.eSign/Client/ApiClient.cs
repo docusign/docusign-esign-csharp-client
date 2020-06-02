@@ -59,14 +59,20 @@ namespace DocuSign.eSign.Client
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
         /// </summary>
         /// <param name="request">The RestSharp request object</param>
-        partial void InterceptRequest(IRestRequest request);
+        public virtual void InterceptRequest(IRestRequest request)
+        {
+            //Override this to add telemetry
+        }
 
         /// <summary>
         /// Allows for extending response processing for <see cref="ApiClient"/> generated code.
         /// </summary>
         /// <param name="request">The RestSharp request object</param>
         /// <param name="response">The RestSharp response object</param>
-        partial void InterceptResponse(IRestRequest request, IRestResponse response);
+        public virtual void InterceptResponse(IRestRequest request, IRestResponse response)
+        {
+            //Override this to add telemetry
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class

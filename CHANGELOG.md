@@ -1,5 +1,13 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v4.4.1] - eSignature API v2.1-20.1.02 - 05/29/2020
+### Changed
+*   Added support for version v2.1-20.1.02 of the DocuSign eSignature API.
+*   Updated the SDK release version
+### Added
+*   Made InterceptRequest and InterceptResponse methods overriable (DCM-4242)
+
+
 ## [v4.4.0-rc] - eSignature API v2.1-20.1.02 - 05/14/2020
 ### Changed
 *   Added support for version v2.1-20.1.02 of the DocuSign eSignature API.

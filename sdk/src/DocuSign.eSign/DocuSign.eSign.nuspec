@@ -2,14 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>DocuSign.eSign.dll</id>
-    <version>3.4.0-rc</version>
+    <version>3.4.1</version>
     <title>DocuSign.eSign</title>
     <authors>DocuSign</authors>
     <owners>DocuSign</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>false</developmentDependency>
     <description>The DocuSign NuGet package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-csharp-client repository. Join the eSign revolution!</description>
-    <iconUrl>https://docucdn-a.akamaihd.net/olive/images/2.17.0/favicons/favicon-32x32.png</iconUrl>
+    <iconUrl>https://s.gravatar.com/avatar/4a8c033df6baa902f730d514d5574c33</iconUrl>
     <projectUrl>https://github.com/docusign/docusign-csharp-client</projectUrl>
     <license>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</license>
     <copyright>Copyright © DocuSign 2020</copyright>

@@ -426,9 +426,6 @@ namespace SdkTests
 
             Assert.IsNotNull(recipientView);
 
-            // Start the embedded signing session
-            System.Diagnostics.Process.Start(recipientView.Url);
-
             Assert.IsNotNull(recipientView.Url);
         }
 

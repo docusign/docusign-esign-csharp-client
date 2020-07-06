@@ -425,10 +425,6 @@ namespace SdkTests
             ViewUrl recipientView = envelopesApi.CreateRecipientView(testConfig.AccountId, testConfig.EnvelopeId, viewOptions);
 
             Assert.IsNotNull(recipientView);
-
-            // Start the embedded signing session
-            System.Diagnostics.Process.Start(recipientView.Url);
-
             Assert.IsNotNull(recipientView.Url);
         }
 

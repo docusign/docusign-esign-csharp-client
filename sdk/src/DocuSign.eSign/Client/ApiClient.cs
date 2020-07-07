@@ -61,7 +61,7 @@ namespace DocuSign.eSign.Client
         /// <param name="request">The RestSharp request object</param>
         public virtual void InterceptRequest(IRestRequest request)
         {
-            //Override this to add telemetry	
+            //Override this to add telemetry 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace DocuSign.eSign.Client
         /// <param name="response">The RestSharp response object</param>
         public virtual void InterceptResponse(IRestRequest request, IRestResponse response)
         {
-            //Override this to add telemetry	
+            //Override this to add telemetry 
         }
 
         /// <summary>

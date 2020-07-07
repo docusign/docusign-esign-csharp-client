@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SdkTests", "SdkTests\SdkTests.csproj", "{603F7955-D911-4DF1-AE58-DFC3D015D3B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SdkNetCoreTests", "SdkNetCoreTests\SdkNetCoreTests.csproj", "{9AB776C7-A1C3-4047-ABAB-C7B89D939EC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SdkNetCoreTests", "SdkNetCoreTests\SdkNetCoreTests.csproj", "{9AB776C7-A1C3-4047-ABAB-C7B89D939EC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SdkTests462", "SdkTests462\SdkTests462.csproj", "{2D19CBFB-DE23-4A26-A83A-D6F21FAFDEC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9AB776C7-A1C3-4047-ABAB-C7B89D939EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AB776C7-A1C3-4047-ABAB-C7B89D939EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AB776C7-A1C3-4047-ABAB-C7B89D939EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D19CBFB-DE23-4A26-A83A-D6F21FAFDEC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D19CBFB-DE23-4A26-A83A-D6F21FAFDEC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D19CBFB-DE23-4A26-A83A-D6F21FAFDEC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D19CBFB-DE23-4A26-A83A-D6F21FAFDEC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,6 +4,8 @@
 ### Changed
 *   Added support for version v2-20.2.00 of the DocuSign eSignature API.
 *   Updated the SDK release version.
+### Added
+- Added properties for Bulk Update call
 
 ## [v3.4.1] - eSignature API v2-20.1.02 - 05/29/2020
 ### Changed

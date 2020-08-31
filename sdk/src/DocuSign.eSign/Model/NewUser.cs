@@ -42,18 +42,20 @@ namespace DocuSign.eSign.Model
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="Email">Email.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="MembershipId">MembershipId.</param>
         /// <param name="PermissionProfileId">PermissionProfileId.</param>
         /// <param name="PermissionProfileName">PermissionProfileName.</param>
         /// <param name="Uri">Uri.</param>
         /// <param name="UserId">Specifies the user ID for the new user..</param>
         /// <param name="UserName">UserName.</param>
         /// <param name="UserStatus">UserStatus.</param>
-        public NewUser(string ApiPassword = default(string), string CreatedDateTime = default(string), string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserStatus = default(string))
+        public NewUser(string ApiPassword = default(string), string CreatedDateTime = default(string), string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string MembershipId = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserStatus = default(string))
         {
             this.ApiPassword = ApiPassword;
             this.CreatedDateTime = CreatedDateTime;
             this.Email = Email;
             this.ErrorDetails = ErrorDetails;
+            this.MembershipId = MembershipId;
             this.PermissionProfileId = PermissionProfileId;
             this.PermissionProfileName = PermissionProfileName;
             this.Uri = Uri;
@@ -84,6 +86,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
+        /// <summary>
+        /// Gets or Sets MembershipId
+        /// </summary>
+        [DataMember(Name="membershipId", EmitDefaultValue=false)]
+        public string MembershipId { get; set; }
         /// <summary>
         /// Gets or Sets PermissionProfileId
         /// </summary>
@@ -127,6 +134,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  CreatedDateTime: ").Append(CreatedDateTime).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
+            sb.Append("  MembershipId: ").Append(MembershipId).Append("\n");
             sb.Append("  PermissionProfileId: ").Append(PermissionProfileId).Append("\n");
             sb.Append("  PermissionProfileName: ").Append(PermissionProfileName).Append("\n");
             sb.Append("  Uri: ").Append(Uri).Append("\n");
@@ -190,6 +198,11 @@ namespace DocuSign.eSign.Model
                     this.ErrorDetails.Equals(other.ErrorDetails)
                 ) && 
                 (
+                    this.MembershipId == other.MembershipId ||
+                    this.MembershipId != null &&
+                    this.MembershipId.Equals(other.MembershipId)
+                ) && 
+                (
                     this.PermissionProfileId == other.PermissionProfileId ||
                     this.PermissionProfileId != null &&
                     this.PermissionProfileId.Equals(other.PermissionProfileId)
@@ -240,6 +253,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Email.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                if (this.MembershipId != null)
+                    hash = hash * 59 + this.MembershipId.GetHashCode();
                 if (this.PermissionProfileId != null)
                     hash = hash * 59 + this.PermissionProfileId.GetHashCode();
                 if (this.PermissionProfileName != null)

@@ -40,12 +40,13 @@ namespace SdkNetCoreTests
                 if (item.IsDefault == "true")
                 {
                     testConfig.AccountId = item.AccountId;
-                    testConfig.ApiClient = new ApiClient(item.BaseUri + "/restapi");
+                    testConfig.ApiClient.SetBasePath(item.BaseUri + "/restapi");
                     break;
                 }
             }
 
             Assert.IsNotNull(testConfig.AccountId);
+            JwtRequestSignatureOnDocumentTest();
         }
 
         private void JwtRequestSignatureOnDocumentTest(string status = "sent")
@@ -105,7 +106,7 @@ namespace SdkNetCoreTests
             envDef.Status = status;
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
             EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
 
             Assert.IsNotNull(envelopeSummary);
@@ -145,7 +146,7 @@ namespace SdkNetCoreTests
             envDef.Status = "sent";
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
             EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
 
             Assert.IsNotNull(envelopeSummary);
@@ -160,7 +161,7 @@ namespace SdkNetCoreTests
             JwtRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes including status calls
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
             Envelope envInfo = envelopesApi.GetEnvelope(testConfig.AccountId, testConfig.EnvelopeId);
 
             Assert.IsNotNull(envInfo);
@@ -173,7 +174,7 @@ namespace SdkNetCoreTests
             JwtRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
             Recipients recips = envelopesApi.ListRecipients(testConfig.AccountId, testConfig.EnvelopeId);
 
             Assert.IsNotNull(recips);
@@ -196,7 +197,7 @@ namespace SdkNetCoreTests
             };
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
             EnvelopesInformation envelopes = envelopesApi.ListStatusChanges(testConfig.AccountId, options);
 
             Assert.IsNotNull(envelopes);
@@ -223,7 +224,7 @@ namespace SdkNetCoreTests
             };
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
 
             EnvelopesInformation envelopes = envelopesApi.ListStatusChanges(testConfig.AccountId, options);
 
@@ -247,7 +248,7 @@ namespace SdkNetCoreTests
             };
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
 
             EnvelopesInformation envelopes = envelopesApi.ListStatus(testConfig.AccountId, envIdsRequest, options);
 
@@ -262,7 +263,7 @@ namespace SdkNetCoreTests
             string bulkRecipientsCSV = "name,email\n" + "John Doe,john.doe@mailinator.com\n" + "Jane Doe,jane.doe@mailinator.com";
             byte[] bulkRecipientsRequest = Encoding.ASCII.GetBytes(bulkRecipientsCSV);
 
-            BulkEnvelopesApi bulkEnvelopesApi = new BulkEnvelopesApi();
+            BulkEnvelopesApi bulkEnvelopesApi = new BulkEnvelopesApi(testConfig.ApiClient);
 
             return bulkEnvelopesApi.UpdateRecipients(testConfig.AccountId, testConfig.EnvelopeId, "1", bulkRecipientsRequest);
         }
@@ -325,7 +326,7 @@ namespace SdkNetCoreTests
             envDef.Status = "created";
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
             EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
 
             testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
@@ -349,7 +350,7 @@ namespace SdkNetCoreTests
             JwtRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
             EnvelopeDocumentsResult docsList = envelopesApi.ListDocuments(testConfig.AccountId, testConfig.EnvelopeId);
 
             Assert.IsNotNull(docsList);
@@ -394,7 +395,7 @@ namespace SdkNetCoreTests
             options.ReturnUrl = testConfig.ReturnUrl;
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
 
             // generate the embedded sending URL
             ViewUrl senderView = envelopesApi.CreateSenderView(testConfig.AccountId, testConfig.EnvelopeId, options);
@@ -409,7 +410,7 @@ namespace SdkNetCoreTests
             JwtRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
 
             RecipientViewRequest viewOptions = new RecipientViewRequest()
             {
@@ -438,7 +439,7 @@ namespace SdkNetCoreTests
             JwtRequestSignatureOnDocumentTest();
 
             // Adding the envelopeId start sthe console with the envelope open
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
 
             ConsoleViewRequest consoleViewRequest = new ConsoleViewRequest();
             consoleViewRequest.EnvelopeId = testConfig.EnvelopeId;
@@ -460,7 +461,7 @@ namespace SdkNetCoreTests
             var envDef = new EnvelopeDefinition();
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
 
             ApiResponse<EnvelopeSummary> envelopeSummary = envelopesApi.CreateEnvelopeWithHttpInfo(testConfig.AccountId, envDef);
 
@@ -531,7 +532,7 @@ namespace SdkNetCoreTests
         [TestMethod]
         public void JwtListBrandTest()
         {
-            AccountsApi accApi = new AccountsApi();
+            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
             var brandsResponse = accApi.ListBrands(testConfig.AccountId);
 
             Assert.IsNotNull(brandsResponse);
@@ -540,7 +541,7 @@ namespace SdkNetCoreTests
         [TestMethod]
         public void JwtUploadBrandLogoTest()
         {
-            AccountsApi accApi = new AccountsApi();
+            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
 
             if (string.IsNullOrEmpty(testConfig.BrandId))
             {
@@ -562,7 +563,7 @@ namespace SdkNetCoreTests
         [TestMethod]
         public void JwtGetBrandLogoByBrandIdTest()
         {
-            AccountsApi accApi = new AccountsApi();
+            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
             if (string.IsNullOrEmpty(testConfig.BrandId))
             {
                 CreateBrandTest();
@@ -585,7 +586,7 @@ namespace SdkNetCoreTests
 
         private void CreateBrandTest()
         {
-            AccountsApi accApi = new AccountsApi();
+            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
             Brand brand = new Brand
             {
                 BrandName = "C# Brand"
@@ -606,7 +607,7 @@ namespace SdkNetCoreTests
         {
             JwtRequestSignatureOnDocumentTest("sent");
 
-            FoldersApi foldersApi = new FoldersApi(testConfig.ApiClient.Configuration);
+            FoldersApi foldersApi = new FoldersApi(testConfig.ApiClient);
 
             FoldersRequest foldersRequest = new FoldersRequest(EnvelopeIds: new List<string> { testConfig.EnvelopeId }, FromFolderId: "sentitems");
 

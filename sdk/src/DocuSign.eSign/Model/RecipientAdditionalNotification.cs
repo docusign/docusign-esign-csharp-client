@@ -41,11 +41,13 @@ namespace DocuSign.eSign.Model
         /// <param name="PhoneNumber">PhoneNumber.</param>
         /// <param name="SecondaryDeliveryMethod">SecondaryDeliveryMethod.</param>
         /// <param name="SecondaryDeliveryMethodMetadata">SecondaryDeliveryMethodMetadata.</param>
-        public RecipientAdditionalNotification(RecipientPhoneNumber PhoneNumber = default(RecipientPhoneNumber), string SecondaryDeliveryMethod = default(string), PropertyMetadata SecondaryDeliveryMethodMetadata = default(PropertyMetadata))
+        /// <param name="SecondaryDeliveryStatus">SecondaryDeliveryStatus.</param>
+        public RecipientAdditionalNotification(RecipientPhoneNumber PhoneNumber = default(RecipientPhoneNumber), string SecondaryDeliveryMethod = default(string), PropertyMetadata SecondaryDeliveryMethodMetadata = default(PropertyMetadata), string SecondaryDeliveryStatus = default(string))
         {
             this.PhoneNumber = PhoneNumber;
             this.SecondaryDeliveryMethod = SecondaryDeliveryMethod;
             this.SecondaryDeliveryMethodMetadata = SecondaryDeliveryMethodMetadata;
+            this.SecondaryDeliveryStatus = SecondaryDeliveryStatus;
         }
         
         /// <summary>
@@ -64,6 +66,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="secondaryDeliveryMethodMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SecondaryDeliveryMethodMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets SecondaryDeliveryStatus
+        /// </summary>
+        [DataMember(Name="secondaryDeliveryStatus", EmitDefaultValue=false)]
+        public string SecondaryDeliveryStatus { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -74,6 +81,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  SecondaryDeliveryMethod: ").Append(SecondaryDeliveryMethod).Append("\n");
             sb.Append("  SecondaryDeliveryMethodMetadata: ").Append(SecondaryDeliveryMethodMetadata).Append("\n");
+            sb.Append("  SecondaryDeliveryStatus: ").Append(SecondaryDeliveryStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,6 +132,11 @@ namespace DocuSign.eSign.Model
                     this.SecondaryDeliveryMethodMetadata == other.SecondaryDeliveryMethodMetadata ||
                     this.SecondaryDeliveryMethodMetadata != null &&
                     this.SecondaryDeliveryMethodMetadata.Equals(other.SecondaryDeliveryMethodMetadata)
+                ) && 
+                (
+                    this.SecondaryDeliveryStatus == other.SecondaryDeliveryStatus ||
+                    this.SecondaryDeliveryStatus != null &&
+                    this.SecondaryDeliveryStatus.Equals(other.SecondaryDeliveryStatus)
                 );
         }
 
@@ -144,6 +157,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SecondaryDeliveryMethod.GetHashCode();
                 if (this.SecondaryDeliveryMethodMetadata != null)
                     hash = hash * 59 + this.SecondaryDeliveryMethodMetadata.GetHashCode();
+                if (this.SecondaryDeliveryStatus != null)
+                    hash = hash * 59 + this.SecondaryDeliveryStatus.GetHashCode();
                 return hash;
             }
         }

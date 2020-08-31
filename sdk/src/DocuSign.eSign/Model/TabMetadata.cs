@@ -72,7 +72,9 @@ namespace DocuSign.eSign.Model
         /// <param name="PaymentItemCode">PaymentItemCode.</param>
         /// <param name="PaymentItemDescription">PaymentItemDescription.</param>
         /// <param name="PaymentItemName">PaymentItemName.</param>
+        /// <param name="RequireAll">When set to **true** and shared is true, information must be entered in this field to complete the envelope. .</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
+        /// <param name="RequireInitialOnSharedChange">Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field..</param>
         /// <param name="ScaleValue">ScaleValue.</param>
         /// <param name="Selected">Selected.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
@@ -84,7 +86,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ValidationMessage">The message displayed if the custom tab fails input validation (either custom of embedded)..</param>
         /// <param name="ValidationPattern">A regular expression used to validate input for the tab..</param>
         /// <param name="Width">Width of the tab in pixels..</param>
-        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string Collaborative = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), string Locked = default(string), string MaximumLength = default(string), MergeField MergeField = default(MergeField), string Name = default(string), string PaymentItemCode = default(string), string PaymentItemDescription = default(string), string PaymentItemName = default(string), string Required = default(string), string ScaleValue = default(string), string Selected = default(string), string Shared = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Width = default(string))
+        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string Collaborative = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), string Locked = default(string), string MaximumLength = default(string), MergeField MergeField = default(MergeField), string Name = default(string), string PaymentItemCode = default(string), string PaymentItemDescription = default(string), string PaymentItemName = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string ScaleValue = default(string), string Selected = default(string), string Shared = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Width = default(string))
         {
             this.Anchor = Anchor;
             this.AnchorCaseSensitive = AnchorCaseSensitive;
@@ -120,7 +122,9 @@ namespace DocuSign.eSign.Model
             this.PaymentItemCode = PaymentItemCode;
             this.PaymentItemDescription = PaymentItemDescription;
             this.PaymentItemName = PaymentItemName;
+            this.RequireAll = RequireAll;
             this.Required = Required;
+            this.RequireInitialOnSharedChange = RequireInitialOnSharedChange;
             this.ScaleValue = ScaleValue;
             this.Selected = Selected;
             this.Shared = Shared;
@@ -333,11 +337,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="paymentItemName", EmitDefaultValue=false)]
         public string PaymentItemName { get; set; }
         /// <summary>
+        /// When set to **true** and shared is true, information must be entered in this field to complete the envelope. 
+        /// </summary>
+        /// <value>When set to **true** and shared is true, information must be entered in this field to complete the envelope. </value>
+        [DataMember(Name="requireAll", EmitDefaultValue=false)]
+        public string RequireAll { get; set; }
+        /// <summary>
         /// When set to **true**, the signer is required to fill out this tab
         /// </summary>
         /// <value>When set to **true**, the signer is required to fill out this tab</value>
         [DataMember(Name="required", EmitDefaultValue=false)]
         public string Required { get; set; }
+        /// <summary>
+        /// Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field.
+        /// </summary>
+        /// <value>Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field.</value>
+        [DataMember(Name="requireInitialOnSharedChange", EmitDefaultValue=false)]
+        public string RequireInitialOnSharedChange { get; set; }
         /// <summary>
         /// Gets or Sets ScaleValue
         /// </summary>
@@ -442,7 +458,9 @@ namespace DocuSign.eSign.Model
             sb.Append("  PaymentItemCode: ").Append(PaymentItemCode).Append("\n");
             sb.Append("  PaymentItemDescription: ").Append(PaymentItemDescription).Append("\n");
             sb.Append("  PaymentItemName: ").Append(PaymentItemName).Append("\n");
+            sb.Append("  RequireAll: ").Append(RequireAll).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
+            sb.Append("  RequireInitialOnSharedChange: ").Append(RequireInitialOnSharedChange).Append("\n");
             sb.Append("  ScaleValue: ").Append(ScaleValue).Append("\n");
             sb.Append("  Selected: ").Append(Selected).Append("\n");
             sb.Append("  Shared: ").Append(Shared).Append("\n");
@@ -661,9 +679,19 @@ namespace DocuSign.eSign.Model
                     this.PaymentItemName.Equals(other.PaymentItemName)
                 ) && 
                 (
+                    this.RequireAll == other.RequireAll ||
+                    this.RequireAll != null &&
+                    this.RequireAll.Equals(other.RequireAll)
+                ) && 
+                (
                     this.Required == other.Required ||
                     this.Required != null &&
                     this.Required.Equals(other.Required)
+                ) && 
+                (
+                    this.RequireInitialOnSharedChange == other.RequireInitialOnSharedChange ||
+                    this.RequireInitialOnSharedChange != null &&
+                    this.RequireInitialOnSharedChange.Equals(other.RequireInitialOnSharedChange)
                 ) && 
                 (
                     this.ScaleValue == other.ScaleValue ||
@@ -801,8 +829,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PaymentItemDescription.GetHashCode();
                 if (this.PaymentItemName != null)
                     hash = hash * 59 + this.PaymentItemName.GetHashCode();
+                if (this.RequireAll != null)
+                    hash = hash * 59 + this.RequireAll.GetHashCode();
                 if (this.Required != null)
                     hash = hash * 59 + this.Required.GetHashCode();
+                if (this.RequireInitialOnSharedChange != null)
+                    hash = hash * 59 + this.RequireInitialOnSharedChange.GetHashCode();
                 if (this.ScaleValue != null)
                     hash = hash * 59 + this.ScaleValue.GetHashCode();
                 if (this.Selected != null)

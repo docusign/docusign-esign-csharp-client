@@ -1,5 +1,19 @@
 ﻿# DocuSign C# Client Changelog - eSignature API v2
 
+## [v3.6.0] - eSignature API v2-20.2.02.02 - 08/24/2020
+### BREAKING
+*	Major design changes, resolved an issue with ApiClient and Configuration circular reference (DCM-3979). The initialization of any api object now requires ApiClient passed as a parameter as a parameter.
+### Changed
+*   Added support for version v2-20.2.02.02 of the DocuSign eSignature API.
+*   Updated the SDK release version
+
+## [v3.6.0-rc] - eSignature API v2-20.2.02.02 - 08/10/2020
+### BREAKING
+*	Major design changes, resolved an issue with ApiClient and Configuration circular reference (DCM-3979). The initialization of any api object now requires ApiClient passed as a parameter as a parameter.
+### Changed
+*   Added support for version v2-20.2.02.02 of the DocuSign eSignature API.
+*   Updated the SDK release version
+
 ## [v3.5.2] - eSignature API v2-20.2.00 - 07/09/2020
 ### Changed
 *   Added support for version v2-20.2.00 of the DocuSign eSignature API.

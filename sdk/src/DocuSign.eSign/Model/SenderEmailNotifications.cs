@@ -44,11 +44,12 @@ namespace DocuSign.eSign.Model
         /// <param name="DeliveryFailed">When set to **true**, the sender receives notification if the delivery of the envelope fails..</param>
         /// <param name="EnvelopeComplete">When set to **true**, the user receives notification that the envelope has been completed..</param>
         /// <param name="OfflineSigningFailed">When set to **true**, the user receives notification if the offline signing failed..</param>
+        /// <param name="PowerformResponsesLimitNotificationEmail">PowerformResponsesLimitNotificationEmail.</param>
         /// <param name="PurgeDocuments">PurgeDocuments.</param>
         /// <param name="RecipientViewed">When set to **true**, the sender receives notification that the recipient viewed the enveloper..</param>
         /// <param name="SenderEnvelopeDeclined">SenderEnvelopeDeclined.</param>
         /// <param name="WithdrawnConsent">When set to **true**, the user receives notification if consent is withdrawn..</param>
-        public SenderEmailNotifications(string ChangedSigner = default(string), string CommentsOnlyPrivateAndMention = default(string), string CommentsReceiveAll = default(string), string DeliveryFailed = default(string), string EnvelopeComplete = default(string), string OfflineSigningFailed = default(string), string PurgeDocuments = default(string), string RecipientViewed = default(string), string SenderEnvelopeDeclined = default(string), string WithdrawnConsent = default(string))
+        public SenderEmailNotifications(string ChangedSigner = default(string), string CommentsOnlyPrivateAndMention = default(string), string CommentsReceiveAll = default(string), string DeliveryFailed = default(string), string EnvelopeComplete = default(string), string OfflineSigningFailed = default(string), string PowerformResponsesLimitNotificationEmail = default(string), string PurgeDocuments = default(string), string RecipientViewed = default(string), string SenderEnvelopeDeclined = default(string), string WithdrawnConsent = default(string))
         {
             this.ChangedSigner = ChangedSigner;
             this.CommentsOnlyPrivateAndMention = CommentsOnlyPrivateAndMention;
@@ -56,6 +57,7 @@ namespace DocuSign.eSign.Model
             this.DeliveryFailed = DeliveryFailed;
             this.EnvelopeComplete = EnvelopeComplete;
             this.OfflineSigningFailed = OfflineSigningFailed;
+            this.PowerformResponsesLimitNotificationEmail = PowerformResponsesLimitNotificationEmail;
             this.PurgeDocuments = PurgeDocuments;
             this.RecipientViewed = RecipientViewed;
             this.SenderEnvelopeDeclined = SenderEnvelopeDeclined;
@@ -97,6 +99,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="offlineSigningFailed", EmitDefaultValue=false)]
         public string OfflineSigningFailed { get; set; }
         /// <summary>
+        /// Gets or Sets PowerformResponsesLimitNotificationEmail
+        /// </summary>
+        [DataMember(Name="powerformResponsesLimitNotificationEmail", EmitDefaultValue=false)]
+        public string PowerformResponsesLimitNotificationEmail { get; set; }
+        /// <summary>
         /// Gets or Sets PurgeDocuments
         /// </summary>
         [DataMember(Name="purgeDocuments", EmitDefaultValue=false)]
@@ -132,6 +139,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DeliveryFailed: ").Append(DeliveryFailed).Append("\n");
             sb.Append("  EnvelopeComplete: ").Append(EnvelopeComplete).Append("\n");
             sb.Append("  OfflineSigningFailed: ").Append(OfflineSigningFailed).Append("\n");
+            sb.Append("  PowerformResponsesLimitNotificationEmail: ").Append(PowerformResponsesLimitNotificationEmail).Append("\n");
             sb.Append("  PurgeDocuments: ").Append(PurgeDocuments).Append("\n");
             sb.Append("  RecipientViewed: ").Append(RecipientViewed).Append("\n");
             sb.Append("  SenderEnvelopeDeclined: ").Append(SenderEnvelopeDeclined).Append("\n");
@@ -203,6 +211,11 @@ namespace DocuSign.eSign.Model
                     this.OfflineSigningFailed.Equals(other.OfflineSigningFailed)
                 ) && 
                 (
+                    this.PowerformResponsesLimitNotificationEmail == other.PowerformResponsesLimitNotificationEmail ||
+                    this.PowerformResponsesLimitNotificationEmail != null &&
+                    this.PowerformResponsesLimitNotificationEmail.Equals(other.PowerformResponsesLimitNotificationEmail)
+                ) && 
+                (
                     this.PurgeDocuments == other.PurgeDocuments ||
                     this.PurgeDocuments != null &&
                     this.PurgeDocuments.Equals(other.PurgeDocuments)
@@ -247,6 +260,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnvelopeComplete.GetHashCode();
                 if (this.OfflineSigningFailed != null)
                     hash = hash * 59 + this.OfflineSigningFailed.GetHashCode();
+                if (this.PowerformResponsesLimitNotificationEmail != null)
+                    hash = hash * 59 + this.PowerformResponsesLimitNotificationEmail.GetHashCode();
                 if (this.PurgeDocuments != null)
                     hash = hash * 59 + this.PurgeDocuments.GetHashCode();
                 if (this.RecipientViewed != null)

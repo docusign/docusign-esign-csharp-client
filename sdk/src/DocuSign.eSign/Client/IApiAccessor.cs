@@ -10,10 +10,6 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using RestSharp;
 
 namespace DocuSign.eSign.Client
 {
@@ -23,10 +19,10 @@ namespace DocuSign.eSign.Client
     public interface IApiAccessor
     {
         /// <summary>
-        /// Gets or sets the configuration object
+        /// Gets or sets the ApiClient object
         /// </summary>
-        /// <value>An instance of the Configuration</value>
-        Configuration Configuration {get; set;}
+        /// <value>An instance of the ApiClient</value>
+        ApiClient ApiClient {get; set;}
 
         /// <summary>
         /// Gets the base path of the API client.

@@ -123,7 +123,8 @@ namespace DocuSign.eSign.Model
         /// <param name="UseDisclosure">When set to **true**, the disclosure is shown to recipients in accordance with the account&#39;s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the &#x60;useDisclosure&#x60; property is not set, then the account&#39;s normal disclosure setting is used and the value of the &#x60;useDisclosure&#x60; property is not returned in responses when getting envelope information..</param>
         /// <param name="VoidedDateTime">The date and time the envelope or template was voided..</param>
         /// <param name="VoidedReason">The reason the envelope or template was voided..</param>
-        public EnvelopeDefinition(string AccessControlListBase64 = default(string), string Accessibility = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowRecipientRecursion = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string Asynchronous = default(string), List<Attachment> Attachments = default(List<Attachment>), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), List<CompositeTemplate> CompositeTemplates = default(List<CompositeTemplate>), string CopyRecipientData = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), EventNotification EventNotification = default(EventNotification), List<EventNotification> EventNotifications = default(List<EventNotification>), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), List<Folder> Folders = default(List<Folder>), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string LastModifiedDateTime = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), string Password = default(string), PowerForm PowerForm = default(PowerForm), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string StatusDateTime = default(string), string TemplateId = default(string), List<TemplateRole> TemplateRoles = default(List<TemplateRole>), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string))
+        /// <param name="Workflow">Workflow.</param>
+        public EnvelopeDefinition(string AccessControlListBase64 = default(string), string Accessibility = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowRecipientRecursion = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string Asynchronous = default(string), List<Attachment> Attachments = default(List<Attachment>), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), List<CompositeTemplate> CompositeTemplates = default(List<CompositeTemplate>), string CopyRecipientData = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), EventNotification EventNotification = default(EventNotification), List<EventNotification> EventNotifications = default(List<EventNotification>), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), List<Folder> Folders = default(List<Folder>), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string LastModifiedDateTime = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), string Password = default(string), PowerForm PowerForm = default(PowerForm), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string StatusDateTime = default(string), string TemplateId = default(string), List<TemplateRole> TemplateRoles = default(List<TemplateRole>), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string), Workflow Workflow = default(Workflow))
         {
             this.AccessControlListBase64 = AccessControlListBase64;
             this.Accessibility = Accessibility;
@@ -210,6 +211,7 @@ namespace DocuSign.eSign.Model
             this.UseDisclosure = UseDisclosure;
             this.VoidedDateTime = VoidedDateTime;
             this.VoidedReason = VoidedReason;
+            this.Workflow = Workflow;
         }
         
         /// <summary>
@@ -680,6 +682,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="voidedReason", EmitDefaultValue=false)]
         public string VoidedReason { get; set; }
         /// <summary>
+        /// Gets or Sets Workflow
+        /// </summary>
+        [DataMember(Name="workflow", EmitDefaultValue=false)]
+        public Workflow Workflow { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -772,6 +779,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  UseDisclosure: ").Append(UseDisclosure).Append("\n");
             sb.Append("  VoidedDateTime: ").Append(VoidedDateTime).Append("\n");
             sb.Append("  VoidedReason: ").Append(VoidedReason).Append("\n");
+            sb.Append("  Workflow: ").Append(Workflow).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1232,6 +1240,11 @@ namespace DocuSign.eSign.Model
                     this.VoidedReason == other.VoidedReason ||
                     this.VoidedReason != null &&
                     this.VoidedReason.Equals(other.VoidedReason)
+                ) && 
+                (
+                    this.Workflow == other.Workflow ||
+                    this.Workflow != null &&
+                    this.Workflow.Equals(other.Workflow)
                 );
         }
 
@@ -1416,6 +1429,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.VoidedDateTime.GetHashCode();
                 if (this.VoidedReason != null)
                     hash = hash * 59 + this.VoidedReason.GetHashCode();
+                if (this.Workflow != null)
+                    hash = hash * 59 + this.Workflow.GetHashCode();
                 return hash;
             }
         }

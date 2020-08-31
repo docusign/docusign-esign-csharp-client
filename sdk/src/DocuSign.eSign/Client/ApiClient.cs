@@ -34,7 +34,7 @@ namespace DocuSign.eSign.Client
     /// <summary>
     /// API client is mainly responsible for making the HTTP call to the API backend.
     /// </summary>
-    public partial class ApiClient
+    public class ApiClient
     {
         // Rest API base path constants
         // Live/Production base path
@@ -43,8 +43,6 @@ namespace DocuSign.eSign.Client
         public const string Demo_REST_BasePath = "https://demo.docusign.net/restapi";
         // Stage base path
         public const string Stage_REST_BasePath = "https://stage.docusign.net/restapi";
-
-        private IWebProxy Proxy { get; set; } = null;
 
         private string basePath = Production_REST_BasePath;
 
@@ -61,7 +59,7 @@ namespace DocuSign.eSign.Client
         /// <param name="request">The RestSharp request object</param>
         public virtual void InterceptRequest(IRestRequest request)
         {
-            //Override this to add telemetry 
+            // Override this to add telemetry
         }
 
         /// <summary>
@@ -71,7 +69,7 @@ namespace DocuSign.eSign.Client
         /// <param name="response">The RestSharp response object</param>
         public virtual void InterceptResponse(IRestRequest request, IRestResponse response)
         {
-            //Override this to add telemetry 
+            // Override this to add telemetry
         }
 
         /// <summary>
@@ -90,22 +88,12 @@ namespace DocuSign.eSign.Client
         /// with default base path (https://www.docusign.net/restapi).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
-        public ApiClient(Configuration config = null)
+        public ApiClient(Configuration config)
         {
             this.InitializeTLSProtocol();
 
-            if (config == null)
-                Configuration = Configuration.Default;
-            else
-                Configuration = config;
-
+            Configuration = config ?? Configuration.Default;
             RestClient = new RestClient("https://www.docusign.net/restapi");
-
-            if (Configuration.Proxy != null)
-            {
-                RestClient.Proxy = Configuration.Proxy;
-                Proxy = Configuration.Proxy;
-            }
         }
 
         /// <summary>
@@ -121,13 +109,12 @@ namespace DocuSign.eSign.Client
 
             this.InitializeTLSProtocol();
 
-            this.basePath = basePath;
-            this.SetOAuthBasePath();
-
             this.Proxy = proxy;
             RestClient = new RestClient(basePath) { Proxy = proxy };
-            Configuration = Configuration.Default;
-            Configuration.ApiClient = this;
+            Configuration = new Configuration(basePath);
+
+            this.SetBasePath(basePath);
+            this.SetOAuthBasePath();
         }
 
         /// <summary>
@@ -146,13 +133,12 @@ namespace DocuSign.eSign.Client
 
             this.InitializeTLSProtocol();
 
-            this.basePath = basePath;
-            this.SetOAuthBasePath(oAuthBasePath);
-
             this.Proxy = proxy;
             RestClient = new RestClient(basePath) { Proxy = proxy };
-            Configuration = Configuration.Default;
-            Configuration.ApiClient = this;
+            Configuration = new Configuration(basePath);
+
+            this.SetBasePath(basePath);
+            this.SetOAuthBasePath();
         }
 
         private void InitializeTLSProtocol()
@@ -173,13 +159,6 @@ namespace DocuSign.eSign.Client
             ServicePointManager.SecurityProtocol = protocolVersions;
 #endif
         }
-
-        /// <summary>
-        /// Gets or sets the default API client for making HTTP calls.
-        /// </summary>
-        /// <value>The default API client.</value>
-        [Obsolete("ApiClient.Default is deprecated, please use 'Configuration.Default.ApiClient' instead.")]
-        public static ApiClient Default;
 
         /// <summary>
         /// Gets or sets the Configuration.
@@ -484,7 +463,7 @@ namespace DocuSign.eSign.Client
                 .FirstOrDefault();
 
             //for this iteration, we only support BulkRecipient request object 
-            sb.Append(SerializeCsvToString((List<Model.BulkRecipient>)requestObjList));
+            sb.Append(SerializeCsvToString((List<object>)requestObjList));
 
             return sb.ToString();
         }
@@ -670,6 +649,27 @@ namespace DocuSign.eSign.Client
         }
 
         /// <summary>
+        /// Gets or sets the Proxy of ApiClient. Default to null
+        /// </summary>
+        /// <value>Timeout.</value>
+        public IWebProxy Proxy
+        {
+            get
+            {
+                if (this.RestClient == null)
+                    return null;
+
+                return this.RestClient.Proxy;
+            }
+
+            set
+            {
+                if (this.RestClient != null)
+                    this.RestClient.Proxy = value;
+            }
+        }
+
+        /// <summary>
         /// Helper method to configure the OAuth accessCode/implicit flow parameters
         /// </summary>
         /// <param name="clientId">OAuth2 client ID: Identifies the client making the request.</param>
@@ -757,6 +757,10 @@ namespace DocuSign.eSign.Client
         public void SetBasePath(string basePath)
         {
             this.basePath = basePath;
+            if(Configuration != null)
+            {
+                Configuration.BasePath = this.basePath;
+            }
         }
 
         /// <summary>
@@ -837,10 +841,16 @@ namespace DocuSign.eSign.Client
             if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
             {
                 OAuth.OAuthToken tokenObj = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
-
                 // Add the token to this ApiClient
                 string authHeader = "Bearer " + tokenObj.access_token;
-                this.Configuration.AddDefaultHeader("Authorization", authHeader);
+                if (!this.Configuration.DefaultHeader.ContainsKey("Authorization"))
+                {
+                    this.Configuration.DefaultHeader.Add("Authorization", authHeader);
+                }
+                else
+                {
+                    this.Configuration.DefaultHeader["Authorization"] = authHeader;
+                }
                 return tokenObj;
             }
             else
@@ -1047,8 +1057,14 @@ namespace DocuSign.eSign.Client
             if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
             {
                 OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
-                var config = Configuration.Default;
-                config.AddDefaultHeader("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+                if (!this.Configuration.DefaultHeader.ContainsKey("Authorization"))
+                {
+                   this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+                }
+                else
+                {
+                   this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
+                }
                 return tokenInfo;
             }
             else
@@ -1138,8 +1154,14 @@ namespace DocuSign.eSign.Client
             if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
             {
                 OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
-                var config = Configuration.Default;
-                config.AddDefaultHeader("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+                if (!this.Configuration.DefaultHeader.ContainsKey("Authorization"))
+                {
+                   this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+                }
+                else
+                {
+                   this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
+                }
                 return tokenInfo;
             }
             else

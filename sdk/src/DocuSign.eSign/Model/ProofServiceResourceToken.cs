@@ -38,16 +38,23 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProofServiceResourceToken" /> class.
         /// </summary>
+        /// <param name="ProofBaseURI">ProofBaseURI.</param>
         /// <param name="ResourceToken">ResourceToken.</param>
-        public ProofServiceResourceToken(string ResourceToken = default(string))
+        public ProofServiceResourceToken(string ProofBaseURI = default(string), string ResourceToken = default(string))
         {
+            this.ProofBaseURI = ProofBaseURI;
             this.ResourceToken = ResourceToken;
         }
         
         /// <summary>
+        /// Gets or Sets ProofBaseURI
+        /// </summary>
+        [DataMember(Name="proofBaseURI", EmitDefaultValue=false)]
+        public string ProofBaseURI { get; set; }
+        /// <summary>
         /// Gets or Sets ResourceToken
         /// </summary>
-        [DataMember(Name="ResourceToken", EmitDefaultValue=false)]
+        [DataMember(Name="resourceToken", EmitDefaultValue=false)]
         public string ResourceToken { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
@@ -57,6 +64,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ProofServiceResourceToken {\n");
+            sb.Append("  ProofBaseURI: ").Append(ProofBaseURI).Append("\n");
             sb.Append("  ResourceToken: ").Append(ResourceToken).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -95,6 +103,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.ProofBaseURI == other.ProofBaseURI ||
+                    this.ProofBaseURI != null &&
+                    this.ProofBaseURI.Equals(other.ProofBaseURI)
+                ) && 
+                (
                     this.ResourceToken == other.ResourceToken ||
                     this.ResourceToken != null &&
                     this.ResourceToken.Equals(other.ResourceToken)
@@ -112,6 +125,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.ProofBaseURI != null)
+                    hash = hash * 59 + this.ProofBaseURI.GetHashCode();
                 if (this.ResourceToken != null)
                     hash = hash * 59 + this.ResourceToken.GetHashCode();
                 return hash;

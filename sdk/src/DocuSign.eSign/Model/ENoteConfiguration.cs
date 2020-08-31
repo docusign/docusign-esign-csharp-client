@@ -38,13 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ENoteConfiguration" /> class.
         /// </summary>
+        /// <param name="ApiKey">ApiKey.</param>
         /// <param name="ConnectConfigured">ConnectConfigured.</param>
         /// <param name="ENoteConfigured">ENoteConfigured.</param>
         /// <param name="Organization">Organization.</param>
         /// <param name="Password">Password.</param>
         /// <param name="UserName">UserName.</param>
-        public ENoteConfiguration(string ConnectConfigured = default(string), string ENoteConfigured = default(string), string Organization = default(string), string Password = default(string), string UserName = default(string))
+        public ENoteConfiguration(string ApiKey = default(string), string ConnectConfigured = default(string), string ENoteConfigured = default(string), string Organization = default(string), string Password = default(string), string UserName = default(string))
         {
+            this.ApiKey = ApiKey;
             this.ConnectConfigured = ConnectConfigured;
             this.ENoteConfigured = ENoteConfigured;
             this.Organization = Organization;
@@ -52,6 +54,11 @@ namespace DocuSign.eSign.Model
             this.UserName = UserName;
         }
         
+        /// <summary>
+        /// Gets or Sets ApiKey
+        /// </summary>
+        [DataMember(Name="apiKey", EmitDefaultValue=false)]
+        public string ApiKey { get; set; }
         /// <summary>
         /// Gets or Sets ConnectConfigured
         /// </summary>
@@ -85,6 +92,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ENoteConfiguration {\n");
+            sb.Append("  ApiKey: ").Append(ApiKey).Append("\n");
             sb.Append("  ConnectConfigured: ").Append(ConnectConfigured).Append("\n");
             sb.Append("  ENoteConfigured: ").Append(ENoteConfigured).Append("\n");
             sb.Append("  Organization: ").Append(Organization).Append("\n");
@@ -127,6 +135,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.ApiKey == other.ApiKey ||
+                    this.ApiKey != null &&
+                    this.ApiKey.Equals(other.ApiKey)
+                ) && 
+                (
                     this.ConnectConfigured == other.ConnectConfigured ||
                     this.ConnectConfigured != null &&
                     this.ConnectConfigured.Equals(other.ConnectConfigured)
@@ -164,6 +177,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.ApiKey != null)
+                    hash = hash * 59 + this.ApiKey.GetHashCode();
                 if (this.ConnectConfigured != null)
                     hash = hash * 59 + this.ConnectConfigured.GetHashCode();
                 if (this.ENoteConfigured != null)

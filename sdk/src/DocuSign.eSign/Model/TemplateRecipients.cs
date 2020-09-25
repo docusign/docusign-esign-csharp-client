@@ -46,11 +46,12 @@ namespace DocuSign.eSign.Model
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="InPersonSigners">Specifies a signer that is in the same physical location as a DocuSign user who will act as a Signing Host for the transaction. The recipient added is the Signing Host and new separate Signer Name field appears after Sign in person is selected..</param>
         /// <param name="Intermediaries">Identifies a recipient that can, but is not required to, add name and email information for recipients at the same or subsequent level in the routing order (until subsequent Agents, Editors or Intermediaries recipient types are added)..</param>
+        /// <param name="Notaries">Notaries.</param>
         /// <param name="RecipientCount">The list of recipient event statuses that will trigger Connect to send updates to the url. It can be a two-part list with:  * recipientEventStatusCode - The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded. * includeDocuments - When set to **true**, the envelope time zone information is included in the message..</param>
         /// <param name="Seals">Seals.</param>
         /// <param name="Signers">A complex type containing information about the Signer recipient..</param>
         /// <param name="Witnesses">Witnesses.</param>
-        public TemplateRecipients(List<Agent> Agents = default(List<Agent>), List<CarbonCopy> CarbonCopies = default(List<CarbonCopy>), List<CertifiedDelivery> CertifiedDeliveries = default(List<CertifiedDelivery>), string CurrentRoutingOrder = default(string), List<Editor> Editors = default(List<Editor>), ErrorDetails ErrorDetails = default(ErrorDetails), List<InPersonSigner> InPersonSigners = default(List<InPersonSigner>), List<Intermediary> Intermediaries = default(List<Intermediary>), string RecipientCount = default(string), List<SealSign> Seals = default(List<SealSign>), List<Signer> Signers = default(List<Signer>), List<Witness> Witnesses = default(List<Witness>))
+        public TemplateRecipients(List<Agent> Agents = default(List<Agent>), List<CarbonCopy> CarbonCopies = default(List<CarbonCopy>), List<CertifiedDelivery> CertifiedDeliveries = default(List<CertifiedDelivery>), string CurrentRoutingOrder = default(string), List<Editor> Editors = default(List<Editor>), ErrorDetails ErrorDetails = default(ErrorDetails), List<InPersonSigner> InPersonSigners = default(List<InPersonSigner>), List<Intermediary> Intermediaries = default(List<Intermediary>), List<NotaryRecipient> Notaries = default(List<NotaryRecipient>), string RecipientCount = default(string), List<SealSign> Seals = default(List<SealSign>), List<Signer> Signers = default(List<Signer>), List<Witness> Witnesses = default(List<Witness>))
         {
             this.Agents = Agents;
             this.CarbonCopies = CarbonCopies;
@@ -60,6 +61,7 @@ namespace DocuSign.eSign.Model
             this.ErrorDetails = ErrorDetails;
             this.InPersonSigners = InPersonSigners;
             this.Intermediaries = Intermediaries;
+            this.Notaries = Notaries;
             this.RecipientCount = RecipientCount;
             this.Seals = Seals;
             this.Signers = Signers;
@@ -112,6 +114,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="intermediaries", EmitDefaultValue=false)]
         public List<Intermediary> Intermediaries { get; set; }
         /// <summary>
+        /// Gets or Sets Notaries
+        /// </summary>
+        [DataMember(Name="notaries", EmitDefaultValue=false)]
+        public List<NotaryRecipient> Notaries { get; set; }
+        /// <summary>
         /// The list of recipient event statuses that will trigger Connect to send updates to the url. It can be a two-part list with:  * recipientEventStatusCode - The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded. * includeDocuments - When set to **true**, the envelope time zone information is included in the message.
         /// </summary>
         /// <value>The list of recipient event statuses that will trigger Connect to send updates to the url. It can be a two-part list with:  * recipientEventStatusCode - The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded. * includeDocuments - When set to **true**, the envelope time zone information is included in the message.</value>
@@ -149,6 +156,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("  InPersonSigners: ").Append(InPersonSigners).Append("\n");
             sb.Append("  Intermediaries: ").Append(Intermediaries).Append("\n");
+            sb.Append("  Notaries: ").Append(Notaries).Append("\n");
             sb.Append("  RecipientCount: ").Append(RecipientCount).Append("\n");
             sb.Append("  Seals: ").Append(Seals).Append("\n");
             sb.Append("  Signers: ").Append(Signers).Append("\n");
@@ -230,6 +238,11 @@ namespace DocuSign.eSign.Model
                     this.Intermediaries.SequenceEqual(other.Intermediaries)
                 ) && 
                 (
+                    this.Notaries == other.Notaries ||
+                    this.Notaries != null &&
+                    this.Notaries.SequenceEqual(other.Notaries)
+                ) && 
+                (
                     this.RecipientCount == other.RecipientCount ||
                     this.RecipientCount != null &&
                     this.RecipientCount.Equals(other.RecipientCount)
@@ -278,6 +291,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.InPersonSigners.GetHashCode();
                 if (this.Intermediaries != null)
                     hash = hash * 59 + this.Intermediaries.GetHashCode();
+                if (this.Notaries != null)
+                    hash = hash * 59 + this.Notaries.GetHashCode();
                 if (this.RecipientCount != null)
                     hash = hash * 59 + this.RecipientCount.GetHashCode();
                 if (this.Seals != null)

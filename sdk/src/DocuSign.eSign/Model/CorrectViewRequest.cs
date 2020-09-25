@@ -40,10 +40,12 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ReturnUrl">The url used after correct/send view session has ended. DocuSign redirects to the url and includes an event parameter that can be used by your app. The event parameters returned are:   * send (user corrected and sent the envelope) * save (user saved the envelope) * cancel (user canceled the transaction.) * error (there was an error when performing the correct or send) * sessionEnd (the session ended before the user completed a different action)  ###### Note: Include https:// in the URL or the redirect might not succeed on some browsers. .</param>
         /// <param name="SuppressNavigation">Specifies whether the window is displayed with or without dressing..</param>
-        public CorrectViewRequest(string ReturnUrl = default(string), string SuppressNavigation = default(string))
+        /// <param name="ViewUrl">ViewUrl.</param>
+        public CorrectViewRequest(string ReturnUrl = default(string), string SuppressNavigation = default(string), string ViewUrl = default(string))
         {
             this.ReturnUrl = ReturnUrl;
             this.SuppressNavigation = SuppressNavigation;
+            this.ViewUrl = ViewUrl;
         }
         
         /// <summary>
@@ -59,6 +61,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="suppressNavigation", EmitDefaultValue=false)]
         public string SuppressNavigation { get; set; }
         /// <summary>
+        /// Gets or Sets ViewUrl
+        /// </summary>
+        [DataMember(Name="viewUrl", EmitDefaultValue=false)]
+        public string ViewUrl { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -68,6 +75,7 @@ namespace DocuSign.eSign.Model
             sb.Append("class CorrectViewRequest {\n");
             sb.Append("  ReturnUrl: ").Append(ReturnUrl).Append("\n");
             sb.Append("  SuppressNavigation: ").Append(SuppressNavigation).Append("\n");
+            sb.Append("  ViewUrl: ").Append(ViewUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,6 +121,11 @@ namespace DocuSign.eSign.Model
                     this.SuppressNavigation == other.SuppressNavigation ||
                     this.SuppressNavigation != null &&
                     this.SuppressNavigation.Equals(other.SuppressNavigation)
+                ) && 
+                (
+                    this.ViewUrl == other.ViewUrl ||
+                    this.ViewUrl != null &&
+                    this.ViewUrl.Equals(other.ViewUrl)
                 );
         }
 
@@ -131,6 +144,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ReturnUrl.GetHashCode();
                 if (this.SuppressNavigation != null)
                     hash = hash * 59 + this.SuppressNavigation.GetHashCode();
+                if (this.ViewUrl != null)
+                    hash = hash * 59 + this.ViewUrl.GetHashCode();
                 return hash;
             }
         }

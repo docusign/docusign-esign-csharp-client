@@ -1,5 +1,12 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v5.1.0-rc] - eSignature API v2.1-20.3.00 - 09/24/2020
+### Changed
+*   Added support for version v2.1-20.3.00 of the DocuSign eSignature API.
+*   Updated the SDK release version
+### Fixed
+*	A bug with ApiClient SetBasePath which did not update basePath for RestClient (DCM-4276).
+
 ## [v5.0.0] - eSignature API v2.1-20.2.02.02 - 08/24/2020
 ### BREAKING
 *	Major design changes, resolved an issue with ApiClient and Configuration circular reference (DCM-3979). The initialization of any api object now requires ApiClient passed as a parameter as a parameter.

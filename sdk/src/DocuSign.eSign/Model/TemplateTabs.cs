@@ -56,6 +56,8 @@ namespace DocuSign.eSign.Model
         /// <param name="LastNameTabs">Specifies a tag on a document where you want the recipient&#39;s last name to appear. This tag takes the recipient&#39;s name, as entered in the recipient information, splits it into sections based on spaces and uses the last section as the last name..</param>
         /// <param name="ListTabs">Specify this tag to give your recipient a list of options, presented as a drop-down list, from which they can select..</param>
         /// <param name="NotarizeTabs">NotarizeTabs.</param>
+        /// <param name="NotaryCertificateTabs">NotaryCertificateTabs.</param>
+        /// <param name="NotarySealTabs">NotarySealTabs.</param>
         /// <param name="NoteTabs">Specifies a location on the document where you want to place additional information, in the form of a note, for a recipient..</param>
         /// <param name="NumberTabs">Specifies a tag on the document where you want the recipient to enter a number. It uses the same parameters as a Text tab, with the validation message and pattern set for number information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response. .</param>
         /// <param name="PolyLineOverlayTabs">PolyLineOverlayTabs.</param>
@@ -69,7 +71,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TitleTabs">Specifies a tag on the document where you want the recipient&#39;s title to appear.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
         /// <param name="ViewTabs">ViewTabs.</param>
         /// <param name="ZipTabs">Specifies a tag on the document where you want the recipient to enter a ZIP code. The ZIP code can be a five numbers or the ZIP+4 format with nine numbers. The zip code can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for ZIP code information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
-        public TemplateTabs(List<Approve> ApproveTabs = default(List<Approve>), List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<CommentThread> CommentThreadTabs = default(List<CommentThread>), List<Company> CompanyTabs = default(List<Company>), List<DateSigned> DateSignedTabs = default(List<DateSigned>), List<DocuSign.eSign.Model.Date> DateTabs = default(List<DocuSign.eSign.Model.Date>), List<Decline> DeclineTabs = default(List<Decline>), List<Draw> DrawTabs = default(List<Draw>), List<EmailAddress> EmailAddressTabs = default(List<EmailAddress>), List<Email> EmailTabs = default(List<Email>), List<EnvelopeId> EnvelopeIdTabs = default(List<EnvelopeId>), List<FirstName> FirstNameTabs = default(List<FirstName>), List<FormulaTab> FormulaTabs = default(List<FormulaTab>), List<FullName> FullNameTabs = default(List<FullName>), List<InitialHere> InitialHereTabs = default(List<InitialHere>), List<LastName> LastNameTabs = default(List<LastName>), List<List> ListTabs = default(List<List>), List<Notarize> NotarizeTabs = default(List<Notarize>), List<Note> NoteTabs = default(List<Note>), List<Number> NumberTabs = default(List<Number>), List<PolyLineOverlay> PolyLineOverlayTabs = default(List<PolyLineOverlay>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SignerAttachment> SignerAttachmentTabs = default(List<SignerAttachment>), List<SignHere> SignHereTabs = default(List<SignHere>), List<SmartSection> SmartSectionTabs = default(List<SmartSection>), List<Ssn> SsnTabs = default(List<Ssn>), List<TabGroup> TabGroups = default(List<TabGroup>), List<Text> TextTabs = default(List<Text>), List<Title> TitleTabs = default(List<Title>), List<View> ViewTabs = default(List<View>), List<Zip> ZipTabs = default(List<Zip>))
+        public TemplateTabs(List<Approve> ApproveTabs = default(List<Approve>), List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<CommentThread> CommentThreadTabs = default(List<CommentThread>), List<Company> CompanyTabs = default(List<Company>), List<DateSigned> DateSignedTabs = default(List<DateSigned>), List<DocuSign.eSign.Model.Date> DateTabs = default(List<DocuSign.eSign.Model.Date>), List<Decline> DeclineTabs = default(List<Decline>), List<Draw> DrawTabs = default(List<Draw>), List<EmailAddress> EmailAddressTabs = default(List<EmailAddress>), List<Email> EmailTabs = default(List<Email>), List<EnvelopeId> EnvelopeIdTabs = default(List<EnvelopeId>), List<FirstName> FirstNameTabs = default(List<FirstName>), List<FormulaTab> FormulaTabs = default(List<FormulaTab>), List<FullName> FullNameTabs = default(List<FullName>), List<InitialHere> InitialHereTabs = default(List<InitialHere>), List<LastName> LastNameTabs = default(List<LastName>), List<List> ListTabs = default(List<List>), List<Notarize> NotarizeTabs = default(List<Notarize>), List<NotaryCertificate> NotaryCertificateTabs = default(List<NotaryCertificate>), List<NotarySeal> NotarySealTabs = default(List<NotarySeal>), List<Note> NoteTabs = default(List<Note>), List<Number> NumberTabs = default(List<Number>), List<PolyLineOverlay> PolyLineOverlayTabs = default(List<PolyLineOverlay>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SignerAttachment> SignerAttachmentTabs = default(List<SignerAttachment>), List<SignHere> SignHereTabs = default(List<SignHere>), List<SmartSection> SmartSectionTabs = default(List<SmartSection>), List<Ssn> SsnTabs = default(List<Ssn>), List<TabGroup> TabGroups = default(List<TabGroup>), List<Text> TextTabs = default(List<Text>), List<Title> TitleTabs = default(List<Title>), List<View> ViewTabs = default(List<View>), List<Zip> ZipTabs = default(List<Zip>))
         {
             this.ApproveTabs = ApproveTabs;
             this.CheckboxTabs = CheckboxTabs;
@@ -89,6 +91,8 @@ namespace DocuSign.eSign.Model
             this.LastNameTabs = LastNameTabs;
             this.ListTabs = ListTabs;
             this.NotarizeTabs = NotarizeTabs;
+            this.NotaryCertificateTabs = NotaryCertificateTabs;
+            this.NotarySealTabs = NotarySealTabs;
             this.NoteTabs = NoteTabs;
             this.NumberTabs = NumberTabs;
             this.PolyLineOverlayTabs = PolyLineOverlayTabs;
@@ -210,6 +214,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="notarizeTabs", EmitDefaultValue=false)]
         public List<Notarize> NotarizeTabs { get; set; }
         /// <summary>
+        /// Gets or Sets NotaryCertificateTabs
+        /// </summary>
+        [DataMember(Name="notaryCertificateTabs", EmitDefaultValue=false)]
+        public List<NotaryCertificate> NotaryCertificateTabs { get; set; }
+        /// <summary>
+        /// Gets or Sets NotarySealTabs
+        /// </summary>
+        [DataMember(Name="notarySealTabs", EmitDefaultValue=false)]
+        public List<NotarySeal> NotarySealTabs { get; set; }
+        /// <summary>
         /// Specifies a location on the document where you want to place additional information, in the form of a note, for a recipient.
         /// </summary>
         /// <value>Specifies a location on the document where you want to place additional information, in the form of a note, for a recipient.</value>
@@ -309,6 +323,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  LastNameTabs: ").Append(LastNameTabs).Append("\n");
             sb.Append("  ListTabs: ").Append(ListTabs).Append("\n");
             sb.Append("  NotarizeTabs: ").Append(NotarizeTabs).Append("\n");
+            sb.Append("  NotaryCertificateTabs: ").Append(NotaryCertificateTabs).Append("\n");
+            sb.Append("  NotarySealTabs: ").Append(NotarySealTabs).Append("\n");
             sb.Append("  NoteTabs: ").Append(NoteTabs).Append("\n");
             sb.Append("  NumberTabs: ").Append(NumberTabs).Append("\n");
             sb.Append("  PolyLineOverlayTabs: ").Append(PolyLineOverlayTabs).Append("\n");
@@ -449,6 +465,16 @@ namespace DocuSign.eSign.Model
                     this.NotarizeTabs.SequenceEqual(other.NotarizeTabs)
                 ) && 
                 (
+                    this.NotaryCertificateTabs == other.NotaryCertificateTabs ||
+                    this.NotaryCertificateTabs != null &&
+                    this.NotaryCertificateTabs.SequenceEqual(other.NotaryCertificateTabs)
+                ) && 
+                (
+                    this.NotarySealTabs == other.NotarySealTabs ||
+                    this.NotarySealTabs != null &&
+                    this.NotarySealTabs.SequenceEqual(other.NotarySealTabs)
+                ) && 
+                (
                     this.NoteTabs == other.NoteTabs ||
                     this.NoteTabs != null &&
                     this.NoteTabs.SequenceEqual(other.NoteTabs)
@@ -562,6 +588,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ListTabs.GetHashCode();
                 if (this.NotarizeTabs != null)
                     hash = hash * 59 + this.NotarizeTabs.GetHashCode();
+                if (this.NotaryCertificateTabs != null)
+                    hash = hash * 59 + this.NotaryCertificateTabs.GetHashCode();
+                if (this.NotarySealTabs != null)
+                    hash = hash * 59 + this.NotarySealTabs.GetHashCode();
                 if (this.NoteTabs != null)
                     hash = hash * 59 + this.NoteTabs.GetHashCode();
                 if (this.NumberTabs != null)

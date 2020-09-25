@@ -47,6 +47,33 @@ namespace SdkTests
             Assert.IsNotNull(testConfig.AccountId);
         }
 
+        [TestMethod]
+        public void SetBasePathTest()
+        {
+            // Prepare
+            var configBasePath = testConfig.ApiClient.Configuration.BasePath;
+            var restBasePath = Convert.ToString(testConfig.ApiClient.RestClient.BaseUrl);
+
+            // Test is everything initialized properly
+            Assert.AreEqual(configBasePath, restBasePath);
+
+            // Test a new basepath
+            var testBasePath = "https://na.docusign.net/restapi";
+
+            testConfig.ApiClient.SetBasePath(testBasePath);
+
+            // Assert the new basePAth
+            Assert.AreEqual(testBasePath, Convert.ToString(testConfig.ApiClient.RestClient.BaseUrl));
+            Assert.AreEqual(testBasePath, testConfig.ApiClient.Configuration.BasePath);
+
+            // Reset 
+            testConfig.ApiClient.SetBasePath(configBasePath);
+
+            // Assert
+            Assert.AreEqual(restBasePath, Convert.ToString(testConfig.ApiClient.RestClient.BaseUrl));
+            Assert.AreEqual(configBasePath, testConfig.ApiClient.Configuration.BasePath);
+        }
+
         private void JwtRequestSignatureOnDocumentTest(string status = "sent")
         {
             // the document (file) we want signed

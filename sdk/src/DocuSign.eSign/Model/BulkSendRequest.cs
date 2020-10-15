@@ -38,12 +38,19 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkSendRequest" /> class.
         /// </summary>
+        /// <param name="BatchName">BatchName.</param>
         /// <param name="EnvelopeOrTemplateId">EnvelopeOrTemplateId.</param>
-        public BulkSendRequest(string EnvelopeOrTemplateId = default(string))
+        public BulkSendRequest(string BatchName = default(string), string EnvelopeOrTemplateId = default(string))
         {
+            this.BatchName = BatchName;
             this.EnvelopeOrTemplateId = EnvelopeOrTemplateId;
         }
         
+        /// <summary>
+        /// Gets or Sets BatchName
+        /// </summary>
+        [DataMember(Name="batchName", EmitDefaultValue=false)]
+        public string BatchName { get; set; }
         /// <summary>
         /// Gets or Sets EnvelopeOrTemplateId
         /// </summary>
@@ -57,6 +64,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BulkSendRequest {\n");
+            sb.Append("  BatchName: ").Append(BatchName).Append("\n");
             sb.Append("  EnvelopeOrTemplateId: ").Append(EnvelopeOrTemplateId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -95,6 +103,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.BatchName == other.BatchName ||
+                    this.BatchName != null &&
+                    this.BatchName.Equals(other.BatchName)
+                ) && 
+                (
                     this.EnvelopeOrTemplateId == other.EnvelopeOrTemplateId ||
                     this.EnvelopeOrTemplateId != null &&
                     this.EnvelopeOrTemplateId.Equals(other.EnvelopeOrTemplateId)
@@ -112,6 +125,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.BatchName != null)
+                    hash = hash * 59 + this.BatchName.GetHashCode();
                 if (this.EnvelopeOrTemplateId != null)
                     hash = hash * 59 + this.EnvelopeOrTemplateId.GetHashCode();
                 return hash;

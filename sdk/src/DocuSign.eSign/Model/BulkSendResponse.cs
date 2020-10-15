@@ -39,15 +39,17 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BulkSendResponse" /> class.
         /// </summary>
         /// <param name="BatchId">BatchId.</param>
+        /// <param name="BatchName">BatchName.</param>
         /// <param name="BatchSize">BatchSize.</param>
         /// <param name="EnvelopeOrTemplateId">EnvelopeOrTemplateId.</param>
         /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="Errors">Errors.</param>
         /// <param name="QueueLimit">QueueLimit.</param>
         /// <param name="TotalQueued">TotalQueued.</param>
-        public BulkSendResponse(string BatchId = default(string), string BatchSize = default(string), string EnvelopeOrTemplateId = default(string), List<string> ErrorDetails = default(List<string>), List<string> Errors = default(List<string>), string QueueLimit = default(string), string TotalQueued = default(string))
+        public BulkSendResponse(string BatchId = default(string), string BatchName = default(string), string BatchSize = default(string), string EnvelopeOrTemplateId = default(string), List<string> ErrorDetails = default(List<string>), List<string> Errors = default(List<string>), string QueueLimit = default(string), string TotalQueued = default(string))
         {
             this.BatchId = BatchId;
+            this.BatchName = BatchName;
             this.BatchSize = BatchSize;
             this.EnvelopeOrTemplateId = EnvelopeOrTemplateId;
             this.ErrorDetails = ErrorDetails;
@@ -61,6 +63,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="batchId", EmitDefaultValue=false)]
         public string BatchId { get; set; }
+        /// <summary>
+        /// Gets or Sets BatchName
+        /// </summary>
+        [DataMember(Name="batchName", EmitDefaultValue=false)]
+        public string BatchName { get; set; }
         /// <summary>
         /// Gets or Sets BatchSize
         /// </summary>
@@ -101,6 +108,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class BulkSendResponse {\n");
             sb.Append("  BatchId: ").Append(BatchId).Append("\n");
+            sb.Append("  BatchName: ").Append(BatchName).Append("\n");
             sb.Append("  BatchSize: ").Append(BatchSize).Append("\n");
             sb.Append("  EnvelopeOrTemplateId: ").Append(EnvelopeOrTemplateId).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
@@ -149,6 +157,11 @@ namespace DocuSign.eSign.Model
                     this.BatchId.Equals(other.BatchId)
                 ) && 
                 (
+                    this.BatchName == other.BatchName ||
+                    this.BatchName != null &&
+                    this.BatchName.Equals(other.BatchName)
+                ) && 
+                (
                     this.BatchSize == other.BatchSize ||
                     this.BatchSize != null &&
                     this.BatchSize.Equals(other.BatchSize)
@@ -193,6 +206,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.BatchId != null)
                     hash = hash * 59 + this.BatchId.GetHashCode();
+                if (this.BatchName != null)
+                    hash = hash * 59 + this.BatchName.GetHashCode();
                 if (this.BatchSize != null)
                     hash = hash * 59 + this.BatchSize.GetHashCode();
                 if (this.EnvelopeOrTemplateId != null)

@@ -58,6 +58,8 @@ namespace DocuSign.eSign.Model
         /// <param name="ListTabsMetadata">ListTabsMetadata.</param>
         /// <param name="NoteTabsEnabled">NoteTabsEnabled.</param>
         /// <param name="NoteTabsMetadata">NoteTabsMetadata.</param>
+        /// <param name="PrefillTabsEnabled">PrefillTabsEnabled.</param>
+        /// <param name="PrefillTabsMetadata">PrefillTabsMetadata.</param>
         /// <param name="RadioTabsEnabled">RadioTabsEnabled.</param>
         /// <param name="RadioTabsMetadata">RadioTabsMetadata.</param>
         /// <param name="SavingCustomTabsEnabled">SavingCustomTabsEnabled.</param>
@@ -78,7 +80,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TabTextFormattingMetadata">TabTextFormattingMetadata.</param>
         /// <param name="TextTabsEnabled">TextTabsEnabled.</param>
         /// <param name="TextTabsMetadata">TextTabsMetadata.</param>
-        public TabAccountSettings(string AllowTabOrder = default(string), SettingsMetadata AllowTabOrderMetadata = default(SettingsMetadata), string ApproveDeclineTabsEnabled = default(string), SettingsMetadata ApproveDeclineTabsMetadata = default(SettingsMetadata), string CalculatedFieldsEnabled = default(string), SettingsMetadata CalculatedFieldsMetadata = default(SettingsMetadata), string CheckboxTabsEnabled = default(string), SettingsMetadata CheckBoxTabsMetadata = default(SettingsMetadata), string DataFieldRegexEnabled = default(string), SettingsMetadata DataFieldRegexMetadata = default(SettingsMetadata), string DataFieldSizeEnabled = default(string), SettingsMetadata DataFieldSizeMetadata = default(SettingsMetadata), string DrawTabsEnabled = default(string), SettingsMetadata DrawTabsMetadata = default(SettingsMetadata), string FirstLastEmailTabsEnabled = default(string), SettingsMetadata FirstLastEmailTabsMetadata = default(SettingsMetadata), string ListTabsEnabled = default(string), SettingsMetadata ListTabsMetadata = default(SettingsMetadata), string NoteTabsEnabled = default(string), SettingsMetadata NoteTabsMetadata = default(SettingsMetadata), string RadioTabsEnabled = default(string), SettingsMetadata RadioTabsMetadata = default(SettingsMetadata), string SavingCustomTabsEnabled = default(string), SettingsMetadata SavingCustomTabsMetadata = default(SettingsMetadata), string SenderToChangeTabAssignmentsEnabled = default(string), SettingsMetadata SenderToChangeTabAssignmentsMetadata = default(SettingsMetadata), string SharedCustomTabsEnabled = default(string), SettingsMetadata SharedCustomTabsMetadata = default(SettingsMetadata), string TabDataLabelEnabled = default(string), SettingsMetadata TabDataLabelMetadata = default(SettingsMetadata), string TabLocationEnabled = default(string), SettingsMetadata TabLocationMetadata = default(SettingsMetadata), string TabLockingEnabled = default(string), SettingsMetadata TabLockingMetadata = default(SettingsMetadata), string TabScaleEnabled = default(string), SettingsMetadata TabScaleMetadata = default(SettingsMetadata), string TabTextFormattingEnabled = default(string), SettingsMetadata TabTextFormattingMetadata = default(SettingsMetadata), string TextTabsEnabled = default(string), SettingsMetadata TextTabsMetadata = default(SettingsMetadata))
+        public TabAccountSettings(string AllowTabOrder = default(string), SettingsMetadata AllowTabOrderMetadata = default(SettingsMetadata), string ApproveDeclineTabsEnabled = default(string), SettingsMetadata ApproveDeclineTabsMetadata = default(SettingsMetadata), string CalculatedFieldsEnabled = default(string), SettingsMetadata CalculatedFieldsMetadata = default(SettingsMetadata), string CheckboxTabsEnabled = default(string), SettingsMetadata CheckBoxTabsMetadata = default(SettingsMetadata), string DataFieldRegexEnabled = default(string), SettingsMetadata DataFieldRegexMetadata = default(SettingsMetadata), string DataFieldSizeEnabled = default(string), SettingsMetadata DataFieldSizeMetadata = default(SettingsMetadata), string DrawTabsEnabled = default(string), SettingsMetadata DrawTabsMetadata = default(SettingsMetadata), string FirstLastEmailTabsEnabled = default(string), SettingsMetadata FirstLastEmailTabsMetadata = default(SettingsMetadata), string ListTabsEnabled = default(string), SettingsMetadata ListTabsMetadata = default(SettingsMetadata), string NoteTabsEnabled = default(string), SettingsMetadata NoteTabsMetadata = default(SettingsMetadata), string PrefillTabsEnabled = default(string), SettingsMetadata PrefillTabsMetadata = default(SettingsMetadata), string RadioTabsEnabled = default(string), SettingsMetadata RadioTabsMetadata = default(SettingsMetadata), string SavingCustomTabsEnabled = default(string), SettingsMetadata SavingCustomTabsMetadata = default(SettingsMetadata), string SenderToChangeTabAssignmentsEnabled = default(string), SettingsMetadata SenderToChangeTabAssignmentsMetadata = default(SettingsMetadata), string SharedCustomTabsEnabled = default(string), SettingsMetadata SharedCustomTabsMetadata = default(SettingsMetadata), string TabDataLabelEnabled = default(string), SettingsMetadata TabDataLabelMetadata = default(SettingsMetadata), string TabLocationEnabled = default(string), SettingsMetadata TabLocationMetadata = default(SettingsMetadata), string TabLockingEnabled = default(string), SettingsMetadata TabLockingMetadata = default(SettingsMetadata), string TabScaleEnabled = default(string), SettingsMetadata TabScaleMetadata = default(SettingsMetadata), string TabTextFormattingEnabled = default(string), SettingsMetadata TabTextFormattingMetadata = default(SettingsMetadata), string TextTabsEnabled = default(string), SettingsMetadata TextTabsMetadata = default(SettingsMetadata))
         {
             this.AllowTabOrder = AllowTabOrder;
             this.AllowTabOrderMetadata = AllowTabOrderMetadata;
@@ -100,6 +102,8 @@ namespace DocuSign.eSign.Model
             this.ListTabsMetadata = ListTabsMetadata;
             this.NoteTabsEnabled = NoteTabsEnabled;
             this.NoteTabsMetadata = NoteTabsMetadata;
+            this.PrefillTabsEnabled = PrefillTabsEnabled;
+            this.PrefillTabsMetadata = PrefillTabsMetadata;
             this.RadioTabsEnabled = RadioTabsEnabled;
             this.RadioTabsMetadata = RadioTabsMetadata;
             this.SavingCustomTabsEnabled = SavingCustomTabsEnabled;
@@ -222,6 +226,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="noteTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata NoteTabsMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets PrefillTabsEnabled
+        /// </summary>
+        [DataMember(Name="prefillTabsEnabled", EmitDefaultValue=false)]
+        public string PrefillTabsEnabled { get; set; }
+        /// <summary>
+        /// Gets or Sets PrefillTabsMetadata
+        /// </summary>
+        [DataMember(Name="prefillTabsMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata PrefillTabsMetadata { get; set; }
         /// <summary>
         /// Gets or Sets RadioTabsEnabled
         /// </summary>
@@ -350,6 +364,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  ListTabsMetadata: ").Append(ListTabsMetadata).Append("\n");
             sb.Append("  NoteTabsEnabled: ").Append(NoteTabsEnabled).Append("\n");
             sb.Append("  NoteTabsMetadata: ").Append(NoteTabsMetadata).Append("\n");
+            sb.Append("  PrefillTabsEnabled: ").Append(PrefillTabsEnabled).Append("\n");
+            sb.Append("  PrefillTabsMetadata: ").Append(PrefillTabsMetadata).Append("\n");
             sb.Append("  RadioTabsEnabled: ").Append(RadioTabsEnabled).Append("\n");
             sb.Append("  RadioTabsMetadata: ").Append(RadioTabsMetadata).Append("\n");
             sb.Append("  SavingCustomTabsEnabled: ").Append(SavingCustomTabsEnabled).Append("\n");
@@ -507,6 +523,16 @@ namespace DocuSign.eSign.Model
                     this.NoteTabsMetadata.Equals(other.NoteTabsMetadata)
                 ) && 
                 (
+                    this.PrefillTabsEnabled == other.PrefillTabsEnabled ||
+                    this.PrefillTabsEnabled != null &&
+                    this.PrefillTabsEnabled.Equals(other.PrefillTabsEnabled)
+                ) && 
+                (
+                    this.PrefillTabsMetadata == other.PrefillTabsMetadata ||
+                    this.PrefillTabsMetadata != null &&
+                    this.PrefillTabsMetadata.Equals(other.PrefillTabsMetadata)
+                ) && 
+                (
                     this.RadioTabsEnabled == other.RadioTabsEnabled ||
                     this.RadioTabsEnabled != null &&
                     this.RadioTabsEnabled.Equals(other.RadioTabsEnabled)
@@ -659,6 +685,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.NoteTabsEnabled.GetHashCode();
                 if (this.NoteTabsMetadata != null)
                     hash = hash * 59 + this.NoteTabsMetadata.GetHashCode();
+                if (this.PrefillTabsEnabled != null)
+                    hash = hash * 59 + this.PrefillTabsEnabled.GetHashCode();
+                if (this.PrefillTabsMetadata != null)
+                    hash = hash * 59 + this.PrefillTabsMetadata.GetHashCode();
                 if (this.RadioTabsEnabled != null)
                     hash = hash * 59 + this.RadioTabsEnabled.GetHashCode();
                 if (this.RadioTabsMetadata != null)

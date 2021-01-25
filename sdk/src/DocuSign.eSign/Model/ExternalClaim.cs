@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalClaim" /> class.
         /// </summary>
-        /// <param name="AcquiredTime">.</param>
-        /// <param name="ClaimName">.</param>
-        /// <param name="Provider">.</param>
+        /// <param name="AcquiredTime">AcquiredTime.</param>
+        /// <param name="ClaimName">ClaimName.</param>
+        /// <param name="Provider">Provider.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
         public ExternalClaim(string AcquiredTime = default(string), string ClaimName = default(string), string Provider = default(string), string Value = default(string))
         {
@@ -50,21 +51,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AcquiredTime
         /// </summary>
-        /// <value></value>
         [DataMember(Name="acquiredTime", EmitDefaultValue=false)]
         public string AcquiredTime { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ClaimName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="claimName", EmitDefaultValue=false)]
         public string ClaimName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Provider
         /// </summary>
-        /// <value></value>
         [DataMember(Name="provider", EmitDefaultValue=false)]
         public string Provider { get; set; }
         /// <summary>
@@ -171,5 +169,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

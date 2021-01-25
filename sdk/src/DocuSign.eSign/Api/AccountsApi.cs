@@ -81,7 +81,7 @@ namespace DocuSign.eSign.Api
         /// Creates one or more brand profile files for the account. The Account Branding feature (accountSettings properties &#x60;canSelfBrandSend&#x60; and &#x60;canSelfBrandSig&#x60;) must be set to **true** for the account to use this call.  An error is returned if &#x60;brandId&#x60; property for a brand profile is already set for the account. To upload a new version of an existing brand profile, you must delete the profile and then upload the newer version.  When brand profile files are being uploaded, they must be combined into one zip file and the &#x60;Content-Type&#x60; must be &#x60;application/zip&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>
         /// <param name="brand"> (optional)</param>
         
         /// <returns></returns>
@@ -94,7 +94,7 @@ namespace DocuSign.eSign.Api
         /// Creates one or more brand profile files for the account. The Account Branding feature (accountSettings properties &#x60;canSelfBrandSend&#x60; and &#x60;canSelfBrandSig&#x60;) must be set to **true** for the account to use this call.  An error is returned if &#x60;brandId&#x60; property for a brand profile is already set for the account. To upload a new version of an existing brand profile, you must delete the profile and then upload the newer version.  When brand profile files are being uploaded, they must be combined into one zip file and the &#x60;Content-Type&#x60; must be &#x60;application/zip&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>
         /// <param name="brand"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
@@ -499,6 +499,31 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<AccountInformation> GetAccountInformationWithHttpInfo (string accountId, AccountsApi.GetAccountInformationOptions options = null);
+        /// <summary>
+        /// Retrieves an account settings comparison.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>/// <param name="resultId"></param>
+        
+        
+        /// <returns></returns>
+        void GetAccountSettingsExport (string organizationId, string resultId);
+
+        /// <summary>
+        /// Retrieves an account settings comparison.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>/// <param name="resultId"></param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> GetAccountSettingsExportWithHttpInfo (string organizationId, string resultId);
         /// <summary>
         /// Returns information about a single signature by specifed signatureId.
         /// </summary>
@@ -1531,7 +1556,7 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="brandId">The unique identifier of a brand.</param>/// <param name="resourceContentType"></param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="resourceContentType">The type of brand resource file that you are updating. Valid values are:  - &#x60;sending&#x60; - &#x60;signing&#x60; - &#x60;email&#x60; - &#x60;signing_captive&#x60;</param>
         
         
         /// <returns></returns>
@@ -1544,7 +1569,7 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="brandId">The unique identifier of a brand.</param>/// <param name="resourceContentType"></param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="resourceContentType">The type of brand resource file that you are updating. Valid values are:  - &#x60;sending&#x60; - &#x60;signing&#x60; - &#x60;email&#x60; - &#x60;signing_captive&#x60;</param>
         
         
         /// <returns>ApiResponse of </returns>
@@ -1958,7 +1983,7 @@ namespace DocuSign.eSign.Api
         /// Creates one or more brand profile files for the account. The Account Branding feature (accountSettings properties &#x60;canSelfBrandSend&#x60; and &#x60;canSelfBrandSig&#x60;) must be set to **true** for the account to use this call.  An error is returned if &#x60;brandId&#x60; property for a brand profile is already set for the account. To upload a new version of an existing brand profile, you must delete the profile and then upload the newer version.  When brand profile files are being uploaded, they must be combined into one zip file and the &#x60;Content-Type&#x60; must be &#x60;application/zip&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>
         /// <param name="brand"> (optional)</param>
         
         /// <returns>Task of BrandsResponse</returns>
@@ -1971,7 +1996,7 @@ namespace DocuSign.eSign.Api
         /// Creates one or more brand profile files for the account. The Account Branding feature (accountSettings properties &#x60;canSelfBrandSend&#x60; and &#x60;canSelfBrandSig&#x60;) must be set to **true** for the account to use this call.  An error is returned if &#x60;brandId&#x60; property for a brand profile is already set for the account. To upload a new version of an existing brand profile, you must delete the profile and then upload the newer version.  When brand profile files are being uploaded, they must be combined into one zip file and the &#x60;Content-Type&#x60; must be &#x60;application/zip&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>
         /// <param name="brand"> (optional)</param>
         
         /// <returns>Task of ApiResponse (BrandsResponse)</returns>
@@ -2376,6 +2401,31 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (AccountInformation)</returns>
         System.Threading.Tasks.Task<ApiResponse<AccountInformation>> GetAccountInformationAsyncWithHttpInfo (string accountId, AccountsApi.GetAccountInformationOptions options = null);
+        /// <summary>
+        /// Retrieves an account settings comparison.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>/// <param name="resultId"></param>
+        
+        
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task GetAccountSettingsExportAsync (string organizationId, string resultId);
+
+        /// <summary>
+        /// Retrieves an account settings comparison.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>/// <param name="resultId"></param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetAccountSettingsExportAsyncWithHttpInfo (string organizationId, string resultId);
         /// <summary>
         /// Returns information about a single signature by specifed signatureId.
         /// </summary>
@@ -3408,7 +3458,7 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="brandId">The unique identifier of a brand.</param>/// <param name="resourceContentType"></param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="resourceContentType">The type of brand resource file that you are updating. Valid values are:  - &#x60;sending&#x60; - &#x60;signing&#x60; - &#x60;email&#x60; - &#x60;signing_captive&#x60;</param>
         
         
         /// <returns>Task of BrandResources</returns>
@@ -3421,7 +3471,7 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="brandId">The unique identifier of a brand.</param>/// <param name="resourceContentType"></param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="resourceContentType">The type of brand resource file that you are updating. Valid values are:  - &#x60;sending&#x60; - &#x60;signing&#x60; - &#x60;email&#x60; - &#x60;signing_captive&#x60;</param>
         
         
         /// <returns>Task of ApiResponse (BrandResources)</returns>
@@ -4240,7 +4290,7 @@ namespace DocuSign.eSign.Api
         /// Creates one or more brand profile files for the account. Creates one or more brand profile files for the account. The Account Branding feature (accountSettings properties &#x60;canSelfBrandSend&#x60; and &#x60;canSelfBrandSig&#x60;) must be set to **true** for the account to use this call.  An error is returned if &#x60;brandId&#x60; property for a brand profile is already set for the account. To upload a new version of an existing brand profile, you must delete the profile and then upload the newer version.  When brand profile files are being uploaded, they must be combined into one zip file and the &#x60;Content-Type&#x60; must be &#x60;application/zip&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>
         /// <param name="brand"> (optional)</param>
         
         /// <returns>BrandsResponse</returns>
@@ -4254,7 +4304,7 @@ namespace DocuSign.eSign.Api
         /// Creates one or more brand profile files for the account. Creates one or more brand profile files for the account. The Account Branding feature (accountSettings properties &#x60;canSelfBrandSend&#x60; and &#x60;canSelfBrandSig&#x60;) must be set to **true** for the account to use this call.  An error is returned if &#x60;brandId&#x60; property for a brand profile is already set for the account. To upload a new version of an existing brand profile, you must delete the profile and then upload the newer version.  When brand profile files are being uploaded, they must be combined into one zip file and the &#x60;Content-Type&#x60; must be &#x60;application/zip&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>
         /// <param name="brand"> (optional)</param>
         
         /// <returns>ApiResponse of BrandsResponse</returns>
@@ -4337,7 +4387,7 @@ namespace DocuSign.eSign.Api
         /// Creates one or more brand profile files for the account. Creates one or more brand profile files for the account. The Account Branding feature (accountSettings properties &#x60;canSelfBrandSend&#x60; and &#x60;canSelfBrandSig&#x60;) must be set to **true** for the account to use this call.  An error is returned if &#x60;brandId&#x60; property for a brand profile is already set for the account. To upload a new version of an existing brand profile, you must delete the profile and then upload the newer version.  When brand profile files are being uploaded, they must be combined into one zip file and the &#x60;Content-Type&#x60; must be &#x60;application/zip&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>
         /// <param name="brand"> (optional)</param>
         
         /// <returns>Task of BrandsResponse</returns>
@@ -4352,7 +4402,7 @@ namespace DocuSign.eSign.Api
         /// Creates one or more brand profile files for the account. Creates one or more brand profile files for the account. The Account Branding feature (accountSettings properties &#x60;canSelfBrandSend&#x60; and &#x60;canSelfBrandSig&#x60;) must be set to **true** for the account to use this call.  An error is returned if &#x60;brandId&#x60; property for a brand profile is already set for the account. To upload a new version of an existing brand profile, you must delete the profile and then upload the newer version.  When brand profile files are being uploaded, they must be combined into one zip file and the &#x60;Content-Type&#x60; must be &#x60;application/zip&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>
         /// <param name="brand"> (optional)</param>
         
         /// <returns>Task of ApiResponse (BrandsResponse)</returns>
@@ -7376,6 +7426,178 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (AccountInformation) this.ApiClient.Deserialize(localVarResponse, typeof(AccountInformation)));
             
+        }
+
+
+
+        /// <summary>
+        /// Retrieves an account settings comparison. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>/// <param name="resultId"></param>
+        
+        
+        /// <returns></returns>
+        public void GetAccountSettingsExport (string organizationId, string resultId)
+        {
+             GetAccountSettingsExportWithHttpInfo(organizationId, resultId);
+        }
+
+        /// <summary>
+        /// Retrieves an account settings comparison. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>/// <param name="resultId"></param>
+        
+        
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> GetAccountSettingsExportWithHttpInfo (string organizationId, string resultId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling AccountsApi->GetAccountSettingsExport");
+            // verify the required parameter 'resultId' is set
+            if (resultId == null)
+                throw new ApiException(400, "Missing required parameter 'resultId' when calling AccountsApi->GetAccountSettingsExport");
+
+            var localVarPath = "/v2.1/organization_exports/{organizationId}/account_settings/{resultId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (resultId != null) localVarPathParams.Add("resultId", this.ApiClient.ParameterToString(resultId)); // path parameter
+
+
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAccountSettingsExport", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Retrieves an account settings comparison. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>/// <param name="resultId"></param>
+        
+        
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task GetAccountSettingsExportAsync (string organizationId, string resultId)
+        {
+             await GetAccountSettingsExportAsyncWithHttpInfo(organizationId, resultId);
+
+        }
+
+        /// <summary>
+        /// Retrieves an account settings comparison. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId"></param>/// <param name="resultId"></param>
+        
+        
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetAccountSettingsExportAsyncWithHttpInfo (string organizationId, string resultId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling AccountsApi->GetAccountSettingsExport");
+            // verify the required parameter 'resultId' is set
+            if (resultId == null)
+                throw new ApiException(400, "Missing required parameter 'resultId' when calling AccountsApi->GetAccountSettingsExport");
+
+            var localVarPath = "/v2.1/organization_exports/{organizationId}/account_settings/{resultId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (resultId != null) localVarPathParams.Add("resultId", this.ApiClient.ParameterToString(resultId)); // path parameter
+
+
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAccountSettingsExport", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
 
@@ -15002,7 +15224,7 @@ namespace DocuSign.eSign.Api
         /// Uploads a branding resource file. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="brandId">The unique identifier of a brand.</param>/// <param name="resourceContentType"></param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="resourceContentType">The type of brand resource file that you are updating. Valid values are:  - &#x60;sending&#x60; - &#x60;signing&#x60; - &#x60;email&#x60; - &#x60;signing_captive&#x60;</param>
         
         
         /// <returns>BrandResources</returns>
@@ -15016,7 +15238,7 @@ namespace DocuSign.eSign.Api
         /// Uploads a branding resource file. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="brandId">The unique identifier of a brand.</param>/// <param name="resourceContentType"></param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="resourceContentType">The type of brand resource file that you are updating. Valid values are:  - &#x60;sending&#x60; - &#x60;signing&#x60; - &#x60;email&#x60; - &#x60;signing_captive&#x60;</param>
         
         
         /// <returns>ApiResponse of BrandResources</returns>
@@ -15042,6 +15264,7 @@ namespace DocuSign.eSign.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -15059,7 +15282,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (brandId != null) localVarPathParams.Add("brandId", this.ApiClient.ParameterToString(brandId)); // path parameter
             if (resourceContentType != null) localVarPathParams.Add("resourceContentType", this.ApiClient.ParameterToString(resourceContentType)); // path parameter
-
 
 
             // authentication (docusignAccessCode) required
@@ -15099,7 +15321,7 @@ namespace DocuSign.eSign.Api
         /// Uploads a branding resource file. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="brandId">The unique identifier of a brand.</param>/// <param name="resourceContentType"></param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="resourceContentType">The type of brand resource file that you are updating. Valid values are:  - &#x60;sending&#x60; - &#x60;signing&#x60; - &#x60;email&#x60; - &#x60;signing_captive&#x60;</param>
         
         
         /// <returns>Task of BrandResources</returns>
@@ -15114,7 +15336,7 @@ namespace DocuSign.eSign.Api
         /// Uploads a branding resource file. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="brandId">The unique identifier of a brand.</param>/// <param name="resourceContentType"></param>
+        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="brandId">The id of the brand.</param>/// <param name="resourceContentType">The type of brand resource file that you are updating. Valid values are:  - &#x60;sending&#x60; - &#x60;signing&#x60; - &#x60;email&#x60; - &#x60;signing_captive&#x60;</param>
         
         
         /// <returns>Task of ApiResponse (BrandResources)</returns>
@@ -15140,6 +15362,7 @@ namespace DocuSign.eSign.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -15157,8 +15380,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (brandId != null) localVarPathParams.Add("brandId", this.ApiClient.ParameterToString(brandId)); // path parameter
             if (resourceContentType != null) localVarPathParams.Add("resourceContentType", this.ApiClient.ParameterToString(resourceContentType)); // path parameter
-
-
 
             // authentication (docusignAccessCode) required
             // oauth required

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,12 +38,12 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="User" /> class.
         /// </summary>
-        /// <param name="CellPhoneNumber">.</param>
-        /// <param name="CountryCode">.</param>
-        /// <param name="Credentials">.</param>
-        /// <param name="DisplayName">.</param>
-        /// <param name="Email">.</param>
-        /// <param name="ExternalClaims">.</param>
+        /// <param name="CellPhoneNumber">CellPhoneNumber.</param>
+        /// <param name="CountryCode">CountryCode.</param>
+        /// <param name="Credentials">Credentials.</param>
+        /// <param name="DisplayName">DisplayName.</param>
+        /// <param name="Email">Email.</param>
+        /// <param name="ExternalClaims">ExternalClaims.</param>
         public User(string CellPhoneNumber = default(string), string CountryCode = default(string), List<Credential> Credentials = default(List<Credential>), string DisplayName = default(string), string Email = default(string), List<ExternalClaim> ExternalClaims = default(List<ExternalClaim>))
         {
             this.CellPhoneNumber = CellPhoneNumber;
@@ -54,39 +55,33 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets CellPhoneNumber
         /// </summary>
-        /// <value></value>
         [DataMember(Name="cellPhoneNumber", EmitDefaultValue=false)]
         public string CellPhoneNumber { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CountryCode
         /// </summary>
-        /// <value></value>
         [DataMember(Name="countryCode", EmitDefaultValue=false)]
         public string CountryCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Credentials
         /// </summary>
-        /// <value></value>
         [DataMember(Name="credentials", EmitDefaultValue=false)]
         public List<Credential> Credentials { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DisplayName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="displayName", EmitDefaultValue=false)]
         public string DisplayName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Email
         /// </summary>
-        /// <value></value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ExternalClaims
         /// </summary>
-        /// <value></value>
         [DataMember(Name="externalClaims", EmitDefaultValue=false)]
         public List<ExternalClaim> ExternalClaims { get; set; }
         /// <summary>
@@ -203,5 +198,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

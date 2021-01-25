@@ -284,6 +284,7 @@ namespace SdkTestsNet462
             Assert.IsNotNull(envelopes.Envelopes[0].Status);
         }
 
+        /* Deprecated
         private BulkRecipientsSummaryResponse MockBulkRecipientsSummaryResponse()
         {
             string bulkRecipientsCSV = "name,email\n" + "John Doe,john.doe@mailinator.com\n" + "Jane Doe,jane.doe@mailinator.com";
@@ -369,6 +370,7 @@ namespace SdkTestsNet462
             Assert.IsNotNull(response.BulkRecipientsUri);
             Assert.IsNotNull(response.BulkRecipientsCount);
         }
+        */
 
         [TestMethod]
         public void JwtListDocumentsAndDownloadTest()

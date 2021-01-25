@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,12 +38,12 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Revision" /> class.
         /// </summary>
-        /// <param name="EndData">.</param>
-        /// <param name="FieldName">.</param>
-        /// <param name="MaxSignatureLength">.</param>
+        /// <param name="EndData">EndData.</param>
+        /// <param name="FieldName">FieldName.</param>
+        /// <param name="MaxSignatureLength">MaxSignatureLength.</param>
         /// <param name="SignatureProperties">SignatureProperties.</param>
-        /// <param name="SignatureType">.</param>
-        /// <param name="StartData">.</param>
+        /// <param name="SignatureType">SignatureType.</param>
+        /// <param name="StartData">StartData.</param>
         public Revision(string EndData = default(string), string FieldName = default(string), string MaxSignatureLength = default(string), SignatureProperties SignatureProperties = default(SignatureProperties), string SignatureType = default(string), string StartData = default(string))
         {
             this.EndData = EndData;
@@ -54,21 +55,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets EndData
         /// </summary>
-        /// <value></value>
         [DataMember(Name="endData", EmitDefaultValue=false)]
         public string EndData { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets FieldName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="fieldName", EmitDefaultValue=false)]
         public string FieldName { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MaxSignatureLength
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maxSignatureLength", EmitDefaultValue=false)]
         public string MaxSignatureLength { get; set; }
         /// <summary>
@@ -77,15 +75,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureProperties", EmitDefaultValue=false)]
         public SignatureProperties SignatureProperties { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureType", EmitDefaultValue=false)]
         public string SignatureType { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StartData
         /// </summary>
-        /// <value></value>
         [DataMember(Name="startData", EmitDefaultValue=false)]
         public string StartData { get; set; }
         /// <summary>
@@ -202,5 +198,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

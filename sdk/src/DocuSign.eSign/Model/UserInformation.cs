@@ -51,6 +51,7 @@ namespace DocuSign.eSign.Model
         /// <param name="FirstName">The user&#39;s first name.  Maximum Length: 50 characters..</param>
         /// <param name="ForgottenPasswordInfo">ForgottenPasswordInfo.</param>
         /// <param name="GroupList">A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. .</param>
+        /// <param name="HasRemoteNotary">HasRemoteNotary.</param>
         /// <param name="HomeAddress">HomeAddress.</param>
         /// <param name="InitialsImageUri">Contains the URI for an endpoint that you can use to retrieve the initials image..</param>
         /// <param name="IsAdmin">Determines if the feature set is actively set as part of the plan..</param>
@@ -80,7 +81,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserStatus">UserStatus.</param>
         /// <param name="UserType">UserType.</param>
         /// <param name="WorkAddress">WorkAddress.</param>
-        public UserInformation(string ActivationAccessCode = default(string), string Company = default(string), List<ConnectUserObject> ConnectConfigurations = default(List<ConnectUserObject>), string CountryCode = default(string), string CreatedDateTime = default(string), List<NameValue> CustomSettings = default(List<NameValue>), string DefaultAccountId = default(string), string Email = default(string), string EnableConnectForUser = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FirstName = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), List<Group> GroupList = default(List<Group>), AddressInformation HomeAddress = default(AddressInformation), string InitialsImageUri = default(string), string IsAdmin = default(string), string IsNAREnabled = default(string), string JobTitle = default(string), string LastLogin = default(string), string LastName = default(string), string LoginStatus = default(string), string MiddleName = default(string), string Password = default(string), string PasswordExpiration = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string ProfileImageUri = default(string), string SendActivationEmail = default(string), string SendActivationOnInvalidLogin = default(string), string SignatureImageUri = default(string), string Subscribe = default(string), string SuffixName = default(string), string Title = default(string), string Uri = default(string), string UserAddedToAccountDateTime = default(string), string UserId = default(string), string UserName = default(string), string UserProfileLastModifiedDate = default(string), UserSettingsInformation UserSettings = default(UserSettingsInformation), string UserStatus = default(string), string UserType = default(string), AddressInformation WorkAddress = default(AddressInformation))
+        public UserInformation(string ActivationAccessCode = default(string), string Company = default(string), List<ConnectUserObject> ConnectConfigurations = default(List<ConnectUserObject>), string CountryCode = default(string), string CreatedDateTime = default(string), List<NameValue> CustomSettings = default(List<NameValue>), string DefaultAccountId = default(string), string Email = default(string), string EnableConnectForUser = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FirstName = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), List<Group> GroupList = default(List<Group>), bool? HasRemoteNotary = default(bool?), AddressInformation HomeAddress = default(AddressInformation), string InitialsImageUri = default(string), string IsAdmin = default(string), string IsNAREnabled = default(string), string JobTitle = default(string), string LastLogin = default(string), string LastName = default(string), string LoginStatus = default(string), string MiddleName = default(string), string Password = default(string), string PasswordExpiration = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string ProfileImageUri = default(string), string SendActivationEmail = default(string), string SendActivationOnInvalidLogin = default(string), string SignatureImageUri = default(string), string Subscribe = default(string), string SuffixName = default(string), string Title = default(string), string Uri = default(string), string UserAddedToAccountDateTime = default(string), string UserId = default(string), string UserName = default(string), string UserProfileLastModifiedDate = default(string), UserSettingsInformation UserSettings = default(UserSettingsInformation), string UserStatus = default(string), string UserType = default(string), AddressInformation WorkAddress = default(AddressInformation))
         {
             this.ActivationAccessCode = ActivationAccessCode;
             this.Company = Company;
@@ -95,6 +96,7 @@ namespace DocuSign.eSign.Model
             this.FirstName = FirstName;
             this.ForgottenPasswordInfo = ForgottenPasswordInfo;
             this.GroupList = GroupList;
+            this.HasRemoteNotary = HasRemoteNotary;
             this.HomeAddress = HomeAddress;
             this.InitialsImageUri = InitialsImageUri;
             this.IsAdmin = IsAdmin;
@@ -197,6 +199,11 @@ namespace DocuSign.eSign.Model
         /// <value>A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. </value>
         [DataMember(Name="groupList", EmitDefaultValue=false)]
         public List<Group> GroupList { get; set; }
+        /// <summary>
+        /// Gets or Sets HasRemoteNotary
+        /// </summary>
+        [DataMember(Name="hasRemoteNotary", EmitDefaultValue=false)]
+        public bool? HasRemoteNotary { get; set; }
         /// <summary>
         /// Gets or Sets HomeAddress
         /// </summary>
@@ -373,6 +380,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  ForgottenPasswordInfo: ").Append(ForgottenPasswordInfo).Append("\n");
             sb.Append("  GroupList: ").Append(GroupList).Append("\n");
+            sb.Append("  HasRemoteNotary: ").Append(HasRemoteNotary).Append("\n");
             sb.Append("  HomeAddress: ").Append(HomeAddress).Append("\n");
             sb.Append("  InitialsImageUri: ").Append(InitialsImageUri).Append("\n");
             sb.Append("  IsAdmin: ").Append(IsAdmin).Append("\n");
@@ -502,6 +510,11 @@ namespace DocuSign.eSign.Model
                     this.GroupList == other.GroupList ||
                     this.GroupList != null &&
                     this.GroupList.SequenceEqual(other.GroupList)
+                ) && 
+                (
+                    this.HasRemoteNotary == other.HasRemoteNotary ||
+                    this.HasRemoteNotary != null &&
+                    this.HasRemoteNotary.Equals(other.HasRemoteNotary)
                 ) && 
                 (
                     this.HomeAddress == other.HomeAddress ||
@@ -687,6 +700,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ForgottenPasswordInfo.GetHashCode();
                 if (this.GroupList != null)
                     hash = hash * 59 + this.GroupList.GetHashCode();
+                if (this.HasRemoteNotary != null)
+                    hash = hash * 59 + this.HasRemoteNotary.GetHashCode();
                 if (this.HomeAddress != null)
                     hash = hash * 59 + this.HomeAddress.GetHashCode();
                 if (this.InitialsImageUri != null)

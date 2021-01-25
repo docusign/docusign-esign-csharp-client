@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateTransactionRequest" /> class.
         /// </summary>
-        /// <param name="Code">.</param>
-        /// <param name="Message">.</param>
+        /// <param name="Code">Code.</param>
+        /// <param name="Message">Message.</param>
         /// <param name="State">The state or province associated with the address..</param>
         public UpdateTransactionRequest(string Code = default(string), string Message = default(string), string State = default(string))
         {
@@ -48,15 +49,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Code
         /// </summary>
-        /// <value></value>
         [DataMember(Name="code", EmitDefaultValue=false)]
         public string Code { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Message
         /// </summary>
-        /// <value></value>
         [DataMember(Name="message", EmitDefaultValue=false)]
         public string Message { get; set; }
         /// <summary>
@@ -155,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -33,85 +34,7 @@ namespace DocuSign.eSign.Model
         {
             // Empty Constructor
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DisplayAppliancePdf" /> class.
-        /// </summary>
-        /// <param name="AttachmentInfo">AttachmentInfo.</param>
-        /// <param name="DocName">.</param>
-        /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
-        /// <param name="LatestPdf">.</param>
-        /// <param name="LatestPDFId">.</param>
-        /// <param name="OriginalPdf">.</param>
-        /// <param name="OriginalPDFId">.</param>
-        /// <param name="PageCount">.</param>
-        /// <param name="PdfType">.</param>
-        public DisplayAppliancePdf(DisplayApplianceSignerAttachment AttachmentInfo = default(DisplayApplianceSignerAttachment), string DocName = default(string), string DocumentId = default(string), string LatestPdf = default(string), string LatestPDFId = default(string), string OriginalPdf = default(string), string OriginalPDFId = default(string), int? PageCount = default(int?), string PdfType = default(string))
-        {
-            this.AttachmentInfo = AttachmentInfo;
-            this.DocName = DocName;
-            this.DocumentId = DocumentId;
-            this.LatestPdf = LatestPdf;
-            this.LatestPDFId = LatestPDFId;
-            this.OriginalPdf = OriginalPdf;
-            this.OriginalPDFId = OriginalPDFId;
-            this.PageCount = PageCount;
-            this.PdfType = PdfType;
-        }
         
-        /// <summary>
-        /// Gets or Sets AttachmentInfo
-        /// </summary>
-        [DataMember(Name="attachmentInfo", EmitDefaultValue=false)]
-        public DisplayApplianceSignerAttachment AttachmentInfo { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="docName", EmitDefaultValue=false)]
-        public string DocName { get; set; }
-        /// <summary>
-        /// Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute.
-        /// </summary>
-        /// <value>Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute.</value>
-        [DataMember(Name="documentId", EmitDefaultValue=false)]
-        public string DocumentId { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="latestPdf", EmitDefaultValue=false)]
-        public string LatestPdf { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="latestPDFId", EmitDefaultValue=false)]
-        public string LatestPDFId { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="originalPdf", EmitDefaultValue=false)]
-        public string OriginalPdf { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="originalPDFId", EmitDefaultValue=false)]
-        public string OriginalPDFId { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="pageCount", EmitDefaultValue=false)]
-        public int? PageCount { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="pdfType", EmitDefaultValue=false)]
-        public string PdfType { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -120,15 +43,6 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DisplayAppliancePdf {\n");
-            sb.Append("  AttachmentInfo: ").Append(AttachmentInfo).Append("\n");
-            sb.Append("  DocName: ").Append(DocName).Append("\n");
-            sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
-            sb.Append("  LatestPdf: ").Append(LatestPdf).Append("\n");
-            sb.Append("  LatestPDFId: ").Append(LatestPDFId).Append("\n");
-            sb.Append("  OriginalPdf: ").Append(OriginalPdf).Append("\n");
-            sb.Append("  OriginalPDFId: ").Append(OriginalPDFId).Append("\n");
-            sb.Append("  PageCount: ").Append(PageCount).Append("\n");
-            sb.Append("  PdfType: ").Append(PdfType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -164,52 +78,7 @@ namespace DocuSign.eSign.Model
             if (other == null)
                 return false;
 
-            return 
-                (
-                    this.AttachmentInfo == other.AttachmentInfo ||
-                    this.AttachmentInfo != null &&
-                    this.AttachmentInfo.Equals(other.AttachmentInfo)
-                ) && 
-                (
-                    this.DocName == other.DocName ||
-                    this.DocName != null &&
-                    this.DocName.Equals(other.DocName)
-                ) && 
-                (
-                    this.DocumentId == other.DocumentId ||
-                    this.DocumentId != null &&
-                    this.DocumentId.Equals(other.DocumentId)
-                ) && 
-                (
-                    this.LatestPdf == other.LatestPdf ||
-                    this.LatestPdf != null &&
-                    this.LatestPdf.Equals(other.LatestPdf)
-                ) && 
-                (
-                    this.LatestPDFId == other.LatestPDFId ||
-                    this.LatestPDFId != null &&
-                    this.LatestPDFId.Equals(other.LatestPDFId)
-                ) && 
-                (
-                    this.OriginalPdf == other.OriginalPdf ||
-                    this.OriginalPdf != null &&
-                    this.OriginalPdf.Equals(other.OriginalPdf)
-                ) && 
-                (
-                    this.OriginalPDFId == other.OriginalPDFId ||
-                    this.OriginalPDFId != null &&
-                    this.OriginalPDFId.Equals(other.OriginalPDFId)
-                ) && 
-                (
-                    this.PageCount == other.PageCount ||
-                    this.PageCount != null &&
-                    this.PageCount.Equals(other.PageCount)
-                ) && 
-                (
-                    this.PdfType == other.PdfType ||
-                    this.PdfType != null &&
-                    this.PdfType.Equals(other.PdfType)
-                );
+            return false;
         }
 
         /// <summary>
@@ -223,24 +92,6 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.AttachmentInfo != null)
-                    hash = hash * 59 + this.AttachmentInfo.GetHashCode();
-                if (this.DocName != null)
-                    hash = hash * 59 + this.DocName.GetHashCode();
-                if (this.DocumentId != null)
-                    hash = hash * 59 + this.DocumentId.GetHashCode();
-                if (this.LatestPdf != null)
-                    hash = hash * 59 + this.LatestPdf.GetHashCode();
-                if (this.LatestPDFId != null)
-                    hash = hash * 59 + this.LatestPDFId.GetHashCode();
-                if (this.OriginalPdf != null)
-                    hash = hash * 59 + this.OriginalPdf.GetHashCode();
-                if (this.OriginalPDFId != null)
-                    hash = hash * 59 + this.OriginalPDFId.GetHashCode();
-                if (this.PageCount != null)
-                    hash = hash * 59 + this.PageCount.GetHashCode();
-                if (this.PdfType != null)
-                    hash = hash * 59 + this.PdfType.GetHashCode();
                 return hash;
             }
         }
@@ -250,5 +101,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

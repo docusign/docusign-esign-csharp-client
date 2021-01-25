@@ -1,5 +1,19 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v5.3.1-rc] - eSignature API v2.1-20.4.01 - 01/20/2021
+### Changed
+*   Added support for version v2.1-20.4.01 of the DocuSign eSignature API.
+*   Updated the SDK release version
+### BREAKING
+*	Deprecated update and delete recipients methods in BulkEnvelopesApi.
+
+## [v5.3.0-rc] - eSignature API v2.1-20.4.00.01 - 12/28/2020
+### Changed
+*   Added support for version v2.1-20.4.00.01 of the DocuSign eSignature API.
+*   Updated the SDK release version
+### Fixed
+- Expected field name in BrandsResponse model is `brandOptions` instead of `brands`. (DCM-4463)
+
 ## [v5.2.0] - eSignature API v2.1-20.3.01 - 10/29/2020
 ### Changed
 *   Added support for version v2.1-20.3.01 of the DocuSign eSignature API.

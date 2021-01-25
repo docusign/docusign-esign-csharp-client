@@ -60,7 +60,7 @@ namespace DocuSign.eSign.Api
         /// <param name="brandsRequest"> (optional)</param>
         
         /// <returns></returns>
-        BrandsResponse DeleteBrands (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        GroupBrands DeleteBrands (string accountId, string groupId, BrandsRequest brandsRequest = null);
 
         /// <summary>
         /// Deletes brand information from the requested group.
@@ -73,7 +73,7 @@ namespace DocuSign.eSign.Api
         /// <param name="brandsRequest"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<BrandsResponse> DeleteBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        ApiResponse<GroupBrands> DeleteBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
         /// <summary>
         /// Deletes one or more users from a gro
         /// </summary>
@@ -135,7 +135,7 @@ namespace DocuSign.eSign.Api
         
         
         /// <returns></returns>
-        BrandsResponse GetBrands (string accountId, string groupId);
+        GroupBrands GetBrands (string accountId, string groupId);
 
         /// <summary>
         /// Gets group brand ID Information. 
@@ -148,7 +148,7 @@ namespace DocuSign.eSign.Api
         
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<BrandsResponse> GetBrandsWithHttpInfo (string accountId, string groupId);
+        ApiResponse<GroupBrands> GetBrandsWithHttpInfo (string accountId, string groupId);
         /// <summary>
         /// Gets a list of users in a group.
         /// </summary>
@@ -210,7 +210,7 @@ namespace DocuSign.eSign.Api
         /// <param name="brandsRequest"> (optional)</param>
         
         /// <returns></returns>
-        BrandsResponse UpdateBrands (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        GroupBrands UpdateBrands (string accountId, string groupId, BrandsRequest brandsRequest = null);
 
         /// <summary>
         /// Adds group brand ID information to a group.
@@ -223,7 +223,7 @@ namespace DocuSign.eSign.Api
         /// <param name="brandsRequest"> (optional)</param>
         
         /// <returns>ApiResponse of </returns>
-        ApiResponse<BrandsResponse> UpdateBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        ApiResponse<GroupBrands> UpdateBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
         /// <summary>
         /// Adds one or more users to an existing group.
         /// </summary>
@@ -311,8 +311,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>Task of BrandsResponse</returns>
-        System.Threading.Tasks.Task<BrandsResponse> DeleteBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        /// <returns>Task of GroupBrands</returns>
+        System.Threading.Tasks.Task<GroupBrands> DeleteBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null);
 
         /// <summary>
         /// Deletes brand information from the requested group.
@@ -324,8 +324,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>Task of ApiResponse (BrandsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BrandsResponse>> DeleteBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        /// <returns>Task of ApiResponse (GroupBrands)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GroupBrands>> DeleteBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
         /// <summary>
         /// Deletes one or more users from a gro
         /// </summary>
@@ -386,8 +386,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         
         
-        /// <returns>Task of BrandsResponse</returns>
-        System.Threading.Tasks.Task<BrandsResponse> GetBrandsAsync (string accountId, string groupId);
+        /// <returns>Task of GroupBrands</returns>
+        System.Threading.Tasks.Task<GroupBrands> GetBrandsAsync (string accountId, string groupId);
 
         /// <summary>
         /// Gets group brand ID Information. 
@@ -399,8 +399,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         
         
-        /// <returns>Task of ApiResponse (BrandsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BrandsResponse>> GetBrandsAsyncWithHttpInfo (string accountId, string groupId);
+        /// <returns>Task of ApiResponse (GroupBrands)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GroupBrands>> GetBrandsAsyncWithHttpInfo (string accountId, string groupId);
         /// <summary>
         /// Gets a list of users in a group.
         /// </summary>
@@ -461,8 +461,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>Task of BrandsResponse</returns>
-        System.Threading.Tasks.Task<BrandsResponse> UpdateBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        /// <returns>Task of GroupBrands</returns>
+        System.Threading.Tasks.Task<GroupBrands> UpdateBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null);
 
         /// <summary>
         /// Adds group brand ID information to a group.
@@ -474,8 +474,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>Task of ApiResponse (BrandsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BrandsResponse>> UpdateBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        /// <returns>Task of ApiResponse (GroupBrands)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GroupBrands>> UpdateBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
         /// <summary>
         /// Adds one or more users to an existing group.
         /// </summary>
@@ -779,10 +779,10 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>BrandsResponse</returns>
-        public BrandsResponse DeleteBrands (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        /// <returns>GroupBrands</returns>
+        public GroupBrands DeleteBrands (string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
-             ApiResponse<BrandsResponse> localVarResponse = DeleteBrandsWithHttpInfo(accountId, groupId, brandsRequest);
+             ApiResponse<GroupBrands> localVarResponse = DeleteBrandsWithHttpInfo(accountId, groupId, brandsRequest);
              return localVarResponse.Data;
         }
 
@@ -793,8 +793,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>ApiResponse of BrandsResponse</returns>
-        public ApiResponse< BrandsResponse > DeleteBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        /// <returns>ApiResponse of GroupBrands</returns>
+        public ApiResponse< GroupBrands > DeleteBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -864,11 +864,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<BrandsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BrandsResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BrandsResponse)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupBrands)));
             }
             else
             {
-                return new ApiResponse<BrandsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BrandsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BrandsResponse)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             }
             
         }
@@ -880,10 +880,10 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>Task of BrandsResponse</returns>
-        public async System.Threading.Tasks.Task<BrandsResponse> DeleteBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        /// <returns>Task of GroupBrands</returns>
+        public async System.Threading.Tasks.Task<GroupBrands> DeleteBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
-             ApiResponse<BrandsResponse> localVarResponse = await DeleteBrandsAsyncWithHttpInfo(accountId, groupId, brandsRequest);
+             ApiResponse<GroupBrands> localVarResponse = await DeleteBrandsAsyncWithHttpInfo(accountId, groupId, brandsRequest);
              return localVarResponse.Data;
 
         }
@@ -895,8 +895,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>Task of ApiResponse (BrandsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BrandsResponse>> DeleteBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        /// <returns>Task of ApiResponse (GroupBrands)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> DeleteBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -962,9 +962,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BrandsResponse>(localVarStatusCode,
+            return new ApiResponse<GroupBrands>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BrandsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BrandsResponse)));
+                (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             
         }
 
@@ -1365,10 +1365,10 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         
         
-        /// <returns>BrandsResponse</returns>
-        public BrandsResponse GetBrands (string accountId, string groupId)
+        /// <returns>GroupBrands</returns>
+        public GroupBrands GetBrands (string accountId, string groupId)
         {
-             ApiResponse<BrandsResponse> localVarResponse = GetBrandsWithHttpInfo(accountId, groupId);
+             ApiResponse<GroupBrands> localVarResponse = GetBrandsWithHttpInfo(accountId, groupId);
              return localVarResponse.Data;
         }
 
@@ -1379,8 +1379,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         
         
-        /// <returns>ApiResponse of BrandsResponse</returns>
-        public ApiResponse< BrandsResponse > GetBrandsWithHttpInfo (string accountId, string groupId)
+        /// <returns>ApiResponse of GroupBrands</returns>
+        public ApiResponse< GroupBrands > GetBrandsWithHttpInfo (string accountId, string groupId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1442,11 +1442,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<BrandsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BrandsResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BrandsResponse)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupBrands)));
             }
             else
             {
-                return new ApiResponse<BrandsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BrandsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BrandsResponse)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             }
             
         }
@@ -1458,10 +1458,10 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         
         
-        /// <returns>Task of BrandsResponse</returns>
-        public async System.Threading.Tasks.Task<BrandsResponse> GetBrandsAsync (string accountId, string groupId)
+        /// <returns>Task of GroupBrands</returns>
+        public async System.Threading.Tasks.Task<GroupBrands> GetBrandsAsync (string accountId, string groupId)
         {
-             ApiResponse<BrandsResponse> localVarResponse = await GetBrandsAsyncWithHttpInfo(accountId, groupId);
+             ApiResponse<GroupBrands> localVarResponse = await GetBrandsAsyncWithHttpInfo(accountId, groupId);
              return localVarResponse.Data;
 
         }
@@ -1473,8 +1473,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         
         
-        /// <returns>Task of ApiResponse (BrandsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BrandsResponse>> GetBrandsAsyncWithHttpInfo (string accountId, string groupId)
+        /// <returns>Task of ApiResponse (GroupBrands)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> GetBrandsAsyncWithHttpInfo (string accountId, string groupId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1532,9 +1532,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BrandsResponse>(localVarStatusCode,
+            return new ApiResponse<GroupBrands>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BrandsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BrandsResponse)));
+                (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             
         }
 
@@ -1955,10 +1955,10 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>BrandsResponse</returns>
-        public BrandsResponse UpdateBrands (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        /// <returns>GroupBrands</returns>
+        public GroupBrands UpdateBrands (string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
-             ApiResponse<BrandsResponse> localVarResponse = UpdateBrandsWithHttpInfo(accountId, groupId, brandsRequest);
+             ApiResponse<GroupBrands> localVarResponse = UpdateBrandsWithHttpInfo(accountId, groupId, brandsRequest);
              return localVarResponse.Data;
         }
 
@@ -1969,8 +1969,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>ApiResponse of BrandsResponse</returns>
-        public ApiResponse< BrandsResponse > UpdateBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        /// <returns>ApiResponse of GroupBrands</returns>
+        public ApiResponse< GroupBrands > UpdateBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2040,11 +2040,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<BrandsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BrandsResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BrandsResponse)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupBrands)));
             }
             else
             {
-                return new ApiResponse<BrandsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BrandsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BrandsResponse)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             }
             
         }
@@ -2056,10 +2056,10 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>Task of BrandsResponse</returns>
-        public async System.Threading.Tasks.Task<BrandsResponse> UpdateBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        /// <returns>Task of GroupBrands</returns>
+        public async System.Threading.Tasks.Task<GroupBrands> UpdateBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
-             ApiResponse<BrandsResponse> localVarResponse = await UpdateBrandsAsyncWithHttpInfo(accountId, groupId, brandsRequest);
+             ApiResponse<GroupBrands> localVarResponse = await UpdateBrandsAsyncWithHttpInfo(accountId, groupId, brandsRequest);
              return localVarResponse.Data;
 
         }
@@ -2071,8 +2071,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         
-        /// <returns>Task of ApiResponse (BrandsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BrandsResponse>> UpdateBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        /// <returns>Task of ApiResponse (GroupBrands)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> UpdateBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2138,9 +2138,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BrandsResponse>(localVarStatusCode,
+            return new ApiResponse<GroupBrands>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BrandsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BrandsResponse)));
+                (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             
         }
 

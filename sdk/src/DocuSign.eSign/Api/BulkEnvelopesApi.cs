@@ -528,7 +528,7 @@ namespace DocuSign.eSign.Api
         {
             /// Specifies the number of entries to return. 
             public string count {get; set;}
-            /// Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;\&quot;failed,queued\&quot;)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.   
+            /// Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;âfailed,queuedâ)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent â This only returns entries with a sent status.   
             public string include {get; set;}
             /// Specifies the location in the list of envelopes from which to start. 
             public string startPosition {get; set;}

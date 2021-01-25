@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SignSessionInfoRequest" /> class.
         /// </summary>
-        /// <param name="Certificate">.</param>
-        /// <param name="ReturnFormat">.</param>
+        /// <param name="Certificate">Certificate.</param>
+        /// <param name="ReturnFormat">ReturnFormat.</param>
         /// <param name="SigningLocation">Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online..</param>
         public SignSessionInfoRequest(string Certificate = default(string), string ReturnFormat = default(string), string SigningLocation = default(string))
         {
@@ -48,15 +49,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Certificate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="certificate", EmitDefaultValue=false)]
         public string Certificate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ReturnFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="returnFormat", EmitDefaultValue=false)]
         public string ReturnFormat { get; set; }
         /// <summary>
@@ -155,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -15,7 +15,7 @@ Contact: devcenter@docusign.com
     <Description>The DocuSign NuGet package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-csharp-client repository. Join the eSign revolution!</Description>
     <Company>DocuSign Inc.</Company>
     <Owners>DocuSign</Owners>
-    <Copyright>Copyright © DocuSign 2020</Copyright>
+    <Copyright>Copyright © DocuSign 2021</Copyright>
     <AssemblyTitle>DocuSign.eSign</AssemblyTitle>
     <Authors>DocuSign</Authors>
     <OutputType>Library</OutputType>
@@ -24,7 +24,7 @@ Contact: devcenter@docusign.com
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>3.7.0</VersionPrefix>
+    <VersionPrefix>3.8.1-rc</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -34,7 +34,7 @@ Contact: devcenter@docusign.com
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[3.7.0] - eSignature API v2-20.2.03.00 - 10/01/2020 </PackageReleaseNotes>
+    <PackageReleaseNotes>[3.8.1-rc] - eSignature API v2-20.4.01 - 01/20/2021</PackageReleaseNotes>
   </PropertyGroup>
 
   <!-- .NET Framework 4.5.2 compilation flags and build options -->

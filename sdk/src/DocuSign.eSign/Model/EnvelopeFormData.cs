@@ -41,14 +41,16 @@ namespace DocuSign.eSign.Model
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
         /// <param name="FormData">FormData.</param>
+        /// <param name="PrefillFormData">PrefillFormData.</param>
         /// <param name="RecipientFormData">RecipientFormData.</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        public EnvelopeFormData(string EmailSubject = default(string), string EnvelopeId = default(string), List<NameValue> FormData = default(List<NameValue>), List<RecipientFormData> RecipientFormData = default(List<RecipientFormData>), string SentDateTime = default(string), string Status = default(string))
+        public EnvelopeFormData(string EmailSubject = default(string), string EnvelopeId = default(string), List<NameValue> FormData = default(List<NameValue>), List<NameValue> PrefillFormData = default(List<NameValue>), List<RecipientFormData> RecipientFormData = default(List<RecipientFormData>), string SentDateTime = default(string), string Status = default(string))
         {
             this.EmailSubject = EmailSubject;
             this.EnvelopeId = EnvelopeId;
             this.FormData = FormData;
+            this.PrefillFormData = PrefillFormData;
             this.RecipientFormData = RecipientFormData;
             this.SentDateTime = SentDateTime;
             this.Status = Status;
@@ -71,6 +73,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="formData", EmitDefaultValue=false)]
         public List<NameValue> FormData { get; set; }
+        /// <summary>
+        /// Gets or Sets PrefillFormData
+        /// </summary>
+        [DataMember(Name="prefillFormData", EmitDefaultValue=false)]
+        public List<NameValue> PrefillFormData { get; set; }
         /// <summary>
         /// Gets or Sets RecipientFormData
         /// </summary>
@@ -99,6 +106,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  EmailSubject: ").Append(EmailSubject).Append("\n");
             sb.Append("  EnvelopeId: ").Append(EnvelopeId).Append("\n");
             sb.Append("  FormData: ").Append(FormData).Append("\n");
+            sb.Append("  PrefillFormData: ").Append(PrefillFormData).Append("\n");
             sb.Append("  RecipientFormData: ").Append(RecipientFormData).Append("\n");
             sb.Append("  SentDateTime: ").Append(SentDateTime).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -154,6 +162,11 @@ namespace DocuSign.eSign.Model
                     this.FormData.SequenceEqual(other.FormData)
                 ) && 
                 (
+                    this.PrefillFormData == other.PrefillFormData ||
+                    this.PrefillFormData != null &&
+                    this.PrefillFormData.SequenceEqual(other.PrefillFormData)
+                ) && 
+                (
                     this.RecipientFormData == other.RecipientFormData ||
                     this.RecipientFormData != null &&
                     this.RecipientFormData.SequenceEqual(other.RecipientFormData)
@@ -187,6 +200,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnvelopeId.GetHashCode();
                 if (this.FormData != null)
                     hash = hash * 59 + this.FormData.GetHashCode();
+                if (this.PrefillFormData != null)
+                    hash = hash * 59 + this.PrefillFormData.GetHashCode();
                 if (this.RecipientFormData != null)
                     hash = hash * 59 + this.RecipientFormData.GetHashCode();
                 if (this.SentDateTime != null)

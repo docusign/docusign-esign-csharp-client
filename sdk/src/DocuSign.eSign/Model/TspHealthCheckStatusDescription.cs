@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,12 +38,12 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TspHealthCheckStatusDescription" /> class.
         /// </summary>
-        /// <param name="Description">.</param>
-        /// <param name="Error">.</param>
-        /// <param name="Hostname">.</param>
-        /// <param name="ResponseSeconds">.</param>
+        /// <param name="Description">Description.</param>
+        /// <param name="Error">Error.</param>
+        /// <param name="Hostname">Hostname.</param>
+        /// <param name="ResponseSeconds">ResponseSeconds.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        /// <param name="Type">.</param>
+        /// <param name="Type">Type.</param>
         public TspHealthCheckStatusDescription(string Description = default(string), string Error = default(string), string Hostname = default(string), string ResponseSeconds = default(string), string Status = default(string), string Type = default(string))
         {
             this.Description = Description;
@@ -54,27 +55,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Description
         /// </summary>
-        /// <value></value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Error
         /// </summary>
-        /// <value></value>
         [DataMember(Name="error", EmitDefaultValue=false)]
         public string Error { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Hostname
         /// </summary>
-        /// <value></value>
         [DataMember(Name="hostname", EmitDefaultValue=false)]
         public string Hostname { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ResponseSeconds
         /// </summary>
-        /// <value></value>
         [DataMember(Name="responseSeconds", EmitDefaultValue=false)]
         public string ResponseSeconds { get; set; }
         /// <summary>
@@ -84,9 +81,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Type
         /// </summary>
-        /// <value></value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
@@ -203,5 +199,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

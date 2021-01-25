@@ -25,38 +25,30 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Credential
+    /// PaymentSignerValues
     /// </summary>
     [DataContract]
-    public partial class Credential :  IEquatable<Credential>, IValidatableObject
+    public partial class PaymentSignerValues :  IEquatable<PaymentSignerValues>, IValidatableObject
     {
-        public Credential()
+        public PaymentSignerValues()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Credential" /> class.
+        /// Initializes a new instance of the <see cref="PaymentSignerValues" /> class.
         /// </summary>
-        /// <param name="Type">Type.</param>
-        /// <param name="Value">Specifies the value of the tab. .</param>
-        public Credential(string Type = default(string), string Value = default(string))
+        /// <param name="PaymentOption">PaymentOption.</param>
+        public PaymentSignerValues(string PaymentOption = default(string))
         {
-            this.Type = Type;
-            this.Value = Value;
+            this.PaymentOption = PaymentOption;
         }
         
         /// <summary>
-        /// Gets or Sets Type
+        /// Gets or Sets PaymentOption
         /// </summary>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public string Type { get; set; }
-        /// <summary>
-        /// Specifies the value of the tab. 
-        /// </summary>
-        /// <value>Specifies the value of the tab. </value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
-        public string Value { get; set; }
+        [DataMember(Name="paymentOption", EmitDefaultValue=false)]
+        public string PaymentOption { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -64,9 +56,8 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Credential {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("class PaymentSignerValues {\n");
+            sb.Append("  PaymentOption: ").Append(PaymentOption).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,15 +79,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as Credential);
+            return this.Equals(obj as PaymentSignerValues);
         }
 
         /// <summary>
-        /// Returns true if Credential instances are equal
+        /// Returns true if PaymentSignerValues instances are equal
         /// </summary>
-        /// <param name="other">Instance of Credential to be compared</param>
+        /// <param name="other">Instance of PaymentSignerValues to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Credential other)
+        public bool Equals(PaymentSignerValues other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -104,14 +95,9 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.Type == other.Type ||
-                    this.Type != null &&
-                    this.Type.Equals(other.Type)
-                ) && 
-                (
-                    this.Value == other.Value ||
-                    this.Value != null &&
-                    this.Value.Equals(other.Value)
+                    this.PaymentOption == other.PaymentOption ||
+                    this.PaymentOption != null &&
+                    this.PaymentOption.Equals(other.PaymentOption)
                 );
         }
 
@@ -126,10 +112,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Type != null)
-                    hash = hash * 59 + this.Type.GetHashCode();
-                if (this.Value != null)
-                    hash = hash * 59 + this.Value.GetHashCode();
+                if (this.PaymentOption != null)
+                    hash = hash * 59 + this.PaymentOption.GetHashCode();
                 return hash;
             }
         }

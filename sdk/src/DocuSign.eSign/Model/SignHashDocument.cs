@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,14 +38,14 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SignHashDocument" /> class.
         /// </summary>
-        /// <param name="Data">.</param>
+        /// <param name="Data">Data.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
-        /// <param name="Format">.</param>
-        /// <param name="Name">.</param>
-        /// <param name="RemainingSignatures">.</param>
-        /// <param name="Revisions">.</param>
+        /// <param name="Format">Format.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="RemainingSignatures">RemainingSignatures.</param>
+        /// <param name="Revisions">Revisions.</param>
         /// <param name="SignatureProperties">SignatureProperties.</param>
-        /// <param name="SignatureType">.</param>
+        /// <param name="SignatureType">SignatureType.</param>
         public SignHashDocument(string Data = default(string), string DocumentId = default(string), string Format = default(string), string Name = default(string), long? RemainingSignatures = default(long?), List<Revision> Revisions = default(List<Revision>), SignatureProperties SignatureProperties = default(SignatureProperties), string SignatureType = default(string))
         {
             this.Data = Data;
@@ -58,9 +59,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Data
         /// </summary>
-        /// <value></value>
         [DataMember(Name="data", EmitDefaultValue=false)]
         public string Data { get; set; }
         /// <summary>
@@ -70,27 +70,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentId", EmitDefaultValue=false)]
         public string DocumentId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Format
         /// </summary>
-        /// <value></value>
         [DataMember(Name="format", EmitDefaultValue=false)]
         public string Format { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RemainingSignatures
         /// </summary>
-        /// <value></value>
         [DataMember(Name="remainingSignatures", EmitDefaultValue=false)]
         public long? RemainingSignatures { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Revisions
         /// </summary>
-        /// <value></value>
         [DataMember(Name="revisions", EmitDefaultValue=false)]
         public List<Revision> Revisions { get; set; }
         /// <summary>
@@ -99,9 +95,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureProperties", EmitDefaultValue=false)]
         public SignatureProperties SignatureProperties { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureType
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureType", EmitDefaultValue=false)]
         public string SignatureType { get; set; }
         /// <summary>
@@ -234,5 +229,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

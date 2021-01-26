@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="CompleteSignHashResponse" /> class.
         /// </summary>
         /// <param name="Documents">Complex element contains the details on the documents in the envelope..</param>
-        /// <param name="RedirectionUrl">.</param>
-        /// <param name="RemainingSignatureRequests">.</param>
+        /// <param name="RedirectionUrl">RedirectionUrl.</param>
+        /// <param name="RemainingSignatureRequests">RemainingSignatureRequests.</param>
         public CompleteSignHashResponse(List<SignHashDocument> Documents = default(List<SignHashDocument>), string RedirectionUrl = default(string), string RemainingSignatureRequests = default(string))
         {
             this.Documents = Documents;
@@ -54,15 +55,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documents", EmitDefaultValue=false)]
         public List<SignHashDocument> Documents { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RedirectionUrl
         /// </summary>
-        /// <value></value>
         [DataMember(Name="redirectionUrl", EmitDefaultValue=false)]
         public string RedirectionUrl { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RemainingSignatureRequests
         /// </summary>
-        /// <value></value>
         [DataMember(Name="remainingSignatureRequests", EmitDefaultValue=false)]
         public string RemainingSignatureRequests { get; set; }
         /// <summary>
@@ -155,5 +154,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

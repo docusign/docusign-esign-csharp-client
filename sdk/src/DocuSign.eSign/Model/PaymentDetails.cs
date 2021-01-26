@@ -52,9 +52,10 @@ namespace DocuSign.eSign.Model
         /// <param name="LineItems">LineItems.</param>
         /// <param name="PaymentOption">PaymentOption.</param>
         /// <param name="PaymentSourceId">PaymentSourceId.</param>
+        /// <param name="SignerValues">SignerValues.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="Total">Total.</param>
-        public PaymentDetails(List<string> AllowedPaymentMethods = default(List<string>), string ChargeId = default(string), string CurrencyCode = default(string), PropertyMetadata CurrencyCodeMetadata = default(PropertyMetadata), string CustomerId = default(string), string CustomMetadata = default(string), bool? CustomMetadataRequired = default(bool?), string GatewayAccountId = default(string), PropertyMetadata GatewayAccountIdMetadata = default(PropertyMetadata), string GatewayDisplayName = default(string), string GatewayName = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string PaymentOption = default(string), string PaymentSourceId = default(string), string Status = default(string), Money Total = default(Money))
+        public PaymentDetails(List<string> AllowedPaymentMethods = default(List<string>), string ChargeId = default(string), string CurrencyCode = default(string), PropertyMetadata CurrencyCodeMetadata = default(PropertyMetadata), string CustomerId = default(string), string CustomMetadata = default(string), bool? CustomMetadataRequired = default(bool?), string GatewayAccountId = default(string), PropertyMetadata GatewayAccountIdMetadata = default(PropertyMetadata), string GatewayDisplayName = default(string), string GatewayName = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string PaymentOption = default(string), string PaymentSourceId = default(string), PaymentSignerValues SignerValues = default(PaymentSignerValues), string Status = default(string), Money Total = default(Money))
         {
             this.AllowedPaymentMethods = AllowedPaymentMethods;
             this.ChargeId = ChargeId;
@@ -70,6 +71,7 @@ namespace DocuSign.eSign.Model
             this.LineItems = LineItems;
             this.PaymentOption = PaymentOption;
             this.PaymentSourceId = PaymentSourceId;
+            this.SignerValues = SignerValues;
             this.Status = Status;
             this.Total = Total;
         }
@@ -145,6 +147,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="paymentSourceId", EmitDefaultValue=false)]
         public string PaymentSourceId { get; set; }
         /// <summary>
+        /// Gets or Sets SignerValues
+        /// </summary>
+        [DataMember(Name="signerValues", EmitDefaultValue=false)]
+        public PaymentSignerValues SignerValues { get; set; }
+        /// <summary>
         /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
         /// </summary>
         /// <value>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.</value>
@@ -177,6 +184,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  PaymentOption: ").Append(PaymentOption).Append("\n");
             sb.Append("  PaymentSourceId: ").Append(PaymentSourceId).Append("\n");
+            sb.Append("  SignerValues: ").Append(SignerValues).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
             sb.Append("}\n");
@@ -286,6 +294,11 @@ namespace DocuSign.eSign.Model
                     this.PaymentSourceId.Equals(other.PaymentSourceId)
                 ) && 
                 (
+                    this.SignerValues == other.SignerValues ||
+                    this.SignerValues != null &&
+                    this.SignerValues.Equals(other.SignerValues)
+                ) && 
+                (
                     this.Status == other.Status ||
                     this.Status != null &&
                     this.Status.Equals(other.Status)
@@ -336,6 +349,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PaymentOption.GetHashCode();
                 if (this.PaymentSourceId != null)
                     hash = hash * 59 + this.PaymentSourceId.GetHashCode();
+                if (this.SignerValues != null)
+                    hash = hash * 59 + this.SignerValues.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.Total != null)

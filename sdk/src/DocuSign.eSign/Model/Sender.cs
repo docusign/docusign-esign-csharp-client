@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Sender" /> class.
         /// </summary>
         /// <param name="AccountIdGuid">The GUID associated with the account ID..</param>
-        /// <param name="CompanyName">.</param>
+        /// <param name="CompanyName">CompanyName.</param>
         public Sender(string AccountIdGuid = default(string), string CompanyName = default(string))
         {
             this.AccountIdGuid = AccountIdGuid;
@@ -52,9 +53,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="accountIdGuid", EmitDefaultValue=false)]
         public string AccountIdGuid { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CompanyName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="companyName", EmitDefaultValue=false)]
         public string CompanyName { get; set; }
         /// <summary>
@@ -139,5 +139,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

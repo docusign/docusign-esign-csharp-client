@@ -125,56 +125,6 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<BulkSendingListSummaries> DeleteBulkSendListWithHttpInfo (string accountId, string bulkSendListId);
         /// <summary>
-        /// Deletes the bulk recipient file from an envelope.
-        /// </summary>
-        /// <remarks>
-        /// Deletes the bulk recipient file from an envelope. This cannot be used if the envelope has been sent.  After using this, the &#x60;bulkRecipientsUri&#x60; property is not returned in subsequent GET calls for the envelope, but the recipient will remain as a bulk recipient.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
-        /// <returns></returns>
-        BulkRecipientsUpdateResponse DeleteRecipients (string accountId, string envelopeId, string recipientId);
-
-        /// <summary>
-        /// Deletes the bulk recipient file from an envelope.
-        /// </summary>
-        /// <remarks>
-        /// Deletes the bulk recipient file from an envelope. This cannot be used if the envelope has been sent.  After using this, the &#x60;bulkRecipientsUri&#x60; property is not returned in subsequent GET calls for the envelope, but the recipient will remain as a bulk recipient.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
-        /// <returns>ApiResponse of </returns>
-        ApiResponse<BulkRecipientsUpdateResponse> DeleteRecipientsWithHttpInfo (string accountId, string envelopeId, string recipientId);
-        /// <summary>
-        /// Gets the status of a specified bulk send operation.
-        /// </summary>
-        /// <remarks>
-        /// Retrieves the status information of a single bulk recipient batch. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="batchId"></param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns></returns>
-        BulkEnvelopeStatus Get (string accountId, string batchId, BulkEnvelopesApi.GetOptions options = null);
-
-        /// <summary>
-        /// Gets the status of a specified bulk send operation.
-        /// </summary>
-        /// <remarks>
-        /// Retrieves the status information of a single bulk recipient batch. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="batchId"></param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>ApiResponse of </returns>
-        ApiResponse<BulkEnvelopeStatus> GetWithHttpInfo (string accountId, string batchId, BulkEnvelopesApi.GetOptions options = null);
-        /// <summary>
         /// Gets a specific bulk send batch status
         /// </summary>
         /// <remarks>
@@ -275,55 +225,30 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<BulkSendingListSummaries> GetBulkSendListsWithHttpInfo (string accountId);
         /// <summary>
-        /// Gets the bulk recipient file from an envelope.
+        /// Put/Update a specific bulk send batch status
         /// </summary>
         /// <remarks>
-        /// Retrieves the bulk recipient file information from an envelope that has a bulk recipient.
+        /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>
+        /// <param name="bulkSendBatchRequest"> (optional)</param>
         
-        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        BulkRecipientsResponse GetRecipients (string accountId, string envelopeId, string recipientId, BulkEnvelopesApi.GetRecipientsOptions options = null);
+        BulkSendBatchStatus UpdateBulkSendBatchStatus (string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null);
 
         /// <summary>
-        /// Gets the bulk recipient file from an envelope.
+        /// Put/Update a specific bulk send batch status
         /// </summary>
         /// <remarks>
-        /// Retrieves the bulk recipient file information from an envelope that has a bulk recipient.
+        /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>
+        /// <param name="bulkSendBatchRequest"> (optional)</param>
         
-        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<BulkRecipientsResponse> GetRecipientsWithHttpInfo (string accountId, string envelopeId, string recipientId, BulkEnvelopesApi.GetRecipientsOptions options = null);
-        /// <summary>
-        /// Gets status information about bulk recipient batches.
-        /// </summary>
-        /// <remarks>
-        /// Retrieves status information about all the bulk recipient batches. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. The response includes general information about each bulk recipient batch.   The response returns information about the envelopes sent with bulk recipient batches, including the &#x60;batchId&#x60; property, which can be used to retrieve a more detailed status of individual bulk recipient batches.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns></returns>
-        BulkEnvelopesResponse List (string accountId, BulkEnvelopesApi.ListOptions options = null);
-
-        /// <summary>
-        /// Gets status information about bulk recipient batches.
-        /// </summary>
-        /// <remarks>
-        /// Retrieves status information about all the bulk recipient batches. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. The response includes general information about each bulk recipient batch.   The response returns information about the envelopes sent with bulk recipient batches, including the &#x60;batchId&#x60; property, which can be used to retrieve a more detailed status of individual bulk recipient batches.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>ApiResponse of </returns>
-        ApiResponse<BulkEnvelopesResponse> ListWithHttpInfo (string accountId, BulkEnvelopesApi.ListOptions options = null);
+        ApiResponse<BulkSendBatchStatus> UpdateBulkSendBatchStatusWithHttpInfo (string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null);
         /// <summary>
         /// Updates an existing bulk send list.  If send_envelope query string value is provided, will accept an empty payload and try to send the specified envelope
         /// </summary>
@@ -349,31 +274,6 @@ namespace DocuSign.eSign.Api
         
         /// <returns>ApiResponse of </returns>
         ApiResponse<BulkSendingList> UpdateBulkSendListWithHttpInfo (string accountId, string bulkSendListId, BulkSendingList bulkSendingList = null);
-        /// <summary>
-        /// Adds or replaces envelope bulk recipients.
-        /// </summary>
-        /// <remarks>
-        /// Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID.   Example: &#x60;93be49ab-xxxx-xxxx-xxxx-f752070d71ec&#x60; </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
-        /// <param name="bulkRecipientsRequest"></param>
-        
-        /// <returns></returns>
-        BulkRecipientsSummaryResponse UpdateRecipients (string accountId, string envelopeId, string recipientId, byte[] bulkRecipientsRequest);
-
-        /// <summary>
-        /// Adds or replaces envelope bulk recipients.
-        /// </summary>
-        /// <remarks>
-        /// Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID.   Example: &#x60;93be49ab-xxxx-xxxx-xxxx-f752070d71ec&#x60; </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
-        /// <param name="bulkRecipientsRequest"></param>
-        
-        /// <returns>ApiResponse of </returns>
-        ApiResponse<BulkRecipientsSummaryResponse> UpdateRecipientsWithHttpInfo (string accountId, string envelopeId, string recipientId, byte[] bulkRecipientsRequest);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -477,56 +377,6 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (BulkSendingListSummaries)</returns>
         System.Threading.Tasks.Task<ApiResponse<BulkSendingListSummaries>> DeleteBulkSendListAsyncWithHttpInfo (string accountId, string bulkSendListId);
         /// <summary>
-        /// Deletes the bulk recipient file from an envelope.
-        /// </summary>
-        /// <remarks>
-        /// Deletes the bulk recipient file from an envelope. This cannot be used if the envelope has been sent.  After using this, the &#x60;bulkRecipientsUri&#x60; property is not returned in subsequent GET calls for the envelope, but the recipient will remain as a bulk recipient.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
-        /// <returns>Task of BulkRecipientsUpdateResponse</returns>
-        System.Threading.Tasks.Task<BulkRecipientsUpdateResponse> DeleteRecipientsAsync (string accountId, string envelopeId, string recipientId);
-
-        /// <summary>
-        /// Deletes the bulk recipient file from an envelope.
-        /// </summary>
-        /// <remarks>
-        /// Deletes the bulk recipient file from an envelope. This cannot be used if the envelope has been sent.  After using this, the &#x60;bulkRecipientsUri&#x60; property is not returned in subsequent GET calls for the envelope, but the recipient will remain as a bulk recipient.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
-        /// <returns>Task of ApiResponse (BulkRecipientsUpdateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BulkRecipientsUpdateResponse>> DeleteRecipientsAsyncWithHttpInfo (string accountId, string envelopeId, string recipientId);
-        /// <summary>
-        /// Gets the status of a specified bulk send operation.
-        /// </summary>
-        /// <remarks>
-        /// Retrieves the status information of a single bulk recipient batch. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="batchId"></param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of BulkEnvelopeStatus</returns>
-        System.Threading.Tasks.Task<BulkEnvelopeStatus> GetAsync (string accountId, string batchId, BulkEnvelopesApi.GetOptions options = null);
-
-        /// <summary>
-        /// Gets the status of a specified bulk send operation.
-        /// </summary>
-        /// <remarks>
-        /// Retrieves the status information of a single bulk recipient batch. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="batchId"></param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (BulkEnvelopeStatus)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BulkEnvelopeStatus>> GetAsyncWithHttpInfo (string accountId, string batchId, BulkEnvelopesApi.GetOptions options = null);
-        /// <summary>
         /// Gets a specific bulk send batch status
         /// </summary>
         /// <remarks>
@@ -627,55 +477,30 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (BulkSendingListSummaries)</returns>
         System.Threading.Tasks.Task<ApiResponse<BulkSendingListSummaries>> GetBulkSendListsAsyncWithHttpInfo (string accountId);
         /// <summary>
-        /// Gets the bulk recipient file from an envelope.
+        /// Put/Update a specific bulk send batch status
         /// </summary>
         /// <remarks>
-        /// Retrieves the bulk recipient file information from an envelope that has a bulk recipient.
+        /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>
+        /// <param name="bulkSendBatchRequest"> (optional)</param>
         
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of BulkRecipientsResponse</returns>
-        System.Threading.Tasks.Task<BulkRecipientsResponse> GetRecipientsAsync (string accountId, string envelopeId, string recipientId, BulkEnvelopesApi.GetRecipientsOptions options = null);
+        /// <returns>Task of BulkSendBatchStatus</returns>
+        System.Threading.Tasks.Task<BulkSendBatchStatus> UpdateBulkSendBatchStatusAsync (string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null);
 
         /// <summary>
-        /// Gets the bulk recipient file from an envelope.
+        /// Put/Update a specific bulk send batch status
         /// </summary>
         /// <remarks>
-        /// Retrieves the bulk recipient file information from an envelope that has a bulk recipient.
+        /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>
+        /// <param name="bulkSendBatchRequest"> (optional)</param>
         
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (BulkRecipientsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BulkRecipientsResponse>> GetRecipientsAsyncWithHttpInfo (string accountId, string envelopeId, string recipientId, BulkEnvelopesApi.GetRecipientsOptions options = null);
-        /// <summary>
-        /// Gets status information about bulk recipient batches.
-        /// </summary>
-        /// <remarks>
-        /// Retrieves status information about all the bulk recipient batches. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. The response includes general information about each bulk recipient batch.   The response returns information about the envelopes sent with bulk recipient batches, including the &#x60;batchId&#x60; property, which can be used to retrieve a more detailed status of individual bulk recipient batches.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of BulkEnvelopesResponse</returns>
-        System.Threading.Tasks.Task<BulkEnvelopesResponse> ListAsync (string accountId, BulkEnvelopesApi.ListOptions options = null);
-
-        /// <summary>
-        /// Gets status information about bulk recipient batches.
-        /// </summary>
-        /// <remarks>
-        /// Retrieves status information about all the bulk recipient batches. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. The response includes general information about each bulk recipient batch.   The response returns information about the envelopes sent with bulk recipient batches, including the &#x60;batchId&#x60; property, which can be used to retrieve a more detailed status of individual bulk recipient batches.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (BulkEnvelopesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BulkEnvelopesResponse>> ListAsyncWithHttpInfo (string accountId, BulkEnvelopesApi.ListOptions options = null);
+        /// <returns>Task of ApiResponse (BulkSendBatchStatus)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BulkSendBatchStatus>> UpdateBulkSendBatchStatusAsyncWithHttpInfo (string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null);
         /// <summary>
         /// Updates an existing bulk send list.  If send_envelope query string value is provided, will accept an empty payload and try to send the specified envelope
         /// </summary>
@@ -701,31 +526,6 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (BulkSendingList)</returns>
         System.Threading.Tasks.Task<ApiResponse<BulkSendingList>> UpdateBulkSendListAsyncWithHttpInfo (string accountId, string bulkSendListId, BulkSendingList bulkSendingList = null);
-        /// <summary>
-        /// Adds or replaces envelope bulk recipients.
-        /// </summary>
-        /// <remarks>
-        /// Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID.   Example: &#x60;93be49ab-xxxx-xxxx-xxxx-f752070d71ec&#x60; </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
-        /// <param name="bulkRecipientsRequest"></param>
-        
-        /// <returns>Task of BulkRecipientsSummaryResponse</returns>
-        System.Threading.Tasks.Task<BulkRecipientsSummaryResponse> UpdateRecipientsAsync (string accountId, string envelopeId, string recipientId, byte[] bulkRecipientsRequest);
-
-        /// <summary>
-        /// Adds or replaces envelope bulk recipients.
-        /// </summary>
-        /// <remarks>
-        /// Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID.   Example: &#x60;93be49ab-xxxx-xxxx-xxxx-f752070d71ec&#x60; </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
-        /// <param name="bulkRecipientsRequest"></param>
-        
-        /// <returns>Task of ApiResponse (BulkRecipientsSummaryResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BulkRecipientsSummaryResponse>> UpdateRecipientsAsyncWithHttpInfo (string accountId, string envelopeId, string recipientId, byte[] bulkRecipientsRequest);
         #endregion Asynchronous Operations
     }
 
@@ -1551,402 +1351,6 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Deletes the bulk recipient file from an envelope. Deletes the bulk recipient file from an envelope. This cannot be used if the envelope has been sent.  After using this, the &#x60;bulkRecipientsUri&#x60; property is not returned in subsequent GET calls for the envelope, but the recipient will remain as a bulk recipient.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
-        /// <returns>BulkRecipientsUpdateResponse</returns>
-        public BulkRecipientsUpdateResponse DeleteRecipients (string accountId, string envelopeId, string recipientId)
-        {
-             ApiResponse<BulkRecipientsUpdateResponse> localVarResponse = DeleteRecipientsWithHttpInfo(accountId, envelopeId, recipientId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Deletes the bulk recipient file from an envelope. Deletes the bulk recipient file from an envelope. This cannot be used if the envelope has been sent.  After using this, the &#x60;bulkRecipientsUri&#x60; property is not returned in subsequent GET calls for the envelope, but the recipient will remain as a bulk recipient.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
-        /// <returns>ApiResponse of BulkRecipientsUpdateResponse</returns>
-        public ApiResponse< BulkRecipientsUpdateResponse > DeleteRecipientsWithHttpInfo (string accountId, string envelopeId, string recipientId)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->DeleteRecipients");
-            // verify the required parameter 'envelopeId' is set
-            if (envelopeId == null)
-                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling BulkEnvelopesApi->DeleteRecipients");
-            // verify the required parameter 'recipientId' is set
-            if (recipientId == null)
-                throw new ApiException(400, "Missing required parameter 'recipientId' when calling BulkEnvelopesApi->DeleteRecipients");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteRecipients", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkRecipientsUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsUpdateResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkRecipientsUpdateResponse)));
-            }
-            else
-            {
-                return new ApiResponse<BulkRecipientsUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsUpdateResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsUpdateResponse)));
-            }
-            
-        }
-
-        /// <summary>
-        /// Deletes the bulk recipient file from an envelope. Deletes the bulk recipient file from an envelope. This cannot be used if the envelope has been sent.  After using this, the &#x60;bulkRecipientsUri&#x60; property is not returned in subsequent GET calls for the envelope, but the recipient will remain as a bulk recipient.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
-        /// <returns>Task of BulkRecipientsUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<BulkRecipientsUpdateResponse> DeleteRecipientsAsync (string accountId, string envelopeId, string recipientId)
-        {
-             ApiResponse<BulkRecipientsUpdateResponse> localVarResponse = await DeleteRecipientsAsyncWithHttpInfo(accountId, envelopeId, recipientId);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Deletes the bulk recipient file from an envelope. Deletes the bulk recipient file from an envelope. This cannot be used if the envelope has been sent.  After using this, the &#x60;bulkRecipientsUri&#x60; property is not returned in subsequent GET calls for the envelope, but the recipient will remain as a bulk recipient.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
-        /// <returns>Task of ApiResponse (BulkRecipientsUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkRecipientsUpdateResponse>> DeleteRecipientsAsyncWithHttpInfo (string accountId, string envelopeId, string recipientId)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->DeleteRecipients");
-            // verify the required parameter 'envelopeId' is set
-            if (envelopeId == null)
-                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling BulkEnvelopesApi->DeleteRecipients");
-            // verify the required parameter 'recipientId' is set
-            if (recipientId == null)
-                throw new ApiException(400, "Missing required parameter 'recipientId' when calling BulkEnvelopesApi->DeleteRecipients");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteRecipients", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<BulkRecipientsUpdateResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BulkRecipientsUpdateResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsUpdateResponse)));
-            
-        }
-
-
-        /// <summary>
-        /// Gets the status of a specified bulk send operation. Retrieves the status information of a single bulk recipient batch. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. 
-        /// </summary>
-        public class GetOptions
-        {
-            /// Specifies the number of entries to return. 
-            public string count {get; set;}
-            /// Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;\&quot;failed,queued\&quot;)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.   
-            public string include {get; set;}
-            /// Specifies the location in the list of envelopes from which to start. 
-            public string startPosition {get; set;}
-        }
-
-        /// <summary>
-        /// Gets the status of a specified bulk send operation. Retrieves the status information of a single bulk recipient batch. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="batchId"></param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>BulkEnvelopeStatus</returns>
-        public BulkEnvelopeStatus Get (string accountId, string batchId, BulkEnvelopesApi.GetOptions options = null)
-        {
-             ApiResponse<BulkEnvelopeStatus> localVarResponse = GetWithHttpInfo(accountId, batchId, options);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Gets the status of a specified bulk send operation. Retrieves the status information of a single bulk recipient batch. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="batchId"></param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>ApiResponse of BulkEnvelopeStatus</returns>
-        public ApiResponse< BulkEnvelopeStatus > GetWithHttpInfo (string accountId, string batchId, BulkEnvelopesApi.GetOptions options = null)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->Get");
-            // verify the required parameter 'batchId' is set
-            if (batchId == null)
-                throw new ApiException(400, "Missing required parameter 'batchId' when calling BulkEnvelopesApi->Get");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_envelopes/{batchId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (batchId != null) localVarPathParams.Add("batchId", this.ApiClient.ParameterToString(batchId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("Get", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkEnvelopeStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkEnvelopeStatus) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkEnvelopeStatus)));
-            }
-            else
-            {
-                return new ApiResponse<BulkEnvelopeStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkEnvelopeStatus) this.ApiClient.Deserialize(localVarResponse, typeof(BulkEnvelopeStatus)));
-            }
-            
-        }
-
-        /// <summary>
-        /// Gets the status of a specified bulk send operation. Retrieves the status information of a single bulk recipient batch. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="batchId"></param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of BulkEnvelopeStatus</returns>
-        public async System.Threading.Tasks.Task<BulkEnvelopeStatus> GetAsync (string accountId, string batchId, BulkEnvelopesApi.GetOptions options = null)
-        {
-             ApiResponse<BulkEnvelopeStatus> localVarResponse = await GetAsyncWithHttpInfo(accountId, batchId, options);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Gets the status of a specified bulk send operation. Retrieves the status information of a single bulk recipient batch. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="batchId"></param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (BulkEnvelopeStatus)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkEnvelopeStatus>> GetAsyncWithHttpInfo (string accountId, string batchId, BulkEnvelopesApi.GetOptions options = null)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->Get");
-            // verify the required parameter 'batchId' is set
-            if (batchId == null)
-                throw new ApiException(400, "Missing required parameter 'batchId' when calling BulkEnvelopesApi->Get");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_envelopes/{batchId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (batchId != null) localVarPathParams.Add("batchId", this.ApiClient.ParameterToString(batchId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("Get", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<BulkEnvelopeStatus>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BulkEnvelopeStatus) this.ApiClient.Deserialize(localVarResponse, typeof(BulkEnvelopeStatus)));
-            
-        }
-
-
-
-        /// <summary>
         /// Gets a specific bulk send batch status 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
@@ -2685,52 +2089,39 @@ namespace DocuSign.eSign.Api
         }
 
 
-        /// <summary>
-        /// Gets the bulk recipient file from an envelope. Retrieves the bulk recipient file information from an envelope that has a bulk recipient.
-        /// </summary>
-        public class GetRecipientsOptions
-        {
-            /// 
-            public string includeTabs {get; set;}
-            /// 
-            public string startPosition {get; set;}
-        }
 
         /// <summary>
-        /// Gets the bulk recipient file from an envelope. Retrieves the bulk recipient file information from an envelope that has a bulk recipient.
+        /// Put/Update a specific bulk send batch status 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>
+        /// <param name="bulkSendBatchRequest"> (optional)</param>
         
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>BulkRecipientsResponse</returns>
-        public BulkRecipientsResponse GetRecipients (string accountId, string envelopeId, string recipientId, BulkEnvelopesApi.GetRecipientsOptions options = null)
+        /// <returns>BulkSendBatchStatus</returns>
+        public BulkSendBatchStatus UpdateBulkSendBatchStatus (string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null)
         {
-             ApiResponse<BulkRecipientsResponse> localVarResponse = GetRecipientsWithHttpInfo(accountId, envelopeId, recipientId, options);
+             ApiResponse<BulkSendBatchStatus> localVarResponse = UpdateBulkSendBatchStatusWithHttpInfo(accountId, bulkSendBatchId, bulkSendBatchRequest);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Gets the bulk recipient file from an envelope. Retrieves the bulk recipient file information from an envelope that has a bulk recipient.
+        /// Put/Update a specific bulk send batch status 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>
+        /// <param name="bulkSendBatchRequest"> (optional)</param>
         
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>ApiResponse of BulkRecipientsResponse</returns>
-        public ApiResponse< BulkRecipientsResponse > GetRecipientsWithHttpInfo (string accountId, string envelopeId, string recipientId, BulkEnvelopesApi.GetRecipientsOptions options = null)
+        /// <returns>ApiResponse of BulkSendBatchStatus</returns>
+        public ApiResponse< BulkSendBatchStatus > UpdateBulkSendBatchStatusWithHttpInfo (string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->GetRecipients");
-            // verify the required parameter 'envelopeId' is set
-            if (envelopeId == null)
-                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling BulkEnvelopesApi->GetRecipients");
-            // verify the required parameter 'recipientId' is set
-            if (recipientId == null)
-                throw new ApiException(400, "Missing required parameter 'recipientId' when calling BulkEnvelopesApi->GetRecipients");
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->UpdateBulkSendBatchStatus");
+            // verify the required parameter 'bulkSendBatchId' is set
+            if (bulkSendBatchId == null)
+                throw new ApiException(400, "Missing required parameter 'bulkSendBatchId' when calling BulkEnvelopesApi->UpdateBulkSendBatchStatus");
 
-            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients";
+            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -2755,15 +2146,17 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
+            if (bulkSendBatchId != null) localVarPathParams.Add("bulkSendBatchId", this.ApiClient.ParameterToString(bulkSendBatchId)); // path parameter
 
-            if (options != null)
+
+            if (bulkSendBatchRequest != null && bulkSendBatchRequest.GetType() != typeof(byte[]))
             {
-                if (options.includeTabs != null) localVarQueryParams.Add("include_tabs", this.ApiClient.ParameterToString(options.includeTabs)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                localVarPostBody = this.ApiClient.Serialize(bulkSendBatchRequest); // http body (model) parameter
             }
-
+            else
+            {
+                localVarPostBody = bulkSendBatchRequest; // byte array
+            }
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -2774,14 +2167,14 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetRecipients", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateBulkSendBatchStatus", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2789,51 +2182,48 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<BulkRecipientsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkRecipientsResponse)));
+                return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkSendBatchStatus) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendBatchStatus)));
             }
             else
             {
-                return new ApiResponse<BulkRecipientsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsResponse)));
+                return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkSendBatchStatus) this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchStatus)));
             }
             
         }
 
         /// <summary>
-        /// Gets the bulk recipient file from an envelope. Retrieves the bulk recipient file information from an envelope that has a bulk recipient.
+        /// Put/Update a specific bulk send batch status 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>
+        /// <param name="bulkSendBatchRequest"> (optional)</param>
         
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of BulkRecipientsResponse</returns>
-        public async System.Threading.Tasks.Task<BulkRecipientsResponse> GetRecipientsAsync (string accountId, string envelopeId, string recipientId, BulkEnvelopesApi.GetRecipientsOptions options = null)
+        /// <returns>Task of BulkSendBatchStatus</returns>
+        public async System.Threading.Tasks.Task<BulkSendBatchStatus> UpdateBulkSendBatchStatusAsync (string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null)
         {
-             ApiResponse<BulkRecipientsResponse> localVarResponse = await GetRecipientsAsyncWithHttpInfo(accountId, envelopeId, recipientId, options);
+             ApiResponse<BulkSendBatchStatus> localVarResponse = await UpdateBulkSendBatchStatusAsyncWithHttpInfo(accountId, bulkSendBatchId, bulkSendBatchRequest);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Gets the bulk recipient file from an envelope. Retrieves the bulk recipient file information from an envelope that has a bulk recipient.
+        /// Put/Update a specific bulk send batch status 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>
+        /// <param name="bulkSendBatchRequest"> (optional)</param>
         
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (BulkRecipientsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkRecipientsResponse>> GetRecipientsAsyncWithHttpInfo (string accountId, string envelopeId, string recipientId, BulkEnvelopesApi.GetRecipientsOptions options = null)
+        /// <returns>Task of ApiResponse (BulkSendBatchStatus)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendBatchStatus>> UpdateBulkSendBatchStatusAsyncWithHttpInfo (string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->GetRecipients");
-            // verify the required parameter 'envelopeId' is set
-            if (envelopeId == null)
-                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling BulkEnvelopesApi->GetRecipients");
-            // verify the required parameter 'recipientId' is set
-            if (recipientId == null)
-                throw new ApiException(400, "Missing required parameter 'recipientId' when calling BulkEnvelopesApi->GetRecipients");
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->UpdateBulkSendBatchStatus");
+            // verify the required parameter 'bulkSendBatchId' is set
+            if (bulkSendBatchId == null)
+                throw new ApiException(400, "Missing required parameter 'bulkSendBatchId' when calling BulkEnvelopesApi->UpdateBulkSendBatchStatus");
 
-            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients";
+            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -2858,15 +2248,17 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
+            if (bulkSendBatchId != null) localVarPathParams.Add("bulkSendBatchId", this.ApiClient.ParameterToString(bulkSendBatchId)); // path parameter
 
-            if (options != null)
+
+            if (bulkSendBatchRequest != null && bulkSendBatchRequest.GetType() != typeof(byte[]))
             {
-                if (options.includeTabs != null) localVarQueryParams.Add("include_tabs", this.ApiClient.ParameterToString(options.includeTabs)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                localVarPostBody = this.ApiClient.Serialize(bulkSendBatchRequest); // http body (model) parameter
             }
-
+            else
+            {
+                localVarPostBody = bulkSendBatchRequest; // byte array
+            }
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -2877,214 +2269,20 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetRecipients", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateBulkSendBatchStatus", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkRecipientsResponse>(localVarStatusCode,
+            return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BulkRecipientsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsResponse)));
-            
-        }
-
-
-        /// <summary>
-        /// Gets status information about bulk recipient batches. Retrieves status information about all the bulk recipient batches. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. The response includes general information about each bulk recipient batch.   The response returns information about the envelopes sent with bulk recipient batches, including the &#x60;batchId&#x60; property, which can be used to retrieve a more detailed status of individual bulk recipient batches.
-        /// </summary>
-        public class ListOptions
-        {
-            /// The number of results to return. This can be 1 to 20. 
-            public string count {get; set;}
-            /// The position of the bulk envelope items in the response. This is used for repeated calls, when the number of bulk envelopes returned is too large for one return. The default value is 0. 
-            public string startPosition {get; set;}
-        }
-
-        /// <summary>
-        /// Gets status information about bulk recipient batches. Retrieves status information about all the bulk recipient batches. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. The response includes general information about each bulk recipient batch.   The response returns information about the envelopes sent with bulk recipient batches, including the &#x60;batchId&#x60; property, which can be used to retrieve a more detailed status of individual bulk recipient batches.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>BulkEnvelopesResponse</returns>
-        public BulkEnvelopesResponse List (string accountId, BulkEnvelopesApi.ListOptions options = null)
-        {
-             ApiResponse<BulkEnvelopesResponse> localVarResponse = ListWithHttpInfo(accountId, options);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Gets status information about bulk recipient batches. Retrieves status information about all the bulk recipient batches. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. The response includes general information about each bulk recipient batch.   The response returns information about the envelopes sent with bulk recipient batches, including the &#x60;batchId&#x60; property, which can be used to retrieve a more detailed status of individual bulk recipient batches.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>ApiResponse of BulkEnvelopesResponse</returns>
-        public ApiResponse< BulkEnvelopesResponse > ListWithHttpInfo (string accountId, BulkEnvelopesApi.ListOptions options = null)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->List");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_envelopes";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("List", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkEnvelopesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkEnvelopesResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkEnvelopesResponse)));
-            }
-            else
-            {
-                return new ApiResponse<BulkEnvelopesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkEnvelopesResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkEnvelopesResponse)));
-            }
-            
-        }
-
-        /// <summary>
-        /// Gets status information about bulk recipient batches. Retrieves status information about all the bulk recipient batches. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. The response includes general information about each bulk recipient batch.   The response returns information about the envelopes sent with bulk recipient batches, including the &#x60;batchId&#x60; property, which can be used to retrieve a more detailed status of individual bulk recipient batches.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of BulkEnvelopesResponse</returns>
-        public async System.Threading.Tasks.Task<BulkEnvelopesResponse> ListAsync (string accountId, BulkEnvelopesApi.ListOptions options = null)
-        {
-             ApiResponse<BulkEnvelopesResponse> localVarResponse = await ListAsyncWithHttpInfo(accountId, options);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Gets status information about bulk recipient batches. Retrieves status information about all the bulk recipient batches. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. The response includes general information about each bulk recipient batch.   The response returns information about the envelopes sent with bulk recipient batches, including the &#x60;batchId&#x60; property, which can be used to retrieve a more detailed status of individual bulk recipient batches.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (BulkEnvelopesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkEnvelopesResponse>> ListAsyncWithHttpInfo (string accountId, BulkEnvelopesApi.ListOptions options = null)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->List");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_envelopes";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("List", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<BulkEnvelopesResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BulkEnvelopesResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkEnvelopesResponse)));
+                (BulkSendBatchStatus) this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchStatus)));
             
         }
 
@@ -3283,220 +2481,6 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<BulkSendingList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (BulkSendingList) this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingList)));
-            
-        }
-
-
-
-        /// <summary>
-        /// Adds or replaces envelope bulk recipients. Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID.   Example: &#x60;93be49ab-xxxx-xxxx-xxxx-f752070d71ec&#x60; </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
-        /// <param name="bulkRecipientsRequest"></param>
-        
-        /// <returns>BulkRecipientsSummaryResponse</returns>
-        public BulkRecipientsSummaryResponse UpdateRecipients (string accountId, string envelopeId, string recipientId, byte[] bulkRecipientsRequest)
-        {
-             ApiResponse<BulkRecipientsSummaryResponse> localVarResponse = UpdateRecipientsWithHttpInfo(accountId, envelopeId, recipientId, bulkRecipientsRequest);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Adds or replaces envelope bulk recipients. Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID.   Example: &#x60;93be49ab-xxxx-xxxx-xxxx-f752070d71ec&#x60; </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
-        /// <param name="bulkRecipientsRequest"></param>
-        
-        /// <returns>ApiResponse of BulkRecipientsSummaryResponse</returns>
-        public ApiResponse< BulkRecipientsSummaryResponse > UpdateRecipientsWithHttpInfo (string accountId, string envelopeId, string recipientId, byte[] bulkRecipientsRequest)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->UpdateRecipients");
-            // verify the required parameter 'envelopeId' is set
-            if (envelopeId == null)
-                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling BulkEnvelopesApi->UpdateRecipients");
-            // verify the required parameter 'recipientId' is set
-            if (recipientId == null)
-                throw new ApiException(400, "Missing required parameter 'recipientId' when calling BulkEnvelopesApi->UpdateRecipients");
-            // verify the required parameter 'bulkRecipientsRequest' is set
-            if (bulkRecipientsRequest == null)
-                throw new ApiException(400, "Missing required parameter 'bulkRecipientsRequest' when calling BulkEnvelopesApi->UpdateRecipients");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "text/csv"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
-
-
-            if (bulkRecipientsRequest != null && bulkRecipientsRequest.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(bulkRecipientsRequest); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = bulkRecipientsRequest; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateRecipients", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkRecipientsSummaryResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsSummaryResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkRecipientsSummaryResponse)));
-            }
-            else
-            {
-                return new ApiResponse<BulkRecipientsSummaryResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsSummaryResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsSummaryResponse)));
-            }
-            
-        }
-
-        /// <summary>
-        /// Adds or replaces envelope bulk recipients. Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID.   Example: &#x60;93be49ab-xxxx-xxxx-xxxx-f752070d71ec&#x60; </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
-        /// <param name="bulkRecipientsRequest"></param>
-        
-        /// <returns>Task of BulkRecipientsSummaryResponse</returns>
-        public async System.Threading.Tasks.Task<BulkRecipientsSummaryResponse> UpdateRecipientsAsync (string accountId, string envelopeId, string recipientId, byte[] bulkRecipientsRequest)
-        {
-             ApiResponse<BulkRecipientsSummaryResponse> localVarResponse = await UpdateRecipientsAsyncWithHttpInfo(accountId, envelopeId, recipientId, bulkRecipientsRequest);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Adds or replaces envelope bulk recipients. Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).  The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID GUID.</param>/// <param name="envelopeId">The envelope&#39;s GUID.   Example: &#x60;93be49ab-xxxx-xxxx-xxxx-f752070d71ec&#x60; </param>/// <param name="recipientId">A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.</param>
-        /// <param name="bulkRecipientsRequest"></param>
-        
-        /// <returns>Task of ApiResponse (BulkRecipientsSummaryResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkRecipientsSummaryResponse>> UpdateRecipientsAsyncWithHttpInfo (string accountId, string envelopeId, string recipientId, byte[] bulkRecipientsRequest)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->UpdateRecipients");
-            // verify the required parameter 'envelopeId' is set
-            if (envelopeId == null)
-                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling BulkEnvelopesApi->UpdateRecipients");
-            // verify the required parameter 'recipientId' is set
-            if (recipientId == null)
-                throw new ApiException(400, "Missing required parameter 'recipientId' when calling BulkEnvelopesApi->UpdateRecipients");
-            // verify the required parameter 'bulkRecipientsRequest' is set
-            if (bulkRecipientsRequest == null)
-                throw new ApiException(400, "Missing required parameter 'bulkRecipientsRequest' when calling BulkEnvelopesApi->UpdateRecipients");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "text/csv"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
-
-
-            if (bulkRecipientsRequest != null && bulkRecipientsRequest.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(bulkRecipientsRequest); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = bulkRecipientsRequest; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateRecipients", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<BulkRecipientsSummaryResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BulkRecipientsSummaryResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsSummaryResponse)));
             
         }
 

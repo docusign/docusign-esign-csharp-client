@@ -760,13 +760,13 @@ namespace DocuSign.eSign.Client
             if(Configuration != null)
             {
                 Configuration.BasePath = this.basePath;
-            } 
+            }
             else
             {
                 Configuration = new Configuration(this.basePath);
             }
 
-            if(RestClient != null)
+            if (RestClient != null)
             {
                 RestClient.BaseUrl = new Uri(this.basePath);
             }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,12 +38,12 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentUpdateInfo" /> class.
         /// </summary>
-        /// <param name="Data">.</param>
+        /// <param name="Data">Data.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentSecurityStore">DocumentSecurityStore.</param>
-        /// <param name="Name">.</param>
-        /// <param name="ReturnFormat">.</param>
-        /// <param name="SignatureDataInfos">.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="ReturnFormat">ReturnFormat.</param>
+        /// <param name="SignatureDataInfos">SignatureDataInfos.</param>
         /// <param name="TimeStampField">TimeStampField.</param>
         public DocumentUpdateInfo(string Data = default(string), string DocumentId = default(string), DocumentSecurityStore DocumentSecurityStore = default(DocumentSecurityStore), string Name = default(string), string ReturnFormat = default(string), List<SignatureDataInfo> SignatureDataInfos = default(List<SignatureDataInfo>), TimeStampField TimeStampField = default(TimeStampField))
         {
@@ -56,9 +57,8 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Data
         /// </summary>
-        /// <value></value>
         [DataMember(Name="data", EmitDefaultValue=false)]
         public string Data { get; set; }
         /// <summary>
@@ -73,21 +73,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentSecurityStore", EmitDefaultValue=false)]
         public DocumentSecurityStore DocumentSecurityStore { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Name
         /// </summary>
-        /// <value></value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets ReturnFormat
         /// </summary>
-        /// <value></value>
         [DataMember(Name="returnFormat", EmitDefaultValue=false)]
         public string ReturnFormat { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureDataInfos
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureDataInfos", EmitDefaultValue=false)]
         public List<SignatureDataInfo> SignatureDataInfos { get; set; }
         /// <summary>
@@ -217,5 +214,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

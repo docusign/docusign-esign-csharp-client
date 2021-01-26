@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SignatureProperties" /> class.
         /// </summary>
-        /// <param name="Filter">.</param>
-        /// <param name="SubFilter">.</param>
+        /// <param name="Filter">Filter.</param>
+        /// <param name="SubFilter">SubFilter.</param>
         public SignatureProperties(string Filter = default(string), string SubFilter = default(string))
         {
             this.Filter = Filter;
@@ -46,15 +47,13 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Filter
         /// </summary>
-        /// <value></value>
         [DataMember(Name="filter", EmitDefaultValue=false)]
         public string Filter { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SubFilter
         /// </summary>
-        /// <value></value>
         [DataMember(Name="subFilter", EmitDefaultValue=false)]
         public string SubFilter { get; set; }
         /// <summary>
@@ -139,5 +138,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

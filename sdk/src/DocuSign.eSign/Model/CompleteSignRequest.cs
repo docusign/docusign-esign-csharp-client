@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CompleteSignRequest" /> class.
         /// </summary>
-        /// <param name="Certificate">.</param>
-        /// <param name="CorrelationId">.</param>
-        /// <param name="DocumentUpdateInfos">.</param>
-        /// <param name="MaxSignatureLength">.</param>
+        /// <param name="Certificate">Certificate.</param>
+        /// <param name="CorrelationId">CorrelationId.</param>
+        /// <param name="DocumentUpdateInfos">DocumentUpdateInfos.</param>
+        /// <param name="MaxSignatureLength">MaxSignatureLength.</param>
         /// <param name="SigningLocation">Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online..</param>
         /// <param name="TransactionId"> Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The &#x60;transactionId&#x60; property can be used determine an envelope&#39;s status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned..</param>
         public CompleteSignRequest(string Certificate = default(string), string CorrelationId = default(string), List<DocumentUpdateInfo> DocumentUpdateInfos = default(List<DocumentUpdateInfo>), string MaxSignatureLength = default(string), string SigningLocation = default(string), string TransactionId = default(string))
@@ -54,27 +55,23 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Certificate
         /// </summary>
-        /// <value></value>
         [DataMember(Name="certificate", EmitDefaultValue=false)]
         public string Certificate { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets CorrelationId
         /// </summary>
-        /// <value></value>
         [DataMember(Name="correlationId", EmitDefaultValue=false)]
         public string CorrelationId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets DocumentUpdateInfos
         /// </summary>
-        /// <value></value>
         [DataMember(Name="documentUpdateInfos", EmitDefaultValue=false)]
         public List<DocumentUpdateInfo> DocumentUpdateInfos { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MaxSignatureLength
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maxSignatureLength", EmitDefaultValue=false)]
         public string MaxSignatureLength { get; set; }
         /// <summary>
@@ -203,5 +200,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

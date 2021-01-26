@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Credential" /> class.
         /// </summary>
         /// <param name="AccessCode">If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account&#39;s access code format setting.  If blank, but the signer &#x60;accessCode&#x60; property is set in the envelope, then that value is used.  If blank and the signer &#x60;accessCode&#x60; property is not set, then the access code is not required..</param>
-        /// <param name="Type">.</param>
+        /// <param name="Type">Type.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
         public Credential(string AccessCode = default(string), string Type = default(string), string Value = default(string))
         {
@@ -54,9 +55,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="accessCode", EmitDefaultValue=false)]
         public string AccessCode { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Type
         /// </summary>
-        /// <value></value>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
         /// <summary>
@@ -155,5 +155,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -33,70 +34,7 @@ namespace DocuSign.eSign.Model
         {
             // Empty Constructor
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DisplayApplianceSignerAttachment" /> class.
-        /// </summary>
-        /// <param name="AttachmentDescription">.</param>
-        /// <param name="AttachmentTabId">.</param>
-        /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
-        /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
-        /// <param name="PageCount">.</param>
-        /// <param name="PageId">.</param>
-        /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
-        public DisplayApplianceSignerAttachment(string AttachmentDescription = default(string), string AttachmentTabId = default(string), string DocumentId = default(string), string EnvelopeId = default(string), int? PageCount = default(int?), string PageId = default(string), string RecipientId = default(string))
-        {
-            this.AttachmentDescription = AttachmentDescription;
-            this.AttachmentTabId = AttachmentTabId;
-            this.DocumentId = DocumentId;
-            this.EnvelopeId = EnvelopeId;
-            this.PageCount = PageCount;
-            this.PageId = PageId;
-            this.RecipientId = RecipientId;
-        }
         
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="attachmentDescription", EmitDefaultValue=false)]
-        public string AttachmentDescription { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="attachmentTabId", EmitDefaultValue=false)]
-        public string AttachmentTabId { get; set; }
-        /// <summary>
-        /// Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute.
-        /// </summary>
-        /// <value>Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute.</value>
-        [DataMember(Name="documentId", EmitDefaultValue=false)]
-        public string DocumentId { get; set; }
-        /// <summary>
-        /// The envelope ID of the envelope status that failed to post.
-        /// </summary>
-        /// <value>The envelope ID of the envelope status that failed to post.</value>
-        [DataMember(Name="envelopeId", EmitDefaultValue=false)]
-        public string EnvelopeId { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="pageCount", EmitDefaultValue=false)]
-        public int? PageCount { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="pageId", EmitDefaultValue=false)]
-        public string PageId { get; set; }
-        /// <summary>
-        /// Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
-        /// </summary>
-        /// <value>Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.</value>
-        [DataMember(Name="recipientId", EmitDefaultValue=false)]
-        public string RecipientId { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -105,13 +43,6 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DisplayApplianceSignerAttachment {\n");
-            sb.Append("  AttachmentDescription: ").Append(AttachmentDescription).Append("\n");
-            sb.Append("  AttachmentTabId: ").Append(AttachmentTabId).Append("\n");
-            sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
-            sb.Append("  EnvelopeId: ").Append(EnvelopeId).Append("\n");
-            sb.Append("  PageCount: ").Append(PageCount).Append("\n");
-            sb.Append("  PageId: ").Append(PageId).Append("\n");
-            sb.Append("  RecipientId: ").Append(RecipientId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,42 +78,7 @@ namespace DocuSign.eSign.Model
             if (other == null)
                 return false;
 
-            return 
-                (
-                    this.AttachmentDescription == other.AttachmentDescription ||
-                    this.AttachmentDescription != null &&
-                    this.AttachmentDescription.Equals(other.AttachmentDescription)
-                ) && 
-                (
-                    this.AttachmentTabId == other.AttachmentTabId ||
-                    this.AttachmentTabId != null &&
-                    this.AttachmentTabId.Equals(other.AttachmentTabId)
-                ) && 
-                (
-                    this.DocumentId == other.DocumentId ||
-                    this.DocumentId != null &&
-                    this.DocumentId.Equals(other.DocumentId)
-                ) && 
-                (
-                    this.EnvelopeId == other.EnvelopeId ||
-                    this.EnvelopeId != null &&
-                    this.EnvelopeId.Equals(other.EnvelopeId)
-                ) && 
-                (
-                    this.PageCount == other.PageCount ||
-                    this.PageCount != null &&
-                    this.PageCount.Equals(other.PageCount)
-                ) && 
-                (
-                    this.PageId == other.PageId ||
-                    this.PageId != null &&
-                    this.PageId.Equals(other.PageId)
-                ) && 
-                (
-                    this.RecipientId == other.RecipientId ||
-                    this.RecipientId != null &&
-                    this.RecipientId.Equals(other.RecipientId)
-                );
+            return false;
         }
 
         /// <summary>
@@ -196,20 +92,6 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.AttachmentDescription != null)
-                    hash = hash * 59 + this.AttachmentDescription.GetHashCode();
-                if (this.AttachmentTabId != null)
-                    hash = hash * 59 + this.AttachmentTabId.GetHashCode();
-                if (this.DocumentId != null)
-                    hash = hash * 59 + this.DocumentId.GetHashCode();
-                if (this.EnvelopeId != null)
-                    hash = hash * 59 + this.EnvelopeId.GetHashCode();
-                if (this.PageCount != null)
-                    hash = hash * 59 + this.PageCount.GetHashCode();
-                if (this.PageId != null)
-                    hash = hash * 59 + this.PageId.GetHashCode();
-                if (this.RecipientId != null)
-                    hash = hash * 59 + this.RecipientId.GetHashCode();
                 return hash;
             }
         }
@@ -219,5 +101,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

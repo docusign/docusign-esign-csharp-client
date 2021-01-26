@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -33,53 +34,7 @@ namespace DocuSign.eSign.Model
         {
             // Empty Constructor
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DisplayApplianceInfo" /> class.
-        /// </summary>
-        /// <param name="DocumentData">.</param>
-        /// <param name="DocumentPages">.</param>
-        /// <param name="EnvelopeData">EnvelopeData.</param>
-        /// <param name="PageData">.</param>
-        /// <param name="RecipientData">.</param>
-        public DisplayApplianceInfo(List<DisplayApplianceDocument> DocumentData = default(List<DisplayApplianceDocument>), List<DisplayApplianceDocumentPage> DocumentPages = default(List<DisplayApplianceDocumentPage>), DisplayApplianceEnvelope EnvelopeData = default(DisplayApplianceEnvelope), List<DisplayAppliancePage> PageData = default(List<DisplayAppliancePage>), List<DisplayApplianceRecipient> RecipientData = default(List<DisplayApplianceRecipient>))
-        {
-            this.DocumentData = DocumentData;
-            this.DocumentPages = DocumentPages;
-            this.EnvelopeData = EnvelopeData;
-            this.PageData = PageData;
-            this.RecipientData = RecipientData;
-        }
         
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="documentData", EmitDefaultValue=false)]
-        public List<DisplayApplianceDocument> DocumentData { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="documentPages", EmitDefaultValue=false)]
-        public List<DisplayApplianceDocumentPage> DocumentPages { get; set; }
-        /// <summary>
-        /// Gets or Sets EnvelopeData
-        /// </summary>
-        [DataMember(Name="envelopeData", EmitDefaultValue=false)]
-        public DisplayApplianceEnvelope EnvelopeData { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="pageData", EmitDefaultValue=false)]
-        public List<DisplayAppliancePage> PageData { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <value></value>
-        [DataMember(Name="recipientData", EmitDefaultValue=false)]
-        public List<DisplayApplianceRecipient> RecipientData { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -88,11 +43,6 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DisplayApplianceInfo {\n");
-            sb.Append("  DocumentData: ").Append(DocumentData).Append("\n");
-            sb.Append("  DocumentPages: ").Append(DocumentPages).Append("\n");
-            sb.Append("  EnvelopeData: ").Append(EnvelopeData).Append("\n");
-            sb.Append("  PageData: ").Append(PageData).Append("\n");
-            sb.Append("  RecipientData: ").Append(RecipientData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -128,32 +78,7 @@ namespace DocuSign.eSign.Model
             if (other == null)
                 return false;
 
-            return 
-                (
-                    this.DocumentData == other.DocumentData ||
-                    this.DocumentData != null &&
-                    this.DocumentData.SequenceEqual(other.DocumentData)
-                ) && 
-                (
-                    this.DocumentPages == other.DocumentPages ||
-                    this.DocumentPages != null &&
-                    this.DocumentPages.SequenceEqual(other.DocumentPages)
-                ) && 
-                (
-                    this.EnvelopeData == other.EnvelopeData ||
-                    this.EnvelopeData != null &&
-                    this.EnvelopeData.Equals(other.EnvelopeData)
-                ) && 
-                (
-                    this.PageData == other.PageData ||
-                    this.PageData != null &&
-                    this.PageData.SequenceEqual(other.PageData)
-                ) && 
-                (
-                    this.RecipientData == other.RecipientData ||
-                    this.RecipientData != null &&
-                    this.RecipientData.SequenceEqual(other.RecipientData)
-                );
+            return false;
         }
 
         /// <summary>
@@ -167,16 +92,6 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.DocumentData != null)
-                    hash = hash * 59 + this.DocumentData.GetHashCode();
-                if (this.DocumentPages != null)
-                    hash = hash * 59 + this.DocumentPages.GetHashCode();
-                if (this.EnvelopeData != null)
-                    hash = hash * 59 + this.EnvelopeData.GetHashCode();
-                if (this.PageData != null)
-                    hash = hash * 59 + this.PageData.GetHashCode();
-                if (this.RecipientData != null)
-                    hash = hash * 59 + this.RecipientData.GetHashCode();
                 return hash;
             }
         }
@@ -186,5 +101,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

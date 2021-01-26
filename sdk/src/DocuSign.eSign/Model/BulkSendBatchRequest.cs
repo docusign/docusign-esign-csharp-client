@@ -25,37 +25,30 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Seal
+    /// BulkSendBatchRequest
     /// </summary>
     [DataContract]
-    public partial class Seal :  IEquatable<Seal>, IValidatableObject
+    public partial class BulkSendBatchRequest :  IEquatable<BulkSendBatchRequest>, IValidatableObject
     {
-        public Seal()
+        public BulkSendBatchRequest()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Seal" /> class.
+        /// Initializes a new instance of the <see cref="BulkSendBatchRequest" /> class.
         /// </summary>
-        /// <param name="Configuration">Configuration.</param>
-        /// <param name="SealIdentifier">SealIdentifier.</param>
-        public Seal(Dictionary<string, string> Configuration = default(Dictionary<string, string>), string SealIdentifier = default(string))
+        /// <param name="BatchName">BatchName.</param>
+        public BulkSendBatchRequest(string BatchName = default(string))
         {
-            this.Configuration = Configuration;
-            this.SealIdentifier = SealIdentifier;
+            this.BatchName = BatchName;
         }
         
         /// <summary>
-        /// Gets or Sets Configuration
+        /// Gets or Sets BatchName
         /// </summary>
-        [DataMember(Name="configuration", EmitDefaultValue=false)]
-        public Dictionary<string, string> Configuration { get; set; }
-        /// <summary>
-        /// Gets or Sets SealIdentifier
-        /// </summary>
-        [DataMember(Name="sealIdentifier", EmitDefaultValue=false)]
-        public string SealIdentifier { get; set; }
+        [DataMember(Name="batchName", EmitDefaultValue=false)]
+        public string BatchName { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -63,9 +56,8 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Seal {\n");
-            sb.Append("  Configuration: ").Append(Configuration).Append("\n");
-            sb.Append("  SealIdentifier: ").Append(SealIdentifier).Append("\n");
+            sb.Append("class BulkSendBatchRequest {\n");
+            sb.Append("  BatchName: ").Append(BatchName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +79,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as Seal);
+            return this.Equals(obj as BulkSendBatchRequest);
         }
 
         /// <summary>
-        /// Returns true if Seal instances are equal
+        /// Returns true if BulkSendBatchRequest instances are equal
         /// </summary>
-        /// <param name="other">Instance of Seal to be compared</param>
+        /// <param name="other">Instance of BulkSendBatchRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Seal other)
+        public bool Equals(BulkSendBatchRequest other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -103,14 +95,9 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.Configuration == other.Configuration ||
-                    this.Configuration != null &&
-                    this.Configuration.SequenceEqual(other.Configuration)
-                ) && 
-                (
-                    this.SealIdentifier == other.SealIdentifier ||
-                    this.SealIdentifier != null &&
-                    this.SealIdentifier.Equals(other.SealIdentifier)
+                    this.BatchName == other.BatchName ||
+                    this.BatchName != null &&
+                    this.BatchName.Equals(other.BatchName)
                 );
         }
 
@@ -125,10 +112,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Configuration != null)
-                    hash = hash * 59 + this.Configuration.GetHashCode();
-                if (this.SealIdentifier != null)
-                    hash = hash * 59 + this.SealIdentifier.GetHashCode();
+                if (this.BatchName != null)
+                    hash = hash * 59 + this.BatchName.GetHashCode();
                 return hash;
             }
         }

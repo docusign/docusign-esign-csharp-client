@@ -47,6 +47,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IncludedSeats">The number of seats (users) included..</param>
         /// <param name="IncrementalSeats">Reserved: TBD.</param>
         /// <param name="IsDowngrade">IsDowngrade.</param>
+        /// <param name="NotificationType">NotificationType.</param>
         /// <param name="OtherDiscountPercent"> Any other percentage discount for the plan. .</param>
         /// <param name="PaymentCycle">PaymentCycle.</param>
         /// <param name="PaymentMethod"> The payment method used with the plan. The possible values are: CreditCard, PurchaseOrder, Premium, or Freemium. .</param>
@@ -59,7 +60,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SeatDiscounts"> A complex type that contains any seat discount information.  Values are: BeginSeatCount, EndSeatCount, and SeatDiscountPercent.  .</param>
         /// <param name="SupportIncidentFee">The support incident fee charged for each support incident..</param>
         /// <param name="SupportPlanFee">The support plan fee charged for this plan..</param>
-        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
+        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string NotificationType = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
         {
             this.AddOns = AddOns;
             this.CanCancelRenewal = CanCancelRenewal;
@@ -70,6 +71,7 @@ namespace DocuSign.eSign.Model
             this.IncludedSeats = IncludedSeats;
             this.IncrementalSeats = IncrementalSeats;
             this.IsDowngrade = IsDowngrade;
+            this.NotificationType = NotificationType;
             this.OtherDiscountPercent = OtherDiscountPercent;
             this.PaymentCycle = PaymentCycle;
             this.PaymentMethod = PaymentMethod;
@@ -136,6 +138,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="isDowngrade", EmitDefaultValue=false)]
         public string IsDowngrade { get; set; }
+        /// <summary>
+        /// Gets or Sets NotificationType
+        /// </summary>
+        [DataMember(Name="notificationType", EmitDefaultValue=false)]
+        public string NotificationType { get; set; }
         /// <summary>
         ///  Any other percentage discount for the plan. 
         /// </summary>
@@ -222,6 +229,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IncludedSeats: ").Append(IncludedSeats).Append("\n");
             sb.Append("  IncrementalSeats: ").Append(IncrementalSeats).Append("\n");
             sb.Append("  IsDowngrade: ").Append(IsDowngrade).Append("\n");
+            sb.Append("  NotificationType: ").Append(NotificationType).Append("\n");
             sb.Append("  OtherDiscountPercent: ").Append(OtherDiscountPercent).Append("\n");
             sb.Append("  PaymentCycle: ").Append(PaymentCycle).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
@@ -316,6 +324,11 @@ namespace DocuSign.eSign.Model
                     this.IsDowngrade.Equals(other.IsDowngrade)
                 ) && 
                 (
+                    this.NotificationType == other.NotificationType ||
+                    this.NotificationType != null &&
+                    this.NotificationType.Equals(other.NotificationType)
+                ) && 
+                (
                     this.OtherDiscountPercent == other.OtherDiscountPercent ||
                     this.OtherDiscountPercent != null &&
                     this.OtherDiscountPercent.Equals(other.OtherDiscountPercent)
@@ -406,6 +419,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IncrementalSeats.GetHashCode();
                 if (this.IsDowngrade != null)
                     hash = hash * 59 + this.IsDowngrade.GetHashCode();
+                if (this.NotificationType != null)
+                    hash = hash * 59 + this.NotificationType.GetHashCode();
                 if (this.OtherDiscountPercent != null)
                     hash = hash * 59 + this.OtherDiscountPercent.GetHashCode();
                 if (this.PaymentCycle != null)

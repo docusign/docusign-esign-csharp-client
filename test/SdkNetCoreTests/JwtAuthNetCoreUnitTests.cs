@@ -286,6 +286,7 @@ namespace SdkNetCoreTests
             Assert.IsNotNull(envelopes.Envelopes[0].Status);
         }
 
+        /* Deprecated
         private BulkRecipientsSummaryResponse MockBulkRecipientsSummaryResponse()
         {
             string bulkRecipientsCSV = "name,email\n" + "John Doe,john.doe@mailinator.com\n" + "Jane Doe,jane.doe@mailinator.com";
@@ -295,6 +296,7 @@ namespace SdkNetCoreTests
 
             return bulkEnvelopesApi.UpdateRecipients(testConfig.AccountId, testConfig.EnvelopeId, "1", bulkRecipientsRequest);
         }
+
 
         [TestMethod]
         public void JwtBulkEnvelopesApiTest()
@@ -359,18 +361,15 @@ namespace SdkNetCoreTests
 
             testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
             #endregion
-            var response = MockBulkRecipientsSummaryResponse();
 
             // update the status of the enve
             Envelope envelope = new Envelope();
             envelope.Status = "sent";
 
             envelopesApi.Update(testConfig.AccountId, testConfig.EnvelopeId, envelope);
-
-            Assert.IsNotNull(response);
-            Assert.IsNotNull(response.BulkRecipientsUri);
-            Assert.IsNotNull(response.BulkRecipientsCount);
         }
+        
+        */
 
         [TestMethod]
         public void JwtListDocumentsAndDownloadTest()

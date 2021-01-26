@@ -53,6 +53,8 @@ namespace DocuSign.eSign.Model
         /// <param name="CreatedDate">CreatedDate.</param>
         /// <param name="CurrencyCode">Specifies the ISO currency code for the account..</param>
         /// <param name="CurrentPlanId">Identifies the plan that was used create this account..</param>
+        /// <param name="DisplayApplianceStartUrl">DisplayApplianceStartUrl.</param>
+        /// <param name="DisplayApplianceUrl">DisplayApplianceUrl.</param>
         /// <param name="DistributorCode">The code that identifies the billing plan groups and plans for the new account..</param>
         /// <param name="DocuSignLandingUrl">DocuSignLandingUrl.</param>
         /// <param name="DssValues">DssValues.</param>
@@ -72,7 +74,8 @@ namespace DocuSign.eSign.Model
         /// <param name="Status21CFRPart11">Status21CFRPart11.</param>
         /// <param name="SuspensionDate">SuspensionDate.</param>
         /// <param name="SuspensionStatus">SuspensionStatus.</param>
-        public AccountInformation(string AccountIdGuid = default(string), string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), string AllowTransactionRooms = default(string), string BillingPeriodDaysRemaining = default(string), string BillingPeriodEndDate = default(string), string BillingPeriodEnvelopesAllowed = default(string), string BillingPeriodEnvelopesSent = default(string), string BillingPeriodStartDate = default(string), string BillingProfile = default(string), string CanUpgrade = default(string), string ConnectPermission = default(string), string CreatedDate = default(string), string CurrencyCode = default(string), string CurrentPlanId = default(string), string DistributorCode = default(string), string DocuSignLandingUrl = default(string), Dictionary<string, string> DssValues = default(Dictionary<string, string>), string EnvelopeSendingBlocked = default(string), string EnvelopeUnitPrice = default(string), string ExternalAccountId = default(string), string ForgottenPasswordQuestionsCount = default(string), string IsDowngrade = default(string), string PaymentMethod = default(string), string PlanClassification = default(string), string PlanEndDate = default(string), string PlanName = default(string), string PlanStartDate = default(string), List<RecipientDomain> RecipientDomains = default(List<RecipientDomain>), string SeatsAllowed = default(string), string SeatsInUse = default(string), string Status21CFRPart11 = default(string), string SuspensionDate = default(string), string SuspensionStatus = default(string))
+        /// <param name="UseDisplayAppliance">UseDisplayAppliance.</param>
+        public AccountInformation(string AccountIdGuid = default(string), string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), string AllowTransactionRooms = default(string), string BillingPeriodDaysRemaining = default(string), string BillingPeriodEndDate = default(string), string BillingPeriodEnvelopesAllowed = default(string), string BillingPeriodEnvelopesSent = default(string), string BillingPeriodStartDate = default(string), string BillingProfile = default(string), string CanUpgrade = default(string), string ConnectPermission = default(string), string CreatedDate = default(string), string CurrencyCode = default(string), string CurrentPlanId = default(string), string DisplayApplianceStartUrl = default(string), string DisplayApplianceUrl = default(string), string DistributorCode = default(string), string DocuSignLandingUrl = default(string), Dictionary<string, string> DssValues = default(Dictionary<string, string>), string EnvelopeSendingBlocked = default(string), string EnvelopeUnitPrice = default(string), string ExternalAccountId = default(string), string ForgottenPasswordQuestionsCount = default(string), string IsDowngrade = default(string), string PaymentMethod = default(string), string PlanClassification = default(string), string PlanEndDate = default(string), string PlanName = default(string), string PlanStartDate = default(string), List<RecipientDomain> RecipientDomains = default(List<RecipientDomain>), string SeatsAllowed = default(string), string SeatsInUse = default(string), string Status21CFRPart11 = default(string), string SuspensionDate = default(string), string SuspensionStatus = default(string), bool? UseDisplayAppliance = default(bool?))
         {
             this.AccountIdGuid = AccountIdGuid;
             this.AccountName = AccountName;
@@ -89,6 +92,8 @@ namespace DocuSign.eSign.Model
             this.CreatedDate = CreatedDate;
             this.CurrencyCode = CurrencyCode;
             this.CurrentPlanId = CurrentPlanId;
+            this.DisplayApplianceStartUrl = DisplayApplianceStartUrl;
+            this.DisplayApplianceUrl = DisplayApplianceUrl;
             this.DistributorCode = DistributorCode;
             this.DocuSignLandingUrl = DocuSignLandingUrl;
             this.DssValues = DssValues;
@@ -108,6 +113,7 @@ namespace DocuSign.eSign.Model
             this.Status21CFRPart11 = Status21CFRPart11;
             this.SuspensionDate = SuspensionDate;
             this.SuspensionStatus = SuspensionStatus;
+            this.UseDisplayAppliance = UseDisplayAppliance;
         }
         
         /// <summary>
@@ -197,6 +203,16 @@ namespace DocuSign.eSign.Model
         /// <value>Identifies the plan that was used create this account.</value>
         [DataMember(Name="currentPlanId", EmitDefaultValue=false)]
         public string CurrentPlanId { get; set; }
+        /// <summary>
+        /// Gets or Sets DisplayApplianceStartUrl
+        /// </summary>
+        [DataMember(Name="displayApplianceStartUrl", EmitDefaultValue=false)]
+        public string DisplayApplianceStartUrl { get; set; }
+        /// <summary>
+        /// Gets or Sets DisplayApplianceUrl
+        /// </summary>
+        [DataMember(Name="displayApplianceUrl", EmitDefaultValue=false)]
+        public string DisplayApplianceUrl { get; set; }
         /// <summary>
         /// The code that identifies the billing plan groups and plans for the new account.
         /// </summary>
@@ -299,6 +315,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="suspensionStatus", EmitDefaultValue=false)]
         public string SuspensionStatus { get; set; }
         /// <summary>
+        /// Gets or Sets UseDisplayAppliance
+        /// </summary>
+        [DataMember(Name="useDisplayAppliance", EmitDefaultValue=false)]
+        public bool? UseDisplayAppliance { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -321,6 +342,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
             sb.Append("  CurrentPlanId: ").Append(CurrentPlanId).Append("\n");
+            sb.Append("  DisplayApplianceStartUrl: ").Append(DisplayApplianceStartUrl).Append("\n");
+            sb.Append("  DisplayApplianceUrl: ").Append(DisplayApplianceUrl).Append("\n");
             sb.Append("  DistributorCode: ").Append(DistributorCode).Append("\n");
             sb.Append("  DocuSignLandingUrl: ").Append(DocuSignLandingUrl).Append("\n");
             sb.Append("  DssValues: ").Append(DssValues).Append("\n");
@@ -340,6 +363,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Status21CFRPart11: ").Append(Status21CFRPart11).Append("\n");
             sb.Append("  SuspensionDate: ").Append(SuspensionDate).Append("\n");
             sb.Append("  SuspensionStatus: ").Append(SuspensionStatus).Append("\n");
+            sb.Append("  UseDisplayAppliance: ").Append(UseDisplayAppliance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -452,6 +476,16 @@ namespace DocuSign.eSign.Model
                     this.CurrentPlanId.Equals(other.CurrentPlanId)
                 ) && 
                 (
+                    this.DisplayApplianceStartUrl == other.DisplayApplianceStartUrl ||
+                    this.DisplayApplianceStartUrl != null &&
+                    this.DisplayApplianceStartUrl.Equals(other.DisplayApplianceStartUrl)
+                ) && 
+                (
+                    this.DisplayApplianceUrl == other.DisplayApplianceUrl ||
+                    this.DisplayApplianceUrl != null &&
+                    this.DisplayApplianceUrl.Equals(other.DisplayApplianceUrl)
+                ) && 
+                (
                     this.DistributorCode == other.DistributorCode ||
                     this.DistributorCode != null &&
                     this.DistributorCode.Equals(other.DistributorCode)
@@ -545,6 +579,11 @@ namespace DocuSign.eSign.Model
                     this.SuspensionStatus == other.SuspensionStatus ||
                     this.SuspensionStatus != null &&
                     this.SuspensionStatus.Equals(other.SuspensionStatus)
+                ) && 
+                (
+                    this.UseDisplayAppliance == other.UseDisplayAppliance ||
+                    this.UseDisplayAppliance != null &&
+                    this.UseDisplayAppliance.Equals(other.UseDisplayAppliance)
                 );
         }
 
@@ -589,6 +628,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CurrencyCode.GetHashCode();
                 if (this.CurrentPlanId != null)
                     hash = hash * 59 + this.CurrentPlanId.GetHashCode();
+                if (this.DisplayApplianceStartUrl != null)
+                    hash = hash * 59 + this.DisplayApplianceStartUrl.GetHashCode();
+                if (this.DisplayApplianceUrl != null)
+                    hash = hash * 59 + this.DisplayApplianceUrl.GetHashCode();
                 if (this.DistributorCode != null)
                     hash = hash * 59 + this.DistributorCode.GetHashCode();
                 if (this.DocuSignLandingUrl != null)
@@ -627,6 +670,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SuspensionDate.GetHashCode();
                 if (this.SuspensionStatus != null)
                     hash = hash * 59 + this.SuspensionStatus.GetHashCode();
+                if (this.UseDisplayAppliance != null)
+                    hash = hash * 59 + this.UseDisplayAppliance.GetHashCode();
                 return hash;
             }
         }

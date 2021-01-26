@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentSecurityStore" /> class.
         /// </summary>
-        /// <param name="Certificates">.</param>
-        /// <param name="Crls">.</param>
-        /// <param name="Ocsps">.</param>
+        /// <param name="Certificates">Certificates.</param>
+        /// <param name="Crls">Crls.</param>
+        /// <param name="Ocsps">Ocsps.</param>
         public DocumentSecurityStore(List<string> Certificates = default(List<string>), List<string> Crls = default(List<string>), List<string> Ocsps = default(List<string>))
         {
             this.Certificates = Certificates;
@@ -48,21 +49,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets Certificates
         /// </summary>
-        /// <value></value>
         [DataMember(Name="certificates", EmitDefaultValue=false)]
         public List<string> Certificates { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Crls
         /// </summary>
-        /// <value></value>
         [DataMember(Name="crls", EmitDefaultValue=false)]
         public List<string> Crls { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Ocsps
         /// </summary>
-        /// <value></value>
         [DataMember(Name="ocsps", EmitDefaultValue=false)]
         public List<string> Ocsps { get; set; }
         /// <summary>
@@ -155,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -39,9 +40,9 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Documents">Complex element contains the details on the documents in the envelope..</param>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
-        /// <param name="Language">.</param>
-        /// <param name="RedirectionUrl">.</param>
-        /// <param name="RemainingSignatureRequests">.</param>
+        /// <param name="Language">Language.</param>
+        /// <param name="RedirectionUrl">RedirectionUrl.</param>
+        /// <param name="RemainingSignatureRequests">RemainingSignatureRequests.</param>
         /// <param name="Seal">Seal.</param>
         /// <param name="User">User.</param>
         public SignHashSessionInfoResponse(List<SignHashDocument> Documents = default(List<SignHashDocument>), string EnvelopeId = default(string), string Language = default(string), string RedirectionUrl = default(string), string RemainingSignatureRequests = default(string), Seal Seal = default(Seal), User User = default(User))
@@ -68,21 +69,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopeId", EmitDefaultValue=false)]
         public string EnvelopeId { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Language
         /// </summary>
-        /// <value></value>
         [DataMember(Name="language", EmitDefaultValue=false)]
         public string Language { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RedirectionUrl
         /// </summary>
-        /// <value></value>
         [DataMember(Name="redirectionUrl", EmitDefaultValue=false)]
         public string RedirectionUrl { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets RemainingSignatureRequests
         /// </summary>
-        /// <value></value>
         [DataMember(Name="remainingSignatureRequests", EmitDefaultValue=false)]
         public string RemainingSignatureRequests { get; set; }
         /// <summary>
@@ -217,5 +215,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,16 +38,15 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateTransactionResponse" /> class.
         /// </summary>
-        /// <param name="RedirectionUrl">.</param>
+        /// <param name="RedirectionUrl">RedirectionUrl.</param>
         public UpdateTransactionResponse(string RedirectionUrl = default(string))
         {
             this.RedirectionUrl = RedirectionUrl;
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets RedirectionUrl
         /// </summary>
-        /// <value></value>
         [DataMember(Name="redirectionUrl", EmitDefaultValue=false)]
         public string RedirectionUrl { get; set; }
         /// <summary>
@@ -123,5 +123,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

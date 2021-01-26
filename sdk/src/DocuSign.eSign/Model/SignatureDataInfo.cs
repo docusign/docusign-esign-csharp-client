@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="SignatureDataInfo" /> class.
         /// </summary>
         /// <param name="DocumentSecurityStore">DocumentSecurityStore.</param>
-        /// <param name="SignatureData">.</param>
-        /// <param name="SignatureFieldName">.</param>
+        /// <param name="SignatureData">SignatureData.</param>
+        /// <param name="SignatureFieldName">SignatureFieldName.</param>
         public SignatureDataInfo(DocumentSecurityStore DocumentSecurityStore = default(DocumentSecurityStore), string SignatureData = default(string), string SignatureFieldName = default(string))
         {
             this.DocumentSecurityStore = DocumentSecurityStore;
@@ -53,15 +54,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentSecurityStore", EmitDefaultValue=false)]
         public DocumentSecurityStore DocumentSecurityStore { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureData
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureData", EmitDefaultValue=false)]
         public string SignatureData { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets SignatureFieldName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="signatureFieldName", EmitDefaultValue=false)]
         public string SignatureFieldName { get; set; }
         /// <summary>
@@ -154,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

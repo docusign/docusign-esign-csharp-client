@@ -757,7 +757,7 @@ namespace DocuSign.eSign.Client
         public void SetBasePath(string basePath)
         {
             this.basePath = basePath;
-            if (Configuration != null)
+            if(Configuration != null)
             {
                 Configuration.BasePath = this.basePath;
             }
@@ -1072,11 +1072,11 @@ namespace DocuSign.eSign.Client
                 OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
                 if (!this.Configuration.DefaultHeader.ContainsKey("Authorization"))
                 {
-                    this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+                   this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
                 }
                 else
                 {
-                    this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
+                   this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
                 }
                 return tokenInfo;
             }
@@ -1169,11 +1169,11 @@ namespace DocuSign.eSign.Client
                 OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
                 if (!this.Configuration.DefaultHeader.ContainsKey("Authorization"))
                 {
-                    this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+                   this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
                 }
                 else
                 {
-                    this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
+                   this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
                 }
                 return tokenInfo;
             }

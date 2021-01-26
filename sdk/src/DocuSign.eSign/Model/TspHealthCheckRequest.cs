@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -37,11 +38,11 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TspHealthCheckRequest" /> class.
         /// </summary>
-        /// <param name="AppVersion">.</param>
-        /// <param name="Description">.</param>
-        /// <param name="Error">.</param>
+        /// <param name="AppVersion">AppVersion.</param>
+        /// <param name="Description">Description.</param>
+        /// <param name="Error">Error.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        /// <param name="StatusDescription">.</param>
+        /// <param name="StatusDescription">StatusDescription.</param>
         public TspHealthCheckRequest(string AppVersion = default(string), string Description = default(string), string Error = default(string), string Status = default(string), List<TspHealthCheckStatusDescription> StatusDescription = default(List<TspHealthCheckStatusDescription>))
         {
             this.AppVersion = AppVersion;
@@ -52,21 +53,18 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// 
+        /// Gets or Sets AppVersion
         /// </summary>
-        /// <value></value>
         [DataMember(Name="appVersion", EmitDefaultValue=false)]
         public string AppVersion { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Description
         /// </summary>
-        /// <value></value>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets Error
         /// </summary>
-        /// <value></value>
         [DataMember(Name="error", EmitDefaultValue=false)]
         public string Error { get; set; }
         /// <summary>
@@ -76,9 +74,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets StatusDescription
         /// </summary>
-        /// <value></value>
         [DataMember(Name="statusDescription", EmitDefaultValue=false)]
         public List<TspHealthCheckStatusDescription> StatusDescription { get; set; }
         /// <summary>
@@ -187,5 +184,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

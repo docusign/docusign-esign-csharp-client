@@ -1,5 +1,17 @@
 ﻿# DocuSign C# Client Changelog - eSignature API v2
 
+## [v3.8.1-rc] - eSignature API v2-20.4.01 - 01/20/2021
+### Changed
+*   Added support for version v2-20.4.01 of the DocuSign eSignature API.
+*   Updated the SDK release version
+
+## [v3.8.0-rc] - eSignature API v2-20.4.00.01 - 12/28/2020
+### Changed
+*   Added support for version v2-20.4.00.01 of the DocuSign eSignature API.
+*   Updated the SDK release version
+### Fixed
+- Expected field name in BrandsResponse model is `brandOptions` instead of `brands`. (DCM-4463)
+
 ## [v3.7.0] - eSignature API v2-20.3.00 - 10/01/2020
 ### Changed
 *   Added support for version v2-20.3.00 of the DocuSign eSignature API.

@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -38,8 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="TimeStampField" /> class.
         /// </summary>
         /// <param name="DocumentSecurityStore">DocumentSecurityStore.</param>
-        /// <param name="MaxTimeStampSignatureLength">.</param>
-        /// <param name="TimeStampFieldName">.</param>
+        /// <param name="MaxTimeStampSignatureLength">MaxTimeStampSignatureLength.</param>
+        /// <param name="TimeStampFieldName">TimeStampFieldName.</param>
         public TimeStampField(DocumentSecurityStore DocumentSecurityStore = default(DocumentSecurityStore), string MaxTimeStampSignatureLength = default(string), string TimeStampFieldName = default(string))
         {
             this.DocumentSecurityStore = DocumentSecurityStore;
@@ -53,15 +54,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentSecurityStore", EmitDefaultValue=false)]
         public DocumentSecurityStore DocumentSecurityStore { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets MaxTimeStampSignatureLength
         /// </summary>
-        /// <value></value>
         [DataMember(Name="maxTimeStampSignatureLength", EmitDefaultValue=false)]
         public string MaxTimeStampSignatureLength { get; set; }
         /// <summary>
-        /// 
+        /// Gets or Sets TimeStampFieldName
         /// </summary>
-        /// <value></value>
         [DataMember(Name="timeStampFieldName", EmitDefaultValue=false)]
         public string TimeStampFieldName { get; set; }
         /// <summary>
@@ -154,5 +153,4 @@ namespace DocuSign.eSign.Model
             yield break;
         }
     }
-
 }

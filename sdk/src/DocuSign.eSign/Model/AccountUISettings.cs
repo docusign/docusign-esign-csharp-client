@@ -42,6 +42,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AskAnAdmin">AskAnAdmin.</param>
         /// <param name="EnableAdminMessage">EnableAdminMessage.</param>
         /// <param name="EnableAdminMessageMetadata">EnableAdminMessageMetadata.</param>
+        /// <param name="EnableAdvancedPaymentsReactEdit">EnableAdvancedPaymentsReactEdit.</param>
         /// <param name="EnableEasySignCanUseMultiTemplateApply">EnableEasySignCanUseMultiTemplateApply.</param>
         /// <param name="EnableEasySignCanUseMultiTemplateApplyMetadata">EnableEasySignCanUseMultiTemplateApplyMetadata.</param>
         /// <param name="EnableEasySignTemplateUpload">EnableEasySignTemplateUpload.</param>
@@ -50,6 +51,8 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableEnvelopeCopyWithDataMetadata">EnableEnvelopeCopyWithDataMetadata.</param>
         /// <param name="EnableLegacyHomepageLink">EnableLegacyHomepageLink.</param>
         /// <param name="EnableLegacyHomepageLinkMetadata">EnableLegacyHomepageLinkMetadata.</param>
+        /// <param name="HasExternalLinkedAccounts">HasExternalLinkedAccounts.</param>
+        /// <param name="HasExternalLinkedAccountsMetadata">HasExternalLinkedAccountsMetadata.</param>
         /// <param name="HideSendAnEnvelope">HideSendAnEnvelope.</param>
         /// <param name="HideSendAnEnvelopeMetadata">HideSendAnEnvelopeMetadata.</param>
         /// <param name="HideUseATemplate">HideUseATemplate.</param>
@@ -64,12 +67,13 @@ namespace DocuSign.eSign.Model
         /// <param name="ShouldRedactAccessCodeMetadata">ShouldRedactAccessCodeMetadata.</param>
         /// <param name="UploadNewImageToSignOrInitial">UploadNewImageToSignOrInitial.</param>
         /// <param name="UploadNewImageToSignOrInitialMetadata">UploadNewImageToSignOrInitialMetadata.</param>
-        public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string EnableEnvelopeCopyWithData = default(string), SettingsMetadata EnableEnvelopeCopyWithDataMetadata = default(SettingsMetadata), string EnableLegacyHomepageLink = default(string), SettingsMetadata EnableLegacyHomepageLinkMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
+        public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableAdvancedPaymentsReactEdit = default(string), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string EnableEnvelopeCopyWithData = default(string), SettingsMetadata EnableEnvelopeCopyWithDataMetadata = default(SettingsMetadata), string EnableLegacyHomepageLink = default(string), SettingsMetadata EnableLegacyHomepageLinkMetadata = default(SettingsMetadata), string HasExternalLinkedAccounts = default(string), SettingsMetadata HasExternalLinkedAccountsMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
         {
             this.AdminMessage = AdminMessage;
             this.AskAnAdmin = AskAnAdmin;
             this.EnableAdminMessage = EnableAdminMessage;
             this.EnableAdminMessageMetadata = EnableAdminMessageMetadata;
+            this.EnableAdvancedPaymentsReactEdit = EnableAdvancedPaymentsReactEdit;
             this.EnableEasySignCanUseMultiTemplateApply = EnableEasySignCanUseMultiTemplateApply;
             this.EnableEasySignCanUseMultiTemplateApplyMetadata = EnableEasySignCanUseMultiTemplateApplyMetadata;
             this.EnableEasySignTemplateUpload = EnableEasySignTemplateUpload;
@@ -78,6 +82,8 @@ namespace DocuSign.eSign.Model
             this.EnableEnvelopeCopyWithDataMetadata = EnableEnvelopeCopyWithDataMetadata;
             this.EnableLegacyHomepageLink = EnableLegacyHomepageLink;
             this.EnableLegacyHomepageLinkMetadata = EnableLegacyHomepageLinkMetadata;
+            this.HasExternalLinkedAccounts = HasExternalLinkedAccounts;
+            this.HasExternalLinkedAccountsMetadata = HasExternalLinkedAccountsMetadata;
             this.HideSendAnEnvelope = HideSendAnEnvelope;
             this.HideSendAnEnvelopeMetadata = HideSendAnEnvelopeMetadata;
             this.HideUseATemplate = HideUseATemplate;
@@ -114,6 +120,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="enableAdminMessageMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableAdminMessageMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableAdvancedPaymentsReactEdit
+        /// </summary>
+        [DataMember(Name="enableAdvancedPaymentsReactEdit", EmitDefaultValue=false)]
+        public string EnableAdvancedPaymentsReactEdit { get; set; }
         /// <summary>
         /// Gets or Sets EnableEasySignCanUseMultiTemplateApply
         /// </summary>
@@ -154,6 +165,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="enableLegacyHomepageLinkMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableLegacyHomepageLinkMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets HasExternalLinkedAccounts
+        /// </summary>
+        [DataMember(Name="hasExternalLinkedAccounts", EmitDefaultValue=false)]
+        public string HasExternalLinkedAccounts { get; set; }
+        /// <summary>
+        /// Gets or Sets HasExternalLinkedAccountsMetadata
+        /// </summary>
+        [DataMember(Name="hasExternalLinkedAccountsMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata HasExternalLinkedAccountsMetadata { get; set; }
         /// <summary>
         /// Gets or Sets HideSendAnEnvelope
         /// </summary>
@@ -236,6 +257,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AskAnAdmin: ").Append(AskAnAdmin).Append("\n");
             sb.Append("  EnableAdminMessage: ").Append(EnableAdminMessage).Append("\n");
             sb.Append("  EnableAdminMessageMetadata: ").Append(EnableAdminMessageMetadata).Append("\n");
+            sb.Append("  EnableAdvancedPaymentsReactEdit: ").Append(EnableAdvancedPaymentsReactEdit).Append("\n");
             sb.Append("  EnableEasySignCanUseMultiTemplateApply: ").Append(EnableEasySignCanUseMultiTemplateApply).Append("\n");
             sb.Append("  EnableEasySignCanUseMultiTemplateApplyMetadata: ").Append(EnableEasySignCanUseMultiTemplateApplyMetadata).Append("\n");
             sb.Append("  EnableEasySignTemplateUpload: ").Append(EnableEasySignTemplateUpload).Append("\n");
@@ -244,6 +266,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnableEnvelopeCopyWithDataMetadata: ").Append(EnableEnvelopeCopyWithDataMetadata).Append("\n");
             sb.Append("  EnableLegacyHomepageLink: ").Append(EnableLegacyHomepageLink).Append("\n");
             sb.Append("  EnableLegacyHomepageLinkMetadata: ").Append(EnableLegacyHomepageLinkMetadata).Append("\n");
+            sb.Append("  HasExternalLinkedAccounts: ").Append(HasExternalLinkedAccounts).Append("\n");
+            sb.Append("  HasExternalLinkedAccountsMetadata: ").Append(HasExternalLinkedAccountsMetadata).Append("\n");
             sb.Append("  HideSendAnEnvelope: ").Append(HideSendAnEnvelope).Append("\n");
             sb.Append("  HideSendAnEnvelopeMetadata: ").Append(HideSendAnEnvelopeMetadata).Append("\n");
             sb.Append("  HideUseATemplate: ").Append(HideUseATemplate).Append("\n");
@@ -315,6 +339,11 @@ namespace DocuSign.eSign.Model
                     this.EnableAdminMessageMetadata.Equals(other.EnableAdminMessageMetadata)
                 ) && 
                 (
+                    this.EnableAdvancedPaymentsReactEdit == other.EnableAdvancedPaymentsReactEdit ||
+                    this.EnableAdvancedPaymentsReactEdit != null &&
+                    this.EnableAdvancedPaymentsReactEdit.Equals(other.EnableAdvancedPaymentsReactEdit)
+                ) && 
+                (
                     this.EnableEasySignCanUseMultiTemplateApply == other.EnableEasySignCanUseMultiTemplateApply ||
                     this.EnableEasySignCanUseMultiTemplateApply != null &&
                     this.EnableEasySignCanUseMultiTemplateApply.Equals(other.EnableEasySignCanUseMultiTemplateApply)
@@ -353,6 +382,16 @@ namespace DocuSign.eSign.Model
                     this.EnableLegacyHomepageLinkMetadata == other.EnableLegacyHomepageLinkMetadata ||
                     this.EnableLegacyHomepageLinkMetadata != null &&
                     this.EnableLegacyHomepageLinkMetadata.Equals(other.EnableLegacyHomepageLinkMetadata)
+                ) && 
+                (
+                    this.HasExternalLinkedAccounts == other.HasExternalLinkedAccounts ||
+                    this.HasExternalLinkedAccounts != null &&
+                    this.HasExternalLinkedAccounts.Equals(other.HasExternalLinkedAccounts)
+                ) && 
+                (
+                    this.HasExternalLinkedAccountsMetadata == other.HasExternalLinkedAccountsMetadata ||
+                    this.HasExternalLinkedAccountsMetadata != null &&
+                    this.HasExternalLinkedAccountsMetadata.Equals(other.HasExternalLinkedAccountsMetadata)
                 ) && 
                 (
                     this.HideSendAnEnvelope == other.HideSendAnEnvelope ||
@@ -445,6 +484,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnableAdminMessage.GetHashCode();
                 if (this.EnableAdminMessageMetadata != null)
                     hash = hash * 59 + this.EnableAdminMessageMetadata.GetHashCode();
+                if (this.EnableAdvancedPaymentsReactEdit != null)
+                    hash = hash * 59 + this.EnableAdvancedPaymentsReactEdit.GetHashCode();
                 if (this.EnableEasySignCanUseMultiTemplateApply != null)
                     hash = hash * 59 + this.EnableEasySignCanUseMultiTemplateApply.GetHashCode();
                 if (this.EnableEasySignCanUseMultiTemplateApplyMetadata != null)
@@ -461,6 +502,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnableLegacyHomepageLink.GetHashCode();
                 if (this.EnableLegacyHomepageLinkMetadata != null)
                     hash = hash * 59 + this.EnableLegacyHomepageLinkMetadata.GetHashCode();
+                if (this.HasExternalLinkedAccounts != null)
+                    hash = hash * 59 + this.HasExternalLinkedAccounts.GetHashCode();
+                if (this.HasExternalLinkedAccountsMetadata != null)
+                    hash = hash * 59 + this.HasExternalLinkedAccountsMetadata.GetHashCode();
                 if (this.HideSendAnEnvelope != null)
                     hash = hash * 59 + this.HideSendAnEnvelope.GetHashCode();
                 if (this.HideSendAnEnvelopeMetadata != null)

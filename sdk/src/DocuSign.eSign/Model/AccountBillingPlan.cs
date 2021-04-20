@@ -39,6 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="AccountBillingPlan" /> class.
         /// </summary>
         /// <param name="AddOns">Reserved:.</param>
+        /// <param name="AppStoreReceiptExpirationDate">AppStoreReceiptExpirationDate.</param>
+        /// <param name="AppStoreReceiptPurchaseDate">AppStoreReceiptPurchaseDate.</param>
         /// <param name="CanCancelRenewal">Reserved: TBD.</param>
         /// <param name="CanUpgrade">When set to **true**, specifies that you can upgrade the account through the API..</param>
         /// <param name="CurrencyCode">Specifies the ISO currency code for the account..</param>
@@ -60,9 +62,11 @@ namespace DocuSign.eSign.Model
         /// <param name="SeatDiscounts"> A complex type that contains any seat discount information.  Values are: BeginSeatCount, EndSeatCount, and SeatDiscountPercent.  .</param>
         /// <param name="SupportIncidentFee">The support incident fee charged for each support incident..</param>
         /// <param name="SupportPlanFee">The support plan fee charged for this plan..</param>
-        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string NotificationType = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
+        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string AppStoreReceiptExpirationDate = default(string), string AppStoreReceiptPurchaseDate = default(string), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string NotificationType = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
         {
             this.AddOns = AddOns;
+            this.AppStoreReceiptExpirationDate = AppStoreReceiptExpirationDate;
+            this.AppStoreReceiptPurchaseDate = AppStoreReceiptPurchaseDate;
             this.CanCancelRenewal = CanCancelRenewal;
             this.CanUpgrade = CanUpgrade;
             this.CurrencyCode = CurrencyCode;
@@ -92,6 +96,16 @@ namespace DocuSign.eSign.Model
         /// <value>Reserved:</value>
         [DataMember(Name="addOns", EmitDefaultValue=false)]
         public List<AddOn> AddOns { get; set; }
+        /// <summary>
+        /// Gets or Sets AppStoreReceiptExpirationDate
+        /// </summary>
+        [DataMember(Name="appStoreReceiptExpirationDate", EmitDefaultValue=false)]
+        public string AppStoreReceiptExpirationDate { get; set; }
+        /// <summary>
+        /// Gets or Sets AppStoreReceiptPurchaseDate
+        /// </summary>
+        [DataMember(Name="appStoreReceiptPurchaseDate", EmitDefaultValue=false)]
+        public string AppStoreReceiptPurchaseDate { get; set; }
         /// <summary>
         /// Reserved: TBD
         /// </summary>
@@ -221,6 +235,8 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class AccountBillingPlan {\n");
             sb.Append("  AddOns: ").Append(AddOns).Append("\n");
+            sb.Append("  AppStoreReceiptExpirationDate: ").Append(AppStoreReceiptExpirationDate).Append("\n");
+            sb.Append("  AppStoreReceiptPurchaseDate: ").Append(AppStoreReceiptPurchaseDate).Append("\n");
             sb.Append("  CanCancelRenewal: ").Append(CanCancelRenewal).Append("\n");
             sb.Append("  CanUpgrade: ").Append(CanUpgrade).Append("\n");
             sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
@@ -282,6 +298,16 @@ namespace DocuSign.eSign.Model
                     this.AddOns == other.AddOns ||
                     this.AddOns != null &&
                     this.AddOns.SequenceEqual(other.AddOns)
+                ) && 
+                (
+                    this.AppStoreReceiptExpirationDate == other.AppStoreReceiptExpirationDate ||
+                    this.AppStoreReceiptExpirationDate != null &&
+                    this.AppStoreReceiptExpirationDate.Equals(other.AppStoreReceiptExpirationDate)
+                ) && 
+                (
+                    this.AppStoreReceiptPurchaseDate == other.AppStoreReceiptPurchaseDate ||
+                    this.AppStoreReceiptPurchaseDate != null &&
+                    this.AppStoreReceiptPurchaseDate.Equals(other.AppStoreReceiptPurchaseDate)
                 ) && 
                 (
                     this.CanCancelRenewal == other.CanCancelRenewal ||
@@ -403,6 +429,10 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.AddOns != null)
                     hash = hash * 59 + this.AddOns.GetHashCode();
+                if (this.AppStoreReceiptExpirationDate != null)
+                    hash = hash * 59 + this.AppStoreReceiptExpirationDate.GetHashCode();
+                if (this.AppStoreReceiptPurchaseDate != null)
+                    hash = hash * 59 + this.AppStoreReceiptPurchaseDate.GetHashCode();
                 if (this.CanCancelRenewal != null)
                     hash = hash * 59 + this.CanCancelRenewal.GetHashCode();
                 if (this.CanUpgrade != null)

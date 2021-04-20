@@ -10335,6 +10335,8 @@ namespace DocuSign.eSign.Api
             /// A comma separated list of additional template attributes to include in the response. Valid values are: recipients, folders, documents, custom_fields, and notifications. 
             public string include {get; set;}
             /// 
+            public string isDeletedTemplateOnly {get; set;}
+            /// 
             public string isDownload {get; set;}
             /// 
             public string modifiedFromDate {get; set;}
@@ -10429,6 +10431,7 @@ namespace DocuSign.eSign.Api
                 if (options.folderTypes != null) localVarQueryParams.Add("folder_types", this.ApiClient.ParameterToString(options.folderTypes)); // query parameter
                 if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
+                if (options.isDeletedTemplateOnly != null) localVarQueryParams.Add("is_deleted_template_only", this.ApiClient.ParameterToString(options.isDeletedTemplateOnly)); // query parameter
                 if (options.isDownload != null) localVarQueryParams.Add("is_download", this.ApiClient.ParameterToString(options.isDownload)); // query parameter
                 if (options.modifiedFromDate != null) localVarQueryParams.Add("modified_from_date", this.ApiClient.ParameterToString(options.modifiedFromDate)); // query parameter
                 if (options.modifiedToDate != null) localVarQueryParams.Add("modified_to_date", this.ApiClient.ParameterToString(options.modifiedToDate)); // query parameter
@@ -10544,6 +10547,7 @@ namespace DocuSign.eSign.Api
                 if (options.folderTypes != null) localVarQueryParams.Add("folder_types", this.ApiClient.ParameterToString(options.folderTypes)); // query parameter
                 if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
+                if (options.isDeletedTemplateOnly != null) localVarQueryParams.Add("is_deleted_template_only", this.ApiClient.ParameterToString(options.isDeletedTemplateOnly)); // query parameter
                 if (options.isDownload != null) localVarQueryParams.Add("is_download", this.ApiClient.ParameterToString(options.isDownload)); // query parameter
                 if (options.modifiedFromDate != null) localVarQueryParams.Add("modified_from_date", this.ApiClient.ParameterToString(options.modifiedFromDate)); // query parameter
                 if (options.modifiedToDate != null) localVarQueryParams.Add("modified_to_date", this.ApiClient.ParameterToString(options.modifiedToDate)); // query parameter

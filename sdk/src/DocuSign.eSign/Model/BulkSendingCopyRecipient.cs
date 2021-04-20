@@ -46,6 +46,8 @@ namespace DocuSign.eSign.Model
         /// <param name="EmailNotification">EmailNotification.</param>
         /// <param name="EmbeddedRecipientStartURL">Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender&#39;s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to &#x60;SIGN_AT_DOCUSIGN&#x60;, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient&#39;s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets &#x60;EmbeddedRecipientStartURL&#x3D;SIGN_AT_DOCUSIGN&#x60;, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the &#x60;clientUserId&#x60; property is NOT set, and the &#x60;embeddedRecipientStartURL&#x60; is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The &#x60;customFields&#x60; property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   &#x60;http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&amp;[[mergeField3]]&#x60; .</param>
         /// <param name="FaxNumber">Reserved:.</param>
+        /// <param name="HostEmail">HostEmail.</param>
+        /// <param name="HostName">HostName.</param>
         /// <param name="IdCheckConfigurationName">Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node..</param>
         /// <param name="IdCheckInformationInput">IdCheckInformationInput.</param>
         /// <param name="IdentificationMethod">IdentificationMethod.</param>
@@ -55,10 +57,12 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="RecipientSignatureProviders">RecipientSignatureProviders.</param>
         /// <param name="RoleName">Optional element. Specifies the role name associated with the recipient.&lt;br/&gt;&lt;br/&gt;This is required when working with template recipients..</param>
+        /// <param name="SignerName">SignerName.</param>
+        /// <param name="SigningGroupId">When set to **true** and the feature is enabled in the sender&#39;s account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once)..</param>
         /// <param name="SmsAuthentication">SmsAuthentication.</param>
         /// <param name="SocialAuthentications"> Lists the social ID type that can be used for recipient authentication..</param>
         /// <param name="Tabs">Tabs.</param>
-        public BulkSendingCopyRecipient(string AccessCode = default(string), string ClientUserId = default(string), List<string> CustomFields = default(List<string>), string DeliveryMethod = default(string), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), string FaxNumber = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string IdentificationMethod = default(string), string Name = default(string), string Note = default(string), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), string RecipientId = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RoleName = default(string), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), List<BulkSendingCopyTab> Tabs = default(List<BulkSendingCopyTab>))
+        public BulkSendingCopyRecipient(string AccessCode = default(string), string ClientUserId = default(string), List<string> CustomFields = default(List<string>), string DeliveryMethod = default(string), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), string FaxNumber = default(string), string HostEmail = default(string), string HostName = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string IdentificationMethod = default(string), string Name = default(string), string Note = default(string), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), string RecipientId = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RoleName = default(string), string SignerName = default(string), string SigningGroupId = default(string), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), List<BulkSendingCopyTab> Tabs = default(List<BulkSendingCopyTab>))
         {
             this.AccessCode = AccessCode;
             this.ClientUserId = ClientUserId;
@@ -68,6 +72,8 @@ namespace DocuSign.eSign.Model
             this.EmailNotification = EmailNotification;
             this.EmbeddedRecipientStartURL = EmbeddedRecipientStartURL;
             this.FaxNumber = FaxNumber;
+            this.HostEmail = HostEmail;
+            this.HostName = HostName;
             this.IdCheckConfigurationName = IdCheckConfigurationName;
             this.IdCheckInformationInput = IdCheckInformationInput;
             this.IdentificationMethod = IdentificationMethod;
@@ -77,6 +83,8 @@ namespace DocuSign.eSign.Model
             this.RecipientId = RecipientId;
             this.RecipientSignatureProviders = RecipientSignatureProviders;
             this.RoleName = RoleName;
+            this.SignerName = SignerName;
+            this.SigningGroupId = SigningGroupId;
             this.SmsAuthentication = SmsAuthentication;
             this.SocialAuthentications = SocialAuthentications;
             this.Tabs = Tabs;
@@ -129,6 +137,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="faxNumber", EmitDefaultValue=false)]
         public string FaxNumber { get; set; }
         /// <summary>
+        /// Gets or Sets HostEmail
+        /// </summary>
+        [DataMember(Name="hostEmail", EmitDefaultValue=false)]
+        public string HostEmail { get; set; }
+        /// <summary>
+        /// Gets or Sets HostName
+        /// </summary>
+        [DataMember(Name="hostName", EmitDefaultValue=false)]
+        public string HostName { get; set; }
+        /// <summary>
         /// Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node.
         /// </summary>
         /// <value>Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node.</value>
@@ -178,6 +196,17 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="roleName", EmitDefaultValue=false)]
         public string RoleName { get; set; }
         /// <summary>
+        /// Gets or Sets SignerName
+        /// </summary>
+        [DataMember(Name="signerName", EmitDefaultValue=false)]
+        public string SignerName { get; set; }
+        /// <summary>
+        /// When set to **true** and the feature is enabled in the sender&#39;s account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).
+        /// </summary>
+        /// <value>When set to **true** and the feature is enabled in the sender&#39;s account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).</value>
+        [DataMember(Name="signingGroupId", EmitDefaultValue=false)]
+        public string SigningGroupId { get; set; }
+        /// <summary>
         /// Gets or Sets SmsAuthentication
         /// </summary>
         [DataMember(Name="smsAuthentication", EmitDefaultValue=false)]
@@ -209,6 +238,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  EmailNotification: ").Append(EmailNotification).Append("\n");
             sb.Append("  EmbeddedRecipientStartURL: ").Append(EmbeddedRecipientStartURL).Append("\n");
             sb.Append("  FaxNumber: ").Append(FaxNumber).Append("\n");
+            sb.Append("  HostEmail: ").Append(HostEmail).Append("\n");
+            sb.Append("  HostName: ").Append(HostName).Append("\n");
             sb.Append("  IdCheckConfigurationName: ").Append(IdCheckConfigurationName).Append("\n");
             sb.Append("  IdCheckInformationInput: ").Append(IdCheckInformationInput).Append("\n");
             sb.Append("  IdentificationMethod: ").Append(IdentificationMethod).Append("\n");
@@ -218,6 +249,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  RecipientId: ").Append(RecipientId).Append("\n");
             sb.Append("  RecipientSignatureProviders: ").Append(RecipientSignatureProviders).Append("\n");
             sb.Append("  RoleName: ").Append(RoleName).Append("\n");
+            sb.Append("  SignerName: ").Append(SignerName).Append("\n");
+            sb.Append("  SigningGroupId: ").Append(SigningGroupId).Append("\n");
             sb.Append("  SmsAuthentication: ").Append(SmsAuthentication).Append("\n");
             sb.Append("  SocialAuthentications: ").Append(SocialAuthentications).Append("\n");
             sb.Append("  Tabs: ").Append(Tabs).Append("\n");
@@ -298,6 +331,16 @@ namespace DocuSign.eSign.Model
                     this.FaxNumber.Equals(other.FaxNumber)
                 ) && 
                 (
+                    this.HostEmail == other.HostEmail ||
+                    this.HostEmail != null &&
+                    this.HostEmail.Equals(other.HostEmail)
+                ) && 
+                (
+                    this.HostName == other.HostName ||
+                    this.HostName != null &&
+                    this.HostName.Equals(other.HostName)
+                ) && 
+                (
                     this.IdCheckConfigurationName == other.IdCheckConfigurationName ||
                     this.IdCheckConfigurationName != null &&
                     this.IdCheckConfigurationName.Equals(other.IdCheckConfigurationName)
@@ -343,6 +386,16 @@ namespace DocuSign.eSign.Model
                     this.RoleName.Equals(other.RoleName)
                 ) && 
                 (
+                    this.SignerName == other.SignerName ||
+                    this.SignerName != null &&
+                    this.SignerName.Equals(other.SignerName)
+                ) && 
+                (
+                    this.SigningGroupId == other.SigningGroupId ||
+                    this.SigningGroupId != null &&
+                    this.SigningGroupId.Equals(other.SigningGroupId)
+                ) && 
+                (
                     this.SmsAuthentication == other.SmsAuthentication ||
                     this.SmsAuthentication != null &&
                     this.SmsAuthentication.Equals(other.SmsAuthentication)
@@ -386,6 +439,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EmbeddedRecipientStartURL.GetHashCode();
                 if (this.FaxNumber != null)
                     hash = hash * 59 + this.FaxNumber.GetHashCode();
+                if (this.HostEmail != null)
+                    hash = hash * 59 + this.HostEmail.GetHashCode();
+                if (this.HostName != null)
+                    hash = hash * 59 + this.HostName.GetHashCode();
                 if (this.IdCheckConfigurationName != null)
                     hash = hash * 59 + this.IdCheckConfigurationName.GetHashCode();
                 if (this.IdCheckInformationInput != null)
@@ -404,6 +461,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.RecipientSignatureProviders.GetHashCode();
                 if (this.RoleName != null)
                     hash = hash * 59 + this.RoleName.GetHashCode();
+                if (this.SignerName != null)
+                    hash = hash * 59 + this.SignerName.GetHashCode();
+                if (this.SigningGroupId != null)
+                    hash = hash * 59 + this.SigningGroupId.GetHashCode();
                 if (this.SmsAuthentication != null)
                     hash = hash * 59 + this.SmsAuthentication.GetHashCode();
                 if (this.SocialAuthentications != null)

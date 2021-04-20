@@ -74,6 +74,7 @@ namespace DocuSign.eSign.Model
         /// <param name="EventDate">EventDate.</param>
         /// <param name="ExpirationDate">ExpirationDate.</param>
         /// <param name="ExpiredTs">ExpiredTs.</param>
+        /// <param name="FailureReason">FailureReason.</param>
         /// <param name="Failures">Failures.</param>
         /// <param name="FailureVendorCode">FailureVendorCode.</param>
         /// <param name="FailureVendorReason">FailureVendorReason.</param>
@@ -158,9 +159,11 @@ namespace DocuSign.eSign.Model
         /// <param name="UserAccountStatus">UserAccountStatus.</param>
         /// <param name="UserCount">UserCount.</param>
         /// <param name="UserId">UserId.</param>
+        /// <param name="VerificationStatus">VerificationStatus.</param>
+        /// <param name="VerificationType">VerificationType.</param>
         /// <param name="ViewDate">ViewDate.</param>
         /// <param name="VoidedTs">VoidedTs.</param>
-        public ReportInProductRunResponseRowFields(string AccessCodeRequired = default(string), string AccessCodesAttempted = default(string), string AccessCodesFailed = default(string), string AccountId = default(string), string AuthenticationCategory = default(string), string AuthenticationSuccess = default(string), string AuthenticationType = default(string), string AverageTimeToCompleteSeconds = default(string), string AvgCompleteSeconds = default(string), string Completed = default(string), string CompletedTs = default(string), string CreatedDate = default(string), string CustomField = default(string), string DeclinedDate = default(string), string DeclinedReason = default(string), string DeliveredDate = default(string), string EnvelopeCount = default(string), string EnvelopeCreator = default(string), string EnvelopeId = default(string), string EnvelopeInitialSendTs = default(string), string EnvelopesBilled = default(string), string EnvelopesCompleted = default(string), string EnvelopesCompletedCount = default(string), string EnvelopesDeclined = default(string), string EnvelopesSent = default(string), string EnvelopesSentCount = default(string), string EnvelopesVoided = default(string), string EnvelopeVoidedReason = default(string), string EodDocumentDescription = default(string), string EodDocumentName = default(string), string EodDocumentProfileId = default(string), string EodTransactionId = default(string), string EodTransactionName = default(string), string EventDate = default(string), string ExpirationDate = default(string), string ExpiredTs = default(string), string Failures = default(string), string FailureVendorCode = default(string), string FailureVendorReason = default(string), string FirstSendTs = default(string), string GroupId = default(string), string GroupName = default(string), string HoursToCompleteEnd = default(string), string HoursToCompleteStart = default(string), string IdChecksAttempted = default(string), string IdChecksFailed = default(string), string InitialSendTs = default(string), string IpAddress = default(string), string LastActivity = default(string), string LastActivityDate = default(string), string LastSentDate = default(string), string NotSigned = default(string), string NumberOfAuthenticatedRecipients = default(string), string NumberOfCompletedSignatures = default(string), string NumberOfDocuments = default(string), string NumberOfPages = default(string), string NumberOfRecipients = default(string), string NumberOfSends = default(string), string NumberOfSigners = default(string), string NumberOfTotalDocuments = default(string), string NumberOfTotalPages = default(string), string NumberOfTotalSigners = default(string), string NumberOfUniqueSenders = default(string), string NumberTotalRecipients = default(string), string PeriodEnd = default(string), string PeriodStart = default(string), string PhoneCallsAttempted = default(string), string PhoneCallsFailed = default(string), string ReasonForDeclining = default(string), string ReasonForVoiding = default(string), string ReassignReason = default(string), string Received = default(string), string Recipient = default(string), string RecipientAction = default(string), string RecipientCompanyName = default(string), string RecipientCountry = default(string), string RecipientEmail = default(string), string RecipientId = default(string), string RecipientName = default(string), string RecipientTemplateRoleName = default(string), string RecipientTitle = default(string), string RecipientType = default(string), string RecipientUserId = default(string), string RemainingSignatures = default(string), string RoutingOrder = default(string), string SenderAccountId = default(string), string SenderCompanyName = default(string), string SenderCountry = default(string), string SenderEmail = default(string), string SenderIPAddress = default(string), string SenderJobTitle = default(string), string SenderName = default(string), string SenderUserId = default(string), string SignDate = default(string), string Signed = default(string), string SignedDate = default(string), string SignedOnMobile = default(string), string SignedOnPaper = default(string), string SignerList = default(string), string Status = default(string), string StatusChangedDate = default(string), string StatusChangedTs = default(string), string Subject = default(string), string Successes = default(string), string TemplatesCreated = default(string), string TemplatesCreatedCount = default(string), string TerminalStatusDate = default(string), string TimeToCompleteSeconds = default(string), string TimeToDeliver = default(string), string TotalDocuments = default(string), string TotalEnvelopes = default(string), string TotalPages = default(string), string TotalRecipients = default(string), string TotalSigners = default(string), string UniqueSenders = default(string), string UserAccountEmail = default(string), string UserAccountName = default(string), string UserAccountStatus = default(string), string UserCount = default(string), string UserId = default(string), string ViewDate = default(string), string VoidedTs = default(string))
+        public ReportInProductRunResponseRowFields(string AccessCodeRequired = default(string), string AccessCodesAttempted = default(string), string AccessCodesFailed = default(string), string AccountId = default(string), string AuthenticationCategory = default(string), string AuthenticationSuccess = default(string), string AuthenticationType = default(string), string AverageTimeToCompleteSeconds = default(string), string AvgCompleteSeconds = default(string), string Completed = default(string), string CompletedTs = default(string), string CreatedDate = default(string), string CustomField = default(string), string DeclinedDate = default(string), string DeclinedReason = default(string), string DeliveredDate = default(string), string EnvelopeCount = default(string), string EnvelopeCreator = default(string), string EnvelopeId = default(string), string EnvelopeInitialSendTs = default(string), string EnvelopesBilled = default(string), string EnvelopesCompleted = default(string), string EnvelopesCompletedCount = default(string), string EnvelopesDeclined = default(string), string EnvelopesSent = default(string), string EnvelopesSentCount = default(string), string EnvelopesVoided = default(string), string EnvelopeVoidedReason = default(string), string EodDocumentDescription = default(string), string EodDocumentName = default(string), string EodDocumentProfileId = default(string), string EodTransactionId = default(string), string EodTransactionName = default(string), string EventDate = default(string), string ExpirationDate = default(string), string ExpiredTs = default(string), string FailureReason = default(string), string Failures = default(string), string FailureVendorCode = default(string), string FailureVendorReason = default(string), string FirstSendTs = default(string), string GroupId = default(string), string GroupName = default(string), string HoursToCompleteEnd = default(string), string HoursToCompleteStart = default(string), string IdChecksAttempted = default(string), string IdChecksFailed = default(string), string InitialSendTs = default(string), string IpAddress = default(string), string LastActivity = default(string), string LastActivityDate = default(string), string LastSentDate = default(string), string NotSigned = default(string), string NumberOfAuthenticatedRecipients = default(string), string NumberOfCompletedSignatures = default(string), string NumberOfDocuments = default(string), string NumberOfPages = default(string), string NumberOfRecipients = default(string), string NumberOfSends = default(string), string NumberOfSigners = default(string), string NumberOfTotalDocuments = default(string), string NumberOfTotalPages = default(string), string NumberOfTotalSigners = default(string), string NumberOfUniqueSenders = default(string), string NumberTotalRecipients = default(string), string PeriodEnd = default(string), string PeriodStart = default(string), string PhoneCallsAttempted = default(string), string PhoneCallsFailed = default(string), string ReasonForDeclining = default(string), string ReasonForVoiding = default(string), string ReassignReason = default(string), string Received = default(string), string Recipient = default(string), string RecipientAction = default(string), string RecipientCompanyName = default(string), string RecipientCountry = default(string), string RecipientEmail = default(string), string RecipientId = default(string), string RecipientName = default(string), string RecipientTemplateRoleName = default(string), string RecipientTitle = default(string), string RecipientType = default(string), string RecipientUserId = default(string), string RemainingSignatures = default(string), string RoutingOrder = default(string), string SenderAccountId = default(string), string SenderCompanyName = default(string), string SenderCountry = default(string), string SenderEmail = default(string), string SenderIPAddress = default(string), string SenderJobTitle = default(string), string SenderName = default(string), string SenderUserId = default(string), string SignDate = default(string), string Signed = default(string), string SignedDate = default(string), string SignedOnMobile = default(string), string SignedOnPaper = default(string), string SignerList = default(string), string Status = default(string), string StatusChangedDate = default(string), string StatusChangedTs = default(string), string Subject = default(string), string Successes = default(string), string TemplatesCreated = default(string), string TemplatesCreatedCount = default(string), string TerminalStatusDate = default(string), string TimeToCompleteSeconds = default(string), string TimeToDeliver = default(string), string TotalDocuments = default(string), string TotalEnvelopes = default(string), string TotalPages = default(string), string TotalRecipients = default(string), string TotalSigners = default(string), string UniqueSenders = default(string), string UserAccountEmail = default(string), string UserAccountName = default(string), string UserAccountStatus = default(string), string UserCount = default(string), string UserId = default(string), string VerificationStatus = default(string), string VerificationType = default(string), string ViewDate = default(string), string VoidedTs = default(string))
         {
             this.AccessCodeRequired = AccessCodeRequired;
             this.AccessCodesAttempted = AccessCodesAttempted;
@@ -198,6 +201,7 @@ namespace DocuSign.eSign.Model
             this.EventDate = EventDate;
             this.ExpirationDate = ExpirationDate;
             this.ExpiredTs = ExpiredTs;
+            this.FailureReason = FailureReason;
             this.Failures = Failures;
             this.FailureVendorCode = FailureVendorCode;
             this.FailureVendorReason = FailureVendorReason;
@@ -282,6 +286,8 @@ namespace DocuSign.eSign.Model
             this.UserAccountStatus = UserAccountStatus;
             this.UserCount = UserCount;
             this.UserId = UserId;
+            this.VerificationStatus = VerificationStatus;
+            this.VerificationType = VerificationType;
             this.ViewDate = ViewDate;
             this.VoidedTs = VoidedTs;
         }
@@ -469,6 +475,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="expiredTs", EmitDefaultValue=false)]
         public string ExpiredTs { get; set; }
+        /// <summary>
+        /// Gets or Sets FailureReason
+        /// </summary>
+        [DataMember(Name="failureReason", EmitDefaultValue=false)]
+        public string FailureReason { get; set; }
         /// <summary>
         /// Gets or Sets Failures
         /// </summary>
@@ -894,6 +905,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>
+        /// Gets or Sets VerificationStatus
+        /// </summary>
+        [DataMember(Name="verificationStatus", EmitDefaultValue=false)]
+        public string VerificationStatus { get; set; }
+        /// <summary>
+        /// Gets or Sets VerificationType
+        /// </summary>
+        [DataMember(Name="verificationType", EmitDefaultValue=false)]
+        public string VerificationType { get; set; }
+        /// <summary>
         /// Gets or Sets ViewDate
         /// </summary>
         [DataMember(Name="viewDate", EmitDefaultValue=false)]
@@ -947,6 +968,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  EventDate: ").Append(EventDate).Append("\n");
             sb.Append("  ExpirationDate: ").Append(ExpirationDate).Append("\n");
             sb.Append("  ExpiredTs: ").Append(ExpiredTs).Append("\n");
+            sb.Append("  FailureReason: ").Append(FailureReason).Append("\n");
             sb.Append("  Failures: ").Append(Failures).Append("\n");
             sb.Append("  FailureVendorCode: ").Append(FailureVendorCode).Append("\n");
             sb.Append("  FailureVendorReason: ").Append(FailureVendorReason).Append("\n");
@@ -1031,6 +1053,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  UserAccountStatus: ").Append(UserAccountStatus).Append("\n");
             sb.Append("  UserCount: ").Append(UserCount).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
+            sb.Append("  VerificationStatus: ").Append(VerificationStatus).Append("\n");
+            sb.Append("  VerificationType: ").Append(VerificationType).Append("\n");
             sb.Append("  ViewDate: ").Append(ViewDate).Append("\n");
             sb.Append("  VoidedTs: ").Append(VoidedTs).Append("\n");
             sb.Append("}\n");
@@ -1248,6 +1272,11 @@ namespace DocuSign.eSign.Model
                     this.ExpiredTs == other.ExpiredTs ||
                     this.ExpiredTs != null &&
                     this.ExpiredTs.Equals(other.ExpiredTs)
+                ) && 
+                (
+                    this.FailureReason == other.FailureReason ||
+                    this.FailureReason != null &&
+                    this.FailureReason.Equals(other.FailureReason)
                 ) && 
                 (
                     this.Failures == other.Failures ||
@@ -1670,6 +1699,16 @@ namespace DocuSign.eSign.Model
                     this.UserId.Equals(other.UserId)
                 ) && 
                 (
+                    this.VerificationStatus == other.VerificationStatus ||
+                    this.VerificationStatus != null &&
+                    this.VerificationStatus.Equals(other.VerificationStatus)
+                ) && 
+                (
+                    this.VerificationType == other.VerificationType ||
+                    this.VerificationType != null &&
+                    this.VerificationType.Equals(other.VerificationType)
+                ) && 
+                (
                     this.ViewDate == other.ViewDate ||
                     this.ViewDate != null &&
                     this.ViewDate.Equals(other.ViewDate)
@@ -1764,6 +1803,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ExpirationDate.GetHashCode();
                 if (this.ExpiredTs != null)
                     hash = hash * 59 + this.ExpiredTs.GetHashCode();
+                if (this.FailureReason != null)
+                    hash = hash * 59 + this.FailureReason.GetHashCode();
                 if (this.Failures != null)
                     hash = hash * 59 + this.Failures.GetHashCode();
                 if (this.FailureVendorCode != null)
@@ -1932,6 +1973,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.UserCount.GetHashCode();
                 if (this.UserId != null)
                     hash = hash * 59 + this.UserId.GetHashCode();
+                if (this.VerificationStatus != null)
+                    hash = hash * 59 + this.VerificationStatus.GetHashCode();
+                if (this.VerificationType != null)
+                    hash = hash * 59 + this.VerificationType.GetHashCode();
                 if (this.ViewDate != null)
                     hash = hash * 59 + this.ViewDate.GetHashCode();
                 if (this.VoidedTs != null)

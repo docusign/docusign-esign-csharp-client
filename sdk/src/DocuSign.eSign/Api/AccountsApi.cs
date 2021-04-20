@@ -1100,6 +1100,31 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<ReportInProductList> GetReportInProductListWithHttpInfo (string accountId);
         /// <summary>
+        /// Returns Account available seals for specified account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns></returns>
+        AccountSeals GetSealProviders (string accountId);
+
+        /// <summary>
+        /// Returns Account available seals for specified account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<AccountSeals> GetSealProvidersWithHttpInfo (string accountId);
+        /// <summary>
         /// Gets list of supported languages for recipient language setting.
         /// </summary>
         /// <remarks>
@@ -3001,6 +3026,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (ReportInProductList)</returns>
         System.Threading.Tasks.Task<ApiResponse<ReportInProductList>> GetReportInProductListAsyncWithHttpInfo (string accountId);
+        /// <summary>
+        /// Returns Account available seals for specified account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of AccountSeals</returns>
+        System.Threading.Tasks.Task<AccountSeals> GetSealProvidersAsync (string accountId);
+
+        /// <summary>
+        /// Returns Account available seals for specified account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse (AccountSeals)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AccountSeals>> GetSealProvidersAsyncWithHttpInfo (string accountId);
         /// <summary>
         /// Gets list of supported languages for recipient language setting.
         /// </summary>
@@ -11801,6 +11851,180 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
+        /// Returns Account available seals for specified account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>AccountSeals</returns>
+        public AccountSeals GetSealProviders (string accountId)
+        {
+             ApiResponse<AccountSeals> localVarResponse = GetSealProvidersWithHttpInfo(accountId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns Account available seals for specified account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>ApiResponse of AccountSeals</returns>
+        public ApiResponse< AccountSeals > GetSealProvidersWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetSealProviders");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/seals";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSealProviders", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<AccountSeals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AccountSeals) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(AccountSeals)));
+            }
+            else
+            {
+                return new ApiResponse<AccountSeals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AccountSeals) this.ApiClient.Deserialize(localVarResponse, typeof(AccountSeals)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Returns Account available seals for specified account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of AccountSeals</returns>
+        public async System.Threading.Tasks.Task<AccountSeals> GetSealProvidersAsync (string accountId)
+        {
+             ApiResponse<AccountSeals> localVarResponse = await GetSealProvidersAsyncWithHttpInfo(accountId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Returns Account available seals for specified account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        
+        
+        /// <returns>Task of ApiResponse (AccountSeals)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<AccountSeals>> GetSealProvidersAsyncWithHttpInfo (string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetSealProviders");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/seals";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSealProviders", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<AccountSeals>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (AccountSeals) this.ApiClient.Deserialize(localVarResponse, typeof(AccountSeals)));
+            
+        }
+
+
+
+        /// <summary>
         /// Gets list of supported languages for recipient language setting. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
@@ -15253,7 +15477,7 @@ namespace DocuSign.eSign.Api
             // verify the required parameter 'resourceContentType' is set
             if (resourceContentType == null)
                 throw new ApiException(400, "Missing required parameter 'resourceContentType' when calling AccountsApi->UpdateBrandResourcesByContentType");
-
+           
             var localVarPath = "/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
@@ -15282,7 +15506,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (brandId != null) localVarPathParams.Add("brandId", this.ApiClient.ParameterToString(brandId)); // path parameter
             if (resourceContentType != null) localVarPathParams.Add("resourceContentType", this.ApiClient.ParameterToString(resourceContentType)); // path parameter
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -15351,7 +15574,7 @@ namespace DocuSign.eSign.Api
             // verify the required parameter 'resourceContentType' is set
             if (resourceContentType == null)
                 throw new ApiException(400, "Missing required parameter 'resourceContentType' when calling AccountsApi->UpdateBrandResourcesByContentType");
-
+           
             var localVarPath = "/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
@@ -15380,6 +15603,7 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (brandId != null) localVarPathParams.Add("brandId", this.ApiClient.ParameterToString(brandId)); // path parameter
             if (resourceContentType != null) localVarPathParams.Add("resourceContentType", this.ApiClient.ParameterToString(resourceContentType)); // path parameter
+
 
             // authentication (docusignAccessCode) required
             // oauth required

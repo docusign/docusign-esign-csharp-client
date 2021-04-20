@@ -41,6 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AddressFormat">AddressFormat.</param>
         /// <param name="CalendarType">CalendarType.</param>
         /// <param name="CultureName">CultureName.</param>
+        /// <param name="CurrencyCode">CurrencyCode.</param>
         /// <param name="CurrencyNegativeFormat">CurrencyNegativeFormat.</param>
         /// <param name="CurrencyPositiveFormat">CurrencyPositiveFormat.</param>
         /// <param name="CustomDateFormat">CustomDateFormat.</param>
@@ -50,11 +51,12 @@ namespace DocuSign.eSign.Model
         /// <param name="NameFormat">NameFormat.</param>
         /// <param name="TimeFormat">TimeFormat.</param>
         /// <param name="TimeZone">TimeZone.</param>
-        public LocalePolicyTab(string AddressFormat = default(string), string CalendarType = default(string), string CultureName = default(string), string CurrencyNegativeFormat = default(string), string CurrencyPositiveFormat = default(string), string CustomDateFormat = default(string), string CustomTimeFormat = default(string), string DateFormat = default(string), string InitialFormat = default(string), string NameFormat = default(string), string TimeFormat = default(string), string TimeZone = default(string))
+        public LocalePolicyTab(string AddressFormat = default(string), string CalendarType = default(string), string CultureName = default(string), string CurrencyCode = default(string), string CurrencyNegativeFormat = default(string), string CurrencyPositiveFormat = default(string), string CustomDateFormat = default(string), string CustomTimeFormat = default(string), string DateFormat = default(string), string InitialFormat = default(string), string NameFormat = default(string), string TimeFormat = default(string), string TimeZone = default(string))
         {
             this.AddressFormat = AddressFormat;
             this.CalendarType = CalendarType;
             this.CultureName = CultureName;
+            this.CurrencyCode = CurrencyCode;
             this.CurrencyNegativeFormat = CurrencyNegativeFormat;
             this.CurrencyPositiveFormat = CurrencyPositiveFormat;
             this.CustomDateFormat = CustomDateFormat;
@@ -81,6 +83,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="cultureName", EmitDefaultValue=false)]
         public string CultureName { get; set; }
+        /// <summary>
+        /// Gets or Sets CurrencyCode
+        /// </summary>
+        [DataMember(Name="currencyCode", EmitDefaultValue=false)]
+        public string CurrencyCode { get; set; }
         /// <summary>
         /// Gets or Sets CurrencyNegativeFormat
         /// </summary>
@@ -137,6 +144,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AddressFormat: ").Append(AddressFormat).Append("\n");
             sb.Append("  CalendarType: ").Append(CalendarType).Append("\n");
             sb.Append("  CultureName: ").Append(CultureName).Append("\n");
+            sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
             sb.Append("  CurrencyNegativeFormat: ").Append(CurrencyNegativeFormat).Append("\n");
             sb.Append("  CurrencyPositiveFormat: ").Append(CurrencyPositiveFormat).Append("\n");
             sb.Append("  CustomDateFormat: ").Append(CustomDateFormat).Append("\n");
@@ -196,6 +204,11 @@ namespace DocuSign.eSign.Model
                     this.CultureName == other.CultureName ||
                     this.CultureName != null &&
                     this.CultureName.Equals(other.CultureName)
+                ) && 
+                (
+                    this.CurrencyCode == other.CurrencyCode ||
+                    this.CurrencyCode != null &&
+                    this.CurrencyCode.Equals(other.CurrencyCode)
                 ) && 
                 (
                     this.CurrencyNegativeFormat == other.CurrencyNegativeFormat ||
@@ -261,6 +274,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CalendarType.GetHashCode();
                 if (this.CultureName != null)
                     hash = hash * 59 + this.CultureName.GetHashCode();
+                if (this.CurrencyCode != null)
+                    hash = hash * 59 + this.CurrencyCode.GetHashCode();
                 if (this.CurrencyNegativeFormat != null)
                     hash = hash * 59 + this.CurrencyNegativeFormat.GetHashCode();
                 if (this.CurrencyPositiveFormat != null)

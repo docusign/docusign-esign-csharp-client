@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>DocuSign.eSign.dll</id>
-    <version>5.3.1-rc</version>
-    <title>DocuSign.eSign.dll</title>
+    <version>5.4.0-rc</version>
+    <title>DocuSign.eSign</title>
     <authors>DocuSign</authors>
     <owners>DocuSign</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

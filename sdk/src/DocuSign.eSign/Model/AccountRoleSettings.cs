@@ -82,6 +82,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AllowWetSigningOverrideMetadata">AllowWetSigningOverrideMetadata.</param>
         /// <param name="CanCreateWorkspaces">CanCreateWorkspaces.</param>
         /// <param name="CanCreateWorkspacesMetadata">CanCreateWorkspacesMetadata.</param>
+        /// <param name="CanSendEnvelopesViaSMS">CanSendEnvelopesViaSMS.</param>
+        /// <param name="CanSendEnvelopesViaSMSMetadata">CanSendEnvelopesViaSMSMetadata.</param>
         /// <param name="DisableDocumentUpload">DisableDocumentUpload.</param>
         /// <param name="DisableDocumentUploadMetadata">DisableDocumentUploadMetadata.</param>
         /// <param name="DisableOtherActions">DisableOtherActions.</param>
@@ -111,7 +113,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UseNewSendingInterfaceMetadata">UseNewSendingInterfaceMetadata.</param>
         /// <param name="VaultingMode">VaultingMode.</param>
         /// <param name="VaultingModeMetadata">VaultingModeMetadata.</param>
-        public AccountRoleSettings(string AllowAccountManagement = default(string), SettingsMetadata AllowAccountManagementMetadata = default(SettingsMetadata), string AllowApiAccess = default(string), SettingsMetadata AllowApiAccessMetadata = default(SettingsMetadata), string AllowApiAccessToAccount = default(string), SettingsMetadata AllowApiAccessToAccountMetadata = default(SettingsMetadata), string AllowApiSendingOnBehalfOfOthers = default(string), SettingsMetadata AllowApiSendingOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowApiSequentialSigning = default(string), SettingsMetadata AllowApiSequentialSigningMetadata = default(SettingsMetadata), string AllowAutoTagging = default(string), SettingsMetadata AllowAutoTaggingMetadata = default(SettingsMetadata), string AllowBulkSending = default(string), SettingsMetadata AllowBulkSendingMetadata = default(SettingsMetadata), string AllowDocuSignDesktopClient = default(string), SettingsMetadata AllowDocuSignDesktopClientMetadata = default(SettingsMetadata), string AllowedAddressBookAccess = default(string), SettingsMetadata AllowedAddressBookAccessMetadata = default(SettingsMetadata), string AllowedClickwrapsAccess = default(string), SettingsMetadata AllowedClickwrapsAccessMetadata = default(SettingsMetadata), string AllowedTemplateAccess = default(string), SettingsMetadata AllowedTemplateAccessMetadata = default(SettingsMetadata), string AllowedToBeEnvelopeTransferRecipient = default(string), SettingsMetadata AllowedToBeEnvelopeTransferRecipientMetadata = default(SettingsMetadata), string AllowEnvelopeSending = default(string), SettingsMetadata AllowEnvelopeSendingMetadata = default(SettingsMetadata), string AllowESealRecipients = default(string), SettingsMetadata AllowESealRecipientsMetadata = default(SettingsMetadata), string AllowPowerFormsAdminToAccessAllPowerFormEnvelopes = default(string), SettingsMetadata AllowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata = default(SettingsMetadata), string AllowSendersToSetRecipientEmailLanguage = default(string), SettingsMetadata AllowSendersToSetRecipientEmailLanguageMetadata = default(SettingsMetadata), string AllowSignerAttachments = default(string), SettingsMetadata AllowSignerAttachmentsMetadata = default(SettingsMetadata), string AllowSupplementalDocuments = default(string), SettingsMetadata AllowSupplementalDocumentsMetadata = default(SettingsMetadata), string AllowTaggingInSendAndCorrect = default(string), SettingsMetadata AllowTaggingInSendAndCorrectMetadata = default(SettingsMetadata), string AllowVaulting = default(string), SettingsMetadata AllowVaultingMetadata = default(SettingsMetadata), string AllowWetSigningOverride = default(string), SettingsMetadata AllowWetSigningOverrideMetadata = default(SettingsMetadata), string CanCreateWorkspaces = default(string), SettingsMetadata CanCreateWorkspacesMetadata = default(SettingsMetadata), string DisableDocumentUpload = default(string), SettingsMetadata DisableDocumentUploadMetadata = default(SettingsMetadata), string DisableOtherActions = default(string), SettingsMetadata DisableOtherActionsMetadata = default(SettingsMetadata), string EnableApiRequestLogging = default(string), SettingsMetadata EnableApiRequestLoggingMetadata = default(SettingsMetadata), string EnableRecipientViewingNotifications = default(string), SettingsMetadata EnableRecipientViewingNotificationsMetadata = default(SettingsMetadata), string EnableSequentialSigningInterface = default(string), SettingsMetadata EnableSequentialSigningInterfaceMetadata = default(SettingsMetadata), string EnableTransactionPointIntegration = default(string), SettingsMetadata EnableTransactionPointIntegrationMetadata = default(SettingsMetadata), string PowerFormRole = default(string), SettingsMetadata PowerFormRoleMetadata = default(SettingsMetadata), string ReceiveCompletedSelfSignedDocumentsAsEmailLinks = default(string), SettingsMetadata ReceiveCompletedSelfSignedDocumentsAsEmailLinksMetadata = default(SettingsMetadata), SettingsMetadata SigningUiVersionMetadata = default(SettingsMetadata), string SupplementalDocumentsMustAccept = default(string), SettingsMetadata SupplementalDocumentsMustAcceptMetadata = default(SettingsMetadata), string SupplementalDocumentsMustRead = default(string), SettingsMetadata SupplementalDocumentsMustReadMetadata = default(SettingsMetadata), string SupplementalDocumentsMustView = default(string), SettingsMetadata SupplementalDocumentsMustViewMetadata = default(SettingsMetadata), string UseNewDocuSignExperienceInterface = default(string), SettingsMetadata UseNewDocuSignExperienceInterfaceMetadata = default(SettingsMetadata), string UseNewSendingInterface = default(string), SettingsMetadata UseNewSendingInterfaceMetadata = default(SettingsMetadata), string VaultingMode = default(string), SettingsMetadata VaultingModeMetadata = default(SettingsMetadata))
+        public AccountRoleSettings(string AllowAccountManagement = default(string), SettingsMetadata AllowAccountManagementMetadata = default(SettingsMetadata), string AllowApiAccess = default(string), SettingsMetadata AllowApiAccessMetadata = default(SettingsMetadata), string AllowApiAccessToAccount = default(string), SettingsMetadata AllowApiAccessToAccountMetadata = default(SettingsMetadata), string AllowApiSendingOnBehalfOfOthers = default(string), SettingsMetadata AllowApiSendingOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowApiSequentialSigning = default(string), SettingsMetadata AllowApiSequentialSigningMetadata = default(SettingsMetadata), string AllowAutoTagging = default(string), SettingsMetadata AllowAutoTaggingMetadata = default(SettingsMetadata), string AllowBulkSending = default(string), SettingsMetadata AllowBulkSendingMetadata = default(SettingsMetadata), string AllowDocuSignDesktopClient = default(string), SettingsMetadata AllowDocuSignDesktopClientMetadata = default(SettingsMetadata), string AllowedAddressBookAccess = default(string), SettingsMetadata AllowedAddressBookAccessMetadata = default(SettingsMetadata), string AllowedClickwrapsAccess = default(string), SettingsMetadata AllowedClickwrapsAccessMetadata = default(SettingsMetadata), string AllowedTemplateAccess = default(string), SettingsMetadata AllowedTemplateAccessMetadata = default(SettingsMetadata), string AllowedToBeEnvelopeTransferRecipient = default(string), SettingsMetadata AllowedToBeEnvelopeTransferRecipientMetadata = default(SettingsMetadata), string AllowEnvelopeSending = default(string), SettingsMetadata AllowEnvelopeSendingMetadata = default(SettingsMetadata), string AllowESealRecipients = default(string), SettingsMetadata AllowESealRecipientsMetadata = default(SettingsMetadata), string AllowPowerFormsAdminToAccessAllPowerFormEnvelopes = default(string), SettingsMetadata AllowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata = default(SettingsMetadata), string AllowSendersToSetRecipientEmailLanguage = default(string), SettingsMetadata AllowSendersToSetRecipientEmailLanguageMetadata = default(SettingsMetadata), string AllowSignerAttachments = default(string), SettingsMetadata AllowSignerAttachmentsMetadata = default(SettingsMetadata), string AllowSupplementalDocuments = default(string), SettingsMetadata AllowSupplementalDocumentsMetadata = default(SettingsMetadata), string AllowTaggingInSendAndCorrect = default(string), SettingsMetadata AllowTaggingInSendAndCorrectMetadata = default(SettingsMetadata), string AllowVaulting = default(string), SettingsMetadata AllowVaultingMetadata = default(SettingsMetadata), string AllowWetSigningOverride = default(string), SettingsMetadata AllowWetSigningOverrideMetadata = default(SettingsMetadata), string CanCreateWorkspaces = default(string), SettingsMetadata CanCreateWorkspacesMetadata = default(SettingsMetadata), string CanSendEnvelopesViaSMS = default(string), SettingsMetadata CanSendEnvelopesViaSMSMetadata = default(SettingsMetadata), string DisableDocumentUpload = default(string), SettingsMetadata DisableDocumentUploadMetadata = default(SettingsMetadata), string DisableOtherActions = default(string), SettingsMetadata DisableOtherActionsMetadata = default(SettingsMetadata), string EnableApiRequestLogging = default(string), SettingsMetadata EnableApiRequestLoggingMetadata = default(SettingsMetadata), string EnableRecipientViewingNotifications = default(string), SettingsMetadata EnableRecipientViewingNotificationsMetadata = default(SettingsMetadata), string EnableSequentialSigningInterface = default(string), SettingsMetadata EnableSequentialSigningInterfaceMetadata = default(SettingsMetadata), string EnableTransactionPointIntegration = default(string), SettingsMetadata EnableTransactionPointIntegrationMetadata = default(SettingsMetadata), string PowerFormRole = default(string), SettingsMetadata PowerFormRoleMetadata = default(SettingsMetadata), string ReceiveCompletedSelfSignedDocumentsAsEmailLinks = default(string), SettingsMetadata ReceiveCompletedSelfSignedDocumentsAsEmailLinksMetadata = default(SettingsMetadata), SettingsMetadata SigningUiVersionMetadata = default(SettingsMetadata), string SupplementalDocumentsMustAccept = default(string), SettingsMetadata SupplementalDocumentsMustAcceptMetadata = default(SettingsMetadata), string SupplementalDocumentsMustRead = default(string), SettingsMetadata SupplementalDocumentsMustReadMetadata = default(SettingsMetadata), string SupplementalDocumentsMustView = default(string), SettingsMetadata SupplementalDocumentsMustViewMetadata = default(SettingsMetadata), string UseNewDocuSignExperienceInterface = default(string), SettingsMetadata UseNewDocuSignExperienceInterfaceMetadata = default(SettingsMetadata), string UseNewSendingInterface = default(string), SettingsMetadata UseNewSendingInterfaceMetadata = default(SettingsMetadata), string VaultingMode = default(string), SettingsMetadata VaultingModeMetadata = default(SettingsMetadata))
         {
             this.AllowAccountManagement = AllowAccountManagement;
             this.AllowAccountManagementMetadata = AllowAccountManagementMetadata;
@@ -157,6 +159,8 @@ namespace DocuSign.eSign.Model
             this.AllowWetSigningOverrideMetadata = AllowWetSigningOverrideMetadata;
             this.CanCreateWorkspaces = CanCreateWorkspaces;
             this.CanCreateWorkspacesMetadata = CanCreateWorkspacesMetadata;
+            this.CanSendEnvelopesViaSMS = CanSendEnvelopesViaSMS;
+            this.CanSendEnvelopesViaSMSMetadata = CanSendEnvelopesViaSMSMetadata;
             this.DisableDocumentUpload = DisableDocumentUpload;
             this.DisableDocumentUploadMetadata = DisableDocumentUploadMetadata;
             this.DisableOtherActions = DisableOtherActions;
@@ -409,6 +413,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canCreateWorkspacesMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanCreateWorkspacesMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets CanSendEnvelopesViaSMS
+        /// </summary>
+        [DataMember(Name="canSendEnvelopesViaSMS", EmitDefaultValue=false)]
+        public string CanSendEnvelopesViaSMS { get; set; }
+        /// <summary>
+        /// Gets or Sets CanSendEnvelopesViaSMSMetadata
+        /// </summary>
+        [DataMember(Name="canSendEnvelopesViaSMSMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata CanSendEnvelopesViaSMSMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets DisableDocumentUpload
         /// </summary>
         [DataMember(Name="disableDocumentUpload", EmitDefaultValue=false)]
@@ -605,6 +619,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  AllowWetSigningOverrideMetadata: ").Append(AllowWetSigningOverrideMetadata).Append("\n");
             sb.Append("  CanCreateWorkspaces: ").Append(CanCreateWorkspaces).Append("\n");
             sb.Append("  CanCreateWorkspacesMetadata: ").Append(CanCreateWorkspacesMetadata).Append("\n");
+            sb.Append("  CanSendEnvelopesViaSMS: ").Append(CanSendEnvelopesViaSMS).Append("\n");
+            sb.Append("  CanSendEnvelopesViaSMSMetadata: ").Append(CanSendEnvelopesViaSMSMetadata).Append("\n");
             sb.Append("  DisableDocumentUpload: ").Append(DisableDocumentUpload).Append("\n");
             sb.Append("  DisableDocumentUploadMetadata: ").Append(DisableDocumentUploadMetadata).Append("\n");
             sb.Append("  DisableOtherActions: ").Append(DisableOtherActions).Append("\n");
@@ -891,6 +907,16 @@ namespace DocuSign.eSign.Model
                     this.CanCreateWorkspacesMetadata.Equals(other.CanCreateWorkspacesMetadata)
                 ) && 
                 (
+                    this.CanSendEnvelopesViaSMS == other.CanSendEnvelopesViaSMS ||
+                    this.CanSendEnvelopesViaSMS != null &&
+                    this.CanSendEnvelopesViaSMS.Equals(other.CanSendEnvelopesViaSMS)
+                ) && 
+                (
+                    this.CanSendEnvelopesViaSMSMetadata == other.CanSendEnvelopesViaSMSMetadata ||
+                    this.CanSendEnvelopesViaSMSMetadata != null &&
+                    this.CanSendEnvelopesViaSMSMetadata.Equals(other.CanSendEnvelopesViaSMSMetadata)
+                ) && 
+                (
                     this.DisableDocumentUpload == other.DisableDocumentUpload ||
                     this.DisableDocumentUpload != null &&
                     this.DisableDocumentUpload.Equals(other.DisableDocumentUpload)
@@ -1136,6 +1162,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CanCreateWorkspaces.GetHashCode();
                 if (this.CanCreateWorkspacesMetadata != null)
                     hash = hash * 59 + this.CanCreateWorkspacesMetadata.GetHashCode();
+                if (this.CanSendEnvelopesViaSMS != null)
+                    hash = hash * 59 + this.CanSendEnvelopesViaSMS.GetHashCode();
+                if (this.CanSendEnvelopesViaSMSMetadata != null)
+                    hash = hash * 59 + this.CanSendEnvelopesViaSMSMetadata.GetHashCode();
                 if (this.DisableDocumentUpload != null)
                     hash = hash * 59 + this.DisableDocumentUpload.GetHashCode();
                 if (this.DisableDocumentUploadMetadata != null)

@@ -54,7 +54,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SizeBytes">SizeBytes.</param>
         /// <param name="Type">Type.</param>
         /// <param name="Uri">Uri.</param>
-        public EnvelopeDocument(string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), string Name = default(string), string Order = default(string), string Pages = default(string), string SignerMustAcknowledge = default(string), Object SizeBytes = default(Object), string Type = default(string), string Uri = default(string))
+        public EnvelopeDocument(string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), string Name = default(string), string Order = default(string), string Pages = default(string), string SignerMustAcknowledge = default(string), string SizeBytes = default(string), string Type = default(string), string Uri = default(string))
         {
             this.AttachmentTabId = AttachmentTabId;
             this.AuthoritativeCopy = AuthoritativeCopy;
@@ -145,7 +145,7 @@ namespace DocuSign.eSign.Model
         /// Gets or Sets SizeBytes
         /// </summary>
         [DataMember(Name="sizeBytes", EmitDefaultValue=false)]
-        public Object SizeBytes { get; set; }
+        public string SizeBytes { get; set; }
         /// <summary>
         /// Gets or Sets Type
         /// </summary>

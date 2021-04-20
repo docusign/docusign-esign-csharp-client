@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>DocuSign.eSign.dll</id>
-    <version>3.8.1-rc</version>
+    <version>3.9.0-rc</version>
     <title>DocuSign.eSign</title>
     <authors>DocuSign</authors>
     <owners>DocuSign</owners>
@@ -12,7 +12,7 @@
     <iconUrl>https://s.gravatar.com/avatar/4a8c033df6baa902f730d514d5574c33</iconUrl>
     <projectUrl>https://github.com/docusign/docusign-csharp-client</projectUrl>
     <license>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</license>
-    <copyright>Copyright © DocuSign 2020</copyright>
+    <copyright>Copyright © DocuSign 2021</copyright>
     <tags>DocuSign.eSign;REST;eSign;docusign;eSignature;api</tags>
     <dependencies>
       <group targetFramework="net452">

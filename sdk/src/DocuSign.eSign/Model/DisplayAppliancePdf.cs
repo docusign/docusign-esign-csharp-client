@@ -34,7 +34,6 @@ namespace DocuSign.eSign.Model
         {
             // Empty Constructor
         }
-
         
         /// <summary>
         /// Returns the string presentation of the object

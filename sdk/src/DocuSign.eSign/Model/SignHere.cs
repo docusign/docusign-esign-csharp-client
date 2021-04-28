@@ -91,6 +91,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ScaleValue">ScaleValue.</param>
         /// <param name="ScaleValueMetadata">ScaleValueMetadata.</param>
         /// <param name="SmartContractInformation">SmartContractInformation.</param>
+        /// <param name="Source">Source.</param>
         /// <param name="Stamp">Stamp.</param>
         /// <param name="StampType">StampType.</param>
         /// <param name="StampTypeMetadata">StampTypeMetadata.</param>
@@ -118,7 +119,7 @@ namespace DocuSign.eSign.Model
         /// <param name="XPositionMetadata">XPositionMetadata.</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPositionMetadata">YPositionMetadata.</param>
-        public SignHere(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string IsSealSignTab = default(string), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Optional = default(string), PropertyMetadata OptionalMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string ScaleValue = default(string), PropertyMetadata ScaleValueMetadata = default(PropertyMetadata), SmartContractInformation SmartContractInformation = default(SmartContractInformation), Stamp Stamp = default(Stamp), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabLabel = default(string), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
+        public SignHere(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string IsSealSignTab = default(string), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Optional = default(string), PropertyMetadata OptionalMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string ScaleValue = default(string), PropertyMetadata ScaleValueMetadata = default(PropertyMetadata), SmartContractInformation SmartContractInformation = default(SmartContractInformation), string Source = default(string), Stamp Stamp = default(Stamp), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabLabel = default(string), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
             this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
             this.AnchorAllowWhiteSpaceInCharactersMetadata = AnchorAllowWhiteSpaceInCharactersMetadata;
@@ -173,6 +174,7 @@ namespace DocuSign.eSign.Model
             this.ScaleValue = ScaleValue;
             this.ScaleValueMetadata = ScaleValueMetadata;
             this.SmartContractInformation = SmartContractInformation;
+            this.Source = Source;
             this.Stamp = Stamp;
             this.StampType = StampType;
             this.StampTypeMetadata = StampTypeMetadata;
@@ -484,6 +486,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="smartContractInformation", EmitDefaultValue=false)]
         public SmartContractInformation SmartContractInformation { get; set; }
         /// <summary>
+        /// Gets or Sets Source
+        /// </summary>
+        [DataMember(Name="source", EmitDefaultValue=false)]
+        public string Source { get; set; }
+        /// <summary>
         /// Gets or Sets Stamp
         /// </summary>
         [DataMember(Name="stamp", EmitDefaultValue=false)]
@@ -687,6 +694,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ScaleValue: ").Append(ScaleValue).Append("\n");
             sb.Append("  ScaleValueMetadata: ").Append(ScaleValueMetadata).Append("\n");
             sb.Append("  SmartContractInformation: ").Append(SmartContractInformation).Append("\n");
+            sb.Append("  Source: ").Append(Source).Append("\n");
             sb.Append("  Stamp: ").Append(Stamp).Append("\n");
             sb.Append("  StampType: ").Append(StampType).Append("\n");
             sb.Append("  StampTypeMetadata: ").Append(StampTypeMetadata).Append("\n");
@@ -1016,6 +1024,11 @@ namespace DocuSign.eSign.Model
                     this.SmartContractInformation.Equals(other.SmartContractInformation)
                 ) && 
                 (
+                    this.Source == other.Source ||
+                    this.Source != null &&
+                    this.Source.Equals(other.Source)
+                ) && 
+                (
                     this.Stamp == other.Stamp ||
                     this.Stamp != null &&
                     this.Stamp.Equals(other.Stamp)
@@ -1269,6 +1282,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ScaleValueMetadata.GetHashCode();
                 if (this.SmartContractInformation != null)
                     hash = hash * 59 + this.SmartContractInformation.GetHashCode();
+                if (this.Source != null)
+                    hash = hash * 59 + this.Source.GetHashCode();
                 if (this.Stamp != null)
                     hash = hash * 59 + this.Stamp.GetHashCode();
                 if (this.StampType != null)

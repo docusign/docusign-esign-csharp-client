@@ -11120,8 +11120,7 @@ namespace DocuSign.eSign.Api
                 throw new ApiException(400, "Missing required parameter 'brandId' when calling AccountsApi->UpdateBrandResourcesByContentType");
             // verify the required parameter 'resourceContentType' is set
             if (resourceContentType == null)
-                throw new ApiException(400, "Missing required parameter 'resourceContentType' when calling AccountsApi->UpdateBrandResourcesByContentType");
-           
+                throw new ApiException(400, "Missing required parameter 'resourceContentType' when calling AccountsApi->UpdateBrandResourcesByContentType");            
             var localVarPath = "/v2/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
@@ -11150,7 +11149,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (brandId != null) localVarPathParams.Add("brandId", this.ApiClient.ParameterToString(brandId)); // path parameter
             if (resourceContentType != null) localVarPathParams.Add("resourceContentType", this.ApiClient.ParameterToString(resourceContentType)); // path parameter
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -11219,7 +11217,7 @@ namespace DocuSign.eSign.Api
             // verify the required parameter 'resourceContentType' is set
             if (resourceContentType == null)
                 throw new ApiException(400, "Missing required parameter 'resourceContentType' when calling AccountsApi->UpdateBrandResourcesByContentType");
-            
+           
             var localVarPath = "/v2/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
@@ -11248,7 +11246,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (brandId != null) localVarPathParams.Add("brandId", this.ApiClient.ParameterToString(brandId)); // path parameter
             if (resourceContentType != null) localVarPathParams.Add("resourceContentType", this.ApiClient.ParameterToString(resourceContentType)); // path parameter
-
 
             // authentication (docusignAccessCode) required
             // oauth required

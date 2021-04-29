@@ -1,5 +1,12 @@
 ﻿# DocuSign C# Client Changelog - eSignature API v2
- 
+
+## [v3.9.0] - eSignature API v2-21.1.01.03 - 04/26/2021
+### Added
+- Added new method `DeleteConnectSecret` to connect.
+### Changed	
+- Added support for version v2-21.1.01.03 of the DocuSign eSignature API.
+- Updated the SDK release version.
+
 ## [v3.9.0-rc] - eSignature API v2-21.1.01 - 04/15/2021
 ### Changed
 *   Added support for version v2-21.1.01 of the DocuSign eSignature API.

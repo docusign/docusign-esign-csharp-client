@@ -1,6 +1,14 @@
 ﻿# DocuSign C# Client Changelog
- 
- ## [v5.4.0-rc] - eSignature API v2.1-21.1.01 - 04/15/2021
+
+## [v5.4.0] - eSignature API v2.1-21.1.01.03 - 04/26/2021
+### Added
+- Added new methods `DeleteCustomFieldsV2`, `DeletePageInfoV2`, `GetApplianceEnvelopeInfo`, `GetTemplateInfo` to envelopes.
+- Added new method `DeleteConnectSecret` to connect.
+### Changed
+- Added support for version v2.1-21.1.01.03 of the DocuSign eSignature API.
+- Updated the SDK release version.
+
+## [v5.4.0-rc] - eSignature API v2.1-21.1.01 - 04/15/2021
 ### Changed
 *   Added support for version v2.1-21.1.01 of the DocuSign eSignature API.
 *   Updated the SDK release version

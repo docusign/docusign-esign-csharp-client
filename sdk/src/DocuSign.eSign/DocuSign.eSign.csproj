@@ -35,8 +35,6 @@ Contact: devcenter@docusign.com
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>[3.10.0-rc] - eSignature API v2-21.1.02.00 - 05/20/2021</PackageReleaseNotes>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>DocuSignClient.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <!-- .NET Framework 4.5.2 compilation flags and build options -->
@@ -62,9 +60,5 @@ Contact: devcenter@docusign.com
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
     <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="5.4.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Include="DocuSignClient.snk" />
   </ItemGroup>
 </Project>

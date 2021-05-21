@@ -46,6 +46,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ContainsPdfFormFields">ContainsPdfFormFields.</param>
         /// <param name="Display">Display.</param>
         /// <param name="DisplayMetadata">DisplayMetadata.</param>
+        /// <param name="DocumentBase64">DocumentBase64.</param>
         /// <param name="DocumentFields">DocumentFields.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdGuid">DocumentIdGuid.</param>
@@ -63,7 +64,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="Type">Type.</param>
         /// <param name="Uri">Uri.</param>
-        public EnvelopeDocument(List<string> AddedRecipientIds = default(List<string>), string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), PropertyMetadata AuthoritativeCopyMetadata = default(PropertyMetadata), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), PropertyMetadata DisplayMetadata = default(PropertyMetadata), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string DocumentIdGuid = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), PropertyMetadata IncludeInDownloadMetadata = default(PropertyMetadata), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Order = default(string), List<Page> Pages = default(List<Page>), string SignerMustAcknowledge = default(string), PropertyMetadata SignerMustAcknowledgeMetadata = default(PropertyMetadata), string SizeBytes = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
+        public EnvelopeDocument(List<string> AddedRecipientIds = default(List<string>), string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), PropertyMetadata AuthoritativeCopyMetadata = default(PropertyMetadata), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), PropertyMetadata DisplayMetadata = default(PropertyMetadata), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string DocumentIdGuid = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), PropertyMetadata IncludeInDownloadMetadata = default(PropertyMetadata), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Order = default(string), List<Page> Pages = default(List<Page>), string SignerMustAcknowledge = default(string), PropertyMetadata SignerMustAcknowledgeMetadata = default(PropertyMetadata), string SizeBytes = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
         {
             this.AddedRecipientIds = AddedRecipientIds;
             this.AttachmentTabId = AttachmentTabId;
@@ -73,6 +74,7 @@ namespace DocuSign.eSign.Model
             this.ContainsPdfFormFields = ContainsPdfFormFields;
             this.Display = Display;
             this.DisplayMetadata = DisplayMetadata;
+            this.DocumentBase64 = DocumentBase64;
             this.DocumentFields = DocumentFields;
             this.DocumentId = DocumentId;
             this.DocumentIdGuid = DocumentIdGuid;
@@ -133,6 +135,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="displayMetadata", EmitDefaultValue=false)]
         public PropertyMetadata DisplayMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets DocumentBase64
+        /// </summary>
+        [DataMember(Name="documentBase64", EmitDefaultValue=false)]
+        public string DocumentBase64 { get; set; }
         /// <summary>
         /// Gets or Sets DocumentFields
         /// </summary>
@@ -237,6 +244,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ContainsPdfFormFields: ").Append(ContainsPdfFormFields).Append("\n");
             sb.Append("  Display: ").Append(Display).Append("\n");
             sb.Append("  DisplayMetadata: ").Append(DisplayMetadata).Append("\n");
+            sb.Append("  DocumentBase64: ").Append(DocumentBase64).Append("\n");
             sb.Append("  DocumentFields: ").Append(DocumentFields).Append("\n");
             sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
             sb.Append("  DocumentIdGuid: ").Append(DocumentIdGuid).Append("\n");
@@ -329,6 +337,11 @@ namespace DocuSign.eSign.Model
                     this.DisplayMetadata == other.DisplayMetadata ||
                     this.DisplayMetadata != null &&
                     this.DisplayMetadata.Equals(other.DisplayMetadata)
+                ) && 
+                (
+                    this.DocumentBase64 == other.DocumentBase64 ||
+                    this.DocumentBase64 != null &&
+                    this.DocumentBase64.Equals(other.DocumentBase64)
                 ) && 
                 (
                     this.DocumentFields == other.DocumentFields ||
@@ -444,6 +457,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Display.GetHashCode();
                 if (this.DisplayMetadata != null)
                     hash = hash * 59 + this.DisplayMetadata.GetHashCode();
+                if (this.DocumentBase64 != null)
+                    hash = hash * 59 + this.DocumentBase64.GetHashCode();
                 if (this.DocumentFields != null)
                     hash = hash * 59 + this.DocumentFields.GetHashCode();
                 if (this.DocumentId != null)

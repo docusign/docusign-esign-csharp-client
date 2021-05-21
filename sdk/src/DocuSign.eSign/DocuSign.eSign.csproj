@@ -24,7 +24,7 @@ Contact: devcenter@docusign.com
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>5.4.0</VersionPrefix>
+    <VersionPrefix>5.5.0-rc</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -34,7 +34,9 @@ Contact: devcenter@docusign.com
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[5.4.0] - eSignature API v2.1-21.1.01.03 - 04/26/2021</PackageReleaseNotes>
+    <PackageReleaseNotes>[5.5.0-rc] - eSignature API v2.1-21.1.02.00 - 05/20/2021</PackageReleaseNotes>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>DocuSignClient.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <!-- .NET Framework 4.5.2 compilation flags and build options -->
@@ -61,5 +63,8 @@ Contact: devcenter@docusign.com
     <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="5.4.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
   </ItemGroup>
-
+  
+  <ItemGroup>
+    <None Include="DocuSignClient.snk" />
+  </ItemGroup>
 </Project>

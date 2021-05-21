@@ -39,19 +39,23 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="ExternalFile" /> class.
         /// </summary>
         /// <param name="Date">Date.</param>
+        /// <param name="HasCompositeTemplate">HasCompositeTemplate.</param>
         /// <param name="Id">Id.</param>
         /// <param name="Img">Img.</param>
         /// <param name="Name">Name.</param>
+        /// <param name="OwnerName">OwnerName.</param>
         /// <param name="Size">Reserved: TBD.</param>
         /// <param name="Supported">Supported.</param>
         /// <param name="Type">Type.</param>
         /// <param name="Uri">Uri.</param>
-        public ExternalFile(string Date = default(string), string Id = default(string), string Img = default(string), string Name = default(string), string Size = default(string), string Supported = default(string), string Type = default(string), string Uri = default(string))
+        public ExternalFile(string Date = default(string), string HasCompositeTemplate = default(string), string Id = default(string), string Img = default(string), string Name = default(string), string OwnerName = default(string), string Size = default(string), string Supported = default(string), string Type = default(string), string Uri = default(string))
         {
             this.Date = Date;
+            this.HasCompositeTemplate = HasCompositeTemplate;
             this.Id = Id;
             this.Img = Img;
             this.Name = Name;
+            this.OwnerName = OwnerName;
             this.Size = Size;
             this.Supported = Supported;
             this.Type = Type;
@@ -63,6 +67,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="date", EmitDefaultValue=false)]
         public string Date { get; set; }
+        /// <summary>
+        /// Gets or Sets HasCompositeTemplate
+        /// </summary>
+        [DataMember(Name="hasCompositeTemplate", EmitDefaultValue=false)]
+        public string HasCompositeTemplate { get; set; }
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
@@ -78,6 +87,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+        /// <summary>
+        /// Gets or Sets OwnerName
+        /// </summary>
+        [DataMember(Name="ownerName", EmitDefaultValue=false)]
+        public string OwnerName { get; set; }
         /// <summary>
         /// Reserved: TBD
         /// </summary>
@@ -108,9 +122,11 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class ExternalFile {\n");
             sb.Append("  Date: ").Append(Date).Append("\n");
+            sb.Append("  HasCompositeTemplate: ").Append(HasCompositeTemplate).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Img: ").Append(Img).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  OwnerName: ").Append(OwnerName).Append("\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
             sb.Append("  Supported: ").Append(Supported).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -157,6 +173,11 @@ namespace DocuSign.eSign.Model
                     this.Date.Equals(other.Date)
                 ) && 
                 (
+                    this.HasCompositeTemplate == other.HasCompositeTemplate ||
+                    this.HasCompositeTemplate != null &&
+                    this.HasCompositeTemplate.Equals(other.HasCompositeTemplate)
+                ) && 
+                (
                     this.Id == other.Id ||
                     this.Id != null &&
                     this.Id.Equals(other.Id)
@@ -170,6 +191,11 @@ namespace DocuSign.eSign.Model
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
+                ) && 
+                (
+                    this.OwnerName == other.OwnerName ||
+                    this.OwnerName != null &&
+                    this.OwnerName.Equals(other.OwnerName)
                 ) && 
                 (
                     this.Size == other.Size ||
@@ -206,12 +232,16 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Date != null)
                     hash = hash * 59 + this.Date.GetHashCode();
+                if (this.HasCompositeTemplate != null)
+                    hash = hash * 59 + this.HasCompositeTemplate.GetHashCode();
                 if (this.Id != null)
                     hash = hash * 59 + this.Id.GetHashCode();
                 if (this.Img != null)
                     hash = hash * 59 + this.Img.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.OwnerName != null)
+                    hash = hash * 59 + this.OwnerName.GetHashCode();
                 if (this.Size != null)
                     hash = hash * 59 + this.Size.GetHashCode();
                 if (this.Supported != null)

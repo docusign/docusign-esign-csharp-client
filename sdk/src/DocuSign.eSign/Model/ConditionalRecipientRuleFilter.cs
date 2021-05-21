@@ -43,14 +43,16 @@ namespace DocuSign.eSign.Model
         /// <param name="Scope">Scope.</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
         /// <param name="TabLabel">The label string associated with the tab..</param>
+        /// <param name="TabType">TabType.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        public ConditionalRecipientRuleFilter(string Operator = default(string), string RecipientId = default(string), string Scope = default(string), string TabId = default(string), string TabLabel = default(string), string Value = default(string))
+        public ConditionalRecipientRuleFilter(string Operator = default(string), string RecipientId = default(string), string Scope = default(string), string TabId = default(string), string TabLabel = default(string), string TabType = default(string), string Value = default(string))
         {
             this.Operator = Operator;
             this.RecipientId = RecipientId;
             this.Scope = Scope;
             this.TabId = TabId;
             this.TabLabel = TabLabel;
+            this.TabType = TabType;
             this.Value = Value;
         }
         
@@ -83,6 +85,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabLabel", EmitDefaultValue=false)]
         public string TabLabel { get; set; }
         /// <summary>
+        /// Gets or Sets TabType
+        /// </summary>
+        [DataMember(Name="tabType", EmitDefaultValue=false)]
+        public string TabType { get; set; }
+        /// <summary>
         /// Specifies the value of the tab. 
         /// </summary>
         /// <value>Specifies the value of the tab. </value>
@@ -101,6 +108,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Scope: ").Append(Scope).Append("\n");
             sb.Append("  TabId: ").Append(TabId).Append("\n");
             sb.Append("  TabLabel: ").Append(TabLabel).Append("\n");
+            sb.Append("  TabType: ").Append(TabType).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -164,6 +172,11 @@ namespace DocuSign.eSign.Model
                     this.TabLabel.Equals(other.TabLabel)
                 ) && 
                 (
+                    this.TabType == other.TabType ||
+                    this.TabType != null &&
+                    this.TabType.Equals(other.TabType)
+                ) && 
+                (
                     this.Value == other.Value ||
                     this.Value != null &&
                     this.Value.Equals(other.Value)
@@ -191,6 +204,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.TabId.GetHashCode();
                 if (this.TabLabel != null)
                     hash = hash * 59 + this.TabLabel.GetHashCode();
+                if (this.TabType != null)
+                    hash = hash * 59 + this.TabType.GetHashCode();
                 if (this.Value != null)
                     hash = hash * 59 + this.Value.GetHashCode();
                 return hash;

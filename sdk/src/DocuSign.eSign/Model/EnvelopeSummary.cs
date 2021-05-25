@@ -41,14 +41,18 @@ namespace DocuSign.eSign.Model
         /// <param name="BulkEnvelopeStatus">BulkEnvelopeStatus.</param>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="RecipientSigningUri">RecipientSigningUri.</param>
+        /// <param name="RecipientSigningUriError">RecipientSigningUriError.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusDateTime">The DateTime that the envelope changed status (i.e. was created or sent.).</param>
         /// <param name="Uri">Uri.</param>
-        public EnvelopeSummary(BulkEnvelopeStatus BulkEnvelopeStatus = default(BulkEnvelopeStatus), string EnvelopeId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Status = default(string), string StatusDateTime = default(string), string Uri = default(string))
+        public EnvelopeSummary(BulkEnvelopeStatus BulkEnvelopeStatus = default(BulkEnvelopeStatus), string EnvelopeId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string RecipientSigningUri = default(string), string RecipientSigningUriError = default(string), string Status = default(string), string StatusDateTime = default(string), string Uri = default(string))
         {
             this.BulkEnvelopeStatus = BulkEnvelopeStatus;
             this.EnvelopeId = EnvelopeId;
             this.ErrorDetails = ErrorDetails;
+            this.RecipientSigningUri = RecipientSigningUri;
+            this.RecipientSigningUriError = RecipientSigningUriError;
             this.Status = Status;
             this.StatusDateTime = StatusDateTime;
             this.Uri = Uri;
@@ -70,6 +74,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
+        /// <summary>
+        /// Gets or Sets RecipientSigningUri
+        /// </summary>
+        [DataMember(Name="recipientSigningUri", EmitDefaultValue=false)]
+        public string RecipientSigningUri { get; set; }
+        /// <summary>
+        /// Gets or Sets RecipientSigningUriError
+        /// </summary>
+        [DataMember(Name="recipientSigningUriError", EmitDefaultValue=false)]
+        public string RecipientSigningUriError { get; set; }
         /// <summary>
         /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
         /// </summary>
@@ -98,6 +112,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  BulkEnvelopeStatus: ").Append(BulkEnvelopeStatus).Append("\n");
             sb.Append("  EnvelopeId: ").Append(EnvelopeId).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
+            sb.Append("  RecipientSigningUri: ").Append(RecipientSigningUri).Append("\n");
+            sb.Append("  RecipientSigningUriError: ").Append(RecipientSigningUriError).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StatusDateTime: ").Append(StatusDateTime).Append("\n");
             sb.Append("  Uri: ").Append(Uri).Append("\n");
@@ -153,6 +169,16 @@ namespace DocuSign.eSign.Model
                     this.ErrorDetails.Equals(other.ErrorDetails)
                 ) && 
                 (
+                    this.RecipientSigningUri == other.RecipientSigningUri ||
+                    this.RecipientSigningUri != null &&
+                    this.RecipientSigningUri.Equals(other.RecipientSigningUri)
+                ) && 
+                (
+                    this.RecipientSigningUriError == other.RecipientSigningUriError ||
+                    this.RecipientSigningUriError != null &&
+                    this.RecipientSigningUriError.Equals(other.RecipientSigningUriError)
+                ) && 
+                (
                     this.Status == other.Status ||
                     this.Status != null &&
                     this.Status.Equals(other.Status)
@@ -186,6 +212,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnvelopeId.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                if (this.RecipientSigningUri != null)
+                    hash = hash * 59 + this.RecipientSigningUri.GetHashCode();
+                if (this.RecipientSigningUriError != null)
+                    hash = hash * 59 + this.RecipientSigningUriError.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.StatusDateTime != null)

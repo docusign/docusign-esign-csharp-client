@@ -41,13 +41,15 @@ namespace DocuSign.eSign.Model
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="ListSelectedValue">ListSelectedValue.</param>
         /// <param name="Name">Name.</param>
+        /// <param name="NumericalValue">NumericalValue.</param>
         /// <param name="OriginalValue">The initial value of the tab when it was sent to the recipient. .</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        public FormDataItem(ErrorDetails ErrorDetails = default(ErrorDetails), string ListSelectedValue = default(string), string Name = default(string), string OriginalValue = default(string), string Value = default(string))
+        public FormDataItem(ErrorDetails ErrorDetails = default(ErrorDetails), string ListSelectedValue = default(string), string Name = default(string), string NumericalValue = default(string), string OriginalValue = default(string), string Value = default(string))
         {
             this.ErrorDetails = ErrorDetails;
             this.ListSelectedValue = ListSelectedValue;
             this.Name = Name;
+            this.NumericalValue = NumericalValue;
             this.OriginalValue = OriginalValue;
             this.Value = Value;
         }
@@ -67,6 +69,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+        /// <summary>
+        /// Gets or Sets NumericalValue
+        /// </summary>
+        [DataMember(Name="numericalValue", EmitDefaultValue=false)]
+        public string NumericalValue { get; set; }
         /// <summary>
         /// The initial value of the tab when it was sent to the recipient. 
         /// </summary>
@@ -90,6 +97,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("  ListSelectedValue: ").Append(ListSelectedValue).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  NumericalValue: ").Append(NumericalValue).Append("\n");
             sb.Append("  OriginalValue: ").Append(OriginalValue).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
@@ -144,6 +152,11 @@ namespace DocuSign.eSign.Model
                     this.Name.Equals(other.Name)
                 ) && 
                 (
+                    this.NumericalValue == other.NumericalValue ||
+                    this.NumericalValue != null &&
+                    this.NumericalValue.Equals(other.NumericalValue)
+                ) && 
+                (
                     this.OriginalValue == other.OriginalValue ||
                     this.OriginalValue != null &&
                     this.OriginalValue.Equals(other.OriginalValue)
@@ -172,6 +185,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ListSelectedValue.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.NumericalValue != null)
+                    hash = hash * 59 + this.NumericalValue.GetHashCode();
                 if (this.OriginalValue != null)
                     hash = hash * 59 + this.OriginalValue.GetHashCode();
                 if (this.Value != null)

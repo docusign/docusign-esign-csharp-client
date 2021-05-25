@@ -38,6 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportInProductRunRequest" /> class.
         /// </summary>
+        /// <param name="AuthenticationSuccessFilter">AuthenticationSuccessFilter.</param>
         /// <param name="CustomFieldFilter">CustomFieldFilter.</param>
         /// <param name="DateRangeCustomFromDate">DateRangeCustomFromDate.</param>
         /// <param name="DateRangeCustomToDate">DateRangeCustomToDate.</param>
@@ -60,8 +61,10 @@ namespace DocuSign.eSign.Model
         /// <param name="SortDirection">SortDirection.</param>
         /// <param name="SortField">SortField.</param>
         /// <param name="StartPosition">Starting position of the current result set..</param>
-        public ReportInProductRunRequest(string CustomFieldFilter = default(string), string DateRangeCustomFromDate = default(string), string DateRangeCustomToDate = default(string), string DateRangeFilter = default(string), string EnvelopeDateTypeFilter = default(string), string EnvelopeRecipientNameContainsFilter = default(string), string EnvelopeStatusFilter = default(string), string EnvelopeSubjectContainsFilter = default(string), List<ReportInProductField> Fields = default(List<ReportInProductField>), string ForDownload = default(string), string IsDashboard = default(string), string PeriodLengthFilter = default(string), string ReportCustomizedId = default(string), string ReportDescription = default(string), string ReportId = default(string), string ReportInvocationType = default(string), string ReportName = default(string), string SentByFilter = default(string), string SentByIds = default(string), string SortDirection = default(string), string SortField = default(string), string StartPosition = default(string))
+        /// <param name="VerificationStatusFilter">VerificationStatusFilter.</param>
+        public ReportInProductRunRequest(string AuthenticationSuccessFilter = default(string), string CustomFieldFilter = default(string), string DateRangeCustomFromDate = default(string), string DateRangeCustomToDate = default(string), string DateRangeFilter = default(string), string EnvelopeDateTypeFilter = default(string), string EnvelopeRecipientNameContainsFilter = default(string), string EnvelopeStatusFilter = default(string), string EnvelopeSubjectContainsFilter = default(string), List<ReportInProductField> Fields = default(List<ReportInProductField>), string ForDownload = default(string), string IsDashboard = default(string), string PeriodLengthFilter = default(string), string ReportCustomizedId = default(string), string ReportDescription = default(string), string ReportId = default(string), string ReportInvocationType = default(string), string ReportName = default(string), string SentByFilter = default(string), string SentByIds = default(string), string SortDirection = default(string), string SortField = default(string), string StartPosition = default(string), string VerificationStatusFilter = default(string))
         {
+            this.AuthenticationSuccessFilter = AuthenticationSuccessFilter;
             this.CustomFieldFilter = CustomFieldFilter;
             this.DateRangeCustomFromDate = DateRangeCustomFromDate;
             this.DateRangeCustomToDate = DateRangeCustomToDate;
@@ -84,8 +87,14 @@ namespace DocuSign.eSign.Model
             this.SortDirection = SortDirection;
             this.SortField = SortField;
             this.StartPosition = StartPosition;
+            this.VerificationStatusFilter = VerificationStatusFilter;
         }
         
+        /// <summary>
+        /// Gets or Sets AuthenticationSuccessFilter
+        /// </summary>
+        [DataMember(Name="authenticationSuccessFilter", EmitDefaultValue=false)]
+        public string AuthenticationSuccessFilter { get; set; }
         /// <summary>
         /// Gets or Sets CustomFieldFilter
         /// </summary>
@@ -198,6 +207,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="startPosition", EmitDefaultValue=false)]
         public string StartPosition { get; set; }
         /// <summary>
+        /// Gets or Sets VerificationStatusFilter
+        /// </summary>
+        [DataMember(Name="verificationStatusFilter", EmitDefaultValue=false)]
+        public string VerificationStatusFilter { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -205,6 +219,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ReportInProductRunRequest {\n");
+            sb.Append("  AuthenticationSuccessFilter: ").Append(AuthenticationSuccessFilter).Append("\n");
             sb.Append("  CustomFieldFilter: ").Append(CustomFieldFilter).Append("\n");
             sb.Append("  DateRangeCustomFromDate: ").Append(DateRangeCustomFromDate).Append("\n");
             sb.Append("  DateRangeCustomToDate: ").Append(DateRangeCustomToDate).Append("\n");
@@ -227,6 +242,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SortDirection: ").Append(SortDirection).Append("\n");
             sb.Append("  SortField: ").Append(SortField).Append("\n");
             sb.Append("  StartPosition: ").Append(StartPosition).Append("\n");
+            sb.Append("  VerificationStatusFilter: ").Append(VerificationStatusFilter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -263,6 +279,11 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.AuthenticationSuccessFilter == other.AuthenticationSuccessFilter ||
+                    this.AuthenticationSuccessFilter != null &&
+                    this.AuthenticationSuccessFilter.Equals(other.AuthenticationSuccessFilter)
+                ) && 
                 (
                     this.CustomFieldFilter == other.CustomFieldFilter ||
                     this.CustomFieldFilter != null &&
@@ -372,6 +393,11 @@ namespace DocuSign.eSign.Model
                     this.StartPosition == other.StartPosition ||
                     this.StartPosition != null &&
                     this.StartPosition.Equals(other.StartPosition)
+                ) && 
+                (
+                    this.VerificationStatusFilter == other.VerificationStatusFilter ||
+                    this.VerificationStatusFilter != null &&
+                    this.VerificationStatusFilter.Equals(other.VerificationStatusFilter)
                 );
         }
 
@@ -386,6 +412,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AuthenticationSuccessFilter != null)
+                    hash = hash * 59 + this.AuthenticationSuccessFilter.GetHashCode();
                 if (this.CustomFieldFilter != null)
                     hash = hash * 59 + this.CustomFieldFilter.GetHashCode();
                 if (this.DateRangeCustomFromDate != null)
@@ -430,6 +458,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SortField.GetHashCode();
                 if (this.StartPosition != null)
                     hash = hash * 59 + this.StartPosition.GetHashCode();
+                if (this.VerificationStatusFilter != null)
+                    hash = hash * 59 + this.VerificationStatusFilter.GetHashCode();
                 return hash;
             }
         }

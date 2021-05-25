@@ -65,6 +65,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DeletedDateTime">Specifies the data and time the item was deleted..</param>
         /// <param name="DeliveredDateTime">Reserved: For DocuSign use only..</param>
         /// <param name="DisableResponsiveDocument">DisableResponsiveDocument.</param>
+        /// <param name="DocumentBase64">DocumentBase64.</param>
         /// <param name="Documents">Complex element contains the details on the documents in the envelope..</param>
         /// <param name="DocumentsCombinedUri">DocumentsCombinedUri.</param>
         /// <param name="DocumentsUri">Contains a URI for an endpoint that you can use to retrieve the documents..</param>
@@ -109,6 +110,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Recipients">Recipients.</param>
         /// <param name="RecipientsLock">When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope..</param>
         /// <param name="RecipientsUri">Contains a URI for an endpoint that you can use to retrieve the recipients..</param>
+        /// <param name="RecipientViewRequest">RecipientViewRequest.</param>
         /// <param name="Sender">Sender.</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="SignerCanSignOnMobile">SignerCanSignOnMobile.</param>
@@ -124,7 +126,7 @@ namespace DocuSign.eSign.Model
         /// <param name="VoidedDateTime">The date and time the envelope or template was voided..</param>
         /// <param name="VoidedReason">The reason the envelope or template was voided..</param>
         /// <param name="Workflow">Workflow.</param>
-        public EnvelopeDefinition(string AccessControlListBase64 = default(string), string Accessibility = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowRecipientRecursion = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string Asynchronous = default(string), List<Attachment> Attachments = default(List<Attachment>), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), List<CompositeTemplate> CompositeTemplates = default(List<CompositeTemplate>), string CopyRecipientData = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), EventNotification EventNotification = default(EventNotification), List<EventNotification> EventNotifications = default(List<EventNotification>), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), List<Folder> Folders = default(List<Folder>), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string LastModifiedDateTime = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), string Password = default(string), PowerForm PowerForm = default(PowerForm), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string StatusDateTime = default(string), string TemplateId = default(string), List<TemplateRole> TemplateRoles = default(List<TemplateRole>), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string), Workflow Workflow = default(Workflow))
+        public EnvelopeDefinition(string AccessControlListBase64 = default(string), string Accessibility = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowRecipientRecursion = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string Asynchronous = default(string), List<Attachment> Attachments = default(List<Attachment>), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), List<CompositeTemplate> CompositeTemplates = default(List<CompositeTemplate>), string CopyRecipientData = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), string DocumentBase64 = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), EventNotification EventNotification = default(EventNotification), List<EventNotification> EventNotifications = default(List<EventNotification>), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), List<Folder> Folders = default(List<Folder>), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string LastModifiedDateTime = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), string Password = default(string), PowerForm PowerForm = default(PowerForm), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), RecipientViewRequest RecipientViewRequest = default(RecipientViewRequest), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string StatusDateTime = default(string), string TemplateId = default(string), List<TemplateRole> TemplateRoles = default(List<TemplateRole>), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string), Workflow Workflow = default(Workflow))
         {
             this.AccessControlListBase64 = AccessControlListBase64;
             this.Accessibility = Accessibility;
@@ -153,6 +155,7 @@ namespace DocuSign.eSign.Model
             this.DeletedDateTime = DeletedDateTime;
             this.DeliveredDateTime = DeliveredDateTime;
             this.DisableResponsiveDocument = DisableResponsiveDocument;
+            this.DocumentBase64 = DocumentBase64;
             this.Documents = Documents;
             this.DocumentsCombinedUri = DocumentsCombinedUri;
             this.DocumentsUri = DocumentsUri;
@@ -197,6 +200,7 @@ namespace DocuSign.eSign.Model
             this.Recipients = Recipients;
             this.RecipientsLock = RecipientsLock;
             this.RecipientsUri = RecipientsUri;
+            this.RecipientViewRequest = RecipientViewRequest;
             this.Sender = Sender;
             this.SentDateTime = SentDateTime;
             this.SignerCanSignOnMobile = SignerCanSignOnMobile;
@@ -364,6 +368,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="disableResponsiveDocument", EmitDefaultValue=false)]
         public string DisableResponsiveDocument { get; set; }
+        /// <summary>
+        /// Gets or Sets DocumentBase64
+        /// </summary>
+        [DataMember(Name="documentBase64", EmitDefaultValue=false)]
+        public string DocumentBase64 { get; set; }
         /// <summary>
         /// Complex element contains the details on the documents in the envelope.
         /// </summary>
@@ -601,6 +610,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientsUri", EmitDefaultValue=false)]
         public string RecipientsUri { get; set; }
         /// <summary>
+        /// Gets or Sets RecipientViewRequest
+        /// </summary>
+        [DataMember(Name="recipientViewRequest", EmitDefaultValue=false)]
+        public RecipientViewRequest RecipientViewRequest { get; set; }
+        /// <summary>
         /// Gets or Sets Sender
         /// </summary>
         [DataMember(Name="sender", EmitDefaultValue=false)]
@@ -721,6 +735,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DeletedDateTime: ").Append(DeletedDateTime).Append("\n");
             sb.Append("  DeliveredDateTime: ").Append(DeliveredDateTime).Append("\n");
             sb.Append("  DisableResponsiveDocument: ").Append(DisableResponsiveDocument).Append("\n");
+            sb.Append("  DocumentBase64: ").Append(DocumentBase64).Append("\n");
             sb.Append("  Documents: ").Append(Documents).Append("\n");
             sb.Append("  DocumentsCombinedUri: ").Append(DocumentsCombinedUri).Append("\n");
             sb.Append("  DocumentsUri: ").Append(DocumentsUri).Append("\n");
@@ -765,6 +780,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Recipients: ").Append(Recipients).Append("\n");
             sb.Append("  RecipientsLock: ").Append(RecipientsLock).Append("\n");
             sb.Append("  RecipientsUri: ").Append(RecipientsUri).Append("\n");
+            sb.Append("  RecipientViewRequest: ").Append(RecipientViewRequest).Append("\n");
             sb.Append("  Sender: ").Append(Sender).Append("\n");
             sb.Append("  SentDateTime: ").Append(SentDateTime).Append("\n");
             sb.Append("  SignerCanSignOnMobile: ").Append(SignerCanSignOnMobile).Append("\n");
@@ -950,6 +966,11 @@ namespace DocuSign.eSign.Model
                     this.DisableResponsiveDocument == other.DisableResponsiveDocument ||
                     this.DisableResponsiveDocument != null &&
                     this.DisableResponsiveDocument.Equals(other.DisableResponsiveDocument)
+                ) && 
+                (
+                    this.DocumentBase64 == other.DocumentBase64 ||
+                    this.DocumentBase64 != null &&
+                    this.DocumentBase64.Equals(other.DocumentBase64)
                 ) && 
                 (
                     this.Documents == other.Documents ||
@@ -1172,6 +1193,11 @@ namespace DocuSign.eSign.Model
                     this.RecipientsUri.Equals(other.RecipientsUri)
                 ) && 
                 (
+                    this.RecipientViewRequest == other.RecipientViewRequest ||
+                    this.RecipientViewRequest != null &&
+                    this.RecipientViewRequest.Equals(other.RecipientViewRequest)
+                ) && 
+                (
                     this.Sender == other.Sender ||
                     this.Sender != null &&
                     this.Sender.Equals(other.Sender)
@@ -1313,6 +1339,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DeliveredDateTime.GetHashCode();
                 if (this.DisableResponsiveDocument != null)
                     hash = hash * 59 + this.DisableResponsiveDocument.GetHashCode();
+                if (this.DocumentBase64 != null)
+                    hash = hash * 59 + this.DocumentBase64.GetHashCode();
                 if (this.Documents != null)
                     hash = hash * 59 + this.Documents.GetHashCode();
                 if (this.DocumentsCombinedUri != null)
@@ -1401,6 +1429,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.RecipientsLock.GetHashCode();
                 if (this.RecipientsUri != null)
                     hash = hash * 59 + this.RecipientsUri.GetHashCode();
+                if (this.RecipientViewRequest != null)
+                    hash = hash * 59 + this.RecipientViewRequest.GetHashCode();
                 if (this.Sender != null)
                     hash = hash * 59 + this.Sender.GetHashCode();
                 if (this.SentDateTime != null)

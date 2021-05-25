@@ -38,6 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportInProductGet" /> class.
         /// </summary>
+        /// <param name="AuthenticationSuccessFilter">AuthenticationSuccessFilter.</param>
         /// <param name="CustomFieldFilter">CustomFieldFilter.</param>
         /// <param name="DateRangeCustomFromDate">DateRangeCustomFromDate.</param>
         /// <param name="DateRangeCustomToDate">DateRangeCustomToDate.</param>
@@ -67,8 +68,10 @@ namespace DocuSign.eSign.Model
         /// <param name="SentByIds">SentByIds.</param>
         /// <param name="SortFieldDirection">SortFieldDirection.</param>
         /// <param name="SortFieldName">SortFieldName.</param>
-        public ReportInProductGet(string CustomFieldFilter = default(string), string DateRangeCustomFromDate = default(string), string DateRangeCustomToDate = default(string), string DateRangeFilter = default(string), string DisplayOrder = default(string), string EnvelopeDateTypeFilter = default(string), string EnvelopeRecipientNameContainsFilter = default(string), string EnvelopeStatusFilter = default(string), string EnvelopeSubjectContainsFilter = default(string), List<ReportInProductField> Fields = default(List<ReportInProductField>), string LastScheduledExecutionDate = default(string), string LastScheduledExecutionSuccessDate = default(string), string MaxDownloadRows = default(string), string MaxGridRows = default(string), string MaxScheduledRows = default(string), string PeriodLengthFilter = default(string), string ReportCustomizedId = default(string), string ReportDescription = default(string), string ReportId = default(string), string ReportName = default(string), string ReportType = default(string), string RunUri = default(string), string SaveUri = default(string), string ScheduleId = default(string), ReportInProductSentByDetails SentByDetails = default(ReportInProductSentByDetails), string SentByFilter = default(string), string SentByIds = default(string), string SortFieldDirection = default(string), string SortFieldName = default(string))
+        /// <param name="VerificationStatusFilter">VerificationStatusFilter.</param>
+        public ReportInProductGet(string AuthenticationSuccessFilter = default(string), string CustomFieldFilter = default(string), string DateRangeCustomFromDate = default(string), string DateRangeCustomToDate = default(string), string DateRangeFilter = default(string), string DisplayOrder = default(string), string EnvelopeDateTypeFilter = default(string), string EnvelopeRecipientNameContainsFilter = default(string), string EnvelopeStatusFilter = default(string), string EnvelopeSubjectContainsFilter = default(string), List<ReportInProductField> Fields = default(List<ReportInProductField>), string LastScheduledExecutionDate = default(string), string LastScheduledExecutionSuccessDate = default(string), string MaxDownloadRows = default(string), string MaxGridRows = default(string), string MaxScheduledRows = default(string), string PeriodLengthFilter = default(string), string ReportCustomizedId = default(string), string ReportDescription = default(string), string ReportId = default(string), string ReportName = default(string), string ReportType = default(string), string RunUri = default(string), string SaveUri = default(string), string ScheduleId = default(string), ReportInProductSentByDetails SentByDetails = default(ReportInProductSentByDetails), string SentByFilter = default(string), string SentByIds = default(string), string SortFieldDirection = default(string), string SortFieldName = default(string), string VerificationStatusFilter = default(string))
         {
+            this.AuthenticationSuccessFilter = AuthenticationSuccessFilter;
             this.CustomFieldFilter = CustomFieldFilter;
             this.DateRangeCustomFromDate = DateRangeCustomFromDate;
             this.DateRangeCustomToDate = DateRangeCustomToDate;
@@ -98,8 +101,14 @@ namespace DocuSign.eSign.Model
             this.SentByIds = SentByIds;
             this.SortFieldDirection = SortFieldDirection;
             this.SortFieldName = SortFieldName;
+            this.VerificationStatusFilter = VerificationStatusFilter;
         }
         
+        /// <summary>
+        /// Gets or Sets AuthenticationSuccessFilter
+        /// </summary>
+        [DataMember(Name="authenticationSuccessFilter", EmitDefaultValue=false)]
+        public string AuthenticationSuccessFilter { get; set; }
         /// <summary>
         /// Gets or Sets CustomFieldFilter
         /// </summary>
@@ -246,6 +255,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="sortFieldName", EmitDefaultValue=false)]
         public string SortFieldName { get; set; }
         /// <summary>
+        /// Gets or Sets VerificationStatusFilter
+        /// </summary>
+        [DataMember(Name="verificationStatusFilter", EmitDefaultValue=false)]
+        public string VerificationStatusFilter { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -253,6 +267,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ReportInProductGet {\n");
+            sb.Append("  AuthenticationSuccessFilter: ").Append(AuthenticationSuccessFilter).Append("\n");
             sb.Append("  CustomFieldFilter: ").Append(CustomFieldFilter).Append("\n");
             sb.Append("  DateRangeCustomFromDate: ").Append(DateRangeCustomFromDate).Append("\n");
             sb.Append("  DateRangeCustomToDate: ").Append(DateRangeCustomToDate).Append("\n");
@@ -282,6 +297,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SentByIds: ").Append(SentByIds).Append("\n");
             sb.Append("  SortFieldDirection: ").Append(SortFieldDirection).Append("\n");
             sb.Append("  SortFieldName: ").Append(SortFieldName).Append("\n");
+            sb.Append("  VerificationStatusFilter: ").Append(VerificationStatusFilter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -318,6 +334,11 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.AuthenticationSuccessFilter == other.AuthenticationSuccessFilter ||
+                    this.AuthenticationSuccessFilter != null &&
+                    this.AuthenticationSuccessFilter.Equals(other.AuthenticationSuccessFilter)
+                ) && 
                 (
                     this.CustomFieldFilter == other.CustomFieldFilter ||
                     this.CustomFieldFilter != null &&
@@ -462,6 +483,11 @@ namespace DocuSign.eSign.Model
                     this.SortFieldName == other.SortFieldName ||
                     this.SortFieldName != null &&
                     this.SortFieldName.Equals(other.SortFieldName)
+                ) && 
+                (
+                    this.VerificationStatusFilter == other.VerificationStatusFilter ||
+                    this.VerificationStatusFilter != null &&
+                    this.VerificationStatusFilter.Equals(other.VerificationStatusFilter)
                 );
         }
 
@@ -476,6 +502,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AuthenticationSuccessFilter != null)
+                    hash = hash * 59 + this.AuthenticationSuccessFilter.GetHashCode();
                 if (this.CustomFieldFilter != null)
                     hash = hash * 59 + this.CustomFieldFilter.GetHashCode();
                 if (this.DateRangeCustomFromDate != null)
@@ -534,6 +562,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SortFieldDirection.GetHashCode();
                 if (this.SortFieldName != null)
                     hash = hash * 59 + this.SortFieldName.GetHashCode();
+                if (this.VerificationStatusFilter != null)
+                    hash = hash * 59 + this.VerificationStatusFilter.GetHashCode();
                 return hash;
             }
         }

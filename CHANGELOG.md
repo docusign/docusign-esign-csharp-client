@@ -1,5 +1,15 @@
 ﻿# DocuSign C# Client Changelog - eSignature API v2
 
+## [v3.10.0-rc] - eSignature API v2-21.1.02.00 - 05/20/2021
+### Breaking
+- Removed methods `GetAccountSettingsExport`,`GetSealProviders` from Accounts.
+- Removed methods `CreateConnectSecret`,`DeleteConnectSecret`,`GenerateConnectSecret`,`GetConnectSecrets` from Connect.
+- Removed methods `CompleteSignHash`,`GetUserInfo`,`HealthCheck`,`SignHashSessionInfo`,`UpdateTransaction` from TrustServiceProviders.
+- Removed method `GetUserListExport` from Users.
+### Changed
+- Added support for version v2-21.1.02.00 of the DocuSign eSignature API.
+- Updated the SDK release version.
+
 ## [v3.9.0] - eSignature API v2-21.1.01.03 - 04/26/2021
 ### Added
 - Added new method `DeleteConnectSecret` to connect.

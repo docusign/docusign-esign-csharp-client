@@ -45,7 +45,7 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientFormData">RecipientFormData.</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        public EnvelopeFormData(string EmailSubject = default(string), string EnvelopeId = default(string), List<FormDataItem> FormData = default(List<FormDataItem>), List<FormDataItem> PrefillFormData = default(List<FormDataItem>), List<RecipientFormData> RecipientFormData = default(List<RecipientFormData>), string SentDateTime = default(string), string Status = default(string))
+        public EnvelopeFormData(string EmailSubject = default(string), string EnvelopeId = default(string), List<FormDataItem> FormData = default(List<FormDataItem>), EnvelopeFormDataPrefillFormData PrefillFormData = default(EnvelopeFormDataPrefillFormData), List<RecipientFormData> RecipientFormData = default(List<RecipientFormData>), string SentDateTime = default(string), string Status = default(string))
         {
             this.EmailSubject = EmailSubject;
             this.EnvelopeId = EnvelopeId;
@@ -77,7 +77,7 @@ namespace DocuSign.eSign.Model
         /// Gets or Sets PrefillFormData
         /// </summary>
         [DataMember(Name="prefillFormData", EmitDefaultValue=false)]
-        public List<FormDataItem> PrefillFormData { get; set; }
+        public EnvelopeFormDataPrefillFormData PrefillFormData { get; set; }
         /// <summary>
         /// Gets or Sets RecipientFormData
         /// </summary>
@@ -164,7 +164,7 @@ namespace DocuSign.eSign.Model
                 (
                     this.PrefillFormData == other.PrefillFormData ||
                     this.PrefillFormData != null &&
-                    this.PrefillFormData.SequenceEqual(other.PrefillFormData)
+                    this.PrefillFormData.Equals(other.PrefillFormData)
                 ) && 
                 (
                     this.RecipientFormData == other.RecipientFormData ||

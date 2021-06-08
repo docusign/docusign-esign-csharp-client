@@ -1,5 +1,18 @@
 ﻿# DocuSign C# Client Changelog
  
+## [v5.5.0] - eSignature API v2.1-21.1.02.00 - 06/07/2021
+### Breaking
+- Removed methods `GetAccountSettingsExport`,`GetSealProviders` from Accounts.
+- Removed methods `CreateConnectSecret`,`DeleteConnectSecret`,`GenerateConnectSecret`,`GetConnectSecrets` from Connect.
+- Removed methods `GetDynamicSystemSettings`,`GetTemplateInfo`,`GetApplianceInfo`,`GetAccount`,`GetCustomFields`,`GeleteCustomFieldsV2`,`GetDocumentPages`,`GetImage`,`GetLocalePolicy`,`UpdatePageInfo`,`CreatePageInfo`,`DeletePageInfo`,`UpdatePdf`,`GetPdf`,`GetPdfBlob`,`UpdatePdfBlob`,`CreatePdfBlob`,`UpdateRecipientDeniedDocumentCopy`,`DeleteRecipientDeniedDocumentCopy`,`GetSignerAttachment`,`DeleteSignerAttachment`, from Envelopes.
+- Removed methods `CompleteSignHash`,`GetUserInfo`,`HealthCheck`,`SignHashSessionInfo`,`UpdateTransaction` from TrustServiceProviders.
+- Removed methods `GetUserListExport` from Users.
+### Added
+- Added new methods `GetBulkSendBatchEnvelopes` to BulkEnvelopes.
+### Changed
+- Added support for version v2.1-21.1.02.00 of the DocuSign eSignature API.
+- Updated the SDK release version.
+ 
 ## [v5.5.0-rc] - eSignature API v2.1-21.1.02.00 - 05/20/2021
 ### Breaking
 - Removed methods `GetAccountSettingsExport`,`GetSealProviders` from Accounts.

@@ -635,7 +635,7 @@ namespace SdkTestsNet462
             Assert.IsNotNull(envelopeSummary.EnvelopeId);
 
             var recipients = envelopesApi.ListRecipients(testConfig.AccountId, envelopeSummary.EnvelopeId);
-            var tabs = envelopesApi.ListTabs(testConfig.AccountId, testConfig.EnvelopeId, recipients.Signers.FirstOrDefault().RecipientId);
+            var tabs = envelopesApi.ListTabs(testConfig.AccountId, envelopeSummary.EnvelopeId, recipients.Signers.FirstOrDefault().RecipientId);
 
             Assert.IsNotNull(tabs);
             Assert.IsNotNull(tabs.ListTabs);
@@ -727,12 +727,15 @@ namespace SdkTestsNet462
             Assert.IsNotNull(listfromDraftsFolder);
 
             bool doesExists = false;
-            foreach (var folderItems in listfromDraftsFolder.FolderItems)
+            foreach (var folder in listfromDraftsFolder.Folders)
             {
-                if (folderItems.EnvelopeId == testConfig.EnvelopeId)
+                foreach (var item in folder.FolderItems)
                 {
-                    doesExists = true;
-                    break;
+                    if (item.EnvelopeId == testConfig.EnvelopeId)
+                    {
+                        doesExists = true;
+                        break;
+                    }
                 }
             }
 

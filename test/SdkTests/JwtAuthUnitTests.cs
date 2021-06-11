@@ -648,12 +648,15 @@ namespace SdkTests
             Assert.IsNotNull(listfromDraftsFolder);
 
             bool doesExists = false;
-            foreach (var folderItem in listfromDraftsFolder.FolderItems)
+            foreach (var folder in listfromDraftsFolder.Folders)
             {
-                if (folderItem.EnvelopeId == testConfig.EnvelopeId)
+                foreach (var item in folder.FolderItems)
                 {
-                    doesExists = true;
-                    break;
+                    if (item.EnvelopeId == testConfig.EnvelopeId)
+                    {
+                        doesExists = true;
+                        break;
+                    }
                 }
             }
 

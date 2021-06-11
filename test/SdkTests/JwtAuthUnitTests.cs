@@ -633,7 +633,7 @@ namespace SdkTests
 
             try
             {
-                foldersResponse = foldersApi.MoveEnvelopes(testConfig.AccountId, ToFolderId, foldersRequest);
+                foldersApi.MoveEnvelopes(testConfig.AccountId, ToFolderId, foldersRequest);
             }
             catch (Exception ex)
             {
@@ -642,16 +642,15 @@ namespace SdkTests
 
             // Test if we moved the envelope to the correct folder
             FoldersApi.ListItemsOptions searchOptions = new FoldersApi.ListItemsOptions();
-            searchOptions.includeItems = "true";
 
             var listfromDraftsFolder = foldersApi.ListItems(testConfig.AccountId, ToFolderId, searchOptions);
 
             Assert.IsNotNull(listfromDraftsFolder);
 
             bool doesExists = false;
-            foreach (var folders in listfromDraftsFolder.Folders)
+            foreach (var folder in listfromDraftsFolder.Folders)
             {
-                foreach (var item in folders.FolderItems)
+                foreach (var item in folder.FolderItems)
                 {
                     if (item.EnvelopeId == testConfig.EnvelopeId)
                     {

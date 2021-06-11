@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
 using System.Text;
+using System.Linq;
 
 namespace SdkNetCoreTests
 {
@@ -180,7 +181,7 @@ namespace SdkNetCoreTests
             Assert.IsNotNull(envelopeSummary);
             Assert.IsNotNull(envelopeSummary.EnvelopeId);
 
-            testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
+            this.testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
         }
 
         [TestMethod]
@@ -611,6 +612,81 @@ namespace SdkNetCoreTests
             }
         }
 
+        [TestMethod]
+        public void JwtListTabsTest()
+        {
+            EnvelopeDefinition envDef = new EnvelopeDefinition();
+            envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
+
+            // assign recipient to template role by setting name, email, and role name.  Note that the
+            // template role name must match the placeholder role name saved in your account template.  
+            TemplateRole tRole = new TemplateRole();
+            tRole.Email = testConfig.RecipientEmail;
+            tRole.Name = testConfig.RecipientName;
+            tRole.RoleName = "Manager";
+
+            List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
+
+            // add the role to the envelope and assign valid templateId from your account
+            envDef.TemplateRoles = rolesList;
+            envDef.TemplateId = testConfig.TemplateId;
+
+            // set envelope status to "sent" to immediately send the signature request
+            envDef.Status = "sent";
+
+            // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
+
+            Assert.IsNotNull(envelopeSummary);
+            Assert.IsNotNull(envelopeSummary.EnvelopeId);
+
+            var recipients = envelopesApi.ListRecipients(testConfig.AccountId, envelopeSummary.EnvelopeId);
+            var tabs = envelopesApi.ListTabs(testConfig.AccountId, envelopeSummary.EnvelopeId, recipients.Signers.FirstOrDefault().RecipientId);
+
+            Assert.IsNotNull(tabs);
+            Assert.IsNotNull(tabs.ListTabs);
+            Assert.IsInstanceOfType(tabs.ListTabs.FirstOrDefault(), typeof(DocuSign.eSign.Model.List));
+
+        }
+
+        [TestMethod]
+        public void JwtGetFormDataTest()
+        {
+            EnvelopeDefinition envDef = new EnvelopeDefinition();
+            envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
+
+            // assign recipient to template role by setting name, email, and role name.  Note that the
+            // template role name must match the placeholder role name saved in your account template.  
+            TemplateRole tRole = new TemplateRole();
+            tRole.Email = testConfig.RecipientEmail;
+            tRole.Name = testConfig.RecipientName;
+            tRole.RoleName = "Manager";
+
+            List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
+
+            // add the role to the envelope and assign valid templateId from your account
+            envDef.TemplateRoles = rolesList;
+            envDef.TemplateId = testConfig.TemplateId;
+
+            // set envelope status to "sent" to immediately send the signature request
+            envDef.Status = "sent";
+
+            // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
+
+            Assert.IsNotNull(envelopeSummary);
+            Assert.IsNotNull(envelopeSummary.EnvelopeId);
+
+            EnvelopeFormData envFormData = envelopesApi.GetFormData(testConfig.AccountId, envelopeSummary.EnvelopeId);
+
+            Assert.IsNotNull(envFormData);
+            Assert.IsNotNull(envFormData.FormData);
+            Assert.IsNotNull(envFormData.EnvelopeId);
+            Assert.IsNotNull(envFormData.FormData.FirstOrDefault().Name);
+        }
+
         private void CreateBrandTest()
         {
             AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
@@ -629,7 +705,7 @@ namespace SdkNetCoreTests
                 }
             }
         }
-        
+
         public void JwtMoveEnvelopesTest()
         {
             JwtRequestSignatureOnDocumentTest("sent");
@@ -642,7 +718,7 @@ namespace SdkNetCoreTests
 
             try
             {
-                var response = foldersApi.MoveEnvelopes(testConfig.AccountId, ToFolderId, foldersRequest);
+                foldersApi.MoveEnvelopes(testConfig.AccountId, ToFolderId, foldersRequest);
             }
             catch (Exception ex)
             {
@@ -651,16 +727,15 @@ namespace SdkNetCoreTests
 
             // Test if we moved the envelope to the correct folder
             FoldersApi.ListItemsOptions searchOptions = new FoldersApi.ListItemsOptions();
-            searchOptions.includeItems = "true";
 
             var listfromDraftsFolder = foldersApi.ListItems(testConfig.AccountId, ToFolderId, searchOptions);
 
             Assert.IsNotNull(listfromDraftsFolder);
 
             bool doesExists = false;
-            foreach (var folders in listfromDraftsFolder.Folders)
+            foreach (var folder in listfromDraftsFolder.Folders)
             {
-                foreach (var item in folders.FolderItems)
+                foreach (var item in folder.FolderItems)
                 {
                     if (item.EnvelopeId == testConfig.EnvelopeId)
                     {

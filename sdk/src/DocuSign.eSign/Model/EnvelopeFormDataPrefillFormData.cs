@@ -25,16 +25,30 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// DisplayApplianceInfo
+    /// EnvelopeFormDataPrefillFormData
     /// </summary>
     [DataContract]
-    public partial class DisplayApplianceInfo :  IEquatable<DisplayApplianceInfo>, IValidatableObject
+    public partial class EnvelopeFormDataPrefillFormData :  IEquatable<EnvelopeFormDataPrefillFormData>, IValidatableObject
     {
-        public DisplayApplianceInfo()
+        public EnvelopeFormDataPrefillFormData()
         {
             // Empty Constructor
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnvelopeFormDataPrefillFormData" /> class.
+        /// </summary>
+        /// <param name="FormData">FormData.</param>
+        public EnvelopeFormDataPrefillFormData(List<FormDataItem> FormData = default(List<FormDataItem>))
+        {
+            this.FormData = FormData;
+        }
         
+        /// <summary>
+        /// Gets or Sets FormData
+        /// </summary>
+        [DataMember(Name="formData", EmitDefaultValue=false)]
+        public List<FormDataItem> FormData { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -42,7 +56,8 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DisplayApplianceInfo {\n");
+            sb.Append("class EnvelopeFormDataPrefillFormData {\n");
+            sb.Append("  FormData: ").Append(FormData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -64,21 +79,26 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as DisplayApplianceInfo);
+            return this.Equals(obj as EnvelopeFormDataPrefillFormData);
         }
 
         /// <summary>
-        /// Returns true if DisplayApplianceInfo instances are equal
+        /// Returns true if EnvelopeFormDataPrefillFormData instances are equal
         /// </summary>
-        /// <param name="other">Instance of DisplayApplianceInfo to be compared</param>
+        /// <param name="other">Instance of EnvelopeFormDataPrefillFormData to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DisplayApplianceInfo other)
+        public bool Equals(EnvelopeFormDataPrefillFormData other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
                 return false;
 
-            return false;
+            return 
+                (
+                    this.FormData == other.FormData ||
+                    this.FormData != null &&
+                    this.FormData.SequenceEqual(other.FormData)
+                );
         }
 
         /// <summary>
@@ -92,6 +112,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.FormData != null)
+                    hash = hash * 59 + this.FormData.GetHashCode();
                 return hash;
             }
         }

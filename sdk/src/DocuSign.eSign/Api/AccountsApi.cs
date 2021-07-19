@@ -10675,7 +10675,7 @@ namespace DocuSign.eSign.Api
             // verify the required parameter 'resourceContentType' is set
             if (resourceContentType == null)
                 throw new ApiException(400, "Missing required parameter 'resourceContentType' when calling AccountsApi->UpdateBrandResourcesByContentType");
-          
+
             var localVarPath = "/v2/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
@@ -10773,7 +10773,7 @@ namespace DocuSign.eSign.Api
             // verify the required parameter 'resourceContentType' is set
             if (resourceContentType == null)
                 throw new ApiException(400, "Missing required parameter 'resourceContentType' when calling AccountsApi->UpdateBrandResourcesByContentType");
-           
+ 
             var localVarPath = "/v2/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();

@@ -45,7 +45,7 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientFormData">RecipientFormData.</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        public EnvelopeFormData(string EmailSubject = default(string), string EnvelopeId = default(string), List<NameValue> FormData = default(List<NameValue>), EnvelopeFormDataPrefillFormData PrefillFormData = default(EnvelopeFormDataPrefillFormData), List<RecipientFormData> RecipientFormData = default(List<RecipientFormData>), string SentDateTime = default(string), string Status = default(string))
+        public EnvelopeFormData(string EmailSubject = default(string), string EnvelopeId = default(string), List<NameValue> FormData = default(List<NameValue>), PrefillFormData PrefillFormData = default(PrefillFormData), List<RecipientFormData> RecipientFormData = default(List<RecipientFormData>), string SentDateTime = default(string), string Status = default(string))
         {
             this.EmailSubject = EmailSubject;
             this.EnvelopeId = EnvelopeId;
@@ -77,7 +77,7 @@ namespace DocuSign.eSign.Model
         /// Gets or Sets PrefillFormData
         /// </summary>
         [DataMember(Name="prefillFormData", EmitDefaultValue=false)]
-        public EnvelopeFormDataPrefillFormData PrefillFormData { get; set; }
+        public PrefillFormData PrefillFormData { get; set; }
         /// <summary>
         /// Gets or Sets RecipientFormData
         /// </summary>

@@ -42,6 +42,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AccessCodeMetadata">AccessCodeMetadata.</param>
         /// <param name="AddAccessCodeToEmail">This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient..</param>
         /// <param name="AllowSystemOverrideForLockedRecipient">AllowSystemOverrideForLockedRecipient.</param>
+        /// <param name="AutoRespondedReason">AutoRespondedReason.</param>
         /// <param name="ClientUserId">Specifies whether the recipient is embedded or remote.   If the &#x60;clientUserId&#x60; property is not null then the recipient is embedded. Note that if the &#x60;ClientUserId&#x60; property is set and either &#x60;SignerMustHaveAccount&#x60; or &#x60;SignerMustLoginToSign&#x60; property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. .</param>
         /// <param name="CompletedCount">CompletedCount.</param>
         /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
@@ -101,12 +102,13 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TotalTabCount">TotalTabCount.</param>
         /// <param name="UserId">UserId.</param>
-        public NotaryHost(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), string AllowSystemOverrideForLockedRecipient = default(string), string ClientUserId = default(string), string CompletedCount = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), string DesignatorId = default(string), string DesignatorIdGuid = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), PropertyMetadata EmailMetadata = default(PropertyMetadata), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string HostRecipientId = default(string), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string InheritEmailNotificationConfiguration = default(string), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), string SignedDateTime = default(string), string SigningGroupId = default(string), PropertyMetadata SigningGroupIdMetadata = default(PropertyMetadata), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), string SuppressEmails = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
+        public NotaryHost(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), string AllowSystemOverrideForLockedRecipient = default(string), string AutoRespondedReason = default(string), string ClientUserId = default(string), string CompletedCount = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), string DesignatorId = default(string), string DesignatorIdGuid = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), PropertyMetadata EmailMetadata = default(PropertyMetadata), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string HostRecipientId = default(string), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string InheritEmailNotificationConfiguration = default(string), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), string SignedDateTime = default(string), string SigningGroupId = default(string), PropertyMetadata SigningGroupIdMetadata = default(PropertyMetadata), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), string SuppressEmails = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
         {
             this.AccessCode = AccessCode;
             this.AccessCodeMetadata = AccessCodeMetadata;
             this.AddAccessCodeToEmail = AddAccessCodeToEmail;
             this.AllowSystemOverrideForLockedRecipient = AllowSystemOverrideForLockedRecipient;
+            this.AutoRespondedReason = AutoRespondedReason;
             this.ClientUserId = ClientUserId;
             this.CompletedCount = CompletedCount;
             this.CustomFields = CustomFields;
@@ -190,6 +192,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="allowSystemOverrideForLockedRecipient", EmitDefaultValue=false)]
         public string AllowSystemOverrideForLockedRecipient { get; set; }
+        /// <summary>
+        /// Gets or Sets AutoRespondedReason
+        /// </summary>
+        [DataMember(Name="autoRespondedReason", EmitDefaultValue=false)]
+        public string AutoRespondedReason { get; set; }
         /// <summary>
         /// Specifies whether the recipient is embedded or remote.   If the &#x60;clientUserId&#x60; property is not null then the recipient is embedded. Note that if the &#x60;ClientUserId&#x60; property is set and either &#x60;SignerMustHaveAccount&#x60; or &#x60;SignerMustLoginToSign&#x60; property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
         /// </summary>
@@ -522,6 +529,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AccessCodeMetadata: ").Append(AccessCodeMetadata).Append("\n");
             sb.Append("  AddAccessCodeToEmail: ").Append(AddAccessCodeToEmail).Append("\n");
             sb.Append("  AllowSystemOverrideForLockedRecipient: ").Append(AllowSystemOverrideForLockedRecipient).Append("\n");
+            sb.Append("  AutoRespondedReason: ").Append(AutoRespondedReason).Append("\n");
             sb.Append("  ClientUserId: ").Append(ClientUserId).Append("\n");
             sb.Append("  CompletedCount: ").Append(CompletedCount).Append("\n");
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
@@ -636,6 +644,11 @@ namespace DocuSign.eSign.Model
                     this.AllowSystemOverrideForLockedRecipient == other.AllowSystemOverrideForLockedRecipient ||
                     this.AllowSystemOverrideForLockedRecipient != null &&
                     this.AllowSystemOverrideForLockedRecipient.Equals(other.AllowSystemOverrideForLockedRecipient)
+                ) && 
+                (
+                    this.AutoRespondedReason == other.AutoRespondedReason ||
+                    this.AutoRespondedReason != null &&
+                    this.AutoRespondedReason.Equals(other.AutoRespondedReason)
                 ) && 
                 (
                     this.ClientUserId == other.ClientUserId ||
@@ -953,6 +966,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AddAccessCodeToEmail.GetHashCode();
                 if (this.AllowSystemOverrideForLockedRecipient != null)
                     hash = hash * 59 + this.AllowSystemOverrideForLockedRecipient.GetHashCode();
+                if (this.AutoRespondedReason != null)
+                    hash = hash * 59 + this.AutoRespondedReason.GetHashCode();
                 if (this.ClientUserId != null)
                     hash = hash * 59 + this.ClientUserId.GetHashCode();
                 if (this.CompletedCount != null)

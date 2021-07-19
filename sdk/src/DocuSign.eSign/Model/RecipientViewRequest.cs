@@ -41,6 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AssertionId">A unique identifier of the authentication event executed by the client application..</param>
         /// <param name="AuthenticationInstant">A sender generated value that indicates the date/time that the signer was authenticated..</param>
         /// <param name="AuthenticationMethod">A sender created value that indicates the convention used to authenticate the signer. This information is included in the Certificate of Completion..</param>
+        /// <param name="ClientURLs">ClientURLs.</param>
         /// <param name="ClientUserId">A sender created value that shows the recipient is embedded (captive).   Maximum length: 100 characters..</param>
         /// <param name="Email">Specifies the email of the recipient. You can use either email and userName or userId to identify the recipient..</param>
         /// <param name="FrameAncestors">FrameAncestors.</param>
@@ -54,11 +55,12 @@ namespace DocuSign.eSign.Model
         /// <param name="UserName">Specifies the username of the recipient. You can use either email and userName or userId to identify the recipient..</param>
         /// <param name="XFrameOptions">XFrameOptions.</param>
         /// <param name="XFrameOptionsAllowFromUrl">XFrameOptionsAllowFromUrl.</param>
-        public RecipientViewRequest(string AssertionId = default(string), string AuthenticationInstant = default(string), string AuthenticationMethod = default(string), string ClientUserId = default(string), string Email = default(string), List<string> FrameAncestors = default(List<string>), List<string> MessageOrigins = default(List<string>), string PingFrequency = default(string), string PingUrl = default(string), string RecipientId = default(string), string ReturnUrl = default(string), string SecurityDomain = default(string), string UserId = default(string), string UserName = default(string), string XFrameOptions = default(string), string XFrameOptionsAllowFromUrl = default(string))
+        public RecipientViewRequest(string AssertionId = default(string), string AuthenticationInstant = default(string), string AuthenticationMethod = default(string), RecipientTokenClientURLs ClientURLs = default(RecipientTokenClientURLs), string ClientUserId = default(string), string Email = default(string), List<string> FrameAncestors = default(List<string>), List<string> MessageOrigins = default(List<string>), string PingFrequency = default(string), string PingUrl = default(string), string RecipientId = default(string), string ReturnUrl = default(string), string SecurityDomain = default(string), string UserId = default(string), string UserName = default(string), string XFrameOptions = default(string), string XFrameOptionsAllowFromUrl = default(string))
         {
             this.AssertionId = AssertionId;
             this.AuthenticationInstant = AuthenticationInstant;
             this.AuthenticationMethod = AuthenticationMethod;
+            this.ClientURLs = ClientURLs;
             this.ClientUserId = ClientUserId;
             this.Email = Email;
             this.FrameAncestors = FrameAncestors;
@@ -92,6 +94,11 @@ namespace DocuSign.eSign.Model
         /// <value>A sender created value that indicates the convention used to authenticate the signer. This information is included in the Certificate of Completion.</value>
         [DataMember(Name="authenticationMethod", EmitDefaultValue=false)]
         public string AuthenticationMethod { get; set; }
+        /// <summary>
+        /// Gets or Sets ClientURLs
+        /// </summary>
+        [DataMember(Name="clientURLs", EmitDefaultValue=false)]
+        public RecipientTokenClientURLs ClientURLs { get; set; }
         /// <summary>
         /// A sender created value that shows the recipient is embedded (captive).   Maximum length: 100 characters.
         /// </summary>
@@ -177,6 +184,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AssertionId: ").Append(AssertionId).Append("\n");
             sb.Append("  AuthenticationInstant: ").Append(AuthenticationInstant).Append("\n");
             sb.Append("  AuthenticationMethod: ").Append(AuthenticationMethod).Append("\n");
+            sb.Append("  ClientURLs: ").Append(ClientURLs).Append("\n");
             sb.Append("  ClientUserId: ").Append(ClientUserId).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  FrameAncestors: ").Append(FrameAncestors).Append("\n");
@@ -240,6 +248,11 @@ namespace DocuSign.eSign.Model
                     this.AuthenticationMethod == other.AuthenticationMethod ||
                     this.AuthenticationMethod != null &&
                     this.AuthenticationMethod.Equals(other.AuthenticationMethod)
+                ) && 
+                (
+                    this.ClientURLs == other.ClientURLs ||
+                    this.ClientURLs != null &&
+                    this.ClientURLs.Equals(other.ClientURLs)
                 ) && 
                 (
                     this.ClientUserId == other.ClientUserId ||
@@ -325,6 +338,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AuthenticationInstant.GetHashCode();
                 if (this.AuthenticationMethod != null)
                     hash = hash * 59 + this.AuthenticationMethod.GetHashCode();
+                if (this.ClientURLs != null)
+                    hash = hash * 59 + this.ClientURLs.GetHashCode();
                 if (this.ClientUserId != null)
                     hash = hash * 59 + this.ClientUserId.GetHashCode();
                 if (this.Email != null)

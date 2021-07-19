@@ -38,14 +38,21 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentMethodWithOptions" /> class.
         /// </summary>
+        /// <param name="SupportedCurrencies">SupportedCurrencies.</param>
         /// <param name="SupportedOptions">SupportedOptions.</param>
         /// <param name="Type">Type.</param>
-        public PaymentMethodWithOptions(List<string> SupportedOptions = default(List<string>), string Type = default(string))
+        public PaymentMethodWithOptions(List<string> SupportedCurrencies = default(List<string>), List<string> SupportedOptions = default(List<string>), string Type = default(string))
         {
+            this.SupportedCurrencies = SupportedCurrencies;
             this.SupportedOptions = SupportedOptions;
             this.Type = Type;
         }
         
+        /// <summary>
+        /// Gets or Sets SupportedCurrencies
+        /// </summary>
+        [DataMember(Name="supportedCurrencies", EmitDefaultValue=false)]
+        public List<string> SupportedCurrencies { get; set; }
         /// <summary>
         /// Gets or Sets SupportedOptions
         /// </summary>
@@ -64,6 +71,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PaymentMethodWithOptions {\n");
+            sb.Append("  SupportedCurrencies: ").Append(SupportedCurrencies).Append("\n");
             sb.Append("  SupportedOptions: ").Append(SupportedOptions).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
@@ -103,6 +111,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.SupportedCurrencies == other.SupportedCurrencies ||
+                    this.SupportedCurrencies != null &&
+                    this.SupportedCurrencies.SequenceEqual(other.SupportedCurrencies)
+                ) && 
+                (
                     this.SupportedOptions == other.SupportedOptions ||
                     this.SupportedOptions != null &&
                     this.SupportedOptions.SequenceEqual(other.SupportedOptions)
@@ -125,6 +138,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.SupportedCurrencies != null)
+                    hash = hash * 59 + this.SupportedCurrencies.GetHashCode();
                 if (this.SupportedOptions != null)
                     hash = hash * 59 + this.SupportedOptions.GetHashCode();
                 if (this.Type != null)

@@ -1,4 +1,25 @@
 ﻿# DocuSign C# Client Changelog
+
+## [v5.6.1] - eSignature API v2.1-21.2.00.00 - 07/15/2021
+### Changed
+- Updated RestSharp version to latest stable (DCM-6070).
+- Updated the SDK release version.
+
+## [v5.6.0] - eSignature API v2.1-21.2.00.00 - 07/15/2021
+### Changed
+- Added support for version v2.1-21.2.00.00 of the DocuSign eSignature API.
+- Updated the SDK release version.
+
+## [v5.6.0-rc] - eSignature API v2.1-21.2.00.00 - 07/12/2021
+### Changed
+- Added support for version v2.1-21.2.00.00 of the DocuSign eSignature API.
+- Updated the SDK release version.
+
+## [v5.5.1-rc] - eSignature API v2.1-21.1.02.00 - 06/15/2021
+### Added
+- Added support for API exceptions to pass along API response headers information from DocuSign (DCM-4453).
+### Changed
+- Updated the SDK release version.
  
 ## [v5.5.0] - eSignature API v2.1-21.1.02.00 - 06/07/2021
 ### Breaking

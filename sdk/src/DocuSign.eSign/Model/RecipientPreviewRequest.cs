@@ -41,6 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AssertionId">AssertionId.</param>
         /// <param name="AuthenticationInstant">AuthenticationInstant.</param>
         /// <param name="AuthenticationMethod">AuthenticationMethod.</param>
+        /// <param name="ClientURLs">ClientURLs.</param>
         /// <param name="PingFrequency">PingFrequency.</param>
         /// <param name="PingUrl">PingUrl.</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
@@ -48,11 +49,12 @@ namespace DocuSign.eSign.Model
         /// <param name="SecurityDomain">SecurityDomain.</param>
         /// <param name="XFrameOptions">XFrameOptions.</param>
         /// <param name="XFrameOptionsAllowFromUrl">XFrameOptionsAllowFromUrl.</param>
-        public RecipientPreviewRequest(string AssertionId = default(string), string AuthenticationInstant = default(string), string AuthenticationMethod = default(string), string PingFrequency = default(string), string PingUrl = default(string), string RecipientId = default(string), string ReturnUrl = default(string), string SecurityDomain = default(string), string XFrameOptions = default(string), string XFrameOptionsAllowFromUrl = default(string))
+        public RecipientPreviewRequest(string AssertionId = default(string), string AuthenticationInstant = default(string), string AuthenticationMethod = default(string), RecipientTokenClientURLs ClientURLs = default(RecipientTokenClientURLs), string PingFrequency = default(string), string PingUrl = default(string), string RecipientId = default(string), string ReturnUrl = default(string), string SecurityDomain = default(string), string XFrameOptions = default(string), string XFrameOptionsAllowFromUrl = default(string))
         {
             this.AssertionId = AssertionId;
             this.AuthenticationInstant = AuthenticationInstant;
             this.AuthenticationMethod = AuthenticationMethod;
+            this.ClientURLs = ClientURLs;
             this.PingFrequency = PingFrequency;
             this.PingUrl = PingUrl;
             this.RecipientId = RecipientId;
@@ -77,6 +79,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="authenticationMethod", EmitDefaultValue=false)]
         public string AuthenticationMethod { get; set; }
+        /// <summary>
+        /// Gets or Sets ClientURLs
+        /// </summary>
+        [DataMember(Name="clientURLs", EmitDefaultValue=false)]
+        public RecipientTokenClientURLs ClientURLs { get; set; }
         /// <summary>
         /// Gets or Sets PingFrequency
         /// </summary>
@@ -124,6 +131,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AssertionId: ").Append(AssertionId).Append("\n");
             sb.Append("  AuthenticationInstant: ").Append(AuthenticationInstant).Append("\n");
             sb.Append("  AuthenticationMethod: ").Append(AuthenticationMethod).Append("\n");
+            sb.Append("  ClientURLs: ").Append(ClientURLs).Append("\n");
             sb.Append("  PingFrequency: ").Append(PingFrequency).Append("\n");
             sb.Append("  PingUrl: ").Append(PingUrl).Append("\n");
             sb.Append("  RecipientId: ").Append(RecipientId).Append("\n");
@@ -183,6 +191,11 @@ namespace DocuSign.eSign.Model
                     this.AuthenticationMethod.Equals(other.AuthenticationMethod)
                 ) && 
                 (
+                    this.ClientURLs == other.ClientURLs ||
+                    this.ClientURLs != null &&
+                    this.ClientURLs.Equals(other.ClientURLs)
+                ) && 
+                (
                     this.PingFrequency == other.PingFrequency ||
                     this.PingFrequency != null &&
                     this.PingFrequency.Equals(other.PingFrequency)
@@ -236,6 +249,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AuthenticationInstant.GetHashCode();
                 if (this.AuthenticationMethod != null)
                     hash = hash * 59 + this.AuthenticationMethod.GetHashCode();
+                if (this.ClientURLs != null)
+                    hash = hash * 59 + this.ClientURLs.GetHashCode();
                 if (this.PingFrequency != null)
                     hash = hash * 59 + this.PingFrequency.GetHashCode();
                 if (this.PingUrl != null)

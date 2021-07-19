@@ -25,18 +25,18 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// SignHere
+    /// SenderName
     /// </summary>
     [DataContract]
-    public partial class SignHere :  IEquatable<SignHere>, IValidatableObject
+    public partial class SenderName :  IEquatable<SenderName>, IValidatableObject
     {
-        public SignHere()
+        public SenderName()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SignHere" /> class.
+        /// Initializes a new instance of the <see cref="SenderName" /> class.
         /// </summary>
         /// <param name="AnchorAllowWhiteSpaceInCharacters">AnchorAllowWhiteSpaceInCharacters.</param>
         /// <param name="AnchorAllowWhiteSpaceInCharactersMetadata">AnchorAllowWhiteSpaceInCharactersMetadata.</param>
@@ -58,6 +58,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AnchorXOffsetMetadata">AnchorXOffsetMetadata.</param>
         /// <param name="AnchorYOffset">Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString..</param>
         /// <param name="AnchorYOffsetMetadata">AnchorYOffsetMetadata.</param>
+        /// <param name="Bold">When set to **true**, the information in the tab is bold..</param>
+        /// <param name="BoldMetadata">BoldMetadata.</param>
         /// <param name="ConditionalParentLabel">For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility..</param>
         /// <param name="ConditionalParentLabelMetadata">ConditionalParentLabelMetadata.</param>
         /// <param name="ConditionalParentValue">For conditional fields, this is the value of the parent tab that controls the tab&#39;s visibility.  If the parent tab is a Checkbox, Radio button, Optional Signature, or Optional Initial use \&quot;on\&quot; as the value to show that the parent tab is active. .</param>
@@ -67,35 +69,35 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdMetadata">DocumentIdMetadata.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="Font">The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default..</param>
+        /// <param name="FontColor">The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White..</param>
+        /// <param name="FontColorMetadata">FontColorMetadata.</param>
+        /// <param name="FontMetadata">FontMetadata.</param>
+        /// <param name="FontSize">The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72..</param>
+        /// <param name="FontSizeMetadata">FontSizeMetadata.</param>
         /// <param name="FormOrder">FormOrder.</param>
         /// <param name="FormOrderMetadata">FormOrderMetadata.</param>
         /// <param name="FormPageLabel">FormPageLabel.</param>
         /// <param name="FormPageLabelMetadata">FormPageLabelMetadata.</param>
         /// <param name="FormPageNumber">FormPageNumber.</param>
         /// <param name="FormPageNumberMetadata">FormPageNumberMetadata.</param>
-        /// <param name="HandDrawRequired">HandDrawRequired.</param>
         /// <param name="Height">Height of the tab in pixels..</param>
         /// <param name="HeightMetadata">HeightMetadata.</param>
-        /// <param name="IsSealSignTab">IsSealSignTab.</param>
+        /// <param name="Italic">When set to **true**, the information in the tab is italic..</param>
+        /// <param name="ItalicMetadata">ItalicMetadata.</param>
+        /// <param name="LocalePolicy">LocalePolicy.</param>
         /// <param name="MergeField">MergeField.</param>
         /// <param name="MergeFieldXml">MergeFieldXml.</param>
-        /// <param name="Name">Specifies the tool tip text for the tab..</param>
+        /// <param name="Name">Name.</param>
         /// <param name="NameMetadata">NameMetadata.</param>
-        /// <param name="Optional">Optional.</param>
-        /// <param name="OptionalMetadata">OptionalMetadata.</param>
         /// <param name="PageNumber">Specifies the page number on which the tab is located..</param>
         /// <param name="PageNumberMetadata">PageNumberMetadata.</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
         /// <param name="RecipientIdGuidMetadata">RecipientIdGuidMetadata.</param>
         /// <param name="RecipientIdMetadata">RecipientIdMetadata.</param>
-        /// <param name="ScaleValue">ScaleValue.</param>
-        /// <param name="ScaleValueMetadata">ScaleValueMetadata.</param>
         /// <param name="SmartContractInformation">SmartContractInformation.</param>
         /// <param name="Source">Source.</param>
-        /// <param name="Stamp">Stamp.</param>
-        /// <param name="StampType">StampType.</param>
-        /// <param name="StampTypeMetadata">StampTypeMetadata.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusMetadata">StatusMetadata.</param>
         /// <param name="TabGroupLabels">TabGroupLabels.</param>
@@ -114,13 +116,17 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequiredMetadata">TemplateRequiredMetadata.</param>
         /// <param name="Tooltip">Tooltip.</param>
         /// <param name="ToolTipMetadata">ToolTipMetadata.</param>
+        /// <param name="Underline">When set to **true**, the information in the tab is underlined..</param>
+        /// <param name="UnderlineMetadata">UnderlineMetadata.</param>
+        /// <param name="Value">Specifies the value of the tab. .</param>
+        /// <param name="ValueMetadata">ValueMetadata.</param>
         /// <param name="Width">Width of the tab in pixels..</param>
         /// <param name="WidthMetadata">WidthMetadata.</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="XPositionMetadata">XPositionMetadata.</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPositionMetadata">YPositionMetadata.</param>
-        public SignHere(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string HandDrawRequired = default(string), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string IsSealSignTab = default(string), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Optional = default(string), PropertyMetadata OptionalMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string ScaleValue = default(string), PropertyMetadata ScaleValueMetadata = default(PropertyMetadata), SmartContractInformation SmartContractInformation = default(SmartContractInformation), string Source = default(string), Stamp Stamp = default(Stamp), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabLabel = default(string), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
+        public SenderName(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), LocalePolicyTab LocalePolicy = default(LocalePolicyTab), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), SmartContractInformation SmartContractInformation = default(SmartContractInformation), string Source = default(string), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabLabel = default(string), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
             this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
             this.AnchorAllowWhiteSpaceInCharactersMetadata = AnchorAllowWhiteSpaceInCharactersMetadata;
@@ -142,6 +148,8 @@ namespace DocuSign.eSign.Model
             this.AnchorXOffsetMetadata = AnchorXOffsetMetadata;
             this.AnchorYOffset = AnchorYOffset;
             this.AnchorYOffsetMetadata = AnchorYOffsetMetadata;
+            this.Bold = Bold;
+            this.BoldMetadata = BoldMetadata;
             this.ConditionalParentLabel = ConditionalParentLabel;
             this.ConditionalParentLabelMetadata = ConditionalParentLabelMetadata;
             this.ConditionalParentValue = ConditionalParentValue;
@@ -151,35 +159,35 @@ namespace DocuSign.eSign.Model
             this.DocumentId = DocumentId;
             this.DocumentIdMetadata = DocumentIdMetadata;
             this.ErrorDetails = ErrorDetails;
+            this.Font = Font;
+            this.FontColor = FontColor;
+            this.FontColorMetadata = FontColorMetadata;
+            this.FontMetadata = FontMetadata;
+            this.FontSize = FontSize;
+            this.FontSizeMetadata = FontSizeMetadata;
             this.FormOrder = FormOrder;
             this.FormOrderMetadata = FormOrderMetadata;
             this.FormPageLabel = FormPageLabel;
             this.FormPageLabelMetadata = FormPageLabelMetadata;
             this.FormPageNumber = FormPageNumber;
             this.FormPageNumberMetadata = FormPageNumberMetadata;
-            this.HandDrawRequired = HandDrawRequired;
             this.Height = Height;
             this.HeightMetadata = HeightMetadata;
-            this.IsSealSignTab = IsSealSignTab;
+            this.Italic = Italic;
+            this.ItalicMetadata = ItalicMetadata;
+            this.LocalePolicy = LocalePolicy;
             this.MergeField = MergeField;
             this.MergeFieldXml = MergeFieldXml;
             this.Name = Name;
             this.NameMetadata = NameMetadata;
-            this.Optional = Optional;
-            this.OptionalMetadata = OptionalMetadata;
             this.PageNumber = PageNumber;
             this.PageNumberMetadata = PageNumberMetadata;
             this.RecipientId = RecipientId;
             this.RecipientIdGuid = RecipientIdGuid;
             this.RecipientIdGuidMetadata = RecipientIdGuidMetadata;
             this.RecipientIdMetadata = RecipientIdMetadata;
-            this.ScaleValue = ScaleValue;
-            this.ScaleValueMetadata = ScaleValueMetadata;
             this.SmartContractInformation = SmartContractInformation;
             this.Source = Source;
-            this.Stamp = Stamp;
-            this.StampType = StampType;
-            this.StampTypeMetadata = StampTypeMetadata;
             this.Status = Status;
             this.StatusMetadata = StatusMetadata;
             this.TabGroupLabels = TabGroupLabels;
@@ -198,6 +206,10 @@ namespace DocuSign.eSign.Model
             this.TemplateRequiredMetadata = TemplateRequiredMetadata;
             this.Tooltip = Tooltip;
             this.ToolTipMetadata = ToolTipMetadata;
+            this.Underline = Underline;
+            this.UnderlineMetadata = UnderlineMetadata;
+            this.Value = Value;
+            this.ValueMetadata = ValueMetadata;
             this.Width = Width;
             this.WidthMetadata = WidthMetadata;
             this.XPosition = XPosition;
@@ -315,6 +327,17 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorYOffsetMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorYOffsetMetadata { get; set; }
         /// <summary>
+        /// When set to **true**, the information in the tab is bold.
+        /// </summary>
+        /// <value>When set to **true**, the information in the tab is bold.</value>
+        [DataMember(Name="bold", EmitDefaultValue=false)]
+        public string Bold { get; set; }
+        /// <summary>
+        /// Gets or Sets BoldMetadata
+        /// </summary>
+        [DataMember(Name="boldMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata BoldMetadata { get; set; }
+        /// <summary>
         /// For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility.
         /// </summary>
         /// <value>For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility.</value>
@@ -364,6 +387,39 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
+        /// The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
+        /// </summary>
+        /// <value>The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.</value>
+        [DataMember(Name="font", EmitDefaultValue=false)]
+        public string Font { get; set; }
+        /// <summary>
+        /// The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White.
+        /// </summary>
+        /// <value>The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White.</value>
+        [DataMember(Name="fontColor", EmitDefaultValue=false)]
+        public string FontColor { get; set; }
+        /// <summary>
+        /// Gets or Sets FontColorMetadata
+        /// </summary>
+        [DataMember(Name="fontColorMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata FontColorMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets FontMetadata
+        /// </summary>
+        [DataMember(Name="fontMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata FontMetadata { get; set; }
+        /// <summary>
+        /// The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72.
+        /// </summary>
+        /// <value>The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72.</value>
+        [DataMember(Name="fontSize", EmitDefaultValue=false)]
+        public string FontSize { get; set; }
+        /// <summary>
+        /// Gets or Sets FontSizeMetadata
+        /// </summary>
+        [DataMember(Name="fontSizeMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata FontSizeMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets FormOrder
         /// </summary>
         [DataMember(Name="formOrder", EmitDefaultValue=false)]
@@ -394,11 +450,6 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="formPageNumberMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FormPageNumberMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets HandDrawRequired
-        /// </summary>
-        [DataMember(Name="handDrawRequired", EmitDefaultValue=false)]
-        public string HandDrawRequired { get; set; }
-        /// <summary>
         /// Height of the tab in pixels.
         /// </summary>
         /// <value>Height of the tab in pixels.</value>
@@ -410,10 +461,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="heightMetadata", EmitDefaultValue=false)]
         public PropertyMetadata HeightMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets IsSealSignTab
+        /// When set to **true**, the information in the tab is italic.
         /// </summary>
-        [DataMember(Name="isSealSignTab", EmitDefaultValue=false)]
-        public string IsSealSignTab { get; set; }
+        /// <value>When set to **true**, the information in the tab is italic.</value>
+        [DataMember(Name="italic", EmitDefaultValue=false)]
+        public string Italic { get; set; }
+        /// <summary>
+        /// Gets or Sets ItalicMetadata
+        /// </summary>
+        [DataMember(Name="italicMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata ItalicMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets LocalePolicy
+        /// </summary>
+        [DataMember(Name="localePolicy", EmitDefaultValue=false)]
+        public LocalePolicyTab LocalePolicy { get; set; }
         /// <summary>
         /// Gets or Sets MergeField
         /// </summary>
@@ -425,9 +487,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="mergeFieldXml", EmitDefaultValue=false)]
         public string MergeFieldXml { get; set; }
         /// <summary>
-        /// Specifies the tool tip text for the tab.
+        /// Gets or Sets Name
         /// </summary>
-        /// <value>Specifies the tool tip text for the tab.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
@@ -435,16 +496,6 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="nameMetadata", EmitDefaultValue=false)]
         public PropertyMetadata NameMetadata { get; set; }
-        /// <summary>
-        /// Gets or Sets Optional
-        /// </summary>
-        [DataMember(Name="optional", EmitDefaultValue=false)]
-        public string Optional { get; set; }
-        /// <summary>
-        /// Gets or Sets OptionalMetadata
-        /// </summary>
-        [DataMember(Name="optionalMetadata", EmitDefaultValue=false)]
-        public PropertyMetadata OptionalMetadata { get; set; }
         /// <summary>
         /// Specifies the page number on which the tab is located.
         /// </summary>
@@ -478,16 +529,6 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RecipientIdMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets ScaleValue
-        /// </summary>
-        [DataMember(Name="scaleValue", EmitDefaultValue=false)]
-        public string ScaleValue { get; set; }
-        /// <summary>
-        /// Gets or Sets ScaleValueMetadata
-        /// </summary>
-        [DataMember(Name="scaleValueMetadata", EmitDefaultValue=false)]
-        public PropertyMetadata ScaleValueMetadata { get; set; }
-        /// <summary>
         /// Gets or Sets SmartContractInformation
         /// </summary>
         [DataMember(Name="smartContractInformation", EmitDefaultValue=false)]
@@ -497,21 +538,6 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="source", EmitDefaultValue=false)]
         public string Source { get; set; }
-        /// <summary>
-        /// Gets or Sets Stamp
-        /// </summary>
-        [DataMember(Name="stamp", EmitDefaultValue=false)]
-        public Stamp Stamp { get; set; }
-        /// <summary>
-        /// Gets or Sets StampType
-        /// </summary>
-        [DataMember(Name="stampType", EmitDefaultValue=false)]
-        public string StampType { get; set; }
-        /// <summary>
-        /// Gets or Sets StampTypeMetadata
-        /// </summary>
-        [DataMember(Name="stampTypeMetadata", EmitDefaultValue=false)]
-        public PropertyMetadata StampTypeMetadata { get; set; }
         /// <summary>
         /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
         /// </summary>
@@ -608,6 +634,28 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="toolTipMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ToolTipMetadata { get; set; }
         /// <summary>
+        /// When set to **true**, the information in the tab is underlined.
+        /// </summary>
+        /// <value>When set to **true**, the information in the tab is underlined.</value>
+        [DataMember(Name="underline", EmitDefaultValue=false)]
+        public string Underline { get; set; }
+        /// <summary>
+        /// Gets or Sets UnderlineMetadata
+        /// </summary>
+        [DataMember(Name="underlineMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata UnderlineMetadata { get; set; }
+        /// <summary>
+        /// Specifies the value of the tab. 
+        /// </summary>
+        /// <value>Specifies the value of the tab. </value>
+        [DataMember(Name="value", EmitDefaultValue=false)]
+        public string Value { get; set; }
+        /// <summary>
+        /// Gets or Sets ValueMetadata
+        /// </summary>
+        [DataMember(Name="valueMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata ValueMetadata { get; set; }
+        /// <summary>
         /// Width of the tab in pixels.
         /// </summary>
         /// <value>Width of the tab in pixels.</value>
@@ -647,7 +695,7 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SignHere {\n");
+            sb.Append("class SenderName {\n");
             sb.Append("  AnchorAllowWhiteSpaceInCharacters: ").Append(AnchorAllowWhiteSpaceInCharacters).Append("\n");
             sb.Append("  AnchorAllowWhiteSpaceInCharactersMetadata: ").Append(AnchorAllowWhiteSpaceInCharactersMetadata).Append("\n");
             sb.Append("  AnchorCaseSensitive: ").Append(AnchorCaseSensitive).Append("\n");
@@ -668,6 +716,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  AnchorXOffsetMetadata: ").Append(AnchorXOffsetMetadata).Append("\n");
             sb.Append("  AnchorYOffset: ").Append(AnchorYOffset).Append("\n");
             sb.Append("  AnchorYOffsetMetadata: ").Append(AnchorYOffsetMetadata).Append("\n");
+            sb.Append("  Bold: ").Append(Bold).Append("\n");
+            sb.Append("  BoldMetadata: ").Append(BoldMetadata).Append("\n");
             sb.Append("  ConditionalParentLabel: ").Append(ConditionalParentLabel).Append("\n");
             sb.Append("  ConditionalParentLabelMetadata: ").Append(ConditionalParentLabelMetadata).Append("\n");
             sb.Append("  ConditionalParentValue: ").Append(ConditionalParentValue).Append("\n");
@@ -677,35 +727,35 @@ namespace DocuSign.eSign.Model
             sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
             sb.Append("  DocumentIdMetadata: ").Append(DocumentIdMetadata).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
+            sb.Append("  Font: ").Append(Font).Append("\n");
+            sb.Append("  FontColor: ").Append(FontColor).Append("\n");
+            sb.Append("  FontColorMetadata: ").Append(FontColorMetadata).Append("\n");
+            sb.Append("  FontMetadata: ").Append(FontMetadata).Append("\n");
+            sb.Append("  FontSize: ").Append(FontSize).Append("\n");
+            sb.Append("  FontSizeMetadata: ").Append(FontSizeMetadata).Append("\n");
             sb.Append("  FormOrder: ").Append(FormOrder).Append("\n");
             sb.Append("  FormOrderMetadata: ").Append(FormOrderMetadata).Append("\n");
             sb.Append("  FormPageLabel: ").Append(FormPageLabel).Append("\n");
             sb.Append("  FormPageLabelMetadata: ").Append(FormPageLabelMetadata).Append("\n");
             sb.Append("  FormPageNumber: ").Append(FormPageNumber).Append("\n");
             sb.Append("  FormPageNumberMetadata: ").Append(FormPageNumberMetadata).Append("\n");
-            sb.Append("  HandDrawRequired: ").Append(HandDrawRequired).Append("\n");
             sb.Append("  Height: ").Append(Height).Append("\n");
             sb.Append("  HeightMetadata: ").Append(HeightMetadata).Append("\n");
-            sb.Append("  IsSealSignTab: ").Append(IsSealSignTab).Append("\n");
+            sb.Append("  Italic: ").Append(Italic).Append("\n");
+            sb.Append("  ItalicMetadata: ").Append(ItalicMetadata).Append("\n");
+            sb.Append("  LocalePolicy: ").Append(LocalePolicy).Append("\n");
             sb.Append("  MergeField: ").Append(MergeField).Append("\n");
             sb.Append("  MergeFieldXml: ").Append(MergeFieldXml).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NameMetadata: ").Append(NameMetadata).Append("\n");
-            sb.Append("  Optional: ").Append(Optional).Append("\n");
-            sb.Append("  OptionalMetadata: ").Append(OptionalMetadata).Append("\n");
             sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
             sb.Append("  PageNumberMetadata: ").Append(PageNumberMetadata).Append("\n");
             sb.Append("  RecipientId: ").Append(RecipientId).Append("\n");
             sb.Append("  RecipientIdGuid: ").Append(RecipientIdGuid).Append("\n");
             sb.Append("  RecipientIdGuidMetadata: ").Append(RecipientIdGuidMetadata).Append("\n");
             sb.Append("  RecipientIdMetadata: ").Append(RecipientIdMetadata).Append("\n");
-            sb.Append("  ScaleValue: ").Append(ScaleValue).Append("\n");
-            sb.Append("  ScaleValueMetadata: ").Append(ScaleValueMetadata).Append("\n");
             sb.Append("  SmartContractInformation: ").Append(SmartContractInformation).Append("\n");
             sb.Append("  Source: ").Append(Source).Append("\n");
-            sb.Append("  Stamp: ").Append(Stamp).Append("\n");
-            sb.Append("  StampType: ").Append(StampType).Append("\n");
-            sb.Append("  StampTypeMetadata: ").Append(StampTypeMetadata).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StatusMetadata: ").Append(StatusMetadata).Append("\n");
             sb.Append("  TabGroupLabels: ").Append(TabGroupLabels).Append("\n");
@@ -724,6 +774,10 @@ namespace DocuSign.eSign.Model
             sb.Append("  TemplateRequiredMetadata: ").Append(TemplateRequiredMetadata).Append("\n");
             sb.Append("  Tooltip: ").Append(Tooltip).Append("\n");
             sb.Append("  ToolTipMetadata: ").Append(ToolTipMetadata).Append("\n");
+            sb.Append("  Underline: ").Append(Underline).Append("\n");
+            sb.Append("  UnderlineMetadata: ").Append(UnderlineMetadata).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  ValueMetadata: ").Append(ValueMetadata).Append("\n");
             sb.Append("  Width: ").Append(Width).Append("\n");
             sb.Append("  WidthMetadata: ").Append(WidthMetadata).Append("\n");
             sb.Append("  XPosition: ").Append(XPosition).Append("\n");
@@ -751,15 +805,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as SignHere);
+            return this.Equals(obj as SenderName);
         }
 
         /// <summary>
-        /// Returns true if SignHere instances are equal
+        /// Returns true if SenderName instances are equal
         /// </summary>
-        /// <param name="other">Instance of SignHere to be compared</param>
+        /// <param name="other">Instance of SenderName to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SignHere other)
+        public bool Equals(SenderName other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -867,6 +921,16 @@ namespace DocuSign.eSign.Model
                     this.AnchorYOffsetMetadata.Equals(other.AnchorYOffsetMetadata)
                 ) && 
                 (
+                    this.Bold == other.Bold ||
+                    this.Bold != null &&
+                    this.Bold.Equals(other.Bold)
+                ) && 
+                (
+                    this.BoldMetadata == other.BoldMetadata ||
+                    this.BoldMetadata != null &&
+                    this.BoldMetadata.Equals(other.BoldMetadata)
+                ) && 
+                (
                     this.ConditionalParentLabel == other.ConditionalParentLabel ||
                     this.ConditionalParentLabel != null &&
                     this.ConditionalParentLabel.Equals(other.ConditionalParentLabel)
@@ -912,6 +976,36 @@ namespace DocuSign.eSign.Model
                     this.ErrorDetails.Equals(other.ErrorDetails)
                 ) && 
                 (
+                    this.Font == other.Font ||
+                    this.Font != null &&
+                    this.Font.Equals(other.Font)
+                ) && 
+                (
+                    this.FontColor == other.FontColor ||
+                    this.FontColor != null &&
+                    this.FontColor.Equals(other.FontColor)
+                ) && 
+                (
+                    this.FontColorMetadata == other.FontColorMetadata ||
+                    this.FontColorMetadata != null &&
+                    this.FontColorMetadata.Equals(other.FontColorMetadata)
+                ) && 
+                (
+                    this.FontMetadata == other.FontMetadata ||
+                    this.FontMetadata != null &&
+                    this.FontMetadata.Equals(other.FontMetadata)
+                ) && 
+                (
+                    this.FontSize == other.FontSize ||
+                    this.FontSize != null &&
+                    this.FontSize.Equals(other.FontSize)
+                ) && 
+                (
+                    this.FontSizeMetadata == other.FontSizeMetadata ||
+                    this.FontSizeMetadata != null &&
+                    this.FontSizeMetadata.Equals(other.FontSizeMetadata)
+                ) && 
+                (
                     this.FormOrder == other.FormOrder ||
                     this.FormOrder != null &&
                     this.FormOrder.Equals(other.FormOrder)
@@ -942,11 +1036,6 @@ namespace DocuSign.eSign.Model
                     this.FormPageNumberMetadata.Equals(other.FormPageNumberMetadata)
                 ) && 
                 (
-                    this.HandDrawRequired == other.HandDrawRequired ||
-                    this.HandDrawRequired != null &&
-                    this.HandDrawRequired.Equals(other.HandDrawRequired)
-                ) && 
-                (
                     this.Height == other.Height ||
                     this.Height != null &&
                     this.Height.Equals(other.Height)
@@ -957,9 +1046,19 @@ namespace DocuSign.eSign.Model
                     this.HeightMetadata.Equals(other.HeightMetadata)
                 ) && 
                 (
-                    this.IsSealSignTab == other.IsSealSignTab ||
-                    this.IsSealSignTab != null &&
-                    this.IsSealSignTab.Equals(other.IsSealSignTab)
+                    this.Italic == other.Italic ||
+                    this.Italic != null &&
+                    this.Italic.Equals(other.Italic)
+                ) && 
+                (
+                    this.ItalicMetadata == other.ItalicMetadata ||
+                    this.ItalicMetadata != null &&
+                    this.ItalicMetadata.Equals(other.ItalicMetadata)
+                ) && 
+                (
+                    this.LocalePolicy == other.LocalePolicy ||
+                    this.LocalePolicy != null &&
+                    this.LocalePolicy.Equals(other.LocalePolicy)
                 ) && 
                 (
                     this.MergeField == other.MergeField ||
@@ -980,16 +1079,6 @@ namespace DocuSign.eSign.Model
                     this.NameMetadata == other.NameMetadata ||
                     this.NameMetadata != null &&
                     this.NameMetadata.Equals(other.NameMetadata)
-                ) && 
-                (
-                    this.Optional == other.Optional ||
-                    this.Optional != null &&
-                    this.Optional.Equals(other.Optional)
-                ) && 
-                (
-                    this.OptionalMetadata == other.OptionalMetadata ||
-                    this.OptionalMetadata != null &&
-                    this.OptionalMetadata.Equals(other.OptionalMetadata)
                 ) && 
                 (
                     this.PageNumber == other.PageNumber ||
@@ -1022,16 +1111,6 @@ namespace DocuSign.eSign.Model
                     this.RecipientIdMetadata.Equals(other.RecipientIdMetadata)
                 ) && 
                 (
-                    this.ScaleValue == other.ScaleValue ||
-                    this.ScaleValue != null &&
-                    this.ScaleValue.Equals(other.ScaleValue)
-                ) && 
-                (
-                    this.ScaleValueMetadata == other.ScaleValueMetadata ||
-                    this.ScaleValueMetadata != null &&
-                    this.ScaleValueMetadata.Equals(other.ScaleValueMetadata)
-                ) && 
-                (
                     this.SmartContractInformation == other.SmartContractInformation ||
                     this.SmartContractInformation != null &&
                     this.SmartContractInformation.Equals(other.SmartContractInformation)
@@ -1040,21 +1119,6 @@ namespace DocuSign.eSign.Model
                     this.Source == other.Source ||
                     this.Source != null &&
                     this.Source.Equals(other.Source)
-                ) && 
-                (
-                    this.Stamp == other.Stamp ||
-                    this.Stamp != null &&
-                    this.Stamp.Equals(other.Stamp)
-                ) && 
-                (
-                    this.StampType == other.StampType ||
-                    this.StampType != null &&
-                    this.StampType.Equals(other.StampType)
-                ) && 
-                (
-                    this.StampTypeMetadata == other.StampTypeMetadata ||
-                    this.StampTypeMetadata != null &&
-                    this.StampTypeMetadata.Equals(other.StampTypeMetadata)
                 ) && 
                 (
                     this.Status == other.Status ||
@@ -1147,6 +1211,26 @@ namespace DocuSign.eSign.Model
                     this.ToolTipMetadata.Equals(other.ToolTipMetadata)
                 ) && 
                 (
+                    this.Underline == other.Underline ||
+                    this.Underline != null &&
+                    this.Underline.Equals(other.Underline)
+                ) && 
+                (
+                    this.UnderlineMetadata == other.UnderlineMetadata ||
+                    this.UnderlineMetadata != null &&
+                    this.UnderlineMetadata.Equals(other.UnderlineMetadata)
+                ) && 
+                (
+                    this.Value == other.Value ||
+                    this.Value != null &&
+                    this.Value.Equals(other.Value)
+                ) && 
+                (
+                    this.ValueMetadata == other.ValueMetadata ||
+                    this.ValueMetadata != null &&
+                    this.ValueMetadata.Equals(other.ValueMetadata)
+                ) && 
+                (
                     this.Width == other.Width ||
                     this.Width != null &&
                     this.Width.Equals(other.Width)
@@ -1229,6 +1313,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AnchorYOffset.GetHashCode();
                 if (this.AnchorYOffsetMetadata != null)
                     hash = hash * 59 + this.AnchorYOffsetMetadata.GetHashCode();
+                if (this.Bold != null)
+                    hash = hash * 59 + this.Bold.GetHashCode();
+                if (this.BoldMetadata != null)
+                    hash = hash * 59 + this.BoldMetadata.GetHashCode();
                 if (this.ConditionalParentLabel != null)
                     hash = hash * 59 + this.ConditionalParentLabel.GetHashCode();
                 if (this.ConditionalParentLabelMetadata != null)
@@ -1247,6 +1335,18 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DocumentIdMetadata.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                if (this.Font != null)
+                    hash = hash * 59 + this.Font.GetHashCode();
+                if (this.FontColor != null)
+                    hash = hash * 59 + this.FontColor.GetHashCode();
+                if (this.FontColorMetadata != null)
+                    hash = hash * 59 + this.FontColorMetadata.GetHashCode();
+                if (this.FontMetadata != null)
+                    hash = hash * 59 + this.FontMetadata.GetHashCode();
+                if (this.FontSize != null)
+                    hash = hash * 59 + this.FontSize.GetHashCode();
+                if (this.FontSizeMetadata != null)
+                    hash = hash * 59 + this.FontSizeMetadata.GetHashCode();
                 if (this.FormOrder != null)
                     hash = hash * 59 + this.FormOrder.GetHashCode();
                 if (this.FormOrderMetadata != null)
@@ -1259,14 +1359,16 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.FormPageNumber.GetHashCode();
                 if (this.FormPageNumberMetadata != null)
                     hash = hash * 59 + this.FormPageNumberMetadata.GetHashCode();
-                if (this.HandDrawRequired != null)
-                    hash = hash * 59 + this.HandDrawRequired.GetHashCode();
                 if (this.Height != null)
                     hash = hash * 59 + this.Height.GetHashCode();
                 if (this.HeightMetadata != null)
                     hash = hash * 59 + this.HeightMetadata.GetHashCode();
-                if (this.IsSealSignTab != null)
-                    hash = hash * 59 + this.IsSealSignTab.GetHashCode();
+                if (this.Italic != null)
+                    hash = hash * 59 + this.Italic.GetHashCode();
+                if (this.ItalicMetadata != null)
+                    hash = hash * 59 + this.ItalicMetadata.GetHashCode();
+                if (this.LocalePolicy != null)
+                    hash = hash * 59 + this.LocalePolicy.GetHashCode();
                 if (this.MergeField != null)
                     hash = hash * 59 + this.MergeField.GetHashCode();
                 if (this.MergeFieldXml != null)
@@ -1275,10 +1377,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.NameMetadata != null)
                     hash = hash * 59 + this.NameMetadata.GetHashCode();
-                if (this.Optional != null)
-                    hash = hash * 59 + this.Optional.GetHashCode();
-                if (this.OptionalMetadata != null)
-                    hash = hash * 59 + this.OptionalMetadata.GetHashCode();
                 if (this.PageNumber != null)
                     hash = hash * 59 + this.PageNumber.GetHashCode();
                 if (this.PageNumberMetadata != null)
@@ -1291,20 +1389,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.RecipientIdGuidMetadata.GetHashCode();
                 if (this.RecipientIdMetadata != null)
                     hash = hash * 59 + this.RecipientIdMetadata.GetHashCode();
-                if (this.ScaleValue != null)
-                    hash = hash * 59 + this.ScaleValue.GetHashCode();
-                if (this.ScaleValueMetadata != null)
-                    hash = hash * 59 + this.ScaleValueMetadata.GetHashCode();
                 if (this.SmartContractInformation != null)
                     hash = hash * 59 + this.SmartContractInformation.GetHashCode();
                 if (this.Source != null)
                     hash = hash * 59 + this.Source.GetHashCode();
-                if (this.Stamp != null)
-                    hash = hash * 59 + this.Stamp.GetHashCode();
-                if (this.StampType != null)
-                    hash = hash * 59 + this.StampType.GetHashCode();
-                if (this.StampTypeMetadata != null)
-                    hash = hash * 59 + this.StampTypeMetadata.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.StatusMetadata != null)
@@ -1341,6 +1429,14 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Tooltip.GetHashCode();
                 if (this.ToolTipMetadata != null)
                     hash = hash * 59 + this.ToolTipMetadata.GetHashCode();
+                if (this.Underline != null)
+                    hash = hash * 59 + this.Underline.GetHashCode();
+                if (this.UnderlineMetadata != null)
+                    hash = hash * 59 + this.UnderlineMetadata.GetHashCode();
+                if (this.Value != null)
+                    hash = hash * 59 + this.Value.GetHashCode();
+                if (this.ValueMetadata != null)
+                    hash = hash * 59 + this.ValueMetadata.GetHashCode();
                 if (this.Width != null)
                     hash = hash * 59 + this.Width.GetHashCode();
                 if (this.WidthMetadata != null)

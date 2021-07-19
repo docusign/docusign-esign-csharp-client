@@ -40,12 +40,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="CheckboxTabs">Specifies a tag on the document in a location where the recipient can select an option..</param>
         /// <param name="RadioGroupTabs">Specifies a tag on the document in a location where the recipient can select one option from a group of options using a radio button. The radio buttons do not have to be on the same page in a document..</param>
+        /// <param name="SenderCompanyTabs">SenderCompanyTabs.</param>
+        /// <param name="SenderNameTabs">SenderNameTabs.</param>
         /// <param name="TabGroups">TabGroups.</param>
         /// <param name="TextTabs">Specifies a that that is an adaptable field that allows the recipient to enter different text information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
-        public PrefillTabs(List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<TabGroup> TabGroups = default(List<TabGroup>), List<Text> TextTabs = default(List<Text>))
+        public PrefillTabs(List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SenderCompany> SenderCompanyTabs = default(List<SenderCompany>), List<SenderName> SenderNameTabs = default(List<SenderName>), List<TabGroup> TabGroups = default(List<TabGroup>), List<Text> TextTabs = default(List<Text>))
         {
             this.CheckboxTabs = CheckboxTabs;
             this.RadioGroupTabs = RadioGroupTabs;
+            this.SenderCompanyTabs = SenderCompanyTabs;
+            this.SenderNameTabs = SenderNameTabs;
             this.TabGroups = TabGroups;
             this.TextTabs = TextTabs;
         }
@@ -62,6 +66,16 @@ namespace DocuSign.eSign.Model
         /// <value>Specifies a tag on the document in a location where the recipient can select one option from a group of options using a radio button. The radio buttons do not have to be on the same page in a document.</value>
         [DataMember(Name="radioGroupTabs", EmitDefaultValue=false)]
         public List<RadioGroup> RadioGroupTabs { get; set; }
+        /// <summary>
+        /// Gets or Sets SenderCompanyTabs
+        /// </summary>
+        [DataMember(Name="senderCompanyTabs", EmitDefaultValue=false)]
+        public List<SenderCompany> SenderCompanyTabs { get; set; }
+        /// <summary>
+        /// Gets or Sets SenderNameTabs
+        /// </summary>
+        [DataMember(Name="senderNameTabs", EmitDefaultValue=false)]
+        public List<SenderName> SenderNameTabs { get; set; }
         /// <summary>
         /// Gets or Sets TabGroups
         /// </summary>
@@ -83,6 +97,8 @@ namespace DocuSign.eSign.Model
             sb.Append("class PrefillTabs {\n");
             sb.Append("  CheckboxTabs: ").Append(CheckboxTabs).Append("\n");
             sb.Append("  RadioGroupTabs: ").Append(RadioGroupTabs).Append("\n");
+            sb.Append("  SenderCompanyTabs: ").Append(SenderCompanyTabs).Append("\n");
+            sb.Append("  SenderNameTabs: ").Append(SenderNameTabs).Append("\n");
             sb.Append("  TabGroups: ").Append(TabGroups).Append("\n");
             sb.Append("  TextTabs: ").Append(TextTabs).Append("\n");
             sb.Append("}\n");
@@ -132,6 +148,16 @@ namespace DocuSign.eSign.Model
                     this.RadioGroupTabs.SequenceEqual(other.RadioGroupTabs)
                 ) && 
                 (
+                    this.SenderCompanyTabs == other.SenderCompanyTabs ||
+                    this.SenderCompanyTabs != null &&
+                    this.SenderCompanyTabs.SequenceEqual(other.SenderCompanyTabs)
+                ) && 
+                (
+                    this.SenderNameTabs == other.SenderNameTabs ||
+                    this.SenderNameTabs != null &&
+                    this.SenderNameTabs.SequenceEqual(other.SenderNameTabs)
+                ) && 
+                (
                     this.TabGroups == other.TabGroups ||
                     this.TabGroups != null &&
                     this.TabGroups.SequenceEqual(other.TabGroups)
@@ -158,6 +184,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CheckboxTabs.GetHashCode();
                 if (this.RadioGroupTabs != null)
                     hash = hash * 59 + this.RadioGroupTabs.GetHashCode();
+                if (this.SenderCompanyTabs != null)
+                    hash = hash * 59 + this.SenderCompanyTabs.GetHashCode();
+                if (this.SenderNameTabs != null)
+                    hash = hash * 59 + this.SenderNameTabs.GetHashCode();
                 if (this.TabGroups != null)
                     hash = hash * 59 + this.TabGroups.GetHashCode();
                 if (this.TextTabs != null)

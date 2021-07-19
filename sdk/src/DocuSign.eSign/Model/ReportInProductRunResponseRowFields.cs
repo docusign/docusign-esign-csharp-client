@@ -51,6 +51,8 @@ namespace DocuSign.eSign.Model
         /// <param name="Completed">Completed.</param>
         /// <param name="CompletedTs">CompletedTs.</param>
         /// <param name="CreatedDate">CreatedDate.</param>
+        /// <param name="CreatedOn">CreatedOn.</param>
+        /// <param name="Creator">Creator.</param>
         /// <param name="CustomField">CustomField.</param>
         /// <param name="DeclinedDate">DeclinedDate.</param>
         /// <param name="DeclinedReason">The reason the recipient declined the document..</param>
@@ -92,7 +94,9 @@ namespace DocuSign.eSign.Model
         /// <param name="IpAddress">IpAddress.</param>
         /// <param name="LastActivity">LastActivity.</param>
         /// <param name="LastActivityDate">LastActivityDate.</param>
+        /// <param name="LastModified">LastModified.</param>
         /// <param name="LastSentDate">LastSentDate.</param>
+        /// <param name="LastUsed">LastUsed.</param>
         /// <param name="MetadataRemoved">MetadataRemoved.</param>
         /// <param name="NotSigned">NotSigned.</param>
         /// <param name="NumberOfAuthenticatedRecipients">NumberOfAuthenticatedRecipients.</param>
@@ -107,6 +111,8 @@ namespace DocuSign.eSign.Model
         /// <param name="NumberOfTotalSigners">NumberOfTotalSigners.</param>
         /// <param name="NumberOfUniqueSenders">NumberOfUniqueSenders.</param>
         /// <param name="NumberTotalRecipients">NumberTotalRecipients.</param>
+        /// <param name="Owner">Owner.</param>
+        /// <param name="OwnerMail">OwnerMail.</param>
         /// <param name="PeriodEnd">PeriodEnd.</param>
         /// <param name="PeriodStart">PeriodStart.</param>
         /// <param name="PhoneCallsAttempted">PhoneCallsAttempted.</param>
@@ -124,6 +130,7 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientEmail">RecipientEmail.</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="RecipientName">RecipientName.</param>
+        /// <param name="RecipientRoleName">RecipientRoleName.</param>
         /// <param name="RecipientTemplateRoleName">RecipientTemplateRoleName.</param>
         /// <param name="RecipientTitle">RecipientTitle.</param>
         /// <param name="RecipientType">RecipientType.</param>
@@ -150,6 +157,8 @@ namespace DocuSign.eSign.Model
         /// <param name="StatusComment">StatusComment.</param>
         /// <param name="Subject">Subject.</param>
         /// <param name="Successes">Successes.</param>
+        /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
+        /// <param name="TemplateName">TemplateName.</param>
         /// <param name="TemplatesCreated">TemplatesCreated.</param>
         /// <param name="TemplatesCreatedCount">TemplatesCreatedCount.</param>
         /// <param name="TerminalStatusDate">TerminalStatusDate.</param>
@@ -170,7 +179,7 @@ namespace DocuSign.eSign.Model
         /// <param name="VerificationType">VerificationType.</param>
         /// <param name="ViewDate">ViewDate.</param>
         /// <param name="VoidedTs">VoidedTs.</param>
-        public ReportInProductRunResponseRowFields(string AccessCodeRequired = default(string), string AccessCodesAttempted = default(string), string AccessCodesFailed = default(string), string AccountId = default(string), string AuthenticationCategory = default(string), string AuthenticationSuccess = default(string), string AuthenticationType = default(string), string AverageTimeToCompleteSeconds = default(string), string AvgCompleteSeconds = default(string), string CaptureMethod = default(string), string Completed = default(string), string CompletedTs = default(string), string CreatedDate = default(string), string CustomField = default(string), string DeclinedDate = default(string), string DeclinedReason = default(string), string DeliveredDate = default(string), string EnvelopeCount = default(string), string EnvelopeCreator = default(string), string EnvelopeId = default(string), string EnvelopeInitialSendTs = default(string), string EnvelopesBilled = default(string), string EnvelopesCompleted = default(string), string EnvelopesCompletedCount = default(string), string EnvelopesDeclined = default(string), string EnvelopesSent = default(string), string EnvelopesSentCount = default(string), string EnvelopesVoided = default(string), string EnvelopeVoidedReason = default(string), string EodDocumentDescription = default(string), string EodDocumentName = default(string), string EodDocumentProfileId = default(string), string EodTransactionId = default(string), string EodTransactionName = default(string), string EventDate = default(string), string ExpirationDate = default(string), string ExpiredTs = default(string), string FailureReason = default(string), string Failures = default(string), string FailureVendorCode = default(string), string FailureVendorReason = default(string), string FirstSendTs = default(string), string GroupId = default(string), string GroupName = default(string), string HoursToCompleteEnd = default(string), string HoursToCompleteStart = default(string), string IdChecksAttempted = default(string), string IdChecksFailed = default(string), string IdCountry = default(string), string IdMethod = default(string), string InitialSendTs = default(string), string IpAddress = default(string), string LastActivity = default(string), string LastActivityDate = default(string), string LastSentDate = default(string), string MetadataRemoved = default(string), string NotSigned = default(string), string NumberOfAuthenticatedRecipients = default(string), string NumberOfCompletedSignatures = default(string), string NumberOfDocuments = default(string), string NumberOfPages = default(string), string NumberOfRecipients = default(string), string NumberOfSends = default(string), string NumberOfSigners = default(string), string NumberOfTotalDocuments = default(string), string NumberOfTotalPages = default(string), string NumberOfTotalSigners = default(string), string NumberOfUniqueSenders = default(string), string NumberTotalRecipients = default(string), string PeriodEnd = default(string), string PeriodStart = default(string), string PhoneCallsAttempted = default(string), string PhoneCallsFailed = default(string), string PiiRedacted = default(string), string PurgeDate = default(string), string ReasonForDeclining = default(string), string ReasonForVoiding = default(string), string ReassignReason = default(string), string Received = default(string), string Recipient = default(string), string RecipientAction = default(string), string RecipientCompanyName = default(string), string RecipientCountry = default(string), string RecipientEmail = default(string), string RecipientId = default(string), string RecipientName = default(string), string RecipientTemplateRoleName = default(string), string RecipientTitle = default(string), string RecipientType = default(string), string RecipientUserId = default(string), string RemainingSignatures = default(string), string RoutingOrder = default(string), string SenderAccountId = default(string), string SenderCompanyName = default(string), string SenderCountry = default(string), string SenderEmail = default(string), string SenderIPAddress = default(string), string SenderJobTitle = default(string), string SenderName = default(string), string SenderUserId = default(string), string SignDate = default(string), string Signed = default(string), string SignedDate = default(string), string SignedOnMobile = default(string), string SignedOnPaper = default(string), string SignerList = default(string), string Status = default(string), string StatusChangedDate = default(string), string StatusChangedTs = default(string), string StatusComment = default(string), string Subject = default(string), string Successes = default(string), string TemplatesCreated = default(string), string TemplatesCreatedCount = default(string), string TerminalStatusDate = default(string), string TimeToCompleteSeconds = default(string), string TimeToDeliver = default(string), string TotalDocuments = default(string), string TotalEnvelopes = default(string), string TotalPages = default(string), string TotalRecipients = default(string), string TotalSigners = default(string), string UniqueSenders = default(string), string UserAccountEmail = default(string), string UserAccountName = default(string), string UserAccountStatus = default(string), string UserCount = default(string), string UserId = default(string), string VerificationStatus = default(string), string VerificationType = default(string), string ViewDate = default(string), string VoidedTs = default(string))
+        public ReportInProductRunResponseRowFields(string AccessCodeRequired = default(string), string AccessCodesAttempted = default(string), string AccessCodesFailed = default(string), string AccountId = default(string), string AuthenticationCategory = default(string), string AuthenticationSuccess = default(string), string AuthenticationType = default(string), string AverageTimeToCompleteSeconds = default(string), string AvgCompleteSeconds = default(string), string CaptureMethod = default(string), string Completed = default(string), string CompletedTs = default(string), string CreatedDate = default(string), string CreatedOn = default(string), string Creator = default(string), string CustomField = default(string), string DeclinedDate = default(string), string DeclinedReason = default(string), string DeliveredDate = default(string), string EnvelopeCount = default(string), string EnvelopeCreator = default(string), string EnvelopeId = default(string), string EnvelopeInitialSendTs = default(string), string EnvelopesBilled = default(string), string EnvelopesCompleted = default(string), string EnvelopesCompletedCount = default(string), string EnvelopesDeclined = default(string), string EnvelopesSent = default(string), string EnvelopesSentCount = default(string), string EnvelopesVoided = default(string), string EnvelopeVoidedReason = default(string), string EodDocumentDescription = default(string), string EodDocumentName = default(string), string EodDocumentProfileId = default(string), string EodTransactionId = default(string), string EodTransactionName = default(string), string EventDate = default(string), string ExpirationDate = default(string), string ExpiredTs = default(string), string FailureReason = default(string), string Failures = default(string), string FailureVendorCode = default(string), string FailureVendorReason = default(string), string FirstSendTs = default(string), string GroupId = default(string), string GroupName = default(string), string HoursToCompleteEnd = default(string), string HoursToCompleteStart = default(string), string IdChecksAttempted = default(string), string IdChecksFailed = default(string), string IdCountry = default(string), string IdMethod = default(string), string InitialSendTs = default(string), string IpAddress = default(string), string LastActivity = default(string), string LastActivityDate = default(string), string LastModified = default(string), string LastSentDate = default(string), string LastUsed = default(string), string MetadataRemoved = default(string), string NotSigned = default(string), string NumberOfAuthenticatedRecipients = default(string), string NumberOfCompletedSignatures = default(string), string NumberOfDocuments = default(string), string NumberOfPages = default(string), string NumberOfRecipients = default(string), string NumberOfSends = default(string), string NumberOfSigners = default(string), string NumberOfTotalDocuments = default(string), string NumberOfTotalPages = default(string), string NumberOfTotalSigners = default(string), string NumberOfUniqueSenders = default(string), string NumberTotalRecipients = default(string), string Owner = default(string), string OwnerMail = default(string), string PeriodEnd = default(string), string PeriodStart = default(string), string PhoneCallsAttempted = default(string), string PhoneCallsFailed = default(string), string PiiRedacted = default(string), string PurgeDate = default(string), string ReasonForDeclining = default(string), string ReasonForVoiding = default(string), string ReassignReason = default(string), string Received = default(string), string Recipient = default(string), string RecipientAction = default(string), string RecipientCompanyName = default(string), string RecipientCountry = default(string), string RecipientEmail = default(string), string RecipientId = default(string), string RecipientName = default(string), string RecipientRoleName = default(string), string RecipientTemplateRoleName = default(string), string RecipientTitle = default(string), string RecipientType = default(string), string RecipientUserId = default(string), string RemainingSignatures = default(string), string RoutingOrder = default(string), string SenderAccountId = default(string), string SenderCompanyName = default(string), string SenderCountry = default(string), string SenderEmail = default(string), string SenderIPAddress = default(string), string SenderJobTitle = default(string), string SenderName = default(string), string SenderUserId = default(string), string SignDate = default(string), string Signed = default(string), string SignedDate = default(string), string SignedOnMobile = default(string), string SignedOnPaper = default(string), string SignerList = default(string), string Status = default(string), string StatusChangedDate = default(string), string StatusChangedTs = default(string), string StatusComment = default(string), string Subject = default(string), string Successes = default(string), string TemplateId = default(string), string TemplateName = default(string), string TemplatesCreated = default(string), string TemplatesCreatedCount = default(string), string TerminalStatusDate = default(string), string TimeToCompleteSeconds = default(string), string TimeToDeliver = default(string), string TotalDocuments = default(string), string TotalEnvelopes = default(string), string TotalPages = default(string), string TotalRecipients = default(string), string TotalSigners = default(string), string UniqueSenders = default(string), string UserAccountEmail = default(string), string UserAccountName = default(string), string UserAccountStatus = default(string), string UserCount = default(string), string UserId = default(string), string VerificationStatus = default(string), string VerificationType = default(string), string ViewDate = default(string), string VoidedTs = default(string))
         {
             this.AccessCodeRequired = AccessCodeRequired;
             this.AccessCodesAttempted = AccessCodesAttempted;
@@ -185,6 +194,8 @@ namespace DocuSign.eSign.Model
             this.Completed = Completed;
             this.CompletedTs = CompletedTs;
             this.CreatedDate = CreatedDate;
+            this.CreatedOn = CreatedOn;
+            this.Creator = Creator;
             this.CustomField = CustomField;
             this.DeclinedDate = DeclinedDate;
             this.DeclinedReason = DeclinedReason;
@@ -226,7 +237,9 @@ namespace DocuSign.eSign.Model
             this.IpAddress = IpAddress;
             this.LastActivity = LastActivity;
             this.LastActivityDate = LastActivityDate;
+            this.LastModified = LastModified;
             this.LastSentDate = LastSentDate;
+            this.LastUsed = LastUsed;
             this.MetadataRemoved = MetadataRemoved;
             this.NotSigned = NotSigned;
             this.NumberOfAuthenticatedRecipients = NumberOfAuthenticatedRecipients;
@@ -241,6 +254,8 @@ namespace DocuSign.eSign.Model
             this.NumberOfTotalSigners = NumberOfTotalSigners;
             this.NumberOfUniqueSenders = NumberOfUniqueSenders;
             this.NumberTotalRecipients = NumberTotalRecipients;
+            this.Owner = Owner;
+            this.OwnerMail = OwnerMail;
             this.PeriodEnd = PeriodEnd;
             this.PeriodStart = PeriodStart;
             this.PhoneCallsAttempted = PhoneCallsAttempted;
@@ -258,6 +273,7 @@ namespace DocuSign.eSign.Model
             this.RecipientEmail = RecipientEmail;
             this.RecipientId = RecipientId;
             this.RecipientName = RecipientName;
+            this.RecipientRoleName = RecipientRoleName;
             this.RecipientTemplateRoleName = RecipientTemplateRoleName;
             this.RecipientTitle = RecipientTitle;
             this.RecipientType = RecipientType;
@@ -284,6 +300,8 @@ namespace DocuSign.eSign.Model
             this.StatusComment = StatusComment;
             this.Subject = Subject;
             this.Successes = Successes;
+            this.TemplateId = TemplateId;
+            this.TemplateName = TemplateName;
             this.TemplatesCreated = TemplatesCreated;
             this.TemplatesCreatedCount = TemplatesCreatedCount;
             this.TerminalStatusDate = TerminalStatusDate;
@@ -372,6 +390,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="createdDate", EmitDefaultValue=false)]
         public string CreatedDate { get; set; }
+        /// <summary>
+        /// Gets or Sets CreatedOn
+        /// </summary>
+        [DataMember(Name="createdOn", EmitDefaultValue=false)]
+        public string CreatedOn { get; set; }
+        /// <summary>
+        /// Gets or Sets Creator
+        /// </summary>
+        [DataMember(Name="creator", EmitDefaultValue=false)]
+        public string Creator { get; set; }
         /// <summary>
         /// Gets or Sets CustomField
         /// </summary>
@@ -581,10 +609,20 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lastActivityDate", EmitDefaultValue=false)]
         public string LastActivityDate { get; set; }
         /// <summary>
+        /// Gets or Sets LastModified
+        /// </summary>
+        [DataMember(Name="lastModified", EmitDefaultValue=false)]
+        public string LastModified { get; set; }
+        /// <summary>
         /// Gets or Sets LastSentDate
         /// </summary>
         [DataMember(Name="lastSentDate", EmitDefaultValue=false)]
         public string LastSentDate { get; set; }
+        /// <summary>
+        /// Gets or Sets LastUsed
+        /// </summary>
+        [DataMember(Name="lastUsed", EmitDefaultValue=false)]
+        public string LastUsed { get; set; }
         /// <summary>
         /// Gets or Sets MetadataRemoved
         /// </summary>
@@ -655,6 +693,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="numberTotalRecipients", EmitDefaultValue=false)]
         public string NumberTotalRecipients { get; set; }
+        /// <summary>
+        /// Gets or Sets Owner
+        /// </summary>
+        [DataMember(Name="owner", EmitDefaultValue=false)]
+        public string Owner { get; set; }
+        /// <summary>
+        /// Gets or Sets OwnerMail
+        /// </summary>
+        [DataMember(Name="ownerMail", EmitDefaultValue=false)]
+        public string OwnerMail { get; set; }
         /// <summary>
         /// Gets or Sets PeriodEnd
         /// </summary>
@@ -741,6 +789,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="recipientName", EmitDefaultValue=false)]
         public string RecipientName { get; set; }
+        /// <summary>
+        /// Gets or Sets RecipientRoleName
+        /// </summary>
+        [DataMember(Name="recipientRoleName", EmitDefaultValue=false)]
+        public string RecipientRoleName { get; set; }
         /// <summary>
         /// Gets or Sets RecipientTemplateRoleName
         /// </summary>
@@ -874,6 +927,17 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="successes", EmitDefaultValue=false)]
         public string Successes { get; set; }
         /// <summary>
+        /// The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+        /// </summary>
+        /// <value>The unique identifier of the template. If this is not provided, DocuSign will generate a value. </value>
+        [DataMember(Name="templateId", EmitDefaultValue=false)]
+        public string TemplateId { get; set; }
+        /// <summary>
+        /// Gets or Sets TemplateName
+        /// </summary>
+        [DataMember(Name="templateName", EmitDefaultValue=false)]
+        public string TemplateName { get; set; }
+        /// <summary>
         /// Gets or Sets TemplatesCreated
         /// </summary>
         [DataMember(Name="templatesCreated", EmitDefaultValue=false)]
@@ -994,6 +1058,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  Completed: ").Append(Completed).Append("\n");
             sb.Append("  CompletedTs: ").Append(CompletedTs).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  CreatedOn: ").Append(CreatedOn).Append("\n");
+            sb.Append("  Creator: ").Append(Creator).Append("\n");
             sb.Append("  CustomField: ").Append(CustomField).Append("\n");
             sb.Append("  DeclinedDate: ").Append(DeclinedDate).Append("\n");
             sb.Append("  DeclinedReason: ").Append(DeclinedReason).Append("\n");
@@ -1035,7 +1101,9 @@ namespace DocuSign.eSign.Model
             sb.Append("  IpAddress: ").Append(IpAddress).Append("\n");
             sb.Append("  LastActivity: ").Append(LastActivity).Append("\n");
             sb.Append("  LastActivityDate: ").Append(LastActivityDate).Append("\n");
+            sb.Append("  LastModified: ").Append(LastModified).Append("\n");
             sb.Append("  LastSentDate: ").Append(LastSentDate).Append("\n");
+            sb.Append("  LastUsed: ").Append(LastUsed).Append("\n");
             sb.Append("  MetadataRemoved: ").Append(MetadataRemoved).Append("\n");
             sb.Append("  NotSigned: ").Append(NotSigned).Append("\n");
             sb.Append("  NumberOfAuthenticatedRecipients: ").Append(NumberOfAuthenticatedRecipients).Append("\n");
@@ -1050,6 +1118,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  NumberOfTotalSigners: ").Append(NumberOfTotalSigners).Append("\n");
             sb.Append("  NumberOfUniqueSenders: ").Append(NumberOfUniqueSenders).Append("\n");
             sb.Append("  NumberTotalRecipients: ").Append(NumberTotalRecipients).Append("\n");
+            sb.Append("  Owner: ").Append(Owner).Append("\n");
+            sb.Append("  OwnerMail: ").Append(OwnerMail).Append("\n");
             sb.Append("  PeriodEnd: ").Append(PeriodEnd).Append("\n");
             sb.Append("  PeriodStart: ").Append(PeriodStart).Append("\n");
             sb.Append("  PhoneCallsAttempted: ").Append(PhoneCallsAttempted).Append("\n");
@@ -1067,6 +1137,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  RecipientEmail: ").Append(RecipientEmail).Append("\n");
             sb.Append("  RecipientId: ").Append(RecipientId).Append("\n");
             sb.Append("  RecipientName: ").Append(RecipientName).Append("\n");
+            sb.Append("  RecipientRoleName: ").Append(RecipientRoleName).Append("\n");
             sb.Append("  RecipientTemplateRoleName: ").Append(RecipientTemplateRoleName).Append("\n");
             sb.Append("  RecipientTitle: ").Append(RecipientTitle).Append("\n");
             sb.Append("  RecipientType: ").Append(RecipientType).Append("\n");
@@ -1093,6 +1164,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  StatusComment: ").Append(StatusComment).Append("\n");
             sb.Append("  Subject: ").Append(Subject).Append("\n");
             sb.Append("  Successes: ").Append(Successes).Append("\n");
+            sb.Append("  TemplateId: ").Append(TemplateId).Append("\n");
+            sb.Append("  TemplateName: ").Append(TemplateName).Append("\n");
             sb.Append("  TemplatesCreated: ").Append(TemplatesCreated).Append("\n");
             sb.Append("  TemplatesCreatedCount: ").Append(TemplatesCreatedCount).Append("\n");
             sb.Append("  TerminalStatusDate: ").Append(TerminalStatusDate).Append("\n");
@@ -1213,6 +1286,16 @@ namespace DocuSign.eSign.Model
                     this.CreatedDate == other.CreatedDate ||
                     this.CreatedDate != null &&
                     this.CreatedDate.Equals(other.CreatedDate)
+                ) && 
+                (
+                    this.CreatedOn == other.CreatedOn ||
+                    this.CreatedOn != null &&
+                    this.CreatedOn.Equals(other.CreatedOn)
+                ) && 
+                (
+                    this.Creator == other.Creator ||
+                    this.Creator != null &&
+                    this.Creator.Equals(other.Creator)
                 ) && 
                 (
                     this.CustomField == other.CustomField ||
@@ -1420,9 +1503,19 @@ namespace DocuSign.eSign.Model
                     this.LastActivityDate.Equals(other.LastActivityDate)
                 ) && 
                 (
+                    this.LastModified == other.LastModified ||
+                    this.LastModified != null &&
+                    this.LastModified.Equals(other.LastModified)
+                ) && 
+                (
                     this.LastSentDate == other.LastSentDate ||
                     this.LastSentDate != null &&
                     this.LastSentDate.Equals(other.LastSentDate)
+                ) && 
+                (
+                    this.LastUsed == other.LastUsed ||
+                    this.LastUsed != null &&
+                    this.LastUsed.Equals(other.LastUsed)
                 ) && 
                 (
                     this.MetadataRemoved == other.MetadataRemoved ||
@@ -1493,6 +1586,16 @@ namespace DocuSign.eSign.Model
                     this.NumberTotalRecipients == other.NumberTotalRecipients ||
                     this.NumberTotalRecipients != null &&
                     this.NumberTotalRecipients.Equals(other.NumberTotalRecipients)
+                ) && 
+                (
+                    this.Owner == other.Owner ||
+                    this.Owner != null &&
+                    this.Owner.Equals(other.Owner)
+                ) && 
+                (
+                    this.OwnerMail == other.OwnerMail ||
+                    this.OwnerMail != null &&
+                    this.OwnerMail.Equals(other.OwnerMail)
                 ) && 
                 (
                     this.PeriodEnd == other.PeriodEnd ||
@@ -1578,6 +1681,11 @@ namespace DocuSign.eSign.Model
                     this.RecipientName == other.RecipientName ||
                     this.RecipientName != null &&
                     this.RecipientName.Equals(other.RecipientName)
+                ) && 
+                (
+                    this.RecipientRoleName == other.RecipientRoleName ||
+                    this.RecipientRoleName != null &&
+                    this.RecipientRoleName.Equals(other.RecipientRoleName)
                 ) && 
                 (
                     this.RecipientTemplateRoleName == other.RecipientTemplateRoleName ||
@@ -1708,6 +1816,16 @@ namespace DocuSign.eSign.Model
                     this.Successes == other.Successes ||
                     this.Successes != null &&
                     this.Successes.Equals(other.Successes)
+                ) && 
+                (
+                    this.TemplateId == other.TemplateId ||
+                    this.TemplateId != null &&
+                    this.TemplateId.Equals(other.TemplateId)
+                ) && 
+                (
+                    this.TemplateName == other.TemplateName ||
+                    this.TemplateName != null &&
+                    this.TemplateName.Equals(other.TemplateName)
                 ) && 
                 (
                     this.TemplatesCreated == other.TemplatesCreated ||
@@ -1848,6 +1966,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CompletedTs.GetHashCode();
                 if (this.CreatedDate != null)
                     hash = hash * 59 + this.CreatedDate.GetHashCode();
+                if (this.CreatedOn != null)
+                    hash = hash * 59 + this.CreatedOn.GetHashCode();
+                if (this.Creator != null)
+                    hash = hash * 59 + this.Creator.GetHashCode();
                 if (this.CustomField != null)
                     hash = hash * 59 + this.CustomField.GetHashCode();
                 if (this.DeclinedDate != null)
@@ -1930,8 +2052,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.LastActivity.GetHashCode();
                 if (this.LastActivityDate != null)
                     hash = hash * 59 + this.LastActivityDate.GetHashCode();
+                if (this.LastModified != null)
+                    hash = hash * 59 + this.LastModified.GetHashCode();
                 if (this.LastSentDate != null)
                     hash = hash * 59 + this.LastSentDate.GetHashCode();
+                if (this.LastUsed != null)
+                    hash = hash * 59 + this.LastUsed.GetHashCode();
                 if (this.MetadataRemoved != null)
                     hash = hash * 59 + this.MetadataRemoved.GetHashCode();
                 if (this.NotSigned != null)
@@ -1960,6 +2086,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.NumberOfUniqueSenders.GetHashCode();
                 if (this.NumberTotalRecipients != null)
                     hash = hash * 59 + this.NumberTotalRecipients.GetHashCode();
+                if (this.Owner != null)
+                    hash = hash * 59 + this.Owner.GetHashCode();
+                if (this.OwnerMail != null)
+                    hash = hash * 59 + this.OwnerMail.GetHashCode();
                 if (this.PeriodEnd != null)
                     hash = hash * 59 + this.PeriodEnd.GetHashCode();
                 if (this.PeriodStart != null)
@@ -1994,6 +2124,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.RecipientId.GetHashCode();
                 if (this.RecipientName != null)
                     hash = hash * 59 + this.RecipientName.GetHashCode();
+                if (this.RecipientRoleName != null)
+                    hash = hash * 59 + this.RecipientRoleName.GetHashCode();
                 if (this.RecipientTemplateRoleName != null)
                     hash = hash * 59 + this.RecipientTemplateRoleName.GetHashCode();
                 if (this.RecipientTitle != null)
@@ -2046,6 +2178,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Subject.GetHashCode();
                 if (this.Successes != null)
                     hash = hash * 59 + this.Successes.GetHashCode();
+                if (this.TemplateId != null)
+                    hash = hash * 59 + this.TemplateId.GetHashCode();
+                if (this.TemplateName != null)
+                    hash = hash * 59 + this.TemplateName.GetHashCode();
                 if (this.TemplatesCreated != null)
                     hash = hash * 59 + this.TemplatesCreated.GetHashCode();
                 if (this.TemplatesCreatedCount != null)

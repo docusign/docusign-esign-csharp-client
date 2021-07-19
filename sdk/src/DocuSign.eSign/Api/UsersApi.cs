@@ -633,9 +633,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userSettingsInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        void UpdateSettings (string accountId, string userId, UserSettingsInformation userSettingsInformation = null);
+        void UpdateSettings (string accountId, string userId, UserSettingsInformation userSettingsInformation = null, UsersApi.UpdateSettingsOptions options = null);
 
         /// <summary>
         /// Updates the user account settings for a specified user.
@@ -646,9 +646,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userSettingsInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateSettingsWithHttpInfo (string accountId, string userId, UserSettingsInformation userSettingsInformation = null);
+        ApiResponse<Object> UpdateSettingsWithHttpInfo (string accountId, string userId, UserSettingsInformation userSettingsInformation = null, UsersApi.UpdateSettingsOptions options = null);
         /// <summary>
         /// Updates the user signature for a specified user.
         /// </summary>
@@ -733,9 +733,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        UserInformation UpdateUser (string accountId, string userId, UserInformation userInformation = null);
+        UserInformation UpdateUser (string accountId, string userId, UserInformation userInformation = null, UsersApi.UpdateUserOptions options = null);
 
         /// <summary>
         /// Updates the specified user information.
@@ -746,9 +746,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UserInformation> UpdateUserWithHttpInfo (string accountId, string userId, UserInformation userInformation = null);
+        ApiResponse<UserInformation> UpdateUserWithHttpInfo (string accountId, string userId, UserInformation userInformation = null, UsersApi.UpdateUserOptions options = null);
         /// <summary>
         /// Change one or more user in the specified account.
         /// </summary>
@@ -758,9 +758,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInformationList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        UserInformationList UpdateUsers (string accountId, UserInformationList userInformationList = null);
+        UserInformationList UpdateUsers (string accountId, UserInformationList userInformationList = null, UsersApi.UpdateUsersOptions options = null);
 
         /// <summary>
         /// Change one or more user in the specified account.
@@ -771,9 +771,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInformationList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UserInformationList> UpdateUsersWithHttpInfo (string accountId, UserInformationList userInformationList = null);
+        ApiResponse<UserInformationList> UpdateUsersWithHttpInfo (string accountId, UserInformationList userInformationList = null, UsersApi.UpdateUsersOptions options = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -1385,9 +1385,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userSettingsInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateSettingsAsync (string accountId, string userId, UserSettingsInformation userSettingsInformation = null);
+        System.Threading.Tasks.Task UpdateSettingsAsync (string accountId, string userId, UserSettingsInformation userSettingsInformation = null, UsersApi.UpdateSettingsOptions options = null);
 
         /// <summary>
         /// Updates the user account settings for a specified user.
@@ -1398,9 +1398,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userSettingsInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSettingsAsyncWithHttpInfo (string accountId, string userId, UserSettingsInformation userSettingsInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSettingsAsyncWithHttpInfo (string accountId, string userId, UserSettingsInformation userSettingsInformation = null, UsersApi.UpdateSettingsOptions options = null);
         /// <summary>
         /// Updates the user signature for a specified user.
         /// </summary>
@@ -1485,9 +1485,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserInformation</returns>
-        System.Threading.Tasks.Task<UserInformation> UpdateUserAsync (string accountId, string userId, UserInformation userInformation = null);
+        System.Threading.Tasks.Task<UserInformation> UpdateUserAsync (string accountId, string userId, UserInformation userInformation = null, UsersApi.UpdateUserOptions options = null);
 
         /// <summary>
         /// Updates the specified user information.
@@ -1498,9 +1498,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserInformation>> UpdateUserAsyncWithHttpInfo (string accountId, string userId, UserInformation userInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<UserInformation>> UpdateUserAsyncWithHttpInfo (string accountId, string userId, UserInformation userInformation = null, UsersApi.UpdateUserOptions options = null);
         /// <summary>
         /// Change one or more user in the specified account.
         /// </summary>
@@ -1510,9 +1510,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInformationList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserInformationList</returns>
-        System.Threading.Tasks.Task<UserInformationList> UpdateUsersAsync (string accountId, UserInformationList userInformationList = null);
+        System.Threading.Tasks.Task<UserInformationList> UpdateUsersAsync (string accountId, UserInformationList userInformationList = null, UsersApi.UpdateUsersOptions options = null);
 
         /// <summary>
         /// Change one or more user in the specified account.
@@ -1523,9 +1523,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInformationList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserInformationList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserInformationList>> UpdateUsersAsyncWithHttpInfo (string accountId, UserInformationList userInformationList = null);
+        System.Threading.Tasks.Task<ApiResponse<UserInformationList>> UpdateUsersAsyncWithHttpInfo (string accountId, UserInformationList userInformationList = null, UsersApi.UpdateUsersOptions options = null);
         #endregion Asynchronous Operations
     }
 
@@ -6211,18 +6211,13 @@ namespace DocuSign.eSign.Api
         }
 
 
-
         /// <summary>
         /// Updates the user account settings for a specified user. Updates the account settings list and email notification types for the specified user.
         /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
-        /// <param name="userSettingsInformation"> (optional)</param>
-        
-        /// <returns></returns>
-        public void UpdateSettings (string accountId, string userId, UserSettingsInformation userSettingsInformation = null)
+        public class UpdateSettingsOptions
         {
-             UpdateSettingsWithHttpInfo(accountId, userId, userSettingsInformation);
+            /// 
+            public string allowAllLanguages {get; set;}
         }
 
         /// <summary>
@@ -6231,9 +6226,22 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userSettingsInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        public void UpdateSettings (string accountId, string userId, UserSettingsInformation userSettingsInformation = null, UsersApi.UpdateSettingsOptions options = null)
+        {
+             UpdateSettingsWithHttpInfo(accountId, userId, userSettingsInformation, options);
+        }
+
+        /// <summary>
+        /// Updates the user account settings for a specified user. Updates the account settings list and email notification types for the specified user.
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userSettingsInformation"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> UpdateSettingsWithHttpInfo (string accountId, string userId, UserSettingsInformation userSettingsInformation = null)
+        public ApiResponse<Object> UpdateSettingsWithHttpInfo (string accountId, string userId, UserSettingsInformation userSettingsInformation = null, UsersApi.UpdateSettingsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6269,6 +6277,10 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.allowAllLanguages != null) localVarQueryParams.Add("allow_all_languages", this.ApiClient.ParameterToString(options.allowAllLanguages)); // query parameter
+            }
 
             if (userSettingsInformation != null && userSettingsInformation.GetType() != typeof(byte[]))
             {
@@ -6310,11 +6322,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userSettingsInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateSettingsAsync (string accountId, string userId, UserSettingsInformation userSettingsInformation = null)
+        public async System.Threading.Tasks.Task UpdateSettingsAsync (string accountId, string userId, UserSettingsInformation userSettingsInformation = null, UsersApi.UpdateSettingsOptions options = null)
         {
-             await UpdateSettingsAsyncWithHttpInfo(accountId, userId, userSettingsInformation);
+             await UpdateSettingsAsyncWithHttpInfo(accountId, userId, userSettingsInformation, options);
 
         }
 
@@ -6324,9 +6336,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userSettingsInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSettingsAsyncWithHttpInfo (string accountId, string userId, UserSettingsInformation userSettingsInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSettingsAsyncWithHttpInfo (string accountId, string userId, UserSettingsInformation userSettingsInformation = null, UsersApi.UpdateSettingsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6362,6 +6374,10 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.allowAllLanguages != null) localVarQueryParams.Add("allow_all_languages", this.ApiClient.ParameterToString(options.allowAllLanguages)); // query parameter
+            }
 
             if (userSettingsInformation != null && userSettingsInformation.GetType() != typeof(byte[]))
             {
@@ -7035,6 +7051,14 @@ namespace DocuSign.eSign.Api
         }
 
 
+        /// <summary>
+        /// Updates the specified user information. 
+        /// </summary>
+        public class UpdateUserOptions
+        {
+            /// 
+            public string allowAllLanguages {get; set;}
+        }
 
         /// <summary>
         /// Updates the specified user information. 
@@ -7042,11 +7066,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>UserInformation</returns>
-        public UserInformation UpdateUser (string accountId, string userId, UserInformation userInformation = null)
+        public UserInformation UpdateUser (string accountId, string userId, UserInformation userInformation = null, UsersApi.UpdateUserOptions options = null)
         {
-             ApiResponse<UserInformation> localVarResponse = UpdateUserWithHttpInfo(accountId, userId, userInformation);
+             ApiResponse<UserInformation> localVarResponse = UpdateUserWithHttpInfo(accountId, userId, userInformation, options);
              return localVarResponse.Data;
         }
 
@@ -7056,9 +7080,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of UserInformation</returns>
-        public ApiResponse< UserInformation > UpdateUserWithHttpInfo (string accountId, string userId, UserInformation userInformation = null)
+        public ApiResponse< UserInformation > UpdateUserWithHttpInfo (string accountId, string userId, UserInformation userInformation = null, UsersApi.UpdateUserOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7094,6 +7118,10 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.allowAllLanguages != null) localVarQueryParams.Add("allow_all_languages", this.ApiClient.ParameterToString(options.allowAllLanguages)); // query parameter
+            }
 
             if (userInformation != null && userInformation.GetType() != typeof(byte[]))
             {
@@ -7143,11 +7171,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserInformation</returns>
-        public async System.Threading.Tasks.Task<UserInformation> UpdateUserAsync (string accountId, string userId, UserInformation userInformation = null)
+        public async System.Threading.Tasks.Task<UserInformation> UpdateUserAsync (string accountId, string userId, UserInformation userInformation = null, UsersApi.UpdateUserOptions options = null)
         {
-             ApiResponse<UserInformation> localVarResponse = await UpdateUserAsyncWithHttpInfo(accountId, userId, userInformation);
+             ApiResponse<UserInformation> localVarResponse = await UpdateUserAsyncWithHttpInfo(accountId, userId, userInformation, options);
              return localVarResponse.Data;
 
         }
@@ -7158,9 +7186,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="userInformation"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserInformation>> UpdateUserAsyncWithHttpInfo (string accountId, string userId, UserInformation userInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UserInformation>> UpdateUserAsyncWithHttpInfo (string accountId, string userId, UserInformation userInformation = null, UsersApi.UpdateUserOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7196,6 +7224,10 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.allowAllLanguages != null) localVarQueryParams.Add("allow_all_languages", this.ApiClient.ParameterToString(options.allowAllLanguages)); // query parameter
+            }
 
             if (userInformation != null && userInformation.GetType() != typeof(byte[]))
             {
@@ -7233,6 +7265,14 @@ namespace DocuSign.eSign.Api
         }
 
 
+        /// <summary>
+        /// Change one or more user in the specified account. 
+        /// </summary>
+        public class UpdateUsersOptions
+        {
+            /// 
+            public string allowAllLanguages {get; set;}
+        }
 
         /// <summary>
         /// Change one or more user in the specified account. 
@@ -7240,11 +7280,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInformationList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>UserInformationList</returns>
-        public UserInformationList UpdateUsers (string accountId, UserInformationList userInformationList = null)
+        public UserInformationList UpdateUsers (string accountId, UserInformationList userInformationList = null, UsersApi.UpdateUsersOptions options = null)
         {
-             ApiResponse<UserInformationList> localVarResponse = UpdateUsersWithHttpInfo(accountId, userInformationList);
+             ApiResponse<UserInformationList> localVarResponse = UpdateUsersWithHttpInfo(accountId, userInformationList, options);
              return localVarResponse.Data;
         }
 
@@ -7254,9 +7294,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInformationList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of UserInformationList</returns>
-        public ApiResponse< UserInformationList > UpdateUsersWithHttpInfo (string accountId, UserInformationList userInformationList = null)
+        public ApiResponse< UserInformationList > UpdateUsersWithHttpInfo (string accountId, UserInformationList userInformationList = null, UsersApi.UpdateUsersOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7288,6 +7328,10 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.allowAllLanguages != null) localVarQueryParams.Add("allow_all_languages", this.ApiClient.ParameterToString(options.allowAllLanguages)); // query parameter
+            }
 
             if (userInformationList != null && userInformationList.GetType() != typeof(byte[]))
             {
@@ -7337,11 +7381,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInformationList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserInformationList</returns>
-        public async System.Threading.Tasks.Task<UserInformationList> UpdateUsersAsync (string accountId, UserInformationList userInformationList = null)
+        public async System.Threading.Tasks.Task<UserInformationList> UpdateUsersAsync (string accountId, UserInformationList userInformationList = null, UsersApi.UpdateUsersOptions options = null)
         {
-             ApiResponse<UserInformationList> localVarResponse = await UpdateUsersAsyncWithHttpInfo(accountId, userInformationList);
+             ApiResponse<UserInformationList> localVarResponse = await UpdateUsersAsyncWithHttpInfo(accountId, userInformationList, options);
              return localVarResponse.Data;
 
         }
@@ -7352,9 +7396,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userInformationList"> (optional)</param>
-        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserInformationList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserInformationList>> UpdateUsersAsyncWithHttpInfo (string accountId, UserInformationList userInformationList = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UserInformationList>> UpdateUsersAsyncWithHttpInfo (string accountId, UserInformationList userInformationList = null, UsersApi.UpdateUsersOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7386,6 +7430,10 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
+            if (options != null)
+            {
+                if (options.allowAllLanguages != null) localVarQueryParams.Add("allow_all_languages", this.ApiClient.ParameterToString(options.allowAllLanguages)); // query parameter
+            }
 
             if (userInformationList != null && userInformationList.GetType() != typeof(byte[]))
             {

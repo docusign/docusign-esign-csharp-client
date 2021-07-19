@@ -58,11 +58,13 @@ namespace DocuSign.eSign.Model
         /// <param name="PlanFeatureSets">A complex type that sets the feature sets for the account. It contains the following information (all string content):  * currencyFeatureSetPrices - Contains the currencyCode and currencySymbol for the alternate currency values for envelopeFee, fixedFee, seatFee that are configured for this plan feature set. * envelopeFee - An incremental envelope cost for plans with envelope overages (when isEnabled&#x3D;true). * featureSetId - A unique ID for the feature set. * fixedFee - A one-time fee associated with the plan (when isEnabled&#x3D;true). * isActive - Specifies whether the feature set is actively set as part of the plan. * isEnabled - Specifies whether the feature set is actively enabled as part of the plan. * name - The name of the feature set. * seatFee - An incremental seat cost for seat-based plans (when isEnabled&#x3D;true). .</param>
         /// <param name="PlanId">PlanId.</param>
         /// <param name="PlanName">The name of the Billing Plan..</param>
+        /// <param name="PlanStartDate">PlanStartDate.</param>
+        /// <param name="RenewalDate">RenewalDate.</param>
         /// <param name="RenewalStatus">The renewal status for the account. The acceptable values are:  * auto: The account automatically renews. * queued_for_close: Account will be closed at the billingPeriodEndDate. * queued_for_downgrade: Account will be downgraded at the billingPeriodEndDate..</param>
         /// <param name="SeatDiscounts"> A complex type that contains any seat discount information.  Values are: BeginSeatCount, EndSeatCount, and SeatDiscountPercent.  .</param>
         /// <param name="SupportIncidentFee">The support incident fee charged for each support incident..</param>
         /// <param name="SupportPlanFee">The support plan fee charged for this plan..</param>
-        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string AppStoreReceiptExpirationDate = default(string), string AppStoreReceiptPurchaseDate = default(string), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string NotificationType = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
+        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string AppStoreReceiptExpirationDate = default(string), string AppStoreReceiptPurchaseDate = default(string), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string NotificationType = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string PlanStartDate = default(string), string RenewalDate = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
         {
             this.AddOns = AddOns;
             this.AppStoreReceiptExpirationDate = AppStoreReceiptExpirationDate;
@@ -84,6 +86,8 @@ namespace DocuSign.eSign.Model
             this.PlanFeatureSets = PlanFeatureSets;
             this.PlanId = PlanId;
             this.PlanName = PlanName;
+            this.PlanStartDate = PlanStartDate;
+            this.RenewalDate = RenewalDate;
             this.RenewalStatus = RenewalStatus;
             this.SeatDiscounts = SeatDiscounts;
             this.SupportIncidentFee = SupportIncidentFee;
@@ -203,6 +207,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="planName", EmitDefaultValue=false)]
         public string PlanName { get; set; }
         /// <summary>
+        /// Gets or Sets PlanStartDate
+        /// </summary>
+        [DataMember(Name="planStartDate", EmitDefaultValue=false)]
+        public string PlanStartDate { get; set; }
+        /// <summary>
+        /// Gets or Sets RenewalDate
+        /// </summary>
+        [DataMember(Name="renewalDate", EmitDefaultValue=false)]
+        public string RenewalDate { get; set; }
+        /// <summary>
         /// The renewal status for the account. The acceptable values are:  * auto: The account automatically renews. * queued_for_close: Account will be closed at the billingPeriodEndDate. * queued_for_downgrade: Account will be downgraded at the billingPeriodEndDate.
         /// </summary>
         /// <value>The renewal status for the account. The acceptable values are:  * auto: The account automatically renews. * queued_for_close: Account will be closed at the billingPeriodEndDate. * queued_for_downgrade: Account will be downgraded at the billingPeriodEndDate.</value>
@@ -254,6 +268,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  PlanFeatureSets: ").Append(PlanFeatureSets).Append("\n");
             sb.Append("  PlanId: ").Append(PlanId).Append("\n");
             sb.Append("  PlanName: ").Append(PlanName).Append("\n");
+            sb.Append("  PlanStartDate: ").Append(PlanStartDate).Append("\n");
+            sb.Append("  RenewalDate: ").Append(RenewalDate).Append("\n");
             sb.Append("  RenewalStatus: ").Append(RenewalStatus).Append("\n");
             sb.Append("  SeatDiscounts: ").Append(SeatDiscounts).Append("\n");
             sb.Append("  SupportIncidentFee: ").Append(SupportIncidentFee).Append("\n");
@@ -395,6 +411,16 @@ namespace DocuSign.eSign.Model
                     this.PlanName.Equals(other.PlanName)
                 ) && 
                 (
+                    this.PlanStartDate == other.PlanStartDate ||
+                    this.PlanStartDate != null &&
+                    this.PlanStartDate.Equals(other.PlanStartDate)
+                ) && 
+                (
+                    this.RenewalDate == other.RenewalDate ||
+                    this.RenewalDate != null &&
+                    this.RenewalDate.Equals(other.RenewalDate)
+                ) && 
+                (
                     this.RenewalStatus == other.RenewalStatus ||
                     this.RenewalStatus != null &&
                     this.RenewalStatus.Equals(other.RenewalStatus)
@@ -467,6 +493,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PlanId.GetHashCode();
                 if (this.PlanName != null)
                     hash = hash * 59 + this.PlanName.GetHashCode();
+                if (this.PlanStartDate != null)
+                    hash = hash * 59 + this.PlanStartDate.GetHashCode();
+                if (this.RenewalDate != null)
+                    hash = hash * 59 + this.RenewalDate.GetHashCode();
                 if (this.RenewalStatus != null)
                     hash = hash * 59 + this.RenewalStatus.GetHashCode();
                 if (this.SeatDiscounts != null)

@@ -18,7 +18,7 @@
       <group targetFramework="net452">
         <dependency id="BouncyCastle" version="1.8.1" />
         <dependency id="Newtonsoft.Json" version="11.0.2" />
-        <dependency id="RestSharp" version="106.10.1" />
+        <dependency id="RestSharp" version="106.2.0" />
         <dependency id="System.IdentityModel.Tokens.Jwt" version="5.4.0" />
         <dependency id="Microsoft.IdentityModel.Protocols" version="5.4.0" />
         <dependency id="System.ComponentModel.Annotations" version="4.5.0" />

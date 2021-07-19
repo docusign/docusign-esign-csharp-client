@@ -50,6 +50,22 @@ namespace SdkNetCoreTests
         }
 
         [TestMethod]
+        public void ApiExceptionHeadersTest()
+        {
+            EnvelopeDefinition envDef = new EnvelopeDefinition();
+            envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
+            // random incorrect guid
+            envDef.TemplateId = "510fc78e-32f4-8778-44eb-6b53abb6c82E";
+
+            // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
+            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+            ApiException ex = Assert.ThrowsException<ApiException>(() => envelopesApi.CreateEnvelope(testConfig.AccountId, envDef));
+
+            Assert.IsNotNull(ex);
+            Assert.IsNotNull(ex.Headers);
+        }
+
+        [TestMethod]
         public void SetBasePathTest()
         {
             // Prepare

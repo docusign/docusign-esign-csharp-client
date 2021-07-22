@@ -42,7 +42,7 @@ Contact: devcenter@docusign.com
     <DefineConstants>NET452</DefineConstants>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net452'">
-    <PackageReference Include="BouncyCastle" Version="1.8.1" />
+    <PackageReference Include="BouncyCastle" Version="1.8.9" />
   </ItemGroup>
 
   <!-- .NET Standard 2.0 compilation flags and build options -->
@@ -50,7 +50,7 @@ Contact: devcenter@docusign.com
     <DefineConstants>NETSTANDARD2_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="Portable.BouncyCastle" Version="1.8.2" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.8.10" />
   </ItemGroup>
 
   <ItemGroup>

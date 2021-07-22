@@ -24,7 +24,7 @@ Contact: devcenter@docusign.com
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>5.6.1</VersionPrefix>
+    <VersionPrefix>5.6.2</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -34,7 +34,7 @@ Contact: devcenter@docusign.com
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[5.6.1] - eSignature API v2.1-21.2.00.00 - 07/18/2021</PackageReleaseNotes>
+    <PackageReleaseNotes>[5.6.2] - eSignature API v2.1-21.2.00.00 - 07/21/2021</PackageReleaseNotes>
   </PropertyGroup>
 
   <!-- .NET Framework 4.5.2 compilation flags and build options -->

@@ -352,7 +352,6 @@ namespace DocuSign.eSign.Client
         /// <returns>Object representation of the JSON string.</returns>
         public object Deserialize(IRestResponse response, Type type)
         {
-            IList<Parameter> headers = response.Headers;
             if (type == typeof(byte[])) // return byte array
             {
                 return response.RawBytes;
@@ -360,13 +359,13 @@ namespace DocuSign.eSign.Client
 
             if (type == typeof(Stream))
             {
-                if (headers != null)
+                if (response.Headers != null)
                 {
                     var filePath = String.IsNullOrEmpty(Configuration.TempFolderPath)
                         ? Path.GetTempPath()
                         : Configuration.TempFolderPath;
                     var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
-                    foreach (var header in headers)
+                    foreach (var header in response.Headers)
                     {
                         var match = regex.Match(header.ToString());
                         if (match.Success)
@@ -409,7 +408,7 @@ namespace DocuSign.eSign.Client
         /// <param name="type">Object type.</param>
         /// <param name="headers"></param>
         /// <returns>Object representation of the JSON string.</returns>
-        public object Deserialize(byte[] content, Type type, IList<Parameter> headers = null)
+        public object Deserialize(byte[] content, Type type)
         {
             if (type == typeof(Stream))
             {

@@ -1405,7 +1405,7 @@ namespace DocuSign.eSign.Api
         public class GetBulkSendBatchEnvelopesOptions
         {
             /// 
-            public int? count {get; set;}
+            public string count {get; set;}
             /// 
             public string include {get; set;}
             /// 
@@ -1415,11 +1415,11 @@ namespace DocuSign.eSign.Api
             /// 
             public string searchText {get; set;}
             /// 
-            public int? startPosition {get; set;}
+            public string startPosition {get; set;}
             /// 
             public string status {get; set;}
             /// 
-            public Guid? userId {get; set;}
+            public string userId {get; set;}
         }
 
         /// <summary>

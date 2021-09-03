@@ -39,21 +39,31 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="DowngradePlanUpdateResponse" /> class.
         /// </summary>
         /// <param name="AccountPaymentMethod">AccountPaymentMethod.</param>
+        /// <param name="DiscountApplied">DiscountApplied.</param>
         /// <param name="DowngradeEffectiveDate">DowngradeEffectiveDate.</param>
         /// <param name="DowngradePaymentCycle">DowngradePaymentCycle.</param>
         /// <param name="DowngradePlanId">DowngradePlanId.</param>
         /// <param name="DowngradePlanName">DowngradePlanName.</param>
         /// <param name="DowngradeRequestStatus">DowngradeRequestStatus.</param>
         /// <param name="Message">Message.</param>
-        public DowngradePlanUpdateResponse(string AccountPaymentMethod = default(string), string DowngradeEffectiveDate = default(string), string DowngradePaymentCycle = default(string), string DowngradePlanId = default(string), string DowngradePlanName = default(string), string DowngradeRequestStatus = default(string), string Message = default(string))
+        /// <param name="PromoCode">PromoCode.</param>
+        /// <param name="SaleDiscount">SaleDiscount.</param>
+        /// <param name="SaleDiscountPeriods">SaleDiscountPeriods.</param>
+        /// <param name="SaleDiscountType">SaleDiscountType.</param>
+        public DowngradePlanUpdateResponse(string AccountPaymentMethod = default(string), string DiscountApplied = default(string), string DowngradeEffectiveDate = default(string), string DowngradePaymentCycle = default(string), string DowngradePlanId = default(string), string DowngradePlanName = default(string), string DowngradeRequestStatus = default(string), string Message = default(string), string PromoCode = default(string), string SaleDiscount = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountType = default(string))
         {
             this.AccountPaymentMethod = AccountPaymentMethod;
+            this.DiscountApplied = DiscountApplied;
             this.DowngradeEffectiveDate = DowngradeEffectiveDate;
             this.DowngradePaymentCycle = DowngradePaymentCycle;
             this.DowngradePlanId = DowngradePlanId;
             this.DowngradePlanName = DowngradePlanName;
             this.DowngradeRequestStatus = DowngradeRequestStatus;
             this.Message = Message;
+            this.PromoCode = PromoCode;
+            this.SaleDiscount = SaleDiscount;
+            this.SaleDiscountPeriods = SaleDiscountPeriods;
+            this.SaleDiscountType = SaleDiscountType;
         }
         
         /// <summary>
@@ -61,6 +71,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="accountPaymentMethod", EmitDefaultValue=false)]
         public string AccountPaymentMethod { get; set; }
+        /// <summary>
+        /// Gets or Sets DiscountApplied
+        /// </summary>
+        [DataMember(Name="discountApplied", EmitDefaultValue=false)]
+        public string DiscountApplied { get; set; }
         /// <summary>
         /// Gets or Sets DowngradeEffectiveDate
         /// </summary>
@@ -92,6 +107,26 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="message", EmitDefaultValue=false)]
         public string Message { get; set; }
         /// <summary>
+        /// Gets or Sets PromoCode
+        /// </summary>
+        [DataMember(Name="promoCode", EmitDefaultValue=false)]
+        public string PromoCode { get; set; }
+        /// <summary>
+        /// Gets or Sets SaleDiscount
+        /// </summary>
+        [DataMember(Name="saleDiscount", EmitDefaultValue=false)]
+        public string SaleDiscount { get; set; }
+        /// <summary>
+        /// Gets or Sets SaleDiscountPeriods
+        /// </summary>
+        [DataMember(Name="saleDiscountPeriods", EmitDefaultValue=false)]
+        public string SaleDiscountPeriods { get; set; }
+        /// <summary>
+        /// Gets or Sets SaleDiscountType
+        /// </summary>
+        [DataMember(Name="saleDiscountType", EmitDefaultValue=false)]
+        public string SaleDiscountType { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -100,12 +135,17 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class DowngradePlanUpdateResponse {\n");
             sb.Append("  AccountPaymentMethod: ").Append(AccountPaymentMethod).Append("\n");
+            sb.Append("  DiscountApplied: ").Append(DiscountApplied).Append("\n");
             sb.Append("  DowngradeEffectiveDate: ").Append(DowngradeEffectiveDate).Append("\n");
             sb.Append("  DowngradePaymentCycle: ").Append(DowngradePaymentCycle).Append("\n");
             sb.Append("  DowngradePlanId: ").Append(DowngradePlanId).Append("\n");
             sb.Append("  DowngradePlanName: ").Append(DowngradePlanName).Append("\n");
             sb.Append("  DowngradeRequestStatus: ").Append(DowngradeRequestStatus).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  PromoCode: ").Append(PromoCode).Append("\n");
+            sb.Append("  SaleDiscount: ").Append(SaleDiscount).Append("\n");
+            sb.Append("  SaleDiscountPeriods: ").Append(SaleDiscountPeriods).Append("\n");
+            sb.Append("  SaleDiscountType: ").Append(SaleDiscountType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -148,6 +188,11 @@ namespace DocuSign.eSign.Model
                     this.AccountPaymentMethod.Equals(other.AccountPaymentMethod)
                 ) && 
                 (
+                    this.DiscountApplied == other.DiscountApplied ||
+                    this.DiscountApplied != null &&
+                    this.DiscountApplied.Equals(other.DiscountApplied)
+                ) && 
+                (
                     this.DowngradeEffectiveDate == other.DowngradeEffectiveDate ||
                     this.DowngradeEffectiveDate != null &&
                     this.DowngradeEffectiveDate.Equals(other.DowngradeEffectiveDate)
@@ -176,6 +221,26 @@ namespace DocuSign.eSign.Model
                     this.Message == other.Message ||
                     this.Message != null &&
                     this.Message.Equals(other.Message)
+                ) && 
+                (
+                    this.PromoCode == other.PromoCode ||
+                    this.PromoCode != null &&
+                    this.PromoCode.Equals(other.PromoCode)
+                ) && 
+                (
+                    this.SaleDiscount == other.SaleDiscount ||
+                    this.SaleDiscount != null &&
+                    this.SaleDiscount.Equals(other.SaleDiscount)
+                ) && 
+                (
+                    this.SaleDiscountPeriods == other.SaleDiscountPeriods ||
+                    this.SaleDiscountPeriods != null &&
+                    this.SaleDiscountPeriods.Equals(other.SaleDiscountPeriods)
+                ) && 
+                (
+                    this.SaleDiscountType == other.SaleDiscountType ||
+                    this.SaleDiscountType != null &&
+                    this.SaleDiscountType.Equals(other.SaleDiscountType)
                 );
         }
 
@@ -192,6 +257,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.AccountPaymentMethod != null)
                     hash = hash * 59 + this.AccountPaymentMethod.GetHashCode();
+                if (this.DiscountApplied != null)
+                    hash = hash * 59 + this.DiscountApplied.GetHashCode();
                 if (this.DowngradeEffectiveDate != null)
                     hash = hash * 59 + this.DowngradeEffectiveDate.GetHashCode();
                 if (this.DowngradePaymentCycle != null)
@@ -204,6 +271,14 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DowngradeRequestStatus.GetHashCode();
                 if (this.Message != null)
                     hash = hash * 59 + this.Message.GetHashCode();
+                if (this.PromoCode != null)
+                    hash = hash * 59 + this.PromoCode.GetHashCode();
+                if (this.SaleDiscount != null)
+                    hash = hash * 59 + this.SaleDiscount.GetHashCode();
+                if (this.SaleDiscountPeriods != null)
+                    hash = hash * 59 + this.SaleDiscountPeriods.GetHashCode();
+                if (this.SaleDiscountType != null)
+                    hash = hash * 59 + this.SaleDiscountType.GetHashCode();
                 return hash;
             }
         }

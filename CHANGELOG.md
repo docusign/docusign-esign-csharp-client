@@ -1,5 +1,11 @@
 ﻿# DocuSign C# Client Changelog - eSignature API v2
 
+## [v3.12.0] - ESignature API v2-21.2.02.00 - 09/02/2021
+### Changed
+- Added support for version v2-21.2.02.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
+
 ## [v3.11.2] - eSignature API v2-21.2.00.00 - 07/21/2021
 ### Changed
 - Updated Bouncy Castle version to latest stable (DCM-6142).

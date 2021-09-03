@@ -50,9 +50,10 @@ namespace DocuSign.eSign.Model
         /// <param name="SignatureId">Specifies the signature ID associated with the signature name. You can use the signature ID in the URI in place of the signature name, and the value stored in the &#x60;signatureName&#x60; property in the body is used. This allows the use of special characters (such as \&quot;&amp;\&quot;, \&quot;&lt;\&quot;, \&quot;&gt;\&quot;) in a the signature name. Note that with each update to signatures, the returned signature ID might change, so the caller will need to trigger off the signature name to get the new signature ID..</param>
         /// <param name="SignatureInitials">SignatureInitials.</param>
         /// <param name="SignatureName">Specifies the user signature name..</param>
+        /// <param name="SignatureType">SignatureType.</param>
         /// <param name="StampFormat">StampFormat.</param>
         /// <param name="StampSizeMM">StampSizeMM.</param>
-        public UserSignatureDefinition(DateStampProperties DateStampProperties = default(DateStampProperties), string DisallowUserResizeStamp = default(string), string ExternalID = default(string), string ImageType = default(string), string IsDefault = default(string), string NrdsId = default(string), string NrdsLastName = default(string), string PhoneticName = default(string), string SignatureFont = default(string), string SignatureId = default(string), string SignatureInitials = default(string), string SignatureName = default(string), string StampFormat = default(string), string StampSizeMM = default(string))
+        public UserSignatureDefinition(DateStampProperties DateStampProperties = default(DateStampProperties), string DisallowUserResizeStamp = default(string), string ExternalID = default(string), string ImageType = default(string), string IsDefault = default(string), string NrdsId = default(string), string NrdsLastName = default(string), string PhoneticName = default(string), string SignatureFont = default(string), string SignatureId = default(string), string SignatureInitials = default(string), string SignatureName = default(string), string SignatureType = default(string), string StampFormat = default(string), string StampSizeMM = default(string))
         {
             this.DateStampProperties = DateStampProperties;
             this.DisallowUserResizeStamp = DisallowUserResizeStamp;
@@ -66,6 +67,7 @@ namespace DocuSign.eSign.Model
             this.SignatureId = SignatureId;
             this.SignatureInitials = SignatureInitials;
             this.SignatureName = SignatureName;
+            this.SignatureType = SignatureType;
             this.StampFormat = StampFormat;
             this.StampSizeMM = StampSizeMM;
         }
@@ -133,6 +135,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureName", EmitDefaultValue=false)]
         public string SignatureName { get; set; }
         /// <summary>
+        /// Gets or Sets SignatureType
+        /// </summary>
+        [DataMember(Name="signatureType", EmitDefaultValue=false)]
+        public string SignatureType { get; set; }
+        /// <summary>
         /// Gets or Sets StampFormat
         /// </summary>
         [DataMember(Name="stampFormat", EmitDefaultValue=false)]
@@ -162,6 +169,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SignatureId: ").Append(SignatureId).Append("\n");
             sb.Append("  SignatureInitials: ").Append(SignatureInitials).Append("\n");
             sb.Append("  SignatureName: ").Append(SignatureName).Append("\n");
+            sb.Append("  SignatureType: ").Append(SignatureType).Append("\n");
             sb.Append("  StampFormat: ").Append(StampFormat).Append("\n");
             sb.Append("  StampSizeMM: ").Append(StampSizeMM).Append("\n");
             sb.Append("}\n");
@@ -261,6 +269,11 @@ namespace DocuSign.eSign.Model
                     this.SignatureName.Equals(other.SignatureName)
                 ) && 
                 (
+                    this.SignatureType == other.SignatureType ||
+                    this.SignatureType != null &&
+                    this.SignatureType.Equals(other.SignatureType)
+                ) && 
+                (
                     this.StampFormat == other.StampFormat ||
                     this.StampFormat != null &&
                     this.StampFormat.Equals(other.StampFormat)
@@ -307,6 +320,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SignatureInitials.GetHashCode();
                 if (this.SignatureName != null)
                     hash = hash * 59 + this.SignatureName.GetHashCode();
+                if (this.SignatureType != null)
+                    hash = hash * 59 + this.SignatureType.GetHashCode();
                 if (this.StampFormat != null)
                     hash = hash * 59 + this.StampFormat.GetHashCode();
                 if (this.StampSizeMM != null)

@@ -39,21 +39,25 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="CreditCardInformation" /> class.
         /// </summary>
         /// <param name="Address">Address.</param>
+        /// <param name="CardLastDigits">CardLastDigits.</param>
         /// <param name="CardNumber">The number on the credit card..</param>
         /// <param name="CardType">The credit card type. Valid values are: visa, mastercard, or amex..</param>
         /// <param name="CvNumber">CvNumber.</param>
         /// <param name="ExpirationMonth">The month that the credit card expires (1-12)..</param>
         /// <param name="ExpirationYear">The year 4 digit year in which the credit card expires..</param>
         /// <param name="NameOnCard">The exact name printed on the credit card..</param>
-        public CreditCardInformation(AddressInformation Address = default(AddressInformation), string CardNumber = default(string), string CardType = default(string), string CvNumber = default(string), string ExpirationMonth = default(string), string ExpirationYear = default(string), string NameOnCard = default(string))
+        /// <param name="TokenizedCard">TokenizedCard.</param>
+        public CreditCardInformation(AddressInformation Address = default(AddressInformation), string CardLastDigits = default(string), string CardNumber = default(string), string CardType = default(string), string CvNumber = default(string), string ExpirationMonth = default(string), string ExpirationYear = default(string), string NameOnCard = default(string), string TokenizedCard = default(string))
         {
             this.Address = Address;
+            this.CardLastDigits = CardLastDigits;
             this.CardNumber = CardNumber;
             this.CardType = CardType;
             this.CvNumber = CvNumber;
             this.ExpirationMonth = ExpirationMonth;
             this.ExpirationYear = ExpirationYear;
             this.NameOnCard = NameOnCard;
+            this.TokenizedCard = TokenizedCard;
         }
         
         /// <summary>
@@ -61,6 +65,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="address", EmitDefaultValue=false)]
         public AddressInformation Address { get; set; }
+        /// <summary>
+        /// Gets or Sets CardLastDigits
+        /// </summary>
+        [DataMember(Name="cardLastDigits", EmitDefaultValue=false)]
+        public string CardLastDigits { get; set; }
         /// <summary>
         /// The number on the credit card.
         /// </summary>
@@ -97,6 +106,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="nameOnCard", EmitDefaultValue=false)]
         public string NameOnCard { get; set; }
         /// <summary>
+        /// Gets or Sets TokenizedCard
+        /// </summary>
+        [DataMember(Name="tokenizedCard", EmitDefaultValue=false)]
+        public string TokenizedCard { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -105,12 +119,14 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class CreditCardInformation {\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
+            sb.Append("  CardLastDigits: ").Append(CardLastDigits).Append("\n");
             sb.Append("  CardNumber: ").Append(CardNumber).Append("\n");
             sb.Append("  CardType: ").Append(CardType).Append("\n");
             sb.Append("  CvNumber: ").Append(CvNumber).Append("\n");
             sb.Append("  ExpirationMonth: ").Append(ExpirationMonth).Append("\n");
             sb.Append("  ExpirationYear: ").Append(ExpirationYear).Append("\n");
             sb.Append("  NameOnCard: ").Append(NameOnCard).Append("\n");
+            sb.Append("  TokenizedCard: ").Append(TokenizedCard).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,6 +169,11 @@ namespace DocuSign.eSign.Model
                     this.Address.Equals(other.Address)
                 ) && 
                 (
+                    this.CardLastDigits == other.CardLastDigits ||
+                    this.CardLastDigits != null &&
+                    this.CardLastDigits.Equals(other.CardLastDigits)
+                ) && 
+                (
                     this.CardNumber == other.CardNumber ||
                     this.CardNumber != null &&
                     this.CardNumber.Equals(other.CardNumber)
@@ -181,6 +202,11 @@ namespace DocuSign.eSign.Model
                     this.NameOnCard == other.NameOnCard ||
                     this.NameOnCard != null &&
                     this.NameOnCard.Equals(other.NameOnCard)
+                ) && 
+                (
+                    this.TokenizedCard == other.TokenizedCard ||
+                    this.TokenizedCard != null &&
+                    this.TokenizedCard.Equals(other.TokenizedCard)
                 );
         }
 
@@ -197,6 +223,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Address != null)
                     hash = hash * 59 + this.Address.GetHashCode();
+                if (this.CardLastDigits != null)
+                    hash = hash * 59 + this.CardLastDigits.GetHashCode();
                 if (this.CardNumber != null)
                     hash = hash * 59 + this.CardNumber.GetHashCode();
                 if (this.CardType != null)
@@ -209,6 +237,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ExpirationYear.GetHashCode();
                 if (this.NameOnCard != null)
                     hash = hash * 59 + this.NameOnCard.GetHashCode();
+                if (this.TokenizedCard != null)
+                    hash = hash * 59 + this.TokenizedCard.GetHashCode();
                 return hash;
             }
         }

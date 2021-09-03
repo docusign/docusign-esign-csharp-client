@@ -40,10 +40,18 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="DowngradeEventType">DowngradeEventType.</param>
         /// <param name="PlanInformation">PlanInformation.</param>
-        public DowngradeBillingPlanInformation(string DowngradeEventType = default(string), PlanInformation PlanInformation = default(PlanInformation))
+        /// <param name="PromoCode">PromoCode.</param>
+        /// <param name="SaleDiscount">SaleDiscount.</param>
+        /// <param name="SaleDiscountPeriods">SaleDiscountPeriods.</param>
+        /// <param name="SaleDiscountType">SaleDiscountType.</param>
+        public DowngradeBillingPlanInformation(string DowngradeEventType = default(string), PlanInformation PlanInformation = default(PlanInformation), string PromoCode = default(string), string SaleDiscount = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountType = default(string))
         {
             this.DowngradeEventType = DowngradeEventType;
             this.PlanInformation = PlanInformation;
+            this.PromoCode = PromoCode;
+            this.SaleDiscount = SaleDiscount;
+            this.SaleDiscountPeriods = SaleDiscountPeriods;
+            this.SaleDiscountType = SaleDiscountType;
         }
         
         /// <summary>
@@ -57,6 +65,26 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="planInformation", EmitDefaultValue=false)]
         public PlanInformation PlanInformation { get; set; }
         /// <summary>
+        /// Gets or Sets PromoCode
+        /// </summary>
+        [DataMember(Name="promoCode", EmitDefaultValue=false)]
+        public string PromoCode { get; set; }
+        /// <summary>
+        /// Gets or Sets SaleDiscount
+        /// </summary>
+        [DataMember(Name="saleDiscount", EmitDefaultValue=false)]
+        public string SaleDiscount { get; set; }
+        /// <summary>
+        /// Gets or Sets SaleDiscountPeriods
+        /// </summary>
+        [DataMember(Name="saleDiscountPeriods", EmitDefaultValue=false)]
+        public string SaleDiscountPeriods { get; set; }
+        /// <summary>
+        /// Gets or Sets SaleDiscountType
+        /// </summary>
+        [DataMember(Name="saleDiscountType", EmitDefaultValue=false)]
+        public string SaleDiscountType { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -66,6 +94,10 @@ namespace DocuSign.eSign.Model
             sb.Append("class DowngradeBillingPlanInformation {\n");
             sb.Append("  DowngradeEventType: ").Append(DowngradeEventType).Append("\n");
             sb.Append("  PlanInformation: ").Append(PlanInformation).Append("\n");
+            sb.Append("  PromoCode: ").Append(PromoCode).Append("\n");
+            sb.Append("  SaleDiscount: ").Append(SaleDiscount).Append("\n");
+            sb.Append("  SaleDiscountPeriods: ").Append(SaleDiscountPeriods).Append("\n");
+            sb.Append("  SaleDiscountType: ").Append(SaleDiscountType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -111,6 +143,26 @@ namespace DocuSign.eSign.Model
                     this.PlanInformation == other.PlanInformation ||
                     this.PlanInformation != null &&
                     this.PlanInformation.Equals(other.PlanInformation)
+                ) && 
+                (
+                    this.PromoCode == other.PromoCode ||
+                    this.PromoCode != null &&
+                    this.PromoCode.Equals(other.PromoCode)
+                ) && 
+                (
+                    this.SaleDiscount == other.SaleDiscount ||
+                    this.SaleDiscount != null &&
+                    this.SaleDiscount.Equals(other.SaleDiscount)
+                ) && 
+                (
+                    this.SaleDiscountPeriods == other.SaleDiscountPeriods ||
+                    this.SaleDiscountPeriods != null &&
+                    this.SaleDiscountPeriods.Equals(other.SaleDiscountPeriods)
+                ) && 
+                (
+                    this.SaleDiscountType == other.SaleDiscountType ||
+                    this.SaleDiscountType != null &&
+                    this.SaleDiscountType.Equals(other.SaleDiscountType)
                 );
         }
 
@@ -129,6 +181,14 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DowngradeEventType.GetHashCode();
                 if (this.PlanInformation != null)
                     hash = hash * 59 + this.PlanInformation.GetHashCode();
+                if (this.PromoCode != null)
+                    hash = hash * 59 + this.PromoCode.GetHashCode();
+                if (this.SaleDiscount != null)
+                    hash = hash * 59 + this.SaleDiscount.GetHashCode();
+                if (this.SaleDiscountPeriods != null)
+                    hash = hash * 59 + this.SaleDiscountPeriods.GetHashCode();
+                if (this.SaleDiscountType != null)
+                    hash = hash * 59 + this.SaleDiscountType.GetHashCode();
                 return hash;
             }
         }

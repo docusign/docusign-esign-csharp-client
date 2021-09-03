@@ -38,12 +38,19 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientProofFile" /> class.
         /// </summary>
+        /// <param name="HasIdentityAttempts">HasIdentityAttempts.</param>
         /// <param name="IsInProofFile">IsInProofFile.</param>
-        public RecipientProofFile(string IsInProofFile = default(string))
+        public RecipientProofFile(string HasIdentityAttempts = default(string), string IsInProofFile = default(string))
         {
+            this.HasIdentityAttempts = HasIdentityAttempts;
             this.IsInProofFile = IsInProofFile;
         }
         
+        /// <summary>
+        /// Gets or Sets HasIdentityAttempts
+        /// </summary>
+        [DataMember(Name="hasIdentityAttempts", EmitDefaultValue=false)]
+        public string HasIdentityAttempts { get; set; }
         /// <summary>
         /// Gets or Sets IsInProofFile
         /// </summary>
@@ -57,6 +64,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class RecipientProofFile {\n");
+            sb.Append("  HasIdentityAttempts: ").Append(HasIdentityAttempts).Append("\n");
             sb.Append("  IsInProofFile: ").Append(IsInProofFile).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -95,6 +103,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.HasIdentityAttempts == other.HasIdentityAttempts ||
+                    this.HasIdentityAttempts != null &&
+                    this.HasIdentityAttempts.Equals(other.HasIdentityAttempts)
+                ) && 
+                (
                     this.IsInProofFile == other.IsInProofFile ||
                     this.IsInProofFile != null &&
                     this.IsInProofFile.Equals(other.IsInProofFile)
@@ -112,6 +125,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.HasIdentityAttempts != null)
+                    hash = hash * 59 + this.HasIdentityAttempts.GetHashCode();
                 if (this.IsInProofFile != null)
                     hash = hash * 59 + this.IsInProofFile.GetHashCode();
                 return hash;

@@ -39,11 +39,13 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="RecipientIdentityPhoneNumber" /> class.
         /// </summary>
         /// <param name="CountryCode">CountryCode.</param>
+        /// <param name="CountryCodeLock">CountryCodeLock.</param>
         /// <param name="Extension">Extension.</param>
         /// <param name="Number">Number.</param>
-        public RecipientIdentityPhoneNumber(string CountryCode = default(string), string Extension = default(string), string Number = default(string))
+        public RecipientIdentityPhoneNumber(string CountryCode = default(string), string CountryCodeLock = default(string), string Extension = default(string), string Number = default(string))
         {
             this.CountryCode = CountryCode;
+            this.CountryCodeLock = CountryCodeLock;
             this.Extension = Extension;
             this.Number = Number;
         }
@@ -53,6 +55,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="countryCode", EmitDefaultValue=false)]
         public string CountryCode { get; set; }
+        /// <summary>
+        /// Gets or Sets CountryCodeLock
+        /// </summary>
+        [DataMember(Name="countryCodeLock", EmitDefaultValue=false)]
+        public string CountryCodeLock { get; set; }
         /// <summary>
         /// Gets or Sets Extension
         /// </summary>
@@ -72,6 +79,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class RecipientIdentityPhoneNumber {\n");
             sb.Append("  CountryCode: ").Append(CountryCode).Append("\n");
+            sb.Append("  CountryCodeLock: ").Append(CountryCodeLock).Append("\n");
             sb.Append("  Extension: ").Append(Extension).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("}\n");
@@ -116,6 +124,11 @@ namespace DocuSign.eSign.Model
                     this.CountryCode.Equals(other.CountryCode)
                 ) && 
                 (
+                    this.CountryCodeLock == other.CountryCodeLock ||
+                    this.CountryCodeLock != null &&
+                    this.CountryCodeLock.Equals(other.CountryCodeLock)
+                ) && 
+                (
                     this.Extension == other.Extension ||
                     this.Extension != null &&
                     this.Extension.Equals(other.Extension)
@@ -140,6 +153,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.CountryCode != null)
                     hash = hash * 59 + this.CountryCode.GetHashCode();
+                if (this.CountryCodeLock != null)
+                    hash = hash * 59 + this.CountryCodeLock.GetHashCode();
                 if (this.Extension != null)
                     hash = hash * 59 + this.Extension.GetHashCode();
                 if (this.Number != null)

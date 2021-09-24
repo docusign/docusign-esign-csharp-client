@@ -46,11 +46,12 @@ namespace DocuSign.eSign.Model
         /// <param name="DowngradePlanName">DowngradePlanName.</param>
         /// <param name="DowngradeRequestStatus">DowngradeRequestStatus.</param>
         /// <param name="Message">Message.</param>
+        /// <param name="ProductId">ProductId.</param>
         /// <param name="PromoCode">PromoCode.</param>
         /// <param name="SaleDiscount">SaleDiscount.</param>
         /// <param name="SaleDiscountPeriods">SaleDiscountPeriods.</param>
         /// <param name="SaleDiscountType">SaleDiscountType.</param>
-        public DowngradePlanUpdateResponse(string AccountPaymentMethod = default(string), string DiscountApplied = default(string), string DowngradeEffectiveDate = default(string), string DowngradePaymentCycle = default(string), string DowngradePlanId = default(string), string DowngradePlanName = default(string), string DowngradeRequestStatus = default(string), string Message = default(string), string PromoCode = default(string), string SaleDiscount = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountType = default(string))
+        public DowngradePlanUpdateResponse(string AccountPaymentMethod = default(string), string DiscountApplied = default(string), string DowngradeEffectiveDate = default(string), string DowngradePaymentCycle = default(string), string DowngradePlanId = default(string), string DowngradePlanName = default(string), string DowngradeRequestStatus = default(string), string Message = default(string), string ProductId = default(string), string PromoCode = default(string), string SaleDiscount = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountType = default(string))
         {
             this.AccountPaymentMethod = AccountPaymentMethod;
             this.DiscountApplied = DiscountApplied;
@@ -60,6 +61,7 @@ namespace DocuSign.eSign.Model
             this.DowngradePlanName = DowngradePlanName;
             this.DowngradeRequestStatus = DowngradeRequestStatus;
             this.Message = Message;
+            this.ProductId = ProductId;
             this.PromoCode = PromoCode;
             this.SaleDiscount = SaleDiscount;
             this.SaleDiscountPeriods = SaleDiscountPeriods;
@@ -107,6 +109,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="message", EmitDefaultValue=false)]
         public string Message { get; set; }
         /// <summary>
+        /// Gets or Sets ProductId
+        /// </summary>
+        [DataMember(Name="productId", EmitDefaultValue=false)]
+        public string ProductId { get; set; }
+        /// <summary>
         /// Gets or Sets PromoCode
         /// </summary>
         [DataMember(Name="promoCode", EmitDefaultValue=false)]
@@ -142,6 +149,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DowngradePlanName: ").Append(DowngradePlanName).Append("\n");
             sb.Append("  DowngradeRequestStatus: ").Append(DowngradeRequestStatus).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  ProductId: ").Append(ProductId).Append("\n");
             sb.Append("  PromoCode: ").Append(PromoCode).Append("\n");
             sb.Append("  SaleDiscount: ").Append(SaleDiscount).Append("\n");
             sb.Append("  SaleDiscountPeriods: ").Append(SaleDiscountPeriods).Append("\n");
@@ -223,6 +231,11 @@ namespace DocuSign.eSign.Model
                     this.Message.Equals(other.Message)
                 ) && 
                 (
+                    this.ProductId == other.ProductId ||
+                    this.ProductId != null &&
+                    this.ProductId.Equals(other.ProductId)
+                ) && 
+                (
                     this.PromoCode == other.PromoCode ||
                     this.PromoCode != null &&
                     this.PromoCode.Equals(other.PromoCode)
@@ -271,6 +284,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DowngradeRequestStatus.GetHashCode();
                 if (this.Message != null)
                     hash = hash * 59 + this.Message.GetHashCode();
+                if (this.ProductId != null)
+                    hash = hash * 59 + this.ProductId.GetHashCode();
                 if (this.PromoCode != null)
                     hash = hash * 59 + this.PromoCode.GetHashCode();
                 if (this.SaleDiscount != null)

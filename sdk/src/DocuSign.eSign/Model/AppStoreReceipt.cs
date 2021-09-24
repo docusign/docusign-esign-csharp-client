@@ -38,14 +38,28 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AppStoreReceipt" /> class.
         /// </summary>
+        /// <param name="DowngradeProductId">DowngradeProductId.</param>
+        /// <param name="IsDowngradeCancellation">IsDowngradeCancellation.</param>
         /// <param name="ProductId">ProductId.</param>
         /// <param name="ReceiptData">Reserved: TBD.</param>
-        public AppStoreReceipt(string ProductId = default(string), string ReceiptData = default(string))
+        public AppStoreReceipt(string DowngradeProductId = default(string), string IsDowngradeCancellation = default(string), string ProductId = default(string), string ReceiptData = default(string))
         {
+            this.DowngradeProductId = DowngradeProductId;
+            this.IsDowngradeCancellation = IsDowngradeCancellation;
             this.ProductId = ProductId;
             this.ReceiptData = ReceiptData;
         }
         
+        /// <summary>
+        /// Gets or Sets DowngradeProductId
+        /// </summary>
+        [DataMember(Name="downgradeProductId", EmitDefaultValue=false)]
+        public string DowngradeProductId { get; set; }
+        /// <summary>
+        /// Gets or Sets IsDowngradeCancellation
+        /// </summary>
+        [DataMember(Name="isDowngradeCancellation", EmitDefaultValue=false)]
+        public string IsDowngradeCancellation { get; set; }
         /// <summary>
         /// Gets or Sets ProductId
         /// </summary>
@@ -65,6 +79,8 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AppStoreReceipt {\n");
+            sb.Append("  DowngradeProductId: ").Append(DowngradeProductId).Append("\n");
+            sb.Append("  IsDowngradeCancellation: ").Append(IsDowngradeCancellation).Append("\n");
             sb.Append("  ProductId: ").Append(ProductId).Append("\n");
             sb.Append("  ReceiptData: ").Append(ReceiptData).Append("\n");
             sb.Append("}\n");
@@ -104,6 +120,16 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.DowngradeProductId == other.DowngradeProductId ||
+                    this.DowngradeProductId != null &&
+                    this.DowngradeProductId.Equals(other.DowngradeProductId)
+                ) && 
+                (
+                    this.IsDowngradeCancellation == other.IsDowngradeCancellation ||
+                    this.IsDowngradeCancellation != null &&
+                    this.IsDowngradeCancellation.Equals(other.IsDowngradeCancellation)
+                ) && 
+                (
                     this.ProductId == other.ProductId ||
                     this.ProductId != null &&
                     this.ProductId.Equals(other.ProductId)
@@ -126,6 +152,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.DowngradeProductId != null)
+                    hash = hash * 59 + this.DowngradeProductId.GetHashCode();
+                if (this.IsDowngradeCancellation != null)
+                    hash = hash * 59 + this.IsDowngradeCancellation.GetHashCode();
                 if (this.ProductId != null)
                     hash = hash * 59 + this.ProductId.GetHashCode();
                 if (this.ReceiptData != null)

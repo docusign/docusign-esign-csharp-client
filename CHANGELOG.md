@@ -1,5 +1,13 @@
 ﻿# DocuSign C# Client Changelog
 
+## [5.8.0-rc] - ESignature API v2.1-21.3.00.00 - 2021-09-23
+### Changed
+- Added support for version v2.1-21.3.00.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+### Fixed
+- Fixed file upload ability to AccountBrands::updateResource (DCM-3867).
+
+
 ## [v5.7.0] - ESignature API v2.1-21.2.02.00 - 09/02/2021
 ### Changed
 - Added support for version v2.1-21.2.02.00 of the DocuSign ESignature API.

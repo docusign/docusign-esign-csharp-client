@@ -44,12 +44,13 @@ namespace DocuSign.eSign.Model
         /// <param name="CreditCardInformation">CreditCardInformation.</param>
         /// <param name="DirectDebitProcessorInformation">DirectDebitProcessorInformation.</param>
         /// <param name="DowngradePlanInformation">DowngradePlanInformation.</param>
+        /// <param name="DowngradeRequestInformation">DowngradeRequestInformation.</param>
         /// <param name="EntityName">EntityName.</param>
         /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
         /// <param name="SuccessorPlans">SuccessorPlans.</param>
-        public AccountBillingPlanResponse(AccountAddress BillingAddress = default(AccountAddress), string BillingAddressIsCreditCardAddress = default(string), AccountBillingPlan BillingPlan = default(AccountBillingPlan), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EntityName = default(string), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), ReferralInformation ReferralInformation = default(ReferralInformation), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>))
+        public AccountBillingPlanResponse(AccountAddress BillingAddress = default(AccountAddress), string BillingAddressIsCreditCardAddress = default(string), AccountBillingPlan BillingPlan = default(AccountBillingPlan), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), DowngradeRequestInformation DowngradeRequestInformation = default(DowngradeRequestInformation), string EntityName = default(string), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), ReferralInformation ReferralInformation = default(ReferralInformation), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>))
         {
             this.BillingAddress = BillingAddress;
             this.BillingAddressIsCreditCardAddress = BillingAddressIsCreditCardAddress;
@@ -57,6 +58,7 @@ namespace DocuSign.eSign.Model
             this.CreditCardInformation = CreditCardInformation;
             this.DirectDebitProcessorInformation = DirectDebitProcessorInformation;
             this.DowngradePlanInformation = DowngradePlanInformation;
+            this.DowngradeRequestInformation = DowngradeRequestInformation;
             this.EntityName = EntityName;
             this.PaymentMethod = PaymentMethod;
             this.PaymentProcessorInformation = PaymentProcessorInformation;
@@ -96,6 +98,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="downgradePlanInformation", EmitDefaultValue=false)]
         public DowngradePlanUpdateResponse DowngradePlanInformation { get; set; }
         /// <summary>
+        /// Gets or Sets DowngradeRequestInformation
+        /// </summary>
+        [DataMember(Name="downgradeRequestInformation", EmitDefaultValue=false)]
+        public DowngradeRequestInformation DowngradeRequestInformation { get; set; }
+        /// <summary>
         /// Gets or Sets EntityName
         /// </summary>
         [DataMember(Name="entityName", EmitDefaultValue=false)]
@@ -134,6 +141,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  CreditCardInformation: ").Append(CreditCardInformation).Append("\n");
             sb.Append("  DirectDebitProcessorInformation: ").Append(DirectDebitProcessorInformation).Append("\n");
             sb.Append("  DowngradePlanInformation: ").Append(DowngradePlanInformation).Append("\n");
+            sb.Append("  DowngradeRequestInformation: ").Append(DowngradeRequestInformation).Append("\n");
             sb.Append("  EntityName: ").Append(EntityName).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  PaymentProcessorInformation: ").Append(PaymentProcessorInformation).Append("\n");
@@ -206,6 +214,11 @@ namespace DocuSign.eSign.Model
                     this.DowngradePlanInformation.Equals(other.DowngradePlanInformation)
                 ) && 
                 (
+                    this.DowngradeRequestInformation == other.DowngradeRequestInformation ||
+                    this.DowngradeRequestInformation != null &&
+                    this.DowngradeRequestInformation.Equals(other.DowngradeRequestInformation)
+                ) && 
+                (
                     this.EntityName == other.EntityName ||
                     this.EntityName != null &&
                     this.EntityName.Equals(other.EntityName)
@@ -255,6 +268,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DirectDebitProcessorInformation.GetHashCode();
                 if (this.DowngradePlanInformation != null)
                     hash = hash * 59 + this.DowngradePlanInformation.GetHashCode();
+                if (this.DowngradeRequestInformation != null)
+                    hash = hash * 59 + this.DowngradeRequestInformation.GetHashCode();
                 if (this.EntityName != null)
                     hash = hash * 59 + this.EntityName.GetHashCode();
                 if (this.PaymentMethod != null)

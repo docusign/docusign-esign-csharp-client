@@ -215,6 +215,7 @@ namespace DocuSign.eSign.Client
 
                 if (postBody.GetType() == typeof(String) || postBody.GetType() == typeof(byte[]))
                 {
+                    request.AddHeader("Content-Disposition", "form-data;filename=fileXml.xml;name=fileXml;");
                     request.AddParameter(contentType, postBody, ParameterType.RequestBody);
                 }
             }

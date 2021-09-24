@@ -43,8 +43,9 @@ namespace DocuSign.eSign.Model
         /// <param name="AllUsers">When set to **true**, the tracked envelope and recipient events for all users, including users that are added a later time, are sent through Connect..</param>
         /// <param name="ConfigurationType">If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**..</param>
         /// <param name="ConnectId"> Specifies the DocuSign generated ID for the Connect configuration.  .</param>
+        /// <param name="DeliveryMode">DeliveryMode.</param>
         /// <param name="EnableLog">This turns Connect logging on or off. When set to **true**, logging is turned on..</param>
-        /// <param name="EnvelopeEvents">A comma separated list of Ã¯Â¿Â½EnvelopeÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided..</param>
+        /// <param name="EnvelopeEvents">A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided..</param>
         /// <param name="EventData">EventData.</param>
         /// <param name="ExternalFolderId">ExternalFolderId.</param>
         /// <param name="ExternalFolderLabel">ExternalFolderLabel.</param>
@@ -58,7 +59,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IncludeTimeZoneInformation">When set to **true**, Connect will include the envelope time zone information..</param>
         /// <param name="Name">The name of the Connect configuration. The name helps identify the configuration in the list..</param>
         /// <param name="Password">Password.</param>
-        /// <param name="RecipientEvents">A comma separated list of Ã¯Â¿Â½RecipientÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded..</param>
+        /// <param name="RecipientEvents">A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded..</param>
         /// <param name="RequireMutualTls">RequireMutualTls.</param>
         /// <param name="RequiresAcknowledgement">When set to **true**, and a publication message fails to be acknowledged, the message goes back into the queue and the system will retry delivery after a successful acknowledgement is received. If the delivery fails a second time, the message is not returned to the queue for sending until Connect receives a successful acknowledgement and it has been at least 24 hours since the previous retry. There is a maximum of ten retries Alternately, you can use Republish Connect Information to manually republish the envelope information..</param>
         /// <param name="SalesforceApiVersion">SalesforceApiVersion.</param>
@@ -71,16 +72,17 @@ namespace DocuSign.eSign.Model
         /// <param name="SignMessageWithX509Certificate">When set to **true**, Connect messages are signed with an X509 certificate. This provides support for 2-way SSL..</param>
         /// <param name="SoapNamespace">The namespace of the SOAP interface.  The namespace value must be set if useSoapInterface is set to true..</param>
         /// <param name="UrlToPublishTo">This is the web address and name of your listener or Retrieving Service endpoint. You need to include HTTPS:// in the web address..</param>
-        /// <param name="UserIds">A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to Ã¯Â¿Â½falseÃ¯Â¿Â½ then you must provide a list of user idÃ¯Â¿Â½s..</param>
+        /// <param name="UserIds">A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s..</param>
         /// <param name="UserName">UserName.</param>
         /// <param name="UseSoapInterface">When set to **true**, indicates that the &#x60;urlToPublishTo&#x60; property contains a SOAP endpoint..</param>
-        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string EnableLog = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string Name = default(string), string Password = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
+        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string EnableLog = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string Name = default(string), string Password = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
         {
             this.AllowEnvelopePublish = AllowEnvelopePublish;
             this.AllowSalesforcePublish = AllowSalesforcePublish;
             this.AllUsers = AllUsers;
             this.ConfigurationType = ConfigurationType;
             this.ConnectId = ConnectId;
+            this.DeliveryMode = DeliveryMode;
             this.EnableLog = EnableLog;
             this.EnvelopeEvents = EnvelopeEvents;
             this.EventData = EventData;
@@ -144,15 +146,20 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="connectId", EmitDefaultValue=false)]
         public string ConnectId { get; set; }
         /// <summary>
+        /// Gets or Sets DeliveryMode
+        /// </summary>
+        [DataMember(Name="deliveryMode", EmitDefaultValue=false)]
+        public string DeliveryMode { get; set; }
+        /// <summary>
         /// This turns Connect logging on or off. When set to **true**, logging is turned on.
         /// </summary>
         /// <value>This turns Connect logging on or off. When set to **true**, logging is turned on.</value>
         [DataMember(Name="enableLog", EmitDefaultValue=false)]
         public string EnableLog { get; set; }
         /// <summary>
-        /// A comma separated list of Ã¯Â¿Â½EnvelopeÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
+        /// A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
         /// </summary>
-        /// <value>A comma separated list of Ã¯Â¿Â½EnvelopeÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.</value>
+        /// <value>A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.</value>
         [DataMember(Name="envelopeEvents", EmitDefaultValue=false)]
         public List<string> EnvelopeEvents { get; set; }
         /// <summary>
@@ -228,9 +235,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
-        /// A comma separated list of Ã¯Â¿Â½RecipientÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
+        /// A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
         /// </summary>
-        /// <value>A comma separated list of Ã¯Â¿Â½RecipientÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.</value>
+        /// <value>A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.</value>
         [DataMember(Name="recipientEvents", EmitDefaultValue=false)]
         public List<string> RecipientEvents { get; set; }
         /// <summary>
@@ -298,9 +305,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="urlToPublishTo", EmitDefaultValue=false)]
         public string UrlToPublishTo { get; set; }
         /// <summary>
-        /// A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to Ã¯Â¿Â½falseÃ¯Â¿Â½ then you must provide a list of user idÃ¯Â¿Â½s.
+        /// A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s.
         /// </summary>
-        /// <value>A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to Ã¯Â¿Â½falseÃ¯Â¿Â½ then you must provide a list of user idÃ¯Â¿Â½s.</value>
+        /// <value>A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s.</value>
         [DataMember(Name="userIds", EmitDefaultValue=false)]
         public List<string> UserIds { get; set; }
         /// <summary>
@@ -327,6 +334,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AllUsers: ").Append(AllUsers).Append("\n");
             sb.Append("  ConfigurationType: ").Append(ConfigurationType).Append("\n");
             sb.Append("  ConnectId: ").Append(ConnectId).Append("\n");
+            sb.Append("  DeliveryMode: ").Append(DeliveryMode).Append("\n");
             sb.Append("  EnableLog: ").Append(EnableLog).Append("\n");
             sb.Append("  EnvelopeEvents: ").Append(EnvelopeEvents).Append("\n");
             sb.Append("  EventData: ").Append(EventData).Append("\n");
@@ -418,6 +426,11 @@ namespace DocuSign.eSign.Model
                     this.ConnectId == other.ConnectId ||
                     this.ConnectId != null &&
                     this.ConnectId.Equals(other.ConnectId)
+                ) && 
+                (
+                    this.DeliveryMode == other.DeliveryMode ||
+                    this.DeliveryMode != null &&
+                    this.DeliveryMode.Equals(other.DeliveryMode)
                 ) && 
                 (
                     this.EnableLog == other.EnableLog ||
@@ -597,6 +610,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ConfigurationType.GetHashCode();
                 if (this.ConnectId != null)
                     hash = hash * 59 + this.ConnectId.GetHashCode();
+                if (this.DeliveryMode != null)
+                    hash = hash * 59 + this.DeliveryMode.GetHashCode();
                 if (this.EnableLog != null)
                     hash = hash * 59 + this.EnableLog.GetHashCode();
                 if (this.EnvelopeEvents != null)

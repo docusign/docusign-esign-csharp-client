@@ -39,13 +39,21 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="RecipientIdentityPhoneNumber" /> class.
         /// </summary>
         /// <param name="CountryCode">CountryCode.</param>
+        /// <param name="CountryCodeLock">CountryCodeLock.</param>
+        /// <param name="CountryCodeMetadata">CountryCodeMetadata.</param>
         /// <param name="Extension">Extension.</param>
+        /// <param name="ExtensionMetadata">ExtensionMetadata.</param>
         /// <param name="Number">Number.</param>
-        public RecipientIdentityPhoneNumber(string CountryCode = default(string), string Extension = default(string), string Number = default(string))
+        /// <param name="NumberMetadata">NumberMetadata.</param>
+        public RecipientIdentityPhoneNumber(string CountryCode = default(string), string CountryCodeLock = default(string), PropertyMetadata CountryCodeMetadata = default(PropertyMetadata), string Extension = default(string), PropertyMetadata ExtensionMetadata = default(PropertyMetadata), string Number = default(string), PropertyMetadata NumberMetadata = default(PropertyMetadata))
         {
             this.CountryCode = CountryCode;
+            this.CountryCodeLock = CountryCodeLock;
+            this.CountryCodeMetadata = CountryCodeMetadata;
             this.Extension = Extension;
+            this.ExtensionMetadata = ExtensionMetadata;
             this.Number = Number;
+            this.NumberMetadata = NumberMetadata;
         }
         
         /// <summary>
@@ -54,15 +62,35 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="countryCode", EmitDefaultValue=false)]
         public string CountryCode { get; set; }
         /// <summary>
+        /// Gets or Sets CountryCodeLock
+        /// </summary>
+        [DataMember(Name="countryCodeLock", EmitDefaultValue=false)]
+        public string CountryCodeLock { get; set; }
+        /// <summary>
+        /// Gets or Sets CountryCodeMetadata
+        /// </summary>
+        [DataMember(Name="countryCodeMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata CountryCodeMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets Extension
         /// </summary>
         [DataMember(Name="extension", EmitDefaultValue=false)]
         public string Extension { get; set; }
         /// <summary>
+        /// Gets or Sets ExtensionMetadata
+        /// </summary>
+        [DataMember(Name="extensionMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata ExtensionMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets Number
         /// </summary>
         [DataMember(Name="number", EmitDefaultValue=false)]
         public string Number { get; set; }
+        /// <summary>
+        /// Gets or Sets NumberMetadata
+        /// </summary>
+        [DataMember(Name="numberMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata NumberMetadata { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -72,8 +100,12 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class RecipientIdentityPhoneNumber {\n");
             sb.Append("  CountryCode: ").Append(CountryCode).Append("\n");
+            sb.Append("  CountryCodeLock: ").Append(CountryCodeLock).Append("\n");
+            sb.Append("  CountryCodeMetadata: ").Append(CountryCodeMetadata).Append("\n");
             sb.Append("  Extension: ").Append(Extension).Append("\n");
+            sb.Append("  ExtensionMetadata: ").Append(ExtensionMetadata).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("  NumberMetadata: ").Append(NumberMetadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -116,14 +148,34 @@ namespace DocuSign.eSign.Model
                     this.CountryCode.Equals(other.CountryCode)
                 ) && 
                 (
+                    this.CountryCodeLock == other.CountryCodeLock ||
+                    this.CountryCodeLock != null &&
+                    this.CountryCodeLock.Equals(other.CountryCodeLock)
+                ) && 
+                (
+                    this.CountryCodeMetadata == other.CountryCodeMetadata ||
+                    this.CountryCodeMetadata != null &&
+                    this.CountryCodeMetadata.Equals(other.CountryCodeMetadata)
+                ) && 
+                (
                     this.Extension == other.Extension ||
                     this.Extension != null &&
                     this.Extension.Equals(other.Extension)
                 ) && 
                 (
+                    this.ExtensionMetadata == other.ExtensionMetadata ||
+                    this.ExtensionMetadata != null &&
+                    this.ExtensionMetadata.Equals(other.ExtensionMetadata)
+                ) && 
+                (
                     this.Number == other.Number ||
                     this.Number != null &&
                     this.Number.Equals(other.Number)
+                ) && 
+                (
+                    this.NumberMetadata == other.NumberMetadata ||
+                    this.NumberMetadata != null &&
+                    this.NumberMetadata.Equals(other.NumberMetadata)
                 );
         }
 
@@ -140,10 +192,18 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.CountryCode != null)
                     hash = hash * 59 + this.CountryCode.GetHashCode();
+                if (this.CountryCodeLock != null)
+                    hash = hash * 59 + this.CountryCodeLock.GetHashCode();
+                if (this.CountryCodeMetadata != null)
+                    hash = hash * 59 + this.CountryCodeMetadata.GetHashCode();
                 if (this.Extension != null)
                     hash = hash * 59 + this.Extension.GetHashCode();
+                if (this.ExtensionMetadata != null)
+                    hash = hash * 59 + this.ExtensionMetadata.GetHashCode();
                 if (this.Number != null)
                     hash = hash * 59 + this.Number.GetHashCode();
+                if (this.NumberMetadata != null)
+                    hash = hash * 59 + this.NumberMetadata.GetHashCode();
                 return hash;
             }
         }

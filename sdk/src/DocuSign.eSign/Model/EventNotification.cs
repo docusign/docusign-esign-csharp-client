@@ -38,6 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EventNotification" /> class.
         /// </summary>
+        /// <param name="DeliveryMode">DeliveryMode.</param>
         /// <param name="EnvelopeEvents">A list of envelope-level event statuses that will trigger Connect to send updates to the endpoint specified in the &#x60;url&#x60; property.   To receive notifications, you must include either an &#x60;envelopeEvents&#x60; node or a &#x60;recipientEvents&#x60; node. You do not need to specify both..</param>
         /// <param name="EventData">EventData.</param>
         /// <param name="IncludeCertificateOfCompletion">When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. .</param>
@@ -55,8 +56,9 @@ namespace DocuSign.eSign.Model
         /// <param name="SoapNameSpace">This lists the namespace in the SOAP listener provided..</param>
         /// <param name="Url">Specifies the endpoint to which envelope updates are sent. Udpates are sent as XML unless &#x60;useSoapInterface&#x60; property is set to **true**..</param>
         /// <param name="UseSoapInterface">When set to **true**, this tells the Connect service that the user&#39;s endpoint has implemented a SOAP interface. .</param>
-        public EventNotification(List<EnvelopeEvent> EnvelopeEvents = default(List<EnvelopeEvent>), ConnectEventData EventData = default(ConnectEventData), string IncludeCertificateOfCompletion = default(string), string IncludeCertificateWithSoap = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeSenderAccountAsCustomField = default(string), string IncludeTimeZone = default(string), string LoggingEnabled = default(string), List<RecipientEvent> RecipientEvents = default(List<RecipientEvent>), string RequireAcknowledgment = default(string), string SignMessageWithX509Cert = default(string), string SoapNameSpace = default(string), string Url = default(string), string UseSoapInterface = default(string))
+        public EventNotification(string DeliveryMode = default(string), List<EnvelopeEvent> EnvelopeEvents = default(List<EnvelopeEvent>), ConnectEventData EventData = default(ConnectEventData), string IncludeCertificateOfCompletion = default(string), string IncludeCertificateWithSoap = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeSenderAccountAsCustomField = default(string), string IncludeTimeZone = default(string), string LoggingEnabled = default(string), List<RecipientEvent> RecipientEvents = default(List<RecipientEvent>), string RequireAcknowledgment = default(string), string SignMessageWithX509Cert = default(string), string SoapNameSpace = default(string), string Url = default(string), string UseSoapInterface = default(string))
         {
+            this.DeliveryMode = DeliveryMode;
             this.EnvelopeEvents = EnvelopeEvents;
             this.EventData = EventData;
             this.IncludeCertificateOfCompletion = IncludeCertificateOfCompletion;
@@ -76,6 +78,11 @@ namespace DocuSign.eSign.Model
             this.UseSoapInterface = UseSoapInterface;
         }
         
+        /// <summary>
+        /// Gets or Sets DeliveryMode
+        /// </summary>
+        [DataMember(Name="deliveryMode", EmitDefaultValue=false)]
+        public string DeliveryMode { get; set; }
         /// <summary>
         /// A list of envelope-level event statuses that will trigger Connect to send updates to the endpoint specified in the &#x60;url&#x60; property.   To receive notifications, you must include either an &#x60;envelopeEvents&#x60; node or a &#x60;recipientEvents&#x60; node. You do not need to specify both.
         /// </summary>
@@ -184,6 +191,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class EventNotification {\n");
+            sb.Append("  DeliveryMode: ").Append(DeliveryMode).Append("\n");
             sb.Append("  EnvelopeEvents: ").Append(EnvelopeEvents).Append("\n");
             sb.Append("  EventData: ").Append(EventData).Append("\n");
             sb.Append("  IncludeCertificateOfCompletion: ").Append(IncludeCertificateOfCompletion).Append("\n");
@@ -237,6 +245,11 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.DeliveryMode == other.DeliveryMode ||
+                    this.DeliveryMode != null &&
+                    this.DeliveryMode.Equals(other.DeliveryMode)
+                ) && 
                 (
                     this.EnvelopeEvents == other.EnvelopeEvents ||
                     this.EnvelopeEvents != null &&
@@ -335,6 +348,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.DeliveryMode != null)
+                    hash = hash * 59 + this.DeliveryMode.GetHashCode();
                 if (this.EnvelopeEvents != null)
                     hash = hash * 59 + this.EnvelopeEvents.GetHashCode();
                 if (this.EventData != null)

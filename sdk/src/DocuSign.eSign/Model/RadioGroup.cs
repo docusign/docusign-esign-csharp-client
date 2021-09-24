@@ -57,6 +57,8 @@ namespace DocuSign.eSign.Model
         /// <param name="RequireInitialOnSharedChangeMetadata">RequireInitialOnSharedChangeMetadata.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="SharedMetadata">SharedMetadata.</param>
+        /// <param name="ShareToRecipients">ShareToRecipients.</param>
+        /// <param name="ShareToRecipientsMetadata">ShareToRecipientsMetadata.</param>
         /// <param name="TabType">TabType.</param>
         /// <param name="TabTypeMetadata">TabTypeMetadata.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
@@ -65,7 +67,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequiredMetadata">TemplateRequiredMetadata.</param>
         /// <param name="Tooltip">Tooltip.</param>
         /// <param name="TooltipMetadata">TooltipMetadata.</param>
-        public RadioGroup(string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), string GroupName = default(string), PropertyMetadata GroupNameMetadata = default(PropertyMetadata), List<Radio> Radios = default(List<Radio>), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string RequireAll = default(string), PropertyMetadata RequireAllMetadata = default(PropertyMetadata), string RequireInitialOnSharedChange = default(string), PropertyMetadata RequireInitialOnSharedChangeMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata TooltipMetadata = default(PropertyMetadata))
+        public RadioGroup(string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), string GroupName = default(string), PropertyMetadata GroupNameMetadata = default(PropertyMetadata), List<Radio> Radios = default(List<Radio>), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string RequireAll = default(string), PropertyMetadata RequireAllMetadata = default(PropertyMetadata), string RequireInitialOnSharedChange = default(string), PropertyMetadata RequireInitialOnSharedChangeMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), string ShareToRecipients = default(string), PropertyMetadata ShareToRecipientsMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata TooltipMetadata = default(PropertyMetadata))
         {
             this.ConditionalParentLabel = ConditionalParentLabel;
             this.ConditionalParentLabelMetadata = ConditionalParentLabelMetadata;
@@ -86,6 +88,8 @@ namespace DocuSign.eSign.Model
             this.RequireInitialOnSharedChangeMetadata = RequireInitialOnSharedChangeMetadata;
             this.Shared = Shared;
             this.SharedMetadata = SharedMetadata;
+            this.ShareToRecipients = ShareToRecipients;
+            this.ShareToRecipientsMetadata = ShareToRecipientsMetadata;
             this.TabType = TabType;
             this.TabTypeMetadata = TabTypeMetadata;
             this.TemplateLocked = TemplateLocked;
@@ -201,6 +205,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="sharedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SharedMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets ShareToRecipients
+        /// </summary>
+        [DataMember(Name="shareToRecipients", EmitDefaultValue=false)]
+        public string ShareToRecipients { get; set; }
+        /// <summary>
+        /// Gets or Sets ShareToRecipientsMetadata
+        /// </summary>
+        [DataMember(Name="shareToRecipientsMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata ShareToRecipientsMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets TabType
         /// </summary>
         [DataMember(Name="tabType", EmitDefaultValue=false)]
@@ -269,6 +283,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  RequireInitialOnSharedChangeMetadata: ").Append(RequireInitialOnSharedChangeMetadata).Append("\n");
             sb.Append("  Shared: ").Append(Shared).Append("\n");
             sb.Append("  SharedMetadata: ").Append(SharedMetadata).Append("\n");
+            sb.Append("  ShareToRecipients: ").Append(ShareToRecipients).Append("\n");
+            sb.Append("  ShareToRecipientsMetadata: ").Append(ShareToRecipientsMetadata).Append("\n");
             sb.Append("  TabType: ").Append(TabType).Append("\n");
             sb.Append("  TabTypeMetadata: ").Append(TabTypeMetadata).Append("\n");
             sb.Append("  TemplateLocked: ").Append(TemplateLocked).Append("\n");
@@ -409,6 +425,16 @@ namespace DocuSign.eSign.Model
                     this.SharedMetadata.Equals(other.SharedMetadata)
                 ) && 
                 (
+                    this.ShareToRecipients == other.ShareToRecipients ||
+                    this.ShareToRecipients != null &&
+                    this.ShareToRecipients.Equals(other.ShareToRecipients)
+                ) && 
+                (
+                    this.ShareToRecipientsMetadata == other.ShareToRecipientsMetadata ||
+                    this.ShareToRecipientsMetadata != null &&
+                    this.ShareToRecipientsMetadata.Equals(other.ShareToRecipientsMetadata)
+                ) && 
+                (
                     this.TabType == other.TabType ||
                     this.TabType != null &&
                     this.TabType.Equals(other.TabType)
@@ -499,6 +525,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Shared.GetHashCode();
                 if (this.SharedMetadata != null)
                     hash = hash * 59 + this.SharedMetadata.GetHashCode();
+                if (this.ShareToRecipients != null)
+                    hash = hash * 59 + this.ShareToRecipients.GetHashCode();
+                if (this.ShareToRecipientsMetadata != null)
+                    hash = hash * 59 + this.ShareToRecipientsMetadata.GetHashCode();
                 if (this.TabType != null)
                     hash = hash * 59 + this.TabType.GetHashCode();
                 if (this.TabTypeMetadata != null)

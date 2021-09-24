@@ -59,13 +59,14 @@ namespace DocuSign.eSign.Model
         /// <param name="PlanId">PlanId.</param>
         /// <param name="PlanName">The name of the Billing Plan..</param>
         /// <param name="PlanStartDate">PlanStartDate.</param>
+        /// <param name="ProductId">ProductId.</param>
         /// <param name="RenewalDate">RenewalDate.</param>
         /// <param name="RenewalStatus">The renewal status for the account. The acceptable values are:  * auto: The account automatically renews. * queued_for_close: Account will be closed at the billingPeriodEndDate. * queued_for_downgrade: Account will be downgraded at the billingPeriodEndDate..</param>
         /// <param name="SeatDiscounts"> A complex type that contains any seat discount information.  Values are: BeginSeatCount, EndSeatCount, and SeatDiscountPercent.  .</param>
         /// <param name="SubscriptionStartDate">SubscriptionStartDate.</param>
         /// <param name="SupportIncidentFee">The support incident fee charged for each support incident..</param>
         /// <param name="SupportPlanFee">The support plan fee charged for this plan..</param>
-        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string AppStoreReceiptExpirationDate = default(string), string AppStoreReceiptPurchaseDate = default(string), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string NotificationType = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string PlanStartDate = default(string), string RenewalDate = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SubscriptionStartDate = default(string), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
+        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string AppStoreReceiptExpirationDate = default(string), string AppStoreReceiptPurchaseDate = default(string), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string NotificationType = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string PlanStartDate = default(string), string ProductId = default(string), string RenewalDate = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SubscriptionStartDate = default(string), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
         {
             this.AddOns = AddOns;
             this.AppStoreReceiptExpirationDate = AppStoreReceiptExpirationDate;
@@ -88,6 +89,7 @@ namespace DocuSign.eSign.Model
             this.PlanId = PlanId;
             this.PlanName = PlanName;
             this.PlanStartDate = PlanStartDate;
+            this.ProductId = ProductId;
             this.RenewalDate = RenewalDate;
             this.RenewalStatus = RenewalStatus;
             this.SeatDiscounts = SeatDiscounts;
@@ -214,6 +216,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="planStartDate", EmitDefaultValue=false)]
         public string PlanStartDate { get; set; }
         /// <summary>
+        /// Gets or Sets ProductId
+        /// </summary>
+        [DataMember(Name="productId", EmitDefaultValue=false)]
+        public string ProductId { get; set; }
+        /// <summary>
         /// Gets or Sets RenewalDate
         /// </summary>
         [DataMember(Name="renewalDate", EmitDefaultValue=false)]
@@ -276,6 +283,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  PlanId: ").Append(PlanId).Append("\n");
             sb.Append("  PlanName: ").Append(PlanName).Append("\n");
             sb.Append("  PlanStartDate: ").Append(PlanStartDate).Append("\n");
+            sb.Append("  ProductId: ").Append(ProductId).Append("\n");
             sb.Append("  RenewalDate: ").Append(RenewalDate).Append("\n");
             sb.Append("  RenewalStatus: ").Append(RenewalStatus).Append("\n");
             sb.Append("  SeatDiscounts: ").Append(SeatDiscounts).Append("\n");
@@ -424,6 +432,11 @@ namespace DocuSign.eSign.Model
                     this.PlanStartDate.Equals(other.PlanStartDate)
                 ) && 
                 (
+                    this.ProductId == other.ProductId ||
+                    this.ProductId != null &&
+                    this.ProductId.Equals(other.ProductId)
+                ) && 
+                (
                     this.RenewalDate == other.RenewalDate ||
                     this.RenewalDate != null &&
                     this.RenewalDate.Equals(other.RenewalDate)
@@ -508,6 +521,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PlanName.GetHashCode();
                 if (this.PlanStartDate != null)
                     hash = hash * 59 + this.PlanStartDate.GetHashCode();
+                if (this.ProductId != null)
+                    hash = hash * 59 + this.ProductId.GetHashCode();
                 if (this.RenewalDate != null)
                     hash = hash * 59 + this.RenewalDate.GetHashCode();
                 if (this.RenewalStatus != null)

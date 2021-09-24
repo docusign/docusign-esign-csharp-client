@@ -539,7 +539,6 @@ namespace SdkTestsNet462
             Assert.AreEqual("{\"error\":\"invalid_grant\",\"error_description\":\"no_valid_keys_or_signatures\"}", ex.ErrorContent);
         }
 
-        [TestMethod]
         public void JwtConsentRequiredTest()
         {
             // Adding a Correct PEM key - no consent granted

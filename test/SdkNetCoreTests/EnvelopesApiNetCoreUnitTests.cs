@@ -5,10 +5,9 @@ using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
 using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
 using System.Linq;
+using SdkTests;
 
 namespace SdkNetCoreTests
 {
@@ -516,9 +515,6 @@ namespace SdkNetCoreTests
             var tabs = envelopesApi.ListTabs(testConfig.AccountId, envelopeSummary.EnvelopeId, recipients.Signers.FirstOrDefault().RecipientId);
 
             Assert.IsNotNull(tabs);
-            Assert.IsNotNull(tabs.ListTabs);
-            Assert.IsInstanceOfType(tabs.ListTabs.FirstOrDefault(), typeof(DocuSign.eSign.Model.List));
-
         }
 
         [TestMethod]
@@ -555,20 +551,6 @@ namespace SdkNetCoreTests
             Assert.IsNotNull(envFormData);
             Assert.IsNotNull(envFormData.FormData);
             Assert.IsNotNull(envFormData.EnvelopeId);
-            Assert.IsNotNull(envFormData.FormData.FirstOrDefault().Name);
-        }
-
-        [TestMethod]
-        public void JwtGetRecipientsTest()
-        {
-            JwtRequestSignatureOnDocumentTest();
-
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
-            Recipients recipients = envelopesApi.ListRecipients(testConfig.AccountId, testConfig.EnvelopeId);
-            Assert.IsNotNull(recipients);
-            Assert.IsNotNull(recipients.RecipientCount);
-            Assert.IsNotNull(recipients.Signers);
-            Assert.IsNotNull(recipients.CarbonCopies);
         }
 
         [TestMethod]
@@ -578,21 +560,33 @@ namespace SdkNetCoreTests
 
             EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
             EnvelopeAuditEventResponse listAuditEvents = envelopesApi.ListAuditEvents(testConfig.AccountId, testConfig.EnvelopeId);
+                
             Assert.IsNotNull(listAuditEvents);
             Assert.IsNotNull(listAuditEvents.AuditEvents);
         }
 
         [TestMethod]
-        public void JwtGetRecipientTest()
+        public void JwtPostRecipientTest()
         {
             JwtRequestSignatureOnDocumentTest();
 
             EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+
+            Tabs tabs = new Tabs();
+            List<Approve> approveTabs = new List<Approve>();
+            Approve approveTab = new Approve();
+
+            approveTab.Status = "created";
+            approveTab.AnchorYOffset = "5";
+            approveTab.AnchorXOffset = "10";
+            
+            approveTabs.Add(approveTab);
+            tabs.ApproveTabs = approveTabs;
+
             Recipients recipients = envelopesApi.ListRecipients(testConfig.AccountId, testConfig.EnvelopeId);
-            Tabs listTabs = envelopesApi.ListTabs(testConfig.AccountId, testConfig.EnvelopeId, recipients.Signers.FirstOrDefault().RecipientId);
+            Tabs listTabs = envelopesApi.CreateTabs(testConfig.AccountId, testConfig.EnvelopeId, recipients.Signers.FirstOrDefault().RecipientId, tabs);
             Assert.IsNotNull(listTabs);
             Assert.IsNotNull(listTabs.ApproveTabs);
-            Assert.IsNotNull(listTabs.TabGroups);
         }
 
         [TestMethod]
@@ -636,7 +630,7 @@ namespace SdkNetCoreTests
                 RecipientId = "1"
             };
 
-            var signHereTabs = new List<SignHere>();
+            List<SignHere> signHereTabs = new List<SignHere>();
             signHereTabs.Add(signHere);
 
             Tabs signerTabs = new Tabs()
@@ -675,7 +669,9 @@ namespace SdkNetCoreTests
                 testConfig.AccountId,
                 testConfig.EnvelopeId);
 
-            Assert.IsTrue(updatedListRecipients.Signers.Exists(x => x.Name == newSigner.Name && x.Email == newSigner.Email));
+            Assert.IsTrue(updatedListRecipients.Signers.Exists(
+                x => 
+                    x.Name == newSigner.Name && x.Email == newSigner.Email));
         }
     }
 }

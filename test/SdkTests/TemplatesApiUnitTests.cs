@@ -1,15 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using DocuSign.eSign.Model;
 using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
-using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
 
 namespace SdkTests
 {
@@ -58,18 +54,11 @@ namespace SdkTests
         public void JwtGetTemplatesTest()
         {
             TemplatesApi templatesApi = new TemplatesApi(testConfig.ApiClient);
-            ApiResponse<EnvelopeTemplateResults> envelopeTemplateResults = templatesApi.ListTemplatesWithHttpInfo(testConfig.AccountId);
+            EnvelopeTemplateResults envelopeTemplateResults = templatesApi.ListTemplates(testConfig.AccountId);
+            
             Assert.IsNotNull(envelopeTemplateResults);
-            Assert.IsNotNull(envelopeTemplateResults.Data.EnvelopeTemplates);
-            Assert.IsNotNull(envelopeTemplateResults.Data.EnvelopeTemplates.FirstOrDefault().TemplateId);
-
-            //Test the Http Response Headers
-            var headers = envelopeTemplateResults.Headers;
-            var x_RateLimit_Remaining_Header = headers["X-RateLimit-Remaining"];
-            var x_RateLimit_Limit_Header = headers["X-RateLimit-Limit"];
-
-            Assert.IsNotNull(x_RateLimit_Remaining_Header);
-            Assert.IsNotNull(x_RateLimit_Limit_Header);
+            Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates);
+            Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault().TemplateId);
         }
 
         [TestMethod]
@@ -77,15 +66,17 @@ namespace SdkTests
         {
             TemplatesApi templatesApi = new TemplatesApi(testConfig.ApiClient);
             EnvelopeTemplateResults envelopeTemplateResults = templatesApi.ListTemplates(testConfig.AccountId);
+
             Assert.IsNotNull(envelopeTemplateResults);
             Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates);
             Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault().TemplateId);
 
-            ApiResponse<EnvelopeTemplate> envelopeTemplate = templatesApi.GetWithHttpInfo(testConfig.AccountId, envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault()?.TemplateId);
+            EnvelopeTemplate envelopeTemplate = templatesApi.Get(testConfig.AccountId, envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault()?.TemplateId);
+            
             Assert.IsNotNull(envelopeTemplate);
-            Assert.IsNotNull(envelopeTemplate.Data.EnvelopeId);
-            Assert.IsNotNull(envelopeTemplate.Data.TemplateId);
-            Assert.IsNotNull(envelopeTemplate.Data.CreatedDateTime);
+            Assert.IsNotNull(envelopeTemplate.EnvelopeId);
+            Assert.IsNotNull(envelopeTemplate.TemplateId);
+            Assert.IsNotNull(envelopeTemplate.CreatedDateTime);
         }
     }
 }

@@ -1,14 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DocuSign.eSign.Model;
 using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
-using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
 using System.Linq;
+using SdkTests;
 
 namespace SdkNetCoreTests
 {
@@ -58,6 +55,7 @@ namespace SdkNetCoreTests
         {
             TemplatesApi templatesApi = new TemplatesApi(testConfig.ApiClient);
             EnvelopeTemplateResults envelopeTemplateResults = templatesApi.ListTemplates(testConfig.AccountId);
+
             Assert.IsNotNull(envelopeTemplateResults);
             Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates);
             Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault().TemplateId);
@@ -68,11 +66,13 @@ namespace SdkNetCoreTests
         {
             TemplatesApi templatesApi = new TemplatesApi(testConfig.ApiClient);
             EnvelopeTemplateResults envelopeTemplateResults = templatesApi.ListTemplates(testConfig.AccountId);
+
             Assert.IsNotNull(envelopeTemplateResults);
             Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates);
             Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault().TemplateId);
 
             EnvelopeTemplate envelopeTemplate = templatesApi.Get(testConfig.AccountId, envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault()?.TemplateId);
+            
             Assert.IsNotNull(envelopeTemplate);
             Assert.IsNotNull(envelopeTemplate.TemplateId);
         }

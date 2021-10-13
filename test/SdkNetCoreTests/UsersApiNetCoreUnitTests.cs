@@ -1,14 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DocuSign.eSign.Model;
 using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
-using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
 using System.Linq;
+using SdkTests;
 
 namespace SdkNetCoreTests
 {
@@ -61,6 +58,28 @@ namespace SdkNetCoreTests
             Assert.IsNotNull(userInformationList);
             Assert.IsNotNull(userInformationList.Users);
             Assert.IsNotNull(userInformationList.Users.FirstOrDefault().UserId);
+        }
+
+        [TestMethod]
+        public void JwtPostUsersTest()
+        {
+            UsersApi usersApi = new UsersApi(testConfig.ApiClient);
+
+            UserInformation user = new UserInformation();
+            List<UserInformation> userInformation = new List<UserInformation>();
+            NewUsersDefinition usersDefinition = new NewUsersDefinition();
+
+            user.Email = "test@test.com";
+            user.UserName = "Test User";
+            
+            userInformation.Add(user);
+            usersDefinition.NewUsers = userInformation;
+
+            NewUsersSummary userInformationList = usersApi.Create(testConfig.AccountId, usersDefinition);
+            
+            Assert.IsNotNull(userInformationList);
+            Assert.IsNotNull(userInformationList.NewUsers);
+            Assert.IsNotNull(userInformationList.NewUsers.Exists(x => x.Email == user.Email && x.UserName == user.UserName));
         }
     }
 }

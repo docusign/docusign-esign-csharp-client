@@ -1,15 +1,10 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using DocuSign.eSign.Model;
 using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
-using System.IO;
 using System.Collections.Generic;
-using System.Linq;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
 
 namespace SdkTests
 {
@@ -58,19 +53,12 @@ namespace SdkTests
         public void JwtGetSettingTest()
         {
             DiagnosticsApi diagnosticsApi = new DiagnosticsApi(testConfig.ApiClient);
-            ApiResponse<DiagnosticsSettingsInformation> diagnosticsSettingsInformation = diagnosticsApi.GetRequestLogSettingsWithHttpInfo();
+            DiagnosticsSettingsInformation diagnosticsSettingsInformation = diagnosticsApi.GetRequestLogSettings();
+
             Assert.IsNotNull(diagnosticsSettingsInformation);
-            Assert.IsNotNull(diagnosticsSettingsInformation.Data.ApiRequestLogMaxEntries);
-            Assert.IsNotNull(diagnosticsSettingsInformation.Data.ApiRequestLogRemainingEntries);
-            Assert.IsNotNull(diagnosticsSettingsInformation.Data.ApiRequestLogging);
-
-            //Test the Http Response Headers
-            var headers = diagnosticsSettingsInformation.Headers;
-            var x_RateLimit_Remaining_Header = headers["X-RateLimit-Remaining"];
-            var x_RateLimit_Limit_Header = headers["X-RateLimit-Limit"];
-
-            Assert.IsNotNull(x_RateLimit_Remaining_Header);
-            Assert.IsNotNull(x_RateLimit_Limit_Header);
+            Assert.IsNotNull(diagnosticsSettingsInformation.ApiRequestLogMaxEntries);
+            Assert.IsNotNull(diagnosticsSettingsInformation.ApiRequestLogRemainingEntries);
+            Assert.IsNotNull(diagnosticsSettingsInformation.ApiRequestLogging);
         }
     }
 }

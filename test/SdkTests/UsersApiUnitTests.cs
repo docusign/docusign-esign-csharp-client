@@ -1,15 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using DocuSign.eSign.Model;
 using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
-using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
 
 namespace SdkTests
 {
@@ -58,18 +54,31 @@ namespace SdkTests
         public void JwtGetUsersTest()
         {
             UsersApi usersApi = new UsersApi(testConfig.ApiClient);
-            ApiResponse<UserInformationList> userInformationList = usersApi.ListWithHttpInfo(testConfig.AccountId);
+            UserInformationList userInformationList = usersApi.List(testConfig.AccountId);
             Assert.IsNotNull(userInformationList);
-            Assert.IsNotNull(userInformationList.Data.Users);
-            Assert.IsNotNull(userInformationList.Data.Users.FirstOrDefault().UserId);
+            Assert.IsNotNull(userInformationList.Users);
+            Assert.IsNotNull(userInformationList.Users.FirstOrDefault().UserId);
+        }
 
-            //Test the Http Response Headers
-            var headers = userInformationList.Headers;
-            var x_RateLimit_Remaining_Header = headers["X-RateLimit-Remaining"];
-            var x_RateLimit_Limit_Header = headers["X-RateLimit-Limit"];
+        [TestMethod]
+        public void JwtPostUsersTest()
+        {
+            UsersApi usersApi = new UsersApi(testConfig.ApiClient);
 
-            Assert.IsNotNull(x_RateLimit_Remaining_Header);
-            Assert.IsNotNull(x_RateLimit_Limit_Header);
+            UserInformation user = new UserInformation();
+            List<UserInformation> userInformation = new List<UserInformation>();
+            NewUsersDefinition usersDefinition = new NewUsersDefinition();
+
+            user.Email = "test@test.com";
+            user.UserName = "Test User";
+            userInformation.Add(user);
+            usersDefinition.NewUsers = userInformation;
+
+            NewUsersSummary userInformationList = usersApi.Create(testConfig.AccountId, usersDefinition);
+            
+            Assert.IsNotNull(userInformationList);
+            Assert.IsNotNull(userInformationList.NewUsers);
+            Assert.IsNotNull(userInformationList.NewUsers.Exists(x => x.Email == user.Email && x.UserName == user.UserName));
         }
     }
 }

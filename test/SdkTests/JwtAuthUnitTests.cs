@@ -1,14 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-using DocuSign.eSign.Model;
 using DocuSign.eSign.Client;
-using DocuSign.eSign.Api;
-using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
 
 namespace SdkTests
 {

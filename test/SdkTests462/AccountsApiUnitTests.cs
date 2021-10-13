@@ -6,11 +6,8 @@ using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
 using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
-using System.Linq;
-using SdkTestsNet462;
+using SdkTests;
 
 namespace SdkTests462
 {
@@ -132,6 +129,7 @@ namespace SdkTests462
         {
             AccountsApi accountsApi = new AccountsApi(testConfig.ApiClient);
             AccountInformation accountInformation = accountsApi.GetAccountInformation(testConfig.AccountId);
+
             Assert.IsNotNull(accountInformation);
             Assert.IsNotNull(accountInformation.AccountIdGuid);
             Assert.IsNotNull(accountInformation.AccountName);

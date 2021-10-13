@@ -6,9 +6,7 @@ using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
 using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
 
 namespace SdkTests
 {
@@ -129,19 +127,12 @@ namespace SdkTests
         public void JwtGetAccountInformationTest()
         {
             AccountsApi accountsApi = new AccountsApi(testConfig.ApiClient);
-            ApiResponse<AccountInformation> accountInformation = accountsApi.GetAccountInformationWithHttpInfo(testConfig.AccountId);
+            AccountInformation accountInformation = accountsApi.GetAccountInformation(testConfig.AccountId);
+            
             Assert.IsNotNull(accountInformation);
-            Assert.IsNotNull(accountInformation.Data.AccountIdGuid);
-            Assert.IsNotNull(accountInformation.Data.AccountName);
-            Assert.IsNotNull(accountInformation.Data.BillingProfile);
-
-            //Test the Http Response Headers
-            var headers = accountInformation.Headers;
-            var x_RateLimit_Remaining_Header = headers["X-RateLimit-Remaining"];
-            var x_RateLimit_Limit_Header = headers["X-RateLimit-Limit"];
-
-            Assert.IsNotNull(x_RateLimit_Remaining_Header);
-            Assert.IsNotNull(x_RateLimit_Limit_Header);
+            Assert.IsNotNull(accountInformation.AccountIdGuid);
+            Assert.IsNotNull(accountInformation.AccountName);
+            Assert.IsNotNull(accountInformation.BillingProfile);
         }
     }
 }

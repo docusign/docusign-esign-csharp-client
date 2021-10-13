@@ -1,15 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using DocuSign.eSign.Model;
 using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
-using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
-using System.Linq;
+using SdkTests;
 
 namespace SdkTestsNet462
 {
@@ -57,6 +53,7 @@ namespace SdkTestsNet462
         {
             DiagnosticsApi diagnosticsApi = new DiagnosticsApi(testConfig.ApiClient);
             DiagnosticsSettingsInformation diagnosticsSettingsInformation = diagnosticsApi.GetRequestLogSettings();
+
             Assert.IsNotNull(diagnosticsSettingsInformation);
             Assert.IsNotNull(diagnosticsSettingsInformation.ApiRequestLogMaxEntries);
             Assert.IsNotNull(diagnosticsSettingsInformation.ApiRequestLogRemainingEntries);

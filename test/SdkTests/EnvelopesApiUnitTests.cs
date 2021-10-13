@@ -7,9 +7,7 @@ using DocuSign.eSign.Api;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
 
 namespace SdkTests
 {
@@ -475,64 +473,38 @@ namespace SdkTests
         }
 
         [TestMethod]
-        public void JwtGetRecipientsTest()
-        {
-            JwtRequestSignatureOnDocumentTest();
-
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
-            ApiResponse<Recipients> recipients = envelopesApi.ListRecipientsWithHttpInfo(testConfig.AccountId, testConfig.EnvelopeId);
-            Assert.IsNotNull(recipients);
-            Assert.IsNotNull(recipients.Data.RecipientCount);
-            Assert.IsNotNull(recipients.Data.Signers);
-            Assert.IsNotNull(recipients.Data.CarbonCopies);
-
-            //Test the Http Response Headers
-            var headers = recipients.Headers;
-            var x_RateLimit_Remaining_Header = headers["X-RateLimit-Remaining"];
-            var x_RateLimit_Limit_Header = headers["X-RateLimit-Limit"];
-
-            Assert.IsNotNull(x_RateLimit_Remaining_Header);
-            Assert.IsNotNull(x_RateLimit_Limit_Header);
-        }
-
-        [TestMethod]
         public void JwtGetAuditEventsTest()
         {
             JwtRequestSignatureOnDocumentTest();
 
             EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
-            ApiResponse<EnvelopeAuditEventResponse> listAuditEvents = envelopesApi.ListAuditEventsWithHttpInfo(testConfig.AccountId, testConfig.EnvelopeId);
+            EnvelopeAuditEventResponse listAuditEvents = envelopesApi.ListAuditEvents(testConfig.AccountId, testConfig.EnvelopeId);
+            
             Assert.IsNotNull(listAuditEvents);
-            Assert.IsNotNull(listAuditEvents.Data.AuditEvents);
-
-            //Test the Http Response Headers
-            var headers = listAuditEvents.Headers;
-            var x_RateLimit_Remaining_Header = headers["X-RateLimit-Remaining"];
-            var x_RateLimit_Limit_Header = headers["X-RateLimit-Limit"];
-
-            Assert.IsNotNull(x_RateLimit_Remaining_Header);
-            Assert.IsNotNull(x_RateLimit_Limit_Header);
+            Assert.IsNotNull(listAuditEvents.AuditEvents);
         }
 
         [TestMethod]
-        public void JwtGetRecipientTest()
+        public void JwtPostRecipientTest()
         {
             JwtRequestSignatureOnDocumentTest();
 
             EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+
+            Tabs tabs = new Tabs();
+            Approve approveTab = new Approve();
+            List<Approve> approveTabs = new List<Approve>();
+            approveTab.Status = "created";
+            approveTab.AnchorYOffset = "5";
+            approveTab.AnchorXOffset = "10";
+            approveTabs.Add(approveTab);
+            tabs.ApproveTabs = approveTabs;
+
             Recipients recipients = envelopesApi.ListRecipients(testConfig.AccountId, testConfig.EnvelopeId);
-            ApiResponse<Tabs> listTabs = envelopesApi.ListTabsWithHttpInfo(testConfig.AccountId, testConfig.EnvelopeId, recipients.Signers.FirstOrDefault().RecipientId);
+            Tabs listTabs = envelopesApi.CreateTabs(testConfig.AccountId, testConfig.EnvelopeId, recipients.Signers.FirstOrDefault().RecipientId, tabs);
+            
             Assert.IsNotNull(listTabs);
-            Assert.IsNotNull(listTabs.Data.ApproveTabs);
-            Assert.IsNotNull(listTabs.Data.TabGroups);
-
-            //Test the Http Response Headers
-            var headers = listTabs.Headers;
-            var x_RateLimit_Remaining_Header = headers["X-RateLimit-Remaining"];
-            var x_RateLimit_Limit_Header = headers["X-RateLimit-Limit"];
-
-            Assert.IsNotNull(x_RateLimit_Remaining_Header);
-            Assert.IsNotNull(x_RateLimit_Limit_Header);
+            Assert.IsNotNull(listTabs.ApproveTabs);
         }
 
         [TestMethod]

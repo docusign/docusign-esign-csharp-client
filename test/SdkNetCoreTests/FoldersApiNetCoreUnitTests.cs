@@ -5,10 +5,8 @@ using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
 using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using DocuSign.eSign.Client.Auth;
-using System.Text;
-using System.Linq;
+using SdkTests;
 
 namespace SdkNetCoreTests
 {

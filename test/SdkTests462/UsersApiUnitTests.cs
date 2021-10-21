@@ -50,18 +50,18 @@ namespace SdkTestsNet462
         }
 
         [TestMethod]
-        public void JwtGetUsersTest()
+        public void JwtGetUsers_CorrectAccountId_ReturnUserInformationList()
         {
             UsersApi usersApi = new UsersApi(testConfig.ApiClient);
             UserInformationList userInformationList = usersApi.List(testConfig.AccountId);
             
             Assert.IsNotNull(userInformationList);
             Assert.IsNotNull(userInformationList.Users);
-            Assert.IsNotNull(userInformationList.Users.FirstOrDefault().UserId);
+            Assert.IsNotNull(userInformationList.Users.FirstOrDefault()?.UserId);
         }
 
         [TestMethod]
-        public void JwtPostUsersTest()
+        public void JwtPostUsers_CorrectAccountIdAndNewUsersDefinition_ReturnNewUsersSummary()
         {
             UsersApi usersApi = new UsersApi(testConfig.ApiClient);
 

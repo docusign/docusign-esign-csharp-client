@@ -554,7 +554,7 @@ namespace SdkNetCoreTests
         }
 
         [TestMethod]
-        public void JwtGetAuditEventsTest()
+        public void JwtGetAuditEventsTest_CorrectAccountIdAndEnvelopeId_ReturnEnvelopeAuditEventResponse()
         {
             JwtRequestSignatureOnDocumentTest();
 
@@ -566,7 +566,7 @@ namespace SdkNetCoreTests
         }
 
         [TestMethod]
-        public void JwtPostRecipientTest()
+        public void JwtPostRecipientTabs_CorrectAccountIdEnvelopeIdRecipientIdAndTabs_ReturnTabs()
         {
             JwtRequestSignatureOnDocumentTest();
 
@@ -579,6 +579,7 @@ namespace SdkNetCoreTests
             approveTab.Status = "created";
             approveTab.AnchorYOffset = "5";
             approveTab.AnchorXOffset = "10";
+            approveTab.TabLabel = "new approve tab";
             
             approveTabs.Add(approveTab);
             tabs.ApproveTabs = approveTabs;
@@ -587,10 +588,11 @@ namespace SdkNetCoreTests
             Tabs listTabs = envelopesApi.CreateTabs(testConfig.AccountId, testConfig.EnvelopeId, recipients.Signers.FirstOrDefault().RecipientId, tabs);
             Assert.IsNotNull(listTabs);
             Assert.IsNotNull(listTabs.ApproveTabs);
+            Assert.IsTrue(listTabs.ApproveTabs.Exists(x => x.TabLabel == approveTab.TabLabel));
         }
 
         [TestMethod]
-        public void JwtPutEnvelopeTest()
+        public void JwtPutEnvelope_CorrectAccountIdEnvelopeIdAndEnvelope_ReturnEnvelopeUpdateSummary()
         {
             JwtRequestSignatureOnDocumentTest();
 
@@ -614,7 +616,7 @@ namespace SdkNetCoreTests
         }
 
         [TestMethod]
-        public void JwtPutRecipientsTest()
+        public void JwtPutRecipients_CorrectAccountIdEnvelopeIdAndRecipients_ReturnRecipientsUpdateSummary()
         {
             JwtRequestSignatureOnDocumentTest();
 

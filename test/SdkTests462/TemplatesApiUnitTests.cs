@@ -51,30 +51,31 @@ namespace SdkTestsNet462
 
 
         [TestMethod]
-        public void JwtGetTemplatesTest()
+        public void JwtGetTemplates_CorrectAccountId_ReturnEnvelopeTemplateResults()
         {
             TemplatesApi templatesApi = new TemplatesApi(testConfig.ApiClient);
             EnvelopeTemplateResults envelopeTemplateResults = templatesApi.ListTemplates(testConfig.AccountId);
             
             Assert.IsNotNull(envelopeTemplateResults);
             Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates);
-            Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault().TemplateId);
+            Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault()?.TemplateId);
         }
 
         [TestMethod]
-        public void JwtGetTemplateTest()
+        public void JwtGetTemplate_CorrectAccountIdAndTemplateId_ReturnEnvelopeTemplate()
         {
             TemplatesApi templatesApi = new TemplatesApi(testConfig.ApiClient);
             EnvelopeTemplateResults envelopeTemplateResults = templatesApi.ListTemplates(testConfig.AccountId);
-            
+            string templateId = envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault()?.TemplateId;
+
             Assert.IsNotNull(envelopeTemplateResults);
             Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates);
-            Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault().TemplateId);
+            Assert.IsNotNull(templateId);
 
-            EnvelopeTemplate envelopeTemplate = templatesApi.Get(testConfig.AccountId, envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault()?.TemplateId);
-            
+            EnvelopeTemplate envelopeTemplate = templatesApi.Get(testConfig.AccountId, templateId);
+
             Assert.IsNotNull(envelopeTemplate);
-            Assert.IsNotNull(envelopeTemplate.TemplateId);
+            Assert.AreEqual(envelopeTemplate.TemplateId, templateId);
         }
     }
 }

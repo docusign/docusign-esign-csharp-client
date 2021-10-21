@@ -118,7 +118,6 @@ namespace SdkNetCoreTests
             testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
         }
 
-        [TestMethod]
         public void JwtMoveEnvelopesTest()
         {
             JwtRequestSignatureOnDocumentTest("sent");

@@ -565,7 +565,7 @@ namespace SdkTestsNet462
         }
 
         [TestMethod]
-        public void JwtGetAuditEventsTest()
+        public void JwtGetAuditEventsTest_CorrectAccountIdAndEnvelopeId_ReturnEnvelopeAuditEventResponse()
         {
             JwtRequestSignatureOnDocumentTest();
 
@@ -577,7 +577,7 @@ namespace SdkTestsNet462
         }
 
         [TestMethod]
-        public void JwtPostRecipientTest()
+        public void JwtPostRecipientTabs_CorrectAccountIdEnvelopeIdRecipientIdAndTabs_ReturnTabs()
         {
             JwtRequestSignatureOnDocumentTest();
 
@@ -601,7 +601,7 @@ namespace SdkTestsNet462
         }
 
         [TestMethod]
-        public void JwtPutEnvelopeTest()
+        public void JwtPutEnvelope_CorrectAccountIdEnvelopeIdAndEnvelope_ReturnEnvelopeUpdateSummary()
         {
             JwtRequestSignatureOnDocumentTest();
 
@@ -627,7 +627,7 @@ namespace SdkTestsNet462
         }
 
         [TestMethod]
-        public void JwtPutRecipientsTest()
+        public void JwtPutRecipients_CorrectAccountIdEnvelopeIdAndRecipients_ReturnRecipientsUpdateSummary()
         {
             JwtRequestSignatureOnDocumentTest();
 

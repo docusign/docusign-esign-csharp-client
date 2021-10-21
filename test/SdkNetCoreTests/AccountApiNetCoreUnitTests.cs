@@ -21,8 +21,6 @@ namespace SdkNetCoreTests
         {
             testConfig.ApiClient = new ApiClient(testConfig.Host);
 
-            Assert.IsNotNull(testConfig.PrivateKey);
-
             byte[] privateKeyStream = testConfig.PrivateKey;
 
             List<string> scopes = new List<string>();
@@ -193,7 +191,7 @@ namespace SdkNetCoreTests
         }
 
         [TestMethod]
-        public void JwtGetAccountInformationTest()
+        public void JwtGetAccountInformation_CorrectAccountId_ReturnAccountInformation()
         {
             AccountsApi accountsApi = new AccountsApi(testConfig.ApiClient);
             AccountInformation accountInformation = accountsApi.GetAccountInformation(testConfig.AccountId);

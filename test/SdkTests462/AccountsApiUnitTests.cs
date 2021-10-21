@@ -125,7 +125,7 @@ namespace SdkTests462
         }
 
         [TestMethod]
-        public void JwtGetAccountInformationTest()
+        public void JwtGetAccountInformation_CorrectAccountId_ReturnAccountInformation()
         {
             AccountsApi accountsApi = new AccountsApi(testConfig.ApiClient);
             AccountInformation accountInformation = accountsApi.GetAccountInformation(testConfig.AccountId);

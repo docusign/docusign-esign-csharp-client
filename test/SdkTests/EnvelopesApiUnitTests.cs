@@ -473,7 +473,7 @@ namespace SdkTests
         }
 
         [TestMethod]
-        public void JwtGetAuditEventsTest()
+        public void JwtGetAuditEventsTest_CorrectAccountIdAndEnvelopeId_ReturnEnvelopeAuditEventResponse()
         {
             JwtRequestSignatureOnDocumentTest();
 
@@ -485,30 +485,33 @@ namespace SdkTests
         }
 
         [TestMethod]
-        public void JwtPostRecipientTest()
+        public void JwtPostRecipientTabs_CorrectAccountIdEnvelopeIdRecipientIdAndTabs_ReturnTabs()
         {
             JwtRequestSignatureOnDocumentTest();
 
             EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
 
             Tabs tabs = new Tabs();
-            Approve approveTab = new Approve();
             List<Approve> approveTabs = new List<Approve>();
+            Approve approveTab = new Approve();
+
             approveTab.Status = "created";
             approveTab.AnchorYOffset = "5";
             approveTab.AnchorXOffset = "10";
+            approveTab.TabLabel = "new approve tab";
+
             approveTabs.Add(approveTab);
             tabs.ApproveTabs = approveTabs;
 
             Recipients recipients = envelopesApi.ListRecipients(testConfig.AccountId, testConfig.EnvelopeId);
             Tabs listTabs = envelopesApi.CreateTabs(testConfig.AccountId, testConfig.EnvelopeId, recipients.Signers.FirstOrDefault().RecipientId, tabs);
-            
             Assert.IsNotNull(listTabs);
             Assert.IsNotNull(listTabs.ApproveTabs);
+            Assert.IsTrue(listTabs.ApproveTabs.Exists(x => x.TabLabel == approveTab.TabLabel));
         }
 
         [TestMethod]
-        public void JwtPutEnvelopeTest()
+        public void JwtPutEnvelope_CorrectAccountIdEnvelopeIdAndEnvelope_ReturnEnvelopeUpdateSummary()
         {
             JwtRequestSignatureOnDocumentTest();
 
@@ -521,9 +524,9 @@ namespace SdkTests
                 Status = "sent"
             };
 
-            ApiResponse<EnvelopeUpdateSummary> envelopeUpdateSummary = envelopesApi.UpdateWithHttpInfo(testConfig.AccountId, testConfig.EnvelopeId, envelope);
+            EnvelopeUpdateSummary envelopeUpdateSummary = envelopesApi.Update(testConfig.AccountId, testConfig.EnvelopeId, envelope);
             Assert.IsNotNull(envelopeUpdateSummary);
-            Assert.IsNotNull(envelopeUpdateSummary.Data.EnvelopeId);
+            Assert.IsNotNull(envelopeUpdateSummary.EnvelopeId);
 
             Envelope renewedEnvelope = envelopesApi.GetEnvelope(testConfig.AccountId, testConfig.EnvelopeId);
             Assert.AreEqual(envelope.EmailSubject, renewedEnvelope.EmailSubject);
@@ -532,7 +535,7 @@ namespace SdkTests
         }
 
         [TestMethod]
-        public void JwtPutRecipientsTest()
+        public void JwtPutRecipients_CorrectAccountIdEnvelopeIdAndRecipients_ReturnRecipientsUpdateSummary()
         {
             JwtRequestSignatureOnDocumentTest();
 

@@ -49,7 +49,7 @@ namespace SdkTestsNet462
         }
 
         [TestMethod]
-        public void JwtGetSettingTest()
+        public void JwtGetSetting_ReturnDiagnosticsSettingsInformation()
         {
             DiagnosticsApi diagnosticsApi = new DiagnosticsApi(testConfig.ApiClient);
             DiagnosticsSettingsInformation diagnosticsSettingsInformation = diagnosticsApi.GetRequestLogSettings();

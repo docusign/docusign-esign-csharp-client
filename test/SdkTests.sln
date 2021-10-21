@@ -1,13 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+VisualStudioVersion = 15.0.28307.1340
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SdkTests", "SdkTests\SdkTests.csproj", "{603F7955-D911-4DF1-AE58-DFC3D015D3B0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SdkNetCoreTests", "SdkNetCoreTests\SdkNetCoreTests.csproj", "{9AB776C7-A1C3-4047-ABAB-C7B89D939EC6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SdkTests462", "SdkTests462\SdkTests462.csproj", "{2D19CBFB-DE23-4A26-A83A-D6F21FAFDEC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{6D3985EA-63C6-4114-913D-E41F1FBC3DC2}"
+	ProjectSection(SolutionItems) = preProject
+		.env = .env
+		.env.example = .env.example
+		private.key = private.key
+		privatekey_noconsent.key = privatekey_noconsent.key
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

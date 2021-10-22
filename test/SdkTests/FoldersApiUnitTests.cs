@@ -9,10 +9,12 @@ namespace SdkTests
     [TestClass]
     public class FoldersApiUnitTests
     {
-        private TestConfig _testConfig = new TestConfig();
+        private TestConfig _testConfig;
 
-        public FoldersApiUnitTests()
+        [ClassInitialize]
+        public void ClassInitialize()
         {
+            _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
         }
 

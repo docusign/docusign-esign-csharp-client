@@ -10,10 +10,12 @@ namespace SdkTests
     [TestClass]
     public class AccountApiUnitTests
     {
-        private TestConfig _testConfig = new TestConfig();
+        private TestConfig _testConfig;
 
-        public AccountApiUnitTests()
+        [TestInitialize]
+        public void TestInitialize()
         {
+            _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
         }
 

@@ -8,10 +8,12 @@ namespace SdkNetCoreTests
     [TestClass]
     public class FoldersApiNetCoreUnitTests
     {
-        private TestConfig _testConfig = new TestConfig();
+        private TestConfig _testConfig;
 
-        public FoldersApiNetCoreUnitTests()
+        [ClassInitialize]
+        public void ClassInitialize()
         {
+            _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
         }
 

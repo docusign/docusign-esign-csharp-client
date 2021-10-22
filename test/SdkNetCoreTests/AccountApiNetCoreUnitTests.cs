@@ -9,10 +9,12 @@ namespace SdkNetCoreTests
     [TestClass]
     public class AccountApiNetCoreUnitTests
     {
-        private readonly TestConfig _testConfig = new TestConfig();
+        private TestConfig _testConfig;
 
-        public AccountApiNetCoreUnitTests()
+        [TestInitialize]
+        public void TestInitialize()
         {
+            _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
         }
 

@@ -9,10 +9,12 @@ namespace SdkNetCoreTests
     [TestClass]
     public class AuthNetCoreUnitTests
     {
-        private readonly TestConfig _testConfig = new TestConfig();
+        private TestConfig _testConfig;
 
-        public AuthNetCoreUnitTests()
+        [TestInitialize]
+        public void TestInitialize()
         {
+            _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
         }
 

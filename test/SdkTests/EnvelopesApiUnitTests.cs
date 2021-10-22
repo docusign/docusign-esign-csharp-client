@@ -13,10 +13,12 @@ namespace SdkTests
     [TestClass]
     public class EnvelopesApiUnitTests
     {
-        private TestConfig _testConfig = new TestConfig();
+        private TestConfig _testConfig;
 
-        public EnvelopesApiUnitTests()
+        [TestInitialize]
+        public void TestInitialize()
         {
+            _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
         }
 

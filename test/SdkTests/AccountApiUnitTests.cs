@@ -40,7 +40,17 @@ namespace SdkTests
 
             byte[] brandLogoByteArray = Convert.FromBase64String(_testConfig.BrandLogo);
             accountsApi.UpdateBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType, brandLogoByteArray);
-            Assert.IsTrue(true);
+
+            Stream stream = accountsApi.GetBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType);
+
+            Assert.IsNotNull(stream);
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                stream.CopyTo(ms);
+                byte[] brandLogoFromApi = ms.ToArray();
+                Assert.AreEqual(Convert.ToBase64String(brandLogoByteArray), Convert.ToBase64String(brandLogoFromApi));
+            }
         }
 
         [TestMethod]

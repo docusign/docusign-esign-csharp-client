@@ -242,8 +242,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountApiUnitTests.cs" />
+    <Compile Include="CreateEnvelopeMethod.cs" />
     <Compile Include="EnvelopesApiUnitTests.cs" />
     <Compile Include="DiagnosticApiUnitTests.cs" />
+    <Compile Include="JwtLoginMethod.cs" />
     <Compile Include="UsersApiUnitTests.cs" />
     <Compile Include="TemplatesApiUnitTests.cs" />
     <Compile Include="FoldersApiUnitTests.cs" />

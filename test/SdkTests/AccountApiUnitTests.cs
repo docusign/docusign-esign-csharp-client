@@ -2,132 +2,92 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using DocuSign.eSign.Model;
-using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
 using System.IO;
-using System.Collections.Generic;
-using DocuSign.eSign.Client.Auth;
 
 namespace SdkTests
 {
     [TestClass]
     public class AccountApiUnitTests
     {
-        TestConfig testConfig = new TestConfig();
-        [TestInitialize()]
-        [TestMethod]
-        public void JwtLoginTest()
+        private TestConfig _testConfig = new TestConfig();
+
+        public AccountApiUnitTests()
         {
-            testConfig.ApiClient = new ApiClient(testConfig.Host);
-
-            Assert.IsNotNull(testConfig.PrivateKey);
-
-            byte[] privateKeyStream = testConfig.PrivateKey;
-
-            List<string> scopes = new List<string>();
-            scopes.Add(OAuth.Scope_SIGNATURE);
-            scopes.Add(OAuth.Scope_IMPERSONATION);
-
-            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours, scopes);
-
-            // the authentication api uses the apiClient (and X-DocuSign-Authentication header) that are set in Configuration object
-            OAuth.UserInfo userInfo = testConfig.ApiClient.GetUserInfo(tokenInfo.access_token);
-
-            Assert.IsNotNull(userInfo);
-            Assert.IsNotNull(userInfo.Accounts);
-
-            foreach (var item in userInfo.Accounts)
-            {
-                if (item.IsDefault == "true")
-                {
-                    testConfig.AccountId = item.AccountId;
-                    testConfig.ApiClient.SetBasePath(item.BaseUri + "/restapi");
-                    break;
-                }
-            }
-
-            Assert.IsNotNull(testConfig.AccountId);
+            JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
         }
 
         [TestMethod]
-        public void JwtListBrandTest()
+        public void ListBrands_CorrectAccountId_ReturnsBrandsResponse()
         {
-            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
-            var brandsResponse = accApi.ListBrands(testConfig.AccountId);
+            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
+            var brandsResponse = accountsApi.ListBrands(_testConfig.AccountId);
 
             Assert.IsNotNull(brandsResponse);
         }
 
         [TestMethod]
-        public void JwtUploadBrandLogoTest()
+        public void UpdateBrandLogoByType_CorectInputs_ReturnsNoErrors()
         {
-            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
-
-            if (string.IsNullOrEmpty(testConfig.BrandId))
+            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
+            var logoType = "primary";
+            if (string.IsNullOrEmpty(_testConfig.BrandId))
             {
-                CreateBrandTest();
+                CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse();
             }
 
-            try
-            {
-                byte[] brandLogoByteArray = Convert.FromBase64String(testConfig.BrandLogo);
-                accApi.UpdateBrandLogoByType(testConfig.AccountId, testConfig.BrandId, "primary", brandLogoByteArray);
-                Assert.IsTrue(true);
-            }
-            catch
-            {
-                Assert.IsTrue(false);
-            }
+            byte[] brandLogoByteArray = Convert.FromBase64String(_testConfig.BrandLogo);
+            accountsApi.UpdateBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType, brandLogoByteArray);
+            Assert.IsTrue(true);
         }
 
         [TestMethod]
-        public void JwtGetBrandLogoByBrandIdTest()
+        public void GetBrandLogoByType_CorrectInputParameters_ReturnStream()
         {
-            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
-            if (string.IsNullOrEmpty(testConfig.BrandId))
+            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
+            if (string.IsNullOrEmpty(_testConfig.BrandId))
             {
-                CreateBrandTest();
+                CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse();
             }
+            var logoType = "primary";
+            byte[] brandLogoByteArray = Convert.FromBase64String(_testConfig.BrandLogo);
 
-            byte[] brandLogoByteArray = Convert.FromBase64String(testConfig.BrandLogo);
-
-            //Check if C# png just got uploaded
-            Stream stream = accApi.GetBrandLogoByType(testConfig.AccountId, testConfig.BrandId, "primary");
+            Stream stream = accountsApi.GetBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType);
 
             Assert.IsNotNull(stream);
 
             using (MemoryStream ms = new MemoryStream())
             {
                 stream.CopyTo(ms);
-                byte[] brandLogofromApi = ms.ToArray();
-                Assert.AreEqual(Convert.ToBase64String(brandLogoByteArray), Convert.ToBase64String(brandLogofromApi));
+                byte[] brandLogoFromApi = ms.ToArray();
+                Assert.AreEqual(Convert.ToBase64String(brandLogoByteArray), Convert.ToBase64String(brandLogoFromApi));
             }
         }
 
-        private void CreateBrandTest()
+        private void CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse()
         {
-            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
+            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
             Brand brand = new Brand
             {
                 BrandName = "C# Brand"
             };
 
-            var brands = accApi.CreateBrand(testConfig.AccountId, brand);
+            var brands = accountsApi.CreateBrand(_testConfig.AccountId, brand);
 
-            foreach (var brnds in brands.Brands)
+            foreach (var singleBrand in brands.Brands)
             {
-                if (brnds.BrandName == brand.BrandName)
+                if (singleBrand.BrandName == brand.BrandName)
                 {
-                    testConfig.BrandId = brnds.BrandId;
+                    _testConfig.BrandId = singleBrand.BrandId;
                 }
             }
         }
 
         [TestMethod]
-        public void JwtGetAccountInformation_CorrectAccountId_ReturnAccountInformation()
+        public void GetAccountInformation_CorrectAccountId_ReturnAccountInformation()
         {
-            AccountsApi accountsApi = new AccountsApi(testConfig.ApiClient);
-            AccountInformation accountInformation = accountsApi.GetAccountInformation(testConfig.AccountId);
+            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
+            AccountInformation accountInformation = accountsApi.GetAccountInformation(_testConfig.AccountId);
             
             Assert.IsNotNull(accountInformation);
             Assert.IsNotNull(accountInformation.AccountIdGuid);

@@ -1,60 +1,27 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using DocuSign.eSign.Model;
-using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
 using System.Collections.Generic;
 using System.Linq;
-using DocuSign.eSign.Client.Auth;
 
 namespace SdkTests
 {
     [TestClass]
     public class UsersApiUnitTests
     {
-        TestConfig testConfig = new TestConfig();
+        private TestConfig _testConfig = new TestConfig();
 
-        [TestInitialize()]
-        [TestMethod]
-        public void JwtLoginTest()
+        public UsersApiUnitTests()
         {
-            testConfig.ApiClient = new ApiClient(testConfig.Host);
-
-            Assert.IsNotNull(testConfig.PrivateKey);
-
-            byte[] privateKeyStream = testConfig.PrivateKey;
-
-            List<string> scopes = new List<string>();
-            scopes.Add(OAuth.Scope_SIGNATURE);
-            scopes.Add(OAuth.Scope_IMPERSONATION);
-
-            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKey,
-                testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours, scopes);
-
-            // the authentication api uses the apiClient (and X-DocuSign-Authentication header) that are set in Configuration object
-            OAuth.UserInfo userInfo = testConfig.ApiClient.GetUserInfo(tokenInfo.access_token);
-
-            Assert.IsNotNull(userInfo);
-            Assert.IsNotNull(userInfo.Accounts);
-
-            foreach (var item in userInfo.Accounts)
-            {
-                if (item.IsDefault == "true")
-                {
-                    testConfig.AccountId = item.AccountId;
-                    testConfig.ApiClient.SetBasePath(item.BaseUri + "/restapi");
-                    break;
-                }
-            }
-
-            Assert.IsNotNull(testConfig.AccountId);
+            JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
         }
 
         [TestMethod]
         public void JwtGetUsers_CorrectAccountId_ReturnUserInformationList()
         {
-            UsersApi usersApi = new UsersApi(testConfig.ApiClient);
-            UserInformationList userInformationList = usersApi.List(testConfig.AccountId);
+            UsersApi usersApi = new UsersApi(_testConfig.ApiClient);
+            UserInformationList userInformationList = usersApi.List(_testConfig.AccountId);
             Assert.IsNotNull(userInformationList);
             Assert.IsNotNull(userInformationList.Users);
             Assert.IsNotNull(userInformationList.Users.FirstOrDefault()?.UserId);
@@ -63,7 +30,7 @@ namespace SdkTests
         [TestMethod]
         public void JwtPostUsers_CorrectAccountIdAndNewUsersDefinition_ReturnNewUsersSummary()
         {
-            UsersApi usersApi = new UsersApi(testConfig.ApiClient);
+            UsersApi usersApi = new UsersApi(_testConfig.ApiClient);
 
             UserInformation user = new UserInformation();
             List<UserInformation> userInformation = new List<UserInformation>();
@@ -74,7 +41,7 @@ namespace SdkTests
             userInformation.Add(user);
             usersDefinition.NewUsers = userInformation;
 
-            NewUsersSummary userInformationList = usersApi.Create(testConfig.AccountId, usersDefinition);
+            NewUsersSummary userInformationList = usersApi.Create(_testConfig.AccountId, usersDefinition);
             
             Assert.IsNotNull(userInformationList);
             Assert.IsNotNull(userInformationList.NewUsers);

@@ -2,118 +2,114 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using DocuSign.eSign.Client;
-using System.Collections.Generic;
-using DocuSign.eSign.Client.Auth;
+using DocuSign.eSign.Api;
+using DocuSign.eSign.Model;
 
 namespace SdkTests
 {
     [TestClass]
-    public class JwtAuthUnitTests
+    public class AuthUnitTests
     {
-        TestConfig testConfig = new TestConfig();
-        [TestInitialize()]
-        [TestMethod]
-        public void JwtLoginTest()
+        private TestConfig _testConfig = new TestConfig();
+
+        public AuthUnitTests()
         {
-            testConfig.ApiClient = new ApiClient(testConfig.Host);
-
-            Assert.IsNotNull(testConfig.PrivateKey);
-
-            byte[] privateKeyStream = testConfig.PrivateKey;
-
-            List<string> scopes = new List<string>();
-            scopes.Add(OAuth.Scope_SIGNATURE);
-            scopes.Add(OAuth.Scope_IMPERSONATION);
-
-            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours, scopes);
-
-            // the authentication api uses the apiClient (and X-DocuSign-Authentication header) that are set in Configuration object
-            OAuth.UserInfo userInfo = testConfig.ApiClient.GetUserInfo(tokenInfo.access_token);
-
-            Assert.IsNotNull(userInfo);
-            Assert.IsNotNull(userInfo.Accounts);
-
-            foreach (var item in userInfo.Accounts)
-            {
-                if (item.IsDefault == "true")
-                {
-                    testConfig.AccountId = item.AccountId;
-                    testConfig.ApiClient.SetBasePath(item.BaseUri + "/restapi");
-                    break;
-                }
-            }
-
-            Assert.IsNotNull(testConfig.AccountId);
+            JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
         }
 
         [TestMethod]
-        public void SetBasePathTest()
+        public void CreateEnvelope_WrongTemplateId_ReturnApiException()
         {
-            // Prepare
-            var configBasePath = testConfig.ApiClient.RestClient.BaseUrl;
-            var restBasePath = testConfig.ApiClient.RestClient.BaseUrl;
+            EnvelopeDefinition envDef = new EnvelopeDefinition
+            {
+                EmailSubject = "[DocuSign C# SDK] - Please sign this doc",
+                // random incorrect guid
+                TemplateId = "510fc78e-32f4-8778-44eb-6b53abb6c82E"
+            };
 
-            // Test is everything initialized properly
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
+            ApiException ex = Assert.ThrowsException<ApiException>(() => envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef));
+
+            Assert.IsNotNull(ex);
+            Assert.IsNotNull(ex.Headers);
+        }
+
+        [TestMethod]
+        public void SetBasePath_MultibleBasePathUsed_BasePathIsChanged()
+        {
+            var configBasePath = _testConfig.ApiClient.Configuration.BasePath;
+            var restBasePath = Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl);
+
             Assert.AreEqual(configBasePath, restBasePath);
 
-            // Test a new basepath
-            var testBasePath = "na.docusign.net/restapi";
+            var testBasePath = "https://na.docusign.net/restapi";
 
-            testConfig.ApiClient.SetBasePath(testBasePath);
+            _testConfig.ApiClient.SetBasePath(testBasePath);
 
-            // Assert
-            Assert.AreEqual(testBasePath, testConfig.ApiClient.RestClient.BaseUrl);
-            Assert.AreEqual(testBasePath, testConfig.ApiClient.RestClient.BaseUrl);
+            Assert.AreEqual(testBasePath, Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl));
+            Assert.AreEqual(testBasePath, _testConfig.ApiClient.Configuration.BasePath);
 
-            // Rest
-            testConfig.ApiClient.SetBasePath(testConfig.OAuthBasePath);
+            _testConfig.ApiClient.SetBasePath(configBasePath);
 
-            // Assert
-            Assert.AreEqual(restBasePath, testConfig.ApiClient.RestClient.BaseUrl);
-            Assert.AreEqual(configBasePath, testConfig.ApiClient.RestClient.BaseUrl);
+            Assert.AreEqual(restBasePath, Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl));
+            Assert.AreEqual(configBasePath, _testConfig.ApiClient.Configuration.BasePath);
         }
 
         [TestMethod]
-        public void JwtUnexpectedPEMTypeTest()
+        public void RequestJWTUserToken_WrongPrivateKeyUsed_ReturnsException()
         {
             var rsaKey = "---Invalid private key---";
-            // Create a stream of bytes... 
             byte[] privateKeyStream = System.Text.Encoding.UTF8.GetBytes(rsaKey);
 
-            Exception ex = Assert.ThrowsException<Exception>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
+            Exception ex = Assert.ThrowsException<Exception>(() =>
+                _testConfig.ApiClient.RequestJWTUserToken(
+                    _testConfig.IntegratorKeyNoConsent,
+                    _testConfig.UserId,
+                    _testConfig.OAuthBasePath,
+                    privateKeyStream,
+                    _testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
             Assert.AreEqual(ex.Message, "Unexpected PEM type");
         }
 
         [TestMethod]
-        public void JwtInvalidGrantTest()
+        public void RequestJWTUserToken_WrongIntegratorKeyUsed_ReturnsException()
         {
-            // Adding a WRONG PEM key 
-            byte[] privateKeyStream = testConfig.PrivateKey;
-            ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
+            byte[] privateKeyStream = _testConfig.PrivateKey;
+            ApiException ex = Assert.ThrowsException<ApiException>(() =>
+                _testConfig.ApiClient.RequestJWTUserToken(
+                    _testConfig.IntegratorKeyNoConsent,
+                    _testConfig.UserId,
+                    _testConfig.OAuthBasePath,
+                    privateKeyStream,
+                    _testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
             Assert.AreEqual("{\"error\":\"invalid_grant\",\"error_description\":\"no_valid_keys_or_signatures\"}", ex.ErrorContent);
         }
 
         [TestMethod]
-        public void JwtConsentRequiredTest()
+        public void RequestJWTUserToken_PrivateKeyWithoutConsentUsed_ReturnsException()
         {
-            // Adding a Correct PEM key - no consent granted
-            byte[] pkey = testConfig.PrivateKeyNoConsent;
-            ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, pkey, testConfig.ExpiresInHours));
+            byte[] pkey = _testConfig.PrivateKeyNoConsent;
+            ApiException ex = Assert.ThrowsException<ApiException>(() =>
+                _testConfig.ApiClient.RequestJWTUserToken(
+                    _testConfig.IntegratorKeyNoConsent,
+                    _testConfig.UserId,
+                    _testConfig.OAuthBasePath,
+                    pkey,
+                    _testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
-            // Assert.AreEqual(ex.ErrorContent, "{\"error\":\"consent_required\"}");
         }
 
         [TestMethod]
-        public void JwtInvalidAccessToken_Unauthorized_Test()
+        public void GetUserInfo_WrongAccessToken_ReturnsException()
         {
             string access_token = "---Invalid-Access-Token---";
 
-            ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.GetUserInfo(access_token));
+            ApiException ex = Assert.ThrowsException<ApiException>(() => _testConfig.ApiClient.GetUserInfo(access_token));
 
             Assert.IsNotNull(ex);
             Assert.IsNotNull(ex.ErrorContent);

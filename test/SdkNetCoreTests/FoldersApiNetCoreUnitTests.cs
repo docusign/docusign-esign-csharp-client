@@ -35,21 +35,25 @@ namespace SdkNetCoreTests
             var listFromDraftsFolder = foldersApi.ListItems(_testConfig.AccountId, ToFolderId, searchOptions);
 
             Assert.IsNotNull(listFromDraftsFolder);
+            Assert.IsTrue(IsEnvelopeIdInFolderItems(listFromDraftsFolder, _testConfig.EnvelopeId));
+        }
 
-            bool doesExists = false;
-            foreach (var folder in listFromDraftsFolder.Folders)
+        public bool IsEnvelopeIdInFolderItems(FolderItemsResponse folderItemsResponse, string envelopeId)
+        {
+            foreach (var folder in folderItemsResponse.Folders)
             {
+                if (folder == null)
+                    continue;
                 foreach (var item in folder.FolderItems)
                 {
-                    if (item.EnvelopeId == _testConfig.EnvelopeId)
+                    if (item.EnvelopeId == envelopeId)
                     {
-                        doesExists = true;
-                        break;
+                        return true;
                     }
                 }
             }
 
-            Assert.IsTrue(doesExists);
+            return false;
         }
     }
 }

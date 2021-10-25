@@ -118,7 +118,8 @@ namespace SdkNetCoreTests
 
             EnvelopesApi.ListStatusChangesOptions options = new EnvelopesApi.ListStatusChangesOptions()
             {
-                envelopeIds = envelopeIds
+                envelopeIds = envelopeIds,
+                fromDate = DateTime.Now.AddMonths(-1).ToString("o")
             };
 
             EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
@@ -139,7 +140,8 @@ namespace SdkNetCoreTests
 
             EnvelopesApi.ListStatusOptions options = new EnvelopesApi.ListStatusOptions()
             {
-                envelopeIds = "request_body"
+                envelopeIds = "request_body",
+                fromDate = DateTime.Now.AddMonths(-1).ToString("o")
             };
 
             EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);

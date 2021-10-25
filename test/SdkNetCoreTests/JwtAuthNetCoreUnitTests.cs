@@ -57,55 +57,6 @@ namespace SdkNetCoreTests
         }
 
         [TestMethod]
-        public void RequestJWTUserToken_WrongPrivateKeyUsed_ReturnsException()
-        {
-            var rsaKey = "---Invalid private key---";
-            byte[] privateKeyStream = System.Text.Encoding.UTF8.GetBytes(rsaKey);
-
-            Exception ex = Assert.ThrowsException<Exception>(() =>
-                _testConfig.ApiClient.RequestJWTUserToken(
-                    _testConfig.IntegratorKeyNoConsent,
-                    _testConfig.UserId,
-                    _testConfig.OAuthBasePath,
-                    privateKeyStream,
-                    _testConfig.ExpiresInHours));
-
-            Assert.IsNotNull(ex);
-            Assert.AreEqual(ex.Message, "Unexpected PEM type");
-        }
-
-        [TestMethod]
-        public void RequestJWTUserToken_WrongIntegratorKeyUsed_ReturnsException()
-        {
-            byte[] privateKeyStream = _testConfig.PrivateKey;
-            ApiException ex = Assert.ThrowsException<ApiException>(() =>
-                _testConfig.ApiClient.RequestJWTUserToken(
-                    _testConfig.IntegratorKeyNoConsent,
-                    _testConfig.UserId,
-                    _testConfig.OAuthBasePath,
-                    privateKeyStream,
-                    _testConfig.ExpiresInHours));
-
-            Assert.IsNotNull(ex);
-            Assert.AreEqual("{\"error\":\"invalid_grant\",\"error_description\":\"no_valid_keys_or_signatures\"}", ex.ErrorContent);
-        }
-
-        [TestMethod]
-        public void RequestJWTUserToken_PrivateKeyWithoutConsentUsed_ReturnsException()
-        {
-            byte[] pkey = _testConfig.PrivateKeyNoConsent;
-            ApiException ex = Assert.ThrowsException<ApiException>(() =>
-                _testConfig.ApiClient.RequestJWTUserToken(
-                    _testConfig.IntegratorKeyNoConsent,
-                    _testConfig.UserId,
-                    _testConfig.OAuthBasePath,
-                    pkey,
-                    _testConfig.ExpiresInHours));
-
-            Assert.IsNotNull(ex);
-        }
-
-        [TestMethod]
         public void GetUserInfo_WrongAccessToken_ReturnsException()
         {
             string access_token = "---Invalid-Access-Token---";

@@ -12,7 +12,7 @@ namespace SdkTests
         public static void CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref TestConfig testConfig, string status = "sent")
         {
             // the document (file) we want signed
-            const string signTest1File = @"../../../docs/SignTest1.pdf";
+            const string signTest1File = @"../../docs/SignTest1.pdf";
 
             // Read a file from disk to use as a document.
             byte[] fileBytes = File.ReadAllBytes(signTest1File);

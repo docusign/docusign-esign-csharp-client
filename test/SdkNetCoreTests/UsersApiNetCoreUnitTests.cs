@@ -11,8 +11,8 @@ namespace SdkNetCoreTests
     {
         private TestConfig _testConfig;
 
-        [ClassInitialize]
-        public void ClassInitialize()
+        [TestInitialize]
+        public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);

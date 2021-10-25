@@ -25,7 +25,7 @@ namespace SdkNetCoreTests
             FoldersApi foldersApi = new FoldersApi(_testConfig.ApiClient);
             EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
 
-            var envelope = envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);
+            Envelope envelope = envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);
             Assert.IsNull(envelope.VoidedDateTime);
             FoldersRequest foldersRequest = new FoldersRequest(new List<string> { _testConfig.EnvelopeId });
 

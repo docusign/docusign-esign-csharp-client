@@ -25,7 +25,6 @@ namespace SdkTests462
             EnvelopeDefinition envDef = new EnvelopeDefinition
             {
                 EmailSubject = "[DocuSign C# SDK] - Please sign this doc",
-                // random incorrect guid
                 TemplateId = "510fc78e-32f4-8778-44eb-6b53abb6c82E"
             };
 
@@ -39,12 +38,12 @@ namespace SdkTests462
         [TestMethod]
         public void SetBasePath_MultibleBasePathUsed_BasePathIsChanged()
         {
-            var configBasePath = _testConfig.ApiClient.Configuration.BasePath;
-            var restBasePath = Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl);
+            string configBasePath = _testConfig.ApiClient.Configuration.BasePath;
+            string restBasePath = Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl);
 
             Assert.AreEqual(configBasePath, restBasePath);
 
-            var testBasePath = "https://na.docusign.net/restapi";
+            string testBasePath = "https://na.docusign.net/restapi";
 
             _testConfig.ApiClient.SetBasePath(testBasePath);
 

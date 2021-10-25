@@ -22,7 +22,7 @@ namespace SdkNetCoreTests
         public void ListBrands_CorrectAccountId_ReturnsBrandsResponse()
         {
             AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
-            var brandsResponse = accountsApi.ListBrands(_testConfig.AccountId);
+            BrandsResponse brandsResponse = accountsApi.ListBrands(_testConfig.AccountId);
 
             Assert.IsNotNull(brandsResponse);
         }
@@ -31,7 +31,7 @@ namespace SdkNetCoreTests
         public void UpdateBrandLogoByType_CorectInputs_ReturnsNoErrors()
         {
             AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
-            var logoType = "primary";
+            string logoType = "primary";
             if (string.IsNullOrEmpty(_testConfig.BrandId))
             {
                 CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse();
@@ -60,7 +60,7 @@ namespace SdkNetCoreTests
             {
                 CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse();
             }
-            var logoType = "primary";
+            string logoType = "primary";
             byte[] brandLogoByteArray = Convert.FromBase64String(_testConfig.BrandLogo);
 
             Stream stream = accountsApi.GetBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType);
@@ -83,9 +83,9 @@ namespace SdkNetCoreTests
                 BrandName = "C# Brand"
             };
 
-            var brands = accountsApi.CreateBrand(_testConfig.AccountId, brand);
+            BrandsResponse brands = accountsApi.CreateBrand(_testConfig.AccountId, brand);
 
-            foreach (var singleBrand in brands.Brands)
+            foreach (Brand singleBrand in brands.Brands)
             {
                 if (singleBrand.BrandName == brand.BrandName)
                 {

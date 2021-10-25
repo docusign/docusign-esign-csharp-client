@@ -105,7 +105,7 @@ namespace SdkTests462
             Assert.IsNotNull(envelopes.Envelopes);
             Assert.IsNotNull(envelopes.Envelopes[0].EnvelopeId);
 
-            foreach (var envelopesList in envelopes.Envelopes)
+            foreach (Envelope envelopesList in envelopes.Envelopes)
             {
                 _testConfig.EnvelopeIdsList.Add(envelopesList.EnvelopeId);
             }
@@ -115,7 +115,7 @@ namespace SdkTests462
         public void ListStatusChanges_CorrectInputParametersAndSpecifiedEnvelopeIds_ReturnEnvelopesInformation()
         {
             JwtGetSampleEnvelopeIds();
-            var envelopeIds = string.Join(", ", _testConfig.EnvelopeIdsList);
+            string envelopeIds = string.Join(", ", _testConfig.EnvelopeIdsList);
 
             EnvelopesApi.ListStatusChangesOptions options = new EnvelopesApi.ListStatusChangesOptions()
             {
@@ -192,7 +192,7 @@ namespace SdkTests462
         [TestMethod]
         public void CreateSenderView_CorrectInputParameters_ReturnViewUrl()
         {
-            var envelopeStatusCreated = "created";
+            string envelopeStatusCreated = "created";
             CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref _testConfig, envelopeStatusCreated);
 
             ReturnUrlRequest options = new ReturnUrlRequest
@@ -254,7 +254,7 @@ namespace SdkTests462
         [TestMethod]
         public void CreateEnvelopeWithHttpInfo_CorrectInputParameters_ReturnsApiResponseWithHeaders()
         {
-            var envDef = new EnvelopeDefinition();
+            EnvelopeDefinition envDef = new EnvelopeDefinition();
 
             EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
 
@@ -265,9 +265,9 @@ namespace SdkTests462
             Assert.IsNotNull(envelopeSummary.Data);
             Assert.IsNotNull(envelopeSummary.Data.EnvelopeId);
 
-            var headers = envelopeSummary.Headers;
-            var xRateLimitRemainingHeader = headers["X-RateLimit-Remaining"];
-            var xRateLimitLimitHeader = headers["X-RateLimit-Limit"];
+            IDictionary<string, string> headers = envelopeSummary.Headers;
+            string xRateLimitRemainingHeader = headers["X-RateLimit-Remaining"];
+            string xRateLimitLimitHeader = headers["X-RateLimit-Limit"];
 
             Assert.IsNotNull(xRateLimitRemainingHeader);
             Assert.IsNotNull(xRateLimitLimitHeader);
@@ -301,8 +301,8 @@ namespace SdkTests462
             Assert.IsNotNull(envelopeSummary);
             Assert.IsNotNull(envelopeSummary.EnvelopeId);
 
-            var recipients = envelopesApi.ListRecipients(_testConfig.AccountId, envelopeSummary.EnvelopeId);
-            var tabs = envelopesApi.ListTabs(_testConfig.AccountId, envelopeSummary.EnvelopeId, recipients.Signers.FirstOrDefault()?.RecipientId);
+            Recipients recipients = envelopesApi.ListRecipients(_testConfig.AccountId, envelopeSummary.EnvelopeId);
+            Tabs tabs = envelopesApi.ListTabs(_testConfig.AccountId, envelopeSummary.EnvelopeId, recipients.Signers.FirstOrDefault()?.RecipientId);
 
             Assert.IsNotNull(tabs);
         }
@@ -445,7 +445,7 @@ namespace SdkTests462
                 IdCheckConfigurationName = "ID Check"
             };
 
-            var signers = new List<Signer> { newSigner };
+            List<Signer> signers = new List<Signer> { newSigner };
             Recipients recipients = new Recipients()
             {
                 Signers = signers

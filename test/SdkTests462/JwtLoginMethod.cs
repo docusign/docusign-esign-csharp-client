@@ -31,7 +31,7 @@ namespace SdkTests462
             Assert.IsNotNull(userInfo);
             Assert.IsNotNull(userInfo.Accounts);
 
-            foreach (var item in userInfo.Accounts)
+            foreach (OAuth.UserInfo.Account item in userInfo.Accounts)
             {
                 if (item.IsDefault == "true")
                 {

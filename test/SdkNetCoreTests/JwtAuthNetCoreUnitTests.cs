@@ -10,12 +10,14 @@ namespace SdkNetCoreTests
     public class AuthNetCoreUnitTests
     {
         private TestConfig _testConfig;
+        private EnvelopesApi envelopesApi;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
+            envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
         }
 
         [TestMethod]
@@ -27,7 +29,6 @@ namespace SdkNetCoreTests
                 TemplateId = "510fc78e-32f4-8778-44eb-6b53abb6c82E"
             };
 
-            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
             ApiException ex = Assert.ThrowsException<ApiException>(() => envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef));
 
             Assert.IsNotNull(ex);

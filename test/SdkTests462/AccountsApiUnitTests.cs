@@ -11,18 +11,19 @@ namespace SdkTests462
     public class AccountsApiUnitTests
     {
         private TestConfig _testConfig;
+        private AccountsApi accountsApi;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
+            accountsApi = new AccountsApi(_testConfig.ApiClient);
         }
 
         [TestMethod]
         public void ListBrands_CorrectAccountId_ReturnsBrandsResponse()
         {
-            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
             BrandsResponse brandsResponse = accountsApi.ListBrands(_testConfig.AccountId);
 
             Assert.IsNotNull(brandsResponse);
@@ -31,7 +32,6 @@ namespace SdkTests462
         [TestMethod]
         public void UpdateBrandLogoByType_CorectInputs_ReturnsNoErrors()
         {
-            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
             string logoType = "primary";
             if (string.IsNullOrEmpty(_testConfig.BrandId))
             {
@@ -56,7 +56,6 @@ namespace SdkTests462
         [TestMethod]
         public void GetBrandLogoByType_CorrectInputParameters_ReturnStream()
         {
-            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
             if (string.IsNullOrEmpty(_testConfig.BrandId))
             {
                 CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse();
@@ -78,7 +77,6 @@ namespace SdkTests462
 
         private void CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse()
         {
-            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
             Brand brand = new Brand
             {
                 BrandName = "C# Brand"
@@ -98,7 +96,6 @@ namespace SdkTests462
         [TestMethod]
         public void GetAccountInformation_CorrectAccountId_ReturnAccountInformation()
         {
-            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
             AccountInformation accountInformation = accountsApi.GetAccountInformation(_testConfig.AccountId);
 
             Assert.IsNotNull(accountInformation);

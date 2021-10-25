@@ -10,12 +10,14 @@ namespace SdkTests462
     public class FoldersApiUnitTests
     {
         private TestConfig _testConfig;
+        private FoldersApi _foldersApi;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
+            _foldersApi = new FoldersApi(_testConfig.ApiClient);
         }
 
         [TestMethod]
@@ -23,7 +25,6 @@ namespace SdkTests462
         {
             CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref _testConfig);
 
-            FoldersApi foldersApi = new FoldersApi(_testConfig.ApiClient);
             EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
 
             Envelope envelope = envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);
@@ -32,7 +33,7 @@ namespace SdkTests462
 
             string ToFolderId = "recyclebin";
 
-            foldersApi.MoveEnvelopes(_testConfig.AccountId, ToFolderId, foldersRequest);
+            _foldersApi.MoveEnvelopes(_testConfig.AccountId, ToFolderId, foldersRequest);
 
             envelope = envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);
             Assert.IsNotNull(envelope.VoidedDateTime);

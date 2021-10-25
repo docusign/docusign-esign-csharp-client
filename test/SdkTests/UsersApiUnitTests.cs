@@ -11,19 +11,20 @@ namespace SdkTests
     public class UsersApiUnitTests
     {
         private TestConfig _testConfig;
+        private UsersApi _usersApi;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
+            UsersApi usersApi = new UsersApi(_testConfig.ApiClient);
         }
 
         [TestMethod]
         public void JwtGetUsers_CorrectAccountId_ReturnUserInformationList()
         {
-            UsersApi usersApi = new UsersApi(_testConfig.ApiClient);
-            UserInformationList userInformationList = usersApi.List(_testConfig.AccountId);
+            UserInformationList userInformationList = _usersApi.List(_testConfig.AccountId);
             Assert.IsNotNull(userInformationList);
             Assert.IsNotNull(userInformationList.Users);
             Assert.IsNotNull(userInformationList.Users.FirstOrDefault()?.UserId);
@@ -32,8 +33,6 @@ namespace SdkTests
         [TestMethod]
         public void JwtPostUsers_CorrectAccountIdAndNewUsersDefinition_ReturnNewUsersSummary()
         {
-            UsersApi usersApi = new UsersApi(_testConfig.ApiClient);
-
             UserInformation user = new UserInformation();
             List<UserInformation> userInformation = new List<UserInformation>();
             NewUsersDefinition usersDefinition = new NewUsersDefinition();
@@ -43,7 +42,7 @@ namespace SdkTests
             userInformation.Add(user);
             usersDefinition.NewUsers = userInformation;
 
-            NewUsersSummary userInformationList = usersApi.Create(_testConfig.AccountId, usersDefinition);
+            NewUsersSummary userInformationList = _usersApi.Create(_testConfig.AccountId, usersDefinition);
             
             Assert.IsNotNull(userInformationList);
             Assert.IsNotNull(userInformationList.NewUsers);

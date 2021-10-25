@@ -62,8 +62,7 @@ namespace SdkTests462
             EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
             EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
 
-            Assert.IsNotNull(envelopeSummary);
-            Assert.IsNotNull(envelopeSummary.EnvelopeId);
+            Assert.IsNotNull(envelopeSummary?.EnvelopeId);
 
             testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
         }

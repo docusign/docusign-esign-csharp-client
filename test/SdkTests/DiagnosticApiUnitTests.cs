@@ -9,19 +9,20 @@ namespace SdkTests
     public class DiagnosticApiUnitTests
     {
         private TestConfig _testConfig;
+        private DiagnosticsApi _diagnosticsApi;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
+            _diagnosticsApi = new DiagnosticsApi(_testConfig.ApiClient);
         }
 
         [TestMethod]
         public void GetSetting_ReturnDiagnosticsSettingsInformation()
         {
-            DiagnosticsApi diagnosticsApi = new DiagnosticsApi(_testConfig.ApiClient);
-            DiagnosticsSettingsInformation diagnosticsSettingsInformation = diagnosticsApi.GetRequestLogSettings();
+            DiagnosticsSettingsInformation diagnosticsSettingsInformation = _diagnosticsApi.GetRequestLogSettings();
 
             Assert.IsNotNull(diagnosticsSettingsInformation);
             Assert.IsNotNull(diagnosticsSettingsInformation.ApiRequestLogMaxEntries);

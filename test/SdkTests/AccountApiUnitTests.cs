@@ -11,19 +11,20 @@ namespace SdkTests
     public class AccountApiUnitTests
     {
         private TestConfig _testConfig;
+        private AccountsApi _accountsApi;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
+            _accountsApi = new AccountsApi(_testConfig.ApiClient);
         }
 
         [TestMethod]
         public void ListBrands_CorrectAccountId_ReturnsBrandsResponse()
         {
-            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
-            BrandsResponse brandsResponse = accountsApi.ListBrands(_testConfig.AccountId);
+            BrandsResponse brandsResponse = _accountsApi.ListBrands(_testConfig.AccountId);
 
             Assert.IsNotNull(brandsResponse);
         }
@@ -31,7 +32,6 @@ namespace SdkTests
         [TestMethod]
         public void UpdateBrandLogoByType_CorectInputs_ReturnsNoErrors()
         {
-            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
             string logoType = "primary";
             if (string.IsNullOrEmpty(_testConfig.BrandId))
             {
@@ -39,9 +39,9 @@ namespace SdkTests
             }
 
             byte[] brandLogoByteArray = Convert.FromBase64String(_testConfig.BrandLogo);
-            accountsApi.UpdateBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType, brandLogoByteArray);
+            _accountsApi.UpdateBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType, brandLogoByteArray);
 
-            Stream stream = accountsApi.GetBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType);
+            Stream stream = _accountsApi.GetBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType);
 
             Assert.IsNotNull(stream);
 
@@ -56,7 +56,6 @@ namespace SdkTests
         [TestMethod]
         public void GetBrandLogoByType_CorrectInputParameters_ReturnStream()
         {
-            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
             if (string.IsNullOrEmpty(_testConfig.BrandId))
             {
                 CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse();
@@ -64,7 +63,7 @@ namespace SdkTests
             string logoType = "primary";
             byte[] brandLogoByteArray = Convert.FromBase64String(_testConfig.BrandLogo);
 
-            Stream stream = accountsApi.GetBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType);
+            Stream stream = _accountsApi.GetBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType);
 
             Assert.IsNotNull(stream);
 
@@ -78,13 +77,12 @@ namespace SdkTests
 
         private void CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse()
         {
-            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
             Brand brand = new Brand
             {
                 BrandName = "C# Brand"
             };
 
-            BrandsResponse brands = accountsApi.CreateBrand(_testConfig.AccountId, brand);
+            BrandsResponse brands = _accountsApi.CreateBrand(_testConfig.AccountId, brand);
 
             foreach (Brand singleBrand in brands.Brands)
             {
@@ -98,8 +96,7 @@ namespace SdkTests
         [TestMethod]
         public void GetAccountInformation_CorrectAccountId_ReturnAccountInformation()
         {
-            AccountsApi accountsApi = new AccountsApi(_testConfig.ApiClient);
-            AccountInformation accountInformation = accountsApi.GetAccountInformation(_testConfig.AccountId);
+            AccountInformation accountInformation = _accountsApi.GetAccountInformation(_testConfig.AccountId);
             
             Assert.IsNotNull(accountInformation);
             Assert.IsNotNull(accountInformation.AccountIdGuid);

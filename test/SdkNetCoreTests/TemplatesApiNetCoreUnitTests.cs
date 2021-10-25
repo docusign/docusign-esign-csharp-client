@@ -9,37 +9,35 @@ namespace SdkNetCoreTests
     public class TemplatesApiNetCoreUnitTests
     {
         private TestConfig _testConfig;
+        private TemplatesApi _templatesApi;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
+            _templatesApi = new TemplatesApi(_testConfig.ApiClient);
         }
 
         [TestMethod]
         public void JwtGetTemplates_CorrectAccountId_ReturnEnvelopeTemplateResults()
         {
-            TemplatesApi templatesApi = new TemplatesApi(_testConfig.ApiClient);
-            EnvelopeTemplateResults envelopeTemplateResults = templatesApi.ListTemplates(_testConfig.AccountId);
+            EnvelopeTemplateResults envelopeTemplateResults = _templatesApi.ListTemplates(_testConfig.AccountId);
 
-            Assert.IsNotNull(envelopeTemplateResults);
-            Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates);
             Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault()?.TemplateId);
         }
 
         [TestMethod]
         public void JwtGetTemplate_CorrectAccountIdAndTemplateId_ReturnEnvelopeTemplate()
         {
-            TemplatesApi templatesApi = new TemplatesApi(_testConfig.ApiClient);
-            EnvelopeTemplateResults envelopeTemplateResults = templatesApi.ListTemplates(_testConfig.AccountId);
+            EnvelopeTemplateResults envelopeTemplateResults = _templatesApi.ListTemplates(_testConfig.AccountId);
             string templateId = envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault()?.TemplateId;
 
             Assert.IsNotNull(envelopeTemplateResults);
             Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates);
             Assert.IsNotNull(templateId);
 
-            EnvelopeTemplate envelopeTemplate = templatesApi.Get(_testConfig.AccountId, templateId);
+            EnvelopeTemplate envelopeTemplate = _templatesApi.Get(_testConfig.AccountId, templateId);
             
             Assert.IsNotNull(envelopeTemplate);
             Assert.AreEqual(envelopeTemplate.TemplateId, templateId);

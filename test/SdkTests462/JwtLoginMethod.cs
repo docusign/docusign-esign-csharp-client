@@ -12,7 +12,7 @@ namespace SdkTests462
         {
             testConfig.ApiClient = new ApiClient(testConfig.Host);
 
-            Assert.IsNotNull(testConfig.PrivateKey);
+            Assert.IsNotNull(testConfig?.PrivateKey);
 
             byte[] privateKeyStream = testConfig.PrivateKey;
 
@@ -28,8 +28,7 @@ namespace SdkTests462
 
             OAuth.UserInfo userInfo = testConfig.ApiClient.GetUserInfo(tokenInfo.access_token);
 
-            Assert.IsNotNull(userInfo);
-            Assert.IsNotNull(userInfo.Accounts);
+            Assert.IsNotNull(userInfo?.Accounts);
 
             foreach (OAuth.UserInfo.Account item in userInfo.Accounts)
             {
@@ -41,7 +40,7 @@ namespace SdkTests462
                 }
             }
 
-            Assert.IsNotNull(testConfig.AccountId);
+            Assert.IsNotNull(testConfig?.AccountId);
             CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref testConfig);
         }
     }

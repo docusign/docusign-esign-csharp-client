@@ -10,18 +10,19 @@ namespace SdkNetCoreTests
     public class UsersApiNetCoreUnitTests
     {
         private TestConfig _testConfig;
+        private UsersApi usersApi;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
+            UsersApi usersApi = new UsersApi(_testConfig.ApiClient);
         }
 
         [TestMethod]
         public void JwtGetUsers_CorrectAccountId_ReturnUserInformationList()
         {
-            UsersApi usersApi = new UsersApi(_testConfig.ApiClient);
             UserInformationList userInformationList = usersApi.List(_testConfig.AccountId);
             Assert.IsNotNull(userInformationList);
             Assert.IsNotNull(userInformationList.Users);
@@ -31,8 +32,6 @@ namespace SdkNetCoreTests
         [TestMethod]
         public void JwtPostUsers_CorrectAccountIdAndNewUsersDefinition_ReturnNewUsersSummary()
         {
-            UsersApi usersApi = new UsersApi(_testConfig.ApiClient);
-
             UserInformation user = new UserInformation();
             List<UserInformation> userInformation = new List<UserInformation>();
             NewUsersDefinition usersDefinition = new NewUsersDefinition();

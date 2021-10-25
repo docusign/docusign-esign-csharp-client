@@ -10,20 +10,21 @@ namespace SdkTests
     public class FoldersApiUnitTests
     {
         private TestConfig _testConfig;
+        private FoldersApi foldersApi;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
+            foldersApi = new FoldersApi(_testConfig.ApiClient);
         }
 
         [TestMethod]
         public void MoveEnvelopes_CorrectInputParameters_ReturnFolderResponse()
         {
             CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref _testConfig);
-
-            FoldersApi foldersApi = new FoldersApi(_testConfig.ApiClient);
+            
             EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
 
             Envelope envelope = envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);

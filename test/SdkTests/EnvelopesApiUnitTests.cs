@@ -14,14 +14,14 @@ namespace SdkTests
     public class EnvelopesApiUnitTests
     {
         private TestConfig _testConfig;
-        private EnvelopesApi envelopesApi;
+        private EnvelopesApi _envelopesApi;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
-            envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
+            _envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
         }
 
         private void JwtGetSampleEnvelopeIds()
@@ -54,7 +54,7 @@ namespace SdkTests
 
             envDef.Status = "sent";
 
-            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef);
+            EnvelopeSummary envelopeSummary = _envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef);
 
             Assert.IsNotNull(envelopeSummary?.EnvelopeId);
 
@@ -66,7 +66,7 @@ namespace SdkTests
         {
             CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref _testConfig);
 
-            Envelope envInfo = envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);
+            Envelope envInfo = _envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);
 
             Assert.IsNotNull(envInfo);
             Assert.IsNotNull(envInfo.EnvelopeId);
@@ -77,7 +77,7 @@ namespace SdkTests
         {
             CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref _testConfig);
 
-            Recipients recipients = envelopesApi.ListRecipients(_testConfig.AccountId, _testConfig.EnvelopeId);
+            Recipients recipients = _envelopesApi.ListRecipients(_testConfig.AccountId, _testConfig.EnvelopeId);
 
             Assert.IsNotNull(recipients);
             Assert.IsNotNull(recipients.RecipientCount);
@@ -96,7 +96,7 @@ namespace SdkTests
                 fromDate = fromDateStr
             };
 
-            EnvelopesInformation envelopes = envelopesApi.ListStatusChanges(_testConfig.AccountId, options);
+            EnvelopesInformation envelopes = _envelopesApi.ListStatusChanges(_testConfig.AccountId, options);
 
             Assert.IsNotNull(envelopes);
             Assert.IsNotNull(envelopes.Envelopes);
@@ -120,7 +120,7 @@ namespace SdkTests
                 fromDate = DateTime.Now.AddMonths(-1).ToString("o")
             };
 
-            EnvelopesInformation envelopes = envelopesApi.ListStatusChanges(_testConfig.AccountId, options);
+            EnvelopesInformation envelopes = _envelopesApi.ListStatusChanges(_testConfig.AccountId, options);
 
             Assert.IsNotNull(envelopes);
             Assert.IsNotNull(envelopes.Envelopes);
@@ -140,7 +140,7 @@ namespace SdkTests
                 fromDate = DateTime.Now.AddMonths(-1).ToString("o")
             };
 
-            EnvelopesInformation envelopes = envelopesApi.ListStatus(_testConfig.AccountId, envIdsRequest, options);
+            EnvelopesInformation envelopes = _envelopesApi.ListStatus(_testConfig.AccountId, envIdsRequest, options);
 
             Assert.IsNotNull(envelopes);
             Assert.IsNotNull(envelopes.Envelopes);
@@ -153,7 +153,7 @@ namespace SdkTests
         {
             CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref _testConfig);
 
-            EnvelopeDocumentsResult docsList = envelopesApi.ListDocuments(_testConfig.AccountId, _testConfig.EnvelopeId);
+            EnvelopeDocumentsResult docsList = _envelopesApi.ListDocuments(_testConfig.AccountId, _testConfig.EnvelopeId);
 
             Assert.IsNotNull(docsList);
             Assert.IsNotNull(docsList.EnvelopeId);
@@ -164,7 +164,7 @@ namespace SdkTests
             {
                 Assert.IsNotNull(docsList.EnvelopeDocuments[i].DocumentId);
 
-                MemoryStream docStream = (MemoryStream)envelopesApi.GetDocument(
+                MemoryStream docStream = (MemoryStream)_envelopesApi.GetDocument(
                     _testConfig.AccountId,
                     _testConfig.EnvelopeId,
                     docsList.EnvelopeDocuments[i].DocumentId);
@@ -192,7 +192,7 @@ namespace SdkTests
                 ReturnUrl = _testConfig.ReturnUrl
             };
 
-            ViewUrl senderView = envelopesApi.CreateSenderView(_testConfig.AccountId, _testConfig.EnvelopeId, options);
+            ViewUrl senderView = _envelopesApi.CreateSenderView(_testConfig.AccountId, _testConfig.EnvelopeId, options);
 
             Assert.IsNotNull(senderView);
             Assert.IsNotNull(senderView.Url);
@@ -213,7 +213,7 @@ namespace SdkTests
                 Email = _testConfig.RecipientEmail
             };
 
-            ViewUrl recipientView = envelopesApi.CreateRecipientView(_testConfig.AccountId, _testConfig.EnvelopeId, viewOptions);
+            ViewUrl recipientView = _envelopesApi.CreateRecipientView(_testConfig.AccountId, _testConfig.EnvelopeId, viewOptions);
 
             Assert.IsNotNull(recipientView);
             Assert.IsNotNull(recipientView.Url);
@@ -231,7 +231,7 @@ namespace SdkTests
                 ReturnUrl = _testConfig.ReturnUrl
             };
 
-            ViewUrl viewUrl = envelopesApi.CreateConsoleView(_testConfig.AccountId, consoleViewRequest);
+            ViewUrl viewUrl = _envelopesApi.CreateConsoleView(_testConfig.AccountId, consoleViewRequest);
 
             Assert.IsNotNull(viewUrl);
             Assert.IsNotNull(viewUrl.Url);
@@ -242,7 +242,7 @@ namespace SdkTests
         {
             EnvelopeDefinition envDef = new EnvelopeDefinition();
 
-            ApiResponse<EnvelopeSummary> envelopeSummary = envelopesApi.CreateEnvelopeWithHttpInfo(_testConfig.AccountId, envDef);
+            ApiResponse<EnvelopeSummary> envelopeSummary = _envelopesApi.CreateEnvelopeWithHttpInfo(_testConfig.AccountId, envDef);
 
             Assert.IsNotNull(envelopeSummary);
             Assert.IsNotNull(envelopeSummary.Headers);
@@ -260,33 +260,14 @@ namespace SdkTests
         [TestMethod]
         public void ListTabs_CorrectInputParameters_ReturnTabs()
         {
-            EnvelopeDefinition envDef = new EnvelopeDefinition
-            {
-                EmailSubject = "[DocuSign C# SDK] - Please sign this doc"
-            };
+            CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(
+                ref _testConfig);
 
-            TemplateRole tRole = new TemplateRole
-            {
-                Email = _testConfig.RecipientEmail,
-                Name = _testConfig.RecipientName,
-                RoleName = "Manager"
-            };
+            Recipients recipients = _envelopesApi.ListRecipients(_testConfig.AccountId, _testConfig.EnvelopeId);
 
-            List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
+            Tabs tabs = _envelopesApi.ListTabs(_testConfig.AccountId, _testConfig.EnvelopeId, recipients.Signers.FirstOrDefault()?.RecipientId, new EnvelopesApi.ListTabsOptions{ includeAnchorTabLocations = "true", includeMetadata = "true"});
 
-            envDef.TemplateRoles = rolesList;
-            envDef.TemplateId = _testConfig.TemplateId;
-
-            envDef.Status = "sent";
-
-            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef);
-
-            Assert.IsNotNull(envelopeSummary?.EnvelopeId);
-
-            Recipients recipients = envelopesApi.ListRecipients(_testConfig.AccountId, envelopeSummary.EnvelopeId);
-            Tabs tabs = envelopesApi.ListTabs(_testConfig.AccountId, envelopeSummary.EnvelopeId, recipients.Signers.FirstOrDefault()?.RecipientId);
-
-            Assert.IsNotNull(tabs);
+            Assert.IsNotNull(tabs?.SignHereTabs);
         }
 
         [TestMethod]
@@ -311,11 +292,11 @@ namespace SdkTests
 
             envDef.Status = "sent";
 
-            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef);
+            EnvelopeSummary envelopeSummary = _envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef);
 
             Assert.IsNotNull(envelopeSummary?.EnvelopeId);
 
-            EnvelopeFormData envFormData = envelopesApi.GetFormData(_testConfig.AccountId, envelopeSummary.EnvelopeId);
+            EnvelopeFormData envFormData = _envelopesApi.GetFormData(_testConfig.AccountId, envelopeSummary.EnvelopeId);
 
             Assert.IsNotNull(envFormData);
             Assert.IsNotNull(envFormData.FormData);
@@ -328,7 +309,7 @@ namespace SdkTests
             CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(
                 ref _testConfig);
 
-            EnvelopeAuditEventResponse listAuditEvents = envelopesApi.ListAuditEvents(_testConfig.AccountId, _testConfig.EnvelopeId);
+            EnvelopeAuditEventResponse listAuditEvents = _envelopesApi.ListAuditEvents(_testConfig.AccountId, _testConfig.EnvelopeId);
 
             Assert.IsNotNull(listAuditEvents);
             Assert.IsNotNull(listAuditEvents.AuditEvents);
@@ -353,8 +334,8 @@ namespace SdkTests
             approveTabs.Add(approveTab);
             tabs.ApproveTabs = approveTabs;
 
-            Recipients recipients = envelopesApi.ListRecipients(_testConfig.AccountId, _testConfig.EnvelopeId);
-            Tabs listTabs = envelopesApi.CreateTabs(_testConfig.AccountId, _testConfig.EnvelopeId, recipients.Signers.FirstOrDefault()?.RecipientId, tabs);
+            Recipients recipients = _envelopesApi.ListRecipients(_testConfig.AccountId, _testConfig.EnvelopeId);
+            Tabs listTabs = _envelopesApi.CreateTabs(_testConfig.AccountId, _testConfig.EnvelopeId, recipients.Signers.FirstOrDefault()?.RecipientId, tabs);
             Assert.IsNotNull(listTabs);
             Assert.IsNotNull(listTabs.ApproveTabs);
             Assert.IsTrue(listTabs.ApproveTabs.Exists(x => x.TabLabel == approveTab.TabLabel));
@@ -374,11 +355,11 @@ namespace SdkTests
                 Status = "sent"
             };
 
-            EnvelopeUpdateSummary envelopeUpdateSummary = envelopesApi.Update(_testConfig.AccountId, _testConfig.EnvelopeId, envelope);
+            EnvelopeUpdateSummary envelopeUpdateSummary = _envelopesApi.Update(_testConfig.AccountId, _testConfig.EnvelopeId, envelope);
             Assert.IsNotNull(envelopeUpdateSummary);
             Assert.IsNotNull(envelopeUpdateSummary.EnvelopeId);
 
-            Envelope renewedEnvelope = envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);
+            Envelope renewedEnvelope = _envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);
             Assert.AreEqual(envelope.EmailSubject, renewedEnvelope.EmailSubject);
             Assert.AreEqual(envelope.EmailBlurb, renewedEnvelope.EmailBlurb);
             Assert.AreEqual(envelope.Status, renewedEnvelope.Status);
@@ -426,7 +407,7 @@ namespace SdkTests
                 Signers = signers
             };
 
-            RecipientsUpdateSummary recipientsUpdateSummary = envelopesApi.UpdateRecipients(
+            RecipientsUpdateSummary recipientsUpdateSummary = _envelopesApi.UpdateRecipients(
                 _testConfig.AccountId,
                 _testConfig.EnvelopeId,
                 recipients);
@@ -434,7 +415,7 @@ namespace SdkTests
             Assert.IsNotNull(recipientsUpdateSummary);
             Assert.IsNotNull(recipientsUpdateSummary.RecipientUpdateResults);
 
-            Recipients updatedListRecipients = envelopesApi.ListRecipients(
+            Recipients updatedListRecipients = _envelopesApi.ListRecipients(
                 _testConfig.AccountId,
                 _testConfig.EnvelopeId);
 

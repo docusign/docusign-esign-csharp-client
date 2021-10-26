@@ -10,19 +10,18 @@ namespace SdkNetCoreTests
     public class AuthNetCoreUnitTests
     {
         private TestConfig _testConfig;
-        private EnvelopesApi envelopesApi;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
-            envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
         }
 
         [TestMethod]
         public void CreateEnvelope_WrongTemplateId_ReturnApiException()
         {
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
             EnvelopeDefinition envDef = new EnvelopeDefinition
             {
                 EmailSubject = "[DocuSign C# SDK] - Please sign this doc",

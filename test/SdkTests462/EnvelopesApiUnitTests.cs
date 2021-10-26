@@ -261,33 +261,14 @@ namespace SdkTests462
         [TestMethod]
         public void ListTabs_CorrectInputParameters_ReturnTabs()
         {
-            EnvelopeDefinition envDef = new EnvelopeDefinition
-            {
-                EmailSubject = "[DocuSign C# SDK] - Please sign this doc"
-            };
+            CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(
+                ref _testConfig);
 
-            TemplateRole tRole = new TemplateRole
-            {
-                Email = _testConfig.RecipientEmail,
-                Name = _testConfig.RecipientName,
-                RoleName = "Manager"
-            };
+            Recipients recipients = _envelopesApi.ListRecipients(_testConfig.AccountId, _testConfig.EnvelopeId);
 
-            List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
+            Tabs tabs = _envelopesApi.ListTabs(_testConfig.AccountId, _testConfig.EnvelopeId, recipients.Signers.FirstOrDefault()?.RecipientId, new EnvelopesApi.ListTabsOptions { includeAnchorTabLocations = "true", includeMetadata = "true" });
 
-            envDef.TemplateRoles = rolesList;
-            envDef.TemplateId = _testConfig.TemplateId;
-
-            envDef.Status = "sent";
-
-            EnvelopeSummary envelopeSummary = _envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef);
-
-            Assert.IsNotNull(envelopeSummary?.EnvelopeId);
-
-            Recipients recipients = _envelopesApi.ListRecipients(_testConfig.AccountId, envelopeSummary.EnvelopeId);
-            Tabs tabs = _envelopesApi.ListTabs(_testConfig.AccountId, envelopeSummary.EnvelopeId, recipients.Signers.FirstOrDefault()?.RecipientId);
-
-            Assert.IsNotNull(tabs);
+            Assert.IsNotNull(tabs?.SignHereTabs);
         }
 
         [TestMethod]

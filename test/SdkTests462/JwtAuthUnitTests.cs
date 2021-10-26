@@ -22,28 +22,27 @@ namespace SdkTests462
         [TestMethod]
         public void CreateEnvelope_WrongTemplateId_ReturnApiException()
         {
-            EnvelopeDefinition envDef = new EnvelopeDefinition
+            var envDef = new EnvelopeDefinition
             {
                 EmailSubject = "[DocuSign C# SDK] - Please sign this doc",
                 TemplateId = "510fc78e-32f4-8778-44eb-6b53abb6c82E"
             };
 
-            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
+            var envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
             ApiException ex = Assert.ThrowsException<ApiException>(() => envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef));
 
-            Assert.IsNotNull(ex);
-            Assert.IsNotNull(ex.Headers);
+            Assert.IsNotNull(ex?.Headers);
         }
 
         [TestMethod]
         public void SetBasePath_MultibleBasePathUsed_BasePathIsChanged()
         {
             string configBasePath = _testConfig.ApiClient.Configuration.BasePath;
-            string restBasePath = Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl);
+            var restBasePath = Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl);
 
             Assert.AreEqual(configBasePath, restBasePath);
 
-            string testBasePath = "https://na.docusign.net/restapi";
+            var testBasePath = "https://na.docusign.net/restapi";
 
             _testConfig.ApiClient.SetBasePath(testBasePath);
 
@@ -59,12 +58,11 @@ namespace SdkTests462
         [TestMethod]
         public void GetUserInfo_WrongAccessToken_ReturnsException()
         {
-            string access_token = "---Invalid-Access-Token---";
+            var access_token = "---Invalid-Access-Token---";
 
             ApiException ex = Assert.ThrowsException<ApiException>(() => _testConfig.ApiClient.GetUserInfo(access_token));
 
-            Assert.IsNotNull(ex);
-            Assert.IsNotNull(ex.ErrorContent);
+            Assert.IsNotNull(ex?.ErrorContent);
 
             int unauthorizedStatusCode = 401;
             Assert.AreEqual(ex.ErrorCode, unauthorizedStatusCode);

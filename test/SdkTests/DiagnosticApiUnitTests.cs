@@ -24,10 +24,9 @@ namespace SdkTests
         {
             DiagnosticsSettingsInformation diagnosticsSettingsInformation = _diagnosticsApi.GetRequestLogSettings();
 
-            Assert.IsNotNull(diagnosticsSettingsInformation);
-            Assert.IsNotNull(diagnosticsSettingsInformation.ApiRequestLogMaxEntries);
-            Assert.IsNotNull(diagnosticsSettingsInformation.ApiRequestLogRemainingEntries);
-            Assert.IsNotNull(diagnosticsSettingsInformation.ApiRequestLogging);
+            Assert.IsNotNull(diagnosticsSettingsInformation?.ApiRequestLogMaxEntries);
+            Assert.IsNotNull(diagnosticsSettingsInformation?.ApiRequestLogRemainingEntries);
+            Assert.IsNotNull(diagnosticsSettingsInformation?.ApiRequestLogging);
         }
     }
 }

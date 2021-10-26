@@ -17,24 +17,23 @@ namespace SdkNetCoreTests
         {
             _testConfig = new TestConfig();
             JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
-            UsersApi usersApi = new UsersApi(_testConfig.ApiClient);
+            _usersApi = new UsersApi(_testConfig.ApiClient);
         }
 
         [TestMethod]
         public void JwtGetUsers_CorrectAccountId_ReturnUserInformationList()
         {
             UserInformationList userInformationList = _usersApi.List(_testConfig.AccountId);
-            Assert.IsNotNull(userInformationList);
-            Assert.IsNotNull(userInformationList.Users);
-            Assert.IsNotNull(userInformationList.Users.FirstOrDefault()?.UserId);
+
+            Assert.IsNotNull(userInformationList?.Users?.FirstOrDefault()?.UserId);
         }
 
         [TestMethod]
         public void JwtPostUsers_CorrectAccountIdAndNewUsersDefinition_ReturnNewUsersSummary()
         {
-            UserInformation user = new UserInformation();
-            List<UserInformation> userInformation = new List<UserInformation>();
-            NewUsersDefinition usersDefinition = new NewUsersDefinition();
+            var user = new UserInformation();
+            var userInformation = new List<UserInformation>();
+            var usersDefinition = new NewUsersDefinition();
 
             user.Email = "test@test.com";
             user.UserName = "Test User";
@@ -44,9 +43,7 @@ namespace SdkNetCoreTests
 
             NewUsersSummary userInformationList = _usersApi.Create(_testConfig.AccountId, usersDefinition);
             
-            Assert.IsNotNull(userInformationList);
-            Assert.IsNotNull(userInformationList.NewUsers);
-            Assert.IsNotNull(userInformationList.NewUsers.Exists(x => x.Email == user.Email && x.UserName == user.UserName));
+            Assert.IsNotNull(userInformationList?.NewUsers?.Exists(x => x.Email == user.Email && x.UserName == user.UserName));
         }
     }
 }

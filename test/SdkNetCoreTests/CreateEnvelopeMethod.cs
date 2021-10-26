@@ -11,16 +11,16 @@ namespace SdkNetCoreTests
     {
         public static void CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref TestConfig testConfig, string status = "sent")
         {
-            const string signTest1File = @"../../../docs/SignTest1.pdf";
+            var signTest1File = @"../../../docs/SignTest1.pdf";
 
             byte[] fileBytes = File.ReadAllBytes(signTest1File);
 
-            EnvelopeDefinition envDef = new EnvelopeDefinition
+            var envDef = new EnvelopeDefinition
             {
                 EmailSubject = "[DocuSign C# SDK] - Please sign this doc"
             };
 
-            Document doc = new Document
+            var doc = new Document
             {
                 DocumentBase64 = Convert.ToBase64String(fileBytes),
                 Name = "TestFile.pdf",
@@ -29,7 +29,7 @@ namespace SdkNetCoreTests
 
             envDef.Documents = new List<Document> { doc };
 
-            Signer signer = new Signer
+            var signer = new Signer
             {
                 Email = testConfig.RecipientEmail,
                 Name = testConfig.RecipientName,
@@ -41,7 +41,7 @@ namespace SdkNetCoreTests
                 }
             };
 
-            SignHere signHere = new SignHere
+            var signHere = new SignHere
             {
                 DocumentId = "1",
                 PageNumber = "1",
@@ -59,7 +59,7 @@ namespace SdkNetCoreTests
 
             envDef.Status = status;
 
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+            var envelopesApi = new EnvelopesApi(testConfig.ApiClient);
             EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
 
             Assert.IsNotNull(envelopeSummary?.EnvelopeId);

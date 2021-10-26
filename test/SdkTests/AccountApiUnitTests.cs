@@ -32,7 +32,7 @@ namespace SdkTests
         [TestMethod]
         public void UpdateBrandLogoByType_CorectInputs_ReturnsNoErrors()
         {
-            string logoType = "primary";
+            var logoType = "primary";
             if (string.IsNullOrEmpty(_testConfig.BrandId))
             {
                 CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse();
@@ -45,7 +45,7 @@ namespace SdkTests
 
             Assert.IsNotNull(stream);
 
-            using (MemoryStream ms = new MemoryStream())
+            using (var ms = new MemoryStream())
             {
                 stream.CopyTo(ms);
                 byte[] brandLogoFromApi = ms.ToArray();
@@ -60,14 +60,14 @@ namespace SdkTests
             {
                 CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse();
             }
-            string logoType = "primary";
+            var logoType = "primary";
             byte[] brandLogoByteArray = Convert.FromBase64String(_testConfig.BrandLogo);
 
             Stream stream = _accountsApi.GetBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, logoType);
 
             Assert.IsNotNull(stream);
 
-            using (MemoryStream ms = new MemoryStream())
+            using (var ms = new MemoryStream())
             {
                 stream.CopyTo(ms);
                 byte[] brandLogoFromApi = ms.ToArray();
@@ -77,7 +77,7 @@ namespace SdkTests
 
         private void CreateBrand_CorrectAccountIdAndBrand_ReturnBrandsResponse()
         {
-            Brand brand = new Brand
+            var brand = new Brand
             {
                 BrandName = "C# Brand"
             };
@@ -97,11 +97,10 @@ namespace SdkTests
         public void GetAccountInformation_CorrectAccountId_ReturnAccountInformation()
         {
             AccountInformation accountInformation = _accountsApi.GetAccountInformation(_testConfig.AccountId);
-            
-            Assert.IsNotNull(accountInformation);
-            Assert.IsNotNull(accountInformation.AccountIdGuid);
-            Assert.IsNotNull(accountInformation.AccountName);
-            Assert.IsNotNull(accountInformation.BillingProfile);
+
+            Assert.IsNotNull(accountInformation?.AccountIdGuid);
+            Assert.IsNotNull(accountInformation?.AccountName);
+            Assert.IsNotNull(accountInformation?.BillingProfile);
         }
     }
 }

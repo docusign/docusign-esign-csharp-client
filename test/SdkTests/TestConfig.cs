@@ -32,7 +32,7 @@ namespace SdkTests
             string recipientName = null, string templateRoleName = null, string templateId = null,
             string returnUrl = null)
         {
-            String pathToSolution = @"../../../";
+            var pathToSolution = @"../../../";
             DotNetEnv.Env.Load(pathToSolution + ".env");
             string userIdFromEnv = Environment.GetEnvironmentVariable("USER_ID");
             string integratorKeyFromEnv = Environment.GetEnvironmentVariable("INTEGRATOR_KEY_JWT");

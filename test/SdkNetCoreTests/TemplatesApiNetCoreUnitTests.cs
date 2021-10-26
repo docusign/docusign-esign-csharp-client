@@ -24,7 +24,7 @@ namespace SdkNetCoreTests
         {
             EnvelopeTemplateResults envelopeTemplateResults = _templatesApi.ListTemplates(_testConfig.AccountId);
 
-            Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault()?.TemplateId);
+            Assert.IsNotNull(envelopeTemplateResults?.EnvelopeTemplates?.FirstOrDefault()?.TemplateId);
         }
 
         [TestMethod]
@@ -33,14 +33,12 @@ namespace SdkNetCoreTests
             EnvelopeTemplateResults envelopeTemplateResults = _templatesApi.ListTemplates(_testConfig.AccountId);
             string templateId = envelopeTemplateResults.EnvelopeTemplates.FirstOrDefault()?.TemplateId;
 
-            Assert.IsNotNull(envelopeTemplateResults);
-            Assert.IsNotNull(envelopeTemplateResults.EnvelopeTemplates);
+            Assert.IsNotNull(envelopeTemplateResults?.EnvelopeTemplates);
             Assert.IsNotNull(templateId);
 
             EnvelopeTemplate envelopeTemplate = _templatesApi.Get(_testConfig.AccountId, templateId);
             
-            Assert.IsNotNull(envelopeTemplate);
-            Assert.AreEqual(envelopeTemplate.TemplateId, templateId);
+            Assert.AreEqual(envelopeTemplate?.TemplateId, templateId);
         }
     }
 }

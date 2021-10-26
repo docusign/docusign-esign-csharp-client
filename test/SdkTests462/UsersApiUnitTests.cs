@@ -26,30 +26,26 @@ namespace SdkTests462
         {
             UserInformationList userInformationList = _usersApi.List(_testConfig.AccountId);
             
-            Assert.IsNotNull(userInformationList);
-            Assert.IsNotNull(userInformationList.Users);
-            Assert.IsNotNull(userInformationList.Users.FirstOrDefault()?.UserId);
+            Assert.IsNotNull(userInformationList?.Users?.FirstOrDefault()?.UserId);
         }
 
         [TestMethod]
         public void JwtPostUsers_CorrectAccountIdAndNewUsersDefinition_ReturnNewUsersSummary()
         {
-            UserInformation user = new UserInformation
+            var user = new UserInformation
             {
                 Email = "test@test.com",
                 UserName = "Test User"
             };
-            List<UserInformation> userInformation = new List<UserInformation> { user };
-            NewUsersDefinition usersDefinition = new NewUsersDefinition
+            var userInformation = new List<UserInformation> { user };
+            var usersDefinition = new NewUsersDefinition
             {
                 NewUsers = userInformation
             };
 
             NewUsersSummary userInformationList = _usersApi.Create(_testConfig.AccountId, usersDefinition);
             
-            Assert.IsNotNull(userInformationList);
-            Assert.IsNotNull(userInformationList.NewUsers);
-            Assert.IsNotNull(userInformationList.NewUsers.Exists(x => x.Email == user.Email && x.UserName == user.UserName));
+            Assert.IsNotNull(userInformationList?.NewUsers?.Exists(x => x.Email == user.Email && x.UserName == user.UserName));
         }
     }
 }

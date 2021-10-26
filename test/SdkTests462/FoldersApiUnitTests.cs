@@ -25,18 +25,18 @@ namespace SdkTests462
         {
             CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref _testConfig);
 
-            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
+            var envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
 
             Envelope envelope = envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);
-            Assert.IsNull(envelope.VoidedDateTime);
-            FoldersRequest foldersRequest = new FoldersRequest(new List<string> { _testConfig.EnvelopeId });
+            Assert.IsNull(envelope?.VoidedDateTime);
+            var foldersRequest = new FoldersRequest(new List<string> { _testConfig.EnvelopeId });
 
-            string ToFolderId = "recyclebin";
+            var ToFolderId = "recyclebin";
 
             _foldersApi.MoveEnvelopes(_testConfig.AccountId, ToFolderId, foldersRequest);
 
             envelope = envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);
-            Assert.IsNotNull(envelope.VoidedDateTime);
+            Assert.IsNotNull(envelope?.VoidedDateTime);
         }
     }
 }

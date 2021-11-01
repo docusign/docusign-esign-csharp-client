@@ -11,3 +11,13 @@
 ### Test running
 
 In your Visual Studio, click Test->Run->All Tests
+
+### Test running using command line
+
+In order to run tests you will have to install the project dependancies by running an `npm install` command.
+
+$ npm install
+
+You can now run tests by using `dotnet test` command, which will run tests from all three of the projects.
+
+$ dotnet test 

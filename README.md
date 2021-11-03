@@ -8,16 +8,20 @@
 6. Create .env.example file copy with .env name and fill it with required data from steps 3-5. 
 7. Write your generated private key to private.key file.
 
+Also, you have to make sure you have the correct version of the .NET Framework installed on your PC, as one of the projects is configured to use the 4.6.2 version specifically.
+
+You can download it from the official distributor by using a link (https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net462-developer-pack-offline-installer).
+
+After downloading process is complete, you will need to open the installer and press the "Install" button.
+
+Make sure the installation is successful before running the tests.
+
 ### Test running
 
 In your Visual Studio, click Test->Run->All Tests
 
 ### Test running using command line
 
-In order to run tests you will have to install the project dependancies by running an `npm install` command.
-
-$ npm install
-
-You can now run tests by using `dotnet test` command, which will run tests from all three of the projects.
+In order to run tests, try using `dotnet test` command, which will run tests from all three of the projects.
 
 $ dotnet test 

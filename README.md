@@ -8,6 +8,8 @@
 6. Create .env.example file copy with .env name and fill it with required data from steps 3-5. 
 7. Write your generated private key to private.key file.
 
+### Setting up .NET versions
+
 Also, you have to make sure you have the correct version of the .NET Framework installed on your PC, as one of the projects is configured to use the 4.6.2 version specifically.
 
 You can download it from the official distributor by using a link (https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net462-developer-pack-offline-installer).
@@ -22,6 +24,6 @@ In your Visual Studio, click Test->Run->All Tests
 
 ### Test running using command line
 
-In order to run tests, try using `dotnet test` command, which will run tests from all three of the projects.
+In order to run tests, open a console in test folder of the project and try using `dotnet test` command, which will run tests from all three of the projects.
 
 $ dotnet test 

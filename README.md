@@ -20,6 +20,7 @@ Make sure the installation is successful before moving on to next steps.
 
 ### Installing .NET SDK
 To make sure, that libraries, set up in project files, will be loaded correctly, please, install .NET SDK from Microsoft page using a link (https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.403-windows-x64-installer). 
+
 This link will locally install .NET SDK 5.0.403 version as the solution is using this version.
 
 After downloading process is complete, you will need to open the installer and press the "Install" button.

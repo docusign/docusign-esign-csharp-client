@@ -8,6 +8,16 @@
 6. Create .env.example file copy with .env name and fill it with required data from steps 3-5. 
 7. Write your generated private key to private.key file.
 
+### Recomended operating system
+The prefered operating system to run unit-tests is Microsoft Windows 10.
+
+### Installing .NET SDK
+To make sure, that libraries, set up in project files, will be loaded correctly, please, install .NET SDK from Microsoft page using a link (https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.403-windows-x64-installer).
+
+After downloading process is complete, you will need to open the installer and press the "Install" button.
+
+Make sure the installation is successful before moving on to next steps.
+
 ### Setting up .NET versions
 
 Also, you have to make sure you have the correct version of the .NET Framework installed on your PC, as one of the projects is configured to use the 4.6.2 version specifically.

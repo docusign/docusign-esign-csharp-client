@@ -37,6 +37,12 @@ After downloading process is complete, you will need to open the installer and p
 
 Make sure the installation is successful before running the tests.
 
+### Restore the packages
+
+In order to restore all project dependancies, open a console in test folder of the project and try using `dotnet restore` command.
+
+$ dotnet restore
+
 ### Test running
 
 In your Visual Studio, click Test->Run->All Tests

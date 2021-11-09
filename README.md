@@ -11,6 +11,13 @@
 ### Recomended operating system
 The prefered operating system to run unit-tests is Microsoft Windows 10.
 
+### Installing .NET Runtime
+To run tests for this project, please, install .NET Runtime (https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-5.0.12-windows-x64-installer).
+
+After downloading process is complete, you will need to open the installer and press the "Install" button.
+
+Make sure the installation is successful before moving on to next steps.
+
 ### Installing .NET SDK
 To make sure, that libraries, set up in project files, will be loaded correctly, please, install .NET SDK from Microsoft page using a link (https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.403-windows-x64-installer).
 

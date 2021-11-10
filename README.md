@@ -43,6 +43,27 @@ In order to restore all project dependancies, open a console in test folder of t
 
 $ dotnet restore
 
+If you are using command prompt and getting message that 'dotnet' is not recognized as an internal or external command, operable program or batch file" then first check the ```C:\Program Files\dotnet>``` path. If you found the ```C:\Program Files\dotnet>``` path then just copy it and set it as an environment variable of your PC.
+
+Steps:
+
+1. Open control panel>System and Security>System
+
+2. Click on Advanced system settings
+
+3. In advanced section, click in Environment Variables
+
+4. In System variables, select path and edit
+
+5. After semicolon, write "C:\Program Files\dotnet"
+
+6. Click on Ok button till end.
+
+7. Check whether its working on not. Just open command propmpt and type
+
+```dotnet --version```
+This will show the dotnet version installed in your PC.
+
 ### Test running
 
 In your Visual Studio, click Test->Run->All Tests

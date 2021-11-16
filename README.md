@@ -27,21 +27,36 @@ After downloading process is complete, you will need to open the installer and p
 
 Make sure the installation is successful before moving on to next steps.
 
-### Setting up .NET versions
+### Installing .NET Core SDK
+To make sure, that SdkNetCoreTest can run correctly, please, install .NET Core SDK from Microsoft page using a link (https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-2.1.202-windows-x64-installer). 
 
-Also, you have to make sure you have the correct version of the .NET Framework installed on your PC, as one of the projects is configured to use the 4.6.2 version specifically.
-
-You can download it from the official distributor by using a link (https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net462-developer-pack-offline-installer).
+This link will locally install .NET Core SDK 2.0 version.
 
 After downloading process is complete, you will need to open the installer and press the "Install" button.
+
+Make sure the installation is successful before moving on to next steps.
+
+### Setting up .NET versions
+
+Also, you have to make sure you have the correct version of the .NET Framework installed on your PC, as one of the projects is configured to use the 4.6.2 version specifically and the eSignature SDK requires a 4.8 version to run correctly.
+
+You can download them from the official distributor by using links:
+* https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net462-developer-pack-offline-installer to load .Net Framework 4.6.2
+* https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-developer-pack-offline-installer to load .Net Framework 4.8
+
+After downloading process is complete, you will need to open each installer and press the "Install" button.
 
 Make sure the installation is successful before running the tests.
 
 ### Restore the packages
 
-In order to restore all project dependancies, open a console in test folder of the project and try using `dotnet restore` command.
+To restore any packages missing from the packages folder, please open a console in test folder of the project and try using `nuget restore` command.
 
-$ dotnet restore
+``` nuget restore ```
+
+In order to restore the project dependancies, open a console in test folder of the project and try using `dotnet restore` command.
+
+``` dotnet restore ```
 
 If you are using command prompt and getting message that 'dotnet' is not recognized as an internal or external command, operable program or batch file" then first check the ```C:\Program Files\dotnet>``` path. If you found the ```C:\Program Files\dotnet>``` path then just copy it and set it as an environment variable of your PC.
 
@@ -72,4 +87,4 @@ In your Visual Studio, click Test->Run->All Tests
 
 In order to run tests, open a console in test folder of the project and try using `dotnet test` command, which will run tests from all three of the projects.
 
-$ dotnet test 
+``` dotnet test ```

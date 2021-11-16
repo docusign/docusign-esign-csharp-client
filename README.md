@@ -72,7 +72,7 @@ If you are using command prompt and getting message that 'nuget' is not recogniz
 
 7. Find 'Path' variable in system variables section and press edit button
 
-8. After semicolon, write "C:\Program Files\NuGet"
+8. In a modal window press "New" button and write "C:\Program Files\NuGet"
 
 9. Click on Ok button till end.
 
@@ -96,7 +96,7 @@ Steps:
 
 4. In System variables, select path and edit
 
-5. After semicolon, write "C:\Program Files\dotnet"
+5. In a modal window press "New" button and write "C:\Program Files\dotnet"
 
 6. Click on Ok button till end.
 

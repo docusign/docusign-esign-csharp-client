@@ -50,11 +50,33 @@ Make sure the installation is successful before running the tests.
 
 ### Restore the packages
 
+#### Step 1: Restore the packages using nuget command
+
 To restore any packages missing from the packages folder, please open a console in test folder of the project and try using `nuget restore` command.
 
 ``` nuget restore ```
 
-In order to restore the project dependancies, open a console in test folder of the project and try using `dotnet restore` command.
+If you are using command prompt and getting message that 'nuget' is not recognized as an internal or external command, operable program or batch file" then follow the steps below:
+
+1. Download NuGet.exe from https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+
+2. Open control panel>System and Security>System
+
+3. Click on Advanced system settings
+
+4. In advanced section, click in Environment Variables
+
+5. In System variables, select path and edit
+
+6. After semicolon, write "C:\Program Files\NuGet"
+
+7. Click on Ok button till end.
+
+9. Try running `nuget restore` command once again.
+
+#### Step 2: Restore the packages using dotnet command
+
+In order to restore the project dependencies, open a console in test folder of the project and try using `dotnet restore` command.
 
 ``` dotnet restore ```
 

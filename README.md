@@ -60,19 +60,23 @@ If you are using command prompt and getting message that 'nuget' is not recogniz
 
 1. Download NuGet.exe from https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
-2. Open control panel>System and Security>System
+2. Open "C:\Program Files" and create a new folder "NuGet"
 
-3. Click on Advanced system settings
+3. Place downloaded nuget.exe file in "C:\Program Files\NuGet" folder
 
-4. In advanced section, click in Environment Variables
+4. Open control panel>System and Security>System
 
-5. In System variables, select path and edit
+5. Click on Advanced system settings
 
-6. After semicolon, write "C:\Program Files\NuGet"
+6. In advanced section, click in Environment Variables
 
-7. Click on Ok button till end.
+7. Find 'Path' variable in system variables section and press edit button
 
-9. Try running `nuget restore` command once again.
+8. After semicolon, write "C:\Program Files\NuGet"
+
+9. Click on Ok button till end.
+
+10. Try running `nuget restore` command once again.
 
 #### Step 2: Restore the packages using dotnet command
 

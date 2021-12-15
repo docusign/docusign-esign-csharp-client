@@ -85,7 +85,7 @@ namespace DocuSign.eSign.Api
         
         
         /// <returns></returns>
-        void DeleteEventFailureLog (string accountId, string failureId);
+        ConnectDeleteFailureResult DeleteEventFailureLog (string accountId, string failureId);
 
         /// <summary>
         /// Deletes a Connect failure log entry.
@@ -97,8 +97,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="failureId">The ID of the failed connect log entry.</param>
         
         
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteEventFailureLogWithHttpInfo (string accountId, string failureId);
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<ConnectDeleteFailureResult> DeleteEventFailureLogWithHttpInfo (string accountId, string failureId);
         /// <summary>
         /// Deletes a specified Connect log entry.
         /// </summary>
@@ -199,6 +199,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>ApiResponse of </returns>
         ApiResponse<ConnectConfigResults> GetConfigurationWithHttpInfo (string accountId, string connectId);
+        /// <summary>
+        /// Returns all users from the configured Connect service.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        IntegratedConnectUserInfoList GetConnectAllUsers (string accountId, string connectId, ConnectApi.GetConnectAllUsersOptions options = null);
+
+        /// <summary>
+        /// Returns all users from the configured Connect service.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<IntegratedConnectUserInfoList> GetConnectAllUsersWithHttpInfo (string accountId, string connectId, ConnectApi.GetConnectAllUsersOptions options = null);
         /// <summary>
         /// Get the specified Connect log entry.
         /// </summary>
@@ -511,8 +536,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="failureId">The ID of the failed connect log entry.</param>
         
         
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteEventFailureLogAsync (string accountId, string failureId);
+        /// <returns>Task of ConnectDeleteFailureResult</returns>
+        System.Threading.Tasks.Task<ConnectDeleteFailureResult> DeleteEventFailureLogAsync (string accountId, string failureId);
 
         /// <summary>
         /// Deletes a Connect failure log entry.
@@ -524,8 +549,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="failureId">The ID of the failed connect log entry.</param>
         
         
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEventFailureLogAsyncWithHttpInfo (string accountId, string failureId);
+        /// <returns>Task of ApiResponse (ConnectDeleteFailureResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConnectDeleteFailureResult>> DeleteEventFailureLogAsyncWithHttpInfo (string accountId, string failureId);
         /// <summary>
         /// Deletes a specified Connect log entry.
         /// </summary>
@@ -626,6 +651,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (ConnectConfigResults)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConnectConfigResults>> GetConfigurationAsyncWithHttpInfo (string accountId, string connectId);
+        /// <summary>
+        /// Returns all users from the configured Connect service.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of IntegratedConnectUserInfoList</returns>
+        System.Threading.Tasks.Task<IntegratedConnectUserInfoList> GetConnectAllUsersAsync (string accountId, string connectId, ConnectApi.GetConnectAllUsersOptions options = null);
+
+        /// <summary>
+        /// Returns all users from the configured Connect service.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (IntegratedConnectUserInfoList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<IntegratedConnectUserInfoList>> GetConnectAllUsersAsyncWithHttpInfo (string accountId, string connectId, ConnectApi.GetConnectAllUsersOptions options = null);
         /// <summary>
         /// Get the specified Connect log entry.
         /// </summary>
@@ -1301,10 +1351,11 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="failureId">The ID of the failed connect log entry.</param>
         
         
-        /// <returns></returns>
-        public void DeleteEventFailureLog (string accountId, string failureId)
+        /// <returns>ConnectDeleteFailureResult</returns>
+        public ConnectDeleteFailureResult DeleteEventFailureLog (string accountId, string failureId)
         {
-             DeleteEventFailureLogWithHttpInfo(accountId, failureId);
+             ApiResponse<ConnectDeleteFailureResult> localVarResponse = DeleteEventFailureLogWithHttpInfo(accountId, failureId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1314,8 +1365,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="failureId">The ID of the failed connect log entry.</param>
         
         
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteEventFailureLogWithHttpInfo (string accountId, string failureId)
+        /// <returns>ApiResponse of ConnectDeleteFailureResult</returns>
+        public ApiResponse< ConnectDeleteFailureResult > DeleteEventFailureLogWithHttpInfo (string accountId, string failureId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1373,9 +1424,17 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<ConnectDeleteFailureResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ConnectDeleteFailureResult) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ConnectDeleteFailureResult)));
+            }
+            else
+            {
+                return new ApiResponse<ConnectDeleteFailureResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ConnectDeleteFailureResult) this.ApiClient.Deserialize(localVarResponse, typeof(ConnectDeleteFailureResult)));
+            }
+            
         }
 
         /// <summary>
@@ -1385,10 +1444,11 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="failureId">The ID of the failed connect log entry.</param>
         
         
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteEventFailureLogAsync (string accountId, string failureId)
+        /// <returns>Task of ConnectDeleteFailureResult</returns>
+        public async System.Threading.Tasks.Task<ConnectDeleteFailureResult> DeleteEventFailureLogAsync (string accountId, string failureId)
         {
-             await DeleteEventFailureLogAsyncWithHttpInfo(accountId, failureId);
+             ApiResponse<ConnectDeleteFailureResult> localVarResponse = await DeleteEventFailureLogAsyncWithHttpInfo(accountId, failureId);
+             return localVarResponse.Data;
 
         }
 
@@ -1399,8 +1459,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="failureId">The ID of the failed connect log entry.</param>
         
         
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEventFailureLogAsyncWithHttpInfo (string accountId, string failureId)
+        /// <returns>Task of ApiResponse (ConnectDeleteFailureResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ConnectDeleteFailureResult>> DeleteEventFailureLogAsyncWithHttpInfo (string accountId, string failureId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1458,10 +1518,10 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<ConnectDeleteFailureResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (ConnectDeleteFailureResult) this.ApiClient.Deserialize(localVarResponse, typeof(ConnectDeleteFailureResult)));
+            
         }
 
 
@@ -2169,6 +2229,224 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<ConnectConfigResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ConnectConfigResults) this.ApiClient.Deserialize(localVarResponse, typeof(ConnectConfigResults)));
+            
+        }
+
+
+        /// <summary>
+        /// Returns all users from the configured Connect service. 
+        /// </summary>
+        public class GetConnectAllUsersOptions
+        {
+            /// 
+            public string count {get; set;}
+            /// 
+            public string domainUsersOnly {get; set;}
+            /// 
+            public string emailSubstring {get; set;}
+            /// 
+            public string startPosition {get; set;}
+            /// 
+            public string status {get; set;}
+            /// 
+            public string userNameSubstring {get; set;}
+        }
+
+        /// <summary>
+        /// Returns all users from the configured Connect service. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>IntegratedConnectUserInfoList</returns>
+        public IntegratedConnectUserInfoList GetConnectAllUsers (string accountId, string connectId, ConnectApi.GetConnectAllUsersOptions options = null)
+        {
+             ApiResponse<IntegratedConnectUserInfoList> localVarResponse = GetConnectAllUsersWithHttpInfo(accountId, connectId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns all users from the configured Connect service. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of IntegratedConnectUserInfoList</returns>
+        public ApiResponse< IntegratedConnectUserInfoList > GetConnectAllUsersWithHttpInfo (string accountId, string connectId, ConnectApi.GetConnectAllUsersOptions options = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->GetConnectAllUsers");
+            // verify the required parameter 'connectId' is set
+            if (connectId == null)
+                throw new ApiException(400, "Missing required parameter 'connectId' when calling ConnectApi->GetConnectAllUsers");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/connect/{connectId}/all/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (connectId != null) localVarPathParams.Add("connectId", this.ApiClient.ParameterToString(connectId)); // path parameter
+
+            if (options != null)
+            {
+                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.domainUsersOnly != null) localVarQueryParams.Add("domain_users_only", this.ApiClient.ParameterToString(options.domainUsersOnly)); // query parameter
+                if (options.emailSubstring != null) localVarQueryParams.Add("email_substring", this.ApiClient.ParameterToString(options.emailSubstring)); // query parameter
+                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                if (options.status != null) localVarQueryParams.Add("status", this.ApiClient.ParameterToString(options.status)); // query parameter
+                if (options.userNameSubstring != null) localVarQueryParams.Add("user_name_substring", this.ApiClient.ParameterToString(options.userNameSubstring)); // query parameter
+            }
+
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetConnectAllUsers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<IntegratedConnectUserInfoList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (IntegratedConnectUserInfoList) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(IntegratedConnectUserInfoList)));
+            }
+            else
+            {
+                return new ApiResponse<IntegratedConnectUserInfoList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (IntegratedConnectUserInfoList) this.ApiClient.Deserialize(localVarResponse, typeof(IntegratedConnectUserInfoList)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Returns all users from the configured Connect service. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of IntegratedConnectUserInfoList</returns>
+        public async System.Threading.Tasks.Task<IntegratedConnectUserInfoList> GetConnectAllUsersAsync (string accountId, string connectId, ConnectApi.GetConnectAllUsersOptions options = null)
+        {
+             ApiResponse<IntegratedConnectUserInfoList> localVarResponse = await GetConnectAllUsersAsyncWithHttpInfo(accountId, connectId, options);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Returns all users from the configured Connect service. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
+        
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (IntegratedConnectUserInfoList)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<IntegratedConnectUserInfoList>> GetConnectAllUsersAsyncWithHttpInfo (string accountId, string connectId, ConnectApi.GetConnectAllUsersOptions options = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->GetConnectAllUsers");
+            // verify the required parameter 'connectId' is set
+            if (connectId == null)
+                throw new ApiException(400, "Missing required parameter 'connectId' when calling ConnectApi->GetConnectAllUsers");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/connect/{connectId}/all/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (connectId != null) localVarPathParams.Add("connectId", this.ApiClient.ParameterToString(connectId)); // path parameter
+
+            if (options != null)
+            {
+                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.domainUsersOnly != null) localVarQueryParams.Add("domain_users_only", this.ApiClient.ParameterToString(options.domainUsersOnly)); // query parameter
+                if (options.emailSubstring != null) localVarQueryParams.Add("email_substring", this.ApiClient.ParameterToString(options.emailSubstring)); // query parameter
+                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                if (options.status != null) localVarQueryParams.Add("status", this.ApiClient.ParameterToString(options.status)); // query parameter
+                if (options.userNameSubstring != null) localVarQueryParams.Add("user_name_substring", this.ApiClient.ParameterToString(options.userNameSubstring)); // query parameter
+            }
+
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetConnectAllUsers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<IntegratedConnectUserInfoList>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (IntegratedConnectUserInfoList) this.ApiClient.Deserialize(localVarResponse, typeof(IntegratedConnectUserInfoList)));
             
         }
 

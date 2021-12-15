@@ -43,6 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="BatchSize">BatchSize.</param>
         /// <param name="BulkErrors">BulkErrors.</param>
         /// <param name="EnvelopeIdOrTemplateId">EnvelopeIdOrTemplateId.</param>
+        /// <param name="EnvelopesInfo">EnvelopesInfo.</param>
         /// <param name="EnvelopesUri">EnvelopesUri.</param>
         /// <param name="Failed">Failed.</param>
         /// <param name="MailingListId">MailingListId.</param>
@@ -52,13 +53,14 @@ namespace DocuSign.eSign.Model
         /// <param name="SenderUserId">SenderUserId.</param>
         /// <param name="Sent">Sent.</param>
         /// <param name="SubmittedDate">SubmittedDate.</param>
-        public BulkSendBatchStatus(string BatchId = default(string), string BatchName = default(string), string BatchSize = default(string), List<BulkSendErrorStatus> BulkErrors = default(List<BulkSendErrorStatus>), string EnvelopeIdOrTemplateId = default(string), string EnvelopesUri = default(string), string Failed = default(string), string MailingListId = default(string), string MailingListName = default(string), string OwnerUserId = default(string), string Queued = default(string), string SenderUserId = default(string), string Sent = default(string), string SubmittedDate = default(string))
+        public BulkSendBatchStatus(string BatchId = default(string), string BatchName = default(string), string BatchSize = default(string), List<BulkSendErrorStatus> BulkErrors = default(List<BulkSendErrorStatus>), string EnvelopeIdOrTemplateId = default(string), BulkSendEnvelopesInfo EnvelopesInfo = default(BulkSendEnvelopesInfo), string EnvelopesUri = default(string), string Failed = default(string), string MailingListId = default(string), string MailingListName = default(string), string OwnerUserId = default(string), string Queued = default(string), string SenderUserId = default(string), string Sent = default(string), string SubmittedDate = default(string))
         {
             this.BatchId = BatchId;
             this.BatchName = BatchName;
             this.BatchSize = BatchSize;
             this.BulkErrors = BulkErrors;
             this.EnvelopeIdOrTemplateId = EnvelopeIdOrTemplateId;
+            this.EnvelopesInfo = EnvelopesInfo;
             this.EnvelopesUri = EnvelopesUri;
             this.Failed = Failed;
             this.MailingListId = MailingListId;
@@ -95,6 +97,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="envelopeIdOrTemplateId", EmitDefaultValue=false)]
         public string EnvelopeIdOrTemplateId { get; set; }
+        /// <summary>
+        /// Gets or Sets EnvelopesInfo
+        /// </summary>
+        [DataMember(Name="envelopesInfo", EmitDefaultValue=false)]
+        public BulkSendEnvelopesInfo EnvelopesInfo { get; set; }
         /// <summary>
         /// Gets or Sets EnvelopesUri
         /// </summary>
@@ -153,6 +160,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  BatchSize: ").Append(BatchSize).Append("\n");
             sb.Append("  BulkErrors: ").Append(BulkErrors).Append("\n");
             sb.Append("  EnvelopeIdOrTemplateId: ").Append(EnvelopeIdOrTemplateId).Append("\n");
+            sb.Append("  EnvelopesInfo: ").Append(EnvelopesInfo).Append("\n");
             sb.Append("  EnvelopesUri: ").Append(EnvelopesUri).Append("\n");
             sb.Append("  Failed: ").Append(Failed).Append("\n");
             sb.Append("  MailingListId: ").Append(MailingListId).Append("\n");
@@ -224,6 +232,11 @@ namespace DocuSign.eSign.Model
                     this.EnvelopeIdOrTemplateId.Equals(other.EnvelopeIdOrTemplateId)
                 ) && 
                 (
+                    this.EnvelopesInfo == other.EnvelopesInfo ||
+                    this.EnvelopesInfo != null &&
+                    this.EnvelopesInfo.Equals(other.EnvelopesInfo)
+                ) && 
+                (
                     this.EnvelopesUri == other.EnvelopesUri ||
                     this.EnvelopesUri != null &&
                     this.EnvelopesUri.Equals(other.EnvelopesUri)
@@ -291,6 +304,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.BulkErrors.GetHashCode();
                 if (this.EnvelopeIdOrTemplateId != null)
                     hash = hash * 59 + this.EnvelopeIdOrTemplateId.GetHashCode();
+                if (this.EnvelopesInfo != null)
+                    hash = hash * 59 + this.EnvelopesInfo.GetHashCode();
                 if (this.EnvelopesUri != null)
                     hash = hash * 59 + this.EnvelopesUri.GetHashCode();
                 if (this.Failed != null)

@@ -407,7 +407,6 @@ namespace DocuSign.eSign.Client
         /// </summary>
         /// <param name="content">Byte Araay (e.g. PDF bytes).</param>
         /// <param name="type">Object type.</param>
-        /// <param name="headers"></param>
         /// <returns>Object representation of the JSON string.</returns>
         public object Deserialize(byte[] content, Type type)
         {
@@ -870,8 +869,8 @@ namespace DocuSign.eSign.Client
             {
                 throw new ApiException((int)response.StatusCode,
                   "Error while requesting server, received a non successful HTTP code with response Body: " + response.Content,
-                  response.Content,
-                  response);
+                   response.Content,
+                   response);
             }
         }
 
@@ -910,9 +909,9 @@ namespace DocuSign.eSign.Client
             else
             {
                 throw new ApiException((int)response.StatusCode,
-                 "Error while requesting server, received a non successful HTTP code with response Body: " + response.Content,
-                 response.Content,
-                 response);
+                      "Error while requesting server, received a non successful HTTP code with response Body: " + response.Content,
+                       response.Content,
+                       response);
             }
         }
 
@@ -1074,20 +1073,20 @@ namespace DocuSign.eSign.Client
                 OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
                 if (!this.Configuration.DefaultHeader.ContainsKey("Authorization"))
                 {
-                    this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+                   this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
                 }
                 else
                 {
-                    this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
+                   this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
                 }
                 return tokenInfo;
             }
             else
             {
                 throw new ApiException((int)response.StatusCode,
-                 "Error while requesting server, received a non successful HTTP code with response Body: " + response.Content,
-                 response.Content,
-                 response);
+                      "Error while requesting server, received a non successful HTTP code with response Body: " + response.Content,
+                       response.Content,
+                       response);
             }
         }
 
@@ -1172,20 +1171,20 @@ namespace DocuSign.eSign.Client
                 OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(((RestResponse)response).Content);
                 if (!this.Configuration.DefaultHeader.ContainsKey("Authorization"))
                 {
-                    this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
+                   this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
                 }
                 else
                 {
-                    this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
+                   this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
                 }
                 return tokenInfo;
             }
             else
             {
                 throw new ApiException((int)response.StatusCode,
-                 "Error while requesting server, received a non successful HTTP code with response Body: " + response.Content,
-                 response.Content,
-                 response);
+                      "Error while requesting server, received a non successful HTTP code with response Body: " + response.Content,
+                       response.Content,
+                       response);
             }
         }
     }

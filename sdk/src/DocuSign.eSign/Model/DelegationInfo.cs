@@ -25,51 +25,51 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConnectUserInfo
+    /// DelegationInfo
     /// </summary>
     [DataContract]
-    public partial class ConnectUserInfo :  IEquatable<ConnectUserInfo>, IValidatableObject
+    public partial class DelegationInfo :  IEquatable<DelegationInfo>, IValidatableObject
     {
-        public ConnectUserInfo()
+        public DelegationInfo()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectUserInfo" /> class.
+        /// Initializes a new instance of the <see cref="DelegationInfo" /> class.
         /// </summary>
         /// <param name="Email">Email.</param>
-        /// <param name="IsIncluded">IsIncluded.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="UserAuthorizationId">UserAuthorizationId.</param>
         /// <param name="UserId">UserId.</param>
-        /// <param name="UserName">UserName.</param>
-        public ConnectUserInfo(string Email = default(string), string IsIncluded = default(string), string UserId = default(string), string UserName = default(string))
+        public DelegationInfo(string Email = default(string), string Name = default(string), string UserAuthorizationId = default(string), string UserId = default(string))
         {
             this.Email = Email;
-            this.IsIncluded = IsIncluded;
+            this.Name = Name;
+            this.UserAuthorizationId = UserAuthorizationId;
             this.UserId = UserId;
-            this.UserName = UserName;
         }
         
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        [DataMember(Name="email", EmitDefaultValue=false)]
+        [DataMember(Name="Email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// Gets or Sets IsIncluded
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="isIncluded", EmitDefaultValue=false)]
-        public string IsIncluded { get; set; }
+        [DataMember(Name="Name", EmitDefaultValue=false)]
+        public string Name { get; set; }
+        /// <summary>
+        /// Gets or Sets UserAuthorizationId
+        /// </summary>
+        [DataMember(Name="UserAuthorizationId", EmitDefaultValue=false)]
+        public string UserAuthorizationId { get; set; }
         /// <summary>
         /// Gets or Sets UserId
         /// </summary>
-        [DataMember(Name="userId", EmitDefaultValue=false)]
+        [DataMember(Name="UserId", EmitDefaultValue=false)]
         public string UserId { get; set; }
-        /// <summary>
-        /// Gets or Sets UserName
-        /// </summary>
-        [DataMember(Name="userName", EmitDefaultValue=false)]
-        public string UserName { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -77,11 +77,11 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ConnectUserInfo {\n");
+            sb.Append("class DelegationInfo {\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
-            sb.Append("  IsIncluded: ").Append(IsIncluded).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  UserAuthorizationId: ").Append(UserAuthorizationId).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
-            sb.Append("  UserName: ").Append(UserName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,15 +103,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ConnectUserInfo);
+            return this.Equals(obj as DelegationInfo);
         }
 
         /// <summary>
-        /// Returns true if ConnectUserInfo instances are equal
+        /// Returns true if DelegationInfo instances are equal
         /// </summary>
-        /// <param name="other">Instance of ConnectUserInfo to be compared</param>
+        /// <param name="other">Instance of DelegationInfo to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ConnectUserInfo other)
+        public bool Equals(DelegationInfo other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -124,19 +124,19 @@ namespace DocuSign.eSign.Model
                     this.Email.Equals(other.Email)
                 ) && 
                 (
-                    this.IsIncluded == other.IsIncluded ||
-                    this.IsIncluded != null &&
-                    this.IsIncluded.Equals(other.IsIncluded)
+                    this.Name == other.Name ||
+                    this.Name != null &&
+                    this.Name.Equals(other.Name)
+                ) && 
+                (
+                    this.UserAuthorizationId == other.UserAuthorizationId ||
+                    this.UserAuthorizationId != null &&
+                    this.UserAuthorizationId.Equals(other.UserAuthorizationId)
                 ) && 
                 (
                     this.UserId == other.UserId ||
                     this.UserId != null &&
                     this.UserId.Equals(other.UserId)
-                ) && 
-                (
-                    this.UserName == other.UserName ||
-                    this.UserName != null &&
-                    this.UserName.Equals(other.UserName)
                 );
         }
 
@@ -153,12 +153,12 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Email != null)
                     hash = hash * 59 + this.Email.GetHashCode();
-                if (this.IsIncluded != null)
-                    hash = hash * 59 + this.IsIncluded.GetHashCode();
+                if (this.Name != null)
+                    hash = hash * 59 + this.Name.GetHashCode();
+                if (this.UserAuthorizationId != null)
+                    hash = hash * 59 + this.UserAuthorizationId.GetHashCode();
                 if (this.UserId != null)
                     hash = hash * 59 + this.UserId.GetHashCode();
-                if (this.UserName != null)
-                    hash = hash * 59 + this.UserName.GetHashCode();
                 return hash;
             }
         }

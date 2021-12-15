@@ -48,10 +48,11 @@ namespace DocuSign.eSign.Model
         /// <param name="IsOwner">IsOwner.</param>
         /// <param name="Name">Name.</param>
         /// <param name="Organization">Organization.</param>
+        /// <param name="RoomContactType">RoomContactType.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="SigningGroup">SigningGroup.</param>
         /// <param name="SigningGroupName">The display name for the signing group.   Maximum Length: 100 characters. .</param>
-        public Contact(string CloudProvider = default(string), string CloudProviderContainerId = default(string), string ContactId = default(string), List<ContactPhoneNumber> ContactPhoneNumbers = default(List<ContactPhoneNumber>), string ContactUri = default(string), List<string> Emails = default(List<string>), ErrorDetails ErrorDetails = default(ErrorDetails), bool? IsOwner = default(bool?), string Name = default(string), string Organization = default(string), string Shared = default(string), string SigningGroup = default(string), string SigningGroupName = default(string))
+        public Contact(string CloudProvider = default(string), string CloudProviderContainerId = default(string), string ContactId = default(string), List<ContactPhoneNumber> ContactPhoneNumbers = default(List<ContactPhoneNumber>), string ContactUri = default(string), List<string> Emails = default(List<string>), ErrorDetails ErrorDetails = default(ErrorDetails), bool? IsOwner = default(bool?), string Name = default(string), string Organization = default(string), string RoomContactType = default(string), string Shared = default(string), string SigningGroup = default(string), string SigningGroupName = default(string))
         {
             this.CloudProvider = CloudProvider;
             this.CloudProviderContainerId = CloudProviderContainerId;
@@ -63,6 +64,7 @@ namespace DocuSign.eSign.Model
             this.IsOwner = IsOwner;
             this.Name = Name;
             this.Organization = Organization;
+            this.RoomContactType = RoomContactType;
             this.Shared = Shared;
             this.SigningGroup = SigningGroup;
             this.SigningGroupName = SigningGroupName;
@@ -119,6 +121,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="organization", EmitDefaultValue=false)]
         public string Organization { get; set; }
         /// <summary>
+        /// Gets or Sets RoomContactType
+        /// </summary>
+        [DataMember(Name="roomContactType", EmitDefaultValue=false)]
+        public string RoomContactType { get; set; }
+        /// <summary>
         /// When set to **true**, this custom tab is shared.
         /// </summary>
         /// <value>When set to **true**, this custom tab is shared.</value>
@@ -153,6 +160,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IsOwner: ").Append(IsOwner).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Organization: ").Append(Organization).Append("\n");
+            sb.Append("  RoomContactType: ").Append(RoomContactType).Append("\n");
             sb.Append("  Shared: ").Append(Shared).Append("\n");
             sb.Append("  SigningGroup: ").Append(SigningGroup).Append("\n");
             sb.Append("  SigningGroupName: ").Append(SigningGroupName).Append("\n");
@@ -243,6 +251,11 @@ namespace DocuSign.eSign.Model
                     this.Organization.Equals(other.Organization)
                 ) && 
                 (
+                    this.RoomContactType == other.RoomContactType ||
+                    this.RoomContactType != null &&
+                    this.RoomContactType.Equals(other.RoomContactType)
+                ) && 
+                (
                     this.Shared == other.Shared ||
                     this.Shared != null &&
                     this.Shared.Equals(other.Shared)
@@ -290,6 +303,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Organization != null)
                     hash = hash * 59 + this.Organization.GetHashCode();
+                if (this.RoomContactType != null)
+                    hash = hash * 59 + this.RoomContactType.GetHashCode();
                 if (this.Shared != null)
                     hash = hash * 59 + this.Shared.GetHashCode();
                 if (this.SigningGroup != null)

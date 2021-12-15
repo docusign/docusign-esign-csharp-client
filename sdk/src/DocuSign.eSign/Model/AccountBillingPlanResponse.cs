@@ -45,12 +45,12 @@ namespace DocuSign.eSign.Model
         /// <param name="DirectDebitProcessorInformation">DirectDebitProcessorInformation.</param>
         /// <param name="DowngradePlanInformation">DowngradePlanInformation.</param>
         /// <param name="DowngradeRequestInformation">DowngradeRequestInformation.</param>
-        /// <param name="EntityName">EntityName.</param>
+        /// <param name="EntityInformation">EntityInformation.</param>
         /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
         /// <param name="SuccessorPlans">SuccessorPlans.</param>
-        public AccountBillingPlanResponse(AccountAddress BillingAddress = default(AccountAddress), string BillingAddressIsCreditCardAddress = default(string), AccountBillingPlan BillingPlan = default(AccountBillingPlan), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), DowngradeRequestInformation DowngradeRequestInformation = default(DowngradeRequestInformation), string EntityName = default(string), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), ReferralInformation ReferralInformation = default(ReferralInformation), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>))
+        public AccountBillingPlanResponse(AccountAddress BillingAddress = default(AccountAddress), string BillingAddressIsCreditCardAddress = default(string), AccountBillingPlan BillingPlan = default(AccountBillingPlan), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), DowngradeRequestInformation DowngradeRequestInformation = default(DowngradeRequestInformation), BillingEntityInformationResponse EntityInformation = default(BillingEntityInformationResponse), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), ReferralInformation ReferralInformation = default(ReferralInformation), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>))
         {
             this.BillingAddress = BillingAddress;
             this.BillingAddressIsCreditCardAddress = BillingAddressIsCreditCardAddress;
@@ -59,7 +59,7 @@ namespace DocuSign.eSign.Model
             this.DirectDebitProcessorInformation = DirectDebitProcessorInformation;
             this.DowngradePlanInformation = DowngradePlanInformation;
             this.DowngradeRequestInformation = DowngradeRequestInformation;
-            this.EntityName = EntityName;
+            this.EntityInformation = EntityInformation;
             this.PaymentMethod = PaymentMethod;
             this.PaymentProcessorInformation = PaymentProcessorInformation;
             this.ReferralInformation = ReferralInformation;
@@ -103,10 +103,10 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="downgradeRequestInformation", EmitDefaultValue=false)]
         public DowngradeRequestInformation DowngradeRequestInformation { get; set; }
         /// <summary>
-        /// Gets or Sets EntityName
+        /// Gets or Sets EntityInformation
         /// </summary>
-        [DataMember(Name="entityName", EmitDefaultValue=false)]
-        public string EntityName { get; set; }
+        [DataMember(Name="entityInformation", EmitDefaultValue=false)]
+        public BillingEntityInformationResponse EntityInformation { get; set; }
         /// <summary>
         /// Gets or Sets PaymentMethod
         /// </summary>
@@ -142,7 +142,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DirectDebitProcessorInformation: ").Append(DirectDebitProcessorInformation).Append("\n");
             sb.Append("  DowngradePlanInformation: ").Append(DowngradePlanInformation).Append("\n");
             sb.Append("  DowngradeRequestInformation: ").Append(DowngradeRequestInformation).Append("\n");
-            sb.Append("  EntityName: ").Append(EntityName).Append("\n");
+            sb.Append("  EntityInformation: ").Append(EntityInformation).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  PaymentProcessorInformation: ").Append(PaymentProcessorInformation).Append("\n");
             sb.Append("  ReferralInformation: ").Append(ReferralInformation).Append("\n");
@@ -219,9 +219,9 @@ namespace DocuSign.eSign.Model
                     this.DowngradeRequestInformation.Equals(other.DowngradeRequestInformation)
                 ) && 
                 (
-                    this.EntityName == other.EntityName ||
-                    this.EntityName != null &&
-                    this.EntityName.Equals(other.EntityName)
+                    this.EntityInformation == other.EntityInformation ||
+                    this.EntityInformation != null &&
+                    this.EntityInformation.Equals(other.EntityInformation)
                 ) && 
                 (
                     this.PaymentMethod == other.PaymentMethod ||
@@ -270,8 +270,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DowngradePlanInformation.GetHashCode();
                 if (this.DowngradeRequestInformation != null)
                     hash = hash * 59 + this.DowngradeRequestInformation.GetHashCode();
-                if (this.EntityName != null)
-                    hash = hash * 59 + this.EntityName.GetHashCode();
+                if (this.EntityInformation != null)
+                    hash = hash * 59 + this.EntityInformation.GetHashCode();
                 if (this.PaymentMethod != null)
                     hash = hash * 59 + this.PaymentMethod.GetHashCode();
                 if (this.PaymentProcessorInformation != null)

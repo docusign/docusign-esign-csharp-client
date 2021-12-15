@@ -38,12 +38,12 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="IntegratedConnectUserInfoList" /> class.
         /// </summary>
-        /// <param name="EndPosition">EndPosition.</param>
-        /// <param name="NextUri">NextUri.</param>
-        /// <param name="PreviousUri">PreviousUri.</param>
-        /// <param name="ResultSetSize">ResultSetSize.</param>
-        /// <param name="StartPosition">StartPosition.</param>
-        /// <param name="TotalSetSize">TotalSetSize.</param>
+        /// <param name="EndPosition">The last position in the result set. .</param>
+        /// <param name="NextUri">The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. .</param>
+        /// <param name="PreviousUri">The postal code for the billing address..</param>
+        /// <param name="ResultSetSize">The number of results returned in this response. .</param>
+        /// <param name="StartPosition">Starting position of the current result set..</param>
+        /// <param name="TotalSetSize">The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response..</param>
         /// <param name="Users">Users.</param>
         public IntegratedConnectUserInfoList(string EndPosition = default(string), string NextUri = default(string), string PreviousUri = default(string), string ResultSetSize = default(string), string StartPosition = default(string), string TotalSetSize = default(string), List<ConnectUserInfo> Users = default(List<ConnectUserInfo>))
         {
@@ -57,33 +57,39 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets EndPosition
+        /// The last position in the result set. 
         /// </summary>
+        /// <value>The last position in the result set. </value>
         [DataMember(Name="endPosition", EmitDefaultValue=false)]
         public string EndPosition { get; set; }
         /// <summary>
-        /// Gets or Sets NextUri
+        /// The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
         /// </summary>
+        /// <value>The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. </value>
         [DataMember(Name="nextUri", EmitDefaultValue=false)]
         public string NextUri { get; set; }
         /// <summary>
-        /// Gets or Sets PreviousUri
+        /// The postal code for the billing address.
         /// </summary>
+        /// <value>The postal code for the billing address.</value>
         [DataMember(Name="previousUri", EmitDefaultValue=false)]
         public string PreviousUri { get; set; }
         /// <summary>
-        /// Gets or Sets ResultSetSize
+        /// The number of results returned in this response. 
         /// </summary>
+        /// <value>The number of results returned in this response. </value>
         [DataMember(Name="resultSetSize", EmitDefaultValue=false)]
         public string ResultSetSize { get; set; }
         /// <summary>
-        /// Gets or Sets StartPosition
+        /// Starting position of the current result set.
         /// </summary>
+        /// <value>Starting position of the current result set.</value>
         [DataMember(Name="startPosition", EmitDefaultValue=false)]
         public string StartPosition { get; set; }
         /// <summary>
-        /// Gets or Sets TotalSetSize
+        /// The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
         /// </summary>
+        /// <value>The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.</value>
         [DataMember(Name="totalSetSize", EmitDefaultValue=false)]
         public string TotalSetSize { get; set; }
         /// <summary>

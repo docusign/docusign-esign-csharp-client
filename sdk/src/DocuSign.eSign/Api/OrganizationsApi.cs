@@ -35,7 +35,7 @@ namespace DocuSign.eSign.Api
         
         
         /// <returns></returns>
-        void DeleteReport (string organizationId, string reportCorrelationId);
+        void GetReportV2 (string organizationId, string reportCorrelationId);
 
         /// <summary>
         /// Retrieves org level report by correlation id and site.
@@ -48,32 +48,7 @@ namespace DocuSign.eSign.Api
         
         
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteReportWithHttpInfo (string organizationId, string reportCorrelationId);
-        /// <summary>
-        /// Retrieves org level report by correlation id and site.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
-        /// <returns></returns>
-        void GetReport (string organizationId, string reportCorrelationId);
-
-        /// <summary>
-        /// Retrieves org level report by correlation id and site.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetReportWithHttpInfo (string organizationId, string reportCorrelationId);
+        ApiResponse<Object> GetReportV2WithHttpInfo (string organizationId, string reportCorrelationId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -87,7 +62,7 @@ namespace DocuSign.eSign.Api
         
         
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteReportAsync (string organizationId, string reportCorrelationId);
+        System.Threading.Tasks.Task GetReportV2Async (string organizationId, string reportCorrelationId);
 
         /// <summary>
         /// Retrieves org level report by correlation id and site.
@@ -100,32 +75,7 @@ namespace DocuSign.eSign.Api
         
         
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteReportAsyncWithHttpInfo (string organizationId, string reportCorrelationId);
-        /// <summary>
-        /// Retrieves org level report by correlation id and site.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetReportAsync (string organizationId, string reportCorrelationId);
-
-        /// <summary>
-        /// Retrieves org level report by correlation id and site.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetReportAsyncWithHttpInfo (string organizationId, string reportCorrelationId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetReportV2AsyncWithHttpInfo (string organizationId, string reportCorrelationId);
         #endregion Asynchronous Operations
     }
 
@@ -190,9 +140,9 @@ namespace DocuSign.eSign.Api
         
         
         /// <returns></returns>
-        public void DeleteReport (string organizationId, string reportCorrelationId)
+        public void GetReportV2 (string organizationId, string reportCorrelationId)
         {
-             DeleteReportWithHttpInfo(organizationId, reportCorrelationId);
+             GetReportV2WithHttpInfo(organizationId, reportCorrelationId);
         }
 
         /// <summary>
@@ -203,188 +153,16 @@ namespace DocuSign.eSign.Api
         
         
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteReportWithHttpInfo (string organizationId, string reportCorrelationId)
+        public ApiResponse<Object> GetReportV2WithHttpInfo (string organizationId, string reportCorrelationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->DeleteReport");
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetReportV2");
             // verify the required parameter 'reportCorrelationId' is set
             if (reportCorrelationId == null)
-                throw new ApiException(400, "Missing required parameter 'reportCorrelationId' when calling OrganizationsApi->DeleteReport");
+                throw new ApiException(400, "Missing required parameter 'reportCorrelationId' when calling OrganizationsApi->GetReportV2");
 
-            var localVarPath = "/v2.1/organization_reporting/{organizationId}/reports/{reportCorrelationId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-            if (reportCorrelationId != null) localVarPathParams.Add("reportCorrelationId", this.ApiClient.ParameterToString(reportCorrelationId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteReport", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// Retrieves org level report by correlation id and site. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteReportAsync (string organizationId, string reportCorrelationId)
-        {
-             await DeleteReportAsyncWithHttpInfo(organizationId, reportCorrelationId);
-
-        }
-
-        /// <summary>
-        /// Retrieves org level report by correlation id and site. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteReportAsyncWithHttpInfo (string organizationId, string reportCorrelationId)
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->DeleteReport");
-            // verify the required parameter 'reportCorrelationId' is set
-            if (reportCorrelationId == null)
-                throw new ApiException(400, "Missing required parameter 'reportCorrelationId' when calling OrganizationsApi->DeleteReport");
-
-            var localVarPath = "/v2.1/organization_reporting/{organizationId}/reports/{reportCorrelationId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-            if (reportCorrelationId != null) localVarPathParams.Add("reportCorrelationId", this.ApiClient.ParameterToString(reportCorrelationId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteReport", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
-        }
-
-
-
-        /// <summary>
-        /// Retrieves org level report by correlation id and site. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
-        /// <returns></returns>
-        public void GetReport (string organizationId, string reportCorrelationId)
-        {
-             GetReportWithHttpInfo(organizationId, reportCorrelationId);
-        }
-
-        /// <summary>
-        /// Retrieves org level report by correlation id and site. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> GetReportWithHttpInfo (string organizationId, string reportCorrelationId)
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetReport");
-            // verify the required parameter 'reportCorrelationId' is set
-            if (reportCorrelationId == null)
-                throw new ApiException(400, "Missing required parameter 'reportCorrelationId' when calling OrganizationsApi->GetReport");
-
-            var localVarPath = "/v2.1/organization_reporting/{organizationId}/reports/{reportCorrelationId}";
+            var localVarPath = "/v2.1/organization_reporting/{organizationId}/reportsv2/{reportCorrelationId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -429,7 +207,7 @@ namespace DocuSign.eSign.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetReport", localVarResponse);
+                Exception exception = ExceptionFactory("GetReportV2", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -446,9 +224,9 @@ namespace DocuSign.eSign.Api
         
         
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetReportAsync (string organizationId, string reportCorrelationId)
+        public async System.Threading.Tasks.Task GetReportV2Async (string organizationId, string reportCorrelationId)
         {
-             await GetReportAsyncWithHttpInfo(organizationId, reportCorrelationId);
+             await GetReportV2AsyncWithHttpInfo(organizationId, reportCorrelationId);
 
         }
 
@@ -460,16 +238,16 @@ namespace DocuSign.eSign.Api
         
         
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetReportAsyncWithHttpInfo (string organizationId, string reportCorrelationId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetReportV2AsyncWithHttpInfo (string organizationId, string reportCorrelationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetReport");
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetReportV2");
             // verify the required parameter 'reportCorrelationId' is set
             if (reportCorrelationId == null)
-                throw new ApiException(400, "Missing required parameter 'reportCorrelationId' when calling OrganizationsApi->GetReport");
+                throw new ApiException(400, "Missing required parameter 'reportCorrelationId' when calling OrganizationsApi->GetReportV2");
 
-            var localVarPath = "/v2.1/organization_reporting/{organizationId}/reports/{reportCorrelationId}";
+            var localVarPath = "/v2.1/organization_reporting/{organizationId}/reportsv2/{reportCorrelationId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -514,7 +292,7 @@ namespace DocuSign.eSign.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetReport", localVarResponse);
+                Exception exception = ExceptionFactory("GetReportV2", localVarResponse);
                 if (exception != null) throw exception;
             }
 

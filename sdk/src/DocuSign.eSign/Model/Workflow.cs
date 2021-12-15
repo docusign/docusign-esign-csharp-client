@@ -39,11 +39,15 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Workflow" /> class.
         /// </summary>
         /// <param name="CurrentWorkflowStepId">CurrentWorkflowStepId.</param>
+        /// <param name="ResumeDate">ResumeDate.</param>
+        /// <param name="ScheduledSending">ScheduledSending.</param>
         /// <param name="WorkflowStatus">WorkflowStatus.</param>
         /// <param name="WorkflowSteps">WorkflowSteps.</param>
-        public Workflow(string CurrentWorkflowStepId = default(string), string WorkflowStatus = default(string), List<WorkflowStep> WorkflowSteps = default(List<WorkflowStep>))
+        public Workflow(string CurrentWorkflowStepId = default(string), string ResumeDate = default(string), ScheduledSendingApiModel ScheduledSending = default(ScheduledSendingApiModel), string WorkflowStatus = default(string), List<WorkflowStep> WorkflowSteps = default(List<WorkflowStep>))
         {
             this.CurrentWorkflowStepId = CurrentWorkflowStepId;
+            this.ResumeDate = ResumeDate;
+            this.ScheduledSending = ScheduledSending;
             this.WorkflowStatus = WorkflowStatus;
             this.WorkflowSteps = WorkflowSteps;
         }
@@ -53,6 +57,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="currentWorkflowStepId", EmitDefaultValue=false)]
         public string CurrentWorkflowStepId { get; set; }
+        /// <summary>
+        /// Gets or Sets ResumeDate
+        /// </summary>
+        [DataMember(Name="resumeDate", EmitDefaultValue=false)]
+        public string ResumeDate { get; set; }
+        /// <summary>
+        /// Gets or Sets ScheduledSending
+        /// </summary>
+        [DataMember(Name="scheduledSending", EmitDefaultValue=false)]
+        public ScheduledSendingApiModel ScheduledSending { get; set; }
         /// <summary>
         /// Gets or Sets WorkflowStatus
         /// </summary>
@@ -72,6 +86,8 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class Workflow {\n");
             sb.Append("  CurrentWorkflowStepId: ").Append(CurrentWorkflowStepId).Append("\n");
+            sb.Append("  ResumeDate: ").Append(ResumeDate).Append("\n");
+            sb.Append("  ScheduledSending: ").Append(ScheduledSending).Append("\n");
             sb.Append("  WorkflowStatus: ").Append(WorkflowStatus).Append("\n");
             sb.Append("  WorkflowSteps: ").Append(WorkflowSteps).Append("\n");
             sb.Append("}\n");
@@ -116,6 +132,16 @@ namespace DocuSign.eSign.Model
                     this.CurrentWorkflowStepId.Equals(other.CurrentWorkflowStepId)
                 ) && 
                 (
+                    this.ResumeDate == other.ResumeDate ||
+                    this.ResumeDate != null &&
+                    this.ResumeDate.Equals(other.ResumeDate)
+                ) && 
+                (
+                    this.ScheduledSending == other.ScheduledSending ||
+                    this.ScheduledSending != null &&
+                    this.ScheduledSending.Equals(other.ScheduledSending)
+                ) && 
+                (
                     this.WorkflowStatus == other.WorkflowStatus ||
                     this.WorkflowStatus != null &&
                     this.WorkflowStatus.Equals(other.WorkflowStatus)
@@ -140,6 +166,10 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.CurrentWorkflowStepId != null)
                     hash = hash * 59 + this.CurrentWorkflowStepId.GetHashCode();
+                if (this.ResumeDate != null)
+                    hash = hash * 59 + this.ResumeDate.GetHashCode();
+                if (this.ScheduledSending != null)
+                    hash = hash * 59 + this.ScheduledSending.GetHashCode();
                 if (this.WorkflowStatus != null)
                     hash = hash * 59 + this.WorkflowStatus.GetHashCode();
                 if (this.WorkflowSteps != null)

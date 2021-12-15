@@ -48,6 +48,8 @@ namespace DocuSign.eSign.Model
         /// <param name="CanManageDocumentRetentionMetadata">CanManageDocumentRetentionMetadata.</param>
         /// <param name="CanManageEnvelopeTransfer">CanManageEnvelopeTransfer.</param>
         /// <param name="CanManageEnvelopeTransferMetadata">CanManageEnvelopeTransferMetadata.</param>
+        /// <param name="CanManageGroupsButNotUsers">CanManageGroupsButNotUsers.</param>
+        /// <param name="CanManageGroupsButNotUsersMetadata">CanManageGroupsButNotUsersMetadata.</param>
         /// <param name="CanManageReporting">CanManageReporting.</param>
         /// <param name="CanManageReportingMetadata">CanManageReportingMetadata.</param>
         /// <param name="CanManageSharing">CanManageSharing.</param>
@@ -57,7 +59,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CanManageUsers">CanManageUsers.</param>
         /// <param name="CanManageUsersMetadata">CanManageUsersMetadata.</param>
         /// <param name="CanViewUsers">CanViewUsers.</param>
-        public UserAccountManagementGranularInformation(string CanManageAccountSecuritySettings = default(string), SettingsMetadata CanManageAccountSecuritySettingsMetadata = default(SettingsMetadata), string CanManageAccountSettings = default(string), SettingsMetadata CanManageAccountSettingsMetadata = default(SettingsMetadata), string CanManageAdmins = default(string), SettingsMetadata CanManageAdminsMetadata = default(SettingsMetadata), string CanManageDocumentRetention = default(string), SettingsMetadata CanManageDocumentRetentionMetadata = default(SettingsMetadata), string CanManageEnvelopeTransfer = default(string), SettingsMetadata CanManageEnvelopeTransferMetadata = default(SettingsMetadata), string CanManageReporting = default(string), SettingsMetadata CanManageReportingMetadata = default(SettingsMetadata), string CanManageSharing = default(string), SettingsMetadata CanManageSharingMetadata = default(SettingsMetadata), string CanManageSigningGroups = default(string), SettingsMetadata CanManageSigningGroupsMetadata = default(SettingsMetadata), string CanManageUsers = default(string), SettingsMetadata CanManageUsersMetadata = default(SettingsMetadata), string CanViewUsers = default(string))
+        public UserAccountManagementGranularInformation(string CanManageAccountSecuritySettings = default(string), SettingsMetadata CanManageAccountSecuritySettingsMetadata = default(SettingsMetadata), string CanManageAccountSettings = default(string), SettingsMetadata CanManageAccountSettingsMetadata = default(SettingsMetadata), string CanManageAdmins = default(string), SettingsMetadata CanManageAdminsMetadata = default(SettingsMetadata), string CanManageDocumentRetention = default(string), SettingsMetadata CanManageDocumentRetentionMetadata = default(SettingsMetadata), string CanManageEnvelopeTransfer = default(string), SettingsMetadata CanManageEnvelopeTransferMetadata = default(SettingsMetadata), string CanManageGroupsButNotUsers = default(string), SettingsMetadata CanManageGroupsButNotUsersMetadata = default(SettingsMetadata), string CanManageReporting = default(string), SettingsMetadata CanManageReportingMetadata = default(SettingsMetadata), string CanManageSharing = default(string), SettingsMetadata CanManageSharingMetadata = default(SettingsMetadata), string CanManageSigningGroups = default(string), SettingsMetadata CanManageSigningGroupsMetadata = default(SettingsMetadata), string CanManageUsers = default(string), SettingsMetadata CanManageUsersMetadata = default(SettingsMetadata), string CanViewUsers = default(string))
         {
             this.CanManageAccountSecuritySettings = CanManageAccountSecuritySettings;
             this.CanManageAccountSecuritySettingsMetadata = CanManageAccountSecuritySettingsMetadata;
@@ -69,6 +71,8 @@ namespace DocuSign.eSign.Model
             this.CanManageDocumentRetentionMetadata = CanManageDocumentRetentionMetadata;
             this.CanManageEnvelopeTransfer = CanManageEnvelopeTransfer;
             this.CanManageEnvelopeTransferMetadata = CanManageEnvelopeTransferMetadata;
+            this.CanManageGroupsButNotUsers = CanManageGroupsButNotUsers;
+            this.CanManageGroupsButNotUsersMetadata = CanManageGroupsButNotUsersMetadata;
             this.CanManageReporting = CanManageReporting;
             this.CanManageReportingMetadata = CanManageReportingMetadata;
             this.CanManageSharing = CanManageSharing;
@@ -130,6 +134,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="canManageEnvelopeTransferMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageEnvelopeTransferMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets CanManageGroupsButNotUsers
+        /// </summary>
+        [DataMember(Name="canManageGroupsButNotUsers", EmitDefaultValue=false)]
+        public string CanManageGroupsButNotUsers { get; set; }
+        /// <summary>
+        /// Gets or Sets CanManageGroupsButNotUsersMetadata
+        /// </summary>
+        [DataMember(Name="canManageGroupsButNotUsersMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata CanManageGroupsButNotUsersMetadata { get; set; }
         /// <summary>
         /// Gets or Sets CanManageReporting
         /// </summary>
@@ -193,6 +207,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  CanManageDocumentRetentionMetadata: ").Append(CanManageDocumentRetentionMetadata).Append("\n");
             sb.Append("  CanManageEnvelopeTransfer: ").Append(CanManageEnvelopeTransfer).Append("\n");
             sb.Append("  CanManageEnvelopeTransferMetadata: ").Append(CanManageEnvelopeTransferMetadata).Append("\n");
+            sb.Append("  CanManageGroupsButNotUsers: ").Append(CanManageGroupsButNotUsers).Append("\n");
+            sb.Append("  CanManageGroupsButNotUsersMetadata: ").Append(CanManageGroupsButNotUsersMetadata).Append("\n");
             sb.Append("  CanManageReporting: ").Append(CanManageReporting).Append("\n");
             sb.Append("  CanManageReportingMetadata: ").Append(CanManageReportingMetadata).Append("\n");
             sb.Append("  CanManageSharing: ").Append(CanManageSharing).Append("\n");
@@ -289,6 +305,16 @@ namespace DocuSign.eSign.Model
                     this.CanManageEnvelopeTransferMetadata.Equals(other.CanManageEnvelopeTransferMetadata)
                 ) && 
                 (
+                    this.CanManageGroupsButNotUsers == other.CanManageGroupsButNotUsers ||
+                    this.CanManageGroupsButNotUsers != null &&
+                    this.CanManageGroupsButNotUsers.Equals(other.CanManageGroupsButNotUsers)
+                ) && 
+                (
+                    this.CanManageGroupsButNotUsersMetadata == other.CanManageGroupsButNotUsersMetadata ||
+                    this.CanManageGroupsButNotUsersMetadata != null &&
+                    this.CanManageGroupsButNotUsersMetadata.Equals(other.CanManageGroupsButNotUsersMetadata)
+                ) && 
+                (
                     this.CanManageReporting == other.CanManageReporting ||
                     this.CanManageReporting != null &&
                     this.CanManageReporting.Equals(other.CanManageReporting)
@@ -366,6 +392,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CanManageEnvelopeTransfer.GetHashCode();
                 if (this.CanManageEnvelopeTransferMetadata != null)
                     hash = hash * 59 + this.CanManageEnvelopeTransferMetadata.GetHashCode();
+                if (this.CanManageGroupsButNotUsers != null)
+                    hash = hash * 59 + this.CanManageGroupsButNotUsers.GetHashCode();
+                if (this.CanManageGroupsButNotUsersMetadata != null)
+                    hash = hash * 59 + this.CanManageGroupsButNotUsersMetadata.GetHashCode();
                 if (this.CanManageReporting != null)
                     hash = hash * 59 + this.CanManageReporting.GetHashCode();
                 if (this.CanManageReportingMetadata != null)

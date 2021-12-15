@@ -40,16 +40,18 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Action">Action.</param>
         /// <param name="CompletedDate">CompletedDate.</param>
+        /// <param name="DelayedRouting">DelayedRouting.</param>
         /// <param name="ItemId">ItemId.</param>
         /// <param name="RecipientRouting">RecipientRouting.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="TriggeredDate">TriggeredDate.</param>
         /// <param name="TriggerOnItem">TriggerOnItem.</param>
         /// <param name="WorkflowStepId">WorkflowStepId.</param>
-        public WorkflowStep(string Action = default(string), string CompletedDate = default(string), string ItemId = default(string), RecipientRouting RecipientRouting = default(RecipientRouting), string Status = default(string), string TriggeredDate = default(string), string TriggerOnItem = default(string), string WorkflowStepId = default(string))
+        public WorkflowStep(string Action = default(string), string CompletedDate = default(string), DelayedRoutingApiModel DelayedRouting = default(DelayedRoutingApiModel), string ItemId = default(string), RecipientRouting RecipientRouting = default(RecipientRouting), string Status = default(string), string TriggeredDate = default(string), string TriggerOnItem = default(string), string WorkflowStepId = default(string))
         {
             this.Action = Action;
             this.CompletedDate = CompletedDate;
+            this.DelayedRouting = DelayedRouting;
             this.ItemId = ItemId;
             this.RecipientRouting = RecipientRouting;
             this.Status = Status;
@@ -68,6 +70,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="completedDate", EmitDefaultValue=false)]
         public string CompletedDate { get; set; }
+        /// <summary>
+        /// Gets or Sets DelayedRouting
+        /// </summary>
+        [DataMember(Name="delayedRouting", EmitDefaultValue=false)]
+        public DelayedRoutingApiModel DelayedRouting { get; set; }
         /// <summary>
         /// Gets or Sets ItemId
         /// </summary>
@@ -109,6 +116,7 @@ namespace DocuSign.eSign.Model
             sb.Append("class WorkflowStep {\n");
             sb.Append("  Action: ").Append(Action).Append("\n");
             sb.Append("  CompletedDate: ").Append(CompletedDate).Append("\n");
+            sb.Append("  DelayedRouting: ").Append(DelayedRouting).Append("\n");
             sb.Append("  ItemId: ").Append(ItemId).Append("\n");
             sb.Append("  RecipientRouting: ").Append(RecipientRouting).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -162,6 +170,11 @@ namespace DocuSign.eSign.Model
                     this.CompletedDate.Equals(other.CompletedDate)
                 ) && 
                 (
+                    this.DelayedRouting == other.DelayedRouting ||
+                    this.DelayedRouting != null &&
+                    this.DelayedRouting.Equals(other.DelayedRouting)
+                ) && 
+                (
                     this.ItemId == other.ItemId ||
                     this.ItemId != null &&
                     this.ItemId.Equals(other.ItemId)
@@ -208,6 +221,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Action.GetHashCode();
                 if (this.CompletedDate != null)
                     hash = hash * 59 + this.CompletedDate.GetHashCode();
+                if (this.DelayedRouting != null)
+                    hash = hash * 59 + this.DelayedRouting.GetHashCode();
                 if (this.ItemId != null)
                     hash = hash * 59 + this.ItemId.GetHashCode();
                 if (this.RecipientRouting != null)

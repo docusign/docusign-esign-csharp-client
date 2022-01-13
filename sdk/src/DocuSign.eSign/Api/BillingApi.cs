@@ -1680,6 +1680,8 @@ namespace DocuSign.eSign.Api
             public string includeMetadata {get; set;}
             /// When set to **true**, excludes successor information from the response. 
             public string includeSuccessorPlans {get; set;}
+            /// 
+            public string includeTaxExemptId {get; set;}
         }
 
         /// <summary>
@@ -1742,6 +1744,7 @@ namespace DocuSign.eSign.Api
                 if (options.includeDowngradeInformation != null) localVarQueryParams.Add("include_downgrade_information", this.ApiClient.ParameterToString(options.includeDowngradeInformation)); // query parameter
                 if (options.includeMetadata != null) localVarQueryParams.Add("include_metadata", this.ApiClient.ParameterToString(options.includeMetadata)); // query parameter
                 if (options.includeSuccessorPlans != null) localVarQueryParams.Add("include_successor_plans", this.ApiClient.ParameterToString(options.includeSuccessorPlans)); // query parameter
+                if (options.includeTaxExemptId != null) localVarQueryParams.Add("include_tax_exempt_id", this.ApiClient.ParameterToString(options.includeTaxExemptId)); // query parameter
             }
 
 
@@ -1839,6 +1842,7 @@ namespace DocuSign.eSign.Api
                 if (options.includeDowngradeInformation != null) localVarQueryParams.Add("include_downgrade_information", this.ApiClient.ParameterToString(options.includeDowngradeInformation)); // query parameter
                 if (options.includeMetadata != null) localVarQueryParams.Add("include_metadata", this.ApiClient.ParameterToString(options.includeMetadata)); // query parameter
                 if (options.includeSuccessorPlans != null) localVarQueryParams.Add("include_successor_plans", this.ApiClient.ParameterToString(options.includeSuccessorPlans)); // query parameter
+                if (options.includeTaxExemptId != null) localVarQueryParams.Add("include_tax_exempt_id", this.ApiClient.ParameterToString(options.includeTaxExemptId)); // query parameter
             }
 
 

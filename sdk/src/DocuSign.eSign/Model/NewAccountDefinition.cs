@@ -52,7 +52,8 @@ namespace DocuSign.eSign.Model
         /// <param name="PlanInformation">PlanInformation.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
         /// <param name="SocialAccountInformation">SocialAccountInformation.</param>
-        public NewAccountDefinition(string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), AccountAddress AddressInformation = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DistributorCode = default(string), string DistributorPassword = default(string), string EnvelopePartitionId = default(string), UserInformation InitialUser = default(UserInformation), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), SocialAccountInformation SocialAccountInformation = default(SocialAccountInformation))
+        /// <param name="TaxExemptId">TaxExemptId.</param>
+        public NewAccountDefinition(string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), AccountAddress AddressInformation = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DistributorCode = default(string), string DistributorPassword = default(string), string EnvelopePartitionId = default(string), UserInformation InitialUser = default(UserInformation), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), SocialAccountInformation SocialAccountInformation = default(SocialAccountInformation), string TaxExemptId = default(string))
         {
             this.AccountName = AccountName;
             this.AccountSettings = AccountSettings;
@@ -68,6 +69,7 @@ namespace DocuSign.eSign.Model
             this.PlanInformation = PlanInformation;
             this.ReferralInformation = ReferralInformation;
             this.SocialAccountInformation = SocialAccountInformation;
+            this.TaxExemptId = TaxExemptId;
         }
         
         /// <summary>
@@ -144,6 +146,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="socialAccountInformation", EmitDefaultValue=false)]
         public SocialAccountInformation SocialAccountInformation { get; set; }
         /// <summary>
+        /// Gets or Sets TaxExemptId
+        /// </summary>
+        [DataMember(Name="taxExemptId", EmitDefaultValue=false)]
+        public string TaxExemptId { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -165,6 +172,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  PlanInformation: ").Append(PlanInformation).Append("\n");
             sb.Append("  ReferralInformation: ").Append(ReferralInformation).Append("\n");
             sb.Append("  SocialAccountInformation: ").Append(SocialAccountInformation).Append("\n");
+            sb.Append("  TaxExemptId: ").Append(TaxExemptId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -270,6 +278,11 @@ namespace DocuSign.eSign.Model
                     this.SocialAccountInformation == other.SocialAccountInformation ||
                     this.SocialAccountInformation != null &&
                     this.SocialAccountInformation.Equals(other.SocialAccountInformation)
+                ) && 
+                (
+                    this.TaxExemptId == other.TaxExemptId ||
+                    this.TaxExemptId != null &&
+                    this.TaxExemptId.Equals(other.TaxExemptId)
                 );
         }
 
@@ -312,6 +325,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ReferralInformation.GetHashCode();
                 if (this.SocialAccountInformation != null)
                     hash = hash * 59 + this.SocialAccountInformation.GetHashCode();
+                if (this.TaxExemptId != null)
+                    hash = hash * 59 + this.TaxExemptId.GetHashCode();
                 return hash;
             }
         }

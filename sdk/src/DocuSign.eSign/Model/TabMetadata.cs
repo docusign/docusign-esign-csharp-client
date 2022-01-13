@@ -68,7 +68,9 @@ namespace DocuSign.eSign.Model
         /// <param name="LocalePolicy">LocalePolicy.</param>
         /// <param name="Locked">When set to **true**, the signer cannot change the data of the custom tab..</param>
         /// <param name="MaximumLength">The maximum number of entry characters supported by the custom tab..</param>
+        /// <param name="MaxNumericalValue">MaxNumericalValue.</param>
         /// <param name="MergeField">MergeField.</param>
+        /// <param name="MinNumericalValue">MinNumericalValue.</param>
         /// <param name="Name">Name.</param>
         /// <param name="NumericalValue">NumericalValue.</param>
         /// <param name="PaymentItemCode">PaymentItemCode.</param>
@@ -88,7 +90,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ValidationMessage">The message displayed if the custom tab fails input validation (either custom of embedded)..</param>
         /// <param name="ValidationPattern">A regular expression used to validate input for the tab..</param>
         /// <param name="Width">Width of the tab in pixels..</param>
-        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string Collaborative = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), LocalePolicyTab LocalePolicy = default(LocalePolicyTab), string Locked = default(string), string MaximumLength = default(string), MergeField MergeField = default(MergeField), string Name = default(string), string NumericalValue = default(string), string PaymentItemCode = default(string), string PaymentItemDescription = default(string), string PaymentItemName = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string ScaleValue = default(string), string Selected = default(string), string Shared = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Width = default(string))
+        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string Collaborative = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), LocalePolicyTab LocalePolicy = default(LocalePolicyTab), string Locked = default(string), string MaximumLength = default(string), string MaxNumericalValue = default(string), MergeField MergeField = default(MergeField), string MinNumericalValue = default(string), string Name = default(string), string NumericalValue = default(string), string PaymentItemCode = default(string), string PaymentItemDescription = default(string), string PaymentItemName = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string ScaleValue = default(string), string Selected = default(string), string Shared = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Width = default(string))
         {
             this.Anchor = Anchor;
             this.AnchorCaseSensitive = AnchorCaseSensitive;
@@ -120,7 +122,9 @@ namespace DocuSign.eSign.Model
             this.LocalePolicy = LocalePolicy;
             this.Locked = Locked;
             this.MaximumLength = MaximumLength;
+            this.MaxNumericalValue = MaxNumericalValue;
             this.MergeField = MergeField;
+            this.MinNumericalValue = MinNumericalValue;
             this.Name = Name;
             this.NumericalValue = NumericalValue;
             this.PaymentItemCode = PaymentItemCode;
@@ -321,10 +325,20 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="maximumLength", EmitDefaultValue=false)]
         public string MaximumLength { get; set; }
         /// <summary>
+        /// Gets or Sets MaxNumericalValue
+        /// </summary>
+        [DataMember(Name="maxNumericalValue", EmitDefaultValue=false)]
+        public string MaxNumericalValue { get; set; }
+        /// <summary>
         /// Gets or Sets MergeField
         /// </summary>
         [DataMember(Name="mergeField", EmitDefaultValue=false)]
         public MergeField MergeField { get; set; }
+        /// <summary>
+        /// Gets or Sets MinNumericalValue
+        /// </summary>
+        [DataMember(Name="minNumericalValue", EmitDefaultValue=false)]
+        public string MinNumericalValue { get; set; }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -468,7 +482,9 @@ namespace DocuSign.eSign.Model
             sb.Append("  LocalePolicy: ").Append(LocalePolicy).Append("\n");
             sb.Append("  Locked: ").Append(Locked).Append("\n");
             sb.Append("  MaximumLength: ").Append(MaximumLength).Append("\n");
+            sb.Append("  MaxNumericalValue: ").Append(MaxNumericalValue).Append("\n");
             sb.Append("  MergeField: ").Append(MergeField).Append("\n");
+            sb.Append("  MinNumericalValue: ").Append(MinNumericalValue).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NumericalValue: ").Append(NumericalValue).Append("\n");
             sb.Append("  PaymentItemCode: ").Append(PaymentItemCode).Append("\n");
@@ -675,9 +691,19 @@ namespace DocuSign.eSign.Model
                     this.MaximumLength.Equals(other.MaximumLength)
                 ) && 
                 (
+                    this.MaxNumericalValue == other.MaxNumericalValue ||
+                    this.MaxNumericalValue != null &&
+                    this.MaxNumericalValue.Equals(other.MaxNumericalValue)
+                ) && 
+                (
                     this.MergeField == other.MergeField ||
                     this.MergeField != null &&
                     this.MergeField.Equals(other.MergeField)
+                ) && 
+                (
+                    this.MinNumericalValue == other.MinNumericalValue ||
+                    this.MinNumericalValue != null &&
+                    this.MinNumericalValue.Equals(other.MinNumericalValue)
                 ) && 
                 (
                     this.Name == other.Name ||
@@ -847,8 +873,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Locked.GetHashCode();
                 if (this.MaximumLength != null)
                     hash = hash * 59 + this.MaximumLength.GetHashCode();
+                if (this.MaxNumericalValue != null)
+                    hash = hash * 59 + this.MaxNumericalValue.GetHashCode();
                 if (this.MergeField != null)
                     hash = hash * 59 + this.MergeField.GetHashCode();
+                if (this.MinNumericalValue != null)
+                    hash = hash * 59 + this.MinNumericalValue.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.NumericalValue != null)

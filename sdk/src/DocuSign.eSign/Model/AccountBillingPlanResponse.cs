@@ -50,7 +50,8 @@ namespace DocuSign.eSign.Model
         /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
         /// <param name="SuccessorPlans">SuccessorPlans.</param>
-        public AccountBillingPlanResponse(AccountAddress BillingAddress = default(AccountAddress), string BillingAddressIsCreditCardAddress = default(string), AccountBillingPlan BillingPlan = default(AccountBillingPlan), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), DowngradeRequestInformation DowngradeRequestInformation = default(DowngradeRequestInformation), BillingEntityInformationResponse EntityInformation = default(BillingEntityInformationResponse), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), ReferralInformation ReferralInformation = default(ReferralInformation), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>))
+        /// <param name="TaxExemptId">TaxExemptId.</param>
+        public AccountBillingPlanResponse(AccountAddress BillingAddress = default(AccountAddress), string BillingAddressIsCreditCardAddress = default(string), AccountBillingPlan BillingPlan = default(AccountBillingPlan), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), DowngradeRequestInformation DowngradeRequestInformation = default(DowngradeRequestInformation), BillingEntityInformationResponse EntityInformation = default(BillingEntityInformationResponse), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), ReferralInformation ReferralInformation = default(ReferralInformation), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>), string TaxExemptId = default(string))
         {
             this.BillingAddress = BillingAddress;
             this.BillingAddressIsCreditCardAddress = BillingAddressIsCreditCardAddress;
@@ -64,6 +65,7 @@ namespace DocuSign.eSign.Model
             this.PaymentProcessorInformation = PaymentProcessorInformation;
             this.ReferralInformation = ReferralInformation;
             this.SuccessorPlans = SuccessorPlans;
+            this.TaxExemptId = TaxExemptId;
         }
         
         /// <summary>
@@ -128,6 +130,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="successorPlans", EmitDefaultValue=false)]
         public List<BillingPlan> SuccessorPlans { get; set; }
         /// <summary>
+        /// Gets or Sets TaxExemptId
+        /// </summary>
+        [DataMember(Name="taxExemptId", EmitDefaultValue=false)]
+        public string TaxExemptId { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -147,6 +154,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  PaymentProcessorInformation: ").Append(PaymentProcessorInformation).Append("\n");
             sb.Append("  ReferralInformation: ").Append(ReferralInformation).Append("\n");
             sb.Append("  SuccessorPlans: ").Append(SuccessorPlans).Append("\n");
+            sb.Append("  TaxExemptId: ").Append(TaxExemptId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -242,6 +250,11 @@ namespace DocuSign.eSign.Model
                     this.SuccessorPlans == other.SuccessorPlans ||
                     this.SuccessorPlans != null &&
                     this.SuccessorPlans.SequenceEqual(other.SuccessorPlans)
+                ) && 
+                (
+                    this.TaxExemptId == other.TaxExemptId ||
+                    this.TaxExemptId != null &&
+                    this.TaxExemptId.Equals(other.TaxExemptId)
                 );
         }
 
@@ -280,6 +293,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ReferralInformation.GetHashCode();
                 if (this.SuccessorPlans != null)
                     hash = hash * 59 + this.SuccessorPlans.GetHashCode();
+                if (this.TaxExemptId != null)
+                    hash = hash * 59 + this.TaxExemptId.GetHashCode();
                 return hash;
             }
         }

@@ -56,7 +56,8 @@ namespace DocuSign.eSign.Model
         /// <param name="SaleDiscountPercent">SaleDiscountPercent.</param>
         /// <param name="SaleDiscountPeriods">SaleDiscountPeriods.</param>
         /// <param name="SaleDiscountSeatPriceOverride">SaleDiscountSeatPriceOverride.</param>
-        public BillingPlanInformation(AppStoreReceipt AppStoreReceipt = default(AppStoreReceipt), AccountAddress BillingAddress = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DowngradeReason = default(string), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), string RenewalStatus = default(string), string SaleDiscountAmount = default(string), string SaleDiscountFixedAmount = default(string), string SaleDiscountPercent = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountSeatPriceOverride = default(string))
+        /// <param name="TaxExemptId">TaxExemptId.</param>
+        public BillingPlanInformation(AppStoreReceipt AppStoreReceipt = default(AppStoreReceipt), AccountAddress BillingAddress = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DowngradeReason = default(string), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), string RenewalStatus = default(string), string SaleDiscountAmount = default(string), string SaleDiscountFixedAmount = default(string), string SaleDiscountPercent = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountSeatPriceOverride = default(string), string TaxExemptId = default(string))
         {
             this.AppStoreReceipt = AppStoreReceipt;
             this.BillingAddress = BillingAddress;
@@ -76,6 +77,7 @@ namespace DocuSign.eSign.Model
             this.SaleDiscountPercent = SaleDiscountPercent;
             this.SaleDiscountPeriods = SaleDiscountPeriods;
             this.SaleDiscountSeatPriceOverride = SaleDiscountSeatPriceOverride;
+            this.TaxExemptId = TaxExemptId;
         }
         
         /// <summary>
@@ -171,6 +173,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="saleDiscountSeatPriceOverride", EmitDefaultValue=false)]
         public string SaleDiscountSeatPriceOverride { get; set; }
         /// <summary>
+        /// Gets or Sets TaxExemptId
+        /// </summary>
+        [DataMember(Name="taxExemptId", EmitDefaultValue=false)]
+        public string TaxExemptId { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -196,6 +203,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SaleDiscountPercent: ").Append(SaleDiscountPercent).Append("\n");
             sb.Append("  SaleDiscountPeriods: ").Append(SaleDiscountPeriods).Append("\n");
             sb.Append("  SaleDiscountSeatPriceOverride: ").Append(SaleDiscountSeatPriceOverride).Append("\n");
+            sb.Append("  TaxExemptId: ").Append(TaxExemptId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -321,6 +329,11 @@ namespace DocuSign.eSign.Model
                     this.SaleDiscountSeatPriceOverride == other.SaleDiscountSeatPriceOverride ||
                     this.SaleDiscountSeatPriceOverride != null &&
                     this.SaleDiscountSeatPriceOverride.Equals(other.SaleDiscountSeatPriceOverride)
+                ) && 
+                (
+                    this.TaxExemptId == other.TaxExemptId ||
+                    this.TaxExemptId != null &&
+                    this.TaxExemptId.Equals(other.TaxExemptId)
                 );
         }
 
@@ -371,6 +384,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SaleDiscountPeriods.GetHashCode();
                 if (this.SaleDiscountSeatPriceOverride != null)
                     hash = hash * 59 + this.SaleDiscountSeatPriceOverride.GetHashCode();
+                if (this.TaxExemptId != null)
+                    hash = hash * 59 + this.TaxExemptId.GetHashCode();
                 return hash;
             }
         }

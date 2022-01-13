@@ -40,6 +40,8 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="BatchSizeLimit">BatchSizeLimit.</param>
         /// <param name="BulkBatchSummaries">BulkBatchSummaries.</param>
+        /// <param name="BulkProcessQueueLimit">BulkProcessQueueLimit.</param>
+        /// <param name="BulkProcessTotalQueued">BulkProcessTotalQueued.</param>
         /// <param name="EndPosition">The last position in the result set. .</param>
         /// <param name="NextUri">The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. .</param>
         /// <param name="PreviousUri">The postal code for the billing address..</param>
@@ -48,10 +50,12 @@ namespace DocuSign.eSign.Model
         /// <param name="StartPosition">Starting position of the current result set..</param>
         /// <param name="TotalQueued">TotalQueued.</param>
         /// <param name="TotalSetSize">The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response..</param>
-        public BulkSendBatchSummaries(string BatchSizeLimit = default(string), List<BulkSendBatchSummary> BulkBatchSummaries = default(List<BulkSendBatchSummary>), string EndPosition = default(string), string NextUri = default(string), string PreviousUri = default(string), string QueueLimit = default(string), string ResultSetSize = default(string), string StartPosition = default(string), string TotalQueued = default(string), string TotalSetSize = default(string))
+        public BulkSendBatchSummaries(string BatchSizeLimit = default(string), List<BulkSendBatchSummary> BulkBatchSummaries = default(List<BulkSendBatchSummary>), string BulkProcessQueueLimit = default(string), string BulkProcessTotalQueued = default(string), string EndPosition = default(string), string NextUri = default(string), string PreviousUri = default(string), string QueueLimit = default(string), string ResultSetSize = default(string), string StartPosition = default(string), string TotalQueued = default(string), string TotalSetSize = default(string))
         {
             this.BatchSizeLimit = BatchSizeLimit;
             this.BulkBatchSummaries = BulkBatchSummaries;
+            this.BulkProcessQueueLimit = BulkProcessQueueLimit;
+            this.BulkProcessTotalQueued = BulkProcessTotalQueued;
             this.EndPosition = EndPosition;
             this.NextUri = NextUri;
             this.PreviousUri = PreviousUri;
@@ -72,6 +76,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="bulkBatchSummaries", EmitDefaultValue=false)]
         public List<BulkSendBatchSummary> BulkBatchSummaries { get; set; }
+        /// <summary>
+        /// Gets or Sets BulkProcessQueueLimit
+        /// </summary>
+        [DataMember(Name="bulkProcessQueueLimit", EmitDefaultValue=false)]
+        public string BulkProcessQueueLimit { get; set; }
+        /// <summary>
+        /// Gets or Sets BulkProcessTotalQueued
+        /// </summary>
+        [DataMember(Name="bulkProcessTotalQueued", EmitDefaultValue=false)]
+        public string BulkProcessTotalQueued { get; set; }
         /// <summary>
         /// The last position in the result set. 
         /// </summary>
@@ -128,6 +142,8 @@ namespace DocuSign.eSign.Model
             sb.Append("class BulkSendBatchSummaries {\n");
             sb.Append("  BatchSizeLimit: ").Append(BatchSizeLimit).Append("\n");
             sb.Append("  BulkBatchSummaries: ").Append(BulkBatchSummaries).Append("\n");
+            sb.Append("  BulkProcessQueueLimit: ").Append(BulkProcessQueueLimit).Append("\n");
+            sb.Append("  BulkProcessTotalQueued: ").Append(BulkProcessTotalQueued).Append("\n");
             sb.Append("  EndPosition: ").Append(EndPosition).Append("\n");
             sb.Append("  NextUri: ").Append(NextUri).Append("\n");
             sb.Append("  PreviousUri: ").Append(PreviousUri).Append("\n");
@@ -181,6 +197,16 @@ namespace DocuSign.eSign.Model
                     this.BulkBatchSummaries == other.BulkBatchSummaries ||
                     this.BulkBatchSummaries != null &&
                     this.BulkBatchSummaries.SequenceEqual(other.BulkBatchSummaries)
+                ) && 
+                (
+                    this.BulkProcessQueueLimit == other.BulkProcessQueueLimit ||
+                    this.BulkProcessQueueLimit != null &&
+                    this.BulkProcessQueueLimit.Equals(other.BulkProcessQueueLimit)
+                ) && 
+                (
+                    this.BulkProcessTotalQueued == other.BulkProcessTotalQueued ||
+                    this.BulkProcessTotalQueued != null &&
+                    this.BulkProcessTotalQueued.Equals(other.BulkProcessTotalQueued)
                 ) && 
                 (
                     this.EndPosition == other.EndPosition ||
@@ -239,6 +265,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.BatchSizeLimit.GetHashCode();
                 if (this.BulkBatchSummaries != null)
                     hash = hash * 59 + this.BulkBatchSummaries.GetHashCode();
+                if (this.BulkProcessQueueLimit != null)
+                    hash = hash * 59 + this.BulkProcessQueueLimit.GetHashCode();
+                if (this.BulkProcessTotalQueued != null)
+                    hash = hash * 59 + this.BulkProcessTotalQueued.GetHashCode();
                 if (this.EndPosition != null)
                     hash = hash * 59 + this.EndPosition.GetHashCode();
                 if (this.NextUri != null)

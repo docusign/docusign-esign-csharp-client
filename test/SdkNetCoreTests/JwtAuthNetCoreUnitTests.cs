@@ -657,7 +657,7 @@ namespace SdkNetCoreTests
             Assert.IsNotNull(envelopeSummary.EnvelopeId);
 
             var recipients = envelopesApi.ListRecipients(testConfig.AccountId, envelopeSummary.EnvelopeId);
-            var tabs = envelopesApi.ListTabs(testConfig.AccountId, envelopeSummary.EnvelopeId, recipients.Signers.FirstOrDefault().RecipientId);
+            var tabs = envelopesApi.ListTabs(testConfig.AccountId, envelopeSummary.EnvelopeId, recipients.Signers[1].RecipientId);
 
             Assert.IsNotNull(tabs);
             Assert.IsNotNull(tabs.ListTabs);

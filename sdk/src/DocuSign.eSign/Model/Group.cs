@@ -38,6 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Group" /> class.
         /// </summary>
+        /// <param name="DsGroupId">DsGroupId.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="GroupId">The DocuSign group ID for the group..</param>
         /// <param name="GroupName">The name of the group..</param>
@@ -45,8 +46,9 @@ namespace DocuSign.eSign.Model
         /// <param name="PermissionProfileId">The ID of the permission profile associated with the group..</param>
         /// <param name="Users">Users.</param>
         /// <param name="UsersCount">UsersCount.</param>
-        public Group(ErrorDetails ErrorDetails = default(ErrorDetails), string GroupId = default(string), string GroupName = default(string), string GroupType = default(string), string PermissionProfileId = default(string), List<UserInfo> Users = default(List<UserInfo>), string UsersCount = default(string))
+        public Group(string DsGroupId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string GroupId = default(string), string GroupName = default(string), string GroupType = default(string), string PermissionProfileId = default(string), List<UserInfo> Users = default(List<UserInfo>), string UsersCount = default(string))
         {
+            this.DsGroupId = DsGroupId;
             this.ErrorDetails = ErrorDetails;
             this.GroupId = GroupId;
             this.GroupName = GroupName;
@@ -56,6 +58,11 @@ namespace DocuSign.eSign.Model
             this.UsersCount = UsersCount;
         }
         
+        /// <summary>
+        /// Gets or Sets DsGroupId
+        /// </summary>
+        [DataMember(Name="dsGroupId", EmitDefaultValue=false)]
+        public string DsGroupId { get; set; }
         /// <summary>
         /// Gets or Sets ErrorDetails
         /// </summary>
@@ -103,6 +110,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Group {\n");
+            sb.Append("  DsGroupId: ").Append(DsGroupId).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("  GroupId: ").Append(GroupId).Append("\n");
             sb.Append("  GroupName: ").Append(GroupName).Append("\n");
@@ -146,6 +154,11 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.DsGroupId == other.DsGroupId ||
+                    this.DsGroupId != null &&
+                    this.DsGroupId.Equals(other.DsGroupId)
+                ) && 
                 (
                     this.ErrorDetails == other.ErrorDetails ||
                     this.ErrorDetails != null &&
@@ -194,6 +207,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.DsGroupId != null)
+                    hash = hash * 59 + this.DsGroupId.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
                 if (this.GroupId != null)

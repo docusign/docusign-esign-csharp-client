@@ -1,81 +1,116 @@
-# The Official DocuSign eSignature C# Client SDK
+## Tests
+### Test configuration
+1. Login with your DocuSign account on https://appdemo.docusign.com.
+2. Open Apps and Keys section in Settings and press Add App and Integration Key button.
+3. Enter App name, add secret key, generate RSA key and press Save button.
+4. Create new brand on https://admindemo.docusign.com/brands page and save its ID.
+5. Create new template on https://appdemo.docusign.com/templates page and save its ID.
+6. Create .env.example file copy with .env name and fill it with required data from steps 3-5. 
+7. Write your generated private key to private.key file.
 
-[![Nuget version][nuget-image]][nuget-url]
-[![Nuget downloads][downloads-image]][downloads-url]
-[![Build status][appveyor-image]][appveyor-url]
+### Recomended operating system
+The prefered operating system to run unit-tests is Microsoft Windows 10.
 
-## Requirements
-*   Microsoft .NET version 4.5.2+ (4.7 recommended)
-*   Free [developer account](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
+### Installing .NET Runtime
+To run tests for this project, please, install .NET Runtime (https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-5.0.12-windows-x64-installer).
 
-## Compatibility
-*   .NET Standard 2.0. See [.NET Standard Selector](https://immo.landwerth.net/netstandard-versions/) for details on versioning for the individual components in .NET Standard.
-*   .NET Core 2.0 or above.
-*   Microsoft .NET version 4.5.2+; we no longer support [version 4.5.1](https://devblogs.microsoft.com/dotnet/support-ending-for-the-net-framework-4-4-5-and-4-5-1/).
-*   TLS 1.2
+After downloading process is complete, you will need to open the installer and press the "Install" button.
 
-## Installation
-This SDK is provided as open source, which enables you to customize its functionality to suit your particular use case. To do so, download or clone the repository. If the SDK’s given functionality meets your integration needs, or if you’re working through our [code examples](https://developers.docusign.com/docs/esign-rest-api/how-to/) from the [DocuSign Developer Center](https://developers.docusign.com/), you merely need to install it by following the instructions below.
+Make sure the installation is successful before moving on to next steps.
 
-### NuGet Package Manager:
-1. Create a new C# project, or open an existing one.
-2. Select **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution.**
-3. Search for DocuSign.
-4. Select **DocuSign.eSign.dll.**
-5. Select the check box next to your project name.
-6. Click **Install.**
+### Installing .NET SDK
+To make sure, that libraries, set up in project files, will be loaded correctly, please, install .NET SDK from Microsoft page using a link (https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.403-windows-x64-installer). 
 
-### Package Manager Console:
-1. Create a new C# project, or open an existing one.
-2. Open the Package Manager Console by either method:
-    1. Select **Package Manager Console** along the bottom of Visual Studio
-    2. Select **Tools** > **NuGet Package Manager** > **Package Manager Console**
-3. In the Package Manager Console, type: **Install-Package DocuSign.eSign.dll**
+This link will locally install .NET SDK 5.0.403 version as the solution is using this version.
 
-## Dependencies
-This client has the following external dependencies:
+After downloading process is complete, you will need to open the installer and press the "Install" button.
 
-**.NET Standard v2 and .NET Core:**
-*   Microsoft.CSharp v4.5.0
-*   Microsoft.IdentityModel.Protocols v5.4.0
-*   Newtonsoft.Json 11.0.2
-*   Portable.BouncyCastle v1.8.10
-*   RestSharp v106.3.1
-*   System.ComponentModel.Annotations v4.5.0
-*   System.IdentityModel.tokens.Jwt v5.4.0
+Make sure the installation is successful before moving on to next steps.
 
-**.NET Framework, version 4.5.2:**
-*   BouncyCastle v1.8.9
-*   Microsoft.CSharp v4.5.0
-*   Microsoft.IdentityModel.Protocols v5.4.0
-*   Newtonsoft.Json 11.0.2
-*   RestSharp v106.3.1
-*   System.ComponentModel.Annotations v4.5.0
-*   System.IdentityModel.tokens.Jwt v5.4.0
+### Installing .NET Core SDK
+To make sure, that SdkNetCoreTest can run correctly, please, install .NET Core SDK from Microsoft page using a link (https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-2.1.202-windows-x64-installer). 
 
-## Code examples
-You can find on our GitHub a self-executing package of code examples for the eSignature C# SDK, called a [Launcher](https://github.com/docusign/code-examples-csharp/blob/master/README.md), that demonstrates common use cases. You can also download a version preconfigured for your DocuSign developer account from [Quickstart](https://developers.docusign.com/docs/esign-rest-api/quickstart/). These examples can use either the [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) or [JSON Web Token (JWT)](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken) authentication workflow.
+This link will locally install .NET Core SDK 2.0 version.
 
-## OAuth implementations
-For details regarding which type of OAuth grant will work best for your DocuSign integration, see [Choose OAuth Type](https://developers.docusign.com/platform/auth/choose/) in the [DocuSign Developer Center](https://developers.docusign.com/).
+After downloading process is complete, you will need to open the installer and press the "Install" button.
 
-For security purposes, DocuSign recommends using the [Authorization Code Grant](https://developers.docusign.com/platform/auth/authcode/) flow.
+Make sure the installation is successful before moving on to next steps.
 
-## Support
-Log issues against this client through GitHub. We also have an [active developer community on Stack Overflow](https://stackoverflow.com/questions/tagged/docusignapi).
+### Setting up .NET versions
 
-## License
-The DocuSign eSignature C# Client SDK is licensed under the [MIT License](https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE).
+Also, you have to make sure you have the correct version of the .NET Framework installed on your PC, as one of the projects is configured to use the 4.6.2 version specifically and the eSignature SDK requires a 4.8 version to run correctly.
 
-## Additional resources
-*   [DocuSign Developer Center](https://developers.docusign.com/)
-*   [DocuSign API on Twitter](https://twitter.com/docusignapi)
-*   [DocuSign For Developers on LinkedIn](https://www.linkedin.com/showcase/docusign-for-developers/)
-*   [DocuSign For Developers on YouTube](https://www.youtube.com/channel/UCJSJ2kMs_qeQotmw4-lX2NQ)
+You can download them from the official distributor by using links:
+* https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net462-developer-pack-offline-installer to load .Net Framework 4.6.2
+* https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-developer-pack-offline-installer to load .Net Framework 4.8
 
-[nuget-image]: https://img.shields.io/nuget/v/DocuSign.eSign.dll.svg?style=flat
-[nuget-url]: https://www.nuget.org/packages/DocuSign.eSign.dll
-[downloads-image]: https://img.shields.io/nuget/dt/DocuSign.eSign.dll.svg?style=flat
-[downloads-url]: https://www.nuget.org/packages/DocuSign.eSign.dll
-[appveyor-image]:https://ci.appveyor.com/api/projects/status/m5a02n1vp3ma6qec?svg=true
-[appveyor-url]:https://ci.appveyor.com/project/DocuSign/docusign-csharp-client
+After downloading process is complete, you will need to open each installer and press the "Install" button.
+
+Make sure the installation is successful before running the tests.
+
+### Restore the packages
+
+#### Step 1: Restore the packages using nuget command
+
+To restore any packages missing from the packages folder, please open a console in test folder of the project and try using `nuget restore` command.
+
+``` nuget restore ```
+
+If you are using command prompt and getting message that 'nuget' is not recognized as an internal or external command, operable program or batch file" then follow the steps below:
+
+1. Download NuGet.exe from https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+
+2. Open "C:\Program Files" and create a new folder "NuGet"
+
+3. Place downloaded nuget.exe file in "C:\Program Files\NuGet" folder
+
+4. Open control panel>System and Security>System
+
+5. Click on Advanced system settings
+
+6. In advanced section, click in Environment Variables
+
+7. Find 'Path' variable in system variables section and press edit button
+
+8. In a modal window press "New" button and write "C:\Program Files\NuGet"
+
+9. Click on Ok button till end.
+
+10. Try running `nuget restore` command once again.
+
+#### Step 2: Restore the packages using dotnet command
+
+In order to restore the project dependencies, open a console in test folder of the project and try using `dotnet restore` command.
+
+``` dotnet restore ```
+
+If you are using command prompt and getting message that 'dotnet' is not recognized as an internal or external command, operable program or batch file" then first check the ```C:\Program Files\dotnet>``` path. If you found the ```C:\Program Files\dotnet>``` path then just copy it and set it as an environment variable of your PC.
+
+Steps:
+
+1. Open control panel>System and Security>System
+
+2. Click on Advanced system settings
+
+3. In advanced section, click in Environment Variables
+
+4. In System variables, select path and edit
+
+5. In a modal window press "New" button and write "C:\Program Files\dotnet"
+
+6. Click on Ok button till end.
+
+7. Check whether its working on not. Just open command propmpt and type
+
+```dotnet --version```
+This will show the dotnet version installed in your PC.
+
+### Test running
+
+In your Visual Studio, click Test->Run->All Tests
+
+### Test running using command line
+
+In order to run tests, open a console in test folder of the project and try using `dotnet test` command, which will run tests from all three of the projects.
+
+``` dotnet test ```

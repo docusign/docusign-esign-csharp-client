@@ -39,13 +39,13 @@ This client has the following external dependencies:
 *   Microsoft.CSharp v4.5.0
 *   Microsoft.IdentityModel.Protocols v5.4.0
 *   Newtonsoft.Json 11.0.2
-*   Portable.BouncyCastle v1.8.2
+*   Portable.BouncyCastle v1.8.10
 *   RestSharp v106.3.1
 *   System.ComponentModel.Annotations v4.5.0
 *   System.IdentityModel.tokens.Jwt v5.4.0
 
 **.NET Framework, version 4.5.2:**
-*   BouncyCastle v1.8.1
+*   BouncyCastle v1.8.9
 *   Microsoft.CSharp v4.5.0
 *   Microsoft.IdentityModel.Protocols v5.4.0
 *   Newtonsoft.Json 11.0.2

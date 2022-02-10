@@ -46,6 +46,8 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentIdMetadata">DocumentIdMetadata.</param>
         /// <param name="GroupName">The name of the group..</param>
         /// <param name="GroupNameMetadata">GroupNameMetadata.</param>
+        /// <param name="OriginalValue">The initial value of the tab when it was sent to the recipient. .</param>
+        /// <param name="OriginalValueMetadata">OriginalValueMetadata.</param>
         /// <param name="Radios">Specifies the locations and status for radio buttons that are grouped together..</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
@@ -67,7 +69,9 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequiredMetadata">TemplateRequiredMetadata.</param>
         /// <param name="Tooltip">Tooltip.</param>
         /// <param name="TooltipMetadata">TooltipMetadata.</param>
-        public RadioGroup(string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), string GroupName = default(string), PropertyMetadata GroupNameMetadata = default(PropertyMetadata), List<Radio> Radios = default(List<Radio>), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string RequireAll = default(string), PropertyMetadata RequireAllMetadata = default(PropertyMetadata), string RequireInitialOnSharedChange = default(string), PropertyMetadata RequireInitialOnSharedChangeMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), string ShareToRecipients = default(string), PropertyMetadata ShareToRecipientsMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata TooltipMetadata = default(PropertyMetadata))
+        /// <param name="Value">Specifies the value of the tab. .</param>
+        /// <param name="ValueMetadata">ValueMetadata.</param>
+        public RadioGroup(string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), string GroupName = default(string), PropertyMetadata GroupNameMetadata = default(PropertyMetadata), string OriginalValue = default(string), PropertyMetadata OriginalValueMetadata = default(PropertyMetadata), List<Radio> Radios = default(List<Radio>), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string RequireAll = default(string), PropertyMetadata RequireAllMetadata = default(PropertyMetadata), string RequireInitialOnSharedChange = default(string), PropertyMetadata RequireInitialOnSharedChangeMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), string ShareToRecipients = default(string), PropertyMetadata ShareToRecipientsMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata TooltipMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata))
         {
             this.ConditionalParentLabel = ConditionalParentLabel;
             this.ConditionalParentLabelMetadata = ConditionalParentLabelMetadata;
@@ -77,6 +81,8 @@ namespace DocuSign.eSign.Model
             this.DocumentIdMetadata = DocumentIdMetadata;
             this.GroupName = GroupName;
             this.GroupNameMetadata = GroupNameMetadata;
+            this.OriginalValue = OriginalValue;
+            this.OriginalValueMetadata = OriginalValueMetadata;
             this.Radios = Radios;
             this.RecipientId = RecipientId;
             this.RecipientIdGuid = RecipientIdGuid;
@@ -98,6 +104,8 @@ namespace DocuSign.eSign.Model
             this.TemplateRequiredMetadata = TemplateRequiredMetadata;
             this.Tooltip = Tooltip;
             this.TooltipMetadata = TooltipMetadata;
+            this.Value = Value;
+            this.ValueMetadata = ValueMetadata;
         }
         
         /// <summary>
@@ -144,6 +152,17 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="groupNameMetadata", EmitDefaultValue=false)]
         public PropertyMetadata GroupNameMetadata { get; set; }
+        /// <summary>
+        /// The initial value of the tab when it was sent to the recipient. 
+        /// </summary>
+        /// <value>The initial value of the tab when it was sent to the recipient. </value>
+        [DataMember(Name="originalValue", EmitDefaultValue=false)]
+        public string OriginalValue { get; set; }
+        /// <summary>
+        /// Gets or Sets OriginalValueMetadata
+        /// </summary>
+        [DataMember(Name="originalValueMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata OriginalValueMetadata { get; set; }
         /// <summary>
         /// Specifies the locations and status for radio buttons that are grouped together.
         /// </summary>
@@ -257,6 +276,17 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tooltipMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TooltipMetadata { get; set; }
         /// <summary>
+        /// Specifies the value of the tab. 
+        /// </summary>
+        /// <value>Specifies the value of the tab. </value>
+        [DataMember(Name="value", EmitDefaultValue=false)]
+        public string Value { get; set; }
+        /// <summary>
+        /// Gets or Sets ValueMetadata
+        /// </summary>
+        [DataMember(Name="valueMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata ValueMetadata { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -272,6 +302,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  DocumentIdMetadata: ").Append(DocumentIdMetadata).Append("\n");
             sb.Append("  GroupName: ").Append(GroupName).Append("\n");
             sb.Append("  GroupNameMetadata: ").Append(GroupNameMetadata).Append("\n");
+            sb.Append("  OriginalValue: ").Append(OriginalValue).Append("\n");
+            sb.Append("  OriginalValueMetadata: ").Append(OriginalValueMetadata).Append("\n");
             sb.Append("  Radios: ").Append(Radios).Append("\n");
             sb.Append("  RecipientId: ").Append(RecipientId).Append("\n");
             sb.Append("  RecipientIdGuid: ").Append(RecipientIdGuid).Append("\n");
@@ -293,6 +325,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  TemplateRequiredMetadata: ").Append(TemplateRequiredMetadata).Append("\n");
             sb.Append("  Tooltip: ").Append(Tooltip).Append("\n");
             sb.Append("  TooltipMetadata: ").Append(TooltipMetadata).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  ValueMetadata: ").Append(ValueMetadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -368,6 +402,16 @@ namespace DocuSign.eSign.Model
                     this.GroupNameMetadata == other.GroupNameMetadata ||
                     this.GroupNameMetadata != null &&
                     this.GroupNameMetadata.Equals(other.GroupNameMetadata)
+                ) && 
+                (
+                    this.OriginalValue == other.OriginalValue ||
+                    this.OriginalValue != null &&
+                    this.OriginalValue.Equals(other.OriginalValue)
+                ) && 
+                (
+                    this.OriginalValueMetadata == other.OriginalValueMetadata ||
+                    this.OriginalValueMetadata != null &&
+                    this.OriginalValueMetadata.Equals(other.OriginalValueMetadata)
                 ) && 
                 (
                     this.Radios == other.Radios ||
@@ -473,6 +517,16 @@ namespace DocuSign.eSign.Model
                     this.TooltipMetadata == other.TooltipMetadata ||
                     this.TooltipMetadata != null &&
                     this.TooltipMetadata.Equals(other.TooltipMetadata)
+                ) && 
+                (
+                    this.Value == other.Value ||
+                    this.Value != null &&
+                    this.Value.Equals(other.Value)
+                ) && 
+                (
+                    this.ValueMetadata == other.ValueMetadata ||
+                    this.ValueMetadata != null &&
+                    this.ValueMetadata.Equals(other.ValueMetadata)
                 );
         }
 
@@ -503,6 +557,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.GroupName.GetHashCode();
                 if (this.GroupNameMetadata != null)
                     hash = hash * 59 + this.GroupNameMetadata.GetHashCode();
+                if (this.OriginalValue != null)
+                    hash = hash * 59 + this.OriginalValue.GetHashCode();
+                if (this.OriginalValueMetadata != null)
+                    hash = hash * 59 + this.OriginalValueMetadata.GetHashCode();
                 if (this.Radios != null)
                     hash = hash * 59 + this.Radios.GetHashCode();
                 if (this.RecipientId != null)
@@ -545,6 +603,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Tooltip.GetHashCode();
                 if (this.TooltipMetadata != null)
                     hash = hash * 59 + this.TooltipMetadata.GetHashCode();
+                if (this.Value != null)
+                    hash = hash * 59 + this.Value.GetHashCode();
+                if (this.ValueMetadata != null)
+                    hash = hash * 59 + this.ValueMetadata.GetHashCode();
                 return hash;
             }
         }

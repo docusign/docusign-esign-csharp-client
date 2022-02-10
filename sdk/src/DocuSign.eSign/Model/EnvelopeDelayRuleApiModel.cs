@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopeDelayRuleApiModel
+    /// An envelope delay rule is a rule which determines how the envelope should be delayed either for sending or routing. It can expressed as either a delay in some number of days, hours, minutes and seconds or an exact resumeDate in the future.
     /// </summary>
     [DataContract]
     public partial class EnvelopeDelayRuleApiModel :  IEquatable<EnvelopeDelayRuleApiModel>, IValidatableObject
@@ -38,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeDelayRuleApiModel" /> class.
         /// </summary>
-        /// <param name="Delay">Delay.</param>
-        /// <param name="ResumeDate">ResumeDate.</param>
+        /// <param name="Delay">A string timespan duration represented as d.hh:mm:ss where the d component is days, hh is hours measured on a 24-hour clock, mm is minutes and ss is seconds, indicating the expected delay for this envelope rule. The maximum delay is 30 days..</param>
+        /// <param name="ResumeDate">A string formatted as an ISO 8601 DATETIME with TimeZone specified, indicating the expected resumeDate for this envelope rule. The specified datetime must occur in the future relative to the current UTC time hen the request is made. The maximum resumeDate must not exceed 30 days in the future..</param>
         public EnvelopeDelayRuleApiModel(string Delay = default(string), string ResumeDate = default(string))
         {
             this.Delay = Delay;
@@ -47,13 +47,15 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets Delay
+        /// A string timespan duration represented as d.hh:mm:ss where the d component is days, hh is hours measured on a 24-hour clock, mm is minutes and ss is seconds, indicating the expected delay for this envelope rule. The maximum delay is 30 days.
         /// </summary>
+        /// <value>A string timespan duration represented as d.hh:mm:ss where the d component is days, hh is hours measured on a 24-hour clock, mm is minutes and ss is seconds, indicating the expected delay for this envelope rule. The maximum delay is 30 days.</value>
         [DataMember(Name="delay", EmitDefaultValue=false)]
         public string Delay { get; set; }
         /// <summary>
-        /// Gets or Sets ResumeDate
+        /// A string formatted as an ISO 8601 DATETIME with TimeZone specified, indicating the expected resumeDate for this envelope rule. The specified datetime must occur in the future relative to the current UTC time hen the request is made. The maximum resumeDate must not exceed 30 days in the future.
         /// </summary>
+        /// <value>A string formatted as an ISO 8601 DATETIME with TimeZone specified, indicating the expected resumeDate for this envelope rule. The specified datetime must occur in the future relative to the current UTC time hen the request is made. The maximum resumeDate must not exceed 30 days in the future.</value>
         [DataMember(Name="resumeDate", EmitDefaultValue=false)]
         public string ResumeDate { get; set; }
         /// <summary>

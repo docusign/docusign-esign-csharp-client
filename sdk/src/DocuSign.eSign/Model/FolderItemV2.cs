@@ -46,6 +46,7 @@ namespace DocuSign.eSign.Model
         /// <param name="FolderId">FolderId.</param>
         /// <param name="FolderUri">FolderUri.</param>
         /// <param name="Is21CFRPart11">When set to **true**, indicates that this module is enabled on the account..</param>
+        /// <param name="LastModifiedDateTime">The date and time the item was last modified..</param>
         /// <param name="OwnerName">OwnerName.</param>
         /// <param name="Recipients">Recipients.</param>
         /// <param name="RecipientsUri">Contains a URI for an endpoint that you can use to retrieve the recipients..</param>
@@ -58,7 +59,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Subject">Subject.</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
         /// <param name="TemplateUri">TemplateUri.</param>
-        public FolderItemV2(string CompletedDateTime = default(string), string CreatedDateTime = default(string), string EnvelopeId = default(string), string EnvelopeUri = default(string), string ExpireDateTime = default(string), string FolderId = default(string), string FolderUri = default(string), string Is21CFRPart11 = default(string), string OwnerName = default(string), Recipients Recipients = default(Recipients), string RecipientsUri = default(string), string SenderCompany = default(string), string SenderEmail = default(string), string SenderName = default(string), string SenderUserId = default(string), string SentDateTime = default(string), string Status = default(string), string Subject = default(string), string TemplateId = default(string), string TemplateUri = default(string))
+        public FolderItemV2(string CompletedDateTime = default(string), string CreatedDateTime = default(string), string EnvelopeId = default(string), string EnvelopeUri = default(string), string ExpireDateTime = default(string), string FolderId = default(string), string FolderUri = default(string), string Is21CFRPart11 = default(string), string LastModifiedDateTime = default(string), string OwnerName = default(string), Recipients Recipients = default(Recipients), string RecipientsUri = default(string), string SenderCompany = default(string), string SenderEmail = default(string), string SenderName = default(string), string SenderUserId = default(string), string SentDateTime = default(string), string Status = default(string), string Subject = default(string), string TemplateId = default(string), string TemplateUri = default(string))
         {
             this.CompletedDateTime = CompletedDateTime;
             this.CreatedDateTime = CreatedDateTime;
@@ -68,6 +69,7 @@ namespace DocuSign.eSign.Model
             this.FolderId = FolderId;
             this.FolderUri = FolderUri;
             this.Is21CFRPart11 = Is21CFRPart11;
+            this.LastModifiedDateTime = LastModifiedDateTime;
             this.OwnerName = OwnerName;
             this.Recipients = Recipients;
             this.RecipientsUri = RecipientsUri;
@@ -128,6 +130,12 @@ namespace DocuSign.eSign.Model
         /// <value>When set to **true**, indicates that this module is enabled on the account.</value>
         [DataMember(Name="is21CFRPart11", EmitDefaultValue=false)]
         public string Is21CFRPart11 { get; set; }
+        /// <summary>
+        /// The date and time the item was last modified.
+        /// </summary>
+        /// <value>The date and time the item was last modified.</value>
+        [DataMember(Name="lastModifiedDateTime", EmitDefaultValue=false)]
+        public string LastModifiedDateTime { get; set; }
         /// <summary>
         /// Gets or Sets OwnerName
         /// </summary>
@@ -208,6 +216,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  FolderId: ").Append(FolderId).Append("\n");
             sb.Append("  FolderUri: ").Append(FolderUri).Append("\n");
             sb.Append("  Is21CFRPart11: ").Append(Is21CFRPart11).Append("\n");
+            sb.Append("  LastModifiedDateTime: ").Append(LastModifiedDateTime).Append("\n");
             sb.Append("  OwnerName: ").Append(OwnerName).Append("\n");
             sb.Append("  Recipients: ").Append(Recipients).Append("\n");
             sb.Append("  RecipientsUri: ").Append(RecipientsUri).Append("\n");
@@ -295,6 +304,11 @@ namespace DocuSign.eSign.Model
                     this.Is21CFRPart11 == other.Is21CFRPart11 ||
                     this.Is21CFRPart11 != null &&
                     this.Is21CFRPart11.Equals(other.Is21CFRPart11)
+                ) && 
+                (
+                    this.LastModifiedDateTime == other.LastModifiedDateTime ||
+                    this.LastModifiedDateTime != null &&
+                    this.LastModifiedDateTime.Equals(other.LastModifiedDateTime)
                 ) && 
                 (
                     this.OwnerName == other.OwnerName ||
@@ -385,6 +399,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.FolderUri.GetHashCode();
                 if (this.Is21CFRPart11 != null)
                     hash = hash * 59 + this.Is21CFRPart11.GetHashCode();
+                if (this.LastModifiedDateTime != null)
+                    hash = hash * 59 + this.LastModifiedDateTime.GetHashCode();
                 if (this.OwnerName != null)
                     hash = hash * 59 + this.OwnerName.GetHashCode();
                 if (this.Recipients != null)

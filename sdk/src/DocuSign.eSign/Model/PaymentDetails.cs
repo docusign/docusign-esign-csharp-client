@@ -54,8 +54,9 @@ namespace DocuSign.eSign.Model
         /// <param name="PaymentSourceId">PaymentSourceId.</param>
         /// <param name="SignerValues">SignerValues.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
+        /// <param name="SubGatewayName">SubGatewayName.</param>
         /// <param name="Total">Total.</param>
-        public PaymentDetails(List<string> AllowedPaymentMethods = default(List<string>), string ChargeId = default(string), string CurrencyCode = default(string), PropertyMetadata CurrencyCodeMetadata = default(PropertyMetadata), string CustomerId = default(string), string CustomMetadata = default(string), bool? CustomMetadataRequired = default(bool?), string GatewayAccountId = default(string), PropertyMetadata GatewayAccountIdMetadata = default(PropertyMetadata), string GatewayDisplayName = default(string), string GatewayName = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string PaymentOption = default(string), string PaymentSourceId = default(string), PaymentSignerValues SignerValues = default(PaymentSignerValues), string Status = default(string), Money Total = default(Money))
+        public PaymentDetails(List<string> AllowedPaymentMethods = default(List<string>), string ChargeId = default(string), string CurrencyCode = default(string), PropertyMetadata CurrencyCodeMetadata = default(PropertyMetadata), string CustomerId = default(string), string CustomMetadata = default(string), bool? CustomMetadataRequired = default(bool?), string GatewayAccountId = default(string), PropertyMetadata GatewayAccountIdMetadata = default(PropertyMetadata), string GatewayDisplayName = default(string), string GatewayName = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string PaymentOption = default(string), string PaymentSourceId = default(string), PaymentSignerValues SignerValues = default(PaymentSignerValues), string Status = default(string), string SubGatewayName = default(string), Money Total = default(Money))
         {
             this.AllowedPaymentMethods = AllowedPaymentMethods;
             this.ChargeId = ChargeId;
@@ -73,6 +74,7 @@ namespace DocuSign.eSign.Model
             this.PaymentSourceId = PaymentSourceId;
             this.SignerValues = SignerValues;
             this.Status = Status;
+            this.SubGatewayName = SubGatewayName;
             this.Total = Total;
         }
         
@@ -158,6 +160,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
+        /// Gets or Sets SubGatewayName
+        /// </summary>
+        [DataMember(Name="subGatewayName", EmitDefaultValue=false)]
+        public string SubGatewayName { get; set; }
+        /// <summary>
         /// Gets or Sets Total
         /// </summary>
         [DataMember(Name="total", EmitDefaultValue=false)]
@@ -186,6 +193,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  PaymentSourceId: ").Append(PaymentSourceId).Append("\n");
             sb.Append("  SignerValues: ").Append(SignerValues).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  SubGatewayName: ").Append(SubGatewayName).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -304,6 +312,11 @@ namespace DocuSign.eSign.Model
                     this.Status.Equals(other.Status)
                 ) && 
                 (
+                    this.SubGatewayName == other.SubGatewayName ||
+                    this.SubGatewayName != null &&
+                    this.SubGatewayName.Equals(other.SubGatewayName)
+                ) && 
+                (
                     this.Total == other.Total ||
                     this.Total != null &&
                     this.Total.Equals(other.Total)
@@ -353,6 +366,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SignerValues.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
+                if (this.SubGatewayName != null)
+                    hash = hash * 59 + this.SubGatewayName.GetHashCode();
                 if (this.Total != null)
                     hash = hash * 59 + this.Total.GetHashCode();
                 return hash;

@@ -79,7 +79,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AllowConsumerDisclosureOverrideMetadata">AllowConsumerDisclosureOverrideMetadata.</param>
         /// <param name="AllowDataDownload">AllowDataDownload.</param>
         /// <param name="AllowDataDownloadMetadata">AllowDataDownloadMetadata.</param>
-        /// <param name="AllowDelayedRouting">AllowDelayedRouting.</param>
+        /// <param name="AllowDelayedRouting">\&quot;true\&quot; if the account has permission to use the delayed routing feature to insert delays before routing an envelope to a recipient, \&quot;false\&quot; otherwise..</param>
         /// <param name="AllowDelayedRoutingMetadata">AllowDelayedRoutingMetadata.</param>
         /// <param name="AllowDelegatedSigning">AllowDelegatedSigning.</param>
         /// <param name="AllowDelegatedSigningMetadata">AllowDelegatedSigningMetadata.</param>
@@ -173,7 +173,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AllowResourceFileBrandingMetadata">AllowResourceFileBrandingMetadata.</param>
         /// <param name="AllowSafeBioPharmaSignerCertificate">AllowSafeBioPharmaSignerCertificate.</param>
         /// <param name="AllowSafeBioPharmaSignerCertificateMetadata">AllowSafeBioPharmaSignerCertificateMetadata.</param>
-        /// <param name="AllowScheduledSending">AllowScheduledSending.</param>
+        /// <param name="AllowScheduledSending">\&quot;true\&quot; if the account has permission to use the scheduled sending feature to send envelopes at a specified datetime in the future, \&quot;false\&quot; otherwise..</param>
         /// <param name="AllowScheduledSendingMetadata">AllowScheduledSendingMetadata.</param>
         /// <param name="AllowSecurityAppliance">AllowSecurityAppliance.</param>
         /// <param name="AllowSecurityApplianceMetadata">AllowSecurityApplianceMetadata.</param>
@@ -1424,8 +1424,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowDataDownloadMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowDataDownloadMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets AllowDelayedRouting
+        /// \&quot;true\&quot; if the account has permission to use the delayed routing feature to insert delays before routing an envelope to a recipient, \&quot;false\&quot; otherwise.
         /// </summary>
+        /// <value>\&quot;true\&quot; if the account has permission to use the delayed routing feature to insert delays before routing an envelope to a recipient, \&quot;false\&quot; otherwise.</value>
         [DataMember(Name="allowDelayedRouting", EmitDefaultValue=false)]
         public string AllowDelayedRouting { get; set; }
         /// <summary>
@@ -1895,8 +1896,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowSafeBioPharmaSignerCertificateMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowSafeBioPharmaSignerCertificateMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets AllowScheduledSending
+        /// \&quot;true\&quot; if the account has permission to use the scheduled sending feature to send envelopes at a specified datetime in the future, \&quot;false\&quot; otherwise.
         /// </summary>
+        /// <value>\&quot;true\&quot; if the account has permission to use the scheduled sending feature to send envelopes at a specified datetime in the future, \&quot;false\&quot; otherwise.</value>
         [DataMember(Name="allowScheduledSending", EmitDefaultValue=false)]
         public string AllowScheduledSending { get; set; }
         /// <summary>

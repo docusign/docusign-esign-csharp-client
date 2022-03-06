@@ -32,16 +32,16 @@ namespace DocuSign.eSign.Client
         /// <value>The error content (Http response body).</value>
         public dynamic ErrorContent { get; private set; }
 
-        /// <summary>	
-        /// Gets or sets the error message	
-        /// </summary>	
-        /// <value>The error message.</value>	
+        /// <summary>
+        /// Gets or sets the error message
+        /// </summary>
+        /// <value>The error message.</value>
         public string ErrorMessage { get; set; }
 
-        /// <summary>	
-        /// Gets or sets the HTTP headers	
-        /// </summary>	
-        /// <value>HTTP headers</value>	
+        /// <summary>
+        /// Gets or sets the HTTP headers
+        /// </summary>
+        /// <value>HTTP headers</value>
         public IDictionary<string, string> Headers { get; private set; }
 
         /// <summary>

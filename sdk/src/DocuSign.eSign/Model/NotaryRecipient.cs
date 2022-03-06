@@ -56,6 +56,8 @@ namespace DocuSign.eSign.Model
         /// <param name="DeclinedDateTime">The date and time the recipient declined the document..</param>
         /// <param name="DeclinedReason">The reason the recipient declined the document..</param>
         /// <param name="DefaultRecipient">DefaultRecipient.</param>
+        /// <param name="DelegatedBy">DelegatedBy.</param>
+        /// <param name="DelegatedTo">DelegatedTo.</param>
         /// <param name="DeliveredDateTime">Reserved: For DocuSign use only..</param>
         /// <param name="DeliveryMethod">Reserved: For DocuSign use only..</param>
         /// <param name="DeliveryMethodMetadata">DeliveryMethodMetadata.</param>
@@ -65,6 +67,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Email">Email.</param>
         /// <param name="EmailMetadata">EmailMetadata.</param>
         /// <param name="EmailNotification">EmailNotification.</param>
+        /// <param name="EmailRecipientPostSigningURL">EmailRecipientPostSigningURL.</param>
         /// <param name="EmbeddedRecipientStartURL">Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender&#39;s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to &#x60;SIGN_AT_DOCUSIGN&#x60;, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient&#39;s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets &#x60;EmbeddedRecipientStartURL&#x3D;SIGN_AT_DOCUSIGN&#x60;, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the &#x60;clientUserId&#x60; property is NOT set, and the &#x60;embeddedRecipientStartURL&#x60; is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The &#x60;customFields&#x60; property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   &#x60;http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&amp;[[mergeField3]]&#x60; .</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="ExcludedDocuments">Specifies the documents that are not visible to this recipient. Document Visibility must be enabled for the account and the &#x60;enforceSignerVisibility&#x60; property must be set to **true** for the envelope to use this.  When enforce signer visibility is enabled, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent..</param>
@@ -89,6 +92,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Name">Name.</param>
         /// <param name="NameMetadata">NameMetadata.</param>
         /// <param name="NotaryId">NotaryId.</param>
+        /// <param name="NotarySignerEmailSent">NotarySignerEmailSent.</param>
         /// <param name="NotarySigners">NotarySigners.</param>
         /// <param name="NotaryType">NotaryType.</param>
         /// <param name="Note">Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters..</param>
@@ -133,7 +137,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TotalTabCount">TotalTabCount.</param>
         /// <param name="UserId">UserId.</param>
-        public NotaryRecipient(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), List<RecipientAdditionalNotification> AdditionalNotifications = default(List<RecipientAdditionalNotification>), string AgentCanEditEmail = default(string), string AgentCanEditName = default(string), string AllowSystemOverrideForLockedRecipient = default(string), string AutoNavigation = default(string), string AutoRespondedReason = default(string), string BulkRecipientsUri = default(string), string CanSignOffline = default(string), string ClientUserId = default(string), string CompletedCount = default(string), string CreationReason = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DefaultRecipient = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), string DesignatorId = default(string), string DesignatorIdGuid = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), PropertyMetadata EmailMetadata = default(PropertyMetadata), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<string> ExcludedDocuments = default(List<string>), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string FirstName = default(string), PropertyMetadata FirstNameMetadata = default(PropertyMetadata), string FullName = default(string), PropertyMetadata FullNameMetadata = default(PropertyMetadata), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string InheritEmailNotificationConfiguration = default(string), string IsBulkRecipient = default(string), PropertyMetadata IsBulkRecipientMetadata = default(PropertyMetadata), string LastName = default(string), PropertyMetadata LastNameMetadata = default(PropertyMetadata), string LiveOakStartURL = default(string), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string NotaryId = default(string), List<string> NotarySigners = default(List<string>), string NotaryType = default(string), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), OfflineAttributes OfflineAttributes = default(OfflineAttributes), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), RecipientPhoneNumber PhoneNumber = default(RecipientPhoneNumber), RecipientProofFile ProofFile = default(RecipientProofFile), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RecipientSuppliesTabs = default(string), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RequireSignerCertificate = default(string), string RequireSignOnPaper = default(string), string RequireUploadSignature = default(string), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), RecipientSignatureInformation SignatureInfo = default(RecipientSignatureInformation), string SignedDateTime = default(string), string SignInEachLocation = default(string), PropertyMetadata SignInEachLocationMetadata = default(PropertyMetadata), string SigningGroupId = default(string), PropertyMetadata SigningGroupIdMetadata = default(PropertyMetadata), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), string SuppressEmails = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
+        public NotaryRecipient(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), List<RecipientAdditionalNotification> AdditionalNotifications = default(List<RecipientAdditionalNotification>), string AgentCanEditEmail = default(string), string AgentCanEditName = default(string), string AllowSystemOverrideForLockedRecipient = default(string), string AutoNavigation = default(string), string AutoRespondedReason = default(string), string BulkRecipientsUri = default(string), string CanSignOffline = default(string), string ClientUserId = default(string), string CompletedCount = default(string), string CreationReason = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DefaultRecipient = default(string), DelegationInfo DelegatedBy = default(DelegationInfo), List<DelegationInfo> DelegatedTo = default(List<DelegationInfo>), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), string DesignatorId = default(string), string DesignatorIdGuid = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), PropertyMetadata EmailMetadata = default(PropertyMetadata), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmailRecipientPostSigningURL = default(string), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), List<string> ExcludedDocuments = default(List<string>), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string FirstName = default(string), PropertyMetadata FirstNameMetadata = default(PropertyMetadata), string FullName = default(string), PropertyMetadata FullNameMetadata = default(PropertyMetadata), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string InheritEmailNotificationConfiguration = default(string), string IsBulkRecipient = default(string), PropertyMetadata IsBulkRecipientMetadata = default(PropertyMetadata), string LastName = default(string), PropertyMetadata LastNameMetadata = default(PropertyMetadata), string LiveOakStartURL = default(string), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string NotaryId = default(string), string NotarySignerEmailSent = default(string), List<string> NotarySigners = default(List<string>), string NotaryType = default(string), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), OfflineAttributes OfflineAttributes = default(OfflineAttributes), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), RecipientPhoneNumber PhoneNumber = default(RecipientPhoneNumber), RecipientProofFile ProofFile = default(RecipientProofFile), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RecipientSuppliesTabs = default(string), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RequireSignerCertificate = default(string), string RequireSignOnPaper = default(string), string RequireUploadSignature = default(string), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), RecipientSignatureInformation SignatureInfo = default(RecipientSignatureInformation), string SignedDateTime = default(string), string SignInEachLocation = default(string), PropertyMetadata SignInEachLocationMetadata = default(PropertyMetadata), string SigningGroupId = default(string), PropertyMetadata SigningGroupIdMetadata = default(PropertyMetadata), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), string SuppressEmails = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
         {
             this.AccessCode = AccessCode;
             this.AccessCodeMetadata = AccessCodeMetadata;
@@ -153,6 +157,8 @@ namespace DocuSign.eSign.Model
             this.DeclinedDateTime = DeclinedDateTime;
             this.DeclinedReason = DeclinedReason;
             this.DefaultRecipient = DefaultRecipient;
+            this.DelegatedBy = DelegatedBy;
+            this.DelegatedTo = DelegatedTo;
             this.DeliveredDateTime = DeliveredDateTime;
             this.DeliveryMethod = DeliveryMethod;
             this.DeliveryMethodMetadata = DeliveryMethodMetadata;
@@ -162,6 +168,7 @@ namespace DocuSign.eSign.Model
             this.Email = Email;
             this.EmailMetadata = EmailMetadata;
             this.EmailNotification = EmailNotification;
+            this.EmailRecipientPostSigningURL = EmailRecipientPostSigningURL;
             this.EmbeddedRecipientStartURL = EmbeddedRecipientStartURL;
             this.ErrorDetails = ErrorDetails;
             this.ExcludedDocuments = ExcludedDocuments;
@@ -186,6 +193,7 @@ namespace DocuSign.eSign.Model
             this.Name = Name;
             this.NameMetadata = NameMetadata;
             this.NotaryId = NotaryId;
+            this.NotarySignerEmailSent = NotarySignerEmailSent;
             this.NotarySigners = NotarySigners;
             this.NotaryType = NotaryType;
             this.Note = Note;
@@ -331,6 +339,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="defaultRecipient", EmitDefaultValue=false)]
         public string DefaultRecipient { get; set; }
         /// <summary>
+        /// Gets or Sets DelegatedBy
+        /// </summary>
+        [DataMember(Name="delegatedBy", EmitDefaultValue=false)]
+        public DelegationInfo DelegatedBy { get; set; }
+        /// <summary>
+        /// Gets or Sets DelegatedTo
+        /// </summary>
+        [DataMember(Name="delegatedTo", EmitDefaultValue=false)]
+        public List<DelegationInfo> DelegatedTo { get; set; }
+        /// <summary>
         /// Reserved: For DocuSign use only.
         /// </summary>
         /// <value>Reserved: For DocuSign use only.</value>
@@ -377,6 +395,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="emailNotification", EmitDefaultValue=false)]
         public RecipientEmailNotification EmailNotification { get; set; }
+        /// <summary>
+        /// Gets or Sets EmailRecipientPostSigningURL
+        /// </summary>
+        [DataMember(Name="emailRecipientPostSigningURL", EmitDefaultValue=false)]
+        public string EmailRecipientPostSigningURL { get; set; }
         /// <summary>
         /// Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender&#39;s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to &#x60;SIGN_AT_DOCUSIGN&#x60;, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient&#39;s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets &#x60;EmbeddedRecipientStartURL&#x3D;SIGN_AT_DOCUSIGN&#x60;, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the &#x60;clientUserId&#x60; property is NOT set, and the &#x60;embeddedRecipientStartURL&#x60; is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The &#x60;customFields&#x60; property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   &#x60;http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&amp;[[mergeField3]]&#x60; 
         /// </summary>
@@ -503,6 +526,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="notaryId", EmitDefaultValue=false)]
         public string NotaryId { get; set; }
+        /// <summary>
+        /// Gets or Sets NotarySignerEmailSent
+        /// </summary>
+        [DataMember(Name="notarySignerEmailSent", EmitDefaultValue=false)]
+        public string NotarySignerEmailSent { get; set; }
         /// <summary>
         /// Gets or Sets NotarySigners
         /// </summary>
@@ -765,6 +793,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  DeclinedDateTime: ").Append(DeclinedDateTime).Append("\n");
             sb.Append("  DeclinedReason: ").Append(DeclinedReason).Append("\n");
             sb.Append("  DefaultRecipient: ").Append(DefaultRecipient).Append("\n");
+            sb.Append("  DelegatedBy: ").Append(DelegatedBy).Append("\n");
+            sb.Append("  DelegatedTo: ").Append(DelegatedTo).Append("\n");
             sb.Append("  DeliveredDateTime: ").Append(DeliveredDateTime).Append("\n");
             sb.Append("  DeliveryMethod: ").Append(DeliveryMethod).Append("\n");
             sb.Append("  DeliveryMethodMetadata: ").Append(DeliveryMethodMetadata).Append("\n");
@@ -774,6 +804,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  EmailMetadata: ").Append(EmailMetadata).Append("\n");
             sb.Append("  EmailNotification: ").Append(EmailNotification).Append("\n");
+            sb.Append("  EmailRecipientPostSigningURL: ").Append(EmailRecipientPostSigningURL).Append("\n");
             sb.Append("  EmbeddedRecipientStartURL: ").Append(EmbeddedRecipientStartURL).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("  ExcludedDocuments: ").Append(ExcludedDocuments).Append("\n");
@@ -798,6 +829,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NameMetadata: ").Append(NameMetadata).Append("\n");
             sb.Append("  NotaryId: ").Append(NotaryId).Append("\n");
+            sb.Append("  NotarySignerEmailSent: ").Append(NotarySignerEmailSent).Append("\n");
             sb.Append("  NotarySigners: ").Append(NotarySigners).Append("\n");
             sb.Append("  NotaryType: ").Append(NotaryType).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
@@ -969,6 +1001,16 @@ namespace DocuSign.eSign.Model
                     this.DefaultRecipient.Equals(other.DefaultRecipient)
                 ) && 
                 (
+                    this.DelegatedBy == other.DelegatedBy ||
+                    this.DelegatedBy != null &&
+                    this.DelegatedBy.Equals(other.DelegatedBy)
+                ) && 
+                (
+                    this.DelegatedTo == other.DelegatedTo ||
+                    this.DelegatedTo != null &&
+                    this.DelegatedTo.SequenceEqual(other.DelegatedTo)
+                ) && 
+                (
                     this.DeliveredDateTime == other.DeliveredDateTime ||
                     this.DeliveredDateTime != null &&
                     this.DeliveredDateTime.Equals(other.DeliveredDateTime)
@@ -1012,6 +1054,11 @@ namespace DocuSign.eSign.Model
                     this.EmailNotification == other.EmailNotification ||
                     this.EmailNotification != null &&
                     this.EmailNotification.Equals(other.EmailNotification)
+                ) && 
+                (
+                    this.EmailRecipientPostSigningURL == other.EmailRecipientPostSigningURL ||
+                    this.EmailRecipientPostSigningURL != null &&
+                    this.EmailRecipientPostSigningURL.Equals(other.EmailRecipientPostSigningURL)
                 ) && 
                 (
                     this.EmbeddedRecipientStartURL == other.EmbeddedRecipientStartURL ||
@@ -1132,6 +1179,11 @@ namespace DocuSign.eSign.Model
                     this.NotaryId == other.NotaryId ||
                     this.NotaryId != null &&
                     this.NotaryId.Equals(other.NotaryId)
+                ) && 
+                (
+                    this.NotarySignerEmailSent == other.NotarySignerEmailSent ||
+                    this.NotarySignerEmailSent != null &&
+                    this.NotarySignerEmailSent.Equals(other.NotarySignerEmailSent)
                 ) && 
                 (
                     this.NotarySigners == other.NotarySigners ||
@@ -1402,6 +1454,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DeclinedReason.GetHashCode();
                 if (this.DefaultRecipient != null)
                     hash = hash * 59 + this.DefaultRecipient.GetHashCode();
+                if (this.DelegatedBy != null)
+                    hash = hash * 59 + this.DelegatedBy.GetHashCode();
+                if (this.DelegatedTo != null)
+                    hash = hash * 59 + this.DelegatedTo.GetHashCode();
                 if (this.DeliveredDateTime != null)
                     hash = hash * 59 + this.DeliveredDateTime.GetHashCode();
                 if (this.DeliveryMethod != null)
@@ -1420,6 +1476,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EmailMetadata.GetHashCode();
                 if (this.EmailNotification != null)
                     hash = hash * 59 + this.EmailNotification.GetHashCode();
+                if (this.EmailRecipientPostSigningURL != null)
+                    hash = hash * 59 + this.EmailRecipientPostSigningURL.GetHashCode();
                 if (this.EmbeddedRecipientStartURL != null)
                     hash = hash * 59 + this.EmbeddedRecipientStartURL.GetHashCode();
                 if (this.ErrorDetails != null)
@@ -1468,6 +1526,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.NameMetadata.GetHashCode();
                 if (this.NotaryId != null)
                     hash = hash * 59 + this.NotaryId.GetHashCode();
+                if (this.NotarySignerEmailSent != null)
+                    hash = hash * 59 + this.NotarySignerEmailSent.GetHashCode();
                 if (this.NotarySigners != null)
                     hash = hash * 59 + this.NotarySigners.GetHashCode();
                 if (this.NotaryType != null)

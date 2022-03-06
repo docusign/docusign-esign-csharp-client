@@ -66,7 +66,8 @@ namespace DocuSign.eSign.Model
         /// <param name="SubscriptionStartDate">SubscriptionStartDate.</param>
         /// <param name="SupportIncidentFee">The support incident fee charged for each support incident..</param>
         /// <param name="SupportPlanFee">The support plan fee charged for this plan..</param>
-        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string AppStoreReceiptExpirationDate = default(string), string AppStoreReceiptPurchaseDate = default(string), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string NotificationType = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string PlanStartDate = default(string), string ProductId = default(string), string RenewalDate = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SubscriptionStartDate = default(string), string SupportIncidentFee = default(string), string SupportPlanFee = default(string))
+        /// <param name="TaxExemptId">TaxExemptId.</param>
+        public AccountBillingPlan(List<AddOn> AddOns = default(List<AddOn>), string AppStoreReceiptExpirationDate = default(string), string AppStoreReceiptPurchaseDate = default(string), string CanCancelRenewal = default(string), string CanUpgrade = default(string), string CurrencyCode = default(string), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string IsDowngrade = default(string), string NotificationType = default(string), string OtherDiscountPercent = default(string), string PaymentCycle = default(string), string PaymentMethod = default(string), string PerSeatPrice = default(string), string PlanClassification = default(string), List<FeatureSet> PlanFeatureSets = default(List<FeatureSet>), string PlanId = default(string), string PlanName = default(string), string PlanStartDate = default(string), string ProductId = default(string), string RenewalDate = default(string), string RenewalStatus = default(string), List<SeatDiscount> SeatDiscounts = default(List<SeatDiscount>), string SubscriptionStartDate = default(string), string SupportIncidentFee = default(string), string SupportPlanFee = default(string), string TaxExemptId = default(string))
         {
             this.AddOns = AddOns;
             this.AppStoreReceiptExpirationDate = AppStoreReceiptExpirationDate;
@@ -96,6 +97,7 @@ namespace DocuSign.eSign.Model
             this.SubscriptionStartDate = SubscriptionStartDate;
             this.SupportIncidentFee = SupportIncidentFee;
             this.SupportPlanFee = SupportPlanFee;
+            this.TaxExemptId = TaxExemptId;
         }
         
         /// <summary>
@@ -255,6 +257,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="supportPlanFee", EmitDefaultValue=false)]
         public string SupportPlanFee { get; set; }
         /// <summary>
+        /// Gets or Sets TaxExemptId
+        /// </summary>
+        [DataMember(Name="taxExemptId", EmitDefaultValue=false)]
+        public string TaxExemptId { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -290,6 +297,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SubscriptionStartDate: ").Append(SubscriptionStartDate).Append("\n");
             sb.Append("  SupportIncidentFee: ").Append(SupportIncidentFee).Append("\n");
             sb.Append("  SupportPlanFee: ").Append(SupportPlanFee).Append("\n");
+            sb.Append("  TaxExemptId: ").Append(TaxExemptId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -465,6 +473,11 @@ namespace DocuSign.eSign.Model
                     this.SupportPlanFee == other.SupportPlanFee ||
                     this.SupportPlanFee != null &&
                     this.SupportPlanFee.Equals(other.SupportPlanFee)
+                ) && 
+                (
+                    this.TaxExemptId == other.TaxExemptId ||
+                    this.TaxExemptId != null &&
+                    this.TaxExemptId.Equals(other.TaxExemptId)
                 );
         }
 
@@ -535,6 +548,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SupportIncidentFee.GetHashCode();
                 if (this.SupportPlanFee != null)
                     hash = hash * 59 + this.SupportPlanFee.GetHashCode();
+                if (this.TaxExemptId != null)
+                    hash = hash * 59 + this.TaxExemptId.GetHashCode();
                 return hash;
             }
         }

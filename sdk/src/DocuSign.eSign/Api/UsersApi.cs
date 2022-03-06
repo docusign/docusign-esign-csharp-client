@@ -4671,6 +4671,8 @@ namespace DocuSign.eSign.Api
             /// Number of records to return. The number must be greater than 0 and less than or equal to 100.  
             public string count {get; set;}
             /// 
+            public string domainUsersOnly {get; set;}
+            /// 
             public string email {get; set;}
             /// Filters the returned user records by the email address or a sub-string of email address. 
             public string emailSubstring {get; set;}
@@ -4748,6 +4750,7 @@ namespace DocuSign.eSign.Api
             {
                 if (options.additionalInfo != null) localVarQueryParams.Add("additional_info", this.ApiClient.ParameterToString(options.additionalInfo)); // query parameter
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.domainUsersOnly != null) localVarQueryParams.Add("domain_users_only", this.ApiClient.ParameterToString(options.domainUsersOnly)); // query parameter
                 if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
                 if (options.emailSubstring != null) localVarQueryParams.Add("email_substring", this.ApiClient.ParameterToString(options.emailSubstring)); // query parameter
                 if (options.groupId != null) localVarQueryParams.Add("group_id", this.ApiClient.ParameterToString(options.groupId)); // query parameter
@@ -4852,6 +4855,7 @@ namespace DocuSign.eSign.Api
             {
                 if (options.additionalInfo != null) localVarQueryParams.Add("additional_info", this.ApiClient.ParameterToString(options.additionalInfo)); // query parameter
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.domainUsersOnly != null) localVarQueryParams.Add("domain_users_only", this.ApiClient.ParameterToString(options.domainUsersOnly)); // query parameter
                 if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
                 if (options.emailSubstring != null) localVarQueryParams.Add("email_substring", this.ApiClient.ParameterToString(options.emailSubstring)); // query parameter
                 if (options.groupId != null) localVarQueryParams.Add("group_id", this.ApiClient.ParameterToString(options.groupId)); // query parameter

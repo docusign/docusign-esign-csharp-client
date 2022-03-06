@@ -250,6 +250,31 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<BulkSendingListSummaries> GetBulkSendListsWithHttpInfo (string accountId);
         /// <summary>
+        /// Initiate a specific bulk send batch action
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>/// <param name="bulkAction"></param>
+        /// <param name="bulkSendBatchActionRequest"> (optional)</param>
+        
+        /// <returns></returns>
+        BulkSendBatchStatus UpdateBulkSendBatchAction (string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null);
+
+        /// <summary>
+        /// Initiate a specific bulk send batch action
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>/// <param name="bulkAction"></param>
+        /// <param name="bulkSendBatchActionRequest"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<BulkSendBatchStatus> UpdateBulkSendBatchActionWithHttpInfo (string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null);
+        /// <summary>
         /// Put/Update a specific bulk send batch status
         /// </summary>
         /// <remarks>
@@ -526,6 +551,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (BulkSendingListSummaries)</returns>
         System.Threading.Tasks.Task<ApiResponse<BulkSendingListSummaries>> GetBulkSendListsAsyncWithHttpInfo (string accountId);
+        /// <summary>
+        /// Initiate a specific bulk send batch action
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>/// <param name="bulkAction"></param>
+        /// <param name="bulkSendBatchActionRequest"> (optional)</param>
+        
+        /// <returns>Task of BulkSendBatchStatus</returns>
+        System.Threading.Tasks.Task<BulkSendBatchStatus> UpdateBulkSendBatchActionAsync (string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null);
+
+        /// <summary>
+        /// Initiate a specific bulk send batch action
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>/// <param name="bulkAction"></param>
+        /// <param name="bulkSendBatchActionRequest"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (BulkSendBatchStatus)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BulkSendBatchStatus>> UpdateBulkSendBatchActionAsyncWithHttpInfo (string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null);
         /// <summary>
         /// Put/Update a specific bulk send batch status
         /// </summary>
@@ -2365,6 +2415,212 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<BulkSendingListSummaries>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (BulkSendingListSummaries) this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingListSummaries)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Initiate a specific bulk send batch action 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>/// <param name="bulkAction"></param>
+        /// <param name="bulkSendBatchActionRequest"> (optional)</param>
+        
+        /// <returns>BulkSendBatchStatus</returns>
+        public BulkSendBatchStatus UpdateBulkSendBatchAction (string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null)
+        {
+             ApiResponse<BulkSendBatchStatus> localVarResponse = UpdateBulkSendBatchActionWithHttpInfo(accountId, bulkSendBatchId, bulkAction, bulkSendBatchActionRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Initiate a specific bulk send batch action 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>/// <param name="bulkAction"></param>
+        /// <param name="bulkSendBatchActionRequest"> (optional)</param>
+        
+        /// <returns>ApiResponse of BulkSendBatchStatus</returns>
+        public ApiResponse< BulkSendBatchStatus > UpdateBulkSendBatchActionWithHttpInfo (string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->UpdateBulkSendBatchAction");
+            // verify the required parameter 'bulkSendBatchId' is set
+            if (bulkSendBatchId == null)
+                throw new ApiException(400, "Missing required parameter 'bulkSendBatchId' when calling BulkEnvelopesApi->UpdateBulkSendBatchAction");
+            // verify the required parameter 'bulkAction' is set
+            if (bulkAction == null)
+                throw new ApiException(400, "Missing required parameter 'bulkAction' when calling BulkEnvelopesApi->UpdateBulkSendBatchAction");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}/{bulkAction}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (bulkSendBatchId != null) localVarPathParams.Add("bulkSendBatchId", this.ApiClient.ParameterToString(bulkSendBatchId)); // path parameter
+            if (bulkAction != null) localVarPathParams.Add("bulkAction", this.ApiClient.ParameterToString(bulkAction)); // path parameter
+
+
+            if (bulkSendBatchActionRequest != null && bulkSendBatchActionRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(bulkSendBatchActionRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = bulkSendBatchActionRequest; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateBulkSendBatchAction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkSendBatchStatus) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendBatchStatus)));
+            }
+            else
+            {
+                return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkSendBatchStatus) this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchStatus)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Initiate a specific bulk send batch action 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>/// <param name="bulkAction"></param>
+        /// <param name="bulkSendBatchActionRequest"> (optional)</param>
+        
+        /// <returns>Task of BulkSendBatchStatus</returns>
+        public async System.Threading.Tasks.Task<BulkSendBatchStatus> UpdateBulkSendBatchActionAsync (string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null)
+        {
+             ApiResponse<BulkSendBatchStatus> localVarResponse = await UpdateBulkSendBatchActionAsyncWithHttpInfo(accountId, bulkSendBatchId, bulkAction, bulkSendBatchActionRequest);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Initiate a specific bulk send batch action 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bulkSendBatchId"></param>/// <param name="bulkAction"></param>
+        /// <param name="bulkSendBatchActionRequest"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (BulkSendBatchStatus)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendBatchStatus>> UpdateBulkSendBatchActionAsyncWithHttpInfo (string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->UpdateBulkSendBatchAction");
+            // verify the required parameter 'bulkSendBatchId' is set
+            if (bulkSendBatchId == null)
+                throw new ApiException(400, "Missing required parameter 'bulkSendBatchId' when calling BulkEnvelopesApi->UpdateBulkSendBatchAction");
+            // verify the required parameter 'bulkAction' is set
+            if (bulkAction == null)
+                throw new ApiException(400, "Missing required parameter 'bulkAction' when calling BulkEnvelopesApi->UpdateBulkSendBatchAction");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}/{bulkAction}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (bulkSendBatchId != null) localVarPathParams.Add("bulkSendBatchId", this.ApiClient.ParameterToString(bulkSendBatchId)); // path parameter
+            if (bulkAction != null) localVarPathParams.Add("bulkAction", this.ApiClient.ParameterToString(bulkAction)); // path parameter
+
+
+            if (bulkSendBatchActionRequest != null && bulkSendBatchActionRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(bulkSendBatchActionRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = bulkSendBatchActionRequest; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateBulkSendBatchAction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (BulkSendBatchStatus) this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchStatus)));
             
         }
 

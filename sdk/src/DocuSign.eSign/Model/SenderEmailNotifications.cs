@@ -39,6 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="SenderEmailNotifications" /> class.
         /// </summary>
         /// <param name="ChangedSigner">When set to **true**, the sender receives notification if the signer changes..</param>
+        /// <param name="ClickwrapResponsesLimitNotificationEmail">ClickwrapResponsesLimitNotificationEmail.</param>
         /// <param name="CommentsOnlyPrivateAndMention">CommentsOnlyPrivateAndMention.</param>
         /// <param name="CommentsReceiveAll">CommentsReceiveAll.</param>
         /// <param name="DeliveryFailed">When set to **true**, the sender receives notification if the delivery of the envelope fails..</param>
@@ -49,9 +50,10 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientViewed">When set to **true**, the sender receives notification that the recipient viewed the enveloper..</param>
         /// <param name="SenderEnvelopeDeclined">SenderEnvelopeDeclined.</param>
         /// <param name="WithdrawnConsent">When set to **true**, the user receives notification if consent is withdrawn..</param>
-        public SenderEmailNotifications(string ChangedSigner = default(string), string CommentsOnlyPrivateAndMention = default(string), string CommentsReceiveAll = default(string), string DeliveryFailed = default(string), string EnvelopeComplete = default(string), string OfflineSigningFailed = default(string), string PowerformResponsesLimitNotificationEmail = default(string), string PurgeDocuments = default(string), string RecipientViewed = default(string), string SenderEnvelopeDeclined = default(string), string WithdrawnConsent = default(string))
+        public SenderEmailNotifications(string ChangedSigner = default(string), string ClickwrapResponsesLimitNotificationEmail = default(string), string CommentsOnlyPrivateAndMention = default(string), string CommentsReceiveAll = default(string), string DeliveryFailed = default(string), string EnvelopeComplete = default(string), string OfflineSigningFailed = default(string), string PowerformResponsesLimitNotificationEmail = default(string), string PurgeDocuments = default(string), string RecipientViewed = default(string), string SenderEnvelopeDeclined = default(string), string WithdrawnConsent = default(string))
         {
             this.ChangedSigner = ChangedSigner;
+            this.ClickwrapResponsesLimitNotificationEmail = ClickwrapResponsesLimitNotificationEmail;
             this.CommentsOnlyPrivateAndMention = CommentsOnlyPrivateAndMention;
             this.CommentsReceiveAll = CommentsReceiveAll;
             this.DeliveryFailed = DeliveryFailed;
@@ -70,6 +72,11 @@ namespace DocuSign.eSign.Model
         /// <value>When set to **true**, the sender receives notification if the signer changes.</value>
         [DataMember(Name="changedSigner", EmitDefaultValue=false)]
         public string ChangedSigner { get; set; }
+        /// <summary>
+        /// Gets or Sets ClickwrapResponsesLimitNotificationEmail
+        /// </summary>
+        [DataMember(Name="clickwrapResponsesLimitNotificationEmail", EmitDefaultValue=false)]
+        public string ClickwrapResponsesLimitNotificationEmail { get; set; }
         /// <summary>
         /// Gets or Sets CommentsOnlyPrivateAndMention
         /// </summary>
@@ -134,6 +141,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class SenderEmailNotifications {\n");
             sb.Append("  ChangedSigner: ").Append(ChangedSigner).Append("\n");
+            sb.Append("  ClickwrapResponsesLimitNotificationEmail: ").Append(ClickwrapResponsesLimitNotificationEmail).Append("\n");
             sb.Append("  CommentsOnlyPrivateAndMention: ").Append(CommentsOnlyPrivateAndMention).Append("\n");
             sb.Append("  CommentsReceiveAll: ").Append(CommentsReceiveAll).Append("\n");
             sb.Append("  DeliveryFailed: ").Append(DeliveryFailed).Append("\n");
@@ -184,6 +192,11 @@ namespace DocuSign.eSign.Model
                     this.ChangedSigner == other.ChangedSigner ||
                     this.ChangedSigner != null &&
                     this.ChangedSigner.Equals(other.ChangedSigner)
+                ) && 
+                (
+                    this.ClickwrapResponsesLimitNotificationEmail == other.ClickwrapResponsesLimitNotificationEmail ||
+                    this.ClickwrapResponsesLimitNotificationEmail != null &&
+                    this.ClickwrapResponsesLimitNotificationEmail.Equals(other.ClickwrapResponsesLimitNotificationEmail)
                 ) && 
                 (
                     this.CommentsOnlyPrivateAndMention == other.CommentsOnlyPrivateAndMention ||
@@ -250,6 +263,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.ChangedSigner != null)
                     hash = hash * 59 + this.ChangedSigner.GetHashCode();
+                if (this.ClickwrapResponsesLimitNotificationEmail != null)
+                    hash = hash * 59 + this.ClickwrapResponsesLimitNotificationEmail.GetHashCode();
                 if (this.CommentsOnlyPrivateAndMention != null)
                     hash = hash * 59 + this.CommentsOnlyPrivateAndMention.GetHashCode();
                 if (this.CommentsReceiveAll != null)

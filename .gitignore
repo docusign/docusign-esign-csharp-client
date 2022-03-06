@@ -8,3 +8,14 @@
 /test/packages
 /test/.vs/config
 /test
+*.[Oo]bj
+*.user
+*.suo
+*.snk
+[Bb]in
+[Oo]bj
+[Dd]ebug
+[Rr]elease
+packages
+.vs
+.vscode

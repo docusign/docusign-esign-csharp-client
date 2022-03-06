@@ -40,14 +40,12 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Email">Email.</param>
         /// <param name="IsIncluded">IsIncluded.</param>
-        /// <param name="IsPartOfDomain">IsPartOfDomain.</param>
         /// <param name="UserId">UserId.</param>
         /// <param name="UserName">UserName.</param>
-        public ConnectUserInfo(string Email = default(string), string IsIncluded = default(string), string IsPartOfDomain = default(string), string UserId = default(string), string UserName = default(string))
+        public ConnectUserInfo(string Email = default(string), string IsIncluded = default(string), string UserId = default(string), string UserName = default(string))
         {
             this.Email = Email;
             this.IsIncluded = IsIncluded;
-            this.IsPartOfDomain = IsPartOfDomain;
             this.UserId = UserId;
             this.UserName = UserName;
         }
@@ -62,11 +60,6 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="isIncluded", EmitDefaultValue=false)]
         public string IsIncluded { get; set; }
-        /// <summary>
-        /// Gets or Sets IsPartOfDomain
-        /// </summary>
-        [DataMember(Name="isPartOfDomain", EmitDefaultValue=false)]
-        public string IsPartOfDomain { get; set; }
         /// <summary>
         /// Gets or Sets UserId
         /// </summary>
@@ -87,7 +80,6 @@ namespace DocuSign.eSign.Model
             sb.Append("class ConnectUserInfo {\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  IsIncluded: ").Append(IsIncluded).Append("\n");
-            sb.Append("  IsPartOfDomain: ").Append(IsPartOfDomain).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("  UserName: ").Append(UserName).Append("\n");
             sb.Append("}\n");
@@ -137,11 +129,6 @@ namespace DocuSign.eSign.Model
                     this.IsIncluded.Equals(other.IsIncluded)
                 ) && 
                 (
-                    this.IsPartOfDomain == other.IsPartOfDomain ||
-                    this.IsPartOfDomain != null &&
-                    this.IsPartOfDomain.Equals(other.IsPartOfDomain)
-                ) && 
-                (
                     this.UserId == other.UserId ||
                     this.UserId != null &&
                     this.UserId.Equals(other.UserId)
@@ -168,8 +155,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Email.GetHashCode();
                 if (this.IsIncluded != null)
                     hash = hash * 59 + this.IsIncluded.GetHashCode();
-                if (this.IsPartOfDomain != null)
-                    hash = hash * 59 + this.IsPartOfDomain.GetHashCode();
                 if (this.UserId != null)
                     hash = hash * 59 + this.UserId.GetHashCode();
                 if (this.UserName != null)

@@ -42,13 +42,17 @@ namespace DocuSign.eSign.Model
         /// <param name="ChargeName">Reserved: TBD.</param>
         /// <param name="InvoiceItemId">Reserved: TBD.</param>
         /// <param name="Quantity">Quantity.</param>
+        /// <param name="TaxAmount">TaxAmount.</param>
+        /// <param name="TaxExemptAmount">TaxExemptAmount.</param>
         /// <param name="UnitPrice">Reserved: TBD.</param>
-        public BillingInvoiceItem(string ChargeAmount = default(string), string ChargeName = default(string), string InvoiceItemId = default(string), string Quantity = default(string), string UnitPrice = default(string))
+        public BillingInvoiceItem(string ChargeAmount = default(string), string ChargeName = default(string), string InvoiceItemId = default(string), string Quantity = default(string), string TaxAmount = default(string), string TaxExemptAmount = default(string), string UnitPrice = default(string))
         {
             this.ChargeAmount = ChargeAmount;
             this.ChargeName = ChargeName;
             this.InvoiceItemId = InvoiceItemId;
             this.Quantity = Quantity;
+            this.TaxAmount = TaxAmount;
+            this.TaxExemptAmount = TaxExemptAmount;
             this.UnitPrice = UnitPrice;
         }
         
@@ -76,6 +80,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="quantity", EmitDefaultValue=false)]
         public string Quantity { get; set; }
         /// <summary>
+        /// Gets or Sets TaxAmount
+        /// </summary>
+        [DataMember(Name="taxAmount", EmitDefaultValue=false)]
+        public string TaxAmount { get; set; }
+        /// <summary>
+        /// Gets or Sets TaxExemptAmount
+        /// </summary>
+        [DataMember(Name="taxExemptAmount", EmitDefaultValue=false)]
+        public string TaxExemptAmount { get; set; }
+        /// <summary>
         /// Reserved: TBD
         /// </summary>
         /// <value>Reserved: TBD</value>
@@ -93,6 +107,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  ChargeName: ").Append(ChargeName).Append("\n");
             sb.Append("  InvoiceItemId: ").Append(InvoiceItemId).Append("\n");
             sb.Append("  Quantity: ").Append(Quantity).Append("\n");
+            sb.Append("  TaxAmount: ").Append(TaxAmount).Append("\n");
+            sb.Append("  TaxExemptAmount: ").Append(TaxExemptAmount).Append("\n");
             sb.Append("  UnitPrice: ").Append(UnitPrice).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -151,6 +167,16 @@ namespace DocuSign.eSign.Model
                     this.Quantity.Equals(other.Quantity)
                 ) && 
                 (
+                    this.TaxAmount == other.TaxAmount ||
+                    this.TaxAmount != null &&
+                    this.TaxAmount.Equals(other.TaxAmount)
+                ) && 
+                (
+                    this.TaxExemptAmount == other.TaxExemptAmount ||
+                    this.TaxExemptAmount != null &&
+                    this.TaxExemptAmount.Equals(other.TaxExemptAmount)
+                ) && 
+                (
                     this.UnitPrice == other.UnitPrice ||
                     this.UnitPrice != null &&
                     this.UnitPrice.Equals(other.UnitPrice)
@@ -176,6 +202,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.InvoiceItemId.GetHashCode();
                 if (this.Quantity != null)
                     hash = hash * 59 + this.Quantity.GetHashCode();
+                if (this.TaxAmount != null)
+                    hash = hash * 59 + this.TaxAmount.GetHashCode();
+                if (this.TaxExemptAmount != null)
+                    hash = hash * 59 + this.TaxExemptAmount.GetHashCode();
                 if (this.UnitPrice != null)
                     hash = hash * 59 + this.UnitPrice.GetHashCode();
                 return hash;

@@ -25,16 +25,37 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConnectDeleteFailureResult
+    /// EnvelopeDelayRule
     /// </summary>
     [DataContract]
-    public partial class ConnectDeleteFailureResult :  IEquatable<ConnectDeleteFailureResult>, IValidatableObject
+    public partial class EnvelopeDelayRule :  IEquatable<EnvelopeDelayRule>, IValidatableObject
     {
-        public ConnectDeleteFailureResult()
+        public EnvelopeDelayRule()
         {
             // Empty Constructor
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnvelopeDelayRule" /> class.
+        /// </summary>
+        /// <param name="Delay">Delay.</param>
+        /// <param name="ResumeDate">ResumeDate.</param>
+        public EnvelopeDelayRule(string Delay = default(string), string ResumeDate = default(string))
+        {
+            this.Delay = Delay;
+            this.ResumeDate = ResumeDate;
+        }
         
+        /// <summary>
+        /// Gets or Sets Delay
+        /// </summary>
+        [DataMember(Name="delay", EmitDefaultValue=false)]
+        public string Delay { get; set; }
+        /// <summary>
+        /// Gets or Sets ResumeDate
+        /// </summary>
+        [DataMember(Name="resumeDate", EmitDefaultValue=false)]
+        public string ResumeDate { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -42,11 +63,13 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ConnectDeleteFailureResult {\n");
+            sb.Append("class EnvelopeDelayRule {\n");
+            sb.Append("  Delay: ").Append(Delay).Append("\n");
+            sb.Append("  ResumeDate: ").Append(ResumeDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
-    
+  
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -64,21 +87,31 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ConnectDeleteFailureResult);
+            return this.Equals(obj as EnvelopeDelayRule);
         }
 
         /// <summary>
-        /// Returns true if ConnectDeleteFailureResult instances are equal
+        /// Returns true if EnvelopeDelayRule instances are equal
         /// </summary>
-        /// <param name="other">Instance of ConnectDeleteFailureResult to be compared</param>
+        /// <param name="other">Instance of EnvelopeDelayRule to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ConnectDeleteFailureResult other)
+        public bool Equals(EnvelopeDelayRule other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
                 return false;
 
-            return false;
+            return 
+                (
+                    this.Delay == other.Delay ||
+                    this.Delay != null &&
+                    this.Delay.Equals(other.Delay)
+                ) && 
+                (
+                    this.ResumeDate == other.ResumeDate ||
+                    this.ResumeDate != null &&
+                    this.ResumeDate.Equals(other.ResumeDate)
+                );
         }
 
         /// <summary>
@@ -92,6 +125,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Delay != null)
+                    hash = hash * 59 + this.Delay.GetHashCode();
+                if (this.ResumeDate != null)
+                    hash = hash * 59 + this.ResumeDate.GetHashCode();
                 return hash;
             }
         }

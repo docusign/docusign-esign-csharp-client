@@ -39,19 +39,29 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="PrefillTabs" /> class.
         /// </summary>
         /// <param name="CheckboxTabs">Specifies a tag on the document in a location where the recipient can select an option..</param>
+        /// <param name="DateTabs">Specifies a tab on the document where you want the recipient to enter a date. Date tabs are single-line fields that allow date information to be entered in any format. The tooltip for this tab recommends entering the date as MM/DD/YYYY, but this is not enforced. The format entered by the signer is retained.   If you need a particular date format enforced, DocuSign recommends using a Text tab with a Validation Pattern and Validation Message to enforce the format..</param>
+        /// <param name="EmailTabs">Specifies a tag on the document where you want the recipient to enter an email. Email tags are single-line fields that accept any characters. The system checks that a valid email format (i.e. xxx@yyy.zzz) is entered in the tag. It uses the same parameters as a Text tab, with the validation message and pattern set for email information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
+        /// <param name="NumberTabs">Specifies a tag on the document where you want the recipient to enter a number. It uses the same parameters as a Text tab, with the validation message and pattern set for number information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response. .</param>
         /// <param name="RadioGroupTabs">Specifies a tag on the document in a location where the recipient can select one option from a group of options using a radio button. The radio buttons do not have to be on the same page in a document..</param>
         /// <param name="SenderCompanyTabs">SenderCompanyTabs.</param>
         /// <param name="SenderNameTabs">SenderNameTabs.</param>
+        /// <param name="SsnTabs">Specifies a tag on the document where you want the recipient to enter a Social Security Number (SSN). A SSN can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for SSN information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
         /// <param name="TabGroups">TabGroups.</param>
         /// <param name="TextTabs">Specifies a that that is an adaptable field that allows the recipient to enter different text information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
-        public PrefillTabs(List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SenderCompany> SenderCompanyTabs = default(List<SenderCompany>), List<SenderName> SenderNameTabs = default(List<SenderName>), List<TabGroup> TabGroups = default(List<TabGroup>), List<Text> TextTabs = default(List<Text>))
+        /// <param name="ZipTabs">Specifies a tag on the document where you want the recipient to enter a ZIP code. The ZIP code can be a five numbers or the ZIP+4 format with nine numbers. The zip code can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for ZIP code information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
+        public PrefillTabs(List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<DocuSign.eSign.Model.Date> DateTabs = default(List<DocuSign.eSign.Model.Date>), List<Email> EmailTabs = default(List<Email>), List<Number> NumberTabs = default(List<Number>), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SenderCompany> SenderCompanyTabs = default(List<SenderCompany>), List<SenderName> SenderNameTabs = default(List<SenderName>), List<Ssn> SsnTabs = default(List<Ssn>), List<TabGroup> TabGroups = default(List<TabGroup>), List<Text> TextTabs = default(List<Text>), List<Zip> ZipTabs = default(List<Zip>))
         {
             this.CheckboxTabs = CheckboxTabs;
+            this.DateTabs = DateTabs;
+            this.EmailTabs = EmailTabs;
+            this.NumberTabs = NumberTabs;
             this.RadioGroupTabs = RadioGroupTabs;
             this.SenderCompanyTabs = SenderCompanyTabs;
             this.SenderNameTabs = SenderNameTabs;
+            this.SsnTabs = SsnTabs;
             this.TabGroups = TabGroups;
             this.TextTabs = TextTabs;
+            this.ZipTabs = ZipTabs;
         }
         
         /// <summary>
@@ -60,6 +70,24 @@ namespace DocuSign.eSign.Model
         /// <value>Specifies a tag on the document in a location where the recipient can select an option.</value>
         [DataMember(Name="checkboxTabs", EmitDefaultValue=false)]
         public List<Checkbox> CheckboxTabs { get; set; }
+        /// <summary>
+        /// Specifies a tab on the document where you want the recipient to enter a date. Date tabs are single-line fields that allow date information to be entered in any format. The tooltip for this tab recommends entering the date as MM/DD/YYYY, but this is not enforced. The format entered by the signer is retained.   If you need a particular date format enforced, DocuSign recommends using a Text tab with a Validation Pattern and Validation Message to enforce the format.
+        /// </summary>
+        /// <value>Specifies a tab on the document where you want the recipient to enter a date. Date tabs are single-line fields that allow date information to be entered in any format. The tooltip for this tab recommends entering the date as MM/DD/YYYY, but this is not enforced. The format entered by the signer is retained.   If you need a particular date format enforced, DocuSign recommends using a Text tab with a Validation Pattern and Validation Message to enforce the format.</value>
+        [DataMember(Name="dateTabs", EmitDefaultValue=false)]
+        public List<DocuSign.eSign.Model.Date> DateTabs { get; set; }
+        /// <summary>
+        /// Specifies a tag on the document where you want the recipient to enter an email. Email tags are single-line fields that accept any characters. The system checks that a valid email format (i.e. xxx@yyy.zzz) is entered in the tag. It uses the same parameters as a Text tab, with the validation message and pattern set for email information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
+        /// </summary>
+        /// <value>Specifies a tag on the document where you want the recipient to enter an email. Email tags are single-line fields that accept any characters. The system checks that a valid email format (i.e. xxx@yyy.zzz) is entered in the tag. It uses the same parameters as a Text tab, with the validation message and pattern set for email information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.</value>
+        [DataMember(Name="emailTabs", EmitDefaultValue=false)]
+        public List<Email> EmailTabs { get; set; }
+        /// <summary>
+        /// Specifies a tag on the document where you want the recipient to enter a number. It uses the same parameters as a Text tab, with the validation message and pattern set for number information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response. 
+        /// </summary>
+        /// <value>Specifies a tag on the document where you want the recipient to enter a number. It uses the same parameters as a Text tab, with the validation message and pattern set for number information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response. </value>
+        [DataMember(Name="numberTabs", EmitDefaultValue=false)]
+        public List<Number> NumberTabs { get; set; }
         /// <summary>
         /// Specifies a tag on the document in a location where the recipient can select one option from a group of options using a radio button. The radio buttons do not have to be on the same page in a document.
         /// </summary>
@@ -77,6 +105,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="senderNameTabs", EmitDefaultValue=false)]
         public List<SenderName> SenderNameTabs { get; set; }
         /// <summary>
+        /// Specifies a tag on the document where you want the recipient to enter a Social Security Number (SSN). A SSN can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for SSN information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
+        /// </summary>
+        /// <value>Specifies a tag on the document where you want the recipient to enter a Social Security Number (SSN). A SSN can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for SSN information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.</value>
+        [DataMember(Name="ssnTabs", EmitDefaultValue=false)]
+        public List<Ssn> SsnTabs { get; set; }
+        /// <summary>
         /// Gets or Sets TabGroups
         /// </summary>
         [DataMember(Name="tabGroups", EmitDefaultValue=false)]
@@ -88,6 +122,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="textTabs", EmitDefaultValue=false)]
         public List<Text> TextTabs { get; set; }
         /// <summary>
+        /// Specifies a tag on the document where you want the recipient to enter a ZIP code. The ZIP code can be a five numbers or the ZIP+4 format with nine numbers. The zip code can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for ZIP code information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
+        /// </summary>
+        /// <value>Specifies a tag on the document where you want the recipient to enter a ZIP code. The ZIP code can be a five numbers or the ZIP+4 format with nine numbers. The zip code can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for ZIP code information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.</value>
+        [DataMember(Name="zipTabs", EmitDefaultValue=false)]
+        public List<Zip> ZipTabs { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -96,11 +136,16 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class PrefillTabs {\n");
             sb.Append("  CheckboxTabs: ").Append(CheckboxTabs).Append("\n");
+            sb.Append("  DateTabs: ").Append(DateTabs).Append("\n");
+            sb.Append("  EmailTabs: ").Append(EmailTabs).Append("\n");
+            sb.Append("  NumberTabs: ").Append(NumberTabs).Append("\n");
             sb.Append("  RadioGroupTabs: ").Append(RadioGroupTabs).Append("\n");
             sb.Append("  SenderCompanyTabs: ").Append(SenderCompanyTabs).Append("\n");
             sb.Append("  SenderNameTabs: ").Append(SenderNameTabs).Append("\n");
+            sb.Append("  SsnTabs: ").Append(SsnTabs).Append("\n");
             sb.Append("  TabGroups: ").Append(TabGroups).Append("\n");
             sb.Append("  TextTabs: ").Append(TextTabs).Append("\n");
+            sb.Append("  ZipTabs: ").Append(ZipTabs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -143,6 +188,21 @@ namespace DocuSign.eSign.Model
                     this.CheckboxTabs.SequenceEqual(other.CheckboxTabs)
                 ) && 
                 (
+                    this.DateTabs == other.DateTabs ||
+                    this.DateTabs != null &&
+                    this.DateTabs.SequenceEqual(other.DateTabs)
+                ) && 
+                (
+                    this.EmailTabs == other.EmailTabs ||
+                    this.EmailTabs != null &&
+                    this.EmailTabs.SequenceEqual(other.EmailTabs)
+                ) && 
+                (
+                    this.NumberTabs == other.NumberTabs ||
+                    this.NumberTabs != null &&
+                    this.NumberTabs.SequenceEqual(other.NumberTabs)
+                ) && 
+                (
                     this.RadioGroupTabs == other.RadioGroupTabs ||
                     this.RadioGroupTabs != null &&
                     this.RadioGroupTabs.SequenceEqual(other.RadioGroupTabs)
@@ -158,6 +218,11 @@ namespace DocuSign.eSign.Model
                     this.SenderNameTabs.SequenceEqual(other.SenderNameTabs)
                 ) && 
                 (
+                    this.SsnTabs == other.SsnTabs ||
+                    this.SsnTabs != null &&
+                    this.SsnTabs.SequenceEqual(other.SsnTabs)
+                ) && 
+                (
                     this.TabGroups == other.TabGroups ||
                     this.TabGroups != null &&
                     this.TabGroups.SequenceEqual(other.TabGroups)
@@ -166,6 +231,11 @@ namespace DocuSign.eSign.Model
                     this.TextTabs == other.TextTabs ||
                     this.TextTabs != null &&
                     this.TextTabs.SequenceEqual(other.TextTabs)
+                ) && 
+                (
+                    this.ZipTabs == other.ZipTabs ||
+                    this.ZipTabs != null &&
+                    this.ZipTabs.SequenceEqual(other.ZipTabs)
                 );
         }
 
@@ -182,16 +252,26 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.CheckboxTabs != null)
                     hash = hash * 59 + this.CheckboxTabs.GetHashCode();
+                if (this.DateTabs != null)
+                    hash = hash * 59 + this.DateTabs.GetHashCode();
+                if (this.EmailTabs != null)
+                    hash = hash * 59 + this.EmailTabs.GetHashCode();
+                if (this.NumberTabs != null)
+                    hash = hash * 59 + this.NumberTabs.GetHashCode();
                 if (this.RadioGroupTabs != null)
                     hash = hash * 59 + this.RadioGroupTabs.GetHashCode();
                 if (this.SenderCompanyTabs != null)
                     hash = hash * 59 + this.SenderCompanyTabs.GetHashCode();
                 if (this.SenderNameTabs != null)
                     hash = hash * 59 + this.SenderNameTabs.GetHashCode();
+                if (this.SsnTabs != null)
+                    hash = hash * 59 + this.SsnTabs.GetHashCode();
                 if (this.TabGroups != null)
                     hash = hash * 59 + this.TabGroups.GetHashCode();
                 if (this.TextTabs != null)
                     hash = hash * 59 + this.TextTabs.GetHashCode();
+                if (this.ZipTabs != null)
+                    hash = hash * 59 + this.ZipTabs.GetHashCode();
                 return hash;
             }
         }

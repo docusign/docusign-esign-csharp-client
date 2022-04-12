@@ -42,3 +42,4 @@ mono_nunit_test.sh
 # Specific src and test files
 src/DocuSign.eSign/packages.config
 # src/DocuSign.eSign/Api/EnvelopesApi.cs
+src/DocuSign.eSign/DocuSign.eSign.nuspec

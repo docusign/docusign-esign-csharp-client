@@ -39,13 +39,15 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Workflow" /> class.
         /// </summary>
         /// <param name="CurrentWorkflowStepId">CurrentWorkflowStepId.</param>
+        /// <param name="OverwriteUpdateMode">OverwriteUpdateMode.</param>
         /// <param name="ResumeDate">ResumeDate.</param>
         /// <param name="ScheduledSending">ScheduledSending.</param>
         /// <param name="WorkflowStatus">WorkflowStatus.</param>
         /// <param name="WorkflowSteps">WorkflowSteps.</param>
-        public Workflow(string CurrentWorkflowStepId = default(string), string ResumeDate = default(string), ScheduledSendingApiModel ScheduledSending = default(ScheduledSendingApiModel), string WorkflowStatus = default(string), List<WorkflowStep> WorkflowSteps = default(List<WorkflowStep>))
+        public Workflow(string CurrentWorkflowStepId = default(string), string OverwriteUpdateMode = default(string), string ResumeDate = default(string), ScheduledSending ScheduledSending = default(ScheduledSending), string WorkflowStatus = default(string), List<WorkflowStep> WorkflowSteps = default(List<WorkflowStep>))
         {
             this.CurrentWorkflowStepId = CurrentWorkflowStepId;
+            this.OverwriteUpdateMode = OverwriteUpdateMode;
             this.ResumeDate = ResumeDate;
             this.ScheduledSending = ScheduledSending;
             this.WorkflowStatus = WorkflowStatus;
@@ -58,6 +60,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="currentWorkflowStepId", EmitDefaultValue=false)]
         public string CurrentWorkflowStepId { get; set; }
         /// <summary>
+        /// Gets or Sets OverwriteUpdateMode
+        /// </summary>
+        [DataMember(Name="overwriteUpdateMode", EmitDefaultValue=false)]
+        public string OverwriteUpdateMode { get; set; }
+        /// <summary>
         /// Gets or Sets ResumeDate
         /// </summary>
         [DataMember(Name="resumeDate", EmitDefaultValue=false)]
@@ -66,7 +73,7 @@ namespace DocuSign.eSign.Model
         /// Gets or Sets ScheduledSending
         /// </summary>
         [DataMember(Name="scheduledSending", EmitDefaultValue=false)]
-        public ScheduledSendingApiModel ScheduledSending { get; set; }
+        public ScheduledSending ScheduledSending { get; set; }
         /// <summary>
         /// Gets or Sets WorkflowStatus
         /// </summary>
@@ -86,6 +93,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class Workflow {\n");
             sb.Append("  CurrentWorkflowStepId: ").Append(CurrentWorkflowStepId).Append("\n");
+            sb.Append("  OverwriteUpdateMode: ").Append(OverwriteUpdateMode).Append("\n");
             sb.Append("  ResumeDate: ").Append(ResumeDate).Append("\n");
             sb.Append("  ScheduledSending: ").Append(ScheduledSending).Append("\n");
             sb.Append("  WorkflowStatus: ").Append(WorkflowStatus).Append("\n");
@@ -132,6 +140,11 @@ namespace DocuSign.eSign.Model
                     this.CurrentWorkflowStepId.Equals(other.CurrentWorkflowStepId)
                 ) && 
                 (
+                    this.OverwriteUpdateMode == other.OverwriteUpdateMode ||
+                    this.OverwriteUpdateMode != null &&
+                    this.OverwriteUpdateMode.Equals(other.OverwriteUpdateMode)
+                ) && 
+                (
                     this.ResumeDate == other.ResumeDate ||
                     this.ResumeDate != null &&
                     this.ResumeDate.Equals(other.ResumeDate)
@@ -166,6 +179,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.CurrentWorkflowStepId != null)
                     hash = hash * 59 + this.CurrentWorkflowStepId.GetHashCode();
+                if (this.OverwriteUpdateMode != null)
+                    hash = hash * 59 + this.OverwriteUpdateMode.GetHashCode();
                 if (this.ResumeDate != null)
                     hash = hash * 59 + this.ResumeDate.GetHashCode();
                 if (this.ScheduledSending != null)

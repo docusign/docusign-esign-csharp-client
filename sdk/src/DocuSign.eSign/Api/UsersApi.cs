@@ -4668,6 +4668,8 @@ namespace DocuSign.eSign.Api
         {
             /// When set to **true**, the full list of user information is returned for each user in the account. 
             public string additionalInfo {get; set;}
+            /// 
+            public string alternateAdminsOnly {get; set;}
             /// Number of records to return. The number must be greater than 0 and less than or equal to 100.  
             public string count {get; set;}
             /// 
@@ -4749,6 +4751,7 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.additionalInfo != null) localVarQueryParams.Add("additional_info", this.ApiClient.ParameterToString(options.additionalInfo)); // query parameter
+                if (options.alternateAdminsOnly != null) localVarQueryParams.Add("alternate_admins_only", this.ApiClient.ParameterToString(options.alternateAdminsOnly)); // query parameter
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
                 if (options.domainUsersOnly != null) localVarQueryParams.Add("domain_users_only", this.ApiClient.ParameterToString(options.domainUsersOnly)); // query parameter
                 if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
@@ -4854,6 +4857,7 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.additionalInfo != null) localVarQueryParams.Add("additional_info", this.ApiClient.ParameterToString(options.additionalInfo)); // query parameter
+                if (options.alternateAdminsOnly != null) localVarQueryParams.Add("alternate_admins_only", this.ApiClient.ParameterToString(options.alternateAdminsOnly)); // query parameter
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
                 if (options.domainUsersOnly != null) localVarQueryParams.Add("domain_users_only", this.ApiClient.ParameterToString(options.domainUsersOnly)); // query parameter
                 if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter

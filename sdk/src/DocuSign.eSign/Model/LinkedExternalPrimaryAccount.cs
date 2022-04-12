@@ -42,15 +42,17 @@ namespace DocuSign.eSign.Model
         /// <param name="ConfigurationId">ConfigurationId.</param>
         /// <param name="Email">Email.</param>
         /// <param name="LinkId">LinkId.</param>
+        /// <param name="PdfFieldHandlingOption">PdfFieldHandlingOption.</param>
         /// <param name="RecipientAuthRequirements">RecipientAuthRequirements.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="UserId">UserId.</param>
-        public LinkedExternalPrimaryAccount(string AccountName = default(string), string ConfigurationId = default(string), string Email = default(string), string LinkId = default(string), ExternalPrimaryAccountRecipientAuthRequirements RecipientAuthRequirements = default(ExternalPrimaryAccountRecipientAuthRequirements), string Status = default(string), string UserId = default(string))
+        public LinkedExternalPrimaryAccount(string AccountName = default(string), string ConfigurationId = default(string), string Email = default(string), string LinkId = default(string), string PdfFieldHandlingOption = default(string), ExternalPrimaryAccountRecipientAuthRequirements RecipientAuthRequirements = default(ExternalPrimaryAccountRecipientAuthRequirements), string Status = default(string), string UserId = default(string))
         {
             this.AccountName = AccountName;
             this.ConfigurationId = ConfigurationId;
             this.Email = Email;
             this.LinkId = LinkId;
+            this.PdfFieldHandlingOption = PdfFieldHandlingOption;
             this.RecipientAuthRequirements = RecipientAuthRequirements;
             this.Status = Status;
             this.UserId = UserId;
@@ -76,6 +78,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="linkId", EmitDefaultValue=false)]
         public string LinkId { get; set; }
+        /// <summary>
+        /// Gets or Sets PdfFieldHandlingOption
+        /// </summary>
+        [DataMember(Name="pdfFieldHandlingOption", EmitDefaultValue=false)]
+        public string PdfFieldHandlingOption { get; set; }
         /// <summary>
         /// Gets or Sets RecipientAuthRequirements
         /// </summary>
@@ -104,6 +111,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ConfigurationId: ").Append(ConfigurationId).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  LinkId: ").Append(LinkId).Append("\n");
+            sb.Append("  PdfFieldHandlingOption: ").Append(PdfFieldHandlingOption).Append("\n");
             sb.Append("  RecipientAuthRequirements: ").Append(RecipientAuthRequirements).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
@@ -164,6 +172,11 @@ namespace DocuSign.eSign.Model
                     this.LinkId.Equals(other.LinkId)
                 ) && 
                 (
+                    this.PdfFieldHandlingOption == other.PdfFieldHandlingOption ||
+                    this.PdfFieldHandlingOption != null &&
+                    this.PdfFieldHandlingOption.Equals(other.PdfFieldHandlingOption)
+                ) && 
+                (
                     this.RecipientAuthRequirements == other.RecipientAuthRequirements ||
                     this.RecipientAuthRequirements != null &&
                     this.RecipientAuthRequirements.Equals(other.RecipientAuthRequirements)
@@ -199,6 +212,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Email.GetHashCode();
                 if (this.LinkId != null)
                     hash = hash * 59 + this.LinkId.GetHashCode();
+                if (this.PdfFieldHandlingOption != null)
+                    hash = hash * 59 + this.PdfFieldHandlingOption.GetHashCode();
                 if (this.RecipientAuthRequirements != null)
                     hash = hash * 59 + this.RecipientAuthRequirements.GetHashCode();
                 if (this.Status != null)

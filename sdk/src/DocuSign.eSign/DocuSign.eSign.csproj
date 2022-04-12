@@ -4,8 +4,7 @@
     <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
     <IsPackable>true</IsPackable>
     <PackageId>DocuSign.eSign.dll</PackageId>
-    <Description>The DocuSign NuGet package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-csharp-client repository. Join the eSign revolution!</Description>
-    <Description>A library generated from a Swagger doc</Description>
+    <Description>The DocuSign NuGet package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-esign-csharp-client repository. Join the eSign revolution!</Description>
     <Company>DocuSign Inc.</Company>
     <Owners>DocuSign</Owners>
     <Copyright>Copyright © DocuSign 2022</Copyright>
@@ -17,7 +16,7 @@
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>5.9.0</VersionPrefix>
+    <VersionPrefix>5.10.0</VersionPrefix>
     <VersionSuffix/>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -27,7 +26,7 @@
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v5.9.0] - eSignature API v2.1-21.4.02.00 - 02/10/2022</PackageReleaseNotes>
+    <PackageReleaseNotes>[v5.10.0] - ESignature API v2.1-22.1.01.00 - 4/7/2022</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net452'">
     <DefineConstants>NET452</DefineConstants>

@@ -47,7 +47,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TriggeredDate">TriggeredDate.</param>
         /// <param name="TriggerOnItem">TriggerOnItem.</param>
         /// <param name="WorkflowStepId">WorkflowStepId.</param>
-        public WorkflowStep(string Action = default(string), string CompletedDate = default(string), DelayedRoutingApiModel DelayedRouting = default(DelayedRoutingApiModel), string ItemId = default(string), RecipientRouting RecipientRouting = default(RecipientRouting), string Status = default(string), string TriggeredDate = default(string), string TriggerOnItem = default(string), string WorkflowStepId = default(string))
+        public WorkflowStep(string Action = default(string), string CompletedDate = default(string), DelayedRouting DelayedRouting = default(DelayedRouting), string ItemId = default(string), RecipientRouting RecipientRouting = default(RecipientRouting), string Status = default(string), string TriggeredDate = default(string), string TriggerOnItem = default(string), string WorkflowStepId = default(string))
         {
             this.Action = Action;
             this.CompletedDate = CompletedDate;
@@ -74,7 +74,7 @@ namespace DocuSign.eSign.Model
         /// Gets or Sets DelayedRouting
         /// </summary>
         [DataMember(Name="delayedRouting", EmitDefaultValue=false)]
-        public DelayedRoutingApiModel DelayedRouting { get; set; }
+        public DelayedRouting DelayedRouting { get; set; }
         /// <summary>
         /// Gets or Sets ItemId
         /// </summary>

@@ -55,6 +55,7 @@ namespace DocuSign.eSign.Model
         /// <param name="HomeAddress">HomeAddress.</param>
         /// <param name="InitialsImageUri">Contains the URI for an endpoint that you can use to retrieve the initials image..</param>
         /// <param name="IsAdmin">Determines if the feature set is actively set as part of the plan..</param>
+        /// <param name="IsAlternateAdmin">IsAlternateAdmin.</param>
         /// <param name="IsNAREnabled">IsNAREnabled.</param>
         /// <param name="JobTitle">JobTitle.</param>
         /// <param name="LastLogin">Shows the date-time when the user last logged on to the system..</param>
@@ -81,7 +82,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserStatus">UserStatus.</param>
         /// <param name="UserType">UserType.</param>
         /// <param name="WorkAddress">WorkAddress.</param>
-        public UserInformation(string ActivationAccessCode = default(string), string Company = default(string), List<ConnectUserObject> ConnectConfigurations = default(List<ConnectUserObject>), string CountryCode = default(string), string CreatedDateTime = default(string), List<NameValue> CustomSettings = default(List<NameValue>), string DefaultAccountId = default(string), string Email = default(string), string EnableConnectForUser = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FirstName = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), List<Group> GroupList = default(List<Group>), bool? HasRemoteNotary = default(bool?), AddressInformation HomeAddress = default(AddressInformation), string InitialsImageUri = default(string), string IsAdmin = default(string), string IsNAREnabled = default(string), string JobTitle = default(string), string LastLogin = default(string), string LastName = default(string), string LoginStatus = default(string), string MiddleName = default(string), string Password = default(string), string PasswordExpiration = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string ProfileImageUri = default(string), string SendActivationEmail = default(string), string SendActivationOnInvalidLogin = default(string), string SignatureImageUri = default(string), string Subscribe = default(string), string SuffixName = default(string), string Title = default(string), string Uri = default(string), string UserAddedToAccountDateTime = default(string), string UserId = default(string), string UserName = default(string), string UserProfileLastModifiedDate = default(string), UserSettingsInformation UserSettings = default(UserSettingsInformation), string UserStatus = default(string), string UserType = default(string), AddressInformation WorkAddress = default(AddressInformation))
+        public UserInformation(string ActivationAccessCode = default(string), string Company = default(string), List<ConnectUserObject> ConnectConfigurations = default(List<ConnectUserObject>), string CountryCode = default(string), string CreatedDateTime = default(string), List<NameValue> CustomSettings = default(List<NameValue>), string DefaultAccountId = default(string), string Email = default(string), string EnableConnectForUser = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FirstName = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), List<Group> GroupList = default(List<Group>), bool? HasRemoteNotary = default(bool?), AddressInformation HomeAddress = default(AddressInformation), string InitialsImageUri = default(string), string IsAdmin = default(string), string IsAlternateAdmin = default(string), string IsNAREnabled = default(string), string JobTitle = default(string), string LastLogin = default(string), string LastName = default(string), string LoginStatus = default(string), string MiddleName = default(string), string Password = default(string), string PasswordExpiration = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string ProfileImageUri = default(string), string SendActivationEmail = default(string), string SendActivationOnInvalidLogin = default(string), string SignatureImageUri = default(string), string Subscribe = default(string), string SuffixName = default(string), string Title = default(string), string Uri = default(string), string UserAddedToAccountDateTime = default(string), string UserId = default(string), string UserName = default(string), string UserProfileLastModifiedDate = default(string), UserSettingsInformation UserSettings = default(UserSettingsInformation), string UserStatus = default(string), string UserType = default(string), AddressInformation WorkAddress = default(AddressInformation))
         {
             this.ActivationAccessCode = ActivationAccessCode;
             this.Company = Company;
@@ -100,6 +101,7 @@ namespace DocuSign.eSign.Model
             this.HomeAddress = HomeAddress;
             this.InitialsImageUri = InitialsImageUri;
             this.IsAdmin = IsAdmin;
+            this.IsAlternateAdmin = IsAlternateAdmin;
             this.IsNAREnabled = IsNAREnabled;
             this.JobTitle = JobTitle;
             this.LastLogin = LastLogin;
@@ -221,6 +223,11 @@ namespace DocuSign.eSign.Model
         /// <value>Determines if the feature set is actively set as part of the plan.</value>
         [DataMember(Name="isAdmin", EmitDefaultValue=false)]
         public string IsAdmin { get; set; }
+        /// <summary>
+        /// Gets or Sets IsAlternateAdmin
+        /// </summary>
+        [DataMember(Name="isAlternateAdmin", EmitDefaultValue=false)]
+        public string IsAlternateAdmin { get; set; }
         /// <summary>
         /// Gets or Sets IsNAREnabled
         /// </summary>
@@ -384,6 +391,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  HomeAddress: ").Append(HomeAddress).Append("\n");
             sb.Append("  InitialsImageUri: ").Append(InitialsImageUri).Append("\n");
             sb.Append("  IsAdmin: ").Append(IsAdmin).Append("\n");
+            sb.Append("  IsAlternateAdmin: ").Append(IsAlternateAdmin).Append("\n");
             sb.Append("  IsNAREnabled: ").Append(IsNAREnabled).Append("\n");
             sb.Append("  JobTitle: ").Append(JobTitle).Append("\n");
             sb.Append("  LastLogin: ").Append(LastLogin).Append("\n");
@@ -530,6 +538,11 @@ namespace DocuSign.eSign.Model
                     this.IsAdmin == other.IsAdmin ||
                     this.IsAdmin != null &&
                     this.IsAdmin.Equals(other.IsAdmin)
+                ) && 
+                (
+                    this.IsAlternateAdmin == other.IsAlternateAdmin ||
+                    this.IsAlternateAdmin != null &&
+                    this.IsAlternateAdmin.Equals(other.IsAlternateAdmin)
                 ) && 
                 (
                     this.IsNAREnabled == other.IsNAREnabled ||
@@ -708,6 +721,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.InitialsImageUri.GetHashCode();
                 if (this.IsAdmin != null)
                     hash = hash * 59 + this.IsAdmin.GetHashCode();
+                if (this.IsAlternateAdmin != null)
+                    hash = hash * 59 + this.IsAlternateAdmin.GetHashCode();
                 if (this.IsNAREnabled != null)
                     hash = hash * 59 + this.IsNAREnabled.GetHashCode();
                 if (this.JobTitle != null)

@@ -1468,8 +1468,6 @@ namespace DocuSign.eSign.Api
             public string startPosition {get; set;}
             /// 
             public string status {get; set;}
-            /// 
-            public string userId {get; set;}
         }
 
         /// <summary>
@@ -1539,7 +1537,6 @@ namespace DocuSign.eSign.Api
                 if (options.searchText != null) localVarQueryParams.Add("search_text", this.ApiClient.ParameterToString(options.searchText)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
                 if (options.status != null) localVarQueryParams.Add("status", this.ApiClient.ParameterToString(options.status)); // query parameter
-                if (options.userId != null) localVarQueryParams.Add("user_id", this.ApiClient.ParameterToString(options.userId)); // query parameter
             }
 
 
@@ -1644,7 +1641,6 @@ namespace DocuSign.eSign.Api
                 if (options.searchText != null) localVarQueryParams.Add("search_text", this.ApiClient.ParameterToString(options.searchText)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
                 if (options.status != null) localVarQueryParams.Add("status", this.ApiClient.ParameterToString(options.status)); // query parameter
-                if (options.userId != null) localVarQueryParams.Add("user_id", this.ApiClient.ParameterToString(options.userId)); // query parameter
             }
 
 
@@ -1867,11 +1863,17 @@ namespace DocuSign.eSign.Api
             /// 
             public string count {get; set;}
             /// 
+            public string fromDate {get; set;}
+            /// 
             public string searchText {get; set;}
             /// 
             public string startPosition {get; set;}
             /// 
             public string status {get; set;}
+            /// 
+            public string toDate {get; set;}
+            /// 
+            public string userId {get; set;}
         }
 
         /// <summary>
@@ -1932,9 +1934,12 @@ namespace DocuSign.eSign.Api
             {
                 if (options.batchIds != null) localVarQueryParams.Add("batch_ids", this.ApiClient.ParameterToString(options.batchIds)); // query parameter
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
                 if (options.searchText != null) localVarQueryParams.Add("search_text", this.ApiClient.ParameterToString(options.searchText)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
                 if (options.status != null) localVarQueryParams.Add("status", this.ApiClient.ParameterToString(options.status)); // query parameter
+                if (options.toDate != null) localVarQueryParams.Add("to_date", this.ApiClient.ParameterToString(options.toDate)); // query parameter
+                if (options.userId != null) localVarQueryParams.Add("user_id", this.ApiClient.ParameterToString(options.userId)); // query parameter
             }
 
 
@@ -2030,9 +2035,12 @@ namespace DocuSign.eSign.Api
             {
                 if (options.batchIds != null) localVarQueryParams.Add("batch_ids", this.ApiClient.ParameterToString(options.batchIds)); // query parameter
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
                 if (options.searchText != null) localVarQueryParams.Add("search_text", this.ApiClient.ParameterToString(options.searchText)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
                 if (options.status != null) localVarQueryParams.Add("status", this.ApiClient.ParameterToString(options.status)); // query parameter
+                if (options.toDate != null) localVarQueryParams.Add("to_date", this.ApiClient.ParameterToString(options.toDate)); // query parameter
+                if (options.userId != null) localVarQueryParams.Add("user_id", this.ApiClient.ParameterToString(options.userId)); // query parameter
             }
 
 

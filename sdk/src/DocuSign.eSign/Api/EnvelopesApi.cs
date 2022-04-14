@@ -1275,31 +1275,6 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<System.IO.Stream> GetDocumentPageImageWithHttpInfo (string accountId, string envelopeId, string documentId, string pageNumber, EnvelopesApi.GetDocumentPageImageOptions options = null);
         /// <summary>
-        /// Get Responsive HTML for a document in an envelope.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns></returns>
-        DocumentHtmlDefinitionOriginals GetDocumentResponsiveHtml (string accountId, string envelopeId, string documentId, EnvelopesApi.GetDocumentResponsiveHtmlOptions options = null);
-
-        /// <summary>
-        /// Get Responsive HTML for a document in an envelope.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentHtmlDefinitionOriginals> GetDocumentResponsiveHtmlWithHttpInfo (string accountId, string envelopeId, string documentId, EnvelopesApi.GetDocumentResponsiveHtmlOptions options = null);
-        /// <summary>
         /// Returns tabs on the document.
         /// </summary>
         /// <remarks>
@@ -1699,31 +1674,6 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<System.IO.Stream> GetRecipientSignatureImageWithHttpInfo (string accountId, string envelopeId, string recipientId, EnvelopesApi.GetRecipientSignatureImageOptions options = null);
-        /// <summary>
-        /// Get Responsive HTML for all documents in an envelope.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns></returns>
-        DocumentHtmlDefinitionOriginals GetResponsiveHtml (string accountId, string envelopeId, EnvelopesApi.GetResponsiveHtmlOptions options = null);
-
-        /// <summary>
-        /// Get Responsive HTML for all documents in an envelope.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentHtmlDefinitionOriginals> GetResponsiveHtmlWithHttpInfo (string accountId, string envelopeId, EnvelopesApi.GetResponsiveHtmlOptions options = null);
         /// <summary>
         /// Get encrypted tabs for envelope.
         /// </summary>
@@ -2599,6 +2549,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>ApiResponse of </returns>
         ApiResponse<DocumentVisibilityList> UpdateRecipientsDocumentVisibilityWithHttpInfo (string accountId, string envelopeId, DocumentVisibilityList documentVisibilityList = null);
+        /// <summary>
+        /// Retrieves a PDF document from the envelope with no CoC.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="regenDocumentId"></param>
+        /// <param name="document"> (optional)</param>
+        
+        /// <returns></returns>
+        System.IO.Stream UpdateRegenDocument (string accountId, string envelopeId, string regenDocumentId, Document document = null);
+
+        /// <summary>
+        /// Retrieves a PDF document from the envelope with no CoC.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="regenDocumentId"></param>
+        /// <param name="document"> (optional)</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<System.IO.Stream> UpdateRegenDocumentWithHttpInfo (string accountId, string envelopeId, string regenDocumentId, Document document = null);
         /// <summary>
         /// Updates the tabs for a recipient.  
         /// </summary>
@@ -3977,31 +3952,6 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDocumentPageImageAsyncWithHttpInfo (string accountId, string envelopeId, string documentId, string pageNumber, EnvelopesApi.GetDocumentPageImageOptions options = null);
         /// <summary>
-        /// Get Responsive HTML for a document in an envelope.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
-        System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetDocumentResponsiveHtmlAsync (string accountId, string envelopeId, string documentId, EnvelopesApi.GetDocumentResponsiveHtmlOptions options = null);
-
-        /// <summary>
-        /// Get Responsive HTML for a document in an envelope.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetDocumentResponsiveHtmlAsyncWithHttpInfo (string accountId, string envelopeId, string documentId, EnvelopesApi.GetDocumentResponsiveHtmlOptions options = null);
-        /// <summary>
         /// Returns tabs on the document.
         /// </summary>
         /// <remarks>
@@ -4401,31 +4351,6 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetRecipientSignatureImageAsyncWithHttpInfo (string accountId, string envelopeId, string recipientId, EnvelopesApi.GetRecipientSignatureImageOptions options = null);
-        /// <summary>
-        /// Get Responsive HTML for all documents in an envelope.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
-        System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetResponsiveHtmlAsync (string accountId, string envelopeId, EnvelopesApi.GetResponsiveHtmlOptions options = null);
-
-        /// <summary>
-        /// Get Responsive HTML for all documents in an envelope.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetResponsiveHtmlAsyncWithHttpInfo (string accountId, string envelopeId, EnvelopesApi.GetResponsiveHtmlOptions options = null);
         /// <summary>
         /// Get encrypted tabs for envelope.
         /// </summary>
@@ -5301,6 +5226,31 @@ namespace DocuSign.eSign.Api
         
         /// <returns>Task of ApiResponse (DocumentVisibilityList)</returns>
         System.Threading.Tasks.Task<ApiResponse<DocumentVisibilityList>> UpdateRecipientsDocumentVisibilityAsyncWithHttpInfo (string accountId, string envelopeId, DocumentVisibilityList documentVisibilityList = null);
+        /// <summary>
+        /// Retrieves a PDF document from the envelope with no CoC.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="regenDocumentId"></param>
+        /// <param name="document"> (optional)</param>
+        
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> UpdateRegenDocumentAsync (string accountId, string envelopeId, string regenDocumentId, Document document = null);
+
+        /// <summary>
+        /// Retrieves a PDF document from the envelope with no CoC.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="regenDocumentId"></param>
+        /// <param name="document"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> UpdateRegenDocumentAsyncWithHttpInfo (string accountId, string envelopeId, string regenDocumentId, Document document = null);
         /// <summary>
         /// Updates the tabs for a recipient.  
         /// </summary>
@@ -15372,212 +15322,6 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get Responsive HTML for a document in an envelope. 
-        /// </summary>
-        public class GetDocumentResponsiveHtmlOptions
-        {
-            /// 
-            public string includeAnchorTabLocations {get; set;}
-        }
-
-        /// <summary>
-        /// Get Responsive HTML for a document in an envelope. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>DocumentHtmlDefinitionOriginals</returns>
-        public DocumentHtmlDefinitionOriginals GetDocumentResponsiveHtml (string accountId, string envelopeId, string documentId, EnvelopesApi.GetDocumentResponsiveHtmlOptions options = null)
-        {
-             ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = GetDocumentResponsiveHtmlWithHttpInfo(accountId, envelopeId, documentId, options);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get Responsive HTML for a document in an envelope. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>ApiResponse of DocumentHtmlDefinitionOriginals</returns>
-        public ApiResponse< DocumentHtmlDefinitionOriginals > GetDocumentResponsiveHtmlWithHttpInfo (string accountId, string envelopeId, string documentId, EnvelopesApi.GetDocumentResponsiveHtmlOptions options = null)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->GetDocumentResponsiveHtml");
-            // verify the required parameter 'envelopeId' is set
-            if (envelopeId == null)
-                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->GetDocumentResponsiveHtml");
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling EnvelopesApi->GetDocumentResponsiveHtml");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/responsive_html";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.includeAnchorTabLocations != null) localVarQueryParams.Add("include_anchor_tab_locations", this.ApiClient.ParameterToString(options.includeAnchorTabLocations)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetDocumentResponsiveHtml", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitionOriginals)));
-            }
-            else
-            {
-                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
-            }
-            
-        }
-
-        /// <summary>
-        /// Get Responsive HTML for a document in an envelope. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
-        public async System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetDocumentResponsiveHtmlAsync (string accountId, string envelopeId, string documentId, EnvelopesApi.GetDocumentResponsiveHtmlOptions options = null)
-        {
-             ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = await GetDocumentResponsiveHtmlAsyncWithHttpInfo(accountId, envelopeId, documentId, options);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get Responsive HTML for a document in an envelope. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetDocumentResponsiveHtmlAsyncWithHttpInfo (string accountId, string envelopeId, string documentId, EnvelopesApi.GetDocumentResponsiveHtmlOptions options = null)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->GetDocumentResponsiveHtml");
-            // verify the required parameter 'envelopeId' is set
-            if (envelopeId == null)
-                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->GetDocumentResponsiveHtml");
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling EnvelopesApi->GetDocumentResponsiveHtml");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/responsive_html";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.includeAnchorTabLocations != null) localVarQueryParams.Add("include_anchor_tab_locations", this.ApiClient.ParameterToString(options.includeAnchorTabLocations)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetDocumentResponsiveHtml", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
-            
-        }
-
-
-        /// <summary>
         /// Returns tabs on the document. 
         /// </summary>
         public class GetDocumentTabsOptions
@@ -18681,204 +18425,6 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<System.IO.Stream>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
-            
-        }
-
-
-        /// <summary>
-        /// Get Responsive HTML for all documents in an envelope. 
-        /// </summary>
-        public class GetResponsiveHtmlOptions
-        {
-            /// 
-            public string includeAnchorTabLocations {get; set;}
-        }
-
-        /// <summary>
-        /// Get Responsive HTML for all documents in an envelope. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>DocumentHtmlDefinitionOriginals</returns>
-        public DocumentHtmlDefinitionOriginals GetResponsiveHtml (string accountId, string envelopeId, EnvelopesApi.GetResponsiveHtmlOptions options = null)
-        {
-             ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = GetResponsiveHtmlWithHttpInfo(accountId, envelopeId, options);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get Responsive HTML for all documents in an envelope. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>ApiResponse of DocumentHtmlDefinitionOriginals</returns>
-        public ApiResponse< DocumentHtmlDefinitionOriginals > GetResponsiveHtmlWithHttpInfo (string accountId, string envelopeId, EnvelopesApi.GetResponsiveHtmlOptions options = null)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->GetResponsiveHtml");
-            // verify the required parameter 'envelopeId' is set
-            if (envelopeId == null)
-                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->GetResponsiveHtml");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/responsive_html";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.includeAnchorTabLocations != null) localVarQueryParams.Add("include_anchor_tab_locations", this.ApiClient.ParameterToString(options.includeAnchorTabLocations)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetResponsiveHtml", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitionOriginals)));
-            }
-            else
-            {
-                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
-            }
-            
-        }
-
-        /// <summary>
-        /// Get Responsive HTML for all documents in an envelope. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
-        public async System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetResponsiveHtmlAsync (string accountId, string envelopeId, EnvelopesApi.GetResponsiveHtmlOptions options = null)
-        {
-             ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = await GetResponsiveHtmlAsyncWithHttpInfo(accountId, envelopeId, options);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get Responsive HTML for all documents in an envelope. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        
-        /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetResponsiveHtmlAsyncWithHttpInfo (string accountId, string envelopeId, EnvelopesApi.GetResponsiveHtmlOptions options = null)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->GetResponsiveHtml");
-            // verify the required parameter 'envelopeId' is set
-            if (envelopeId == null)
-                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->GetResponsiveHtml");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/responsive_html";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.includeAnchorTabLocations != null) localVarQueryParams.Add("include_anchor_tab_locations", this.ApiClient.ParameterToString(options.includeAnchorTabLocations)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetResponsiveHtml", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
             
         }
 
@@ -25973,6 +25519,212 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<DocumentVisibilityList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (DocumentVisibilityList) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentVisibilityList)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a PDF document from the envelope with no CoC. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="regenDocumentId"></param>
+        /// <param name="document"> (optional)</param>
+        
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream UpdateRegenDocument (string accountId, string envelopeId, string regenDocumentId, Document document = null)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = UpdateRegenDocumentWithHttpInfo(accountId, envelopeId, regenDocumentId, document);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieves a PDF document from the envelope with no CoC. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="regenDocumentId"></param>
+        /// <param name="document"> (optional)</param>
+        
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public ApiResponse< System.IO.Stream > UpdateRegenDocumentWithHttpInfo (string accountId, string envelopeId, string regenDocumentId, Document document = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->UpdateRegenDocument");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->UpdateRegenDocument");
+            // verify the required parameter 'regenDocumentId' is set
+            if (regenDocumentId == null)
+                throw new ApiException(400, "Missing required parameter 'regenDocumentId' when calling EnvelopesApi->UpdateRegenDocument");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{regenDocumentId}/regen";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/pdf"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
+            if (regenDocumentId != null) localVarPathParams.Add("regenDocumentId", this.ApiClient.ParameterToString(regenDocumentId)); // path parameter
+
+
+            if (document != null && document.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(document); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = document; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateRegenDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(System.IO.Stream)));
+            }
+            else
+            {
+                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Retrieves a PDF document from the envelope with no CoC. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="regenDocumentId"></param>
+        /// <param name="document"> (optional)</param>
+        
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> UpdateRegenDocumentAsync (string accountId, string envelopeId, string regenDocumentId, Document document = null)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = await UpdateRegenDocumentAsyncWithHttpInfo(accountId, envelopeId, regenDocumentId, document);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Retrieves a PDF document from the envelope with no CoC. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>/// <param name="regenDocumentId"></param>
+        /// <param name="document"> (optional)</param>
+        
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> UpdateRegenDocumentAsyncWithHttpInfo (string accountId, string envelopeId, string regenDocumentId, Document document = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->UpdateRegenDocument");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->UpdateRegenDocument");
+            // verify the required parameter 'regenDocumentId' is set
+            if (regenDocumentId == null)
+                throw new ApiException(400, "Missing required parameter 'regenDocumentId' when calling EnvelopesApi->UpdateRegenDocument");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{regenDocumentId}/regen";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/pdf"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
+            if (regenDocumentId != null) localVarPathParams.Add("regenDocumentId", this.ApiClient.ParameterToString(regenDocumentId)); // path parameter
+
+
+            if (document != null && document.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(document); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = document; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateRegenDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
             
         }
 

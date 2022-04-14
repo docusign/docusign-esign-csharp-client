@@ -1,77 +1,51 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-using DocuSign.eSign.Model;
 using DocuSign.eSign.Client;
 using DocuSign.eSign.Api;
+using DocuSign.eSign.Model;
 using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using DocuSign.eSign.Client.Auth;
-using System.Text;
 
 namespace SdkTests
 {
     [TestClass]
-    public class JwtAuthUnitTests
+    public class AuthUnitTests
     {
-        TestConfig testConfig = new TestConfig();
-        [TestInitialize()]
-        [TestMethod]
-        public void JwtLoginTest()
+        private TestConfig _testConfig;
+
+        [TestInitialize]
+        public void TestInitialize()
         {
-            testConfig.ApiClient = new ApiClient(testConfig.Host);
-
-            Assert.IsNotNull(testConfig.PrivateKey);
-
-            byte[] privateKeyStream = Convert.FromBase64String(testConfig.PrivateKey);
-
-            OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours);
-
-            // the authentication api uses the apiClient (and X-DocuSign-Authentication header) that are set in Configuration object
-            OAuth.UserInfo userInfo = testConfig.ApiClient.GetUserInfo(tokenInfo.access_token);
-
-            Assert.IsNotNull(userInfo);
-            Assert.IsNotNull(userInfo.Accounts);
-
-            foreach (var item in userInfo.Accounts)
-            {
-                if (item.IsDefault == "true")
-                {
-                    testConfig.AccountId = item.AccountId;
-                    testConfig.ApiClient.SetBasePath(item.BaseUri + "/restapi");
-                    break;
-                }
-            }
-
-            Assert.IsNotNull(testConfig.AccountId);
+            _testConfig = new TestConfig();
+            JwtLoginMethod.RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref _testConfig);
         }
 
         [TestMethod]
         public void SetBasePathTest()
         {
             // Prepare
-            var configBasePath = testConfig.ApiClient.Configuration.BasePath;
-            var restBasePath = testConfig.ApiClient.RestClient.BasePath;
+            var configBasePath = _testConfig.ApiClient.Configuration.BasePath;
+            var restBasePath = _testConfig.ApiClient.RestClient.BaseUrl.ToString();
 
             // Test is everything initialized properly
             Assert.AreEqual(configBasePath, restBasePath);
 
             // Test a new basepath
-            var testBasePath = "na.docusign.net/restapi";
-
-            testConfig.ApiClient.SetBasePath(testBasePath);
+            var testBasePath = "https://na.docusign.net/restapi";
+            
+            _testConfig.ApiClient.SetBasePath(testBasePath);
 
             // Assert
-            Assert.AreEqual(testBasePath, testConfig.ApiClient.RestClient.BasePath);
-            Assert.AreEqual(testBasePath, testConfig.ApiClient.Configuration.BasePath);
+            Assert.AreEqual(testBasePath, _testConfig.ApiClient.RestClient.BaseUrl.ToString());
+            Assert.AreEqual(testBasePath, _testConfig.ApiClient.Configuration.BasePath);
 
             // Rest
-            testConfig.ApiClient.SetBasePath(configBasePath);
+            _testConfig.ApiClient.SetBasePath(configBasePath);
 
             // Assert
-            Assert.AreEqual(restBasePath, testConfig.ApiClient.RestClient.BasePath);
-            Assert.AreEqual(configBasePath, testConfig.ApiClient.Configuration.BasePath);
+            Assert.AreEqual(restBasePath, _testConfig.ApiClient.RestClient.BaseUrl.ToString());
+            Assert.AreEqual(configBasePath, _testConfig.ApiClient.Configuration.BasePath);
         }
 
 
@@ -97,8 +71,8 @@ namespace SdkTests
 
             // Add a recipient to sign the documeent
             Signer signer = new Signer();
-            signer.Email = testConfig.RecipientEmail;
-            signer.Name = testConfig.RecipientName;
+            signer.Email = _testConfig.RecipientEmail;
+            signer.Name = _testConfig.RecipientName;
             signer.RecipientId = "1";
             signer.ClientUserId = "1234";
 
@@ -132,18 +106,18 @@ namespace SdkTests
             envDef.Status = status;
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
-            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
+            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef);
 
             Assert.IsNotNull(envelopeSummary);
             Assert.IsNotNull(envelopeSummary.EnvelopeId);
 
-            testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
+            _testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
         }
 
         private void GetSampleEnvelopeIds()
         {
-            if (testConfig.EnvelopeIdsList.Count <= 0)
+            if (_testConfig.EnvelopeIdsList.Count <= 0)
             {
                 JwtListEnvelopesTest();
             }
@@ -158,27 +132,27 @@ namespace SdkTests
             // assign recipient to template role by setting name, email, and role name.  Note that the
             // template role name must match the placeholder role name saved in your account template.  
             TemplateRole tRole = new TemplateRole();
-            tRole.Email = testConfig.RecipientEmail;
-            tRole.Name = testConfig.RecipientName;
-            tRole.RoleName = testConfig.TemplateRoleName;
+            tRole.Email = _testConfig.RecipientEmail;
+            tRole.Name = _testConfig.RecipientName;
+            tRole.RoleName = _testConfig.TemplateRoleName;
 
             List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
 
             // add the role to the envelope and assign valid templateId from your account
             envDef.TemplateRoles = rolesList;
-            envDef.TemplateId = testConfig.TemplateId;
+            envDef.TemplateId = _testConfig.TemplateId;
 
             // set envelope status to "sent" to immediately send the signature request
             envDef.Status = "sent";
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
-            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
+            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef);
 
             Assert.IsNotNull(envelopeSummary);
             Assert.IsNotNull(envelopeSummary.EnvelopeId);
 
-            testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
+            _testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
         }
 
         [TestMethod]
@@ -187,8 +161,8 @@ namespace SdkTests
             JwtRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes including status calls
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
-            Envelope envInfo = envelopesApi.GetEnvelope(testConfig.AccountId, testConfig.EnvelopeId);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
+            Envelope envInfo = envelopesApi.GetEnvelope(_testConfig.AccountId, _testConfig.EnvelopeId);
 
             Assert.IsNotNull(envInfo);
             Assert.IsNotNull(envInfo.EnvelopeId);
@@ -200,8 +174,8 @@ namespace SdkTests
             JwtRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
-            Recipients recips = envelopesApi.ListRecipients(testConfig.AccountId, testConfig.EnvelopeId);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
+            Recipients recips = envelopesApi.ListRecipients(_testConfig.AccountId, _testConfig.EnvelopeId);
 
             Assert.IsNotNull(recips);
             Assert.IsNotNull(recips.RecipientCount);
@@ -223,8 +197,8 @@ namespace SdkTests
             };
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
-            EnvelopesInformation envelopes = envelopesApi.ListStatusChanges(testConfig.AccountId, options);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
+            EnvelopesInformation envelopes = envelopesApi.ListStatusChanges(_testConfig.AccountId, options);
 
             Assert.IsNotNull(envelopes);
             Assert.IsNotNull(envelopes.Envelopes);
@@ -232,7 +206,7 @@ namespace SdkTests
 
             foreach (var envelopeslist in envelopes.Envelopes)
             {
-                testConfig.EnvelopeIdsList.Add(envelopeslist.EnvelopeId);
+                _testConfig.EnvelopeIdsList.Add(envelopeslist.EnvelopeId);
             }
 
         } // end listEnvelopesTest()
@@ -242,7 +216,7 @@ namespace SdkTests
         {
             GetSampleEnvelopeIds();
             // This example gets statuses of all envelopes listed in envelopeIds comma separated
-            var envIds = string.Join(", ", testConfig.EnvelopeIdsList);
+            var envIds = string.Join(", ", _testConfig.EnvelopeIdsList);
 
             // set a filter for the envelopes we want returned using the envelopeIds property in the query parameter
             EnvelopesApi.ListStatusChangesOptions options = new EnvelopesApi.ListStatusChangesOptions()
@@ -251,9 +225,9 @@ namespace SdkTests
             };
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
 
-            EnvelopesInformation envelopes = envelopesApi.ListStatusChanges(testConfig.AccountId, options);
+            EnvelopesInformation envelopes = envelopesApi.ListStatusChanges(_testConfig.AccountId, options);
 
             Assert.IsNotNull(envelopes);
             Assert.IsNotNull(envelopes.Envelopes);
@@ -266,7 +240,7 @@ namespace SdkTests
         {
             GetSampleEnvelopeIds();
             // This example gets statuses of all envelopes listed in envelopeIds comma separated
-            EnvelopeIdsRequest envIdsRequest = new EnvelopeIdsRequest(testConfig.EnvelopeIdsList);
+            EnvelopeIdsRequest envIdsRequest = new EnvelopeIdsRequest(_testConfig.EnvelopeIdsList);
 
             // set a filter for the envelopes we want returned - we will ask the API to let the List of Envelope Ids from request body
             EnvelopesApi.ListStatusOptions options = new EnvelopesApi.ListStatusOptions()
@@ -275,9 +249,9 @@ namespace SdkTests
             };
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
 
-            EnvelopesInformation envelopes = envelopesApi.ListStatus(testConfig.AccountId, envIdsRequest, options);
+            EnvelopesInformation envelopes = envelopesApi.ListStatus(_testConfig.AccountId, envIdsRequest, options);
 
             Assert.IsNotNull(envelopes);
             Assert.IsNotNull(envelopes.Envelopes);
@@ -285,98 +259,14 @@ namespace SdkTests
             Assert.IsNotNull(envelopes.Envelopes[0].Status);
         }
 
-        /* Deprecated
-        private BulkRecipientsSummaryResponse MockBulkRecipientsSummaryResponse()
-        {
-            string bulkRecipientsCSV = "name,email\n" + "John Doe,john.doe@mailinator.com\n" + "Jane Doe,jane.doe@mailinator.com";
-            byte[] bulkRecipientsRequest = Encoding.ASCII.GetBytes(bulkRecipientsCSV);
-
-            BulkEnvelopesApi bulkEnvelopesApi = new BulkEnvelopesApi(testConfig.ApiClient);
-
-            return bulkEnvelopesApi.UpdateRecipients(testConfig.AccountId, testConfig.EnvelopeId, "1", bulkRecipientsRequest);
-        }
-
-        [TestMethod]
-        public void JwtBulkEnvelopesApiTest()
-        {
-            #region Envelope Creation - with BulkRecipient Flag
-            // the document (file) we want signed
-            const string SignTest1File = @"../../docs/SignTest1.pdf";
-
-            // Read a file from disk to use as a document.
-            byte[] fileBytes = File.ReadAllBytes(SignTest1File);
-
-            EnvelopeDefinition envDef = new EnvelopeDefinition();
-            envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
-
-            // Add a document to the envelope
-            Document doc = new Document();
-            doc.DocumentBase64 = System.Convert.ToBase64String(fileBytes);
-            doc.Name = "TestFile.pdf";
-            doc.DocumentId = "1";
-            // doc.FileExtension = System.IO.Path.GetExtension(SignTest1File);
-
-            envDef.Documents = new List<Document>();
-            envDef.Documents.Add(doc);
-
-            // Add a recipient to sign the documeent
-            Signer signer = new Signer();
-            signer.RecipientId = "1";
-            signer.IsBulkRecipient = "true";
-
-            // Create a |SignHere| tab somewhere on the document for the recipient to sign
-            signer.Tabs = new Tabs();
-            signer.Tabs.SignHereTabs = new List<SignHere>();
-            SignHere signHere = new SignHere();
-            signHere.DocumentId = "1";
-            signHere.PageNumber = "1";
-            signHere.RecipientId = "1";
-            signHere.XPosition = "100";
-            signHere.YPosition = "100";
-            signHere.ScaleValue = ".5";
-            signer.Tabs.SignHereTabs.Add(signHere);
-
-            envDef.Recipients = new Recipients();
-            envDef.Recipients.Signers = new List<Signer>();
-            envDef.Recipients.Signers.Add(signer);
-
-
-            TemplateTabs templateTabs = new TemplateTabs();
-            templateTabs.DateTabs = new List<Date>();
-
-            Tabs tabs = new Tabs();
-            tabs.DateTabs = new List<Date>();
-
-            SignerAttachment signerAttachment = new SignerAttachment();
-            signerAttachment.ScaleValue = "";
-
-            // set envelope status to "sent" to immediately send the signature request
-            envDef.Status = "created";
-
-            // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
-            EnvelopeSummary envelopeSummary = envelopesApi.CreateEnvelope(testConfig.AccountId, envDef);
-
-            testConfig.EnvelopeId = envelopeSummary.EnvelopeId;
-            #endregion
-
-            // update the status of the enve
-            Envelope envelope = new Envelope();
-            envelope.Status = "sent";
-
-            envelopesApi.Update(testConfig.AccountId, testConfig.EnvelopeId, envelope);
-        }
-        
-        */
-
         [TestMethod]
         public void JwtListDocumentsAndDownloadTest()
         {
             JwtRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
-            EnvelopeDocumentsResult docsList = envelopesApi.ListDocuments(testConfig.AccountId, testConfig.EnvelopeId);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
+            EnvelopeDocumentsResult docsList = envelopesApi.ListDocuments(_testConfig.AccountId, _testConfig.EnvelopeId);
 
             Assert.IsNotNull(docsList);
             Assert.IsNotNull(docsList.EnvelopeId);
@@ -396,7 +286,7 @@ namespace SdkTests
                 Assert.IsNotNull(docsList.EnvelopeDocuments[i].DocumentId);
 
                 // GetDocument() API call returns a MemoryStream
-                MemoryStream docStream = (MemoryStream)envelopesApi.GetDocument(testConfig.AccountId, testConfig.EnvelopeId, docsList.EnvelopeDocuments[i].DocumentId);
+                MemoryStream docStream = (MemoryStream)envelopesApi.GetDocument(_testConfig.AccountId, _testConfig.EnvelopeId, docsList.EnvelopeDocuments[i].DocumentId);
 
                 Assert.IsNotNull(docStream);
 
@@ -417,13 +307,13 @@ namespace SdkTests
             JwtRequestSignatureOnDocumentTest("created");
 
             ReturnUrlRequest options = new ReturnUrlRequest();
-            options.ReturnUrl = testConfig.ReturnUrl;
+            options.ReturnUrl = _testConfig.ReturnUrl;
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
 
             // generate the embedded sending URL
-            ViewUrl senderView = envelopesApi.CreateSenderView(testConfig.AccountId, testConfig.EnvelopeId, options);
+            ViewUrl senderView = envelopesApi.CreateSenderView(_testConfig.AccountId, _testConfig.EnvelopeId, options);
 
             Assert.IsNotNull(senderView);
 
@@ -436,19 +326,19 @@ namespace SdkTests
             JwtRequestSignatureOnDocumentTest();
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
 
             RecipientViewRequest viewOptions = new RecipientViewRequest()
             {
-                ReturnUrl = testConfig.ReturnUrl,
+                ReturnUrl = _testConfig.ReturnUrl,
                 ClientUserId = "1234",  // must match clientUserId set in step #2!
                 AuthenticationMethod = "email",
-                UserName = testConfig.RecipientName,
-                Email = testConfig.RecipientEmail
+                UserName = _testConfig.RecipientName,
+                Email = _testConfig.RecipientEmail
             };
 
             // create the recipient view (aka signing URL)
-            ViewUrl recipientView = envelopesApi.CreateRecipientView(testConfig.AccountId, testConfig.EnvelopeId, viewOptions);
+            ViewUrl recipientView = envelopesApi.CreateRecipientView(_testConfig.AccountId, _testConfig.EnvelopeId, viewOptions);
 
             Assert.IsNotNull(recipientView);
 
@@ -461,13 +351,13 @@ namespace SdkTests
             JwtRequestSignatureOnDocumentTest();
 
             // Adding the envelopeId start sthe console with the envelope open
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
 
             ConsoleViewRequest consoleViewRequest = new ConsoleViewRequest();
-            consoleViewRequest.EnvelopeId = testConfig.EnvelopeId;
-            consoleViewRequest.ReturnUrl = testConfig.ReturnUrl;
+            consoleViewRequest.EnvelopeId = _testConfig.EnvelopeId;
+            consoleViewRequest.ReturnUrl = _testConfig.ReturnUrl;
 
-            ViewUrl viewUrl = envelopesApi.CreateConsoleView(testConfig.AccountId, consoleViewRequest);
+            ViewUrl viewUrl = envelopesApi.CreateConsoleView(_testConfig.AccountId, consoleViewRequest);
 
             Assert.IsNotNull(viewUrl);
             Assert.IsNotNull(viewUrl.Url);
@@ -479,9 +369,9 @@ namespace SdkTests
             var envDef = new EnvelopeDefinition();
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
-            EnvelopesApi envelopesApi = new EnvelopesApi(testConfig.ApiClient);
+            EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
 
-            ApiResponse<EnvelopeSummary> envelopeSummary = envelopesApi.CreateEnvelopeWithHttpInfo(testConfig.AccountId, envDef);
+            ApiResponse<EnvelopeSummary> envelopeSummary = envelopesApi.CreateEnvelopeWithHttpInfo(_testConfig.AccountId, envDef);
 
             Assert.IsNotNull(envelopeSummary);
             Assert.IsNotNull(envelopeSummary.Headers);
@@ -504,7 +394,7 @@ namespace SdkTests
             // Create a stream of bytes... 
             byte[] privateKeyStream = System.Text.Encoding.UTF8.GetBytes(rsaKey);
 
-            Exception ex = Assert.ThrowsException<Exception>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
+            Exception ex = Assert.ThrowsException<Exception>(() => _testConfig.ApiClient.RequestJWTUserToken(_testConfig.IntegratorKeyNoConsent, _testConfig.UserId, _testConfig.OAuthBasePath, privateKeyStream, _testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
             Assert.AreEqual(ex.Message, "Unexpected PEM type");
@@ -514,8 +404,8 @@ namespace SdkTests
         public void JwtInvalidGrantTest()
         {
             // Adding a WRONG PEM key 
-            byte[] privateKeyStream = Convert.FromBase64String(testConfig.PrivateKey);
-            ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours));
+            byte[] privateKeyStream = _testConfig.PrivateKey;
+            ApiException ex = Assert.ThrowsException<ApiException>(() => _testConfig.ApiClient.RequestJWTUserToken(_testConfig.IntegratorKeyNoConsent, _testConfig.UserId, _testConfig.OAuthBasePath, privateKeyStream, _testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
             Assert.AreEqual("{\"error\":\"invalid_grant\",\"error_description\":\"no_valid_keys_or_signatures\"}", ex.ErrorContent);
@@ -525,8 +415,8 @@ namespace SdkTests
         public void JwtConsentRequiredTest()
         {
             // Adding a Correct PEM key - no consent granted
-            byte[] pkey = Convert.FromBase64String(testConfig.PrivateKeyNoConsent);
-            ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKeyNoConsent, testConfig.UserId, testConfig.OAuthBasePath, pkey, testConfig.ExpiresInHours));
+            byte[] pkey = Convert.FromBase64String(_testConfig.PrivateKeyNoConsent);
+            ApiException ex = Assert.ThrowsException<ApiException>(() => _testConfig.ApiClient.RequestJWTUserToken(_testConfig.IntegratorKeyNoConsent, _testConfig.UserId, _testConfig.OAuthBasePath, pkey, _testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
             // Assert.AreEqual(ex.ErrorContent, "{\"error\":\"consent_required\"}");
@@ -537,7 +427,7 @@ namespace SdkTests
         {
             string access_token = "---Invalid-Access-Token---";
 
-            ApiException ex = Assert.ThrowsException<ApiException>(() => testConfig.ApiClient.GetUserInfo(access_token));
+            ApiException ex = Assert.ThrowsException<ApiException>(() => _testConfig.ApiClient.GetUserInfo(access_token));
 
             Assert.IsNotNull(ex);
             Assert.IsNotNull(ex.ErrorContent);
@@ -549,8 +439,8 @@ namespace SdkTests
         [TestMethod]
         public void JwtListBrandTest()
         {
-            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
-            var brandsResponse = accApi.ListBrands(testConfig.AccountId);
+            AccountsApi accApi = new AccountsApi(_testConfig.ApiClient);
+            var brandsResponse = accApi.ListBrands(_testConfig.AccountId);
 
             Assert.IsNotNull(brandsResponse);
         }
@@ -558,17 +448,17 @@ namespace SdkTests
         [TestMethod]
         public void JwtUploadBrandLogoTest()
         {
-            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
+            AccountsApi accApi = new AccountsApi(_testConfig.ApiClient);
 
-            if (string.IsNullOrEmpty(testConfig.BrandId))
+            if (string.IsNullOrEmpty(_testConfig.BrandId))
             {
                 CreateBrandTest();
             }
 
             try
             {
-                byte[] brandLogoByteArray = Convert.FromBase64String(testConfig.BrandLogo);
-                accApi.UpdateBrandLogoByType(testConfig.AccountId, testConfig.BrandId, "primary", brandLogoByteArray);
+                byte[] brandLogoByteArray = Convert.FromBase64String(_testConfig.BrandLogo);
+                accApi.UpdateBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, "primary", brandLogoByteArray);
                 Assert.IsTrue(true);
             }
             catch
@@ -580,16 +470,16 @@ namespace SdkTests
         [TestMethod]
         public void JwtGetBrandLogoByBrandIdTest()
         {
-            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
-            if (string.IsNullOrEmpty(testConfig.BrandId))
+            AccountsApi accApi = new AccountsApi(_testConfig.ApiClient);
+            if (string.IsNullOrEmpty(_testConfig.BrandId))
             {
                 CreateBrandTest();
             }
 
-            byte[] brandLogoByteArray = Convert.FromBase64String(testConfig.BrandLogo);
+            byte[] brandLogoByteArray = Convert.FromBase64String(_testConfig.BrandLogo);
 
             //Check if C# png just got uploaded
-            Stream stream = accApi.GetBrandLogoByType(testConfig.AccountId, testConfig.BrandId, "primary");
+            Stream stream = accApi.GetBrandLogoByType(_testConfig.AccountId, _testConfig.BrandId, "primary");
 
             Assert.IsNotNull(stream);
 
@@ -603,19 +493,19 @@ namespace SdkTests
 
         private void CreateBrandTest()
         {
-            AccountsApi accApi = new AccountsApi(testConfig.ApiClient);
+            AccountsApi accApi = new AccountsApi(_testConfig.ApiClient);
             Brand brand = new Brand
             {
                 BrandName = "C# Brand"
             };
 
-            var brands = accApi.CreateBrand(testConfig.AccountId, brand);
+            var brands = accApi.CreateBrand(_testConfig.AccountId, brand);
 
             foreach (var brnds in brands.Brands)
             {
                 if (brnds.BrandName == brand.BrandName)
                 {
-                    testConfig.BrandId = brnds.BrandId;
+                    _testConfig.BrandId = brnds.BrandId;
                 }
             }
         }
@@ -624,16 +514,15 @@ namespace SdkTests
         {
             JwtRequestSignatureOnDocumentTest("sent");
 
-            FoldersApi foldersApi = new FoldersApi(testConfig.ApiClient);
+            FoldersApi foldersApi = new FoldersApi(_testConfig.ApiClient);
 
-            FoldersRequest foldersRequest = new FoldersRequest(EnvelopeIds: new List<string> { testConfig.EnvelopeId }, FromFolderId: "sentitems");
+            FoldersRequest foldersRequest = new FoldersRequest(EnvelopeIds: new List<string> { _testConfig.EnvelopeId }, FromFolderId: "sentitems");
 
             string ToFolderId = "draft";
-            FoldersResponse foldersResponse;
 
             try
             {
-                foldersApi.MoveEnvelopes(testConfig.AccountId, ToFolderId, foldersRequest);
+                foldersApi.MoveEnvelopes(_testConfig.AccountId, ToFolderId, foldersRequest);
             }
             catch (Exception ex)
             {
@@ -643,7 +532,7 @@ namespace SdkTests
             // Test if we moved the envelope to the correct folder
             FoldersApi.ListItemsOptions searchOptions = new FoldersApi.ListItemsOptions();
 
-            var listfromDraftsFolder = foldersApi.ListItems(testConfig.AccountId, ToFolderId, searchOptions);
+            var listfromDraftsFolder = foldersApi.ListItems(_testConfig.AccountId, ToFolderId, searchOptions);
 
             Assert.IsNotNull(listfromDraftsFolder);
 
@@ -652,7 +541,7 @@ namespace SdkTests
             {
                 foreach (var item in folder.FolderItems)
                 {
-                    if (item.EnvelopeId == testConfig.EnvelopeId)
+                    if (item.EnvelopeId == _testConfig.EnvelopeId)
                     {
                         doesExists = true;
                         break;
@@ -661,6 +550,55 @@ namespace SdkTests
             }
 
             Assert.IsTrue(doesExists);
+        }
+
+        [TestMethod]
+        public void CreateEnvelope_WrongTemplateId_ReturnApiException()
+        {
+            var envDef = new EnvelopeDefinition
+            {
+                EmailSubject = "[DocuSign C# SDK] - Please sign this doc",
+                TemplateId = "510fc78e-32f4-8778-44eb-6b53abb6c82E"
+            };
+
+            var envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
+            ApiException ex = Assert.ThrowsException<ApiException>(() => envelopesApi.CreateEnvelope(_testConfig.AccountId, envDef));
+
+            Assert.IsNotNull(ex?.Headers);
+        }
+
+        [TestMethod]
+        public void SetBasePath_MultibleBasePathUsed_BasePathIsChanged()
+        {
+            string configBasePath = _testConfig.ApiClient.Configuration.BasePath;
+            var restBasePath = Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl);
+
+            Assert.AreEqual(configBasePath, restBasePath);
+
+            var testBasePath = "https://na.docusign.net/restapi";
+
+            _testConfig.ApiClient.SetBasePath(testBasePath);
+
+            Assert.AreEqual(testBasePath, Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl));
+            Assert.AreEqual(testBasePath, _testConfig.ApiClient.Configuration.BasePath);
+
+            _testConfig.ApiClient.SetBasePath(configBasePath);
+
+            Assert.AreEqual(restBasePath, Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl));
+            Assert.AreEqual(configBasePath, _testConfig.ApiClient.Configuration.BasePath);
+        }
+
+        [TestMethod]
+        public void GetUserInfo_WrongAccessToken_ReturnsException()
+        {
+            var access_token = "---Invalid-Access-Token---";
+
+            ApiException ex = Assert.ThrowsException<ApiException>(() => _testConfig.ApiClient.GetUserInfo(access_token));
+
+            Assert.IsNotNull(ex?.ErrorContent);
+
+            int unauthorizedStatusCode = 401;
+            Assert.AreEqual(ex.ErrorCode, unauthorizedStatusCode);
         }
     }
 }

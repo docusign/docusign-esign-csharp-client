@@ -33,9 +33,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchive"> (optional)</param>
-        
         /// <returns></returns>
-        BccEmailArchive CreateBCCEmailArchive (string accountId, BccEmailArchive bccEmailArchive = null);
+        BccEmailArchive CreateBCCEmailArchive(string accountId, BccEmailArchive bccEmailArchive = null);
 
         /// <summary>
         /// Creates a blind carbon copy email archive entry
@@ -46,9 +45,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchive"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<BccEmailArchive> CreateBCCEmailArchiveWithHttpInfo (string accountId, BccEmailArchive bccEmailArchive = null);
+        ApiResponse<BccEmailArchive> CreateBCCEmailArchiveWithHttpInfo(string accountId, BccEmailArchive bccEmailArchive = null);
         /// <summary>
         /// Delete a blind carbon copy email archive for an account.
         /// </summary>
@@ -56,11 +54,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <returns></returns>
-        void DeleteBCCEmailArchive (string accountId, string bccEmailArchiveId);
+        void DeleteBCCEmailArchive(string accountId, string bccEmailArchiveId);
 
         /// <summary>
         /// Delete a blind carbon copy email archive for an account.
@@ -69,11 +66,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteBCCEmailArchiveWithHttpInfo (string accountId, string bccEmailArchiveId);
+        ApiResponse<Object> DeleteBCCEmailArchiveWithHttpInfo(string accountId, string bccEmailArchiveId);
         /// <summary>
         /// Get the blind carbon copy email archive history entries for the specified archive
         /// </summary>
@@ -81,11 +77,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        BccEmailArchiveHistoryList GetBCCEmailArchiveHistoryList (string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null);
+        BccEmailArchiveHistoryList GetBCCEmailArchiveHistoryList(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null);
 
         /// <summary>
         /// Get the blind carbon copy email archive history entries for the specified archive
@@ -94,11 +90,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<BccEmailArchiveHistoryList> GetBCCEmailArchiveHistoryListWithHttpInfo (string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null);
+        ApiResponse<BccEmailArchiveHistoryList> GetBCCEmailArchiveHistoryListWithHttpInfo(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null);
         /// <summary>
         /// Get the blind carbon copy email archive entries owned by the specified account
         /// </summary>
@@ -107,10 +103,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        BccEmailArchiveList GetBCCEmailArchiveList (string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null);
+        BccEmailArchiveList GetBCCEmailArchiveList(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null);
 
         /// <summary>
         /// Get the blind carbon copy email archive entries owned by the specified account
@@ -120,10 +115,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<BccEmailArchiveList> GetBCCEmailArchiveListWithHttpInfo (string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null);
+        ApiResponse<BccEmailArchiveList> GetBCCEmailArchiveListWithHttpInfo(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -135,9 +129,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchive"> (optional)</param>
-        
         /// <returns>Task of BccEmailArchive</returns>
-        System.Threading.Tasks.Task<BccEmailArchive> CreateBCCEmailArchiveAsync (string accountId, BccEmailArchive bccEmailArchive = null);
+        System.Threading.Tasks.Task<BccEmailArchive> CreateBCCEmailArchiveAsync(string accountId, BccEmailArchive bccEmailArchive = null);
 
         /// <summary>
         /// Creates a blind carbon copy email archive entry
@@ -148,9 +141,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchive"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (BccEmailArchive)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BccEmailArchive>> CreateBCCEmailArchiveAsyncWithHttpInfo (string accountId, BccEmailArchive bccEmailArchive = null);
+        System.Threading.Tasks.Task<ApiResponse<BccEmailArchive>> CreateBCCEmailArchiveAsyncWithHttpInfo(string accountId, BccEmailArchive bccEmailArchive = null);
         /// <summary>
         /// Delete a blind carbon copy email archive for an account.
         /// </summary>
@@ -158,11 +150,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteBCCEmailArchiveAsync (string accountId, string bccEmailArchiveId);
+        System.Threading.Tasks.Task DeleteBCCEmailArchiveAsync(string accountId, string bccEmailArchiveId);
 
         /// <summary>
         /// Delete a blind carbon copy email archive for an account.
@@ -171,11 +162,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteBCCEmailArchiveAsyncWithHttpInfo (string accountId, string bccEmailArchiveId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteBCCEmailArchiveAsyncWithHttpInfo(string accountId, string bccEmailArchiveId);
         /// <summary>
         /// Get the blind carbon copy email archive history entries for the specified archive
         /// </summary>
@@ -183,11 +173,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BccEmailArchiveHistoryList</returns>
-        System.Threading.Tasks.Task<BccEmailArchiveHistoryList> GetBCCEmailArchiveHistoryListAsync (string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null);
+        System.Threading.Tasks.Task<BccEmailArchiveHistoryList> GetBCCEmailArchiveHistoryListAsync(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null);
 
         /// <summary>
         /// Get the blind carbon copy email archive history entries for the specified archive
@@ -196,11 +186,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BccEmailArchiveHistoryList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveHistoryList>> GetBCCEmailArchiveHistoryListAsyncWithHttpInfo (string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveHistoryList>> GetBCCEmailArchiveHistoryListAsyncWithHttpInfo(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null);
         /// <summary>
         /// Get the blind carbon copy email archive entries owned by the specified account
         /// </summary>
@@ -209,10 +199,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BccEmailArchiveList</returns>
-        System.Threading.Tasks.Task<BccEmailArchiveList> GetBCCEmailArchiveListAsync (string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null);
+        System.Threading.Tasks.Task<BccEmailArchiveList> GetBCCEmailArchiveListAsync(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null);
 
         /// <summary>
         /// Get the blind carbon copy email archive entries owned by the specified account
@@ -222,10 +211,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BccEmailArchiveList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveList>> GetBCCEmailArchiveListAsyncWithHttpInfo (string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveList>> GetBCCEmailArchiveListAsyncWithHttpInfo(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null);
         #endregion Asynchronous Operations
     }
 
@@ -288,9 +276,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchive"> (optional)</param>
-        
         /// <returns>BccEmailArchive</returns>
-        public BccEmailArchive CreateBCCEmailArchive (string accountId, BccEmailArchive bccEmailArchive = null)
+        public BccEmailArchive CreateBCCEmailArchive(string accountId, BccEmailArchive bccEmailArchive = null)
         {
              ApiResponse<BccEmailArchive> localVarResponse = CreateBCCEmailArchiveWithHttpInfo(accountId, bccEmailArchive);
              return localVarResponse.Data;
@@ -302,9 +289,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchive"> (optional)</param>
-        
         /// <returns>ApiResponse of BccEmailArchive</returns>
-        public ApiResponse< BccEmailArchive > CreateBCCEmailArchiveWithHttpInfo (string accountId, BccEmailArchive bccEmailArchive = null)
+        public ApiResponse<BccEmailArchive> CreateBCCEmailArchiveWithHttpInfo(string accountId, BccEmailArchive bccEmailArchive = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -354,11 +340,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -370,11 +356,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<BccEmailArchive>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchive) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BccEmailArchive)));
+                return new ApiResponse<BccEmailArchive>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchive)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BccEmailArchive)));
             }
             else
             {
-                return new ApiResponse<BccEmailArchive>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchive) this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchive)));
+                return new ApiResponse<BccEmailArchive>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchive)this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchive)));
             }
             
         }
@@ -385,13 +371,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchive"> (optional)</param>
-        
         /// <returns>Task of BccEmailArchive</returns>
-        public async System.Threading.Tasks.Task<BccEmailArchive> CreateBCCEmailArchiveAsync (string accountId, BccEmailArchive bccEmailArchive = null)
+        public async System.Threading.Tasks.Task<BccEmailArchive> CreateBCCEmailArchiveAsync(string accountId, BccEmailArchive bccEmailArchive = null)
         {
              ApiResponse<BccEmailArchive> localVarResponse = await CreateBCCEmailArchiveAsyncWithHttpInfo(accountId, bccEmailArchive);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -400,9 +384,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchive"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (BccEmailArchive)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchive>> CreateBCCEmailArchiveAsyncWithHttpInfo (string accountId, BccEmailArchive bccEmailArchive = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchive>> CreateBCCEmailArchiveAsyncWithHttpInfo(string accountId, BccEmailArchive bccEmailArchive = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -433,8 +416,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (bccEmailArchive != null && bccEmailArchive.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(bccEmailArchive); // http body (model) parameter
@@ -452,11 +433,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -466,7 +447,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<BccEmailArchive>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BccEmailArchive) this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchive)));
+                (BccEmailArchive)this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchive)));
             
         }
 
@@ -476,11 +457,10 @@ namespace DocuSign.eSign.Api
         /// Delete a blind carbon copy email archive for an account. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <returns></returns>
-        public void DeleteBCCEmailArchive (string accountId, string bccEmailArchiveId)
+        public void DeleteBCCEmailArchive(string accountId, string bccEmailArchiveId)
         {
              DeleteBCCEmailArchiveWithHttpInfo(accountId, bccEmailArchiveId);
         }
@@ -489,11 +469,10 @@ namespace DocuSign.eSign.Api
         /// Delete a blind carbon copy email archive for an account. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteBCCEmailArchiveWithHttpInfo (string accountId, string bccEmailArchiveId)
+        public ApiResponse<Object> DeleteBCCEmailArchiveWithHttpInfo(string accountId, string bccEmailArchiveId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -539,11 +518,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -560,25 +539,22 @@ namespace DocuSign.eSign.Api
         /// Delete a blind carbon copy email archive for an account. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteBCCEmailArchiveAsync (string accountId, string bccEmailArchiveId)
+        public async System.Threading.Tasks.Task DeleteBCCEmailArchiveAsync(string accountId, string bccEmailArchiveId)
         {
              await DeleteBCCEmailArchiveAsyncWithHttpInfo(accountId, bccEmailArchiveId);
-
         }
 
         /// <summary>
         /// Delete a blind carbon copy email archive for an account. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteBCCEmailArchiveAsyncWithHttpInfo (string accountId, string bccEmailArchiveId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteBCCEmailArchiveAsyncWithHttpInfo(string accountId, string bccEmailArchiveId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -614,8 +590,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (bccEmailArchiveId != null) localVarPathParams.Add("bccEmailArchiveId", this.ApiClient.ParameterToString(bccEmailArchiveId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -624,11 +598,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -658,11 +632,11 @@ namespace DocuSign.eSign.Api
         /// Get the blind carbon copy email archive history entries for the specified archive 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>BccEmailArchiveHistoryList</returns>
-        public BccEmailArchiveHistoryList GetBCCEmailArchiveHistoryList (string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null)
+        public BccEmailArchiveHistoryList GetBCCEmailArchiveHistoryList(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null)
         {
              ApiResponse<BccEmailArchiveHistoryList> localVarResponse = GetBCCEmailArchiveHistoryListWithHttpInfo(accountId, bccEmailArchiveId, options);
              return localVarResponse.Data;
@@ -672,11 +646,11 @@ namespace DocuSign.eSign.Api
         /// Get the blind carbon copy email archive history entries for the specified archive 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of BccEmailArchiveHistoryList</returns>
-        public ApiResponse< BccEmailArchiveHistoryList > GetBCCEmailArchiveHistoryListWithHttpInfo (string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null)
+        public ApiResponse<BccEmailArchiveHistoryList> GetBCCEmailArchiveHistoryListWithHttpInfo(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -727,11 +701,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -743,11 +717,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<BccEmailArchiveHistoryList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchiveHistoryList) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BccEmailArchiveHistoryList)));
+                return new ApiResponse<BccEmailArchiveHistoryList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchiveHistoryList)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BccEmailArchiveHistoryList)));
             }
             else
             {
-                return new ApiResponse<BccEmailArchiveHistoryList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchiveHistoryList) this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchiveHistoryList)));
+                return new ApiResponse<BccEmailArchiveHistoryList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchiveHistoryList)this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchiveHistoryList)));
             }
             
         }
@@ -756,26 +730,25 @@ namespace DocuSign.eSign.Api
         /// Get the blind carbon copy email archive history entries for the specified archive 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BccEmailArchiveHistoryList</returns>
-        public async System.Threading.Tasks.Task<BccEmailArchiveHistoryList> GetBCCEmailArchiveHistoryListAsync (string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null)
+        public async System.Threading.Tasks.Task<BccEmailArchiveHistoryList> GetBCCEmailArchiveHistoryListAsync(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null)
         {
              ApiResponse<BccEmailArchiveHistoryList> localVarResponse = await GetBCCEmailArchiveHistoryListAsyncWithHttpInfo(accountId, bccEmailArchiveId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get the blind carbon copy email archive history entries for the specified archive 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="bccEmailArchiveId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="bccEmailArchiveId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BccEmailArchiveHistoryList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveHistoryList>> GetBCCEmailArchiveHistoryListAsyncWithHttpInfo (string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveHistoryList>> GetBCCEmailArchiveHistoryListAsyncWithHttpInfo(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -810,13 +783,11 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (bccEmailArchiveId != null) localVarPathParams.Add("bccEmailArchiveId", this.ApiClient.ParameterToString(bccEmailArchiveId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -826,11 +797,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -840,7 +811,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<BccEmailArchiveHistoryList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BccEmailArchiveHistoryList) this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchiveHistoryList)));
+                (BccEmailArchiveHistoryList)this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchiveHistoryList)));
             
         }
 
@@ -861,10 +832,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>BccEmailArchiveList</returns>
-        public BccEmailArchiveList GetBCCEmailArchiveList (string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null)
+        public BccEmailArchiveList GetBCCEmailArchiveList(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null)
         {
              ApiResponse<BccEmailArchiveList> localVarResponse = GetBCCEmailArchiveListWithHttpInfo(accountId, options);
              return localVarResponse.Data;
@@ -875,10 +845,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of BccEmailArchiveList</returns>
-        public ApiResponse< BccEmailArchiveList > GetBCCEmailArchiveListWithHttpInfo (string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null)
+        public ApiResponse<BccEmailArchiveList> GetBCCEmailArchiveListWithHttpInfo(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -925,11 +894,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -941,11 +910,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<BccEmailArchiveList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchiveList) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BccEmailArchiveList)));
+                return new ApiResponse<BccEmailArchiveList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchiveList)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BccEmailArchiveList)));
             }
             else
             {
-                return new ApiResponse<BccEmailArchiveList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchiveList) this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchiveList)));
+                return new ApiResponse<BccEmailArchiveList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BccEmailArchiveList)this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchiveList)));
             }
             
         }
@@ -955,14 +924,12 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BccEmailArchiveList</returns>
-        public async System.Threading.Tasks.Task<BccEmailArchiveList> GetBCCEmailArchiveListAsync (string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null)
+        public async System.Threading.Tasks.Task<BccEmailArchiveList> GetBCCEmailArchiveListAsync(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null)
         {
              ApiResponse<BccEmailArchiveList> localVarResponse = await GetBCCEmailArchiveListAsyncWithHttpInfo(accountId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -970,10 +937,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BccEmailArchiveList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveList>> GetBCCEmailArchiveListAsyncWithHttpInfo (string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveList>> GetBCCEmailArchiveListAsyncWithHttpInfo(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1004,13 +970,11 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -1020,11 +984,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1034,7 +998,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<BccEmailArchiveList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BccEmailArchiveList) this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchiveList)));
+                (BccEmailArchiveList)this.ApiClient.Deserialize(localVarResponse, typeof(BccEmailArchiveList)));
             
         }
 

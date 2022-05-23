@@ -33,9 +33,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns></returns>
-        Workspace CreateWorkspace (string accountId, Workspace workspace = null);
+        Workspace CreateWorkspace(string accountId, Workspace workspace = null);
 
         /// <summary>
         /// Create a Workspace
@@ -46,9 +45,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Workspace> CreateWorkspaceWithHttpInfo (string accountId, Workspace workspace = null);
+        ApiResponse<Workspace> CreateWorkspaceWithHttpInfo(string accountId, Workspace workspace = null);
         /// <summary>
         /// Creates a workspace file.
         /// </summary>
@@ -56,11 +54,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <returns></returns>
-        WorkspaceItem CreateWorkspaceFile (string accountId, string workspaceId, string folderId);
+        WorkspaceItem CreateWorkspaceFile(string accountId, string workspaceId, string folderId);
 
         /// <summary>
         /// Creates a workspace file.
@@ -69,11 +67,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<WorkspaceItem> CreateWorkspaceFileWithHttpInfo (string accountId, string workspaceId, string folderId);
+        ApiResponse<WorkspaceItem> CreateWorkspaceFileWithHttpInfo(string accountId, string workspaceId, string folderId);
         /// <summary>
         /// Delete Workspace
         /// </summary>
@@ -81,11 +79,10 @@ namespace DocuSign.eSign.Api
         /// Deletes an existing workspace (logically).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns></returns>
-        Workspace DeleteWorkspace (string accountId, string workspaceId);
+        Workspace DeleteWorkspace(string accountId, string workspaceId);
 
         /// <summary>
         /// Delete Workspace
@@ -94,11 +91,10 @@ namespace DocuSign.eSign.Api
         /// Deletes an existing workspace (logically).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Workspace> DeleteWorkspaceWithHttpInfo (string accountId, string workspaceId);
+        ApiResponse<Workspace> DeleteWorkspaceWithHttpInfo(string accountId, string workspaceId);
         /// <summary>
         /// Deletes workspace one or more specific files/folders from the given folder or root.
         /// </summary>
@@ -106,11 +102,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="workspaceItemList"> (optional)</param>
-        
         /// <returns></returns>
-        void DeleteWorkspaceFolderItems (string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null);
+        void DeleteWorkspaceFolderItems(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null);
 
         /// <summary>
         /// Deletes workspace one or more specific files/folders from the given folder or root.
@@ -119,11 +116,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="workspaceItemList"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteWorkspaceFolderItemsWithHttpInfo (string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null);
+        ApiResponse<Object> DeleteWorkspaceFolderItemsWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null);
         /// <summary>
         /// Get Workspace
         /// </summary>
@@ -131,11 +129,10 @@ namespace DocuSign.eSign.Api
         /// Retrives properties about a workspace given a unique workspaceId. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns></returns>
-        Workspace GetWorkspace (string accountId, string workspaceId);
+        Workspace GetWorkspace(string accountId, string workspaceId);
 
         /// <summary>
         /// Get Workspace
@@ -144,11 +141,10 @@ namespace DocuSign.eSign.Api
         /// Retrives properties about a workspace given a unique workspaceId. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Workspace> GetWorkspaceWithHttpInfo (string accountId, string workspaceId);
+        ApiResponse<Workspace> GetWorkspaceWithHttpInfo(string accountId, string workspaceId);
         /// <summary>
         /// Get Workspace File
         /// </summary>
@@ -156,11 +152,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a workspace file (the binary).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        void GetWorkspaceFile (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null);
+        void GetWorkspaceFile(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null);
 
         /// <summary>
         /// Get Workspace File
@@ -169,11 +167,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a workspace file (the binary).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetWorkspaceFileWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null);
+        ApiResponse<Object> GetWorkspaceFileWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null);
         /// <summary>
         /// List File Pages
         /// </summary>
@@ -181,11 +181,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a workspace file as rasterized pages.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        PageImages ListWorkspaceFilePages (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null);
+        PageImages ListWorkspaceFilePages(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null);
 
         /// <summary>
         /// List File Pages
@@ -194,11 +196,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a workspace file as rasterized pages.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<PageImages> ListWorkspaceFilePagesWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null);
+        ApiResponse<PageImages> ListWorkspaceFilePagesWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null);
         /// <summary>
         /// List Workspace Folder Contents
         /// </summary>
@@ -206,11 +210,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves workspace folder contents, which can include sub folders and files.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        WorkspaceFolderContents ListWorkspaceFolderItems (string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null);
+        WorkspaceFolderContents ListWorkspaceFolderItems(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null);
 
         /// <summary>
         /// List Workspace Folder Contents
@@ -219,11 +224,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves workspace folder contents, which can include sub folders and files.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<WorkspaceFolderContents> ListWorkspaceFolderItemsWithHttpInfo (string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null);
+        ApiResponse<WorkspaceFolderContents> ListWorkspaceFolderItemsWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null);
         /// <summary>
         /// List Workspaces
         /// </summary>
@@ -232,10 +238,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns></returns>
-        WorkspaceList ListWorkspaces (string accountId);
+        WorkspaceList ListWorkspaces(string accountId);
 
         /// <summary>
         /// List Workspaces
@@ -245,10 +249,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<WorkspaceList> ListWorkspacesWithHttpInfo (string accountId);
+        ApiResponse<WorkspaceList> ListWorkspacesWithHttpInfo(string accountId);
         /// <summary>
         /// Update Workspace
         /// </summary>
@@ -256,11 +258,11 @@ namespace DocuSign.eSign.Api
         /// Updates information about a specific workspace.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns></returns>
-        Workspace UpdateWorkspace (string accountId, string workspaceId, Workspace workspace = null);
+        Workspace UpdateWorkspace(string accountId, string workspaceId, Workspace workspace = null);
 
         /// <summary>
         /// Update Workspace
@@ -269,11 +271,11 @@ namespace DocuSign.eSign.Api
         /// Updates information about a specific workspace.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Workspace> UpdateWorkspaceWithHttpInfo (string accountId, string workspaceId, Workspace workspace = null);
+        ApiResponse<Workspace> UpdateWorkspaceWithHttpInfo(string accountId, string workspaceId, Workspace workspace = null);
         /// <summary>
         /// Update Workspace File Metadata
         /// </summary>
@@ -281,11 +283,12 @@ namespace DocuSign.eSign.Api
         /// Updates workspace item metadata for one or more specific files/folders.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <returns></returns>
-        WorkspaceItem UpdateWorkspaceFile (string accountId, string workspaceId, string folderId, string fileId);
+        WorkspaceItem UpdateWorkspaceFile(string accountId, string workspaceId, string folderId, string fileId);
 
         /// <summary>
         /// Update Workspace File Metadata
@@ -294,11 +297,12 @@ namespace DocuSign.eSign.Api
         /// Updates workspace item metadata for one or more specific files/folders.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<WorkspaceItem> UpdateWorkspaceFileWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId);
+        ApiResponse<WorkspaceItem> UpdateWorkspaceFileWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -310,9 +314,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>Task of Workspace</returns>
-        System.Threading.Tasks.Task<Workspace> CreateWorkspaceAsync (string accountId, Workspace workspace = null);
+        System.Threading.Tasks.Task<Workspace> CreateWorkspaceAsync(string accountId, Workspace workspace = null);
 
         /// <summary>
         /// Create a Workspace
@@ -323,9 +326,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Workspace>> CreateWorkspaceAsyncWithHttpInfo (string accountId, Workspace workspace = null);
+        System.Threading.Tasks.Task<ApiResponse<Workspace>> CreateWorkspaceAsyncWithHttpInfo(string accountId, Workspace workspace = null);
         /// <summary>
         /// Creates a workspace file.
         /// </summary>
@@ -333,11 +335,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <returns>Task of WorkspaceItem</returns>
-        System.Threading.Tasks.Task<WorkspaceItem> CreateWorkspaceFileAsync (string accountId, string workspaceId, string folderId);
+        System.Threading.Tasks.Task<WorkspaceItem> CreateWorkspaceFileAsync(string accountId, string workspaceId, string folderId);
 
         /// <summary>
         /// Creates a workspace file.
@@ -346,11 +348,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <returns>Task of ApiResponse (WorkspaceItem)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> CreateWorkspaceFileAsyncWithHttpInfo (string accountId, string workspaceId, string folderId);
+        System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> CreateWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId);
         /// <summary>
         /// Delete Workspace
         /// </summary>
@@ -358,11 +360,10 @@ namespace DocuSign.eSign.Api
         /// Deletes an existing workspace (logically).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of Workspace</returns>
-        System.Threading.Tasks.Task<Workspace> DeleteWorkspaceAsync (string accountId, string workspaceId);
+        System.Threading.Tasks.Task<Workspace> DeleteWorkspaceAsync(string accountId, string workspaceId);
 
         /// <summary>
         /// Delete Workspace
@@ -371,11 +372,10 @@ namespace DocuSign.eSign.Api
         /// Deletes an existing workspace (logically).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Workspace>> DeleteWorkspaceAsyncWithHttpInfo (string accountId, string workspaceId);
+        System.Threading.Tasks.Task<ApiResponse<Workspace>> DeleteWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId);
         /// <summary>
         /// Deletes workspace one or more specific files/folders from the given folder or root.
         /// </summary>
@@ -383,11 +383,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="workspaceItemList"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteWorkspaceFolderItemsAsync (string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null);
+        System.Threading.Tasks.Task DeleteWorkspaceFolderItemsAsync(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null);
 
         /// <summary>
         /// Deletes workspace one or more specific files/folders from the given folder or root.
@@ -396,11 +397,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="workspaceItemList"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWorkspaceFolderItemsAsyncWithHttpInfo (string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWorkspaceFolderItemsAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null);
         /// <summary>
         /// Get Workspace
         /// </summary>
@@ -408,11 +410,10 @@ namespace DocuSign.eSign.Api
         /// Retrives properties about a workspace given a unique workspaceId. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of Workspace</returns>
-        System.Threading.Tasks.Task<Workspace> GetWorkspaceAsync (string accountId, string workspaceId);
+        System.Threading.Tasks.Task<Workspace> GetWorkspaceAsync(string accountId, string workspaceId);
 
         /// <summary>
         /// Get Workspace
@@ -421,11 +422,10 @@ namespace DocuSign.eSign.Api
         /// Retrives properties about a workspace given a unique workspaceId. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Workspace>> GetWorkspaceAsyncWithHttpInfo (string accountId, string workspaceId);
+        System.Threading.Tasks.Task<ApiResponse<Workspace>> GetWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId);
         /// <summary>
         /// Get Workspace File
         /// </summary>
@@ -433,11 +433,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a workspace file (the binary).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetWorkspaceFileAsync (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null);
+        System.Threading.Tasks.Task GetWorkspaceFileAsync(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null);
 
         /// <summary>
         /// Get Workspace File
@@ -446,11 +448,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a workspace file (the binary).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetWorkspaceFileAsyncWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null);
         /// <summary>
         /// List File Pages
         /// </summary>
@@ -458,11 +462,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a workspace file as rasterized pages.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of PageImages</returns>
-        System.Threading.Tasks.Task<PageImages> ListWorkspaceFilePagesAsync (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null);
+        System.Threading.Tasks.Task<PageImages> ListWorkspaceFilePagesAsync(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null);
 
         /// <summary>
         /// List File Pages
@@ -471,11 +477,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a workspace file as rasterized pages.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PageImages)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PageImages>> ListWorkspaceFilePagesAsyncWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<PageImages>> ListWorkspaceFilePagesAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null);
         /// <summary>
         /// List Workspace Folder Contents
         /// </summary>
@@ -483,11 +491,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves workspace folder contents, which can include sub folders and files.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of WorkspaceFolderContents</returns>
-        System.Threading.Tasks.Task<WorkspaceFolderContents> ListWorkspaceFolderItemsAsync (string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null);
+        System.Threading.Tasks.Task<WorkspaceFolderContents> ListWorkspaceFolderItemsAsync(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null);
 
         /// <summary>
         /// List Workspace Folder Contents
@@ -496,11 +505,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves workspace folder contents, which can include sub folders and files.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (WorkspaceFolderContents)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkspaceFolderContents>> ListWorkspaceFolderItemsAsyncWithHttpInfo (string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<WorkspaceFolderContents>> ListWorkspaceFolderItemsAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null);
         /// <summary>
         /// List Workspaces
         /// </summary>
@@ -509,10 +519,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>Task of WorkspaceList</returns>
-        System.Threading.Tasks.Task<WorkspaceList> ListWorkspacesAsync (string accountId);
+        System.Threading.Tasks.Task<WorkspaceList> ListWorkspacesAsync(string accountId);
 
         /// <summary>
         /// List Workspaces
@@ -522,10 +530,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>Task of ApiResponse (WorkspaceList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkspaceList>> ListWorkspacesAsyncWithHttpInfo (string accountId);
+        System.Threading.Tasks.Task<ApiResponse<WorkspaceList>> ListWorkspacesAsyncWithHttpInfo(string accountId);
         /// <summary>
         /// Update Workspace
         /// </summary>
@@ -533,11 +539,11 @@ namespace DocuSign.eSign.Api
         /// Updates information about a specific workspace.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>Task of Workspace</returns>
-        System.Threading.Tasks.Task<Workspace> UpdateWorkspaceAsync (string accountId, string workspaceId, Workspace workspace = null);
+        System.Threading.Tasks.Task<Workspace> UpdateWorkspaceAsync(string accountId, string workspaceId, Workspace workspace = null);
 
         /// <summary>
         /// Update Workspace
@@ -546,11 +552,11 @@ namespace DocuSign.eSign.Api
         /// Updates information about a specific workspace.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Workspace>> UpdateWorkspaceAsyncWithHttpInfo (string accountId, string workspaceId, Workspace workspace = null);
+        System.Threading.Tasks.Task<ApiResponse<Workspace>> UpdateWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId, Workspace workspace = null);
         /// <summary>
         /// Update Workspace File Metadata
         /// </summary>
@@ -558,11 +564,12 @@ namespace DocuSign.eSign.Api
         /// Updates workspace item metadata for one or more specific files/folders.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <returns>Task of WorkspaceItem</returns>
-        System.Threading.Tasks.Task<WorkspaceItem> UpdateWorkspaceFileAsync (string accountId, string workspaceId, string folderId, string fileId);
+        System.Threading.Tasks.Task<WorkspaceItem> UpdateWorkspaceFileAsync(string accountId, string workspaceId, string folderId, string fileId);
 
         /// <summary>
         /// Update Workspace File Metadata
@@ -571,11 +578,12 @@ namespace DocuSign.eSign.Api
         /// Updates workspace item metadata for one or more specific files/folders.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <returns>Task of ApiResponse (WorkspaceItem)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> UpdateWorkspaceFileAsyncWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId);
+        System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> UpdateWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId);
         #endregion Asynchronous Operations
     }
 
@@ -638,9 +646,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>Workspace</returns>
-        public Workspace CreateWorkspace (string accountId, Workspace workspace = null)
+        public Workspace CreateWorkspace(string accountId, Workspace workspace = null)
         {
              ApiResponse<Workspace> localVarResponse = CreateWorkspaceWithHttpInfo(accountId, workspace);
              return localVarResponse.Data;
@@ -652,9 +659,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>ApiResponse of Workspace</returns>
-        public ApiResponse< Workspace > CreateWorkspaceWithHttpInfo (string accountId, Workspace workspace = null)
+        public ApiResponse<Workspace> CreateWorkspaceWithHttpInfo(string accountId, Workspace workspace = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -704,11 +710,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -720,11 +726,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Workspace)));
+                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Workspace)));
             }
             else
             {
-                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace) this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
+                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
             }
             
         }
@@ -735,13 +741,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>Task of Workspace</returns>
-        public async System.Threading.Tasks.Task<Workspace> CreateWorkspaceAsync (string accountId, Workspace workspace = null)
+        public async System.Threading.Tasks.Task<Workspace> CreateWorkspaceAsync(string accountId, Workspace workspace = null)
         {
              ApiResponse<Workspace> localVarResponse = await CreateWorkspaceAsyncWithHttpInfo(accountId, workspace);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -750,9 +754,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> CreateWorkspaceAsyncWithHttpInfo (string accountId, Workspace workspace = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> CreateWorkspaceAsyncWithHttpInfo(string accountId, Workspace workspace = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -783,8 +786,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (workspace != null && workspace.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(workspace); // http body (model) parameter
@@ -802,11 +803,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -816,7 +817,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Workspace>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Workspace) this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
+                (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
             
         }
 
@@ -826,11 +827,11 @@ namespace DocuSign.eSign.Api
         /// Creates a workspace file. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <returns>WorkspaceItem</returns>
-        public WorkspaceItem CreateWorkspaceFile (string accountId, string workspaceId, string folderId)
+        public WorkspaceItem CreateWorkspaceFile(string accountId, string workspaceId, string folderId)
         {
              ApiResponse<WorkspaceItem> localVarResponse = CreateWorkspaceFileWithHttpInfo(accountId, workspaceId, folderId);
              return localVarResponse.Data;
@@ -840,11 +841,11 @@ namespace DocuSign.eSign.Api
         /// Creates a workspace file. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <returns>ApiResponse of WorkspaceItem</returns>
-        public ApiResponse< WorkspaceItem > CreateWorkspaceFileWithHttpInfo (string accountId, string workspaceId, string folderId)
+        public ApiResponse<WorkspaceItem> CreateWorkspaceFileWithHttpInfo(string accountId, string workspaceId, string folderId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -894,11 +895,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -910,11 +911,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<WorkspaceItem>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceItem) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(WorkspaceItem)));
+                return new ApiResponse<WorkspaceItem>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceItem)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(WorkspaceItem)));
             }
             else
             {
-                return new ApiResponse<WorkspaceItem>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceItem) this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceItem)));
+                return new ApiResponse<WorkspaceItem>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceItem)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceItem)));
             }
             
         }
@@ -923,26 +924,25 @@ namespace DocuSign.eSign.Api
         /// Creates a workspace file. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <returns>Task of WorkspaceItem</returns>
-        public async System.Threading.Tasks.Task<WorkspaceItem> CreateWorkspaceFileAsync (string accountId, string workspaceId, string folderId)
+        public async System.Threading.Tasks.Task<WorkspaceItem> CreateWorkspaceFileAsync(string accountId, string workspaceId, string folderId)
         {
              ApiResponse<WorkspaceItem> localVarResponse = await CreateWorkspaceFileAsyncWithHttpInfo(accountId, workspaceId, folderId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Creates a workspace file. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <returns>Task of ApiResponse (WorkspaceItem)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> CreateWorkspaceFileAsyncWithHttpInfo (string accountId, string workspaceId, string folderId)
+        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> CreateWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -982,8 +982,6 @@ namespace DocuSign.eSign.Api
             if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
             if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -992,11 +990,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1006,7 +1004,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<WorkspaceItem>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorkspaceItem) this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceItem)));
+                (WorkspaceItem)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceItem)));
             
         }
 
@@ -1016,11 +1014,10 @@ namespace DocuSign.eSign.Api
         /// Delete Workspace Deletes an existing workspace (logically).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Workspace</returns>
-        public Workspace DeleteWorkspace (string accountId, string workspaceId)
+        public Workspace DeleteWorkspace(string accountId, string workspaceId)
         {
              ApiResponse<Workspace> localVarResponse = DeleteWorkspaceWithHttpInfo(accountId, workspaceId);
              return localVarResponse.Data;
@@ -1030,11 +1027,10 @@ namespace DocuSign.eSign.Api
         /// Delete Workspace Deletes an existing workspace (logically).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>ApiResponse of Workspace</returns>
-        public ApiResponse< Workspace > DeleteWorkspaceWithHttpInfo (string accountId, string workspaceId)
+        public ApiResponse<Workspace> DeleteWorkspaceWithHttpInfo(string accountId, string workspaceId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1080,11 +1076,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1096,11 +1092,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Workspace)));
+                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Workspace)));
             }
             else
             {
-                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace) this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
+                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
             }
             
         }
@@ -1109,26 +1105,23 @@ namespace DocuSign.eSign.Api
         /// Delete Workspace Deletes an existing workspace (logically).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of Workspace</returns>
-        public async System.Threading.Tasks.Task<Workspace> DeleteWorkspaceAsync (string accountId, string workspaceId)
+        public async System.Threading.Tasks.Task<Workspace> DeleteWorkspaceAsync(string accountId, string workspaceId)
         {
              ApiResponse<Workspace> localVarResponse = await DeleteWorkspaceAsyncWithHttpInfo(accountId, workspaceId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Delete Workspace Deletes an existing workspace (logically).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> DeleteWorkspaceAsyncWithHttpInfo (string accountId, string workspaceId)
+        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> DeleteWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1164,8 +1157,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1174,11 +1165,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1188,7 +1179,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Workspace>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Workspace) this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
+                (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
             
         }
 
@@ -1198,11 +1189,12 @@ namespace DocuSign.eSign.Api
         /// Deletes workspace one or more specific files/folders from the given folder or root. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="workspaceItemList"> (optional)</param>
-        
         /// <returns></returns>
-        public void DeleteWorkspaceFolderItems (string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null)
+        public void DeleteWorkspaceFolderItems(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null)
         {
              DeleteWorkspaceFolderItemsWithHttpInfo(accountId, workspaceId, folderId, workspaceItemList);
         }
@@ -1211,11 +1203,12 @@ namespace DocuSign.eSign.Api
         /// Deletes workspace one or more specific files/folders from the given folder or root. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="workspaceItemList"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteWorkspaceFolderItemsWithHttpInfo (string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null)
+        public ApiResponse<Object> DeleteWorkspaceFolderItemsWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1273,11 +1266,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1294,25 +1287,26 @@ namespace DocuSign.eSign.Api
         /// Deletes workspace one or more specific files/folders from the given folder or root. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="workspaceItemList"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteWorkspaceFolderItemsAsync (string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null)
+        public async System.Threading.Tasks.Task DeleteWorkspaceFolderItemsAsync(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null)
         {
              await DeleteWorkspaceFolderItemsAsyncWithHttpInfo(accountId, workspaceId, folderId, workspaceItemList);
-
         }
 
         /// <summary>
         /// Deletes workspace one or more specific files/folders from the given folder or root. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="workspaceItemList"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWorkspaceFolderItemsAsyncWithHttpInfo (string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWorkspaceFolderItemsAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1351,8 +1345,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
             if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
-
-
             if (workspaceItemList != null && workspaceItemList.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(workspaceItemList); // http body (model) parameter
@@ -1370,11 +1362,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1394,11 +1386,10 @@ namespace DocuSign.eSign.Api
         /// Get Workspace Retrives properties about a workspace given a unique workspaceId. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Workspace</returns>
-        public Workspace GetWorkspace (string accountId, string workspaceId)
+        public Workspace GetWorkspace(string accountId, string workspaceId)
         {
              ApiResponse<Workspace> localVarResponse = GetWorkspaceWithHttpInfo(accountId, workspaceId);
              return localVarResponse.Data;
@@ -1408,11 +1399,10 @@ namespace DocuSign.eSign.Api
         /// Get Workspace Retrives properties about a workspace given a unique workspaceId. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>ApiResponse of Workspace</returns>
-        public ApiResponse< Workspace > GetWorkspaceWithHttpInfo (string accountId, string workspaceId)
+        public ApiResponse<Workspace> GetWorkspaceWithHttpInfo(string accountId, string workspaceId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1458,11 +1448,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1474,11 +1464,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Workspace)));
+                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Workspace)));
             }
             else
             {
-                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace) this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
+                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
             }
             
         }
@@ -1487,26 +1477,23 @@ namespace DocuSign.eSign.Api
         /// Get Workspace Retrives properties about a workspace given a unique workspaceId. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of Workspace</returns>
-        public async System.Threading.Tasks.Task<Workspace> GetWorkspaceAsync (string accountId, string workspaceId)
+        public async System.Threading.Tasks.Task<Workspace> GetWorkspaceAsync(string accountId, string workspaceId)
         {
              ApiResponse<Workspace> localVarResponse = await GetWorkspaceAsyncWithHttpInfo(accountId, workspaceId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get Workspace Retrives properties about a workspace given a unique workspaceId. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> GetWorkspaceAsyncWithHttpInfo (string accountId, string workspaceId)
+        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> GetWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1542,8 +1529,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1552,11 +1537,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1566,7 +1551,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Workspace>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Workspace) this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
+                (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
             
         }
 
@@ -1586,11 +1571,13 @@ namespace DocuSign.eSign.Api
         /// Get Workspace File Retrieves a workspace file (the binary).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        public void GetWorkspaceFile (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null)
+        public void GetWorkspaceFile(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null)
         {
              GetWorkspaceFileWithHttpInfo(accountId, workspaceId, folderId, fileId, options);
         }
@@ -1599,11 +1586,13 @@ namespace DocuSign.eSign.Api
         /// Get Workspace File Retrieves a workspace file (the binary).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> GetWorkspaceFileWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null)
+        public ApiResponse<Object> GetWorkspaceFileWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1662,11 +1651,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1683,25 +1672,28 @@ namespace DocuSign.eSign.Api
         /// Get Workspace File Retrieves a workspace file (the binary).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetWorkspaceFileAsync (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null)
+        public async System.Threading.Tasks.Task GetWorkspaceFileAsync(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null)
         {
              await GetWorkspaceFileAsyncWithHttpInfo(accountId, workspaceId, folderId, fileId, options);
-
         }
 
         /// <summary>
         /// Get Workspace File Retrieves a workspace file (the binary).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetWorkspaceFileAsyncWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1744,13 +1736,11 @@ namespace DocuSign.eSign.Api
             if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
             if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
             if (fileId != null) localVarPathParams.Add("fileId", this.ApiClient.ParameterToString(fileId)); // path parameter
-
             if (options != null)
             {
                 if (options.isDownload != null) localVarQueryParams.Add("is_download", this.ApiClient.ParameterToString(options.isDownload)); // query parameter
                 if (options.pdfVersion != null) localVarQueryParams.Add("pdf_version", this.ApiClient.ParameterToString(options.pdfVersion)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -1760,11 +1750,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1800,11 +1790,13 @@ namespace DocuSign.eSign.Api
         /// List File Pages Retrieves a workspace file as rasterized pages.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>PageImages</returns>
-        public PageImages ListWorkspaceFilePages (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null)
+        public PageImages ListWorkspaceFilePages(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null)
         {
              ApiResponse<PageImages> localVarResponse = ListWorkspaceFilePagesWithHttpInfo(accountId, workspaceId, folderId, fileId, options);
              return localVarResponse.Data;
@@ -1814,11 +1806,13 @@ namespace DocuSign.eSign.Api
         /// List File Pages Retrieves a workspace file as rasterized pages.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of PageImages</returns>
-        public ApiResponse< PageImages > ListWorkspaceFilePagesWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null)
+        public ApiResponse<PageImages> ListWorkspaceFilePagesWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1880,11 +1874,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1896,11 +1890,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<PageImages>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PageImages) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PageImages)));
+                return new ApiResponse<PageImages>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PageImages)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PageImages)));
             }
             else
             {
-                return new ApiResponse<PageImages>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PageImages) this.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
+                return new ApiResponse<PageImages>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PageImages)this.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
             }
             
         }
@@ -1909,26 +1903,29 @@ namespace DocuSign.eSign.Api
         /// List File Pages Retrieves a workspace file as rasterized pages.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of PageImages</returns>
-        public async System.Threading.Tasks.Task<PageImages> ListWorkspaceFilePagesAsync (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null)
+        public async System.Threading.Tasks.Task<PageImages> ListWorkspaceFilePagesAsync(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null)
         {
              ApiResponse<PageImages> localVarResponse = await ListWorkspaceFilePagesAsyncWithHttpInfo(accountId, workspaceId, folderId, fileId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// List File Pages Retrieves a workspace file as rasterized pages.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PageImages)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PageImages>> ListWorkspaceFilePagesAsyncWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PageImages>> ListWorkspaceFilePagesAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1971,7 +1968,6 @@ namespace DocuSign.eSign.Api
             if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
             if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
             if (fileId != null) localVarPathParams.Add("fileId", this.ApiClient.ParameterToString(fileId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
@@ -1981,7 +1977,6 @@ namespace DocuSign.eSign.Api
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
 
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1990,11 +1985,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2004,7 +1999,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<PageImages>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PageImages) this.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
+                (PageImages)this.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
             
         }
 
@@ -2034,11 +2029,12 @@ namespace DocuSign.eSign.Api
         /// List Workspace Folder Contents Retrieves workspace folder contents, which can include sub folders and files.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>WorkspaceFolderContents</returns>
-        public WorkspaceFolderContents ListWorkspaceFolderItems (string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null)
+        public WorkspaceFolderContents ListWorkspaceFolderItems(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null)
         {
              ApiResponse<WorkspaceFolderContents> localVarResponse = ListWorkspaceFolderItemsWithHttpInfo(accountId, workspaceId, folderId, options);
              return localVarResponse.Data;
@@ -2048,11 +2044,12 @@ namespace DocuSign.eSign.Api
         /// List Workspace Folder Contents Retrieves workspace folder contents, which can include sub folders and files.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of WorkspaceFolderContents</returns>
-        public ApiResponse< WorkspaceFolderContents > ListWorkspaceFolderItemsWithHttpInfo (string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null)
+        public ApiResponse<WorkspaceFolderContents> ListWorkspaceFolderItemsWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2112,11 +2109,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2128,11 +2125,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<WorkspaceFolderContents>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceFolderContents) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(WorkspaceFolderContents)));
+                return new ApiResponse<WorkspaceFolderContents>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceFolderContents)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(WorkspaceFolderContents)));
             }
             else
             {
-                return new ApiResponse<WorkspaceFolderContents>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceFolderContents) this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceFolderContents)));
+                return new ApiResponse<WorkspaceFolderContents>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceFolderContents)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceFolderContents)));
             }
             
         }
@@ -2141,26 +2138,27 @@ namespace DocuSign.eSign.Api
         /// List Workspace Folder Contents Retrieves workspace folder contents, which can include sub folders and files.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of WorkspaceFolderContents</returns>
-        public async System.Threading.Tasks.Task<WorkspaceFolderContents> ListWorkspaceFolderItemsAsync (string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null)
+        public async System.Threading.Tasks.Task<WorkspaceFolderContents> ListWorkspaceFolderItemsAsync(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null)
         {
              ApiResponse<WorkspaceFolderContents> localVarResponse = await ListWorkspaceFolderItemsAsyncWithHttpInfo(accountId, workspaceId, folderId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// List Workspace Folder Contents Retrieves workspace folder contents, which can include sub folders and files.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (WorkspaceFolderContents)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceFolderContents>> ListWorkspaceFolderItemsAsyncWithHttpInfo (string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceFolderContents>> ListWorkspaceFolderItemsAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2199,7 +2197,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
             if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
@@ -2211,7 +2208,6 @@ namespace DocuSign.eSign.Api
                 if (options.workspaceUserId != null) localVarQueryParams.Add("workspace_user_id", this.ApiClient.ParameterToString(options.workspaceUserId)); // query parameter
             }
 
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -2220,11 +2216,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2234,7 +2230,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<WorkspaceFolderContents>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorkspaceFolderContents) this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceFolderContents)));
+                (WorkspaceFolderContents)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceFolderContents)));
             
         }
 
@@ -2245,10 +2241,8 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>WorkspaceList</returns>
-        public WorkspaceList ListWorkspaces (string accountId)
+        public WorkspaceList ListWorkspaces(string accountId)
         {
              ApiResponse<WorkspaceList> localVarResponse = ListWorkspacesWithHttpInfo(accountId);
              return localVarResponse.Data;
@@ -2259,10 +2253,8 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>ApiResponse of WorkspaceList</returns>
-        public ApiResponse< WorkspaceList > ListWorkspacesWithHttpInfo (string accountId)
+        public ApiResponse<WorkspaceList> ListWorkspacesWithHttpInfo(string accountId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2304,11 +2296,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2320,11 +2312,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<WorkspaceList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceList) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(WorkspaceList)));
+                return new ApiResponse<WorkspaceList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceList)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(WorkspaceList)));
             }
             else
             {
-                return new ApiResponse<WorkspaceList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceList) this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceList)));
+                return new ApiResponse<WorkspaceList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceList)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceList)));
             }
             
         }
@@ -2334,14 +2326,11 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>Task of WorkspaceList</returns>
-        public async System.Threading.Tasks.Task<WorkspaceList> ListWorkspacesAsync (string accountId)
+        public async System.Threading.Tasks.Task<WorkspaceList> ListWorkspacesAsync(string accountId)
         {
              ApiResponse<WorkspaceList> localVarResponse = await ListWorkspacesAsyncWithHttpInfo(accountId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -2349,10 +2338,8 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>Task of ApiResponse (WorkspaceList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceList>> ListWorkspacesAsyncWithHttpInfo (string accountId)
+        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceList>> ListWorkspacesAsyncWithHttpInfo(string accountId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2384,8 +2371,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -2394,11 +2379,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2408,7 +2393,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<WorkspaceList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorkspaceList) this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceList)));
+                (WorkspaceList)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceList)));
             
         }
 
@@ -2418,11 +2403,11 @@ namespace DocuSign.eSign.Api
         /// Update Workspace Updates information about a specific workspace.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>Workspace</returns>
-        public Workspace UpdateWorkspace (string accountId, string workspaceId, Workspace workspace = null)
+        public Workspace UpdateWorkspace(string accountId, string workspaceId, Workspace workspace = null)
         {
              ApiResponse<Workspace> localVarResponse = UpdateWorkspaceWithHttpInfo(accountId, workspaceId, workspace);
              return localVarResponse.Data;
@@ -2432,11 +2417,11 @@ namespace DocuSign.eSign.Api
         /// Update Workspace Updates information about a specific workspace.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>ApiResponse of Workspace</returns>
-        public ApiResponse< Workspace > UpdateWorkspaceWithHttpInfo (string accountId, string workspaceId, Workspace workspace = null)
+        public ApiResponse<Workspace> UpdateWorkspaceWithHttpInfo(string accountId, string workspaceId, Workspace workspace = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2490,11 +2475,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2506,11 +2491,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Workspace)));
+                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Workspace)));
             }
             else
             {
-                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace) this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
+                return new ApiResponse<Workspace>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
             }
             
         }
@@ -2519,26 +2504,25 @@ namespace DocuSign.eSign.Api
         /// Update Workspace Updates information about a specific workspace.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>Task of Workspace</returns>
-        public async System.Threading.Tasks.Task<Workspace> UpdateWorkspaceAsync (string accountId, string workspaceId, Workspace workspace = null)
+        public async System.Threading.Tasks.Task<Workspace> UpdateWorkspaceAsync(string accountId, string workspaceId, Workspace workspace = null)
         {
              ApiResponse<Workspace> localVarResponse = await UpdateWorkspaceAsyncWithHttpInfo(accountId, workspaceId, workspace);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Update Workspace Updates information about a specific workspace.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="workspace"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> UpdateWorkspaceAsyncWithHttpInfo (string accountId, string workspaceId, Workspace workspace = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> UpdateWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId, Workspace workspace = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2573,8 +2557,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
-
-
             if (workspace != null && workspace.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(workspace); // http body (model) parameter
@@ -2592,11 +2574,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2606,7 +2588,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Workspace>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Workspace) this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
+                (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
             
         }
 
@@ -2616,11 +2598,12 @@ namespace DocuSign.eSign.Api
         /// Update Workspace File Metadata Updates workspace item metadata for one or more specific files/folders.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <returns>WorkspaceItem</returns>
-        public WorkspaceItem UpdateWorkspaceFile (string accountId, string workspaceId, string folderId, string fileId)
+        public WorkspaceItem UpdateWorkspaceFile(string accountId, string workspaceId, string folderId, string fileId)
         {
              ApiResponse<WorkspaceItem> localVarResponse = UpdateWorkspaceFileWithHttpInfo(accountId, workspaceId, folderId, fileId);
              return localVarResponse.Data;
@@ -2630,11 +2613,12 @@ namespace DocuSign.eSign.Api
         /// Update Workspace File Metadata Updates workspace item metadata for one or more specific files/folders.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <returns>ApiResponse of WorkspaceItem</returns>
-        public ApiResponse< WorkspaceItem > UpdateWorkspaceFileWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId)
+        public ApiResponse<WorkspaceItem> UpdateWorkspaceFileWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2688,11 +2672,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2704,11 +2688,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<WorkspaceItem>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceItem) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(WorkspaceItem)));
+                return new ApiResponse<WorkspaceItem>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceItem)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(WorkspaceItem)));
             }
             else
             {
-                return new ApiResponse<WorkspaceItem>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceItem) this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceItem)));
+                return new ApiResponse<WorkspaceItem>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (WorkspaceItem)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceItem)));
             }
             
         }
@@ -2717,26 +2701,27 @@ namespace DocuSign.eSign.Api
         /// Update Workspace File Metadata Updates workspace item metadata for one or more specific files/folders.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <returns>Task of WorkspaceItem</returns>
-        public async System.Threading.Tasks.Task<WorkspaceItem> UpdateWorkspaceFileAsync (string accountId, string workspaceId, string folderId, string fileId)
+        public async System.Threading.Tasks.Task<WorkspaceItem> UpdateWorkspaceFileAsync(string accountId, string workspaceId, string folderId, string fileId)
         {
              ApiResponse<WorkspaceItem> localVarResponse = await UpdateWorkspaceFileAsyncWithHttpInfo(accountId, workspaceId, folderId, fileId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Update Workspace File Metadata Updates workspace item metadata for one or more specific files/folders.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="workspaceId">Specifies the workspace ID GUID.</param>/// <param name="folderId">The ID of the folder being accessed.</param>/// <param name="fileId">Specifies the room file ID GUID.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <returns>Task of ApiResponse (WorkspaceItem)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> UpdateWorkspaceFileAsyncWithHttpInfo (string accountId, string workspaceId, string folderId, string fileId)
+        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> UpdateWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2780,8 +2765,6 @@ namespace DocuSign.eSign.Api
             if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
             if (fileId != null) localVarPathParams.Add("fileId", this.ApiClient.ParameterToString(fileId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -2790,11 +2773,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2804,7 +2787,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<WorkspaceItem>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorkspaceItem) this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceItem)));
+                (WorkspaceItem)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceItem)));
             
         }
 

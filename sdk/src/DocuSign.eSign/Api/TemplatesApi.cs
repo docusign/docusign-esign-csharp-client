@@ -31,11 +31,11 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns></returns>
-        CustomFields CreateCustomFields (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        CustomFields CreateCustomFields(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
 
         /// <summary>
         /// Creates custom document fields in an existing template document.
@@ -44,11 +44,11 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<CustomFields> CreateCustomFieldsWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        ApiResponse<CustomFields> CreateCustomFieldsWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
         /// <summary>
         /// Creates custom document fields in an existing template document.
         /// </summary>
@@ -56,11 +56,12 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns></returns>
-        DocumentFieldsInformation CreateDocumentFields (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        DocumentFieldsInformation CreateDocumentFields(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
 
         /// <summary>
         /// Creates custom document fields in an existing template document.
@@ -69,11 +70,12 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentFieldsInformation> CreateDocumentFieldsWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        ApiResponse<DocumentFieldsInformation> CreateDocumentFieldsWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
         /// <summary>
         /// Provides a URL to start an edit view of the Template UI
         /// </summary>
@@ -81,11 +83,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="returnUrlRequest"> (optional)</param>
-        
         /// <returns></returns>
-        ViewUrl CreateEditView (string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
+        ViewUrl CreateEditView(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
 
         /// <summary>
         /// Provides a URL to start an edit view of the Template UI
@@ -94,11 +96,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="returnUrlRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ViewUrl> CreateEditViewWithHttpInfo (string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
+        ApiResponse<ViewUrl> CreateEditViewWithHttpInfo(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
         /// <summary>
         /// Lock a template.
         /// </summary>
@@ -106,11 +108,11 @@ namespace DocuSign.eSign.Api
         /// Locks the specified template, and sets the time until the lock expires, to prevent other users or recipients from accessing and changing the template.  ###### Note: Users must have envelope locking capability enabled to use this function (the userSetting property &#x60;canLockEnvelopes&#x60; must be set to **true** for the user).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns></returns>
-        LockInformation CreateLock (string accountId, string templateId, LockRequest lockRequest = null);
+        LockInformation CreateLock(string accountId, string templateId, LockRequest lockRequest = null);
 
         /// <summary>
         /// Lock a template.
@@ -119,11 +121,11 @@ namespace DocuSign.eSign.Api
         /// Locks the specified template, and sets the time until the lock expires, to prevent other users or recipients from accessing and changing the template.  ###### Note: Users must have envelope locking capability enabled to use this function (the userSetting property &#x60;canLockEnvelopes&#x60; must be set to **true** for the user).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<LockInformation> CreateLockWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null);
+        ApiResponse<LockInformation> CreateLockWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null);
         /// <summary>
         /// Adds tabs for a recipient.
         /// </summary>
@@ -131,11 +133,12 @@ namespace DocuSign.eSign.Api
         /// Adds one or more recipients to a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        Recipients CreateRecipients (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null);
+        Recipients CreateRecipients(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null);
 
         /// <summary>
         /// Adds tabs for a recipient.
@@ -144,11 +147,12 @@ namespace DocuSign.eSign.Api
         /// Adds one or more recipients to a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Recipients> CreateRecipientsWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null);
+        ApiResponse<Recipients> CreateRecipientsWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null);
         /// <summary>
         /// Adds tabs for a recipient.
         /// </summary>
@@ -156,11 +160,12 @@ namespace DocuSign.eSign.Api
         /// Adds one or more tabs for a recipient.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns></returns>
-        Tabs CreateTabs (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        Tabs CreateTabs(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Adds tabs for a recipient.
@@ -169,11 +174,12 @@ namespace DocuSign.eSign.Api
         /// Adds one or more tabs for a recipient.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Tabs> CreateTabsWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        ApiResponse<Tabs> CreateTabsWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
         /// <summary>
         /// Creates an envelope from a template.
         /// </summary>
@@ -183,9 +189,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns></returns>
-        TemplateSummary CreateTemplate (string accountId, EnvelopeTemplate envelopeTemplate = null);
+        TemplateSummary CreateTemplate(string accountId, EnvelopeTemplate envelopeTemplate = null);
 
         /// <summary>
         /// Creates an envelope from a template.
@@ -196,9 +201,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<TemplateSummary> CreateTemplateWithHttpInfo (string accountId, EnvelopeTemplate envelopeTemplate = null);
+        ApiResponse<TemplateSummary> CreateTemplateWithHttpInfo(string accountId, EnvelopeTemplate envelopeTemplate = null);
         /// <summary>
         /// Post Responsive HTML Preview for a document in a template.
         /// </summary>
@@ -206,11 +210,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns></returns>
-        DocumentHtmlDefinitions CreateTemplateDocumentResponsiveHtmlPreview (string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null);
+        DocumentHtmlDefinitions CreateTemplateDocumentResponsiveHtmlPreview(string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null);
 
         /// <summary>
         /// Post Responsive HTML Preview for a document in a template.
@@ -219,11 +224,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentHtmlDefinitions> CreateTemplateDocumentResponsiveHtmlPreviewWithHttpInfo (string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null);
+        ApiResponse<DocumentHtmlDefinitions> CreateTemplateDocumentResponsiveHtmlPreviewWithHttpInfo(string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null);
         /// <summary>
         /// Adds the tabs to a tempate
         /// </summary>
@@ -231,11 +237,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns></returns>
-        Tabs CreateTemplateDocumentTabs (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        Tabs CreateTemplateDocumentTabs(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Adds the tabs to a tempate
@@ -244,11 +251,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Tabs> CreateTemplateDocumentTabsWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        ApiResponse<Tabs> CreateTemplateDocumentTabsWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
         /// <summary>
         /// Provides a URL to start a recipient view of the Envelope UI
         /// </summary>
@@ -256,11 +264,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="recipientPreviewRequest"> (optional)</param>
-        
         /// <returns></returns>
-        ViewUrl CreateTemplateRecipientPreview (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
+        ViewUrl CreateTemplateRecipientPreview(string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
 
         /// <summary>
         /// Provides a URL to start a recipient view of the Envelope UI
@@ -269,11 +277,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="recipientPreviewRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ViewUrl> CreateTemplateRecipientPreviewWithHttpInfo (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
+        ApiResponse<ViewUrl> CreateTemplateRecipientPreviewWithHttpInfo(string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
         /// <summary>
         /// Get Responsive HTML Preview for all documents in a template.
         /// </summary>
@@ -281,11 +289,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns></returns>
-        DocumentHtmlDefinitions CreateTemplateResponsiveHtmlPreview (string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null);
+        DocumentHtmlDefinitions CreateTemplateResponsiveHtmlPreview(string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null);
 
         /// <summary>
         /// Get Responsive HTML Preview for all documents in a template.
@@ -294,11 +302,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentHtmlDefinitions> CreateTemplateResponsiveHtmlPreviewWithHttpInfo (string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null);
+        ApiResponse<DocumentHtmlDefinitions> CreateTemplateResponsiveHtmlPreviewWithHttpInfo(string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null);
         /// <summary>
         /// Deletes the bulk recipient list on a template.
         /// </summary>
@@ -306,11 +314,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the bulk recipient list on a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <returns></returns>
-        BulkRecipientsUpdateResponse DeleteBulkRecipients (string accountId, string templateId, string recipientId);
+        BulkRecipientsUpdateResponse DeleteBulkRecipients(string accountId, string templateId, string recipientId);
 
         /// <summary>
         /// Deletes the bulk recipient list on a template.
@@ -319,11 +327,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the bulk recipient list on a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<BulkRecipientsUpdateResponse> DeleteBulkRecipientsWithHttpInfo (string accountId, string templateId, string recipientId);
+        ApiResponse<BulkRecipientsUpdateResponse> DeleteBulkRecipientsWithHttpInfo(string accountId, string templateId, string recipientId);
         /// <summary>
         /// Deletes envelope custom fields in a template.
         /// </summary>
@@ -331,11 +339,11 @@ namespace DocuSign.eSign.Api
         /// Deletes envelope custom fields in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns></returns>
-        CustomFields DeleteCustomFields (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        CustomFields DeleteCustomFields(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
 
         /// <summary>
         /// Deletes envelope custom fields in a template.
@@ -344,11 +352,11 @@ namespace DocuSign.eSign.Api
         /// Deletes envelope custom fields in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<CustomFields> DeleteCustomFieldsWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        ApiResponse<CustomFields> DeleteCustomFieldsWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
         /// <summary>
         /// Deletes custom document fields from an existing template document.
         /// </summary>
@@ -356,11 +364,12 @@ namespace DocuSign.eSign.Api
         /// Deletes custom document fields from an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns></returns>
-        DocumentFieldsInformation DeleteDocumentFields (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        DocumentFieldsInformation DeleteDocumentFields(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
 
         /// <summary>
         /// Deletes custom document fields from an existing template document.
@@ -369,11 +378,12 @@ namespace DocuSign.eSign.Api
         /// Deletes custom document fields from an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentFieldsInformation> DeleteDocumentFieldsWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        ApiResponse<DocumentFieldsInformation> DeleteDocumentFieldsWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
         /// <summary>
         /// Deletes a page from a document in an template.
         /// </summary>
@@ -381,11 +391,13 @@ namespace DocuSign.eSign.Api
         /// Deletes a page from a document in a template based on the page number.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns></returns>
-        void DeleteDocumentPage (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
+        void DeleteDocumentPage(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
 
         /// <summary>
         /// Deletes a page from a document in an template.
@@ -394,11 +406,13 @@ namespace DocuSign.eSign.Api
         /// Deletes a page from a document in a template based on the page number.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteDocumentPageWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
+        ApiResponse<Object> DeleteDocumentPageWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
         /// <summary>
         /// Deletes documents from a template.
         /// </summary>
@@ -406,11 +420,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more documents from an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns></returns>
-        TemplateDocumentsResult DeleteDocuments (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
+        TemplateDocumentsResult DeleteDocuments(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
 
         /// <summary>
         /// Deletes documents from a template.
@@ -419,11 +433,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more documents from an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<TemplateDocumentsResult> DeleteDocumentsWithHttpInfo (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
+        ApiResponse<TemplateDocumentsResult> DeleteDocumentsWithHttpInfo(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
         /// <summary>
         /// Removes a member group&#39;s sharing permissions for a template.
         /// </summary>
@@ -431,11 +445,12 @@ namespace DocuSign.eSign.Api
         /// Removes a member group&#39;s sharing permissions for a specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns></returns>
-        GroupInformation DeleteGroupShare (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
+        GroupInformation DeleteGroupShare(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
 
         /// <summary>
         /// Removes a member group&#39;s sharing permissions for a template.
@@ -444,11 +459,12 @@ namespace DocuSign.eSign.Api
         /// Removes a member group&#39;s sharing permissions for a specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<GroupInformation> DeleteGroupShareWithHttpInfo (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
+        ApiResponse<GroupInformation> DeleteGroupShareWithHttpInfo(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
         /// <summary>
         /// Deletes a template lock.
         /// </summary>
@@ -456,11 +472,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the lock from the specified template. The &#x60;X-DocuSign-Edit&#x60; header must be included in the request.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns></returns>
-        LockInformation DeleteLock (string accountId, string templateId, LockRequest lockRequest = null);
+        LockInformation DeleteLock(string accountId, string templateId, LockRequest lockRequest = null);
 
         /// <summary>
         /// Deletes a template lock.
@@ -469,11 +485,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the lock from the specified template. The &#x60;X-DocuSign-Edit&#x60; header must be included in the request.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<LockInformation> DeleteLockWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null);
+        ApiResponse<LockInformation> DeleteLockWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null);
         /// <summary>
         /// Deletes the specified recipient file from a template.
         /// </summary>
@@ -481,11 +497,12 @@ namespace DocuSign.eSign.Api
         /// Deletes the specified recipient file from the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns></returns>
-        Recipients DeleteRecipient (string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null);
+        Recipients DeleteRecipient(string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null);
 
         /// <summary>
         /// Deletes the specified recipient file from a template.
@@ -494,11 +511,12 @@ namespace DocuSign.eSign.Api
         /// Deletes the specified recipient file from the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Recipients> DeleteRecipientWithHttpInfo (string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null);
+        ApiResponse<Recipients> DeleteRecipientWithHttpInfo(string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null);
         /// <summary>
         /// Deletes recipients from a template.
         /// </summary>
@@ -506,11 +524,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more recipients from a template. Recipients to be deleted are listed in the request, with the &#x60;recipientId&#x60; being used as the key for deleting recipients.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns></returns>
-        Recipients DeleteRecipients (string accountId, string templateId, TemplateRecipients templateRecipients = null);
+        Recipients DeleteRecipients(string accountId, string templateId, TemplateRecipients templateRecipients = null);
 
         /// <summary>
         /// Deletes recipients from a template.
@@ -519,11 +537,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more recipients from a template. Recipients to be deleted are listed in the request, with the &#x60;recipientId&#x60; being used as the key for deleting recipients.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Recipients> DeleteRecipientsWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null);
+        ApiResponse<Recipients> DeleteRecipientsWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null);
         /// <summary>
         /// Deletes the tabs associated with a recipient in a template.
         /// </summary>
@@ -531,11 +549,12 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more tabs associated with a recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns></returns>
-        Tabs DeleteTabs (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        Tabs DeleteTabs(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Deletes the tabs associated with a recipient in a template.
@@ -544,11 +563,12 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more tabs associated with a recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Tabs> DeleteTabsWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        ApiResponse<Tabs> DeleteTabsWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
         /// <summary>
         /// Deletes tabs from an envelope document
         /// </summary>
@@ -556,11 +576,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns></returns>
-        Tabs DeleteTemplateDocumentTabs (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        Tabs DeleteTemplateDocumentTabs(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Deletes tabs from an envelope document
@@ -569,11 +590,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Tabs> DeleteTemplateDocumentTabsWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        ApiResponse<Tabs> DeleteTemplateDocumentTabsWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
         /// <summary>
         /// Gets a list of templates for a specified account.
         /// </summary>
@@ -581,11 +603,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the definition of the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        EnvelopeTemplate Get (string accountId, string templateId, TemplatesApi.GetOptions options = null);
+        EnvelopeTemplate Get(string accountId, string templateId, TemplatesApi.GetOptions options = null);
 
         /// <summary>
         /// Gets a list of templates for a specified account.
@@ -594,11 +616,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the definition of the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<EnvelopeTemplate> GetWithHttpInfo (string accountId, string templateId, TemplatesApi.GetOptions options = null);
+        ApiResponse<EnvelopeTemplate> GetWithHttpInfo(string accountId, string templateId, TemplatesApi.GetOptions options = null);
         /// <summary>
         /// Gets PDF documents from a template.
         /// </summary>
@@ -606,11 +628,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves one or more PDF documents from the specified template.  You can specify the ID of the document to retrieve or can specify &#x60;combined&#x60; to retrieve all documents in the template as one pdf.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        System.IO.Stream GetDocument (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null);
+        System.IO.Stream GetDocument(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null);
 
         /// <summary>
         /// Gets PDF documents from a template.
@@ -619,11 +642,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves one or more PDF documents from the specified template.  You can specify the ID of the document to retrieve or can specify &#x60;combined&#x60; to retrieve all documents in the template as one pdf.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<System.IO.Stream> GetDocumentWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null);
+        ApiResponse<System.IO.Stream> GetDocumentWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null);
         /// <summary>
         /// Gets a page image from a template for display.
         /// </summary>
@@ -631,11 +655,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a page image for display from the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        System.IO.Stream GetDocumentPageImage (string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null);
+        System.IO.Stream GetDocumentPageImage(string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null);
 
         /// <summary>
         /// Gets a page image from a template for display.
@@ -644,11 +670,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a page image for display from the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<System.IO.Stream> GetDocumentPageImageWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null);
+        ApiResponse<System.IO.Stream> GetDocumentPageImageWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null);
         /// <summary>
         /// Returns tabs on the document.
         /// </summary>
@@ -656,11 +684,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        Tabs GetDocumentTabs (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
+        Tabs GetDocumentTabs(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
 
         /// <summary>
         /// Returns tabs on the document.
@@ -669,11 +698,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Tabs> GetDocumentTabsWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
+        ApiResponse<Tabs> GetDocumentTabsWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
         /// <summary>
         /// Gets template lock information.
         /// </summary>
@@ -681,11 +711,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves general information about the template lock.  If the call is made by the user who has the lock and the request has the same integrator key as original, then the &#x60;X-DocuSign-Edit&#x60; header  field and additional lock information is included in the response. This allows users to recover a lost editing session token and the &#x60;X-DocuSign-Edit&#x60; header.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns></returns>
-        LockInformation GetLock (string accountId, string templateId);
+        LockInformation GetLock(string accountId, string templateId);
 
         /// <summary>
         /// Gets template lock information.
@@ -694,11 +723,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves general information about the template lock.  If the call is made by the user who has the lock and the request has the same integrator key as original, then the &#x60;X-DocuSign-Edit&#x60; header  field and additional lock information is included in the response. This allows users to recover a lost editing session token and the &#x60;X-DocuSign-Edit&#x60; header.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<LockInformation> GetLockWithHttpInfo (string accountId, string templateId);
+        ApiResponse<LockInformation> GetLockWithHttpInfo(string accountId, string templateId);
         /// <summary>
         /// Gets template notification information.
         /// </summary>
@@ -706,11 +734,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves the envelope notification, reminders and expirations, information for an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns></returns>
-        Notification GetNotificationSettings (string accountId, string templateId);
+        Notification GetNotificationSettings(string accountId, string templateId);
 
         /// <summary>
         /// Gets template notification information.
@@ -719,11 +746,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves the envelope notification, reminders and expirations, information for an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Notification> GetNotificationSettingsWithHttpInfo (string accountId, string templateId);
+        ApiResponse<Notification> GetNotificationSettingsWithHttpInfo(string accountId, string templateId);
         /// <summary>
         /// Returns tabs on the specified page.
         /// </summary>
@@ -731,11 +757,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <returns></returns>
-        Tabs GetPageTabs (string accountId, string templateId, string documentId, string pageNumber);
+        Tabs GetPageTabs(string accountId, string templateId, string documentId, string pageNumber);
 
         /// <summary>
         /// Returns tabs on the specified page.
@@ -744,11 +771,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Tabs> GetPageTabsWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber);
+        ApiResponse<Tabs> GetPageTabsWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber);
         /// <summary>
         /// Returns document page image(s) based on input.
         /// </summary>
@@ -756,11 +784,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        PageImages GetPages (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
+        PageImages GetPages(string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
 
         /// <summary>
         /// Returns document page image(s) based on input.
@@ -769,11 +798,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<PageImages> GetPagesWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
+        ApiResponse<PageImages> GetPagesWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
         /// </summary>
@@ -781,11 +811,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns></returns>
-        DocumentHtmlDefinitionOriginals GetTemplateDocumentHtmlDefinitions (string accountId, string templateId, string documentId);
+        DocumentHtmlDefinitionOriginals GetTemplateDocumentHtmlDefinitions(string accountId, string templateId, string documentId);
 
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
@@ -794,11 +824,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentHtmlDefinitionOriginals> GetTemplateDocumentHtmlDefinitionsWithHttpInfo (string accountId, string templateId, string documentId);
+        ApiResponse<DocumentHtmlDefinitionOriginals> GetTemplateDocumentHtmlDefinitionsWithHttpInfo(string accountId, string templateId, string documentId);
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for the template.
         /// </summary>
@@ -806,11 +836,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns></returns>
-        DocumentHtmlDefinitionOriginals GetTemplateHtmlDefinitions (string accountId, string templateId);
+        DocumentHtmlDefinitionOriginals GetTemplateHtmlDefinitions(string accountId, string templateId);
 
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for the template.
@@ -819,11 +848,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentHtmlDefinitionOriginals> GetTemplateHtmlDefinitionsWithHttpInfo (string accountId, string templateId);
+        ApiResponse<DocumentHtmlDefinitionOriginals> GetTemplateHtmlDefinitionsWithHttpInfo(string accountId, string templateId);
         /// <summary>
         /// Gets the bulk recipient file from a template.
         /// </summary>
@@ -831,11 +859,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves the bulk recipient file information from a template that has a bulk recipient.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        BulkRecipientsResponse ListBulkRecipients (string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null);
+        BulkRecipientsResponse ListBulkRecipients(string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null);
 
         /// <summary>
         /// Gets the bulk recipient file from a template.
@@ -844,11 +873,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves the bulk recipient file information from a template that has a bulk recipient.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<BulkRecipientsResponse> ListBulkRecipientsWithHttpInfo (string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null);
+        ApiResponse<BulkRecipientsResponse> ListBulkRecipientsWithHttpInfo(string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null);
         /// <summary>
         /// Gets the custom document fields from a template.
         /// </summary>
@@ -856,11 +886,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves the custom document field information from an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns></returns>
-        CustomFields ListCustomFields (string accountId, string templateId);
+        CustomFields ListCustomFields(string accountId, string templateId);
 
         /// <summary>
         /// Gets the custom document fields from a template.
@@ -869,11 +898,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves the custom document field information from an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<CustomFields> ListCustomFieldsWithHttpInfo (string accountId, string templateId);
+        ApiResponse<CustomFields> ListCustomFieldsWithHttpInfo(string accountId, string templateId);
         /// <summary>
         /// Gets the custom document fields for a an existing template document.
         /// </summary>
@@ -881,11 +909,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the custom document fields for an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns></returns>
-        DocumentFieldsInformation ListDocumentFields (string accountId, string templateId, string documentId);
+        DocumentFieldsInformation ListDocumentFields(string accountId, string templateId, string documentId);
 
         /// <summary>
         /// Gets the custom document fields for a an existing template document.
@@ -894,11 +922,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the custom document fields for an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentFieldsInformation> ListDocumentFieldsWithHttpInfo (string accountId, string templateId, string documentId);
+        ApiResponse<DocumentFieldsInformation> ListDocumentFieldsWithHttpInfo(string accountId, string templateId, string documentId);
         /// <summary>
         /// Gets a list of documents associated with a template.
         /// </summary>
@@ -906,11 +934,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of documents associated with the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        TemplateDocumentsResult ListDocuments (string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null);
+        TemplateDocumentsResult ListDocuments(string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null);
 
         /// <summary>
         /// Gets a list of documents associated with a template.
@@ -919,11 +947,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of documents associated with the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<TemplateDocumentsResult> ListDocumentsWithHttpInfo (string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null);
+        ApiResponse<TemplateDocumentsResult> ListDocumentsWithHttpInfo(string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null);
         /// <summary>
         /// Gets recipient information from a template.
         /// </summary>
@@ -931,11 +959,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the information for all recipients in the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        Recipients ListRecipients (string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null);
+        Recipients ListRecipients(string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null);
 
         /// <summary>
         /// Gets recipient information from a template.
@@ -944,11 +972,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the information for all recipients in the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Recipients> ListRecipientsWithHttpInfo (string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null);
+        ApiResponse<Recipients> ListRecipientsWithHttpInfo(string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null);
         /// <summary>
         /// Gets the tabs information for a signer or sign-in-person recipient in a template.
         /// </summary>
@@ -956,11 +984,12 @@ namespace DocuSign.eSign.Api
         /// Gets the tabs information for a signer or sign-in-person recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        Tabs ListTabs (string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null);
+        Tabs ListTabs(string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null);
 
         /// <summary>
         /// Gets the tabs information for a signer or sign-in-person recipient in a template.
@@ -969,11 +998,12 @@ namespace DocuSign.eSign.Api
         /// Gets the tabs information for a signer or sign-in-person recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Tabs> ListTabsWithHttpInfo (string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null);
+        ApiResponse<Tabs> ListTabsWithHttpInfo(string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null);
         /// <summary>
         /// Gets the definition of a template.
         /// </summary>
@@ -982,10 +1012,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        EnvelopeTemplateResults ListTemplates (string accountId, TemplatesApi.ListTemplatesOptions options = null);
+        EnvelopeTemplateResults ListTemplates(string accountId, TemplatesApi.ListTemplatesOptions options = null);
 
         /// <summary>
         /// Gets the definition of a template.
@@ -995,10 +1024,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<EnvelopeTemplateResults> ListTemplatesWithHttpInfo (string accountId, TemplatesApi.ListTemplatesOptions options = null);
+        ApiResponse<EnvelopeTemplateResults> ListTemplatesWithHttpInfo(string accountId, TemplatesApi.ListTemplatesOptions options = null);
         /// <summary>
         /// Rotates page image from a template for display.
         /// </summary>
@@ -1006,11 +1034,13 @@ namespace DocuSign.eSign.Api
         /// Rotates page image from a template for display. The page image can be rotated to the left or right.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns></returns>
-        void RotateDocumentPage (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
+        void RotateDocumentPage(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
 
         /// <summary>
         /// Rotates page image from a template for display.
@@ -1019,11 +1049,13 @@ namespace DocuSign.eSign.Api
         /// Rotates page image from a template for display. The page image can be rotated to the left or right.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RotateDocumentPageWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
+        ApiResponse<Object> RotateDocumentPageWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
         /// <summary>
         /// Updates an existing template.
         /// </summary>
@@ -1031,11 +1063,11 @@ namespace DocuSign.eSign.Api
         /// Updates an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns></returns>
-        TemplateUpdateSummary Update (string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null);
+        TemplateUpdateSummary Update(string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null);
 
         /// <summary>
         /// Updates an existing template.
@@ -1044,11 +1076,11 @@ namespace DocuSign.eSign.Api
         /// Updates an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<TemplateUpdateSummary> UpdateWithHttpInfo (string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null);
+        ApiResponse<TemplateUpdateSummary> UpdateWithHttpInfo(string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null);
         /// <summary>
         /// Updates envelope custom fields in a template.
         /// </summary>
@@ -1056,11 +1088,11 @@ namespace DocuSign.eSign.Api
         /// Updates the custom fields in a template.  Each custom field used in a template must have a unique name.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns></returns>
-        CustomFields UpdateCustomFields (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        CustomFields UpdateCustomFields(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
 
         /// <summary>
         /// Updates envelope custom fields in a template.
@@ -1069,11 +1101,11 @@ namespace DocuSign.eSign.Api
         /// Updates the custom fields in a template.  Each custom field used in a template must have a unique name.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<CustomFields> UpdateCustomFieldsWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        ApiResponse<CustomFields> UpdateCustomFieldsWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
         /// <summary>
         /// Adds a document to a template document.
         /// </summary>
@@ -1081,11 +1113,13 @@ namespace DocuSign.eSign.Api
         /// Adds the specified document to an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        EnvelopeDocument UpdateDocument (string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null);
+        EnvelopeDocument UpdateDocument(string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null);
 
         /// <summary>
         /// Adds a document to a template document.
@@ -1094,11 +1128,13 @@ namespace DocuSign.eSign.Api
         /// Adds the specified document to an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<EnvelopeDocument> UpdateDocumentWithHttpInfo (string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null);
+        ApiResponse<EnvelopeDocument> UpdateDocumentWithHttpInfo(string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null);
         /// <summary>
         /// Updates existing custom document fields in an existing template document.
         /// </summary>
@@ -1106,11 +1142,12 @@ namespace DocuSign.eSign.Api
         /// Updates existing custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns></returns>
-        DocumentFieldsInformation UpdateDocumentFields (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        DocumentFieldsInformation UpdateDocumentFields(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
 
         /// <summary>
         /// Updates existing custom document fields in an existing template document.
@@ -1119,11 +1156,12 @@ namespace DocuSign.eSign.Api
         /// Updates existing custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DocumentFieldsInformation> UpdateDocumentFieldsWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        ApiResponse<DocumentFieldsInformation> UpdateDocumentFieldsWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
         /// <summary>
         /// Adds documents to a template document.
         /// </summary>
@@ -1131,11 +1169,11 @@ namespace DocuSign.eSign.Api
         /// Adds one or more documents to an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns></returns>
-        TemplateDocumentsResult UpdateDocuments (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
+        TemplateDocumentsResult UpdateDocuments(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
 
         /// <summary>
         /// Adds documents to a template document.
@@ -1144,11 +1182,11 @@ namespace DocuSign.eSign.Api
         /// Adds one or more documents to an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<TemplateDocumentsResult> UpdateDocumentsWithHttpInfo (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
+        ApiResponse<TemplateDocumentsResult> UpdateDocumentsWithHttpInfo(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
         /// <summary>
         /// Shares a template with a group
         /// </summary>
@@ -1156,11 +1194,12 @@ namespace DocuSign.eSign.Api
         /// Shares a template with the specified members group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns></returns>
-        GroupInformation UpdateGroupShare (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
+        GroupInformation UpdateGroupShare(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
 
         /// <summary>
         /// Shares a template with a group
@@ -1169,11 +1208,12 @@ namespace DocuSign.eSign.Api
         /// Shares a template with the specified members group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<GroupInformation> UpdateGroupShareWithHttpInfo (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
+        ApiResponse<GroupInformation> UpdateGroupShareWithHttpInfo(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
         /// <summary>
         /// Updates a template lock.
         /// </summary>
@@ -1181,11 +1221,11 @@ namespace DocuSign.eSign.Api
         /// Updates the lock duration time or update the &#x60;lockedByApp&#x60; property information for the specified template. The user and integrator key must match the user specified by the &#x60;lockByUser&#x60; property and integrator key information and the &#x60;X-DocuSign-Edit&#x60; header must be included or an error will be generated.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns></returns>
-        LockInformation UpdateLock (string accountId, string templateId, LockRequest lockRequest = null);
+        LockInformation UpdateLock(string accountId, string templateId, LockRequest lockRequest = null);
 
         /// <summary>
         /// Updates a template lock.
@@ -1194,11 +1234,11 @@ namespace DocuSign.eSign.Api
         /// Updates the lock duration time or update the &#x60;lockedByApp&#x60; property information for the specified template. The user and integrator key must match the user specified by the &#x60;lockByUser&#x60; property and integrator key information and the &#x60;X-DocuSign-Edit&#x60; header must be included or an error will be generated.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<LockInformation> UpdateLockWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null);
+        ApiResponse<LockInformation> UpdateLockWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null);
         /// <summary>
         /// Updates the notification  structure for an existing template.
         /// </summary>
@@ -1206,11 +1246,11 @@ namespace DocuSign.eSign.Api
         /// Updates the notification structure for an existing template. Use this endpoint to set reminder and expiration notifications.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateNotificationRequest"> (optional)</param>
-        
         /// <returns></returns>
-        Notification UpdateNotificationSettings (string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null);
+        Notification UpdateNotificationSettings(string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null);
 
         /// <summary>
         /// Updates the notification  structure for an existing template.
@@ -1219,11 +1259,11 @@ namespace DocuSign.eSign.Api
         /// Updates the notification structure for an existing template. Use this endpoint to set reminder and expiration notifications.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateNotificationRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Notification> UpdateNotificationSettingsWithHttpInfo (string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null);
+        ApiResponse<Notification> UpdateNotificationSettingsWithHttpInfo(string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null);
         /// <summary>
         /// Updates recipients in a template.
         /// </summary>
@@ -1231,11 +1271,12 @@ namespace DocuSign.eSign.Api
         /// Updates recipients in a template.   You can edit the following properties: &#x60;email&#x60;, &#x60;userName&#x60;, &#x60;routingOrder&#x60;, &#x60;faxNumber&#x60;, &#x60;deliveryMethod&#x60;, &#x60;accessCode&#x60;, and &#x60;requireIdLookup&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        RecipientsUpdateSummary UpdateRecipients (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null);
+        RecipientsUpdateSummary UpdateRecipients(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null);
 
         /// <summary>
         /// Updates recipients in a template.
@@ -1244,11 +1285,12 @@ namespace DocuSign.eSign.Api
         /// Updates recipients in a template.   You can edit the following properties: &#x60;email&#x60;, &#x60;userName&#x60;, &#x60;routingOrder&#x60;, &#x60;faxNumber&#x60;, &#x60;deliveryMethod&#x60;, &#x60;accessCode&#x60;, and &#x60;requireIdLookup&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<RecipientsUpdateSummary> UpdateRecipientsWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null);
+        ApiResponse<RecipientsUpdateSummary> UpdateRecipientsWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null);
         /// <summary>
         /// Updates the tabs for a recipient.
         /// </summary>
@@ -1256,11 +1298,12 @@ namespace DocuSign.eSign.Api
         /// Updates one or more tabs for a recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns></returns>
-        Tabs UpdateTabs (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        Tabs UpdateTabs(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Updates the tabs for a recipient.
@@ -1269,11 +1312,12 @@ namespace DocuSign.eSign.Api
         /// Updates one or more tabs for a recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Tabs> UpdateTabsWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        ApiResponse<Tabs> UpdateTabsWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
         /// <summary>
         /// Updates the tabs for a template
         /// </summary>
@@ -1281,11 +1325,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns></returns>
-        Tabs UpdateTemplateDocumentTabs (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        Tabs UpdateTemplateDocumentTabs(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Updates the tabs for a template
@@ -1294,11 +1339,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<Tabs> UpdateTemplateDocumentTabsWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        ApiResponse<Tabs> UpdateTemplateDocumentTabsWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -1308,11 +1354,11 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of CustomFields</returns>
-        System.Threading.Tasks.Task<CustomFields> CreateCustomFieldsAsync (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        System.Threading.Tasks.Task<CustomFields> CreateCustomFieldsAsync(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
 
         /// <summary>
         /// Creates custom document fields in an existing template document.
@@ -1321,11 +1367,11 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (CustomFields)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomFields>> CreateCustomFieldsAsyncWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        System.Threading.Tasks.Task<ApiResponse<CustomFields>> CreateCustomFieldsAsyncWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
         /// <summary>
         /// Creates custom document fields in an existing template document.
         /// </summary>
@@ -1333,11 +1379,12 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of DocumentFieldsInformation</returns>
-        System.Threading.Tasks.Task<DocumentFieldsInformation> CreateDocumentFieldsAsync (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        System.Threading.Tasks.Task<DocumentFieldsInformation> CreateDocumentFieldsAsync(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
 
         /// <summary>
         /// Creates custom document fields in an existing template document.
@@ -1346,11 +1393,12 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DocumentFieldsInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> CreateDocumentFieldsAsyncWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> CreateDocumentFieldsAsyncWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
         /// <summary>
         /// Provides a URL to start an edit view of the Template UI
         /// </summary>
@@ -1358,11 +1406,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="returnUrlRequest"> (optional)</param>
-        
         /// <returns>Task of ViewUrl</returns>
-        System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync (string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
+        System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
 
         /// <summary>
         /// Provides a URL to start an edit view of the Template UI
@@ -1371,11 +1419,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="returnUrlRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo (string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
         /// <summary>
         /// Lock a template.
         /// </summary>
@@ -1383,11 +1431,11 @@ namespace DocuSign.eSign.Api
         /// Locks the specified template, and sets the time until the lock expires, to prevent other users or recipients from accessing and changing the template.  ###### Note: Users must have envelope locking capability enabled to use this function (the userSetting property &#x60;canLockEnvelopes&#x60; must be set to **true** for the user).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of LockInformation</returns>
-        System.Threading.Tasks.Task<LockInformation> CreateLockAsync (string accountId, string templateId, LockRequest lockRequest = null);
+        System.Threading.Tasks.Task<LockInformation> CreateLockAsync(string accountId, string templateId, LockRequest lockRequest = null);
 
         /// <summary>
         /// Lock a template.
@@ -1396,11 +1444,11 @@ namespace DocuSign.eSign.Api
         /// Locks the specified template, and sets the time until the lock expires, to prevent other users or recipients from accessing and changing the template.  ###### Note: Users must have envelope locking capability enabled to use this function (the userSetting property &#x60;canLockEnvelopes&#x60; must be set to **true** for the user).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (LockInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LockInformation>> CreateLockAsyncWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<LockInformation>> CreateLockAsyncWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null);
         /// <summary>
         /// Adds tabs for a recipient.
         /// </summary>
@@ -1408,11 +1456,12 @@ namespace DocuSign.eSign.Api
         /// Adds one or more recipients to a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Recipients</returns>
-        System.Threading.Tasks.Task<Recipients> CreateRecipientsAsync (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null);
+        System.Threading.Tasks.Task<Recipients> CreateRecipientsAsync(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null);
 
         /// <summary>
         /// Adds tabs for a recipient.
@@ -1421,11 +1470,12 @@ namespace DocuSign.eSign.Api
         /// Adds one or more recipients to a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Recipients)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Recipients>> CreateRecipientsAsyncWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<Recipients>> CreateRecipientsAsyncWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null);
         /// <summary>
         /// Adds tabs for a recipient.
         /// </summary>
@@ -1433,11 +1483,12 @@ namespace DocuSign.eSign.Api
         /// Adds one or more tabs for a recipient.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        System.Threading.Tasks.Task<Tabs> CreateTabsAsync (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<Tabs> CreateTabsAsync(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Adds tabs for a recipient.
@@ -1446,11 +1497,12 @@ namespace DocuSign.eSign.Api
         /// Adds one or more tabs for a recipient.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Tabs>> CreateTabsAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<ApiResponse<Tabs>> CreateTabsAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
         /// <summary>
         /// Creates an envelope from a template.
         /// </summary>
@@ -1460,9 +1512,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>Task of TemplateSummary</returns>
-        System.Threading.Tasks.Task<TemplateSummary> CreateTemplateAsync (string accountId, EnvelopeTemplate envelopeTemplate = null);
+        System.Threading.Tasks.Task<TemplateSummary> CreateTemplateAsync(string accountId, EnvelopeTemplate envelopeTemplate = null);
 
         /// <summary>
         /// Creates an envelope from a template.
@@ -1473,9 +1524,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TemplateSummary)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TemplateSummary>> CreateTemplateAsyncWithHttpInfo (string accountId, EnvelopeTemplate envelopeTemplate = null);
+        System.Threading.Tasks.Task<ApiResponse<TemplateSummary>> CreateTemplateAsyncWithHttpInfo(string accountId, EnvelopeTemplate envelopeTemplate = null);
         /// <summary>
         /// Post Responsive HTML Preview for a document in a template.
         /// </summary>
@@ -1483,11 +1533,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>Task of DocumentHtmlDefinitions</returns>
-        System.Threading.Tasks.Task<DocumentHtmlDefinitions> CreateTemplateDocumentResponsiveHtmlPreviewAsync (string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null);
+        System.Threading.Tasks.Task<DocumentHtmlDefinitions> CreateTemplateDocumentResponsiveHtmlPreviewAsync(string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null);
 
         /// <summary>
         /// Post Responsive HTML Preview for a document in a template.
@@ -1496,11 +1547,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DocumentHtmlDefinitions)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitions>> CreateTemplateDocumentResponsiveHtmlPreviewAsyncWithHttpInfo (string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null);
+        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitions>> CreateTemplateDocumentResponsiveHtmlPreviewAsyncWithHttpInfo(string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null);
         /// <summary>
         /// Adds the tabs to a tempate
         /// </summary>
@@ -1508,11 +1560,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        System.Threading.Tasks.Task<Tabs> CreateTemplateDocumentTabsAsync (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<Tabs> CreateTemplateDocumentTabsAsync(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Adds the tabs to a tempate
@@ -1521,11 +1574,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Tabs>> CreateTemplateDocumentTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<ApiResponse<Tabs>> CreateTemplateDocumentTabsAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
         /// <summary>
         /// Provides a URL to start a recipient view of the Envelope UI
         /// </summary>
@@ -1533,11 +1587,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="recipientPreviewRequest"> (optional)</param>
-        
         /// <returns>Task of ViewUrl</returns>
-        System.Threading.Tasks.Task<ViewUrl> CreateTemplateRecipientPreviewAsync (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
+        System.Threading.Tasks.Task<ViewUrl> CreateTemplateRecipientPreviewAsync(string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
 
         /// <summary>
         /// Provides a URL to start a recipient view of the Envelope UI
@@ -1546,11 +1600,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="recipientPreviewRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateTemplateRecipientPreviewAsyncWithHttpInfo (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateTemplateRecipientPreviewAsyncWithHttpInfo(string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null);
         /// <summary>
         /// Get Responsive HTML Preview for all documents in a template.
         /// </summary>
@@ -1558,11 +1612,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>Task of DocumentHtmlDefinitions</returns>
-        System.Threading.Tasks.Task<DocumentHtmlDefinitions> CreateTemplateResponsiveHtmlPreviewAsync (string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null);
+        System.Threading.Tasks.Task<DocumentHtmlDefinitions> CreateTemplateResponsiveHtmlPreviewAsync(string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null);
 
         /// <summary>
         /// Get Responsive HTML Preview for all documents in a template.
@@ -1571,11 +1625,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DocumentHtmlDefinitions)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitions>> CreateTemplateResponsiveHtmlPreviewAsyncWithHttpInfo (string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null);
+        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitions>> CreateTemplateResponsiveHtmlPreviewAsyncWithHttpInfo(string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null);
         /// <summary>
         /// Deletes the bulk recipient list on a template.
         /// </summary>
@@ -1583,11 +1637,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the bulk recipient list on a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <returns>Task of BulkRecipientsUpdateResponse</returns>
-        System.Threading.Tasks.Task<BulkRecipientsUpdateResponse> DeleteBulkRecipientsAsync (string accountId, string templateId, string recipientId);
+        System.Threading.Tasks.Task<BulkRecipientsUpdateResponse> DeleteBulkRecipientsAsync(string accountId, string templateId, string recipientId);
 
         /// <summary>
         /// Deletes the bulk recipient list on a template.
@@ -1596,11 +1650,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the bulk recipient list on a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <returns>Task of ApiResponse (BulkRecipientsUpdateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BulkRecipientsUpdateResponse>> DeleteBulkRecipientsAsyncWithHttpInfo (string accountId, string templateId, string recipientId);
+        System.Threading.Tasks.Task<ApiResponse<BulkRecipientsUpdateResponse>> DeleteBulkRecipientsAsyncWithHttpInfo(string accountId, string templateId, string recipientId);
         /// <summary>
         /// Deletes envelope custom fields in a template.
         /// </summary>
@@ -1608,11 +1662,11 @@ namespace DocuSign.eSign.Api
         /// Deletes envelope custom fields in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of CustomFields</returns>
-        System.Threading.Tasks.Task<CustomFields> DeleteCustomFieldsAsync (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        System.Threading.Tasks.Task<CustomFields> DeleteCustomFieldsAsync(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
 
         /// <summary>
         /// Deletes envelope custom fields in a template.
@@ -1621,11 +1675,11 @@ namespace DocuSign.eSign.Api
         /// Deletes envelope custom fields in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (CustomFields)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomFields>> DeleteCustomFieldsAsyncWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        System.Threading.Tasks.Task<ApiResponse<CustomFields>> DeleteCustomFieldsAsyncWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
         /// <summary>
         /// Deletes custom document fields from an existing template document.
         /// </summary>
@@ -1633,11 +1687,12 @@ namespace DocuSign.eSign.Api
         /// Deletes custom document fields from an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of DocumentFieldsInformation</returns>
-        System.Threading.Tasks.Task<DocumentFieldsInformation> DeleteDocumentFieldsAsync (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        System.Threading.Tasks.Task<DocumentFieldsInformation> DeleteDocumentFieldsAsync(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
 
         /// <summary>
         /// Deletes custom document fields from an existing template document.
@@ -1646,11 +1701,12 @@ namespace DocuSign.eSign.Api
         /// Deletes custom document fields from an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DocumentFieldsInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> DeleteDocumentFieldsAsyncWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> DeleteDocumentFieldsAsyncWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
         /// <summary>
         /// Deletes a page from a document in an template.
         /// </summary>
@@ -1658,11 +1714,13 @@ namespace DocuSign.eSign.Api
         /// Deletes a page from a document in a template based on the page number.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteDocumentPageAsync (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
+        System.Threading.Tasks.Task DeleteDocumentPageAsync(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
 
         /// <summary>
         /// Deletes a page from a document in an template.
@@ -1671,11 +1729,13 @@ namespace DocuSign.eSign.Api
         /// Deletes a page from a document in a template based on the page number.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDocumentPageAsyncWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDocumentPageAsyncWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
         /// <summary>
         /// Deletes documents from a template.
         /// </summary>
@@ -1683,11 +1743,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more documents from an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>Task of TemplateDocumentsResult</returns>
-        System.Threading.Tasks.Task<TemplateDocumentsResult> DeleteDocumentsAsync (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
+        System.Threading.Tasks.Task<TemplateDocumentsResult> DeleteDocumentsAsync(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
 
         /// <summary>
         /// Deletes documents from a template.
@@ -1696,11 +1756,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more documents from an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TemplateDocumentsResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> DeleteDocumentsAsyncWithHttpInfo (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
+        System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> DeleteDocumentsAsyncWithHttpInfo(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
         /// <summary>
         /// Removes a member group&#39;s sharing permissions for a template.
         /// </summary>
@@ -1708,11 +1768,12 @@ namespace DocuSign.eSign.Api
         /// Removes a member group&#39;s sharing permissions for a specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of GroupInformation</returns>
-        System.Threading.Tasks.Task<GroupInformation> DeleteGroupShareAsync (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
+        System.Threading.Tasks.Task<GroupInformation> DeleteGroupShareAsync(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
 
         /// <summary>
         /// Removes a member group&#39;s sharing permissions for a template.
@@ -1721,11 +1782,12 @@ namespace DocuSign.eSign.Api
         /// Removes a member group&#39;s sharing permissions for a specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> DeleteGroupShareAsyncWithHttpInfo (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> DeleteGroupShareAsyncWithHttpInfo(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
         /// <summary>
         /// Deletes a template lock.
         /// </summary>
@@ -1733,11 +1795,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the lock from the specified template. The &#x60;X-DocuSign-Edit&#x60; header must be included in the request.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of LockInformation</returns>
-        System.Threading.Tasks.Task<LockInformation> DeleteLockAsync (string accountId, string templateId, LockRequest lockRequest = null);
+        System.Threading.Tasks.Task<LockInformation> DeleteLockAsync(string accountId, string templateId, LockRequest lockRequest = null);
 
         /// <summary>
         /// Deletes a template lock.
@@ -1746,11 +1808,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the lock from the specified template. The &#x60;X-DocuSign-Edit&#x60; header must be included in the request.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (LockInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LockInformation>> DeleteLockAsyncWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<LockInformation>> DeleteLockAsyncWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null);
         /// <summary>
         /// Deletes the specified recipient file from a template.
         /// </summary>
@@ -1758,11 +1820,12 @@ namespace DocuSign.eSign.Api
         /// Deletes the specified recipient file from the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>Task of Recipients</returns>
-        System.Threading.Tasks.Task<Recipients> DeleteRecipientAsync (string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null);
+        System.Threading.Tasks.Task<Recipients> DeleteRecipientAsync(string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null);
 
         /// <summary>
         /// Deletes the specified recipient file from a template.
@@ -1771,11 +1834,12 @@ namespace DocuSign.eSign.Api
         /// Deletes the specified recipient file from the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Recipients)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Recipients>> DeleteRecipientAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null);
+        System.Threading.Tasks.Task<ApiResponse<Recipients>> DeleteRecipientAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null);
         /// <summary>
         /// Deletes recipients from a template.
         /// </summary>
@@ -1783,11 +1847,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more recipients from a template. Recipients to be deleted are listed in the request, with the &#x60;recipientId&#x60; being used as the key for deleting recipients.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>Task of Recipients</returns>
-        System.Threading.Tasks.Task<Recipients> DeleteRecipientsAsync (string accountId, string templateId, TemplateRecipients templateRecipients = null);
+        System.Threading.Tasks.Task<Recipients> DeleteRecipientsAsync(string accountId, string templateId, TemplateRecipients templateRecipients = null);
 
         /// <summary>
         /// Deletes recipients from a template.
@@ -1796,11 +1860,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more recipients from a template. Recipients to be deleted are listed in the request, with the &#x60;recipientId&#x60; being used as the key for deleting recipients.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Recipients)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Recipients>> DeleteRecipientsAsyncWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null);
+        System.Threading.Tasks.Task<ApiResponse<Recipients>> DeleteRecipientsAsyncWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null);
         /// <summary>
         /// Deletes the tabs associated with a recipient in a template.
         /// </summary>
@@ -1808,11 +1872,12 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more tabs associated with a recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        System.Threading.Tasks.Task<Tabs> DeleteTabsAsync (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<Tabs> DeleteTabsAsync(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Deletes the tabs associated with a recipient in a template.
@@ -1821,11 +1886,12 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more tabs associated with a recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Tabs>> DeleteTabsAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<ApiResponse<Tabs>> DeleteTabsAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
         /// <summary>
         /// Deletes tabs from an envelope document
         /// </summary>
@@ -1833,11 +1899,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        System.Threading.Tasks.Task<Tabs> DeleteTemplateDocumentTabsAsync (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<Tabs> DeleteTemplateDocumentTabsAsync(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Deletes tabs from an envelope document
@@ -1846,11 +1913,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Tabs>> DeleteTemplateDocumentTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<ApiResponse<Tabs>> DeleteTemplateDocumentTabsAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
         /// <summary>
         /// Gets a list of templates for a specified account.
         /// </summary>
@@ -1858,11 +1926,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the definition of the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of EnvelopeTemplate</returns>
-        System.Threading.Tasks.Task<EnvelopeTemplate> GetAsync (string accountId, string templateId, TemplatesApi.GetOptions options = null);
+        System.Threading.Tasks.Task<EnvelopeTemplate> GetAsync(string accountId, string templateId, TemplatesApi.GetOptions options = null);
 
         /// <summary>
         /// Gets a list of templates for a specified account.
@@ -1871,11 +1939,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the definition of the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (EnvelopeTemplate)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EnvelopeTemplate>> GetAsyncWithHttpInfo (string accountId, string templateId, TemplatesApi.GetOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<EnvelopeTemplate>> GetAsyncWithHttpInfo(string accountId, string templateId, TemplatesApi.GetOptions options = null);
         /// <summary>
         /// Gets PDF documents from a template.
         /// </summary>
@@ -1883,11 +1951,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves one or more PDF documents from the specified template.  You can specify the ID of the document to retrieve or can specify &#x60;combined&#x60; to retrieve all documents in the template as one pdf.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> GetDocumentAsync (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null);
+        System.Threading.Tasks.Task<System.IO.Stream> GetDocumentAsync(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null);
 
         /// <summary>
         /// Gets PDF documents from a template.
@@ -1896,11 +1965,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves one or more PDF documents from the specified template.  You can specify the ID of the document to retrieve or can specify &#x60;combined&#x60; to retrieve all documents in the template as one pdf.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDocumentAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDocumentAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null);
         /// <summary>
         /// Gets a page image from a template for display.
         /// </summary>
@@ -1908,11 +1978,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a page image for display from the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> GetDocumentPageImageAsync (string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null);
+        System.Threading.Tasks.Task<System.IO.Stream> GetDocumentPageImageAsync(string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null);
 
         /// <summary>
         /// Gets a page image from a template for display.
@@ -1921,11 +1993,13 @@ namespace DocuSign.eSign.Api
         /// Retrieves a page image for display from the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDocumentPageImageAsyncWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDocumentPageImageAsyncWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null);
         /// <summary>
         /// Returns tabs on the document.
         /// </summary>
@@ -1933,11 +2007,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Tabs</returns>
-        System.Threading.Tasks.Task<Tabs> GetDocumentTabsAsync (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
+        System.Threading.Tasks.Task<Tabs> GetDocumentTabsAsync(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
 
         /// <summary>
         /// Returns tabs on the document.
@@ -1946,11 +2021,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Tabs>> GetDocumentTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<Tabs>> GetDocumentTabsAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null);
         /// <summary>
         /// Gets template lock information.
         /// </summary>
@@ -1958,11 +2034,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves general information about the template lock.  If the call is made by the user who has the lock and the request has the same integrator key as original, then the &#x60;X-DocuSign-Edit&#x60; header  field and additional lock information is included in the response. This allows users to recover a lost editing session token and the &#x60;X-DocuSign-Edit&#x60; header.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of LockInformation</returns>
-        System.Threading.Tasks.Task<LockInformation> GetLockAsync (string accountId, string templateId);
+        System.Threading.Tasks.Task<LockInformation> GetLockAsync(string accountId, string templateId);
 
         /// <summary>
         /// Gets template lock information.
@@ -1971,11 +2046,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves general information about the template lock.  If the call is made by the user who has the lock and the request has the same integrator key as original, then the &#x60;X-DocuSign-Edit&#x60; header  field and additional lock information is included in the response. This allows users to recover a lost editing session token and the &#x60;X-DocuSign-Edit&#x60; header.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of ApiResponse (LockInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LockInformation>> GetLockAsyncWithHttpInfo (string accountId, string templateId);
+        System.Threading.Tasks.Task<ApiResponse<LockInformation>> GetLockAsyncWithHttpInfo(string accountId, string templateId);
         /// <summary>
         /// Gets template notification information.
         /// </summary>
@@ -1983,11 +2057,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves the envelope notification, reminders and expirations, information for an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of Notification</returns>
-        System.Threading.Tasks.Task<Notification> GetNotificationSettingsAsync (string accountId, string templateId);
+        System.Threading.Tasks.Task<Notification> GetNotificationSettingsAsync(string accountId, string templateId);
 
         /// <summary>
         /// Gets template notification information.
@@ -1996,11 +2069,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves the envelope notification, reminders and expirations, information for an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of ApiResponse (Notification)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Notification>> GetNotificationSettingsAsyncWithHttpInfo (string accountId, string templateId);
+        System.Threading.Tasks.Task<ApiResponse<Notification>> GetNotificationSettingsAsyncWithHttpInfo(string accountId, string templateId);
         /// <summary>
         /// Returns tabs on the specified page.
         /// </summary>
@@ -2008,11 +2080,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <returns>Task of Tabs</returns>
-        System.Threading.Tasks.Task<Tabs> GetPageTabsAsync (string accountId, string templateId, string documentId, string pageNumber);
+        System.Threading.Tasks.Task<Tabs> GetPageTabsAsync(string accountId, string templateId, string documentId, string pageNumber);
 
         /// <summary>
         /// Returns tabs on the specified page.
@@ -2021,11 +2094,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Tabs>> GetPageTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber);
+        System.Threading.Tasks.Task<ApiResponse<Tabs>> GetPageTabsAsyncWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber);
         /// <summary>
         /// Returns document page image(s) based on input.
         /// </summary>
@@ -2033,11 +2107,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of PageImages</returns>
-        System.Threading.Tasks.Task<PageImages> GetPagesAsync (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
+        System.Threading.Tasks.Task<PageImages> GetPagesAsync(string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
 
         /// <summary>
         /// Returns document page image(s) based on input.
@@ -2046,11 +2121,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PageImages)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PageImages>> GetPagesAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<PageImages>> GetPagesAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null);
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
         /// </summary>
@@ -2058,11 +2134,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
-        System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetTemplateDocumentHtmlDefinitionsAsync (string accountId, string templateId, string documentId);
+        System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetTemplateDocumentHtmlDefinitionsAsync(string accountId, string templateId, string documentId);
 
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
@@ -2071,11 +2147,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetTemplateDocumentHtmlDefinitionsAsyncWithHttpInfo (string accountId, string templateId, string documentId);
+        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetTemplateDocumentHtmlDefinitionsAsyncWithHttpInfo(string accountId, string templateId, string documentId);
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for the template.
         /// </summary>
@@ -2083,11 +2159,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
-        System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetTemplateHtmlDefinitionsAsync (string accountId, string templateId);
+        System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetTemplateHtmlDefinitionsAsync(string accountId, string templateId);
 
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for the template.
@@ -2096,11 +2171,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetTemplateHtmlDefinitionsAsyncWithHttpInfo (string accountId, string templateId);
+        System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetTemplateHtmlDefinitionsAsyncWithHttpInfo(string accountId, string templateId);
         /// <summary>
         /// Gets the bulk recipient file from a template.
         /// </summary>
@@ -2108,11 +2182,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves the bulk recipient file information from a template that has a bulk recipient.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BulkRecipientsResponse</returns>
-        System.Threading.Tasks.Task<BulkRecipientsResponse> ListBulkRecipientsAsync (string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null);
+        System.Threading.Tasks.Task<BulkRecipientsResponse> ListBulkRecipientsAsync(string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null);
 
         /// <summary>
         /// Gets the bulk recipient file from a template.
@@ -2121,11 +2196,12 @@ namespace DocuSign.eSign.Api
         /// Retrieves the bulk recipient file information from a template that has a bulk recipient.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BulkRecipientsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BulkRecipientsResponse>> ListBulkRecipientsAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<BulkRecipientsResponse>> ListBulkRecipientsAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null);
         /// <summary>
         /// Gets the custom document fields from a template.
         /// </summary>
@@ -2133,11 +2209,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves the custom document field information from an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of CustomFields</returns>
-        System.Threading.Tasks.Task<CustomFields> ListCustomFieldsAsync (string accountId, string templateId);
+        System.Threading.Tasks.Task<CustomFields> ListCustomFieldsAsync(string accountId, string templateId);
 
         /// <summary>
         /// Gets the custom document fields from a template.
@@ -2146,11 +2221,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves the custom document field information from an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of ApiResponse (CustomFields)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomFields>> ListCustomFieldsAsyncWithHttpInfo (string accountId, string templateId);
+        System.Threading.Tasks.Task<ApiResponse<CustomFields>> ListCustomFieldsAsyncWithHttpInfo(string accountId, string templateId);
         /// <summary>
         /// Gets the custom document fields for a an existing template document.
         /// </summary>
@@ -2158,11 +2232,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the custom document fields for an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>Task of DocumentFieldsInformation</returns>
-        System.Threading.Tasks.Task<DocumentFieldsInformation> ListDocumentFieldsAsync (string accountId, string templateId, string documentId);
+        System.Threading.Tasks.Task<DocumentFieldsInformation> ListDocumentFieldsAsync(string accountId, string templateId, string documentId);
 
         /// <summary>
         /// Gets the custom document fields for a an existing template document.
@@ -2171,11 +2245,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the custom document fields for an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>Task of ApiResponse (DocumentFieldsInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> ListDocumentFieldsAsyncWithHttpInfo (string accountId, string templateId, string documentId);
+        System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> ListDocumentFieldsAsyncWithHttpInfo(string accountId, string templateId, string documentId);
         /// <summary>
         /// Gets a list of documents associated with a template.
         /// </summary>
@@ -2183,11 +2257,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of documents associated with the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of TemplateDocumentsResult</returns>
-        System.Threading.Tasks.Task<TemplateDocumentsResult> ListDocumentsAsync (string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null);
+        System.Threading.Tasks.Task<TemplateDocumentsResult> ListDocumentsAsync(string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null);
 
         /// <summary>
         /// Gets a list of documents associated with a template.
@@ -2196,11 +2270,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of documents associated with the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (TemplateDocumentsResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> ListDocumentsAsyncWithHttpInfo (string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> ListDocumentsAsyncWithHttpInfo(string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null);
         /// <summary>
         /// Gets recipient information from a template.
         /// </summary>
@@ -2208,11 +2282,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the information for all recipients in the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Recipients</returns>
-        System.Threading.Tasks.Task<Recipients> ListRecipientsAsync (string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null);
+        System.Threading.Tasks.Task<Recipients> ListRecipientsAsync(string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null);
 
         /// <summary>
         /// Gets recipient information from a template.
@@ -2221,11 +2295,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves the information for all recipients in the specified template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Recipients)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Recipients>> ListRecipientsAsyncWithHttpInfo (string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<Recipients>> ListRecipientsAsyncWithHttpInfo(string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null);
         /// <summary>
         /// Gets the tabs information for a signer or sign-in-person recipient in a template.
         /// </summary>
@@ -2233,11 +2307,12 @@ namespace DocuSign.eSign.Api
         /// Gets the tabs information for a signer or sign-in-person recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Tabs</returns>
-        System.Threading.Tasks.Task<Tabs> ListTabsAsync (string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null);
+        System.Threading.Tasks.Task<Tabs> ListTabsAsync(string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null);
 
         /// <summary>
         /// Gets the tabs information for a signer or sign-in-person recipient in a template.
@@ -2246,11 +2321,12 @@ namespace DocuSign.eSign.Api
         /// Gets the tabs information for a signer or sign-in-person recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Tabs>> ListTabsAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<Tabs>> ListTabsAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null);
         /// <summary>
         /// Gets the definition of a template.
         /// </summary>
@@ -2259,10 +2335,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of EnvelopeTemplateResults</returns>
-        System.Threading.Tasks.Task<EnvelopeTemplateResults> ListTemplatesAsync (string accountId, TemplatesApi.ListTemplatesOptions options = null);
+        System.Threading.Tasks.Task<EnvelopeTemplateResults> ListTemplatesAsync(string accountId, TemplatesApi.ListTemplatesOptions options = null);
 
         /// <summary>
         /// Gets the definition of a template.
@@ -2272,10 +2347,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (EnvelopeTemplateResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EnvelopeTemplateResults>> ListTemplatesAsyncWithHttpInfo (string accountId, TemplatesApi.ListTemplatesOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<EnvelopeTemplateResults>> ListTemplatesAsyncWithHttpInfo(string accountId, TemplatesApi.ListTemplatesOptions options = null);
         /// <summary>
         /// Rotates page image from a template for display.
         /// </summary>
@@ -2283,11 +2357,13 @@ namespace DocuSign.eSign.Api
         /// Rotates page image from a template for display. The page image can be rotated to the left or right.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RotateDocumentPageAsync (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
+        System.Threading.Tasks.Task RotateDocumentPageAsync(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
 
         /// <summary>
         /// Rotates page image from a template for display.
@@ -2296,11 +2372,13 @@ namespace DocuSign.eSign.Api
         /// Rotates page image from a template for display. The page image can be rotated to the left or right.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RotateDocumentPageAsyncWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> RotateDocumentPageAsyncWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null);
         /// <summary>
         /// Updates an existing template.
         /// </summary>
@@ -2308,11 +2386,11 @@ namespace DocuSign.eSign.Api
         /// Updates an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>Task of TemplateUpdateSummary</returns>
-        System.Threading.Tasks.Task<TemplateUpdateSummary> UpdateAsync (string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null);
+        System.Threading.Tasks.Task<TemplateUpdateSummary> UpdateAsync(string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null);
 
         /// <summary>
         /// Updates an existing template.
@@ -2321,11 +2399,11 @@ namespace DocuSign.eSign.Api
         /// Updates an existing template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TemplateUpdateSummary)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TemplateUpdateSummary>> UpdateAsyncWithHttpInfo (string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null);
+        System.Threading.Tasks.Task<ApiResponse<TemplateUpdateSummary>> UpdateAsyncWithHttpInfo(string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null);
         /// <summary>
         /// Updates envelope custom fields in a template.
         /// </summary>
@@ -2333,11 +2411,11 @@ namespace DocuSign.eSign.Api
         /// Updates the custom fields in a template.  Each custom field used in a template must have a unique name.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of CustomFields</returns>
-        System.Threading.Tasks.Task<CustomFields> UpdateCustomFieldsAsync (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        System.Threading.Tasks.Task<CustomFields> UpdateCustomFieldsAsync(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
 
         /// <summary>
         /// Updates envelope custom fields in a template.
@@ -2346,11 +2424,11 @@ namespace DocuSign.eSign.Api
         /// Updates the custom fields in a template.  Each custom field used in a template must have a unique name.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (CustomFields)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomFields>> UpdateCustomFieldsAsyncWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
+        System.Threading.Tasks.Task<ApiResponse<CustomFields>> UpdateCustomFieldsAsyncWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null);
         /// <summary>
         /// Adds a document to a template document.
         /// </summary>
@@ -2358,11 +2436,13 @@ namespace DocuSign.eSign.Api
         /// Adds the specified document to an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of EnvelopeDocument</returns>
-        System.Threading.Tasks.Task<EnvelopeDocument> UpdateDocumentAsync (string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null);
+        System.Threading.Tasks.Task<EnvelopeDocument> UpdateDocumentAsync(string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null);
 
         /// <summary>
         /// Adds a document to a template document.
@@ -2371,11 +2451,13 @@ namespace DocuSign.eSign.Api
         /// Adds the specified document to an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (EnvelopeDocument)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EnvelopeDocument>> UpdateDocumentAsyncWithHttpInfo (string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<EnvelopeDocument>> UpdateDocumentAsyncWithHttpInfo(string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null);
         /// <summary>
         /// Updates existing custom document fields in an existing template document.
         /// </summary>
@@ -2383,11 +2465,12 @@ namespace DocuSign.eSign.Api
         /// Updates existing custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of DocumentFieldsInformation</returns>
-        System.Threading.Tasks.Task<DocumentFieldsInformation> UpdateDocumentFieldsAsync (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        System.Threading.Tasks.Task<DocumentFieldsInformation> UpdateDocumentFieldsAsync(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
 
         /// <summary>
         /// Updates existing custom document fields in an existing template document.
@@ -2396,11 +2479,12 @@ namespace DocuSign.eSign.Api
         /// Updates existing custom document fields in an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DocumentFieldsInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> UpdateDocumentFieldsAsyncWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> UpdateDocumentFieldsAsyncWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null);
         /// <summary>
         /// Adds documents to a template document.
         /// </summary>
@@ -2408,11 +2492,11 @@ namespace DocuSign.eSign.Api
         /// Adds one or more documents to an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>Task of TemplateDocumentsResult</returns>
-        System.Threading.Tasks.Task<TemplateDocumentsResult> UpdateDocumentsAsync (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
+        System.Threading.Tasks.Task<TemplateDocumentsResult> UpdateDocumentsAsync(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
 
         /// <summary>
         /// Adds documents to a template document.
@@ -2421,11 +2505,11 @@ namespace DocuSign.eSign.Api
         /// Adds one or more documents to an existing template document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TemplateDocumentsResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> UpdateDocumentsAsyncWithHttpInfo (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
+        System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> UpdateDocumentsAsyncWithHttpInfo(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null);
         /// <summary>
         /// Shares a template with a group
         /// </summary>
@@ -2433,11 +2517,12 @@ namespace DocuSign.eSign.Api
         /// Shares a template with the specified members group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of GroupInformation</returns>
-        System.Threading.Tasks.Task<GroupInformation> UpdateGroupShareAsync (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
+        System.Threading.Tasks.Task<GroupInformation> UpdateGroupShareAsync(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
 
         /// <summary>
         /// Shares a template with a group
@@ -2446,11 +2531,12 @@ namespace DocuSign.eSign.Api
         /// Shares a template with the specified members group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> UpdateGroupShareAsyncWithHttpInfo (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> UpdateGroupShareAsyncWithHttpInfo(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null);
         /// <summary>
         /// Updates a template lock.
         /// </summary>
@@ -2458,11 +2544,11 @@ namespace DocuSign.eSign.Api
         /// Updates the lock duration time or update the &#x60;lockedByApp&#x60; property information for the specified template. The user and integrator key must match the user specified by the &#x60;lockByUser&#x60; property and integrator key information and the &#x60;X-DocuSign-Edit&#x60; header must be included or an error will be generated.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of LockInformation</returns>
-        System.Threading.Tasks.Task<LockInformation> UpdateLockAsync (string accountId, string templateId, LockRequest lockRequest = null);
+        System.Threading.Tasks.Task<LockInformation> UpdateLockAsync(string accountId, string templateId, LockRequest lockRequest = null);
 
         /// <summary>
         /// Updates a template lock.
@@ -2471,11 +2557,11 @@ namespace DocuSign.eSign.Api
         /// Updates the lock duration time or update the &#x60;lockedByApp&#x60; property information for the specified template. The user and integrator key must match the user specified by the &#x60;lockByUser&#x60; property and integrator key information and the &#x60;X-DocuSign-Edit&#x60; header must be included or an error will be generated.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (LockInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LockInformation>> UpdateLockAsyncWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<LockInformation>> UpdateLockAsyncWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null);
         /// <summary>
         /// Updates the notification  structure for an existing template.
         /// </summary>
@@ -2483,11 +2569,11 @@ namespace DocuSign.eSign.Api
         /// Updates the notification structure for an existing template. Use this endpoint to set reminder and expiration notifications.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateNotificationRequest"> (optional)</param>
-        
         /// <returns>Task of Notification</returns>
-        System.Threading.Tasks.Task<Notification> UpdateNotificationSettingsAsync (string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null);
+        System.Threading.Tasks.Task<Notification> UpdateNotificationSettingsAsync(string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null);
 
         /// <summary>
         /// Updates the notification  structure for an existing template.
@@ -2496,11 +2582,11 @@ namespace DocuSign.eSign.Api
         /// Updates the notification structure for an existing template. Use this endpoint to set reminder and expiration notifications.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateNotificationRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Notification)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Notification>> UpdateNotificationSettingsAsyncWithHttpInfo (string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<Notification>> UpdateNotificationSettingsAsyncWithHttpInfo(string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null);
         /// <summary>
         /// Updates recipients in a template.
         /// </summary>
@@ -2508,11 +2594,12 @@ namespace DocuSign.eSign.Api
         /// Updates recipients in a template.   You can edit the following properties: &#x60;email&#x60;, &#x60;userName&#x60;, &#x60;routingOrder&#x60;, &#x60;faxNumber&#x60;, &#x60;deliveryMethod&#x60;, &#x60;accessCode&#x60;, and &#x60;requireIdLookup&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RecipientsUpdateSummary</returns>
-        System.Threading.Tasks.Task<RecipientsUpdateSummary> UpdateRecipientsAsync (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null);
+        System.Threading.Tasks.Task<RecipientsUpdateSummary> UpdateRecipientsAsync(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null);
 
         /// <summary>
         /// Updates recipients in a template.
@@ -2521,11 +2608,12 @@ namespace DocuSign.eSign.Api
         /// Updates recipients in a template.   You can edit the following properties: &#x60;email&#x60;, &#x60;userName&#x60;, &#x60;routingOrder&#x60;, &#x60;faxNumber&#x60;, &#x60;deliveryMethod&#x60;, &#x60;accessCode&#x60;, and &#x60;requireIdLookup&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RecipientsUpdateSummary)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RecipientsUpdateSummary>> UpdateRecipientsAsyncWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<RecipientsUpdateSummary>> UpdateRecipientsAsyncWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null);
         /// <summary>
         /// Updates the tabs for a recipient.
         /// </summary>
@@ -2533,11 +2621,12 @@ namespace DocuSign.eSign.Api
         /// Updates one or more tabs for a recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        System.Threading.Tasks.Task<Tabs> UpdateTabsAsync (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<Tabs> UpdateTabsAsync(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Updates the tabs for a recipient.
@@ -2546,11 +2635,12 @@ namespace DocuSign.eSign.Api
         /// Updates one or more tabs for a recipient in a template.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Tabs>> UpdateTabsAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<ApiResponse<Tabs>> UpdateTabsAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null);
         /// <summary>
         /// Updates the tabs for a template
         /// </summary>
@@ -2558,11 +2648,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        System.Threading.Tasks.Task<Tabs> UpdateTemplateDocumentTabsAsync (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<Tabs> UpdateTemplateDocumentTabsAsync(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
 
         /// <summary>
         /// Updates the tabs for a template
@@ -2571,11 +2662,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Tabs>> UpdateTemplateDocumentTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
+        System.Threading.Tasks.Task<ApiResponse<Tabs>> UpdateTemplateDocumentTabsAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null);
         #endregion Asynchronous Operations
     }
 
@@ -2636,11 +2728,11 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document. Creates custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>CustomFields</returns>
-        public CustomFields CreateCustomFields (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public CustomFields CreateCustomFields(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
              ApiResponse<CustomFields> localVarResponse = CreateCustomFieldsWithHttpInfo(accountId, templateId, templateCustomFields);
              return localVarResponse.Data;
@@ -2650,11 +2742,11 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document. Creates custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>ApiResponse of CustomFields</returns>
-        public ApiResponse< CustomFields > CreateCustomFieldsWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public ApiResponse<CustomFields> CreateCustomFieldsWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2708,11 +2800,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2724,11 +2816,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(CustomFields)));
+                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(CustomFields)));
             }
             else
             {
-                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields) this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
+                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields)this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
             }
             
         }
@@ -2737,26 +2829,25 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document. Creates custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of CustomFields</returns>
-        public async System.Threading.Tasks.Task<CustomFields> CreateCustomFieldsAsync (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public async System.Threading.Tasks.Task<CustomFields> CreateCustomFieldsAsync(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
              ApiResponse<CustomFields> localVarResponse = await CreateCustomFieldsAsyncWithHttpInfo(accountId, templateId, templateCustomFields);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Creates custom document fields in an existing template document. Creates custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (CustomFields)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CustomFields>> CreateCustomFieldsAsyncWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFields>> CreateCustomFieldsAsyncWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2791,8 +2882,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (templateCustomFields != null && templateCustomFields.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateCustomFields); // http body (model) parameter
@@ -2810,11 +2899,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2824,7 +2913,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<CustomFields>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CustomFields) this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
+                (CustomFields)this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
             
         }
 
@@ -2834,11 +2923,12 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document. Creates custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>DocumentFieldsInformation</returns>
-        public DocumentFieldsInformation CreateDocumentFields (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public DocumentFieldsInformation CreateDocumentFields(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
              ApiResponse<DocumentFieldsInformation> localVarResponse = CreateDocumentFieldsWithHttpInfo(accountId, templateId, documentId, documentFieldsInformation);
              return localVarResponse.Data;
@@ -2848,11 +2938,12 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document. Creates custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of DocumentFieldsInformation</returns>
-        public ApiResponse< DocumentFieldsInformation > CreateDocumentFieldsWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public ApiResponse<DocumentFieldsInformation> CreateDocumentFieldsWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2910,11 +3001,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2926,11 +3017,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentFieldsInformation)));
+                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentFieldsInformation)));
             }
             else
             {
-                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
+                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
             }
             
         }
@@ -2939,26 +3030,27 @@ namespace DocuSign.eSign.Api
         /// Creates custom document fields in an existing template document. Creates custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of DocumentFieldsInformation</returns>
-        public async System.Threading.Tasks.Task<DocumentFieldsInformation> CreateDocumentFieldsAsync (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public async System.Threading.Tasks.Task<DocumentFieldsInformation> CreateDocumentFieldsAsync(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
              ApiResponse<DocumentFieldsInformation> localVarResponse = await CreateDocumentFieldsAsyncWithHttpInfo(accountId, templateId, documentId, documentFieldsInformation);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Creates custom document fields in an existing template document. Creates custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DocumentFieldsInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> CreateDocumentFieldsAsyncWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> CreateDocumentFieldsAsyncWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2997,8 +3089,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-
             if (documentFieldsInformation != null && documentFieldsInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(documentFieldsInformation); // http body (model) parameter
@@ -3016,11 +3106,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3030,7 +3120,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
+                (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
             
         }
 
@@ -3040,11 +3130,11 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start an edit view of the Template UI 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="returnUrlRequest"> (optional)</param>
-        
         /// <returns>ViewUrl</returns>
-        public ViewUrl CreateEditView (string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
+        public ViewUrl CreateEditView(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
         {
              ApiResponse<ViewUrl> localVarResponse = CreateEditViewWithHttpInfo(accountId, templateId, returnUrlRequest);
              return localVarResponse.Data;
@@ -3054,11 +3144,11 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start an edit view of the Template UI 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="returnUrlRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of ViewUrl</returns>
-        public ApiResponse< ViewUrl > CreateEditViewWithHttpInfo (string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
+        public ApiResponse<ViewUrl> CreateEditViewWithHttpInfo(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3112,11 +3202,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3128,11 +3218,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<ViewUrl>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ViewUrl) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ViewUrl)));
+                return new ApiResponse<ViewUrl>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ViewUrl)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ViewUrl)));
             }
             else
             {
-                return new ApiResponse<ViewUrl>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ViewUrl) this.ApiClient.Deserialize(localVarResponse, typeof(ViewUrl)));
+                return new ApiResponse<ViewUrl>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ViewUrl)this.ApiClient.Deserialize(localVarResponse, typeof(ViewUrl)));
             }
             
         }
@@ -3141,26 +3231,25 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start an edit view of the Template UI 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="returnUrlRequest"> (optional)</param>
-        
         /// <returns>Task of ViewUrl</returns>
-        public async System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync (string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
+        public async System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
         {
              ApiResponse<ViewUrl> localVarResponse = await CreateEditViewAsyncWithHttpInfo(accountId, templateId, returnUrlRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Provides a URL to start an edit view of the Template UI 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="returnUrlRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo (string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3195,8 +3284,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (returnUrlRequest != null && returnUrlRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(returnUrlRequest); // http body (model) parameter
@@ -3214,11 +3301,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3228,7 +3315,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<ViewUrl>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ViewUrl) this.ApiClient.Deserialize(localVarResponse, typeof(ViewUrl)));
+                (ViewUrl)this.ApiClient.Deserialize(localVarResponse, typeof(ViewUrl)));
             
         }
 
@@ -3238,11 +3325,11 @@ namespace DocuSign.eSign.Api
         /// Lock a template. Locks the specified template, and sets the time until the lock expires, to prevent other users or recipients from accessing and changing the template.  ###### Note: Users must have envelope locking capability enabled to use this function (the userSetting property &#x60;canLockEnvelopes&#x60; must be set to **true** for the user).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>LockInformation</returns>
-        public LockInformation CreateLock (string accountId, string templateId, LockRequest lockRequest = null)
+        public LockInformation CreateLock(string accountId, string templateId, LockRequest lockRequest = null)
         {
              ApiResponse<LockInformation> localVarResponse = CreateLockWithHttpInfo(accountId, templateId, lockRequest);
              return localVarResponse.Data;
@@ -3252,11 +3339,11 @@ namespace DocuSign.eSign.Api
         /// Lock a template. Locks the specified template, and sets the time until the lock expires, to prevent other users or recipients from accessing and changing the template.  ###### Note: Users must have envelope locking capability enabled to use this function (the userSetting property &#x60;canLockEnvelopes&#x60; must be set to **true** for the user).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of LockInformation</returns>
-        public ApiResponse< LockInformation > CreateLockWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null)
+        public ApiResponse<LockInformation> CreateLockWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3310,11 +3397,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3326,11 +3413,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(LockInformation)));
+                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(LockInformation)));
             }
             else
             {
-                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation) this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
+                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation)this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
             }
             
         }
@@ -3339,26 +3426,25 @@ namespace DocuSign.eSign.Api
         /// Lock a template. Locks the specified template, and sets the time until the lock expires, to prevent other users or recipients from accessing and changing the template.  ###### Note: Users must have envelope locking capability enabled to use this function (the userSetting property &#x60;canLockEnvelopes&#x60; must be set to **true** for the user).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of LockInformation</returns>
-        public async System.Threading.Tasks.Task<LockInformation> CreateLockAsync (string accountId, string templateId, LockRequest lockRequest = null)
+        public async System.Threading.Tasks.Task<LockInformation> CreateLockAsync(string accountId, string templateId, LockRequest lockRequest = null)
         {
              ApiResponse<LockInformation> localVarResponse = await CreateLockAsyncWithHttpInfo(accountId, templateId, lockRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Lock a template. Locks the specified template, and sets the time until the lock expires, to prevent other users or recipients from accessing and changing the template.  ###### Note: Users must have envelope locking capability enabled to use this function (the userSetting property &#x60;canLockEnvelopes&#x60; must be set to **true** for the user).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (LockInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LockInformation>> CreateLockAsyncWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LockInformation>> CreateLockAsyncWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3393,8 +3479,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (lockRequest != null && lockRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(lockRequest); // http body (model) parameter
@@ -3412,11 +3496,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3426,7 +3510,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<LockInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LockInformation) this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
+                (LockInformation)this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
             
         }
 
@@ -3444,11 +3528,12 @@ namespace DocuSign.eSign.Api
         /// Adds tabs for a recipient. Adds one or more recipients to a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Recipients</returns>
-        public Recipients CreateRecipients (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null)
+        public Recipients CreateRecipients(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null)
         {
              ApiResponse<Recipients> localVarResponse = CreateRecipientsWithHttpInfo(accountId, templateId, templateRecipients, options);
              return localVarResponse.Data;
@@ -3458,11 +3543,12 @@ namespace DocuSign.eSign.Api
         /// Adds tabs for a recipient. Adds one or more recipients to a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Recipients</returns>
-        public ApiResponse< Recipients > CreateRecipientsWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null)
+        public ApiResponse<Recipients> CreateRecipientsWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3520,11 +3606,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3536,11 +3622,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Recipients)));
+                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Recipients)));
             }
             else
             {
-                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients) this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
+                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients)this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
             }
             
         }
@@ -3549,26 +3635,27 @@ namespace DocuSign.eSign.Api
         /// Adds tabs for a recipient. Adds one or more recipients to a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Recipients</returns>
-        public async System.Threading.Tasks.Task<Recipients> CreateRecipientsAsync (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null)
+        public async System.Threading.Tasks.Task<Recipients> CreateRecipientsAsync(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null)
         {
              ApiResponse<Recipients> localVarResponse = await CreateRecipientsAsyncWithHttpInfo(accountId, templateId, templateRecipients, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Adds tabs for a recipient. Adds one or more recipients to a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Recipients)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Recipients>> CreateRecipientsAsyncWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Recipients>> CreateRecipientsAsyncWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.CreateRecipientsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3603,12 +3690,10 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
             if (options != null)
             {
                 if (options.resendEnvelope != null) localVarQueryParams.Add("resend_envelope", this.ApiClient.ParameterToString(options.resendEnvelope)); // query parameter
             }
-
             if (templateRecipients != null && templateRecipients.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateRecipients); // http body (model) parameter
@@ -3626,11 +3711,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3640,7 +3725,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Recipients>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Recipients) this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
+                (Recipients)this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
             
         }
 
@@ -3650,11 +3735,12 @@ namespace DocuSign.eSign.Api
         /// Adds tabs for a recipient. Adds one or more tabs for a recipient.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Tabs</returns>
-        public Tabs CreateTabs (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public Tabs CreateTabs(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = CreateTabsWithHttpInfo(accountId, templateId, recipientId, templateTabs);
              return localVarResponse.Data;
@@ -3664,11 +3750,12 @@ namespace DocuSign.eSign.Api
         /// Adds tabs for a recipient. Adds one or more tabs for a recipient.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of Tabs</returns>
-        public ApiResponse< Tabs > CreateTabsWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public ApiResponse<Tabs> CreateTabsWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3726,11 +3813,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3742,11 +3829,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
             }
             else
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             }
             
         }
@@ -3755,26 +3842,27 @@ namespace DocuSign.eSign.Api
         /// Adds tabs for a recipient. Adds one or more tabs for a recipient.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        public async System.Threading.Tasks.Task<Tabs> CreateTabsAsync (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<Tabs> CreateTabsAsync(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = await CreateTabsAsyncWithHttpInfo(accountId, templateId, recipientId, templateTabs);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Adds tabs for a recipient. Adds one or more tabs for a recipient.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> CreateTabsAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> CreateTabsAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3813,8 +3901,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
-
-
             if (templateTabs != null && templateTabs.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateTabs); // http body (model) parameter
@@ -3832,11 +3918,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3846,7 +3932,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Tabs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             
         }
 
@@ -3858,9 +3944,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>TemplateSummary</returns>
-        public TemplateSummary CreateTemplate (string accountId, EnvelopeTemplate envelopeTemplate = null)
+        public TemplateSummary CreateTemplate(string accountId, EnvelopeTemplate envelopeTemplate = null)
         {
              ApiResponse<TemplateSummary> localVarResponse = CreateTemplateWithHttpInfo(accountId, envelopeTemplate);
              return localVarResponse.Data;
@@ -3872,9 +3957,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>ApiResponse of TemplateSummary</returns>
-        public ApiResponse< TemplateSummary > CreateTemplateWithHttpInfo (string accountId, EnvelopeTemplate envelopeTemplate = null)
+        public ApiResponse<TemplateSummary> CreateTemplateWithHttpInfo(string accountId, EnvelopeTemplate envelopeTemplate = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3924,11 +4008,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3940,11 +4024,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<TemplateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateSummary) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TemplateSummary)));
+                return new ApiResponse<TemplateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateSummary)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TemplateSummary)));
             }
             else
             {
-                return new ApiResponse<TemplateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateSummary) this.ApiClient.Deserialize(localVarResponse, typeof(TemplateSummary)));
+                return new ApiResponse<TemplateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateSummary)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateSummary)));
             }
             
         }
@@ -3955,13 +4039,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>Task of TemplateSummary</returns>
-        public async System.Threading.Tasks.Task<TemplateSummary> CreateTemplateAsync (string accountId, EnvelopeTemplate envelopeTemplate = null)
+        public async System.Threading.Tasks.Task<TemplateSummary> CreateTemplateAsync(string accountId, EnvelopeTemplate envelopeTemplate = null)
         {
              ApiResponse<TemplateSummary> localVarResponse = await CreateTemplateAsyncWithHttpInfo(accountId, envelopeTemplate);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -3970,9 +4052,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TemplateSummary)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TemplateSummary>> CreateTemplateAsyncWithHttpInfo (string accountId, EnvelopeTemplate envelopeTemplate = null)
+        public async System.Threading.Tasks.Task<ApiResponse<TemplateSummary>> CreateTemplateAsyncWithHttpInfo(string accountId, EnvelopeTemplate envelopeTemplate = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4003,8 +4084,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (envelopeTemplate != null && envelopeTemplate.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(envelopeTemplate); // http body (model) parameter
@@ -4022,11 +4101,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4036,7 +4115,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<TemplateSummary>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TemplateSummary) this.ApiClient.Deserialize(localVarResponse, typeof(TemplateSummary)));
+                (TemplateSummary)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateSummary)));
             
         }
 
@@ -4046,11 +4125,12 @@ namespace DocuSign.eSign.Api
         /// Post Responsive HTML Preview for a document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>DocumentHtmlDefinitions</returns>
-        public DocumentHtmlDefinitions CreateTemplateDocumentResponsiveHtmlPreview (string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null)
+        public DocumentHtmlDefinitions CreateTemplateDocumentResponsiveHtmlPreview(string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null)
         {
              ApiResponse<DocumentHtmlDefinitions> localVarResponse = CreateTemplateDocumentResponsiveHtmlPreviewWithHttpInfo(accountId, templateId, documentId, documentHtmlDefinition);
              return localVarResponse.Data;
@@ -4060,11 +4140,12 @@ namespace DocuSign.eSign.Api
         /// Post Responsive HTML Preview for a document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>ApiResponse of DocumentHtmlDefinitions</returns>
-        public ApiResponse< DocumentHtmlDefinitions > CreateTemplateDocumentResponsiveHtmlPreviewWithHttpInfo (string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null)
+        public ApiResponse<DocumentHtmlDefinitions> CreateTemplateDocumentResponsiveHtmlPreviewWithHttpInfo(string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4122,11 +4203,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4138,11 +4219,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DocumentHtmlDefinitions>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitions) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitions)));
+                return new ApiResponse<DocumentHtmlDefinitions>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitions)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitions)));
             }
             else
             {
-                return new ApiResponse<DocumentHtmlDefinitions>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitions) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitions)));
+                return new ApiResponse<DocumentHtmlDefinitions>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitions)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitions)));
             }
             
         }
@@ -4151,26 +4232,27 @@ namespace DocuSign.eSign.Api
         /// Post Responsive HTML Preview for a document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>Task of DocumentHtmlDefinitions</returns>
-        public async System.Threading.Tasks.Task<DocumentHtmlDefinitions> CreateTemplateDocumentResponsiveHtmlPreviewAsync (string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null)
+        public async System.Threading.Tasks.Task<DocumentHtmlDefinitions> CreateTemplateDocumentResponsiveHtmlPreviewAsync(string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null)
         {
              ApiResponse<DocumentHtmlDefinitions> localVarResponse = await CreateTemplateDocumentResponsiveHtmlPreviewAsyncWithHttpInfo(accountId, templateId, documentId, documentHtmlDefinition);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Post Responsive HTML Preview for a document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DocumentHtmlDefinitions)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitions>> CreateTemplateDocumentResponsiveHtmlPreviewAsyncWithHttpInfo (string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitions>> CreateTemplateDocumentResponsiveHtmlPreviewAsyncWithHttpInfo(string accountId, string templateId, string documentId, DocumentHtmlDefinition documentHtmlDefinition = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4209,8 +4291,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-
             if (documentHtmlDefinition != null && documentHtmlDefinition.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(documentHtmlDefinition); // http body (model) parameter
@@ -4228,11 +4308,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4242,7 +4322,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<DocumentHtmlDefinitions>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DocumentHtmlDefinitions) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitions)));
+                (DocumentHtmlDefinitions)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitions)));
             
         }
 
@@ -4252,11 +4332,12 @@ namespace DocuSign.eSign.Api
         /// Adds the tabs to a tempate 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Tabs</returns>
-        public Tabs CreateTemplateDocumentTabs (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public Tabs CreateTemplateDocumentTabs(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = CreateTemplateDocumentTabsWithHttpInfo(accountId, templateId, documentId, templateTabs);
              return localVarResponse.Data;
@@ -4266,11 +4347,12 @@ namespace DocuSign.eSign.Api
         /// Adds the tabs to a tempate 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of Tabs</returns>
-        public ApiResponse< Tabs > CreateTemplateDocumentTabsWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public ApiResponse<Tabs> CreateTemplateDocumentTabsWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4328,11 +4410,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4344,11 +4426,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
             }
             else
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             }
             
         }
@@ -4357,26 +4439,27 @@ namespace DocuSign.eSign.Api
         /// Adds the tabs to a tempate 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        public async System.Threading.Tasks.Task<Tabs> CreateTemplateDocumentTabsAsync (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<Tabs> CreateTemplateDocumentTabsAsync(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = await CreateTemplateDocumentTabsAsyncWithHttpInfo(accountId, templateId, documentId, templateTabs);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Adds the tabs to a tempate 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> CreateTemplateDocumentTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> CreateTemplateDocumentTabsAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4415,8 +4498,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-
             if (templateTabs != null && templateTabs.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateTabs); // http body (model) parameter
@@ -4434,11 +4515,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4448,7 +4529,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Tabs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             
         }
 
@@ -4458,11 +4539,11 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start a recipient view of the Envelope UI 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="recipientPreviewRequest"> (optional)</param>
-        
         /// <returns>ViewUrl</returns>
-        public ViewUrl CreateTemplateRecipientPreview (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
+        public ViewUrl CreateTemplateRecipientPreview(string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
         {
              ApiResponse<ViewUrl> localVarResponse = CreateTemplateRecipientPreviewWithHttpInfo(accountId, templateId, recipientPreviewRequest);
              return localVarResponse.Data;
@@ -4472,11 +4553,11 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start a recipient view of the Envelope UI 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="recipientPreviewRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of ViewUrl</returns>
-        public ApiResponse< ViewUrl > CreateTemplateRecipientPreviewWithHttpInfo (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
+        public ApiResponse<ViewUrl> CreateTemplateRecipientPreviewWithHttpInfo(string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4530,11 +4611,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4546,11 +4627,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<ViewUrl>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ViewUrl) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ViewUrl)));
+                return new ApiResponse<ViewUrl>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ViewUrl)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ViewUrl)));
             }
             else
             {
-                return new ApiResponse<ViewUrl>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ViewUrl) this.ApiClient.Deserialize(localVarResponse, typeof(ViewUrl)));
+                return new ApiResponse<ViewUrl>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ViewUrl)this.ApiClient.Deserialize(localVarResponse, typeof(ViewUrl)));
             }
             
         }
@@ -4559,26 +4640,25 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start a recipient view of the Envelope UI 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="recipientPreviewRequest"> (optional)</param>
-        
         /// <returns>Task of ViewUrl</returns>
-        public async System.Threading.Tasks.Task<ViewUrl> CreateTemplateRecipientPreviewAsync (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
+        public async System.Threading.Tasks.Task<ViewUrl> CreateTemplateRecipientPreviewAsync(string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
         {
              ApiResponse<ViewUrl> localVarResponse = await CreateTemplateRecipientPreviewAsyncWithHttpInfo(accountId, templateId, recipientPreviewRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Provides a URL to start a recipient view of the Envelope UI 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="recipientPreviewRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateTemplateRecipientPreviewAsyncWithHttpInfo (string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateTemplateRecipientPreviewAsyncWithHttpInfo(string accountId, string templateId, RecipientPreviewRequest recipientPreviewRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4613,8 +4693,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (recipientPreviewRequest != null && recipientPreviewRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(recipientPreviewRequest); // http body (model) parameter
@@ -4632,11 +4710,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4646,7 +4724,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<ViewUrl>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ViewUrl) this.ApiClient.Deserialize(localVarResponse, typeof(ViewUrl)));
+                (ViewUrl)this.ApiClient.Deserialize(localVarResponse, typeof(ViewUrl)));
             
         }
 
@@ -4656,11 +4734,11 @@ namespace DocuSign.eSign.Api
         /// Get Responsive HTML Preview for all documents in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>DocumentHtmlDefinitions</returns>
-        public DocumentHtmlDefinitions CreateTemplateResponsiveHtmlPreview (string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null)
+        public DocumentHtmlDefinitions CreateTemplateResponsiveHtmlPreview(string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null)
         {
              ApiResponse<DocumentHtmlDefinitions> localVarResponse = CreateTemplateResponsiveHtmlPreviewWithHttpInfo(accountId, templateId, documentHtmlDefinition);
              return localVarResponse.Data;
@@ -4670,11 +4748,11 @@ namespace DocuSign.eSign.Api
         /// Get Responsive HTML Preview for all documents in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>ApiResponse of DocumentHtmlDefinitions</returns>
-        public ApiResponse< DocumentHtmlDefinitions > CreateTemplateResponsiveHtmlPreviewWithHttpInfo (string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null)
+        public ApiResponse<DocumentHtmlDefinitions> CreateTemplateResponsiveHtmlPreviewWithHttpInfo(string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4728,11 +4806,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4744,11 +4822,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DocumentHtmlDefinitions>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitions) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitions)));
+                return new ApiResponse<DocumentHtmlDefinitions>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitions)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitions)));
             }
             else
             {
-                return new ApiResponse<DocumentHtmlDefinitions>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitions) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitions)));
+                return new ApiResponse<DocumentHtmlDefinitions>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitions)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitions)));
             }
             
         }
@@ -4757,26 +4835,25 @@ namespace DocuSign.eSign.Api
         /// Get Responsive HTML Preview for all documents in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>Task of DocumentHtmlDefinitions</returns>
-        public async System.Threading.Tasks.Task<DocumentHtmlDefinitions> CreateTemplateResponsiveHtmlPreviewAsync (string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null)
+        public async System.Threading.Tasks.Task<DocumentHtmlDefinitions> CreateTemplateResponsiveHtmlPreviewAsync(string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null)
         {
              ApiResponse<DocumentHtmlDefinitions> localVarResponse = await CreateTemplateResponsiveHtmlPreviewAsyncWithHttpInfo(accountId, templateId, documentHtmlDefinition);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get Responsive HTML Preview for all documents in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="documentHtmlDefinition"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DocumentHtmlDefinitions)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitions>> CreateTemplateResponsiveHtmlPreviewAsyncWithHttpInfo (string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitions>> CreateTemplateResponsiveHtmlPreviewAsyncWithHttpInfo(string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4811,8 +4888,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (documentHtmlDefinition != null && documentHtmlDefinition.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(documentHtmlDefinition); // http body (model) parameter
@@ -4830,11 +4905,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4844,7 +4919,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<DocumentHtmlDefinitions>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DocumentHtmlDefinitions) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitions)));
+                (DocumentHtmlDefinitions)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitions)));
             
         }
 
@@ -4854,11 +4929,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the bulk recipient list on a template. Deletes the bulk recipient list on a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <returns>BulkRecipientsUpdateResponse</returns>
-        public BulkRecipientsUpdateResponse DeleteBulkRecipients (string accountId, string templateId, string recipientId)
+        public BulkRecipientsUpdateResponse DeleteBulkRecipients(string accountId, string templateId, string recipientId)
         {
              ApiResponse<BulkRecipientsUpdateResponse> localVarResponse = DeleteBulkRecipientsWithHttpInfo(accountId, templateId, recipientId);
              return localVarResponse.Data;
@@ -4868,11 +4943,11 @@ namespace DocuSign.eSign.Api
         /// Deletes the bulk recipient list on a template. Deletes the bulk recipient list on a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <returns>ApiResponse of BulkRecipientsUpdateResponse</returns>
-        public ApiResponse< BulkRecipientsUpdateResponse > DeleteBulkRecipientsWithHttpInfo (string accountId, string templateId, string recipientId)
+        public ApiResponse<BulkRecipientsUpdateResponse> DeleteBulkRecipientsWithHttpInfo(string accountId, string templateId, string recipientId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4922,11 +4997,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4938,11 +5013,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<BulkRecipientsUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsUpdateResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkRecipientsUpdateResponse)));
+                return new ApiResponse<BulkRecipientsUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsUpdateResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkRecipientsUpdateResponse)));
             }
             else
             {
-                return new ApiResponse<BulkRecipientsUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsUpdateResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsUpdateResponse)));
+                return new ApiResponse<BulkRecipientsUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsUpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsUpdateResponse)));
             }
             
         }
@@ -4951,26 +5026,25 @@ namespace DocuSign.eSign.Api
         /// Deletes the bulk recipient list on a template. Deletes the bulk recipient list on a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <returns>Task of BulkRecipientsUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<BulkRecipientsUpdateResponse> DeleteBulkRecipientsAsync (string accountId, string templateId, string recipientId)
+        public async System.Threading.Tasks.Task<BulkRecipientsUpdateResponse> DeleteBulkRecipientsAsync(string accountId, string templateId, string recipientId)
         {
              ApiResponse<BulkRecipientsUpdateResponse> localVarResponse = await DeleteBulkRecipientsAsyncWithHttpInfo(accountId, templateId, recipientId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes the bulk recipient list on a template. Deletes the bulk recipient list on a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <returns>Task of ApiResponse (BulkRecipientsUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkRecipientsUpdateResponse>> DeleteBulkRecipientsAsyncWithHttpInfo (string accountId, string templateId, string recipientId)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkRecipientsUpdateResponse>> DeleteBulkRecipientsAsyncWithHttpInfo(string accountId, string templateId, string recipientId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5010,8 +5084,6 @@ namespace DocuSign.eSign.Api
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -5020,11 +5092,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5034,7 +5106,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<BulkRecipientsUpdateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BulkRecipientsUpdateResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsUpdateResponse)));
+                (BulkRecipientsUpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsUpdateResponse)));
             
         }
 
@@ -5044,11 +5116,11 @@ namespace DocuSign.eSign.Api
         /// Deletes envelope custom fields in a template. Deletes envelope custom fields in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>CustomFields</returns>
-        public CustomFields DeleteCustomFields (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public CustomFields DeleteCustomFields(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
              ApiResponse<CustomFields> localVarResponse = DeleteCustomFieldsWithHttpInfo(accountId, templateId, templateCustomFields);
              return localVarResponse.Data;
@@ -5058,11 +5130,11 @@ namespace DocuSign.eSign.Api
         /// Deletes envelope custom fields in a template. Deletes envelope custom fields in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>ApiResponse of CustomFields</returns>
-        public ApiResponse< CustomFields > DeleteCustomFieldsWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public ApiResponse<CustomFields> DeleteCustomFieldsWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5116,11 +5188,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5132,11 +5204,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(CustomFields)));
+                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(CustomFields)));
             }
             else
             {
-                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields) this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
+                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields)this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
             }
             
         }
@@ -5145,26 +5217,25 @@ namespace DocuSign.eSign.Api
         /// Deletes envelope custom fields in a template. Deletes envelope custom fields in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of CustomFields</returns>
-        public async System.Threading.Tasks.Task<CustomFields> DeleteCustomFieldsAsync (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public async System.Threading.Tasks.Task<CustomFields> DeleteCustomFieldsAsync(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
              ApiResponse<CustomFields> localVarResponse = await DeleteCustomFieldsAsyncWithHttpInfo(accountId, templateId, templateCustomFields);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes envelope custom fields in a template. Deletes envelope custom fields in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (CustomFields)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CustomFields>> DeleteCustomFieldsAsyncWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFields>> DeleteCustomFieldsAsyncWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5199,8 +5270,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (templateCustomFields != null && templateCustomFields.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateCustomFields); // http body (model) parameter
@@ -5218,11 +5287,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5232,7 +5301,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<CustomFields>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CustomFields) this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
+                (CustomFields)this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
             
         }
 
@@ -5242,11 +5311,12 @@ namespace DocuSign.eSign.Api
         /// Deletes custom document fields from an existing template document. Deletes custom document fields from an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>DocumentFieldsInformation</returns>
-        public DocumentFieldsInformation DeleteDocumentFields (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public DocumentFieldsInformation DeleteDocumentFields(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
              ApiResponse<DocumentFieldsInformation> localVarResponse = DeleteDocumentFieldsWithHttpInfo(accountId, templateId, documentId, documentFieldsInformation);
              return localVarResponse.Data;
@@ -5256,11 +5326,12 @@ namespace DocuSign.eSign.Api
         /// Deletes custom document fields from an existing template document. Deletes custom document fields from an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of DocumentFieldsInformation</returns>
-        public ApiResponse< DocumentFieldsInformation > DeleteDocumentFieldsWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public ApiResponse<DocumentFieldsInformation> DeleteDocumentFieldsWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5318,11 +5389,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5334,11 +5405,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentFieldsInformation)));
+                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentFieldsInformation)));
             }
             else
             {
-                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
+                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
             }
             
         }
@@ -5347,26 +5418,27 @@ namespace DocuSign.eSign.Api
         /// Deletes custom document fields from an existing template document. Deletes custom document fields from an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of DocumentFieldsInformation</returns>
-        public async System.Threading.Tasks.Task<DocumentFieldsInformation> DeleteDocumentFieldsAsync (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public async System.Threading.Tasks.Task<DocumentFieldsInformation> DeleteDocumentFieldsAsync(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
              ApiResponse<DocumentFieldsInformation> localVarResponse = await DeleteDocumentFieldsAsyncWithHttpInfo(accountId, templateId, documentId, documentFieldsInformation);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes custom document fields from an existing template document. Deletes custom document fields from an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DocumentFieldsInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> DeleteDocumentFieldsAsyncWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> DeleteDocumentFieldsAsyncWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5405,8 +5477,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-
             if (documentFieldsInformation != null && documentFieldsInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(documentFieldsInformation); // http body (model) parameter
@@ -5424,11 +5494,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5438,7 +5508,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
+                (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
             
         }
 
@@ -5448,11 +5518,13 @@ namespace DocuSign.eSign.Api
         /// Deletes a page from a document in an template. Deletes a page from a document in a template based on the page number.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns></returns>
-        public void DeleteDocumentPage (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
+        public void DeleteDocumentPage(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
         {
              DeleteDocumentPageWithHttpInfo(accountId, templateId, documentId, pageNumber, pageRequest);
         }
@@ -5461,11 +5533,13 @@ namespace DocuSign.eSign.Api
         /// Deletes a page from a document in an template. Deletes a page from a document in a template based on the page number.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteDocumentPageWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
+        public ApiResponse<Object> DeleteDocumentPageWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5527,11 +5601,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5548,25 +5622,28 @@ namespace DocuSign.eSign.Api
         /// Deletes a page from a document in an template. Deletes a page from a document in a template based on the page number.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteDocumentPageAsync (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
+        public async System.Threading.Tasks.Task DeleteDocumentPageAsync(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
         {
              await DeleteDocumentPageAsyncWithHttpInfo(accountId, templateId, documentId, pageNumber, pageRequest);
-
         }
 
         /// <summary>
         /// Deletes a page from a document in an template. Deletes a page from a document in a template based on the page number.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDocumentPageAsyncWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDocumentPageAsyncWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5609,8 +5686,6 @@ namespace DocuSign.eSign.Api
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
             if (pageNumber != null) localVarPathParams.Add("pageNumber", this.ApiClient.ParameterToString(pageNumber)); // path parameter
-
-
             if (pageRequest != null && pageRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(pageRequest); // http body (model) parameter
@@ -5628,11 +5703,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5652,11 +5727,11 @@ namespace DocuSign.eSign.Api
         /// Deletes documents from a template. Deletes one or more documents from an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>TemplateDocumentsResult</returns>
-        public TemplateDocumentsResult DeleteDocuments (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
+        public TemplateDocumentsResult DeleteDocuments(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
         {
              ApiResponse<TemplateDocumentsResult> localVarResponse = DeleteDocumentsWithHttpInfo(accountId, templateId, envelopeDefinition);
              return localVarResponse.Data;
@@ -5666,11 +5741,11 @@ namespace DocuSign.eSign.Api
         /// Deletes documents from a template. Deletes one or more documents from an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>ApiResponse of TemplateDocumentsResult</returns>
-        public ApiResponse< TemplateDocumentsResult > DeleteDocumentsWithHttpInfo (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
+        public ApiResponse<TemplateDocumentsResult> DeleteDocumentsWithHttpInfo(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5724,11 +5799,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5740,11 +5815,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TemplateDocumentsResult)));
+                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TemplateDocumentsResult)));
             }
             else
             {
-                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult) this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
+                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
             }
             
         }
@@ -5753,26 +5828,25 @@ namespace DocuSign.eSign.Api
         /// Deletes documents from a template. Deletes one or more documents from an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>Task of TemplateDocumentsResult</returns>
-        public async System.Threading.Tasks.Task<TemplateDocumentsResult> DeleteDocumentsAsync (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
+        public async System.Threading.Tasks.Task<TemplateDocumentsResult> DeleteDocumentsAsync(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
         {
              ApiResponse<TemplateDocumentsResult> localVarResponse = await DeleteDocumentsAsyncWithHttpInfo(accountId, templateId, envelopeDefinition);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes documents from a template. Deletes one or more documents from an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TemplateDocumentsResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> DeleteDocumentsAsyncWithHttpInfo (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
+        public async System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> DeleteDocumentsAsyncWithHttpInfo(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5807,8 +5881,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (envelopeDefinition != null && envelopeDefinition.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(envelopeDefinition); // http body (model) parameter
@@ -5826,11 +5898,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5840,7 +5912,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TemplateDocumentsResult) this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
+                (TemplateDocumentsResult)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
             
         }
 
@@ -5850,11 +5922,12 @@ namespace DocuSign.eSign.Api
         /// Removes a member group&#39;s sharing permissions for a template. Removes a member group&#39;s sharing permissions for a specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>GroupInformation</returns>
-        public GroupInformation DeleteGroupShare (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
+        public GroupInformation DeleteGroupShare(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
         {
              ApiResponse<GroupInformation> localVarResponse = DeleteGroupShareWithHttpInfo(accountId, templateId, templatePart, groupInformation);
              return localVarResponse.Data;
@@ -5864,11 +5937,12 @@ namespace DocuSign.eSign.Api
         /// Removes a member group&#39;s sharing permissions for a template. Removes a member group&#39;s sharing permissions for a specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of GroupInformation</returns>
-        public ApiResponse< GroupInformation > DeleteGroupShareWithHttpInfo (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
+        public ApiResponse<GroupInformation> DeleteGroupShareWithHttpInfo(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -5926,11 +6000,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5942,11 +6016,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
             }
             else
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             }
             
         }
@@ -5955,26 +6029,27 @@ namespace DocuSign.eSign.Api
         /// Removes a member group&#39;s sharing permissions for a template. Removes a member group&#39;s sharing permissions for a specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of GroupInformation</returns>
-        public async System.Threading.Tasks.Task<GroupInformation> DeleteGroupShareAsync (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<GroupInformation> DeleteGroupShareAsync(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
         {
              ApiResponse<GroupInformation> localVarResponse = await DeleteGroupShareAsyncWithHttpInfo(accountId, templateId, templatePart, groupInformation);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Removes a member group&#39;s sharing permissions for a template. Removes a member group&#39;s sharing permissions for a specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> DeleteGroupShareAsyncWithHttpInfo (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> DeleteGroupShareAsyncWithHttpInfo(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6013,8 +6088,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (templatePart != null) localVarPathParams.Add("templatePart", this.ApiClient.ParameterToString(templatePart)); // path parameter
-
-
             if (groupInformation != null && groupInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(groupInformation); // http body (model) parameter
@@ -6032,11 +6105,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6046,7 +6119,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<GroupInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             
         }
 
@@ -6056,11 +6129,11 @@ namespace DocuSign.eSign.Api
         /// Deletes a template lock. Deletes the lock from the specified template. The &#x60;X-DocuSign-Edit&#x60; header must be included in the request.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>LockInformation</returns>
-        public LockInformation DeleteLock (string accountId, string templateId, LockRequest lockRequest = null)
+        public LockInformation DeleteLock(string accountId, string templateId, LockRequest lockRequest = null)
         {
              ApiResponse<LockInformation> localVarResponse = DeleteLockWithHttpInfo(accountId, templateId, lockRequest);
              return localVarResponse.Data;
@@ -6070,11 +6143,11 @@ namespace DocuSign.eSign.Api
         /// Deletes a template lock. Deletes the lock from the specified template. The &#x60;X-DocuSign-Edit&#x60; header must be included in the request.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of LockInformation</returns>
-        public ApiResponse< LockInformation > DeleteLockWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null)
+        public ApiResponse<LockInformation> DeleteLockWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6128,11 +6201,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6144,11 +6217,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(LockInformation)));
+                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(LockInformation)));
             }
             else
             {
-                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation) this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
+                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation)this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
             }
             
         }
@@ -6157,26 +6230,25 @@ namespace DocuSign.eSign.Api
         /// Deletes a template lock. Deletes the lock from the specified template. The &#x60;X-DocuSign-Edit&#x60; header must be included in the request.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of LockInformation</returns>
-        public async System.Threading.Tasks.Task<LockInformation> DeleteLockAsync (string accountId, string templateId, LockRequest lockRequest = null)
+        public async System.Threading.Tasks.Task<LockInformation> DeleteLockAsync(string accountId, string templateId, LockRequest lockRequest = null)
         {
              ApiResponse<LockInformation> localVarResponse = await DeleteLockAsyncWithHttpInfo(accountId, templateId, lockRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes a template lock. Deletes the lock from the specified template. The &#x60;X-DocuSign-Edit&#x60; header must be included in the request.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (LockInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LockInformation>> DeleteLockAsyncWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LockInformation>> DeleteLockAsyncWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6211,8 +6283,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (lockRequest != null && lockRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(lockRequest); // http body (model) parameter
@@ -6230,11 +6300,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6244,7 +6314,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<LockInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LockInformation) this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
+                (LockInformation)this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
             
         }
 
@@ -6254,11 +6324,12 @@ namespace DocuSign.eSign.Api
         /// Deletes the specified recipient file from a template. Deletes the specified recipient file from the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>Recipients</returns>
-        public Recipients DeleteRecipient (string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null)
+        public Recipients DeleteRecipient(string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null)
         {
              ApiResponse<Recipients> localVarResponse = DeleteRecipientWithHttpInfo(accountId, templateId, recipientId, templateRecipients);
              return localVarResponse.Data;
@@ -6268,11 +6339,12 @@ namespace DocuSign.eSign.Api
         /// Deletes the specified recipient file from a template. Deletes the specified recipient file from the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>ApiResponse of Recipients</returns>
-        public ApiResponse< Recipients > DeleteRecipientWithHttpInfo (string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null)
+        public ApiResponse<Recipients> DeleteRecipientWithHttpInfo(string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6330,11 +6402,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6346,11 +6418,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Recipients)));
+                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Recipients)));
             }
             else
             {
-                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients) this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
+                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients)this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
             }
             
         }
@@ -6359,26 +6431,27 @@ namespace DocuSign.eSign.Api
         /// Deletes the specified recipient file from a template. Deletes the specified recipient file from the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>Task of Recipients</returns>
-        public async System.Threading.Tasks.Task<Recipients> DeleteRecipientAsync (string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null)
+        public async System.Threading.Tasks.Task<Recipients> DeleteRecipientAsync(string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null)
         {
              ApiResponse<Recipients> localVarResponse = await DeleteRecipientAsyncWithHttpInfo(accountId, templateId, recipientId, templateRecipients);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes the specified recipient file from a template. Deletes the specified recipient file from the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Recipients)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Recipients>> DeleteRecipientAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Recipients>> DeleteRecipientAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplateRecipients templateRecipients = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6417,8 +6490,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
-
-
             if (templateRecipients != null && templateRecipients.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateRecipients); // http body (model) parameter
@@ -6436,11 +6507,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6450,7 +6521,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Recipients>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Recipients) this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
+                (Recipients)this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
             
         }
 
@@ -6460,11 +6531,11 @@ namespace DocuSign.eSign.Api
         /// Deletes recipients from a template. Deletes one or more recipients from a template. Recipients to be deleted are listed in the request, with the &#x60;recipientId&#x60; being used as the key for deleting recipients.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>Recipients</returns>
-        public Recipients DeleteRecipients (string accountId, string templateId, TemplateRecipients templateRecipients = null)
+        public Recipients DeleteRecipients(string accountId, string templateId, TemplateRecipients templateRecipients = null)
         {
              ApiResponse<Recipients> localVarResponse = DeleteRecipientsWithHttpInfo(accountId, templateId, templateRecipients);
              return localVarResponse.Data;
@@ -6474,11 +6545,11 @@ namespace DocuSign.eSign.Api
         /// Deletes recipients from a template. Deletes one or more recipients from a template. Recipients to be deleted are listed in the request, with the &#x60;recipientId&#x60; being used as the key for deleting recipients.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>ApiResponse of Recipients</returns>
-        public ApiResponse< Recipients > DeleteRecipientsWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null)
+        public ApiResponse<Recipients> DeleteRecipientsWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6532,11 +6603,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6548,11 +6619,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Recipients)));
+                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Recipients)));
             }
             else
             {
-                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients) this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
+                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients)this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
             }
             
         }
@@ -6561,26 +6632,25 @@ namespace DocuSign.eSign.Api
         /// Deletes recipients from a template. Deletes one or more recipients from a template. Recipients to be deleted are listed in the request, with the &#x60;recipientId&#x60; being used as the key for deleting recipients.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>Task of Recipients</returns>
-        public async System.Threading.Tasks.Task<Recipients> DeleteRecipientsAsync (string accountId, string templateId, TemplateRecipients templateRecipients = null)
+        public async System.Threading.Tasks.Task<Recipients> DeleteRecipientsAsync(string accountId, string templateId, TemplateRecipients templateRecipients = null)
         {
              ApiResponse<Recipients> localVarResponse = await DeleteRecipientsAsyncWithHttpInfo(accountId, templateId, templateRecipients);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes recipients from a template. Deletes one or more recipients from a template. Recipients to be deleted are listed in the request, with the &#x60;recipientId&#x60; being used as the key for deleting recipients.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Recipients)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Recipients>> DeleteRecipientsAsyncWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Recipients>> DeleteRecipientsAsyncWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6615,8 +6685,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (templateRecipients != null && templateRecipients.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateRecipients); // http body (model) parameter
@@ -6634,11 +6702,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6648,7 +6716,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Recipients>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Recipients) this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
+                (Recipients)this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
             
         }
 
@@ -6658,11 +6726,12 @@ namespace DocuSign.eSign.Api
         /// Deletes the tabs associated with a recipient in a template. Deletes one or more tabs associated with a recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Tabs</returns>
-        public Tabs DeleteTabs (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public Tabs DeleteTabs(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = DeleteTabsWithHttpInfo(accountId, templateId, recipientId, templateTabs);
              return localVarResponse.Data;
@@ -6672,11 +6741,12 @@ namespace DocuSign.eSign.Api
         /// Deletes the tabs associated with a recipient in a template. Deletes one or more tabs associated with a recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of Tabs</returns>
-        public ApiResponse< Tabs > DeleteTabsWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public ApiResponse<Tabs> DeleteTabsWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6734,11 +6804,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6750,11 +6820,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
             }
             else
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             }
             
         }
@@ -6763,26 +6833,27 @@ namespace DocuSign.eSign.Api
         /// Deletes the tabs associated with a recipient in a template. Deletes one or more tabs associated with a recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        public async System.Threading.Tasks.Task<Tabs> DeleteTabsAsync (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<Tabs> DeleteTabsAsync(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = await DeleteTabsAsyncWithHttpInfo(accountId, templateId, recipientId, templateTabs);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes the tabs associated with a recipient in a template. Deletes one or more tabs associated with a recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> DeleteTabsAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> DeleteTabsAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6821,8 +6892,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
-
-
             if (templateTabs != null && templateTabs.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateTabs); // http body (model) parameter
@@ -6840,11 +6909,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6854,7 +6923,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Tabs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             
         }
 
@@ -6864,11 +6933,12 @@ namespace DocuSign.eSign.Api
         /// Deletes tabs from an envelope document 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Tabs</returns>
-        public Tabs DeleteTemplateDocumentTabs (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public Tabs DeleteTemplateDocumentTabs(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = DeleteTemplateDocumentTabsWithHttpInfo(accountId, templateId, documentId, templateTabs);
              return localVarResponse.Data;
@@ -6878,11 +6948,12 @@ namespace DocuSign.eSign.Api
         /// Deletes tabs from an envelope document 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of Tabs</returns>
-        public ApiResponse< Tabs > DeleteTemplateDocumentTabsWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public ApiResponse<Tabs> DeleteTemplateDocumentTabsWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6940,11 +7011,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6956,11 +7027,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
             }
             else
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             }
             
         }
@@ -6969,26 +7040,27 @@ namespace DocuSign.eSign.Api
         /// Deletes tabs from an envelope document 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        public async System.Threading.Tasks.Task<Tabs> DeleteTemplateDocumentTabsAsync (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<Tabs> DeleteTemplateDocumentTabsAsync(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = await DeleteTemplateDocumentTabsAsyncWithHttpInfo(accountId, templateId, documentId, templateTabs);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes tabs from an envelope document 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> DeleteTemplateDocumentTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> DeleteTemplateDocumentTabsAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7027,8 +7099,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-
             if (templateTabs != null && templateTabs.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateTabs); // http body (model) parameter
@@ -7046,11 +7116,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7060,7 +7130,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Tabs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             
         }
 
@@ -7078,11 +7148,11 @@ namespace DocuSign.eSign.Api
         /// Gets a list of templates for a specified account. Retrieves the definition of the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>EnvelopeTemplate</returns>
-        public EnvelopeTemplate Get (string accountId, string templateId, TemplatesApi.GetOptions options = null)
+        public EnvelopeTemplate Get(string accountId, string templateId, TemplatesApi.GetOptions options = null)
         {
              ApiResponse<EnvelopeTemplate> localVarResponse = GetWithHttpInfo(accountId, templateId, options);
              return localVarResponse.Data;
@@ -7092,11 +7162,11 @@ namespace DocuSign.eSign.Api
         /// Gets a list of templates for a specified account. Retrieves the definition of the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of EnvelopeTemplate</returns>
-        public ApiResponse< EnvelopeTemplate > GetWithHttpInfo (string accountId, string templateId, TemplatesApi.GetOptions options = null)
+        public ApiResponse<EnvelopeTemplate> GetWithHttpInfo(string accountId, string templateId, TemplatesApi.GetOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7146,11 +7216,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7162,11 +7232,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<EnvelopeTemplate>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeTemplate) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(EnvelopeTemplate)));
+                return new ApiResponse<EnvelopeTemplate>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeTemplate)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(EnvelopeTemplate)));
             }
             else
             {
-                return new ApiResponse<EnvelopeTemplate>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeTemplate) this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeTemplate)));
+                return new ApiResponse<EnvelopeTemplate>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeTemplate)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeTemplate)));
             }
             
         }
@@ -7175,26 +7245,25 @@ namespace DocuSign.eSign.Api
         /// Gets a list of templates for a specified account. Retrieves the definition of the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of EnvelopeTemplate</returns>
-        public async System.Threading.Tasks.Task<EnvelopeTemplate> GetAsync (string accountId, string templateId, TemplatesApi.GetOptions options = null)
+        public async System.Threading.Tasks.Task<EnvelopeTemplate> GetAsync(string accountId, string templateId, TemplatesApi.GetOptions options = null)
         {
              ApiResponse<EnvelopeTemplate> localVarResponse = await GetAsyncWithHttpInfo(accountId, templateId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets a list of templates for a specified account. Retrieves the definition of the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (EnvelopeTemplate)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EnvelopeTemplate>> GetAsyncWithHttpInfo (string accountId, string templateId, TemplatesApi.GetOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopeTemplate>> GetAsyncWithHttpInfo(string accountId, string templateId, TemplatesApi.GetOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7229,12 +7298,10 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
             if (options != null)
             {
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -7244,11 +7311,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7258,7 +7325,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<EnvelopeTemplate>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EnvelopeTemplate) this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeTemplate)));
+                (EnvelopeTemplate)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeTemplate)));
             
         }
 
@@ -7278,11 +7345,12 @@ namespace DocuSign.eSign.Api
         /// Gets PDF documents from a template. Retrieves one or more PDF documents from the specified template.  You can specify the ID of the document to retrieve or can specify &#x60;combined&#x60; to retrieve all documents in the template as one pdf.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream GetDocument (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null)
+        public System.IO.Stream GetDocument(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null)
         {
              ApiResponse<System.IO.Stream> localVarResponse = GetDocumentWithHttpInfo(accountId, templateId, documentId, options);
              return localVarResponse.Data;
@@ -7292,11 +7360,12 @@ namespace DocuSign.eSign.Api
         /// Gets PDF documents from a template. Retrieves one or more PDF documents from the specified template.  You can specify the ID of the document to retrieve or can specify &#x60;combined&#x60; to retrieve all documents in the template as one pdf.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public ApiResponse< System.IO.Stream > GetDocumentWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null)
+        public ApiResponse<System.IO.Stream> GetDocumentWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7351,11 +7420,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7367,11 +7436,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(System.IO.Stream)));
+                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(System.IO.Stream)));
             }
             else
             {
-                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
             }
             
         }
@@ -7380,26 +7449,27 @@ namespace DocuSign.eSign.Api
         /// Gets PDF documents from a template. Retrieves one or more PDF documents from the specified template.  You can specify the ID of the document to retrieve or can specify &#x60;combined&#x60; to retrieve all documents in the template as one pdf.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> GetDocumentAsync (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null)
+        public async System.Threading.Tasks.Task<System.IO.Stream> GetDocumentAsync(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null)
         {
              ApiResponse<System.IO.Stream> localVarResponse = await GetDocumentAsyncWithHttpInfo(accountId, templateId, documentId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets PDF documents from a template. Retrieves one or more PDF documents from the specified template.  You can specify the ID of the document to retrieve or can specify &#x60;combined&#x60; to retrieve all documents in the template as one pdf.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDocumentAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDocumentAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7438,13 +7508,11 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
             if (options != null)
             {
                 if (options.encrypt != null) localVarQueryParams.Add("encrypt", this.ApiClient.ParameterToString(options.encrypt)); // query parameter
                 if (options.showChanges != null) localVarQueryParams.Add("show_changes", this.ApiClient.ParameterToString(options.showChanges)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -7454,11 +7522,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7468,7 +7536,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<System.IO.Stream>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+                (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
             
         }
 
@@ -7492,11 +7560,13 @@ namespace DocuSign.eSign.Api
         /// Gets a page image from a template for display. Retrieves a page image for display from the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream GetDocumentPageImage (string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null)
+        public System.IO.Stream GetDocumentPageImage(string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null)
         {
              ApiResponse<System.IO.Stream> localVarResponse = GetDocumentPageImageWithHttpInfo(accountId, templateId, documentId, pageNumber, options);
              return localVarResponse.Data;
@@ -7506,11 +7576,13 @@ namespace DocuSign.eSign.Api
         /// Gets a page image from a template for display. Retrieves a page image for display from the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public ApiResponse< System.IO.Stream > GetDocumentPageImageWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null)
+        public ApiResponse<System.IO.Stream> GetDocumentPageImageWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7571,11 +7643,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7587,11 +7659,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(System.IO.Stream)));
+                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(System.IO.Stream)));
             }
             else
             {
-                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
             }
             
         }
@@ -7600,26 +7672,29 @@ namespace DocuSign.eSign.Api
         /// Gets a page image from a template for display. Retrieves a page image for display from the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> GetDocumentPageImageAsync (string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null)
+        public async System.Threading.Tasks.Task<System.IO.Stream> GetDocumentPageImageAsync(string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null)
         {
              ApiResponse<System.IO.Stream> localVarResponse = await GetDocumentPageImageAsyncWithHttpInfo(accountId, templateId, documentId, pageNumber, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets a page image from a template for display. Retrieves a page image for display from the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDocumentPageImageAsyncWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDocumentPageImageAsyncWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, TemplatesApi.GetDocumentPageImageOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7662,7 +7737,6 @@ namespace DocuSign.eSign.Api
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
             if (pageNumber != null) localVarPathParams.Add("pageNumber", this.ApiClient.ParameterToString(pageNumber)); // path parameter
-
             if (options != null)
             {
                 if (options.dpi != null) localVarQueryParams.Add("dpi", this.ApiClient.ParameterToString(options.dpi)); // query parameter
@@ -7670,7 +7744,6 @@ namespace DocuSign.eSign.Api
                 if (options.maxWidth != null) localVarQueryParams.Add("max_width", this.ApiClient.ParameterToString(options.maxWidth)); // query parameter
                 if (options.showChanges != null) localVarQueryParams.Add("show_changes", this.ApiClient.ParameterToString(options.showChanges)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -7680,11 +7753,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7694,7 +7767,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<System.IO.Stream>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+                (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
             
         }
 
@@ -7712,11 +7785,12 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the document. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Tabs</returns>
-        public Tabs GetDocumentTabs (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
+        public Tabs GetDocumentTabs(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
         {
              ApiResponse<Tabs> localVarResponse = GetDocumentTabsWithHttpInfo(accountId, templateId, documentId, options);
              return localVarResponse.Data;
@@ -7726,11 +7800,12 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the document. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Tabs</returns>
-        public ApiResponse< Tabs > GetDocumentTabsWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
+        public ApiResponse<Tabs> GetDocumentTabsWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7784,11 +7859,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7800,11 +7875,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
             }
             else
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             }
             
         }
@@ -7813,26 +7888,27 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the document. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Tabs</returns>
-        public async System.Threading.Tasks.Task<Tabs> GetDocumentTabsAsync (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
+        public async System.Threading.Tasks.Task<Tabs> GetDocumentTabsAsync(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
         {
              ApiResponse<Tabs> localVarResponse = await GetDocumentTabsAsyncWithHttpInfo(accountId, templateId, documentId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Returns tabs on the document. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> GetDocumentTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> GetDocumentTabsAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetDocumentTabsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7871,12 +7947,10 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
             if (options != null)
             {
                 if (options.pageNumbers != null) localVarQueryParams.Add("page_numbers", this.ApiClient.ParameterToString(options.pageNumbers)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -7886,11 +7960,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7900,7 +7974,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Tabs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             
         }
 
@@ -7910,11 +7984,10 @@ namespace DocuSign.eSign.Api
         /// Gets template lock information. Retrieves general information about the template lock.  If the call is made by the user who has the lock and the request has the same integrator key as original, then the &#x60;X-DocuSign-Edit&#x60; header  field and additional lock information is included in the response. This allows users to recover a lost editing session token and the &#x60;X-DocuSign-Edit&#x60; header.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>LockInformation</returns>
-        public LockInformation GetLock (string accountId, string templateId)
+        public LockInformation GetLock(string accountId, string templateId)
         {
              ApiResponse<LockInformation> localVarResponse = GetLockWithHttpInfo(accountId, templateId);
              return localVarResponse.Data;
@@ -7924,11 +7997,10 @@ namespace DocuSign.eSign.Api
         /// Gets template lock information. Retrieves general information about the template lock.  If the call is made by the user who has the lock and the request has the same integrator key as original, then the &#x60;X-DocuSign-Edit&#x60; header  field and additional lock information is included in the response. This allows users to recover a lost editing session token and the &#x60;X-DocuSign-Edit&#x60; header.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>ApiResponse of LockInformation</returns>
-        public ApiResponse< LockInformation > GetLockWithHttpInfo (string accountId, string templateId)
+        public ApiResponse<LockInformation> GetLockWithHttpInfo(string accountId, string templateId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7974,11 +8046,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7990,11 +8062,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(LockInformation)));
+                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(LockInformation)));
             }
             else
             {
-                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation) this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
+                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation)this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
             }
             
         }
@@ -8003,26 +8075,23 @@ namespace DocuSign.eSign.Api
         /// Gets template lock information. Retrieves general information about the template lock.  If the call is made by the user who has the lock and the request has the same integrator key as original, then the &#x60;X-DocuSign-Edit&#x60; header  field and additional lock information is included in the response. This allows users to recover a lost editing session token and the &#x60;X-DocuSign-Edit&#x60; header.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of LockInformation</returns>
-        public async System.Threading.Tasks.Task<LockInformation> GetLockAsync (string accountId, string templateId)
+        public async System.Threading.Tasks.Task<LockInformation> GetLockAsync(string accountId, string templateId)
         {
              ApiResponse<LockInformation> localVarResponse = await GetLockAsyncWithHttpInfo(accountId, templateId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets template lock information. Retrieves general information about the template lock.  If the call is made by the user who has the lock and the request has the same integrator key as original, then the &#x60;X-DocuSign-Edit&#x60; header  field and additional lock information is included in the response. This allows users to recover a lost editing session token and the &#x60;X-DocuSign-Edit&#x60; header.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of ApiResponse (LockInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LockInformation>> GetLockAsyncWithHttpInfo (string accountId, string templateId)
+        public async System.Threading.Tasks.Task<ApiResponse<LockInformation>> GetLockAsyncWithHttpInfo(string accountId, string templateId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8058,8 +8127,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -8068,11 +8135,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -8082,7 +8149,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<LockInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LockInformation) this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
+                (LockInformation)this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
             
         }
 
@@ -8092,11 +8159,10 @@ namespace DocuSign.eSign.Api
         /// Gets template notification information. Retrieves the envelope notification, reminders and expirations, information for an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Notification</returns>
-        public Notification GetNotificationSettings (string accountId, string templateId)
+        public Notification GetNotificationSettings(string accountId, string templateId)
         {
              ApiResponse<Notification> localVarResponse = GetNotificationSettingsWithHttpInfo(accountId, templateId);
              return localVarResponse.Data;
@@ -8106,11 +8172,10 @@ namespace DocuSign.eSign.Api
         /// Gets template notification information. Retrieves the envelope notification, reminders and expirations, information for an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>ApiResponse of Notification</returns>
-        public ApiResponse< Notification > GetNotificationSettingsWithHttpInfo (string accountId, string templateId)
+        public ApiResponse<Notification> GetNotificationSettingsWithHttpInfo(string accountId, string templateId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8156,11 +8221,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -8172,11 +8237,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Notification>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notification) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Notification)));
+                return new ApiResponse<Notification>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notification)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Notification)));
             }
             else
             {
-                return new ApiResponse<Notification>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notification) this.ApiClient.Deserialize(localVarResponse, typeof(Notification)));
+                return new ApiResponse<Notification>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notification)this.ApiClient.Deserialize(localVarResponse, typeof(Notification)));
             }
             
         }
@@ -8185,26 +8250,23 @@ namespace DocuSign.eSign.Api
         /// Gets template notification information. Retrieves the envelope notification, reminders and expirations, information for an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of Notification</returns>
-        public async System.Threading.Tasks.Task<Notification> GetNotificationSettingsAsync (string accountId, string templateId)
+        public async System.Threading.Tasks.Task<Notification> GetNotificationSettingsAsync(string accountId, string templateId)
         {
              ApiResponse<Notification> localVarResponse = await GetNotificationSettingsAsyncWithHttpInfo(accountId, templateId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets template notification information. Retrieves the envelope notification, reminders and expirations, information for an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of ApiResponse (Notification)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Notification>> GetNotificationSettingsAsyncWithHttpInfo (string accountId, string templateId)
+        public async System.Threading.Tasks.Task<ApiResponse<Notification>> GetNotificationSettingsAsyncWithHttpInfo(string accountId, string templateId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8240,8 +8302,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -8250,11 +8310,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -8264,7 +8324,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Notification>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Notification) this.ApiClient.Deserialize(localVarResponse, typeof(Notification)));
+                (Notification)this.ApiClient.Deserialize(localVarResponse, typeof(Notification)));
             
         }
 
@@ -8274,11 +8334,12 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the specified page. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <returns>Tabs</returns>
-        public Tabs GetPageTabs (string accountId, string templateId, string documentId, string pageNumber)
+        public Tabs GetPageTabs(string accountId, string templateId, string documentId, string pageNumber)
         {
              ApiResponse<Tabs> localVarResponse = GetPageTabsWithHttpInfo(accountId, templateId, documentId, pageNumber);
              return localVarResponse.Data;
@@ -8288,11 +8349,12 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the specified page. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <returns>ApiResponse of Tabs</returns>
-        public ApiResponse< Tabs > GetPageTabsWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber)
+        public ApiResponse<Tabs> GetPageTabsWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8346,11 +8408,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -8362,11 +8424,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
             }
             else
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             }
             
         }
@@ -8375,26 +8437,27 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the specified page. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <returns>Task of Tabs</returns>
-        public async System.Threading.Tasks.Task<Tabs> GetPageTabsAsync (string accountId, string templateId, string documentId, string pageNumber)
+        public async System.Threading.Tasks.Task<Tabs> GetPageTabsAsync(string accountId, string templateId, string documentId, string pageNumber)
         {
              ApiResponse<Tabs> localVarResponse = await GetPageTabsAsyncWithHttpInfo(accountId, templateId, documentId, pageNumber);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Returns tabs on the specified page. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> GetPageTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber)
+        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> GetPageTabsAsyncWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8438,8 +8501,6 @@ namespace DocuSign.eSign.Api
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
             if (pageNumber != null) localVarPathParams.Add("pageNumber", this.ApiClient.ParameterToString(pageNumber)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -8448,11 +8509,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -8462,7 +8523,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Tabs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             
         }
 
@@ -8492,11 +8553,12 @@ namespace DocuSign.eSign.Api
         /// Returns document page image(s) based on input. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>PageImages</returns>
-        public PageImages GetPages (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
+        public PageImages GetPages(string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
         {
              ApiResponse<PageImages> localVarResponse = GetPagesWithHttpInfo(accountId, templateId, documentId, options);
              return localVarResponse.Data;
@@ -8506,11 +8568,12 @@ namespace DocuSign.eSign.Api
         /// Returns document page image(s) based on input. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of PageImages</returns>
-        public ApiResponse< PageImages > GetPagesWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
+        public ApiResponse<PageImages> GetPagesWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8570,11 +8633,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -8586,11 +8649,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<PageImages>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PageImages) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PageImages)));
+                return new ApiResponse<PageImages>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PageImages)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PageImages)));
             }
             else
             {
-                return new ApiResponse<PageImages>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PageImages) this.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
+                return new ApiResponse<PageImages>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PageImages)this.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
             }
             
         }
@@ -8599,26 +8662,27 @@ namespace DocuSign.eSign.Api
         /// Returns document page image(s) based on input. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of PageImages</returns>
-        public async System.Threading.Tasks.Task<PageImages> GetPagesAsync (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
+        public async System.Threading.Tasks.Task<PageImages> GetPagesAsync(string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
         {
              ApiResponse<PageImages> localVarResponse = await GetPagesAsyncWithHttpInfo(accountId, templateId, documentId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Returns document page image(s) based on input. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PageImages)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PageImages>> GetPagesAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PageImages>> GetPagesAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplatesApi.GetPagesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8657,7 +8721,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
@@ -8669,7 +8732,6 @@ namespace DocuSign.eSign.Api
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
 
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -8678,11 +8740,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -8692,7 +8754,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<PageImages>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PageImages) this.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
+                (PageImages)this.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
             
         }
 
@@ -8702,11 +8764,11 @@ namespace DocuSign.eSign.Api
         /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>DocumentHtmlDefinitionOriginals</returns>
-        public DocumentHtmlDefinitionOriginals GetTemplateDocumentHtmlDefinitions (string accountId, string templateId, string documentId)
+        public DocumentHtmlDefinitionOriginals GetTemplateDocumentHtmlDefinitions(string accountId, string templateId, string documentId)
         {
              ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = GetTemplateDocumentHtmlDefinitionsWithHttpInfo(accountId, templateId, documentId);
              return localVarResponse.Data;
@@ -8716,11 +8778,11 @@ namespace DocuSign.eSign.Api
         /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>ApiResponse of DocumentHtmlDefinitionOriginals</returns>
-        public ApiResponse< DocumentHtmlDefinitionOriginals > GetTemplateDocumentHtmlDefinitionsWithHttpInfo (string accountId, string templateId, string documentId)
+        public ApiResponse<DocumentHtmlDefinitionOriginals> GetTemplateDocumentHtmlDefinitionsWithHttpInfo(string accountId, string templateId, string documentId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8770,11 +8832,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -8786,11 +8848,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitionOriginals)));
+                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitionOriginals)));
             }
             else
             {
-                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
+                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
             }
             
         }
@@ -8799,26 +8861,25 @@ namespace DocuSign.eSign.Api
         /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
-        public async System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetTemplateDocumentHtmlDefinitionsAsync (string accountId, string templateId, string documentId)
+        public async System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetTemplateDocumentHtmlDefinitionsAsync(string accountId, string templateId, string documentId)
         {
              ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = await GetTemplateDocumentHtmlDefinitionsAsyncWithHttpInfo(accountId, templateId, documentId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetTemplateDocumentHtmlDefinitionsAsyncWithHttpInfo (string accountId, string templateId, string documentId)
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetTemplateDocumentHtmlDefinitionsAsyncWithHttpInfo(string accountId, string templateId, string documentId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8858,8 +8919,6 @@ namespace DocuSign.eSign.Api
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -8868,11 +8927,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -8882,7 +8941,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
+                (DocumentHtmlDefinitionOriginals)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
             
         }
 
@@ -8892,11 +8951,10 @@ namespace DocuSign.eSign.Api
         /// Get the Original HTML Definition used to generate the Responsive HTML for the template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>DocumentHtmlDefinitionOriginals</returns>
-        public DocumentHtmlDefinitionOriginals GetTemplateHtmlDefinitions (string accountId, string templateId)
+        public DocumentHtmlDefinitionOriginals GetTemplateHtmlDefinitions(string accountId, string templateId)
         {
              ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = GetTemplateHtmlDefinitionsWithHttpInfo(accountId, templateId);
              return localVarResponse.Data;
@@ -8906,11 +8964,10 @@ namespace DocuSign.eSign.Api
         /// Get the Original HTML Definition used to generate the Responsive HTML for the template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>ApiResponse of DocumentHtmlDefinitionOriginals</returns>
-        public ApiResponse< DocumentHtmlDefinitionOriginals > GetTemplateHtmlDefinitionsWithHttpInfo (string accountId, string templateId)
+        public ApiResponse<DocumentHtmlDefinitionOriginals> GetTemplateHtmlDefinitionsWithHttpInfo(string accountId, string templateId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8956,11 +9013,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -8972,11 +9029,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitionOriginals)));
+                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentHtmlDefinitionOriginals)));
             }
             else
             {
-                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
+                return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentHtmlDefinitionOriginals)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
             }
             
         }
@@ -8985,26 +9042,23 @@ namespace DocuSign.eSign.Api
         /// Get the Original HTML Definition used to generate the Responsive HTML for the template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of DocumentHtmlDefinitionOriginals</returns>
-        public async System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetTemplateHtmlDefinitionsAsync (string accountId, string templateId)
+        public async System.Threading.Tasks.Task<DocumentHtmlDefinitionOriginals> GetTemplateHtmlDefinitionsAsync(string accountId, string templateId)
         {
              ApiResponse<DocumentHtmlDefinitionOriginals> localVarResponse = await GetTemplateHtmlDefinitionsAsyncWithHttpInfo(accountId, templateId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for the template. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetTemplateHtmlDefinitionsAsyncWithHttpInfo (string accountId, string templateId)
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetTemplateHtmlDefinitionsAsyncWithHttpInfo(string accountId, string templateId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9040,8 +9094,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -9050,11 +9102,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -9064,7 +9116,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DocumentHtmlDefinitionOriginals) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
+                (DocumentHtmlDefinitionOriginals)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
             
         }
 
@@ -9084,11 +9136,12 @@ namespace DocuSign.eSign.Api
         /// Gets the bulk recipient file from a template. Retrieves the bulk recipient file information from a template that has a bulk recipient.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>BulkRecipientsResponse</returns>
-        public BulkRecipientsResponse ListBulkRecipients (string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null)
+        public BulkRecipientsResponse ListBulkRecipients(string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null)
         {
              ApiResponse<BulkRecipientsResponse> localVarResponse = ListBulkRecipientsWithHttpInfo(accountId, templateId, recipientId, options);
              return localVarResponse.Data;
@@ -9098,11 +9151,12 @@ namespace DocuSign.eSign.Api
         /// Gets the bulk recipient file from a template. Retrieves the bulk recipient file information from a template that has a bulk recipient.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of BulkRecipientsResponse</returns>
-        public ApiResponse< BulkRecipientsResponse > ListBulkRecipientsWithHttpInfo (string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null)
+        public ApiResponse<BulkRecipientsResponse> ListBulkRecipientsWithHttpInfo(string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9157,11 +9211,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -9173,11 +9227,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<BulkRecipientsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkRecipientsResponse)));
+                return new ApiResponse<BulkRecipientsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkRecipientsResponse)));
             }
             else
             {
-                return new ApiResponse<BulkRecipientsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsResponse)));
+                return new ApiResponse<BulkRecipientsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkRecipientsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsResponse)));
             }
             
         }
@@ -9186,26 +9240,27 @@ namespace DocuSign.eSign.Api
         /// Gets the bulk recipient file from a template. Retrieves the bulk recipient file information from a template that has a bulk recipient.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BulkRecipientsResponse</returns>
-        public async System.Threading.Tasks.Task<BulkRecipientsResponse> ListBulkRecipientsAsync (string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null)
+        public async System.Threading.Tasks.Task<BulkRecipientsResponse> ListBulkRecipientsAsync(string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null)
         {
              ApiResponse<BulkRecipientsResponse> localVarResponse = await ListBulkRecipientsAsyncWithHttpInfo(accountId, templateId, recipientId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets the bulk recipient file from a template. Retrieves the bulk recipient file information from a template that has a bulk recipient.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BulkRecipientsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkRecipientsResponse>> ListBulkRecipientsAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkRecipientsResponse>> ListBulkRecipientsAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplatesApi.ListBulkRecipientsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9244,13 +9299,11 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
-
             if (options != null)
             {
                 if (options.includeTabs != null) localVarQueryParams.Add("include_tabs", this.ApiClient.ParameterToString(options.includeTabs)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -9260,11 +9313,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -9274,7 +9327,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<BulkRecipientsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BulkRecipientsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsResponse)));
+                (BulkRecipientsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsResponse)));
             
         }
 
@@ -9284,11 +9337,10 @@ namespace DocuSign.eSign.Api
         /// Gets the custom document fields from a template. Retrieves the custom document field information from an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>CustomFields</returns>
-        public CustomFields ListCustomFields (string accountId, string templateId)
+        public CustomFields ListCustomFields(string accountId, string templateId)
         {
              ApiResponse<CustomFields> localVarResponse = ListCustomFieldsWithHttpInfo(accountId, templateId);
              return localVarResponse.Data;
@@ -9298,11 +9350,10 @@ namespace DocuSign.eSign.Api
         /// Gets the custom document fields from a template. Retrieves the custom document field information from an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>ApiResponse of CustomFields</returns>
-        public ApiResponse< CustomFields > ListCustomFieldsWithHttpInfo (string accountId, string templateId)
+        public ApiResponse<CustomFields> ListCustomFieldsWithHttpInfo(string accountId, string templateId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9348,11 +9399,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -9364,11 +9415,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(CustomFields)));
+                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(CustomFields)));
             }
             else
             {
-                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields) this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
+                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields)this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
             }
             
         }
@@ -9377,26 +9428,23 @@ namespace DocuSign.eSign.Api
         /// Gets the custom document fields from a template. Retrieves the custom document field information from an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of CustomFields</returns>
-        public async System.Threading.Tasks.Task<CustomFields> ListCustomFieldsAsync (string accountId, string templateId)
+        public async System.Threading.Tasks.Task<CustomFields> ListCustomFieldsAsync(string accountId, string templateId)
         {
              ApiResponse<CustomFields> localVarResponse = await ListCustomFieldsAsyncWithHttpInfo(accountId, templateId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets the custom document fields from a template. Retrieves the custom document field information from an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <returns>Task of ApiResponse (CustomFields)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CustomFields>> ListCustomFieldsAsyncWithHttpInfo (string accountId, string templateId)
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFields>> ListCustomFieldsAsyncWithHttpInfo(string accountId, string templateId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9432,8 +9480,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -9442,11 +9488,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -9456,7 +9502,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<CustomFields>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CustomFields) this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
+                (CustomFields)this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
             
         }
 
@@ -9466,11 +9512,11 @@ namespace DocuSign.eSign.Api
         /// Gets the custom document fields for a an existing template document. Retrieves the custom document fields for an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>DocumentFieldsInformation</returns>
-        public DocumentFieldsInformation ListDocumentFields (string accountId, string templateId, string documentId)
+        public DocumentFieldsInformation ListDocumentFields(string accountId, string templateId, string documentId)
         {
              ApiResponse<DocumentFieldsInformation> localVarResponse = ListDocumentFieldsWithHttpInfo(accountId, templateId, documentId);
              return localVarResponse.Data;
@@ -9480,11 +9526,11 @@ namespace DocuSign.eSign.Api
         /// Gets the custom document fields for a an existing template document. Retrieves the custom document fields for an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>ApiResponse of DocumentFieldsInformation</returns>
-        public ApiResponse< DocumentFieldsInformation > ListDocumentFieldsWithHttpInfo (string accountId, string templateId, string documentId)
+        public ApiResponse<DocumentFieldsInformation> ListDocumentFieldsWithHttpInfo(string accountId, string templateId, string documentId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9534,11 +9580,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -9550,11 +9596,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentFieldsInformation)));
+                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentFieldsInformation)));
             }
             else
             {
-                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
+                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
             }
             
         }
@@ -9563,26 +9609,25 @@ namespace DocuSign.eSign.Api
         /// Gets the custom document fields for a an existing template document. Retrieves the custom document fields for an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>Task of DocumentFieldsInformation</returns>
-        public async System.Threading.Tasks.Task<DocumentFieldsInformation> ListDocumentFieldsAsync (string accountId, string templateId, string documentId)
+        public async System.Threading.Tasks.Task<DocumentFieldsInformation> ListDocumentFieldsAsync(string accountId, string templateId, string documentId)
         {
              ApiResponse<DocumentFieldsInformation> localVarResponse = await ListDocumentFieldsAsyncWithHttpInfo(accountId, templateId, documentId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets the custom document fields for a an existing template document. Retrieves the custom document fields for an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <returns>Task of ApiResponse (DocumentFieldsInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> ListDocumentFieldsAsyncWithHttpInfo (string accountId, string templateId, string documentId)
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> ListDocumentFieldsAsyncWithHttpInfo(string accountId, string templateId, string documentId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9622,8 +9667,6 @@ namespace DocuSign.eSign.Api
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -9632,11 +9675,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -9646,7 +9689,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
+                (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
             
         }
 
@@ -9664,11 +9707,11 @@ namespace DocuSign.eSign.Api
         /// Gets a list of documents associated with a template. Retrieves a list of documents associated with the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>TemplateDocumentsResult</returns>
-        public TemplateDocumentsResult ListDocuments (string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null)
+        public TemplateDocumentsResult ListDocuments(string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null)
         {
              ApiResponse<TemplateDocumentsResult> localVarResponse = ListDocumentsWithHttpInfo(accountId, templateId, options);
              return localVarResponse.Data;
@@ -9678,11 +9721,11 @@ namespace DocuSign.eSign.Api
         /// Gets a list of documents associated with a template. Retrieves a list of documents associated with the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of TemplateDocumentsResult</returns>
-        public ApiResponse< TemplateDocumentsResult > ListDocumentsWithHttpInfo (string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null)
+        public ApiResponse<TemplateDocumentsResult> ListDocumentsWithHttpInfo(string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9732,11 +9775,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -9748,11 +9791,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TemplateDocumentsResult)));
+                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TemplateDocumentsResult)));
             }
             else
             {
-                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult) this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
+                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
             }
             
         }
@@ -9761,26 +9804,25 @@ namespace DocuSign.eSign.Api
         /// Gets a list of documents associated with a template. Retrieves a list of documents associated with the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of TemplateDocumentsResult</returns>
-        public async System.Threading.Tasks.Task<TemplateDocumentsResult> ListDocumentsAsync (string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null)
+        public async System.Threading.Tasks.Task<TemplateDocumentsResult> ListDocumentsAsync(string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null)
         {
              ApiResponse<TemplateDocumentsResult> localVarResponse = await ListDocumentsAsyncWithHttpInfo(accountId, templateId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets a list of documents associated with a template. Retrieves a list of documents associated with the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (TemplateDocumentsResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> ListDocumentsAsyncWithHttpInfo (string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> ListDocumentsAsyncWithHttpInfo(string accountId, string templateId, TemplatesApi.ListDocumentsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9815,12 +9857,10 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
             if (options != null)
             {
                 if (options.includeTabs != null) localVarQueryParams.Add("include_tabs", this.ApiClient.ParameterToString(options.includeTabs)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -9830,11 +9870,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -9844,7 +9884,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TemplateDocumentsResult) this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
+                (TemplateDocumentsResult)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
             
         }
 
@@ -9866,11 +9906,11 @@ namespace DocuSign.eSign.Api
         /// Gets recipient information from a template. Retrieves the information for all recipients in the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Recipients</returns>
-        public Recipients ListRecipients (string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null)
+        public Recipients ListRecipients(string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null)
         {
              ApiResponse<Recipients> localVarResponse = ListRecipientsWithHttpInfo(accountId, templateId, options);
              return localVarResponse.Data;
@@ -9880,11 +9920,11 @@ namespace DocuSign.eSign.Api
         /// Gets recipient information from a template. Retrieves the information for all recipients in the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Recipients</returns>
-        public ApiResponse< Recipients > ListRecipientsWithHttpInfo (string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null)
+        public ApiResponse<Recipients> ListRecipientsWithHttpInfo(string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -9936,11 +9976,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -9952,11 +9992,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Recipients)));
+                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Recipients)));
             }
             else
             {
-                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients) this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
+                return new ApiResponse<Recipients>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Recipients)this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
             }
             
         }
@@ -9965,26 +10005,25 @@ namespace DocuSign.eSign.Api
         /// Gets recipient information from a template. Retrieves the information for all recipients in the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Recipients</returns>
-        public async System.Threading.Tasks.Task<Recipients> ListRecipientsAsync (string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null)
+        public async System.Threading.Tasks.Task<Recipients> ListRecipientsAsync(string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null)
         {
              ApiResponse<Recipients> localVarResponse = await ListRecipientsAsyncWithHttpInfo(accountId, templateId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets recipient information from a template. Retrieves the information for all recipients in the specified template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Recipients)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Recipients>> ListRecipientsAsyncWithHttpInfo (string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Recipients>> ListRecipientsAsyncWithHttpInfo(string accountId, string templateId, TemplatesApi.ListRecipientsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10019,14 +10058,12 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
             if (options != null)
             {
                 if (options.includeAnchorTabLocations != null) localVarQueryParams.Add("include_anchor_tab_locations", this.ApiClient.ParameterToString(options.includeAnchorTabLocations)); // query parameter
                 if (options.includeExtended != null) localVarQueryParams.Add("include_extended", this.ApiClient.ParameterToString(options.includeExtended)); // query parameter
                 if (options.includeTabs != null) localVarQueryParams.Add("include_tabs", this.ApiClient.ParameterToString(options.includeTabs)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -10036,11 +10073,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -10050,7 +10087,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Recipients>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Recipients) this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
+                (Recipients)this.ApiClient.Deserialize(localVarResponse, typeof(Recipients)));
             
         }
 
@@ -10070,11 +10107,12 @@ namespace DocuSign.eSign.Api
         /// Gets the tabs information for a signer or sign-in-person recipient in a template. Gets the tabs information for a signer or sign-in-person recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Tabs</returns>
-        public Tabs ListTabs (string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null)
+        public Tabs ListTabs(string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null)
         {
              ApiResponse<Tabs> localVarResponse = ListTabsWithHttpInfo(accountId, templateId, recipientId, options);
              return localVarResponse.Data;
@@ -10084,11 +10122,12 @@ namespace DocuSign.eSign.Api
         /// Gets the tabs information for a signer or sign-in-person recipient in a template. Gets the tabs information for a signer or sign-in-person recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of Tabs</returns>
-        public ApiResponse< Tabs > ListTabsWithHttpInfo (string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null)
+        public ApiResponse<Tabs> ListTabsWithHttpInfo(string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10143,11 +10182,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -10159,11 +10198,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
             }
             else
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             }
             
         }
@@ -10172,26 +10211,27 @@ namespace DocuSign.eSign.Api
         /// Gets the tabs information for a signer or sign-in-person recipient in a template. Gets the tabs information for a signer or sign-in-person recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of Tabs</returns>
-        public async System.Threading.Tasks.Task<Tabs> ListTabsAsync (string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null)
+        public async System.Threading.Tasks.Task<Tabs> ListTabsAsync(string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null)
         {
              ApiResponse<Tabs> localVarResponse = await ListTabsAsyncWithHttpInfo(accountId, templateId, recipientId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets the tabs information for a signer or sign-in-person recipient in a template. Gets the tabs information for a signer or sign-in-person recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> ListTabsAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> ListTabsAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplatesApi.ListTabsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10230,13 +10270,11 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
-
             if (options != null)
             {
                 if (options.includeAnchorTabLocations != null) localVarQueryParams.Add("include_anchor_tab_locations", this.ApiClient.ParameterToString(options.includeAnchorTabLocations)); // query parameter
                 if (options.includeMetadata != null) localVarQueryParams.Add("include_metadata", this.ApiClient.ParameterToString(options.includeMetadata)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -10246,11 +10284,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -10260,7 +10298,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Tabs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             
         }
 
@@ -10323,10 +10361,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>EnvelopeTemplateResults</returns>
-        public EnvelopeTemplateResults ListTemplates (string accountId, TemplatesApi.ListTemplatesOptions options = null)
+        public EnvelopeTemplateResults ListTemplates(string accountId, TemplatesApi.ListTemplatesOptions options = null)
         {
              ApiResponse<EnvelopeTemplateResults> localVarResponse = ListTemplatesWithHttpInfo(accountId, options);
              return localVarResponse.Data;
@@ -10337,10 +10374,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of EnvelopeTemplateResults</returns>
-        public ApiResponse< EnvelopeTemplateResults > ListTemplatesWithHttpInfo (string accountId, TemplatesApi.ListTemplatesOptions options = null)
+        public ApiResponse<EnvelopeTemplateResults> ListTemplatesWithHttpInfo(string accountId, TemplatesApi.ListTemplatesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10408,11 +10444,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -10424,11 +10460,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<EnvelopeTemplateResults>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeTemplateResults) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(EnvelopeTemplateResults)));
+                return new ApiResponse<EnvelopeTemplateResults>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeTemplateResults)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(EnvelopeTemplateResults)));
             }
             else
             {
-                return new ApiResponse<EnvelopeTemplateResults>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeTemplateResults) this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeTemplateResults)));
+                return new ApiResponse<EnvelopeTemplateResults>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeTemplateResults)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeTemplateResults)));
             }
             
         }
@@ -10438,14 +10474,12 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of EnvelopeTemplateResults</returns>
-        public async System.Threading.Tasks.Task<EnvelopeTemplateResults> ListTemplatesAsync (string accountId, TemplatesApi.ListTemplatesOptions options = null)
+        public async System.Threading.Tasks.Task<EnvelopeTemplateResults> ListTemplatesAsync(string accountId, TemplatesApi.ListTemplatesOptions options = null)
         {
              ApiResponse<EnvelopeTemplateResults> localVarResponse = await ListTemplatesAsyncWithHttpInfo(accountId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -10453,10 +10487,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (EnvelopeTemplateResults)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EnvelopeTemplateResults>> ListTemplatesAsyncWithHttpInfo (string accountId, TemplatesApi.ListTemplatesOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopeTemplateResults>> ListTemplatesAsyncWithHttpInfo(string accountId, TemplatesApi.ListTemplatesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10487,7 +10520,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
@@ -10515,7 +10547,6 @@ namespace DocuSign.eSign.Api
                 if (options.userId != null) localVarQueryParams.Add("user_id", this.ApiClient.ParameterToString(options.userId)); // query parameter
             }
 
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -10524,11 +10555,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -10538,7 +10569,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<EnvelopeTemplateResults>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EnvelopeTemplateResults) this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeTemplateResults)));
+                (EnvelopeTemplateResults)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeTemplateResults)));
             
         }
 
@@ -10548,11 +10579,13 @@ namespace DocuSign.eSign.Api
         /// Rotates page image from a template for display. Rotates page image from a template for display. The page image can be rotated to the left or right.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns></returns>
-        public void RotateDocumentPage (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
+        public void RotateDocumentPage(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
         {
              RotateDocumentPageWithHttpInfo(accountId, templateId, documentId, pageNumber, pageRequest);
         }
@@ -10561,11 +10594,13 @@ namespace DocuSign.eSign.Api
         /// Rotates page image from a template for display. Rotates page image from a template for display. The page image can be rotated to the left or right.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> RotateDocumentPageWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
+        public ApiResponse<Object> RotateDocumentPageWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10627,11 +10662,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -10648,25 +10683,28 @@ namespace DocuSign.eSign.Api
         /// Rotates page image from a template for display. Rotates page image from a template for display. The page image can be rotated to the left or right.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RotateDocumentPageAsync (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
+        public async System.Threading.Tasks.Task RotateDocumentPageAsync(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
         {
              await RotateDocumentPageAsyncWithHttpInfo(accountId, templateId, documentId, pageNumber, pageRequest);
-
         }
 
         /// <summary>
         /// Rotates page image from a template for display. Rotates page image from a template for display. The page image can be rotated to the left or right.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>/// <param name="pageNumber">The page number being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="pageNumber">The page number being accessed.</param>
         /// <param name="pageRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> RotateDocumentPageAsyncWithHttpInfo (string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RotateDocumentPageAsyncWithHttpInfo(string accountId, string templateId, string documentId, string pageNumber, PageRequest pageRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10709,8 +10747,6 @@ namespace DocuSign.eSign.Api
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
             if (pageNumber != null) localVarPathParams.Add("pageNumber", this.ApiClient.ParameterToString(pageNumber)); // path parameter
-
-
             if (pageRequest != null && pageRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(pageRequest); // http body (model) parameter
@@ -10728,11 +10764,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -10752,11 +10788,11 @@ namespace DocuSign.eSign.Api
         /// Updates an existing template. Updates an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>TemplateUpdateSummary</returns>
-        public TemplateUpdateSummary Update (string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null)
+        public TemplateUpdateSummary Update(string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null)
         {
              ApiResponse<TemplateUpdateSummary> localVarResponse = UpdateWithHttpInfo(accountId, templateId, envelopeTemplate);
              return localVarResponse.Data;
@@ -10766,11 +10802,11 @@ namespace DocuSign.eSign.Api
         /// Updates an existing template. Updates an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>ApiResponse of TemplateUpdateSummary</returns>
-        public ApiResponse< TemplateUpdateSummary > UpdateWithHttpInfo (string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null)
+        public ApiResponse<TemplateUpdateSummary> UpdateWithHttpInfo(string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10824,11 +10860,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -10840,11 +10876,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<TemplateUpdateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateUpdateSummary) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TemplateUpdateSummary)));
+                return new ApiResponse<TemplateUpdateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateUpdateSummary)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TemplateUpdateSummary)));
             }
             else
             {
-                return new ApiResponse<TemplateUpdateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateUpdateSummary) this.ApiClient.Deserialize(localVarResponse, typeof(TemplateUpdateSummary)));
+                return new ApiResponse<TemplateUpdateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateUpdateSummary)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateUpdateSummary)));
             }
             
         }
@@ -10853,26 +10889,25 @@ namespace DocuSign.eSign.Api
         /// Updates an existing template. Updates an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>Task of TemplateUpdateSummary</returns>
-        public async System.Threading.Tasks.Task<TemplateUpdateSummary> UpdateAsync (string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null)
+        public async System.Threading.Tasks.Task<TemplateUpdateSummary> UpdateAsync(string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null)
         {
              ApiResponse<TemplateUpdateSummary> localVarResponse = await UpdateAsyncWithHttpInfo(accountId, templateId, envelopeTemplate);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates an existing template. Updates an existing template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeTemplate"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TemplateUpdateSummary)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TemplateUpdateSummary>> UpdateAsyncWithHttpInfo (string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null)
+        public async System.Threading.Tasks.Task<ApiResponse<TemplateUpdateSummary>> UpdateAsyncWithHttpInfo(string accountId, string templateId, EnvelopeTemplate envelopeTemplate = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -10907,8 +10942,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (envelopeTemplate != null && envelopeTemplate.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(envelopeTemplate); // http body (model) parameter
@@ -10926,11 +10959,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -10940,7 +10973,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<TemplateUpdateSummary>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TemplateUpdateSummary) this.ApiClient.Deserialize(localVarResponse, typeof(TemplateUpdateSummary)));
+                (TemplateUpdateSummary)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateUpdateSummary)));
             
         }
 
@@ -10950,11 +10983,11 @@ namespace DocuSign.eSign.Api
         /// Updates envelope custom fields in a template. Updates the custom fields in a template.  Each custom field used in a template must have a unique name.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>CustomFields</returns>
-        public CustomFields UpdateCustomFields (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public CustomFields UpdateCustomFields(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
              ApiResponse<CustomFields> localVarResponse = UpdateCustomFieldsWithHttpInfo(accountId, templateId, templateCustomFields);
              return localVarResponse.Data;
@@ -10964,11 +10997,11 @@ namespace DocuSign.eSign.Api
         /// Updates envelope custom fields in a template. Updates the custom fields in a template.  Each custom field used in a template must have a unique name.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>ApiResponse of CustomFields</returns>
-        public ApiResponse< CustomFields > UpdateCustomFieldsWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public ApiResponse<CustomFields> UpdateCustomFieldsWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11022,11 +11055,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -11038,11 +11071,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(CustomFields)));
+                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(CustomFields)));
             }
             else
             {
-                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields) this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
+                return new ApiResponse<CustomFields>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CustomFields)this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
             }
             
         }
@@ -11051,26 +11084,25 @@ namespace DocuSign.eSign.Api
         /// Updates envelope custom fields in a template. Updates the custom fields in a template.  Each custom field used in a template must have a unique name.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of CustomFields</returns>
-        public async System.Threading.Tasks.Task<CustomFields> UpdateCustomFieldsAsync (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public async System.Threading.Tasks.Task<CustomFields> UpdateCustomFieldsAsync(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
              ApiResponse<CustomFields> localVarResponse = await UpdateCustomFieldsAsyncWithHttpInfo(accountId, templateId, templateCustomFields);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates envelope custom fields in a template. Updates the custom fields in a template.  Each custom field used in a template must have a unique name.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateCustomFields"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (CustomFields)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CustomFields>> UpdateCustomFieldsAsyncWithHttpInfo (string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFields>> UpdateCustomFieldsAsyncWithHttpInfo(string accountId, string templateId, TemplateCustomFields templateCustomFields = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11105,8 +11137,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (templateCustomFields != null && templateCustomFields.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateCustomFields); // http body (model) parameter
@@ -11124,11 +11154,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -11138,7 +11168,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<CustomFields>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CustomFields) this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
+                (CustomFields)this.ApiClient.Deserialize(localVarResponse, typeof(CustomFields)));
             
         }
 
@@ -11156,11 +11186,13 @@ namespace DocuSign.eSign.Api
         /// Adds a document to a template document. Adds the specified document to an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>EnvelopeDocument</returns>
-        public EnvelopeDocument UpdateDocument (string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null)
+        public EnvelopeDocument UpdateDocument(string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null)
         {
              ApiResponse<EnvelopeDocument> localVarResponse = UpdateDocumentWithHttpInfo(accountId, templateId, documentId, envelopeDefinition, options);
              return localVarResponse.Data;
@@ -11170,11 +11202,13 @@ namespace DocuSign.eSign.Api
         /// Adds a document to a template document. Adds the specified document to an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of EnvelopeDocument</returns>
-        public ApiResponse< EnvelopeDocument > UpdateDocumentWithHttpInfo (string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null)
+        public ApiResponse<EnvelopeDocument> UpdateDocumentWithHttpInfo(string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11236,11 +11270,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -11252,11 +11286,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<EnvelopeDocument>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeDocument) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(EnvelopeDocument)));
+                return new ApiResponse<EnvelopeDocument>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeDocument)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(EnvelopeDocument)));
             }
             else
             {
-                return new ApiResponse<EnvelopeDocument>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeDocument) this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeDocument)));
+                return new ApiResponse<EnvelopeDocument>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopeDocument)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeDocument)));
             }
             
         }
@@ -11265,26 +11299,29 @@ namespace DocuSign.eSign.Api
         /// Adds a document to a template document. Adds the specified document to an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of EnvelopeDocument</returns>
-        public async System.Threading.Tasks.Task<EnvelopeDocument> UpdateDocumentAsync (string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null)
+        public async System.Threading.Tasks.Task<EnvelopeDocument> UpdateDocumentAsync(string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null)
         {
              ApiResponse<EnvelopeDocument> localVarResponse = await UpdateDocumentAsyncWithHttpInfo(accountId, templateId, documentId, envelopeDefinition, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Adds a document to a template document. Adds the specified document to an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (EnvelopeDocument)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EnvelopeDocument>> UpdateDocumentAsyncWithHttpInfo (string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopeDocument>> UpdateDocumentAsyncWithHttpInfo(string accountId, string templateId, string documentId, EnvelopeDefinition envelopeDefinition = null, TemplatesApi.UpdateDocumentOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11323,12 +11360,10 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
             if (options != null)
             {
                 if (options.isEnvelopeDefinition != null) localVarQueryParams.Add("is_envelope_definition", this.ApiClient.ParameterToString(options.isEnvelopeDefinition)); // query parameter
             }
-
             if (envelopeDefinition != null && envelopeDefinition.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(envelopeDefinition); // http body (model) parameter
@@ -11346,11 +11381,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -11360,7 +11395,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<EnvelopeDocument>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EnvelopeDocument) this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeDocument)));
+                (EnvelopeDocument)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeDocument)));
             
         }
 
@@ -11370,11 +11405,12 @@ namespace DocuSign.eSign.Api
         /// Updates existing custom document fields in an existing template document. Updates existing custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>DocumentFieldsInformation</returns>
-        public DocumentFieldsInformation UpdateDocumentFields (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public DocumentFieldsInformation UpdateDocumentFields(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
              ApiResponse<DocumentFieldsInformation> localVarResponse = UpdateDocumentFieldsWithHttpInfo(accountId, templateId, documentId, documentFieldsInformation);
              return localVarResponse.Data;
@@ -11384,11 +11420,12 @@ namespace DocuSign.eSign.Api
         /// Updates existing custom document fields in an existing template document. Updates existing custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of DocumentFieldsInformation</returns>
-        public ApiResponse< DocumentFieldsInformation > UpdateDocumentFieldsWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public ApiResponse<DocumentFieldsInformation> UpdateDocumentFieldsWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11446,11 +11483,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -11462,11 +11499,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentFieldsInformation)));
+                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DocumentFieldsInformation)));
             }
             else
             {
-                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
+                return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
             }
             
         }
@@ -11475,26 +11512,27 @@ namespace DocuSign.eSign.Api
         /// Updates existing custom document fields in an existing template document. Updates existing custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of DocumentFieldsInformation</returns>
-        public async System.Threading.Tasks.Task<DocumentFieldsInformation> UpdateDocumentFieldsAsync (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public async System.Threading.Tasks.Task<DocumentFieldsInformation> UpdateDocumentFieldsAsync(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
              ApiResponse<DocumentFieldsInformation> localVarResponse = await UpdateDocumentFieldsAsyncWithHttpInfo(accountId, templateId, documentId, documentFieldsInformation);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates existing custom document fields in an existing template document. Updates existing custom document fields in an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="documentFieldsInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DocumentFieldsInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> UpdateDocumentFieldsAsyncWithHttpInfo (string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentFieldsInformation>> UpdateDocumentFieldsAsyncWithHttpInfo(string accountId, string templateId, string documentId, DocumentFieldsInformation documentFieldsInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11533,8 +11571,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-
             if (documentFieldsInformation != null && documentFieldsInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(documentFieldsInformation); // http body (model) parameter
@@ -11552,11 +11588,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -11566,7 +11602,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<DocumentFieldsInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DocumentFieldsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
+                (DocumentFieldsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentFieldsInformation)));
             
         }
 
@@ -11576,11 +11612,11 @@ namespace DocuSign.eSign.Api
         /// Adds documents to a template document. Adds one or more documents to an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>TemplateDocumentsResult</returns>
-        public TemplateDocumentsResult UpdateDocuments (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
+        public TemplateDocumentsResult UpdateDocuments(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
         {
              ApiResponse<TemplateDocumentsResult> localVarResponse = UpdateDocumentsWithHttpInfo(accountId, templateId, envelopeDefinition);
              return localVarResponse.Data;
@@ -11590,11 +11626,11 @@ namespace DocuSign.eSign.Api
         /// Adds documents to a template document. Adds one or more documents to an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>ApiResponse of TemplateDocumentsResult</returns>
-        public ApiResponse< TemplateDocumentsResult > UpdateDocumentsWithHttpInfo (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
+        public ApiResponse<TemplateDocumentsResult> UpdateDocumentsWithHttpInfo(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11648,11 +11684,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -11664,11 +11700,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TemplateDocumentsResult)));
+                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TemplateDocumentsResult)));
             }
             else
             {
-                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult) this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
+                return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TemplateDocumentsResult)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
             }
             
         }
@@ -11677,26 +11713,25 @@ namespace DocuSign.eSign.Api
         /// Adds documents to a template document. Adds one or more documents to an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>Task of TemplateDocumentsResult</returns>
-        public async System.Threading.Tasks.Task<TemplateDocumentsResult> UpdateDocumentsAsync (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
+        public async System.Threading.Tasks.Task<TemplateDocumentsResult> UpdateDocumentsAsync(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
         {
              ApiResponse<TemplateDocumentsResult> localVarResponse = await UpdateDocumentsAsyncWithHttpInfo(accountId, templateId, envelopeDefinition);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Adds documents to a template document. Adds one or more documents to an existing template document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="envelopeDefinition"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TemplateDocumentsResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> UpdateDocumentsAsyncWithHttpInfo (string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
+        public async System.Threading.Tasks.Task<ApiResponse<TemplateDocumentsResult>> UpdateDocumentsAsyncWithHttpInfo(string accountId, string templateId, EnvelopeDefinition envelopeDefinition = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11731,8 +11766,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (envelopeDefinition != null && envelopeDefinition.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(envelopeDefinition); // http body (model) parameter
@@ -11750,11 +11783,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -11764,7 +11797,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<TemplateDocumentsResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TemplateDocumentsResult) this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
+                (TemplateDocumentsResult)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateDocumentsResult)));
             
         }
 
@@ -11774,11 +11807,12 @@ namespace DocuSign.eSign.Api
         /// Shares a template with a group Shares a template with the specified members group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>GroupInformation</returns>
-        public GroupInformation UpdateGroupShare (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
+        public GroupInformation UpdateGroupShare(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
         {
              ApiResponse<GroupInformation> localVarResponse = UpdateGroupShareWithHttpInfo(accountId, templateId, templatePart, groupInformation);
              return localVarResponse.Data;
@@ -11788,11 +11822,12 @@ namespace DocuSign.eSign.Api
         /// Shares a template with a group Shares a template with the specified members group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of GroupInformation</returns>
-        public ApiResponse< GroupInformation > UpdateGroupShareWithHttpInfo (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
+        public ApiResponse<GroupInformation> UpdateGroupShareWithHttpInfo(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11850,11 +11885,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -11866,11 +11901,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
             }
             else
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             }
             
         }
@@ -11879,26 +11914,27 @@ namespace DocuSign.eSign.Api
         /// Shares a template with a group Shares a template with the specified members group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of GroupInformation</returns>
-        public async System.Threading.Tasks.Task<GroupInformation> UpdateGroupShareAsync (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<GroupInformation> UpdateGroupShareAsync(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
         {
              ApiResponse<GroupInformation> localVarResponse = await UpdateGroupShareAsyncWithHttpInfo(accountId, templateId, templatePart, groupInformation);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Shares a template with a group Shares a template with the specified members group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="templatePart">Currently, the only defined part is **groups**.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="templatePart">Currently, the only defined part is **groups**.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> UpdateGroupShareAsyncWithHttpInfo (string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> UpdateGroupShareAsyncWithHttpInfo(string accountId, string templateId, string templatePart, GroupInformation groupInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11937,8 +11973,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (templatePart != null) localVarPathParams.Add("templatePart", this.ApiClient.ParameterToString(templatePart)); // path parameter
-
-
             if (groupInformation != null && groupInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(groupInformation); // http body (model) parameter
@@ -11956,11 +11990,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -11970,7 +12004,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<GroupInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             
         }
 
@@ -11980,11 +12014,11 @@ namespace DocuSign.eSign.Api
         /// Updates a template lock. Updates the lock duration time or update the &#x60;lockedByApp&#x60; property information for the specified template. The user and integrator key must match the user specified by the &#x60;lockByUser&#x60; property and integrator key information and the &#x60;X-DocuSign-Edit&#x60; header must be included or an error will be generated.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>LockInformation</returns>
-        public LockInformation UpdateLock (string accountId, string templateId, LockRequest lockRequest = null)
+        public LockInformation UpdateLock(string accountId, string templateId, LockRequest lockRequest = null)
         {
              ApiResponse<LockInformation> localVarResponse = UpdateLockWithHttpInfo(accountId, templateId, lockRequest);
              return localVarResponse.Data;
@@ -11994,11 +12028,11 @@ namespace DocuSign.eSign.Api
         /// Updates a template lock. Updates the lock duration time or update the &#x60;lockedByApp&#x60; property information for the specified template. The user and integrator key must match the user specified by the &#x60;lockByUser&#x60; property and integrator key information and the &#x60;X-DocuSign-Edit&#x60; header must be included or an error will be generated.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of LockInformation</returns>
-        public ApiResponse< LockInformation > UpdateLockWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null)
+        public ApiResponse<LockInformation> UpdateLockWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12052,11 +12086,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -12068,11 +12102,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(LockInformation)));
+                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(LockInformation)));
             }
             else
             {
-                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation) this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
+                return new ApiResponse<LockInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LockInformation)this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
             }
             
         }
@@ -12081,26 +12115,25 @@ namespace DocuSign.eSign.Api
         /// Updates a template lock. Updates the lock duration time or update the &#x60;lockedByApp&#x60; property information for the specified template. The user and integrator key must match the user specified by the &#x60;lockByUser&#x60; property and integrator key information and the &#x60;X-DocuSign-Edit&#x60; header must be included or an error will be generated.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of LockInformation</returns>
-        public async System.Threading.Tasks.Task<LockInformation> UpdateLockAsync (string accountId, string templateId, LockRequest lockRequest = null)
+        public async System.Threading.Tasks.Task<LockInformation> UpdateLockAsync(string accountId, string templateId, LockRequest lockRequest = null)
         {
              ApiResponse<LockInformation> localVarResponse = await UpdateLockAsyncWithHttpInfo(accountId, templateId, lockRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates a template lock. Updates the lock duration time or update the &#x60;lockedByApp&#x60; property information for the specified template. The user and integrator key must match the user specified by the &#x60;lockByUser&#x60; property and integrator key information and the &#x60;X-DocuSign-Edit&#x60; header must be included or an error will be generated.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (LockInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LockInformation>> UpdateLockAsyncWithHttpInfo (string accountId, string templateId, LockRequest lockRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LockInformation>> UpdateLockAsyncWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12135,8 +12168,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (lockRequest != null && lockRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(lockRequest); // http body (model) parameter
@@ -12154,11 +12185,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -12168,7 +12199,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<LockInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LockInformation) this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
+                (LockInformation)this.ApiClient.Deserialize(localVarResponse, typeof(LockInformation)));
             
         }
 
@@ -12178,11 +12209,11 @@ namespace DocuSign.eSign.Api
         /// Updates the notification  structure for an existing template. Updates the notification structure for an existing template. Use this endpoint to set reminder and expiration notifications.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateNotificationRequest"> (optional)</param>
-        
         /// <returns>Notification</returns>
-        public Notification UpdateNotificationSettings (string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null)
+        public Notification UpdateNotificationSettings(string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null)
         {
              ApiResponse<Notification> localVarResponse = UpdateNotificationSettingsWithHttpInfo(accountId, templateId, templateNotificationRequest);
              return localVarResponse.Data;
@@ -12192,11 +12223,11 @@ namespace DocuSign.eSign.Api
         /// Updates the notification  structure for an existing template. Updates the notification structure for an existing template. Use this endpoint to set reminder and expiration notifications.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateNotificationRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of Notification</returns>
-        public ApiResponse< Notification > UpdateNotificationSettingsWithHttpInfo (string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null)
+        public ApiResponse<Notification> UpdateNotificationSettingsWithHttpInfo(string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12250,11 +12281,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -12266,11 +12297,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Notification>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notification) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Notification)));
+                return new ApiResponse<Notification>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notification)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Notification)));
             }
             else
             {
-                return new ApiResponse<Notification>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notification) this.ApiClient.Deserialize(localVarResponse, typeof(Notification)));
+                return new ApiResponse<Notification>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Notification)this.ApiClient.Deserialize(localVarResponse, typeof(Notification)));
             }
             
         }
@@ -12279,26 +12310,25 @@ namespace DocuSign.eSign.Api
         /// Updates the notification  structure for an existing template. Updates the notification structure for an existing template. Use this endpoint to set reminder and expiration notifications.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateNotificationRequest"> (optional)</param>
-        
         /// <returns>Task of Notification</returns>
-        public async System.Threading.Tasks.Task<Notification> UpdateNotificationSettingsAsync (string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null)
+        public async System.Threading.Tasks.Task<Notification> UpdateNotificationSettingsAsync(string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null)
         {
              ApiResponse<Notification> localVarResponse = await UpdateNotificationSettingsAsyncWithHttpInfo(accountId, templateId, templateNotificationRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates the notification  structure for an existing template. Updates the notification structure for an existing template. Use this endpoint to set reminder and expiration notifications.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateNotificationRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Notification)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Notification>> UpdateNotificationSettingsAsyncWithHttpInfo (string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Notification>> UpdateNotificationSettingsAsyncWithHttpInfo(string accountId, string templateId, TemplateNotificationRequest templateNotificationRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12333,8 +12363,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-
             if (templateNotificationRequest != null && templateNotificationRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateNotificationRequest); // http body (model) parameter
@@ -12352,11 +12380,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -12366,7 +12394,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Notification>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Notification) this.ApiClient.Deserialize(localVarResponse, typeof(Notification)));
+                (Notification)this.ApiClient.Deserialize(localVarResponse, typeof(Notification)));
             
         }
 
@@ -12384,11 +12412,12 @@ namespace DocuSign.eSign.Api
         /// Updates recipients in a template. Updates recipients in a template.   You can edit the following properties: &#x60;email&#x60;, &#x60;userName&#x60;, &#x60;routingOrder&#x60;, &#x60;faxNumber&#x60;, &#x60;deliveryMethod&#x60;, &#x60;accessCode&#x60;, and &#x60;requireIdLookup&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>RecipientsUpdateSummary</returns>
-        public RecipientsUpdateSummary UpdateRecipients (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null)
+        public RecipientsUpdateSummary UpdateRecipients(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null)
         {
              ApiResponse<RecipientsUpdateSummary> localVarResponse = UpdateRecipientsWithHttpInfo(accountId, templateId, templateRecipients, options);
              return localVarResponse.Data;
@@ -12398,11 +12427,12 @@ namespace DocuSign.eSign.Api
         /// Updates recipients in a template. Updates recipients in a template.   You can edit the following properties: &#x60;email&#x60;, &#x60;userName&#x60;, &#x60;routingOrder&#x60;, &#x60;faxNumber&#x60;, &#x60;deliveryMethod&#x60;, &#x60;accessCode&#x60;, and &#x60;requireIdLookup&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of RecipientsUpdateSummary</returns>
-        public ApiResponse< RecipientsUpdateSummary > UpdateRecipientsWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null)
+        public ApiResponse<RecipientsUpdateSummary> UpdateRecipientsWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12460,11 +12490,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -12476,11 +12506,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<RecipientsUpdateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RecipientsUpdateSummary) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RecipientsUpdateSummary)));
+                return new ApiResponse<RecipientsUpdateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RecipientsUpdateSummary)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RecipientsUpdateSummary)));
             }
             else
             {
-                return new ApiResponse<RecipientsUpdateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RecipientsUpdateSummary) this.ApiClient.Deserialize(localVarResponse, typeof(RecipientsUpdateSummary)));
+                return new ApiResponse<RecipientsUpdateSummary>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RecipientsUpdateSummary)this.ApiClient.Deserialize(localVarResponse, typeof(RecipientsUpdateSummary)));
             }
             
         }
@@ -12489,26 +12519,27 @@ namespace DocuSign.eSign.Api
         /// Updates recipients in a template. Updates recipients in a template.   You can edit the following properties: &#x60;email&#x60;, &#x60;userName&#x60;, &#x60;routingOrder&#x60;, &#x60;faxNumber&#x60;, &#x60;deliveryMethod&#x60;, &#x60;accessCode&#x60;, and &#x60;requireIdLookup&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of RecipientsUpdateSummary</returns>
-        public async System.Threading.Tasks.Task<RecipientsUpdateSummary> UpdateRecipientsAsync (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null)
+        public async System.Threading.Tasks.Task<RecipientsUpdateSummary> UpdateRecipientsAsync(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null)
         {
              ApiResponse<RecipientsUpdateSummary> localVarResponse = await UpdateRecipientsAsyncWithHttpInfo(accountId, templateId, templateRecipients, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates recipients in a template. Updates recipients in a template.   You can edit the following properties: &#x60;email&#x60;, &#x60;userName&#x60;, &#x60;routingOrder&#x60;, &#x60;faxNumber&#x60;, &#x60;deliveryMethod&#x60;, &#x60;accessCode&#x60;, and &#x60;requireIdLookup&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="templateRecipients"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (RecipientsUpdateSummary)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RecipientsUpdateSummary>> UpdateRecipientsAsyncWithHttpInfo (string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RecipientsUpdateSummary>> UpdateRecipientsAsyncWithHttpInfo(string accountId, string templateId, TemplateRecipients templateRecipients = null, TemplatesApi.UpdateRecipientsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12543,12 +12574,10 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
             if (options != null)
             {
                 if (options.resendEnvelope != null) localVarQueryParams.Add("resend_envelope", this.ApiClient.ParameterToString(options.resendEnvelope)); // query parameter
             }
-
             if (templateRecipients != null && templateRecipients.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateRecipients); // http body (model) parameter
@@ -12566,11 +12595,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -12580,7 +12609,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<RecipientsUpdateSummary>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RecipientsUpdateSummary) this.ApiClient.Deserialize(localVarResponse, typeof(RecipientsUpdateSummary)));
+                (RecipientsUpdateSummary)this.ApiClient.Deserialize(localVarResponse, typeof(RecipientsUpdateSummary)));
             
         }
 
@@ -12590,11 +12619,12 @@ namespace DocuSign.eSign.Api
         /// Updates the tabs for a recipient. Updates one or more tabs for a recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Tabs</returns>
-        public Tabs UpdateTabs (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public Tabs UpdateTabs(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = UpdateTabsWithHttpInfo(accountId, templateId, recipientId, templateTabs);
              return localVarResponse.Data;
@@ -12604,11 +12634,12 @@ namespace DocuSign.eSign.Api
         /// Updates the tabs for a recipient. Updates one or more tabs for a recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of Tabs</returns>
-        public ApiResponse< Tabs > UpdateTabsWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public ApiResponse<Tabs> UpdateTabsWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12666,11 +12697,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -12682,11 +12713,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
             }
             else
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             }
             
         }
@@ -12695,26 +12726,27 @@ namespace DocuSign.eSign.Api
         /// Updates the tabs for a recipient. Updates one or more tabs for a recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        public async System.Threading.Tasks.Task<Tabs> UpdateTabsAsync (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<Tabs> UpdateTabsAsync(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = await UpdateTabsAsyncWithHttpInfo(accountId, templateId, recipientId, templateTabs);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates the tabs for a recipient. Updates one or more tabs for a recipient in a template.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="recipientId">The ID of the recipient being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> UpdateTabsAsyncWithHttpInfo (string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> UpdateTabsAsyncWithHttpInfo(string accountId, string templateId, string recipientId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12753,8 +12785,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
-
-
             if (templateTabs != null && templateTabs.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateTabs); // http body (model) parameter
@@ -12772,11 +12802,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -12786,7 +12816,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Tabs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             
         }
 
@@ -12796,11 +12826,12 @@ namespace DocuSign.eSign.Api
         /// Updates the tabs for a template 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Tabs</returns>
-        public Tabs UpdateTemplateDocumentTabs (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public Tabs UpdateTemplateDocumentTabs(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = UpdateTemplateDocumentTabsWithHttpInfo(accountId, templateId, documentId, templateTabs);
              return localVarResponse.Data;
@@ -12810,11 +12841,12 @@ namespace DocuSign.eSign.Api
         /// Updates the tabs for a template 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>ApiResponse of Tabs</returns>
-        public ApiResponse< Tabs > UpdateTemplateDocumentTabsWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public ApiResponse<Tabs> UpdateTemplateDocumentTabsWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12872,11 +12904,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -12888,11 +12920,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Tabs)));
             }
             else
             {
-                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                return new ApiResponse<Tabs>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             }
             
         }
@@ -12901,26 +12933,27 @@ namespace DocuSign.eSign.Api
         /// Updates the tabs for a template 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of Tabs</returns>
-        public async System.Threading.Tasks.Task<Tabs> UpdateTemplateDocumentTabsAsync (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<Tabs> UpdateTemplateDocumentTabsAsync(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
              ApiResponse<Tabs> localVarResponse = await UpdateTemplateDocumentTabsAsyncWithHttpInfo(accountId, templateId, documentId, templateTabs);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates the tabs for a template 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="templateId">The ID of the template being accessed.</param>/// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="templateId">The ID of the template being accessed.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
         /// <param name="templateTabs"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (Tabs)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> UpdateTemplateDocumentTabsAsyncWithHttpInfo (string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Tabs>> UpdateTemplateDocumentTabsAsyncWithHttpInfo(string accountId, string templateId, string documentId, TemplateTabs templateTabs = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -12959,8 +12992,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
-
-
             if (templateTabs != null && templateTabs.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(templateTabs); // http body (model) parameter
@@ -12978,11 +13009,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -12992,7 +13023,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<Tabs>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Tabs) this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
+                (Tabs)this.ApiClient.Deserialize(localVarResponse, typeof(Tabs)));
             
         }
 

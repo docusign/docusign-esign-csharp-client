@@ -52,10 +52,11 @@ namespace DocuSign.eSign.Model
         /// <param name="MailingListName">MailingListName.</param>
         /// <param name="OwnerUserId">OwnerUserId.</param>
         /// <param name="Queued">Queued.</param>
+        /// <param name="ResendsRemaining">ResendsRemaining.</param>
         /// <param name="SenderUserId">SenderUserId.</param>
         /// <param name="Sent">Sent.</param>
         /// <param name="SubmittedDate">SubmittedDate.</param>
-        public BulkSendBatchStatus(string Action = default(string), string ActionStatus = default(string), string BatchId = default(string), string BatchName = default(string), string BatchSize = default(string), List<BulkSendErrorStatus> BulkErrors = default(List<BulkSendErrorStatus>), string EnvelopeIdOrTemplateId = default(string), BulkSendEnvelopesInfo EnvelopesInfo = default(BulkSendEnvelopesInfo), string EnvelopesUri = default(string), string Failed = default(string), string MailingListId = default(string), string MailingListName = default(string), string OwnerUserId = default(string), string Queued = default(string), string SenderUserId = default(string), string Sent = default(string), string SubmittedDate = default(string))
+        public BulkSendBatchStatus(string Action = default(string), string ActionStatus = default(string), string BatchId = default(string), string BatchName = default(string), string BatchSize = default(string), List<BulkSendErrorStatus> BulkErrors = default(List<BulkSendErrorStatus>), string EnvelopeIdOrTemplateId = default(string), BulkSendEnvelopesInfo EnvelopesInfo = default(BulkSendEnvelopesInfo), string EnvelopesUri = default(string), string Failed = default(string), string MailingListId = default(string), string MailingListName = default(string), string OwnerUserId = default(string), string Queued = default(string), string ResendsRemaining = default(string), string SenderUserId = default(string), string Sent = default(string), string SubmittedDate = default(string))
         {
             this.Action = Action;
             this.ActionStatus = ActionStatus;
@@ -71,6 +72,7 @@ namespace DocuSign.eSign.Model
             this.MailingListName = MailingListName;
             this.OwnerUserId = OwnerUserId;
             this.Queued = Queued;
+            this.ResendsRemaining = ResendsRemaining;
             this.SenderUserId = SenderUserId;
             this.Sent = Sent;
             this.SubmittedDate = SubmittedDate;
@@ -147,6 +149,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="queued", EmitDefaultValue=false)]
         public string Queued { get; set; }
         /// <summary>
+        /// Gets or Sets ResendsRemaining
+        /// </summary>
+        [DataMember(Name="resendsRemaining", EmitDefaultValue=false)]
+        public string ResendsRemaining { get; set; }
+        /// <summary>
         /// Gets or Sets SenderUserId
         /// </summary>
         [DataMember(Name="senderUserId", EmitDefaultValue=false)]
@@ -183,6 +190,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  MailingListName: ").Append(MailingListName).Append("\n");
             sb.Append("  OwnerUserId: ").Append(OwnerUserId).Append("\n");
             sb.Append("  Queued: ").Append(Queued).Append("\n");
+            sb.Append("  ResendsRemaining: ").Append(ResendsRemaining).Append("\n");
             sb.Append("  SenderUserId: ").Append(SenderUserId).Append("\n");
             sb.Append("  Sent: ").Append(Sent).Append("\n");
             sb.Append("  SubmittedDate: ").Append(SubmittedDate).Append("\n");
@@ -293,6 +301,11 @@ namespace DocuSign.eSign.Model
                     this.Queued.Equals(other.Queued)
                 ) && 
                 (
+                    this.ResendsRemaining == other.ResendsRemaining ||
+                    this.ResendsRemaining != null &&
+                    this.ResendsRemaining.Equals(other.ResendsRemaining)
+                ) && 
+                (
                     this.SenderUserId == other.SenderUserId ||
                     this.SenderUserId != null &&
                     this.SenderUserId.Equals(other.SenderUserId)
@@ -348,6 +361,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.OwnerUserId.GetHashCode();
                 if (this.Queued != null)
                     hash = hash * 59 + this.Queued.GetHashCode();
+                if (this.ResendsRemaining != null)
+                    hash = hash * 59 + this.ResendsRemaining.GetHashCode();
                 if (this.SenderUserId != null)
                     hash = hash * 59 + this.SenderUserId.GetHashCode();
                 if (this.Sent != null)

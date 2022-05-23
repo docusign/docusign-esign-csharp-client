@@ -31,11 +31,11 @@ namespace DocuSign.eSign.Api
         /// Deletes a social account from a use&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns></returns>
-        void DeleteSocialLogin (string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
+        void DeleteSocialLogin(string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
 
         /// <summary>
         /// Deletes user&#39;s social account.
@@ -44,11 +44,11 @@ namespace DocuSign.eSign.Api
         /// Deletes a social account from a use&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteSocialLoginWithHttpInfo (string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
+        ApiResponse<Object> DeleteSocialLoginWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
         /// <summary>
         /// Creates an authorization token.
         /// </summary>
@@ -56,11 +56,8 @@ namespace DocuSign.eSign.Api
         /// Creates an OAuth2 authorization server token endpoint.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns></returns>
-        OauthAccess GetOAuthToken ();
+        OauthAccess GetOAuthToken();
 
         /// <summary>
         /// Creates an authorization token.
@@ -69,11 +66,8 @@ namespace DocuSign.eSign.Api
         /// Creates an OAuth2 authorization server token endpoint.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<OauthAccess> GetOAuthTokenWithHttpInfo ();
+        ApiResponse<OauthAccess> GetOAuthTokenWithHttpInfo();
         /// <summary>
         /// Gets a list of a user&#39;s social accounts.
         /// </summary>
@@ -81,11 +75,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of social accounts linked to a user&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <returns></returns>
-        UserSocialIdResult ListSocialLogins (string accountId, string userId);
+        UserSocialIdResult ListSocialLogins(string accountId, string userId);
 
         /// <summary>
         /// Gets a list of a user&#39;s social accounts.
@@ -94,11 +87,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of social accounts linked to a user&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UserSocialIdResult> ListSocialLoginsWithHttpInfo (string accountId, string userId);
+        ApiResponse<UserSocialIdResult> ListSocialLoginsWithHttpInfo(string accountId, string userId);
         /// <summary>
         /// Gets login information for a specified user.
         /// </summary>
@@ -106,11 +98,9 @@ namespace DocuSign.eSign.Api
         /// Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.    The &#x60;baseUrl&#x60; property, returned in the response, is used in all future API calls as the base of the request URL. The &#x60;baseUrl&#x60; property contains the DocuSign server, the API version, and the &#x60;accountId&#x60; property that is used for the login. This request uses your DocuSign credentials to retrieve the account information.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        LoginInformation Login (AuthenticationApi.LoginOptions options = null);
+        LoginInformation Login(AuthenticationApi.LoginOptions options = null);
 
         /// <summary>
         /// Gets login information for a specified user.
@@ -119,11 +109,9 @@ namespace DocuSign.eSign.Api
         /// Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.    The &#x60;baseUrl&#x60; property, returned in the response, is used in all future API calls as the base of the request URL. The &#x60;baseUrl&#x60; property contains the DocuSign server, the API version, and the &#x60;accountId&#x60; property that is used for the login. This request uses your DocuSign credentials to retrieve the account information.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<LoginInformation> LoginWithHttpInfo (AuthenticationApi.LoginOptions options = null);
+        ApiResponse<LoginInformation> LoginWithHttpInfo(AuthenticationApi.LoginOptions options = null);
         /// <summary>
         /// Revokes an authorization token.
         /// </summary>
@@ -131,11 +119,8 @@ namespace DocuSign.eSign.Api
         /// Revokes an OAuth2 authorization server token. After the revocation is complete, a caller must re-authenticate to restore access.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns></returns>
-        void RevokeOAuthToken ();
+        void RevokeOAuthToken();
 
         /// <summary>
         /// Revokes an authorization token.
@@ -144,11 +129,8 @@ namespace DocuSign.eSign.Api
         /// Revokes an OAuth2 authorization server token. After the revocation is complete, a caller must re-authenticate to restore access.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RevokeOAuthTokenWithHttpInfo ();
+        ApiResponse<Object> RevokeOAuthTokenWithHttpInfo();
         /// <summary>
         /// Updates the password for a specified user.
         /// </summary>
@@ -158,9 +140,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="loginPart">Currently, only the value **password** is supported.</param>
         /// <param name="userPasswordInformation"> (optional)</param>
-        
         /// <returns></returns>
-        void UpdatePassword (string loginPart, UserPasswordInformation userPasswordInformation = null);
+        void UpdatePassword(string loginPart, UserPasswordInformation userPasswordInformation = null);
 
         /// <summary>
         /// Updates the password for a specified user.
@@ -171,9 +152,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="loginPart">Currently, only the value **password** is supported.</param>
         /// <param name="userPasswordInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdatePasswordWithHttpInfo (string loginPart, UserPasswordInformation userPasswordInformation = null);
+        ApiResponse<Object> UpdatePasswordWithHttpInfo(string loginPart, UserPasswordInformation userPasswordInformation = null);
         /// <summary>
         /// Adds social account for a user.
         /// </summary>
@@ -181,11 +161,11 @@ namespace DocuSign.eSign.Api
         /// Adds a new social account to a user&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns></returns>
-        void UpdateSocialLogin (string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
+        void UpdateSocialLogin(string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
 
         /// <summary>
         /// Adds social account for a user.
@@ -194,11 +174,11 @@ namespace DocuSign.eSign.Api
         /// Adds a new social account to a user&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateSocialLoginWithHttpInfo (string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
+        ApiResponse<Object> UpdateSocialLoginWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -208,11 +188,11 @@ namespace DocuSign.eSign.Api
         /// Deletes a social account from a use&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteSocialLoginAsync (string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
+        System.Threading.Tasks.Task DeleteSocialLoginAsync(string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
 
         /// <summary>
         /// Deletes user&#39;s social account.
@@ -221,11 +201,11 @@ namespace DocuSign.eSign.Api
         /// Deletes a social account from a use&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSocialLoginAsyncWithHttpInfo (string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSocialLoginAsyncWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
         /// <summary>
         /// Creates an authorization token.
         /// </summary>
@@ -233,11 +213,8 @@ namespace DocuSign.eSign.Api
         /// Creates an OAuth2 authorization server token endpoint.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of OauthAccess</returns>
-        System.Threading.Tasks.Task<OauthAccess> GetOAuthTokenAsync ();
+        System.Threading.Tasks.Task<OauthAccess> GetOAuthTokenAsync();
 
         /// <summary>
         /// Creates an authorization token.
@@ -246,11 +223,8 @@ namespace DocuSign.eSign.Api
         /// Creates an OAuth2 authorization server token endpoint.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse (OauthAccess)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OauthAccess>> GetOAuthTokenAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<OauthAccess>> GetOAuthTokenAsyncWithHttpInfo();
         /// <summary>
         /// Gets a list of a user&#39;s social accounts.
         /// </summary>
@@ -258,11 +232,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of social accounts linked to a user&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <returns>Task of UserSocialIdResult</returns>
-        System.Threading.Tasks.Task<UserSocialIdResult> ListSocialLoginsAsync (string accountId, string userId);
+        System.Threading.Tasks.Task<UserSocialIdResult> ListSocialLoginsAsync(string accountId, string userId);
 
         /// <summary>
         /// Gets a list of a user&#39;s social accounts.
@@ -271,11 +244,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of social accounts linked to a user&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <returns>Task of ApiResponse (UserSocialIdResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserSocialIdResult>> ListSocialLoginsAsyncWithHttpInfo (string accountId, string userId);
+        System.Threading.Tasks.Task<ApiResponse<UserSocialIdResult>> ListSocialLoginsAsyncWithHttpInfo(string accountId, string userId);
         /// <summary>
         /// Gets login information for a specified user.
         /// </summary>
@@ -283,11 +255,9 @@ namespace DocuSign.eSign.Api
         /// Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.    The &#x60;baseUrl&#x60; property, returned in the response, is used in all future API calls as the base of the request URL. The &#x60;baseUrl&#x60; property contains the DocuSign server, the API version, and the &#x60;accountId&#x60; property that is used for the login. This request uses your DocuSign credentials to retrieve the account information.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of LoginInformation</returns>
-        System.Threading.Tasks.Task<LoginInformation> LoginAsync (AuthenticationApi.LoginOptions options = null);
+        System.Threading.Tasks.Task<LoginInformation> LoginAsync(AuthenticationApi.LoginOptions options = null);
 
         /// <summary>
         /// Gets login information for a specified user.
@@ -296,11 +266,9 @@ namespace DocuSign.eSign.Api
         /// Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.    The &#x60;baseUrl&#x60; property, returned in the response, is used in all future API calls as the base of the request URL. The &#x60;baseUrl&#x60; property contains the DocuSign server, the API version, and the &#x60;accountId&#x60; property that is used for the login. This request uses your DocuSign credentials to retrieve the account information.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (LoginInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LoginInformation>> LoginAsyncWithHttpInfo (AuthenticationApi.LoginOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<LoginInformation>> LoginAsyncWithHttpInfo(AuthenticationApi.LoginOptions options = null);
         /// <summary>
         /// Revokes an authorization token.
         /// </summary>
@@ -308,11 +276,8 @@ namespace DocuSign.eSign.Api
         /// Revokes an OAuth2 authorization server token. After the revocation is complete, a caller must re-authenticate to restore access.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RevokeOAuthTokenAsync ();
+        System.Threading.Tasks.Task RevokeOAuthTokenAsync();
 
         /// <summary>
         /// Revokes an authorization token.
@@ -321,11 +286,8 @@ namespace DocuSign.eSign.Api
         /// Revokes an OAuth2 authorization server token. After the revocation is complete, a caller must re-authenticate to restore access.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RevokeOAuthTokenAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<Object>> RevokeOAuthTokenAsyncWithHttpInfo();
         /// <summary>
         /// Updates the password for a specified user.
         /// </summary>
@@ -335,9 +297,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="loginPart">Currently, only the value **password** is supported.</param>
         /// <param name="userPasswordInformation"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdatePasswordAsync (string loginPart, UserPasswordInformation userPasswordInformation = null);
+        System.Threading.Tasks.Task UpdatePasswordAsync(string loginPart, UserPasswordInformation userPasswordInformation = null);
 
         /// <summary>
         /// Updates the password for a specified user.
@@ -348,9 +309,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="loginPart">Currently, only the value **password** is supported.</param>
         /// <param name="userPasswordInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePasswordAsyncWithHttpInfo (string loginPart, UserPasswordInformation userPasswordInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePasswordAsyncWithHttpInfo(string loginPart, UserPasswordInformation userPasswordInformation = null);
         /// <summary>
         /// Adds social account for a user.
         /// </summary>
@@ -358,11 +318,11 @@ namespace DocuSign.eSign.Api
         /// Adds a new social account to a user&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateSocialLoginAsync (string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
+        System.Threading.Tasks.Task UpdateSocialLoginAsync(string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
 
         /// <summary>
         /// Adds social account for a user.
@@ -371,11 +331,11 @@ namespace DocuSign.eSign.Api
         /// Adds a new social account to a user&#39;s account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSocialLoginAsyncWithHttpInfo (string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSocialLoginAsyncWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null);
         #endregion Asynchronous Operations
     }
 
@@ -436,11 +396,11 @@ namespace DocuSign.eSign.Api
         /// Deletes user&#39;s social account. Deletes a social account from a use&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns></returns>
-        public void DeleteSocialLogin (string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public void DeleteSocialLogin(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
         {
              DeleteSocialLoginWithHttpInfo(accountId, userId, socialAccountInformation);
         }
@@ -449,11 +409,11 @@ namespace DocuSign.eSign.Api
         /// Deletes user&#39;s social account. Deletes a social account from a use&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteSocialLoginWithHttpInfo (string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public ApiResponse<Object> DeleteSocialLoginWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -507,11 +467,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -528,25 +488,24 @@ namespace DocuSign.eSign.Api
         /// Deletes user&#39;s social account. Deletes a social account from a use&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteSocialLoginAsync (string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public async System.Threading.Tasks.Task DeleteSocialLoginAsync(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
         {
              await DeleteSocialLoginAsyncWithHttpInfo(accountId, userId, socialAccountInformation);
-
         }
 
         /// <summary>
         /// Deletes user&#39;s social account. Deletes a social account from a use&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSocialLoginAsyncWithHttpInfo (string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSocialLoginAsyncWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -581,8 +540,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
-
-
             if (socialAccountInformation != null && socialAccountInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(socialAccountInformation); // http body (model) parameter
@@ -600,11 +557,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -624,11 +581,8 @@ namespace DocuSign.eSign.Api
         /// Creates an authorization token. Creates an OAuth2 authorization server token endpoint.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>OauthAccess</returns>
-        public OauthAccess GetOAuthToken ()
+        public OauthAccess GetOAuthToken()
         {
              ApiResponse<OauthAccess> localVarResponse = GetOAuthTokenWithHttpInfo();
              return localVarResponse.Data;
@@ -638,11 +592,8 @@ namespace DocuSign.eSign.Api
         /// Creates an authorization token. Creates an OAuth2 authorization server token endpoint.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of OauthAccess</returns>
-        public ApiResponse< OauthAccess > GetOAuthTokenWithHttpInfo ()
+        public ApiResponse<OauthAccess> GetOAuthTokenWithHttpInfo()
         {
 
             var localVarPath = "/v2.1/oauth2/token";
@@ -680,11 +631,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -696,11 +647,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<OauthAccess>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OauthAccess) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OauthAccess)));
+                return new ApiResponse<OauthAccess>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OauthAccess)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OauthAccess)));
             }
             else
             {
-                return new ApiResponse<OauthAccess>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OauthAccess) this.ApiClient.Deserialize(localVarResponse, typeof(OauthAccess)));
+                return new ApiResponse<OauthAccess>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OauthAccess)this.ApiClient.Deserialize(localVarResponse, typeof(OauthAccess)));
             }
             
         }
@@ -709,26 +660,19 @@ namespace DocuSign.eSign.Api
         /// Creates an authorization token. Creates an OAuth2 authorization server token endpoint.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of OauthAccess</returns>
-        public async System.Threading.Tasks.Task<OauthAccess> GetOAuthTokenAsync ()
+        public async System.Threading.Tasks.Task<OauthAccess> GetOAuthTokenAsync()
         {
              ApiResponse<OauthAccess> localVarResponse = await GetOAuthTokenAsyncWithHttpInfo();
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Creates an authorization token. Creates an OAuth2 authorization server token endpoint.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse (OauthAccess)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OauthAccess>> GetOAuthTokenAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<OauthAccess>> GetOAuthTokenAsyncWithHttpInfo()
         {
 
             var localVarPath = "/v2.1/oauth2/token";
@@ -756,8 +700,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -766,11 +708,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -780,7 +722,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<OauthAccess>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (OauthAccess) this.ApiClient.Deserialize(localVarResponse, typeof(OauthAccess)));
+                (OauthAccess)this.ApiClient.Deserialize(localVarResponse, typeof(OauthAccess)));
             
         }
 
@@ -790,11 +732,10 @@ namespace DocuSign.eSign.Api
         /// Gets a list of a user&#39;s social accounts. Retrieves a list of social accounts linked to a user&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <returns>UserSocialIdResult</returns>
-        public UserSocialIdResult ListSocialLogins (string accountId, string userId)
+        public UserSocialIdResult ListSocialLogins(string accountId, string userId)
         {
              ApiResponse<UserSocialIdResult> localVarResponse = ListSocialLoginsWithHttpInfo(accountId, userId);
              return localVarResponse.Data;
@@ -804,11 +745,10 @@ namespace DocuSign.eSign.Api
         /// Gets a list of a user&#39;s social accounts. Retrieves a list of social accounts linked to a user&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <returns>ApiResponse of UserSocialIdResult</returns>
-        public ApiResponse< UserSocialIdResult > ListSocialLoginsWithHttpInfo (string accountId, string userId)
+        public ApiResponse<UserSocialIdResult> ListSocialLoginsWithHttpInfo(string accountId, string userId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -854,11 +794,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -870,11 +810,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<UserSocialIdResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserSocialIdResult) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UserSocialIdResult)));
+                return new ApiResponse<UserSocialIdResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserSocialIdResult)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UserSocialIdResult)));
             }
             else
             {
-                return new ApiResponse<UserSocialIdResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserSocialIdResult) this.ApiClient.Deserialize(localVarResponse, typeof(UserSocialIdResult)));
+                return new ApiResponse<UserSocialIdResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserSocialIdResult)this.ApiClient.Deserialize(localVarResponse, typeof(UserSocialIdResult)));
             }
             
         }
@@ -883,26 +823,23 @@ namespace DocuSign.eSign.Api
         /// Gets a list of a user&#39;s social accounts. Retrieves a list of social accounts linked to a user&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <returns>Task of UserSocialIdResult</returns>
-        public async System.Threading.Tasks.Task<UserSocialIdResult> ListSocialLoginsAsync (string accountId, string userId)
+        public async System.Threading.Tasks.Task<UserSocialIdResult> ListSocialLoginsAsync(string accountId, string userId)
         {
              ApiResponse<UserSocialIdResult> localVarResponse = await ListSocialLoginsAsyncWithHttpInfo(accountId, userId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets a list of a user&#39;s social accounts. Retrieves a list of social accounts linked to a user&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <returns>Task of ApiResponse (UserSocialIdResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserSocialIdResult>> ListSocialLoginsAsyncWithHttpInfo (string accountId, string userId)
+        public async System.Threading.Tasks.Task<ApiResponse<UserSocialIdResult>> ListSocialLoginsAsyncWithHttpInfo(string accountId, string userId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -938,8 +875,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -948,11 +883,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -962,7 +897,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<UserSocialIdResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UserSocialIdResult) this.ApiClient.Deserialize(localVarResponse, typeof(UserSocialIdResult)));
+                (UserSocialIdResult)this.ApiClient.Deserialize(localVarResponse, typeof(UserSocialIdResult)));
             
         }
 
@@ -986,11 +921,9 @@ namespace DocuSign.eSign.Api
         /// Gets login information for a specified user. Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.    The &#x60;baseUrl&#x60; property, returned in the response, is used in all future API calls as the base of the request URL. The &#x60;baseUrl&#x60; property contains the DocuSign server, the API version, and the &#x60;accountId&#x60; property that is used for the login. This request uses your DocuSign credentials to retrieve the account information.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>LoginInformation</returns>
-        public LoginInformation Login (AuthenticationApi.LoginOptions options = null)
+        public LoginInformation Login(AuthenticationApi.LoginOptions options = null)
         {
              ApiResponse<LoginInformation> localVarResponse = LoginWithHttpInfo(options);
              return localVarResponse.Data;
@@ -1000,11 +933,9 @@ namespace DocuSign.eSign.Api
         /// Gets login information for a specified user. Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.    The &#x60;baseUrl&#x60; property, returned in the response, is used in all future API calls as the base of the request URL. The &#x60;baseUrl&#x60; property contains the DocuSign server, the API version, and the &#x60;accountId&#x60; property that is used for the login. This request uses your DocuSign credentials to retrieve the account information.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of LoginInformation</returns>
-        public ApiResponse< LoginInformation > LoginWithHttpInfo (AuthenticationApi.LoginOptions options = null)
+        public ApiResponse<LoginInformation> LoginWithHttpInfo(AuthenticationApi.LoginOptions options = null)
         {
 
             var localVarPath = "/v2.1/login_information";
@@ -1049,11 +980,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1065,11 +996,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<LoginInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LoginInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(LoginInformation)));
+                return new ApiResponse<LoginInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LoginInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(LoginInformation)));
             }
             else
             {
-                return new ApiResponse<LoginInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LoginInformation) this.ApiClient.Deserialize(localVarResponse, typeof(LoginInformation)));
+                return new ApiResponse<LoginInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (LoginInformation)this.ApiClient.Deserialize(localVarResponse, typeof(LoginInformation)));
             }
             
         }
@@ -1078,26 +1009,21 @@ namespace DocuSign.eSign.Api
         /// Gets login information for a specified user. Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.    The &#x60;baseUrl&#x60; property, returned in the response, is used in all future API calls as the base of the request URL. The &#x60;baseUrl&#x60; property contains the DocuSign server, the API version, and the &#x60;accountId&#x60; property that is used for the login. This request uses your DocuSign credentials to retrieve the account information.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of LoginInformation</returns>
-        public async System.Threading.Tasks.Task<LoginInformation> LoginAsync (AuthenticationApi.LoginOptions options = null)
+        public async System.Threading.Tasks.Task<LoginInformation> LoginAsync(AuthenticationApi.LoginOptions options = null)
         {
              ApiResponse<LoginInformation> localVarResponse = await LoginAsyncWithHttpInfo(options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets login information for a specified user. Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.    The &#x60;baseUrl&#x60; property, returned in the response, is used in all future API calls as the base of the request URL. The &#x60;baseUrl&#x60; property contains the DocuSign server, the API version, and the &#x60;accountId&#x60; property that is used for the login. This request uses your DocuSign credentials to retrieve the account information.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (LoginInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LoginInformation>> LoginAsyncWithHttpInfo (AuthenticationApi.LoginOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LoginInformation>> LoginAsyncWithHttpInfo(AuthenticationApi.LoginOptions options = null)
         {
 
             var localVarPath = "/v2.1/login_information";
@@ -1124,7 +1050,6 @@ namespace DocuSign.eSign.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-
             if (options != null)
             {
                 if (options.apiPassword != null) localVarQueryParams.Add("api_password", this.ApiClient.ParameterToString(options.apiPassword)); // query parameter
@@ -1132,7 +1057,6 @@ namespace DocuSign.eSign.Api
                 if (options.includeAccountIdGuid != null) localVarQueryParams.Add("include_account_id_guid", this.ApiClient.ParameterToString(options.includeAccountIdGuid)); // query parameter
                 if (options.loginSettings != null) localVarQueryParams.Add("login_settings", this.ApiClient.ParameterToString(options.loginSettings)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -1142,11 +1066,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1156,7 +1080,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<LoginInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (LoginInformation) this.ApiClient.Deserialize(localVarResponse, typeof(LoginInformation)));
+                (LoginInformation)this.ApiClient.Deserialize(localVarResponse, typeof(LoginInformation)));
             
         }
 
@@ -1166,11 +1090,8 @@ namespace DocuSign.eSign.Api
         /// Revokes an authorization token. Revokes an OAuth2 authorization server token. After the revocation is complete, a caller must re-authenticate to restore access.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns></returns>
-        public void RevokeOAuthToken ()
+        public void RevokeOAuthToken()
         {
              RevokeOAuthTokenWithHttpInfo();
         }
@@ -1179,11 +1100,8 @@ namespace DocuSign.eSign.Api
         /// Revokes an authorization token. Revokes an OAuth2 authorization server token. After the revocation is complete, a caller must re-authenticate to restore access.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> RevokeOAuthTokenWithHttpInfo ()
+        public ApiResponse<Object> RevokeOAuthTokenWithHttpInfo()
         {
 
             var localVarPath = "/v2.1/oauth2/revoke";
@@ -1221,11 +1139,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1242,25 +1160,18 @@ namespace DocuSign.eSign.Api
         /// Revokes an authorization token. Revokes an OAuth2 authorization server token. After the revocation is complete, a caller must re-authenticate to restore access.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RevokeOAuthTokenAsync ()
+        public async System.Threading.Tasks.Task RevokeOAuthTokenAsync()
         {
              await RevokeOAuthTokenAsyncWithHttpInfo();
-
         }
 
         /// <summary>
         /// Revokes an authorization token. Revokes an OAuth2 authorization server token. After the revocation is complete, a caller must re-authenticate to restore access.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> RevokeOAuthTokenAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RevokeOAuthTokenAsyncWithHttpInfo()
         {
 
             var localVarPath = "/v2.1/oauth2/revoke";
@@ -1288,8 +1199,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1298,11 +1207,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1324,9 +1233,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="loginPart">Currently, only the value **password** is supported.</param>
         /// <param name="userPasswordInformation"> (optional)</param>
-        
         /// <returns></returns>
-        public void UpdatePassword (string loginPart, UserPasswordInformation userPasswordInformation = null)
+        public void UpdatePassword(string loginPart, UserPasswordInformation userPasswordInformation = null)
         {
              UpdatePasswordWithHttpInfo(loginPart, userPasswordInformation);
         }
@@ -1337,9 +1245,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="loginPart">Currently, only the value **password** is supported.</param>
         /// <param name="userPasswordInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> UpdatePasswordWithHttpInfo (string loginPart, UserPasswordInformation userPasswordInformation = null)
+        public ApiResponse<Object> UpdatePasswordWithHttpInfo(string loginPart, UserPasswordInformation userPasswordInformation = null)
         {
             // verify the required parameter 'loginPart' is set
             if (loginPart == null)
@@ -1389,11 +1296,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1412,12 +1319,10 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="loginPart">Currently, only the value **password** is supported.</param>
         /// <param name="userPasswordInformation"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdatePasswordAsync (string loginPart, UserPasswordInformation userPasswordInformation = null)
+        public async System.Threading.Tasks.Task UpdatePasswordAsync(string loginPart, UserPasswordInformation userPasswordInformation = null)
         {
              await UpdatePasswordAsyncWithHttpInfo(loginPart, userPasswordInformation);
-
         }
 
         /// <summary>
@@ -1426,9 +1331,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="loginPart">Currently, only the value **password** is supported.</param>
         /// <param name="userPasswordInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePasswordAsyncWithHttpInfo (string loginPart, UserPasswordInformation userPasswordInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePasswordAsyncWithHttpInfo(string loginPart, UserPasswordInformation userPasswordInformation = null)
         {
             // verify the required parameter 'loginPart' is set
             if (loginPart == null)
@@ -1459,8 +1363,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (loginPart != null) localVarPathParams.Add("loginPart", this.ApiClient.ParameterToString(loginPart)); // path parameter
-
-
             if (userPasswordInformation != null && userPasswordInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(userPasswordInformation); // http body (model) parameter
@@ -1478,11 +1380,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1502,11 +1404,11 @@ namespace DocuSign.eSign.Api
         /// Adds social account for a user. Adds a new social account to a user&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns></returns>
-        public void UpdateSocialLogin (string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public void UpdateSocialLogin(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
         {
              UpdateSocialLoginWithHttpInfo(accountId, userId, socialAccountInformation);
         }
@@ -1515,11 +1417,11 @@ namespace DocuSign.eSign.Api
         /// Adds social account for a user. Adds a new social account to a user&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> UpdateSocialLoginWithHttpInfo (string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public ApiResponse<Object> UpdateSocialLoginWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1573,11 +1475,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1594,25 +1496,24 @@ namespace DocuSign.eSign.Api
         /// Adds social account for a user. Adds a new social account to a user&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateSocialLoginAsync (string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public async System.Threading.Tasks.Task UpdateSocialLoginAsync(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
         {
              await UpdateSocialLoginAsyncWithHttpInfo(accountId, userId, socialAccountInformation);
-
         }
 
         /// <summary>
         /// Adds social account for a user. Adds a new social account to a user&#39;s account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSocialLoginAsyncWithHttpInfo (string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSocialLoginAsyncWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1647,8 +1548,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
-
-
             if (socialAccountInformation != null && socialAccountInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(socialAccountInformation); // http body (model) parameter
@@ -1666,11 +1565,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {

@@ -25,20 +25,30 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConnectDeleteFailureResult
+    /// IdEvidenceViewLink
     /// </summary>
     [DataContract]
-    public partial class ConnectDeleteFailureResult :  IEquatable<ConnectDeleteFailureResult>, IValidatableObject
+    public partial class IdEvidenceViewLink :  IEquatable<IdEvidenceViewLink>, IValidatableObject
     {
+        public IdEvidenceViewLink()
+        {
+            // Empty Constructor
+        }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectDeleteFailureResult" /> class.
+        /// Initializes a new instance of the <see cref="IdEvidenceViewLink" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        public ConnectDeleteFailureResult()
+        /// <param name="ViewLink">ViewLink.</param>
+        public IdEvidenceViewLink(string ViewLink = default(string))
         {
+            this.ViewLink = ViewLink;
         }
         
+        /// <summary>
+        /// Gets or Sets ViewLink
+        /// </summary>
+        [DataMember(Name="ViewLink", EmitDefaultValue=false)]
+        public string ViewLink { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -46,7 +56,8 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ConnectDeleteFailureResult {\n");
+            sb.Append("class IdEvidenceViewLink {\n");
+            sb.Append("  ViewLink: ").Append(ViewLink).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,21 +79,26 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ConnectDeleteFailureResult);
+            return this.Equals(obj as IdEvidenceViewLink);
         }
 
         /// <summary>
-        /// Returns true if ConnectDeleteFailureResult instances are equal
+        /// Returns true if IdEvidenceViewLink instances are equal
         /// </summary>
-        /// <param name="other">Instance of ConnectDeleteFailureResult to be compared</param>
+        /// <param name="other">Instance of IdEvidenceViewLink to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ConnectDeleteFailureResult other)
+        public bool Equals(IdEvidenceViewLink other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
                 return false;
 
-            return false;
+            return 
+                (
+                    this.ViewLink == other.ViewLink ||
+                    this.ViewLink != null &&
+                    this.ViewLink.Equals(other.ViewLink)
+                );
         }
 
         /// <summary>
@@ -96,6 +112,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.ViewLink != null)
+                    hash = hash * 59 + this.ViewLink.GetHashCode();
                 return hash;
             }
         }

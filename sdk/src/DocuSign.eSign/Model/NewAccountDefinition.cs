@@ -45,15 +45,17 @@ namespace DocuSign.eSign.Model
         /// <param name="DirectDebitProcessorInformation">DirectDebitProcessorInformation.</param>
         /// <param name="DistributorCode">The code that identifies the billing plan groups and plans for the new account..</param>
         /// <param name="DistributorPassword">The password for the distributorCode..</param>
+        /// <param name="EnablePreAuth">EnablePreAuth.</param>
         /// <param name="EnvelopePartitionId">EnvelopePartitionId.</param>
         /// <param name="InitialUser">InitialUser.</param>
         /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="PlanInformation">PlanInformation.</param>
+        /// <param name="ProcessPayment">ProcessPayment.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
         /// <param name="SocialAccountInformation">SocialAccountInformation.</param>
         /// <param name="TaxExemptId">TaxExemptId.</param>
-        public NewAccountDefinition(string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), AccountAddress AddressInformation = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DistributorCode = default(string), string DistributorPassword = default(string), string EnvelopePartitionId = default(string), UserInformation InitialUser = default(UserInformation), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), SocialAccountInformation SocialAccountInformation = default(SocialAccountInformation), string TaxExemptId = default(string))
+        public NewAccountDefinition(string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), AccountAddress AddressInformation = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DistributorCode = default(string), string DistributorPassword = default(string), string EnablePreAuth = default(string), string EnvelopePartitionId = default(string), UserInformation InitialUser = default(UserInformation), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), string ProcessPayment = default(string), ReferralInformation ReferralInformation = default(ReferralInformation), SocialAccountInformation SocialAccountInformation = default(SocialAccountInformation), string TaxExemptId = default(string))
         {
             this.AccountName = AccountName;
             this.AccountSettings = AccountSettings;
@@ -62,11 +64,13 @@ namespace DocuSign.eSign.Model
             this.DirectDebitProcessorInformation = DirectDebitProcessorInformation;
             this.DistributorCode = DistributorCode;
             this.DistributorPassword = DistributorPassword;
+            this.EnablePreAuth = EnablePreAuth;
             this.EnvelopePartitionId = EnvelopePartitionId;
             this.InitialUser = InitialUser;
             this.PaymentMethod = PaymentMethod;
             this.PaymentProcessorInformation = PaymentProcessorInformation;
             this.PlanInformation = PlanInformation;
+            this.ProcessPayment = ProcessPayment;
             this.ReferralInformation = ReferralInformation;
             this.SocialAccountInformation = SocialAccountInformation;
             this.TaxExemptId = TaxExemptId;
@@ -111,6 +115,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="distributorPassword", EmitDefaultValue=false)]
         public string DistributorPassword { get; set; }
         /// <summary>
+        /// Gets or Sets EnablePreAuth
+        /// </summary>
+        [DataMember(Name="enablePreAuth", EmitDefaultValue=false)]
+        public string EnablePreAuth { get; set; }
+        /// <summary>
         /// Gets or Sets EnvelopePartitionId
         /// </summary>
         [DataMember(Name="envelopePartitionId", EmitDefaultValue=false)]
@@ -135,6 +144,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="planInformation", EmitDefaultValue=false)]
         public PlanInformation PlanInformation { get; set; }
+        /// <summary>
+        /// Gets or Sets ProcessPayment
+        /// </summary>
+        [DataMember(Name="processPayment", EmitDefaultValue=false)]
+        public string ProcessPayment { get; set; }
         /// <summary>
         /// Gets or Sets ReferralInformation
         /// </summary>
@@ -165,11 +179,13 @@ namespace DocuSign.eSign.Model
             sb.Append("  DirectDebitProcessorInformation: ").Append(DirectDebitProcessorInformation).Append("\n");
             sb.Append("  DistributorCode: ").Append(DistributorCode).Append("\n");
             sb.Append("  DistributorPassword: ").Append(DistributorPassword).Append("\n");
+            sb.Append("  EnablePreAuth: ").Append(EnablePreAuth).Append("\n");
             sb.Append("  EnvelopePartitionId: ").Append(EnvelopePartitionId).Append("\n");
             sb.Append("  InitialUser: ").Append(InitialUser).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  PaymentProcessorInformation: ").Append(PaymentProcessorInformation).Append("\n");
             sb.Append("  PlanInformation: ").Append(PlanInformation).Append("\n");
+            sb.Append("  ProcessPayment: ").Append(ProcessPayment).Append("\n");
             sb.Append("  ReferralInformation: ").Append(ReferralInformation).Append("\n");
             sb.Append("  SocialAccountInformation: ").Append(SocialAccountInformation).Append("\n");
             sb.Append("  TaxExemptId: ").Append(TaxExemptId).Append("\n");
@@ -245,6 +261,11 @@ namespace DocuSign.eSign.Model
                     this.DistributorPassword.Equals(other.DistributorPassword)
                 ) && 
                 (
+                    this.EnablePreAuth == other.EnablePreAuth ||
+                    this.EnablePreAuth != null &&
+                    this.EnablePreAuth.Equals(other.EnablePreAuth)
+                ) && 
+                (
                     this.EnvelopePartitionId == other.EnvelopePartitionId ||
                     this.EnvelopePartitionId != null &&
                     this.EnvelopePartitionId.Equals(other.EnvelopePartitionId)
@@ -268,6 +289,11 @@ namespace DocuSign.eSign.Model
                     this.PlanInformation == other.PlanInformation ||
                     this.PlanInformation != null &&
                     this.PlanInformation.Equals(other.PlanInformation)
+                ) && 
+                (
+                    this.ProcessPayment == other.ProcessPayment ||
+                    this.ProcessPayment != null &&
+                    this.ProcessPayment.Equals(other.ProcessPayment)
                 ) && 
                 (
                     this.ReferralInformation == other.ReferralInformation ||
@@ -311,6 +337,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DistributorCode.GetHashCode();
                 if (this.DistributorPassword != null)
                     hash = hash * 59 + this.DistributorPassword.GetHashCode();
+                if (this.EnablePreAuth != null)
+                    hash = hash * 59 + this.EnablePreAuth.GetHashCode();
                 if (this.EnvelopePartitionId != null)
                     hash = hash * 59 + this.EnvelopePartitionId.GetHashCode();
                 if (this.InitialUser != null)
@@ -321,6 +349,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PaymentProcessorInformation.GetHashCode();
                 if (this.PlanInformation != null)
                     hash = hash * 59 + this.PlanInformation.GetHashCode();
+                if (this.ProcessPayment != null)
+                    hash = hash * 59 + this.ProcessPayment.GetHashCode();
                 if (this.ReferralInformation != null)
                     hash = hash * 59 + this.ReferralInformation.GetHashCode();
                 if (this.SocialAccountInformation != null)

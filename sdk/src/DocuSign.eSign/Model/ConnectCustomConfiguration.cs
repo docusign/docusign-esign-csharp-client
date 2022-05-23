@@ -41,6 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AllowEnvelopePublish">When set to **true**, data is sent to the urlToPublishTo web address. This option can be set to false to stop sending data while maintaining the Connect configuration information..</param>
         /// <param name="AllowSalesforcePublish">AllowSalesforcePublish.</param>
         /// <param name="AllUsers">When set to **true**, the tracked envelope and recipient events for all users, including users that are added a later time, are sent through Connect..</param>
+        /// <param name="AllUsersExcept">AllUsersExcept.</param>
         /// <param name="ConfigurationType">If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**..</param>
         /// <param name="ConnectId"> Specifies the DocuSign generated ID for the Connect configuration.  .</param>
         /// <param name="DeliveryMode">DeliveryMode.</param>
@@ -50,6 +51,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Events">Events.</param>
         /// <param name="ExternalFolderId">ExternalFolderId.</param>
         /// <param name="ExternalFolderLabel">ExternalFolderLabel.</param>
+        /// <param name="GroupIds">GroupIds.</param>
         /// <param name="IncludeCertificateOfCompletion">When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. .</param>
         /// <param name="IncludeCertSoapHeader">IncludeCertSoapHeader.</param>
         /// <param name="IncludeDocumentFields">When set to **true**, the Document Fields associated with envelope documents are included in the data. Document Fields are optional custom name-value pairs added to documents using the API. .</param>
@@ -76,11 +78,12 @@ namespace DocuSign.eSign.Model
         /// <param name="UserIds">A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s..</param>
         /// <param name="UserName">UserName.</param>
         /// <param name="UseSoapInterface">When set to **true**, indicates that the &#x60;urlToPublishTo&#x60; property contains a SOAP endpoint..</param>
-        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string EnableLog = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string Name = default(string), string Password = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
+        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string AllUsersExcept = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string EnableLog = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), List<string> GroupIds = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string Name = default(string), string Password = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
         {
             this.AllowEnvelopePublish = AllowEnvelopePublish;
             this.AllowSalesforcePublish = AllowSalesforcePublish;
             this.AllUsers = AllUsers;
+            this.AllUsersExcept = AllUsersExcept;
             this.ConfigurationType = ConfigurationType;
             this.ConnectId = ConnectId;
             this.DeliveryMode = DeliveryMode;
@@ -90,6 +93,7 @@ namespace DocuSign.eSign.Model
             this.Events = Events;
             this.ExternalFolderId = ExternalFolderId;
             this.ExternalFolderLabel = ExternalFolderLabel;
+            this.GroupIds = GroupIds;
             this.IncludeCertificateOfCompletion = IncludeCertificateOfCompletion;
             this.IncludeCertSoapHeader = IncludeCertSoapHeader;
             this.IncludeDocumentFields = IncludeDocumentFields;
@@ -135,6 +139,11 @@ namespace DocuSign.eSign.Model
         /// <value>When set to **true**, the tracked envelope and recipient events for all users, including users that are added a later time, are sent through Connect.</value>
         [DataMember(Name="allUsers", EmitDefaultValue=false)]
         public string AllUsers { get; set; }
+        /// <summary>
+        /// Gets or Sets AllUsersExcept
+        /// </summary>
+        [DataMember(Name="allUsersExcept", EmitDefaultValue=false)]
+        public string AllUsersExcept { get; set; }
         /// <summary>
         /// If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
         /// </summary>
@@ -184,6 +193,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="externalFolderLabel", EmitDefaultValue=false)]
         public string ExternalFolderLabel { get; set; }
+        /// <summary>
+        /// Gets or Sets GroupIds
+        /// </summary>
+        [DataMember(Name="groupIds", EmitDefaultValue=false)]
+        public List<string> GroupIds { get; set; }
         /// <summary>
         /// When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. 
         /// </summary>
@@ -339,6 +353,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AllowEnvelopePublish: ").Append(AllowEnvelopePublish).Append("\n");
             sb.Append("  AllowSalesforcePublish: ").Append(AllowSalesforcePublish).Append("\n");
             sb.Append("  AllUsers: ").Append(AllUsers).Append("\n");
+            sb.Append("  AllUsersExcept: ").Append(AllUsersExcept).Append("\n");
             sb.Append("  ConfigurationType: ").Append(ConfigurationType).Append("\n");
             sb.Append("  ConnectId: ").Append(ConnectId).Append("\n");
             sb.Append("  DeliveryMode: ").Append(DeliveryMode).Append("\n");
@@ -348,6 +363,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Events: ").Append(Events).Append("\n");
             sb.Append("  ExternalFolderId: ").Append(ExternalFolderId).Append("\n");
             sb.Append("  ExternalFolderLabel: ").Append(ExternalFolderLabel).Append("\n");
+            sb.Append("  GroupIds: ").Append(GroupIds).Append("\n");
             sb.Append("  IncludeCertificateOfCompletion: ").Append(IncludeCertificateOfCompletion).Append("\n");
             sb.Append("  IncludeCertSoapHeader: ").Append(IncludeCertSoapHeader).Append("\n");
             sb.Append("  IncludeDocumentFields: ").Append(IncludeDocumentFields).Append("\n");
@@ -426,6 +442,11 @@ namespace DocuSign.eSign.Model
                     this.AllUsers.Equals(other.AllUsers)
                 ) && 
                 (
+                    this.AllUsersExcept == other.AllUsersExcept ||
+                    this.AllUsersExcept != null &&
+                    this.AllUsersExcept.Equals(other.AllUsersExcept)
+                ) && 
+                (
                     this.ConfigurationType == other.ConfigurationType ||
                     this.ConfigurationType != null &&
                     this.ConfigurationType.Equals(other.ConfigurationType)
@@ -469,6 +490,11 @@ namespace DocuSign.eSign.Model
                     this.ExternalFolderLabel == other.ExternalFolderLabel ||
                     this.ExternalFolderLabel != null &&
                     this.ExternalFolderLabel.Equals(other.ExternalFolderLabel)
+                ) && 
+                (
+                    this.GroupIds == other.GroupIds ||
+                    this.GroupIds != null &&
+                    this.GroupIds.SequenceEqual(other.GroupIds)
                 ) && 
                 (
                     this.IncludeCertificateOfCompletion == other.IncludeCertificateOfCompletion ||
@@ -619,6 +645,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AllowSalesforcePublish.GetHashCode();
                 if (this.AllUsers != null)
                     hash = hash * 59 + this.AllUsers.GetHashCode();
+                if (this.AllUsersExcept != null)
+                    hash = hash * 59 + this.AllUsersExcept.GetHashCode();
                 if (this.ConfigurationType != null)
                     hash = hash * 59 + this.ConfigurationType.GetHashCode();
                 if (this.ConnectId != null)
@@ -637,6 +665,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ExternalFolderId.GetHashCode();
                 if (this.ExternalFolderLabel != null)
                     hash = hash * 59 + this.ExternalFolderLabel.GetHashCode();
+                if (this.GroupIds != null)
+                    hash = hash * 59 + this.GroupIds.GetHashCode();
                 if (this.IncludeCertificateOfCompletion != null)
                     hash = hash * 59 + this.IncludeCertificateOfCompletion.GetHashCode();
                 if (this.IncludeCertSoapHeader != null)

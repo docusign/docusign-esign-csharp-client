@@ -59,6 +59,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AnchorXOffsetMetadata">AnchorXOffsetMetadata.</param>
         /// <param name="AnchorYOffset">Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString..</param>
         /// <param name="AnchorYOffsetMetadata">AnchorYOffsetMetadata.</param>
+        /// <param name="Caption">Caption.</param>
+        /// <param name="CaptionMetadata">CaptionMetadata.</param>
         /// <param name="ConditionalParentLabel">For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility..</param>
         /// <param name="ConditionalParentLabelMetadata">ConditionalParentLabelMetadata.</param>
         /// <param name="ConditionalParentValue">For conditional fields, this is the value of the parent tab that controls the tab&#39;s visibility.  If the parent tab is a Checkbox, Radio button, Optional Signature, or Optional Initial use \&quot;on\&quot; as the value to show that the parent tab is active. .</param>
@@ -116,7 +118,7 @@ namespace DocuSign.eSign.Model
         /// <param name="XPositionMetadata">XPositionMetadata.</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPositionMetadata">YPositionMetadata.</param>
-        public Draw(string AllowSignerUpload = default(string), string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), SmartContractInformation SmartContractInformation = default(SmartContractInformation), string Source = default(string), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string UseBackgroundAsCanvas = default(string), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
+        public Draw(string AllowSignerUpload = default(string), string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), SmartContractInformation SmartContractInformation = default(SmartContractInformation), string Source = default(string), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string UseBackgroundAsCanvas = default(string), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
             this.AllowSignerUpload = AllowSignerUpload;
             this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
@@ -139,6 +141,8 @@ namespace DocuSign.eSign.Model
             this.AnchorXOffsetMetadata = AnchorXOffsetMetadata;
             this.AnchorYOffset = AnchorYOffset;
             this.AnchorYOffsetMetadata = AnchorYOffsetMetadata;
+            this.Caption = Caption;
+            this.CaptionMetadata = CaptionMetadata;
             this.ConditionalParentLabel = ConditionalParentLabel;
             this.ConditionalParentLabelMetadata = ConditionalParentLabelMetadata;
             this.ConditionalParentValue = ConditionalParentValue;
@@ -311,6 +315,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="anchorYOffsetMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorYOffsetMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets Caption
+        /// </summary>
+        [DataMember(Name="caption", EmitDefaultValue=false)]
+        public string Caption { get; set; }
+        /// <summary>
+        /// Gets or Sets CaptionMetadata
+        /// </summary>
+        [DataMember(Name="captionMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata CaptionMetadata { get; set; }
         /// <summary>
         /// For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility.
         /// </summary>
@@ -642,6 +656,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  AnchorXOffsetMetadata: ").Append(AnchorXOffsetMetadata).Append("\n");
             sb.Append("  AnchorYOffset: ").Append(AnchorYOffset).Append("\n");
             sb.Append("  AnchorYOffsetMetadata: ").Append(AnchorYOffsetMetadata).Append("\n");
+            sb.Append("  Caption: ").Append(Caption).Append("\n");
+            sb.Append("  CaptionMetadata: ").Append(CaptionMetadata).Append("\n");
             sb.Append("  ConditionalParentLabel: ").Append(ConditionalParentLabel).Append("\n");
             sb.Append("  ConditionalParentLabelMetadata: ").Append(ConditionalParentLabelMetadata).Append("\n");
             sb.Append("  ConditionalParentValue: ").Append(ConditionalParentValue).Append("\n");
@@ -839,6 +855,16 @@ namespace DocuSign.eSign.Model
                     this.AnchorYOffsetMetadata == other.AnchorYOffsetMetadata ||
                     this.AnchorYOffsetMetadata != null &&
                     this.AnchorYOffsetMetadata.Equals(other.AnchorYOffsetMetadata)
+                ) && 
+                (
+                    this.Caption == other.Caption ||
+                    this.Caption != null &&
+                    this.Caption.Equals(other.Caption)
+                ) && 
+                (
+                    this.CaptionMetadata == other.CaptionMetadata ||
+                    this.CaptionMetadata != null &&
+                    this.CaptionMetadata.Equals(other.CaptionMetadata)
                 ) && 
                 (
                     this.ConditionalParentLabel == other.ConditionalParentLabel ||
@@ -1180,6 +1206,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AnchorYOffset.GetHashCode();
                 if (this.AnchorYOffsetMetadata != null)
                     hash = hash * 59 + this.AnchorYOffsetMetadata.GetHashCode();
+                if (this.Caption != null)
+                    hash = hash * 59 + this.Caption.GetHashCode();
+                if (this.CaptionMetadata != null)
+                    hash = hash * 59 + this.CaptionMetadata.GetHashCode();
                 if (this.ConditionalParentLabel != null)
                     hash = hash * 59 + this.ConditionalParentLabel.GetHashCode();
                 if (this.ConditionalParentLabelMetadata != null)

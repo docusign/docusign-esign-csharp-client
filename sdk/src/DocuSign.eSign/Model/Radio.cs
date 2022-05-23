@@ -60,6 +60,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AnchorYOffsetMetadata">AnchorYOffsetMetadata.</param>
         /// <param name="Bold">When set to **true**, the information in the tab is bold..</param>
         /// <param name="BoldMetadata">BoldMetadata.</param>
+        /// <param name="Caption">Caption.</param>
+        /// <param name="CaptionMetadata">CaptionMetadata.</param>
         /// <param name="ErrorDetails">ErrorDetails.</param>
         /// <param name="Font">The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default..</param>
         /// <param name="FontColor">The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White..</param>
@@ -91,7 +93,7 @@ namespace DocuSign.eSign.Model
         /// <param name="XPositionMetadata">XPositionMetadata.</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPositionMetadata">YPositionMetadata.</param>
-        public Radio(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
+        public Radio(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
             this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
             this.AnchorAllowWhiteSpaceInCharactersMetadata = AnchorAllowWhiteSpaceInCharactersMetadata;
@@ -115,6 +117,8 @@ namespace DocuSign.eSign.Model
             this.AnchorYOffsetMetadata = AnchorYOffsetMetadata;
             this.Bold = Bold;
             this.BoldMetadata = BoldMetadata;
+            this.Caption = Caption;
+            this.CaptionMetadata = CaptionMetadata;
             this.ErrorDetails = ErrorDetails;
             this.Font = Font;
             this.FontColor = FontColor;
@@ -267,6 +271,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="boldMetadata", EmitDefaultValue=false)]
         public PropertyMetadata BoldMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets Caption
+        /// </summary>
+        [DataMember(Name="caption", EmitDefaultValue=false)]
+        public string Caption { get; set; }
+        /// <summary>
+        /// Gets or Sets CaptionMetadata
+        /// </summary>
+        [DataMember(Name="captionMetadata", EmitDefaultValue=false)]
+        public PropertyMetadata CaptionMetadata { get; set; }
         /// <summary>
         /// Gets or Sets ErrorDetails
         /// </summary>
@@ -466,6 +480,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  AnchorYOffsetMetadata: ").Append(AnchorYOffsetMetadata).Append("\n");
             sb.Append("  Bold: ").Append(Bold).Append("\n");
             sb.Append("  BoldMetadata: ").Append(BoldMetadata).Append("\n");
+            sb.Append("  Caption: ").Append(Caption).Append("\n");
+            sb.Append("  CaptionMetadata: ").Append(CaptionMetadata).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("  Font: ").Append(Font).Append("\n");
             sb.Append("  FontColor: ").Append(FontColor).Append("\n");
@@ -642,6 +658,16 @@ namespace DocuSign.eSign.Model
                     this.BoldMetadata == other.BoldMetadata ||
                     this.BoldMetadata != null &&
                     this.BoldMetadata.Equals(other.BoldMetadata)
+                ) && 
+                (
+                    this.Caption == other.Caption ||
+                    this.Caption != null &&
+                    this.Caption.Equals(other.Caption)
+                ) && 
+                (
+                    this.CaptionMetadata == other.CaptionMetadata ||
+                    this.CaptionMetadata != null &&
+                    this.CaptionMetadata.Equals(other.CaptionMetadata)
                 ) && 
                 (
                     this.ErrorDetails == other.ErrorDetails ||
@@ -855,6 +881,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Bold.GetHashCode();
                 if (this.BoldMetadata != null)
                     hash = hash * 59 + this.BoldMetadata.GetHashCode();
+                if (this.Caption != null)
+                    hash = hash * 59 + this.Caption.GetHashCode();
+                if (this.CaptionMetadata != null)
+                    hash = hash * 59 + this.CaptionMetadata.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
                 if (this.Font != null)

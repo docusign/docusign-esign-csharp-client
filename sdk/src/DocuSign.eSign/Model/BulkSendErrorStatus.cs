@@ -39,11 +39,13 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BulkSendErrorStatus" /> class.
         /// </summary>
         /// <param name="Created">Created.</param>
+        /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
         /// <param name="ErrorMessage">ErrorMessage.</param>
         /// <param name="RecipientEmails">RecipientEmails.</param>
-        public BulkSendErrorStatus(string Created = default(string), string ErrorMessage = default(string), List<string> RecipientEmails = default(List<string>))
+        public BulkSendErrorStatus(string Created = default(string), string EnvelopeId = default(string), string ErrorMessage = default(string), List<string> RecipientEmails = default(List<string>))
         {
             this.Created = Created;
+            this.EnvelopeId = EnvelopeId;
             this.ErrorMessage = ErrorMessage;
             this.RecipientEmails = RecipientEmails;
         }
@@ -53,6 +55,12 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="created", EmitDefaultValue=false)]
         public string Created { get; set; }
+        /// <summary>
+        /// The envelope ID of the envelope status that failed to post.
+        /// </summary>
+        /// <value>The envelope ID of the envelope status that failed to post.</value>
+        [DataMember(Name="envelopeId", EmitDefaultValue=false)]
+        public string EnvelopeId { get; set; }
         /// <summary>
         /// Gets or Sets ErrorMessage
         /// </summary>
@@ -72,6 +80,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class BulkSendErrorStatus {\n");
             sb.Append("  Created: ").Append(Created).Append("\n");
+            sb.Append("  EnvelopeId: ").Append(EnvelopeId).Append("\n");
             sb.Append("  ErrorMessage: ").Append(ErrorMessage).Append("\n");
             sb.Append("  RecipientEmails: ").Append(RecipientEmails).Append("\n");
             sb.Append("}\n");
@@ -116,6 +125,11 @@ namespace DocuSign.eSign.Model
                     this.Created.Equals(other.Created)
                 ) && 
                 (
+                    this.EnvelopeId == other.EnvelopeId ||
+                    this.EnvelopeId != null &&
+                    this.EnvelopeId.Equals(other.EnvelopeId)
+                ) && 
+                (
                     this.ErrorMessage == other.ErrorMessage ||
                     this.ErrorMessage != null &&
                     this.ErrorMessage.Equals(other.ErrorMessage)
@@ -140,6 +154,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Created != null)
                     hash = hash * 59 + this.Created.GetHashCode();
+                if (this.EnvelopeId != null)
+                    hash = hash * 59 + this.EnvelopeId.GetHashCode();
                 if (this.ErrorMessage != null)
                     hash = hash * 59 + this.ErrorMessage.GetHashCode();
                 if (this.RecipientEmails != null)

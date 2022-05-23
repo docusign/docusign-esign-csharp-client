@@ -33,9 +33,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns></returns>
-        GroupInformation CreateGroups (string accountId, GroupInformation groupInformation = null);
+        GroupInformation CreateGroups(string accountId, GroupInformation groupInformation = null);
 
         /// <summary>
         /// Creates one or more groups for the account.
@@ -46,9 +45,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<GroupInformation> CreateGroupsWithHttpInfo (string accountId, GroupInformation groupInformation = null);
+        ApiResponse<GroupInformation> CreateGroupsWithHttpInfo(string accountId, GroupInformation groupInformation = null);
         /// <summary>
         /// Deletes brand information from the requested group.
         /// </summary>
@@ -56,11 +54,11 @@ namespace DocuSign.eSign.Api
         /// Deletes brand information from the requested group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns></returns>
-        GroupBrands DeleteBrands (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        GroupBrands DeleteBrands(string accountId, string groupId, BrandsRequest brandsRequest = null);
 
         /// <summary>
         /// Deletes brand information from the requested group.
@@ -69,11 +67,11 @@ namespace DocuSign.eSign.Api
         /// Deletes brand information from the requested group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<GroupBrands> DeleteBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        ApiResponse<GroupBrands> DeleteBrandsWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null);
         /// <summary>
         /// Deletes one or more users from a gro
         /// </summary>
@@ -81,11 +79,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more users from a group. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns></returns>
-        UsersResponse DeleteGroupUsers (string accountId, string groupId, UserInfoList userInfoList = null);
+        UsersResponse DeleteGroupUsers(string accountId, string groupId, UserInfoList userInfoList = null);
 
         /// <summary>
         /// Deletes one or more users from a gro
@@ -94,11 +92,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more users from a group. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UsersResponse> DeleteGroupUsersWithHttpInfo (string accountId, string groupId, UserInfoList userInfoList = null);
+        ApiResponse<UsersResponse> DeleteGroupUsersWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null);
         /// <summary>
         /// Deletes an existing user group.
         /// </summary>
@@ -108,9 +106,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns></returns>
-        GroupInformation DeleteGroups (string accountId, GroupInformation groupInformation = null);
+        GroupInformation DeleteGroups(string accountId, GroupInformation groupInformation = null);
 
         /// <summary>
         /// Deletes an existing user group.
@@ -121,9 +118,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<GroupInformation> DeleteGroupsWithHttpInfo (string accountId, GroupInformation groupInformation = null);
+        ApiResponse<GroupInformation> DeleteGroupsWithHttpInfo(string accountId, GroupInformation groupInformation = null);
         /// <summary>
         /// Gets group brand ID Information. 
         /// </summary>
@@ -131,11 +127,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves information about the brands associated with the requested group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <returns></returns>
-        GroupBrands GetBrands (string accountId, string groupId);
+        GroupBrands GetBrands(string accountId, string groupId);
 
         /// <summary>
         /// Gets group brand ID Information. 
@@ -144,11 +139,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves information about the brands associated with the requested group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<GroupBrands> GetBrandsWithHttpInfo (string accountId, string groupId);
+        ApiResponse<GroupBrands> GetBrandsWithHttpInfo(string accountId, string groupId);
         /// <summary>
         /// Gets a list of users in a group.
         /// </summary>
@@ -156,11 +150,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of users in a group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        UsersResponse ListGroupUsers (string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
+        UsersResponse ListGroupUsers(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
 
         /// <summary>
         /// Gets a list of users in a group.
@@ -169,11 +163,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of users in a group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UsersResponse> ListGroupUsersWithHttpInfo (string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
+        ApiResponse<UsersResponse> ListGroupUsersWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
         /// <summary>
         /// Gets information about groups associated with the account.
         /// </summary>
@@ -182,10 +176,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        GroupInformation ListGroups (string accountId, GroupsApi.ListGroupsOptions options = null);
+        GroupInformation ListGroups(string accountId, GroupsApi.ListGroupsOptions options = null);
 
         /// <summary>
         /// Gets information about groups associated with the account.
@@ -195,10 +188,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<GroupInformation> ListGroupsWithHttpInfo (string accountId, GroupsApi.ListGroupsOptions options = null);
+        ApiResponse<GroupInformation> ListGroupsWithHttpInfo(string accountId, GroupsApi.ListGroupsOptions options = null);
         /// <summary>
         /// Adds group brand ID information to a group.
         /// </summary>
@@ -206,11 +198,11 @@ namespace DocuSign.eSign.Api
         /// Adds group brand ID information to a group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns></returns>
-        GroupBrands UpdateBrands (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        GroupBrands UpdateBrands(string accountId, string groupId, BrandsRequest brandsRequest = null);
 
         /// <summary>
         /// Adds group brand ID information to a group.
@@ -219,11 +211,11 @@ namespace DocuSign.eSign.Api
         /// Adds group brand ID information to a group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<GroupBrands> UpdateBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        ApiResponse<GroupBrands> UpdateBrandsWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null);
         /// <summary>
         /// Adds one or more users to an existing group.
         /// </summary>
@@ -231,11 +223,11 @@ namespace DocuSign.eSign.Api
         /// Adds one or more users to an existing group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns></returns>
-        UsersResponse UpdateGroupUsers (string accountId, string groupId, UserInfoList userInfoList = null);
+        UsersResponse UpdateGroupUsers(string accountId, string groupId, UserInfoList userInfoList = null);
 
         /// <summary>
         /// Adds one or more users to an existing group.
@@ -244,11 +236,11 @@ namespace DocuSign.eSign.Api
         /// Adds one or more users to an existing group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UsersResponse> UpdateGroupUsersWithHttpInfo (string accountId, string groupId, UserInfoList userInfoList = null);
+        ApiResponse<UsersResponse> UpdateGroupUsersWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null);
         /// <summary>
         /// Updates the group information for a group.
         /// </summary>
@@ -258,9 +250,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns></returns>
-        GroupInformation UpdateGroups (string accountId, GroupInformation groupInformation = null);
+        GroupInformation UpdateGroups(string accountId, GroupInformation groupInformation = null);
 
         /// <summary>
         /// Updates the group information for a group.
@@ -271,9 +262,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<GroupInformation> UpdateGroupsWithHttpInfo (string accountId, GroupInformation groupInformation = null);
+        ApiResponse<GroupInformation> UpdateGroupsWithHttpInfo(string accountId, GroupInformation groupInformation = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -285,9 +275,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of GroupInformation</returns>
-        System.Threading.Tasks.Task<GroupInformation> CreateGroupsAsync (string accountId, GroupInformation groupInformation = null);
+        System.Threading.Tasks.Task<GroupInformation> CreateGroupsAsync(string accountId, GroupInformation groupInformation = null);
 
         /// <summary>
         /// Creates one or more groups for the account.
@@ -298,9 +287,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> CreateGroupsAsyncWithHttpInfo (string accountId, GroupInformation groupInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> CreateGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null);
         /// <summary>
         /// Deletes brand information from the requested group.
         /// </summary>
@@ -308,11 +296,11 @@ namespace DocuSign.eSign.Api
         /// Deletes brand information from the requested group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>Task of GroupBrands</returns>
-        System.Threading.Tasks.Task<GroupBrands> DeleteBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        System.Threading.Tasks.Task<GroupBrands> DeleteBrandsAsync(string accountId, string groupId, BrandsRequest brandsRequest = null);
 
         /// <summary>
         /// Deletes brand information from the requested group.
@@ -321,11 +309,11 @@ namespace DocuSign.eSign.Api
         /// Deletes brand information from the requested group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupBrands)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupBrands>> DeleteBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<GroupBrands>> DeleteBrandsAsyncWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null);
         /// <summary>
         /// Deletes one or more users from a gro
         /// </summary>
@@ -333,11 +321,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more users from a group. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>Task of UsersResponse</returns>
-        System.Threading.Tasks.Task<UsersResponse> DeleteGroupUsersAsync (string accountId, string groupId, UserInfoList userInfoList = null);
+        System.Threading.Tasks.Task<UsersResponse> DeleteGroupUsersAsync(string accountId, string groupId, UserInfoList userInfoList = null);
 
         /// <summary>
         /// Deletes one or more users from a gro
@@ -346,11 +334,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more users from a group. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UsersResponse>> DeleteGroupUsersAsyncWithHttpInfo (string accountId, string groupId, UserInfoList userInfoList = null);
+        System.Threading.Tasks.Task<ApiResponse<UsersResponse>> DeleteGroupUsersAsyncWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null);
         /// <summary>
         /// Deletes an existing user group.
         /// </summary>
@@ -360,9 +348,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of GroupInformation</returns>
-        System.Threading.Tasks.Task<GroupInformation> DeleteGroupsAsync (string accountId, GroupInformation groupInformation = null);
+        System.Threading.Tasks.Task<GroupInformation> DeleteGroupsAsync(string accountId, GroupInformation groupInformation = null);
 
         /// <summary>
         /// Deletes an existing user group.
@@ -373,9 +360,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> DeleteGroupsAsyncWithHttpInfo (string accountId, GroupInformation groupInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> DeleteGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null);
         /// <summary>
         /// Gets group brand ID Information. 
         /// </summary>
@@ -383,11 +369,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves information about the brands associated with the requested group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <returns>Task of GroupBrands</returns>
-        System.Threading.Tasks.Task<GroupBrands> GetBrandsAsync (string accountId, string groupId);
+        System.Threading.Tasks.Task<GroupBrands> GetBrandsAsync(string accountId, string groupId);
 
         /// <summary>
         /// Gets group brand ID Information. 
@@ -396,11 +381,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves information about the brands associated with the requested group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <returns>Task of ApiResponse (GroupBrands)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupBrands>> GetBrandsAsyncWithHttpInfo (string accountId, string groupId);
+        System.Threading.Tasks.Task<ApiResponse<GroupBrands>> GetBrandsAsyncWithHttpInfo(string accountId, string groupId);
         /// <summary>
         /// Gets a list of users in a group.
         /// </summary>
@@ -408,11 +392,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of users in a group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UsersResponse</returns>
-        System.Threading.Tasks.Task<UsersResponse> ListGroupUsersAsync (string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
+        System.Threading.Tasks.Task<UsersResponse> ListGroupUsersAsync(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
 
         /// <summary>
         /// Gets a list of users in a group.
@@ -421,11 +405,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of users in a group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UsersResponse>> ListGroupUsersAsyncWithHttpInfo (string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<UsersResponse>> ListGroupUsersAsyncWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
         /// <summary>
         /// Gets information about groups associated with the account.
         /// </summary>
@@ -434,10 +418,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of GroupInformation</returns>
-        System.Threading.Tasks.Task<GroupInformation> ListGroupsAsync (string accountId, GroupsApi.ListGroupsOptions options = null);
+        System.Threading.Tasks.Task<GroupInformation> ListGroupsAsync(string accountId, GroupsApi.ListGroupsOptions options = null);
 
         /// <summary>
         /// Gets information about groups associated with the account.
@@ -447,10 +430,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> ListGroupsAsyncWithHttpInfo (string accountId, GroupsApi.ListGroupsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> ListGroupsAsyncWithHttpInfo(string accountId, GroupsApi.ListGroupsOptions options = null);
         /// <summary>
         /// Adds group brand ID information to a group.
         /// </summary>
@@ -458,11 +440,11 @@ namespace DocuSign.eSign.Api
         /// Adds group brand ID information to a group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>Task of GroupBrands</returns>
-        System.Threading.Tasks.Task<GroupBrands> UpdateBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        System.Threading.Tasks.Task<GroupBrands> UpdateBrandsAsync(string accountId, string groupId, BrandsRequest brandsRequest = null);
 
         /// <summary>
         /// Adds group brand ID information to a group.
@@ -471,11 +453,11 @@ namespace DocuSign.eSign.Api
         /// Adds group brand ID information to a group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupBrands)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupBrands>> UpdateBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<GroupBrands>> UpdateBrandsAsyncWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null);
         /// <summary>
         /// Adds one or more users to an existing group.
         /// </summary>
@@ -483,11 +465,11 @@ namespace DocuSign.eSign.Api
         /// Adds one or more users to an existing group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>Task of UsersResponse</returns>
-        System.Threading.Tasks.Task<UsersResponse> UpdateGroupUsersAsync (string accountId, string groupId, UserInfoList userInfoList = null);
+        System.Threading.Tasks.Task<UsersResponse> UpdateGroupUsersAsync(string accountId, string groupId, UserInfoList userInfoList = null);
 
         /// <summary>
         /// Adds one or more users to an existing group.
@@ -496,11 +478,11 @@ namespace DocuSign.eSign.Api
         /// Adds one or more users to an existing group.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UsersResponse>> UpdateGroupUsersAsyncWithHttpInfo (string accountId, string groupId, UserInfoList userInfoList = null);
+        System.Threading.Tasks.Task<ApiResponse<UsersResponse>> UpdateGroupUsersAsyncWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null);
         /// <summary>
         /// Updates the group information for a group.
         /// </summary>
@@ -510,9 +492,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of GroupInformation</returns>
-        System.Threading.Tasks.Task<GroupInformation> UpdateGroupsAsync (string accountId, GroupInformation groupInformation = null);
+        System.Threading.Tasks.Task<GroupInformation> UpdateGroupsAsync(string accountId, GroupInformation groupInformation = null);
 
         /// <summary>
         /// Updates the group information for a group.
@@ -523,9 +504,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> UpdateGroupsAsyncWithHttpInfo (string accountId, GroupInformation groupInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<GroupInformation>> UpdateGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null);
         #endregion Asynchronous Operations
     }
 
@@ -588,9 +568,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>GroupInformation</returns>
-        public GroupInformation CreateGroups (string accountId, GroupInformation groupInformation = null)
+        public GroupInformation CreateGroups(string accountId, GroupInformation groupInformation = null)
         {
              ApiResponse<GroupInformation> localVarResponse = CreateGroupsWithHttpInfo(accountId, groupInformation);
              return localVarResponse.Data;
@@ -602,9 +581,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of GroupInformation</returns>
-        public ApiResponse< GroupInformation > CreateGroupsWithHttpInfo (string accountId, GroupInformation groupInformation = null)
+        public ApiResponse<GroupInformation> CreateGroupsWithHttpInfo(string accountId, GroupInformation groupInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -654,11 +632,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -670,11 +648,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
             }
             else
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             }
             
         }
@@ -685,13 +663,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of GroupInformation</returns>
-        public async System.Threading.Tasks.Task<GroupInformation> CreateGroupsAsync (string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<GroupInformation> CreateGroupsAsync(string accountId, GroupInformation groupInformation = null)
         {
              ApiResponse<GroupInformation> localVarResponse = await CreateGroupsAsyncWithHttpInfo(accountId, groupInformation);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -700,9 +676,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> CreateGroupsAsyncWithHttpInfo (string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> CreateGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -733,8 +708,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (groupInformation != null && groupInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(groupInformation); // http body (model) parameter
@@ -752,11 +725,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -766,7 +739,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<GroupInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             
         }
 
@@ -776,11 +749,11 @@ namespace DocuSign.eSign.Api
         /// Deletes brand information from the requested group. Deletes brand information from the requested group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>GroupBrands</returns>
-        public GroupBrands DeleteBrands (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public GroupBrands DeleteBrands(string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
              ApiResponse<GroupBrands> localVarResponse = DeleteBrandsWithHttpInfo(accountId, groupId, brandsRequest);
              return localVarResponse.Data;
@@ -790,11 +763,11 @@ namespace DocuSign.eSign.Api
         /// Deletes brand information from the requested group. Deletes brand information from the requested group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of GroupBrands</returns>
-        public ApiResponse< GroupBrands > DeleteBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public ApiResponse<GroupBrands> DeleteBrandsWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -848,11 +821,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -864,11 +837,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupBrands)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupBrands)));
             }
             else
             {
-                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands)this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             }
             
         }
@@ -877,26 +850,25 @@ namespace DocuSign.eSign.Api
         /// Deletes brand information from the requested group. Deletes brand information from the requested group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>Task of GroupBrands</returns>
-        public async System.Threading.Tasks.Task<GroupBrands> DeleteBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public async System.Threading.Tasks.Task<GroupBrands> DeleteBrandsAsync(string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
              ApiResponse<GroupBrands> localVarResponse = await DeleteBrandsAsyncWithHttpInfo(accountId, groupId, brandsRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes brand information from the requested group. Deletes brand information from the requested group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupBrands)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> DeleteBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> DeleteBrandsAsyncWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -931,8 +903,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (groupId != null) localVarPathParams.Add("groupId", this.ApiClient.ParameterToString(groupId)); // path parameter
-
-
             if (brandsRequest != null && brandsRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(brandsRequest); // http body (model) parameter
@@ -950,11 +920,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -964,7 +934,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<GroupBrands>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
+                (GroupBrands)this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             
         }
 
@@ -974,11 +944,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more users from a gro Deletes one or more users from a group. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>UsersResponse</returns>
-        public UsersResponse DeleteGroupUsers (string accountId, string groupId, UserInfoList userInfoList = null)
+        public UsersResponse DeleteGroupUsers(string accountId, string groupId, UserInfoList userInfoList = null)
         {
              ApiResponse<UsersResponse> localVarResponse = DeleteGroupUsersWithHttpInfo(accountId, groupId, userInfoList);
              return localVarResponse.Data;
@@ -988,11 +958,11 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more users from a gro Deletes one or more users from a group. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>ApiResponse of UsersResponse</returns>
-        public ApiResponse< UsersResponse > DeleteGroupUsersWithHttpInfo (string accountId, string groupId, UserInfoList userInfoList = null)
+        public ApiResponse<UsersResponse> DeleteGroupUsersWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1046,11 +1016,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1062,11 +1032,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersResponse)));
+                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersResponse)));
             }
             else
             {
-                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
+                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
             }
             
         }
@@ -1075,26 +1045,25 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more users from a gro Deletes one or more users from a group. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>Task of UsersResponse</returns>
-        public async System.Threading.Tasks.Task<UsersResponse> DeleteGroupUsersAsync (string accountId, string groupId, UserInfoList userInfoList = null)
+        public async System.Threading.Tasks.Task<UsersResponse> DeleteGroupUsersAsync(string accountId, string groupId, UserInfoList userInfoList = null)
         {
              ApiResponse<UsersResponse> localVarResponse = await DeleteGroupUsersAsyncWithHttpInfo(accountId, groupId, userInfoList);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes one or more users from a gro Deletes one or more users from a group. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> DeleteGroupUsersAsyncWithHttpInfo (string accountId, string groupId, UserInfoList userInfoList = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> DeleteGroupUsersAsyncWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1129,8 +1098,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (groupId != null) localVarPathParams.Add("groupId", this.ApiClient.ParameterToString(groupId)); // path parameter
-
-
             if (userInfoList != null && userInfoList.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(userInfoList); // http body (model) parameter
@@ -1148,11 +1115,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1162,7 +1129,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<UsersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
+                (UsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
             
         }
 
@@ -1174,9 +1141,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>GroupInformation</returns>
-        public GroupInformation DeleteGroups (string accountId, GroupInformation groupInformation = null)
+        public GroupInformation DeleteGroups(string accountId, GroupInformation groupInformation = null)
         {
              ApiResponse<GroupInformation> localVarResponse = DeleteGroupsWithHttpInfo(accountId, groupInformation);
              return localVarResponse.Data;
@@ -1188,9 +1154,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of GroupInformation</returns>
-        public ApiResponse< GroupInformation > DeleteGroupsWithHttpInfo (string accountId, GroupInformation groupInformation = null)
+        public ApiResponse<GroupInformation> DeleteGroupsWithHttpInfo(string accountId, GroupInformation groupInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1240,11 +1205,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1256,11 +1221,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
             }
             else
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             }
             
         }
@@ -1271,13 +1236,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of GroupInformation</returns>
-        public async System.Threading.Tasks.Task<GroupInformation> DeleteGroupsAsync (string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<GroupInformation> DeleteGroupsAsync(string accountId, GroupInformation groupInformation = null)
         {
              ApiResponse<GroupInformation> localVarResponse = await DeleteGroupsAsyncWithHttpInfo(accountId, groupInformation);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1286,9 +1249,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> DeleteGroupsAsyncWithHttpInfo (string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> DeleteGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1319,8 +1281,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (groupInformation != null && groupInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(groupInformation); // http body (model) parameter
@@ -1338,11 +1298,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1352,7 +1312,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<GroupInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             
         }
 
@@ -1362,11 +1322,10 @@ namespace DocuSign.eSign.Api
         /// Gets group brand ID Information.  Retrieves information about the brands associated with the requested group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <returns>GroupBrands</returns>
-        public GroupBrands GetBrands (string accountId, string groupId)
+        public GroupBrands GetBrands(string accountId, string groupId)
         {
              ApiResponse<GroupBrands> localVarResponse = GetBrandsWithHttpInfo(accountId, groupId);
              return localVarResponse.Data;
@@ -1376,11 +1335,10 @@ namespace DocuSign.eSign.Api
         /// Gets group brand ID Information.  Retrieves information about the brands associated with the requested group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <returns>ApiResponse of GroupBrands</returns>
-        public ApiResponse< GroupBrands > GetBrandsWithHttpInfo (string accountId, string groupId)
+        public ApiResponse<GroupBrands> GetBrandsWithHttpInfo(string accountId, string groupId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1426,11 +1384,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1442,11 +1400,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupBrands)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupBrands)));
             }
             else
             {
-                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands)this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             }
             
         }
@@ -1455,26 +1413,23 @@ namespace DocuSign.eSign.Api
         /// Gets group brand ID Information.  Retrieves information about the brands associated with the requested group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <returns>Task of GroupBrands</returns>
-        public async System.Threading.Tasks.Task<GroupBrands> GetBrandsAsync (string accountId, string groupId)
+        public async System.Threading.Tasks.Task<GroupBrands> GetBrandsAsync(string accountId, string groupId)
         {
              ApiResponse<GroupBrands> localVarResponse = await GetBrandsAsyncWithHttpInfo(accountId, groupId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets group brand ID Information.  Retrieves information about the brands associated with the requested group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <returns>Task of ApiResponse (GroupBrands)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> GetBrandsAsyncWithHttpInfo (string accountId, string groupId)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> GetBrandsAsyncWithHttpInfo(string accountId, string groupId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1510,8 +1465,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (groupId != null) localVarPathParams.Add("groupId", this.ApiClient.ParameterToString(groupId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1520,11 +1473,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1534,7 +1487,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<GroupBrands>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
+                (GroupBrands)this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             
         }
 
@@ -1554,11 +1507,11 @@ namespace DocuSign.eSign.Api
         /// Gets a list of users in a group. Retrieves a list of users in a group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>UsersResponse</returns>
-        public UsersResponse ListGroupUsers (string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
+        public UsersResponse ListGroupUsers(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
         {
              ApiResponse<UsersResponse> localVarResponse = ListGroupUsersWithHttpInfo(accountId, groupId, options);
              return localVarResponse.Data;
@@ -1568,11 +1521,11 @@ namespace DocuSign.eSign.Api
         /// Gets a list of users in a group. Retrieves a list of users in a group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of UsersResponse</returns>
-        public ApiResponse< UsersResponse > ListGroupUsersWithHttpInfo (string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
+        public ApiResponse<UsersResponse> ListGroupUsersWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1623,11 +1576,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1639,11 +1592,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersResponse)));
+                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersResponse)));
             }
             else
             {
-                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
+                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
             }
             
         }
@@ -1652,26 +1605,25 @@ namespace DocuSign.eSign.Api
         /// Gets a list of users in a group. Retrieves a list of users in a group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UsersResponse</returns>
-        public async System.Threading.Tasks.Task<UsersResponse> ListGroupUsersAsync (string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
+        public async System.Threading.Tasks.Task<UsersResponse> ListGroupUsersAsync(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
         {
              ApiResponse<UsersResponse> localVarResponse = await ListGroupUsersAsyncWithHttpInfo(accountId, groupId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets a list of users in a group. Retrieves a list of users in a group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> ListGroupUsersAsyncWithHttpInfo (string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> ListGroupUsersAsyncWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1706,13 +1658,11 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (groupId != null) localVarPathParams.Add("groupId", this.ApiClient.ParameterToString(groupId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -1722,11 +1672,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1736,7 +1686,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<UsersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
+                (UsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
             
         }
 
@@ -1763,10 +1713,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>GroupInformation</returns>
-        public GroupInformation ListGroups (string accountId, GroupsApi.ListGroupsOptions options = null)
+        public GroupInformation ListGroups(string accountId, GroupsApi.ListGroupsOptions options = null)
         {
              ApiResponse<GroupInformation> localVarResponse = ListGroupsWithHttpInfo(accountId, options);
              return localVarResponse.Data;
@@ -1777,10 +1726,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of GroupInformation</returns>
-        public ApiResponse< GroupInformation > ListGroupsWithHttpInfo (string accountId, GroupsApi.ListGroupsOptions options = null)
+        public ApiResponse<GroupInformation> ListGroupsWithHttpInfo(string accountId, GroupsApi.ListGroupsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1830,11 +1778,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1846,11 +1794,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
             }
             else
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             }
             
         }
@@ -1860,14 +1808,12 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of GroupInformation</returns>
-        public async System.Threading.Tasks.Task<GroupInformation> ListGroupsAsync (string accountId, GroupsApi.ListGroupsOptions options = null)
+        public async System.Threading.Tasks.Task<GroupInformation> ListGroupsAsync(string accountId, GroupsApi.ListGroupsOptions options = null)
         {
              ApiResponse<GroupInformation> localVarResponse = await ListGroupsAsyncWithHttpInfo(accountId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1875,10 +1821,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> ListGroupsAsyncWithHttpInfo (string accountId, GroupsApi.ListGroupsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> ListGroupsAsyncWithHttpInfo(string accountId, GroupsApi.ListGroupsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1909,7 +1854,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (options != null)
             {
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
@@ -1919,7 +1863,6 @@ namespace DocuSign.eSign.Api
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
 
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1928,11 +1871,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1942,7 +1885,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<GroupInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             
         }
 
@@ -1952,11 +1895,11 @@ namespace DocuSign.eSign.Api
         /// Adds group brand ID information to a group. Adds group brand ID information to a group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>GroupBrands</returns>
-        public GroupBrands UpdateBrands (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public GroupBrands UpdateBrands(string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
              ApiResponse<GroupBrands> localVarResponse = UpdateBrandsWithHttpInfo(accountId, groupId, brandsRequest);
              return localVarResponse.Data;
@@ -1966,11 +1909,11 @@ namespace DocuSign.eSign.Api
         /// Adds group brand ID information to a group. Adds group brand ID information to a group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of GroupBrands</returns>
-        public ApiResponse< GroupBrands > UpdateBrandsWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public ApiResponse<GroupBrands> UpdateBrandsWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2024,11 +1967,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2040,11 +1983,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupBrands)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupBrands)));
             }
             else
             {
-                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
+                return new ApiResponse<GroupBrands>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupBrands)this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             }
             
         }
@@ -2053,26 +1996,25 @@ namespace DocuSign.eSign.Api
         /// Adds group brand ID information to a group. Adds group brand ID information to a group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>Task of GroupBrands</returns>
-        public async System.Threading.Tasks.Task<GroupBrands> UpdateBrandsAsync (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public async System.Threading.Tasks.Task<GroupBrands> UpdateBrandsAsync(string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
              ApiResponse<GroupBrands> localVarResponse = await UpdateBrandsAsyncWithHttpInfo(accountId, groupId, brandsRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Adds group brand ID information to a group. Adds group brand ID information to a group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupBrands)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> UpdateBrandsAsyncWithHttpInfo (string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> UpdateBrandsAsyncWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2107,8 +2049,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (groupId != null) localVarPathParams.Add("groupId", this.ApiClient.ParameterToString(groupId)); // path parameter
-
-
             if (brandsRequest != null && brandsRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(brandsRequest); // http body (model) parameter
@@ -2126,11 +2066,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2140,7 +2080,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<GroupBrands>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GroupBrands) this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
+                (GroupBrands)this.ApiClient.Deserialize(localVarResponse, typeof(GroupBrands)));
             
         }
 
@@ -2150,11 +2090,11 @@ namespace DocuSign.eSign.Api
         /// Adds one or more users to an existing group. Adds one or more users to an existing group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>UsersResponse</returns>
-        public UsersResponse UpdateGroupUsers (string accountId, string groupId, UserInfoList userInfoList = null)
+        public UsersResponse UpdateGroupUsers(string accountId, string groupId, UserInfoList userInfoList = null)
         {
              ApiResponse<UsersResponse> localVarResponse = UpdateGroupUsersWithHttpInfo(accountId, groupId, userInfoList);
              return localVarResponse.Data;
@@ -2164,11 +2104,11 @@ namespace DocuSign.eSign.Api
         /// Adds one or more users to an existing group. Adds one or more users to an existing group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>ApiResponse of UsersResponse</returns>
-        public ApiResponse< UsersResponse > UpdateGroupUsersWithHttpInfo (string accountId, string groupId, UserInfoList userInfoList = null)
+        public ApiResponse<UsersResponse> UpdateGroupUsersWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2222,11 +2162,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2238,11 +2178,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersResponse)));
+                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersResponse)));
             }
             else
             {
-                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
+                return new ApiResponse<UsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
             }
             
         }
@@ -2251,26 +2191,25 @@ namespace DocuSign.eSign.Api
         /// Adds one or more users to an existing group. Adds one or more users to an existing group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>Task of UsersResponse</returns>
-        public async System.Threading.Tasks.Task<UsersResponse> UpdateGroupUsersAsync (string accountId, string groupId, UserInfoList userInfoList = null)
+        public async System.Threading.Tasks.Task<UsersResponse> UpdateGroupUsersAsync(string accountId, string groupId, UserInfoList userInfoList = null)
         {
              ApiResponse<UsersResponse> localVarResponse = await UpdateGroupUsersAsyncWithHttpInfo(accountId, groupId, userInfoList);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Adds one or more users to an existing group. Adds one or more users to an existing group.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="groupId">The ID of the group being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> UpdateGroupUsersAsyncWithHttpInfo (string accountId, string groupId, UserInfoList userInfoList = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> UpdateGroupUsersAsyncWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2305,8 +2244,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (groupId != null) localVarPathParams.Add("groupId", this.ApiClient.ParameterToString(groupId)); // path parameter
-
-
             if (userInfoList != null && userInfoList.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(userInfoList); // http body (model) parameter
@@ -2324,11 +2261,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2338,7 +2275,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<UsersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
+                (UsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
             
         }
 
@@ -2350,9 +2287,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>GroupInformation</returns>
-        public GroupInformation UpdateGroups (string accountId, GroupInformation groupInformation = null)
+        public GroupInformation UpdateGroups(string accountId, GroupInformation groupInformation = null)
         {
              ApiResponse<GroupInformation> localVarResponse = UpdateGroupsWithHttpInfo(accountId, groupInformation);
              return localVarResponse.Data;
@@ -2364,9 +2300,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of GroupInformation</returns>
-        public ApiResponse< GroupInformation > UpdateGroupsWithHttpInfo (string accountId, GroupInformation groupInformation = null)
+        public ApiResponse<GroupInformation> UpdateGroupsWithHttpInfo(string accountId, GroupInformation groupInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2416,11 +2351,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2432,11 +2367,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(GroupInformation)));
             }
             else
             {
-                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                return new ApiResponse<GroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             }
             
         }
@@ -2447,13 +2382,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of GroupInformation</returns>
-        public async System.Threading.Tasks.Task<GroupInformation> UpdateGroupsAsync (string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<GroupInformation> UpdateGroupsAsync(string accountId, GroupInformation groupInformation = null)
         {
              ApiResponse<GroupInformation> localVarResponse = await UpdateGroupsAsyncWithHttpInfo(accountId, groupInformation);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -2462,9 +2395,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> UpdateGroupsAsyncWithHttpInfo (string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> UpdateGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2495,8 +2427,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (groupInformation != null && groupInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(groupInformation); // http body (model) parameter
@@ -2514,11 +2444,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2528,7 +2458,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<GroupInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GroupInformation) this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
+                (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
             
         }
 

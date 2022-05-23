@@ -31,11 +31,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
+        /// <param name="organizationId"></param>
+        /// <param name="reportCorrelationId"></param>
         /// <returns></returns>
-        void GetReportV2 (string organizationId, string reportCorrelationId);
+        void GetReportV2(string organizationId, string reportCorrelationId);
 
         /// <summary>
         /// Retrieves org level report by correlation id and site.
@@ -44,11 +43,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
+        /// <param name="organizationId"></param>
+        /// <param name="reportCorrelationId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetReportV2WithHttpInfo (string organizationId, string reportCorrelationId);
+        ApiResponse<Object> GetReportV2WithHttpInfo(string organizationId, string reportCorrelationId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -58,11 +56,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
+        /// <param name="organizationId"></param>
+        /// <param name="reportCorrelationId"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetReportV2Async (string organizationId, string reportCorrelationId);
+        System.Threading.Tasks.Task GetReportV2Async(string organizationId, string reportCorrelationId);
 
         /// <summary>
         /// Retrieves org level report by correlation id and site.
@@ -71,11 +68,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
+        /// <param name="organizationId"></param>
+        /// <param name="reportCorrelationId"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetReportV2AsyncWithHttpInfo (string organizationId, string reportCorrelationId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetReportV2AsyncWithHttpInfo(string organizationId, string reportCorrelationId);
         #endregion Asynchronous Operations
     }
 
@@ -136,11 +132,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves org level report by correlation id and site. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
+        /// <param name="organizationId"></param>
+        /// <param name="reportCorrelationId"></param>
         /// <returns></returns>
-        public void GetReportV2 (string organizationId, string reportCorrelationId)
+        public void GetReportV2(string organizationId, string reportCorrelationId)
         {
              GetReportV2WithHttpInfo(organizationId, reportCorrelationId);
         }
@@ -149,11 +144,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves org level report by correlation id and site. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
+        /// <param name="organizationId"></param>
+        /// <param name="reportCorrelationId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> GetReportV2WithHttpInfo (string organizationId, string reportCorrelationId)
+        public ApiResponse<Object> GetReportV2WithHttpInfo(string organizationId, string reportCorrelationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -199,11 +193,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -220,25 +214,22 @@ namespace DocuSign.eSign.Api
         /// Retrieves org level report by correlation id and site. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
+        /// <param name="organizationId"></param>
+        /// <param name="reportCorrelationId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetReportV2Async (string organizationId, string reportCorrelationId)
+        public async System.Threading.Tasks.Task GetReportV2Async(string organizationId, string reportCorrelationId)
         {
              await GetReportV2AsyncWithHttpInfo(organizationId, reportCorrelationId);
-
         }
 
         /// <summary>
         /// Retrieves org level report by correlation id and site. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId"></param>/// <param name="reportCorrelationId"></param>
-        
-        
+        /// <param name="organizationId"></param>
+        /// <param name="reportCorrelationId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetReportV2AsyncWithHttpInfo (string organizationId, string reportCorrelationId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetReportV2AsyncWithHttpInfo(string organizationId, string reportCorrelationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -274,8 +265,6 @@ namespace DocuSign.eSign.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (reportCorrelationId != null) localVarPathParams.Add("reportCorrelationId", this.ApiClient.ParameterToString(reportCorrelationId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -284,11 +273,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {

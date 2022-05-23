@@ -33,9 +33,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns></returns>
-        TabMetadata Create (string accountId, TabMetadata tabMetadata = null);
+        TabMetadata Create(string accountId, TabMetadata tabMetadata = null);
 
         /// <summary>
         /// Creates a custom tab.
@@ -46,9 +45,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<TabMetadata> CreateWithHttpInfo (string accountId, TabMetadata tabMetadata = null);
+        ApiResponse<TabMetadata> CreateWithHttpInfo(string accountId, TabMetadata tabMetadata = null);
         /// <summary>
         /// Deletes custom tab information.
         /// </summary>
@@ -56,11 +54,10 @@ namespace DocuSign.eSign.Api
         /// Deletes the custom from the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns></returns>
-        void Delete (string accountId, string customTabId);
+        void Delete(string accountId, string customTabId);
 
         /// <summary>
         /// Deletes custom tab information.
@@ -69,11 +66,10 @@ namespace DocuSign.eSign.Api
         /// Deletes the custom from the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteWithHttpInfo (string accountId, string customTabId);
+        ApiResponse<Object> DeleteWithHttpInfo(string accountId, string customTabId);
         /// <summary>
         /// Gets custom tab information.
         /// </summary>
@@ -81,11 +77,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves information about the requested custom tab on the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns></returns>
-        TabMetadata Get (string accountId, string customTabId);
+        TabMetadata Get(string accountId, string customTabId);
 
         /// <summary>
         /// Gets custom tab information.
@@ -94,11 +89,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves information about the requested custom tab on the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<TabMetadata> GetWithHttpInfo (string accountId, string customTabId);
+        ApiResponse<TabMetadata> GetWithHttpInfo(string accountId, string customTabId);
         /// <summary>
         /// Gets a list of all account tabs.
         /// </summary>
@@ -107,10 +101,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        TabMetadataList List (string accountId, CustomTabsApi.ListOptions options = null);
+        TabMetadataList List(string accountId, CustomTabsApi.ListOptions options = null);
 
         /// <summary>
         /// Gets a list of all account tabs.
@@ -120,10 +113,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<TabMetadataList> ListWithHttpInfo (string accountId, CustomTabsApi.ListOptions options = null);
+        ApiResponse<TabMetadataList> ListWithHttpInfo(string accountId, CustomTabsApi.ListOptions options = null);
         /// <summary>
         /// Updates custom tab information.  
         /// </summary>
@@ -131,11 +123,11 @@ namespace DocuSign.eSign.Api
         /// Updates the information in a custom tab for the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns></returns>
-        TabMetadata Update (string accountId, string customTabId, TabMetadata tabMetadata = null);
+        TabMetadata Update(string accountId, string customTabId, TabMetadata tabMetadata = null);
 
         /// <summary>
         /// Updates custom tab information.  
@@ -144,11 +136,11 @@ namespace DocuSign.eSign.Api
         /// Updates the information in a custom tab for the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<TabMetadata> UpdateWithHttpInfo (string accountId, string customTabId, TabMetadata tabMetadata = null);
+        ApiResponse<TabMetadata> UpdateWithHttpInfo(string accountId, string customTabId, TabMetadata tabMetadata = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -160,9 +152,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>Task of TabMetadata</returns>
-        System.Threading.Tasks.Task<TabMetadata> CreateAsync (string accountId, TabMetadata tabMetadata = null);
+        System.Threading.Tasks.Task<TabMetadata> CreateAsync(string accountId, TabMetadata tabMetadata = null);
 
         /// <summary>
         /// Creates a custom tab.
@@ -173,9 +164,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TabMetadata)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TabMetadata>> CreateAsyncWithHttpInfo (string accountId, TabMetadata tabMetadata = null);
+        System.Threading.Tasks.Task<ApiResponse<TabMetadata>> CreateAsyncWithHttpInfo(string accountId, TabMetadata tabMetadata = null);
         /// <summary>
         /// Deletes custom tab information.
         /// </summary>
@@ -183,11 +173,10 @@ namespace DocuSign.eSign.Api
         /// Deletes the custom from the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteAsync (string accountId, string customTabId);
+        System.Threading.Tasks.Task DeleteAsync(string accountId, string customTabId);
 
         /// <summary>
         /// Deletes custom tab information.
@@ -196,11 +185,10 @@ namespace DocuSign.eSign.Api
         /// Deletes the custom from the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAsyncWithHttpInfo (string accountId, string customTabId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAsyncWithHttpInfo(string accountId, string customTabId);
         /// <summary>
         /// Gets custom tab information.
         /// </summary>
@@ -208,11 +196,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves information about the requested custom tab on the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>Task of TabMetadata</returns>
-        System.Threading.Tasks.Task<TabMetadata> GetAsync (string accountId, string customTabId);
+        System.Threading.Tasks.Task<TabMetadata> GetAsync(string accountId, string customTabId);
 
         /// <summary>
         /// Gets custom tab information.
@@ -221,11 +208,10 @@ namespace DocuSign.eSign.Api
         /// Retrieves information about the requested custom tab on the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>Task of ApiResponse (TabMetadata)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TabMetadata>> GetAsyncWithHttpInfo (string accountId, string customTabId);
+        System.Threading.Tasks.Task<ApiResponse<TabMetadata>> GetAsyncWithHttpInfo(string accountId, string customTabId);
         /// <summary>
         /// Gets a list of all account tabs.
         /// </summary>
@@ -234,10 +220,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of TabMetadataList</returns>
-        System.Threading.Tasks.Task<TabMetadataList> ListAsync (string accountId, CustomTabsApi.ListOptions options = null);
+        System.Threading.Tasks.Task<TabMetadataList> ListAsync(string accountId, CustomTabsApi.ListOptions options = null);
 
         /// <summary>
         /// Gets a list of all account tabs.
@@ -247,10 +232,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (TabMetadataList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TabMetadataList>> ListAsyncWithHttpInfo (string accountId, CustomTabsApi.ListOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<TabMetadataList>> ListAsyncWithHttpInfo(string accountId, CustomTabsApi.ListOptions options = null);
         /// <summary>
         /// Updates custom tab information.  
         /// </summary>
@@ -258,11 +242,11 @@ namespace DocuSign.eSign.Api
         /// Updates the information in a custom tab for the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>Task of TabMetadata</returns>
-        System.Threading.Tasks.Task<TabMetadata> UpdateAsync (string accountId, string customTabId, TabMetadata tabMetadata = null);
+        System.Threading.Tasks.Task<TabMetadata> UpdateAsync(string accountId, string customTabId, TabMetadata tabMetadata = null);
 
         /// <summary>
         /// Updates custom tab information.  
@@ -271,11 +255,11 @@ namespace DocuSign.eSign.Api
         /// Updates the information in a custom tab for the specified account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TabMetadata)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TabMetadata>> UpdateAsyncWithHttpInfo (string accountId, string customTabId, TabMetadata tabMetadata = null);
+        System.Threading.Tasks.Task<ApiResponse<TabMetadata>> UpdateAsyncWithHttpInfo(string accountId, string customTabId, TabMetadata tabMetadata = null);
         #endregion Asynchronous Operations
     }
 
@@ -338,9 +322,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>TabMetadata</returns>
-        public TabMetadata Create (string accountId, TabMetadata tabMetadata = null)
+        public TabMetadata Create(string accountId, TabMetadata tabMetadata = null)
         {
              ApiResponse<TabMetadata> localVarResponse = CreateWithHttpInfo(accountId, tabMetadata);
              return localVarResponse.Data;
@@ -352,9 +335,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>ApiResponse of TabMetadata</returns>
-        public ApiResponse< TabMetadata > CreateWithHttpInfo (string accountId, TabMetadata tabMetadata = null)
+        public ApiResponse<TabMetadata> CreateWithHttpInfo(string accountId, TabMetadata tabMetadata = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -404,11 +386,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -420,11 +402,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TabMetadata)));
+                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TabMetadata)));
             }
             else
             {
-                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata) this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
+                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata)this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
             }
             
         }
@@ -435,13 +417,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>Task of TabMetadata</returns>
-        public async System.Threading.Tasks.Task<TabMetadata> CreateAsync (string accountId, TabMetadata tabMetadata = null)
+        public async System.Threading.Tasks.Task<TabMetadata> CreateAsync(string accountId, TabMetadata tabMetadata = null)
         {
              ApiResponse<TabMetadata> localVarResponse = await CreateAsyncWithHttpInfo(accountId, tabMetadata);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -450,9 +430,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TabMetadata)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TabMetadata>> CreateAsyncWithHttpInfo (string accountId, TabMetadata tabMetadata = null)
+        public async System.Threading.Tasks.Task<ApiResponse<TabMetadata>> CreateAsyncWithHttpInfo(string accountId, TabMetadata tabMetadata = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -483,8 +462,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (tabMetadata != null && tabMetadata.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(tabMetadata); // http body (model) parameter
@@ -502,11 +479,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -516,7 +493,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<TabMetadata>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TabMetadata) this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
+                (TabMetadata)this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
             
         }
 
@@ -526,11 +503,10 @@ namespace DocuSign.eSign.Api
         /// Deletes custom tab information. Deletes the custom from the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns></returns>
-        public void Delete (string accountId, string customTabId)
+        public void Delete(string accountId, string customTabId)
         {
              DeleteWithHttpInfo(accountId, customTabId);
         }
@@ -539,11 +515,10 @@ namespace DocuSign.eSign.Api
         /// Deletes custom tab information. Deletes the custom from the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteWithHttpInfo (string accountId, string customTabId)
+        public ApiResponse<Object> DeleteWithHttpInfo(string accountId, string customTabId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -589,11 +564,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -610,25 +585,22 @@ namespace DocuSign.eSign.Api
         /// Deletes custom tab information. Deletes the custom from the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteAsync (string accountId, string customTabId)
+        public async System.Threading.Tasks.Task DeleteAsync(string accountId, string customTabId)
         {
              await DeleteAsyncWithHttpInfo(accountId, customTabId);
-
         }
 
         /// <summary>
         /// Deletes custom tab information. Deletes the custom from the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAsyncWithHttpInfo (string accountId, string customTabId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAsyncWithHttpInfo(string accountId, string customTabId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -664,8 +636,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (customTabId != null) localVarPathParams.Add("customTabId", this.ApiClient.ParameterToString(customTabId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -674,11 +644,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -698,11 +668,10 @@ namespace DocuSign.eSign.Api
         /// Gets custom tab information. Retrieves information about the requested custom tab on the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>TabMetadata</returns>
-        public TabMetadata Get (string accountId, string customTabId)
+        public TabMetadata Get(string accountId, string customTabId)
         {
              ApiResponse<TabMetadata> localVarResponse = GetWithHttpInfo(accountId, customTabId);
              return localVarResponse.Data;
@@ -712,11 +681,10 @@ namespace DocuSign.eSign.Api
         /// Gets custom tab information. Retrieves information about the requested custom tab on the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>ApiResponse of TabMetadata</returns>
-        public ApiResponse< TabMetadata > GetWithHttpInfo (string accountId, string customTabId)
+        public ApiResponse<TabMetadata> GetWithHttpInfo(string accountId, string customTabId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -762,11 +730,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -778,11 +746,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TabMetadata)));
+                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TabMetadata)));
             }
             else
             {
-                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata) this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
+                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata)this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
             }
             
         }
@@ -791,26 +759,23 @@ namespace DocuSign.eSign.Api
         /// Gets custom tab information. Retrieves information about the requested custom tab on the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>Task of TabMetadata</returns>
-        public async System.Threading.Tasks.Task<TabMetadata> GetAsync (string accountId, string customTabId)
+        public async System.Threading.Tasks.Task<TabMetadata> GetAsync(string accountId, string customTabId)
         {
              ApiResponse<TabMetadata> localVarResponse = await GetAsyncWithHttpInfo(accountId, customTabId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets custom tab information. Retrieves information about the requested custom tab on the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <returns>Task of ApiResponse (TabMetadata)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TabMetadata>> GetAsyncWithHttpInfo (string accountId, string customTabId)
+        public async System.Threading.Tasks.Task<ApiResponse<TabMetadata>> GetAsyncWithHttpInfo(string accountId, string customTabId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -846,8 +811,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (customTabId != null) localVarPathParams.Add("customTabId", this.ApiClient.ParameterToString(customTabId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -856,11 +819,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -870,7 +833,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<TabMetadata>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TabMetadata) this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
+                (TabMetadata)this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
             
         }
 
@@ -889,10 +852,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>TabMetadataList</returns>
-        public TabMetadataList List (string accountId, CustomTabsApi.ListOptions options = null)
+        public TabMetadataList List(string accountId, CustomTabsApi.ListOptions options = null)
         {
              ApiResponse<TabMetadataList> localVarResponse = ListWithHttpInfo(accountId, options);
              return localVarResponse.Data;
@@ -903,10 +865,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of TabMetadataList</returns>
-        public ApiResponse< TabMetadataList > ListWithHttpInfo (string accountId, CustomTabsApi.ListOptions options = null)
+        public ApiResponse<TabMetadataList> ListWithHttpInfo(string accountId, CustomTabsApi.ListOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -952,11 +913,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -968,11 +929,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<TabMetadataList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadataList) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TabMetadataList)));
+                return new ApiResponse<TabMetadataList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadataList)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TabMetadataList)));
             }
             else
             {
-                return new ApiResponse<TabMetadataList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadataList) this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadataList)));
+                return new ApiResponse<TabMetadataList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadataList)this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadataList)));
             }
             
         }
@@ -982,14 +943,12 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of TabMetadataList</returns>
-        public async System.Threading.Tasks.Task<TabMetadataList> ListAsync (string accountId, CustomTabsApi.ListOptions options = null)
+        public async System.Threading.Tasks.Task<TabMetadataList> ListAsync(string accountId, CustomTabsApi.ListOptions options = null)
         {
              ApiResponse<TabMetadataList> localVarResponse = await ListAsyncWithHttpInfo(accountId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -997,10 +956,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (TabMetadataList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TabMetadataList>> ListAsyncWithHttpInfo (string accountId, CustomTabsApi.ListOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<TabMetadataList>> ListAsyncWithHttpInfo(string accountId, CustomTabsApi.ListOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1031,12 +989,10 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (options != null)
             {
                 if (options.customTabOnly != null) localVarQueryParams.Add("custom_tab_only", this.ApiClient.ParameterToString(options.customTabOnly)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -1046,11 +1002,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1060,7 +1016,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<TabMetadataList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TabMetadataList) this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadataList)));
+                (TabMetadataList)this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadataList)));
             
         }
 
@@ -1070,11 +1026,11 @@ namespace DocuSign.eSign.Api
         /// Updates custom tab information.   Updates the information in a custom tab for the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>TabMetadata</returns>
-        public TabMetadata Update (string accountId, string customTabId, TabMetadata tabMetadata = null)
+        public TabMetadata Update(string accountId, string customTabId, TabMetadata tabMetadata = null)
         {
              ApiResponse<TabMetadata> localVarResponse = UpdateWithHttpInfo(accountId, customTabId, tabMetadata);
              return localVarResponse.Data;
@@ -1084,11 +1040,11 @@ namespace DocuSign.eSign.Api
         /// Updates custom tab information.   Updates the information in a custom tab for the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>ApiResponse of TabMetadata</returns>
-        public ApiResponse< TabMetadata > UpdateWithHttpInfo (string accountId, string customTabId, TabMetadata tabMetadata = null)
+        public ApiResponse<TabMetadata> UpdateWithHttpInfo(string accountId, string customTabId, TabMetadata tabMetadata = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1142,11 +1098,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1158,11 +1114,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TabMetadata)));
+                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(TabMetadata)));
             }
             else
             {
-                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata) this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
+                return new ApiResponse<TabMetadata>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (TabMetadata)this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
             }
             
         }
@@ -1171,26 +1127,25 @@ namespace DocuSign.eSign.Api
         /// Updates custom tab information.   Updates the information in a custom tab for the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>Task of TabMetadata</returns>
-        public async System.Threading.Tasks.Task<TabMetadata> UpdateAsync (string accountId, string customTabId, TabMetadata tabMetadata = null)
+        public async System.Threading.Tasks.Task<TabMetadata> UpdateAsync(string accountId, string customTabId, TabMetadata tabMetadata = null)
         {
              ApiResponse<TabMetadata> localVarResponse = await UpdateAsyncWithHttpInfo(accountId, customTabId, tabMetadata);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Updates custom tab information.   Updates the information in a custom tab for the specified account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="customTabId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="customTabId"></param>
         /// <param name="tabMetadata"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (TabMetadata)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TabMetadata>> UpdateAsyncWithHttpInfo (string accountId, string customTabId, TabMetadata tabMetadata = null)
+        public async System.Threading.Tasks.Task<ApiResponse<TabMetadata>> UpdateAsyncWithHttpInfo(string accountId, string customTabId, TabMetadata tabMetadata = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1225,8 +1180,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (customTabId != null) localVarPathParams.Add("customTabId", this.ApiClient.ParameterToString(customTabId)); // path parameter
-
-
             if (tabMetadata != null && tabMetadata.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(tabMetadata); // http body (model) parameter
@@ -1244,11 +1197,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1258,7 +1211,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<TabMetadata>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TabMetadata) this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
+                (TabMetadata)this.ApiClient.Deserialize(localVarResponse, typeof(TabMetadata)));
             
         }
 

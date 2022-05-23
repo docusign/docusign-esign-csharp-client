@@ -34,7 +34,84 @@ namespace DocuSign.eSign.Model
         {
             // Empty Constructor
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecipientTokenClientURLs" /> class.
+        /// </summary>
+        /// <param name="OnAccessCodeFailed">OnAccessCodeFailed.</param>
+        /// <param name="OnCancel">OnCancel.</param>
+        /// <param name="OnDecline">OnDecline.</param>
+        /// <param name="OnException">OnException.</param>
+        /// <param name="OnFaxPending">OnFaxPending.</param>
+        /// <param name="OnIdCheckFailed">OnIdCheckFailed.</param>
+        /// <param name="OnSessionTimeout">OnSessionTimeout.</param>
+        /// <param name="OnSigningComplete">OnSigningComplete.</param>
+        /// <param name="OnTTLExpired">OnTTLExpired.</param>
+        /// <param name="OnViewingComplete">OnViewingComplete.</param>
+        public RecipientTokenClientURLs(string OnAccessCodeFailed = default(string), string OnCancel = default(string), string OnDecline = default(string), string OnException = default(string), string OnFaxPending = default(string), string OnIdCheckFailed = default(string), string OnSessionTimeout = default(string), string OnSigningComplete = default(string), string OnTTLExpired = default(string), string OnViewingComplete = default(string))
+        {
+            this.OnAccessCodeFailed = OnAccessCodeFailed;
+            this.OnCancel = OnCancel;
+            this.OnDecline = OnDecline;
+            this.OnException = OnException;
+            this.OnFaxPending = OnFaxPending;
+            this.OnIdCheckFailed = OnIdCheckFailed;
+            this.OnSessionTimeout = OnSessionTimeout;
+            this.OnSigningComplete = OnSigningComplete;
+            this.OnTTLExpired = OnTTLExpired;
+            this.OnViewingComplete = OnViewingComplete;
+        }
         
+        /// <summary>
+        /// Gets or Sets OnAccessCodeFailed
+        /// </summary>
+        [DataMember(Name="OnAccessCodeFailed", EmitDefaultValue=false)]
+        public string OnAccessCodeFailed { get; set; }
+        /// <summary>
+        /// Gets or Sets OnCancel
+        /// </summary>
+        [DataMember(Name="OnCancel", EmitDefaultValue=false)]
+        public string OnCancel { get; set; }
+        /// <summary>
+        /// Gets or Sets OnDecline
+        /// </summary>
+        [DataMember(Name="OnDecline", EmitDefaultValue=false)]
+        public string OnDecline { get; set; }
+        /// <summary>
+        /// Gets or Sets OnException
+        /// </summary>
+        [DataMember(Name="OnException", EmitDefaultValue=false)]
+        public string OnException { get; set; }
+        /// <summary>
+        /// Gets or Sets OnFaxPending
+        /// </summary>
+        [DataMember(Name="OnFaxPending", EmitDefaultValue=false)]
+        public string OnFaxPending { get; set; }
+        /// <summary>
+        /// Gets or Sets OnIdCheckFailed
+        /// </summary>
+        [DataMember(Name="OnIdCheckFailed", EmitDefaultValue=false)]
+        public string OnIdCheckFailed { get; set; }
+        /// <summary>
+        /// Gets or Sets OnSessionTimeout
+        /// </summary>
+        [DataMember(Name="OnSessionTimeout", EmitDefaultValue=false)]
+        public string OnSessionTimeout { get; set; }
+        /// <summary>
+        /// Gets or Sets OnSigningComplete
+        /// </summary>
+        [DataMember(Name="OnSigningComplete", EmitDefaultValue=false)]
+        public string OnSigningComplete { get; set; }
+        /// <summary>
+        /// Gets or Sets OnTTLExpired
+        /// </summary>
+        [DataMember(Name="OnTTLExpired", EmitDefaultValue=false)]
+        public string OnTTLExpired { get; set; }
+        /// <summary>
+        /// Gets or Sets OnViewingComplete
+        /// </summary>
+        [DataMember(Name="OnViewingComplete", EmitDefaultValue=false)]
+        public string OnViewingComplete { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -43,6 +120,16 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class RecipientTokenClientURLs {\n");
+            sb.Append("  OnAccessCodeFailed: ").Append(OnAccessCodeFailed).Append("\n");
+            sb.Append("  OnCancel: ").Append(OnCancel).Append("\n");
+            sb.Append("  OnDecline: ").Append(OnDecline).Append("\n");
+            sb.Append("  OnException: ").Append(OnException).Append("\n");
+            sb.Append("  OnFaxPending: ").Append(OnFaxPending).Append("\n");
+            sb.Append("  OnIdCheckFailed: ").Append(OnIdCheckFailed).Append("\n");
+            sb.Append("  OnSessionTimeout: ").Append(OnSessionTimeout).Append("\n");
+            sb.Append("  OnSigningComplete: ").Append(OnSigningComplete).Append("\n");
+            sb.Append("  OnTTLExpired: ").Append(OnTTLExpired).Append("\n");
+            sb.Append("  OnViewingComplete: ").Append(OnViewingComplete).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -78,7 +165,57 @@ namespace DocuSign.eSign.Model
             if (other == null)
                 return false;
 
-            return false;
+            return 
+                (
+                    this.OnAccessCodeFailed == other.OnAccessCodeFailed ||
+                    this.OnAccessCodeFailed != null &&
+                    this.OnAccessCodeFailed.Equals(other.OnAccessCodeFailed)
+                ) && 
+                (
+                    this.OnCancel == other.OnCancel ||
+                    this.OnCancel != null &&
+                    this.OnCancel.Equals(other.OnCancel)
+                ) && 
+                (
+                    this.OnDecline == other.OnDecline ||
+                    this.OnDecline != null &&
+                    this.OnDecline.Equals(other.OnDecline)
+                ) && 
+                (
+                    this.OnException == other.OnException ||
+                    this.OnException != null &&
+                    this.OnException.Equals(other.OnException)
+                ) && 
+                (
+                    this.OnFaxPending == other.OnFaxPending ||
+                    this.OnFaxPending != null &&
+                    this.OnFaxPending.Equals(other.OnFaxPending)
+                ) && 
+                (
+                    this.OnIdCheckFailed == other.OnIdCheckFailed ||
+                    this.OnIdCheckFailed != null &&
+                    this.OnIdCheckFailed.Equals(other.OnIdCheckFailed)
+                ) && 
+                (
+                    this.OnSessionTimeout == other.OnSessionTimeout ||
+                    this.OnSessionTimeout != null &&
+                    this.OnSessionTimeout.Equals(other.OnSessionTimeout)
+                ) && 
+                (
+                    this.OnSigningComplete == other.OnSigningComplete ||
+                    this.OnSigningComplete != null &&
+                    this.OnSigningComplete.Equals(other.OnSigningComplete)
+                ) && 
+                (
+                    this.OnTTLExpired == other.OnTTLExpired ||
+                    this.OnTTLExpired != null &&
+                    this.OnTTLExpired.Equals(other.OnTTLExpired)
+                ) && 
+                (
+                    this.OnViewingComplete == other.OnViewingComplete ||
+                    this.OnViewingComplete != null &&
+                    this.OnViewingComplete.Equals(other.OnViewingComplete)
+                );
         }
 
         /// <summary>
@@ -92,6 +229,26 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.OnAccessCodeFailed != null)
+                    hash = hash * 59 + this.OnAccessCodeFailed.GetHashCode();
+                if (this.OnCancel != null)
+                    hash = hash * 59 + this.OnCancel.GetHashCode();
+                if (this.OnDecline != null)
+                    hash = hash * 59 + this.OnDecline.GetHashCode();
+                if (this.OnException != null)
+                    hash = hash * 59 + this.OnException.GetHashCode();
+                if (this.OnFaxPending != null)
+                    hash = hash * 59 + this.OnFaxPending.GetHashCode();
+                if (this.OnIdCheckFailed != null)
+                    hash = hash * 59 + this.OnIdCheckFailed.GetHashCode();
+                if (this.OnSessionTimeout != null)
+                    hash = hash * 59 + this.OnSessionTimeout.GetHashCode();
+                if (this.OnSigningComplete != null)
+                    hash = hash * 59 + this.OnSigningComplete.GetHashCode();
+                if (this.OnTTLExpired != null)
+                    hash = hash * 59 + this.OnTTLExpired.GetHashCode();
+                if (this.OnViewingComplete != null)
+                    hash = hash * 59 + this.OnViewingComplete.GetHashCode();
                 return hash;
             }
         }

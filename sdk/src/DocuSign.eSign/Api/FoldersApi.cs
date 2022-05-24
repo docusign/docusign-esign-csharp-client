@@ -32,10 +32,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        FoldersResponse List (string accountId, FoldersApi.ListOptions options = null);
+        FoldersResponse List(string accountId, FoldersApi.ListOptions options = null);
 
         /// <summary>
         /// Gets a list of the folders for the account.
@@ -45,10 +44,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FoldersResponse> ListWithHttpInfo (string accountId, FoldersApi.ListOptions options = null);
+        ApiResponse<FoldersResponse> ListWithHttpInfo(string accountId, FoldersApi.ListOptions options = null);
         /// <summary>
         /// Gets a list of the envelopes in the specified folder.
         /// </summary>
@@ -56,11 +54,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        FolderItemsResponse ListItems (string accountId, string folderId, FoldersApi.ListItemsOptions options = null);
+        FolderItemsResponse ListItems(string accountId, string folderId, FoldersApi.ListItemsOptions options = null);
 
         /// <summary>
         /// Gets a list of the envelopes in the specified folder.
@@ -69,11 +67,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FolderItemsResponse> ListItemsWithHttpInfo (string accountId, string folderId, FoldersApi.ListItemsOptions options = null);
+        ApiResponse<FolderItemsResponse> ListItemsWithHttpInfo(string accountId, string folderId, FoldersApi.ListItemsOptions options = null);
         /// <summary>
         /// Moves an envelope from its current folder to the specified folder.
         /// </summary>
@@ -81,11 +79,11 @@ namespace DocuSign.eSign.Api
         /// Moves envelopes to the specified folder.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="foldersRequest"> (optional)</param>
-        
         /// <returns></returns>
-        FoldersResponse MoveEnvelopes (string accountId, string folderId, FoldersRequest foldersRequest = null);
+        FoldersResponse MoveEnvelopes(string accountId, string folderId, FoldersRequest foldersRequest = null);
 
         /// <summary>
         /// Moves an envelope from its current folder to the specified folder.
@@ -94,11 +92,11 @@ namespace DocuSign.eSign.Api
         /// Moves envelopes to the specified folder.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="foldersRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FoldersResponse> MoveEnvelopesWithHttpInfo (string accountId, string folderId, FoldersRequest foldersRequest = null);
+        ApiResponse<FoldersResponse> MoveEnvelopesWithHttpInfo(string accountId, string folderId, FoldersRequest foldersRequest = null);
         /// <summary>
         /// Gets a list of envelopes in folders matching the specified criteria.
         /// </summary>
@@ -106,11 +104,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        FolderItemResponse Search (string accountId, string searchFolderId, FoldersApi.SearchOptions options = null);
+        FolderItemResponse Search(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null);
 
         /// <summary>
         /// Gets a list of envelopes in folders matching the specified criteria.
@@ -119,11 +117,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<FolderItemResponse> SearchWithHttpInfo (string accountId, string searchFolderId, FoldersApi.SearchOptions options = null);
+        ApiResponse<FolderItemResponse> SearchWithHttpInfo(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -134,10 +132,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FoldersResponse</returns>
-        System.Threading.Tasks.Task<FoldersResponse> ListAsync (string accountId, FoldersApi.ListOptions options = null);
+        System.Threading.Tasks.Task<FoldersResponse> ListAsync(string accountId, FoldersApi.ListOptions options = null);
 
         /// <summary>
         /// Gets a list of the folders for the account.
@@ -147,10 +144,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FoldersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> ListAsyncWithHttpInfo (string accountId, FoldersApi.ListOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> ListAsyncWithHttpInfo(string accountId, FoldersApi.ListOptions options = null);
         /// <summary>
         /// Gets a list of the envelopes in the specified folder.
         /// </summary>
@@ -158,11 +154,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FolderItemsResponse</returns>
-        System.Threading.Tasks.Task<FolderItemsResponse> ListItemsAsync (string accountId, string folderId, FoldersApi.ListItemsOptions options = null);
+        System.Threading.Tasks.Task<FolderItemsResponse> ListItemsAsync(string accountId, string folderId, FoldersApi.ListItemsOptions options = null);
 
         /// <summary>
         /// Gets a list of the envelopes in the specified folder.
@@ -171,11 +167,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FolderItemsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FolderItemsResponse>> ListItemsAsyncWithHttpInfo (string accountId, string folderId, FoldersApi.ListItemsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<FolderItemsResponse>> ListItemsAsyncWithHttpInfo(string accountId, string folderId, FoldersApi.ListItemsOptions options = null);
         /// <summary>
         /// Moves an envelope from its current folder to the specified folder.
         /// </summary>
@@ -183,11 +179,11 @@ namespace DocuSign.eSign.Api
         /// Moves envelopes to the specified folder.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="foldersRequest"> (optional)</param>
-        
         /// <returns>Task of FoldersResponse</returns>
-        System.Threading.Tasks.Task<FoldersResponse> MoveEnvelopesAsync (string accountId, string folderId, FoldersRequest foldersRequest = null);
+        System.Threading.Tasks.Task<FoldersResponse> MoveEnvelopesAsync(string accountId, string folderId, FoldersRequest foldersRequest = null);
 
         /// <summary>
         /// Moves an envelope from its current folder to the specified folder.
@@ -196,11 +192,11 @@ namespace DocuSign.eSign.Api
         /// Moves envelopes to the specified folder.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="foldersRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (FoldersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> MoveEnvelopesAsyncWithHttpInfo (string accountId, string folderId, FoldersRequest foldersRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> MoveEnvelopesAsyncWithHttpInfo(string accountId, string folderId, FoldersRequest foldersRequest = null);
         /// <summary>
         /// Gets a list of envelopes in folders matching the specified criteria.
         /// </summary>
@@ -208,11 +204,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FolderItemResponse</returns>
-        System.Threading.Tasks.Task<FolderItemResponse> SearchAsync (string accountId, string searchFolderId, FoldersApi.SearchOptions options = null);
+        System.Threading.Tasks.Task<FolderItemResponse> SearchAsync(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null);
 
         /// <summary>
         /// Gets a list of envelopes in folders matching the specified criteria.
@@ -221,11 +217,11 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FolderItemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FolderItemResponse>> SearchAsyncWithHttpInfo (string accountId, string searchFolderId, FoldersApi.SearchOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<FolderItemResponse>> SearchAsyncWithHttpInfo(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null);
         #endregion Asynchronous Operations
     }
 
@@ -303,10 +299,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>FoldersResponse</returns>
-        public FoldersResponse List (string accountId, FoldersApi.ListOptions options = null)
+        public FoldersResponse List(string accountId, FoldersApi.ListOptions options = null)
         {
              ApiResponse<FoldersResponse> localVarResponse = ListWithHttpInfo(accountId, options);
              return localVarResponse.Data;
@@ -317,10 +312,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of FoldersResponse</returns>
-        public ApiResponse< FoldersResponse > ListWithHttpInfo (string accountId, FoldersApi.ListOptions options = null)
+        public ApiResponse<FoldersResponse> ListWithHttpInfo(string accountId, FoldersApi.ListOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -370,11 +364,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -386,11 +380,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<FoldersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FoldersResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FoldersResponse)));
+                return new ApiResponse<FoldersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FoldersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FoldersResponse)));
             }
             else
             {
-                return new ApiResponse<FoldersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FoldersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(FoldersResponse)));
+                return new ApiResponse<FoldersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FoldersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(FoldersResponse)));
             }
             
         }
@@ -400,14 +394,12 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FoldersResponse</returns>
-        public async System.Threading.Tasks.Task<FoldersResponse> ListAsync (string accountId, FoldersApi.ListOptions options = null)
+        public async System.Threading.Tasks.Task<FoldersResponse> ListAsync(string accountId, FoldersApi.ListOptions options = null)
         {
              ApiResponse<FoldersResponse> localVarResponse = await ListAsyncWithHttpInfo(accountId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -415,10 +407,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FoldersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> ListAsyncWithHttpInfo (string accountId, FoldersApi.ListOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> ListAsyncWithHttpInfo(string accountId, FoldersApi.ListOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -449,7 +440,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (options != null)
             {
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
@@ -459,7 +449,6 @@ namespace DocuSign.eSign.Api
                 if (options.userFilter != null) localVarQueryParams.Add("user_filter", this.ApiClient.ParameterToString(options.userFilter)); // query parameter
             }
 
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -468,11 +457,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -482,7 +471,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<FoldersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FoldersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(FoldersResponse)));
+                (FoldersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(FoldersResponse)));
             
         }
 
@@ -514,11 +503,11 @@ namespace DocuSign.eSign.Api
         /// Gets a list of the envelopes in the specified folder. Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>FolderItemsResponse</returns>
-        public FolderItemsResponse ListItems (string accountId, string folderId, FoldersApi.ListItemsOptions options = null)
+        public FolderItemsResponse ListItems(string accountId, string folderId, FoldersApi.ListItemsOptions options = null)
         {
              ApiResponse<FolderItemsResponse> localVarResponse = ListItemsWithHttpInfo(accountId, folderId, options);
              return localVarResponse.Data;
@@ -528,11 +517,11 @@ namespace DocuSign.eSign.Api
         /// Gets a list of the envelopes in the specified folder. Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of FolderItemsResponse</returns>
-        public ApiResponse< FolderItemsResponse > ListItemsWithHttpInfo (string accountId, string folderId, FoldersApi.ListItemsOptions options = null)
+        public ApiResponse<FolderItemsResponse> ListItemsWithHttpInfo(string accountId, string folderId, FoldersApi.ListItemsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -589,11 +578,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -605,11 +594,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<FolderItemsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FolderItemsResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FolderItemsResponse)));
+                return new ApiResponse<FolderItemsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FolderItemsResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FolderItemsResponse)));
             }
             else
             {
-                return new ApiResponse<FolderItemsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FolderItemsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(FolderItemsResponse)));
+                return new ApiResponse<FolderItemsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FolderItemsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(FolderItemsResponse)));
             }
             
         }
@@ -618,26 +607,25 @@ namespace DocuSign.eSign.Api
         /// Gets a list of the envelopes in the specified folder. Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FolderItemsResponse</returns>
-        public async System.Threading.Tasks.Task<FolderItemsResponse> ListItemsAsync (string accountId, string folderId, FoldersApi.ListItemsOptions options = null)
+        public async System.Threading.Tasks.Task<FolderItemsResponse> ListItemsAsync(string accountId, string folderId, FoldersApi.ListItemsOptions options = null)
         {
              ApiResponse<FolderItemsResponse> localVarResponse = await ListItemsAsyncWithHttpInfo(accountId, folderId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets a list of the envelopes in the specified folder. Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FolderItemsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FolderItemsResponse>> ListItemsAsyncWithHttpInfo (string accountId, string folderId, FoldersApi.ListItemsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FolderItemsResponse>> ListItemsAsyncWithHttpInfo(string accountId, string folderId, FoldersApi.ListItemsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -672,7 +660,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
-
             if (options != null)
             {
                 if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
@@ -685,7 +672,6 @@ namespace DocuSign.eSign.Api
                 if (options.toDate != null) localVarQueryParams.Add("to_date", this.ApiClient.ParameterToString(options.toDate)); // query parameter
             }
 
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -694,11 +680,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -708,7 +694,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<FolderItemsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FolderItemsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(FolderItemsResponse)));
+                (FolderItemsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(FolderItemsResponse)));
             
         }
 
@@ -718,11 +704,11 @@ namespace DocuSign.eSign.Api
         /// Moves an envelope from its current folder to the specified folder. Moves envelopes to the specified folder.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="foldersRequest"> (optional)</param>
-        
         /// <returns>FoldersResponse</returns>
-        public FoldersResponse MoveEnvelopes (string accountId, string folderId, FoldersRequest foldersRequest = null)
+        public FoldersResponse MoveEnvelopes(string accountId, string folderId, FoldersRequest foldersRequest = null)
         {
              ApiResponse<FoldersResponse> localVarResponse = MoveEnvelopesWithHttpInfo(accountId, folderId, foldersRequest);
              return localVarResponse.Data;
@@ -732,11 +718,11 @@ namespace DocuSign.eSign.Api
         /// Moves an envelope from its current folder to the specified folder. Moves envelopes to the specified folder.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="foldersRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of FoldersResponse</returns>
-        public ApiResponse< FoldersResponse > MoveEnvelopesWithHttpInfo (string accountId, string folderId, FoldersRequest foldersRequest = null)
+        public ApiResponse<FoldersResponse> MoveEnvelopesWithHttpInfo(string accountId, string folderId, FoldersRequest foldersRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -790,11 +776,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -806,11 +792,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<FoldersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FoldersResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FoldersResponse)));
+                return new ApiResponse<FoldersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FoldersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FoldersResponse)));
             }
             else
             {
-                return new ApiResponse<FoldersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FoldersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(FoldersResponse)));
+                return new ApiResponse<FoldersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FoldersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(FoldersResponse)));
             }
             
         }
@@ -819,26 +805,25 @@ namespace DocuSign.eSign.Api
         /// Moves an envelope from its current folder to the specified folder. Moves envelopes to the specified folder.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="foldersRequest"> (optional)</param>
-        
         /// <returns>Task of FoldersResponse</returns>
-        public async System.Threading.Tasks.Task<FoldersResponse> MoveEnvelopesAsync (string accountId, string folderId, FoldersRequest foldersRequest = null)
+        public async System.Threading.Tasks.Task<FoldersResponse> MoveEnvelopesAsync(string accountId, string folderId, FoldersRequest foldersRequest = null)
         {
              ApiResponse<FoldersResponse> localVarResponse = await MoveEnvelopesAsyncWithHttpInfo(accountId, folderId, foldersRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Moves an envelope from its current folder to the specified folder. Moves envelopes to the specified folder.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="folderId">The ID of the folder being accessed.</param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="foldersRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (FoldersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> MoveEnvelopesAsyncWithHttpInfo (string accountId, string folderId, FoldersRequest foldersRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> MoveEnvelopesAsyncWithHttpInfo(string accountId, string folderId, FoldersRequest foldersRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -873,8 +858,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
-
-
             if (foldersRequest != null && foldersRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(foldersRequest); // http body (model) parameter
@@ -892,11 +875,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -906,7 +889,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<FoldersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FoldersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(FoldersResponse)));
+                (FoldersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(FoldersResponse)));
             
         }
 
@@ -938,11 +921,11 @@ namespace DocuSign.eSign.Api
         /// Gets a list of envelopes in folders matching the specified criteria. Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>FolderItemResponse</returns>
-        public FolderItemResponse Search (string accountId, string searchFolderId, FoldersApi.SearchOptions options = null)
+        public FolderItemResponse Search(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null)
         {
              ApiResponse<FolderItemResponse> localVarResponse = SearchWithHttpInfo(accountId, searchFolderId, options);
              return localVarResponse.Data;
@@ -952,11 +935,11 @@ namespace DocuSign.eSign.Api
         /// Gets a list of envelopes in folders matching the specified criteria. Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of FolderItemResponse</returns>
-        public ApiResponse< FolderItemResponse > SearchWithHttpInfo (string accountId, string searchFolderId, FoldersApi.SearchOptions options = null)
+        public ApiResponse<FolderItemResponse> SearchWithHttpInfo(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1013,11 +996,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1029,11 +1012,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<FolderItemResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FolderItemResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FolderItemResponse)));
+                return new ApiResponse<FolderItemResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FolderItemResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(FolderItemResponse)));
             }
             else
             {
-                return new ApiResponse<FolderItemResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FolderItemResponse) this.ApiClient.Deserialize(localVarResponse, typeof(FolderItemResponse)));
+                return new ApiResponse<FolderItemResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (FolderItemResponse)this.ApiClient.Deserialize(localVarResponse, typeof(FolderItemResponse)));
             }
             
         }
@@ -1042,26 +1025,25 @@ namespace DocuSign.eSign.Api
         /// Gets a list of envelopes in folders matching the specified criteria. Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FolderItemResponse</returns>
-        public async System.Threading.Tasks.Task<FolderItemResponse> SearchAsync (string accountId, string searchFolderId, FoldersApi.SearchOptions options = null)
+        public async System.Threading.Tasks.Task<FolderItemResponse> SearchAsync(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null)
         {
              ApiResponse<FolderItemResponse> localVarResponse = await SearchAsyncWithHttpInfo(accountId, searchFolderId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets a list of envelopes in folders matching the specified criteria. Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FolderItemResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FolderItemResponse>> SearchAsyncWithHttpInfo (string accountId, string searchFolderId, FoldersApi.SearchOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FolderItemResponse>> SearchAsyncWithHttpInfo(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1096,7 +1078,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (searchFolderId != null) localVarPathParams.Add("searchFolderId", this.ApiClient.ParameterToString(searchFolderId)); // path parameter
-
             if (options != null)
             {
                 if (options.all != null) localVarQueryParams.Add("all", this.ApiClient.ParameterToString(options.all)); // query parameter
@@ -1109,7 +1090,6 @@ namespace DocuSign.eSign.Api
                 if (options.toDate != null) localVarQueryParams.Add("to_date", this.ApiClient.ParameterToString(options.toDate)); // query parameter
             }
 
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1118,11 +1098,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1132,7 +1112,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<FolderItemResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (FolderItemResponse) this.ApiClient.Deserialize(localVarResponse, typeof(FolderItemResponse)));
+                (FolderItemResponse)this.ApiClient.Deserialize(localVarResponse, typeof(FolderItemResponse)));
             
         }
 

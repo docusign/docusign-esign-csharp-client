@@ -26,7 +26,7 @@ namespace DocuSign.eSign.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "5.10.0";
+        public const string Version = "5.11.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -102,7 +102,7 @@ namespace DocuSign.eSign.Client
         /// </summary>
         public Configuration(string basePath = "https://www.docusign.net/restapi")
         {
-            UserAgent = "Swagger-Codegen/"+ Version +"/csharp";
+            UserAgent = $"C#/{Version}/{_getFrameworkVersion()}";
             BasePath = basePath ?? "https://www.docusign.net/restapi";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -309,6 +309,50 @@ namespace DocuSign.eSign.Client
         public void AddApiKeyPrefix(string key, string value)
         {
             ApiKeyPrefix[key] = value;
+        }
+        
+        /// <summary>
+        /// Trims the CLR version description
+        /// </summary>
+        /// <param name="longVersionDescription">The original, longer version of the CLR version description</param>
+        /// <returns></returns>
+        string _trimVersionDescription(string longVersionDescription)
+        {
+            if (string.IsNullOrEmpty(longVersionDescription)) { return string.Empty; }
+            var trimmedVersionDescription = longVersionDescription;
+            var longVersionDescriptionBits = longVersionDescription.Split(' ');
+            if (longVersionDescriptionBits?.Length > 1)
+            {
+                string trimmedVersionNumber = string.Empty;
+                string versionNumber = longVersionDescriptionBits[longVersionDescriptionBits.Length - 1];
+                var versionNumberBits = versionNumber.Split('.');
+                if (versionNumberBits?.Length > 2)
+                {
+                    var trimmedRevisionNumber = versionNumberBits[2].Substring(0, 1);
+                    trimmedVersionNumber = string.Join(".", versionNumberBits[0], versionNumberBits[1], trimmedRevisionNumber);
+                }
+                else
+                {
+                    trimmedVersionNumber = versionNumber;
+                }
+                var clrType = longVersionDescription.Substring(0, longVersionDescription.LastIndexOf(" "));
+                trimmedVersionDescription = string.Format("{0} {1}", clrType, trimmedVersionNumber);
+                trimmedVersionDescription = trimmedVersionDescription.ToUpper().Replace(".NET FRAMEWORK", "FW").Replace(".NET CORE", "Core").Trim();
+            }
+            return trimmedVersionDescription;
+        }
+
+        /// <summary>
+        /// Identifies the CLR version for logging purposes.
+        /// </summary>
+        /// <returns></returns>
+        string _getFrameworkVersion()
+        {
+#if NET452
+            return ".NET Framework";
+#else
+            return _trimVersionDescription(System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription);
+#endif
         }
 
         #endregion Methods

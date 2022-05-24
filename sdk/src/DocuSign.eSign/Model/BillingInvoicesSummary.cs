@@ -38,22 +38,36 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingInvoicesSummary" /> class.
         /// </summary>
+        /// <param name="AccountBalance">AccountBalance.</param>
         /// <param name="BillingInvoices">Reserved: TBD.</param>
+        /// <param name="CurrencyCode">CurrencyCode.</param>
         /// <param name="PastDueBalance">PastDueBalance.</param>
         /// <param name="PaymentAllowed">PaymentAllowed.</param>
-        public BillingInvoicesSummary(List<BillingInvoice> BillingInvoices = default(List<BillingInvoice>), string PastDueBalance = default(string), string PaymentAllowed = default(string))
+        public BillingInvoicesSummary(string AccountBalance = default(string), List<BillingInvoice> BillingInvoices = default(List<BillingInvoice>), string CurrencyCode = default(string), string PastDueBalance = default(string), string PaymentAllowed = default(string))
         {
+            this.AccountBalance = AccountBalance;
             this.BillingInvoices = BillingInvoices;
+            this.CurrencyCode = CurrencyCode;
             this.PastDueBalance = PastDueBalance;
             this.PaymentAllowed = PaymentAllowed;
         }
         
+        /// <summary>
+        /// Gets or Sets AccountBalance
+        /// </summary>
+        [DataMember(Name="accountBalance", EmitDefaultValue=false)]
+        public string AccountBalance { get; set; }
         /// <summary>
         /// Reserved: TBD
         /// </summary>
         /// <value>Reserved: TBD</value>
         [DataMember(Name="billingInvoices", EmitDefaultValue=false)]
         public List<BillingInvoice> BillingInvoices { get; set; }
+        /// <summary>
+        /// Gets or Sets CurrencyCode
+        /// </summary>
+        [DataMember(Name="currencyCode", EmitDefaultValue=false)]
+        public string CurrencyCode { get; set; }
         /// <summary>
         /// Gets or Sets PastDueBalance
         /// </summary>
@@ -72,7 +86,9 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BillingInvoicesSummary {\n");
+            sb.Append("  AccountBalance: ").Append(AccountBalance).Append("\n");
             sb.Append("  BillingInvoices: ").Append(BillingInvoices).Append("\n");
+            sb.Append("  CurrencyCode: ").Append(CurrencyCode).Append("\n");
             sb.Append("  PastDueBalance: ").Append(PastDueBalance).Append("\n");
             sb.Append("  PaymentAllowed: ").Append(PaymentAllowed).Append("\n");
             sb.Append("}\n");
@@ -112,9 +128,19 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.AccountBalance == other.AccountBalance ||
+                    this.AccountBalance != null &&
+                    this.AccountBalance.Equals(other.AccountBalance)
+                ) && 
+                (
                     this.BillingInvoices == other.BillingInvoices ||
                     this.BillingInvoices != null &&
                     this.BillingInvoices.SequenceEqual(other.BillingInvoices)
+                ) && 
+                (
+                    this.CurrencyCode == other.CurrencyCode ||
+                    this.CurrencyCode != null &&
+                    this.CurrencyCode.Equals(other.CurrencyCode)
                 ) && 
                 (
                     this.PastDueBalance == other.PastDueBalance ||
@@ -139,8 +165,12 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AccountBalance != null)
+                    hash = hash * 59 + this.AccountBalance.GetHashCode();
                 if (this.BillingInvoices != null)
                     hash = hash * 59 + this.BillingInvoices.GetHashCode();
+                if (this.CurrencyCode != null)
+                    hash = hash * 59 + this.CurrencyCode.GetHashCode();
                 if (this.PastDueBalance != null)
                     hash = hash * 59 + this.PastDueBalance.GetHashCode();
                 if (this.PaymentAllowed != null)

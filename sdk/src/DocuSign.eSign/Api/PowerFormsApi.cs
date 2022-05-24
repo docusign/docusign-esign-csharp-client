@@ -33,9 +33,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns></returns>
-        PowerForm CreatePowerForm (string accountId, PowerForm powerForm = null);
+        PowerForm CreatePowerForm(string accountId, PowerForm powerForm = null);
 
         /// <summary>
         /// Creates a new PowerForm.
@@ -46,9 +45,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<PowerForm> CreatePowerFormWithHttpInfo (string accountId, PowerForm powerForm = null);
+        ApiResponse<PowerForm> CreatePowerFormWithHttpInfo(string accountId, PowerForm powerForm = null);
         /// <summary>
         /// Delete a PowerForm.
         /// </summary>
@@ -56,11 +54,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns></returns>
-        void DeletePowerForm (string accountId, string powerFormId);
+        void DeletePowerForm(string accountId, string powerFormId);
 
         /// <summary>
         /// Delete a PowerForm.
@@ -69,11 +66,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeletePowerFormWithHttpInfo (string accountId, string powerFormId);
+        ApiResponse<Object> DeletePowerFormWithHttpInfo(string accountId, string powerFormId);
         /// <summary>
         /// Deletes one or more PowerForms
         /// </summary>
@@ -83,9 +79,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerFormsRequest"> (optional)</param>
-        
         /// <returns></returns>
-        PowerFormsResponse DeletePowerForms (string accountId, PowerFormsRequest powerFormsRequest = null);
+        PowerFormsResponse DeletePowerForms(string accountId, PowerFormsRequest powerFormsRequest = null);
 
         /// <summary>
         /// Deletes one or more PowerForms
@@ -96,9 +91,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerFormsRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<PowerFormsResponse> DeletePowerFormsWithHttpInfo (string accountId, PowerFormsRequest powerFormsRequest = null);
+        ApiResponse<PowerFormsResponse> DeletePowerFormsWithHttpInfo(string accountId, PowerFormsRequest powerFormsRequest = null);
         /// <summary>
         /// Returns a single PowerForm.
         /// </summary>
@@ -106,11 +100,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns></returns>
-        PowerForm GetPowerForm (string accountId, string powerFormId);
+        PowerForm GetPowerForm(string accountId, string powerFormId);
 
         /// <summary>
         /// Returns a single PowerForm.
@@ -119,11 +112,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<PowerForm> GetPowerFormWithHttpInfo (string accountId, string powerFormId);
+        ApiResponse<PowerForm> GetPowerFormWithHttpInfo(string accountId, string powerFormId);
         /// <summary>
         /// Returns the form data associated with the usage of a PowerForm.
         /// </summary>
@@ -131,11 +123,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        PowerFormsFormDataResponse GetPowerFormData (string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null);
+        PowerFormsFormDataResponse GetPowerFormData(string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null);
 
         /// <summary>
         /// Returns the form data associated with the usage of a PowerForm.
@@ -144,11 +136,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<PowerFormsFormDataResponse> GetPowerFormDataWithHttpInfo (string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null);
+        ApiResponse<PowerFormsFormDataResponse> GetPowerFormDataWithHttpInfo(string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null);
         /// <summary>
         /// Returns the list of PowerForms available to the user.
         /// </summary>
@@ -157,10 +149,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        PowerFormSendersResponse ListPowerFormSenders (string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null);
+        PowerFormSendersResponse ListPowerFormSenders(string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null);
 
         /// <summary>
         /// Returns the list of PowerForms available to the user.
@@ -170,10 +161,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<PowerFormSendersResponse> ListPowerFormSendersWithHttpInfo (string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null);
+        ApiResponse<PowerFormSendersResponse> ListPowerFormSendersWithHttpInfo(string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null);
         /// <summary>
         /// Returns the list of PowerForms available to the user.
         /// </summary>
@@ -182,10 +172,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        PowerFormsResponse ListPowerForms (string accountId, PowerFormsApi.ListPowerFormsOptions options = null);
+        PowerFormsResponse ListPowerForms(string accountId, PowerFormsApi.ListPowerFormsOptions options = null);
 
         /// <summary>
         /// Returns the list of PowerForms available to the user.
@@ -195,10 +184,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<PowerFormsResponse> ListPowerFormsWithHttpInfo (string accountId, PowerFormsApi.ListPowerFormsOptions options = null);
+        ApiResponse<PowerFormsResponse> ListPowerFormsWithHttpInfo(string accountId, PowerFormsApi.ListPowerFormsOptions options = null);
         /// <summary>
         /// Creates a new PowerForm.
         /// </summary>
@@ -206,11 +194,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns></returns>
-        PowerForm UpdatePowerForm (string accountId, string powerFormId, PowerForm powerForm = null);
+        PowerForm UpdatePowerForm(string accountId, string powerFormId, PowerForm powerForm = null);
 
         /// <summary>
         /// Creates a new PowerForm.
@@ -219,11 +207,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<PowerForm> UpdatePowerFormWithHttpInfo (string accountId, string powerFormId, PowerForm powerForm = null);
+        ApiResponse<PowerForm> UpdatePowerFormWithHttpInfo(string accountId, string powerFormId, PowerForm powerForm = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -235,9 +223,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>Task of PowerForm</returns>
-        System.Threading.Tasks.Task<PowerForm> CreatePowerFormAsync (string accountId, PowerForm powerForm = null);
+        System.Threading.Tasks.Task<PowerForm> CreatePowerFormAsync(string accountId, PowerForm powerForm = null);
 
         /// <summary>
         /// Creates a new PowerForm.
@@ -248,9 +235,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (PowerForm)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PowerForm>> CreatePowerFormAsyncWithHttpInfo (string accountId, PowerForm powerForm = null);
+        System.Threading.Tasks.Task<ApiResponse<PowerForm>> CreatePowerFormAsyncWithHttpInfo(string accountId, PowerForm powerForm = null);
         /// <summary>
         /// Delete a PowerForm.
         /// </summary>
@@ -258,11 +244,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeletePowerFormAsync (string accountId, string powerFormId);
+        System.Threading.Tasks.Task DeletePowerFormAsync(string accountId, string powerFormId);
 
         /// <summary>
         /// Delete a PowerForm.
@@ -271,11 +256,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeletePowerFormAsyncWithHttpInfo (string accountId, string powerFormId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeletePowerFormAsyncWithHttpInfo(string accountId, string powerFormId);
         /// <summary>
         /// Deletes one or more PowerForms
         /// </summary>
@@ -285,9 +269,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerFormsRequest"> (optional)</param>
-        
         /// <returns>Task of PowerFormsResponse</returns>
-        System.Threading.Tasks.Task<PowerFormsResponse> DeletePowerFormsAsync (string accountId, PowerFormsRequest powerFormsRequest = null);
+        System.Threading.Tasks.Task<PowerFormsResponse> DeletePowerFormsAsync(string accountId, PowerFormsRequest powerFormsRequest = null);
 
         /// <summary>
         /// Deletes one or more PowerForms
@@ -298,9 +281,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerFormsRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (PowerFormsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PowerFormsResponse>> DeletePowerFormsAsyncWithHttpInfo (string accountId, PowerFormsRequest powerFormsRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<PowerFormsResponse>> DeletePowerFormsAsyncWithHttpInfo(string accountId, PowerFormsRequest powerFormsRequest = null);
         /// <summary>
         /// Returns a single PowerForm.
         /// </summary>
@@ -308,11 +290,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>Task of PowerForm</returns>
-        System.Threading.Tasks.Task<PowerForm> GetPowerFormAsync (string accountId, string powerFormId);
+        System.Threading.Tasks.Task<PowerForm> GetPowerFormAsync(string accountId, string powerFormId);
 
         /// <summary>
         /// Returns a single PowerForm.
@@ -321,11 +302,10 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>Task of ApiResponse (PowerForm)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PowerForm>> GetPowerFormAsyncWithHttpInfo (string accountId, string powerFormId);
+        System.Threading.Tasks.Task<ApiResponse<PowerForm>> GetPowerFormAsyncWithHttpInfo(string accountId, string powerFormId);
         /// <summary>
         /// Returns the form data associated with the usage of a PowerForm.
         /// </summary>
@@ -333,11 +313,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of PowerFormsFormDataResponse</returns>
-        System.Threading.Tasks.Task<PowerFormsFormDataResponse> GetPowerFormDataAsync (string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null);
+        System.Threading.Tasks.Task<PowerFormsFormDataResponse> GetPowerFormDataAsync(string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null);
 
         /// <summary>
         /// Returns the form data associated with the usage of a PowerForm.
@@ -346,11 +326,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PowerFormsFormDataResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PowerFormsFormDataResponse>> GetPowerFormDataAsyncWithHttpInfo (string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<PowerFormsFormDataResponse>> GetPowerFormDataAsyncWithHttpInfo(string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null);
         /// <summary>
         /// Returns the list of PowerForms available to the user.
         /// </summary>
@@ -359,10 +339,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of PowerFormSendersResponse</returns>
-        System.Threading.Tasks.Task<PowerFormSendersResponse> ListPowerFormSendersAsync (string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null);
+        System.Threading.Tasks.Task<PowerFormSendersResponse> ListPowerFormSendersAsync(string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null);
 
         /// <summary>
         /// Returns the list of PowerForms available to the user.
@@ -372,10 +351,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PowerFormSendersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PowerFormSendersResponse>> ListPowerFormSendersAsyncWithHttpInfo (string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<PowerFormSendersResponse>> ListPowerFormSendersAsyncWithHttpInfo(string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null);
         /// <summary>
         /// Returns the list of PowerForms available to the user.
         /// </summary>
@@ -384,10 +362,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of PowerFormsResponse</returns>
-        System.Threading.Tasks.Task<PowerFormsResponse> ListPowerFormsAsync (string accountId, PowerFormsApi.ListPowerFormsOptions options = null);
+        System.Threading.Tasks.Task<PowerFormsResponse> ListPowerFormsAsync(string accountId, PowerFormsApi.ListPowerFormsOptions options = null);
 
         /// <summary>
         /// Returns the list of PowerForms available to the user.
@@ -397,10 +374,9 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PowerFormsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PowerFormsResponse>> ListPowerFormsAsyncWithHttpInfo (string accountId, PowerFormsApi.ListPowerFormsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<PowerFormsResponse>> ListPowerFormsAsyncWithHttpInfo(string accountId, PowerFormsApi.ListPowerFormsOptions options = null);
         /// <summary>
         /// Creates a new PowerForm.
         /// </summary>
@@ -408,11 +384,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>Task of PowerForm</returns>
-        System.Threading.Tasks.Task<PowerForm> UpdatePowerFormAsync (string accountId, string powerFormId, PowerForm powerForm = null);
+        System.Threading.Tasks.Task<PowerForm> UpdatePowerFormAsync(string accountId, string powerFormId, PowerForm powerForm = null);
 
         /// <summary>
         /// Creates a new PowerForm.
@@ -421,11 +397,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (PowerForm)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PowerForm>> UpdatePowerFormAsyncWithHttpInfo (string accountId, string powerFormId, PowerForm powerForm = null);
+        System.Threading.Tasks.Task<ApiResponse<PowerForm>> UpdatePowerFormAsyncWithHttpInfo(string accountId, string powerFormId, PowerForm powerForm = null);
         #endregion Asynchronous Operations
     }
 
@@ -488,9 +464,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>PowerForm</returns>
-        public PowerForm CreatePowerForm (string accountId, PowerForm powerForm = null)
+        public PowerForm CreatePowerForm(string accountId, PowerForm powerForm = null)
         {
              ApiResponse<PowerForm> localVarResponse = CreatePowerFormWithHttpInfo(accountId, powerForm);
              return localVarResponse.Data;
@@ -502,9 +477,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>ApiResponse of PowerForm</returns>
-        public ApiResponse< PowerForm > CreatePowerFormWithHttpInfo (string accountId, PowerForm powerForm = null)
+        public ApiResponse<PowerForm> CreatePowerFormWithHttpInfo(string accountId, PowerForm powerForm = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -554,11 +528,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -570,11 +544,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerForm)));
+                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerForm)));
             }
             else
             {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm) this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
+                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
             }
             
         }
@@ -585,13 +559,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>Task of PowerForm</returns>
-        public async System.Threading.Tasks.Task<PowerForm> CreatePowerFormAsync (string accountId, PowerForm powerForm = null)
+        public async System.Threading.Tasks.Task<PowerForm> CreatePowerFormAsync(string accountId, PowerForm powerForm = null)
         {
              ApiResponse<PowerForm> localVarResponse = await CreatePowerFormAsyncWithHttpInfo(accountId, powerForm);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -600,9 +572,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (PowerForm)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PowerForm>> CreatePowerFormAsyncWithHttpInfo (string accountId, PowerForm powerForm = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PowerForm>> CreatePowerFormAsyncWithHttpInfo(string accountId, PowerForm powerForm = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -633,8 +604,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (powerForm != null && powerForm.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(powerForm); // http body (model) parameter
@@ -652,11 +621,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -666,7 +635,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<PowerForm>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PowerForm) this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
+                (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
             
         }
 
@@ -676,11 +645,10 @@ namespace DocuSign.eSign.Api
         /// Delete a PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns></returns>
-        public void DeletePowerForm (string accountId, string powerFormId)
+        public void DeletePowerForm(string accountId, string powerFormId)
         {
              DeletePowerFormWithHttpInfo(accountId, powerFormId);
         }
@@ -689,11 +657,10 @@ namespace DocuSign.eSign.Api
         /// Delete a PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeletePowerFormWithHttpInfo (string accountId, string powerFormId)
+        public ApiResponse<Object> DeletePowerFormWithHttpInfo(string accountId, string powerFormId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -739,11 +706,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -760,25 +727,22 @@ namespace DocuSign.eSign.Api
         /// Delete a PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeletePowerFormAsync (string accountId, string powerFormId)
+        public async System.Threading.Tasks.Task DeletePowerFormAsync(string accountId, string powerFormId)
         {
              await DeletePowerFormAsyncWithHttpInfo(accountId, powerFormId);
-
         }
 
         /// <summary>
         /// Delete a PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeletePowerFormAsyncWithHttpInfo (string accountId, string powerFormId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeletePowerFormAsyncWithHttpInfo(string accountId, string powerFormId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -814,8 +778,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (powerFormId != null) localVarPathParams.Add("powerFormId", this.ApiClient.ParameterToString(powerFormId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -824,11 +786,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -850,9 +812,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerFormsRequest"> (optional)</param>
-        
         /// <returns>PowerFormsResponse</returns>
-        public PowerFormsResponse DeletePowerForms (string accountId, PowerFormsRequest powerFormsRequest = null)
+        public PowerFormsResponse DeletePowerForms(string accountId, PowerFormsRequest powerFormsRequest = null)
         {
              ApiResponse<PowerFormsResponse> localVarResponse = DeletePowerFormsWithHttpInfo(accountId, powerFormsRequest);
              return localVarResponse.Data;
@@ -864,9 +825,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerFormsRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of PowerFormsResponse</returns>
-        public ApiResponse< PowerFormsResponse > DeletePowerFormsWithHttpInfo (string accountId, PowerFormsRequest powerFormsRequest = null)
+        public ApiResponse<PowerFormsResponse> DeletePowerFormsWithHttpInfo(string accountId, PowerFormsRequest powerFormsRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -916,11 +876,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -932,11 +892,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormsResponse)));
+                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormsResponse)));
             }
             else
             {
-                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
+                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
             }
             
         }
@@ -947,13 +907,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerFormsRequest"> (optional)</param>
-        
         /// <returns>Task of PowerFormsResponse</returns>
-        public async System.Threading.Tasks.Task<PowerFormsResponse> DeletePowerFormsAsync (string accountId, PowerFormsRequest powerFormsRequest = null)
+        public async System.Threading.Tasks.Task<PowerFormsResponse> DeletePowerFormsAsync(string accountId, PowerFormsRequest powerFormsRequest = null)
         {
              ApiResponse<PowerFormsResponse> localVarResponse = await DeletePowerFormsAsyncWithHttpInfo(accountId, powerFormsRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -962,9 +920,8 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="powerFormsRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (PowerFormsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PowerFormsResponse>> DeletePowerFormsAsyncWithHttpInfo (string accountId, PowerFormsRequest powerFormsRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PowerFormsResponse>> DeletePowerFormsAsyncWithHttpInfo(string accountId, PowerFormsRequest powerFormsRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -995,8 +952,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (powerFormsRequest != null && powerFormsRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(powerFormsRequest); // http body (model) parameter
@@ -1014,11 +969,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1028,7 +983,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<PowerFormsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PowerFormsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
+                (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
             
         }
 
@@ -1038,11 +993,10 @@ namespace DocuSign.eSign.Api
         /// Returns a single PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>PowerForm</returns>
-        public PowerForm GetPowerForm (string accountId, string powerFormId)
+        public PowerForm GetPowerForm(string accountId, string powerFormId)
         {
              ApiResponse<PowerForm> localVarResponse = GetPowerFormWithHttpInfo(accountId, powerFormId);
              return localVarResponse.Data;
@@ -1052,11 +1006,10 @@ namespace DocuSign.eSign.Api
         /// Returns a single PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>ApiResponse of PowerForm</returns>
-        public ApiResponse< PowerForm > GetPowerFormWithHttpInfo (string accountId, string powerFormId)
+        public ApiResponse<PowerForm> GetPowerFormWithHttpInfo(string accountId, string powerFormId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1102,11 +1055,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1118,11 +1071,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerForm)));
+                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerForm)));
             }
             else
             {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm) this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
+                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
             }
             
         }
@@ -1131,26 +1084,23 @@ namespace DocuSign.eSign.Api
         /// Returns a single PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>Task of PowerForm</returns>
-        public async System.Threading.Tasks.Task<PowerForm> GetPowerFormAsync (string accountId, string powerFormId)
+        public async System.Threading.Tasks.Task<PowerForm> GetPowerFormAsync(string accountId, string powerFormId)
         {
              ApiResponse<PowerForm> localVarResponse = await GetPowerFormAsyncWithHttpInfo(accountId, powerFormId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Returns a single PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <returns>Task of ApiResponse (PowerForm)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PowerForm>> GetPowerFormAsyncWithHttpInfo (string accountId, string powerFormId)
+        public async System.Threading.Tasks.Task<ApiResponse<PowerForm>> GetPowerFormAsyncWithHttpInfo(string accountId, string powerFormId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1186,8 +1136,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (powerFormId != null) localVarPathParams.Add("powerFormId", this.ApiClient.ParameterToString(powerFormId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1196,11 +1144,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1210,7 +1158,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<PowerForm>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PowerForm) this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
+                (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
             
         }
 
@@ -1232,11 +1180,11 @@ namespace DocuSign.eSign.Api
         /// Returns the form data associated with the usage of a PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>PowerFormsFormDataResponse</returns>
-        public PowerFormsFormDataResponse GetPowerFormData (string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null)
+        public PowerFormsFormDataResponse GetPowerFormData(string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null)
         {
              ApiResponse<PowerFormsFormDataResponse> localVarResponse = GetPowerFormDataWithHttpInfo(accountId, powerFormId, options);
              return localVarResponse.Data;
@@ -1246,11 +1194,11 @@ namespace DocuSign.eSign.Api
         /// Returns the form data associated with the usage of a PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of PowerFormsFormDataResponse</returns>
-        public ApiResponse< PowerFormsFormDataResponse > GetPowerFormDataWithHttpInfo (string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null)
+        public ApiResponse<PowerFormsFormDataResponse> GetPowerFormDataWithHttpInfo(string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1302,11 +1250,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1318,11 +1266,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<PowerFormsFormDataResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsFormDataResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormsFormDataResponse)));
+                return new ApiResponse<PowerFormsFormDataResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsFormDataResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormsFormDataResponse)));
             }
             else
             {
-                return new ApiResponse<PowerFormsFormDataResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsFormDataResponse) this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsFormDataResponse)));
+                return new ApiResponse<PowerFormsFormDataResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsFormDataResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsFormDataResponse)));
             }
             
         }
@@ -1331,26 +1279,25 @@ namespace DocuSign.eSign.Api
         /// Returns the form data associated with the usage of a PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of PowerFormsFormDataResponse</returns>
-        public async System.Threading.Tasks.Task<PowerFormsFormDataResponse> GetPowerFormDataAsync (string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null)
+        public async System.Threading.Tasks.Task<PowerFormsFormDataResponse> GetPowerFormDataAsync(string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null)
         {
              ApiResponse<PowerFormsFormDataResponse> localVarResponse = await GetPowerFormDataAsyncWithHttpInfo(accountId, powerFormId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Returns the form data associated with the usage of a PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PowerFormsFormDataResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PowerFormsFormDataResponse>> GetPowerFormDataAsyncWithHttpInfo (string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PowerFormsFormDataResponse>> GetPowerFormDataAsyncWithHttpInfo(string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1385,14 +1332,12 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (powerFormId != null) localVarPathParams.Add("powerFormId", this.ApiClient.ParameterToString(powerFormId)); // path parameter
-
             if (options != null)
             {
                 if (options.dataLayout != null) localVarQueryParams.Add("data_layout", this.ApiClient.ParameterToString(options.dataLayout)); // query parameter
                 if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
                 if (options.toDate != null) localVarQueryParams.Add("to_date", this.ApiClient.ParameterToString(options.toDate)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -1402,11 +1347,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1416,7 +1361,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<PowerFormsFormDataResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PowerFormsFormDataResponse) this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsFormDataResponse)));
+                (PowerFormsFormDataResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsFormDataResponse)));
             
         }
 
@@ -1435,10 +1380,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>PowerFormSendersResponse</returns>
-        public PowerFormSendersResponse ListPowerFormSenders (string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null)
+        public PowerFormSendersResponse ListPowerFormSenders(string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null)
         {
              ApiResponse<PowerFormSendersResponse> localVarResponse = ListPowerFormSendersWithHttpInfo(accountId, options);
              return localVarResponse.Data;
@@ -1449,10 +1393,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of PowerFormSendersResponse</returns>
-        public ApiResponse< PowerFormSendersResponse > ListPowerFormSendersWithHttpInfo (string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null)
+        public ApiResponse<PowerFormSendersResponse> ListPowerFormSendersWithHttpInfo(string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1498,11 +1441,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1514,11 +1457,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<PowerFormSendersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormSendersResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormSendersResponse)));
+                return new ApiResponse<PowerFormSendersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormSendersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormSendersResponse)));
             }
             else
             {
-                return new ApiResponse<PowerFormSendersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormSendersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormSendersResponse)));
+                return new ApiResponse<PowerFormSendersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormSendersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormSendersResponse)));
             }
             
         }
@@ -1528,14 +1471,12 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of PowerFormSendersResponse</returns>
-        public async System.Threading.Tasks.Task<PowerFormSendersResponse> ListPowerFormSendersAsync (string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null)
+        public async System.Threading.Tasks.Task<PowerFormSendersResponse> ListPowerFormSendersAsync(string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null)
         {
              ApiResponse<PowerFormSendersResponse> localVarResponse = await ListPowerFormSendersAsyncWithHttpInfo(accountId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1543,10 +1484,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PowerFormSendersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PowerFormSendersResponse>> ListPowerFormSendersAsyncWithHttpInfo (string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PowerFormSendersResponse>> ListPowerFormSendersAsyncWithHttpInfo(string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1577,12 +1517,10 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (options != null)
             {
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -1592,11 +1530,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1606,7 +1544,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<PowerFormSendersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PowerFormSendersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormSendersResponse)));
+                (PowerFormSendersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormSendersResponse)));
             
         }
 
@@ -1631,10 +1569,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>PowerFormsResponse</returns>
-        public PowerFormsResponse ListPowerForms (string accountId, PowerFormsApi.ListPowerFormsOptions options = null)
+        public PowerFormsResponse ListPowerForms(string accountId, PowerFormsApi.ListPowerFormsOptions options = null)
         {
              ApiResponse<PowerFormsResponse> localVarResponse = ListPowerFormsWithHttpInfo(accountId, options);
              return localVarResponse.Data;
@@ -1645,10 +1582,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of PowerFormsResponse</returns>
-        public ApiResponse< PowerFormsResponse > ListPowerFormsWithHttpInfo (string accountId, PowerFormsApi.ListPowerFormsOptions options = null)
+        public ApiResponse<PowerFormsResponse> ListPowerFormsWithHttpInfo(string accountId, PowerFormsApi.ListPowerFormsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1697,11 +1633,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1713,11 +1649,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormsResponse)));
+                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormsResponse)));
             }
             else
             {
-                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
+                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
             }
             
         }
@@ -1727,14 +1663,12 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of PowerFormsResponse</returns>
-        public async System.Threading.Tasks.Task<PowerFormsResponse> ListPowerFormsAsync (string accountId, PowerFormsApi.ListPowerFormsOptions options = null)
+        public async System.Threading.Tasks.Task<PowerFormsResponse> ListPowerFormsAsync(string accountId, PowerFormsApi.ListPowerFormsOptions options = null)
         {
              ApiResponse<PowerFormsResponse> localVarResponse = await ListPowerFormsAsyncWithHttpInfo(accountId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1742,10 +1676,9 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PowerFormsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PowerFormsResponse>> ListPowerFormsAsyncWithHttpInfo (string accountId, PowerFormsApi.ListPowerFormsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PowerFormsResponse>> ListPowerFormsAsyncWithHttpInfo(string accountId, PowerFormsApi.ListPowerFormsOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1776,7 +1709,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (options != null)
             {
                 if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
@@ -1784,7 +1716,6 @@ namespace DocuSign.eSign.Api
                 if (options.orderBy != null) localVarQueryParams.Add("order_by", this.ApiClient.ParameterToString(options.orderBy)); // query parameter
                 if (options.toDate != null) localVarQueryParams.Add("to_date", this.ApiClient.ParameterToString(options.toDate)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -1794,11 +1725,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1808,7 +1739,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<PowerFormsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PowerFormsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
+                (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
             
         }
 
@@ -1818,11 +1749,11 @@ namespace DocuSign.eSign.Api
         /// Creates a new PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>PowerForm</returns>
-        public PowerForm UpdatePowerForm (string accountId, string powerFormId, PowerForm powerForm = null)
+        public PowerForm UpdatePowerForm(string accountId, string powerFormId, PowerForm powerForm = null)
         {
              ApiResponse<PowerForm> localVarResponse = UpdatePowerFormWithHttpInfo(accountId, powerFormId, powerForm);
              return localVarResponse.Data;
@@ -1832,11 +1763,11 @@ namespace DocuSign.eSign.Api
         /// Creates a new PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>ApiResponse of PowerForm</returns>
-        public ApiResponse< PowerForm > UpdatePowerFormWithHttpInfo (string accountId, string powerFormId, PowerForm powerForm = null)
+        public ApiResponse<PowerForm> UpdatePowerFormWithHttpInfo(string accountId, string powerFormId, PowerForm powerForm = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1890,11 +1821,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1906,11 +1837,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerForm)));
+                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerForm)));
             }
             else
             {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm) this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
+                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
             }
             
         }
@@ -1919,26 +1850,25 @@ namespace DocuSign.eSign.Api
         /// Creates a new PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>Task of PowerForm</returns>
-        public async System.Threading.Tasks.Task<PowerForm> UpdatePowerFormAsync (string accountId, string powerFormId, PowerForm powerForm = null)
+        public async System.Threading.Tasks.Task<PowerForm> UpdatePowerFormAsync(string accountId, string powerFormId, PowerForm powerForm = null)
         {
              ApiResponse<PowerForm> localVarResponse = await UpdatePowerFormAsyncWithHttpInfo(accountId, powerFormId, powerForm);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Creates a new PowerForm. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="powerFormId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="powerFormId"></param>
         /// <param name="powerForm"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (PowerForm)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PowerForm>> UpdatePowerFormAsyncWithHttpInfo (string accountId, string powerFormId, PowerForm powerForm = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PowerForm>> UpdatePowerFormAsyncWithHttpInfo(string accountId, string powerFormId, PowerForm powerForm = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1973,8 +1903,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (powerFormId != null) localVarPathParams.Add("powerFormId", this.ApiClient.ParameterToString(powerFormId)); // path parameter
-
-
             if (powerForm != null && powerForm.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(powerForm); // http body (model) parameter
@@ -1992,11 +1920,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2006,7 +1934,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<PowerForm>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PowerForm) this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
+                (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
             
         }
 

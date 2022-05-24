@@ -31,11 +31,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <param name="bulkProcessRequest"> (optional)</param>
-        
         /// <returns></returns>
-        BulkProcessResponse CreateBulkProcessRequestToQueue (string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null);
+        BulkProcessResponse CreateBulkProcessRequestToQueue(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null);
 
         /// <summary>
         /// Uses the specified bulk envelopes list to update the envelopes specified in the payload
@@ -44,11 +45,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <param name="bulkProcessRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<BulkProcessResponse> CreateBulkProcessRequestToQueueWithHttpInfo (string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null);
+        ApiResponse<BulkProcessResponse> CreateBulkProcessRequestToQueueWithHttpInfo(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null);
         /// <summary>
         /// Deletes a specific bulk process list
         /// </summary>
@@ -56,11 +58,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns></returns>
-        BulkProcessResult DeleteBulkProcessList (string accountId, string processAction, string bulkProcessListId);
+        BulkProcessResult DeleteBulkProcessList(string accountId, string processAction, string bulkProcessListId);
 
         /// <summary>
         /// Deletes a specific bulk process list
@@ -69,11 +71,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<BulkProcessResult> DeleteBulkProcessListWithHttpInfo (string accountId, string processAction, string bulkProcessListId);
+        ApiResponse<BulkProcessResult> DeleteBulkProcessListWithHttpInfo(string accountId, string processAction, string bulkProcessListId);
         /// <summary>
         /// Gets a specific bulk process list
         /// </summary>
@@ -81,11 +83,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns></returns>
-        void GetBulkProcessList (string accountId, string processAction, string bulkProcessListId);
+        void GetBulkProcessList(string accountId, string processAction, string bulkProcessListId);
 
         /// <summary>
         /// Gets a specific bulk process list
@@ -94,11 +96,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetBulkProcessListWithHttpInfo (string accountId, string processAction, string bulkProcessListId);
+        ApiResponse<Object> GetBulkProcessListWithHttpInfo(string accountId, string processAction, string bulkProcessListId);
         /// <summary>
         /// Updates a specific bulk process list
         /// </summary>
@@ -106,11 +108,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns></returns>
-        void UpdateBulkProcessList (string accountId, string processAction, string bulkProcessListId);
+        void UpdateBulkProcessList(string accountId, string processAction, string bulkProcessListId);
 
         /// <summary>
         /// Updates a specific bulk process list
@@ -119,11 +121,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateBulkProcessListWithHttpInfo (string accountId, string processAction, string bulkProcessListId);
+        ApiResponse<Object> UpdateBulkProcessListWithHttpInfo(string accountId, string processAction, string bulkProcessListId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -133,11 +135,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <param name="bulkProcessRequest"> (optional)</param>
-        
         /// <returns>Task of BulkProcessResponse</returns>
-        System.Threading.Tasks.Task<BulkProcessResponse> CreateBulkProcessRequestToQueueAsync (string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null);
+        System.Threading.Tasks.Task<BulkProcessResponse> CreateBulkProcessRequestToQueueAsync(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null);
 
         /// <summary>
         /// Uses the specified bulk envelopes list to update the envelopes specified in the payload
@@ -146,11 +149,12 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <param name="bulkProcessRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (BulkProcessResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BulkProcessResponse>> CreateBulkProcessRequestToQueueAsyncWithHttpInfo (string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<BulkProcessResponse>> CreateBulkProcessRequestToQueueAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null);
         /// <summary>
         /// Deletes a specific bulk process list
         /// </summary>
@@ -158,11 +162,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of BulkProcessResult</returns>
-        System.Threading.Tasks.Task<BulkProcessResult> DeleteBulkProcessListAsync (string accountId, string processAction, string bulkProcessListId);
+        System.Threading.Tasks.Task<BulkProcessResult> DeleteBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId);
 
         /// <summary>
         /// Deletes a specific bulk process list
@@ -171,11 +175,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of ApiResponse (BulkProcessResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BulkProcessResult>> DeleteBulkProcessListAsyncWithHttpInfo (string accountId, string processAction, string bulkProcessListId);
+        System.Threading.Tasks.Task<ApiResponse<BulkProcessResult>> DeleteBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId);
         /// <summary>
         /// Gets a specific bulk process list
         /// </summary>
@@ -183,11 +187,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetBulkProcessListAsync (string accountId, string processAction, string bulkProcessListId);
+        System.Threading.Tasks.Task GetBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId);
 
         /// <summary>
         /// Gets a specific bulk process list
@@ -196,11 +200,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetBulkProcessListAsyncWithHttpInfo (string accountId, string processAction, string bulkProcessListId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId);
         /// <summary>
         /// Updates a specific bulk process list
         /// </summary>
@@ -208,11 +212,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateBulkProcessListAsync (string accountId, string processAction, string bulkProcessListId);
+        System.Threading.Tasks.Task UpdateBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId);
 
         /// <summary>
         /// Updates a specific bulk process list
@@ -221,11 +225,11 @@ namespace DocuSign.eSign.Api
         /// 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateBulkProcessListAsyncWithHttpInfo (string accountId, string processAction, string bulkProcessListId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId);
         #endregion Asynchronous Operations
     }
 
@@ -286,11 +290,12 @@ namespace DocuSign.eSign.Api
         /// Uses the specified bulk envelopes list to update the envelopes specified in the payload 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <param name="bulkProcessRequest"> (optional)</param>
-        
         /// <returns>BulkProcessResponse</returns>
-        public BulkProcessResponse CreateBulkProcessRequestToQueue (string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null)
+        public BulkProcessResponse CreateBulkProcessRequestToQueue(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null)
         {
              ApiResponse<BulkProcessResponse> localVarResponse = CreateBulkProcessRequestToQueueWithHttpInfo(accountId, processAction, bulkProcessListId, bulkProcessRequest);
              return localVarResponse.Data;
@@ -300,11 +305,12 @@ namespace DocuSign.eSign.Api
         /// Uses the specified bulk envelopes list to update the envelopes specified in the payload 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <param name="bulkProcessRequest"> (optional)</param>
-        
         /// <returns>ApiResponse of BulkProcessResponse</returns>
-        public ApiResponse< BulkProcessResponse > CreateBulkProcessRequestToQueueWithHttpInfo (string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null)
+        public ApiResponse<BulkProcessResponse> CreateBulkProcessRequestToQueueWithHttpInfo(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -362,11 +368,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -378,11 +384,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<BulkProcessResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkProcessResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkProcessResponse)));
+                return new ApiResponse<BulkProcessResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkProcessResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkProcessResponse)));
             }
             else
             {
-                return new ApiResponse<BulkProcessResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkProcessResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResponse)));
+                return new ApiResponse<BulkProcessResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkProcessResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResponse)));
             }
             
         }
@@ -391,26 +397,27 @@ namespace DocuSign.eSign.Api
         /// Uses the specified bulk envelopes list to update the envelopes specified in the payload 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <param name="bulkProcessRequest"> (optional)</param>
-        
         /// <returns>Task of BulkProcessResponse</returns>
-        public async System.Threading.Tasks.Task<BulkProcessResponse> CreateBulkProcessRequestToQueueAsync (string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null)
+        public async System.Threading.Tasks.Task<BulkProcessResponse> CreateBulkProcessRequestToQueueAsync(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null)
         {
              ApiResponse<BulkProcessResponse> localVarResponse = await CreateBulkProcessRequestToQueueAsyncWithHttpInfo(accountId, processAction, bulkProcessListId, bulkProcessRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Uses the specified bulk envelopes list to update the envelopes specified in the payload 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <param name="bulkProcessRequest"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (BulkProcessResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessResponse>> CreateBulkProcessRequestToQueueAsyncWithHttpInfo (string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessResponse>> CreateBulkProcessRequestToQueueAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -449,8 +456,6 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (processAction != null) localVarPathParams.Add("processAction", this.ApiClient.ParameterToString(processAction)); // path parameter
             if (bulkProcessListId != null) localVarPathParams.Add("bulkProcessListId", this.ApiClient.ParameterToString(bulkProcessListId)); // path parameter
-
-
             if (bulkProcessRequest != null && bulkProcessRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(bulkProcessRequest); // http body (model) parameter
@@ -468,11 +473,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -482,7 +487,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<BulkProcessResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BulkProcessResponse) this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResponse)));
+                (BulkProcessResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResponse)));
             
         }
 
@@ -492,11 +497,11 @@ namespace DocuSign.eSign.Api
         /// Deletes a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>BulkProcessResult</returns>
-        public BulkProcessResult DeleteBulkProcessList (string accountId, string processAction, string bulkProcessListId)
+        public BulkProcessResult DeleteBulkProcessList(string accountId, string processAction, string bulkProcessListId)
         {
              ApiResponse<BulkProcessResult> localVarResponse = DeleteBulkProcessListWithHttpInfo(accountId, processAction, bulkProcessListId);
              return localVarResponse.Data;
@@ -506,11 +511,11 @@ namespace DocuSign.eSign.Api
         /// Deletes a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>ApiResponse of BulkProcessResult</returns>
-        public ApiResponse< BulkProcessResult > DeleteBulkProcessListWithHttpInfo (string accountId, string processAction, string bulkProcessListId)
+        public ApiResponse<BulkProcessResult> DeleteBulkProcessListWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -560,11 +565,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -576,11 +581,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<BulkProcessResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkProcessResult) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkProcessResult)));
+                return new ApiResponse<BulkProcessResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkProcessResult)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkProcessResult)));
             }
             else
             {
-                return new ApiResponse<BulkProcessResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkProcessResult) this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResult)));
+                return new ApiResponse<BulkProcessResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (BulkProcessResult)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResult)));
             }
             
         }
@@ -589,26 +594,25 @@ namespace DocuSign.eSign.Api
         /// Deletes a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of BulkProcessResult</returns>
-        public async System.Threading.Tasks.Task<BulkProcessResult> DeleteBulkProcessListAsync (string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task<BulkProcessResult> DeleteBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId)
         {
              ApiResponse<BulkProcessResult> localVarResponse = await DeleteBulkProcessListAsyncWithHttpInfo(accountId, processAction, bulkProcessListId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of ApiResponse (BulkProcessResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessResult>> DeleteBulkProcessListAsyncWithHttpInfo (string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessResult>> DeleteBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -648,8 +652,6 @@ namespace DocuSign.eSign.Api
             if (processAction != null) localVarPathParams.Add("processAction", this.ApiClient.ParameterToString(processAction)); // path parameter
             if (bulkProcessListId != null) localVarPathParams.Add("bulkProcessListId", this.ApiClient.ParameterToString(bulkProcessListId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -658,11 +660,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -672,7 +674,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<BulkProcessResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BulkProcessResult) this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResult)));
+                (BulkProcessResult)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResult)));
             
         }
 
@@ -682,11 +684,11 @@ namespace DocuSign.eSign.Api
         /// Gets a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns></returns>
-        public void GetBulkProcessList (string accountId, string processAction, string bulkProcessListId)
+        public void GetBulkProcessList(string accountId, string processAction, string bulkProcessListId)
         {
              GetBulkProcessListWithHttpInfo(accountId, processAction, bulkProcessListId);
         }
@@ -695,11 +697,11 @@ namespace DocuSign.eSign.Api
         /// Gets a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> GetBulkProcessListWithHttpInfo (string accountId, string processAction, string bulkProcessListId)
+        public ApiResponse<Object> GetBulkProcessListWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -749,11 +751,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -770,25 +772,24 @@ namespace DocuSign.eSign.Api
         /// Gets a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetBulkProcessListAsync (string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task GetBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId)
         {
              await GetBulkProcessListAsyncWithHttpInfo(accountId, processAction, bulkProcessListId);
-
         }
 
         /// <summary>
         /// Gets a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetBulkProcessListAsyncWithHttpInfo (string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -828,8 +829,6 @@ namespace DocuSign.eSign.Api
             if (processAction != null) localVarPathParams.Add("processAction", this.ApiClient.ParameterToString(processAction)); // path parameter
             if (bulkProcessListId != null) localVarPathParams.Add("bulkProcessListId", this.ApiClient.ParameterToString(bulkProcessListId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -838,11 +837,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -862,11 +861,11 @@ namespace DocuSign.eSign.Api
         /// Updates a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns></returns>
-        public void UpdateBulkProcessList (string accountId, string processAction, string bulkProcessListId)
+        public void UpdateBulkProcessList(string accountId, string processAction, string bulkProcessListId)
         {
              UpdateBulkProcessListWithHttpInfo(accountId, processAction, bulkProcessListId);
         }
@@ -875,11 +874,11 @@ namespace DocuSign.eSign.Api
         /// Updates a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> UpdateBulkProcessListWithHttpInfo (string accountId, string processAction, string bulkProcessListId)
+        public ApiResponse<Object> UpdateBulkProcessListWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -929,11 +928,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -950,25 +949,24 @@ namespace DocuSign.eSign.Api
         /// Updates a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateBulkProcessListAsync (string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task UpdateBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId)
         {
              await UpdateBulkProcessListAsyncWithHttpInfo(accountId, processAction, bulkProcessListId);
-
         }
 
         /// <summary>
         /// Updates a specific bulk process list 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>/// <param name="processAction"></param>/// <param name="bulkProcessListId"></param>
-        
-        
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="processAction"></param>
+        /// <param name="bulkProcessListId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateBulkProcessListAsyncWithHttpInfo (string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1008,8 +1006,6 @@ namespace DocuSign.eSign.Api
             if (processAction != null) localVarPathParams.Add("processAction", this.ApiClient.ParameterToString(processAction)); // path parameter
             if (bulkProcessListId != null) localVarPathParams.Add("bulkProcessListId", this.ApiClient.ParameterToString(bulkProcessListId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1018,11 +1014,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {

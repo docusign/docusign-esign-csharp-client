@@ -25,20 +25,37 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConnectDeleteFailureResult
+    /// IdEvidenceResourceToken
     /// </summary>
     [DataContract]
-    public partial class ConnectDeleteFailureResult :  IEquatable<ConnectDeleteFailureResult>, IValidatableObject
+    public partial class IdEvidenceResourceToken :  IEquatable<IdEvidenceResourceToken>, IValidatableObject
     {
+        public IdEvidenceResourceToken()
+        {
+            // Empty Constructor
+        }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectDeleteFailureResult" /> class.
+        /// Initializes a new instance of the <see cref="IdEvidenceResourceToken" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        public ConnectDeleteFailureResult()
+        /// <param name="ProofBaseURI">ProofBaseURI.</param>
+        /// <param name="ResourceToken">ResourceToken.</param>
+        public IdEvidenceResourceToken(string ProofBaseURI = default(string), string ResourceToken = default(string))
         {
+            this.ProofBaseURI = ProofBaseURI;
+            this.ResourceToken = ResourceToken;
         }
         
+        /// <summary>
+        /// Gets or Sets ProofBaseURI
+        /// </summary>
+        [DataMember(Name="proofBaseURI", EmitDefaultValue=false)]
+        public string ProofBaseURI { get; set; }
+        /// <summary>
+        /// Gets or Sets ResourceToken
+        /// </summary>
+        [DataMember(Name="resourceToken", EmitDefaultValue=false)]
+        public string ResourceToken { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -46,7 +63,9 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ConnectDeleteFailureResult {\n");
+            sb.Append("class IdEvidenceResourceToken {\n");
+            sb.Append("  ProofBaseURI: ").Append(ProofBaseURI).Append("\n");
+            sb.Append("  ResourceToken: ").Append(ResourceToken).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -68,21 +87,31 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ConnectDeleteFailureResult);
+            return this.Equals(obj as IdEvidenceResourceToken);
         }
 
         /// <summary>
-        /// Returns true if ConnectDeleteFailureResult instances are equal
+        /// Returns true if IdEvidenceResourceToken instances are equal
         /// </summary>
-        /// <param name="other">Instance of ConnectDeleteFailureResult to be compared</param>
+        /// <param name="other">Instance of IdEvidenceResourceToken to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ConnectDeleteFailureResult other)
+        public bool Equals(IdEvidenceResourceToken other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
                 return false;
 
-            return false;
+            return 
+                (
+                    this.ProofBaseURI == other.ProofBaseURI ||
+                    this.ProofBaseURI != null &&
+                    this.ProofBaseURI.Equals(other.ProofBaseURI)
+                ) && 
+                (
+                    this.ResourceToken == other.ResourceToken ||
+                    this.ResourceToken != null &&
+                    this.ResourceToken.Equals(other.ResourceToken)
+                );
         }
 
         /// <summary>
@@ -96,6 +125,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.ProofBaseURI != null)
+                    hash = hash * 59 + this.ProofBaseURI.GetHashCode();
+                if (this.ResourceToken != null)
+                    hash = hash * 59 + this.ResourceToken.GetHashCode();
                 return hash;
             }
         }

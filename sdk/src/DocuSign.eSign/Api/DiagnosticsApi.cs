@@ -31,11 +31,8 @@ namespace DocuSign.eSign.Api
         /// Deletes the request log files.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns></returns>
-        void DeleteRequestLogs ();
+        void DeleteRequestLogs();
 
         /// <summary>
         /// Deletes the request log files.
@@ -44,11 +41,8 @@ namespace DocuSign.eSign.Api
         /// Deletes the request log files.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteRequestLogsWithHttpInfo ();
+        ApiResponse<Object> DeleteRequestLogsWithHttpInfo();
         /// <summary>
         /// Gets a request logging log file.
         /// </summary>
@@ -57,10 +51,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestLogId"></param>
-        
-        
         /// <returns></returns>
-        System.IO.Stream GetRequestLog (string requestLogId);
+        System.IO.Stream GetRequestLog(string requestLogId);
 
         /// <summary>
         /// Gets a request logging log file.
@@ -70,10 +62,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestLogId"></param>
-        
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<System.IO.Stream> GetRequestLogWithHttpInfo (string requestLogId);
+        ApiResponse<System.IO.Stream> GetRequestLogWithHttpInfo(string requestLogId);
         /// <summary>
         /// Gets the API request logging settings.
         /// </summary>
@@ -81,11 +71,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the current API request logging setting for the user and remaining log entries.  **Response** The response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns></returns>
-        DiagnosticsSettingsInformation GetRequestLogSettings ();
+        DiagnosticsSettingsInformation GetRequestLogSettings();
 
         /// <summary>
         /// Gets the API request logging settings.
@@ -94,11 +81,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the current API request logging setting for the user and remaining log entries.  **Response** The response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DiagnosticsSettingsInformation> GetRequestLogSettingsWithHttpInfo ();
+        ApiResponse<DiagnosticsSettingsInformation> GetRequestLogSettingsWithHttpInfo();
         /// <summary>
         /// Lists resources for REST version specified
         /// </summary>
@@ -106,11 +90,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the base resources available for the DocuSign REST APIs.  You do not need an integrator key to view the REST API versions and resources.  Example: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.  To view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.  Example: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns></returns>
-        ResourceInformation GetResources ();
+        ResourceInformation GetResources();
 
         /// <summary>
         /// Lists resources for REST version specified
@@ -119,11 +100,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the base resources available for the DocuSign REST APIs.  You do not need an integrator key to view the REST API versions and resources.  Example: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.  To view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.  Example: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ResourceInformation> GetResourcesWithHttpInfo ();
+        ApiResponse<ResourceInformation> GetResourcesWithHttpInfo();
         /// <summary>
         /// Retrieves the available REST API versions.
         /// </summary>
@@ -131,11 +109,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the available REST API versions.  DocuSign Production system: https://www.docusign.net/restapi/service_information DocuSign Demo system: https://demo.docusign.net/restapi/service_information  You do not need an integrator key to view the REST API versions and resources.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns></returns>
-        ServiceInformation GetService ();
+        ServiceInformation GetService();
 
         /// <summary>
         /// Retrieves the available REST API versions.
@@ -144,11 +119,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the available REST API versions.  DocuSign Production system: https://www.docusign.net/restapi/service_information DocuSign Demo system: https://demo.docusign.net/restapi/service_information  You do not need an integrator key to view the REST API versions and resources.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ServiceInformation> GetServiceWithHttpInfo ();
+        ApiResponse<ServiceInformation> GetServiceWithHttpInfo();
         /// <summary>
         /// Gets the API request logging log files.
         /// </summary>
@@ -156,11 +128,9 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.  If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.  If the Accept header is set to &#x60;application/json&#x60; or &#x60;application/xml&#x60;, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        ApiRequestLogsResult ListRequestLogs (DiagnosticsApi.ListRequestLogsOptions options = null);
+        ApiRequestLogsResult ListRequestLogs(DiagnosticsApi.ListRequestLogsOptions options = null);
 
         /// <summary>
         /// Gets the API request logging log files.
@@ -169,11 +139,9 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.  If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.  If the Accept header is set to &#x60;application/json&#x60; or &#x60;application/xml&#x60;, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ApiRequestLogsResult> ListRequestLogsWithHttpInfo (DiagnosticsApi.ListRequestLogsOptions options = null);
+        ApiResponse<ApiRequestLogsResult> ListRequestLogsWithHttpInfo(DiagnosticsApi.ListRequestLogsOptions options = null);
         /// <summary>
         /// Enables or disables API request logging for troubleshooting.
         /// </summary>
@@ -181,11 +149,9 @@ namespace DocuSign.eSign.Api
         /// Enables or disables API request logging for troubleshooting.  When enabled (&#x60;apiRequestLogging&#x60; is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.  You can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.  Private information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.  ###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn&#39;t logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
         /// <param name="diagnosticsSettingsInformation"> (optional)</param>
-        
         /// <returns></returns>
-        DiagnosticsSettingsInformation UpdateRequestLogSettings (DiagnosticsSettingsInformation diagnosticsSettingsInformation = null);
+        DiagnosticsSettingsInformation UpdateRequestLogSettings(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null);
 
         /// <summary>
         /// Enables or disables API request logging for troubleshooting.
@@ -194,11 +160,9 @@ namespace DocuSign.eSign.Api
         /// Enables or disables API request logging for troubleshooting.  When enabled (&#x60;apiRequestLogging&#x60; is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.  You can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.  Private information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.  ###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn&#39;t logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
         /// <param name="diagnosticsSettingsInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DiagnosticsSettingsInformation> UpdateRequestLogSettingsWithHttpInfo (DiagnosticsSettingsInformation diagnosticsSettingsInformation = null);
+        ApiResponse<DiagnosticsSettingsInformation> UpdateRequestLogSettingsWithHttpInfo(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -208,11 +172,8 @@ namespace DocuSign.eSign.Api
         /// Deletes the request log files.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteRequestLogsAsync ();
+        System.Threading.Tasks.Task DeleteRequestLogsAsync();
 
         /// <summary>
         /// Deletes the request log files.
@@ -221,11 +182,8 @@ namespace DocuSign.eSign.Api
         /// Deletes the request log files.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRequestLogsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRequestLogsAsyncWithHttpInfo();
         /// <summary>
         /// Gets a request logging log file.
         /// </summary>
@@ -234,10 +192,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestLogId"></param>
-        
-        
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> GetRequestLogAsync (string requestLogId);
+        System.Threading.Tasks.Task<System.IO.Stream> GetRequestLogAsync(string requestLogId);
 
         /// <summary>
         /// Gets a request logging log file.
@@ -247,10 +203,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestLogId"></param>
-        
-        
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetRequestLogAsyncWithHttpInfo (string requestLogId);
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetRequestLogAsyncWithHttpInfo(string requestLogId);
         /// <summary>
         /// Gets the API request logging settings.
         /// </summary>
@@ -258,11 +212,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the current API request logging setting for the user and remaining log entries.  **Response** The response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of DiagnosticsSettingsInformation</returns>
-        System.Threading.Tasks.Task<DiagnosticsSettingsInformation> GetRequestLogSettingsAsync ();
+        System.Threading.Tasks.Task<DiagnosticsSettingsInformation> GetRequestLogSettingsAsync();
 
         /// <summary>
         /// Gets the API request logging settings.
@@ -271,11 +222,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the current API request logging setting for the user and remaining log entries.  **Response** The response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse (DiagnosticsSettingsInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> GetRequestLogSettingsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> GetRequestLogSettingsAsyncWithHttpInfo();
         /// <summary>
         /// Lists resources for REST version specified
         /// </summary>
@@ -283,11 +231,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the base resources available for the DocuSign REST APIs.  You do not need an integrator key to view the REST API versions and resources.  Example: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.  To view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.  Example: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ResourceInformation</returns>
-        System.Threading.Tasks.Task<ResourceInformation> GetResourcesAsync ();
+        System.Threading.Tasks.Task<ResourceInformation> GetResourcesAsync();
 
         /// <summary>
         /// Lists resources for REST version specified
@@ -296,11 +241,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the base resources available for the DocuSign REST APIs.  You do not need an integrator key to view the REST API versions and resources.  Example: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.  To view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.  Example: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse (ResourceInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResourceInformation>> GetResourcesAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<ResourceInformation>> GetResourcesAsyncWithHttpInfo();
         /// <summary>
         /// Retrieves the available REST API versions.
         /// </summary>
@@ -308,11 +250,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the available REST API versions.  DocuSign Production system: https://www.docusign.net/restapi/service_information DocuSign Demo system: https://demo.docusign.net/restapi/service_information  You do not need an integrator key to view the REST API versions and resources.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ServiceInformation</returns>
-        System.Threading.Tasks.Task<ServiceInformation> GetServiceAsync ();
+        System.Threading.Tasks.Task<ServiceInformation> GetServiceAsync();
 
         /// <summary>
         /// Retrieves the available REST API versions.
@@ -321,11 +260,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the available REST API versions.  DocuSign Production system: https://www.docusign.net/restapi/service_information DocuSign Demo system: https://demo.docusign.net/restapi/service_information  You do not need an integrator key to view the REST API versions and resources.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse (ServiceInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ServiceInformation>> GetServiceAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<ServiceInformation>> GetServiceAsyncWithHttpInfo();
         /// <summary>
         /// Gets the API request logging log files.
         /// </summary>
@@ -333,11 +269,9 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.  If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.  If the Accept header is set to &#x60;application/json&#x60; or &#x60;application/xml&#x60;, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiRequestLogsResult</returns>
-        System.Threading.Tasks.Task<ApiRequestLogsResult> ListRequestLogsAsync (DiagnosticsApi.ListRequestLogsOptions options = null);
+        System.Threading.Tasks.Task<ApiRequestLogsResult> ListRequestLogsAsync(DiagnosticsApi.ListRequestLogsOptions options = null);
 
         /// <summary>
         /// Gets the API request logging log files.
@@ -346,11 +280,9 @@ namespace DocuSign.eSign.Api
         /// Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.  If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.  If the Accept header is set to &#x60;application/json&#x60; or &#x60;application/xml&#x60;, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (ApiRequestLogsResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApiRequestLogsResult>> ListRequestLogsAsyncWithHttpInfo (DiagnosticsApi.ListRequestLogsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<ApiRequestLogsResult>> ListRequestLogsAsyncWithHttpInfo(DiagnosticsApi.ListRequestLogsOptions options = null);
         /// <summary>
         /// Enables or disables API request logging for troubleshooting.
         /// </summary>
@@ -358,11 +290,9 @@ namespace DocuSign.eSign.Api
         /// Enables or disables API request logging for troubleshooting.  When enabled (&#x60;apiRequestLogging&#x60; is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.  You can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.  Private information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.  ###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn&#39;t logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
         /// <param name="diagnosticsSettingsInformation"> (optional)</param>
-        
         /// <returns>Task of DiagnosticsSettingsInformation</returns>
-        System.Threading.Tasks.Task<DiagnosticsSettingsInformation> UpdateRequestLogSettingsAsync (DiagnosticsSettingsInformation diagnosticsSettingsInformation = null);
+        System.Threading.Tasks.Task<DiagnosticsSettingsInformation> UpdateRequestLogSettingsAsync(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null);
 
         /// <summary>
         /// Enables or disables API request logging for troubleshooting.
@@ -371,11 +301,9 @@ namespace DocuSign.eSign.Api
         /// Enables or disables API request logging for troubleshooting.  When enabled (&#x60;apiRequestLogging&#x60; is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.  You can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.  Private information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.  ###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn&#39;t logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
         /// <param name="diagnosticsSettingsInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DiagnosticsSettingsInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> UpdateRequestLogSettingsAsyncWithHttpInfo (DiagnosticsSettingsInformation diagnosticsSettingsInformation = null);
+        System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> UpdateRequestLogSettingsAsyncWithHttpInfo(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null);
         #endregion Asynchronous Operations
     }
 
@@ -436,11 +364,8 @@ namespace DocuSign.eSign.Api
         /// Deletes the request log files. Deletes the request log files.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns></returns>
-        public void DeleteRequestLogs ()
+        public void DeleteRequestLogs()
         {
              DeleteRequestLogsWithHttpInfo();
         }
@@ -449,11 +374,8 @@ namespace DocuSign.eSign.Api
         /// Deletes the request log files. Deletes the request log files.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteRequestLogsWithHttpInfo ()
+        public ApiResponse<Object> DeleteRequestLogsWithHttpInfo()
         {
 
             var localVarPath = "/v2.1/diagnostics/request_logs";
@@ -491,11 +413,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -512,25 +434,18 @@ namespace DocuSign.eSign.Api
         /// Deletes the request log files. Deletes the request log files.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteRequestLogsAsync ()
+        public async System.Threading.Tasks.Task DeleteRequestLogsAsync()
         {
              await DeleteRequestLogsAsyncWithHttpInfo();
-
         }
 
         /// <summary>
         /// Deletes the request log files. Deletes the request log files.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRequestLogsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRequestLogsAsyncWithHttpInfo()
         {
 
             var localVarPath = "/v2.1/diagnostics/request_logs";
@@ -558,8 +473,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -568,11 +481,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -593,10 +506,8 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestLogId"></param>
-        
-        
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream GetRequestLog (string requestLogId)
+        public System.IO.Stream GetRequestLog(string requestLogId)
         {
              ApiResponse<System.IO.Stream> localVarResponse = GetRequestLogWithHttpInfo(requestLogId);
              return localVarResponse.Data;
@@ -607,10 +518,8 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestLogId"></param>
-        
-        
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public ApiResponse< System.IO.Stream > GetRequestLogWithHttpInfo (string requestLogId)
+        public ApiResponse<System.IO.Stream> GetRequestLogWithHttpInfo(string requestLogId)
         {
             // verify the required parameter 'requestLogId' is set
             if (requestLogId == null)
@@ -652,11 +561,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -668,11 +577,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(System.IO.Stream)));
+                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(System.IO.Stream)));
             }
             else
             {
-                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+                return new ApiResponse<System.IO.Stream>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
             }
             
         }
@@ -682,14 +591,11 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestLogId"></param>
-        
-        
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> GetRequestLogAsync (string requestLogId)
+        public async System.Threading.Tasks.Task<System.IO.Stream> GetRequestLogAsync(string requestLogId)
         {
              ApiResponse<System.IO.Stream> localVarResponse = await GetRequestLogAsyncWithHttpInfo(requestLogId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -697,10 +603,8 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestLogId"></param>
-        
-        
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetRequestLogAsyncWithHttpInfo (string requestLogId)
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetRequestLogAsyncWithHttpInfo(string requestLogId)
         {
             // verify the required parameter 'requestLogId' is set
             if (requestLogId == null)
@@ -732,8 +636,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (requestLogId != null) localVarPathParams.Add("requestLogId", this.ApiClient.ParameterToString(requestLogId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -742,11 +644,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -756,7 +658,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<System.IO.Stream>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (System.IO.Stream) this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+                (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
             
         }
 
@@ -766,11 +668,8 @@ namespace DocuSign.eSign.Api
         /// Gets the API request logging settings. Retrieves the current API request logging setting for the user and remaining log entries.  **Response** The response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>DiagnosticsSettingsInformation</returns>
-        public DiagnosticsSettingsInformation GetRequestLogSettings ()
+        public DiagnosticsSettingsInformation GetRequestLogSettings()
         {
              ApiResponse<DiagnosticsSettingsInformation> localVarResponse = GetRequestLogSettingsWithHttpInfo();
              return localVarResponse.Data;
@@ -780,11 +679,8 @@ namespace DocuSign.eSign.Api
         /// Gets the API request logging settings. Retrieves the current API request logging setting for the user and remaining log entries.  **Response** The response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of DiagnosticsSettingsInformation</returns>
-        public ApiResponse< DiagnosticsSettingsInformation > GetRequestLogSettingsWithHttpInfo ()
+        public ApiResponse<DiagnosticsSettingsInformation> GetRequestLogSettingsWithHttpInfo()
         {
 
             var localVarPath = "/v2.1/diagnostics/settings";
@@ -822,11 +718,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -838,11 +734,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DiagnosticsSettingsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DiagnosticsSettingsInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DiagnosticsSettingsInformation)));
+                return new ApiResponse<DiagnosticsSettingsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DiagnosticsSettingsInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DiagnosticsSettingsInformation)));
             }
             else
             {
-                return new ApiResponse<DiagnosticsSettingsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DiagnosticsSettingsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DiagnosticsSettingsInformation)));
+                return new ApiResponse<DiagnosticsSettingsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DiagnosticsSettingsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DiagnosticsSettingsInformation)));
             }
             
         }
@@ -851,26 +747,19 @@ namespace DocuSign.eSign.Api
         /// Gets the API request logging settings. Retrieves the current API request logging setting for the user and remaining log entries.  **Response** The response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of DiagnosticsSettingsInformation</returns>
-        public async System.Threading.Tasks.Task<DiagnosticsSettingsInformation> GetRequestLogSettingsAsync ()
+        public async System.Threading.Tasks.Task<DiagnosticsSettingsInformation> GetRequestLogSettingsAsync()
         {
              ApiResponse<DiagnosticsSettingsInformation> localVarResponse = await GetRequestLogSettingsAsyncWithHttpInfo();
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets the API request logging settings. Retrieves the current API request logging setting for the user and remaining log entries.  **Response** The response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse (DiagnosticsSettingsInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> GetRequestLogSettingsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> GetRequestLogSettingsAsyncWithHttpInfo()
         {
 
             var localVarPath = "/v2.1/diagnostics/settings";
@@ -898,8 +787,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -908,11 +795,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -922,7 +809,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<DiagnosticsSettingsInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DiagnosticsSettingsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DiagnosticsSettingsInformation)));
+                (DiagnosticsSettingsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DiagnosticsSettingsInformation)));
             
         }
 
@@ -932,11 +819,8 @@ namespace DocuSign.eSign.Api
         /// Lists resources for REST version specified Retrieves the base resources available for the DocuSign REST APIs.  You do not need an integrator key to view the REST API versions and resources.  Example: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.  To view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.  Example: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ResourceInformation</returns>
-        public ResourceInformation GetResources ()
+        public ResourceInformation GetResources()
         {
              ApiResponse<ResourceInformation> localVarResponse = GetResourcesWithHttpInfo();
              return localVarResponse.Data;
@@ -946,11 +830,8 @@ namespace DocuSign.eSign.Api
         /// Lists resources for REST version specified Retrieves the base resources available for the DocuSign REST APIs.  You do not need an integrator key to view the REST API versions and resources.  Example: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.  To view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.  Example: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of ResourceInformation</returns>
-        public ApiResponse< ResourceInformation > GetResourcesWithHttpInfo ()
+        public ApiResponse<ResourceInformation> GetResourcesWithHttpInfo()
         {
 
             var localVarPath = "/v2.1";
@@ -988,11 +869,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1004,11 +885,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<ResourceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ResourceInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ResourceInformation)));
+                return new ApiResponse<ResourceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ResourceInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ResourceInformation)));
             }
             else
             {
-                return new ApiResponse<ResourceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ResourceInformation) this.ApiClient.Deserialize(localVarResponse, typeof(ResourceInformation)));
+                return new ApiResponse<ResourceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ResourceInformation)this.ApiClient.Deserialize(localVarResponse, typeof(ResourceInformation)));
             }
             
         }
@@ -1017,26 +898,19 @@ namespace DocuSign.eSign.Api
         /// Lists resources for REST version specified Retrieves the base resources available for the DocuSign REST APIs.  You do not need an integrator key to view the REST API versions and resources.  Example: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.  To view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.  Example: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ResourceInformation</returns>
-        public async System.Threading.Tasks.Task<ResourceInformation> GetResourcesAsync ()
+        public async System.Threading.Tasks.Task<ResourceInformation> GetResourcesAsync()
         {
              ApiResponse<ResourceInformation> localVarResponse = await GetResourcesAsyncWithHttpInfo();
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Lists resources for REST version specified Retrieves the base resources available for the DocuSign REST APIs.  You do not need an integrator key to view the REST API versions and resources.  Example: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.  To view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.  Example: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse (ResourceInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResourceInformation>> GetResourcesAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<ResourceInformation>> GetResourcesAsyncWithHttpInfo()
         {
 
             var localVarPath = "/v2.1";
@@ -1064,8 +938,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1074,11 +946,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1088,7 +960,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<ResourceInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ResourceInformation) this.ApiClient.Deserialize(localVarResponse, typeof(ResourceInformation)));
+                (ResourceInformation)this.ApiClient.Deserialize(localVarResponse, typeof(ResourceInformation)));
             
         }
 
@@ -1098,11 +970,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the available REST API versions. Retrieves the available REST API versions.  DocuSign Production system: https://www.docusign.net/restapi/service_information DocuSign Demo system: https://demo.docusign.net/restapi/service_information  You do not need an integrator key to view the REST API versions and resources.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ServiceInformation</returns>
-        public ServiceInformation GetService ()
+        public ServiceInformation GetService()
         {
              ApiResponse<ServiceInformation> localVarResponse = GetServiceWithHttpInfo();
              return localVarResponse.Data;
@@ -1112,11 +981,8 @@ namespace DocuSign.eSign.Api
         /// Retrieves the available REST API versions. Retrieves the available REST API versions.  DocuSign Production system: https://www.docusign.net/restapi/service_information DocuSign Demo system: https://demo.docusign.net/restapi/service_information  You do not need an integrator key to view the REST API versions and resources.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>ApiResponse of ServiceInformation</returns>
-        public ApiResponse< ServiceInformation > GetServiceWithHttpInfo ()
+        public ApiResponse<ServiceInformation> GetServiceWithHttpInfo()
         {
 
             var localVarPath = "/service_information";
@@ -1154,11 +1020,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1170,11 +1036,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<ServiceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ServiceInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ServiceInformation)));
+                return new ApiResponse<ServiceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ServiceInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ServiceInformation)));
             }
             else
             {
-                return new ApiResponse<ServiceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ServiceInformation) this.ApiClient.Deserialize(localVarResponse, typeof(ServiceInformation)));
+                return new ApiResponse<ServiceInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ServiceInformation)this.ApiClient.Deserialize(localVarResponse, typeof(ServiceInformation)));
             }
             
         }
@@ -1183,26 +1049,19 @@ namespace DocuSign.eSign.Api
         /// Retrieves the available REST API versions. Retrieves the available REST API versions.  DocuSign Production system: https://www.docusign.net/restapi/service_information DocuSign Demo system: https://demo.docusign.net/restapi/service_information  You do not need an integrator key to view the REST API versions and resources.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ServiceInformation</returns>
-        public async System.Threading.Tasks.Task<ServiceInformation> GetServiceAsync ()
+        public async System.Threading.Tasks.Task<ServiceInformation> GetServiceAsync()
         {
              ApiResponse<ServiceInformation> localVarResponse = await GetServiceAsyncWithHttpInfo();
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Retrieves the available REST API versions. Retrieves the available REST API versions.  DocuSign Production system: https://www.docusign.net/restapi/service_information DocuSign Demo system: https://demo.docusign.net/restapi/service_information  You do not need an integrator key to view the REST API versions and resources.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
-        
         /// <returns>Task of ApiResponse (ServiceInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ServiceInformation>> GetServiceAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<ServiceInformation>> GetServiceAsyncWithHttpInfo()
         {
 
             var localVarPath = "/service_information";
@@ -1230,8 +1089,6 @@ namespace DocuSign.eSign.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -1240,11 +1097,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1254,7 +1111,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<ServiceInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ServiceInformation) this.ApiClient.Deserialize(localVarResponse, typeof(ServiceInformation)));
+                (ServiceInformation)this.ApiClient.Deserialize(localVarResponse, typeof(ServiceInformation)));
             
         }
 
@@ -1272,11 +1129,9 @@ namespace DocuSign.eSign.Api
         /// Gets the API request logging log files. Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.  If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.  If the Accept header is set to &#x60;application/json&#x60; or &#x60;application/xml&#x60;, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiRequestLogsResult</returns>
-        public ApiRequestLogsResult ListRequestLogs (DiagnosticsApi.ListRequestLogsOptions options = null)
+        public ApiRequestLogsResult ListRequestLogs(DiagnosticsApi.ListRequestLogsOptions options = null)
         {
              ApiResponse<ApiRequestLogsResult> localVarResponse = ListRequestLogsWithHttpInfo(options);
              return localVarResponse.Data;
@@ -1286,11 +1141,9 @@ namespace DocuSign.eSign.Api
         /// Gets the API request logging log files. Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.  If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.  If the Accept header is set to &#x60;application/json&#x60; or &#x60;application/xml&#x60;, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of ApiRequestLogsResult</returns>
-        public ApiResponse< ApiRequestLogsResult > ListRequestLogsWithHttpInfo (DiagnosticsApi.ListRequestLogsOptions options = null)
+        public ApiResponse<ApiRequestLogsResult> ListRequestLogsWithHttpInfo(DiagnosticsApi.ListRequestLogsOptions options = null)
         {
 
             var localVarPath = "/v2.1/diagnostics/request_logs";
@@ -1332,11 +1185,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1348,11 +1201,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<ApiRequestLogsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ApiRequestLogsResult) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ApiRequestLogsResult)));
+                return new ApiResponse<ApiRequestLogsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ApiRequestLogsResult)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ApiRequestLogsResult)));
             }
             else
             {
-                return new ApiResponse<ApiRequestLogsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ApiRequestLogsResult) this.ApiClient.Deserialize(localVarResponse, typeof(ApiRequestLogsResult)));
+                return new ApiResponse<ApiRequestLogsResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ApiRequestLogsResult)this.ApiClient.Deserialize(localVarResponse, typeof(ApiRequestLogsResult)));
             }
             
         }
@@ -1361,26 +1214,21 @@ namespace DocuSign.eSign.Api
         /// Gets the API request logging log files. Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.  If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.  If the Accept header is set to &#x60;application/json&#x60; or &#x60;application/xml&#x60;, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiRequestLogsResult</returns>
-        public async System.Threading.Tasks.Task<ApiRequestLogsResult> ListRequestLogsAsync (DiagnosticsApi.ListRequestLogsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiRequestLogsResult> ListRequestLogsAsync(DiagnosticsApi.ListRequestLogsOptions options = null)
         {
              ApiResponse<ApiRequestLogsResult> localVarResponse = await ListRequestLogsAsyncWithHttpInfo(options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Gets the API request logging log files. Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.  If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.  If the Accept header is set to &#x60;application/json&#x60; or &#x60;application/xml&#x60;, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (ApiRequestLogsResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ApiRequestLogsResult>> ListRequestLogsAsyncWithHttpInfo (DiagnosticsApi.ListRequestLogsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ApiRequestLogsResult>> ListRequestLogsAsyncWithHttpInfo(DiagnosticsApi.ListRequestLogsOptions options = null)
         {
 
             var localVarPath = "/v2.1/diagnostics/request_logs";
@@ -1407,12 +1255,10 @@ namespace DocuSign.eSign.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-
             if (options != null)
             {
                 if (options.encoding != null) localVarQueryParams.Add("encoding", this.ApiClient.ParameterToString(options.encoding)); // query parameter
             }
-
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -1422,11 +1268,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1436,7 +1282,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<ApiRequestLogsResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ApiRequestLogsResult) this.ApiClient.Deserialize(localVarResponse, typeof(ApiRequestLogsResult)));
+                (ApiRequestLogsResult)this.ApiClient.Deserialize(localVarResponse, typeof(ApiRequestLogsResult)));
             
         }
 
@@ -1446,11 +1292,9 @@ namespace DocuSign.eSign.Api
         /// Enables or disables API request logging for troubleshooting. Enables or disables API request logging for troubleshooting.  When enabled (&#x60;apiRequestLogging&#x60; is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.  You can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.  Private information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.  ###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn&#39;t logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
         /// <param name="diagnosticsSettingsInformation"> (optional)</param>
-        
         /// <returns>DiagnosticsSettingsInformation</returns>
-        public DiagnosticsSettingsInformation UpdateRequestLogSettings (DiagnosticsSettingsInformation diagnosticsSettingsInformation = null)
+        public DiagnosticsSettingsInformation UpdateRequestLogSettings(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null)
         {
              ApiResponse<DiagnosticsSettingsInformation> localVarResponse = UpdateRequestLogSettingsWithHttpInfo(diagnosticsSettingsInformation);
              return localVarResponse.Data;
@@ -1460,11 +1304,9 @@ namespace DocuSign.eSign.Api
         /// Enables or disables API request logging for troubleshooting. Enables or disables API request logging for troubleshooting.  When enabled (&#x60;apiRequestLogging&#x60; is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.  You can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.  Private information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.  ###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn&#39;t logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
         /// <param name="diagnosticsSettingsInformation"> (optional)</param>
-        
         /// <returns>ApiResponse of DiagnosticsSettingsInformation</returns>
-        public ApiResponse< DiagnosticsSettingsInformation > UpdateRequestLogSettingsWithHttpInfo (DiagnosticsSettingsInformation diagnosticsSettingsInformation = null)
+        public ApiResponse<DiagnosticsSettingsInformation> UpdateRequestLogSettingsWithHttpInfo(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null)
         {
 
             var localVarPath = "/v2.1/diagnostics/settings";
@@ -1510,11 +1352,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1526,11 +1368,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DiagnosticsSettingsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DiagnosticsSettingsInformation) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DiagnosticsSettingsInformation)));
+                return new ApiResponse<DiagnosticsSettingsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DiagnosticsSettingsInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DiagnosticsSettingsInformation)));
             }
             else
             {
-                return new ApiResponse<DiagnosticsSettingsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DiagnosticsSettingsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DiagnosticsSettingsInformation)));
+                return new ApiResponse<DiagnosticsSettingsInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DiagnosticsSettingsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DiagnosticsSettingsInformation)));
             }
             
         }
@@ -1539,26 +1381,21 @@ namespace DocuSign.eSign.Api
         /// Enables or disables API request logging for troubleshooting. Enables or disables API request logging for troubleshooting.  When enabled (&#x60;apiRequestLogging&#x60; is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.  You can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.  Private information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.  ###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn&#39;t logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
         /// <param name="diagnosticsSettingsInformation"> (optional)</param>
-        
         /// <returns>Task of DiagnosticsSettingsInformation</returns>
-        public async System.Threading.Tasks.Task<DiagnosticsSettingsInformation> UpdateRequestLogSettingsAsync (DiagnosticsSettingsInformation diagnosticsSettingsInformation = null)
+        public async System.Threading.Tasks.Task<DiagnosticsSettingsInformation> UpdateRequestLogSettingsAsync(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null)
         {
              ApiResponse<DiagnosticsSettingsInformation> localVarResponse = await UpdateRequestLogSettingsAsyncWithHttpInfo(diagnosticsSettingsInformation);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Enables or disables API request logging for troubleshooting. Enables or disables API request logging for troubleshooting.  When enabled (&#x60;apiRequestLogging&#x60; is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.  You can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.  Private information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.  ###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn&#39;t logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        
         /// <param name="diagnosticsSettingsInformation"> (optional)</param>
-        
         /// <returns>Task of ApiResponse (DiagnosticsSettingsInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> UpdateRequestLogSettingsAsyncWithHttpInfo (DiagnosticsSettingsInformation diagnosticsSettingsInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> UpdateRequestLogSettingsAsyncWithHttpInfo(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null)
         {
 
             var localVarPath = "/v2.1/diagnostics/settings";
@@ -1585,8 +1422,6 @@ namespace DocuSign.eSign.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-
-
             if (diagnosticsSettingsInformation != null && diagnosticsSettingsInformation.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(diagnosticsSettingsInformation); // http body (model) parameter
@@ -1604,11 +1439,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1618,7 +1453,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<DiagnosticsSettingsInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DiagnosticsSettingsInformation) this.ApiClient.Deserialize(localVarResponse, typeof(DiagnosticsSettingsInformation)));
+                (DiagnosticsSettingsInformation)this.ApiClient.Deserialize(localVarResponse, typeof(DiagnosticsSettingsInformation)));
             
         }
 

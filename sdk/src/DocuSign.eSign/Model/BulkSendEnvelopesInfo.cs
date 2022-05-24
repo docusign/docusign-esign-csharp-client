@@ -38,26 +38,97 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkSendEnvelopesInfo" /> class.
         /// </summary>
+        /// <param name="AuthoritativeCopy">Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled..</param>
         /// <param name="Completed">Completed.</param>
+        /// <param name="Correct">Correct.</param>
+        /// <param name="Created">Created.</param>
         /// <param name="Declined">Declined.</param>
+        /// <param name="Deleted">Deleted.</param>
+        /// <param name="Delivered">Delivered.</param>
+        /// <param name="DigitalSignaturesPending">DigitalSignaturesPending.</param>
+        /// <param name="Sent">Sent.</param>
+        /// <param name="Signed">Signed.</param>
+        /// <param name="TimedOut">TimedOut.</param>
+        /// <param name="TransferCompleted">TransferCompleted.</param>
         /// <param name="Voided">Voided.</param>
-        public BulkSendEnvelopesInfo(string Completed = default(string), string Declined = default(string), string Voided = default(string))
+        public BulkSendEnvelopesInfo(string AuthoritativeCopy = default(string), string Completed = default(string), string Correct = default(string), string Created = default(string), string Declined = default(string), string Deleted = default(string), string Delivered = default(string), string DigitalSignaturesPending = default(string), string Sent = default(string), string Signed = default(string), string TimedOut = default(string), string TransferCompleted = default(string), string Voided = default(string))
         {
+            this.AuthoritativeCopy = AuthoritativeCopy;
             this.Completed = Completed;
+            this.Correct = Correct;
+            this.Created = Created;
             this.Declined = Declined;
+            this.Deleted = Deleted;
+            this.Delivered = Delivered;
+            this.DigitalSignaturesPending = DigitalSignaturesPending;
+            this.Sent = Sent;
+            this.Signed = Signed;
+            this.TimedOut = TimedOut;
+            this.TransferCompleted = TransferCompleted;
             this.Voided = Voided;
         }
         
+        /// <summary>
+        /// Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+        /// </summary>
+        /// <value>Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.</value>
+        [DataMember(Name="authoritativeCopy", EmitDefaultValue=false)]
+        public string AuthoritativeCopy { get; set; }
         /// <summary>
         /// Gets or Sets Completed
         /// </summary>
         [DataMember(Name="completed", EmitDefaultValue=false)]
         public string Completed { get; set; }
         /// <summary>
+        /// Gets or Sets Correct
+        /// </summary>
+        [DataMember(Name="correct", EmitDefaultValue=false)]
+        public string Correct { get; set; }
+        /// <summary>
+        /// Gets or Sets Created
+        /// </summary>
+        [DataMember(Name="created", EmitDefaultValue=false)]
+        public string Created { get; set; }
+        /// <summary>
         /// Gets or Sets Declined
         /// </summary>
         [DataMember(Name="declined", EmitDefaultValue=false)]
         public string Declined { get; set; }
+        /// <summary>
+        /// Gets or Sets Deleted
+        /// </summary>
+        [DataMember(Name="deleted", EmitDefaultValue=false)]
+        public string Deleted { get; set; }
+        /// <summary>
+        /// Gets or Sets Delivered
+        /// </summary>
+        [DataMember(Name="delivered", EmitDefaultValue=false)]
+        public string Delivered { get; set; }
+        /// <summary>
+        /// Gets or Sets DigitalSignaturesPending
+        /// </summary>
+        [DataMember(Name="digitalSignaturesPending", EmitDefaultValue=false)]
+        public string DigitalSignaturesPending { get; set; }
+        /// <summary>
+        /// Gets or Sets Sent
+        /// </summary>
+        [DataMember(Name="sent", EmitDefaultValue=false)]
+        public string Sent { get; set; }
+        /// <summary>
+        /// Gets or Sets Signed
+        /// </summary>
+        [DataMember(Name="signed", EmitDefaultValue=false)]
+        public string Signed { get; set; }
+        /// <summary>
+        /// Gets or Sets TimedOut
+        /// </summary>
+        [DataMember(Name="timedOut", EmitDefaultValue=false)]
+        public string TimedOut { get; set; }
+        /// <summary>
+        /// Gets or Sets TransferCompleted
+        /// </summary>
+        [DataMember(Name="transferCompleted", EmitDefaultValue=false)]
+        public string TransferCompleted { get; set; }
         /// <summary>
         /// Gets or Sets Voided
         /// </summary>
@@ -71,8 +142,18 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BulkSendEnvelopesInfo {\n");
+            sb.Append("  AuthoritativeCopy: ").Append(AuthoritativeCopy).Append("\n");
             sb.Append("  Completed: ").Append(Completed).Append("\n");
+            sb.Append("  Correct: ").Append(Correct).Append("\n");
+            sb.Append("  Created: ").Append(Created).Append("\n");
             sb.Append("  Declined: ").Append(Declined).Append("\n");
+            sb.Append("  Deleted: ").Append(Deleted).Append("\n");
+            sb.Append("  Delivered: ").Append(Delivered).Append("\n");
+            sb.Append("  DigitalSignaturesPending: ").Append(DigitalSignaturesPending).Append("\n");
+            sb.Append("  Sent: ").Append(Sent).Append("\n");
+            sb.Append("  Signed: ").Append(Signed).Append("\n");
+            sb.Append("  TimedOut: ").Append(TimedOut).Append("\n");
+            sb.Append("  TransferCompleted: ").Append(TransferCompleted).Append("\n");
             sb.Append("  Voided: ").Append(Voided).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -111,14 +192,64 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.AuthoritativeCopy == other.AuthoritativeCopy ||
+                    this.AuthoritativeCopy != null &&
+                    this.AuthoritativeCopy.Equals(other.AuthoritativeCopy)
+                ) && 
+                (
                     this.Completed == other.Completed ||
                     this.Completed != null &&
                     this.Completed.Equals(other.Completed)
                 ) && 
                 (
+                    this.Correct == other.Correct ||
+                    this.Correct != null &&
+                    this.Correct.Equals(other.Correct)
+                ) && 
+                (
+                    this.Created == other.Created ||
+                    this.Created != null &&
+                    this.Created.Equals(other.Created)
+                ) && 
+                (
                     this.Declined == other.Declined ||
                     this.Declined != null &&
                     this.Declined.Equals(other.Declined)
+                ) && 
+                (
+                    this.Deleted == other.Deleted ||
+                    this.Deleted != null &&
+                    this.Deleted.Equals(other.Deleted)
+                ) && 
+                (
+                    this.Delivered == other.Delivered ||
+                    this.Delivered != null &&
+                    this.Delivered.Equals(other.Delivered)
+                ) && 
+                (
+                    this.DigitalSignaturesPending == other.DigitalSignaturesPending ||
+                    this.DigitalSignaturesPending != null &&
+                    this.DigitalSignaturesPending.Equals(other.DigitalSignaturesPending)
+                ) && 
+                (
+                    this.Sent == other.Sent ||
+                    this.Sent != null &&
+                    this.Sent.Equals(other.Sent)
+                ) && 
+                (
+                    this.Signed == other.Signed ||
+                    this.Signed != null &&
+                    this.Signed.Equals(other.Signed)
+                ) && 
+                (
+                    this.TimedOut == other.TimedOut ||
+                    this.TimedOut != null &&
+                    this.TimedOut.Equals(other.TimedOut)
+                ) && 
+                (
+                    this.TransferCompleted == other.TransferCompleted ||
+                    this.TransferCompleted != null &&
+                    this.TransferCompleted.Equals(other.TransferCompleted)
                 ) && 
                 (
                     this.Voided == other.Voided ||
@@ -138,10 +269,30 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AuthoritativeCopy != null)
+                    hash = hash * 59 + this.AuthoritativeCopy.GetHashCode();
                 if (this.Completed != null)
                     hash = hash * 59 + this.Completed.GetHashCode();
+                if (this.Correct != null)
+                    hash = hash * 59 + this.Correct.GetHashCode();
+                if (this.Created != null)
+                    hash = hash * 59 + this.Created.GetHashCode();
                 if (this.Declined != null)
                     hash = hash * 59 + this.Declined.GetHashCode();
+                if (this.Deleted != null)
+                    hash = hash * 59 + this.Deleted.GetHashCode();
+                if (this.Delivered != null)
+                    hash = hash * 59 + this.Delivered.GetHashCode();
+                if (this.DigitalSignaturesPending != null)
+                    hash = hash * 59 + this.DigitalSignaturesPending.GetHashCode();
+                if (this.Sent != null)
+                    hash = hash * 59 + this.Sent.GetHashCode();
+                if (this.Signed != null)
+                    hash = hash * 59 + this.Signed.GetHashCode();
+                if (this.TimedOut != null)
+                    hash = hash * 59 + this.TimedOut.GetHashCode();
+                if (this.TransferCompleted != null)
+                    hash = hash * 59 + this.TransferCompleted.GetHashCode();
                 if (this.Voided != null)
                     hash = hash * 59 + this.Voided.GetHashCode();
                 return hash;

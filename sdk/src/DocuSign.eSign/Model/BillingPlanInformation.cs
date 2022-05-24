@@ -43,12 +43,14 @@ namespace DocuSign.eSign.Model
         /// <param name="CreditCardInformation">CreditCardInformation.</param>
         /// <param name="DirectDebitProcessorInformation">DirectDebitProcessorInformation.</param>
         /// <param name="DowngradeReason">DowngradeReason.</param>
+        /// <param name="EnablePreAuth">EnablePreAuth.</param>
         /// <param name="EnableSupport">EnableSupport.</param>
         /// <param name="IncludedSeats">The number of seats (users) included..</param>
         /// <param name="IncrementalSeats">Reserved: TBD.</param>
         /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
         /// <param name="PlanInformation">PlanInformation.</param>
+        /// <param name="ProcessPayment">ProcessPayment.</param>
         /// <param name="ReferralInformation">ReferralInformation.</param>
         /// <param name="RenewalStatus">RenewalStatus.</param>
         /// <param name="SaleDiscountAmount">SaleDiscountAmount.</param>
@@ -57,19 +59,21 @@ namespace DocuSign.eSign.Model
         /// <param name="SaleDiscountPeriods">SaleDiscountPeriods.</param>
         /// <param name="SaleDiscountSeatPriceOverride">SaleDiscountSeatPriceOverride.</param>
         /// <param name="TaxExemptId">TaxExemptId.</param>
-        public BillingPlanInformation(AppStoreReceipt AppStoreReceipt = default(AppStoreReceipt), AccountAddress BillingAddress = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DowngradeReason = default(string), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), ReferralInformation ReferralInformation = default(ReferralInformation), string RenewalStatus = default(string), string SaleDiscountAmount = default(string), string SaleDiscountFixedAmount = default(string), string SaleDiscountPercent = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountSeatPriceOverride = default(string), string TaxExemptId = default(string))
+        public BillingPlanInformation(AppStoreReceipt AppStoreReceipt = default(AppStoreReceipt), AccountAddress BillingAddress = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DowngradeReason = default(string), string EnablePreAuth = default(string), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), string ProcessPayment = default(string), ReferralInformation ReferralInformation = default(ReferralInformation), string RenewalStatus = default(string), string SaleDiscountAmount = default(string), string SaleDiscountFixedAmount = default(string), string SaleDiscountPercent = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountSeatPriceOverride = default(string), string TaxExemptId = default(string))
         {
             this.AppStoreReceipt = AppStoreReceipt;
             this.BillingAddress = BillingAddress;
             this.CreditCardInformation = CreditCardInformation;
             this.DirectDebitProcessorInformation = DirectDebitProcessorInformation;
             this.DowngradeReason = DowngradeReason;
+            this.EnablePreAuth = EnablePreAuth;
             this.EnableSupport = EnableSupport;
             this.IncludedSeats = IncludedSeats;
             this.IncrementalSeats = IncrementalSeats;
             this.PaymentMethod = PaymentMethod;
             this.PaymentProcessorInformation = PaymentProcessorInformation;
             this.PlanInformation = PlanInformation;
+            this.ProcessPayment = ProcessPayment;
             this.ReferralInformation = ReferralInformation;
             this.RenewalStatus = RenewalStatus;
             this.SaleDiscountAmount = SaleDiscountAmount;
@@ -106,6 +110,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="downgradeReason", EmitDefaultValue=false)]
         public string DowngradeReason { get; set; }
         /// <summary>
+        /// Gets or Sets EnablePreAuth
+        /// </summary>
+        [DataMember(Name="enablePreAuth", EmitDefaultValue=false)]
+        public string EnablePreAuth { get; set; }
+        /// <summary>
         /// Gets or Sets EnableSupport
         /// </summary>
         [DataMember(Name="enableSupport", EmitDefaultValue=false)]
@@ -137,6 +146,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="planInformation", EmitDefaultValue=false)]
         public PlanInformation PlanInformation { get; set; }
+        /// <summary>
+        /// Gets or Sets ProcessPayment
+        /// </summary>
+        [DataMember(Name="processPayment", EmitDefaultValue=false)]
+        public string ProcessPayment { get; set; }
         /// <summary>
         /// Gets or Sets ReferralInformation
         /// </summary>
@@ -190,12 +204,14 @@ namespace DocuSign.eSign.Model
             sb.Append("  CreditCardInformation: ").Append(CreditCardInformation).Append("\n");
             sb.Append("  DirectDebitProcessorInformation: ").Append(DirectDebitProcessorInformation).Append("\n");
             sb.Append("  DowngradeReason: ").Append(DowngradeReason).Append("\n");
+            sb.Append("  EnablePreAuth: ").Append(EnablePreAuth).Append("\n");
             sb.Append("  EnableSupport: ").Append(EnableSupport).Append("\n");
             sb.Append("  IncludedSeats: ").Append(IncludedSeats).Append("\n");
             sb.Append("  IncrementalSeats: ").Append(IncrementalSeats).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  PaymentProcessorInformation: ").Append(PaymentProcessorInformation).Append("\n");
             sb.Append("  PlanInformation: ").Append(PlanInformation).Append("\n");
+            sb.Append("  ProcessPayment: ").Append(ProcessPayment).Append("\n");
             sb.Append("  ReferralInformation: ").Append(ReferralInformation).Append("\n");
             sb.Append("  RenewalStatus: ").Append(RenewalStatus).Append("\n");
             sb.Append("  SaleDiscountAmount: ").Append(SaleDiscountAmount).Append("\n");
@@ -266,6 +282,11 @@ namespace DocuSign.eSign.Model
                     this.DowngradeReason.Equals(other.DowngradeReason)
                 ) && 
                 (
+                    this.EnablePreAuth == other.EnablePreAuth ||
+                    this.EnablePreAuth != null &&
+                    this.EnablePreAuth.Equals(other.EnablePreAuth)
+                ) && 
+                (
                     this.EnableSupport == other.EnableSupport ||
                     this.EnableSupport != null &&
                     this.EnableSupport.Equals(other.EnableSupport)
@@ -294,6 +315,11 @@ namespace DocuSign.eSign.Model
                     this.PlanInformation == other.PlanInformation ||
                     this.PlanInformation != null &&
                     this.PlanInformation.Equals(other.PlanInformation)
+                ) && 
+                (
+                    this.ProcessPayment == other.ProcessPayment ||
+                    this.ProcessPayment != null &&
+                    this.ProcessPayment.Equals(other.ProcessPayment)
                 ) && 
                 (
                     this.ReferralInformation == other.ReferralInformation ||
@@ -358,6 +384,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DirectDebitProcessorInformation.GetHashCode();
                 if (this.DowngradeReason != null)
                     hash = hash * 59 + this.DowngradeReason.GetHashCode();
+                if (this.EnablePreAuth != null)
+                    hash = hash * 59 + this.EnablePreAuth.GetHashCode();
                 if (this.EnableSupport != null)
                     hash = hash * 59 + this.EnableSupport.GetHashCode();
                 if (this.IncludedSeats != null)
@@ -370,6 +398,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PaymentProcessorInformation.GetHashCode();
                 if (this.PlanInformation != null)
                     hash = hash * 59 + this.PlanInformation.GetHashCode();
+                if (this.ProcessPayment != null)
+                    hash = hash * 59 + this.ProcessPayment.GetHashCode();
                 if (this.ReferralInformation != null)
                     hash = hash * 59 + this.ReferralInformation.GetHashCode();
                 if (this.RenewalStatus != null)

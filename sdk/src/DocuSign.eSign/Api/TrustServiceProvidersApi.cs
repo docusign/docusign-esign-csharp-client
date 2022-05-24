@@ -32,10 +32,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns></returns>
-        AccountSeals GetSealProviders (string accountId);
+        AccountSeals GetSealProviders(string accountId);
 
         /// <summary>
         /// Returns Account available seals for specified account.
@@ -45,10 +43,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<AccountSeals> GetSealProvidersWithHttpInfo (string accountId);
+        ApiResponse<AccountSeals> GetSealProvidersWithHttpInfo(string accountId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -59,10 +55,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>Task of AccountSeals</returns>
-        System.Threading.Tasks.Task<AccountSeals> GetSealProvidersAsync (string accountId);
+        System.Threading.Tasks.Task<AccountSeals> GetSealProvidersAsync(string accountId);
 
         /// <summary>
         /// Returns Account available seals for specified account.
@@ -72,10 +66,8 @@ namespace DocuSign.eSign.Api
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>Task of ApiResponse (AccountSeals)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountSeals>> GetSealProvidersAsyncWithHttpInfo (string accountId);
+        System.Threading.Tasks.Task<ApiResponse<AccountSeals>> GetSealProvidersAsyncWithHttpInfo(string accountId);
         #endregion Asynchronous Operations
     }
 
@@ -137,10 +129,8 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>AccountSeals</returns>
-        public AccountSeals GetSealProviders (string accountId)
+        public AccountSeals GetSealProviders(string accountId)
         {
              ApiResponse<AccountSeals> localVarResponse = GetSealProvidersWithHttpInfo(accountId);
              return localVarResponse.Data;
@@ -151,10 +141,8 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>ApiResponse of AccountSeals</returns>
-        public ApiResponse< AccountSeals > GetSealProvidersWithHttpInfo (string accountId)
+        public ApiResponse<AccountSeals> GetSealProvidersWithHttpInfo(string accountId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -196,11 +184,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -212,11 +200,11 @@ namespace DocuSign.eSign.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<AccountSeals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AccountSeals) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(AccountSeals)));
+                return new ApiResponse<AccountSeals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AccountSeals)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(AccountSeals)));
             }
             else
             {
-                return new ApiResponse<AccountSeals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AccountSeals) this.ApiClient.Deserialize(localVarResponse, typeof(AccountSeals)));
+                return new ApiResponse<AccountSeals>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AccountSeals)this.ApiClient.Deserialize(localVarResponse, typeof(AccountSeals)));
             }
             
         }
@@ -226,14 +214,11 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>Task of AccountSeals</returns>
-        public async System.Threading.Tasks.Task<AccountSeals> GetSealProvidersAsync (string accountId)
+        public async System.Threading.Tasks.Task<AccountSeals> GetSealProvidersAsync(string accountId)
         {
              ApiResponse<AccountSeals> localVarResponse = await GetSealProvidersAsyncWithHttpInfo(accountId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -241,10 +226,8 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        
-        
         /// <returns>Task of ApiResponse (AccountSeals)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AccountSeals>> GetSealProvidersAsyncWithHttpInfo (string accountId)
+        public async System.Threading.Tasks.Task<ApiResponse<AccountSeals>> GetSealProvidersAsyncWithHttpInfo(string accountId)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -276,8 +259,6 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
-
-
             // authentication (docusignAccessCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
@@ -286,11 +267,11 @@ namespace DocuSign.eSign.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -300,7 +281,7 @@ namespace DocuSign.eSign.Api
 
             return new ApiResponse<AccountSeals>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AccountSeals) this.ApiClient.Deserialize(localVarResponse, typeof(AccountSeals)));
+                (AccountSeals)this.ApiClient.Deserialize(localVarResponse, typeof(AccountSeals)));
             
         }
 

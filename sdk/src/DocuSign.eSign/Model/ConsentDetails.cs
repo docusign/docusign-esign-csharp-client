@@ -25,37 +25,45 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopePublishTransactionErrorRollup
+    /// ConsentDetails
     /// </summary>
     [DataContract]
-    public partial class EnvelopePublishTransactionErrorRollup :  IEquatable<EnvelopePublishTransactionErrorRollup>, IValidatableObject
+    public partial class ConsentDetails :  IEquatable<ConsentDetails>, IValidatableObject
     {
-        public EnvelopePublishTransactionErrorRollup()
+        public ConsentDetails()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EnvelopePublishTransactionErrorRollup" /> class.
+        /// Initializes a new instance of the <see cref="ConsentDetails" /> class.
         /// </summary>
-        /// <param name="Count">Count.</param>
-        /// <param name="ErrorType">ErrorType.</param>
-        public EnvelopePublishTransactionErrorRollup(string Count = default(string), string ErrorType = default(string))
+        /// <param name="ConsentKey">ConsentKey.</param>
+        /// <param name="DeliveryMethod">Reserved: For DocuSign use only..</param>
+        /// <param name="SignerConsentStatus">SignerConsentStatus.</param>
+        public ConsentDetails(string ConsentKey = default(string), string DeliveryMethod = default(string), string SignerConsentStatus = default(string))
         {
-            this.Count = Count;
-            this.ErrorType = ErrorType;
+            this.ConsentKey = ConsentKey;
+            this.DeliveryMethod = DeliveryMethod;
+            this.SignerConsentStatus = SignerConsentStatus;
         }
         
         /// <summary>
-        /// Gets or Sets Count
+        /// Gets or Sets ConsentKey
         /// </summary>
-        [DataMember(Name="count", EmitDefaultValue=false)]
-        public string Count { get; set; }
+        [DataMember(Name="consentKey", EmitDefaultValue=false)]
+        public string ConsentKey { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorType
+        /// Reserved: For DocuSign use only.
         /// </summary>
-        [DataMember(Name="errorType", EmitDefaultValue=false)]
-        public string ErrorType { get; set; }
+        /// <value>Reserved: For DocuSign use only.</value>
+        [DataMember(Name="deliveryMethod", EmitDefaultValue=false)]
+        public string DeliveryMethod { get; set; }
+        /// <summary>
+        /// Gets or Sets SignerConsentStatus
+        /// </summary>
+        [DataMember(Name="signerConsentStatus", EmitDefaultValue=false)]
+        public string SignerConsentStatus { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -63,9 +71,10 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class EnvelopePublishTransactionErrorRollup {\n");
-            sb.Append("  Count: ").Append(Count).Append("\n");
-            sb.Append("  ErrorType: ").Append(ErrorType).Append("\n");
+            sb.Append("class ConsentDetails {\n");
+            sb.Append("  ConsentKey: ").Append(ConsentKey).Append("\n");
+            sb.Append("  DeliveryMethod: ").Append(DeliveryMethod).Append("\n");
+            sb.Append("  SignerConsentStatus: ").Append(SignerConsentStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +96,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as EnvelopePublishTransactionErrorRollup);
+            return this.Equals(obj as ConsentDetails);
         }
 
         /// <summary>
-        /// Returns true if EnvelopePublishTransactionErrorRollup instances are equal
+        /// Returns true if ConsentDetails instances are equal
         /// </summary>
-        /// <param name="other">Instance of EnvelopePublishTransactionErrorRollup to be compared</param>
+        /// <param name="other">Instance of ConsentDetails to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EnvelopePublishTransactionErrorRollup other)
+        public bool Equals(ConsentDetails other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -103,14 +112,19 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.Count == other.Count ||
-                    this.Count != null &&
-                    this.Count.Equals(other.Count)
+                    this.ConsentKey == other.ConsentKey ||
+                    this.ConsentKey != null &&
+                    this.ConsentKey.Equals(other.ConsentKey)
                 ) && 
                 (
-                    this.ErrorType == other.ErrorType ||
-                    this.ErrorType != null &&
-                    this.ErrorType.Equals(other.ErrorType)
+                    this.DeliveryMethod == other.DeliveryMethod ||
+                    this.DeliveryMethod != null &&
+                    this.DeliveryMethod.Equals(other.DeliveryMethod)
+                ) && 
+                (
+                    this.SignerConsentStatus == other.SignerConsentStatus ||
+                    this.SignerConsentStatus != null &&
+                    this.SignerConsentStatus.Equals(other.SignerConsentStatus)
                 );
         }
 
@@ -125,10 +139,12 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Count != null)
-                    hash = hash * 59 + this.Count.GetHashCode();
-                if (this.ErrorType != null)
-                    hash = hash * 59 + this.ErrorType.GetHashCode();
+                if (this.ConsentKey != null)
+                    hash = hash * 59 + this.ConsentKey.GetHashCode();
+                if (this.DeliveryMethod != null)
+                    hash = hash * 59 + this.DeliveryMethod.GetHashCode();
+                if (this.SignerConsentStatus != null)
+                    hash = hash * 59 + this.SignerConsentStatus.GetHashCode();
                 return hash;
             }
         }

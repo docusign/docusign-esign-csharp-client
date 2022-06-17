@@ -45,6 +45,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ConfigurationType">If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**..</param>
         /// <param name="ConnectId"> Specifies the DocuSign generated ID for the Connect configuration.  .</param>
         /// <param name="DeliveryMode">DeliveryMode.</param>
+        /// <param name="DisabledBy">DisabledBy.</param>
         /// <param name="EnableLog">This turns Connect logging on or off. When set to **true**, logging is turned on..</param>
         /// <param name="EnvelopeEvents">A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided..</param>
         /// <param name="EventData">EventData.</param>
@@ -78,7 +79,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserIds">A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s..</param>
         /// <param name="UserName">UserName.</param>
         /// <param name="UseSoapInterface">When set to **true**, indicates that the &#x60;urlToPublishTo&#x60; property contains a SOAP endpoint..</param>
-        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string AllUsersExcept = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string EnableLog = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), List<string> GroupIds = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string Name = default(string), string Password = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
+        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string AllUsersExcept = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string DisabledBy = default(string), string EnableLog = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), List<string> GroupIds = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string Name = default(string), string Password = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
         {
             this.AllowEnvelopePublish = AllowEnvelopePublish;
             this.AllowSalesforcePublish = AllowSalesforcePublish;
@@ -87,6 +88,7 @@ namespace DocuSign.eSign.Model
             this.ConfigurationType = ConfigurationType;
             this.ConnectId = ConnectId;
             this.DeliveryMode = DeliveryMode;
+            this.DisabledBy = DisabledBy;
             this.EnableLog = EnableLog;
             this.EnvelopeEvents = EnvelopeEvents;
             this.EventData = EventData;
@@ -161,6 +163,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="deliveryMode", EmitDefaultValue=false)]
         public string DeliveryMode { get; set; }
+        /// <summary>
+        /// Gets or Sets DisabledBy
+        /// </summary>
+        [DataMember(Name="disabledBy", EmitDefaultValue=false)]
+        public string DisabledBy { get; set; }
         /// <summary>
         /// This turns Connect logging on or off. When set to **true**, logging is turned on.
         /// </summary>
@@ -357,6 +364,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ConfigurationType: ").Append(ConfigurationType).Append("\n");
             sb.Append("  ConnectId: ").Append(ConnectId).Append("\n");
             sb.Append("  DeliveryMode: ").Append(DeliveryMode).Append("\n");
+            sb.Append("  DisabledBy: ").Append(DisabledBy).Append("\n");
             sb.Append("  EnableLog: ").Append(EnableLog).Append("\n");
             sb.Append("  EnvelopeEvents: ").Append(EnvelopeEvents).Append("\n");
             sb.Append("  EventData: ").Append(EventData).Append("\n");
@@ -460,6 +468,11 @@ namespace DocuSign.eSign.Model
                     this.DeliveryMode == other.DeliveryMode ||
                     this.DeliveryMode != null &&
                     this.DeliveryMode.Equals(other.DeliveryMode)
+                ) && 
+                (
+                    this.DisabledBy == other.DisabledBy ||
+                    this.DisabledBy != null &&
+                    this.DisabledBy.Equals(other.DisabledBy)
                 ) && 
                 (
                     this.EnableLog == other.EnableLog ||
@@ -653,6 +666,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ConnectId.GetHashCode();
                 if (this.DeliveryMode != null)
                     hash = hash * 59 + this.DeliveryMode.GetHashCode();
+                if (this.DisabledBy != null)
+                    hash = hash * 59 + this.DisabledBy.GetHashCode();
                 if (this.EnableLog != null)
                     hash = hash * 59 + this.EnableLog.GetHashCode();
                 if (this.EnvelopeEvents != null)

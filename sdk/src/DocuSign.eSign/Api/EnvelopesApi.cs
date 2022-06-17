@@ -431,6 +431,29 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<EnvelopeTransferRuleInformation> CreateEnvelopeTransferRulesWithHttpInfo(string accountId, EnvelopeTransferRuleRequest envelopeTransferRuleRequest = null);
         /// <summary>
+        /// Submits a batch of historical envelopes for republish to an adhoc config.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectHistoricalEnvelopeRepublish"> (optional)</param>
+        /// <returns></returns>
+        EnvelopePublishTransaction CreateHistoricalEnvelopePublishTransaction(string accountId, ConnectHistoricalEnvelopeRepublish connectHistoricalEnvelopeRepublish = null);
+
+        /// <summary>
+        /// Submits a batch of historical envelopes for republish to an adhoc config.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectHistoricalEnvelopeRepublish"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<EnvelopePublishTransaction> CreateHistoricalEnvelopePublishTransactionWithHttpInfo(string accountId, ConnectHistoricalEnvelopeRepublish connectHistoricalEnvelopeRepublish = null);
+        /// <summary>
         /// Lock an envelope.
         /// </summary>
         /// <remarks>
@@ -3137,6 +3160,29 @@ namespace DocuSign.eSign.Api
         /// <param name="envelopeTransferRuleRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (EnvelopeTransferRuleInformation)</returns>
         System.Threading.Tasks.Task<ApiResponse<EnvelopeTransferRuleInformation>> CreateEnvelopeTransferRulesAsyncWithHttpInfo(string accountId, EnvelopeTransferRuleRequest envelopeTransferRuleRequest = null);
+        /// <summary>
+        /// Submits a batch of historical envelopes for republish to an adhoc config.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectHistoricalEnvelopeRepublish"> (optional)</param>
+        /// <returns>Task of EnvelopePublishTransaction</returns>
+        System.Threading.Tasks.Task<EnvelopePublishTransaction> CreateHistoricalEnvelopePublishTransactionAsync(string accountId, ConnectHistoricalEnvelopeRepublish connectHistoricalEnvelopeRepublish = null);
+
+        /// <summary>
+        /// Submits a batch of historical envelopes for republish to an adhoc config.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectHistoricalEnvelopeRepublish"> (optional)</param>
+        /// <returns>Task of ApiResponse (EnvelopePublishTransaction)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EnvelopePublishTransaction>> CreateHistoricalEnvelopePublishTransactionAsyncWithHttpInfo(string accountId, ConnectHistoricalEnvelopeRepublish connectHistoricalEnvelopeRepublish = null);
         /// <summary>
         /// Lock an envelope.
         /// </summary>
@@ -8683,6 +8729,189 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<EnvelopeTransferRuleInformation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (EnvelopeTransferRuleInformation)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeTransferRuleInformation)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Submits a batch of historical envelopes for republish to an adhoc config. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectHistoricalEnvelopeRepublish"> (optional)</param>
+        /// <returns>EnvelopePublishTransaction</returns>
+        public EnvelopePublishTransaction CreateHistoricalEnvelopePublishTransaction(string accountId, ConnectHistoricalEnvelopeRepublish connectHistoricalEnvelopeRepublish = null)
+        {
+             ApiResponse<EnvelopePublishTransaction> localVarResponse = CreateHistoricalEnvelopePublishTransactionWithHttpInfo(accountId, connectHistoricalEnvelopeRepublish);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Submits a batch of historical envelopes for republish to an adhoc config. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectHistoricalEnvelopeRepublish"> (optional)</param>
+        /// <returns>ApiResponse of EnvelopePublishTransaction</returns>
+        public ApiResponse<EnvelopePublishTransaction> CreateHistoricalEnvelopePublishTransactionWithHttpInfo(string accountId, ConnectHistoricalEnvelopeRepublish connectHistoricalEnvelopeRepublish = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateHistoricalEnvelopePublishTransaction");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/connect/envelopes/publish/historical";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (connectHistoricalEnvelopeRepublish != null && connectHistoricalEnvelopeRepublish.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(connectHistoricalEnvelopeRepublish); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = connectHistoricalEnvelopeRepublish; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateHistoricalEnvelopePublishTransaction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<EnvelopePublishTransaction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopePublishTransaction)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(EnvelopePublishTransaction)));
+            }
+            else
+            {
+                return new ApiResponse<EnvelopePublishTransaction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (EnvelopePublishTransaction)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopePublishTransaction)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Submits a batch of historical envelopes for republish to an adhoc config. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectHistoricalEnvelopeRepublish"> (optional)</param>
+        /// <returns>Task of EnvelopePublishTransaction</returns>
+        public async System.Threading.Tasks.Task<EnvelopePublishTransaction> CreateHistoricalEnvelopePublishTransactionAsync(string accountId, ConnectHistoricalEnvelopeRepublish connectHistoricalEnvelopeRepublish = null)
+        {
+             ApiResponse<EnvelopePublishTransaction> localVarResponse = await CreateHistoricalEnvelopePublishTransactionAsyncWithHttpInfo(accountId, connectHistoricalEnvelopeRepublish);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Submits a batch of historical envelopes for republish to an adhoc config. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectHistoricalEnvelopeRepublish"> (optional)</param>
+        /// <returns>Task of ApiResponse (EnvelopePublishTransaction)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopePublishTransaction>> CreateHistoricalEnvelopePublishTransactionAsyncWithHttpInfo(string accountId, ConnectHistoricalEnvelopeRepublish connectHistoricalEnvelopeRepublish = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateHistoricalEnvelopePublishTransaction");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/connect/envelopes/publish/historical";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (connectHistoricalEnvelopeRepublish != null && connectHistoricalEnvelopeRepublish.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(connectHistoricalEnvelopeRepublish); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = connectHistoricalEnvelopeRepublish; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateHistoricalEnvelopePublishTransaction", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopePublishTransaction>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (EnvelopePublishTransaction)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopePublishTransaction)));
             
         }
 

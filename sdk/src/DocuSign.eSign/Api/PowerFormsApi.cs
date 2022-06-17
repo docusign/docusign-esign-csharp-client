@@ -1561,6 +1561,10 @@ namespace DocuSign.eSign.Api
             /// 
             public string orderBy {get; set;}
             /// 
+            public string searchFields {get; set;}
+            /// 
+            public string searchText {get; set;}
+            /// 
             public string toDate {get; set;}
         }
 
@@ -1621,6 +1625,8 @@ namespace DocuSign.eSign.Api
                 if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
                 if (options.order != null) localVarQueryParams.Add("order", this.ApiClient.ParameterToString(options.order)); // query parameter
                 if (options.orderBy != null) localVarQueryParams.Add("order_by", this.ApiClient.ParameterToString(options.orderBy)); // query parameter
+                if (options.searchFields != null) localVarQueryParams.Add("search_fields", this.ApiClient.ParameterToString(options.searchFields)); // query parameter
+                if (options.searchText != null) localVarQueryParams.Add("search_text", this.ApiClient.ParameterToString(options.searchText)); // query parameter
                 if (options.toDate != null) localVarQueryParams.Add("to_date", this.ApiClient.ParameterToString(options.toDate)); // query parameter
             }
 
@@ -1714,6 +1720,8 @@ namespace DocuSign.eSign.Api
                 if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
                 if (options.order != null) localVarQueryParams.Add("order", this.ApiClient.ParameterToString(options.order)); // query parameter
                 if (options.orderBy != null) localVarQueryParams.Add("order_by", this.ApiClient.ParameterToString(options.orderBy)); // query parameter
+                if (options.searchFields != null) localVarQueryParams.Add("search_fields", this.ApiClient.ParameterToString(options.searchFields)); // query parameter
+                if (options.searchText != null) localVarQueryParams.Add("search_text", this.ApiClient.ParameterToString(options.searchText)); // query parameter
                 if (options.toDate != null) localVarQueryParams.Add("to_date", this.ApiClient.ParameterToString(options.toDate)); // query parameter
             }
 

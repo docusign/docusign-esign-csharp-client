@@ -25,37 +25,37 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopePublishTransactionErrorRollup
+    /// ConnectHistoricalEnvelopeRepublish
     /// </summary>
     [DataContract]
-    public partial class EnvelopePublishTransactionErrorRollup :  IEquatable<EnvelopePublishTransactionErrorRollup>, IValidatableObject
+    public partial class ConnectHistoricalEnvelopeRepublish :  IEquatable<ConnectHistoricalEnvelopeRepublish>, IValidatableObject
     {
-        public EnvelopePublishTransactionErrorRollup()
+        public ConnectHistoricalEnvelopeRepublish()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EnvelopePublishTransactionErrorRollup" /> class.
+        /// Initializes a new instance of the <see cref="ConnectHistoricalEnvelopeRepublish" /> class.
         /// </summary>
-        /// <param name="Count">Count.</param>
-        /// <param name="ErrorType">ErrorType.</param>
-        public EnvelopePublishTransactionErrorRollup(string Count = default(string), string ErrorType = default(string))
+        /// <param name="Config">Config.</param>
+        /// <param name="Envelopes">Envelopes.</param>
+        public ConnectHistoricalEnvelopeRepublish(ConnectCustomConfiguration Config = default(ConnectCustomConfiguration), List<string> Envelopes = default(List<string>))
         {
-            this.Count = Count;
-            this.ErrorType = ErrorType;
+            this.Config = Config;
+            this.Envelopes = Envelopes;
         }
         
         /// <summary>
-        /// Gets or Sets Count
+        /// Gets or Sets Config
         /// </summary>
-        [DataMember(Name="count", EmitDefaultValue=false)]
-        public string Count { get; set; }
+        [DataMember(Name="config", EmitDefaultValue=false)]
+        public ConnectCustomConfiguration Config { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorType
+        /// Gets or Sets Envelopes
         /// </summary>
-        [DataMember(Name="errorType", EmitDefaultValue=false)]
-        public string ErrorType { get; set; }
+        [DataMember(Name="envelopes", EmitDefaultValue=false)]
+        public List<string> Envelopes { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -63,9 +63,9 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class EnvelopePublishTransactionErrorRollup {\n");
-            sb.Append("  Count: ").Append(Count).Append("\n");
-            sb.Append("  ErrorType: ").Append(ErrorType).Append("\n");
+            sb.Append("class ConnectHistoricalEnvelopeRepublish {\n");
+            sb.Append("  Config: ").Append(Config).Append("\n");
+            sb.Append("  Envelopes: ").Append(Envelopes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +87,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as EnvelopePublishTransactionErrorRollup);
+            return this.Equals(obj as ConnectHistoricalEnvelopeRepublish);
         }
 
         /// <summary>
-        /// Returns true if EnvelopePublishTransactionErrorRollup instances are equal
+        /// Returns true if ConnectHistoricalEnvelopeRepublish instances are equal
         /// </summary>
-        /// <param name="other">Instance of EnvelopePublishTransactionErrorRollup to be compared</param>
+        /// <param name="other">Instance of ConnectHistoricalEnvelopeRepublish to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EnvelopePublishTransactionErrorRollup other)
+        public bool Equals(ConnectHistoricalEnvelopeRepublish other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -103,14 +103,14 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.Count == other.Count ||
-                    this.Count != null &&
-                    this.Count.Equals(other.Count)
+                    this.Config == other.Config ||
+                    this.Config != null &&
+                    this.Config.Equals(other.Config)
                 ) && 
                 (
-                    this.ErrorType == other.ErrorType ||
-                    this.ErrorType != null &&
-                    this.ErrorType.Equals(other.ErrorType)
+                    this.Envelopes == other.Envelopes ||
+                    this.Envelopes != null &&
+                    this.Envelopes.SequenceEqual(other.Envelopes)
                 );
         }
 
@@ -125,10 +125,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Count != null)
-                    hash = hash * 59 + this.Count.GetHashCode();
-                if (this.ErrorType != null)
-                    hash = hash * 59 + this.ErrorType.GetHashCode();
+                if (this.Config != null)
+                    hash = hash * 59 + this.Config.GetHashCode();
+                if (this.Envelopes != null)
+                    hash = hash * 59 + this.Envelopes.GetHashCode();
                 return hash;
             }
         }

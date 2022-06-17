@@ -38,16 +38,23 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduledSending" /> class.
         /// </summary>
+        /// <param name="BulkListId">BulkListId.</param>
         /// <param name="ResumeDate">ResumeDate.</param>
         /// <param name="Rules">Rules.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        public ScheduledSending(string ResumeDate = default(string), List<EnvelopeDelayRule> Rules = default(List<EnvelopeDelayRule>), string Status = default(string))
+        public ScheduledSending(string BulkListId = default(string), string ResumeDate = default(string), List<EnvelopeDelayRule> Rules = default(List<EnvelopeDelayRule>), string Status = default(string))
         {
+            this.BulkListId = BulkListId;
             this.ResumeDate = ResumeDate;
             this.Rules = Rules;
             this.Status = Status;
         }
         
+        /// <summary>
+        /// Gets or Sets BulkListId
+        /// </summary>
+        [DataMember(Name="bulkListId", EmitDefaultValue=false)]
+        public string BulkListId { get; set; }
         /// <summary>
         /// Gets or Sets ResumeDate
         /// </summary>
@@ -72,6 +79,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ScheduledSending {\n");
+            sb.Append("  BulkListId: ").Append(BulkListId).Append("\n");
             sb.Append("  ResumeDate: ").Append(ResumeDate).Append("\n");
             sb.Append("  Rules: ").Append(Rules).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -112,6 +120,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.BulkListId == other.BulkListId ||
+                    this.BulkListId != null &&
+                    this.BulkListId.Equals(other.BulkListId)
+                ) && 
+                (
                     this.ResumeDate == other.ResumeDate ||
                     this.ResumeDate != null &&
                     this.ResumeDate.Equals(other.ResumeDate)
@@ -139,6 +152,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.BulkListId != null)
+                    hash = hash * 59 + this.BulkListId.GetHashCode();
                 if (this.ResumeDate != null)
                     hash = hash * 59 + this.ResumeDate.GetHashCode();
                 if (this.Rules != null)

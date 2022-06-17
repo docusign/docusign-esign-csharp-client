@@ -48,6 +48,7 @@ namespace DocuSign.eSign.Model
         /// <param name="BillingPeriodEnvelopesSent">Reserved: TBD.</param>
         /// <param name="BillingPeriodStartDate">Reserved: TBD.</param>
         /// <param name="BillingProfile">Reserved: TBD.</param>
+        /// <param name="Brands">Brands.</param>
         /// <param name="CanUpgrade">When set to **true**, specifies that you can upgrade the account through the API..</param>
         /// <param name="ConnectPermission">ConnectPermission.</param>
         /// <param name="CreatedDate">CreatedDate.</param>
@@ -75,7 +76,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SuspensionDate">SuspensionDate.</param>
         /// <param name="SuspensionStatus">SuspensionStatus.</param>
         /// <param name="UseDisplayAppliance">UseDisplayAppliance.</param>
-        public AccountInformation(string AccountIdGuid = default(string), string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), string AllowTransactionRooms = default(string), string BillingPeriodDaysRemaining = default(string), string BillingPeriodEndDate = default(string), string BillingPeriodEnvelopesAllowed = default(string), string BillingPeriodEnvelopesSent = default(string), string BillingPeriodStartDate = default(string), string BillingProfile = default(string), string CanUpgrade = default(string), string ConnectPermission = default(string), string CreatedDate = default(string), string CurrencyCode = default(string), string CurrentPlanId = default(string), string DisplayApplianceStartUrl = default(string), string DisplayApplianceUrl = default(string), string DistributorCode = default(string), string DocuSignLandingUrl = default(string), Dictionary<string, string> DssValues = default(Dictionary<string, string>), string EnvelopeSendingBlocked = default(string), string EnvelopeUnitPrice = default(string), string ExternalAccountId = default(string), string ForgottenPasswordQuestionsCount = default(string), string IsDowngrade = default(string), string PaymentMethod = default(string), string PlanClassification = default(string), string PlanEndDate = default(string), string PlanName = default(string), string PlanStartDate = default(string), List<RecipientDomain> RecipientDomains = default(List<RecipientDomain>), string SeatsAllowed = default(string), string SeatsInUse = default(string), string Status21CFRPart11 = default(string), string SuspensionDate = default(string), string SuspensionStatus = default(string), bool? UseDisplayAppliance = default(bool?))
+        public AccountInformation(string AccountIdGuid = default(string), string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), string AllowTransactionRooms = default(string), string BillingPeriodDaysRemaining = default(string), string BillingPeriodEndDate = default(string), string BillingPeriodEnvelopesAllowed = default(string), string BillingPeriodEnvelopesSent = default(string), string BillingPeriodStartDate = default(string), string BillingProfile = default(string), BrandsResponse Brands = default(BrandsResponse), string CanUpgrade = default(string), string ConnectPermission = default(string), string CreatedDate = default(string), string CurrencyCode = default(string), string CurrentPlanId = default(string), string DisplayApplianceStartUrl = default(string), string DisplayApplianceUrl = default(string), string DistributorCode = default(string), string DocuSignLandingUrl = default(string), Dictionary<string, string> DssValues = default(Dictionary<string, string>), string EnvelopeSendingBlocked = default(string), string EnvelopeUnitPrice = default(string), string ExternalAccountId = default(string), string ForgottenPasswordQuestionsCount = default(string), string IsDowngrade = default(string), string PaymentMethod = default(string), string PlanClassification = default(string), string PlanEndDate = default(string), string PlanName = default(string), string PlanStartDate = default(string), List<RecipientDomain> RecipientDomains = default(List<RecipientDomain>), string SeatsAllowed = default(string), string SeatsInUse = default(string), string Status21CFRPart11 = default(string), string SuspensionDate = default(string), string SuspensionStatus = default(string), bool? UseDisplayAppliance = default(bool?))
         {
             this.AccountIdGuid = AccountIdGuid;
             this.AccountName = AccountName;
@@ -87,6 +88,7 @@ namespace DocuSign.eSign.Model
             this.BillingPeriodEnvelopesSent = BillingPeriodEnvelopesSent;
             this.BillingPeriodStartDate = BillingPeriodStartDate;
             this.BillingProfile = BillingProfile;
+            this.Brands = Brands;
             this.CanUpgrade = CanUpgrade;
             this.ConnectPermission = ConnectPermission;
             this.CreatedDate = CreatedDate;
@@ -175,6 +177,11 @@ namespace DocuSign.eSign.Model
         /// <value>Reserved: TBD</value>
         [DataMember(Name="billingProfile", EmitDefaultValue=false)]
         public string BillingProfile { get; set; }
+        /// <summary>
+        /// Gets or Sets Brands
+        /// </summary>
+        [DataMember(Name="brands", EmitDefaultValue=false)]
+        public BrandsResponse Brands { get; set; }
         /// <summary>
         /// When set to **true**, specifies that you can upgrade the account through the API.
         /// </summary>
@@ -337,6 +344,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  BillingPeriodEnvelopesSent: ").Append(BillingPeriodEnvelopesSent).Append("\n");
             sb.Append("  BillingPeriodStartDate: ").Append(BillingPeriodStartDate).Append("\n");
             sb.Append("  BillingProfile: ").Append(BillingProfile).Append("\n");
+            sb.Append("  Brands: ").Append(Brands).Append("\n");
             sb.Append("  CanUpgrade: ").Append(CanUpgrade).Append("\n");
             sb.Append("  ConnectPermission: ").Append(ConnectPermission).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
@@ -449,6 +457,11 @@ namespace DocuSign.eSign.Model
                     this.BillingProfile == other.BillingProfile ||
                     this.BillingProfile != null &&
                     this.BillingProfile.Equals(other.BillingProfile)
+                ) && 
+                (
+                    this.Brands == other.Brands ||
+                    this.Brands != null &&
+                    this.Brands.Equals(other.Brands)
                 ) && 
                 (
                     this.CanUpgrade == other.CanUpgrade ||
@@ -618,6 +631,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.BillingPeriodStartDate.GetHashCode();
                 if (this.BillingProfile != null)
                     hash = hash * 59 + this.BillingProfile.GetHashCode();
+                if (this.Brands != null)
+                    hash = hash * 59 + this.Brands.GetHashCode();
                 if (this.CanUpgrade != null)
                     hash = hash * 59 + this.CanUpgrade.GetHashCode();
                 if (this.ConnectPermission != null)

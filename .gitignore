@@ -7,7 +7,6 @@
 /test/.vs/SdkTests
 /test/packages
 /test/.vs/config
-/test
 *.[Oo]bj
 *.user
 *.suo

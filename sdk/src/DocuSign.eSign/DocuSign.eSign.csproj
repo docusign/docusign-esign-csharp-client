@@ -16,7 +16,7 @@
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>5.12.0</VersionPrefix>
+    <VersionPrefix>6.0.0-rc</VersionPrefix>
     <VersionSuffix/>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -26,7 +26,7 @@
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v5.12.0] - ESignature API v2.1-22.2.00.00 - 6/17/2022</PackageReleaseNotes>
+    <PackageReleaseNotes>[v6.0.0-rc] - ESignature API v2.1-22.2.00.00 - 6/23/2022</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net452'">
     <DefineConstants>NET452</DefineConstants>
@@ -36,14 +36,14 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net452'">
     <PackageReference Include="BouncyCastle" Version="1.8.9"/>
+    <Reference Include="System.Web"/>
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="Portable.BouncyCastle" Version="1.8.10"/>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0"/>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
-    <PackageReference Include="RestSharp" Version="106.12.0"/>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0"/>
     <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="5.4.0"/>
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0"/>

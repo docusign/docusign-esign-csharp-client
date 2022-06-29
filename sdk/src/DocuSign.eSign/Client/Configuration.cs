@@ -26,7 +26,7 @@ namespace DocuSign.eSign.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "5.12.0";
+        public const string Version = "6.0.0-rc";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -34,6 +34,8 @@ namespace DocuSign.eSign.Client
         /// <remarks>See https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8 for more information.</remarks>
         // ReSharper disable once InconsistentNaming
         public const string ISO8601_DATETIME_FORMAT = "o";
+
+        public const int DefaultTimeoutValue = 100000;
 
         #endregion Constants
 

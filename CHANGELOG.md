@@ -1,5 +1,17 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v6.0.0-rc] - eSignature API v2.1-22.2.00.00 - 2022-06-23
+### Changed
+- Removed external reference to RestSharp
+- Added support for version v2.1-22.2.00.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
+### Breaking
+- ApiClient in Api/*Api.cs files is now a DocuSignClient, so functionality based on direct access to attributes of previous RestSharp-based client will not work anymore.
+- Following Api classes removed:
+  - DataFeedApi.cs
+  - SignatureApi.cs
+
 ## [v5.12.0] - eSignature API v2.1-22.2.00.00 - 2022-06-17
 ### Changed
 - Added support for version v2.1-22.2.00.00 of the DocuSign ESignature API.

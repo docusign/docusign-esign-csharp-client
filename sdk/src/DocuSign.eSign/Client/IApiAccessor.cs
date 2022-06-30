@@ -22,7 +22,7 @@ namespace DocuSign.eSign.Client
         /// Gets or sets the ApiClient object
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        ApiClient ApiClient {get; set;}
+        DocuSignClient ApiClient {get; set;}
 
         /// <summary>
         /// Gets the base path of the API client.

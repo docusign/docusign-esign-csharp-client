@@ -26,7 +26,7 @@ namespace SdkTests
         {
             // Prepare
             var configBasePath = _testConfig.ApiClient.Configuration.BasePath;
-            var restBasePath = _testConfig.ApiClient.RestClient.BaseUrl.ToString();
+            var restBasePath = _testConfig.ApiClient.GetBasePath();
 
             // Test is everything initialized properly
             Assert.AreEqual(configBasePath, restBasePath);
@@ -37,14 +37,14 @@ namespace SdkTests
             _testConfig.ApiClient.SetBasePath(testBasePath);
 
             // Assert
-            Assert.AreEqual(testBasePath, _testConfig.ApiClient.RestClient.BaseUrl.ToString());
+            Assert.AreEqual(testBasePath, _testConfig.ApiClient.GetBasePath());
             Assert.AreEqual(testBasePath, _testConfig.ApiClient.Configuration.BasePath);
 
             // Rest
             _testConfig.ApiClient.SetBasePath(configBasePath);
 
             // Assert
-            Assert.AreEqual(restBasePath, _testConfig.ApiClient.RestClient.BaseUrl.ToString());
+            Assert.AreEqual(restBasePath, _testConfig.ApiClient.GetBasePath());
             Assert.AreEqual(configBasePath, _testConfig.ApiClient.Configuration.BasePath);
         }
 
@@ -571,7 +571,7 @@ namespace SdkTests
         public void SetBasePath_MultibleBasePathUsed_BasePathIsChanged()
         {
             string configBasePath = _testConfig.ApiClient.Configuration.BasePath;
-            var restBasePath = Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl);
+            var restBasePath = Convert.ToString(_testConfig.ApiClient.GetBasePath());
 
             Assert.AreEqual(configBasePath, restBasePath);
 
@@ -579,12 +579,12 @@ namespace SdkTests
 
             _testConfig.ApiClient.SetBasePath(testBasePath);
 
-            Assert.AreEqual(testBasePath, Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl));
+            Assert.AreEqual(testBasePath, Convert.ToString(_testConfig.ApiClient.GetBasePath()));
             Assert.AreEqual(testBasePath, _testConfig.ApiClient.Configuration.BasePath);
 
             _testConfig.ApiClient.SetBasePath(configBasePath);
 
-            Assert.AreEqual(restBasePath, Convert.ToString(_testConfig.ApiClient.RestClient.BaseUrl));
+            Assert.AreEqual(restBasePath, Convert.ToString(_testConfig.ApiClient.GetBasePath()));
             Assert.AreEqual(configBasePath, _testConfig.ApiClient.Configuration.BasePath);
         }
 

@@ -38,7 +38,7 @@ This client has the following external dependencies:
 **.NET Standard v2 and .NET Core:**
 *   Microsoft.CSharp v4.5.0
 *   Microsoft.IdentityModel.Protocols v5.4.0
-*   Newtonsoft.Json 11.0.2
+*   Newtonsoft.Json 13.0.1
 *   Portable.BouncyCastle v1.8.10
 *   RestSharp v106.3.1
 *   System.ComponentModel.Annotations v4.5.0
@@ -48,7 +48,7 @@ This client has the following external dependencies:
 *   BouncyCastle v1.8.9
 *   Microsoft.CSharp v4.5.0
 *   Microsoft.IdentityModel.Protocols v5.4.0
-*   Newtonsoft.Json 11.0.2
+*   Newtonsoft.Json 13.0.1
 *   RestSharp v106.3.1
 *   System.ComponentModel.Annotations v4.5.0
 *   System.IdentityModel.tokens.Jwt v5.4.0

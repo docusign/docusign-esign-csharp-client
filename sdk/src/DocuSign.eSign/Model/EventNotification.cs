@@ -40,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="DeliveryMode">DeliveryMode.</param>
         /// <param name="EnvelopeEvents">A list of envelope-level event statuses that will trigger Connect to send updates to the endpoint specified in the &#x60;url&#x60; property.   To receive notifications, you must include either an &#x60;envelopeEvents&#x60; node or a &#x60;recipientEvents&#x60; node. You do not need to specify both..</param>
-        /// <param name="EventData">EventData.</param>
+        /// <param name="EventData">Allows you to specify the format of the information the Connect webhooks returns. For more information, see [Connect webhooks with JSON notifications](https://www.docusign.com/blog/developers/connect-webhooks-json-notifications).</param>
         /// <param name="Events">Events.</param>
         /// <param name="IncludeCertificateOfCompletion">When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. .</param>
         /// <param name="IncludeCertificateWithSoap">When set to **true**, this tells the Connect service to send the DocuSign signedby certificate as part of the outgoing SOAP xml. This appears in the XML as wsse:BinarySecurityToken..</param>
@@ -92,8 +92,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopeEvents", EmitDefaultValue=false)]
         public List<EnvelopeEvent> EnvelopeEvents { get; set; }
         /// <summary>
-        /// Gets or Sets EventData
+        /// Allows you to specify the format of the information the Connect webhooks returns. For more information, see [Connect webhooks with JSON notifications](https://www.docusign.com/blog/developers/connect-webhooks-json-notifications)
         /// </summary>
+        /// <value>Allows you to specify the format of the information the Connect webhooks returns. For more information, see [Connect webhooks with JSON notifications](https://www.docusign.com/blog/developers/connect-webhooks-json-notifications)</value>
         [DataMember(Name="eventData", EmitDefaultValue=false)]
         public ConnectEventData EventData { get; set; }
         /// <summary>

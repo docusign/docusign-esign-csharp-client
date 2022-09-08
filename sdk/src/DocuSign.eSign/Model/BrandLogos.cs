@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BrandLogos
+    /// The URIs for retrieving the logos that are associated with the brand.  These are read-only properties that provide a URI to logos in use. To update a logo use [AccountBrands: updateLogo](/docs/esign-rest-api/reference/accounts/accountbrands/updatelogo/). 
     /// </summary>
     [DataContract]
     public partial class BrandLogos :  IEquatable<BrandLogos>, IValidatableObject

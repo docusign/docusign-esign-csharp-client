@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientRouting
+    /// Describes the recipient routing rules.
     /// </summary>
     [DataContract]
     public partial class RecipientRouting :  IEquatable<RecipientRouting>, IValidatableObject
@@ -38,15 +38,16 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientRouting" /> class.
         /// </summary>
-        /// <param name="Rules">Rules.</param>
+        /// <param name="Rules">The recipient routing rules..</param>
         public RecipientRouting(RecipientRules Rules = default(RecipientRules))
         {
             this.Rules = Rules;
         }
         
         /// <summary>
-        /// Gets or Sets Rules
+        /// The recipient routing rules.
         /// </summary>
+        /// <value>The recipient routing rules.</value>
         [DataMember(Name="rules", EmitDefaultValue=false)]
         public RecipientRules Rules { get; set; }
         /// <summary>

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Intermediary
+    /// Contains information about an intermediary recipient. An intermediary is a recipient who can, but is not required to, add name and email information for recipients at the same or subsequent level in the routing order, unless subsequent agents, editors or intermediaries are added.
     /// </summary>
     [DataContract]
     public partial class Intermediary :  IEquatable<Intermediary>, IValidatableObject
@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Intermediary" /> class.
         /// </summary>
         /// <param name="AccessCode">If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account&#39;s access code format setting.  If blank, but the signer &#x60;accessCode&#x60; property is set in the envelope, then that value is used.  If blank and the signer &#x60;accessCode&#x60; property is not set, then the access code is not required..</param>
-        /// <param name="AccessCodeMetadata">AccessCodeMetadata.</param>
+        /// <param name="AccessCodeMetadata">Metadata that indicates whether the &#x60;accessCode&#x60; property is editable. This property is read-only..</param>
         /// <param name="AddAccessCodeToEmail">This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient..</param>
         /// <param name="AdditionalNotifications">AdditionalNotifications.</param>
         /// <param name="AllowSystemOverrideForLockedRecipient">AllowSystemOverrideForLockedRecipient.</param>
@@ -52,57 +52,57 @@ namespace DocuSign.eSign.Model
         /// <param name="DeclinedReason">The reason the recipient declined the document..</param>
         /// <param name="DeliveredDateTime">Reserved: For DocuSign use only..</param>
         /// <param name="DeliveryMethod">Reserved: For DocuSign use only..</param>
-        /// <param name="DeliveryMethodMetadata">DeliveryMethodMetadata.</param>
+        /// <param name="DeliveryMethodMetadata">Reserved for DocuSign..</param>
         /// <param name="DesignatorId">DesignatorId.</param>
         /// <param name="DesignatorIdGuid">DesignatorIdGuid.</param>
         /// <param name="DocumentVisibility">DocumentVisibility.</param>
         /// <param name="Email">Email id of the recipient. Notification of the document to sign is sent to this email id.   Maximum length: 100 characters. .</param>
-        /// <param name="EmailMetadata">EmailMetadata.</param>
-        /// <param name="EmailNotification">EmailNotification.</param>
+        /// <param name="EmailMetadata">Metadata that indicates whether the &#x60;email&#x60; property is editable. This property is read-only..</param>
+        /// <param name="EmailNotification">An optional complex type that sets a specific email subject and body for this recipient&#39;s notification email.   **Note:** You can set the &#x60;emailNotification&#x60; property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level &#x60;emailSubject&#x60; and &#x60;emailBlurb&#x60;. .</param>
         /// <param name="EmailRecipientPostSigningURL">EmailRecipientPostSigningURL.</param>
         /// <param name="EmbeddedRecipientStartURL">Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender&#39;s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to &#x60;SIGN_AT_DOCUSIGN&#x60;, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient&#39;s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets &#x60;EmbeddedRecipientStartURL&#x3D;SIGN_AT_DOCUSIGN&#x60;, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the &#x60;clientUserId&#x60; property is NOT set, and the &#x60;embeddedRecipientStartURL&#x60; is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The &#x60;customFields&#x60; property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   &#x60;http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&amp;[[mergeField3]]&#x60; .</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="ExcludedDocuments">Specifies the documents that are not visible to this recipient. Document Visibility must be enabled for the account and the &#x60;enforceSignerVisibility&#x60; property must be set to **true** for the envelope to use this.  When enforce signer visibility is enabled, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent..</param>
         /// <param name="FaxNumber">Reserved:.</param>
-        /// <param name="FaxNumberMetadata">FaxNumberMetadata.</param>
+        /// <param name="FaxNumberMetadata">Reserved for DocuSign..</param>
         /// <param name="FirstName">The user&#39;s first name.  Maximum Length: 50 characters..</param>
-        /// <param name="FirstNameMetadata">FirstNameMetadata.</param>
+        /// <param name="FirstNameMetadata">Metadata that indicates whether the &#x60;firstName&#x60; property is editable. This property is read-only..</param>
         /// <param name="FullName">FullName.</param>
-        /// <param name="FullNameMetadata">FullNameMetadata.</param>
+        /// <param name="FullNameMetadata">Reserved for DocuSign..</param>
         /// <param name="IdCheckConfigurationName">Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node..</param>
-        /// <param name="IdCheckConfigurationNameMetadata">IdCheckConfigurationNameMetadata.</param>
-        /// <param name="IdCheckInformationInput">IdCheckInformationInput.</param>
-        /// <param name="IdentityVerification">IdentityVerification.</param>
+        /// <param name="IdCheckConfigurationNameMetadata">Metadata that indicates whether the &#x60;idCheckConfigurationName&#x60; property is editable. This property is read-only..</param>
+        /// <param name="IdCheckInformationInput">An object that contains input information related to a recipient ID check..</param>
+        /// <param name="IdentityVerification">Specifies the ID Verification workflow applied on an envelope by workflow ID. &lt;br/&gt;See the [list](/docs/esign-rest-api/reference/accounts/identityverifications/list/) method in the [IdentityVerifications](/docs/esign-rest-api/reference/accounts/identityverifications/) resource for more information on how to retrieve workflow IDs available for an account. &lt;br/&gt;This can be used in addition to other [recipient authentication](https://support.docusign.com/en/guides/ndse-user-guide-recipient-authentication) methods. &lt;br/&gt;Note that ID Verification and ID Check are two distinct methods. ID Verification checks recipients&#39; identity by verifying their ID while ID Check relies on data available on public records (such as current and former address)..</param>
         /// <param name="InheritEmailNotificationConfiguration">When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient&#39;s account. .</param>
         /// <param name="LastName">LastName.</param>
-        /// <param name="LastNameMetadata">LastNameMetadata.</param>
+        /// <param name="LastNameMetadata">Metadata that indicates whether the &#x60;lastName&#x60; property is editable. This property is read-only..</param>
         /// <param name="LockedRecipientPhoneAuthEditable">LockedRecipientPhoneAuthEditable.</param>
         /// <param name="LockedRecipientSmsEditable">LockedRecipientSmsEditable.</param>
         /// <param name="Name">Name.</param>
-        /// <param name="NameMetadata">NameMetadata.</param>
+        /// <param name="NameMetadata">Metadata that indicates whether the &#x60;name&#x60; property is editable. This property is read-only..</param>
         /// <param name="Note">Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters..</param>
-        /// <param name="NoteMetadata">NoteMetadata.</param>
-        /// <param name="PhoneAuthentication">PhoneAuthentication.</param>
-        /// <param name="PhoneNumber">PhoneNumber.</param>
+        /// <param name="NoteMetadata">Metadata that indicates whether the &#x60;note&#x60; property is editable. This property is read-only..</param>
+        /// <param name="PhoneAuthentication">When &#x60;idCheckConfigurationName&#x60; is set to &#x60;Phone Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * &#x60;recipMayProvideNumber&#x60;: Boolean. When **true,** the recipient can use whatever phone number they choose. * &#x60;senderProvidedNumbers&#x60;: ArrayOfStrings.  A list of phone numbers the recipient can use. * &#x60;recordVoicePrint&#x60;: Reserved for DocuSign. * &#x60;validateRecipProvidedNumber&#x60;: Reserved for DocuSign.  .</param>
+        /// <param name="PhoneNumber">Describes the recipient phone number..</param>
         /// <param name="RecipientAttachments">Reserved:.</param>
-        /// <param name="RecipientAuthenticationStatus">RecipientAuthenticationStatus.</param>
+        /// <param name="RecipientAuthenticationStatus">Information about the recipient&#39;s authentication status. This property is read-only..</param>
         /// <param name="RecipientFeatureMetadata">RecipientFeatureMetadata.</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
         /// <param name="RecipientType">RecipientType.</param>
-        /// <param name="RecipientTypeMetadata">RecipientTypeMetadata.</param>
+        /// <param name="RecipientTypeMetadata">Metadata that indicates whether the &#x60;recipientType&#x60; property is editable. This property is read-only..</param>
         /// <param name="RequireIdLookup">When set to **true**, the recipient is required to use the specified ID check method (including Phone and SMS authentication) to validate their identity. .</param>
-        /// <param name="RequireIdLookupMetadata">RequireIdLookupMetadata.</param>
+        /// <param name="RequireIdLookupMetadata">Metadata that indicates whether the &#x60;requireIdLookup&#x60; property is editable. This property is read-only..</param>
         /// <param name="RoleName">Optional element. Specifies the role name associated with the recipient.&lt;br/&gt;&lt;br/&gt;This is required when working with template recipients..</param>
         /// <param name="RoutingOrder">Specifies the routing order of the recipient in the envelope. .</param>
-        /// <param name="RoutingOrderMetadata">RoutingOrderMetadata.</param>
+        /// <param name="RoutingOrderMetadata">Metadata that indicates whether the &#x60;routingOrder&#x60; property is editable. This property is read-only..</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="SignedDateTime">Reserved: For DocuSign use only. .</param>
         /// <param name="SigningGroupId">When set to **true** and the feature is enabled in the sender&#39;s account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once)..</param>
-        /// <param name="SigningGroupIdMetadata">SigningGroupIdMetadata.</param>
+        /// <param name="SigningGroupIdMetadata">Metadata that indicates whether the &#x60;signingGroupId&#x60; property is editable. This property is read-only..</param>
         /// <param name="SigningGroupName">The display name for the signing group.   Maximum Length: 100 characters. .</param>
         /// <param name="SigningGroupUsers">A complex type that contains information about users in the signing group..</param>
-        /// <param name="SmsAuthentication">SmsAuthentication.</param>
+        /// <param name="SmsAuthentication">When &#x60;idCheckConfigurationName&#x60; is set to &#x60;SMS Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the element &#x60;senderProvidedNumbers&#x60;, which is an array of phone numbers that the recipient can use for SMS text authentication.   .</param>
         /// <param name="SocialAuthentications"> Lists the social ID type that can be used for recipient authentication..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusCode">StatusCode.</param>
@@ -195,8 +195,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="accessCode", EmitDefaultValue=false)]
         public string AccessCode { get; set; }
         /// <summary>
-        /// Gets or Sets AccessCodeMetadata
+        /// Metadata that indicates whether the &#x60;accessCode&#x60; property is editable. This property is read-only.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;accessCode&#x60; property is editable. This property is read-only.</value>
         [DataMember(Name="accessCodeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AccessCodeMetadata { get; set; }
         /// <summary>
@@ -267,8 +268,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="deliveryMethod", EmitDefaultValue=false)]
         public string DeliveryMethod { get; set; }
         /// <summary>
-        /// Gets or Sets DeliveryMethodMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="deliveryMethodMetadata", EmitDefaultValue=false)]
         public PropertyMetadata DeliveryMethodMetadata { get; set; }
         /// <summary>
@@ -293,13 +295,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// Gets or Sets EmailMetadata
+        /// Metadata that indicates whether the &#x60;email&#x60; property is editable. This property is read-only.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;email&#x60; property is editable. This property is read-only.</value>
         [DataMember(Name="emailMetadata", EmitDefaultValue=false)]
         public PropertyMetadata EmailMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets EmailNotification
+        /// An optional complex type that sets a specific email subject and body for this recipient&#39;s notification email.   **Note:** You can set the &#x60;emailNotification&#x60; property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level &#x60;emailSubject&#x60; and &#x60;emailBlurb&#x60;. 
         /// </summary>
+        /// <value>An optional complex type that sets a specific email subject and body for this recipient&#39;s notification email.   **Note:** You can set the &#x60;emailNotification&#x60; property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level &#x60;emailSubject&#x60; and &#x60;emailBlurb&#x60;. </value>
         [DataMember(Name="emailNotification", EmitDefaultValue=false)]
         public RecipientEmailNotification EmailNotification { get; set; }
         /// <summary>
@@ -314,8 +318,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="embeddedRecipientStartURL", EmitDefaultValue=false)]
         public string EmbeddedRecipientStartURL { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -331,8 +336,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="faxNumber", EmitDefaultValue=false)]
         public string FaxNumber { get; set; }
         /// <summary>
-        /// Gets or Sets FaxNumberMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="faxNumberMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FaxNumberMetadata { get; set; }
         /// <summary>
@@ -342,8 +348,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="firstName", EmitDefaultValue=false)]
         public string FirstName { get; set; }
         /// <summary>
-        /// Gets or Sets FirstNameMetadata
+        /// Metadata that indicates whether the &#x60;firstName&#x60; property is editable. This property is read-only.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;firstName&#x60; property is editable. This property is read-only.</value>
         [DataMember(Name="firstNameMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FirstNameMetadata { get; set; }
         /// <summary>
@@ -352,8 +359,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="fullName", EmitDefaultValue=false)]
         public string FullName { get; set; }
         /// <summary>
-        /// Gets or Sets FullNameMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="fullNameMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FullNameMetadata { get; set; }
         /// <summary>
@@ -363,18 +371,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="idCheckConfigurationName", EmitDefaultValue=false)]
         public string IdCheckConfigurationName { get; set; }
         /// <summary>
-        /// Gets or Sets IdCheckConfigurationNameMetadata
+        /// Metadata that indicates whether the &#x60;idCheckConfigurationName&#x60; property is editable. This property is read-only.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;idCheckConfigurationName&#x60; property is editable. This property is read-only.</value>
         [DataMember(Name="idCheckConfigurationNameMetadata", EmitDefaultValue=false)]
         public PropertyMetadata IdCheckConfigurationNameMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets IdCheckInformationInput
+        /// An object that contains input information related to a recipient ID check.
         /// </summary>
+        /// <value>An object that contains input information related to a recipient ID check.</value>
         [DataMember(Name="idCheckInformationInput", EmitDefaultValue=false)]
         public IdCheckInformationInput IdCheckInformationInput { get; set; }
         /// <summary>
-        /// Gets or Sets IdentityVerification
+        /// Specifies the ID Verification workflow applied on an envelope by workflow ID. &lt;br/&gt;See the [list](/docs/esign-rest-api/reference/accounts/identityverifications/list/) method in the [IdentityVerifications](/docs/esign-rest-api/reference/accounts/identityverifications/) resource for more information on how to retrieve workflow IDs available for an account. &lt;br/&gt;This can be used in addition to other [recipient authentication](https://support.docusign.com/en/guides/ndse-user-guide-recipient-authentication) methods. &lt;br/&gt;Note that ID Verification and ID Check are two distinct methods. ID Verification checks recipients&#39; identity by verifying their ID while ID Check relies on data available on public records (such as current and former address).
         /// </summary>
+        /// <value>Specifies the ID Verification workflow applied on an envelope by workflow ID. &lt;br/&gt;See the [list](/docs/esign-rest-api/reference/accounts/identityverifications/list/) method in the [IdentityVerifications](/docs/esign-rest-api/reference/accounts/identityverifications/) resource for more information on how to retrieve workflow IDs available for an account. &lt;br/&gt;This can be used in addition to other [recipient authentication](https://support.docusign.com/en/guides/ndse-user-guide-recipient-authentication) methods. &lt;br/&gt;Note that ID Verification and ID Check are two distinct methods. ID Verification checks recipients&#39; identity by verifying their ID while ID Check relies on data available on public records (such as current and former address).</value>
         [DataMember(Name="identityVerification", EmitDefaultValue=false)]
         public RecipientIdentityVerification IdentityVerification { get; set; }
         /// <summary>
@@ -389,8 +400,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lastName", EmitDefaultValue=false)]
         public string LastName { get; set; }
         /// <summary>
-        /// Gets or Sets LastNameMetadata
+        /// Metadata that indicates whether the &#x60;lastName&#x60; property is editable. This property is read-only.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;lastName&#x60; property is editable. This property is read-only.</value>
         [DataMember(Name="lastNameMetadata", EmitDefaultValue=false)]
         public PropertyMetadata LastNameMetadata { get; set; }
         /// <summary>
@@ -409,8 +421,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// Gets or Sets NameMetadata
+        /// Metadata that indicates whether the &#x60;name&#x60; property is editable. This property is read-only.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;name&#x60; property is editable. This property is read-only.</value>
         [DataMember(Name="nameMetadata", EmitDefaultValue=false)]
         public PropertyMetadata NameMetadata { get; set; }
         /// <summary>
@@ -420,18 +433,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="note", EmitDefaultValue=false)]
         public string Note { get; set; }
         /// <summary>
-        /// Gets or Sets NoteMetadata
+        /// Metadata that indicates whether the &#x60;note&#x60; property is editable. This property is read-only.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;note&#x60; property is editable. This property is read-only.</value>
         [DataMember(Name="noteMetadata", EmitDefaultValue=false)]
         public PropertyMetadata NoteMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets PhoneAuthentication
+        /// When &#x60;idCheckConfigurationName&#x60; is set to &#x60;Phone Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * &#x60;recipMayProvideNumber&#x60;: Boolean. When **true,** the recipient can use whatever phone number they choose. * &#x60;senderProvidedNumbers&#x60;: ArrayOfStrings.  A list of phone numbers the recipient can use. * &#x60;recordVoicePrint&#x60;: Reserved for DocuSign. * &#x60;validateRecipProvidedNumber&#x60;: Reserved for DocuSign.  
         /// </summary>
+        /// <value>When &#x60;idCheckConfigurationName&#x60; is set to &#x60;Phone Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * &#x60;recipMayProvideNumber&#x60;: Boolean. When **true,** the recipient can use whatever phone number they choose. * &#x60;senderProvidedNumbers&#x60;: ArrayOfStrings.  A list of phone numbers the recipient can use. * &#x60;recordVoicePrint&#x60;: Reserved for DocuSign. * &#x60;validateRecipProvidedNumber&#x60;: Reserved for DocuSign.  </value>
         [DataMember(Name="phoneAuthentication", EmitDefaultValue=false)]
         public RecipientPhoneAuthentication PhoneAuthentication { get; set; }
         /// <summary>
-        /// Gets or Sets PhoneNumber
+        /// Describes the recipient phone number.
         /// </summary>
+        /// <value>Describes the recipient phone number.</value>
         [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
         public RecipientPhoneNumber PhoneNumber { get; set; }
         /// <summary>
@@ -441,8 +457,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientAttachments", EmitDefaultValue=false)]
         public List<RecipientAttachment> RecipientAttachments { get; set; }
         /// <summary>
-        /// Gets or Sets RecipientAuthenticationStatus
+        /// Information about the recipient&#39;s authentication status. This property is read-only.
         /// </summary>
+        /// <value>Information about the recipient&#39;s authentication status. This property is read-only.</value>
         [DataMember(Name="recipientAuthenticationStatus", EmitDefaultValue=false)]
         public AuthenticationStatus RecipientAuthenticationStatus { get; set; }
         /// <summary>
@@ -467,8 +484,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientType", EmitDefaultValue=false)]
         public string RecipientType { get; set; }
         /// <summary>
-        /// Gets or Sets RecipientTypeMetadata
+        /// Metadata that indicates whether the &#x60;recipientType&#x60; property is editable. This property is read-only.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;recipientType&#x60; property is editable. This property is read-only.</value>
         [DataMember(Name="recipientTypeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RecipientTypeMetadata { get; set; }
         /// <summary>
@@ -478,8 +496,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="requireIdLookup", EmitDefaultValue=false)]
         public string RequireIdLookup { get; set; }
         /// <summary>
-        /// Gets or Sets RequireIdLookupMetadata
+        /// Metadata that indicates whether the &#x60;requireIdLookup&#x60; property is editable. This property is read-only.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;requireIdLookup&#x60; property is editable. This property is read-only.</value>
         [DataMember(Name="requireIdLookupMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RequireIdLookupMetadata { get; set; }
         /// <summary>
@@ -495,8 +514,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="routingOrder", EmitDefaultValue=false)]
         public string RoutingOrder { get; set; }
         /// <summary>
-        /// Gets or Sets RoutingOrderMetadata
+        /// Metadata that indicates whether the &#x60;routingOrder&#x60; property is editable. This property is read-only.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;routingOrder&#x60; property is editable. This property is read-only.</value>
         [DataMember(Name="routingOrderMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RoutingOrderMetadata { get; set; }
         /// <summary>
@@ -518,8 +538,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signingGroupId", EmitDefaultValue=false)]
         public string SigningGroupId { get; set; }
         /// <summary>
-        /// Gets or Sets SigningGroupIdMetadata
+        /// Metadata that indicates whether the &#x60;signingGroupId&#x60; property is editable. This property is read-only.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;signingGroupId&#x60; property is editable. This property is read-only.</value>
         [DataMember(Name="signingGroupIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SigningGroupIdMetadata { get; set; }
         /// <summary>
@@ -535,8 +556,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signingGroupUsers", EmitDefaultValue=false)]
         public List<UserInfo> SigningGroupUsers { get; set; }
         /// <summary>
-        /// Gets or Sets SmsAuthentication
+        /// When &#x60;idCheckConfigurationName&#x60; is set to &#x60;SMS Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the element &#x60;senderProvidedNumbers&#x60;, which is an array of phone numbers that the recipient can use for SMS text authentication.   
         /// </summary>
+        /// <value>When &#x60;idCheckConfigurationName&#x60; is set to &#x60;SMS Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the element &#x60;senderProvidedNumbers&#x60;, which is an array of phone numbers that the recipient can use for SMS text authentication.   </value>
         [DataMember(Name="smsAuthentication", EmitDefaultValue=false)]
         public RecipientSMSAuthentication SmsAuthentication { get; set; }
         /// <summary>

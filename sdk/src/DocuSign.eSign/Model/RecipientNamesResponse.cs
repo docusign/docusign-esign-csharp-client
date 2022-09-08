@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientNamesResponse
+    /// This response object contains a list of recipients.
     /// </summary>
     [DataContract]
     public partial class RecipientNamesResponse :  IEquatable<RecipientNamesResponse>, IValidatableObject

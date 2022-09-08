@@ -43,7 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CertifiedDeliveries">A complex type containing information on a recipient the must receive the completed documents for the envelope to be completed, but the recipient does not need to sign, initial, date, or add information to any of the documents..</param>
         /// <param name="CurrentRoutingOrder">CurrentRoutingOrder.</param>
         /// <param name="Editors">Editors.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="InPersonSigners">Specifies a signer that is in the same physical location as a DocuSign user who will act as a Signing Host for the transaction. The recipient added is the Signing Host and new separate Signer Name field appears after Sign in person is selected..</param>
         /// <param name="Intermediaries">Identifies a recipient that can, but is not required to, add name and email information for recipients at the same or subsequent level in the routing order (until subsequent Agents, Editors or Intermediaries recipient types are added)..</param>
         /// <param name="Notaries">Notaries.</param>
@@ -99,8 +99,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="editors", EmitDefaultValue=false)]
         public List<Editor> Editors { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

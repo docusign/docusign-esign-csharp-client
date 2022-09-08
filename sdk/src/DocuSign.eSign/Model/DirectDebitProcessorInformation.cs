@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// DirectDebitProcessorInformation
+    /// Contains information about a bank that processes a customer&#39;s direct debit payments.
     /// </summary>
     [DataContract]
     public partial class DirectDebitProcessorInformation :  IEquatable<DirectDebitProcessorInformation>, IValidatableObject

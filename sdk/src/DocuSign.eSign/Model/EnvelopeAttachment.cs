@@ -41,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AccessControl">AccessControl.</param>
         /// <param name="AttachmentId">AttachmentId.</param>
         /// <param name="AttachmentType">AttachmentType.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="Label">Label.</param>
         /// <param name="Name">Name.</param>
         public EnvelopeAttachment(string AccessControl = default(string), string AttachmentId = default(string), string AttachmentType = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Label = default(string), string Name = default(string))
@@ -70,8 +70,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="attachmentType", EmitDefaultValue=false)]
         public string AttachmentType { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

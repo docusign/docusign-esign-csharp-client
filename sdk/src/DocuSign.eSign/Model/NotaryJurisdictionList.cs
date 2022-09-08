@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// NotaryJurisdictionList
+    /// A paged list of jurisdictions.
     /// </summary>
     [DataContract]
     public partial class NotaryJurisdictionList :  IEquatable<NotaryJurisdictionList>, IValidatableObject

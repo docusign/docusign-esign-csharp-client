@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="RecipientSMSAuthentication" /> class.
         /// </summary>
         /// <param name="SenderProvidedNumbers">An Array containing a list of phone numbers the recipient may use for SMS text authentication. .</param>
-        /// <param name="SenderProvidedNumbersMetadata">SenderProvidedNumbersMetadata.</param>
+        /// <param name="SenderProvidedNumbersMetadata">Metadata that indicates whether the &#x60;senderProvidedNumbers&#x60; property can be edited..</param>
         public RecipientSMSAuthentication(List<string> SenderProvidedNumbers = default(List<string>), PropertyMetadata SenderProvidedNumbersMetadata = default(PropertyMetadata))
         {
             this.SenderProvidedNumbers = SenderProvidedNumbers;
@@ -53,8 +53,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="senderProvidedNumbers", EmitDefaultValue=false)]
         public List<string> SenderProvidedNumbers { get; set; }
         /// <summary>
-        /// Gets or Sets SenderProvidedNumbersMetadata
+        /// Metadata that indicates whether the &#x60;senderProvidedNumbers&#x60; property can be edited.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;senderProvidedNumbers&#x60; property can be edited.</value>
         [DataMember(Name="senderProvidedNumbersMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SenderProvidedNumbersMetadata { get; set; }
         /// <summary>

@@ -648,7 +648,7 @@ namespace DocuSign.eSign.Client
         /// <param name="scopes">the list of requested scopes.  Client applications may be scoped to a limited set of system access.</param>
         /// <param name="redirectUri">this determines where to deliver the response containing the authorization code or access token.</param>
         /// <param name="responseType">determines the response type of the authorization request.
-        /// <br><i>Note</i>: these response types are mutually exclusive for a client application.
+        /// <br /><i>Note</i>: these response types are mutually exclusive for a client application.
         /// A public/native client application may only request a response type of "token";
         /// a private/trusted client application may only request a response type of "code".</br></param>
         /// <param name="state">Allows for arbitrary state that may be useful to your application.

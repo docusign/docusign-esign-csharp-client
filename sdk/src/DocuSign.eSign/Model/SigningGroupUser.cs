@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="SigningGroupUser" /> class.
         /// </summary>
         /// <param name="Email">Email.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="UserName">The name of the group member.   Maximum Length: 100 characters. .</param>
         public SigningGroupUser(string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string UserName = default(string))
         {
@@ -54,8 +54,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

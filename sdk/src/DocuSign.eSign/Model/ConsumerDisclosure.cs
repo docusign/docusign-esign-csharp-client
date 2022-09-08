@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConsumerDisclosure
+    /// Details about consumer disclosures.
     /// </summary>
     [DataContract]
     public partial class ConsumerDisclosure :  IEquatable<ConsumerDisclosure>, IValidatableObject
@@ -40,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AccountEsignId">A GUID identifying the account associated with the consumer disclosure.</param>
         /// <param name="AllowCDWithdraw">Indicates whether the customer can withdraw their acceptance of the consumer disclosure..</param>
-        /// <param name="AllowCDWithdrawMetadata">AllowCDWithdrawMetadata.</param>
+        /// <param name="AllowCDWithdrawMetadata">Metadata that indicates whether the &#x60;allowCDWithdraw&#x60; property is editable. .</param>
         /// <param name="ChangeEmail">ChangeEmail.</param>
         /// <param name="ChangeEmailOther">ChangeEmailOther.</param>
         /// <param name="CompanyName">The name of the company associated with the consumer disclosure..</param>
@@ -57,7 +57,7 @@ namespace DocuSign.eSign.Model
         /// <param name="PdfId">PdfId.</param>
         /// <param name="UseBrand">UseBrand.</param>
         /// <param name="UseConsumerDisclosureWithinAccount">UseConsumerDisclosureWithinAccount.</param>
-        /// <param name="UseConsumerDisclosureWithinAccountMetadata">UseConsumerDisclosureWithinAccountMetadata.</param>
+        /// <param name="UseConsumerDisclosureWithinAccountMetadata">Metadata that indicates whether the &#x60;useConsumerDisclosureWithinAccount&#x60; property is editable. .</param>
         /// <param name="WithdrawAddressLine1">Contains the first address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters. .</param>
         /// <param name="WithdrawAddressLine2">Contains the second address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters. .</param>
         /// <param name="WithdrawByEmail">Indicates whether the customer can withdraw consent by email..</param>
@@ -119,8 +119,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowCDWithdraw", EmitDefaultValue=false)]
         public string AllowCDWithdraw { get; set; }
         /// <summary>
-        /// Gets or Sets AllowCDWithdrawMetadata
+        /// Metadata that indicates whether the &#x60;allowCDWithdraw&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;allowCDWithdraw&#x60; property is editable. </value>
         [DataMember(Name="allowCDWithdrawMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowCDWithdrawMetadata { get; set; }
         /// <summary>
@@ -208,8 +209,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="useConsumerDisclosureWithinAccount", EmitDefaultValue=false)]
         public string UseConsumerDisclosureWithinAccount { get; set; }
         /// <summary>
-        /// Gets or Sets UseConsumerDisclosureWithinAccountMetadata
+        /// Metadata that indicates whether the &#x60;useConsumerDisclosureWithinAccount&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;useConsumerDisclosureWithinAccount&#x60; property is editable. </value>
         [DataMember(Name="useConsumerDisclosureWithinAccountMetadata", EmitDefaultValue=false)]
         public SettingsMetadata UseConsumerDisclosureWithinAccountMetadata { get; set; }
         /// <summary>

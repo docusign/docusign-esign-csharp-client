@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// SeatDiscount
+    /// This object contains information about a seat discount.
     /// </summary>
     [DataContract]
     public partial class SeatDiscount :  IEquatable<SeatDiscount>, IValidatableObject

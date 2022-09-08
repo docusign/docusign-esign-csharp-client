@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// AccountSignatureProvider
+    /// Contains information abotu the signature provider associated with the Identity Verification workflow.  If empty, then this specific workflow is not intended for signers. 
     /// </summary>
     [DataContract]
     public partial class AccountSignatureProvider :  IEquatable<AccountSignatureProvider>, IValidatableObject

@@ -42,7 +42,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ContentType">ContentType.</param>
         /// <param name="Created">The UTC DateTime when the workspace item was created..</param>
         /// <param name="CreatedById">CreatedById.</param>
-        /// <param name="CreatedByInformation">CreatedByInformation.</param>
+        /// <param name="CreatedByInformation">Details about the user who created the workspace item..</param>
         /// <param name="Extension">Extension.</param>
         /// <param name="FileSize">FileSize.</param>
         /// <param name="FileUri">FileUri.</param>
@@ -50,7 +50,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IsPublic"> If true, this supersedes need for bit mask permission with workspaceUserAuthorization.</param>
         /// <param name="LastModified">LastModified.</param>
         /// <param name="LastModifiedById">Utc date and time the comment was last updated (can only be done by creator).</param>
-        /// <param name="LastModifiedByInformation">LastModifiedByInformation.</param>
+        /// <param name="LastModifiedByInformation">Details about the user who last modified the workspace item..</param>
         /// <param name="Name">A simple string description of the item, such as a file name or a folder name..</param>
         /// <param name="PageCount">PageCount.</param>
         /// <param name="ParentFolderId">The ID of the parent folder. This is the GUID of the parent folder, or the special value &#39;root&#39; for the root folder..</param>
@@ -112,8 +112,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdById", EmitDefaultValue=false)]
         public string CreatedById { get; set; }
         /// <summary>
-        /// Gets or Sets CreatedByInformation
+        /// Details about the user who created the workspace item.
         /// </summary>
+        /// <value>Details about the user who created the workspace item.</value>
         [DataMember(Name="createdByInformation", EmitDefaultValue=false)]
         public WorkspaceUser CreatedByInformation { get; set; }
         /// <summary>
@@ -154,8 +155,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lastModifiedById", EmitDefaultValue=false)]
         public string LastModifiedById { get; set; }
         /// <summary>
-        /// Gets or Sets LastModifiedByInformation
+        /// Details about the user who last modified the workspace item.
         /// </summary>
+        /// <value>Details about the user who last modified the workspace item.</value>
         [DataMember(Name="lastModifiedByInformation", EmitDefaultValue=false)]
         public WorkspaceUser LastModifiedByInformation { get; set; }
         /// <summary>

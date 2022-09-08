@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Workflow
+    /// Describes the workflow for an envelope.
     /// </summary>
     [DataContract]
     public partial class Workflow :  IEquatable<Workflow>, IValidatableObject
@@ -41,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CurrentWorkflowStepId">CurrentWorkflowStepId.</param>
         /// <param name="OverwriteUpdateMode">OverwriteUpdateMode.</param>
         /// <param name="ResumeDate">ResumeDate.</param>
-        /// <param name="ScheduledSending">ScheduledSending.</param>
+        /// <param name="ScheduledSending">An object that describes the settings for scheduled sending..</param>
         /// <param name="WorkflowStatus">WorkflowStatus.</param>
         /// <param name="WorkflowSteps">WorkflowSteps.</param>
         public Workflow(string CurrentWorkflowStepId = default(string), string OverwriteUpdateMode = default(string), string ResumeDate = default(string), ScheduledSending ScheduledSending = default(ScheduledSending), string WorkflowStatus = default(string), List<WorkflowStep> WorkflowSteps = default(List<WorkflowStep>))
@@ -70,8 +70,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="resumeDate", EmitDefaultValue=false)]
         public string ResumeDate { get; set; }
         /// <summary>
-        /// Gets or Sets ScheduledSending
+        /// An object that describes the settings for scheduled sending.
         /// </summary>
+        /// <value>An object that describes the settings for scheduled sending.</value>
         [DataMember(Name="scheduledSending", EmitDefaultValue=false)]
         public ScheduledSending ScheduledSending { get; set; }
         /// <summary>

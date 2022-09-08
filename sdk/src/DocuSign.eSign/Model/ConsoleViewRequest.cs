@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConsoleViewRequest
+    /// The request object for the [EnvelopeViews: createConsole](/docs/esign-rest-api/reference/envelopes/envelopeviews/createconsole/) method.
     /// </summary>
     [DataContract]
     public partial class ConsoleViewRequest :  IEquatable<ConsoleViewRequest>, IValidatableObject

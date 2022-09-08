@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// AccountIdentityVerificationWorkflow
+    /// Specifies an Identity Verification workflow.
     /// </summary>
     [DataContract]
     public partial class AccountIdentityVerificationWorkflow :  IEquatable<AccountIdentityVerificationWorkflow>, IValidatableObject
@@ -41,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DefaultDescription">DefaultDescription.</param>
         /// <param name="DefaultName">DefaultName.</param>
         /// <param name="InputOptions">InputOptions.</param>
-        /// <param name="SignatureProvider">SignatureProvider.</param>
+        /// <param name="SignatureProvider">The signature provider associated with the Identity Verification workflow..</param>
         /// <param name="Steps">Steps.</param>
         /// <param name="WorkflowId">WorkflowId.</param>
         /// <param name="WorkflowResourceKey">WorkflowResourceKey.</param>
@@ -72,8 +72,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="inputOptions", EmitDefaultValue=false)]
         public List<AccountIdentityInputOption> InputOptions { get; set; }
         /// <summary>
-        /// Gets or Sets SignatureProvider
+        /// The signature provider associated with the Identity Verification workflow.
         /// </summary>
+        /// <value>The signature provider associated with the Identity Verification workflow.</value>
         [DataMember(Name="signatureProvider", EmitDefaultValue=false)]
         public AccountSignatureProvider SignatureProvider { get; set; }
         /// <summary>

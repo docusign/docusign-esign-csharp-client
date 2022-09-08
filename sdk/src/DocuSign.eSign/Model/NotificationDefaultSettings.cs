@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// NotificationDefaultSettings
+    /// Contains details about the default notification settings for the envelope notifications that senders and signers receive.
     /// </summary>
     [DataContract]
     public partial class NotificationDefaultSettings :  IEquatable<NotificationDefaultSettings>, IValidatableObject
@@ -38,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NotificationDefaultSettings" /> class.
         /// </summary>
-        /// <param name="SenderEmailNotifications">SenderEmailNotifications.</param>
-        /// <param name="SignerEmailNotifications">SignerEmailNotifications.</param>
+        /// <param name="SenderEmailNotifications">  An array of email notifications that sets the email the user receives when they are a sender. When the specific email notification is set to true, the user will receive those types of email notifications from DocuSign.   The user inherits the default account sender email notification settings when the user is created. The email notifications are:  * envelopeComplete * changedSigner  * senderEnvelopeDeclined  * withdrawnConsent  * recipientViewed  * deliveryFailed   .</param>
+        /// <param name="SignerEmailNotifications">An array of email notifications that specifies the email the user receives when they are a recipient. When the specific email notification is set to true, the user receives those types of email notifications from DocuSign. The user inherits the default account email notification settings when the user is created. .</param>
         public NotificationDefaultSettings(SenderEmailNotifications SenderEmailNotifications = default(SenderEmailNotifications), SignerEmailNotifications SignerEmailNotifications = default(SignerEmailNotifications))
         {
             this.SenderEmailNotifications = SenderEmailNotifications;
@@ -47,13 +47,15 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets SenderEmailNotifications
+        ///   An array of email notifications that sets the email the user receives when they are a sender. When the specific email notification is set to true, the user will receive those types of email notifications from DocuSign.   The user inherits the default account sender email notification settings when the user is created. The email notifications are:  * envelopeComplete * changedSigner  * senderEnvelopeDeclined  * withdrawnConsent  * recipientViewed  * deliveryFailed   
         /// </summary>
+        /// <value>  An array of email notifications that sets the email the user receives when they are a sender. When the specific email notification is set to true, the user will receive those types of email notifications from DocuSign.   The user inherits the default account sender email notification settings when the user is created. The email notifications are:  * envelopeComplete * changedSigner  * senderEnvelopeDeclined  * withdrawnConsent  * recipientViewed  * deliveryFailed   </value>
         [DataMember(Name="senderEmailNotifications", EmitDefaultValue=false)]
         public SenderEmailNotifications SenderEmailNotifications { get; set; }
         /// <summary>
-        /// Gets or Sets SignerEmailNotifications
+        /// An array of email notifications that specifies the email the user receives when they are a recipient. When the specific email notification is set to true, the user receives those types of email notifications from DocuSign. The user inherits the default account email notification settings when the user is created. 
         /// </summary>
+        /// <value>An array of email notifications that specifies the email the user receives when they are a recipient. When the specific email notification is set to true, the user receives those types of email notifications from DocuSign. The user inherits the default account email notification settings when the user is created. </value>
         [DataMember(Name="signerEmailNotifications", EmitDefaultValue=false)]
         public SignerEmailNotifications SignerEmailNotifications { get; set; }
         /// <summary>

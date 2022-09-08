@@ -39,23 +39,24 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="NewAccountDefinition" /> class.
         /// </summary>
         /// <param name="AccountName">The account name for the new account..</param>
-        /// <param name="AccountSettings">AccountSettings.</param>
-        /// <param name="AddressInformation">AddressInformation.</param>
-        /// <param name="CreditCardInformation">CreditCardInformation.</param>
-        /// <param name="DirectDebitProcessorInformation">DirectDebitProcessorInformation.</param>
+        /// <param name="AccountSettings">The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  .</param>
+        /// <param name="AddressInformation">A complex type that contains the following information for the new account: &#x60;Street1&#x60;, &#x60;Street2&#x60;, &#x60;City&#x60;, &#x60;State&#x60;, &#x60;Zip&#x60;, &#x60;Phone&#x60;, and &#x60;Fax&#x60;..</param>
+        /// <param name="CreditCardInformation">A complex type that has information about the credit card used to pay for this account..</param>
+        /// <param name="DirectDebitProcessorInformation">Information about the bank that processes direct debits for the payment plan..</param>
         /// <param name="DistributorCode">The code that identifies the billing plan groups and plans for the new account..</param>
         /// <param name="DistributorPassword">The password for the distributorCode..</param>
         /// <param name="EnablePreAuth">EnablePreAuth.</param>
         /// <param name="EnvelopePartitionId">EnvelopePartitionId.</param>
-        /// <param name="InitialUser">InitialUser.</param>
+        /// <param name="InitialUser">A complex type with the initial user information for the new account. Note that some user information is set internally based on the plan and cannot be overridden..</param>
         /// <param name="PaymentMethod">PaymentMethod.</param>
-        /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
-        /// <param name="PlanInformation">PlanInformation.</param>
+        /// <param name="PaymentProcessor">PaymentProcessor.</param>
+        /// <param name="PaymentProcessorInformation">Information about the entity that processes payments for the billing plan..</param>
+        /// <param name="PlanInformation">An object used to identify the features and attributes of the account being created..</param>
         /// <param name="ProcessPayment">ProcessPayment.</param>
-        /// <param name="ReferralInformation">ReferralInformation.</param>
-        /// <param name="SocialAccountInformation">SocialAccountInformation.</param>
+        /// <param name="ReferralInformation">A complex type that contains properties for entering referral and discount information..</param>
+        /// <param name="SocialAccountInformation">Contains properties that map a DocuSign user to a social account such as Facebook or Yahoo..</param>
         /// <param name="TaxExemptId">TaxExemptId.</param>
-        public NewAccountDefinition(string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), AccountAddress AddressInformation = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DistributorCode = default(string), string DistributorPassword = default(string), string EnablePreAuth = default(string), string EnvelopePartitionId = default(string), UserInformation InitialUser = default(UserInformation), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), string ProcessPayment = default(string), ReferralInformation ReferralInformation = default(ReferralInformation), SocialAccountInformation SocialAccountInformation = default(SocialAccountInformation), string TaxExemptId = default(string))
+        public NewAccountDefinition(string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), AccountAddress AddressInformation = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DistributorCode = default(string), string DistributorPassword = default(string), string EnablePreAuth = default(string), string EnvelopePartitionId = default(string), UserInformation InitialUser = default(UserInformation), string PaymentMethod = default(string), string PaymentProcessor = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), string ProcessPayment = default(string), ReferralInformation ReferralInformation = default(ReferralInformation), SocialAccountInformation SocialAccountInformation = default(SocialAccountInformation), string TaxExemptId = default(string))
         {
             this.AccountName = AccountName;
             this.AccountSettings = AccountSettings;
@@ -68,6 +69,7 @@ namespace DocuSign.eSign.Model
             this.EnvelopePartitionId = EnvelopePartitionId;
             this.InitialUser = InitialUser;
             this.PaymentMethod = PaymentMethod;
+            this.PaymentProcessor = PaymentProcessor;
             this.PaymentProcessorInformation = PaymentProcessorInformation;
             this.PlanInformation = PlanInformation;
             this.ProcessPayment = ProcessPayment;
@@ -83,23 +85,27 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="accountName", EmitDefaultValue=false)]
         public string AccountName { get; set; }
         /// <summary>
-        /// Gets or Sets AccountSettings
+        /// The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  
         /// </summary>
+        /// <value>The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  </value>
         [DataMember(Name="accountSettings", EmitDefaultValue=false)]
         public AccountSettingsInformation AccountSettings { get; set; }
         /// <summary>
-        /// Gets or Sets AddressInformation
+        /// A complex type that contains the following information for the new account: &#x60;Street1&#x60;, &#x60;Street2&#x60;, &#x60;City&#x60;, &#x60;State&#x60;, &#x60;Zip&#x60;, &#x60;Phone&#x60;, and &#x60;Fax&#x60;.
         /// </summary>
+        /// <value>A complex type that contains the following information for the new account: &#x60;Street1&#x60;, &#x60;Street2&#x60;, &#x60;City&#x60;, &#x60;State&#x60;, &#x60;Zip&#x60;, &#x60;Phone&#x60;, and &#x60;Fax&#x60;.</value>
         [DataMember(Name="addressInformation", EmitDefaultValue=false)]
         public AccountAddress AddressInformation { get; set; }
         /// <summary>
-        /// Gets or Sets CreditCardInformation
+        /// A complex type that has information about the credit card used to pay for this account.
         /// </summary>
+        /// <value>A complex type that has information about the credit card used to pay for this account.</value>
         [DataMember(Name="creditCardInformation", EmitDefaultValue=false)]
         public CreditCardInformation CreditCardInformation { get; set; }
         /// <summary>
-        /// Gets or Sets DirectDebitProcessorInformation
+        /// Information about the bank that processes direct debits for the payment plan.
         /// </summary>
+        /// <value>Information about the bank that processes direct debits for the payment plan.</value>
         [DataMember(Name="directDebitProcessorInformation", EmitDefaultValue=false)]
         public DirectDebitProcessorInformation DirectDebitProcessorInformation { get; set; }
         /// <summary>
@@ -125,8 +131,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopePartitionId", EmitDefaultValue=false)]
         public string EnvelopePartitionId { get; set; }
         /// <summary>
-        /// Gets or Sets InitialUser
+        /// A complex type with the initial user information for the new account. Note that some user information is set internally based on the plan and cannot be overridden.
         /// </summary>
+        /// <value>A complex type with the initial user information for the new account. Note that some user information is set internally based on the plan and cannot be overridden.</value>
         [DataMember(Name="initialUser", EmitDefaultValue=false)]
         public UserInformation InitialUser { get; set; }
         /// <summary>
@@ -135,13 +142,20 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
         public string PaymentMethod { get; set; }
         /// <summary>
-        /// Gets or Sets PaymentProcessorInformation
+        /// Gets or Sets PaymentProcessor
         /// </summary>
+        [DataMember(Name="paymentProcessor", EmitDefaultValue=false)]
+        public string PaymentProcessor { get; set; }
+        /// <summary>
+        /// Information about the entity that processes payments for the billing plan.
+        /// </summary>
+        /// <value>Information about the entity that processes payments for the billing plan.</value>
         [DataMember(Name="paymentProcessorInformation", EmitDefaultValue=false)]
         public PaymentProcessorInformation PaymentProcessorInformation { get; set; }
         /// <summary>
-        /// Gets or Sets PlanInformation
+        /// An object used to identify the features and attributes of the account being created.
         /// </summary>
+        /// <value>An object used to identify the features and attributes of the account being created.</value>
         [DataMember(Name="planInformation", EmitDefaultValue=false)]
         public PlanInformation PlanInformation { get; set; }
         /// <summary>
@@ -150,13 +164,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="processPayment", EmitDefaultValue=false)]
         public string ProcessPayment { get; set; }
         /// <summary>
-        /// Gets or Sets ReferralInformation
+        /// A complex type that contains properties for entering referral and discount information.
         /// </summary>
+        /// <value>A complex type that contains properties for entering referral and discount information.</value>
         [DataMember(Name="referralInformation", EmitDefaultValue=false)]
         public ReferralInformation ReferralInformation { get; set; }
         /// <summary>
-        /// Gets or Sets SocialAccountInformation
+        /// Contains properties that map a DocuSign user to a social account such as Facebook or Yahoo.
         /// </summary>
+        /// <value>Contains properties that map a DocuSign user to a social account such as Facebook or Yahoo.</value>
         [DataMember(Name="socialAccountInformation", EmitDefaultValue=false)]
         public SocialAccountInformation SocialAccountInformation { get; set; }
         /// <summary>
@@ -183,6 +199,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnvelopePartitionId: ").Append(EnvelopePartitionId).Append("\n");
             sb.Append("  InitialUser: ").Append(InitialUser).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+            sb.Append("  PaymentProcessor: ").Append(PaymentProcessor).Append("\n");
             sb.Append("  PaymentProcessorInformation: ").Append(PaymentProcessorInformation).Append("\n");
             sb.Append("  PlanInformation: ").Append(PlanInformation).Append("\n");
             sb.Append("  ProcessPayment: ").Append(ProcessPayment).Append("\n");
@@ -281,6 +298,11 @@ namespace DocuSign.eSign.Model
                     this.PaymentMethod.Equals(other.PaymentMethod)
                 ) && 
                 (
+                    this.PaymentProcessor == other.PaymentProcessor ||
+                    this.PaymentProcessor != null &&
+                    this.PaymentProcessor.Equals(other.PaymentProcessor)
+                ) && 
+                (
                     this.PaymentProcessorInformation == other.PaymentProcessorInformation ||
                     this.PaymentProcessorInformation != null &&
                     this.PaymentProcessorInformation.Equals(other.PaymentProcessorInformation)
@@ -345,6 +367,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.InitialUser.GetHashCode();
                 if (this.PaymentMethod != null)
                     hash = hash * 59 + this.PaymentMethod.GetHashCode();
+                if (this.PaymentProcessor != null)
+                    hash = hash * 59 + this.PaymentProcessor.GetHashCode();
                 if (this.PaymentProcessorInformation != null)
                     hash = hash * 59 + this.PaymentProcessorInformation.GetHashCode();
                 if (this.PlanInformation != null)

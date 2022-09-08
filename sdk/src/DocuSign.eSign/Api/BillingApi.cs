@@ -48,7 +48,7 @@ namespace DocuSign.eSign.Api
         /// Get metadata for a given credit card.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about a credit card associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -59,7 +59,7 @@ namespace DocuSign.eSign.Api
         /// Get metadata for a given credit card.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about a credit card associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -362,7 +362,7 @@ namespace DocuSign.eSign.Api
         /// Get metadata for a given credit card.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about a credit card associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -373,7 +373,7 @@ namespace DocuSign.eSign.Api
         /// Get metadata for a given credit card.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about a credit card associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -869,7 +869,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get metadata for a given credit card. 
+        /// Get metadata for a given credit card. This method returns information about a credit card associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -881,7 +881,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get metadata for a given credit card. 
+        /// Get metadata for a given credit card. This method returns information about a credit card associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -954,7 +954,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get metadata for a given credit card. 
+        /// Get metadata for a given credit card. This method returns information about a credit card associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -966,7 +966,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get metadata for a given credit card. 
+        /// Get metadata for a given credit card. This method returns information about a credit card associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>

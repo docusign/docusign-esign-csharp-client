@@ -27,7 +27,7 @@ namespace DocuSign.eSign.Api
         /// Creates a blind carbon copy email archive entry
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a BCC email archive configuration for an account (adds a BCC email address to the account for archiving the emails that DocuSign generates).  The only property that you must set in the request body is the BCC email address that you want to use.  **Note:** An account can have up to five active and pending email archive addresses combined, but you must use this method to add them to the account one at a time. Each email address is considered a separate BCC email archive configuration. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Api
         /// Creates a blind carbon copy email archive entry
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a BCC email archive configuration for an account (adds a BCC email address to the account for archiving the emails that DocuSign generates).  The only property that you must set in the request body is the BCC email address that you want to use.  **Note:** An account can have up to five active and pending email archive addresses combined, but you must use this method to add them to the account one at a time. Each email address is considered a separate BCC email archive configuration. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -50,7 +50,7 @@ namespace DocuSign.eSign.Api
         /// Delete a blind carbon copy email archive for an account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a BCC email archive configuration from an account.  When you use this method, the status of the BCC email archive configuration switches to &#x60;closed&#x60; and the BCC email address is no longer used to archive DocuSign-generated email messages. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -62,7 +62,7 @@ namespace DocuSign.eSign.Api
         /// Delete a blind carbon copy email archive for an account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a BCC email archive configuration from an account.  When you use this method, the status of the BCC email archive configuration switches to &#x60;closed&#x60; and the BCC email address is no longer used to archive DocuSign-generated email messages. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -73,7 +73,7 @@ namespace DocuSign.eSign.Api
         /// Get the blind carbon copy email archive history entries for the specified archive
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -86,7 +86,7 @@ namespace DocuSign.eSign.Api
         /// Get the blind carbon copy email archive history entries for the specified archive
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -98,7 +98,7 @@ namespace DocuSign.eSign.Api
         /// Get the blind carbon copy email archive entries owned by the specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method retrieves all of the BCC email archive configurations associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -110,7 +110,7 @@ namespace DocuSign.eSign.Api
         /// Get the blind carbon copy email archive entries owned by the specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method retrieves all of the BCC email archive configurations associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -123,7 +123,7 @@ namespace DocuSign.eSign.Api
         /// Creates a blind carbon copy email archive entry
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a BCC email archive configuration for an account (adds a BCC email address to the account for archiving the emails that DocuSign generates).  The only property that you must set in the request body is the BCC email address that you want to use.  **Note:** An account can have up to five active and pending email archive addresses combined, but you must use this method to add them to the account one at a time. Each email address is considered a separate BCC email archive configuration. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -135,7 +135,7 @@ namespace DocuSign.eSign.Api
         /// Creates a blind carbon copy email archive entry
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a BCC email archive configuration for an account (adds a BCC email address to the account for archiving the emails that DocuSign generates).  The only property that you must set in the request body is the BCC email address that you want to use.  **Note:** An account can have up to five active and pending email archive addresses combined, but you must use this method to add them to the account one at a time. Each email address is considered a separate BCC email archive configuration. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -146,7 +146,7 @@ namespace DocuSign.eSign.Api
         /// Delete a blind carbon copy email archive for an account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a BCC email archive configuration from an account.  When you use this method, the status of the BCC email archive configuration switches to &#x60;closed&#x60; and the BCC email address is no longer used to archive DocuSign-generated email messages. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -158,7 +158,7 @@ namespace DocuSign.eSign.Api
         /// Delete a blind carbon copy email archive for an account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a BCC email archive configuration from an account.  When you use this method, the status of the BCC email archive configuration switches to &#x60;closed&#x60; and the BCC email address is no longer used to archive DocuSign-generated email messages. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -169,7 +169,7 @@ namespace DocuSign.eSign.Api
         /// Get the blind carbon copy email archive history entries for the specified archive
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -182,7 +182,7 @@ namespace DocuSign.eSign.Api
         /// Get the blind carbon copy email archive history entries for the specified archive
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -194,7 +194,7 @@ namespace DocuSign.eSign.Api
         /// Get the blind carbon copy email archive entries owned by the specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method retrieves all of the BCC email archive configurations associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -206,7 +206,7 @@ namespace DocuSign.eSign.Api
         /// Get the blind carbon copy email archive entries owned by the specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method retrieves all of the BCC email archive configurations associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -270,7 +270,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Creates a blind carbon copy email archive entry 
+        /// Creates a blind carbon copy email archive entry This method creates a BCC email archive configuration for an account (adds a BCC email address to the account for archiving the emails that DocuSign generates).  The only property that you must set in the request body is the BCC email address that you want to use.  **Note:** An account can have up to five active and pending email archive addresses combined, but you must use this method to add them to the account one at a time. Each email address is considered a separate BCC email archive configuration. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -283,7 +283,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a blind carbon copy email archive entry 
+        /// Creates a blind carbon copy email archive entry This method creates a BCC email archive configuration for an account (adds a BCC email address to the account for archiving the emails that DocuSign generates).  The only property that you must set in the request body is the BCC email address that you want to use.  **Note:** An account can have up to five active and pending email archive addresses combined, but you must use this method to add them to the account one at a time. Each email address is considered a separate BCC email archive configuration. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -365,7 +365,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a blind carbon copy email archive entry 
+        /// Creates a blind carbon copy email archive entry This method creates a BCC email archive configuration for an account (adds a BCC email address to the account for archiving the emails that DocuSign generates).  The only property that you must set in the request body is the BCC email address that you want to use.  **Note:** An account can have up to five active and pending email archive addresses combined, but you must use this method to add them to the account one at a time. Each email address is considered a separate BCC email archive configuration. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -378,7 +378,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a blind carbon copy email archive entry 
+        /// Creates a blind carbon copy email archive entry This method creates a BCC email archive configuration for an account (adds a BCC email address to the account for archiving the emails that DocuSign generates).  The only property that you must set in the request body is the BCC email address that you want to use.  **Note:** An account can have up to five active and pending email archive addresses combined, but you must use this method to add them to the account one at a time. Each email address is considered a separate BCC email archive configuration. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -453,7 +453,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Delete a blind carbon copy email archive for an account. 
+        /// Delete a blind carbon copy email archive for an account. This method deletes a BCC email archive configuration from an account.  When you use this method, the status of the BCC email archive configuration switches to &#x60;closed&#x60; and the BCC email address is no longer used to archive DocuSign-generated email messages. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -465,7 +465,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete a blind carbon copy email archive for an account. 
+        /// Delete a blind carbon copy email archive for an account. This method deletes a BCC email archive configuration from an account.  When you use this method, the status of the BCC email archive configuration switches to &#x60;closed&#x60; and the BCC email address is no longer used to archive DocuSign-generated email messages. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -535,7 +535,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete a blind carbon copy email archive for an account. 
+        /// Delete a blind carbon copy email archive for an account. This method deletes a BCC email archive configuration from an account.  When you use this method, the status of the BCC email archive configuration switches to &#x60;closed&#x60; and the BCC email address is no longer used to archive DocuSign-generated email messages. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -547,7 +547,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete a blind carbon copy email archive for an account. 
+        /// Delete a blind carbon copy email archive for an account. This method deletes a BCC email archive configuration from an account.  When you use this method, the status of the BCC email archive configuration switches to &#x60;closed&#x60; and the BCC email address is no longer used to archive DocuSign-generated email messages. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -617,7 +617,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get the blind carbon copy email archive history entries for the specified archive 
+        /// Get the blind carbon copy email archive history entries for the specified archive This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
         /// </summary>
         public class GetBCCEmailArchiveHistoryListOptions
         {
@@ -628,7 +628,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the blind carbon copy email archive history entries for the specified archive 
+        /// Get the blind carbon copy email archive history entries for the specified archive This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -642,7 +642,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the blind carbon copy email archive history entries for the specified archive 
+        /// Get the blind carbon copy email archive history entries for the specified archive This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -726,7 +726,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the blind carbon copy email archive history entries for the specified archive 
+        /// Get the blind carbon copy email archive history entries for the specified archive This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -740,7 +740,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the blind carbon copy email archive history entries for the specified archive 
+        /// Get the blind carbon copy email archive history entries for the specified archive This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -816,7 +816,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get the blind carbon copy email archive entries owned by the specified account 
+        /// Get the blind carbon copy email archive entries owned by the specified account This method retrieves all of the BCC email archive configurations associated with an account.
         /// </summary>
         public class GetBCCEmailArchiveListOptions
         {
@@ -827,7 +827,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the blind carbon copy email archive entries owned by the specified account 
+        /// Get the blind carbon copy email archive entries owned by the specified account This method retrieves all of the BCC email archive configurations associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -840,7 +840,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the blind carbon copy email archive entries owned by the specified account 
+        /// Get the blind carbon copy email archive entries owned by the specified account This method retrieves all of the BCC email archive configurations associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -919,7 +919,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the blind carbon copy email archive entries owned by the specified account 
+        /// Get the blind carbon copy email archive entries owned by the specified account This method retrieves all of the BCC email archive configurations associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -932,7 +932,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the blind carbon copy email archive entries owned by the specified account 
+        /// Get the blind carbon copy email archive entries owned by the specified account This method retrieves all of the BCC email archive configurations associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// DocumentHtmlCollapsibleDisplaySettings
+    /// Display settings for collapsible section.
     /// </summary>
     [DataContract]
     public partial class DocumentHtmlCollapsibleDisplaySettings :  IEquatable<DocumentHtmlCollapsibleDisplaySettings>, IValidatableObject

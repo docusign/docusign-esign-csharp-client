@@ -38,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NotificationDefaults" /> class.
         /// </summary>
-        /// <param name="ApiEmailNotifications">ApiEmailNotifications.</param>
-        /// <param name="EmailNotifications">EmailNotifications.</param>
+        /// <param name="ApiEmailNotifications">The default notification settings for envelopes sent by using the console..</param>
+        /// <param name="EmailNotifications">The default notification settings for envelopes sent by using the API..</param>
         public NotificationDefaults(NotificationDefaultSettings ApiEmailNotifications = default(NotificationDefaultSettings), NotificationDefaultSettings EmailNotifications = default(NotificationDefaultSettings))
         {
             this.ApiEmailNotifications = ApiEmailNotifications;
@@ -47,13 +47,15 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets ApiEmailNotifications
+        /// The default notification settings for envelopes sent by using the console.
         /// </summary>
+        /// <value>The default notification settings for envelopes sent by using the console.</value>
         [DataMember(Name="apiEmailNotifications", EmitDefaultValue=false)]
         public NotificationDefaultSettings ApiEmailNotifications { get; set; }
         /// <summary>
-        /// Gets or Sets EmailNotifications
+        /// The default notification settings for envelopes sent by using the API.
         /// </summary>
+        /// <value>The default notification settings for envelopes sent by using the API.</value>
         [DataMember(Name="emailNotifications", EmitDefaultValue=false)]
         public NotificationDefaultSettings EmailNotifications { get; set; }
         /// <summary>

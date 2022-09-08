@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopeTransferRuleRequest
+    /// This object contains details about the envelope transfer rule that you want to create.
     /// </summary>
     [DataContract]
     public partial class EnvelopeTransferRuleRequest :  IEquatable<EnvelopeTransferRuleRequest>, IValidatableObject
@@ -45,9 +45,9 @@ namespace DocuSign.eSign.Model
         /// <param name="FromGroups">FromGroups.</param>
         /// <param name="FromUsers">FromUsers.</param>
         /// <param name="ModifiedDate">ModifiedDate.</param>
-        /// <param name="ModifiedUser">ModifiedUser.</param>
-        /// <param name="ToFolder">ToFolder.</param>
-        /// <param name="ToUser">ToUser.</param>
+        /// <param name="ModifiedUser">Information about the user who last modified the envelope transfer rule..</param>
+        /// <param name="ToFolder">Information about the destination folder to which the envelope is transferred..</param>
+        /// <param name="ToUser">Information about the user to which the envelope is transferred..</param>
         public EnvelopeTransferRuleRequest(string CarbonCopyOriginalOwner = default(string), string Enabled = default(string), string EnvelopeTransferRuleId = default(string), string EventType = default(string), List<Group> FromGroups = default(List<Group>), List<UserInformation> FromUsers = default(List<UserInformation>), string ModifiedDate = default(string), UserInformation ModifiedUser = default(UserInformation), Folder ToFolder = default(Folder), UserInformation ToUser = default(UserInformation))
         {
             this.CarbonCopyOriginalOwner = CarbonCopyOriginalOwner;
@@ -98,18 +98,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="modifiedDate", EmitDefaultValue=false)]
         public string ModifiedDate { get; set; }
         /// <summary>
-        /// Gets or Sets ModifiedUser
+        /// Information about the user who last modified the envelope transfer rule.
         /// </summary>
+        /// <value>Information about the user who last modified the envelope transfer rule.</value>
         [DataMember(Name="modifiedUser", EmitDefaultValue=false)]
         public UserInformation ModifiedUser { get; set; }
         /// <summary>
-        /// Gets or Sets ToFolder
+        /// Information about the destination folder to which the envelope is transferred.
         /// </summary>
+        /// <value>Information about the destination folder to which the envelope is transferred.</value>
         [DataMember(Name="toFolder", EmitDefaultValue=false)]
         public Folder ToFolder { get; set; }
         /// <summary>
-        /// Gets or Sets ToUser
+        /// Information about the user to which the envelope is transferred.
         /// </summary>
+        /// <value>Information about the user to which the envelope is transferred.</value>
         [DataMember(Name="toUser", EmitDefaultValue=false)]
         public UserInformation ToUser { get; set; }
         /// <summary>

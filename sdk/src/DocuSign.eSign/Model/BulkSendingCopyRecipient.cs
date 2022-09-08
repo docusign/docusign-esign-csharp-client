@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BulkSendingCopyRecipient
+    /// This object contains details about a bulk send recipient.
     /// </summary>
     [DataContract]
     public partial class BulkSendingCopyRecipient :  IEquatable<BulkSendingCopyRecipient>, IValidatableObject
@@ -43,23 +43,23 @@ namespace DocuSign.eSign.Model
         /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
         /// <param name="DeliveryMethod">Reserved: For DocuSign use only..</param>
         /// <param name="Email">Email.</param>
-        /// <param name="EmailNotification">EmailNotification.</param>
+        /// <param name="EmailNotification">An optional complex type that sets a specific email subject and body for this recipient&#39;s notification email.   **Note:** You can set the &#x60;emailNotification&#x60; property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level &#x60;emailSubject&#x60; and &#x60;emailBlurb&#x60;. .</param>
         /// <param name="EmbeddedRecipientStartURL">Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender&#39;s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to &#x60;SIGN_AT_DOCUSIGN&#x60;, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient&#39;s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets &#x60;EmbeddedRecipientStartURL&#x3D;SIGN_AT_DOCUSIGN&#x60;, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the &#x60;clientUserId&#x60; property is NOT set, and the &#x60;embeddedRecipientStartURL&#x60; is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The &#x60;customFields&#x60; property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   &#x60;http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&amp;[[mergeField3]]&#x60; .</param>
         /// <param name="FaxNumber">Reserved:.</param>
         /// <param name="HostEmail">HostEmail.</param>
         /// <param name="HostName">HostName.</param>
         /// <param name="IdCheckConfigurationName">Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node..</param>
-        /// <param name="IdCheckInformationInput">IdCheckInformationInput.</param>
+        /// <param name="IdCheckInformationInput">An object that contains input information related to a recipient ID check..</param>
         /// <param name="IdentificationMethod">IdentificationMethod.</param>
         /// <param name="Name">Name.</param>
         /// <param name="Note">Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters..</param>
-        /// <param name="PhoneAuthentication">PhoneAuthentication.</param>
+        /// <param name="PhoneAuthentication">When &#x60;idCheckConfigurationName&#x60; is set to &#x60;Phone Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * &#x60;recipMayProvideNumber&#x60;: Boolean. When **true,** the recipient can use whatever phone number they choose. * &#x60;senderProvidedNumbers&#x60;: ArrayOfStrings.  A list of phone numbers the recipient can use. * &#x60;recordVoicePrint&#x60;: Reserved for DocuSign. * &#x60;validateRecipProvidedNumber&#x60;: Reserved for DocuSign.  .</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="RecipientSignatureProviders">RecipientSignatureProviders.</param>
         /// <param name="RoleName">Optional element. Specifies the role name associated with the recipient.&lt;br/&gt;&lt;br/&gt;This is required when working with template recipients..</param>
         /// <param name="SignerName">SignerName.</param>
         /// <param name="SigningGroupId">When set to **true** and the feature is enabled in the sender&#39;s account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once)..</param>
-        /// <param name="SmsAuthentication">SmsAuthentication.</param>
+        /// <param name="SmsAuthentication">When &#x60;idCheckConfigurationName&#x60; is set to &#x60;SMS Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the element &#x60;senderProvidedNumbers&#x60;, which is an array of phone numbers that the recipient can use for SMS text authentication.   .</param>
         /// <param name="SocialAuthentications"> Lists the social ID type that can be used for recipient authentication..</param>
         /// <param name="Tabs">Tabs.</param>
         public BulkSendingCopyRecipient(string AccessCode = default(string), string ClientUserId = default(string), List<string> CustomFields = default(List<string>), string DeliveryMethod = default(string), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), string FaxNumber = default(string), string HostEmail = default(string), string HostName = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string IdentificationMethod = default(string), string Name = default(string), string Note = default(string), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), string RecipientId = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RoleName = default(string), string SignerName = default(string), string SigningGroupId = default(string), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), List<BulkSendingCopyTab> Tabs = default(List<BulkSendingCopyTab>))
@@ -120,8 +120,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// Gets or Sets EmailNotification
+        /// An optional complex type that sets a specific email subject and body for this recipient&#39;s notification email.   **Note:** You can set the &#x60;emailNotification&#x60; property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level &#x60;emailSubject&#x60; and &#x60;emailBlurb&#x60;. 
         /// </summary>
+        /// <value>An optional complex type that sets a specific email subject and body for this recipient&#39;s notification email.   **Note:** You can set the &#x60;emailNotification&#x60; property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level &#x60;emailSubject&#x60; and &#x60;emailBlurb&#x60;. </value>
         [DataMember(Name="emailNotification", EmitDefaultValue=false)]
         public RecipientEmailNotification EmailNotification { get; set; }
         /// <summary>
@@ -153,8 +154,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="idCheckConfigurationName", EmitDefaultValue=false)]
         public string IdCheckConfigurationName { get; set; }
         /// <summary>
-        /// Gets or Sets IdCheckInformationInput
+        /// An object that contains input information related to a recipient ID check.
         /// </summary>
+        /// <value>An object that contains input information related to a recipient ID check.</value>
         [DataMember(Name="idCheckInformationInput", EmitDefaultValue=false)]
         public IdCheckInformationInput IdCheckInformationInput { get; set; }
         /// <summary>
@@ -174,8 +176,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="note", EmitDefaultValue=false)]
         public string Note { get; set; }
         /// <summary>
-        /// Gets or Sets PhoneAuthentication
+        /// When &#x60;idCheckConfigurationName&#x60; is set to &#x60;Phone Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * &#x60;recipMayProvideNumber&#x60;: Boolean. When **true,** the recipient can use whatever phone number they choose. * &#x60;senderProvidedNumbers&#x60;: ArrayOfStrings.  A list of phone numbers the recipient can use. * &#x60;recordVoicePrint&#x60;: Reserved for DocuSign. * &#x60;validateRecipProvidedNumber&#x60;: Reserved for DocuSign.  
         /// </summary>
+        /// <value>When &#x60;idCheckConfigurationName&#x60; is set to &#x60;Phone Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * &#x60;recipMayProvideNumber&#x60;: Boolean. When **true,** the recipient can use whatever phone number they choose. * &#x60;senderProvidedNumbers&#x60;: ArrayOfStrings.  A list of phone numbers the recipient can use. * &#x60;recordVoicePrint&#x60;: Reserved for DocuSign. * &#x60;validateRecipProvidedNumber&#x60;: Reserved for DocuSign.  </value>
         [DataMember(Name="phoneAuthentication", EmitDefaultValue=false)]
         public RecipientPhoneAuthentication PhoneAuthentication { get; set; }
         /// <summary>
@@ -207,8 +210,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signingGroupId", EmitDefaultValue=false)]
         public string SigningGroupId { get; set; }
         /// <summary>
-        /// Gets or Sets SmsAuthentication
+        /// When &#x60;idCheckConfigurationName&#x60; is set to &#x60;SMS Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the element &#x60;senderProvidedNumbers&#x60;, which is an array of phone numbers that the recipient can use for SMS text authentication.   
         /// </summary>
+        /// <value>When &#x60;idCheckConfigurationName&#x60; is set to &#x60;SMS Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the element &#x60;senderProvidedNumbers&#x60;, which is an array of phone numbers that the recipient can use for SMS text authentication.   </value>
         [DataMember(Name="smsAuthentication", EmitDefaultValue=false)]
         public RecipientSMSAuthentication SmsAuthentication { get; set; }
         /// <summary>

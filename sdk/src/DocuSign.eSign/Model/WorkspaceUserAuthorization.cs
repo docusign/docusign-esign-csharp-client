@@ -44,11 +44,11 @@ namespace DocuSign.eSign.Model
         /// <param name="CanView">CanView.</param>
         /// <param name="Created">The UTC DateTime when the workspace user authorization was created..</param>
         /// <param name="CreatedById">CreatedById.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="Modified">Modified.</param>
         /// <param name="ModifiedById">ModifiedById.</param>
         /// <param name="WorkspaceUserId">WorkspaceUserId.</param>
-        /// <param name="WorkspaceUserInformation">WorkspaceUserInformation.</param>
+        /// <param name="WorkspaceUserInformation">An object that provides details about the workspace user..</param>
         public WorkspaceUserAuthorization(string CanDelete = default(string), string CanMove = default(string), string CanTransact = default(string), string CanView = default(string), string Created = default(string), string CreatedById = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Modified = default(string), string ModifiedById = default(string), string WorkspaceUserId = default(string), WorkspaceUser WorkspaceUserInformation = default(WorkspaceUser))
         {
             this.CanDelete = CanDelete;
@@ -96,8 +96,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdById", EmitDefaultValue=false)]
         public string CreatedById { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -116,8 +117,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="workspaceUserId", EmitDefaultValue=false)]
         public string WorkspaceUserId { get; set; }
         /// <summary>
-        /// Gets or Sets WorkspaceUserInformation
+        /// An object that provides details about the workspace user.
         /// </summary>
+        /// <value>An object that provides details about the workspace user.</value>
         [DataMember(Name="workspaceUserInformation", EmitDefaultValue=false)]
         public WorkspaceUser WorkspaceUserInformation { get; set; }
         /// <summary>

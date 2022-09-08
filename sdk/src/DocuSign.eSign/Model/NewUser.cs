@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// NewUser
+    /// Object representing a new user.
     /// </summary>
     [DataContract]
     public partial class NewUser :  IEquatable<NewUser>, IValidatableObject
@@ -41,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ApiPassword">Contains a token that can be used for authentication in API calls instead of using the user name and password..</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="Email">Email.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="MembershipId">MembershipId.</param>
         /// <param name="PermissionProfileId">PermissionProfileId.</param>
         /// <param name="PermissionProfileName">PermissionProfileName.</param>
@@ -82,8 +82,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

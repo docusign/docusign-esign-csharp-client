@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConnectConfigResults
+    /// This object contains the results of a ConnectConfigurations::GET method.
     /// </summary>
     [DataContract]
     public partial class ConnectConfigResults :  IEquatable<ConnectConfigResults>, IValidatableObject

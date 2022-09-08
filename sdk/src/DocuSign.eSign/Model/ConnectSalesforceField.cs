@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConnectSalesforceField
+    /// This object is used to match a DocuSign field to a Salesforce field so that Docusign can send information to your Salesforce account.
     /// </summary>
     [DataContract]
     public partial class ConnectSalesforceField :  IEquatable<ConnectSalesforceField>, IValidatableObject

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BulkSendTestResponse
+    /// This object contains the results of a bulk send test.
     /// </summary>
     [DataContract]
     public partial class BulkSendTestResponse :  IEquatable<BulkSendTestResponse>, IValidatableObject

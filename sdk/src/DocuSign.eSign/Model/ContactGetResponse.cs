@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ContactGetResponse
+    /// This response object contains information about the contacts associated with an account.
     /// </summary>
     [DataContract]
     public partial class ContactGetResponse :  IEquatable<ContactGetResponse>, IValidatableObject

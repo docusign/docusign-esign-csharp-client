@@ -100,7 +100,7 @@ namespace DocuSign.eSign.Api
         /// Replaces a particular contact associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a contact associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -112,7 +112,7 @@ namespace DocuSign.eSign.Api
         /// Replaces a particular contact associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a contact associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -123,7 +123,7 @@ namespace DocuSign.eSign.Api
         /// Delete contacts associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes multiple contacts associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -135,7 +135,7 @@ namespace DocuSign.eSign.Api
         /// Delete contacts associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes multiple contacts associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -246,7 +246,7 @@ namespace DocuSign.eSign.Api
         /// Gets a particular contact associated with the user&#39;s account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns one or more contacts associated with a DocuSign account. You can also retrieve contacts from connected [cloud storage][CloudStorage] providers by using the &#x60;cloud_provider&#x60; query parameter. By default, contacts are retrieved from the DocuSign account&#39;s default address book.  To return a specific contact, use the &#x60;contactId&#x60; query parameter. To return all contacts associated with an account, omit this parameter.  [CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -259,7 +259,7 @@ namespace DocuSign.eSign.Api
         /// Gets a particular contact associated with the user&#39;s account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns one or more contacts associated with a DocuSign account. You can also retrieve contacts from connected [cloud storage][CloudStorage] providers by using the &#x60;cloud_provider&#x60; query parameter. By default, contacts are retrieved from the DocuSign account&#39;s default address book.  To return a specific contact, use the &#x60;contactId&#x60; query parameter. To return all contacts associated with an account, omit this parameter.  [CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -492,7 +492,7 @@ namespace DocuSign.eSign.Api
         /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type).
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method adds multiple contacts into a contacts list.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -504,7 +504,7 @@ namespace DocuSign.eSign.Api
         /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type).
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method adds multiple contacts into a contacts list.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -515,7 +515,7 @@ namespace DocuSign.eSign.Api
         /// Replaces contacts associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates one or more contacts associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -527,7 +527,7 @@ namespace DocuSign.eSign.Api
         /// Replaces contacts associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates one or more contacts associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -721,7 +721,7 @@ namespace DocuSign.eSign.Api
         /// Updates the specified user information.
         /// </summary>
         /// <remarks>
-        /// 
+        /// To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -735,7 +735,7 @@ namespace DocuSign.eSign.Api
         /// Updates the specified user information.
         /// </summary>
         /// <remarks>
-        /// 
+        /// To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -748,7 +748,7 @@ namespace DocuSign.eSign.Api
         /// Change one or more user in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates the information about one or more account users.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -761,7 +761,7 @@ namespace DocuSign.eSign.Api
         /// Change one or more user in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates the information about one or more account users.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -848,7 +848,7 @@ namespace DocuSign.eSign.Api
         /// Replaces a particular contact associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a contact associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -860,7 +860,7 @@ namespace DocuSign.eSign.Api
         /// Replaces a particular contact associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a contact associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -871,7 +871,7 @@ namespace DocuSign.eSign.Api
         /// Delete contacts associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes multiple contacts associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -883,7 +883,7 @@ namespace DocuSign.eSign.Api
         /// Delete contacts associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes multiple contacts associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -994,7 +994,7 @@ namespace DocuSign.eSign.Api
         /// Gets a particular contact associated with the user&#39;s account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns one or more contacts associated with a DocuSign account. You can also retrieve contacts from connected [cloud storage][CloudStorage] providers by using the &#x60;cloud_provider&#x60; query parameter. By default, contacts are retrieved from the DocuSign account&#39;s default address book.  To return a specific contact, use the &#x60;contactId&#x60; query parameter. To return all contacts associated with an account, omit this parameter.  [CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1007,7 +1007,7 @@ namespace DocuSign.eSign.Api
         /// Gets a particular contact associated with the user&#39;s account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns one or more contacts associated with a DocuSign account. You can also retrieve contacts from connected [cloud storage][CloudStorage] providers by using the &#x60;cloud_provider&#x60; query parameter. By default, contacts are retrieved from the DocuSign account&#39;s default address book.  To return a specific contact, use the &#x60;contactId&#x60; query parameter. To return all contacts associated with an account, omit this parameter.  [CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1240,7 +1240,7 @@ namespace DocuSign.eSign.Api
         /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type).
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method adds multiple contacts into a contacts list.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1252,7 +1252,7 @@ namespace DocuSign.eSign.Api
         /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type).
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method adds multiple contacts into a contacts list.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1263,7 +1263,7 @@ namespace DocuSign.eSign.Api
         /// Replaces contacts associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates one or more contacts associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1275,7 +1275,7 @@ namespace DocuSign.eSign.Api
         /// Replaces contacts associated with an account for the DocuSign service.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates one or more contacts associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1469,7 +1469,7 @@ namespace DocuSign.eSign.Api
         /// Updates the specified user information.
         /// </summary>
         /// <remarks>
-        /// 
+        /// To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1483,7 +1483,7 @@ namespace DocuSign.eSign.Api
         /// Updates the specified user information.
         /// </summary>
         /// <remarks>
-        /// 
+        /// To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1496,7 +1496,7 @@ namespace DocuSign.eSign.Api
         /// Change one or more user in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates the information about one or more account users.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1509,7 +1509,7 @@ namespace DocuSign.eSign.Api
         /// Change one or more user in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates the information about one or more account users.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2155,7 +2155,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Replaces a particular contact associated with an account for the DocuSign service. 
+        /// Replaces a particular contact associated with an account for the DocuSign service. This method deletes a contact associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2168,7 +2168,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Replaces a particular contact associated with an account for the DocuSign service. 
+        /// Replaces a particular contact associated with an account for the DocuSign service. This method deletes a contact associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2246,7 +2246,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Replaces a particular contact associated with an account for the DocuSign service. 
+        /// Replaces a particular contact associated with an account for the DocuSign service. This method deletes a contact associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2259,7 +2259,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Replaces a particular contact associated with an account for the DocuSign service. 
+        /// Replaces a particular contact associated with an account for the DocuSign service. This method deletes a contact associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2330,7 +2330,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Delete contacts associated with an account for the DocuSign service. 
+        /// Delete contacts associated with an account for the DocuSign service. This method deletes multiple contacts associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2343,7 +2343,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete contacts associated with an account for the DocuSign service. 
+        /// Delete contacts associated with an account for the DocuSign service. This method deletes multiple contacts associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2425,7 +2425,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete contacts associated with an account for the DocuSign service. 
+        /// Delete contacts associated with an account for the DocuSign service. This method deletes multiple contacts associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2438,7 +2438,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete contacts associated with an account for the DocuSign service. 
+        /// Delete contacts associated with an account for the DocuSign service. This method deletes multiple contacts associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3248,7 +3248,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Gets a particular contact associated with the user&#39;s account. 
+        /// Gets a particular contact associated with the user&#39;s account. This method returns one or more contacts associated with a DocuSign account. You can also retrieve contacts from connected [cloud storage][CloudStorage] providers by using the &#x60;cloud_provider&#x60; query parameter. By default, contacts are retrieved from the DocuSign account&#39;s default address book.  To return a specific contact, use the &#x60;contactId&#x60; query parameter. To return all contacts associated with an account, omit this parameter.  [CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
         /// </summary>
         public class GetContactByIdOptions
         {
@@ -3257,7 +3257,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Gets a particular contact associated with the user&#39;s account. 
+        /// Gets a particular contact associated with the user&#39;s account. This method returns one or more contacts associated with a DocuSign account. You can also retrieve contacts from connected [cloud storage][CloudStorage] providers by using the &#x60;cloud_provider&#x60; query parameter. By default, contacts are retrieved from the DocuSign account&#39;s default address book.  To return a specific contact, use the &#x60;contactId&#x60; query parameter. To return all contacts associated with an account, omit this parameter.  [CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3271,7 +3271,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Gets a particular contact associated with the user&#39;s account. 
+        /// Gets a particular contact associated with the user&#39;s account. This method returns one or more contacts associated with a DocuSign account. You can also retrieve contacts from connected [cloud storage][CloudStorage] providers by using the &#x60;cloud_provider&#x60; query parameter. By default, contacts are retrieved from the DocuSign account&#39;s default address book.  To return a specific contact, use the &#x60;contactId&#x60; query parameter. To return all contacts associated with an account, omit this parameter.  [CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3354,7 +3354,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Gets a particular contact associated with the user&#39;s account. 
+        /// Gets a particular contact associated with the user&#39;s account. This method returns one or more contacts associated with a DocuSign account. You can also retrieve contacts from connected [cloud storage][CloudStorage] providers by using the &#x60;cloud_provider&#x60; query parameter. By default, contacts are retrieved from the DocuSign account&#39;s default address book.  To return a specific contact, use the &#x60;contactId&#x60; query parameter. To return all contacts associated with an account, omit this parameter.  [CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3368,7 +3368,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Gets a particular contact associated with the user&#39;s account. 
+        /// Gets a particular contact associated with the user&#39;s account. This method returns one or more contacts associated with a DocuSign account. You can also retrieve contacts from connected [cloud storage][CloudStorage] providers by using the &#x60;cloud_provider&#x60; query parameter. By default, contacts are retrieved from the DocuSign account&#39;s default address book.  To return a specific contact, use the &#x60;contactId&#x60; query parameter. To return all contacts associated with an account, omit this parameter.  [CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5195,7 +5195,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type). 
+        /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type). This method adds multiple contacts into a contacts list.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5208,7 +5208,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type). 
+        /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type). This method adds multiple contacts into a contacts list.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5290,7 +5290,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type). 
+        /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type). This method adds multiple contacts into a contacts list.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5303,7 +5303,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type). 
+        /// Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type). This method adds multiple contacts into a contacts list.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5378,7 +5378,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Replaces contacts associated with an account for the DocuSign service. 
+        /// Replaces contacts associated with an account for the DocuSign service. This method updates one or more contacts associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5391,7 +5391,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Replaces contacts associated with an account for the DocuSign service. 
+        /// Replaces contacts associated with an account for the DocuSign service. This method updates one or more contacts associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5473,7 +5473,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Replaces contacts associated with an account for the DocuSign service. 
+        /// Replaces contacts associated with an account for the DocuSign service. This method updates one or more contacts associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5486,7 +5486,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Replaces contacts associated with an account for the DocuSign service. 
+        /// Replaces contacts associated with an account for the DocuSign service. This method updates one or more contacts associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6955,7 +6955,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Updates the specified user information. 
+        /// Updates the specified user information. To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
         /// </summary>
         public class UpdateUserOptions
         {
@@ -6964,7 +6964,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates the specified user information. 
+        /// Updates the specified user information. To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6979,7 +6979,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates the specified user information. 
+        /// Updates the specified user information. To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7071,7 +7071,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates the specified user information. 
+        /// Updates the specified user information. To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7086,7 +7086,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates the specified user information. 
+        /// Updates the specified user information. To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7170,7 +7170,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Change one or more user in the specified account. 
+        /// Change one or more user in the specified account. This method updates the information about one or more account users.
         /// </summary>
         public class UpdateUsersOptions
         {
@@ -7179,7 +7179,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Change one or more user in the specified account. 
+        /// Change one or more user in the specified account. This method updates the information about one or more account users.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7193,7 +7193,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Change one or more user in the specified account. 
+        /// Change one or more user in the specified account. This method updates the information about one or more account users.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7280,7 +7280,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Change one or more user in the specified account. 
+        /// Change one or more user in the specified account. This method updates the information about one or more account users.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7294,7 +7294,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Change one or more user in the specified account. 
+        /// Change one or more user in the specified account. This method updates the information about one or more account users.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>

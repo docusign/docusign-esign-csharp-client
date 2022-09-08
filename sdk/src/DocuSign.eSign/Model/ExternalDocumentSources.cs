@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ExternalDocumentSources
+    /// A complex object specifying the external document sources.
     /// </summary>
     [DataContract]
     public partial class ExternalDocumentSources :  IEquatable<ExternalDocumentSources>, IValidatableObject
@@ -39,15 +39,15 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="ExternalDocumentSources" /> class.
         /// </summary>
         /// <param name="BoxnetEnabled">BoxnetEnabled.</param>
-        /// <param name="BoxnetMetadata">BoxnetMetadata.</param>
+        /// <param name="BoxnetMetadata">Metadata indicating whether the &#x60;boxnetEnabled&#x60; property is editable..</param>
         /// <param name="DropboxEnabled">DropboxEnabled.</param>
-        /// <param name="DropboxMetadata">DropboxMetadata.</param>
+        /// <param name="DropboxMetadata">Metadata indicating whether the &#x60;dropboxEnabled&#x60; property is editable..</param>
         /// <param name="GoogleDriveEnabled">GoogleDriveEnabled.</param>
-        /// <param name="GoogleDriveMetadata">GoogleDriveMetadata.</param>
+        /// <param name="GoogleDriveMetadata">Metadata indicating whether the &#x60;googleDriveEnabled&#x60; property is editable..</param>
         /// <param name="OneDriveEnabled">OneDriveEnabled.</param>
-        /// <param name="OneDriveMetadata">OneDriveMetadata.</param>
+        /// <param name="OneDriveMetadata">Metadata indicating whether the &#x60;oneDriveEnabled&#x60; property is editable..</param>
         /// <param name="SalesforceEnabled">SalesforceEnabled.</param>
-        /// <param name="SalesforceMetadata">SalesforceMetadata.</param>
+        /// <param name="SalesforceMetadata">Metadata indicating whether the &#x60;salesforceEnabled&#x60; property is editable..</param>
         public ExternalDocumentSources(string BoxnetEnabled = default(string), SettingsMetadata BoxnetMetadata = default(SettingsMetadata), string DropboxEnabled = default(string), SettingsMetadata DropboxMetadata = default(SettingsMetadata), string GoogleDriveEnabled = default(string), SettingsMetadata GoogleDriveMetadata = default(SettingsMetadata), string OneDriveEnabled = default(string), SettingsMetadata OneDriveMetadata = default(SettingsMetadata), string SalesforceEnabled = default(string), SettingsMetadata SalesforceMetadata = default(SettingsMetadata))
         {
             this.BoxnetEnabled = BoxnetEnabled;
@@ -68,8 +68,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="boxnetEnabled", EmitDefaultValue=false)]
         public string BoxnetEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets BoxnetMetadata
+        /// Metadata indicating whether the &#x60;boxnetEnabled&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata indicating whether the &#x60;boxnetEnabled&#x60; property is editable.</value>
         [DataMember(Name="boxnetMetadata", EmitDefaultValue=false)]
         public SettingsMetadata BoxnetMetadata { get; set; }
         /// <summary>
@@ -78,8 +79,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dropboxEnabled", EmitDefaultValue=false)]
         public string DropboxEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets DropboxMetadata
+        /// Metadata indicating whether the &#x60;dropboxEnabled&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata indicating whether the &#x60;dropboxEnabled&#x60; property is editable.</value>
         [DataMember(Name="dropboxMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DropboxMetadata { get; set; }
         /// <summary>
@@ -88,8 +90,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="googleDriveEnabled", EmitDefaultValue=false)]
         public string GoogleDriveEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets GoogleDriveMetadata
+        /// Metadata indicating whether the &#x60;googleDriveEnabled&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata indicating whether the &#x60;googleDriveEnabled&#x60; property is editable.</value>
         [DataMember(Name="googleDriveMetadata", EmitDefaultValue=false)]
         public SettingsMetadata GoogleDriveMetadata { get; set; }
         /// <summary>
@@ -98,8 +101,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="oneDriveEnabled", EmitDefaultValue=false)]
         public string OneDriveEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets OneDriveMetadata
+        /// Metadata indicating whether the &#x60;oneDriveEnabled&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata indicating whether the &#x60;oneDriveEnabled&#x60; property is editable.</value>
         [DataMember(Name="oneDriveMetadata", EmitDefaultValue=false)]
         public SettingsMetadata OneDriveMetadata { get; set; }
         /// <summary>
@@ -108,8 +112,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="salesforceEnabled", EmitDefaultValue=false)]
         public string SalesforceEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets SalesforceMetadata
+        /// Metadata indicating whether the &#x60;salesforceEnabled&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata indicating whether the &#x60;salesforceEnabled&#x60; property is editable.</value>
         [DataMember(Name="salesforceMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SalesforceMetadata { get; set; }
         /// <summary>

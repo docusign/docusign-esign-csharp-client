@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// UserPasswordRules
+    /// Contains details about the password rules for a user.
     /// </summary>
     [DataContract]
     public partial class UserPasswordRules :  IEquatable<UserPasswordRules>, IValidatableObject
@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserPasswordRules" /> class.
         /// </summary>
-        /// <param name="PasswordRules">PasswordRules.</param>
+        /// <param name="PasswordRules">Contains details about the password rules for the user..</param>
         /// <param name="UserId">UserId.</param>
         public UserPasswordRules(AccountPasswordRules PasswordRules = default(AccountPasswordRules), string UserId = default(string))
         {
@@ -47,8 +47,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets PasswordRules
+        /// Contains details about the password rules for the user.
         /// </summary>
+        /// <value>Contains details about the password rules for the user.</value>
         [DataMember(Name="passwordRules", EmitDefaultValue=false)]
         public AccountPasswordRules PasswordRules { get; set; }
         /// <summary>

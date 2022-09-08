@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// SignatureType
+    /// This object contains information about the type of signature.
     /// </summary>
     [DataContract]
     public partial class SignatureType :  IEquatable<SignatureType>, IValidatableObject

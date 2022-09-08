@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// UserInformationList
+    /// Contains a list of account users.
     /// </summary>
     [DataContract]
     public partial class UserInformationList :  IEquatable<UserInformationList>, IValidatableObject

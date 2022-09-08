@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FavoriteTemplatesInfo" /> class.
         /// </summary>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="FavoriteTemplates">FavoriteTemplates.</param>
         /// <param name="TemplatesUpdatedCount">TemplatesUpdatedCount.</param>
         public FavoriteTemplatesInfo(ErrorDetails ErrorDetails = default(ErrorDetails), List<FavoriteTemplatesContentItem> FavoriteTemplates = default(List<FavoriteTemplatesContentItem>), int? TemplatesUpdatedCount = default(int?))
@@ -49,8 +49,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

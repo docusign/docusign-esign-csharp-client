@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BrandEmailContent
+    /// Deprecated.
     /// </summary>
     [DataContract]
     public partial class BrandEmailContent :  IEquatable<BrandEmailContent>, IValidatableObject

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Filter
+    /// Use this object to create a filtered view of the items in a folder.
     /// </summary>
     [DataContract]
     public partial class Filter :  IEquatable<Filter>, IValidatableObject

@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserSignatureDefinition" /> class.
         /// </summary>
-        /// <param name="DateStampProperties">DateStampProperties.</param>
+        /// <param name="DateStampProperties">Specifies the area in which a date stamp is placed. This parameter uses pixel positioning to draw a rectangle at the center of the stamp area. The stamp is superimposed on top of this central area.  This property contains the following information about the central rectangle:  - &#x60;DateAreaX&#x60;: The X axis position of the top-left corner. - &#x60;DateAreaY&#x60;: The Y axis position of the top-left corner. - &#x60;DateAreaWidth&#x60;: The width of the rectangle. - &#x60;DateAreaHeight&#x60;: The height of the rectangle..</param>
         /// <param name="DisallowUserResizeStamp">DisallowUserResizeStamp.</param>
         /// <param name="ExternalID">ExternalID.</param>
         /// <param name="ImageType">ImageType.</param>
@@ -73,8 +73,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets DateStampProperties
+        /// Specifies the area in which a date stamp is placed. This parameter uses pixel positioning to draw a rectangle at the center of the stamp area. The stamp is superimposed on top of this central area.  This property contains the following information about the central rectangle:  - &#x60;DateAreaX&#x60;: The X axis position of the top-left corner. - &#x60;DateAreaY&#x60;: The Y axis position of the top-left corner. - &#x60;DateAreaWidth&#x60;: The width of the rectangle. - &#x60;DateAreaHeight&#x60;: The height of the rectangle.
         /// </summary>
+        /// <value>Specifies the area in which a date stamp is placed. This parameter uses pixel positioning to draw a rectangle at the center of the stamp area. The stamp is superimposed on top of this central area.  This property contains the following information about the central rectangle:  - &#x60;DateAreaX&#x60;: The X axis position of the top-left corner. - &#x60;DateAreaY&#x60;: The Y axis position of the top-left corner. - &#x60;DateAreaWidth&#x60;: The width of the rectangle. - &#x60;DateAreaHeight&#x60;: The height of the rectangle.</value>
         [DataMember(Name="dateStampProperties", EmitDefaultValue=false)]
         public DateStampProperties DateStampProperties { get; set; }
         /// <summary>

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// SharedItem
+    /// Information about the shared item.
     /// </summary>
     [DataContract]
     public partial class SharedItem :  IEquatable<SharedItem>, IValidatableObject
@@ -38,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedItem" /> class.
         /// </summary>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
-        /// <param name="User">User.</param>
+        /// <param name="User">Information about the user who owns the shared item..</param>
         public SharedItem(ErrorDetails ErrorDetails = default(ErrorDetails), string Shared = default(string), UserInfo User = default(UserInfo))
         {
             this.ErrorDetails = ErrorDetails;
@@ -49,8 +49,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -60,8 +61,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shared", EmitDefaultValue=false)]
         public string Shared { get; set; }
         /// <summary>
-        /// Gets or Sets User
+        /// Information about the user who owns the shared item.
         /// </summary>
+        /// <value>Information about the user who owns the shared item.</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
         public UserInfo User { get; set; }
         /// <summary>

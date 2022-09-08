@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// CompositeTemplate
+    /// This object contains information about a [composite template][composite], which you can use to to apply multiple templates to a single envelope, combine templates with PDF forms, and combine templates with documents from cloud sources.  [composite]: /docs/esign-rest-api/esign101/concepts/templates/composite/
     /// </summary>
     [DataContract]
     public partial class CompositeTemplate :  IEquatable<CompositeTemplate>, IValidatableObject
@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="CompositeTemplate" /> class.
         /// </summary>
         /// <param name="CompositeTemplateId">The identify of this composite template. It is used as a reference when adding document object information. If used, the document&#39;s &#x60;content-disposition&#x60; must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the &#x60;documentId&#x60; property only. If no document object is specified, the composite template inherits the first document..</param>
-        /// <param name="Document">Document.</param>
+        /// <param name="Document">An optional document object that will act as the primary document in the composite template object. If the document node is present, it will take precedence over any server template or inline template documents. It always comes first. Only use this when you want to supply the document dynamically..</param>
         /// <param name="InlineTemplates"> Zero or more inline templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value..</param>
         /// <param name="PdfMetaDataTemplateSequence">PdfMetaDataTemplateSequence.</param>
         /// <param name="ServerTemplates">0 or more server-side templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value.</param>
@@ -59,8 +59,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="compositeTemplateId", EmitDefaultValue=false)]
         public string CompositeTemplateId { get; set; }
         /// <summary>
-        /// Gets or Sets Document
+        /// An optional document object that will act as the primary document in the composite template object. If the document node is present, it will take precedence over any server template or inline template documents. It always comes first. Only use this when you want to supply the document dynamically.
         /// </summary>
+        /// <value>An optional document object that will act as the primary document in the composite template object. If the document node is present, it will take precedence over any server template or inline template documents. It always comes first. Only use this when you want to supply the document dynamically.</value>
         [DataMember(Name="document", EmitDefaultValue=false)]
         public Document Document { get; set; }
         /// <summary>

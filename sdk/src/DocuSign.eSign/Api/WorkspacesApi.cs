@@ -50,7 +50,7 @@ namespace DocuSign.eSign.Api
         /// Creates a workspace file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method adds a file to a workspace.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -63,7 +63,7 @@ namespace DocuSign.eSign.Api
         /// Creates a workspace file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method adds a file to a workspace.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -98,7 +98,7 @@ namespace DocuSign.eSign.Api
         /// Deletes workspace one or more specific files/folders from the given folder or root.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes one or more files or sub-folders from a workspace folder or root.  Note: To delete items from a workspace, the &#x60;status&#x60; of the workspace must be &#x60;active&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -112,7 +112,7 @@ namespace DocuSign.eSign.Api
         /// Deletes workspace one or more specific files/folders from the given folder or root.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes one or more files or sub-folders from a workspace folder or root.  Note: To delete items from a workspace, the &#x60;status&#x60; of the workspace must be &#x60;active&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -331,7 +331,7 @@ namespace DocuSign.eSign.Api
         /// Creates a workspace file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method adds a file to a workspace.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -344,7 +344,7 @@ namespace DocuSign.eSign.Api
         /// Creates a workspace file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method adds a file to a workspace.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -379,7 +379,7 @@ namespace DocuSign.eSign.Api
         /// Deletes workspace one or more specific files/folders from the given folder or root.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes one or more files or sub-folders from a workspace folder or root.  Note: To delete items from a workspace, the &#x60;status&#x60; of the workspace must be &#x60;active&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -393,7 +393,7 @@ namespace DocuSign.eSign.Api
         /// Deletes workspace one or more specific files/folders from the given folder or root.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes one or more files or sub-folders from a workspace folder or root.  Note: To delete items from a workspace, the &#x60;status&#x60; of the workspace must be &#x60;active&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -823,7 +823,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Creates a workspace file. 
+        /// Creates a workspace file. This method adds a file to a workspace.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -837,7 +837,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a workspace file. 
+        /// Creates a workspace file. This method adds a file to a workspace.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -920,7 +920,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a workspace file. 
+        /// Creates a workspace file. This method adds a file to a workspace.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -934,7 +934,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a workspace file. 
+        /// Creates a workspace file. This method adds a file to a workspace.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1185,7 +1185,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Deletes workspace one or more specific files/folders from the given folder or root. 
+        /// Deletes workspace one or more specific files/folders from the given folder or root. This method deletes one or more files or sub-folders from a workspace folder or root.  Note: To delete items from a workspace, the &#x60;status&#x60; of the workspace must be &#x60;active&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1199,7 +1199,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes workspace one or more specific files/folders from the given folder or root. 
+        /// Deletes workspace one or more specific files/folders from the given folder or root. This method deletes one or more files or sub-folders from a workspace folder or root.  Note: To delete items from a workspace, the &#x60;status&#x60; of the workspace must be &#x60;active&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1283,7 +1283,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes workspace one or more specific files/folders from the given folder or root. 
+        /// Deletes workspace one or more specific files/folders from the given folder or root. This method deletes one or more files or sub-folders from a workspace folder or root.  Note: To delete items from a workspace, the &#x60;status&#x60; of the workspace must be &#x60;active&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1297,7 +1297,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes workspace one or more specific files/folders from the given folder or root. 
+        /// Deletes workspace one or more specific files/folders from the given folder or root. This method deletes one or more files or sub-folders from a workspace folder or root.  Note: To delete items from a workspace, the &#x60;status&#x60; of the workspace must be &#x60;active&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>

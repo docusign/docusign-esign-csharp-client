@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// NotaryResult
+    /// Describes a single notary jurisdiction.
     /// </summary>
     [DataContract]
     public partial class NotaryResult :  IEquatable<NotaryResult>, IValidatableObject

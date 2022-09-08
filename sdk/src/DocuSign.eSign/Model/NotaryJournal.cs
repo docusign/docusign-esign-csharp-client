@@ -40,9 +40,9 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="CreatedDate">CreatedDate.</param>
         /// <param name="DocumentName">DocumentName.</param>
-        /// <param name="Jurisdiction">Jurisdiction.</param>
+        /// <param name="Jurisdiction">The notary&#39;s jurisdiction. .</param>
         /// <param name="NotaryJournalId">NotaryJournalId.</param>
-        /// <param name="NotaryJournalMetaData">NotaryJournalMetaData.</param>
+        /// <param name="NotaryJournalMetaData">Additional journal data such as the witness list and signature image..</param>
         /// <param name="SignerName">SignerName.</param>
         public NotaryJournal(string CreatedDate = default(string), string DocumentName = default(string), Jurisdiction Jurisdiction = default(Jurisdiction), string NotaryJournalId = default(string), NotaryJournalMetaData NotaryJournalMetaData = default(NotaryJournalMetaData), string SignerName = default(string))
         {
@@ -65,8 +65,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentName", EmitDefaultValue=false)]
         public string DocumentName { get; set; }
         /// <summary>
-        /// Gets or Sets Jurisdiction
+        /// The notary&#39;s jurisdiction. 
         /// </summary>
+        /// <value>The notary&#39;s jurisdiction. </value>
         [DataMember(Name="jurisdiction", EmitDefaultValue=false)]
         public Jurisdiction Jurisdiction { get; set; }
         /// <summary>
@@ -75,8 +76,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="notaryJournalId", EmitDefaultValue=false)]
         public string NotaryJournalId { get; set; }
         /// <summary>
-        /// Gets or Sets NotaryJournalMetaData
+        /// Additional journal data such as the witness list and signature image.
         /// </summary>
+        /// <value>Additional journal data such as the witness list and signature image.</value>
         [DataMember(Name="notaryJournalMetaData", EmitDefaultValue=false)]
         public NotaryJournalMetaData NotaryJournalMetaData { get; set; }
         /// <summary>

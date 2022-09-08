@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BccEmailArchive
+    /// This object contains information abut a BCC email archive configuration (a BCC email address used to archive DocuSign-generated emails).
     /// </summary>
     [DataContract]
     public partial class BccEmailArchive :  IEquatable<BccEmailArchive>, IValidatableObject
@@ -41,11 +41,11 @@ namespace DocuSign.eSign.Model
         /// <param name="AccountId">The account ID associated with the envelope..</param>
         /// <param name="BccEmailArchiveId">BccEmailArchiveId.</param>
         /// <param name="Created">Created.</param>
-        /// <param name="CreatedBy">CreatedBy.</param>
+        /// <param name="CreatedBy">Details about the user who created the BCC email archive configuration..</param>
         /// <param name="Email">Email.</param>
         /// <param name="EmailNotificationId">EmailNotificationId.</param>
         /// <param name="Modified">Modified.</param>
-        /// <param name="ModifiedBy">ModifiedBy.</param>
+        /// <param name="ModifiedBy">Details about the user who last modified the BCC email archive configuration..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="Uri">Uri.</param>
         public BccEmailArchive(string AccountId = default(string), string BccEmailArchiveId = default(string), string Created = default(string), UserInfo CreatedBy = default(UserInfo), string Email = default(string), string EmailNotificationId = default(string), string Modified = default(string), UserInfo ModifiedBy = default(UserInfo), string Status = default(string), string Uri = default(string))
@@ -79,8 +79,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="created", EmitDefaultValue=false)]
         public string Created { get; set; }
         /// <summary>
-        /// Gets or Sets CreatedBy
+        /// Details about the user who created the BCC email archive configuration.
         /// </summary>
+        /// <value>Details about the user who created the BCC email archive configuration.</value>
         [DataMember(Name="createdBy", EmitDefaultValue=false)]
         public UserInfo CreatedBy { get; set; }
         /// <summary>
@@ -99,8 +100,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="modified", EmitDefaultValue=false)]
         public string Modified { get; set; }
         /// <summary>
-        /// Gets or Sets ModifiedBy
+        /// Details about the user who last modified the BCC email archive configuration.
         /// </summary>
+        /// <value>Details about the user who last modified the BCC email archive configuration.</value>
         [DataMember(Name="modifiedBy", EmitDefaultValue=false)]
         public UserInfo ModifiedBy { get; set; }
         /// <summary>

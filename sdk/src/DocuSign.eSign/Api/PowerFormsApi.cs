@@ -27,7 +27,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a new PowerForm.  You create a PowerForm from an existing DocuSign [template](/docs/esign-rest-api/reference/templates/templates/create/), based on the &#x60;templateId&#x60; in the request body.   PowerForms that you create from a template are referred to as *web PowerForms*.  **Note:** The DocuSign Admin console also supports creating a PowerForm by uploading a PDF file that has active form fields (referred to as a *PDF PowerForm*). However, PDF PowerForms are deprecated and are not supported in the API.  **Note:** A PowerForm can have only one sender. (Because PowerForms are not necessarily sent by email, this user is also referred to as the PowerForm *initiator*.) If you need to associate multiple senders with a PowerForm, create multiple copies of the PowerForm by using the same template (one copy for each sender). By default, the sender is the PowerForm Administrator who creates the PowerForm.   ### Signing modes  You can use one of the following signing modes for a PowerForm:  **&#x60;email&#x60;**  This mode verifies the recipient&#39;s identity by using email authentication before the recipient can sign a document. The recipient enters their email address on the landing page and then clicks **Begin Signing** to begin the signing process. The system then sends an email message with a validation code to the recipient. If the recipient does not provide a valid email address, they do not receive the email message containing the access code and are not able to open and sign the document.  Alternatively, you can make the process easier for signers by using email authentication only and omitting the access code. To do this, you append the &#x60;activateonly&#x60; flag to the PowerForm URL and set it to true by passing in the value &#x60;1&#x60;.  When the flag is active, the first recipient receives an email with a link that initiates the signing session without having to enter access code.  Example: &#x60;activateonly&#x3D;1&#x60;  **&#x60;direct&#x60;**  This mode does not require any verification. After a recipient enters their email address on the landing page and clicks **Begin Signing,** a new browser tab opens and the recipient can immediately begin the signing process.  Because the &#x60;direct&#x60; signing mode does not verify the recipient&#39;s identity by using email authentication, we strongly recommend that you use this mode only when the PowerForm is accessible behind a secure portal where the recipient&#39;s identity is already authenticated, or where another form of authentication is specified for the recipient in the DocuSign template (for example, an access code, phone authentication, or ID check).  **Note:** In the account settings, &#x60;enablePowerFormDirect&#x60; must be **true** to use &#x60;direct&#x60; as the &#x60;signingMode&#x60;.  ### Redirect URLs  You can control the URL to which signers are redirected after signing your PowerForm. However, the URL is specified elsewhere, outside of the PowerForm creation process. For details, see [How do I specify a URL to redirect to when a PowerForm is completed?](https://support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed).  ### More information  For more information about creating PowerForms, see [Create a PowerForm](https://support.docusign.com/en/guides/ndse-user-guide-create-a-powerform).  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a new PowerForm.  You create a PowerForm from an existing DocuSign [template](/docs/esign-rest-api/reference/templates/templates/create/), based on the &#x60;templateId&#x60; in the request body.   PowerForms that you create from a template are referred to as *web PowerForms*.  **Note:** The DocuSign Admin console also supports creating a PowerForm by uploading a PDF file that has active form fields (referred to as a *PDF PowerForm*). However, PDF PowerForms are deprecated and are not supported in the API.  **Note:** A PowerForm can have only one sender. (Because PowerForms are not necessarily sent by email, this user is also referred to as the PowerForm *initiator*.) If you need to associate multiple senders with a PowerForm, create multiple copies of the PowerForm by using the same template (one copy for each sender). By default, the sender is the PowerForm Administrator who creates the PowerForm.   ### Signing modes  You can use one of the following signing modes for a PowerForm:  **&#x60;email&#x60;**  This mode verifies the recipient&#39;s identity by using email authentication before the recipient can sign a document. The recipient enters their email address on the landing page and then clicks **Begin Signing** to begin the signing process. The system then sends an email message with a validation code to the recipient. If the recipient does not provide a valid email address, they do not receive the email message containing the access code and are not able to open and sign the document.  Alternatively, you can make the process easier for signers by using email authentication only and omitting the access code. To do this, you append the &#x60;activateonly&#x60; flag to the PowerForm URL and set it to true by passing in the value &#x60;1&#x60;.  When the flag is active, the first recipient receives an email with a link that initiates the signing session without having to enter access code.  Example: &#x60;activateonly&#x3D;1&#x60;  **&#x60;direct&#x60;**  This mode does not require any verification. After a recipient enters their email address on the landing page and clicks **Begin Signing,** a new browser tab opens and the recipient can immediately begin the signing process.  Because the &#x60;direct&#x60; signing mode does not verify the recipient&#39;s identity by using email authentication, we strongly recommend that you use this mode only when the PowerForm is accessible behind a secure portal where the recipient&#39;s identity is already authenticated, or where another form of authentication is specified for the recipient in the DocuSign template (for example, an access code, phone authentication, or ID check).  **Note:** In the account settings, &#x60;enablePowerFormDirect&#x60; must be **true** to use &#x60;direct&#x60; as the &#x60;signingMode&#x60;.  ### Redirect URLs  You can control the URL to which signers are redirected after signing your PowerForm. However, the URL is specified elsewhere, outside of the PowerForm creation process. For details, see [How do I specify a URL to redirect to when a PowerForm is completed?](https://support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed).  ### More information  For more information about creating PowerForms, see [Create a PowerForm](https://support.docusign.com/en/guides/ndse-user-guide-create-a-powerform).  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -50,7 +50,7 @@ namespace DocuSign.eSign.Api
         /// Delete a PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -62,7 +62,7 @@ namespace DocuSign.eSign.Api
         /// Delete a PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -73,7 +73,7 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more PowerForms
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes one or more PowerForms. The request body takes an array of PowerForm objects that are deleted based on the &#x60;powerFormId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -85,7 +85,7 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more PowerForms
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes one or more PowerForms. The request body takes an array of PowerForm objects that are deleted based on the &#x60;powerFormId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -96,7 +96,7 @@ namespace DocuSign.eSign.Api
         /// Returns a single PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns detailed information about a specific PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -108,7 +108,7 @@ namespace DocuSign.eSign.Api
         /// Returns a single PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns detailed information about a specific PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -119,7 +119,7 @@ namespace DocuSign.eSign.Api
         /// Returns the form data associated with the usage of a PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method enables Powerform Administrators or the sender of a PowerForm to download the data that recipients have entered into a PowerForm.  You specify the format in which you want to retrieve the data in the &#x60;Accept&#x60; header. This header accepts the following values:   - &#x60;application/json&#x60;: JSON format - &#x60;application/xml&#x60;: XML format - &#x60;text/csv&#x60;: Comma-separated value (CSV) format  **Note:** Only PowerForm Administrators or the PowerForm Sender can download the data associated with a PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -132,7 +132,7 @@ namespace DocuSign.eSign.Api
         /// Returns the form data associated with the usage of a PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method enables Powerform Administrators or the sender of a PowerForm to download the data that recipients have entered into a PowerForm.  You specify the format in which you want to retrieve the data in the &#x60;Accept&#x60; header. This header accepts the following values:   - &#x60;application/json&#x60;: JSON format - &#x60;application/xml&#x60;: XML format - &#x60;text/csv&#x60;: Comma-separated value (CSV) format  **Note:** Only PowerForm Administrators or the PowerForm Sender can download the data associated with a PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -144,7 +144,7 @@ namespace DocuSign.eSign.Api
         /// Returns the list of PowerForms available to the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of users who have sent PowerForms.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -156,7 +156,7 @@ namespace DocuSign.eSign.Api
         /// Returns the list of PowerForms available to the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of users who have sent PowerForms.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -167,7 +167,7 @@ namespace DocuSign.eSign.Api
         /// Returns the list of PowerForms available to the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of PowerForms that are available to the user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -179,7 +179,7 @@ namespace DocuSign.eSign.Api
         /// Returns the list of PowerForms available to the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of PowerForms that are available to the user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -190,7 +190,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an existing PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -203,7 +203,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an existing PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -217,7 +217,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a new PowerForm.  You create a PowerForm from an existing DocuSign [template](/docs/esign-rest-api/reference/templates/templates/create/), based on the &#x60;templateId&#x60; in the request body.   PowerForms that you create from a template are referred to as *web PowerForms*.  **Note:** The DocuSign Admin console also supports creating a PowerForm by uploading a PDF file that has active form fields (referred to as a *PDF PowerForm*). However, PDF PowerForms are deprecated and are not supported in the API.  **Note:** A PowerForm can have only one sender. (Because PowerForms are not necessarily sent by email, this user is also referred to as the PowerForm *initiator*.) If you need to associate multiple senders with a PowerForm, create multiple copies of the PowerForm by using the same template (one copy for each sender). By default, the sender is the PowerForm Administrator who creates the PowerForm.   ### Signing modes  You can use one of the following signing modes for a PowerForm:  **&#x60;email&#x60;**  This mode verifies the recipient&#39;s identity by using email authentication before the recipient can sign a document. The recipient enters their email address on the landing page and then clicks **Begin Signing** to begin the signing process. The system then sends an email message with a validation code to the recipient. If the recipient does not provide a valid email address, they do not receive the email message containing the access code and are not able to open and sign the document.  Alternatively, you can make the process easier for signers by using email authentication only and omitting the access code. To do this, you append the &#x60;activateonly&#x60; flag to the PowerForm URL and set it to true by passing in the value &#x60;1&#x60;.  When the flag is active, the first recipient receives an email with a link that initiates the signing session without having to enter access code.  Example: &#x60;activateonly&#x3D;1&#x60;  **&#x60;direct&#x60;**  This mode does not require any verification. After a recipient enters their email address on the landing page and clicks **Begin Signing,** a new browser tab opens and the recipient can immediately begin the signing process.  Because the &#x60;direct&#x60; signing mode does not verify the recipient&#39;s identity by using email authentication, we strongly recommend that you use this mode only when the PowerForm is accessible behind a secure portal where the recipient&#39;s identity is already authenticated, or where another form of authentication is specified for the recipient in the DocuSign template (for example, an access code, phone authentication, or ID check).  **Note:** In the account settings, &#x60;enablePowerFormDirect&#x60; must be **true** to use &#x60;direct&#x60; as the &#x60;signingMode&#x60;.  ### Redirect URLs  You can control the URL to which signers are redirected after signing your PowerForm. However, the URL is specified elsewhere, outside of the PowerForm creation process. For details, see [How do I specify a URL to redirect to when a PowerForm is completed?](https://support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed).  ### More information  For more information about creating PowerForms, see [Create a PowerForm](https://support.docusign.com/en/guides/ndse-user-guide-create-a-powerform).  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -229,7 +229,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a new PowerForm.  You create a PowerForm from an existing DocuSign [template](/docs/esign-rest-api/reference/templates/templates/create/), based on the &#x60;templateId&#x60; in the request body.   PowerForms that you create from a template are referred to as *web PowerForms*.  **Note:** The DocuSign Admin console also supports creating a PowerForm by uploading a PDF file that has active form fields (referred to as a *PDF PowerForm*). However, PDF PowerForms are deprecated and are not supported in the API.  **Note:** A PowerForm can have only one sender. (Because PowerForms are not necessarily sent by email, this user is also referred to as the PowerForm *initiator*.) If you need to associate multiple senders with a PowerForm, create multiple copies of the PowerForm by using the same template (one copy for each sender). By default, the sender is the PowerForm Administrator who creates the PowerForm.   ### Signing modes  You can use one of the following signing modes for a PowerForm:  **&#x60;email&#x60;**  This mode verifies the recipient&#39;s identity by using email authentication before the recipient can sign a document. The recipient enters their email address on the landing page and then clicks **Begin Signing** to begin the signing process. The system then sends an email message with a validation code to the recipient. If the recipient does not provide a valid email address, they do not receive the email message containing the access code and are not able to open and sign the document.  Alternatively, you can make the process easier for signers by using email authentication only and omitting the access code. To do this, you append the &#x60;activateonly&#x60; flag to the PowerForm URL and set it to true by passing in the value &#x60;1&#x60;.  When the flag is active, the first recipient receives an email with a link that initiates the signing session without having to enter access code.  Example: &#x60;activateonly&#x3D;1&#x60;  **&#x60;direct&#x60;**  This mode does not require any verification. After a recipient enters their email address on the landing page and clicks **Begin Signing,** a new browser tab opens and the recipient can immediately begin the signing process.  Because the &#x60;direct&#x60; signing mode does not verify the recipient&#39;s identity by using email authentication, we strongly recommend that you use this mode only when the PowerForm is accessible behind a secure portal where the recipient&#39;s identity is already authenticated, or where another form of authentication is specified for the recipient in the DocuSign template (for example, an access code, phone authentication, or ID check).  **Note:** In the account settings, &#x60;enablePowerFormDirect&#x60; must be **true** to use &#x60;direct&#x60; as the &#x60;signingMode&#x60;.  ### Redirect URLs  You can control the URL to which signers are redirected after signing your PowerForm. However, the URL is specified elsewhere, outside of the PowerForm creation process. For details, see [How do I specify a URL to redirect to when a PowerForm is completed?](https://support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed).  ### More information  For more information about creating PowerForms, see [Create a PowerForm](https://support.docusign.com/en/guides/ndse-user-guide-create-a-powerform).  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -240,7 +240,7 @@ namespace DocuSign.eSign.Api
         /// Delete a PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -252,7 +252,7 @@ namespace DocuSign.eSign.Api
         /// Delete a PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -263,7 +263,7 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more PowerForms
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes one or more PowerForms. The request body takes an array of PowerForm objects that are deleted based on the &#x60;powerFormId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -275,7 +275,7 @@ namespace DocuSign.eSign.Api
         /// Deletes one or more PowerForms
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes one or more PowerForms. The request body takes an array of PowerForm objects that are deleted based on the &#x60;powerFormId&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -286,7 +286,7 @@ namespace DocuSign.eSign.Api
         /// Returns a single PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns detailed information about a specific PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -298,7 +298,7 @@ namespace DocuSign.eSign.Api
         /// Returns a single PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns detailed information about a specific PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -309,7 +309,7 @@ namespace DocuSign.eSign.Api
         /// Returns the form data associated with the usage of a PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method enables Powerform Administrators or the sender of a PowerForm to download the data that recipients have entered into a PowerForm.  You specify the format in which you want to retrieve the data in the &#x60;Accept&#x60; header. This header accepts the following values:   - &#x60;application/json&#x60;: JSON format - &#x60;application/xml&#x60;: XML format - &#x60;text/csv&#x60;: Comma-separated value (CSV) format  **Note:** Only PowerForm Administrators or the PowerForm Sender can download the data associated with a PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -322,7 +322,7 @@ namespace DocuSign.eSign.Api
         /// Returns the form data associated with the usage of a PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method enables Powerform Administrators or the sender of a PowerForm to download the data that recipients have entered into a PowerForm.  You specify the format in which you want to retrieve the data in the &#x60;Accept&#x60; header. This header accepts the following values:   - &#x60;application/json&#x60;: JSON format - &#x60;application/xml&#x60;: XML format - &#x60;text/csv&#x60;: Comma-separated value (CSV) format  **Note:** Only PowerForm Administrators or the PowerForm Sender can download the data associated with a PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -334,7 +334,7 @@ namespace DocuSign.eSign.Api
         /// Returns the list of PowerForms available to the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of users who have sent PowerForms.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -346,7 +346,7 @@ namespace DocuSign.eSign.Api
         /// Returns the list of PowerForms available to the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of users who have sent PowerForms.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -357,7 +357,7 @@ namespace DocuSign.eSign.Api
         /// Returns the list of PowerForms available to the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of PowerForms that are available to the user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -369,7 +369,7 @@ namespace DocuSign.eSign.Api
         /// Returns the list of PowerForms available to the user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of PowerForms that are available to the user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -380,7 +380,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an existing PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -393,7 +393,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new PowerForm.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an existing PowerForm.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -458,7 +458,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Creates a new PowerForm. 
+        /// Creates a new PowerForm. This method creates a new PowerForm.  You create a PowerForm from an existing DocuSign [template](/docs/esign-rest-api/reference/templates/templates/create/), based on the &#x60;templateId&#x60; in the request body.   PowerForms that you create from a template are referred to as *web PowerForms*.  **Note:** The DocuSign Admin console also supports creating a PowerForm by uploading a PDF file that has active form fields (referred to as a *PDF PowerForm*). However, PDF PowerForms are deprecated and are not supported in the API.  **Note:** A PowerForm can have only one sender. (Because PowerForms are not necessarily sent by email, this user is also referred to as the PowerForm *initiator*.) If you need to associate multiple senders with a PowerForm, create multiple copies of the PowerForm by using the same template (one copy for each sender). By default, the sender is the PowerForm Administrator who creates the PowerForm.   ### Signing modes  You can use one of the following signing modes for a PowerForm:  **&#x60;email&#x60;**  This mode verifies the recipient&#39;s identity by using email authentication before the recipient can sign a document. The recipient enters their email address on the landing page and then clicks **Begin Signing** to begin the signing process. The system then sends an email message with a validation code to the recipient. If the recipient does not provide a valid email address, they do not receive the email message containing the access code and are not able to open and sign the document.  Alternatively, you can make the process easier for signers by using email authentication only and omitting the access code. To do this, you append the &#x60;activateonly&#x60; flag to the PowerForm URL and set it to true by passing in the value &#x60;1&#x60;.  When the flag is active, the first recipient receives an email with a link that initiates the signing session without having to enter access code.  Example: &#x60;activateonly&#x3D;1&#x60;  **&#x60;direct&#x60;**  This mode does not require any verification. After a recipient enters their email address on the landing page and clicks **Begin Signing,** a new browser tab opens and the recipient can immediately begin the signing process.  Because the &#x60;direct&#x60; signing mode does not verify the recipient&#39;s identity by using email authentication, we strongly recommend that you use this mode only when the PowerForm is accessible behind a secure portal where the recipient&#39;s identity is already authenticated, or where another form of authentication is specified for the recipient in the DocuSign template (for example, an access code, phone authentication, or ID check).  **Note:** In the account settings, &#x60;enablePowerFormDirect&#x60; must be **true** to use &#x60;direct&#x60; as the &#x60;signingMode&#x60;.  ### Redirect URLs  You can control the URL to which signers are redirected after signing your PowerForm. However, the URL is specified elsewhere, outside of the PowerForm creation process. For details, see [How do I specify a URL to redirect to when a PowerForm is completed?](https://support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed).  ### More information  For more information about creating PowerForms, see [Create a PowerForm](https://support.docusign.com/en/guides/ndse-user-guide-create-a-powerform).  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -471,7 +471,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a new PowerForm. 
+        /// Creates a new PowerForm. This method creates a new PowerForm.  You create a PowerForm from an existing DocuSign [template](/docs/esign-rest-api/reference/templates/templates/create/), based on the &#x60;templateId&#x60; in the request body.   PowerForms that you create from a template are referred to as *web PowerForms*.  **Note:** The DocuSign Admin console also supports creating a PowerForm by uploading a PDF file that has active form fields (referred to as a *PDF PowerForm*). However, PDF PowerForms are deprecated and are not supported in the API.  **Note:** A PowerForm can have only one sender. (Because PowerForms are not necessarily sent by email, this user is also referred to as the PowerForm *initiator*.) If you need to associate multiple senders with a PowerForm, create multiple copies of the PowerForm by using the same template (one copy for each sender). By default, the sender is the PowerForm Administrator who creates the PowerForm.   ### Signing modes  You can use one of the following signing modes for a PowerForm:  **&#x60;email&#x60;**  This mode verifies the recipient&#39;s identity by using email authentication before the recipient can sign a document. The recipient enters their email address on the landing page and then clicks **Begin Signing** to begin the signing process. The system then sends an email message with a validation code to the recipient. If the recipient does not provide a valid email address, they do not receive the email message containing the access code and are not able to open and sign the document.  Alternatively, you can make the process easier for signers by using email authentication only and omitting the access code. To do this, you append the &#x60;activateonly&#x60; flag to the PowerForm URL and set it to true by passing in the value &#x60;1&#x60;.  When the flag is active, the first recipient receives an email with a link that initiates the signing session without having to enter access code.  Example: &#x60;activateonly&#x3D;1&#x60;  **&#x60;direct&#x60;**  This mode does not require any verification. After a recipient enters their email address on the landing page and clicks **Begin Signing,** a new browser tab opens and the recipient can immediately begin the signing process.  Because the &#x60;direct&#x60; signing mode does not verify the recipient&#39;s identity by using email authentication, we strongly recommend that you use this mode only when the PowerForm is accessible behind a secure portal where the recipient&#39;s identity is already authenticated, or where another form of authentication is specified for the recipient in the DocuSign template (for example, an access code, phone authentication, or ID check).  **Note:** In the account settings, &#x60;enablePowerFormDirect&#x60; must be **true** to use &#x60;direct&#x60; as the &#x60;signingMode&#x60;.  ### Redirect URLs  You can control the URL to which signers are redirected after signing your PowerForm. However, the URL is specified elsewhere, outside of the PowerForm creation process. For details, see [How do I specify a URL to redirect to when a PowerForm is completed?](https://support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed).  ### More information  For more information about creating PowerForms, see [Create a PowerForm](https://support.docusign.com/en/guides/ndse-user-guide-create-a-powerform).  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -553,7 +553,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a new PowerForm. 
+        /// Creates a new PowerForm. This method creates a new PowerForm.  You create a PowerForm from an existing DocuSign [template](/docs/esign-rest-api/reference/templates/templates/create/), based on the &#x60;templateId&#x60; in the request body.   PowerForms that you create from a template are referred to as *web PowerForms*.  **Note:** The DocuSign Admin console also supports creating a PowerForm by uploading a PDF file that has active form fields (referred to as a *PDF PowerForm*). However, PDF PowerForms are deprecated and are not supported in the API.  **Note:** A PowerForm can have only one sender. (Because PowerForms are not necessarily sent by email, this user is also referred to as the PowerForm *initiator*.) If you need to associate multiple senders with a PowerForm, create multiple copies of the PowerForm by using the same template (one copy for each sender). By default, the sender is the PowerForm Administrator who creates the PowerForm.   ### Signing modes  You can use one of the following signing modes for a PowerForm:  **&#x60;email&#x60;**  This mode verifies the recipient&#39;s identity by using email authentication before the recipient can sign a document. The recipient enters their email address on the landing page and then clicks **Begin Signing** to begin the signing process. The system then sends an email message with a validation code to the recipient. If the recipient does not provide a valid email address, they do not receive the email message containing the access code and are not able to open and sign the document.  Alternatively, you can make the process easier for signers by using email authentication only and omitting the access code. To do this, you append the &#x60;activateonly&#x60; flag to the PowerForm URL and set it to true by passing in the value &#x60;1&#x60;.  When the flag is active, the first recipient receives an email with a link that initiates the signing session without having to enter access code.  Example: &#x60;activateonly&#x3D;1&#x60;  **&#x60;direct&#x60;**  This mode does not require any verification. After a recipient enters their email address on the landing page and clicks **Begin Signing,** a new browser tab opens and the recipient can immediately begin the signing process.  Because the &#x60;direct&#x60; signing mode does not verify the recipient&#39;s identity by using email authentication, we strongly recommend that you use this mode only when the PowerForm is accessible behind a secure portal where the recipient&#39;s identity is already authenticated, or where another form of authentication is specified for the recipient in the DocuSign template (for example, an access code, phone authentication, or ID check).  **Note:** In the account settings, &#x60;enablePowerFormDirect&#x60; must be **true** to use &#x60;direct&#x60; as the &#x60;signingMode&#x60;.  ### Redirect URLs  You can control the URL to which signers are redirected after signing your PowerForm. However, the URL is specified elsewhere, outside of the PowerForm creation process. For details, see [How do I specify a URL to redirect to when a PowerForm is completed?](https://support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed).  ### More information  For more information about creating PowerForms, see [Create a PowerForm](https://support.docusign.com/en/guides/ndse-user-guide-create-a-powerform).  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -566,7 +566,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a new PowerForm. 
+        /// Creates a new PowerForm. This method creates a new PowerForm.  You create a PowerForm from an existing DocuSign [template](/docs/esign-rest-api/reference/templates/templates/create/), based on the &#x60;templateId&#x60; in the request body.   PowerForms that you create from a template are referred to as *web PowerForms*.  **Note:** The DocuSign Admin console also supports creating a PowerForm by uploading a PDF file that has active form fields (referred to as a *PDF PowerForm*). However, PDF PowerForms are deprecated and are not supported in the API.  **Note:** A PowerForm can have only one sender. (Because PowerForms are not necessarily sent by email, this user is also referred to as the PowerForm *initiator*.) If you need to associate multiple senders with a PowerForm, create multiple copies of the PowerForm by using the same template (one copy for each sender). By default, the sender is the PowerForm Administrator who creates the PowerForm.   ### Signing modes  You can use one of the following signing modes for a PowerForm:  **&#x60;email&#x60;**  This mode verifies the recipient&#39;s identity by using email authentication before the recipient can sign a document. The recipient enters their email address on the landing page and then clicks **Begin Signing** to begin the signing process. The system then sends an email message with a validation code to the recipient. If the recipient does not provide a valid email address, they do not receive the email message containing the access code and are not able to open and sign the document.  Alternatively, you can make the process easier for signers by using email authentication only and omitting the access code. To do this, you append the &#x60;activateonly&#x60; flag to the PowerForm URL and set it to true by passing in the value &#x60;1&#x60;.  When the flag is active, the first recipient receives an email with a link that initiates the signing session without having to enter access code.  Example: &#x60;activateonly&#x3D;1&#x60;  **&#x60;direct&#x60;**  This mode does not require any verification. After a recipient enters their email address on the landing page and clicks **Begin Signing,** a new browser tab opens and the recipient can immediately begin the signing process.  Because the &#x60;direct&#x60; signing mode does not verify the recipient&#39;s identity by using email authentication, we strongly recommend that you use this mode only when the PowerForm is accessible behind a secure portal where the recipient&#39;s identity is already authenticated, or where another form of authentication is specified for the recipient in the DocuSign template (for example, an access code, phone authentication, or ID check).  **Note:** In the account settings, &#x60;enablePowerFormDirect&#x60; must be **true** to use &#x60;direct&#x60; as the &#x60;signingMode&#x60;.  ### Redirect URLs  You can control the URL to which signers are redirected after signing your PowerForm. However, the URL is specified elsewhere, outside of the PowerForm creation process. For details, see [How do I specify a URL to redirect to when a PowerForm is completed?](https://support.docusign.com/en/articles/How-do-I-specify-a-URL-to-redirect-to-when-a-Powerform-is-completed).  ### More information  For more information about creating PowerForms, see [Create a PowerForm](https://support.docusign.com/en/guides/ndse-user-guide-create-a-powerform).  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -641,7 +641,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Delete a PowerForm. 
+        /// Delete a PowerForm. This method deletes a PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -653,7 +653,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete a PowerForm. 
+        /// Delete a PowerForm. This method deletes a PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -723,7 +723,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete a PowerForm. 
+        /// Delete a PowerForm. This method deletes a PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -735,7 +735,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete a PowerForm. 
+        /// Delete a PowerForm. This method deletes a PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -806,7 +806,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Deletes one or more PowerForms 
+        /// Deletes one or more PowerForms This method deletes one or more PowerForms. The request body takes an array of PowerForm objects that are deleted based on the &#x60;powerFormId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -819,7 +819,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes one or more PowerForms 
+        /// Deletes one or more PowerForms This method deletes one or more PowerForms. The request body takes an array of PowerForm objects that are deleted based on the &#x60;powerFormId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -901,7 +901,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes one or more PowerForms 
+        /// Deletes one or more PowerForms This method deletes one or more PowerForms. The request body takes an array of PowerForm objects that are deleted based on the &#x60;powerFormId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -914,7 +914,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes one or more PowerForms 
+        /// Deletes one or more PowerForms This method deletes one or more PowerForms. The request body takes an array of PowerForm objects that are deleted based on the &#x60;powerFormId&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -989,7 +989,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns a single PowerForm. 
+        /// Returns a single PowerForm. This method returns detailed information about a specific PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1002,7 +1002,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns a single PowerForm. 
+        /// Returns a single PowerForm. This method returns detailed information about a specific PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1080,7 +1080,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns a single PowerForm. 
+        /// Returns a single PowerForm. This method returns detailed information about a specific PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1093,7 +1093,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns a single PowerForm. 
+        /// Returns a single PowerForm. This method returns detailed information about a specific PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1163,7 +1163,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns the form data associated with the usage of a PowerForm. 
+        /// Returns the form data associated with the usage of a PowerForm. This method enables Powerform Administrators or the sender of a PowerForm to download the data that recipients have entered into a PowerForm.  You specify the format in which you want to retrieve the data in the &#x60;Accept&#x60; header. This header accepts the following values:   - &#x60;application/json&#x60;: JSON format - &#x60;application/xml&#x60;: XML format - &#x60;text/csv&#x60;: Comma-separated value (CSV) format  **Note:** Only PowerForm Administrators or the PowerForm Sender can download the data associated with a PowerForm.
         /// </summary>
         public class GetPowerFormDataOptions
         {
@@ -1176,7 +1176,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the form data associated with the usage of a PowerForm. 
+        /// Returns the form data associated with the usage of a PowerForm. This method enables Powerform Administrators or the sender of a PowerForm to download the data that recipients have entered into a PowerForm.  You specify the format in which you want to retrieve the data in the &#x60;Accept&#x60; header. This header accepts the following values:   - &#x60;application/json&#x60;: JSON format - &#x60;application/xml&#x60;: XML format - &#x60;text/csv&#x60;: Comma-separated value (CSV) format  **Note:** Only PowerForm Administrators or the PowerForm Sender can download the data associated with a PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1190,7 +1190,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the form data associated with the usage of a PowerForm. 
+        /// Returns the form data associated with the usage of a PowerForm. This method enables Powerform Administrators or the sender of a PowerForm to download the data that recipients have entered into a PowerForm.  You specify the format in which you want to retrieve the data in the &#x60;Accept&#x60; header. This header accepts the following values:   - &#x60;application/json&#x60;: JSON format - &#x60;application/xml&#x60;: XML format - &#x60;text/csv&#x60;: Comma-separated value (CSV) format  **Note:** Only PowerForm Administrators or the PowerForm Sender can download the data associated with a PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1275,7 +1275,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the form data associated with the usage of a PowerForm. 
+        /// Returns the form data associated with the usage of a PowerForm. This method enables Powerform Administrators or the sender of a PowerForm to download the data that recipients have entered into a PowerForm.  You specify the format in which you want to retrieve the data in the &#x60;Accept&#x60; header. This header accepts the following values:   - &#x60;application/json&#x60;: JSON format - &#x60;application/xml&#x60;: XML format - &#x60;text/csv&#x60;: Comma-separated value (CSV) format  **Note:** Only PowerForm Administrators or the PowerForm Sender can download the data associated with a PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1289,7 +1289,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the form data associated with the usage of a PowerForm. 
+        /// Returns the form data associated with the usage of a PowerForm. This method enables Powerform Administrators or the sender of a PowerForm to download the data that recipients have entered into a PowerForm.  You specify the format in which you want to retrieve the data in the &#x60;Accept&#x60; header. This header accepts the following values:   - &#x60;application/json&#x60;: JSON format - &#x60;application/xml&#x60;: XML format - &#x60;text/csv&#x60;: Comma-separated value (CSV) format  **Note:** Only PowerForm Administrators or the PowerForm Sender can download the data associated with a PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1366,7 +1366,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns the list of PowerForms available to the user. 
+        /// Returns the list of PowerForms available to the user. This method returns a list of users who have sent PowerForms.
         /// </summary>
         public class ListPowerFormSendersOptions
         {
@@ -1375,7 +1375,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the list of PowerForms available to the user. 
+        /// Returns the list of PowerForms available to the user. This method returns a list of users who have sent PowerForms.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1388,7 +1388,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the list of PowerForms available to the user. 
+        /// Returns the list of PowerForms available to the user. This method returns a list of users who have sent PowerForms.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1466,7 +1466,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the list of PowerForms available to the user. 
+        /// Returns the list of PowerForms available to the user. This method returns a list of users who have sent PowerForms.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1479,7 +1479,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the list of PowerForms available to the user. 
+        /// Returns the list of PowerForms available to the user. This method returns a list of users who have sent PowerForms.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1549,7 +1549,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns the list of PowerForms available to the user. 
+        /// Returns the list of PowerForms available to the user. This method returns a list of PowerForms that are available to the user.
         /// </summary>
         public class ListPowerFormsOptions
         {
@@ -1568,7 +1568,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the list of PowerForms available to the user. 
+        /// Returns the list of PowerForms available to the user. This method returns a list of PowerForms that are available to the user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1581,7 +1581,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the list of PowerForms available to the user. 
+        /// Returns the list of PowerForms available to the user. This method returns a list of PowerForms that are available to the user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1664,7 +1664,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the list of PowerForms available to the user. 
+        /// Returns the list of PowerForms available to the user. This method returns a list of PowerForms that are available to the user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1677,7 +1677,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the list of PowerForms available to the user. 
+        /// Returns the list of PowerForms available to the user. This method returns a list of PowerForms that are available to the user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1753,7 +1753,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Creates a new PowerForm. 
+        /// Creates a new PowerForm. This method updates an existing PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1767,7 +1767,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a new PowerForm. 
+        /// Creates a new PowerForm. This method updates an existing PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1854,7 +1854,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a new PowerForm. 
+        /// Creates a new PowerForm. This method updates an existing PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1868,7 +1868,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a new PowerForm. 
+        /// Creates a new PowerForm. This method updates an existing PowerForm.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>

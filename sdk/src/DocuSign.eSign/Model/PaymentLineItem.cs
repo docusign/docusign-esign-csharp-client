@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// PaymentLineItem
+    /// A line item describes details about an individual line item in a payment request.  
     /// </summary>
     [DataContract]
     public partial class PaymentLineItem :  IEquatable<PaymentLineItem>, IValidatableObject

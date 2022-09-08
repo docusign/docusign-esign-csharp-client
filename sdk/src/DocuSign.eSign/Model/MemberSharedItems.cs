@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// MemberSharedItems
+    /// Information about shared items.
     /// </summary>
     [DataContract]
     public partial class MemberSharedItems :  IEquatable<MemberSharedItems>, IValidatableObject
@@ -39,10 +39,10 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="MemberSharedItems" /> class.
         /// </summary>
         /// <param name="Envelopes">Envelopes.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="Folders">Folders.</param>
         /// <param name="Templates">Templates.</param>
-        /// <param name="User">User.</param>
+        /// <param name="User">Information about the user requesting sharing information..</param>
         public MemberSharedItems(List<SharedItem> Envelopes = default(List<SharedItem>), ErrorDetails ErrorDetails = default(ErrorDetails), List<FolderSharedItem> Folders = default(List<FolderSharedItem>), List<TemplateSharedItem> Templates = default(List<TemplateSharedItem>), UserInfo User = default(UserInfo))
         {
             this.Envelopes = Envelopes;
@@ -58,8 +58,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopes", EmitDefaultValue=false)]
         public List<SharedItem> Envelopes { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -73,8 +74,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templates", EmitDefaultValue=false)]
         public List<TemplateSharedItem> Templates { get; set; }
         /// <summary>
-        /// Gets or Sets User
+        /// Information about the user requesting sharing information.
         /// </summary>
+        /// <value>Information about the user requesting sharing information.</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
         public UserInfo User { get; set; }
         /// <summary>

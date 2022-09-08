@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConnectFailureResult
+    /// This object contains details about a Connect failure result.
     /// </summary>
     [DataContract]
     public partial class ConnectFailureResult :  IEquatable<ConnectFailureResult>, IValidatableObject

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// AccountNotification
+    /// A complex element that specifies notifications (expirations and reminders) for the envelope.
     /// </summary>
     [DataContract]
     public partial class AccountNotification :  IEquatable<AccountNotification>, IValidatableObject
@@ -38,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountNotification" /> class.
         /// </summary>
-        /// <param name="Expirations">Expirations.</param>
-        /// <param name="Reminders">Reminders.</param>
+        /// <param name="Expirations">A complex element that specifies the expiration settings for the envelope..</param>
+        /// <param name="Reminders">A complex element that specifies reminder settings for the envelope..</param>
         /// <param name="UserOverrideEnabled">UserOverrideEnabled.</param>
         public AccountNotification(Expirations Expirations = default(Expirations), Reminders Reminders = default(Reminders), string UserOverrideEnabled = default(string))
         {
@@ -49,13 +49,15 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets Expirations
+        /// A complex element that specifies the expiration settings for the envelope.
         /// </summary>
+        /// <value>A complex element that specifies the expiration settings for the envelope.</value>
         [DataMember(Name="expirations", EmitDefaultValue=false)]
         public Expirations Expirations { get; set; }
         /// <summary>
-        /// Gets or Sets Reminders
+        /// A complex element that specifies reminder settings for the envelope.
         /// </summary>
+        /// <value>A complex element that specifies reminder settings for the envelope.</value>
         [DataMember(Name="reminders", EmitDefaultValue=false)]
         public Reminders Reminders { get; set; }
         /// <summary>

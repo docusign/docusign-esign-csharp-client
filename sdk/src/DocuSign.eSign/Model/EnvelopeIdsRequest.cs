@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopeIdsRequest
+    /// Lists of envelope and transaction IDs to use in the results.  If you use this request body with Envelopes: listStatus, you must set one or both of the following query parameters to the special value &#x60;request_body&#x60;:  - &#x60;envelope_ids&#x3D;request_body&#x60; - &#x60;transaction_ids&#x3D;request_body&#x60; 
     /// </summary>
     [DataContract]
     public partial class EnvelopeIdsRequest :  IEquatable<EnvelopeIdsRequest>, IValidatableObject

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// CreditCardInformation
+    /// This object contains information about a credit card that is associated with an account.
     /// </summary>
     [DataContract]
     public partial class CreditCardInformation :  IEquatable<CreditCardInformation>, IValidatableObject
@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreditCardInformation" /> class.
         /// </summary>
-        /// <param name="Address">Address.</param>
+        /// <param name="Address">A complex element containing the credit card billing address information..</param>
         /// <param name="CardLastDigits">CardLastDigits.</param>
         /// <param name="CardNumber">The number on the credit card..</param>
         /// <param name="CardType">The credit card type. Valid values are: visa, mastercard, or amex..</param>
@@ -61,8 +61,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets Address
+        /// A complex element containing the credit card billing address information.
         /// </summary>
+        /// <value>A complex element containing the credit card billing address information.</value>
         [DataMember(Name="address", EmitDefaultValue=false)]
         public AddressInformation Address { get; set; }
         /// <summary>

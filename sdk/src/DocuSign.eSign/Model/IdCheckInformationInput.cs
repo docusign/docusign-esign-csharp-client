@@ -38,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="IdCheckInformationInput" /> class.
         /// </summary>
-        /// <param name="AddressInformationInput">AddressInformationInput.</param>
-        /// <param name="DobInformationInput">DobInformationInput.</param>
-        /// <param name="Ssn4InformationInput">Ssn4InformationInput.</param>
-        /// <param name="Ssn9InformationInput">Ssn9InformationInput.</param>
+        /// <param name="AddressInformationInput">An object that specifies recipient address information and how it is displayed..</param>
+        /// <param name="DobInformationInput">An object that specifies recipient date of birth information and how it is displayed..</param>
+        /// <param name="Ssn4InformationInput">An object that specifies the last four digits of the recipient&#39;s Social Security Number (SSN)..</param>
+        /// <param name="Ssn9InformationInput">An object that specifies the recipient&#39;s Social Security Number (SSN) information. Note that ssn9 information cannot be returned in a response..</param>
         public IdCheckInformationInput(AddressInformationInput AddressInformationInput = default(AddressInformationInput), DobInformationInput DobInformationInput = default(DobInformationInput), Ssn4InformationInput Ssn4InformationInput = default(Ssn4InformationInput), Ssn9InformationInput Ssn9InformationInput = default(Ssn9InformationInput))
         {
             this.AddressInformationInput = AddressInformationInput;
@@ -51,23 +51,27 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets AddressInformationInput
+        /// An object that specifies recipient address information and how it is displayed.
         /// </summary>
+        /// <value>An object that specifies recipient address information and how it is displayed.</value>
         [DataMember(Name="addressInformationInput", EmitDefaultValue=false)]
         public AddressInformationInput AddressInformationInput { get; set; }
         /// <summary>
-        /// Gets or Sets DobInformationInput
+        /// An object that specifies recipient date of birth information and how it is displayed.
         /// </summary>
+        /// <value>An object that specifies recipient date of birth information and how it is displayed.</value>
         [DataMember(Name="dobInformationInput", EmitDefaultValue=false)]
         public DobInformationInput DobInformationInput { get; set; }
         /// <summary>
-        /// Gets or Sets Ssn4InformationInput
+        /// An object that specifies the last four digits of the recipient&#39;s Social Security Number (SSN).
         /// </summary>
+        /// <value>An object that specifies the last four digits of the recipient&#39;s Social Security Number (SSN).</value>
         [DataMember(Name="ssn4InformationInput", EmitDefaultValue=false)]
         public Ssn4InformationInput Ssn4InformationInput { get; set; }
         /// <summary>
-        /// Gets or Sets Ssn9InformationInput
+        /// An object that specifies the recipient&#39;s Social Security Number (SSN) information. Note that ssn9 information cannot be returned in a response.
         /// </summary>
+        /// <value>An object that specifies the recipient&#39;s Social Security Number (SSN) information. Note that ssn9 information cannot be returned in a response.</value>
         [DataMember(Name="ssn9InformationInput", EmitDefaultValue=false)]
         public Ssn9InformationInput Ssn9InformationInput { get; set; }
         /// <summary>

@@ -39,49 +39,49 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="TabAccountSettings" /> class.
         /// </summary>
         /// <param name="AllowTabOrder">AllowTabOrder.</param>
-        /// <param name="AllowTabOrderMetadata">AllowTabOrderMetadata.</param>
+        /// <param name="AllowTabOrderMetadata">Metadata that indicates whether the &#x60;allowTabOrder&#x60; property is editable. .</param>
         /// <param name="ApproveDeclineTabsEnabled">ApproveDeclineTabsEnabled.</param>
-        /// <param name="ApproveDeclineTabsMetadata">ApproveDeclineTabsMetadata.</param>
+        /// <param name="ApproveDeclineTabsMetadata">Metadata that indicates whether the &#x60;approveDeclineTabs&#x60; property is editable. .</param>
         /// <param name="CalculatedFieldsEnabled">CalculatedFieldsEnabled.</param>
-        /// <param name="CalculatedFieldsMetadata">CalculatedFieldsMetadata.</param>
+        /// <param name="CalculatedFieldsMetadata">Metadata that indicates whether the &#x60;calculatedFields&#x60; property is editable. .</param>
         /// <param name="CheckboxTabsEnabled">CheckboxTabsEnabled.</param>
-        /// <param name="CheckBoxTabsMetadata">CheckBoxTabsMetadata.</param>
+        /// <param name="CheckBoxTabsMetadata">Metadata that indicates whether the &#x60;checkBoxTabs&#x60; property is editable..</param>
         /// <param name="CurrencyTabsEnabled">CurrencyTabsEnabled.</param>
         /// <param name="CurrencyTabsMetadata">CurrencyTabsMetadata.</param>
         /// <param name="DataFieldRegexEnabled">DataFieldRegexEnabled.</param>
-        /// <param name="DataFieldRegexMetadata">DataFieldRegexMetadata.</param>
+        /// <param name="DataFieldRegexMetadata">Metadata that indicates whether the &#x60;dataFieldRegex&#x60; property is editable. .</param>
         /// <param name="DataFieldSizeEnabled">DataFieldSizeEnabled.</param>
-        /// <param name="DataFieldSizeMetadata">DataFieldSizeMetadata.</param>
+        /// <param name="DataFieldSizeMetadata">Metadata that indicates whether the &#x60;dataFieldSize&#x60; property is editable. .</param>
         /// <param name="DrawTabsEnabled">DrawTabsEnabled.</param>
         /// <param name="DrawTabsMetadata">DrawTabsMetadata.</param>
         /// <param name="FirstLastEmailTabsEnabled">FirstLastEmailTabsEnabled.</param>
-        /// <param name="FirstLastEmailTabsMetadata">FirstLastEmailTabsMetadata.</param>
+        /// <param name="FirstLastEmailTabsMetadata">Reserved for DocuSign..</param>
         /// <param name="ListTabsEnabled">ListTabsEnabled.</param>
-        /// <param name="ListTabsMetadata">ListTabsMetadata.</param>
+        /// <param name="ListTabsMetadata">Metadata that indicates whether the &#x60;listTabs&#x60; property is editable. .</param>
         /// <param name="NoteTabsEnabled">NoteTabsEnabled.</param>
-        /// <param name="NoteTabsMetadata">NoteTabsMetadata.</param>
+        /// <param name="NoteTabsMetadata">Metadata that indicates whether the &#x60;noteTabs&#x60; property is editable. .</param>
         /// <param name="PrefillTabsEnabled">PrefillTabsEnabled.</param>
         /// <param name="PrefillTabsMetadata">PrefillTabsMetadata.</param>
         /// <param name="RadioTabsEnabled">RadioTabsEnabled.</param>
-        /// <param name="RadioTabsMetadata">RadioTabsMetadata.</param>
+        /// <param name="RadioTabsMetadata">Metadata that indicates whether the &#x60;radioTabs&#x60; property is editable. .</param>
         /// <param name="SavingCustomTabsEnabled">SavingCustomTabsEnabled.</param>
-        /// <param name="SavingCustomTabsMetadata">SavingCustomTabsMetadata.</param>
+        /// <param name="SavingCustomTabsMetadata">Metadata that indicates whether the &#x60;savingCustomTabs&#x60; property is editable. .</param>
         /// <param name="SenderToChangeTabAssignmentsEnabled">SenderToChangeTabAssignmentsEnabled.</param>
-        /// <param name="SenderToChangeTabAssignmentsMetadata">SenderToChangeTabAssignmentsMetadata.</param>
+        /// <param name="SenderToChangeTabAssignmentsMetadata">Reserved for DocuSign..</param>
         /// <param name="SharedCustomTabsEnabled">SharedCustomTabsEnabled.</param>
-        /// <param name="SharedCustomTabsMetadata">SharedCustomTabsMetadata.</param>
+        /// <param name="SharedCustomTabsMetadata">Metadata that indicates whether the &#x60;sharedCustomTabs&#x60; property is editable. .</param>
         /// <param name="TabDataLabelEnabled">TabDataLabelEnabled.</param>
-        /// <param name="TabDataLabelMetadata">TabDataLabelMetadata.</param>
+        /// <param name="TabDataLabelMetadata">Metadata that indicates whether the &#x60;tabDataLabel&#x60; property is editable. .</param>
         /// <param name="TabLocationEnabled">TabLocationEnabled.</param>
-        /// <param name="TabLocationMetadata">TabLocationMetadata.</param>
+        /// <param name="TabLocationMetadata">Reserved for DocuSign..</param>
         /// <param name="TabLockingEnabled">TabLockingEnabled.</param>
-        /// <param name="TabLockingMetadata">TabLockingMetadata.</param>
+        /// <param name="TabLockingMetadata">Metadata that indicates whether the &#x60;tabLocking&#x60; property is editable. .</param>
         /// <param name="TabScaleEnabled">TabScaleEnabled.</param>
-        /// <param name="TabScaleMetadata">TabScaleMetadata.</param>
+        /// <param name="TabScaleMetadata">Reserved for DocuSign..</param>
         /// <param name="TabTextFormattingEnabled">TabTextFormattingEnabled.</param>
-        /// <param name="TabTextFormattingMetadata">TabTextFormattingMetadata.</param>
+        /// <param name="TabTextFormattingMetadata">Metadata that indicates whether the &#x60;tabTextFormatting&#x60; property is editable. .</param>
         /// <param name="TextTabsEnabled">TextTabsEnabled.</param>
-        /// <param name="TextTabsMetadata">TextTabsMetadata.</param>
+        /// <param name="TextTabsMetadata">Metadata that indicates whether the &#x60;textTabs&#x60; property is editable. .</param>
         public TabAccountSettings(string AllowTabOrder = default(string), SettingsMetadata AllowTabOrderMetadata = default(SettingsMetadata), string ApproveDeclineTabsEnabled = default(string), SettingsMetadata ApproveDeclineTabsMetadata = default(SettingsMetadata), string CalculatedFieldsEnabled = default(string), SettingsMetadata CalculatedFieldsMetadata = default(SettingsMetadata), string CheckboxTabsEnabled = default(string), SettingsMetadata CheckBoxTabsMetadata = default(SettingsMetadata), string CurrencyTabsEnabled = default(string), SettingsMetadata CurrencyTabsMetadata = default(SettingsMetadata), string DataFieldRegexEnabled = default(string), SettingsMetadata DataFieldRegexMetadata = default(SettingsMetadata), string DataFieldSizeEnabled = default(string), SettingsMetadata DataFieldSizeMetadata = default(SettingsMetadata), string DrawTabsEnabled = default(string), SettingsMetadata DrawTabsMetadata = default(SettingsMetadata), string FirstLastEmailTabsEnabled = default(string), SettingsMetadata FirstLastEmailTabsMetadata = default(SettingsMetadata), string ListTabsEnabled = default(string), SettingsMetadata ListTabsMetadata = default(SettingsMetadata), string NoteTabsEnabled = default(string), SettingsMetadata NoteTabsMetadata = default(SettingsMetadata), string PrefillTabsEnabled = default(string), SettingsMetadata PrefillTabsMetadata = default(SettingsMetadata), string RadioTabsEnabled = default(string), SettingsMetadata RadioTabsMetadata = default(SettingsMetadata), string SavingCustomTabsEnabled = default(string), SettingsMetadata SavingCustomTabsMetadata = default(SettingsMetadata), string SenderToChangeTabAssignmentsEnabled = default(string), SettingsMetadata SenderToChangeTabAssignmentsMetadata = default(SettingsMetadata), string SharedCustomTabsEnabled = default(string), SettingsMetadata SharedCustomTabsMetadata = default(SettingsMetadata), string TabDataLabelEnabled = default(string), SettingsMetadata TabDataLabelMetadata = default(SettingsMetadata), string TabLocationEnabled = default(string), SettingsMetadata TabLocationMetadata = default(SettingsMetadata), string TabLockingEnabled = default(string), SettingsMetadata TabLockingMetadata = default(SettingsMetadata), string TabScaleEnabled = default(string), SettingsMetadata TabScaleMetadata = default(SettingsMetadata), string TabTextFormattingEnabled = default(string), SettingsMetadata TabTextFormattingMetadata = default(SettingsMetadata), string TextTabsEnabled = default(string), SettingsMetadata TextTabsMetadata = default(SettingsMetadata))
         {
             this.AllowTabOrder = AllowTabOrder;
@@ -136,8 +136,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowTabOrder", EmitDefaultValue=false)]
         public string AllowTabOrder { get; set; }
         /// <summary>
-        /// Gets or Sets AllowTabOrderMetadata
+        /// Metadata that indicates whether the &#x60;allowTabOrder&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;allowTabOrder&#x60; property is editable. </value>
         [DataMember(Name="allowTabOrderMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowTabOrderMetadata { get; set; }
         /// <summary>
@@ -146,8 +147,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="approveDeclineTabsEnabled", EmitDefaultValue=false)]
         public string ApproveDeclineTabsEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets ApproveDeclineTabsMetadata
+        /// Metadata that indicates whether the &#x60;approveDeclineTabs&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;approveDeclineTabs&#x60; property is editable. </value>
         [DataMember(Name="approveDeclineTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ApproveDeclineTabsMetadata { get; set; }
         /// <summary>
@@ -156,8 +158,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="calculatedFieldsEnabled", EmitDefaultValue=false)]
         public string CalculatedFieldsEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets CalculatedFieldsMetadata
+        /// Metadata that indicates whether the &#x60;calculatedFields&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;calculatedFields&#x60; property is editable. </value>
         [DataMember(Name="calculatedFieldsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CalculatedFieldsMetadata { get; set; }
         /// <summary>
@@ -166,8 +169,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="checkboxTabsEnabled", EmitDefaultValue=false)]
         public string CheckboxTabsEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets CheckBoxTabsMetadata
+        /// Metadata that indicates whether the &#x60;checkBoxTabs&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;checkBoxTabs&#x60; property is editable.</value>
         [DataMember(Name="checkBoxTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CheckBoxTabsMetadata { get; set; }
         /// <summary>
@@ -186,8 +190,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dataFieldRegexEnabled", EmitDefaultValue=false)]
         public string DataFieldRegexEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets DataFieldRegexMetadata
+        /// Metadata that indicates whether the &#x60;dataFieldRegex&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;dataFieldRegex&#x60; property is editable. </value>
         [DataMember(Name="dataFieldRegexMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DataFieldRegexMetadata { get; set; }
         /// <summary>
@@ -196,8 +201,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dataFieldSizeEnabled", EmitDefaultValue=false)]
         public string DataFieldSizeEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets DataFieldSizeMetadata
+        /// Metadata that indicates whether the &#x60;dataFieldSize&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;dataFieldSize&#x60; property is editable. </value>
         [DataMember(Name="dataFieldSizeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DataFieldSizeMetadata { get; set; }
         /// <summary>
@@ -216,8 +222,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="firstLastEmailTabsEnabled", EmitDefaultValue=false)]
         public string FirstLastEmailTabsEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets FirstLastEmailTabsMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="firstLastEmailTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata FirstLastEmailTabsMetadata { get; set; }
         /// <summary>
@@ -226,8 +233,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="listTabsEnabled", EmitDefaultValue=false)]
         public string ListTabsEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets ListTabsMetadata
+        /// Metadata that indicates whether the &#x60;listTabs&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;listTabs&#x60; property is editable. </value>
         [DataMember(Name="listTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ListTabsMetadata { get; set; }
         /// <summary>
@@ -236,8 +244,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="noteTabsEnabled", EmitDefaultValue=false)]
         public string NoteTabsEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets NoteTabsMetadata
+        /// Metadata that indicates whether the &#x60;noteTabs&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;noteTabs&#x60; property is editable. </value>
         [DataMember(Name="noteTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata NoteTabsMetadata { get; set; }
         /// <summary>
@@ -256,8 +265,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="radioTabsEnabled", EmitDefaultValue=false)]
         public string RadioTabsEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets RadioTabsMetadata
+        /// Metadata that indicates whether the &#x60;radioTabs&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;radioTabs&#x60; property is editable. </value>
         [DataMember(Name="radioTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata RadioTabsMetadata { get; set; }
         /// <summary>
@@ -266,8 +276,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="savingCustomTabsEnabled", EmitDefaultValue=false)]
         public string SavingCustomTabsEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets SavingCustomTabsMetadata
+        /// Metadata that indicates whether the &#x60;savingCustomTabs&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;savingCustomTabs&#x60; property is editable. </value>
         [DataMember(Name="savingCustomTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SavingCustomTabsMetadata { get; set; }
         /// <summary>
@@ -276,8 +287,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="senderToChangeTabAssignmentsEnabled", EmitDefaultValue=false)]
         public string SenderToChangeTabAssignmentsEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets SenderToChangeTabAssignmentsMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="senderToChangeTabAssignmentsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SenderToChangeTabAssignmentsMetadata { get; set; }
         /// <summary>
@@ -286,8 +298,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="sharedCustomTabsEnabled", EmitDefaultValue=false)]
         public string SharedCustomTabsEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets SharedCustomTabsMetadata
+        /// Metadata that indicates whether the &#x60;sharedCustomTabs&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;sharedCustomTabs&#x60; property is editable. </value>
         [DataMember(Name="sharedCustomTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SharedCustomTabsMetadata { get; set; }
         /// <summary>
@@ -296,8 +309,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabDataLabelEnabled", EmitDefaultValue=false)]
         public string TabDataLabelEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets TabDataLabelMetadata
+        /// Metadata that indicates whether the &#x60;tabDataLabel&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;tabDataLabel&#x60; property is editable. </value>
         [DataMember(Name="tabDataLabelMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TabDataLabelMetadata { get; set; }
         /// <summary>
@@ -306,8 +320,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabLocationEnabled", EmitDefaultValue=false)]
         public string TabLocationEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets TabLocationMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="tabLocationMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TabLocationMetadata { get; set; }
         /// <summary>
@@ -316,8 +331,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabLockingEnabled", EmitDefaultValue=false)]
         public string TabLockingEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets TabLockingMetadata
+        /// Metadata that indicates whether the &#x60;tabLocking&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;tabLocking&#x60; property is editable. </value>
         [DataMember(Name="tabLockingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TabLockingMetadata { get; set; }
         /// <summary>
@@ -326,8 +342,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabScaleEnabled", EmitDefaultValue=false)]
         public string TabScaleEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets TabScaleMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="tabScaleMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TabScaleMetadata { get; set; }
         /// <summary>
@@ -336,8 +353,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabTextFormattingEnabled", EmitDefaultValue=false)]
         public string TabTextFormattingEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets TabTextFormattingMetadata
+        /// Metadata that indicates whether the &#x60;tabTextFormatting&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;tabTextFormatting&#x60; property is editable. </value>
         [DataMember(Name="tabTextFormattingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TabTextFormattingMetadata { get; set; }
         /// <summary>
@@ -346,8 +364,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="textTabsEnabled", EmitDefaultValue=false)]
         public string TextTabsEnabled { get; set; }
         /// <summary>
-        /// Gets or Sets TextTabsMetadata
+        /// Metadata that indicates whether the &#x60;textTabs&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;textTabs&#x60; property is editable. </value>
         [DataMember(Name="textTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TextTabsMetadata { get; set; }
         /// <summary>

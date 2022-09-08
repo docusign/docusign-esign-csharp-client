@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// PowerFormSendersResponse
+    /// This object includes information about the users who have sent PowerForms.
     /// </summary>
     [DataContract]
     public partial class PowerFormSendersResponse :  IEquatable<PowerFormSendersResponse>, IValidatableObject

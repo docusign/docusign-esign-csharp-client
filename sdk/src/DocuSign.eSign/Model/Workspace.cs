@@ -41,10 +41,10 @@ namespace DocuSign.eSign.Model
         /// <param name="BillableAccountId">BillableAccountId.</param>
         /// <param name="CallerInformation">CallerInformation.</param>
         /// <param name="Created">Created.</param>
-        /// <param name="CreatedByInformation">CreatedByInformation.</param>
+        /// <param name="CreatedByInformation">Details about the user who created the workspace..</param>
         /// <param name="LastModified">Utc date and time the comment was last updated (can only be done by creator.).</param>
-        /// <param name="LastModifiedByInformation">LastModifiedByInformation.</param>
-        /// <param name="Settings">Settings.</param>
+        /// <param name="LastModifiedByInformation">Details about the user who last modified the workspace..</param>
+        /// <param name="Settings">Information about the settings for the workspace..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="WorkspaceBaseUrl">The relative URL that may be used to access the workspace..</param>
         /// <param name="WorkspaceDescription">Text describing the purpose of the workspace..</param>
@@ -84,8 +84,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="created", EmitDefaultValue=false)]
         public string Created { get; set; }
         /// <summary>
-        /// Gets or Sets CreatedByInformation
+        /// Details about the user who created the workspace.
         /// </summary>
+        /// <value>Details about the user who created the workspace.</value>
         [DataMember(Name="createdByInformation", EmitDefaultValue=false)]
         public WorkspaceUser CreatedByInformation { get; set; }
         /// <summary>
@@ -95,13 +96,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lastModified", EmitDefaultValue=false)]
         public string LastModified { get; set; }
         /// <summary>
-        /// Gets or Sets LastModifiedByInformation
+        /// Details about the user who last modified the workspace.
         /// </summary>
+        /// <value>Details about the user who last modified the workspace.</value>
         [DataMember(Name="lastModifiedByInformation", EmitDefaultValue=false)]
         public WorkspaceUser LastModifiedByInformation { get; set; }
         /// <summary>
-        /// Gets or Sets Settings
+        /// Information about the settings for the workspace.
         /// </summary>
+        /// <value>Information about the settings for the workspace.</value>
         [DataMember(Name="settings", EmitDefaultValue=false)]
         public WorkspaceSettings Settings { get; set; }
         /// <summary>

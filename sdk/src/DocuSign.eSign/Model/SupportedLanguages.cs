@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// SupportedLanguages
+    /// A list of supported languages.
     /// </summary>
     [DataContract]
     public partial class SupportedLanguages :  IEquatable<SupportedLanguages>, IValidatableObject

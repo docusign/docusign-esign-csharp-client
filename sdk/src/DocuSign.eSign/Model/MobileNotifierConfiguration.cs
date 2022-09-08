@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="MobileNotifierConfiguration" /> class.
         /// </summary>
         /// <param name="DeviceId">DeviceId.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="Platform">Platform.</param>
         public MobileNotifierConfiguration(string DeviceId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Platform = default(string))
         {
@@ -54,8 +54,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="deviceId", EmitDefaultValue=false)]
         public string DeviceId { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

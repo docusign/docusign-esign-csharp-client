@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BillingPlanInformation
+    /// This object contains details about a billing plan.
     /// </summary>
     [DataContract]
     public partial class BillingPlanInformation :  IEquatable<BillingPlanInformation>, IValidatableObject
@@ -39,19 +39,20 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BillingPlanInformation" /> class.
         /// </summary>
         /// <param name="AppStoreReceipt">AppStoreReceipt.</param>
-        /// <param name="BillingAddress">BillingAddress.</param>
-        /// <param name="CreditCardInformation">CreditCardInformation.</param>
-        /// <param name="DirectDebitProcessorInformation">DirectDebitProcessorInformation.</param>
+        /// <param name="BillingAddress">The billing address for the account..</param>
+        /// <param name="CreditCardInformation">A complex type that has information about the credit card used to pay for this account..</param>
+        /// <param name="DirectDebitProcessorInformation">Information about the bank that processes direct debits for the payment plan..</param>
         /// <param name="DowngradeReason">DowngradeReason.</param>
         /// <param name="EnablePreAuth">EnablePreAuth.</param>
         /// <param name="EnableSupport">EnableSupport.</param>
         /// <param name="IncludedSeats">The number of seats (users) included..</param>
         /// <param name="IncrementalSeats">Reserved: TBD.</param>
         /// <param name="PaymentMethod">PaymentMethod.</param>
-        /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
-        /// <param name="PlanInformation">PlanInformation.</param>
+        /// <param name="PaymentProcessor">PaymentProcessor.</param>
+        /// <param name="PaymentProcessorInformation">Information about the entity that processes payments for the billing plan..</param>
+        /// <param name="PlanInformation">An object used to identify the features and attributes of the account being created..</param>
         /// <param name="ProcessPayment">ProcessPayment.</param>
-        /// <param name="ReferralInformation">ReferralInformation.</param>
+        /// <param name="ReferralInformation">A complex type that contains properties for entering referral and discount information..</param>
         /// <param name="RenewalStatus">RenewalStatus.</param>
         /// <param name="SaleDiscountAmount">SaleDiscountAmount.</param>
         /// <param name="SaleDiscountFixedAmount">SaleDiscountFixedAmount.</param>
@@ -59,7 +60,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SaleDiscountPeriods">SaleDiscountPeriods.</param>
         /// <param name="SaleDiscountSeatPriceOverride">SaleDiscountSeatPriceOverride.</param>
         /// <param name="TaxExemptId">TaxExemptId.</param>
-        public BillingPlanInformation(AppStoreReceipt AppStoreReceipt = default(AppStoreReceipt), AccountAddress BillingAddress = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DowngradeReason = default(string), string EnablePreAuth = default(string), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), string ProcessPayment = default(string), ReferralInformation ReferralInformation = default(ReferralInformation), string RenewalStatus = default(string), string SaleDiscountAmount = default(string), string SaleDiscountFixedAmount = default(string), string SaleDiscountPercent = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountSeatPriceOverride = default(string), string TaxExemptId = default(string))
+        public BillingPlanInformation(AppStoreReceipt AppStoreReceipt = default(AppStoreReceipt), AccountAddress BillingAddress = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DowngradeReason = default(string), string EnablePreAuth = default(string), string EnableSupport = default(string), string IncludedSeats = default(string), string IncrementalSeats = default(string), string PaymentMethod = default(string), string PaymentProcessor = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), string ProcessPayment = default(string), ReferralInformation ReferralInformation = default(ReferralInformation), string RenewalStatus = default(string), string SaleDiscountAmount = default(string), string SaleDiscountFixedAmount = default(string), string SaleDiscountPercent = default(string), string SaleDiscountPeriods = default(string), string SaleDiscountSeatPriceOverride = default(string), string TaxExemptId = default(string))
         {
             this.AppStoreReceipt = AppStoreReceipt;
             this.BillingAddress = BillingAddress;
@@ -71,6 +72,7 @@ namespace DocuSign.eSign.Model
             this.IncludedSeats = IncludedSeats;
             this.IncrementalSeats = IncrementalSeats;
             this.PaymentMethod = PaymentMethod;
+            this.PaymentProcessor = PaymentProcessor;
             this.PaymentProcessorInformation = PaymentProcessorInformation;
             this.PlanInformation = PlanInformation;
             this.ProcessPayment = ProcessPayment;
@@ -90,18 +92,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="appStoreReceipt", EmitDefaultValue=false)]
         public AppStoreReceipt AppStoreReceipt { get; set; }
         /// <summary>
-        /// Gets or Sets BillingAddress
+        /// The billing address for the account.
         /// </summary>
+        /// <value>The billing address for the account.</value>
         [DataMember(Name="billingAddress", EmitDefaultValue=false)]
         public AccountAddress BillingAddress { get; set; }
         /// <summary>
-        /// Gets or Sets CreditCardInformation
+        /// A complex type that has information about the credit card used to pay for this account.
         /// </summary>
+        /// <value>A complex type that has information about the credit card used to pay for this account.</value>
         [DataMember(Name="creditCardInformation", EmitDefaultValue=false)]
         public CreditCardInformation CreditCardInformation { get; set; }
         /// <summary>
-        /// Gets or Sets DirectDebitProcessorInformation
+        /// Information about the bank that processes direct debits for the payment plan.
         /// </summary>
+        /// <value>Information about the bank that processes direct debits for the payment plan.</value>
         [DataMember(Name="directDebitProcessorInformation", EmitDefaultValue=false)]
         public DirectDebitProcessorInformation DirectDebitProcessorInformation { get; set; }
         /// <summary>
@@ -137,13 +142,20 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
         public string PaymentMethod { get; set; }
         /// <summary>
-        /// Gets or Sets PaymentProcessorInformation
+        /// Gets or Sets PaymentProcessor
         /// </summary>
+        [DataMember(Name="paymentProcessor", EmitDefaultValue=false)]
+        public string PaymentProcessor { get; set; }
+        /// <summary>
+        /// Information about the entity that processes payments for the billing plan.
+        /// </summary>
+        /// <value>Information about the entity that processes payments for the billing plan.</value>
         [DataMember(Name="paymentProcessorInformation", EmitDefaultValue=false)]
         public PaymentProcessorInformation PaymentProcessorInformation { get; set; }
         /// <summary>
-        /// Gets or Sets PlanInformation
+        /// An object used to identify the features and attributes of the account being created.
         /// </summary>
+        /// <value>An object used to identify the features and attributes of the account being created.</value>
         [DataMember(Name="planInformation", EmitDefaultValue=false)]
         public PlanInformation PlanInformation { get; set; }
         /// <summary>
@@ -152,8 +164,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="processPayment", EmitDefaultValue=false)]
         public string ProcessPayment { get; set; }
         /// <summary>
-        /// Gets or Sets ReferralInformation
+        /// A complex type that contains properties for entering referral and discount information.
         /// </summary>
+        /// <value>A complex type that contains properties for entering referral and discount information.</value>
         [DataMember(Name="referralInformation", EmitDefaultValue=false)]
         public ReferralInformation ReferralInformation { get; set; }
         /// <summary>
@@ -209,6 +222,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IncludedSeats: ").Append(IncludedSeats).Append("\n");
             sb.Append("  IncrementalSeats: ").Append(IncrementalSeats).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+            sb.Append("  PaymentProcessor: ").Append(PaymentProcessor).Append("\n");
             sb.Append("  PaymentProcessorInformation: ").Append(PaymentProcessorInformation).Append("\n");
             sb.Append("  PlanInformation: ").Append(PlanInformation).Append("\n");
             sb.Append("  ProcessPayment: ").Append(ProcessPayment).Append("\n");
@@ -307,6 +321,11 @@ namespace DocuSign.eSign.Model
                     this.PaymentMethod.Equals(other.PaymentMethod)
                 ) && 
                 (
+                    this.PaymentProcessor == other.PaymentProcessor ||
+                    this.PaymentProcessor != null &&
+                    this.PaymentProcessor.Equals(other.PaymentProcessor)
+                ) && 
+                (
                     this.PaymentProcessorInformation == other.PaymentProcessorInformation ||
                     this.PaymentProcessorInformation != null &&
                     this.PaymentProcessorInformation.Equals(other.PaymentProcessorInformation)
@@ -394,6 +413,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IncrementalSeats.GetHashCode();
                 if (this.PaymentMethod != null)
                     hash = hash * 59 + this.PaymentMethod.GetHashCode();
+                if (this.PaymentProcessor != null)
+                    hash = hash * 59 + this.PaymentProcessor.GetHashCode();
                 if (this.PaymentProcessorInformation != null)
                     hash = hash * 59 + this.PaymentProcessorInformation.GetHashCode();
                 if (this.PlanInformation != null)

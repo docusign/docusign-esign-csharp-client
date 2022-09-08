@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// LockRequest
+    /// This request object contains information about the lock that you want to create or update.
     /// </summary>
     [DataContract]
     public partial class LockRequest :  IEquatable<LockRequest>, IValidatableObject

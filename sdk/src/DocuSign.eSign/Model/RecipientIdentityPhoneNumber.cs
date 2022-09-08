@@ -40,11 +40,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="CountryCode">CountryCode.</param>
         /// <param name="CountryCodeLock">CountryCodeLock.</param>
-        /// <param name="CountryCodeMetadata">CountryCodeMetadata.</param>
+        /// <param name="CountryCodeMetadata">Metadata that indicates if the &#x60;countryCode&#x60; property is editable..</param>
         /// <param name="Extension">Extension.</param>
-        /// <param name="ExtensionMetadata">ExtensionMetadata.</param>
+        /// <param name="ExtensionMetadata">Metadata that indicates if the &#x60;extension&#x60; property is editable..</param>
         /// <param name="Number">Number.</param>
-        /// <param name="NumberMetadata">NumberMetadata.</param>
+        /// <param name="NumberMetadata">Metadata that indicates if the &#x60;number&#x60; property is editable..</param>
         public RecipientIdentityPhoneNumber(string CountryCode = default(string), string CountryCodeLock = default(string), PropertyMetadata CountryCodeMetadata = default(PropertyMetadata), string Extension = default(string), PropertyMetadata ExtensionMetadata = default(PropertyMetadata), string Number = default(string), PropertyMetadata NumberMetadata = default(PropertyMetadata))
         {
             this.CountryCode = CountryCode;
@@ -67,8 +67,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="countryCodeLock", EmitDefaultValue=false)]
         public string CountryCodeLock { get; set; }
         /// <summary>
-        /// Gets or Sets CountryCodeMetadata
+        /// Metadata that indicates if the &#x60;countryCode&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates if the &#x60;countryCode&#x60; property is editable.</value>
         [DataMember(Name="countryCodeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata CountryCodeMetadata { get; set; }
         /// <summary>
@@ -77,8 +78,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="extension", EmitDefaultValue=false)]
         public string Extension { get; set; }
         /// <summary>
-        /// Gets or Sets ExtensionMetadata
+        /// Metadata that indicates if the &#x60;extension&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates if the &#x60;extension&#x60; property is editable.</value>
         [DataMember(Name="extensionMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ExtensionMetadata { get; set; }
         /// <summary>
@@ -87,8 +89,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="number", EmitDefaultValue=false)]
         public string Number { get; set; }
         /// <summary>
-        /// Gets or Sets NumberMetadata
+        /// Metadata that indicates if the &#x60;number&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates if the &#x60;number&#x60; property is editable.</value>
         [DataMember(Name="numberMetadata", EmitDefaultValue=false)]
         public PropertyMetadata NumberMetadata { get; set; }
         /// <summary>

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Folder
+    /// This object contains details about a folder.
     /// </summary>
     [DataContract]
     public partial class Folder :  IEquatable<Folder>, IValidatableObject
@@ -38,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Folder" /> class.
         /// </summary>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Filter">Filter.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="Filter">An object used to present a filtered view of the items in a folder..</param>
         /// <param name="FolderId">FolderId.</param>
         /// <param name="FolderItems">A list of the envelopes in the specified folder or folders. .</param>
         /// <param name="Folders">A collection of folder objects returned in a response..</param>
@@ -47,7 +47,7 @@ namespace DocuSign.eSign.Model
         /// <param name="HasSubFolders">HasSubFolders.</param>
         /// <param name="ItemCount">ItemCount.</param>
         /// <param name="Name">Name.</param>
-        /// <param name="Owner">Owner.</param>
+        /// <param name="Owner">Information about the user who owns the folder..</param>
         /// <param name="ParentFolderId">ParentFolderId.</param>
         /// <param name="ParentFolderUri">ParentFolderUri.</param>
         /// <param name="SubFolderCount">SubFolderCount.</param>
@@ -73,13 +73,15 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// Gets or Sets Filter
+        /// An object used to present a filtered view of the items in a folder.
         /// </summary>
+        /// <value>An object used to present a filtered view of the items in a folder.</value>
         [DataMember(Name="filter", EmitDefaultValue=false)]
         public Filter Filter { get; set; }
         /// <summary>
@@ -120,8 +122,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// Gets or Sets Owner
+        /// Information about the user who owns the folder.
         /// </summary>
+        /// <value>Information about the user who owns the folder.</value>
         [DataMember(Name="owner", EmitDefaultValue=false)]
         public UserInfo Owner { get; set; }
         /// <summary>

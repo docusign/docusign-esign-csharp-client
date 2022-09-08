@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConditionalRecipientRule
+    /// A rule that defines a set of recipients and the conditions under which they will be used for the envelope.
     /// </summary>
     [DataContract]
     public partial class ConditionalRecipientRule :  IEquatable<ConditionalRecipientRule>, IValidatableObject
@@ -40,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Conditions">Conditions.</param>
         /// <param name="Order">Order.</param>
-        /// <param name="RecipientGroup">RecipientGroup.</param>
+        /// <param name="RecipientGroup">A set of recipients that may be used for the envelope, depending on the &#x60;conditions&#x60; defined..</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         public ConditionalRecipientRule(List<ConditionalRecipientRuleCondition> Conditions = default(List<ConditionalRecipientRuleCondition>), string Order = default(string), RecipientGroup RecipientGroup = default(RecipientGroup), string RecipientId = default(string))
         {
@@ -61,8 +61,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="order", EmitDefaultValue=false)]
         public string Order { get; set; }
         /// <summary>
-        /// Gets or Sets RecipientGroup
+        /// A set of recipients that may be used for the envelope, depending on the &#x60;conditions&#x60; defined.
         /// </summary>
+        /// <value>A set of recipients that may be used for the envelope, depending on the &#x60;conditions&#x60; defined.</value>
         [DataMember(Name="recipientGroup", EmitDefaultValue=false)]
         public RecipientGroup RecipientGroup { get; set; }
         /// <summary>

@@ -65,52 +65,52 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Gets or Sets OnAccessCodeFailed
         /// </summary>
-        [DataMember(Name="OnAccessCodeFailed", EmitDefaultValue=false)]
+        [DataMember(Name="onAccessCodeFailed", EmitDefaultValue=false)]
         public string OnAccessCodeFailed { get; set; }
         /// <summary>
         /// Gets or Sets OnCancel
         /// </summary>
-        [DataMember(Name="OnCancel", EmitDefaultValue=false)]
+        [DataMember(Name="onCancel", EmitDefaultValue=false)]
         public string OnCancel { get; set; }
         /// <summary>
         /// Gets or Sets OnDecline
         /// </summary>
-        [DataMember(Name="OnDecline", EmitDefaultValue=false)]
+        [DataMember(Name="onDecline", EmitDefaultValue=false)]
         public string OnDecline { get; set; }
         /// <summary>
         /// Gets or Sets OnException
         /// </summary>
-        [DataMember(Name="OnException", EmitDefaultValue=false)]
+        [DataMember(Name="onException", EmitDefaultValue=false)]
         public string OnException { get; set; }
         /// <summary>
         /// Gets or Sets OnFaxPending
         /// </summary>
-        [DataMember(Name="OnFaxPending", EmitDefaultValue=false)]
+        [DataMember(Name="onFaxPending", EmitDefaultValue=false)]
         public string OnFaxPending { get; set; }
         /// <summary>
         /// Gets or Sets OnIdCheckFailed
         /// </summary>
-        [DataMember(Name="OnIdCheckFailed", EmitDefaultValue=false)]
+        [DataMember(Name="onIdCheckFailed", EmitDefaultValue=false)]
         public string OnIdCheckFailed { get; set; }
         /// <summary>
         /// Gets or Sets OnSessionTimeout
         /// </summary>
-        [DataMember(Name="OnSessionTimeout", EmitDefaultValue=false)]
+        [DataMember(Name="onSessionTimeout", EmitDefaultValue=false)]
         public string OnSessionTimeout { get; set; }
         /// <summary>
         /// Gets or Sets OnSigningComplete
         /// </summary>
-        [DataMember(Name="OnSigningComplete", EmitDefaultValue=false)]
+        [DataMember(Name="onSigningComplete", EmitDefaultValue=false)]
         public string OnSigningComplete { get; set; }
         /// <summary>
         /// Gets or Sets OnTTLExpired
         /// </summary>
-        [DataMember(Name="OnTTLExpired", EmitDefaultValue=false)]
+        [DataMember(Name="onTTLExpired", EmitDefaultValue=false)]
         public string OnTTLExpired { get; set; }
         /// <summary>
         /// Gets or Sets OnViewingComplete
         /// </summary>
-        [DataMember(Name="OnViewingComplete", EmitDefaultValue=false)]
+        [DataMember(Name="onViewingComplete", EmitDefaultValue=false)]
         public string OnViewingComplete { get; set; }
         /// <summary>
         /// Returns the string presentation of the object

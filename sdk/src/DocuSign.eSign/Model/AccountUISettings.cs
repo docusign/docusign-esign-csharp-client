@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// AccountUISettings
+    /// An object that defines the options that are available to non-administrators in the UI.
     /// </summary>
     [DataContract]
     public partial class AccountUISettings :  IEquatable<AccountUISettings>, IValidatableObject

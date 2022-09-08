@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="DocumentHtmlDisplayAnchor" /> class.
         /// </summary>
         /// <param name="CaseSensitive">CaseSensitive.</param>
-        /// <param name="DisplaySettings">DisplaySettings.</param>
+        /// <param name="DisplaySettings">This object defines how the HTML section inside the &#x60;startAnchor&#x60; and &#x60;endAnchor&#x60; displays..</param>
         /// <param name="EndAnchor">EndAnchor.</param>
         /// <param name="RemoveEndAnchor">RemoveEndAnchor.</param>
         /// <param name="RemoveStartAnchor">RemoveStartAnchor.</param>
@@ -60,8 +60,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="caseSensitive", EmitDefaultValue=false)]
         public bool? CaseSensitive { get; set; }
         /// <summary>
-        /// Gets or Sets DisplaySettings
+        /// This object defines how the HTML section inside the &#x60;startAnchor&#x60; and &#x60;endAnchor&#x60; displays.
         /// </summary>
+        /// <value>This object defines how the HTML section inside the &#x60;startAnchor&#x60; and &#x60;endAnchor&#x60; displays.</value>
         [DataMember(Name="displaySettings", EmitDefaultValue=false)]
         public DocumentHtmlDisplaySettings DisplaySettings { get; set; }
         /// <summary>

@@ -38,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TemplateNotificationRequest" /> class.
         /// </summary>
-        /// <param name="Expirations">Expirations.</param>
+        /// <param name="Expirations">A complex element that specifies the expiration settings for the envelope..</param>
         /// <param name="Password">Password.</param>
-        /// <param name="Reminders">Reminders.</param>
+        /// <param name="Reminders">A complex element that specifies reminder settings for the envelope..</param>
         /// <param name="UseAccountDefaults">When set to **true**, the account default notification settings are used for the envelope..</param>
         public TemplateNotificationRequest(Expirations Expirations = default(Expirations), string Password = default(string), Reminders Reminders = default(Reminders), string UseAccountDefaults = default(string))
         {
@@ -51,8 +51,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets Expirations
+        /// A complex element that specifies the expiration settings for the envelope.
         /// </summary>
+        /// <value>A complex element that specifies the expiration settings for the envelope.</value>
         [DataMember(Name="expirations", EmitDefaultValue=false)]
         public Expirations Expirations { get; set; }
         /// <summary>
@@ -61,8 +62,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
-        /// Gets or Sets Reminders
+        /// A complex element that specifies reminder settings for the envelope.
         /// </summary>
+        /// <value>A complex element that specifies reminder settings for the envelope.</value>
         [DataMember(Name="reminders", EmitDefaultValue=false)]
         public Reminders Reminders { get; set; }
         /// <summary>

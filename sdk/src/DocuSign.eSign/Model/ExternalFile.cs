@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ExternalFile
+    /// This object contains information about a file or folder in cloud storage.
     /// </summary>
     [DataContract]
     public partial class ExternalFile :  IEquatable<ExternalFile>, IValidatableObject

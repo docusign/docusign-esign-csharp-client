@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BulkSendingCopyTab
+    /// A tab associated with the bulk send recipient. In a bulk send request, each recipient tab must match a recipient tab on the envelope or template that you want to send. To match up, the &#x60;tabLabel&#x60; for this tab and the &#x60;tabLabel&#x60; for the corresponding tab on the envelope or template must be the same.  For example, if the envelope has a placeholder text tab with the &#x60;tabLabel&#x60; &#x60;childName&#x60;, you must assign the same &#x60;tabLabel&#x60; &#x60;childName&#x60; to the tab here that you are populating with that information.
     /// </summary>
     [DataContract]
     public partial class BulkSendingCopyTab :  IEquatable<BulkSendingCopyTab>, IValidatableObject

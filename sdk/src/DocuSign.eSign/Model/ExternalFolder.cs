@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="ExternalFolder" /> class.
         /// </summary>
         /// <param name="EndPosition">The last position in the result set. .</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="Id">Id.</param>
         /// <param name="Items">Items.</param>
         /// <param name="Name">Name.</param>
@@ -69,8 +69,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="endPosition", EmitDefaultValue=false)]
         public string EndPosition { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ExternalDocServiceErrorDetails ErrorDetails { get; set; }
         /// <summary>

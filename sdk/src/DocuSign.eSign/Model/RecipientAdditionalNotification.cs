@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientAdditionalNotification
+    /// Describes an additional notification method.
     /// </summary>
     [DataContract]
     public partial class RecipientAdditionalNotification :  IEquatable<RecipientAdditionalNotification>, IValidatableObject
@@ -38,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientAdditionalNotification" /> class.
         /// </summary>
-        /// <param name="PhoneNumber">PhoneNumber.</param>
+        /// <param name="PhoneNumber">The phone number to receive the additional notifcation..</param>
         /// <param name="SecondaryDeliveryMethod">SecondaryDeliveryMethod.</param>
-        /// <param name="SecondaryDeliveryMethodMetadata">SecondaryDeliveryMethodMetadata.</param>
+        /// <param name="SecondaryDeliveryMethodMetadata">Metadata about the delivery method..</param>
         /// <param name="SecondaryDeliveryStatus">SecondaryDeliveryStatus.</param>
         public RecipientAdditionalNotification(RecipientPhoneNumber PhoneNumber = default(RecipientPhoneNumber), string SecondaryDeliveryMethod = default(string), PropertyMetadata SecondaryDeliveryMethodMetadata = default(PropertyMetadata), string SecondaryDeliveryStatus = default(string))
         {
@@ -51,8 +51,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets PhoneNumber
+        /// The phone number to receive the additional notifcation.
         /// </summary>
+        /// <value>The phone number to receive the additional notifcation.</value>
         [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
         public RecipientPhoneNumber PhoneNumber { get; set; }
         /// <summary>
@@ -61,8 +62,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="secondaryDeliveryMethod", EmitDefaultValue=false)]
         public string SecondaryDeliveryMethod { get; set; }
         /// <summary>
-        /// Gets or Sets SecondaryDeliveryMethodMetadata
+        /// Metadata about the delivery method.
         /// </summary>
+        /// <value>Metadata about the delivery method.</value>
         [DataMember(Name="secondaryDeliveryMethodMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SecondaryDeliveryMethodMetadata { get; set; }
         /// <summary>

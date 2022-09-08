@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConnectLog
+    /// Contains information about a Connect log entry.
     /// </summary>
     [DataContract]
     public partial class ConnectLog :  IEquatable<ConnectLog>, IValidatableObject

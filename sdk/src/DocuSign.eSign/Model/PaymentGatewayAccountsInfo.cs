@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// PaymentGatewayAccountsInfo
+    /// Holds information about connected payment accounts.
     /// </summary>
     [DataContract]
     public partial class PaymentGatewayAccountsInfo :  IEquatable<PaymentGatewayAccountsInfo>, IValidatableObject

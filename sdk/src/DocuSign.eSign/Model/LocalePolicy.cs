@@ -46,7 +46,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CultureName">CultureName.</param>
         /// <param name="CultureNameMetadata">CultureNameMetadata.</param>
         /// <param name="CurrencyCode">CurrencyCode.</param>
-        /// <param name="CurrencyCodeMetadata">CurrencyCodeMetadata.</param>
+        /// <param name="CurrencyCodeMetadata">Metadata that indicates whether the &#x60;currencyCode&#x60; property is editable..</param>
         /// <param name="CurrencyNegativeFormat">CurrencyNegativeFormat.</param>
         /// <param name="CurrencyNegativeFormatMetadata">CurrencyNegativeFormatMetadata.</param>
         /// <param name="CurrencyPositiveFormat">CurrencyPositiveFormat.</param>
@@ -74,9 +74,9 @@ namespace DocuSign.eSign.Model
         /// <param name="NameFormat">NameFormat.</param>
         /// <param name="NameFormatMetadata">NameFormatMetadata.</param>
         /// <param name="SignDateFormat">SignDateFormat.</param>
-        /// <param name="SignDateFormatMetadata">SignDateFormatMetadata.</param>
+        /// <param name="SignDateFormatMetadata">Metadata that indicates whether the &#x60;signDateFormat&#x60; property is editable. .</param>
         /// <param name="SignTimeFormat">SignTimeFormat.</param>
-        /// <param name="SignTimeFormatMetadata">SignTimeFormatMetadata.</param>
+        /// <param name="SignTimeFormatMetadata">Metadata that indicates whether the &#x60;signTimeFormat&#x60; property is editable. .</param>
         /// <param name="TimeFormat">TimeFormat.</param>
         /// <param name="TimeFormatMetadata">TimeFormatMetadata.</param>
         /// <param name="TimeZone">TimeZone.</param>
@@ -169,8 +169,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="currencyCode", EmitDefaultValue=false)]
         public string CurrencyCode { get; set; }
         /// <summary>
-        /// Gets or Sets CurrencyCodeMetadata
+        /// Metadata that indicates whether the &#x60;currencyCode&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;currencyCode&#x60; property is editable.</value>
         [DataMember(Name="currencyCodeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CurrencyCodeMetadata { get; set; }
         /// <summary>
@@ -309,8 +310,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signDateFormat", EmitDefaultValue=false)]
         public string SignDateFormat { get; set; }
         /// <summary>
-        /// Gets or Sets SignDateFormatMetadata
+        /// Metadata that indicates whether the &#x60;signDateFormat&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;signDateFormat&#x60; property is editable. </value>
         [DataMember(Name="signDateFormatMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SignDateFormatMetadata { get; set; }
         /// <summary>
@@ -319,8 +321,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signTimeFormat", EmitDefaultValue=false)]
         public string SignTimeFormat { get; set; }
         /// <summary>
-        /// Gets or Sets SignTimeFormatMetadata
+        /// Metadata that indicates whether the &#x60;signTimeFormat&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;signTimeFormat&#x60; property is editable. </value>
         [DataMember(Name="signTimeFormatMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SignTimeFormatMetadata { get; set; }
         /// <summary>

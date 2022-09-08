@@ -40,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AccountIdGuid">The GUID associated with the account ID..</param>
         /// <param name="AccountName">The name of the current account..</param>
-        /// <param name="AccountSettings">AccountSettings.</param>
+        /// <param name="AccountSettings">The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  .</param>
         /// <param name="AllowTransactionRooms">When set to **true**, the transaction rooms feature exposed through the Workspaces API is enabled..</param>
         /// <param name="BillingPeriodDaysRemaining">Reserved: TBD.</param>
         /// <param name="BillingPeriodEndDate">Reserved: TBD.</param>
@@ -131,8 +131,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="accountName", EmitDefaultValue=false)]
         public string AccountName { get; set; }
         /// <summary>
-        /// Gets or Sets AccountSettings
+        /// The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  
         /// </summary>
+        /// <value>The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  </value>
         [DataMember(Name="accountSettings", EmitDefaultValue=false)]
         public AccountSettingsInformation AccountSettings { get; set; }
         /// <summary>

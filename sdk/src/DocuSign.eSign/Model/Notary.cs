@@ -41,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CreatedDate">CreatedDate.</param>
         /// <param name="Enabled">Enabled.</param>
         /// <param name="Searchable">Searchable.</param>
-        /// <param name="UserInfo">UserInfo.</param>
+        /// <param name="UserInfo">Information about the user registering to be a notary..</param>
         public Notary(string CreatedDate = default(string), string Enabled = default(string), string Searchable = default(string), UserInformation UserInfo = default(UserInformation))
         {
             this.CreatedDate = CreatedDate;
@@ -66,8 +66,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="searchable", EmitDefaultValue=false)]
         public string Searchable { get; set; }
         /// <summary>
-        /// Gets or Sets UserInfo
+        /// Information about the user registering to be a notary.
         /// </summary>
+        /// <value>Information about the user registering to be a notary.</value>
         [DataMember(Name="userInfo", EmitDefaultValue=false)]
         public UserInformation UserInfo { get; set; }
         /// <summary>

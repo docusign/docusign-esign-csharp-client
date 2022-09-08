@@ -98,7 +98,7 @@ namespace DocuSign.eSign.Api
         /// Creates an acount custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a custom field and makes it available for all new envelopes associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -111,7 +111,7 @@ namespace DocuSign.eSign.Api
         /// Creates an acount custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a custom field and makes it available for all new envelopes associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -123,7 +123,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new permission profile in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a new permission profile for an account.  ### Related topics  - [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -136,7 +136,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new permission profile in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a new permission profile for an account.  ### Related topics  - [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -217,7 +217,7 @@ namespace DocuSign.eSign.Api
         /// Removes a brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a brand from an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -229,7 +229,7 @@ namespace DocuSign.eSign.Api
         /// Removes a brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a brand from an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -240,7 +240,7 @@ namespace DocuSign.eSign.Api
         /// Delete one branding logo.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a single logo from an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -253,7 +253,7 @@ namespace DocuSign.eSign.Api
         /// Delete one branding logo.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a single logo from an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -313,7 +313,7 @@ namespace DocuSign.eSign.Api
         /// Delete an existing account custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes an existing account custom field.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -326,7 +326,7 @@ namespace DocuSign.eSign.Api
         /// Delete an existing account custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes an existing account custom field.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -359,7 +359,7 @@ namespace DocuSign.eSign.Api
         /// Deletes a permissions profile within the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a permission profile from an account.  To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the &#x60;move_users_to&#x60; query parameter.   ### Related topics  - [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -372,7 +372,7 @@ namespace DocuSign.eSign.Api
         /// Deletes a permissions profile within the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a permission profile from an account.  To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the &#x60;move_users_to&#x60; query parameter.   ### Related topics  - [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -384,7 +384,7 @@ namespace DocuSign.eSign.Api
         /// Get the list of identity verification options for an account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -395,7 +395,7 @@ namespace DocuSign.eSign.Api
         /// Get the list of identity verification options for an account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -501,7 +501,7 @@ namespace DocuSign.eSign.Api
         /// Returns tab settings list for specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about the tab types and tab functionality that is currently enabled for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -512,7 +512,7 @@ namespace DocuSign.eSign.Api
         /// Returns tab settings list for specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about the tab types and tab functionality that is currently enabled for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -522,7 +522,7 @@ namespace DocuSign.eSign.Api
         /// Get all payment gateway account for the provided accountId
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of payment gateway accounts and basic information about them.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -533,7 +533,7 @@ namespace DocuSign.eSign.Api
         /// Get all payment gateway account for the provided accountId
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of payment gateway accounts and basic information about them.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -566,7 +566,7 @@ namespace DocuSign.eSign.Api
         /// Get information for a specific brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns details about an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -579,7 +579,7 @@ namespace DocuSign.eSign.Api
         /// Get information for a specific brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns details about an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -591,7 +591,7 @@ namespace DocuSign.eSign.Api
         /// Export a specific brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method exports information about a brand to an XML file.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -603,7 +603,7 @@ namespace DocuSign.eSign.Api
         /// Export a specific brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method exports information about a brand to an XML file.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -614,7 +614,7 @@ namespace DocuSign.eSign.Api
         /// Obtains the specified image for a brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific logo that is used in a brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -627,7 +627,7 @@ namespace DocuSign.eSign.Api
         /// Obtains the specified image for a brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific logo that is used in a brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -639,7 +639,7 @@ namespace DocuSign.eSign.Api
         /// Returns the specified account&#39;s list of branding resources (metadata).
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns metadata about the branding resources that are associated with an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -651,7 +651,7 @@ namespace DocuSign.eSign.Api
         /// Returns the specified account&#39;s list of branding resources (metadata).
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns metadata about the branding resources that are associated with an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -662,7 +662,7 @@ namespace DocuSign.eSign.Api
         /// Returns the specified branding resource file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific branding resource file.  A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.  **Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -676,7 +676,7 @@ namespace DocuSign.eSign.Api
         /// Returns the specified branding resource file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific branding resource file.  A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.  **Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -756,7 +756,7 @@ namespace DocuSign.eSign.Api
         /// Select envelope purge configuration.
         /// </summary>
         /// <remarks>
-        /// 
+        /// An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method retrieves the current envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -767,7 +767,7 @@ namespace DocuSign.eSign.Api
         /// Select envelope purge configuration.
         /// </summary>
         /// <remarks>
-        /// 
+        /// An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method retrieves the current envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -798,7 +798,7 @@ namespace DocuSign.eSign.Api
         /// Returns default user level settings for a specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns the default settings for the email notifications that signers and senders receive about envelopes.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -809,7 +809,7 @@ namespace DocuSign.eSign.Api
         /// Returns default user level settings for a specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns the default settings for the email notifications that signers and senders receive about envelopes.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -819,7 +819,7 @@ namespace DocuSign.eSign.Api
         /// Get the password rules
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method retrieves the password rules for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -830,7 +830,7 @@ namespace DocuSign.eSign.Api
         /// Get the password rules
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method retrieves the password rules for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -859,7 +859,7 @@ namespace DocuSign.eSign.Api
         /// Returns a permissions profile in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about a specific permission profile that is associated with an account.  ### Related topics  - [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -872,7 +872,7 @@ namespace DocuSign.eSign.Api
         /// Returns a permissions profile in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about a specific permission profile that is associated with an account.  ### Related topics  - [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -903,7 +903,7 @@ namespace DocuSign.eSign.Api
         /// Gets list of supported languages for recipient language setting.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Retrieves a list of supported languages that you can set for an individual recipient when creating an envelope, as well as their simple type enumeration values. These are the languages that you can set for the standard email format and signing view for each recipient.  For example, in the recipient&#39;s email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.  **Note:** Setting a language for a recipient affects only the DocuSign standard text. Any custom text that you enter for the &#x60;emailBody&#x60; and &#x60;emailSubject&#x60; of the notification is not translated, and appears exactly as you enter it.  For more information, see [Set Recipient Language and Specify Custom Email Messages](https://support.docusign.com/en/guides/ndse-user-guide-recipient-language).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -914,7 +914,7 @@ namespace DocuSign.eSign.Api
         /// Gets list of supported languages for recipient language setting.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Retrieves a list of supported languages that you can set for an individual recipient when creating an envelope, as well as their simple type enumeration values. These are the languages that you can set for the standard email format and signing view for each recipient.  For example, in the recipient&#39;s email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.  **Note:** Setting a language for a recipient affects only the DocuSign standard text. Any custom text that you enter for the &#x60;emailBody&#x60; and &#x60;emailSubject&#x60; of the notification is not translated, and appears exactly as you enter it.  For more information, see [Set Recipient Language and Specify Custom Email Messages](https://support.docusign.com/en/guides/ndse-user-guide-recipient-language).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1102,7 +1102,7 @@ namespace DocuSign.eSign.Api
         /// Returns Account available signature providers for specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of signature providers that the specified account can use.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1113,7 +1113,7 @@ namespace DocuSign.eSign.Api
         /// Returns Account available signature providers for specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of signature providers that the specified account can use.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1244,7 +1244,7 @@ namespace DocuSign.eSign.Api
         /// Modifies tab settings for specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method modifies the tab types and tab functionality that is enabled for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1256,7 +1256,7 @@ namespace DocuSign.eSign.Api
         /// Modifies tab settings for specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method modifies the tab types and tab functionality that is enabled for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1267,7 +1267,7 @@ namespace DocuSign.eSign.Api
         /// Updates an existing brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an account brand.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1281,7 +1281,7 @@ namespace DocuSign.eSign.Api
         /// Updates an existing brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an account brand.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1294,7 +1294,7 @@ namespace DocuSign.eSign.Api
         /// Put one branding logo.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates a single brand logo.  You pass in the new version of the resource in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;logo.jpg\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -1308,7 +1308,7 @@ namespace DocuSign.eSign.Api
         /// Put one branding logo.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates a single brand logo.  You pass in the new version of the resource in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;logo.jpg\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -1321,7 +1321,7 @@ namespace DocuSign.eSign.Api
         /// Uploads a branding resource file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates a branding resource file.  You pass in the new version of the resource file in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;DocuSign_SigningResource_4328673.xml\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).  **Important:** Customizing resource files is an advanced branding configuration option which can significantly impact your account, and should be done only by someone with expertise in XML and HTML. The master resource files are subject to change without notice. If you customize your resource files, after each release, DocuSign recommends you review any changes and update your custom files as needed.  When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -1335,7 +1335,7 @@ namespace DocuSign.eSign.Api
         /// Uploads a branding resource file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates a branding resource file.  You pass in the new version of the resource file in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;DocuSign_SigningResource_4328673.xml\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).  **Important:** Customizing resource files is an advanced branding configuration option which can significantly impact your account, and should be done only by someone with expertise in XML and HTML. The master resource files are subject to change without notice. If you customize your resource files, after each release, DocuSign recommends you review any changes and update your custom files as needed.  When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -1348,7 +1348,7 @@ namespace DocuSign.eSign.Api
         /// Update Consumer Disclosure.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional &#x60;langCode&#x60; query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;custom&#x60;: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - &#x60;esignAgreement&#x60;: This property is read-only. - &#x60;esignText&#x60;: You cannot edit this property when &#x60;custom&#x60; is set to **false.** The API returns a 200 OK HTTP response, but does not update the &#x60;esignText&#x60;. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the &#x60;custom&#x60; property to **true** and customize the value for the &#x60;eSignText&#x60; property.   You can also edit all of the other properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the &#x60;langCode&#x60; parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only.  - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1362,7 +1362,7 @@ namespace DocuSign.eSign.Api
         /// Update Consumer Disclosure.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional &#x60;langCode&#x60; query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;custom&#x60;: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - &#x60;esignAgreement&#x60;: This property is read-only. - &#x60;esignText&#x60;: You cannot edit this property when &#x60;custom&#x60; is set to **false.** The API returns a 200 OK HTTP response, but does not update the &#x60;esignText&#x60;. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the &#x60;custom&#x60; property to **true** and customize the value for the &#x60;eSignText&#x60; property.   You can also edit all of the other properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the &#x60;langCode&#x60; parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only.  - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1375,7 +1375,7 @@ namespace DocuSign.eSign.Api
         /// Updates an existing account custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an existing account custom field.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1389,7 +1389,7 @@ namespace DocuSign.eSign.Api
         /// Updates an existing account custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an existing account custom field.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1425,7 +1425,7 @@ namespace DocuSign.eSign.Api
         /// Updates envelope purge configuration.
         /// </summary>
         /// <remarks>
-        /// 
+        /// An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method sets the envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.  For more information, see [Purge Envelopes](https://support.docusign.com/en/guides/ndse-user-guide-purge-envelopes).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1437,7 +1437,7 @@ namespace DocuSign.eSign.Api
         /// Updates envelope purge configuration.
         /// </summary>
         /// <remarks>
-        /// 
+        /// An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method sets the envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.  For more information, see [Purge Envelopes](https://support.docusign.com/en/guides/ndse-user-guide-purge-envelopes).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1471,7 +1471,7 @@ namespace DocuSign.eSign.Api
         /// Updates default user level settings for a specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method changes the default settings for the email notifications that signers and senders receive about envelopes.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1483,7 +1483,7 @@ namespace DocuSign.eSign.Api
         /// Updates default user level settings for a specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method changes the default settings for the email notifications that signers and senders receive about envelopes.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1494,7 +1494,7 @@ namespace DocuSign.eSign.Api
         /// Update the password rules
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates the password rules for an account.  **Note:** To update the password rules for an account, you must be an account administrator.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1506,7 +1506,7 @@ namespace DocuSign.eSign.Api
         /// Update the password rules
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates the password rules for an account.  **Note:** To update the password rules for an account, you must be an account administrator.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1517,7 +1517,7 @@ namespace DocuSign.eSign.Api
         /// Updates a permission profile within the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an account permission profile.  ### Related topics  - [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1531,7 +1531,7 @@ namespace DocuSign.eSign.Api
         /// Updates a permission profile within the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an account permission profile.  ### Related topics  - [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1688,7 +1688,7 @@ namespace DocuSign.eSign.Api
         /// Creates an acount custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a custom field and makes it available for all new envelopes associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1701,7 +1701,7 @@ namespace DocuSign.eSign.Api
         /// Creates an acount custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a custom field and makes it available for all new envelopes associated with an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1713,7 +1713,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new permission profile in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a new permission profile for an account.  ### Related topics  - [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1726,7 +1726,7 @@ namespace DocuSign.eSign.Api
         /// Creates a new permission profile in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method creates a new permission profile for an account.  ### Related topics  - [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1807,7 +1807,7 @@ namespace DocuSign.eSign.Api
         /// Removes a brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a brand from an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1819,7 +1819,7 @@ namespace DocuSign.eSign.Api
         /// Removes a brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a brand from an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1830,7 +1830,7 @@ namespace DocuSign.eSign.Api
         /// Delete one branding logo.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a single logo from an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1843,7 +1843,7 @@ namespace DocuSign.eSign.Api
         /// Delete one branding logo.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a single logo from an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1903,7 +1903,7 @@ namespace DocuSign.eSign.Api
         /// Delete an existing account custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes an existing account custom field.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1916,7 +1916,7 @@ namespace DocuSign.eSign.Api
         /// Delete an existing account custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes an existing account custom field.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1949,7 +1949,7 @@ namespace DocuSign.eSign.Api
         /// Deletes a permissions profile within the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a permission profile from an account.  To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the &#x60;move_users_to&#x60; query parameter.   ### Related topics  - [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1962,7 +1962,7 @@ namespace DocuSign.eSign.Api
         /// Deletes a permissions profile within the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method deletes a permission profile from an account.  To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the &#x60;move_users_to&#x60; query parameter.   ### Related topics  - [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1974,7 +1974,7 @@ namespace DocuSign.eSign.Api
         /// Get the list of identity verification options for an account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1985,7 +1985,7 @@ namespace DocuSign.eSign.Api
         /// Get the list of identity verification options for an account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2091,7 +2091,7 @@ namespace DocuSign.eSign.Api
         /// Returns tab settings list for specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about the tab types and tab functionality that is currently enabled for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2102,7 +2102,7 @@ namespace DocuSign.eSign.Api
         /// Returns tab settings list for specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about the tab types and tab functionality that is currently enabled for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2112,7 +2112,7 @@ namespace DocuSign.eSign.Api
         /// Get all payment gateway account for the provided accountId
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of payment gateway accounts and basic information about them.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2123,7 +2123,7 @@ namespace DocuSign.eSign.Api
         /// Get all payment gateway account for the provided accountId
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a list of payment gateway accounts and basic information about them.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2156,7 +2156,7 @@ namespace DocuSign.eSign.Api
         /// Get information for a specific brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns details about an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2169,7 +2169,7 @@ namespace DocuSign.eSign.Api
         /// Get information for a specific brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns details about an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2181,7 +2181,7 @@ namespace DocuSign.eSign.Api
         /// Export a specific brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method exports information about a brand to an XML file.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2193,7 +2193,7 @@ namespace DocuSign.eSign.Api
         /// Export a specific brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method exports information about a brand to an XML file.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2204,7 +2204,7 @@ namespace DocuSign.eSign.Api
         /// Obtains the specified image for a brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific logo that is used in a brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2217,7 +2217,7 @@ namespace DocuSign.eSign.Api
         /// Obtains the specified image for a brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific logo that is used in a brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2229,7 +2229,7 @@ namespace DocuSign.eSign.Api
         /// Returns the specified account&#39;s list of branding resources (metadata).
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns metadata about the branding resources that are associated with an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2241,7 +2241,7 @@ namespace DocuSign.eSign.Api
         /// Returns the specified account&#39;s list of branding resources (metadata).
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns metadata about the branding resources that are associated with an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2252,7 +2252,7 @@ namespace DocuSign.eSign.Api
         /// Returns the specified branding resource file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific branding resource file.  A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.  **Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2266,7 +2266,7 @@ namespace DocuSign.eSign.Api
         /// Returns the specified branding resource file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a specific branding resource file.  A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.  **Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2346,7 +2346,7 @@ namespace DocuSign.eSign.Api
         /// Select envelope purge configuration.
         /// </summary>
         /// <remarks>
-        /// 
+        /// An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method retrieves the current envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2357,7 +2357,7 @@ namespace DocuSign.eSign.Api
         /// Select envelope purge configuration.
         /// </summary>
         /// <remarks>
-        /// 
+        /// An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method retrieves the current envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2388,7 +2388,7 @@ namespace DocuSign.eSign.Api
         /// Returns default user level settings for a specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns the default settings for the email notifications that signers and senders receive about envelopes.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2399,7 +2399,7 @@ namespace DocuSign.eSign.Api
         /// Returns default user level settings for a specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns the default settings for the email notifications that signers and senders receive about envelopes.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2409,7 +2409,7 @@ namespace DocuSign.eSign.Api
         /// Get the password rules
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method retrieves the password rules for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2420,7 +2420,7 @@ namespace DocuSign.eSign.Api
         /// Get the password rules
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method retrieves the password rules for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2449,7 +2449,7 @@ namespace DocuSign.eSign.Api
         /// Returns a permissions profile in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about a specific permission profile that is associated with an account.  ### Related topics  - [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2462,7 +2462,7 @@ namespace DocuSign.eSign.Api
         /// Returns a permissions profile in the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns information about a specific permission profile that is associated with an account.  ### Related topics  - [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2493,7 +2493,7 @@ namespace DocuSign.eSign.Api
         /// Gets list of supported languages for recipient language setting.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Retrieves a list of supported languages that you can set for an individual recipient when creating an envelope, as well as their simple type enumeration values. These are the languages that you can set for the standard email format and signing view for each recipient.  For example, in the recipient&#39;s email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.  **Note:** Setting a language for a recipient affects only the DocuSign standard text. Any custom text that you enter for the &#x60;emailBody&#x60; and &#x60;emailSubject&#x60; of the notification is not translated, and appears exactly as you enter it.  For more information, see [Set Recipient Language and Specify Custom Email Messages](https://support.docusign.com/en/guides/ndse-user-guide-recipient-language).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2504,7 +2504,7 @@ namespace DocuSign.eSign.Api
         /// Gets list of supported languages for recipient language setting.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Retrieves a list of supported languages that you can set for an individual recipient when creating an envelope, as well as their simple type enumeration values. These are the languages that you can set for the standard email format and signing view for each recipient.  For example, in the recipient&#39;s email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.  **Note:** Setting a language for a recipient affects only the DocuSign standard text. Any custom text that you enter for the &#x60;emailBody&#x60; and &#x60;emailSubject&#x60; of the notification is not translated, and appears exactly as you enter it.  For more information, see [Set Recipient Language and Specify Custom Email Messages](https://support.docusign.com/en/guides/ndse-user-guide-recipient-language).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2692,7 +2692,7 @@ namespace DocuSign.eSign.Api
         /// Returns Account available signature providers for specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of signature providers that the specified account can use.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2703,7 +2703,7 @@ namespace DocuSign.eSign.Api
         /// Returns Account available signature providers for specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of signature providers that the specified account can use.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2834,7 +2834,7 @@ namespace DocuSign.eSign.Api
         /// Modifies tab settings for specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method modifies the tab types and tab functionality that is enabled for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2846,7 +2846,7 @@ namespace DocuSign.eSign.Api
         /// Modifies tab settings for specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method modifies the tab types and tab functionality that is enabled for an account.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2857,7 +2857,7 @@ namespace DocuSign.eSign.Api
         /// Updates an existing brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an account brand.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2871,7 +2871,7 @@ namespace DocuSign.eSign.Api
         /// Updates an existing brand.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an account brand.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2884,7 +2884,7 @@ namespace DocuSign.eSign.Api
         /// Put one branding logo.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates a single brand logo.  You pass in the new version of the resource in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;logo.jpg\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -2898,7 +2898,7 @@ namespace DocuSign.eSign.Api
         /// Put one branding logo.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates a single brand logo.  You pass in the new version of the resource in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;logo.jpg\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -2911,7 +2911,7 @@ namespace DocuSign.eSign.Api
         /// Uploads a branding resource file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates a branding resource file.  You pass in the new version of the resource file in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;DocuSign_SigningResource_4328673.xml\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).  **Important:** Customizing resource files is an advanced branding configuration option which can significantly impact your account, and should be done only by someone with expertise in XML and HTML. The master resource files are subject to change without notice. If you customize your resource files, after each release, DocuSign recommends you review any changes and update your custom files as needed.  When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -2925,7 +2925,7 @@ namespace DocuSign.eSign.Api
         /// Uploads a branding resource file.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates a branding resource file.  You pass in the new version of the resource file in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;DocuSign_SigningResource_4328673.xml\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).  **Important:** Customizing resource files is an advanced branding configuration option which can significantly impact your account, and should be done only by someone with expertise in XML and HTML. The master resource files are subject to change without notice. If you customize your resource files, after each release, DocuSign recommends you review any changes and update your custom files as needed.  When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -2938,7 +2938,7 @@ namespace DocuSign.eSign.Api
         /// Update Consumer Disclosure.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional &#x60;langCode&#x60; query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;custom&#x60;: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - &#x60;esignAgreement&#x60;: This property is read-only. - &#x60;esignText&#x60;: You cannot edit this property when &#x60;custom&#x60; is set to **false.** The API returns a 200 OK HTTP response, but does not update the &#x60;esignText&#x60;. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the &#x60;custom&#x60; property to **true** and customize the value for the &#x60;eSignText&#x60; property.   You can also edit all of the other properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the &#x60;langCode&#x60; parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only.  - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2952,7 +2952,7 @@ namespace DocuSign.eSign.Api
         /// Update Consumer Disclosure.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional &#x60;langCode&#x60; query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;custom&#x60;: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - &#x60;esignAgreement&#x60;: This property is read-only. - &#x60;esignText&#x60;: You cannot edit this property when &#x60;custom&#x60; is set to **false.** The API returns a 200 OK HTTP response, but does not update the &#x60;esignText&#x60;. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the &#x60;custom&#x60; property to **true** and customize the value for the &#x60;eSignText&#x60; property.   You can also edit all of the other properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the &#x60;langCode&#x60; parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only.  - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2965,7 +2965,7 @@ namespace DocuSign.eSign.Api
         /// Updates an existing account custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an existing account custom field.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2979,7 +2979,7 @@ namespace DocuSign.eSign.Api
         /// Updates an existing account custom field.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an existing account custom field.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3015,7 +3015,7 @@ namespace DocuSign.eSign.Api
         /// Updates envelope purge configuration.
         /// </summary>
         /// <remarks>
-        /// 
+        /// An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method sets the envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.  For more information, see [Purge Envelopes](https://support.docusign.com/en/guides/ndse-user-guide-purge-envelopes).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3027,7 +3027,7 @@ namespace DocuSign.eSign.Api
         /// Updates envelope purge configuration.
         /// </summary>
         /// <remarks>
-        /// 
+        /// An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method sets the envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.  For more information, see [Purge Envelopes](https://support.docusign.com/en/guides/ndse-user-guide-purge-envelopes).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3061,7 +3061,7 @@ namespace DocuSign.eSign.Api
         /// Updates default user level settings for a specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method changes the default settings for the email notifications that signers and senders receive about envelopes.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3073,7 +3073,7 @@ namespace DocuSign.eSign.Api
         /// Updates default user level settings for a specified account
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method changes the default settings for the email notifications that signers and senders receive about envelopes.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3084,7 +3084,7 @@ namespace DocuSign.eSign.Api
         /// Update the password rules
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates the password rules for an account.  **Note:** To update the password rules for an account, you must be an account administrator.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3096,7 +3096,7 @@ namespace DocuSign.eSign.Api
         /// Update the password rules
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates the password rules for an account.  **Note:** To update the password rules for an account, you must be an account administrator.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3107,7 +3107,7 @@ namespace DocuSign.eSign.Api
         /// Updates a permission profile within the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an account permission profile.  ### Related topics  - [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3121,7 +3121,7 @@ namespace DocuSign.eSign.Api
         /// Updates a permission profile within the specified account.
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method updates an account permission profile.  ### Related topics  - [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/) 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3834,7 +3834,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Creates an acount custom field. 
+        /// Creates an acount custom field. This method creates a custom field and makes it available for all new envelopes associated with an account.
         /// </summary>
         public class CreateCustomFieldOptions
         {
@@ -3843,7 +3843,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates an acount custom field. 
+        /// Creates an acount custom field. This method creates a custom field and makes it available for all new envelopes associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3857,7 +3857,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates an acount custom field. 
+        /// Creates an acount custom field. This method creates a custom field and makes it available for all new envelopes associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3944,7 +3944,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates an acount custom field. 
+        /// Creates an acount custom field. This method creates a custom field and makes it available for all new envelopes associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3958,7 +3958,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates an acount custom field. 
+        /// Creates an acount custom field. This method creates a custom field and makes it available for all new envelopes associated with an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4037,7 +4037,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Creates a new permission profile in the specified account. 
+        /// Creates a new permission profile in the specified account. This method creates a new permission profile for an account.  ### Related topics  - [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/) 
         /// </summary>
         public class CreatePermissionProfileOptions
         {
@@ -4046,7 +4046,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a new permission profile in the specified account. 
+        /// Creates a new permission profile in the specified account. This method creates a new permission profile for an account.  ### Related topics  - [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4060,7 +4060,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a new permission profile in the specified account. 
+        /// Creates a new permission profile in the specified account. This method creates a new permission profile for an account.  ### Related topics  - [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4147,7 +4147,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a new permission profile in the specified account. 
+        /// Creates a new permission profile in the specified account. This method creates a new permission profile for an account.  ### Related topics  - [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4161,7 +4161,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates a new permission profile in the specified account. 
+        /// Creates a new permission profile in the specified account. This method creates a new permission profile for an account.  ### Related topics  - [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4746,7 +4746,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Removes a brand. 
+        /// Removes a brand. This method deletes a brand from an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4758,7 +4758,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Removes a brand. 
+        /// Removes a brand. This method deletes a brand from an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4828,7 +4828,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Removes a brand. 
+        /// Removes a brand. This method deletes a brand from an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4840,7 +4840,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Removes a brand. 
+        /// Removes a brand. This method deletes a brand from an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4911,7 +4911,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Delete one branding logo. 
+        /// Delete one branding logo. This method deletes a single logo from an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4924,7 +4924,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete one branding logo. 
+        /// Delete one branding logo. This method deletes a single logo from an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4999,7 +4999,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete one branding logo. 
+        /// Delete one branding logo. This method deletes a single logo from an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5012,7 +5012,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete one branding logo. 
+        /// Delete one branding logo. This method deletes a single logo from an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5465,7 +5465,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Delete an existing account custom field. 
+        /// Delete an existing account custom field. This method deletes an existing account custom field.
         /// </summary>
         public class DeleteCustomFieldOptions
         {
@@ -5474,7 +5474,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete an existing account custom field. 
+        /// Delete an existing account custom field. This method deletes an existing account custom field.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5487,7 +5487,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete an existing account custom field. 
+        /// Delete an existing account custom field. This method deletes an existing account custom field.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5562,7 +5562,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete an existing account custom field. 
+        /// Delete an existing account custom field. This method deletes an existing account custom field.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5575,7 +5575,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete an existing account custom field. 
+        /// Delete an existing account custom field. This method deletes an existing account custom field.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5803,7 +5803,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Deletes a permissions profile within the specified account. 
+        /// Deletes a permissions profile within the specified account. This method deletes a permission profile from an account.  To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the &#x60;move_users_to&#x60; query parameter.   ### Related topics  - [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
         /// </summary>
         public class DeletePermissionProfileOptions
         {
@@ -5812,7 +5812,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes a permissions profile within the specified account. 
+        /// Deletes a permissions profile within the specified account. This method deletes a permission profile from an account.  To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the &#x60;move_users_to&#x60; query parameter.   ### Related topics  - [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5825,7 +5825,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes a permissions profile within the specified account. 
+        /// Deletes a permissions profile within the specified account. This method deletes a permission profile from an account.  To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the &#x60;move_users_to&#x60; query parameter.   ### Related topics  - [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5900,7 +5900,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes a permissions profile within the specified account. 
+        /// Deletes a permissions profile within the specified account. This method deletes a permission profile from an account.  To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the &#x60;move_users_to&#x60; query parameter.   ### Related topics  - [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5913,7 +5913,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes a permissions profile within the specified account. 
+        /// Deletes a permissions profile within the specified account. This method deletes a permission profile from an account.  To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the &#x60;move_users_to&#x60; query parameter.   ### Related topics  - [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -5989,7 +5989,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get the list of identity verification options for an account 
+        /// Get the list of identity verification options for an account This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6001,7 +6001,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the list of identity verification options for an account 
+        /// Get the list of identity verification options for an account This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6074,7 +6074,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the list of identity verification options for an account 
+        /// Get the list of identity verification options for an account This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6086,7 +6086,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the list of identity verification options for an account 
+        /// Get the list of identity verification options for an account This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6908,7 +6908,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns tab settings list for specified account 
+        /// Returns tab settings list for specified account This method returns information about the tab types and tab functionality that is currently enabled for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6920,7 +6920,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns tab settings list for specified account 
+        /// Returns tab settings list for specified account This method returns information about the tab types and tab functionality that is currently enabled for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6993,7 +6993,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns tab settings list for specified account 
+        /// Returns tab settings list for specified account This method returns information about the tab types and tab functionality that is currently enabled for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7005,7 +7005,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns tab settings list for specified account 
+        /// Returns tab settings list for specified account This method returns information about the tab types and tab functionality that is currently enabled for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7071,7 +7071,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get all payment gateway account for the provided accountId 
+        /// Get all payment gateway account for the provided accountId This method returns a list of payment gateway accounts and basic information about them.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7083,7 +7083,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get all payment gateway account for the provided accountId 
+        /// Get all payment gateway account for the provided accountId This method returns a list of payment gateway accounts and basic information about them.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7156,7 +7156,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get all payment gateway account for the provided accountId 
+        /// Get all payment gateway account for the provided accountId This method returns a list of payment gateway accounts and basic information about them.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7168,7 +7168,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get all payment gateway account for the provided accountId 
+        /// Get all payment gateway account for the provided accountId This method returns a list of payment gateway accounts and basic information about them.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7416,7 +7416,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get information for a specific brand. 
+        /// Get information for a specific brand. This method returns details about an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         public class GetBrandOptions
         {
@@ -7427,7 +7427,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get information for a specific brand. 
+        /// Get information for a specific brand. This method returns details about an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7441,7 +7441,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get information for a specific brand. 
+        /// Get information for a specific brand. This method returns details about an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7525,7 +7525,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get information for a specific brand. 
+        /// Get information for a specific brand. This method returns details about an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7539,7 +7539,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get information for a specific brand. 
+        /// Get information for a specific brand. This method returns details about an account brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7616,7 +7616,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Export a specific brand. 
+        /// Export a specific brand. This method exports information about a brand to an XML file.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7628,7 +7628,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Export a specific brand. 
+        /// Export a specific brand. This method exports information about a brand to an XML file.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7698,7 +7698,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Export a specific brand. 
+        /// Export a specific brand. This method exports information about a brand to an XML file.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7710,7 +7710,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Export a specific brand. 
+        /// Export a specific brand. This method exports information about a brand to an XML file.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7781,7 +7781,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Obtains the specified image for a brand. 
+        /// Obtains the specified image for a brand. This method returns a specific logo that is used in a brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7795,7 +7795,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Obtains the specified image for a brand. 
+        /// Obtains the specified image for a brand. This method returns a specific logo that is used in a brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7878,7 +7878,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Obtains the specified image for a brand. 
+        /// Obtains the specified image for a brand. This method returns a specific logo that is used in a brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7892,7 +7892,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Obtains the specified image for a brand. 
+        /// Obtains the specified image for a brand. This method returns a specific logo that is used in a brand.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7968,7 +7968,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns the specified account&#39;s list of branding resources (metadata). 
+        /// Returns the specified account&#39;s list of branding resources (metadata). This method returns metadata about the branding resources that are associated with an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7981,7 +7981,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the specified account&#39;s list of branding resources (metadata). 
+        /// Returns the specified account&#39;s list of branding resources (metadata). This method returns metadata about the branding resources that are associated with an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8059,7 +8059,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the specified account&#39;s list of branding resources (metadata). 
+        /// Returns the specified account&#39;s list of branding resources (metadata). This method returns metadata about the branding resources that are associated with an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8072,7 +8072,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the specified account&#39;s list of branding resources (metadata). 
+        /// Returns the specified account&#39;s list of branding resources (metadata). This method returns metadata about the branding resources that are associated with an account.  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8142,7 +8142,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns the specified branding resource file. 
+        /// Returns the specified branding resource file. This method returns a specific branding resource file.  A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.  **Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         public class GetBrandResourcesByContentTypeOptions
         {
@@ -8153,7 +8153,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the specified branding resource file. 
+        /// Returns the specified branding resource file. This method returns a specific branding resource file.  A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.  **Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8167,7 +8167,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the specified branding resource file. 
+        /// Returns the specified branding resource file. This method returns a specific branding resource file.  A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.  **Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8248,7 +8248,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the specified branding resource file. 
+        /// Returns the specified branding resource file. This method returns a specific branding resource file.  A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.  **Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8262,7 +8262,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns the specified branding resource file. 
+        /// Returns the specified branding resource file. This method returns a specific branding resource file.  A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.  **Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8865,7 +8865,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Select envelope purge configuration. 
+        /// Select envelope purge configuration. An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method retrieves the current envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8877,7 +8877,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Select envelope purge configuration. 
+        /// Select envelope purge configuration. An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method retrieves the current envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8950,7 +8950,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Select envelope purge configuration. 
+        /// Select envelope purge configuration. An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method retrieves the current envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8962,7 +8962,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Select envelope purge configuration. 
+        /// Select envelope purge configuration. An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method retrieves the current envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9191,7 +9191,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns default user level settings for a specified account 
+        /// Returns default user level settings for a specified account This method returns the default settings for the email notifications that signers and senders receive about envelopes.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9203,7 +9203,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns default user level settings for a specified account 
+        /// Returns default user level settings for a specified account This method returns the default settings for the email notifications that signers and senders receive about envelopes.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9276,7 +9276,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns default user level settings for a specified account 
+        /// Returns default user level settings for a specified account This method returns the default settings for the email notifications that signers and senders receive about envelopes.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9288,7 +9288,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns default user level settings for a specified account 
+        /// Returns default user level settings for a specified account This method returns the default settings for the email notifications that signers and senders receive about envelopes.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9354,7 +9354,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get the password rules 
+        /// Get the password rules This method retrieves the password rules for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9366,7 +9366,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the password rules 
+        /// Get the password rules This method retrieves the password rules for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9439,7 +9439,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the password rules 
+        /// Get the password rules This method retrieves the password rules for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9451,7 +9451,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get the password rules 
+        /// Get the password rules This method retrieves the password rules for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9667,7 +9667,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns a permissions profile in the specified account. 
+        /// Returns a permissions profile in the specified account. This method returns information about a specific permission profile that is associated with an account.  ### Related topics  - [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/) 
         /// </summary>
         public class GetPermissionProfileOptions
         {
@@ -9676,7 +9676,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns a permissions profile in the specified account. 
+        /// Returns a permissions profile in the specified account. This method returns information about a specific permission profile that is associated with an account.  ### Related topics  - [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9690,7 +9690,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns a permissions profile in the specified account. 
+        /// Returns a permissions profile in the specified account. This method returns information about a specific permission profile that is associated with an account.  ### Related topics  - [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9773,7 +9773,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns a permissions profile in the specified account. 
+        /// Returns a permissions profile in the specified account. This method returns information about a specific permission profile that is associated with an account.  ### Related topics  - [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -9787,7 +9787,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns a permissions profile in the specified account. 
+        /// Returns a permissions profile in the specified account. This method returns information about a specific permission profile that is associated with an account.  ### Related topics  - [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -10014,7 +10014,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Gets list of supported languages for recipient language setting. 
+        /// Gets list of supported languages for recipient language setting. Retrieves a list of supported languages that you can set for an individual recipient when creating an envelope, as well as their simple type enumeration values. These are the languages that you can set for the standard email format and signing view for each recipient.  For example, in the recipient&#39;s email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.  **Note:** Setting a language for a recipient affects only the DocuSign standard text. Any custom text that you enter for the &#x60;emailBody&#x60; and &#x60;emailSubject&#x60; of the notification is not translated, and appears exactly as you enter it.  For more information, see [Set Recipient Language and Specify Custom Email Messages](https://support.docusign.com/en/guides/ndse-user-guide-recipient-language).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -10026,7 +10026,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Gets list of supported languages for recipient language setting. 
+        /// Gets list of supported languages for recipient language setting. Retrieves a list of supported languages that you can set for an individual recipient when creating an envelope, as well as their simple type enumeration values. These are the languages that you can set for the standard email format and signing view for each recipient.  For example, in the recipient&#39;s email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.  **Note:** Setting a language for a recipient affects only the DocuSign standard text. Any custom text that you enter for the &#x60;emailBody&#x60; and &#x60;emailSubject&#x60; of the notification is not translated, and appears exactly as you enter it.  For more information, see [Set Recipient Language and Specify Custom Email Messages](https://support.docusign.com/en/guides/ndse-user-guide-recipient-language).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -10099,7 +10099,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Gets list of supported languages for recipient language setting. 
+        /// Gets list of supported languages for recipient language setting. Retrieves a list of supported languages that you can set for an individual recipient when creating an envelope, as well as their simple type enumeration values. These are the languages that you can set for the standard email format and signing view for each recipient.  For example, in the recipient&#39;s email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.  **Note:** Setting a language for a recipient affects only the DocuSign standard text. Any custom text that you enter for the &#x60;emailBody&#x60; and &#x60;emailSubject&#x60; of the notification is not translated, and appears exactly as you enter it.  For more information, see [Set Recipient Language and Specify Custom Email Messages](https://support.docusign.com/en/guides/ndse-user-guide-recipient-language).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -10111,7 +10111,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Gets list of supported languages for recipient language setting. 
+        /// Gets list of supported languages for recipient language setting. Retrieves a list of supported languages that you can set for an individual recipient when creating an envelope, as well as their simple type enumeration values. These are the languages that you can set for the standard email format and signing view for each recipient.  For example, in the recipient&#39;s email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.  **Note:** Setting a language for a recipient affects only the DocuSign standard text. Any custom text that you enter for the &#x60;emailBody&#x60; and &#x60;emailSubject&#x60; of the notification is not translated, and appears exactly as you enter it.  For more information, see [Set Recipient Language and Specify Custom Email Messages](https://support.docusign.com/en/guides/ndse-user-guide-recipient-language).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -11613,7 +11613,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns Account available signature providers for specified account. 
+        /// Returns Account available signature providers for specified account. Returns a list of signature providers that the specified account can use.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -11625,7 +11625,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns Account available signature providers for specified account. 
+        /// Returns Account available signature providers for specified account. Returns a list of signature providers that the specified account can use.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -11698,7 +11698,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns Account available signature providers for specified account. 
+        /// Returns Account available signature providers for specified account. Returns a list of signature providers that the specified account can use.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -11710,7 +11710,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns Account available signature providers for specified account. 
+        /// Returns Account available signature providers for specified account. Returns a list of signature providers that the specified account can use.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -12729,7 +12729,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Modifies tab settings for specified account 
+        /// Modifies tab settings for specified account This method modifies the tab types and tab functionality that is enabled for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -12742,7 +12742,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Modifies tab settings for specified account 
+        /// Modifies tab settings for specified account This method modifies the tab types and tab functionality that is enabled for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -12824,7 +12824,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Modifies tab settings for specified account 
+        /// Modifies tab settings for specified account This method modifies the tab types and tab functionality that is enabled for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -12837,7 +12837,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Modifies tab settings for specified account 
+        /// Modifies tab settings for specified account This method modifies the tab types and tab functionality that is enabled for an account.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -12911,7 +12911,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Updates an existing brand. 
+        /// Updates an existing brand. This method updates an account brand.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         public class UpdateBrandOptions
         {
@@ -12920,7 +12920,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates an existing brand. 
+        /// Updates an existing brand. This method updates an account brand.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -12935,7 +12935,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates an existing brand. 
+        /// Updates an existing brand. This method updates an account brand.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -13027,7 +13027,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates an existing brand. 
+        /// Updates an existing brand. This method updates an account brand.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -13042,7 +13042,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates an existing brand. 
+        /// Updates an existing brand. This method updates an account brand.   **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -13127,7 +13127,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Put one branding logo. 
+        /// Put one branding logo. This method updates a single brand logo.  You pass in the new version of the resource in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;logo.jpg\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -13141,7 +13141,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Put one branding logo. 
+        /// Put one branding logo. This method updates a single brand logo.  You pass in the new version of the resource in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;logo.jpg\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -13229,7 +13229,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Put one branding logo. 
+        /// Put one branding logo. This method updates a single brand logo.  You pass in the new version of the resource in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;logo.jpg\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -13243,7 +13243,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Put one branding logo. 
+        /// Put one branding logo. This method updates a single brand logo.  You pass in the new version of the resource in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;logo.jpg\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -13332,7 +13332,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Uploads a branding resource file. 
+        /// Uploads a branding resource file. This method updates a branding resource file.  You pass in the new version of the resource file in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;DocuSign_SigningResource_4328673.xml\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).  **Important:** Customizing resource files is an advanced branding configuration option which can significantly impact your account, and should be done only by someone with expertise in XML and HTML. The master resource files are subject to change without notice. If you customize your resource files, after each release, DocuSign recommends you review any changes and update your custom files as needed.  When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -13347,7 +13347,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Uploads a branding resource file. 
+        /// Uploads a branding resource file. This method updates a branding resource file.  You pass in the new version of the resource file in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;DocuSign_SigningResource_4328673.xml\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).  **Important:** Customizing resource files is an advanced branding configuration option which can significantly impact your account, and should be done only by someone with expertise in XML and HTML. The master resource files are subject to change without notice. If you customize your resource files, after each release, DocuSign recommends you review any changes and update your custom files as needed.  When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -13445,7 +13445,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Uploads a branding resource file. 
+        /// Uploads a branding resource file. This method updates a branding resource file.  You pass in the new version of the resource file in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;DocuSign_SigningResource_4328673.xml\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).  **Important:** Customizing resource files is an advanced branding configuration option which can significantly impact your account, and should be done only by someone with expertise in XML and HTML. The master resource files are subject to change without notice. If you customize your resource files, after each release, DocuSign recommends you review any changes and update your custom files as needed.  When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -13460,7 +13460,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Uploads a branding resource file. 
+        /// Uploads a branding resource file. This method updates a branding resource file.  You pass in the new version of the resource file in the &#x60;Content-Disposition&#x60; header. Example:  &#x60;Content-Disposition: form-data; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;DocuSign_SigningResource_4328673.xml\&quot;&#x60;  **Note:** Branding for either signing or sending must be enabled for the account (&#x60;canSelfBrandSend&#x60; , &#x60;canSelfBrandSign&#x60;, or both of these account settings must be **true**).  **Important:** Customizing resource files is an advanced branding configuration option which can significantly impact your account, and should be done only by someone with expertise in XML and HTML. The master resource files are subject to change without notice. If you customize your resource files, after each release, DocuSign recommends you review any changes and update your custom files as needed.  When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID GUID.</param>
@@ -13549,7 +13549,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Update Consumer Disclosure. 
+        /// Update Consumer Disclosure. Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional &#x60;langCode&#x60; query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;custom&#x60;: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - &#x60;esignAgreement&#x60;: This property is read-only. - &#x60;esignText&#x60;: You cannot edit this property when &#x60;custom&#x60; is set to **false.** The API returns a 200 OK HTTP response, but does not update the &#x60;esignText&#x60;. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the &#x60;custom&#x60; property to **true** and customize the value for the &#x60;eSignText&#x60; property.   You can also edit all of the other properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the &#x60;langCode&#x60; parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only.  - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
         /// </summary>
         public class UpdateConsumerDisclosureOptions
         {
@@ -13558,7 +13558,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update Consumer Disclosure. 
+        /// Update Consumer Disclosure. Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional &#x60;langCode&#x60; query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;custom&#x60;: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - &#x60;esignAgreement&#x60;: This property is read-only. - &#x60;esignText&#x60;: You cannot edit this property when &#x60;custom&#x60; is set to **false.** The API returns a 200 OK HTTP response, but does not update the &#x60;esignText&#x60;. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the &#x60;custom&#x60; property to **true** and customize the value for the &#x60;eSignText&#x60; property.   You can also edit all of the other properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the &#x60;langCode&#x60; parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only.  - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -13573,7 +13573,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update Consumer Disclosure. 
+        /// Update Consumer Disclosure. Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional &#x60;langCode&#x60; query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;custom&#x60;: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - &#x60;esignAgreement&#x60;: This property is read-only. - &#x60;esignText&#x60;: You cannot edit this property when &#x60;custom&#x60; is set to **false.** The API returns a 200 OK HTTP response, but does not update the &#x60;esignText&#x60;. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the &#x60;custom&#x60; property to **true** and customize the value for the &#x60;eSignText&#x60; property.   You can also edit all of the other properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the &#x60;langCode&#x60; parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only.  - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -13665,7 +13665,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update Consumer Disclosure. 
+        /// Update Consumer Disclosure. Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional &#x60;langCode&#x60; query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;custom&#x60;: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - &#x60;esignAgreement&#x60;: This property is read-only. - &#x60;esignText&#x60;: You cannot edit this property when &#x60;custom&#x60; is set to **false.** The API returns a 200 OK HTTP response, but does not update the &#x60;esignText&#x60;. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the &#x60;custom&#x60; property to **true** and customize the value for the &#x60;eSignText&#x60; property.   You can also edit all of the other properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the &#x60;langCode&#x60; parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only.  - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -13680,7 +13680,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update Consumer Disclosure. 
+        /// Update Consumer Disclosure. Account administrators can use this method to perform the following tasks:  - Customize values in the default disclosure. - Switch to a custom disclosure that uses your own text and HTML formatting. - Change values in your existing consumer disclosure.   To specify the signer language version of the disclosure that you are updating, use the optional &#x60;langCode&#x60; query parameter.  **Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version.   ## Updating the default disclosure  When you update the default disclosure, you can edit all properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;custom&#x60;: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure. - &#x60;esignAgreement&#x60;: This property is read-only. - &#x60;esignText&#x60;: You cannot edit this property when &#x60;custom&#x60; is set to **false.** The API returns a 200 OK HTTP response, but does not update the &#x60;esignText&#x60;. - Metadata properties: These properties are read-only.  **Note:** The text of the default disclosure is always in English.  ## Switching to a custom disclosure  To switch to a custom disclosure, set the &#x60;custom&#x60; property to **true** and customize the value for the &#x60;eSignText&#x60; property.   You can also edit all of the other properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only. - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the &#x60;langCode&#x60; parameter to specify the signer language version that you are updating.  **Important:**  When you switch from a default to a custom disclosure, note the following information:  - You will not be able to return to using the default disclosure. - Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  ## Updating a custom disclosure  When you update a custom disclosure, you can update all of the properties except for the following ones:  - &#x60;accountEsignId&#x60;: This property is read-only.  - &#x60;esignAgreement&#x60;: This property is read-only. - Metadata properties: These properties are read-only.  **Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -13764,7 +13764,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Updates an existing account custom field. 
+        /// Updates an existing account custom field. This method updates an existing account custom field.
         /// </summary>
         public class UpdateCustomFieldOptions
         {
@@ -13773,7 +13773,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates an existing account custom field. 
+        /// Updates an existing account custom field. This method updates an existing account custom field.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -13788,7 +13788,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates an existing account custom field. 
+        /// Updates an existing account custom field. This method updates an existing account custom field.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -13880,7 +13880,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates an existing account custom field. 
+        /// Updates an existing account custom field. This method updates an existing account custom field.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -13895,7 +13895,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates an existing account custom field. 
+        /// Updates an existing account custom field. This method updates an existing account custom field.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14163,7 +14163,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Updates envelope purge configuration. 
+        /// Updates envelope purge configuration. An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method sets the envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.  For more information, see [Purge Envelopes](https://support.docusign.com/en/guides/ndse-user-guide-purge-envelopes).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14176,7 +14176,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates envelope purge configuration. 
+        /// Updates envelope purge configuration. An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method sets the envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.  For more information, see [Purge Envelopes](https://support.docusign.com/en/guides/ndse-user-guide-purge-envelopes).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14258,7 +14258,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates envelope purge configuration. 
+        /// Updates envelope purge configuration. An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method sets the envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.  For more information, see [Purge Envelopes](https://support.docusign.com/en/guides/ndse-user-guide-purge-envelopes).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14271,7 +14271,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates envelope purge configuration. 
+        /// Updates envelope purge configuration. An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (&#x60;retentionDays&#x60;). This method sets the envelope purge configuration for your account.  **Note:** To use this method, you must be an account administrator.  For more information, see [Purge Envelopes](https://support.docusign.com/en/guides/ndse-user-guide-purge-envelopes).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14529,7 +14529,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Updates default user level settings for a specified account 
+        /// Updates default user level settings for a specified account This method changes the default settings for the email notifications that signers and senders receive about envelopes.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14542,7 +14542,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates default user level settings for a specified account 
+        /// Updates default user level settings for a specified account This method changes the default settings for the email notifications that signers and senders receive about envelopes.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14624,7 +14624,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates default user level settings for a specified account 
+        /// Updates default user level settings for a specified account This method changes the default settings for the email notifications that signers and senders receive about envelopes.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14637,7 +14637,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates default user level settings for a specified account 
+        /// Updates default user level settings for a specified account This method changes the default settings for the email notifications that signers and senders receive about envelopes.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14712,7 +14712,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Update the password rules 
+        /// Update the password rules This method updates the password rules for an account.  **Note:** To update the password rules for an account, you must be an account administrator.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14725,7 +14725,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update the password rules 
+        /// Update the password rules This method updates the password rules for an account.  **Note:** To update the password rules for an account, you must be an account administrator.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14807,7 +14807,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update the password rules 
+        /// Update the password rules This method updates the password rules for an account.  **Note:** To update the password rules for an account, you must be an account administrator.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14820,7 +14820,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update the password rules 
+        /// Update the password rules This method updates the password rules for an account.  **Note:** To update the password rules for an account, you must be an account administrator.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14894,7 +14894,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Updates a permission profile within the specified account. 
+        /// Updates a permission profile within the specified account. This method updates an account permission profile.  ### Related topics  - [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/) 
         /// </summary>
         public class UpdatePermissionProfileOptions
         {
@@ -14903,7 +14903,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates a permission profile within the specified account. 
+        /// Updates a permission profile within the specified account. This method updates an account permission profile.  ### Related topics  - [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -14918,7 +14918,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates a permission profile within the specified account. 
+        /// Updates a permission profile within the specified account. This method updates an account permission profile.  ### Related topics  - [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -15010,7 +15010,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates a permission profile within the specified account. 
+        /// Updates a permission profile within the specified account. This method updates an account permission profile.  ### Related topics  - [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -15025,7 +15025,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates a permission profile within the specified account. 
+        /// Updates a permission profile within the specified account. This method updates an account permission profile.  ### Related topics  - [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/) 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>

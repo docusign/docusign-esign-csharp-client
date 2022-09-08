@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// DocumentVisibilityList
+    /// A list of &#x60;documentVisibility&#x60; objects that specify whether documents are visible to recipients.
     /// </summary>
     [DataContract]
     public partial class DocumentVisibilityList :  IEquatable<DocumentVisibilityList>, IValidatableObject

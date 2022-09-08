@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BrandResources
+    /// Information about the resource files that the brand uses for the email, signing, sending, and captive (embedded) signing experiences.
     /// </summary>
     [DataContract]
     public partial class BrandResources :  IEquatable<BrandResources>, IValidatableObject
@@ -38,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BrandResources" /> class.
         /// </summary>
-        /// <param name="CreatedByUserInfo">CreatedByUserInfo.</param>
+        /// <param name="CreatedByUserInfo">The user ID of the user who created the brand resource..</param>
         /// <param name="CreatedDate">CreatedDate.</param>
         /// <param name="DataNotSavedNotInMaster">DataNotSavedNotInMaster.</param>
-        /// <param name="ModifiedByUserInfo">ModifiedByUserInfo.</param>
+        /// <param name="ModifiedByUserInfo">Information about the user who last modified the brand resource..</param>
         /// <param name="ModifiedDate">ModifiedDate.</param>
         /// <param name="ModifiedTemplates">ModifiedTemplates.</param>
         /// <param name="ResourcesContentType">ResourcesContentType.</param>
@@ -59,8 +59,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets CreatedByUserInfo
+        /// The user ID of the user who created the brand resource.
         /// </summary>
+        /// <value>The user ID of the user who created the brand resource.</value>
         [DataMember(Name="createdByUserInfo", EmitDefaultValue=false)]
         public UserInfo CreatedByUserInfo { get; set; }
         /// <summary>
@@ -74,8 +75,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dataNotSavedNotInMaster", EmitDefaultValue=false)]
         public List<string> DataNotSavedNotInMaster { get; set; }
         /// <summary>
-        /// Gets or Sets ModifiedByUserInfo
+        /// Information about the user who last modified the brand resource.
         /// </summary>
+        /// <value>Information about the user who last modified the brand resource.</value>
         [DataMember(Name="modifiedByUserInfo", EmitDefaultValue=false)]
         public UserInfo ModifiedByUserInfo { get; set; }
         /// <summary>

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BulkSendingCopy
+    /// This object contains the details to use for a specific copy, or instance, of the envelope. When you send an envelope by using a bulk send list, you can customize these properties for each instance.
     /// </summary>
     [DataContract]
     public partial class BulkSendingCopy :  IEquatable<BulkSendingCopy>, IValidatableObject

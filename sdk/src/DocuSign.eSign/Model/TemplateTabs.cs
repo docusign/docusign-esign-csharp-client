@@ -66,7 +66,7 @@ namespace DocuSign.eSign.Model
         /// <param name="NumberTabs">Specifies a tag on the document where you want the recipient to enter a number. It uses the same parameters as a Text tab, with the validation message and pattern set for number information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response. .</param>
         /// <param name="PhoneNumberTabs">PhoneNumberTabs.</param>
         /// <param name="PolyLineOverlayTabs">PolyLineOverlayTabs.</param>
-        /// <param name="PrefillTabs">PrefillTabs.</param>
+        /// <param name="PrefillTabs">Prefill tabs are tabs that the sender can fill in before the envelope is sent. They are sometimes called sender tags or pre-fill fields.   [Pre-Fill Your Own Document Fields][app] describes how prefill tabs work in the web application.   [Customize your envelopes with pre-fill fields][catblog] shows how to use prefill tabs in your application using the eSignature SDKs.  [app]:      https://support.docusign.com/en/guides/ndse-user-guide-prefill-fields [catblog]:  https://www.docusign.com/blog/developers/common-api-tasks-customize-your-envelopes-pre-fill-fields.</param>
         /// <param name="RadioGroupTabs">Specifies a tag on the document in a location where the recipient can select one option from a group of options using a radio button. The radio buttons do not have to be on the same page in a document..</param>
         /// <param name="SignerAttachmentTabs">Specifies a tag on the document when you want the recipient to add supporting documents to an envelope..</param>
         /// <param name="SignHereTabs">A complex type the contains information about the tag that specifies where the recipient places their signature in the document. The \&quot;optional\&quot; parameter sets if the signature is required or optional. .</param>
@@ -278,8 +278,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="polyLineOverlayTabs", EmitDefaultValue=false)]
         public List<PolyLineOverlay> PolyLineOverlayTabs { get; set; }
         /// <summary>
-        /// Gets or Sets PrefillTabs
+        /// Prefill tabs are tabs that the sender can fill in before the envelope is sent. They are sometimes called sender tags or pre-fill fields.   [Pre-Fill Your Own Document Fields][app] describes how prefill tabs work in the web application.   [Customize your envelopes with pre-fill fields][catblog] shows how to use prefill tabs in your application using the eSignature SDKs.  [app]:      https://support.docusign.com/en/guides/ndse-user-guide-prefill-fields [catblog]:  https://www.docusign.com/blog/developers/common-api-tasks-customize-your-envelopes-pre-fill-fields
         /// </summary>
+        /// <value>Prefill tabs are tabs that the sender can fill in before the envelope is sent. They are sometimes called sender tags or pre-fill fields.   [Pre-Fill Your Own Document Fields][app] describes how prefill tabs work in the web application.   [Customize your envelopes with pre-fill fields][catblog] shows how to use prefill tabs in your application using the eSignature SDKs.  [app]:      https://support.docusign.com/en/guides/ndse-user-guide-prefill-fields [catblog]:  https://www.docusign.com/blog/developers/common-api-tasks-customize-your-envelopes-pre-fill-fields</value>
         [DataMember(Name="prefillTabs", EmitDefaultValue=false)]
         public PrefillTabs PrefillTabs { get; set; }
         /// <summary>

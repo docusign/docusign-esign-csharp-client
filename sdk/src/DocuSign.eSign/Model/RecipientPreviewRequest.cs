@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientPreviewRequest
+    /// This request object contains the information necessary to create a recipient preview.
     /// </summary>
     [DataContract]
     public partial class RecipientPreviewRequest :  IEquatable<RecipientPreviewRequest>, IValidatableObject

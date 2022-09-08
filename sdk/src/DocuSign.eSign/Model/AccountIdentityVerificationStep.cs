@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// AccountIdentityVerificationStep
+    /// Information about a specific step in an Identity Verification workflow.
     /// </summary>
     [DataContract]
     public partial class AccountIdentityVerificationStep :  IEquatable<AccountIdentityVerificationStep>, IValidatableObject

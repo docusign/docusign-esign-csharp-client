@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BccEmailArchiveList
+    /// Contains a list of BCC email archive configurations.
     /// </summary>
     [DataContract]
     public partial class BccEmailArchiveList :  IEquatable<BccEmailArchiveList>, IValidatableObject

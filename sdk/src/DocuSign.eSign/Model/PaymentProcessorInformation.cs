@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentProcessorInformation" /> class.
         /// </summary>
-        /// <param name="Address">Address.</param>
+        /// <param name="Address">The mailing address associated with the payment processor..</param>
         /// <param name="BillingAgreementId">BillingAgreementId.</param>
         /// <param name="Email">Email.</param>
         public PaymentProcessorInformation(AddressInformation Address = default(AddressInformation), string BillingAgreementId = default(string), string Email = default(string))
@@ -49,8 +49,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets Address
+        /// The mailing address associated with the payment processor.
         /// </summary>
+        /// <value>The mailing address associated with the payment processor.</value>
         [DataMember(Name="address", EmitDefaultValue=false)]
         public AddressInformation Address { get; set; }
         /// <summary>

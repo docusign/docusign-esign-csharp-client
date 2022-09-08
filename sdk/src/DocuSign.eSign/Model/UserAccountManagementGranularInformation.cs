@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// UserAccountManagementGranularInformation
+    /// Describes which account management capabilities a user has.
     /// </summary>
     [DataContract]
     public partial class UserAccountManagementGranularInformation :  IEquatable<UserAccountManagementGranularInformation>, IValidatableObject
@@ -43,7 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CanManageAccountSettings">CanManageAccountSettings.</param>
         /// <param name="CanManageAccountSettingsMetadata">CanManageAccountSettingsMetadata.</param>
         /// <param name="CanManageAdmins">CanManageAdmins.</param>
-        /// <param name="CanManageAdminsMetadata">CanManageAdminsMetadata.</param>
+        /// <param name="CanManageAdminsMetadata">Metadata that indicates whether the &#x60;canManageAdmins&#x60; property is editable. .</param>
         /// <param name="CanManageConnect">CanManageConnect.</param>
         /// <param name="CanManageConnectMetadata">CanManageConnectMetadata.</param>
         /// <param name="CanManageDocumentRetention">CanManageDocumentRetention.</param>
@@ -55,13 +55,13 @@ namespace DocuSign.eSign.Model
         /// <param name="CanManageReporting">CanManageReporting.</param>
         /// <param name="CanManageReportingMetadata">CanManageReportingMetadata.</param>
         /// <param name="CanManageSharing">CanManageSharing.</param>
-        /// <param name="CanManageSharingMetadata">CanManageSharingMetadata.</param>
+        /// <param name="CanManageSharingMetadata">Metadata that indicates whether the &#x60;canManageSharing&#x60; property is editable. .</param>
         /// <param name="CanManageSigningGroups">CanManageSigningGroups.</param>
         /// <param name="CanManageSigningGroupsMetadata">CanManageSigningGroupsMetadata.</param>
         /// <param name="CanManageStamps">CanManageStamps.</param>
         /// <param name="CanManageStampsMetadata">CanManageStampsMetadata.</param>
         /// <param name="CanManageUsers">CanManageUsers.</param>
-        /// <param name="CanManageUsersMetadata">CanManageUsersMetadata.</param>
+        /// <param name="CanManageUsersMetadata">Metadata that indicates whether the &#x60;canManageUsers&#x60; property is editable. .</param>
         /// <param name="CanViewUsers">CanViewUsers.</param>
         public UserAccountManagementGranularInformation(string CanManageAccountSecuritySettings = default(string), SettingsMetadata CanManageAccountSecuritySettingsMetadata = default(SettingsMetadata), string CanManageAccountSettings = default(string), SettingsMetadata CanManageAccountSettingsMetadata = default(SettingsMetadata), string CanManageAdmins = default(string), SettingsMetadata CanManageAdminsMetadata = default(SettingsMetadata), string CanManageConnect = default(string), SettingsMetadata CanManageConnectMetadata = default(SettingsMetadata), string CanManageDocumentRetention = default(string), SettingsMetadata CanManageDocumentRetentionMetadata = default(SettingsMetadata), string CanManageEnvelopeTransfer = default(string), SettingsMetadata CanManageEnvelopeTransferMetadata = default(SettingsMetadata), string CanManageGroupsButNotUsers = default(string), SettingsMetadata CanManageGroupsButNotUsersMetadata = default(SettingsMetadata), string CanManageReporting = default(string), SettingsMetadata CanManageReportingMetadata = default(SettingsMetadata), string CanManageSharing = default(string), SettingsMetadata CanManageSharingMetadata = default(SettingsMetadata), string CanManageSigningGroups = default(string), SettingsMetadata CanManageSigningGroupsMetadata = default(SettingsMetadata), string CanManageStamps = default(string), SettingsMetadata CanManageStampsMetadata = default(SettingsMetadata), string CanManageUsers = default(string), SettingsMetadata CanManageUsersMetadata = default(SettingsMetadata), string CanViewUsers = default(string))
         {
@@ -118,8 +118,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageAdmins", EmitDefaultValue=false)]
         public string CanManageAdmins { get; set; }
         /// <summary>
-        /// Gets or Sets CanManageAdminsMetadata
+        /// Metadata that indicates whether the &#x60;canManageAdmins&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;canManageAdmins&#x60; property is editable. </value>
         [DataMember(Name="canManageAdminsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageAdminsMetadata { get; set; }
         /// <summary>
@@ -178,8 +179,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageSharing", EmitDefaultValue=false)]
         public string CanManageSharing { get; set; }
         /// <summary>
-        /// Gets or Sets CanManageSharingMetadata
+        /// Metadata that indicates whether the &#x60;canManageSharing&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;canManageSharing&#x60; property is editable. </value>
         [DataMember(Name="canManageSharingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageSharingMetadata { get; set; }
         /// <summary>
@@ -208,8 +210,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageUsers", EmitDefaultValue=false)]
         public string CanManageUsers { get; set; }
         /// <summary>
-        /// Gets or Sets CanManageUsersMetadata
+        /// Metadata that indicates whether the &#x60;canManageUsers&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;canManageUsers&#x60; property is editable. </value>
         [DataMember(Name="canManageUsersMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageUsersMetadata { get; set; }
         /// <summary>

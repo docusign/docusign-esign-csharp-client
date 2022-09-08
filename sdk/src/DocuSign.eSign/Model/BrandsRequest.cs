@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BrandsRequest
+    /// Details about one or more brands.
     /// </summary>
     [DataContract]
     public partial class BrandsRequest :  IEquatable<BrandsRequest>, IValidatableObject

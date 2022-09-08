@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopePurgeConfiguration
+    /// Contains information about the current envelope purge configuration for an account, which enables account administrators to purge documents from completed and voided envelopes after a set number of days (&#x60;retentionDays&#x60;). 
     /// </summary>
     [DataContract]
     public partial class EnvelopePurgeConfiguration :  IEquatable<EnvelopePurgeConfiguration>, IValidatableObject

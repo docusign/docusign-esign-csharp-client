@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Notarize
+    /// A tab that alerts notary recipients that they must take action on the page. Only one notarize tab can appear on a page.
     /// </summary>
     [DataContract]
     public partial class Notarize :  IEquatable<Notarize>, IValidatableObject
@@ -39,80 +39,80 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Notarize" /> class.
         /// </summary>
         /// <param name="AnchorAllowWhiteSpaceInCharacters">AnchorAllowWhiteSpaceInCharacters.</param>
-        /// <param name="AnchorAllowWhiteSpaceInCharactersMetadata">AnchorAllowWhiteSpaceInCharactersMetadata.</param>
+        /// <param name="AnchorAllowWhiteSpaceInCharactersMetadata">Metadata that indicates whether the &#x60;anchorAllowWhiteSpaceInCharacters&#x60; property is editable..</param>
         /// <param name="AnchorCaseSensitive">When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**..</param>
-        /// <param name="AnchorCaseSensitiveMetadata">AnchorCaseSensitiveMetadata.</param>
+        /// <param name="AnchorCaseSensitiveMetadata">Metadata that indicates whether the &#x60;anchorCaseSensitive&#x60; property is editable..</param>
         /// <param name="AnchorHorizontalAlignment">Specifies the alignment of anchor tabs with anchor strings. Possible values are **left** or **right**. The default value is **left**..</param>
-        /// <param name="AnchorHorizontalAlignmentMetadata">AnchorHorizontalAlignmentMetadata.</param>
+        /// <param name="AnchorHorizontalAlignmentMetadata">Metadata that indicates whether the &#x60;anchorHorizontalAlignment&#x60; property is editable..</param>
         /// <param name="AnchorIgnoreIfNotPresent">When set to **true**, this tab is ignored if anchorString is not found in the document..</param>
-        /// <param name="AnchorIgnoreIfNotPresentMetadata">AnchorIgnoreIfNotPresentMetadata.</param>
+        /// <param name="AnchorIgnoreIfNotPresentMetadata">Metadata that indicates whether the &#x60;anchorIgnoreIfNotPresent&#x60; property is editable..</param>
         /// <param name="AnchorMatchWholeWord">When set to **true**, the anchor string in this tab matches whole words only (strings embedded in other strings are ignored.) The default value is **true**..</param>
-        /// <param name="AnchorMatchWholeWordMetadata">AnchorMatchWholeWordMetadata.</param>
+        /// <param name="AnchorMatchWholeWordMetadata">Metadata that indicates whether the &#x60;anchorMatchWholeWord&#x60; property is editable..</param>
         /// <param name="AnchorString">Anchor text information for a radio button..</param>
-        /// <param name="AnchorStringMetadata">AnchorStringMetadata.</param>
+        /// <param name="AnchorStringMetadata">Metadata that indicates whether the &#x60;anchorString&#x60; property is editable..</param>
         /// <param name="AnchorTabProcessorVersion">AnchorTabProcessorVersion.</param>
-        /// <param name="AnchorTabProcessorVersionMetadata">AnchorTabProcessorVersionMetadata.</param>
+        /// <param name="AnchorTabProcessorVersionMetadata">Reserved for DocuSign..</param>
         /// <param name="AnchorUnits">Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches..</param>
-        /// <param name="AnchorUnitsMetadata">AnchorUnitsMetadata.</param>
+        /// <param name="AnchorUnitsMetadata">Metadata that indicates whether the &#x60;anchorUnits&#x60; property is editable..</param>
         /// <param name="AnchorXOffset">Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString..</param>
-        /// <param name="AnchorXOffsetMetadata">AnchorXOffsetMetadata.</param>
+        /// <param name="AnchorXOffsetMetadata">Metadata that indicates whether the &#x60;anchorXOffset&#x60; property is editable..</param>
         /// <param name="AnchorYOffset">Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString..</param>
-        /// <param name="AnchorYOffsetMetadata">AnchorYOffsetMetadata.</param>
+        /// <param name="AnchorYOffsetMetadata">Metadata that indicates whether the &#x60;anchorYOffset&#x60; property is editable..</param>
         /// <param name="Caption">Caption.</param>
         /// <param name="CaptionMetadata">CaptionMetadata.</param>
         /// <param name="ConditionalParentLabel">For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility..</param>
-        /// <param name="ConditionalParentLabelMetadata">ConditionalParentLabelMetadata.</param>
+        /// <param name="ConditionalParentLabelMetadata">Metadata that indicates whether the &#x60;conditionalParentLabel&#x60; property is editable..</param>
         /// <param name="ConditionalParentValue">For conditional fields, this is the value of the parent tab that controls the tab&#39;s visibility.  If the parent tab is a Checkbox, Radio button, Optional Signature, or Optional Initial use \&quot;on\&quot; as the value to show that the parent tab is active. .</param>
-        /// <param name="ConditionalParentValueMetadata">ConditionalParentValueMetadata.</param>
+        /// <param name="ConditionalParentValueMetadata">Metadata that indicates whether the &#x60;conditionalParentValue&#x60; property is editable..</param>
         /// <param name="CustomTabId">The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties..</param>
-        /// <param name="CustomTabIdMetadata">CustomTabIdMetadata.</param>
+        /// <param name="CustomTabIdMetadata">Metadata that indicates whether the &#x60;customTabId&#x60; property is editable..</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
-        /// <param name="DocumentIdMetadata">DocumentIdMetadata.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="DocumentIdMetadata">Metadata that indicates whether the &#x60;documentId&#x60; property is editable..</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="FormOrder">FormOrder.</param>
-        /// <param name="FormOrderMetadata">FormOrderMetadata.</param>
+        /// <param name="FormOrderMetadata">Metadata that indicates whether the &#x60;formOrder&#x60; property is editable..</param>
         /// <param name="FormPageLabel">FormPageLabel.</param>
-        /// <param name="FormPageLabelMetadata">FormPageLabelMetadata.</param>
+        /// <param name="FormPageLabelMetadata">Metadata that indicates whether the &#x60;formPageLabel&#x60; property is editable..</param>
         /// <param name="FormPageNumber">FormPageNumber.</param>
-        /// <param name="FormPageNumberMetadata">FormPageNumberMetadata.</param>
+        /// <param name="FormPageNumberMetadata">Metadata that indicates whether the &#x60;fromPageNumber&#x60; property is editable..</param>
         /// <param name="Height">Height of the tab in pixels..</param>
-        /// <param name="HeightMetadata">HeightMetadata.</param>
+        /// <param name="HeightMetadata">Metadata that indicates whether the &#x60;height&#x60; property is editable..</param>
         /// <param name="Locked">When set to **true**, the signer cannot change the data of the custom tab..</param>
-        /// <param name="LockedMetadata">LockedMetadata.</param>
-        /// <param name="MergeField">MergeField.</param>
+        /// <param name="LockedMetadata">Metadata that indicates whether the &#x60;locked&#x60; property is editable..</param>
+        /// <param name="MergeField">Contains the information necessary to map the tab to a field in SalesForce..</param>
         /// <param name="MergeFieldXml">MergeFieldXml.</param>
         /// <param name="PageNumber">Specifies the page number on which the tab is located..</param>
-        /// <param name="PageNumberMetadata">PageNumberMetadata.</param>
+        /// <param name="PageNumberMetadata">Metadata that indicates whether the &#x60;pageNumber&#x60; property is editable..</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
-        /// <param name="RecipientIdGuidMetadata">RecipientIdGuidMetadata.</param>
-        /// <param name="RecipientIdMetadata">RecipientIdMetadata.</param>
+        /// <param name="RecipientIdGuidMetadata">Metadata that indicates whether the &#x60;recipientIdGuid&#x60; property is editable..</param>
+        /// <param name="RecipientIdMetadata">Metadata that indicates whether the &#x60;recipientId&#x60; property is editable..</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
-        /// <param name="RequiredMetadata">RequiredMetadata.</param>
-        /// <param name="SmartContractInformation">SmartContractInformation.</param>
+        /// <param name="RequiredMetadata">Metadata that indicates whether the &#x60;required&#x60; property is editable..</param>
+        /// <param name="SmartContractInformation">Reserved for DocuSign..</param>
         /// <param name="Source">Source.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        /// <param name="StatusMetadata">StatusMetadata.</param>
+        /// <param name="StatusMetadata">Metadata that indicates whether the &#x60;status&#x60; property is editable..</param>
         /// <param name="TabGroupLabels">TabGroupLabels.</param>
-        /// <param name="TabGroupLabelsMetadata">TabGroupLabelsMetadata.</param>
+        /// <param name="TabGroupLabelsMetadata">Metadata that indicates whether the &#x60;tabGroupLabels&#x60; property is editable..</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
-        /// <param name="TabIdMetadata">TabIdMetadata.</param>
+        /// <param name="TabIdMetadata">Metadata that indicates whether the &#x60;tabId&#x60; property is editable..</param>
         /// <param name="TabOrder">TabOrder.</param>
-        /// <param name="TabOrderMetadata">TabOrderMetadata.</param>
+        /// <param name="TabOrderMetadata">Metadata that indicates whether the &#x60;tabOrder&#x60; property is editable..</param>
         /// <param name="TabType">TabType.</param>
-        /// <param name="TabTypeMetadata">TabTypeMetadata.</param>
+        /// <param name="TabTypeMetadata">Metadata that indicates whether the &#x60;tabType&#x60; property is editable..</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
-        /// <param name="TemplateLockedMetadata">TemplateLockedMetadata.</param>
+        /// <param name="TemplateLockedMetadata">Metadata that indicates whether the &#x60;templateLocked&#x60; property is editable..</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
-        /// <param name="TemplateRequiredMetadata">TemplateRequiredMetadata.</param>
+        /// <param name="TemplateRequiredMetadata">Metadata that indicates whether the &#x60;templateRequired&#x60; property is editable..</param>
         /// <param name="Tooltip">Tooltip.</param>
-        /// <param name="ToolTipMetadata">ToolTipMetadata.</param>
+        /// <param name="ToolTipMetadata">Metadata that indicates whether the &#x60;toolTip&#x60; property is editable..</param>
         /// <param name="Width">Width of the tab in pixels..</param>
-        /// <param name="WidthMetadata">WidthMetadata.</param>
+        /// <param name="WidthMetadata">Metadata that indicates whether the &#x60;width&#x60; property is editable..</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
-        /// <param name="XPositionMetadata">XPositionMetadata.</param>
+        /// <param name="XPositionMetadata">Metadata that indicates whether the &#x60;xPosition&#x60; property is editable..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
-        /// <param name="YPositionMetadata">YPositionMetadata.</param>
+        /// <param name="YPositionMetadata">Metadata that indicates whether the &#x60;yPosition&#x60; property is editable..</param>
         public Notarize(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), SmartContractInformation SmartContractInformation = default(SmartContractInformation), string Source = default(string), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
             this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
@@ -198,8 +198,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorAllowWhiteSpaceInCharacters", EmitDefaultValue=false)]
         public string AnchorAllowWhiteSpaceInCharacters { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorAllowWhiteSpaceInCharactersMetadata
+        /// Metadata that indicates whether the &#x60;anchorAllowWhiteSpaceInCharacters&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorAllowWhiteSpaceInCharacters&#x60; property is editable.</value>
         [DataMember(Name="anchorAllowWhiteSpaceInCharactersMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata { get; set; }
         /// <summary>
@@ -209,8 +210,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorCaseSensitive", EmitDefaultValue=false)]
         public string AnchorCaseSensitive { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorCaseSensitiveMetadata
+        /// Metadata that indicates whether the &#x60;anchorCaseSensitive&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorCaseSensitive&#x60; property is editable.</value>
         [DataMember(Name="anchorCaseSensitiveMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorCaseSensitiveMetadata { get; set; }
         /// <summary>
@@ -220,8 +222,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorHorizontalAlignment", EmitDefaultValue=false)]
         public string AnchorHorizontalAlignment { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorHorizontalAlignmentMetadata
+        /// Metadata that indicates whether the &#x60;anchorHorizontalAlignment&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorHorizontalAlignment&#x60; property is editable.</value>
         [DataMember(Name="anchorHorizontalAlignmentMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorHorizontalAlignmentMetadata { get; set; }
         /// <summary>
@@ -231,8 +234,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorIgnoreIfNotPresent", EmitDefaultValue=false)]
         public string AnchorIgnoreIfNotPresent { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorIgnoreIfNotPresentMetadata
+        /// Metadata that indicates whether the &#x60;anchorIgnoreIfNotPresent&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorIgnoreIfNotPresent&#x60; property is editable.</value>
         [DataMember(Name="anchorIgnoreIfNotPresentMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorIgnoreIfNotPresentMetadata { get; set; }
         /// <summary>
@@ -242,8 +246,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorMatchWholeWord", EmitDefaultValue=false)]
         public string AnchorMatchWholeWord { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorMatchWholeWordMetadata
+        /// Metadata that indicates whether the &#x60;anchorMatchWholeWord&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorMatchWholeWord&#x60; property is editable.</value>
         [DataMember(Name="anchorMatchWholeWordMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorMatchWholeWordMetadata { get; set; }
         /// <summary>
@@ -253,8 +258,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorString", EmitDefaultValue=false)]
         public string AnchorString { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorStringMetadata
+        /// Metadata that indicates whether the &#x60;anchorString&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorString&#x60; property is editable.</value>
         [DataMember(Name="anchorStringMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorStringMetadata { get; set; }
         /// <summary>
@@ -263,8 +269,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorTabProcessorVersion", EmitDefaultValue=false)]
         public string AnchorTabProcessorVersion { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorTabProcessorVersionMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="anchorTabProcessorVersionMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorTabProcessorVersionMetadata { get; set; }
         /// <summary>
@@ -274,8 +281,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorUnits", EmitDefaultValue=false)]
         public string AnchorUnits { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorUnitsMetadata
+        /// Metadata that indicates whether the &#x60;anchorUnits&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorUnits&#x60; property is editable.</value>
         [DataMember(Name="anchorUnitsMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorUnitsMetadata { get; set; }
         /// <summary>
@@ -285,8 +293,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorXOffset", EmitDefaultValue=false)]
         public string AnchorXOffset { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorXOffsetMetadata
+        /// Metadata that indicates whether the &#x60;anchorXOffset&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorXOffset&#x60; property is editable.</value>
         [DataMember(Name="anchorXOffsetMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorXOffsetMetadata { get; set; }
         /// <summary>
@@ -296,8 +305,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorYOffset", EmitDefaultValue=false)]
         public string AnchorYOffset { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorYOffsetMetadata
+        /// Metadata that indicates whether the &#x60;anchorYOffset&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorYOffset&#x60; property is editable.</value>
         [DataMember(Name="anchorYOffsetMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorYOffsetMetadata { get; set; }
         /// <summary>
@@ -317,8 +327,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="conditionalParentLabel", EmitDefaultValue=false)]
         public string ConditionalParentLabel { get; set; }
         /// <summary>
-        /// Gets or Sets ConditionalParentLabelMetadata
+        /// Metadata that indicates whether the &#x60;conditionalParentLabel&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;conditionalParentLabel&#x60; property is editable.</value>
         [DataMember(Name="conditionalParentLabelMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ConditionalParentLabelMetadata { get; set; }
         /// <summary>
@@ -328,8 +339,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="conditionalParentValue", EmitDefaultValue=false)]
         public string ConditionalParentValue { get; set; }
         /// <summary>
-        /// Gets or Sets ConditionalParentValueMetadata
+        /// Metadata that indicates whether the &#x60;conditionalParentValue&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;conditionalParentValue&#x60; property is editable.</value>
         [DataMember(Name="conditionalParentValueMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ConditionalParentValueMetadata { get; set; }
         /// <summary>
@@ -339,8 +351,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="customTabId", EmitDefaultValue=false)]
         public string CustomTabId { get; set; }
         /// <summary>
-        /// Gets or Sets CustomTabIdMetadata
+        /// Metadata that indicates whether the &#x60;customTabId&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;customTabId&#x60; property is editable.</value>
         [DataMember(Name="customTabIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata CustomTabIdMetadata { get; set; }
         /// <summary>
@@ -350,13 +363,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentId", EmitDefaultValue=false)]
         public string DocumentId { get; set; }
         /// <summary>
-        /// Gets or Sets DocumentIdMetadata
+        /// Metadata that indicates whether the &#x60;documentId&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;documentId&#x60; property is editable.</value>
         [DataMember(Name="documentIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata DocumentIdMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -365,8 +380,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="formOrder", EmitDefaultValue=false)]
         public string FormOrder { get; set; }
         /// <summary>
-        /// Gets or Sets FormOrderMetadata
+        /// Metadata that indicates whether the &#x60;formOrder&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;formOrder&#x60; property is editable.</value>
         [DataMember(Name="formOrderMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FormOrderMetadata { get; set; }
         /// <summary>
@@ -375,8 +391,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="formPageLabel", EmitDefaultValue=false)]
         public string FormPageLabel { get; set; }
         /// <summary>
-        /// Gets or Sets FormPageLabelMetadata
+        /// Metadata that indicates whether the &#x60;formPageLabel&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;formPageLabel&#x60; property is editable.</value>
         [DataMember(Name="formPageLabelMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FormPageLabelMetadata { get; set; }
         /// <summary>
@@ -385,8 +402,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="formPageNumber", EmitDefaultValue=false)]
         public string FormPageNumber { get; set; }
         /// <summary>
-        /// Gets or Sets FormPageNumberMetadata
+        /// Metadata that indicates whether the &#x60;fromPageNumber&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;fromPageNumber&#x60; property is editable.</value>
         [DataMember(Name="formPageNumberMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FormPageNumberMetadata { get; set; }
         /// <summary>
@@ -396,8 +414,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="height", EmitDefaultValue=false)]
         public string Height { get; set; }
         /// <summary>
-        /// Gets or Sets HeightMetadata
+        /// Metadata that indicates whether the &#x60;height&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;height&#x60; property is editable.</value>
         [DataMember(Name="heightMetadata", EmitDefaultValue=false)]
         public PropertyMetadata HeightMetadata { get; set; }
         /// <summary>
@@ -407,13 +426,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="locked", EmitDefaultValue=false)]
         public string Locked { get; set; }
         /// <summary>
-        /// Gets or Sets LockedMetadata
+        /// Metadata that indicates whether the &#x60;locked&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;locked&#x60; property is editable.</value>
         [DataMember(Name="lockedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata LockedMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets MergeField
+        /// Contains the information necessary to map the tab to a field in SalesForce.
         /// </summary>
+        /// <value>Contains the information necessary to map the tab to a field in SalesForce.</value>
         [DataMember(Name="mergeField", EmitDefaultValue=false)]
         public MergeField MergeField { get; set; }
         /// <summary>
@@ -428,8 +449,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="pageNumber", EmitDefaultValue=false)]
         public string PageNumber { get; set; }
         /// <summary>
-        /// Gets or Sets PageNumberMetadata
+        /// Metadata that indicates whether the &#x60;pageNumber&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;pageNumber&#x60; property is editable.</value>
         [DataMember(Name="pageNumberMetadata", EmitDefaultValue=false)]
         public PropertyMetadata PageNumberMetadata { get; set; }
         /// <summary>
@@ -444,13 +466,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientIdGuid", EmitDefaultValue=false)]
         public string RecipientIdGuid { get; set; }
         /// <summary>
-        /// Gets or Sets RecipientIdGuidMetadata
+        /// Metadata that indicates whether the &#x60;recipientIdGuid&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;recipientIdGuid&#x60; property is editable.</value>
         [DataMember(Name="recipientIdGuidMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RecipientIdGuidMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets RecipientIdMetadata
+        /// Metadata that indicates whether the &#x60;recipientId&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;recipientId&#x60; property is editable.</value>
         [DataMember(Name="recipientIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RecipientIdMetadata { get; set; }
         /// <summary>
@@ -460,13 +484,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="required", EmitDefaultValue=false)]
         public string Required { get; set; }
         /// <summary>
-        /// Gets or Sets RequiredMetadata
+        /// Metadata that indicates whether the &#x60;required&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;required&#x60; property is editable.</value>
         [DataMember(Name="requiredMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RequiredMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets SmartContractInformation
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="smartContractInformation", EmitDefaultValue=false)]
         public SmartContractInformation SmartContractInformation { get; set; }
         /// <summary>
@@ -481,8 +507,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// Gets or Sets StatusMetadata
+        /// Metadata that indicates whether the &#x60;status&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;status&#x60; property is editable.</value>
         [DataMember(Name="statusMetadata", EmitDefaultValue=false)]
         public PropertyMetadata StatusMetadata { get; set; }
         /// <summary>
@@ -491,8 +518,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabGroupLabels", EmitDefaultValue=false)]
         public List<string> TabGroupLabels { get; set; }
         /// <summary>
-        /// Gets or Sets TabGroupLabelsMetadata
+        /// Metadata that indicates whether the &#x60;tabGroupLabels&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;tabGroupLabels&#x60; property is editable.</value>
         [DataMember(Name="tabGroupLabelsMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TabGroupLabelsMetadata { get; set; }
         /// <summary>
@@ -502,8 +530,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabId", EmitDefaultValue=false)]
         public string TabId { get; set; }
         /// <summary>
-        /// Gets or Sets TabIdMetadata
+        /// Metadata that indicates whether the &#x60;tabId&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;tabId&#x60; property is editable.</value>
         [DataMember(Name="tabIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TabIdMetadata { get; set; }
         /// <summary>
@@ -512,8 +541,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabOrder", EmitDefaultValue=false)]
         public string TabOrder { get; set; }
         /// <summary>
-        /// Gets or Sets TabOrderMetadata
+        /// Metadata that indicates whether the &#x60;tabOrder&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;tabOrder&#x60; property is editable.</value>
         [DataMember(Name="tabOrderMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TabOrderMetadata { get; set; }
         /// <summary>
@@ -522,8 +552,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabType", EmitDefaultValue=false)]
         public string TabType { get; set; }
         /// <summary>
-        /// Gets or Sets TabTypeMetadata
+        /// Metadata that indicates whether the &#x60;tabType&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;tabType&#x60; property is editable.</value>
         [DataMember(Name="tabTypeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TabTypeMetadata { get; set; }
         /// <summary>
@@ -533,8 +564,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateLocked", EmitDefaultValue=false)]
         public string TemplateLocked { get; set; }
         /// <summary>
-        /// Gets or Sets TemplateLockedMetadata
+        /// Metadata that indicates whether the &#x60;templateLocked&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;templateLocked&#x60; property is editable.</value>
         [DataMember(Name="templateLockedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TemplateLockedMetadata { get; set; }
         /// <summary>
@@ -544,8 +576,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequired", EmitDefaultValue=false)]
         public string TemplateRequired { get; set; }
         /// <summary>
-        /// Gets or Sets TemplateRequiredMetadata
+        /// Metadata that indicates whether the &#x60;templateRequired&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;templateRequired&#x60; property is editable.</value>
         [DataMember(Name="templateRequiredMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TemplateRequiredMetadata { get; set; }
         /// <summary>
@@ -554,8 +587,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tooltip", EmitDefaultValue=false)]
         public string Tooltip { get; set; }
         /// <summary>
-        /// Gets or Sets ToolTipMetadata
+        /// Metadata that indicates whether the &#x60;toolTip&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;toolTip&#x60; property is editable.</value>
         [DataMember(Name="toolTipMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ToolTipMetadata { get; set; }
         /// <summary>
@@ -565,8 +599,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="width", EmitDefaultValue=false)]
         public string Width { get; set; }
         /// <summary>
-        /// Gets or Sets WidthMetadata
+        /// Metadata that indicates whether the &#x60;width&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;width&#x60; property is editable.</value>
         [DataMember(Name="widthMetadata", EmitDefaultValue=false)]
         public PropertyMetadata WidthMetadata { get; set; }
         /// <summary>
@@ -576,8 +611,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="xPosition", EmitDefaultValue=false)]
         public string XPosition { get; set; }
         /// <summary>
-        /// Gets or Sets XPositionMetadata
+        /// Metadata that indicates whether the &#x60;xPosition&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;xPosition&#x60; property is editable.</value>
         [DataMember(Name="xPositionMetadata", EmitDefaultValue=false)]
         public PropertyMetadata XPositionMetadata { get; set; }
         /// <summary>
@@ -587,8 +623,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="yPosition", EmitDefaultValue=false)]
         public string YPosition { get; set; }
         /// <summary>
-        /// Gets or Sets YPositionMetadata
+        /// Metadata that indicates whether the &#x60;yPosition&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;yPosition&#x60; property is editable.</value>
         [DataMember(Name="yPositionMetadata", EmitDefaultValue=false)]
         public PropertyMetadata YPositionMetadata { get; set; }
         /// <summary>

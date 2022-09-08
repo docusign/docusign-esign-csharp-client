@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientUpdateResponse
+    /// The recipient details that are returned after you update the recipient.
     /// </summary>
     [DataContract]
     public partial class RecipientUpdateResponse :  IEquatable<RecipientUpdateResponse>, IValidatableObject
@@ -39,10 +39,10 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="RecipientUpdateResponse" /> class.
         /// </summary>
         /// <param name="Combined">Combined.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
-        /// <param name="Tabs">Tabs.</param>
+        /// <param name="Tabs">All of the tabs associated with the recipient..</param>
         public RecipientUpdateResponse(string Combined = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string RecipientId = default(string), string RecipientIdGuid = default(string), Tabs Tabs = default(Tabs))
         {
             this.Combined = Combined;
@@ -58,8 +58,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="combined", EmitDefaultValue=false)]
         public string Combined { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -74,8 +75,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientIdGuid", EmitDefaultValue=false)]
         public string RecipientIdGuid { get; set; }
         /// <summary>
-        /// Gets or Sets Tabs
+        /// All of the tabs associated with the recipient.
         /// </summary>
+        /// <value>All of the tabs associated with the recipient.</value>
         [DataMember(Name="tabs", EmitDefaultValue=false)]
         public Tabs Tabs { get; set; }
         /// <summary>

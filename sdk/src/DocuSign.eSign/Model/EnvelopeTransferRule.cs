@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopeTransferRule
+    /// This object contains details about an envelope transfer rule.
     /// </summary>
     [DataContract]
     public partial class EnvelopeTransferRule :  IEquatable<EnvelopeTransferRule>, IValidatableObject
@@ -42,12 +42,12 @@ namespace DocuSign.eSign.Model
         /// <param name="Enabled">Enabled.</param>
         /// <param name="EnvelopeTransferRuleId">EnvelopeTransferRuleId.</param>
         /// <param name="EventType">EventType.</param>
-        /// <param name="FromGroup">FromGroup.</param>
-        /// <param name="FromUser">FromUser.</param>
+        /// <param name="FromGroup">Information about the group that triggers the transfer..</param>
+        /// <param name="FromUser">Information about the user who triggers the transfer..</param>
         /// <param name="ModifiedDate">ModifiedDate.</param>
-        /// <param name="ModifiedUser">ModifiedUser.</param>
-        /// <param name="ToFolder">ToFolder.</param>
-        /// <param name="ToUser">ToUser.</param>
+        /// <param name="ModifiedUser">Information about the user who last modified the envelope transfer rule..</param>
+        /// <param name="ToFolder">Information about the destination folder to which the envelope is transferred..</param>
+        /// <param name="ToUser">Information about the user to which the envelope is transferred..</param>
         public EnvelopeTransferRule(string CarbonCopyOriginalOwner = default(string), string Enabled = default(string), string EnvelopeTransferRuleId = default(string), string EventType = default(string), Group FromGroup = default(Group), UserInformation FromUser = default(UserInformation), string ModifiedDate = default(string), UserInformation ModifiedUser = default(UserInformation), Folder ToFolder = default(Folder), UserInformation ToUser = default(UserInformation))
         {
             this.CarbonCopyOriginalOwner = CarbonCopyOriginalOwner;
@@ -83,13 +83,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="eventType", EmitDefaultValue=false)]
         public string EventType { get; set; }
         /// <summary>
-        /// Gets or Sets FromGroup
+        /// Information about the group that triggers the transfer.
         /// </summary>
+        /// <value>Information about the group that triggers the transfer.</value>
         [DataMember(Name="fromGroup", EmitDefaultValue=false)]
         public Group FromGroup { get; set; }
         /// <summary>
-        /// Gets or Sets FromUser
+        /// Information about the user who triggers the transfer.
         /// </summary>
+        /// <value>Information about the user who triggers the transfer.</value>
         [DataMember(Name="fromUser", EmitDefaultValue=false)]
         public UserInformation FromUser { get; set; }
         /// <summary>
@@ -98,18 +100,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="modifiedDate", EmitDefaultValue=false)]
         public string ModifiedDate { get; set; }
         /// <summary>
-        /// Gets or Sets ModifiedUser
+        /// Information about the user who last modified the envelope transfer rule.
         /// </summary>
+        /// <value>Information about the user who last modified the envelope transfer rule.</value>
         [DataMember(Name="modifiedUser", EmitDefaultValue=false)]
         public UserInformation ModifiedUser { get; set; }
         /// <summary>
-        /// Gets or Sets ToFolder
+        /// Information about the destination folder to which the envelope is transferred.
         /// </summary>
+        /// <value>Information about the destination folder to which the envelope is transferred.</value>
         [DataMember(Name="toFolder", EmitDefaultValue=false)]
         public Folder ToFolder { get; set; }
         /// <summary>
-        /// Gets or Sets ToUser
+        /// Information about the user to which the envelope is transferred.
         /// </summary>
+        /// <value>Information about the user to which the envelope is transferred.</value>
         [DataMember(Name="toUser", EmitDefaultValue=false)]
         public UserInformation ToUser { get; set; }
         /// <summary>

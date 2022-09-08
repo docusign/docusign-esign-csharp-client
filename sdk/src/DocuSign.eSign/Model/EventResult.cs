@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EventResult
+    /// Information about the result of an event.
     /// </summary>
     [DataContract]
     public partial class EventResult :  IEquatable<EventResult>, IValidatableObject

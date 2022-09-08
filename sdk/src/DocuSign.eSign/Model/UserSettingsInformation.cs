@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// UserSettingsInformation
+    /// Properties that configure the settings for a user. Some elements of this object have a &#x60;metadata&#x60; property, which includes the following: - &#x60;rights&#x60;: The calling users permissions to edit this setting (can be &#x60;editable&#x60; or &#x60;read_only&#x60;) - &#x60;uiHint&#x60;: Internally used to build UIs (can be &#x60;available&#x60; or &#x60;hidden&#x60;) - &#x60;options&#x60;: The values supported for this setting (not all settings have this element)
     /// </summary>
     [DataContract]
     public partial class UserSettingsInformation :  IEquatable<UserSettingsInformation>, IValidatableObject
@@ -38,129 +38,129 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserSettingsInformation" /> class.
         /// </summary>
-        /// <param name="AccountManagementGranular">AccountManagementGranular.</param>
+        /// <param name="AccountManagementGranular">Describes which account management capabilities a user has..</param>
         /// <param name="AdminOnly">AdminOnly.</param>
-        /// <param name="AdminOnlyMetadata">AdminOnlyMetadata.</param>
+        /// <param name="AdminOnlyMetadata">Reserved for DocuSign..</param>
         /// <param name="AllowAutoTagging">AllowAutoTagging.</param>
         /// <param name="AllowEnvelopeTransferTo">AllowEnvelopeTransferTo.</param>
-        /// <param name="AllowEnvelopeTransferToMetadata">AllowEnvelopeTransferToMetadata.</param>
+        /// <param name="AllowEnvelopeTransferToMetadata">Reserved for DocuSign..</param>
         /// <param name="AllowEsealRecipients">AllowEsealRecipients.</param>
-        /// <param name="AllowEsealRecipientsMetadata">AllowEsealRecipientsMetadata.</param>
+        /// <param name="AllowEsealRecipientsMetadata">Metadata about the &#x60;allowEsealRecipientsMetadata&#x60; property..</param>
         /// <param name="AllowPowerFormsAdminToAccessAllPowerFormEnvelope">AllowPowerFormsAdminToAccessAllPowerFormEnvelope.</param>
-        /// <param name="AllowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata">AllowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata.</param>
+        /// <param name="AllowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata">Metadata about the &#x60;allowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata&#x60; property..</param>
         /// <param name="AllowRecipientLanguageSelection">AllowRecipientLanguageSelection.</param>
-        /// <param name="AllowRecipientLanguageSelectionMetadata">AllowRecipientLanguageSelectionMetadata.</param>
+        /// <param name="AllowRecipientLanguageSelectionMetadata">Metadata for allowRecipientLanguageSelection..</param>
         /// <param name="AllowSendOnBehalfOf">AllowSendOnBehalfOf.</param>
-        /// <param name="AllowSendOnBehalfOfMetadata">AllowSendOnBehalfOfMetadata.</param>
+        /// <param name="AllowSendOnBehalfOfMetadata">Metadata for allowSendOnBehalfOf..</param>
         /// <param name="AllowSupplementalDocuments">AllowSupplementalDocuments.</param>
-        /// <param name="AllowSupplementalDocumentsMetadata">AllowSupplementalDocumentsMetadata.</param>
+        /// <param name="AllowSupplementalDocumentsMetadata">Metadata that indicates whether the &#x60;allowSupplementalDocuments&#x60; property is editable..</param>
         /// <param name="AnchorTagVersionedPlacementEnabled">AnchorTagVersionedPlacementEnabled.</param>
         /// <param name="ApiAccountWideAccess">ApiAccountWideAccess.</param>
-        /// <param name="ApiAccountWideAccessMetadata">ApiAccountWideAccessMetadata.</param>
+        /// <param name="ApiAccountWideAccessMetadata">Metadata for apiAccountWideAccess..</param>
         /// <param name="ApiCanExportAC">ApiCanExportAC.</param>
-        /// <param name="ApiCanExportACMetadata">ApiCanExportACMetadata.</param>
+        /// <param name="ApiCanExportACMetadata">Metadata about the &#x60;apiCanExportACMetadata&#x60; property..</param>
         /// <param name="BulkSend">BulkSend.</param>
-        /// <param name="BulkSendMetadata">BulkSendMetadata.</param>
+        /// <param name="BulkSendMetadata">Metadata that indicates whether the &#x60;bulkSend&#x60; property is editable. .</param>
         /// <param name="CanChargeAccount">CanChargeAccount.</param>
-        /// <param name="CanChargeAccountMetadata">CanChargeAccountMetadata.</param>
+        /// <param name="CanChargeAccountMetadata">Reserved for DocuSign..</param>
         /// <param name="CanEditSharedAddressbook">CanEditSharedAddressbook.</param>
-        /// <param name="CanEditSharedAddressbookMetadata">CanEditSharedAddressbookMetadata.</param>
+        /// <param name="CanEditSharedAddressbookMetadata">Metadata about the &#x60;canEditSharedAddressbookMetadata&#x60; property..</param>
         /// <param name="CanLockEnvelopes">CanLockEnvelopes.</param>
-        /// <param name="CanLockEnvelopesMetadata">CanLockEnvelopesMetadata.</param>
+        /// <param name="CanLockEnvelopesMetadata">Metadata about the &#x60;canLockEnvelopes&#x60; property..</param>
         /// <param name="CanManageAccount">CanManageAccount.</param>
-        /// <param name="CanManageAccountMetadata">CanManageAccountMetadata.</param>
+        /// <param name="CanManageAccountMetadata">Metadata about the &#x60;canManageAccountMetadata&#x60; property..</param>
         /// <param name="CanManageDistributor">CanManageDistributor.</param>
-        /// <param name="CanManageDistributorMetadata">CanManageDistributorMetadata.</param>
+        /// <param name="CanManageDistributorMetadata">Metadata about the &#x60;canManageDistributor&#x60; property..</param>
         /// <param name="CanManageTemplates">CanManageTemplates.</param>
-        /// <param name="CanManageTemplatesMetadata">CanManageTemplatesMetadata.</param>
+        /// <param name="CanManageTemplatesMetadata">Metadata about the &#x60;canManageTemplates&#x60; property..</param>
         /// <param name="CanSendAPIRequests">CanSendAPIRequests.</param>
-        /// <param name="CanSendAPIRequestsMetadata">CanSendAPIRequestsMetadata.</param>
+        /// <param name="CanSendAPIRequestsMetadata">Metadata about the &#x60;canSendAPIRequests&#x60; property..</param>
         /// <param name="CanSendEnvelope">CanSendEnvelope.</param>
-        /// <param name="CanSendEnvelopeMetadata">CanSendEnvelopeMetadata.</param>
+        /// <param name="CanSendEnvelopeMetadata">Metadata about the &#x60;canSendEnvelope&#x60; property..</param>
         /// <param name="CanSendEnvelopesViaSMS">CanSendEnvelopesViaSMS.</param>
         /// <param name="CanSendEnvelopesViaSMSMetadata">CanSendEnvelopesViaSMSMetadata.</param>
         /// <param name="CanSignEnvelope">CanSignEnvelope.</param>
-        /// <param name="CanSignEnvelopeMetadata">CanSignEnvelopeMetadata.</param>
+        /// <param name="CanSignEnvelopeMetadata">Metadata about the &#x60;canSignEnvelope&#x60; property..</param>
         /// <param name="CanUseScratchpad">CanUseScratchpad.</param>
-        /// <param name="CanUseScratchpadMetadata">CanUseScratchpadMetadata.</param>
+        /// <param name="CanUseScratchpadMetadata">Metadata about the &#x60;canUseScratchpad&#x60; property..</param>
         /// <param name="CanUseSmartContracts">CanUseSmartContracts.</param>
-        /// <param name="CanUseSmartContractsMetadata">CanUseSmartContractsMetadata.</param>
+        /// <param name="CanUseSmartContractsMetadata">Reserved for DocuSign..</param>
         /// <param name="DisableDocumentUpload">DisableDocumentUpload.</param>
-        /// <param name="DisableDocumentUploadMetadata">DisableDocumentUploadMetadata.</param>
+        /// <param name="DisableDocumentUploadMetadata">Metadata that indicates whether the &#x60;disableDocumentUpload&#x60; property is editable. .</param>
         /// <param name="DisableOtherActions">DisableOtherActions.</param>
-        /// <param name="DisableOtherActionsMetadata">DisableOtherActionsMetadata.</param>
+        /// <param name="DisableOtherActionsMetadata">Metadata that indicates whether the &#x60;disableOtherActions&#x60; property is editable. .</param>
         /// <param name="EnableDSPro">EnableDSPro.</param>
-        /// <param name="EnableDSProMetadata">EnableDSProMetadata.</param>
+        /// <param name="EnableDSProMetadata">Metadata that indicates whether the &#x60;enableDSPro&#x60; property is editable. .</param>
         /// <param name="EnableKeyTermsSuggestionsByDocumentType">EnableKeyTermsSuggestionsByDocumentType.</param>
         /// <param name="EnableKeyTermsSuggestionsByDocumentTypeMetadata">EnableKeyTermsSuggestionsByDocumentTypeMetadata.</param>
         /// <param name="EnableSequentialSigningAPI">EnableSequentialSigningAPI.</param>
-        /// <param name="EnableSequentialSigningAPIMetadata">EnableSequentialSigningAPIMetadata.</param>
+        /// <param name="EnableSequentialSigningAPIMetadata">Metadata that indicates whether the &#x60;enableSequentialSigningAPI&#x60; property is editable. .</param>
         /// <param name="EnableSequentialSigningUI">EnableSequentialSigningUI.</param>
-        /// <param name="EnableSequentialSigningUIMetadata">EnableSequentialSigningUIMetadata.</param>
+        /// <param name="EnableSequentialSigningUIMetadata">Metadata that indicates whether the &#x60;enableSequentialSigningUI&#x60; property is editable. .</param>
         /// <param name="EnableSignerAttachments">EnableSignerAttachments.</param>
-        /// <param name="EnableSignerAttachmentsMetadata">EnableSignerAttachmentsMetadata.</param>
+        /// <param name="EnableSignerAttachmentsMetadata">Metadata that indicates whether the &#x60;enableSignerAttachments&#x60; property is editable. .</param>
         /// <param name="EnableSignOnPaperOverride">EnableSignOnPaperOverride.</param>
-        /// <param name="EnableSignOnPaperOverrideMetadata">EnableSignOnPaperOverrideMetadata.</param>
+        /// <param name="EnableSignOnPaperOverrideMetadata">Metadata that indicates whether the &#x60;enableSignOnPaperOverride&#x60; property is editable. .</param>
         /// <param name="EnableTransactionPoint">EnableTransactionPoint.</param>
-        /// <param name="EnableTransactionPointMetadata">EnableTransactionPointMetadata.</param>
+        /// <param name="EnableTransactionPointMetadata">Reserved for DocuSign..</param>
         /// <param name="EnableVaulting">EnableVaulting.</param>
-        /// <param name="EnableVaultingMetadata">EnableVaultingMetadata.</param>
+        /// <param name="EnableVaultingMetadata">Metadata that indicates whether the &#x60;enableVaulting&#x60; property is editable. .</param>
         /// <param name="ExpressSendOnly">ExpressSendOnly.</param>
         /// <param name="Locale">Locale.</param>
-        /// <param name="LocaleMetadata">LocaleMetadata.</param>
-        /// <param name="LocalePolicy">LocalePolicy.</param>
+        /// <param name="LocaleMetadata">Metadata about the &#x60;locale&#x60; property..</param>
+        /// <param name="LocalePolicy">Reserved for DocuSign..</param>
         /// <param name="ManageClickwrapsMode">ManageClickwrapsMode.</param>
-        /// <param name="ManageClickwrapsModeMetadata">ManageClickwrapsModeMetadata.</param>
+        /// <param name="ManageClickwrapsModeMetadata">Metadata about the &#x60;manageClickwrapsMode&#x60; property..</param>
         /// <param name="ModifiedBy">ModifiedBy.</param>
-        /// <param name="ModifiedByMetadata">ModifiedByMetadata.</param>
+        /// <param name="ModifiedByMetadata">Metadata about the &#x60;modifiedBy&#x60; property..</param>
         /// <param name="ModifiedDate">ModifiedDate.</param>
-        /// <param name="ModifiedDateMetadata">ModifiedDateMetadata.</param>
+        /// <param name="ModifiedDateMetadata">Metadata about the &#x60;modifiedDate&#x60; property..</param>
         /// <param name="ModifiedPage">ModifiedPage.</param>
-        /// <param name="ModifiedPageMetadata">ModifiedPageMetadata.</param>
+        /// <param name="ModifiedPageMetadata">Metadata about the &#x60;modifiedPage&#x60; property..</param>
         /// <param name="NewSendUI">NewSendUI.</param>
-        /// <param name="NewSendUIMetadata">NewSendUIMetadata.</param>
+        /// <param name="NewSendUIMetadata">Metadata about the &#x60;newSendUI&#x60; property..</param>
         /// <param name="PowerFormMode">PowerFormMode.</param>
-        /// <param name="PowerFormModeMetadata">PowerFormModeMetadata.</param>
+        /// <param name="PowerFormModeMetadata">Metadata about the &#x60;powerFormMode&#x60; property..</param>
         /// <param name="RecipientViewedNotification">RecipientViewedNotification.</param>
-        /// <param name="RecipientViewedNotificationMetadata">RecipientViewedNotificationMetadata.</param>
+        /// <param name="RecipientViewedNotificationMetadata">Metadata about the &#x60;recipientViewedNotification&#x60; property..</param>
         /// <param name="SealIdentifiers">SealIdentifiers.</param>
         /// <param name="SelfSignedRecipientEmailDocument">SelfSignedRecipientEmailDocument.</param>
-        /// <param name="SelfSignedRecipientEmailDocumentMetadata">SelfSignedRecipientEmailDocumentMetadata.</param>
-        /// <param name="SenderEmailNotifications">SenderEmailNotifications.</param>
-        /// <param name="SignerEmailNotifications">SignerEmailNotifications.</param>
+        /// <param name="SelfSignedRecipientEmailDocumentMetadata">Metadata that indicates whether the &#x60;selfSignedRecipientEmailDocument&#x60; property is editable. .</param>
+        /// <param name="SenderEmailNotifications">  An array of email notifications that sets the email the user receives when they are a sender. When the specific email notification is set to true, the user will receive those types of email notifications from DocuSign.   The user inherits the default account sender email notification settings when the user is created. The email notifications are:  * envelopeComplete * changedSigner  * senderEnvelopeDeclined  * withdrawnConsent  * recipientViewed  * deliveryFailed   .</param>
+        /// <param name="SignerEmailNotifications">An array of email notifications that specifies the email the user receives when they are a recipient. When the specific email notification is set to true, the user receives those types of email notifications from DocuSign. The user inherits the default account email notification settings when the user is created. .</param>
         /// <param name="SupplementalDocumentIncludeInDownload">SupplementalDocumentIncludeInDownload.</param>
         /// <param name="SupplementalDocumentsMustAccept">SupplementalDocumentsMustAccept.</param>
-        /// <param name="SupplementalDocumentsMustAcceptMetadata">SupplementalDocumentsMustAcceptMetadata.</param>
+        /// <param name="SupplementalDocumentsMustAcceptMetadata">Metadata that indicates whether the &#x60;supplementalDocumentsMustAccept&#x60; property is editable. .</param>
         /// <param name="SupplementalDocumentsMustRead">SupplementalDocumentsMustRead.</param>
-        /// <param name="SupplementalDocumentsMustReadMetadata">SupplementalDocumentsMustReadMetadata.</param>
+        /// <param name="SupplementalDocumentsMustReadMetadata">Metadata that indicates whether the &#x60;supplementalDocumentsMustRead&#x60; property is editable. .</param>
         /// <param name="SupplementalDocumentsMustView">SupplementalDocumentsMustView.</param>
-        /// <param name="SupplementalDocumentsMustViewMetadata">SupplementalDocumentsMustViewMetadata.</param>
+        /// <param name="SupplementalDocumentsMustViewMetadata">Metadata that indicates whether the &#x60;supplementalDocumentsMustView&#x60; property is editable. .</param>
         /// <param name="TemplateActiveCreation">TemplateActiveCreation.</param>
-        /// <param name="TemplateActiveCreationMetadata">TemplateActiveCreationMetadata.</param>
+        /// <param name="TemplateActiveCreationMetadata">Metadata about the &#x60;templateActiveCreation&#x60; property..</param>
         /// <param name="TemplateApplyNotify">TemplateApplyNotify.</param>
-        /// <param name="TemplateApplyNotifyMetadata">TemplateApplyNotifyMetadata.</param>
+        /// <param name="TemplateApplyNotifyMetadata">Metadata about the &#x60;templateApplyNotify&#x60; property..</param>
         /// <param name="TemplateAutoMatching">TemplateAutoMatching.</param>
-        /// <param name="TemplateAutoMatchingMetadata">TemplateAutoMatchingMetadata.</param>
+        /// <param name="TemplateAutoMatchingMetadata">Metadata about the &#x60;templateAutoMatching&#x60; property..</param>
         /// <param name="TemplateMatchingSensitivity">TemplateMatchingSensitivity.</param>
-        /// <param name="TemplateMatchingSensitivityMetadata">TemplateMatchingSensitivityMetadata.</param>
+        /// <param name="TemplateMatchingSensitivityMetadata">Metadata about the &#x60;tempalteMatchingSensitivity&#x60; property..</param>
         /// <param name="TemplatePageLevelMatching">TemplatePageLevelMatching.</param>
-        /// <param name="TemplatePageLevelMatchingMetadata">TemplatePageLevelMatchingMetadata.</param>
+        /// <param name="TemplatePageLevelMatchingMetadata">Metadata about the &#x60;templatePageLevelMatching&#x60; property..</param>
         /// <param name="TimezoneDST">TimezoneDST.</param>
-        /// <param name="TimezoneDSTMetadata">TimezoneDSTMetadata.</param>
+        /// <param name="TimezoneDSTMetadata">Metadata about the &#x60;timezoneDST&#x60; property..</param>
         /// <param name="TimezoneMask">TimezoneMask.</param>
-        /// <param name="TimezoneMaskMetadata">TimezoneMaskMetadata.</param>
+        /// <param name="TimezoneMaskMetadata">Metadata about the &#x60;timezoneMask&#x60; property..</param>
         /// <param name="TimezoneOffset">TimezoneOffset.</param>
-        /// <param name="TimezoneOffsetMetadata">TimezoneOffsetMetadata.</param>
+        /// <param name="TimezoneOffsetMetadata">Metadata about the &#x60;timezoneOffset&#x60; property..</param>
         /// <param name="TimezoneSendingPref">TimezoneSendingPref.</param>
-        /// <param name="TimezoneSendingPrefMetadata">TimezoneSendingPrefMetadata.</param>
+        /// <param name="TimezoneSendingPrefMetadata">Reserved for DocuSign..</param>
         /// <param name="TimezoneSigningPref">TimezoneSigningPref.</param>
-        /// <param name="TimezoneSigningPrefMetadata">TimezoneSigningPrefMetadata.</param>
+        /// <param name="TimezoneSigningPrefMetadata">Reserved for DocuSign..</param>
         /// <param name="TransactionPointSiteNameURL">TransactionPointSiteNameURL.</param>
-        /// <param name="TransactionPointSiteNameURLMetadata">TransactionPointSiteNameURLMetadata.</param>
+        /// <param name="TransactionPointSiteNameURLMetadata">Reserved for DocuSign..</param>
         /// <param name="TransactionPointUserName">TransactionPointUserName.</param>
-        /// <param name="TransactionPointUserNameMetadata">TransactionPointUserNameMetadata.</param>
+        /// <param name="TransactionPointUserNameMetadata">Reserved for DocuSign..</param>
         /// <param name="VaultingMode">VaultingMode.</param>
-        /// <param name="VaultingModeMetadata">VaultingModeMetadata.</param>
+        /// <param name="VaultingModeMetadata">Metadata about the &#x60;vaultingMode&#x60; property..</param>
         /// <param name="WebForms">WebForms.</param>
         /// <param name="WebFormsMetadata">WebFormsMetadata.</param>
         public UserSettingsInformation(UserAccountManagementGranularInformation AccountManagementGranular = default(UserAccountManagementGranularInformation), string AdminOnly = default(string), SettingsMetadata AdminOnlyMetadata = default(SettingsMetadata), string AllowAutoTagging = default(string), string AllowEnvelopeTransferTo = default(string), SettingsMetadata AllowEnvelopeTransferToMetadata = default(SettingsMetadata), string AllowEsealRecipients = default(string), SettingsMetadata AllowEsealRecipientsMetadata = default(SettingsMetadata), string AllowPowerFormsAdminToAccessAllPowerFormEnvelope = default(string), SettingsMetadata AllowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata = default(SettingsMetadata), string AllowRecipientLanguageSelection = default(string), SettingsMetadata AllowRecipientLanguageSelectionMetadata = default(SettingsMetadata), string AllowSendOnBehalfOf = default(string), SettingsMetadata AllowSendOnBehalfOfMetadata = default(SettingsMetadata), string AllowSupplementalDocuments = default(string), SettingsMetadata AllowSupplementalDocumentsMetadata = default(SettingsMetadata), string AnchorTagVersionedPlacementEnabled = default(string), string ApiAccountWideAccess = default(string), SettingsMetadata ApiAccountWideAccessMetadata = default(SettingsMetadata), string ApiCanExportAC = default(string), SettingsMetadata ApiCanExportACMetadata = default(SettingsMetadata), string BulkSend = default(string), SettingsMetadata BulkSendMetadata = default(SettingsMetadata), string CanChargeAccount = default(string), SettingsMetadata CanChargeAccountMetadata = default(SettingsMetadata), string CanEditSharedAddressbook = default(string), SettingsMetadata CanEditSharedAddressbookMetadata = default(SettingsMetadata), string CanLockEnvelopes = default(string), SettingsMetadata CanLockEnvelopesMetadata = default(SettingsMetadata), string CanManageAccount = default(string), SettingsMetadata CanManageAccountMetadata = default(SettingsMetadata), string CanManageDistributor = default(string), SettingsMetadata CanManageDistributorMetadata = default(SettingsMetadata), string CanManageTemplates = default(string), SettingsMetadata CanManageTemplatesMetadata = default(SettingsMetadata), string CanSendAPIRequests = default(string), SettingsMetadata CanSendAPIRequestsMetadata = default(SettingsMetadata), string CanSendEnvelope = default(string), SettingsMetadata CanSendEnvelopeMetadata = default(SettingsMetadata), string CanSendEnvelopesViaSMS = default(string), SettingsMetadata CanSendEnvelopesViaSMSMetadata = default(SettingsMetadata), string CanSignEnvelope = default(string), SettingsMetadata CanSignEnvelopeMetadata = default(SettingsMetadata), string CanUseScratchpad = default(string), SettingsMetadata CanUseScratchpadMetadata = default(SettingsMetadata), string CanUseSmartContracts = default(string), SettingsMetadata CanUseSmartContractsMetadata = default(SettingsMetadata), string DisableDocumentUpload = default(string), SettingsMetadata DisableDocumentUploadMetadata = default(SettingsMetadata), string DisableOtherActions = default(string), SettingsMetadata DisableOtherActionsMetadata = default(SettingsMetadata), string EnableDSPro = default(string), SettingsMetadata EnableDSProMetadata = default(SettingsMetadata), string EnableKeyTermsSuggestionsByDocumentType = default(string), SettingsMetadata EnableKeyTermsSuggestionsByDocumentTypeMetadata = default(SettingsMetadata), string EnableSequentialSigningAPI = default(string), SettingsMetadata EnableSequentialSigningAPIMetadata = default(SettingsMetadata), string EnableSequentialSigningUI = default(string), SettingsMetadata EnableSequentialSigningUIMetadata = default(SettingsMetadata), string EnableSignerAttachments = default(string), SettingsMetadata EnableSignerAttachmentsMetadata = default(SettingsMetadata), string EnableSignOnPaperOverride = default(string), SettingsMetadata EnableSignOnPaperOverrideMetadata = default(SettingsMetadata), string EnableTransactionPoint = default(string), SettingsMetadata EnableTransactionPointMetadata = default(SettingsMetadata), string EnableVaulting = default(string), SettingsMetadata EnableVaultingMetadata = default(SettingsMetadata), string ExpressSendOnly = default(string), string Locale = default(string), SettingsMetadata LocaleMetadata = default(SettingsMetadata), LocalePolicy LocalePolicy = default(LocalePolicy), string ManageClickwrapsMode = default(string), SettingsMetadata ManageClickwrapsModeMetadata = default(SettingsMetadata), string ModifiedBy = default(string), SettingsMetadata ModifiedByMetadata = default(SettingsMetadata), string ModifiedDate = default(string), SettingsMetadata ModifiedDateMetadata = default(SettingsMetadata), string ModifiedPage = default(string), SettingsMetadata ModifiedPageMetadata = default(SettingsMetadata), string NewSendUI = default(string), SettingsMetadata NewSendUIMetadata = default(SettingsMetadata), string PowerFormMode = default(string), SettingsMetadata PowerFormModeMetadata = default(SettingsMetadata), string RecipientViewedNotification = default(string), SettingsMetadata RecipientViewedNotificationMetadata = default(SettingsMetadata), List<SealIdentifier> SealIdentifiers = default(List<SealIdentifier>), string SelfSignedRecipientEmailDocument = default(string), SettingsMetadata SelfSignedRecipientEmailDocumentMetadata = default(SettingsMetadata), SenderEmailNotifications SenderEmailNotifications = default(SenderEmailNotifications), SignerEmailNotifications SignerEmailNotifications = default(SignerEmailNotifications), string SupplementalDocumentIncludeInDownload = default(string), string SupplementalDocumentsMustAccept = default(string), SettingsMetadata SupplementalDocumentsMustAcceptMetadata = default(SettingsMetadata), string SupplementalDocumentsMustRead = default(string), SettingsMetadata SupplementalDocumentsMustReadMetadata = default(SettingsMetadata), string SupplementalDocumentsMustView = default(string), SettingsMetadata SupplementalDocumentsMustViewMetadata = default(SettingsMetadata), string TemplateActiveCreation = default(string), SettingsMetadata TemplateActiveCreationMetadata = default(SettingsMetadata), string TemplateApplyNotify = default(string), SettingsMetadata TemplateApplyNotifyMetadata = default(SettingsMetadata), string TemplateAutoMatching = default(string), SettingsMetadata TemplateAutoMatchingMetadata = default(SettingsMetadata), string TemplateMatchingSensitivity = default(string), SettingsMetadata TemplateMatchingSensitivityMetadata = default(SettingsMetadata), string TemplatePageLevelMatching = default(string), SettingsMetadata TemplatePageLevelMatchingMetadata = default(SettingsMetadata), string TimezoneDST = default(string), SettingsMetadata TimezoneDSTMetadata = default(SettingsMetadata), string TimezoneMask = default(string), SettingsMetadata TimezoneMaskMetadata = default(SettingsMetadata), string TimezoneOffset = default(string), SettingsMetadata TimezoneOffsetMetadata = default(SettingsMetadata), string TimezoneSendingPref = default(string), SettingsMetadata TimezoneSendingPrefMetadata = default(SettingsMetadata), string TimezoneSigningPref = default(string), SettingsMetadata TimezoneSigningPrefMetadata = default(SettingsMetadata), string TransactionPointSiteNameURL = default(string), SettingsMetadata TransactionPointSiteNameURLMetadata = default(SettingsMetadata), string TransactionPointUserName = default(string), SettingsMetadata TransactionPointUserNameMetadata = default(SettingsMetadata), string VaultingMode = default(string), SettingsMetadata VaultingModeMetadata = default(SettingsMetadata), string WebForms = default(string), SettingsMetadata WebFormsMetadata = default(SettingsMetadata))
@@ -293,8 +293,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets AccountManagementGranular
+        /// Describes which account management capabilities a user has.
         /// </summary>
+        /// <value>Describes which account management capabilities a user has.</value>
         [DataMember(Name="accountManagementGranular", EmitDefaultValue=false)]
         public UserAccountManagementGranularInformation AccountManagementGranular { get; set; }
         /// <summary>
@@ -303,8 +304,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="adminOnly", EmitDefaultValue=false)]
         public string AdminOnly { get; set; }
         /// <summary>
-        /// Gets or Sets AdminOnlyMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="adminOnlyMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AdminOnlyMetadata { get; set; }
         /// <summary>
@@ -318,8 +320,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowEnvelopeTransferTo", EmitDefaultValue=false)]
         public string AllowEnvelopeTransferTo { get; set; }
         /// <summary>
-        /// Gets or Sets AllowEnvelopeTransferToMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="allowEnvelopeTransferToMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowEnvelopeTransferToMetadata { get; set; }
         /// <summary>
@@ -328,8 +331,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowEsealRecipients", EmitDefaultValue=false)]
         public string AllowEsealRecipients { get; set; }
         /// <summary>
-        /// Gets or Sets AllowEsealRecipientsMetadata
+        /// Metadata about the &#x60;allowEsealRecipientsMetadata&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;allowEsealRecipientsMetadata&#x60; property.</value>
         [DataMember(Name="allowEsealRecipientsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowEsealRecipientsMetadata { get; set; }
         /// <summary>
@@ -338,8 +342,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowPowerFormsAdminToAccessAllPowerFormEnvelope", EmitDefaultValue=false)]
         public string AllowPowerFormsAdminToAccessAllPowerFormEnvelope { get; set; }
         /// <summary>
-        /// Gets or Sets AllowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata
+        /// Metadata about the &#x60;allowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;allowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata&#x60; property.</value>
         [DataMember(Name="allowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata { get; set; }
         /// <summary>
@@ -348,8 +353,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowRecipientLanguageSelection", EmitDefaultValue=false)]
         public string AllowRecipientLanguageSelection { get; set; }
         /// <summary>
-        /// Gets or Sets AllowRecipientLanguageSelectionMetadata
+        /// Metadata for allowRecipientLanguageSelection.
         /// </summary>
+        /// <value>Metadata for allowRecipientLanguageSelection.</value>
         [DataMember(Name="allowRecipientLanguageSelectionMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowRecipientLanguageSelectionMetadata { get; set; }
         /// <summary>
@@ -358,8 +364,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowSendOnBehalfOf", EmitDefaultValue=false)]
         public string AllowSendOnBehalfOf { get; set; }
         /// <summary>
-        /// Gets or Sets AllowSendOnBehalfOfMetadata
+        /// Metadata for allowSendOnBehalfOf.
         /// </summary>
+        /// <value>Metadata for allowSendOnBehalfOf.</value>
         [DataMember(Name="allowSendOnBehalfOfMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowSendOnBehalfOfMetadata { get; set; }
         /// <summary>
@@ -368,8 +375,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowSupplementalDocuments", EmitDefaultValue=false)]
         public string AllowSupplementalDocuments { get; set; }
         /// <summary>
-        /// Gets or Sets AllowSupplementalDocumentsMetadata
+        /// Metadata that indicates whether the &#x60;allowSupplementalDocuments&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;allowSupplementalDocuments&#x60; property is editable.</value>
         [DataMember(Name="allowSupplementalDocumentsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowSupplementalDocumentsMetadata { get; set; }
         /// <summary>
@@ -383,8 +391,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="apiAccountWideAccess", EmitDefaultValue=false)]
         public string ApiAccountWideAccess { get; set; }
         /// <summary>
-        /// Gets or Sets ApiAccountWideAccessMetadata
+        /// Metadata for apiAccountWideAccess.
         /// </summary>
+        /// <value>Metadata for apiAccountWideAccess.</value>
         [DataMember(Name="apiAccountWideAccessMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ApiAccountWideAccessMetadata { get; set; }
         /// <summary>
@@ -393,8 +402,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="apiCanExportAC", EmitDefaultValue=false)]
         public string ApiCanExportAC { get; set; }
         /// <summary>
-        /// Gets or Sets ApiCanExportACMetadata
+        /// Metadata about the &#x60;apiCanExportACMetadata&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;apiCanExportACMetadata&#x60; property.</value>
         [DataMember(Name="apiCanExportACMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ApiCanExportACMetadata { get; set; }
         /// <summary>
@@ -403,8 +413,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="bulkSend", EmitDefaultValue=false)]
         public string BulkSend { get; set; }
         /// <summary>
-        /// Gets or Sets BulkSendMetadata
+        /// Metadata that indicates whether the &#x60;bulkSend&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;bulkSend&#x60; property is editable. </value>
         [DataMember(Name="bulkSendMetadata", EmitDefaultValue=false)]
         public SettingsMetadata BulkSendMetadata { get; set; }
         /// <summary>
@@ -413,8 +424,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canChargeAccount", EmitDefaultValue=false)]
         public string CanChargeAccount { get; set; }
         /// <summary>
-        /// Gets or Sets CanChargeAccountMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="canChargeAccountMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanChargeAccountMetadata { get; set; }
         /// <summary>
@@ -423,8 +435,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canEditSharedAddressbook", EmitDefaultValue=false)]
         public string CanEditSharedAddressbook { get; set; }
         /// <summary>
-        /// Gets or Sets CanEditSharedAddressbookMetadata
+        /// Metadata about the &#x60;canEditSharedAddressbookMetadata&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;canEditSharedAddressbookMetadata&#x60; property.</value>
         [DataMember(Name="canEditSharedAddressbookMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanEditSharedAddressbookMetadata { get; set; }
         /// <summary>
@@ -433,8 +446,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canLockEnvelopes", EmitDefaultValue=false)]
         public string CanLockEnvelopes { get; set; }
         /// <summary>
-        /// Gets or Sets CanLockEnvelopesMetadata
+        /// Metadata about the &#x60;canLockEnvelopes&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;canLockEnvelopes&#x60; property.</value>
         [DataMember(Name="canLockEnvelopesMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanLockEnvelopesMetadata { get; set; }
         /// <summary>
@@ -443,8 +457,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageAccount", EmitDefaultValue=false)]
         public string CanManageAccount { get; set; }
         /// <summary>
-        /// Gets or Sets CanManageAccountMetadata
+        /// Metadata about the &#x60;canManageAccountMetadata&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;canManageAccountMetadata&#x60; property.</value>
         [DataMember(Name="canManageAccountMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageAccountMetadata { get; set; }
         /// <summary>
@@ -453,8 +468,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageDistributor", EmitDefaultValue=false)]
         public string CanManageDistributor { get; set; }
         /// <summary>
-        /// Gets or Sets CanManageDistributorMetadata
+        /// Metadata about the &#x60;canManageDistributor&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;canManageDistributor&#x60; property.</value>
         [DataMember(Name="canManageDistributorMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageDistributorMetadata { get; set; }
         /// <summary>
@@ -463,8 +479,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageTemplates", EmitDefaultValue=false)]
         public string CanManageTemplates { get; set; }
         /// <summary>
-        /// Gets or Sets CanManageTemplatesMetadata
+        /// Metadata about the &#x60;canManageTemplates&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;canManageTemplates&#x60; property.</value>
         [DataMember(Name="canManageTemplatesMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageTemplatesMetadata { get; set; }
         /// <summary>
@@ -473,8 +490,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canSendAPIRequests", EmitDefaultValue=false)]
         public string CanSendAPIRequests { get; set; }
         /// <summary>
-        /// Gets or Sets CanSendAPIRequestsMetadata
+        /// Metadata about the &#x60;canSendAPIRequests&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;canSendAPIRequests&#x60; property.</value>
         [DataMember(Name="canSendAPIRequestsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanSendAPIRequestsMetadata { get; set; }
         /// <summary>
@@ -483,8 +501,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canSendEnvelope", EmitDefaultValue=false)]
         public string CanSendEnvelope { get; set; }
         /// <summary>
-        /// Gets or Sets CanSendEnvelopeMetadata
+        /// Metadata about the &#x60;canSendEnvelope&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;canSendEnvelope&#x60; property.</value>
         [DataMember(Name="canSendEnvelopeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanSendEnvelopeMetadata { get; set; }
         /// <summary>
@@ -503,8 +522,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canSignEnvelope", EmitDefaultValue=false)]
         public string CanSignEnvelope { get; set; }
         /// <summary>
-        /// Gets or Sets CanSignEnvelopeMetadata
+        /// Metadata about the &#x60;canSignEnvelope&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;canSignEnvelope&#x60; property.</value>
         [DataMember(Name="canSignEnvelopeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanSignEnvelopeMetadata { get; set; }
         /// <summary>
@@ -513,8 +533,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canUseScratchpad", EmitDefaultValue=false)]
         public string CanUseScratchpad { get; set; }
         /// <summary>
-        /// Gets or Sets CanUseScratchpadMetadata
+        /// Metadata about the &#x60;canUseScratchpad&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;canUseScratchpad&#x60; property.</value>
         [DataMember(Name="canUseScratchpadMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanUseScratchpadMetadata { get; set; }
         /// <summary>
@@ -523,8 +544,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canUseSmartContracts", EmitDefaultValue=false)]
         public string CanUseSmartContracts { get; set; }
         /// <summary>
-        /// Gets or Sets CanUseSmartContractsMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="canUseSmartContractsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanUseSmartContractsMetadata { get; set; }
         /// <summary>
@@ -533,8 +555,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="disableDocumentUpload", EmitDefaultValue=false)]
         public string DisableDocumentUpload { get; set; }
         /// <summary>
-        /// Gets or Sets DisableDocumentUploadMetadata
+        /// Metadata that indicates whether the &#x60;disableDocumentUpload&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;disableDocumentUpload&#x60; property is editable. </value>
         [DataMember(Name="disableDocumentUploadMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DisableDocumentUploadMetadata { get; set; }
         /// <summary>
@@ -543,8 +566,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="disableOtherActions", EmitDefaultValue=false)]
         public string DisableOtherActions { get; set; }
         /// <summary>
-        /// Gets or Sets DisableOtherActionsMetadata
+        /// Metadata that indicates whether the &#x60;disableOtherActions&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;disableOtherActions&#x60; property is editable. </value>
         [DataMember(Name="disableOtherActionsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DisableOtherActionsMetadata { get; set; }
         /// <summary>
@@ -553,8 +577,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableDSPro", EmitDefaultValue=false)]
         public string EnableDSPro { get; set; }
         /// <summary>
-        /// Gets or Sets EnableDSProMetadata
+        /// Metadata that indicates whether the &#x60;enableDSPro&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;enableDSPro&#x60; property is editable. </value>
         [DataMember(Name="enableDSProMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableDSProMetadata { get; set; }
         /// <summary>
@@ -573,8 +598,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableSequentialSigningAPI", EmitDefaultValue=false)]
         public string EnableSequentialSigningAPI { get; set; }
         /// <summary>
-        /// Gets or Sets EnableSequentialSigningAPIMetadata
+        /// Metadata that indicates whether the &#x60;enableSequentialSigningAPI&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;enableSequentialSigningAPI&#x60; property is editable. </value>
         [DataMember(Name="enableSequentialSigningAPIMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableSequentialSigningAPIMetadata { get; set; }
         /// <summary>
@@ -583,8 +609,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableSequentialSigningUI", EmitDefaultValue=false)]
         public string EnableSequentialSigningUI { get; set; }
         /// <summary>
-        /// Gets or Sets EnableSequentialSigningUIMetadata
+        /// Metadata that indicates whether the &#x60;enableSequentialSigningUI&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;enableSequentialSigningUI&#x60; property is editable. </value>
         [DataMember(Name="enableSequentialSigningUIMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableSequentialSigningUIMetadata { get; set; }
         /// <summary>
@@ -593,8 +620,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableSignerAttachments", EmitDefaultValue=false)]
         public string EnableSignerAttachments { get; set; }
         /// <summary>
-        /// Gets or Sets EnableSignerAttachmentsMetadata
+        /// Metadata that indicates whether the &#x60;enableSignerAttachments&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;enableSignerAttachments&#x60; property is editable. </value>
         [DataMember(Name="enableSignerAttachmentsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableSignerAttachmentsMetadata { get; set; }
         /// <summary>
@@ -603,8 +631,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableSignOnPaperOverride", EmitDefaultValue=false)]
         public string EnableSignOnPaperOverride { get; set; }
         /// <summary>
-        /// Gets or Sets EnableSignOnPaperOverrideMetadata
+        /// Metadata that indicates whether the &#x60;enableSignOnPaperOverride&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;enableSignOnPaperOverride&#x60; property is editable. </value>
         [DataMember(Name="enableSignOnPaperOverrideMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableSignOnPaperOverrideMetadata { get; set; }
         /// <summary>
@@ -613,8 +642,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableTransactionPoint", EmitDefaultValue=false)]
         public string EnableTransactionPoint { get; set; }
         /// <summary>
-        /// Gets or Sets EnableTransactionPointMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="enableTransactionPointMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableTransactionPointMetadata { get; set; }
         /// <summary>
@@ -623,8 +653,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableVaulting", EmitDefaultValue=false)]
         public string EnableVaulting { get; set; }
         /// <summary>
-        /// Gets or Sets EnableVaultingMetadata
+        /// Metadata that indicates whether the &#x60;enableVaulting&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;enableVaulting&#x60; property is editable. </value>
         [DataMember(Name="enableVaultingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableVaultingMetadata { get; set; }
         /// <summary>
@@ -638,13 +669,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="locale", EmitDefaultValue=false)]
         public string Locale { get; set; }
         /// <summary>
-        /// Gets or Sets LocaleMetadata
+        /// Metadata about the &#x60;locale&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;locale&#x60; property.</value>
         [DataMember(Name="localeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata LocaleMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets LocalePolicy
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="localePolicy", EmitDefaultValue=false)]
         public LocalePolicy LocalePolicy { get; set; }
         /// <summary>
@@ -653,8 +686,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="manageClickwrapsMode", EmitDefaultValue=false)]
         public string ManageClickwrapsMode { get; set; }
         /// <summary>
-        /// Gets or Sets ManageClickwrapsModeMetadata
+        /// Metadata about the &#x60;manageClickwrapsMode&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;manageClickwrapsMode&#x60; property.</value>
         [DataMember(Name="manageClickwrapsModeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ManageClickwrapsModeMetadata { get; set; }
         /// <summary>
@@ -663,8 +697,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="modifiedBy", EmitDefaultValue=false)]
         public string ModifiedBy { get; set; }
         /// <summary>
-        /// Gets or Sets ModifiedByMetadata
+        /// Metadata about the &#x60;modifiedBy&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;modifiedBy&#x60; property.</value>
         [DataMember(Name="modifiedByMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ModifiedByMetadata { get; set; }
         /// <summary>
@@ -673,8 +708,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="modifiedDate", EmitDefaultValue=false)]
         public string ModifiedDate { get; set; }
         /// <summary>
-        /// Gets or Sets ModifiedDateMetadata
+        /// Metadata about the &#x60;modifiedDate&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;modifiedDate&#x60; property.</value>
         [DataMember(Name="modifiedDateMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ModifiedDateMetadata { get; set; }
         /// <summary>
@@ -683,8 +719,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="modifiedPage", EmitDefaultValue=false)]
         public string ModifiedPage { get; set; }
         /// <summary>
-        /// Gets or Sets ModifiedPageMetadata
+        /// Metadata about the &#x60;modifiedPage&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;modifiedPage&#x60; property.</value>
         [DataMember(Name="modifiedPageMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ModifiedPageMetadata { get; set; }
         /// <summary>
@@ -693,8 +730,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="newSendUI", EmitDefaultValue=false)]
         public string NewSendUI { get; set; }
         /// <summary>
-        /// Gets or Sets NewSendUIMetadata
+        /// Metadata about the &#x60;newSendUI&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;newSendUI&#x60; property.</value>
         [DataMember(Name="newSendUIMetadata", EmitDefaultValue=false)]
         public SettingsMetadata NewSendUIMetadata { get; set; }
         /// <summary>
@@ -703,8 +741,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="powerFormMode", EmitDefaultValue=false)]
         public string PowerFormMode { get; set; }
         /// <summary>
-        /// Gets or Sets PowerFormModeMetadata
+        /// Metadata about the &#x60;powerFormMode&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;powerFormMode&#x60; property.</value>
         [DataMember(Name="powerFormModeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata PowerFormModeMetadata { get; set; }
         /// <summary>
@@ -713,8 +752,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientViewedNotification", EmitDefaultValue=false)]
         public string RecipientViewedNotification { get; set; }
         /// <summary>
-        /// Gets or Sets RecipientViewedNotificationMetadata
+        /// Metadata about the &#x60;recipientViewedNotification&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;recipientViewedNotification&#x60; property.</value>
         [DataMember(Name="recipientViewedNotificationMetadata", EmitDefaultValue=false)]
         public SettingsMetadata RecipientViewedNotificationMetadata { get; set; }
         /// <summary>
@@ -728,18 +768,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="selfSignedRecipientEmailDocument", EmitDefaultValue=false)]
         public string SelfSignedRecipientEmailDocument { get; set; }
         /// <summary>
-        /// Gets or Sets SelfSignedRecipientEmailDocumentMetadata
+        /// Metadata that indicates whether the &#x60;selfSignedRecipientEmailDocument&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;selfSignedRecipientEmailDocument&#x60; property is editable. </value>
         [DataMember(Name="selfSignedRecipientEmailDocumentMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SelfSignedRecipientEmailDocumentMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets SenderEmailNotifications
+        ///   An array of email notifications that sets the email the user receives when they are a sender. When the specific email notification is set to true, the user will receive those types of email notifications from DocuSign.   The user inherits the default account sender email notification settings when the user is created. The email notifications are:  * envelopeComplete * changedSigner  * senderEnvelopeDeclined  * withdrawnConsent  * recipientViewed  * deliveryFailed   
         /// </summary>
+        /// <value>  An array of email notifications that sets the email the user receives when they are a sender. When the specific email notification is set to true, the user will receive those types of email notifications from DocuSign.   The user inherits the default account sender email notification settings when the user is created. The email notifications are:  * envelopeComplete * changedSigner  * senderEnvelopeDeclined  * withdrawnConsent  * recipientViewed  * deliveryFailed   </value>
         [DataMember(Name="senderEmailNotifications", EmitDefaultValue=false)]
         public SenderEmailNotifications SenderEmailNotifications { get; set; }
         /// <summary>
-        /// Gets or Sets SignerEmailNotifications
+        /// An array of email notifications that specifies the email the user receives when they are a recipient. When the specific email notification is set to true, the user receives those types of email notifications from DocuSign. The user inherits the default account email notification settings when the user is created. 
         /// </summary>
+        /// <value>An array of email notifications that specifies the email the user receives when they are a recipient. When the specific email notification is set to true, the user receives those types of email notifications from DocuSign. The user inherits the default account email notification settings when the user is created. </value>
         [DataMember(Name="signerEmailNotifications", EmitDefaultValue=false)]
         public SignerEmailNotifications SignerEmailNotifications { get; set; }
         /// <summary>
@@ -753,8 +796,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="supplementalDocumentsMustAccept", EmitDefaultValue=false)]
         public string SupplementalDocumentsMustAccept { get; set; }
         /// <summary>
-        /// Gets or Sets SupplementalDocumentsMustAcceptMetadata
+        /// Metadata that indicates whether the &#x60;supplementalDocumentsMustAccept&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;supplementalDocumentsMustAccept&#x60; property is editable. </value>
         [DataMember(Name="supplementalDocumentsMustAcceptMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SupplementalDocumentsMustAcceptMetadata { get; set; }
         /// <summary>
@@ -763,8 +807,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="supplementalDocumentsMustRead", EmitDefaultValue=false)]
         public string SupplementalDocumentsMustRead { get; set; }
         /// <summary>
-        /// Gets or Sets SupplementalDocumentsMustReadMetadata
+        /// Metadata that indicates whether the &#x60;supplementalDocumentsMustRead&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;supplementalDocumentsMustRead&#x60; property is editable. </value>
         [DataMember(Name="supplementalDocumentsMustReadMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SupplementalDocumentsMustReadMetadata { get; set; }
         /// <summary>
@@ -773,8 +818,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="supplementalDocumentsMustView", EmitDefaultValue=false)]
         public string SupplementalDocumentsMustView { get; set; }
         /// <summary>
-        /// Gets or Sets SupplementalDocumentsMustViewMetadata
+        /// Metadata that indicates whether the &#x60;supplementalDocumentsMustView&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;supplementalDocumentsMustView&#x60; property is editable. </value>
         [DataMember(Name="supplementalDocumentsMustViewMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SupplementalDocumentsMustViewMetadata { get; set; }
         /// <summary>
@@ -783,8 +829,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateActiveCreation", EmitDefaultValue=false)]
         public string TemplateActiveCreation { get; set; }
         /// <summary>
-        /// Gets or Sets TemplateActiveCreationMetadata
+        /// Metadata about the &#x60;templateActiveCreation&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;templateActiveCreation&#x60; property.</value>
         [DataMember(Name="templateActiveCreationMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TemplateActiveCreationMetadata { get; set; }
         /// <summary>
@@ -793,8 +840,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateApplyNotify", EmitDefaultValue=false)]
         public string TemplateApplyNotify { get; set; }
         /// <summary>
-        /// Gets or Sets TemplateApplyNotifyMetadata
+        /// Metadata about the &#x60;templateApplyNotify&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;templateApplyNotify&#x60; property.</value>
         [DataMember(Name="templateApplyNotifyMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TemplateApplyNotifyMetadata { get; set; }
         /// <summary>
@@ -803,8 +851,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateAutoMatching", EmitDefaultValue=false)]
         public string TemplateAutoMatching { get; set; }
         /// <summary>
-        /// Gets or Sets TemplateAutoMatchingMetadata
+        /// Metadata about the &#x60;templateAutoMatching&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;templateAutoMatching&#x60; property.</value>
         [DataMember(Name="templateAutoMatchingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TemplateAutoMatchingMetadata { get; set; }
         /// <summary>
@@ -813,8 +862,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateMatchingSensitivity", EmitDefaultValue=false)]
         public string TemplateMatchingSensitivity { get; set; }
         /// <summary>
-        /// Gets or Sets TemplateMatchingSensitivityMetadata
+        /// Metadata about the &#x60;tempalteMatchingSensitivity&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;tempalteMatchingSensitivity&#x60; property.</value>
         [DataMember(Name="templateMatchingSensitivityMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TemplateMatchingSensitivityMetadata { get; set; }
         /// <summary>
@@ -823,8 +873,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templatePageLevelMatching", EmitDefaultValue=false)]
         public string TemplatePageLevelMatching { get; set; }
         /// <summary>
-        /// Gets or Sets TemplatePageLevelMatchingMetadata
+        /// Metadata about the &#x60;templatePageLevelMatching&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;templatePageLevelMatching&#x60; property.</value>
         [DataMember(Name="templatePageLevelMatchingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TemplatePageLevelMatchingMetadata { get; set; }
         /// <summary>
@@ -833,8 +884,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="timezoneDST", EmitDefaultValue=false)]
         public string TimezoneDST { get; set; }
         /// <summary>
-        /// Gets or Sets TimezoneDSTMetadata
+        /// Metadata about the &#x60;timezoneDST&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;timezoneDST&#x60; property.</value>
         [DataMember(Name="timezoneDSTMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TimezoneDSTMetadata { get; set; }
         /// <summary>
@@ -843,8 +895,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="timezoneMask", EmitDefaultValue=false)]
         public string TimezoneMask { get; set; }
         /// <summary>
-        /// Gets or Sets TimezoneMaskMetadata
+        /// Metadata about the &#x60;timezoneMask&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;timezoneMask&#x60; property.</value>
         [DataMember(Name="timezoneMaskMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TimezoneMaskMetadata { get; set; }
         /// <summary>
@@ -853,8 +906,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="timezoneOffset", EmitDefaultValue=false)]
         public string TimezoneOffset { get; set; }
         /// <summary>
-        /// Gets or Sets TimezoneOffsetMetadata
+        /// Metadata about the &#x60;timezoneOffset&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;timezoneOffset&#x60; property.</value>
         [DataMember(Name="timezoneOffsetMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TimezoneOffsetMetadata { get; set; }
         /// <summary>
@@ -863,8 +917,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="timezoneSendingPref", EmitDefaultValue=false)]
         public string TimezoneSendingPref { get; set; }
         /// <summary>
-        /// Gets or Sets TimezoneSendingPrefMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="timezoneSendingPrefMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TimezoneSendingPrefMetadata { get; set; }
         /// <summary>
@@ -873,8 +928,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="timezoneSigningPref", EmitDefaultValue=false)]
         public string TimezoneSigningPref { get; set; }
         /// <summary>
-        /// Gets or Sets TimezoneSigningPrefMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="timezoneSigningPrefMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TimezoneSigningPrefMetadata { get; set; }
         /// <summary>
@@ -883,8 +939,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="transactionPointSiteNameURL", EmitDefaultValue=false)]
         public string TransactionPointSiteNameURL { get; set; }
         /// <summary>
-        /// Gets or Sets TransactionPointSiteNameURLMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="transactionPointSiteNameURLMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TransactionPointSiteNameURLMetadata { get; set; }
         /// <summary>
@@ -893,8 +950,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="transactionPointUserName", EmitDefaultValue=false)]
         public string TransactionPointUserName { get; set; }
         /// <summary>
-        /// Gets or Sets TransactionPointUserNameMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="transactionPointUserNameMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TransactionPointUserNameMetadata { get; set; }
         /// <summary>
@@ -903,8 +961,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="vaultingMode", EmitDefaultValue=false)]
         public string VaultingMode { get; set; }
         /// <summary>
-        /// Gets or Sets VaultingModeMetadata
+        /// Metadata about the &#x60;vaultingMode&#x60; property.
         /// </summary>
+        /// <value>Metadata about the &#x60;vaultingMode&#x60; property.</value>
         [DataMember(Name="vaultingModeMetadata", EmitDefaultValue=false)]
         public SettingsMetadata VaultingModeMetadata { get; set; }
         /// <summary>

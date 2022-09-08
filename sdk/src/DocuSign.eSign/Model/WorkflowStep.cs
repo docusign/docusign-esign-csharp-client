@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// WorkflowStep
+    /// Describes a single step in a workflow.
     /// </summary>
     [DataContract]
     public partial class WorkflowStep :  IEquatable<WorkflowStep>, IValidatableObject
@@ -40,9 +40,9 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Action">Action.</param>
         /// <param name="CompletedDate">CompletedDate.</param>
-        /// <param name="DelayedRouting">DelayedRouting.</param>
+        /// <param name="DelayedRouting">A complex element that specifies the delayed routing settings for the workflow step..</param>
         /// <param name="ItemId">ItemId.</param>
-        /// <param name="RecipientRouting">RecipientRouting.</param>
+        /// <param name="RecipientRouting">The rules for recipient routing..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="TriggeredDate">TriggeredDate.</param>
         /// <param name="TriggerOnItem">TriggerOnItem.</param>
@@ -71,8 +71,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="completedDate", EmitDefaultValue=false)]
         public string CompletedDate { get; set; }
         /// <summary>
-        /// Gets or Sets DelayedRouting
+        /// A complex element that specifies the delayed routing settings for the workflow step.
         /// </summary>
+        /// <value>A complex element that specifies the delayed routing settings for the workflow step.</value>
         [DataMember(Name="delayedRouting", EmitDefaultValue=false)]
         public DelayedRouting DelayedRouting { get; set; }
         /// <summary>
@@ -81,8 +82,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="itemId", EmitDefaultValue=false)]
         public string ItemId { get; set; }
         /// <summary>
-        /// Gets or Sets RecipientRouting
+        /// The rules for recipient routing.
         /// </summary>
+        /// <value>The rules for recipient routing.</value>
         [DataMember(Name="recipientRouting", EmitDefaultValue=false)]
         public RecipientRouting RecipientRouting { get; set; }
         /// <summary>

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RadioGroup
+    /// This group tab is used to place radio buttons on a document. The &#x60;radios&#x60; property contains a list of [&#x60;radio&#x60;](/docs/esign-rest-api/reference/envelopes/enveloperecipienttabs/) objects  associated with the group. Only one radio button can be selected in a group. 
     /// </summary>
     [DataContract]
     public partial class RadioGroup :  IEquatable<RadioGroup>, IValidatableObject
@@ -39,38 +39,38 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="RadioGroup" /> class.
         /// </summary>
         /// <param name="ConditionalParentLabel">For conditional fields this is the TabLabel of the parent tab that controls this tab&#39;s visibility..</param>
-        /// <param name="ConditionalParentLabelMetadata">ConditionalParentLabelMetadata.</param>
+        /// <param name="ConditionalParentLabelMetadata">Metadata that indicates whether the &#x60;conditionalParentLabel&#x60; property is editable..</param>
         /// <param name="ConditionalParentValue">For conditional fields, this is the value of the parent tab that controls the tab&#39;s visibility.  If the parent tab is a Checkbox, Radio button, Optional Signature, or Optional Initial use \&quot;on\&quot; as the value to show that the parent tab is active. .</param>
-        /// <param name="ConditionalParentValueMetadata">ConditionalParentValueMetadata.</param>
+        /// <param name="ConditionalParentValueMetadata">Metadata that indicates whether the &#x60;conditionalParentValue&#x60; property is editable..</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
-        /// <param name="DocumentIdMetadata">DocumentIdMetadata.</param>
+        /// <param name="DocumentIdMetadata">Metadata that indicates whether the &#x60;documentId&#x60; property is editable..</param>
         /// <param name="GroupName">The name of the group..</param>
-        /// <param name="GroupNameMetadata">GroupNameMetadata.</param>
+        /// <param name="GroupNameMetadata">Metadata that indicates whether the &#x60;groupName&#x60; property is editable..</param>
         /// <param name="OriginalValue">The initial value of the tab when it was sent to the recipient. .</param>
-        /// <param name="OriginalValueMetadata">OriginalValueMetadata.</param>
+        /// <param name="OriginalValueMetadata">Metadata that indicates whether the &#x60;originalValue&#x60; property is editable..</param>
         /// <param name="Radios">Specifies the locations and status for radio buttons that are grouped together..</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
-        /// <param name="RecipientIdGuidMetadata">RecipientIdGuidMetadata.</param>
-        /// <param name="RecipientIdMetadata">RecipientIdMetadata.</param>
+        /// <param name="RecipientIdGuidMetadata">Metadata that indicates whether the &#x60;recipientIdGuid&#x60; property is editable..</param>
+        /// <param name="RecipientIdMetadata">Metadata that indicates whether the &#x60;recipientId&#x60; property is editable..</param>
         /// <param name="RequireAll">When set to **true** and shared is true, information must be entered in this field to complete the envelope. .</param>
-        /// <param name="RequireAllMetadata">RequireAllMetadata.</param>
+        /// <param name="RequireAllMetadata">Metadata that indicates whether the &#x60;requireAll&#x60; property is editable..</param>
         /// <param name="RequireInitialOnSharedChange">Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field..</param>
-        /// <param name="RequireInitialOnSharedChangeMetadata">RequireInitialOnSharedChangeMetadata.</param>
+        /// <param name="RequireInitialOnSharedChangeMetadata">Metadata that indicates whether the &#x60;requireInitialOnSharedChange&#x60; property is editable..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
-        /// <param name="SharedMetadata">SharedMetadata.</param>
+        /// <param name="SharedMetadata">Metadata that indicates whether the &#x60;shared&#x60; property is editable..</param>
         /// <param name="ShareToRecipients">ShareToRecipients.</param>
-        /// <param name="ShareToRecipientsMetadata">ShareToRecipientsMetadata.</param>
+        /// <param name="ShareToRecipientsMetadata">Reserved for DocuSign..</param>
         /// <param name="TabType">TabType.</param>
-        /// <param name="TabTypeMetadata">TabTypeMetadata.</param>
+        /// <param name="TabTypeMetadata">Metadata that indicates whether the &#x60;tabType&#x60; property is editable..</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
-        /// <param name="TemplateLockedMetadata">TemplateLockedMetadata.</param>
+        /// <param name="TemplateLockedMetadata">Metadata that indicates whether the &#x60;templateLocked&#x60; property is editable..</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
-        /// <param name="TemplateRequiredMetadata">TemplateRequiredMetadata.</param>
+        /// <param name="TemplateRequiredMetadata">Metadata that indicates whether the &#x60;templateRequired&#x60; property is editable..</param>
         /// <param name="Tooltip">Tooltip.</param>
-        /// <param name="TooltipMetadata">TooltipMetadata.</param>
+        /// <param name="TooltipMetadata">Metadata that indicates whether the &#x60;tooltip&#x60; property is editable..</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        /// <param name="ValueMetadata">ValueMetadata.</param>
+        /// <param name="ValueMetadata">Metadata that indicates whether the &#x60;value&#x60; property is editable..</param>
         public RadioGroup(string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), string GroupName = default(string), PropertyMetadata GroupNameMetadata = default(PropertyMetadata), string OriginalValue = default(string), PropertyMetadata OriginalValueMetadata = default(PropertyMetadata), List<Radio> Radios = default(List<Radio>), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string RequireAll = default(string), PropertyMetadata RequireAllMetadata = default(PropertyMetadata), string RequireInitialOnSharedChange = default(string), PropertyMetadata RequireInitialOnSharedChangeMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), string ShareToRecipients = default(string), PropertyMetadata ShareToRecipientsMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata TooltipMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata))
         {
             this.ConditionalParentLabel = ConditionalParentLabel;
@@ -115,8 +115,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="conditionalParentLabel", EmitDefaultValue=false)]
         public string ConditionalParentLabel { get; set; }
         /// <summary>
-        /// Gets or Sets ConditionalParentLabelMetadata
+        /// Metadata that indicates whether the &#x60;conditionalParentLabel&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;conditionalParentLabel&#x60; property is editable.</value>
         [DataMember(Name="conditionalParentLabelMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ConditionalParentLabelMetadata { get; set; }
         /// <summary>
@@ -126,8 +127,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="conditionalParentValue", EmitDefaultValue=false)]
         public string ConditionalParentValue { get; set; }
         /// <summary>
-        /// Gets or Sets ConditionalParentValueMetadata
+        /// Metadata that indicates whether the &#x60;conditionalParentValue&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;conditionalParentValue&#x60; property is editable.</value>
         [DataMember(Name="conditionalParentValueMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ConditionalParentValueMetadata { get; set; }
         /// <summary>
@@ -137,8 +139,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentId", EmitDefaultValue=false)]
         public string DocumentId { get; set; }
         /// <summary>
-        /// Gets or Sets DocumentIdMetadata
+        /// Metadata that indicates whether the &#x60;documentId&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;documentId&#x60; property is editable.</value>
         [DataMember(Name="documentIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata DocumentIdMetadata { get; set; }
         /// <summary>
@@ -148,8 +151,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="groupName", EmitDefaultValue=false)]
         public string GroupName { get; set; }
         /// <summary>
-        /// Gets or Sets GroupNameMetadata
+        /// Metadata that indicates whether the &#x60;groupName&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;groupName&#x60; property is editable.</value>
         [DataMember(Name="groupNameMetadata", EmitDefaultValue=false)]
         public PropertyMetadata GroupNameMetadata { get; set; }
         /// <summary>
@@ -159,8 +163,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="originalValue", EmitDefaultValue=false)]
         public string OriginalValue { get; set; }
         /// <summary>
-        /// Gets or Sets OriginalValueMetadata
+        /// Metadata that indicates whether the &#x60;originalValue&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;originalValue&#x60; property is editable.</value>
         [DataMember(Name="originalValueMetadata", EmitDefaultValue=false)]
         public PropertyMetadata OriginalValueMetadata { get; set; }
         /// <summary>
@@ -181,13 +186,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientIdGuid", EmitDefaultValue=false)]
         public string RecipientIdGuid { get; set; }
         /// <summary>
-        /// Gets or Sets RecipientIdGuidMetadata
+        /// Metadata that indicates whether the &#x60;recipientIdGuid&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;recipientIdGuid&#x60; property is editable.</value>
         [DataMember(Name="recipientIdGuidMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RecipientIdGuidMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets RecipientIdMetadata
+        /// Metadata that indicates whether the &#x60;recipientId&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;recipientId&#x60; property is editable.</value>
         [DataMember(Name="recipientIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RecipientIdMetadata { get; set; }
         /// <summary>
@@ -197,8 +204,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="requireAll", EmitDefaultValue=false)]
         public string RequireAll { get; set; }
         /// <summary>
-        /// Gets or Sets RequireAllMetadata
+        /// Metadata that indicates whether the &#x60;requireAll&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;requireAll&#x60; property is editable.</value>
         [DataMember(Name="requireAllMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RequireAllMetadata { get; set; }
         /// <summary>
@@ -208,8 +216,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="requireInitialOnSharedChange", EmitDefaultValue=false)]
         public string RequireInitialOnSharedChange { get; set; }
         /// <summary>
-        /// Gets or Sets RequireInitialOnSharedChangeMetadata
+        /// Metadata that indicates whether the &#x60;requireInitialOnSharedChange&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;requireInitialOnSharedChange&#x60; property is editable.</value>
         [DataMember(Name="requireInitialOnSharedChangeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RequireInitialOnSharedChangeMetadata { get; set; }
         /// <summary>
@@ -219,8 +228,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shared", EmitDefaultValue=false)]
         public string Shared { get; set; }
         /// <summary>
-        /// Gets or Sets SharedMetadata
+        /// Metadata that indicates whether the &#x60;shared&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;shared&#x60; property is editable.</value>
         [DataMember(Name="sharedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SharedMetadata { get; set; }
         /// <summary>
@@ -229,8 +239,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shareToRecipients", EmitDefaultValue=false)]
         public string ShareToRecipients { get; set; }
         /// <summary>
-        /// Gets or Sets ShareToRecipientsMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="shareToRecipientsMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ShareToRecipientsMetadata { get; set; }
         /// <summary>
@@ -239,8 +250,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabType", EmitDefaultValue=false)]
         public string TabType { get; set; }
         /// <summary>
-        /// Gets or Sets TabTypeMetadata
+        /// Metadata that indicates whether the &#x60;tabType&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;tabType&#x60; property is editable.</value>
         [DataMember(Name="tabTypeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TabTypeMetadata { get; set; }
         /// <summary>
@@ -250,8 +262,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateLocked", EmitDefaultValue=false)]
         public string TemplateLocked { get; set; }
         /// <summary>
-        /// Gets or Sets TemplateLockedMetadata
+        /// Metadata that indicates whether the &#x60;templateLocked&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;templateLocked&#x60; property is editable.</value>
         [DataMember(Name="templateLockedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TemplateLockedMetadata { get; set; }
         /// <summary>
@@ -261,8 +274,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="templateRequired", EmitDefaultValue=false)]
         public string TemplateRequired { get; set; }
         /// <summary>
-        /// Gets or Sets TemplateRequiredMetadata
+        /// Metadata that indicates whether the &#x60;templateRequired&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;templateRequired&#x60; property is editable.</value>
         [DataMember(Name="templateRequiredMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TemplateRequiredMetadata { get; set; }
         /// <summary>
@@ -271,8 +285,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tooltip", EmitDefaultValue=false)]
         public string Tooltip { get; set; }
         /// <summary>
-        /// Gets or Sets TooltipMetadata
+        /// Metadata that indicates whether the &#x60;tooltip&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;tooltip&#x60; property is editable.</value>
         [DataMember(Name="tooltipMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TooltipMetadata { get; set; }
         /// <summary>
@@ -282,8 +297,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="value", EmitDefaultValue=false)]
         public string Value { get; set; }
         /// <summary>
-        /// Gets or Sets ValueMetadata
+        /// Metadata that indicates whether the &#x60;value&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;value&#x60; property is editable.</value>
         [DataMember(Name="valueMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ValueMetadata { get; set; }
         /// <summary>

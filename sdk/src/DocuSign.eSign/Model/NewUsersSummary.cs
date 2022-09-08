@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// NewUsersSummary
+    /// Object representing a summary of data for new users.
     /// </summary>
     [DataContract]
     public partial class NewUsersSummary :  IEquatable<NewUsersSummary>, IValidatableObject

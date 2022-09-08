@@ -40,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AccountId">The account ID associated with the envelope..</param>
         /// <param name="EndPosition">The last position in the result set. .</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">A complex type containing an errorCode and message identifying the error that occurred..</param>
         /// <param name="NextUri">The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. .</param>
         /// <param name="PreviousUri">The postal code for the billing address..</param>
         /// <param name="ResultSetSize">The number of results returned in this response. .</param>
@@ -73,8 +73,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="endPosition", EmitDefaultValue=false)]
         public string EndPosition { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// A complex type containing an errorCode and message identifying the error that occurred.
         /// </summary>
+        /// <value>A complex type containing an errorCode and message identifying the error that occurred.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

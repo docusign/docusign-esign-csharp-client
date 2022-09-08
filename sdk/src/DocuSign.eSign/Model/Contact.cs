@@ -44,7 +44,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ContactPhoneNumbers">ContactPhoneNumbers.</param>
         /// <param name="ContactUri">ContactUri.</param>
         /// <param name="Emails">Emails.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="IsOwner">IsOwner.</param>
         /// <param name="Name">Name.</param>
         /// <param name="Organization">Organization.</param>
@@ -101,8 +101,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="emails", EmitDefaultValue=false)]
         public List<string> Emails { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

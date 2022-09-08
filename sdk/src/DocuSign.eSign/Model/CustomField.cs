@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// CustomField
+    /// This object provides details about a custom field.
     /// </summary>
     [DataContract]
     public partial class CustomField :  IEquatable<CustomField>, IValidatableObject
@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="CustomField" /> class.
         /// </summary>
         /// <param name="CustomFieldType">CustomFieldType.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="FieldId">FieldId.</param>
         /// <param name="ListItems">ListItems.</param>
         /// <param name="Name">Name.</param>
@@ -64,8 +64,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="customFieldType", EmitDefaultValue=false)]
         public string CustomFieldType { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

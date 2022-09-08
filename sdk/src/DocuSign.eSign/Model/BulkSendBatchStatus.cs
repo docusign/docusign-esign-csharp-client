@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BulkSendBatchStatus
+    /// Result of &#x60;getBulkSendBatchStatus&#x60;
     /// </summary>
     [DataContract]
     public partial class BulkSendBatchStatus :  IEquatable<BulkSendBatchStatus>, IValidatableObject

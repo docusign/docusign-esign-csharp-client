@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// PermissionProfile
+    /// This object defines the account permissions for a profile that you can apply to a group of users.
     /// </summary>
     [DataContract]
     public partial class PermissionProfile :  IEquatable<PermissionProfile>, IValidatableObject
@@ -42,7 +42,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ModifiedDateTime">ModifiedDateTime.</param>
         /// <param name="PermissionProfileId">PermissionProfileId.</param>
         /// <param name="PermissionProfileName">PermissionProfileName.</param>
-        /// <param name="Settings">Settings.</param>
+        /// <param name="Settings">This object specifies the permissions that are associated with the account permission profile..</param>
         /// <param name="UserCount">UserCount.</param>
         /// <param name="Users">Users.</param>
         public PermissionProfile(string ModifiedByUsername = default(string), string ModifiedDateTime = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), AccountRoleSettings Settings = default(AccountRoleSettings), string UserCount = default(string), List<UserInformation> Users = default(List<UserInformation>))
@@ -77,8 +77,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="permissionProfileName", EmitDefaultValue=false)]
         public string PermissionProfileName { get; set; }
         /// <summary>
-        /// Gets or Sets Settings
+        /// This object specifies the permissions that are associated with the account permission profile.
         /// </summary>
+        /// <value>This object specifies the permissions that are associated with the account permission profile.</value>
         [DataMember(Name="settings", EmitDefaultValue=false)]
         public AccountRoleSettings Settings { get; set; }
         /// <summary>

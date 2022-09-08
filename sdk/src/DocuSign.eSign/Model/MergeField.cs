@@ -39,17 +39,17 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="MergeField" /> class.
         /// </summary>
         /// <param name="AllowSenderToEdit">When set to **true**, the sender can modify the value of the custom tab during the sending process..</param>
-        /// <param name="AllowSenderToEditMetadata">AllowSenderToEditMetadata.</param>
+        /// <param name="AllowSenderToEditMetadata">Metadata that indicates if the sender can edit the &#x60;allowSenderToEdit&#x60; property..</param>
         /// <param name="ConfigurationType">If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**..</param>
-        /// <param name="ConfigurationTypeMetadata">ConfigurationTypeMetadata.</param>
+        /// <param name="ConfigurationTypeMetadata">Metadata that indicates if the sender can edit the &#x60;configurationType&#x60; property..</param>
         /// <param name="Path">Sets the object associated with the custom tab. Currently this is the Salesforce Object..</param>
         /// <param name="PathExtended">PathExtended.</param>
-        /// <param name="PathExtendedMetadata">PathExtendedMetadata.</param>
-        /// <param name="PathMetadata">PathMetadata.</param>
+        /// <param name="PathExtendedMetadata">Reserved for DocuSign..</param>
+        /// <param name="PathMetadata">Metadata that indicates whether the &#x60;path&#x60; property is editable. .</param>
         /// <param name="Row">Specifies the row number in a Salesforce table that the merge field value corresponds to..</param>
-        /// <param name="RowMetadata">RowMetadata.</param>
+        /// <param name="RowMetadata">Metadata that indicates whether the &#x60;row&#x60; property is editable. .</param>
         /// <param name="WriteBack">When wet to true, the information entered in the tab automatically updates the related Salesforce data when an envelope is completed..</param>
-        /// <param name="WriteBackMetadata">WriteBackMetadata.</param>
+        /// <param name="WriteBackMetadata">Metadata that indicates if the sender can edit the &#x60;writeBack&#x60; property..</param>
         public MergeField(string AllowSenderToEdit = default(string), PropertyMetadata AllowSenderToEditMetadata = default(PropertyMetadata), string ConfigurationType = default(string), PropertyMetadata ConfigurationTypeMetadata = default(PropertyMetadata), string Path = default(string), List<PathExtendedElement> PathExtended = default(List<PathExtendedElement>), PropertyMetadata PathExtendedMetadata = default(PropertyMetadata), PropertyMetadata PathMetadata = default(PropertyMetadata), string Row = default(string), PropertyMetadata RowMetadata = default(PropertyMetadata), string WriteBack = default(string), PropertyMetadata WriteBackMetadata = default(PropertyMetadata))
         {
             this.AllowSenderToEdit = AllowSenderToEdit;
@@ -73,8 +73,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowSenderToEdit", EmitDefaultValue=false)]
         public string AllowSenderToEdit { get; set; }
         /// <summary>
-        /// Gets or Sets AllowSenderToEditMetadata
+        /// Metadata that indicates if the sender can edit the &#x60;allowSenderToEdit&#x60; property.
         /// </summary>
+        /// <value>Metadata that indicates if the sender can edit the &#x60;allowSenderToEdit&#x60; property.</value>
         [DataMember(Name="allowSenderToEditMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AllowSenderToEditMetadata { get; set; }
         /// <summary>
@@ -84,8 +85,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="configurationType", EmitDefaultValue=false)]
         public string ConfigurationType { get; set; }
         /// <summary>
-        /// Gets or Sets ConfigurationTypeMetadata
+        /// Metadata that indicates if the sender can edit the &#x60;configurationType&#x60; property.
         /// </summary>
+        /// <value>Metadata that indicates if the sender can edit the &#x60;configurationType&#x60; property.</value>
         [DataMember(Name="configurationTypeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ConfigurationTypeMetadata { get; set; }
         /// <summary>
@@ -100,13 +102,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="pathExtended", EmitDefaultValue=false)]
         public List<PathExtendedElement> PathExtended { get; set; }
         /// <summary>
-        /// Gets or Sets PathExtendedMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="pathExtendedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata PathExtendedMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets PathMetadata
+        /// Metadata that indicates whether the &#x60;path&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;path&#x60; property is editable. </value>
         [DataMember(Name="pathMetadata", EmitDefaultValue=false)]
         public PropertyMetadata PathMetadata { get; set; }
         /// <summary>
@@ -116,8 +120,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="row", EmitDefaultValue=false)]
         public string Row { get; set; }
         /// <summary>
-        /// Gets or Sets RowMetadata
+        /// Metadata that indicates whether the &#x60;row&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;row&#x60; property is editable. </value>
         [DataMember(Name="rowMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RowMetadata { get; set; }
         /// <summary>
@@ -127,8 +132,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="writeBack", EmitDefaultValue=false)]
         public string WriteBack { get; set; }
         /// <summary>
-        /// Gets or Sets WriteBackMetadata
+        /// Metadata that indicates if the sender can edit the &#x60;writeBack&#x60; property.
         /// </summary>
+        /// <value>Metadata that indicates if the sender can edit the &#x60;writeBack&#x60; property.</value>
         [DataMember(Name="writeBackMetadata", EmitDefaultValue=false)]
         public PropertyMetadata WriteBackMetadata { get; set; }
         /// <summary>

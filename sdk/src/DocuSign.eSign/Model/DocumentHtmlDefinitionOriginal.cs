@@ -40,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdGuid">DocumentIdGuid.</param>
-        /// <param name="HtmlDefinition">HtmlDefinition.</param>
+        /// <param name="HtmlDefinition">Defines how to generate the responsive-formatted HTML for the document..</param>
         public DocumentHtmlDefinitionOriginal(string DocumentId = default(string), string DocumentIdGuid = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition))
         {
             this.DocumentId = DocumentId;
@@ -60,8 +60,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentIdGuid", EmitDefaultValue=false)]
         public string DocumentIdGuid { get; set; }
         /// <summary>
-        /// Gets or Sets HtmlDefinition
+        /// Defines how to generate the responsive-formatted HTML for the document.
         /// </summary>
+        /// <value>Defines how to generate the responsive-formatted HTML for the document.</value>
         [DataMember(Name="htmlDefinition", EmitDefaultValue=false)]
         public DocumentHtmlDefinition HtmlDefinition { get; set; }
         /// <summary>

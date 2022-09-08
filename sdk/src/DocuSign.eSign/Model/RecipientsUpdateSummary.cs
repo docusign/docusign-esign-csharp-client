@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientsUpdateSummary
+    /// This is the response that the API returns after you update recipients.
     /// </summary>
     [DataContract]
     public partial class RecipientsUpdateSummary :  IEquatable<RecipientsUpdateSummary>, IValidatableObject

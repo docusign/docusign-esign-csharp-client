@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// PropertyMetadata
+    /// Metadata about a property.
     /// </summary>
     [DataContract]
     public partial class PropertyMetadata :  IEquatable<PropertyMetadata>, IValidatableObject

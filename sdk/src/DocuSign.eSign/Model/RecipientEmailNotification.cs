@@ -39,11 +39,11 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="RecipientEmailNotification" /> class.
         /// </summary>
         /// <param name="EmailBody">Specifies the email body of the message sent to the recipient.   Maximum length: 10000 characters. .</param>
-        /// <param name="EmailBodyMetadata">EmailBodyMetadata.</param>
+        /// <param name="EmailBodyMetadata">Metadata that indicates whether the &#x60;emailBody&#x60; property can be edited..</param>
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
-        /// <param name="EmailSubjectMetadata">EmailSubjectMetadata.</param>
+        /// <param name="EmailSubjectMetadata">Metadata that indicates whether the &#x60;emailSubject&#x60; property can be edited..</param>
         /// <param name="SupportedLanguage">A simple type enumeration of the language used. The supported languages, with the language value shown in parenthesis, are: Arabic (ar), Armenian (hy), Bahasa Indonesia (id), Bahasa Melayu (ms) Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro),Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), and Vietnamese (vi)..</param>
-        /// <param name="SupportedLanguageMetadata">SupportedLanguageMetadata.</param>
+        /// <param name="SupportedLanguageMetadata">Metadata that indicates whether the &#x60;supportedLanguage&#x60; property can be edited..</param>
         public RecipientEmailNotification(string EmailBody = default(string), PropertyMetadata EmailBodyMetadata = default(PropertyMetadata), string EmailSubject = default(string), PropertyMetadata EmailSubjectMetadata = default(PropertyMetadata), string SupportedLanguage = default(string), PropertyMetadata SupportedLanguageMetadata = default(PropertyMetadata))
         {
             this.EmailBody = EmailBody;
@@ -61,8 +61,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="emailBody", EmitDefaultValue=false)]
         public string EmailBody { get; set; }
         /// <summary>
-        /// Gets or Sets EmailBodyMetadata
+        /// Metadata that indicates whether the &#x60;emailBody&#x60; property can be edited.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;emailBody&#x60; property can be edited.</value>
         [DataMember(Name="emailBodyMetadata", EmitDefaultValue=false)]
         public PropertyMetadata EmailBodyMetadata { get; set; }
         /// <summary>
@@ -72,8 +73,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="emailSubject", EmitDefaultValue=false)]
         public string EmailSubject { get; set; }
         /// <summary>
-        /// Gets or Sets EmailSubjectMetadata
+        /// Metadata that indicates whether the &#x60;emailSubject&#x60; property can be edited.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;emailSubject&#x60; property can be edited.</value>
         [DataMember(Name="emailSubjectMetadata", EmitDefaultValue=false)]
         public PropertyMetadata EmailSubjectMetadata { get; set; }
         /// <summary>
@@ -83,8 +85,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="supportedLanguage", EmitDefaultValue=false)]
         public string SupportedLanguage { get; set; }
         /// <summary>
-        /// Gets or Sets SupportedLanguageMetadata
+        /// Metadata that indicates whether the &#x60;supportedLanguage&#x60; property can be edited.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;supportedLanguage&#x60; property can be edited.</value>
         [DataMember(Name="supportedLanguageMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SupportedLanguageMetadata { get; set; }
         /// <summary>

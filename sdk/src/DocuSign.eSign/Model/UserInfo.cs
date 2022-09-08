@@ -42,7 +42,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AccountName">AccountName.</param>
         /// <param name="ActivationAccessCode">ActivationAccessCode.</param>
         /// <param name="Email">Email.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="LoginStatus">LoginStatus.</param>
         /// <param name="MembershipId">MembershipId.</param>
         /// <param name="SendActivationEmail">SendActivationEmail.</param>
@@ -90,8 +90,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

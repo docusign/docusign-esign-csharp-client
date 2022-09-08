@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// MemberGroupSharedItem
+    /// Information about items shared among groups.
     /// </summary>
     [DataContract]
     public partial class MemberGroupSharedItem :  IEquatable<MemberGroupSharedItem>, IValidatableObject
@@ -38,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MemberGroupSharedItem" /> class.
         /// </summary>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Group">Group.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="Group">The group sharing the item..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         public MemberGroupSharedItem(ErrorDetails ErrorDetails = default(ErrorDetails), Group Group = default(Group), string Shared = default(string))
         {
@@ -49,13 +49,15 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// Gets or Sets Group
+        /// The group sharing the item.
         /// </summary>
+        /// <value>The group sharing the item.</value>
         [DataMember(Name="group", EmitDefaultValue=false)]
         public Group Group { get; set; }
         /// <summary>

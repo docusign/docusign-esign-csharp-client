@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AddressInformationInput" /> class.
         /// </summary>
-        /// <param name="AddressInformation">AddressInformation.</param>
+        /// <param name="AddressInformation">A complex type that contains the following information for the new account: &#x60;address1&#x60;, &#x60;address2&#x60;, &#x60;city&#x60;, &#x60;country&#x60;, &#x60;fax&#x60;, &#x60;phone&#x60;, &#x60;postalCode&#x60; and &#x60;stateOrProvince&#x60;.  The maximum characters for the strings are: * &#x60;address1&#x60;, &#x60;address2&#x60;, &#x60;city&#x60;, &#x60;country&#x60; and &#x60;stateOrProvince&#x60;: 100 characters * &#x60;postalCode&#x60;, &#x60;phone&#x60;, and &#x60;fax&#x60;: 20 characters  **Note:** If country is US (United States), &#x60;stateOrProvince&#x60; codes are validated. Otherwise, &#x60;stateOrProvince&#x60; is treated as a non-validated string used to specify a state, province, or region..</param>
         /// <param name="DisplayLevelCode">Specifies the display level for the recipient.  Valid values are:   * ReadOnly * Editable * DoNotDisplay.</param>
         /// <param name="ReceiveInResponse">When set to **true**, the information needs to be returned in the response..</param>
         public AddressInformationInput(AddressInformation AddressInformation = default(AddressInformation), string DisplayLevelCode = default(string), string ReceiveInResponse = default(string))
@@ -49,8 +49,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets AddressInformation
+        /// A complex type that contains the following information for the new account: &#x60;address1&#x60;, &#x60;address2&#x60;, &#x60;city&#x60;, &#x60;country&#x60;, &#x60;fax&#x60;, &#x60;phone&#x60;, &#x60;postalCode&#x60; and &#x60;stateOrProvince&#x60;.  The maximum characters for the strings are: * &#x60;address1&#x60;, &#x60;address2&#x60;, &#x60;city&#x60;, &#x60;country&#x60; and &#x60;stateOrProvince&#x60;: 100 characters * &#x60;postalCode&#x60;, &#x60;phone&#x60;, and &#x60;fax&#x60;: 20 characters  **Note:** If country is US (United States), &#x60;stateOrProvince&#x60; codes are validated. Otherwise, &#x60;stateOrProvince&#x60; is treated as a non-validated string used to specify a state, province, or region.
         /// </summary>
+        /// <value>A complex type that contains the following information for the new account: &#x60;address1&#x60;, &#x60;address2&#x60;, &#x60;city&#x60;, &#x60;country&#x60;, &#x60;fax&#x60;, &#x60;phone&#x60;, &#x60;postalCode&#x60; and &#x60;stateOrProvince&#x60;.  The maximum characters for the strings are: * &#x60;address1&#x60;, &#x60;address2&#x60;, &#x60;city&#x60;, &#x60;country&#x60; and &#x60;stateOrProvince&#x60;: 100 characters * &#x60;postalCode&#x60;, &#x60;phone&#x60;, and &#x60;fax&#x60;: 20 characters  **Note:** If country is US (United States), &#x60;stateOrProvince&#x60; codes are validated. Otherwise, &#x60;stateOrProvince&#x60; is treated as a non-validated string used to specify a state, province, or region.</value>
         [DataMember(Name="addressInformation", EmitDefaultValue=false)]
         public AddressInformation AddressInformation { get; set; }
         /// <summary>

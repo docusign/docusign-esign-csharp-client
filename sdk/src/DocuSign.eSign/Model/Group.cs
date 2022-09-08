@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Group
+    /// This object contains information about a group.
     /// </summary>
     [DataContract]
     public partial class Group :  IEquatable<Group>, IValidatableObject
@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Group" /> class.
         /// </summary>
         /// <param name="DsGroupId">DsGroupId.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="GroupId">The DocuSign group ID for the group..</param>
         /// <param name="GroupName">The name of the group..</param>
         /// <param name="GroupType">The group type..</param>
@@ -64,8 +64,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dsGroupId", EmitDefaultValue=false)]
         public string DsGroupId { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

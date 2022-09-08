@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// WorkspaceSettings
+    /// This object provides information about the settings for the workspace.
     /// </summary>
     [DataContract]
     public partial class WorkspaceSettings :  IEquatable<WorkspaceSettings>, IValidatableObject

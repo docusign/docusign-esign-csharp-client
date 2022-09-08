@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// FoldersRequest
+    /// Information for a folder request.
     /// </summary>
     [DataContract]
     public partial class FoldersRequest :  IEquatable<FoldersRequest>, IValidatableObject

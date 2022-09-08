@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// TemplateSharedItem
+    /// Information about shared templates.
     /// </summary>
     [DataContract]
     public partial class TemplateSharedItem :  IEquatable<TemplateSharedItem>, IValidatableObject
@@ -38,8 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TemplateSharedItem" /> class.
         /// </summary>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Owner">Owner.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="Owner">Information about the user who owns the template..</param>
         /// <param name="Password">Password.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="SharedGroups">SharedGroups.</param>
@@ -59,13 +59,15 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// Gets or Sets Owner
+        /// Information about the user who owns the template.
         /// </summary>
+        /// <value>Information about the user who owns the template.</value>
         [DataMember(Name="owner", EmitDefaultValue=false)]
         public UserInfo Owner { get; set; }
         /// <summary>

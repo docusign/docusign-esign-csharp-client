@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="WorkspaceFolderContents" /> class.
         /// </summary>
         /// <param name="EndPosition">The last position in the result set. .</param>
-        /// <param name="Folder">Folder.</param>
+        /// <param name="Folder">The folder from which to return items. You can enter either the folder name or folder ID..</param>
         /// <param name="Items">Items.</param>
         /// <param name="ParentFolders">ParentFolders.</param>
         /// <param name="ResultSetSize">The number of results returned in this response. .</param>
@@ -65,8 +65,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="endPosition", EmitDefaultValue=false)]
         public string EndPosition { get; set; }
         /// <summary>
-        /// Gets or Sets Folder
+        /// The folder from which to return items. You can enter either the folder name or folder ID.
         /// </summary>
+        /// <value>The folder from which to return items. You can enter either the folder name or folder ID.</value>
         [DataMember(Name="folder", EmitDefaultValue=false)]
         public WorkspaceItem Folder { get; set; }
         /// <summary>

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// CurrencyFeatureSetPrice
+    /// Information about the price and currency associated with the feature set. Reserved for internal DocuSign use only.
     /// </summary>
     [DataContract]
     public partial class CurrencyFeatureSetPrice :  IEquatable<CurrencyFeatureSetPrice>, IValidatableObject

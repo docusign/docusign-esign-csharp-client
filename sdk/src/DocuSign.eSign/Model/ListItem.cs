@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ListItem
+    /// One of the selectable items in the &#x60;listItems&#x60; property of a [&#x60;list&#x60;](/docs/esign-rest-api/reference/envelopes/enveloperecipienttabs/create/) tab.
     /// </summary>
     [DataContract]
     public partial class ListItem :  IEquatable<ListItem>, IValidatableObject
@@ -39,11 +39,11 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="ListItem" /> class.
         /// </summary>
         /// <param name="Selected">When set to **true**, indicates that this item is the default selection shown to a signer.   Only one selection can be set as the default..</param>
-        /// <param name="SelectedMetadata">SelectedMetadata.</param>
+        /// <param name="SelectedMetadata">Metadata that indicates whether the &#x60;selected&#x60; property is editable..</param>
         /// <param name="Text">Specifies the text that is shown in the dropdown list. .</param>
         /// <param name="TextMetadata">TextMetadata.</param>
         /// <param name="Value">Specifies the value that is used when the list item is selected..</param>
-        /// <param name="ValueMetadata">ValueMetadata.</param>
+        /// <param name="ValueMetadata">Metadata that indicates whether the &#x60;value&#x60; property is editable..</param>
         public ListItem(string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Text = default(string), PropertyMetadata TextMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata))
         {
             this.Selected = Selected;
@@ -61,8 +61,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="selected", EmitDefaultValue=false)]
         public string Selected { get; set; }
         /// <summary>
-        /// Gets or Sets SelectedMetadata
+        /// Metadata that indicates whether the &#x60;selected&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;selected&#x60; property is editable.</value>
         [DataMember(Name="selectedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SelectedMetadata { get; set; }
         /// <summary>
@@ -83,8 +84,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="value", EmitDefaultValue=false)]
         public string Value { get; set; }
         /// <summary>
-        /// Gets or Sets ValueMetadata
+        /// Metadata that indicates whether the &#x60;value&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;value&#x60; property is editable.</value>
         [DataMember(Name="valueMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ValueMetadata { get; set; }
         /// <summary>

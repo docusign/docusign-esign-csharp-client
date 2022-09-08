@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserProfile" /> class.
         /// </summary>
-        /// <param name="Address">Address.</param>
+        /// <param name="Address">The user&#39;s address..</param>
         /// <param name="AuthenticationMethods">These properties cannot be modified in the PUT.   Indicates the authentication methods used by the user..</param>
         /// <param name="CompanyName">The name of the user&#39;s Company..</param>
         /// <param name="DisplayOrganizationInfo"> When set to **true**, the user&#39;s company and title information are shown on the ID card. .</param>
@@ -47,7 +47,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DisplayUsageHistory">When set to **true**, the user&#39;s usage information is shown on the ID card..</param>
         /// <param name="ProfileImageUri">ProfileImageUri.</param>
         /// <param name="Title">Title.</param>
-        /// <param name="UsageHistory">UsageHistory.</param>
+        /// <param name="UsageHistory">A complex element consisting of:   - &#x60;lastSentDateTime&#x60;: The date and time the user last sent an envelope.  - &#x60;lastSignedDateTime&#x60;: The date and time the user last signed an envelope. - &#x60;sentCount&#x60;: The number of envelopes the user has sent. - &#x60;signedCount&#x60;: The number of envelopes the user has signed.  .</param>
         /// <param name="UserDetails">UserDetails.</param>
         /// <param name="UserProfileLastModifiedDate">UserProfileLastModifiedDate.</param>
         public UserProfile(AddressInformation Address = default(AddressInformation), List<AuthenticationMethod> AuthenticationMethods = default(List<AuthenticationMethod>), string CompanyName = default(string), string DisplayOrganizationInfo = default(string), string DisplayPersonalInfo = default(string), string DisplayProfile = default(string), string DisplayUsageHistory = default(string), string ProfileImageUri = default(string), string Title = default(string), UsageHistory UsageHistory = default(UsageHistory), UserInformation UserDetails = default(UserInformation), string UserProfileLastModifiedDate = default(string))
@@ -67,8 +67,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets Address
+        /// The user&#39;s address.
         /// </summary>
+        /// <value>The user&#39;s address.</value>
         [DataMember(Name="address", EmitDefaultValue=false)]
         public AddressInformation Address { get; set; }
         /// <summary>
@@ -118,8 +119,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="title", EmitDefaultValue=false)]
         public string Title { get; set; }
         /// <summary>
-        /// Gets or Sets UsageHistory
+        /// A complex element consisting of:   - &#x60;lastSentDateTime&#x60;: The date and time the user last sent an envelope.  - &#x60;lastSignedDateTime&#x60;: The date and time the user last signed an envelope. - &#x60;sentCount&#x60;: The number of envelopes the user has sent. - &#x60;signedCount&#x60;: The number of envelopes the user has signed.  
         /// </summary>
+        /// <value>A complex element consisting of:   - &#x60;lastSentDateTime&#x60;: The date and time the user last sent an envelope.  - &#x60;lastSignedDateTime&#x60;: The date and time the user last signed an envelope. - &#x60;sentCount&#x60;: The number of envelopes the user has sent. - &#x60;signedCount&#x60;: The number of envelopes the user has signed.  </value>
         [DataMember(Name="usageHistory", EmitDefaultValue=false)]
         public UsageHistory UsageHistory { get; set; }
         /// <summary>

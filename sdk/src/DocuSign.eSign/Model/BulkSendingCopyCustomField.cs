@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BulkSendingCopyCustomField
+    /// This object contains details about a custom field for a bulk send copy. In a bulk send request, each custom field in the bulk send list must match a custom field in the envelope or template that you want to send.
     /// </summary>
     [DataContract]
     public partial class BulkSendingCopyCustomField :  IEquatable<BulkSendingCopyCustomField>, IValidatableObject

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// NotaryJurisdiction
+    /// A notary jurisdiction.
     /// </summary>
     [DataContract]
     public partial class NotaryJurisdiction :  IEquatable<NotaryJurisdiction>, IValidatableObject
@@ -41,8 +41,8 @@ namespace DocuSign.eSign.Model
         /// <param name="CommissionExpiration">CommissionExpiration.</param>
         /// <param name="CommissionId">CommissionId.</param>
         /// <param name="County">County.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
-        /// <param name="Jurisdiction">Jurisdiction.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="Jurisdiction">Description of the jurisdiction for this notary. This is a read-only property..</param>
         /// <param name="RegisteredName">RegisteredName.</param>
         /// <param name="SealType">SealType.</param>
         public NotaryJurisdiction(string CommissionExpiration = default(string), string CommissionId = default(string), string County = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), Jurisdiction Jurisdiction = default(Jurisdiction), string RegisteredName = default(string), string SealType = default(string))
@@ -72,13 +72,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="county", EmitDefaultValue=false)]
         public string County { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// Gets or Sets Jurisdiction
+        /// Description of the jurisdiction for this notary. This is a read-only property.
         /// </summary>
+        /// <value>Description of the jurisdiction for this notary. This is a read-only property.</value>
         [DataMember(Name="jurisdiction", EmitDefaultValue=false)]
         public Jurisdiction Jurisdiction { get; set; }
         /// <summary>

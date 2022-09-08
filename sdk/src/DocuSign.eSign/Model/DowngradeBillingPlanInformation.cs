@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="DowngradeBillingPlanInformation" /> class.
         /// </summary>
         /// <param name="DowngradeEventType">DowngradeEventType.</param>
-        /// <param name="PlanInformation">PlanInformation.</param>
+        /// <param name="PlanInformation">An object used to identify the features and attributes of the account being created..</param>
         /// <param name="PromoCode">PromoCode.</param>
         /// <param name="SaleDiscount">SaleDiscount.</param>
         /// <param name="SaleDiscountPeriods">SaleDiscountPeriods.</param>
@@ -60,8 +60,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="downgradeEventType", EmitDefaultValue=false)]
         public string DowngradeEventType { get; set; }
         /// <summary>
-        /// Gets or Sets PlanInformation
+        /// An object used to identify the features and attributes of the account being created.
         /// </summary>
+        /// <value>An object used to identify the features and attributes of the account being created.</value>
         [DataMember(Name="planInformation", EmitDefaultValue=false)]
         public PlanInformation PlanInformation { get; set; }
         /// <summary>

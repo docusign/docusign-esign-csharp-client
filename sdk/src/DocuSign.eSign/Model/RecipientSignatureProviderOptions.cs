@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientSignatureProviderOptions
+    /// Option settings for the signature provider. Different providers require or use different options. [The current provider list and the options they require.](/docs/esign-rest-api/esign101/concepts/standards-based-signatures/)
     /// </summary>
     [DataContract]
     public partial class RecipientSignatureProviderOptions :  IEquatable<RecipientSignatureProviderOptions>, IValidatableObject
@@ -39,13 +39,13 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="RecipientSignatureProviderOptions" /> class.
         /// </summary>
         /// <param name="CpfNumber">CpfNumber.</param>
-        /// <param name="CpfNumberMetadata">CpfNumberMetadata.</param>
+        /// <param name="CpfNumberMetadata">Reserved for DocuSign..</param>
         /// <param name="OneTimePassword">OneTimePassword.</param>
-        /// <param name="OneTimePasswordMetadata">OneTimePasswordMetadata.</param>
+        /// <param name="OneTimePasswordMetadata">Metadata that indicates whether the &#x60;oneTimePassword&#x60; property is editable..</param>
         /// <param name="SignerRole">SignerRole.</param>
-        /// <param name="SignerRoleMetadata">SignerRoleMetadata.</param>
+        /// <param name="SignerRoleMetadata">Metadata that indicates whether the &#x60;signerRole&#x60; property is editable..</param>
         /// <param name="Sms">Sms.</param>
-        /// <param name="SmsMetadata">SmsMetadata.</param>
+        /// <param name="SmsMetadata">Metadata that indicates whether the &#x60;sms&#x60; property is editable..</param>
         public RecipientSignatureProviderOptions(string CpfNumber = default(string), PropertyMetadata CpfNumberMetadata = default(PropertyMetadata), string OneTimePassword = default(string), PropertyMetadata OneTimePasswordMetadata = default(PropertyMetadata), string SignerRole = default(string), PropertyMetadata SignerRoleMetadata = default(PropertyMetadata), string Sms = default(string), PropertyMetadata SmsMetadata = default(PropertyMetadata))
         {
             this.CpfNumber = CpfNumber;
@@ -64,8 +64,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="cpfNumber", EmitDefaultValue=false)]
         public string CpfNumber { get; set; }
         /// <summary>
-        /// Gets or Sets CpfNumberMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="cpfNumberMetadata", EmitDefaultValue=false)]
         public PropertyMetadata CpfNumberMetadata { get; set; }
         /// <summary>
@@ -74,8 +75,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="oneTimePassword", EmitDefaultValue=false)]
         public string OneTimePassword { get; set; }
         /// <summary>
-        /// Gets or Sets OneTimePasswordMetadata
+        /// Metadata that indicates whether the &#x60;oneTimePassword&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;oneTimePassword&#x60; property is editable.</value>
         [DataMember(Name="oneTimePasswordMetadata", EmitDefaultValue=false)]
         public PropertyMetadata OneTimePasswordMetadata { get; set; }
         /// <summary>
@@ -84,8 +86,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signerRole", EmitDefaultValue=false)]
         public string SignerRole { get; set; }
         /// <summary>
-        /// Gets or Sets SignerRoleMetadata
+        /// Metadata that indicates whether the &#x60;signerRole&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;signerRole&#x60; property is editable.</value>
         [DataMember(Name="signerRoleMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SignerRoleMetadata { get; set; }
         /// <summary>
@@ -94,8 +97,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="sms", EmitDefaultValue=false)]
         public string Sms { get; set; }
         /// <summary>
-        /// Gets or Sets SmsMetadata
+        /// Metadata that indicates whether the &#x60;sms&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;sms&#x60; property is editable.</value>
         [DataMember(Name="smsMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SmsMetadata { get; set; }
         /// <summary>

@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Page" /> class.
         /// </summary>
         /// <param name="Dpi">The number of dots per inch used for the page image..</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">If an error occurs, this property describes the error..</param>
         /// <param name="Height">Height of the tab in pixels..</param>
         /// <param name="ImageBytes">ImageBytes.</param>
         /// <param name="MimeType">MimeType.</param>
@@ -65,8 +65,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="dpi", EmitDefaultValue=false)]
         public string Dpi { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// If an error occurs, this property describes the error.
         /// </summary>
+        /// <value>If an error occurs, this property describes the error.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

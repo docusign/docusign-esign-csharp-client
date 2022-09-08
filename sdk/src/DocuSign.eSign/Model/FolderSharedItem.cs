@@ -38,17 +38,17 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FolderSharedItem" /> class.
         /// </summary>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="FolderId">FolderId.</param>
         /// <param name="Name">Name.</param>
-        /// <param name="Owner">Owner.</param>
+        /// <param name="Owner">Information about the user who owns the folder..</param>
         /// <param name="ParentFolderId">ParentFolderId.</param>
         /// <param name="ParentFolderUri">ParentFolderUri.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="SharedGroups">SharedGroups.</param>
         /// <param name="SharedUsers">SharedUsers.</param>
         /// <param name="Uri">Uri.</param>
-        /// <param name="User">User.</param>
+        /// <param name="User">Information about the user associated with the folder..</param>
         public FolderSharedItem(ErrorDetails ErrorDetails = default(ErrorDetails), string FolderId = default(string), string Name = default(string), UserInfo Owner = default(UserInfo), string ParentFolderId = default(string), string ParentFolderUri = default(string), string Shared = default(string), List<MemberGroupSharedItem> SharedGroups = default(List<MemberGroupSharedItem>), List<UserSharedItem> SharedUsers = default(List<UserSharedItem>), string Uri = default(string), UserInfo User = default(UserInfo))
         {
             this.ErrorDetails = ErrorDetails;
@@ -65,8 +65,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -80,8 +81,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// Gets or Sets Owner
+        /// Information about the user who owns the folder.
         /// </summary>
+        /// <value>Information about the user who owns the folder.</value>
         [DataMember(Name="owner", EmitDefaultValue=false)]
         public UserInfo Owner { get; set; }
         /// <summary>
@@ -116,8 +118,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="uri", EmitDefaultValue=false)]
         public string Uri { get; set; }
         /// <summary>
-        /// Gets or Sets User
+        /// Information about the user associated with the folder.
         /// </summary>
+        /// <value>Information about the user associated with the folder.</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
         public UserInfo User { get; set; }
         /// <summary>

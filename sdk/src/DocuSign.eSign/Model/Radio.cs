@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Radio
+    /// One of the selectable radio buttons in the &#x60;radios&#x60; property of a [&#x60;radioGroup&#x60;](/docs/esign-rest-api/reference/envelopes/enveloperecipienttabs/) tab. 
     /// </summary>
     [DataContract]
     public partial class Radio :  IEquatable<Radio>, IValidatableObject
@@ -39,60 +39,60 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="Radio" /> class.
         /// </summary>
         /// <param name="AnchorAllowWhiteSpaceInCharacters">AnchorAllowWhiteSpaceInCharacters.</param>
-        /// <param name="AnchorAllowWhiteSpaceInCharactersMetadata">AnchorAllowWhiteSpaceInCharactersMetadata.</param>
+        /// <param name="AnchorAllowWhiteSpaceInCharactersMetadata">Metadata that indicates whether the &#x60;anchorAllowWhiteSpaceInCharacters&#x60; property is editable..</param>
         /// <param name="AnchorCaseSensitive">When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**..</param>
-        /// <param name="AnchorCaseSensitiveMetadata">AnchorCaseSensitiveMetadata.</param>
+        /// <param name="AnchorCaseSensitiveMetadata">Metadata that indicates whether the &#x60;anchorCaseSensitive&#x60; property is editable..</param>
         /// <param name="AnchorHorizontalAlignment">Specifies the alignment of anchor tabs with anchor strings. Possible values are **left** or **right**. The default value is **left**..</param>
-        /// <param name="AnchorHorizontalAlignmentMetadata">AnchorHorizontalAlignmentMetadata.</param>
+        /// <param name="AnchorHorizontalAlignmentMetadata">Metadata that indicates whether the &#x60;anchorHorizontalAlignment&#x60; property is editable..</param>
         /// <param name="AnchorIgnoreIfNotPresent">When set to **true**, this tab is ignored if anchorString is not found in the document..</param>
-        /// <param name="AnchorIgnoreIfNotPresentMetadata">AnchorIgnoreIfNotPresentMetadata.</param>
+        /// <param name="AnchorIgnoreIfNotPresentMetadata">Metadata that indicates whether the &#x60;anchorIgnoreIfNotPresent&#x60; property is editable..</param>
         /// <param name="AnchorMatchWholeWord">When set to **true**, the anchor string in this tab matches whole words only (strings embedded in other strings are ignored.) The default value is **true**..</param>
-        /// <param name="AnchorMatchWholeWordMetadata">AnchorMatchWholeWordMetadata.</param>
+        /// <param name="AnchorMatchWholeWordMetadata">Metadata that indicates whether the &#x60;anchorMatchWholeWord&#x60; property is editable..</param>
         /// <param name="AnchorString">Anchor text information for a radio button..</param>
-        /// <param name="AnchorStringMetadata">AnchorStringMetadata.</param>
+        /// <param name="AnchorStringMetadata">Metadata that indicates whether the &#x60;anchorString&#x60; property is editable..</param>
         /// <param name="AnchorTabProcessorVersion">AnchorTabProcessorVersion.</param>
-        /// <param name="AnchorTabProcessorVersionMetadata">AnchorTabProcessorVersionMetadata.</param>
+        /// <param name="AnchorTabProcessorVersionMetadata">Reserved for DocuSign..</param>
         /// <param name="AnchorUnits">Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches..</param>
-        /// <param name="AnchorUnitsMetadata">AnchorUnitsMetadata.</param>
+        /// <param name="AnchorUnitsMetadata">Metadata that indicates whether the &#x60;anchorUnits&#x60; property is editable..</param>
         /// <param name="AnchorXOffset">Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString..</param>
-        /// <param name="AnchorXOffsetMetadata">AnchorXOffsetMetadata.</param>
+        /// <param name="AnchorXOffsetMetadata">Metadata that indicates whether the &#x60;anchorXOffset&#x60; property is editable..</param>
         /// <param name="AnchorYOffset">Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString..</param>
-        /// <param name="AnchorYOffsetMetadata">AnchorYOffsetMetadata.</param>
+        /// <param name="AnchorYOffsetMetadata">Metadata that indicates whether the &#x60;anchorYOffset&#x60; property is editable..</param>
         /// <param name="Bold">When set to **true**, the information in the tab is bold..</param>
-        /// <param name="BoldMetadata">BoldMetadata.</param>
+        /// <param name="BoldMetadata">Metadata that indicates whether the &#x60;bold&#x60; property is editable..</param>
         /// <param name="Caption">Caption.</param>
         /// <param name="CaptionMetadata">CaptionMetadata.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="Font">The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default..</param>
         /// <param name="FontColor">The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White..</param>
-        /// <param name="FontColorMetadata">FontColorMetadata.</param>
-        /// <param name="FontMetadata">FontMetadata.</param>
+        /// <param name="FontColorMetadata">Metadata that indicates whether the &#x60;fontColor&#x60; property is editable..</param>
+        /// <param name="FontMetadata">Metadata that indicates whether the &#x60;font&#x60; property is editable..</param>
         /// <param name="FontSize">The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72..</param>
-        /// <param name="FontSizeMetadata">FontSizeMetadata.</param>
+        /// <param name="FontSizeMetadata">Metadata that indicates whether the &#x60;fontSize&#x60; property is editable..</param>
         /// <param name="Italic">When set to **true**, the information in the tab is italic..</param>
-        /// <param name="ItalicMetadata">ItalicMetadata.</param>
+        /// <param name="ItalicMetadata">Metadata that indicates whether the &#x60;italic&#x60; property is editable..</param>
         /// <param name="Locked">When set to **true**, the signer cannot change the data of the custom tab..</param>
-        /// <param name="LockedMetadata">LockedMetadata.</param>
+        /// <param name="LockedMetadata">Metadata that indicates whether the &#x60;locked&#x60; property is editable..</param>
         /// <param name="PageNumber">Specifies the page number on which the tab is located..</param>
-        /// <param name="PageNumberMetadata">PageNumberMetadata.</param>
+        /// <param name="PageNumberMetadata">Metadata that indicates whether the &#x60;pageNumber&#x60; property is editable..</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
-        /// <param name="RequiredMetadata">RequiredMetadata.</param>
+        /// <param name="RequiredMetadata">Metadata that indicates whether the &#x60;required&#x60; property is editable..</param>
         /// <param name="Selected">When set to **true**, the radio button is selected..</param>
-        /// <param name="SelectedMetadata">SelectedMetadata.</param>
+        /// <param name="SelectedMetadata">Metadata that indicates whether the &#x60;selected&#x60; property is editable..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
-        /// <param name="StatusMetadata">StatusMetadata.</param>
+        /// <param name="StatusMetadata">Metadata that indicates whether the &#x60;status&#x60; property is editable..</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
-        /// <param name="TabIdMetadata">TabIdMetadata.</param>
+        /// <param name="TabIdMetadata">Metadata that indicates whether the &#x60;tabId&#x60; property is editable..</param>
         /// <param name="TabOrder">TabOrder.</param>
-        /// <param name="TabOrderMetadata">TabOrderMetadata.</param>
+        /// <param name="TabOrderMetadata">Metadata that indicates whether the &#x60;tabOrder&#x60; property is editable..</param>
         /// <param name="Underline">When set to **true**, the information in the tab is underlined..</param>
-        /// <param name="UnderlineMetadata">UnderlineMetadata.</param>
+        /// <param name="UnderlineMetadata">Metadata that indicates whether the &#x60;underline&#x60; property is editable..</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        /// <param name="ValueMetadata">ValueMetadata.</param>
+        /// <param name="ValueMetadata">Metadata that indicates whether the &#x60;value&#x60; property is editable..</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
-        /// <param name="XPositionMetadata">XPositionMetadata.</param>
+        /// <param name="XPositionMetadata">Metadata that indicates whether the &#x60;xPosition&#x60; property is editable..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
-        /// <param name="YPositionMetadata">YPositionMetadata.</param>
+        /// <param name="YPositionMetadata">Metadata that indicates whether the &#x60;yPosition&#x60; property is editable..</param>
         public Radio(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
             this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
@@ -158,8 +158,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorAllowWhiteSpaceInCharacters", EmitDefaultValue=false)]
         public string AnchorAllowWhiteSpaceInCharacters { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorAllowWhiteSpaceInCharactersMetadata
+        /// Metadata that indicates whether the &#x60;anchorAllowWhiteSpaceInCharacters&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorAllowWhiteSpaceInCharacters&#x60; property is editable.</value>
         [DataMember(Name="anchorAllowWhiteSpaceInCharactersMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata { get; set; }
         /// <summary>
@@ -169,8 +170,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorCaseSensitive", EmitDefaultValue=false)]
         public string AnchorCaseSensitive { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorCaseSensitiveMetadata
+        /// Metadata that indicates whether the &#x60;anchorCaseSensitive&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorCaseSensitive&#x60; property is editable.</value>
         [DataMember(Name="anchorCaseSensitiveMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorCaseSensitiveMetadata { get; set; }
         /// <summary>
@@ -180,8 +182,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorHorizontalAlignment", EmitDefaultValue=false)]
         public string AnchorHorizontalAlignment { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorHorizontalAlignmentMetadata
+        /// Metadata that indicates whether the &#x60;anchorHorizontalAlignment&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorHorizontalAlignment&#x60; property is editable.</value>
         [DataMember(Name="anchorHorizontalAlignmentMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorHorizontalAlignmentMetadata { get; set; }
         /// <summary>
@@ -191,8 +194,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorIgnoreIfNotPresent", EmitDefaultValue=false)]
         public string AnchorIgnoreIfNotPresent { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorIgnoreIfNotPresentMetadata
+        /// Metadata that indicates whether the &#x60;anchorIgnoreIfNotPresent&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorIgnoreIfNotPresent&#x60; property is editable.</value>
         [DataMember(Name="anchorIgnoreIfNotPresentMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorIgnoreIfNotPresentMetadata { get; set; }
         /// <summary>
@@ -202,8 +206,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorMatchWholeWord", EmitDefaultValue=false)]
         public string AnchorMatchWholeWord { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorMatchWholeWordMetadata
+        /// Metadata that indicates whether the &#x60;anchorMatchWholeWord&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorMatchWholeWord&#x60; property is editable.</value>
         [DataMember(Name="anchorMatchWholeWordMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorMatchWholeWordMetadata { get; set; }
         /// <summary>
@@ -213,8 +218,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorString", EmitDefaultValue=false)]
         public string AnchorString { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorStringMetadata
+        /// Metadata that indicates whether the &#x60;anchorString&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorString&#x60; property is editable.</value>
         [DataMember(Name="anchorStringMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorStringMetadata { get; set; }
         /// <summary>
@@ -223,8 +229,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorTabProcessorVersion", EmitDefaultValue=false)]
         public string AnchorTabProcessorVersion { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorTabProcessorVersionMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="anchorTabProcessorVersionMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorTabProcessorVersionMetadata { get; set; }
         /// <summary>
@@ -234,8 +241,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorUnits", EmitDefaultValue=false)]
         public string AnchorUnits { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorUnitsMetadata
+        /// Metadata that indicates whether the &#x60;anchorUnits&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorUnits&#x60; property is editable.</value>
         [DataMember(Name="anchorUnitsMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorUnitsMetadata { get; set; }
         /// <summary>
@@ -245,8 +253,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorXOffset", EmitDefaultValue=false)]
         public string AnchorXOffset { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorXOffsetMetadata
+        /// Metadata that indicates whether the &#x60;anchorXOffset&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorXOffset&#x60; property is editable.</value>
         [DataMember(Name="anchorXOffsetMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorXOffsetMetadata { get; set; }
         /// <summary>
@@ -256,8 +265,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anchorYOffset", EmitDefaultValue=false)]
         public string AnchorYOffset { get; set; }
         /// <summary>
-        /// Gets or Sets AnchorYOffsetMetadata
+        /// Metadata that indicates whether the &#x60;anchorYOffset&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;anchorYOffset&#x60; property is editable.</value>
         [DataMember(Name="anchorYOffsetMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorYOffsetMetadata { get; set; }
         /// <summary>
@@ -267,8 +277,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="bold", EmitDefaultValue=false)]
         public string Bold { get; set; }
         /// <summary>
-        /// Gets or Sets BoldMetadata
+        /// Metadata that indicates whether the &#x60;bold&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;bold&#x60; property is editable.</value>
         [DataMember(Name="boldMetadata", EmitDefaultValue=false)]
         public PropertyMetadata BoldMetadata { get; set; }
         /// <summary>
@@ -282,8 +293,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="captionMetadata", EmitDefaultValue=false)]
         public PropertyMetadata CaptionMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -299,13 +311,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="fontColor", EmitDefaultValue=false)]
         public string FontColor { get; set; }
         /// <summary>
-        /// Gets or Sets FontColorMetadata
+        /// Metadata that indicates whether the &#x60;fontColor&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;fontColor&#x60; property is editable.</value>
         [DataMember(Name="fontColorMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FontColorMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets FontMetadata
+        /// Metadata that indicates whether the &#x60;font&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;font&#x60; property is editable.</value>
         [DataMember(Name="fontMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FontMetadata { get; set; }
         /// <summary>
@@ -315,8 +329,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="fontSize", EmitDefaultValue=false)]
         public string FontSize { get; set; }
         /// <summary>
-        /// Gets or Sets FontSizeMetadata
+        /// Metadata that indicates whether the &#x60;fontSize&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;fontSize&#x60; property is editable.</value>
         [DataMember(Name="fontSizeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata FontSizeMetadata { get; set; }
         /// <summary>
@@ -326,8 +341,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="italic", EmitDefaultValue=false)]
         public string Italic { get; set; }
         /// <summary>
-        /// Gets or Sets ItalicMetadata
+        /// Metadata that indicates whether the &#x60;italic&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;italic&#x60; property is editable.</value>
         [DataMember(Name="italicMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ItalicMetadata { get; set; }
         /// <summary>
@@ -337,8 +353,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="locked", EmitDefaultValue=false)]
         public string Locked { get; set; }
         /// <summary>
-        /// Gets or Sets LockedMetadata
+        /// Metadata that indicates whether the &#x60;locked&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;locked&#x60; property is editable.</value>
         [DataMember(Name="lockedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata LockedMetadata { get; set; }
         /// <summary>
@@ -348,8 +365,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="pageNumber", EmitDefaultValue=false)]
         public string PageNumber { get; set; }
         /// <summary>
-        /// Gets or Sets PageNumberMetadata
+        /// Metadata that indicates whether the &#x60;pageNumber&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;pageNumber&#x60; property is editable.</value>
         [DataMember(Name="pageNumberMetadata", EmitDefaultValue=false)]
         public PropertyMetadata PageNumberMetadata { get; set; }
         /// <summary>
@@ -359,8 +377,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="required", EmitDefaultValue=false)]
         public string Required { get; set; }
         /// <summary>
-        /// Gets or Sets RequiredMetadata
+        /// Metadata that indicates whether the &#x60;required&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;required&#x60; property is editable.</value>
         [DataMember(Name="requiredMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RequiredMetadata { get; set; }
         /// <summary>
@@ -370,8 +389,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="selected", EmitDefaultValue=false)]
         public string Selected { get; set; }
         /// <summary>
-        /// Gets or Sets SelectedMetadata
+        /// Metadata that indicates whether the &#x60;selected&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;selected&#x60; property is editable.</value>
         [DataMember(Name="selectedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SelectedMetadata { get; set; }
         /// <summary>
@@ -381,8 +401,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
-        /// Gets or Sets StatusMetadata
+        /// Metadata that indicates whether the &#x60;status&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;status&#x60; property is editable.</value>
         [DataMember(Name="statusMetadata", EmitDefaultValue=false)]
         public PropertyMetadata StatusMetadata { get; set; }
         /// <summary>
@@ -392,8 +413,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabId", EmitDefaultValue=false)]
         public string TabId { get; set; }
         /// <summary>
-        /// Gets or Sets TabIdMetadata
+        /// Metadata that indicates whether the &#x60;tabId&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;tabId&#x60; property is editable.</value>
         [DataMember(Name="tabIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TabIdMetadata { get; set; }
         /// <summary>
@@ -402,8 +424,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabOrder", EmitDefaultValue=false)]
         public string TabOrder { get; set; }
         /// <summary>
-        /// Gets or Sets TabOrderMetadata
+        /// Metadata that indicates whether the &#x60;tabOrder&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;tabOrder&#x60; property is editable.</value>
         [DataMember(Name="tabOrderMetadata", EmitDefaultValue=false)]
         public PropertyMetadata TabOrderMetadata { get; set; }
         /// <summary>
@@ -413,8 +436,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="underline", EmitDefaultValue=false)]
         public string Underline { get; set; }
         /// <summary>
-        /// Gets or Sets UnderlineMetadata
+        /// Metadata that indicates whether the &#x60;underline&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;underline&#x60; property is editable.</value>
         [DataMember(Name="underlineMetadata", EmitDefaultValue=false)]
         public PropertyMetadata UnderlineMetadata { get; set; }
         /// <summary>
@@ -424,8 +448,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="value", EmitDefaultValue=false)]
         public string Value { get; set; }
         /// <summary>
-        /// Gets or Sets ValueMetadata
+        /// Metadata that indicates whether the &#x60;value&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;value&#x60; property is editable.</value>
         [DataMember(Name="valueMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ValueMetadata { get; set; }
         /// <summary>
@@ -435,8 +460,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="xPosition", EmitDefaultValue=false)]
         public string XPosition { get; set; }
         /// <summary>
-        /// Gets or Sets XPositionMetadata
+        /// Metadata that indicates whether the &#x60;xPosition&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;xPosition&#x60; property is editable.</value>
         [DataMember(Name="xPositionMetadata", EmitDefaultValue=false)]
         public PropertyMetadata XPositionMetadata { get; set; }
         /// <summary>
@@ -446,8 +472,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="yPosition", EmitDefaultValue=false)]
         public string YPosition { get; set; }
         /// <summary>
-        /// Gets or Sets YPositionMetadata
+        /// Metadata that indicates whether the &#x60;yPosition&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;yPosition&#x60; property is editable.</value>
         [DataMember(Name="yPositionMetadata", EmitDefaultValue=false)]
         public PropertyMetadata YPositionMetadata { get; set; }
         /// <summary>

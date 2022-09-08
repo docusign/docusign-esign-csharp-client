@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingPlanResponse" /> class.
         /// </summary>
-        /// <param name="BillingPlan">BillingPlan.</param>
+        /// <param name="BillingPlan">An object that contains details about the billing plan..</param>
         /// <param name="SuccessorPlans">SuccessorPlans.</param>
         public BillingPlanResponse(BillingPlan BillingPlan = default(BillingPlan), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>))
         {
@@ -47,8 +47,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets BillingPlan
+        /// An object that contains details about the billing plan.
         /// </summary>
+        /// <value>An object that contains details about the billing plan.</value>
         [DataMember(Name="billingPlan", EmitDefaultValue=false)]
         public BillingPlan BillingPlan { get; set; }
         /// <summary>

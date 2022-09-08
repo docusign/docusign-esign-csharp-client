@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// TemplateSummary
+    /// Summary of a template request.
     /// </summary>
     [DataContract]
     public partial class TemplateSummary :  IEquatable<TemplateSummary>, IValidatableObject
@@ -41,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Applied">Reserved: TBD.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentName">DocumentName.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="Name">Name.</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
         /// <param name="TemplateMatch">TemplateMatch.</param>
@@ -76,8 +76,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentName", EmitDefaultValue=false)]
         public string DocumentName { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

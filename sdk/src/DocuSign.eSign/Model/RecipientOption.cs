@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientOption
+    /// Describes a recipient who is a member of a conditional group.
     /// </summary>
     [DataContract]
     public partial class RecipientOption :  IEquatable<RecipientOption>, IValidatableObject

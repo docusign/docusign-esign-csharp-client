@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConnectFailureFilter
+    /// A list of failed envelope IDs to retry.
     /// </summary>
     [DataContract]
     public partial class ConnectFailureFilter :  IEquatable<ConnectFailureFilter>, IValidatableObject

@@ -40,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="CurrentPassword">The user&#39;s current password to be changed..</param>
         /// <param name="Email">The user&#39;s email address for the associated account..</param>
-        /// <param name="ForgottenPasswordInfo">ForgottenPasswordInfo.</param>
+        /// <param name="ForgottenPasswordInfo">A complex element containing up to four Question/Answer pairs for forgotten password information..</param>
         /// <param name="NewPassword">The user&#39;s new password..</param>
         public UserPasswordInformation(string CurrentPassword = default(string), string Email = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), string NewPassword = default(string))
         {
@@ -63,8 +63,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// Gets or Sets ForgottenPasswordInfo
+        /// A complex element containing up to four Question/Answer pairs for forgotten password information.
         /// </summary>
+        /// <value>A complex element containing up to four Question/Answer pairs for forgotten password information.</value>
         [DataMember(Name="forgottenPasswordInfo", EmitDefaultValue=false)]
         public ForgottenPasswordInformation ForgottenPasswordInfo { get; set; }
         /// <summary>

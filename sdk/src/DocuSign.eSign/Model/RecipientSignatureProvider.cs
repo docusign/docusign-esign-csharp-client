@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// RecipientSignatureProvider
+    /// An Electronic or Standards Based Signature (digital signature) provider for the signer to use. [More information](/docs/esign-rest-api/esign101/concepts/standards-based-signatures/). 
     /// </summary>
     [DataContract]
     public partial class RecipientSignatureProvider :  IEquatable<RecipientSignatureProvider>, IValidatableObject
@@ -41,8 +41,8 @@ namespace DocuSign.eSign.Model
         /// <param name="SealDocumentsWithTabsOnly">SealDocumentsWithTabsOnly.</param>
         /// <param name="SealName">SealName.</param>
         /// <param name="SignatureProviderName">SignatureProviderName.</param>
-        /// <param name="SignatureProviderNameMetadata">SignatureProviderNameMetadata.</param>
-        /// <param name="SignatureProviderOptions">SignatureProviderOptions.</param>
+        /// <param name="SignatureProviderNameMetadata">Metadata that indicates whether the &#x60;signatureProviderName&#x60; property is editable. .</param>
+        /// <param name="SignatureProviderOptions">Not applicable for this object..</param>
         public RecipientSignatureProvider(string SealDocumentsWithTabsOnly = default(string), string SealName = default(string), string SignatureProviderName = default(string), PropertyMetadata SignatureProviderNameMetadata = default(PropertyMetadata), RecipientSignatureProviderOptions SignatureProviderOptions = default(RecipientSignatureProviderOptions))
         {
             this.SealDocumentsWithTabsOnly = SealDocumentsWithTabsOnly;
@@ -68,13 +68,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureProviderName", EmitDefaultValue=false)]
         public string SignatureProviderName { get; set; }
         /// <summary>
-        /// Gets or Sets SignatureProviderNameMetadata
+        /// Metadata that indicates whether the &#x60;signatureProviderName&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;signatureProviderName&#x60; property is editable. </value>
         [DataMember(Name="signatureProviderNameMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SignatureProviderNameMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets SignatureProviderOptions
+        /// Not applicable for this object.
         /// </summary>
+        /// <value>Not applicable for this object.</value>
         [DataMember(Name="signatureProviderOptions", EmitDefaultValue=false)]
         public RecipientSignatureProviderOptions SignatureProviderOptions { get; set; }
         /// <summary>

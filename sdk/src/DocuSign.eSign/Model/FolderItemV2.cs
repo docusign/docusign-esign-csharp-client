@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// FolderItemV2
+    /// Information about folder item results.
     /// </summary>
     [DataContract]
     public partial class FolderItemV2 :  IEquatable<FolderItemV2>, IValidatableObject
@@ -48,7 +48,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Is21CFRPart11">When set to **true**, indicates that this module is enabled on the account..</param>
         /// <param name="LastModifiedDateTime">The date and time the item was last modified..</param>
         /// <param name="OwnerName">OwnerName.</param>
-        /// <param name="Recipients">Recipients.</param>
+        /// <param name="Recipients">An array of recipient objects that provides details about the recipients of the envelope..</param>
         /// <param name="RecipientsUri">Contains a URI for an endpoint that you can use to retrieve the recipients..</param>
         /// <param name="SenderCompany">SenderCompany.</param>
         /// <param name="SenderEmail">SenderEmail.</param>
@@ -142,8 +142,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="ownerName", EmitDefaultValue=false)]
         public string OwnerName { get; set; }
         /// <summary>
-        /// Gets or Sets Recipients
+        /// An array of recipient objects that provides details about the recipients of the envelope.
         /// </summary>
+        /// <value>An array of recipient objects that provides details about the recipients of the envelope.</value>
         [DataMember(Name="recipients", EmitDefaultValue=false)]
         public Recipients Recipients { get; set; }
         /// <summary>

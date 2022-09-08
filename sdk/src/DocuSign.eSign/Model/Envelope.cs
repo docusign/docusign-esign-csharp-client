@@ -55,7 +55,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CompletedDateTime">Specifies the date and time this item was completed..</param>
         /// <param name="CopyRecipientData">CopyRecipientData.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
-        /// <param name="CustomFields">CustomFields.</param>
+        /// <param name="CustomFields">An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters..</param>
         /// <param name="CustomFieldsUri">Contains a URI for an endpoint that you can use to retrieve the custom fields..</param>
         /// <param name="DeclinedDateTime">The date and time the recipient declined the document..</param>
         /// <param name="DeletedDateTime">Specifies the data and time the item was deleted..</param>
@@ -65,7 +65,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentsCombinedUri">DocumentsCombinedUri.</param>
         /// <param name="DocumentsUri">Contains a URI for an endpoint that you can use to retrieve the documents..</param>
         /// <param name="EmailBlurb">This is the same as the email body. If specified it is included in email body for all envelope recipients..</param>
-        /// <param name="EmailSettings">EmailSettings.</param>
+        /// <param name="EmailSettings">A complex type that contains email settings..</param>
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
         /// <param name="EnableWetSign">When set to **true**, the signer is allowed to print the document and sign it on paper..</param>
         /// <param name="EnforceSignerVisibility">When set to **true**, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent.  Your account must have Document Visibility enabled to use this..</param>
@@ -75,7 +75,7 @@ namespace DocuSign.eSign.Model
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
         /// <param name="EnvelopeIdStamping">When set to **true**, Envelope ID Stamping is enabled..</param>
         /// <param name="EnvelopeLocation">EnvelopeLocation.</param>
-        /// <param name="EnvelopeMetadata">EnvelopeMetadata.</param>
+        /// <param name="EnvelopeMetadata">Provides information about the features and services that are enabled for the envelope, including the Correct feature, the Advanced Correct feature, and DocuSign eNotary service..</param>
         /// <param name="EnvelopeUri">Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes..</param>
         /// <param name="ExpireAfter">ExpireAfter.</param>
         /// <param name="ExpireDateTime">ExpireDateTime.</param>
@@ -92,18 +92,18 @@ namespace DocuSign.eSign.Model
         /// <param name="IsSignatureProviderEnvelope">IsSignatureProviderEnvelope.</param>
         /// <param name="LastModifiedDateTime">The date and time the item was last modified..</param>
         /// <param name="Location">Location.</param>
-        /// <param name="LockInformation">LockInformation.</param>
+        /// <param name="LockInformation">Provides lock information about an envelope that a user has locked..</param>
         /// <param name="MessageLock">When set to **true**, prevents senders from changing the contents of &#x60;emailBlurb&#x60; and &#x60;emailSubject&#x60; properties for the envelope.   Additionally, this prevents users from making changes to the contents of &#x60;emailBlurb&#x60; and &#x60;emailSubject&#x60; properties when correcting envelopes.   However, if the &#x60;messageLock&#x60; node is set to true**** and the &#x60;emailSubject&#x60; property is empty, senders and correctors are able to add a subject to the envelope..</param>
         /// <param name="Notification">Notification.</param>
         /// <param name="NotificationUri">Contains a URI for an endpoint that you can use to retrieve the notifications..</param>
-        /// <param name="PowerForm">PowerForm.</param>
+        /// <param name="PowerForm">Information about any PowerForms that are included in the envelope..</param>
         /// <param name="PurgeCompletedDate">PurgeCompletedDate.</param>
         /// <param name="PurgeRequestDate">PurgeRequestDate.</param>
         /// <param name="PurgeState">PurgeState.</param>
-        /// <param name="Recipients">Recipients.</param>
+        /// <param name="Recipients">An array of recipient objects that provides details about the recipients of the envelope..</param>
         /// <param name="RecipientsLock">When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope..</param>
         /// <param name="RecipientsUri">Contains a URI for an endpoint that you can use to retrieve the recipients..</param>
-        /// <param name="Sender">Sender.</param>
+        /// <param name="Sender">Information about the sender of the envelope..</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="SignerCanSignOnMobile">SignerCanSignOnMobile.</param>
         /// <param name="SigningLocation">Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online..</param>
@@ -291,8 +291,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdDateTime", EmitDefaultValue=false)]
         public string CreatedDateTime { get; set; }
         /// <summary>
-        /// Gets or Sets CustomFields
+        /// An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters.
         /// </summary>
+        /// <value>An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters.</value>
         [DataMember(Name="customFields", EmitDefaultValue=false)]
         public CustomFields CustomFields { get; set; }
         /// <summary>
@@ -347,8 +348,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="emailBlurb", EmitDefaultValue=false)]
         public string EmailBlurb { get; set; }
         /// <summary>
-        /// Gets or Sets EmailSettings
+        /// A complex type that contains email settings.
         /// </summary>
+        /// <value>A complex type that contains email settings.</value>
         [DataMember(Name="emailSettings", EmitDefaultValue=false)]
         public EmailSettings EmailSettings { get; set; }
         /// <summary>
@@ -402,8 +404,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopeLocation", EmitDefaultValue=false)]
         public string EnvelopeLocation { get; set; }
         /// <summary>
-        /// Gets or Sets EnvelopeMetadata
+        /// Provides information about the features and services that are enabled for the envelope, including the Correct feature, the Advanced Correct feature, and DocuSign eNotary service.
         /// </summary>
+        /// <value>Provides information about the features and services that are enabled for the envelope, including the Correct feature, the Advanced Correct feature, and DocuSign eNotary service.</value>
         [DataMember(Name="envelopeMetadata", EmitDefaultValue=false)]
         public EnvelopeMetadata EnvelopeMetadata { get; set; }
         /// <summary>
@@ -490,8 +493,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="location", EmitDefaultValue=false)]
         public string Location { get; set; }
         /// <summary>
-        /// Gets or Sets LockInformation
+        /// Provides lock information about an envelope that a user has locked.
         /// </summary>
+        /// <value>Provides lock information about an envelope that a user has locked.</value>
         [DataMember(Name="lockInformation", EmitDefaultValue=false)]
         public LockInformation LockInformation { get; set; }
         /// <summary>
@@ -512,8 +516,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="notificationUri", EmitDefaultValue=false)]
         public string NotificationUri { get; set; }
         /// <summary>
-        /// Gets or Sets PowerForm
+        /// Information about any PowerForms that are included in the envelope.
         /// </summary>
+        /// <value>Information about any PowerForms that are included in the envelope.</value>
         [DataMember(Name="powerForm", EmitDefaultValue=false)]
         public PowerForm PowerForm { get; set; }
         /// <summary>
@@ -532,8 +537,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="purgeState", EmitDefaultValue=false)]
         public string PurgeState { get; set; }
         /// <summary>
-        /// Gets or Sets Recipients
+        /// An array of recipient objects that provides details about the recipients of the envelope.
         /// </summary>
+        /// <value>An array of recipient objects that provides details about the recipients of the envelope.</value>
         [DataMember(Name="recipients", EmitDefaultValue=false)]
         public Recipients Recipients { get; set; }
         /// <summary>
@@ -549,8 +555,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientsUri", EmitDefaultValue=false)]
         public string RecipientsUri { get; set; }
         /// <summary>
-        /// Gets or Sets Sender
+        /// Information about the sender of the envelope.
         /// </summary>
+        /// <value>Information about the sender of the envelope.</value>
         [DataMember(Name="sender", EmitDefaultValue=false)]
         public UserInfo Sender { get; set; }
         /// <summary>

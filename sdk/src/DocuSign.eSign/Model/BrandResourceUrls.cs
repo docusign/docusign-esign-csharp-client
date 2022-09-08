@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BrandResourceUrls
+    /// Brands use resource files to style the following experiences:   - Email - Sending - Signing - Captive (embedded) signing   You can modify these resource files to customize these experiences.
     /// </summary>
     [DataContract]
     public partial class BrandResourceUrls :  IEquatable<BrandResourceUrls>, IValidatableObject

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopeSummary
+    ///  This object describes an envelope.
     /// </summary>
     [DataContract]
     public partial class EnvelopeSummary :  IEquatable<EnvelopeSummary>, IValidatableObject
@@ -38,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopeSummary" /> class.
         /// </summary>
-        /// <param name="BulkEnvelopeStatus">BulkEnvelopeStatus.</param>
+        /// <param name="BulkEnvelopeStatus">An object that describes the status of the bulk send envelopes..</param>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="RecipientSigningUri">RecipientSigningUri.</param>
         /// <param name="RecipientSigningUriError">RecipientSigningUriError.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
@@ -59,8 +59,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets BulkEnvelopeStatus
+        /// An object that describes the status of the bulk send envelopes.
         /// </summary>
+        /// <value>An object that describes the status of the bulk send envelopes.</value>
         [DataMember(Name="bulkEnvelopeStatus", EmitDefaultValue=false)]
         public BulkEnvelopeStatus BulkEnvelopeStatus { get; set; }
         /// <summary>
@@ -70,8 +71,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopeId", EmitDefaultValue=false)]
         public string EnvelopeId { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

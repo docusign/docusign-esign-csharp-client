@@ -38,25 +38,25 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AuthenticationStatus" /> class.
         /// </summary>
-        /// <param name="AccessCodeResult">AccessCodeResult.</param>
-        /// <param name="AgeVerifyResult">AgeVerifyResult.</param>
-        /// <param name="AnySocialIDResult">AnySocialIDResult.</param>
-        /// <param name="FacebookResult">FacebookResult.</param>
-        /// <param name="GoogleResult">GoogleResult.</param>
-        /// <param name="IdentityVerificationResult">IdentityVerificationResult.</param>
-        /// <param name="IdLookupResult">IdLookupResult.</param>
-        /// <param name="IdQuestionsResult">IdQuestionsResult.</param>
-        /// <param name="LinkedinResult">LinkedinResult.</param>
-        /// <param name="LiveIDResult">LiveIDResult.</param>
-        /// <param name="OfacResult">OfacResult.</param>
-        /// <param name="OpenIDResult">OpenIDResult.</param>
-        /// <param name="PhoneAuthResult">PhoneAuthResult.</param>
-        /// <param name="SalesforceResult">SalesforceResult.</param>
-        /// <param name="SignatureProviderResult">SignatureProviderResult.</param>
-        /// <param name="SmsAuthResult">SmsAuthResult.</param>
-        /// <param name="STANPinResult">STANPinResult.</param>
-        /// <param name="TwitterResult">TwitterResult.</param>
-        /// <param name="YahooResult">YahooResult.</param>
+        /// <param name="AccessCodeResult">The result of a user&#39;s attempt to authenticate by using an access code. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. .</param>
+        /// <param name="AgeVerifyResult">The result of an age verification check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. .</param>
+        /// <param name="AnySocialIDResult">Deprecated..</param>
+        /// <param name="FacebookResult">Deprecated..</param>
+        /// <param name="GoogleResult">Deprecated..</param>
+        /// <param name="IdentityVerificationResult">The result of an [Identity Verification][IDV] workflow.  [IDV]: /docs/esign-rest-api/reference/accounts/identityverifications/.</param>
+        /// <param name="IdLookupResult">The result of an ID lookup authentication check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. .</param>
+        /// <param name="IdQuestionsResult">The result of the user&#39;s answers to ID challenge questions. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. .</param>
+        /// <param name="LinkedinResult">Deprecated..</param>
+        /// <param name="LiveIDResult">Deprecated..</param>
+        /// <param name="OfacResult">The result of an Office of Foreign Asset Control (OFAC) check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. .</param>
+        /// <param name="OpenIDResult">Deprecated..</param>
+        /// <param name="PhoneAuthResult">The result of the user&#39;s attempt to authenticate by using two-factor authentication (2FA) through phone messaging. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. .</param>
+        /// <param name="SalesforceResult">Success/failure result of authentication using sign-in with a Salesforce account. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. .</param>
+        /// <param name="SignatureProviderResult">The result of the user&#39;s attempt to authenticate by using a signature provider..</param>
+        /// <param name="SmsAuthResult">The result of the user&#39;s attempt to authenticate by using two-factor authentication (2FA) through SMS messaging on a mobile phone..</param>
+        /// <param name="STANPinResult">The result of a Student Authentication Network (STAN) authentication check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. .</param>
+        /// <param name="TwitterResult">Deprecated..</param>
+        /// <param name="YahooResult">Deprecated..</param>
         public AuthenticationStatus(EventResult AccessCodeResult = default(EventResult), EventResult AgeVerifyResult = default(EventResult), EventResult AnySocialIDResult = default(EventResult), EventResult FacebookResult = default(EventResult), EventResult GoogleResult = default(EventResult), EventResult IdentityVerificationResult = default(EventResult), EventResult IdLookupResult = default(EventResult), EventResult IdQuestionsResult = default(EventResult), EventResult LinkedinResult = default(EventResult), EventResult LiveIDResult = default(EventResult), EventResult OfacResult = default(EventResult), EventResult OpenIDResult = default(EventResult), EventResult PhoneAuthResult = default(EventResult), EventResult SalesforceResult = default(EventResult), EventResult SignatureProviderResult = default(EventResult), EventResult SmsAuthResult = default(EventResult), EventResult STANPinResult = default(EventResult), EventResult TwitterResult = default(EventResult), EventResult YahooResult = default(EventResult))
         {
             this.AccessCodeResult = AccessCodeResult;
@@ -81,98 +81,117 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets AccessCodeResult
+        /// The result of a user&#39;s attempt to authenticate by using an access code. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. 
         /// </summary>
+        /// <value>The result of a user&#39;s attempt to authenticate by using an access code. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. </value>
         [DataMember(Name="accessCodeResult", EmitDefaultValue=false)]
         public EventResult AccessCodeResult { get; set; }
         /// <summary>
-        /// Gets or Sets AgeVerifyResult
+        /// The result of an age verification check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. 
         /// </summary>
+        /// <value>The result of an age verification check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. </value>
         [DataMember(Name="ageVerifyResult", EmitDefaultValue=false)]
         public EventResult AgeVerifyResult { get; set; }
         /// <summary>
-        /// Gets or Sets AnySocialIDResult
+        /// Deprecated.
         /// </summary>
+        /// <value>Deprecated.</value>
         [DataMember(Name="anySocialIDResult", EmitDefaultValue=false)]
         public EventResult AnySocialIDResult { get; set; }
         /// <summary>
-        /// Gets or Sets FacebookResult
+        /// Deprecated.
         /// </summary>
+        /// <value>Deprecated.</value>
         [DataMember(Name="facebookResult", EmitDefaultValue=false)]
         public EventResult FacebookResult { get; set; }
         /// <summary>
-        /// Gets or Sets GoogleResult
+        /// Deprecated.
         /// </summary>
+        /// <value>Deprecated.</value>
         [DataMember(Name="googleResult", EmitDefaultValue=false)]
         public EventResult GoogleResult { get; set; }
         /// <summary>
-        /// Gets or Sets IdentityVerificationResult
+        /// The result of an [Identity Verification][IDV] workflow.  [IDV]: /docs/esign-rest-api/reference/accounts/identityverifications/
         /// </summary>
+        /// <value>The result of an [Identity Verification][IDV] workflow.  [IDV]: /docs/esign-rest-api/reference/accounts/identityverifications/</value>
         [DataMember(Name="identityVerificationResult", EmitDefaultValue=false)]
         public EventResult IdentityVerificationResult { get; set; }
         /// <summary>
-        /// Gets or Sets IdLookupResult
+        /// The result of an ID lookup authentication check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. 
         /// </summary>
+        /// <value>The result of an ID lookup authentication check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. </value>
         [DataMember(Name="idLookupResult", EmitDefaultValue=false)]
         public EventResult IdLookupResult { get; set; }
         /// <summary>
-        /// Gets or Sets IdQuestionsResult
+        /// The result of the user&#39;s answers to ID challenge questions. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. 
         /// </summary>
+        /// <value>The result of the user&#39;s answers to ID challenge questions. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. </value>
         [DataMember(Name="idQuestionsResult", EmitDefaultValue=false)]
         public EventResult IdQuestionsResult { get; set; }
         /// <summary>
-        /// Gets or Sets LinkedinResult
+        /// Deprecated.
         /// </summary>
+        /// <value>Deprecated.</value>
         [DataMember(Name="linkedinResult", EmitDefaultValue=false)]
         public EventResult LinkedinResult { get; set; }
         /// <summary>
-        /// Gets or Sets LiveIDResult
+        /// Deprecated.
         /// </summary>
+        /// <value>Deprecated.</value>
         [DataMember(Name="liveIDResult", EmitDefaultValue=false)]
         public EventResult LiveIDResult { get; set; }
         /// <summary>
-        /// Gets or Sets OfacResult
+        /// The result of an Office of Foreign Asset Control (OFAC) check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. 
         /// </summary>
+        /// <value>The result of an Office of Foreign Asset Control (OFAC) check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. </value>
         [DataMember(Name="ofacResult", EmitDefaultValue=false)]
         public EventResult OfacResult { get; set; }
         /// <summary>
-        /// Gets or Sets OpenIDResult
+        /// Deprecated.
         /// </summary>
+        /// <value>Deprecated.</value>
         [DataMember(Name="openIDResult", EmitDefaultValue=false)]
         public EventResult OpenIDResult { get; set; }
         /// <summary>
-        /// Gets or Sets PhoneAuthResult
+        /// The result of the user&#39;s attempt to authenticate by using two-factor authentication (2FA) through phone messaging. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. 
         /// </summary>
+        /// <value>The result of the user&#39;s attempt to authenticate by using two-factor authentication (2FA) through phone messaging. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. </value>
         [DataMember(Name="phoneAuthResult", EmitDefaultValue=false)]
         public EventResult PhoneAuthResult { get; set; }
         /// <summary>
-        /// Gets or Sets SalesforceResult
+        /// Success/failure result of authentication using sign-in with a Salesforce account. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. 
         /// </summary>
+        /// <value>Success/failure result of authentication using sign-in with a Salesforce account. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. </value>
         [DataMember(Name="salesforceResult", EmitDefaultValue=false)]
         public EventResult SalesforceResult { get; set; }
         /// <summary>
-        /// Gets or Sets SignatureProviderResult
+        /// The result of the user&#39;s attempt to authenticate by using a signature provider.
         /// </summary>
+        /// <value>The result of the user&#39;s attempt to authenticate by using a signature provider.</value>
         [DataMember(Name="signatureProviderResult", EmitDefaultValue=false)]
         public EventResult SignatureProviderResult { get; set; }
         /// <summary>
-        /// Gets or Sets SmsAuthResult
+        /// The result of the user&#39;s attempt to authenticate by using two-factor authentication (2FA) through SMS messaging on a mobile phone.
         /// </summary>
+        /// <value>The result of the user&#39;s attempt to authenticate by using two-factor authentication (2FA) through SMS messaging on a mobile phone.</value>
         [DataMember(Name="smsAuthResult", EmitDefaultValue=false)]
         public EventResult SmsAuthResult { get; set; }
         /// <summary>
-        /// Gets or Sets STANPinResult
+        /// The result of a Student Authentication Network (STAN) authentication check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. 
         /// </summary>
+        /// <value>The result of a Student Authentication Network (STAN) authentication check. It returns:  - &#x60;Status&#x60;: &#x60;Pass&#x60; or &#x60;Fail&#x60;. - &#x60;dateTime&#x60;: The date and time that the event occurred. - &#x60;FailureDescription&#x60;: A string containing the details about a failed authentication. - &#x60;VendorFailureStatusCode&#x60;: A string containing the vendor&#39;s status code for a failed authentication. </value>
         [DataMember(Name="sTANPinResult", EmitDefaultValue=false)]
         public EventResult STANPinResult { get; set; }
         /// <summary>
-        /// Gets or Sets TwitterResult
+        /// Deprecated.
         /// </summary>
+        /// <value>Deprecated.</value>
         [DataMember(Name="twitterResult", EmitDefaultValue=false)]
         public EventResult TwitterResult { get; set; }
         /// <summary>
-        /// Gets or Sets YahooResult
+        /// Deprecated.
         /// </summary>
+        /// <value>Deprecated.</value>
         [DataMember(Name="yahooResult", EmitDefaultValue=false)]
         public EventResult YahooResult { get; set; }
         /// <summary>

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ReturnUrlRequest
+    /// The request body for the [EnvelopeViews: createSender](/docs/esign-rest-api/reference/envelopes/envelopeviews/createsender/) method.
     /// </summary>
     [DataContract]
     public partial class ReturnUrlRequest :  IEquatable<ReturnUrlRequest>, IValidatableObject

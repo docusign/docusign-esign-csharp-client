@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Document
+    /// A document object.
     /// </summary>
     [DataContract]
     public partial class Document :  IEquatable<Document>, IValidatableObject
@@ -47,7 +47,7 @@ namespace DocuSign.eSign.Model
         /// <param name="EncryptedWithKeyManager">When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.  .</param>
         /// <param name="FileExtension">The file extension type of the document. If the document is not a PDF it is converted to a PDF.  .</param>
         /// <param name="FileFormatHint">FileFormatHint.</param>
-        /// <param name="HtmlDefinition">HtmlDefinition.</param>
+        /// <param name="HtmlDefinition">Defines how to generate the responsive-formatted HTML for the document. See [Responsive signing](/docs/esign-rest-api/esign101/concepts/responsive/) in the [eSignature concepts guide](/docs/esign-rest-api/esign101/concepts/)..</param>
         /// <param name="IncludeInDownload">IncludeInDownload.</param>
         /// <param name="MatchBoxes">Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  .</param>
         /// <param name="Name">Name.</param>
@@ -58,7 +58,7 @@ namespace DocuSign.eSign.Model
         /// <param name="RemoteUrl">The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}]. .</param>
         /// <param name="SignerMustAcknowledge">SignerMustAcknowledge.</param>
         /// <param name="SignerMustAcknowledgeUseAccountDefault">SignerMustAcknowledgeUseAccountDefault.</param>
-        /// <param name="Tabs">Tabs.</param>
+        /// <param name="Tabs">A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients..</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TransformPdfFields">When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs. .</param>
@@ -143,8 +143,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="fileFormatHint", EmitDefaultValue=false)]
         public string FileFormatHint { get; set; }
         /// <summary>
-        /// Gets or Sets HtmlDefinition
+        /// Defines how to generate the responsive-formatted HTML for the document. See [Responsive signing](/docs/esign-rest-api/esign101/concepts/responsive/) in the [eSignature concepts guide](/docs/esign-rest-api/esign101/concepts/).
         /// </summary>
+        /// <value>Defines how to generate the responsive-formatted HTML for the document. See [Responsive signing](/docs/esign-rest-api/esign101/concepts/responsive/) in the [eSignature concepts guide](/docs/esign-rest-api/esign101/concepts/).</value>
         [DataMember(Name="htmlDefinition", EmitDefaultValue=false)]
         public DocumentHtmlDefinition HtmlDefinition { get; set; }
         /// <summary>
@@ -200,8 +201,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signerMustAcknowledgeUseAccountDefault", EmitDefaultValue=false)]
         public bool? SignerMustAcknowledgeUseAccountDefault { get; set; }
         /// <summary>
-        /// Gets or Sets Tabs
+        /// A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients.
         /// </summary>
+        /// <value>A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients.</value>
         [DataMember(Name="tabs", EmitDefaultValue=false)]
         public Tabs Tabs { get; set; }
         /// <summary>

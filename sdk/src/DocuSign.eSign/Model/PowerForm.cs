@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// PowerForm
+    /// Contains details about a PowerForm.
     /// </summary>
     [DataContract]
     public partial class PowerForm :  IEquatable<PowerForm>, IValidatableObject
@@ -43,7 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="EmailBody">Specifies the email body of the message sent to the recipient.   Maximum length: 10000 characters. .</param>
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
         /// <param name="Envelopes">Envelopes.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="Instructions">Instructions.</param>
         /// <param name="IsActive">IsActive.</param>
         /// <param name="LastUsed">LastUsed.</param>
@@ -121,8 +121,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopes", EmitDefaultValue=false)]
         public List<Envelope> Envelopes { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

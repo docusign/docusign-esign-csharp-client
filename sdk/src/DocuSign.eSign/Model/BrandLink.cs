@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BrandLink
+    /// Information about a link that a brand uses.
     /// </summary>
     [DataContract]
     public partial class BrandLink :  IEquatable<BrandLink>, IValidatableObject

@@ -1,5 +1,10 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v6.0.0] - eSignature API v2.1-22.3.00.00 - 2022-09-07
+### Changed
+- Added support for version v2.1-22.3.00.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v6.0.0-rc] - eSignature API v2.1-22.2.00.00 - 2022-06-23
 ### Changed
 - Removed external reference to RestSharp

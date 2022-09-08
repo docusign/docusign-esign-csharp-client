@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// DocumentHtmlDefinition
+    /// Holds the properties that define how to generate the responsive-formatted HTML for the document. See [Responsive signing](/docs/esign-rest-api/esign101/concepts/responsive/) in the [eSignature concepts guide](/docs/esign-rest-api/esign101/concepts/).
     /// </summary>
     [DataContract]
     public partial class DocumentHtmlDefinition :  IEquatable<DocumentHtmlDefinition>, IValidatableObject

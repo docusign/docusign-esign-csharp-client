@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BccEmailArchiveHistory
+    /// Contains details about the history of the BCC email archive configuration.
     /// </summary>
     [DataContract]
     public partial class BccEmailArchiveHistory :  IEquatable<BccEmailArchiveHistory>, IValidatableObject
@@ -42,7 +42,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Action">Action.</param>
         /// <param name="Email">Email.</param>
         /// <param name="Modified">Modified.</param>
-        /// <param name="ModifiedBy">ModifiedBy.</param>
+        /// <param name="ModifiedBy">Details about the user who last modified the BCC email archive configuration..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         public BccEmailArchiveHistory(string AccountId = default(string), string Action = default(string), string Email = default(string), string Modified = default(string), UserInfo ModifiedBy = default(UserInfo), string Status = default(string))
         {
@@ -76,8 +76,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="modified", EmitDefaultValue=false)]
         public string Modified { get; set; }
         /// <summary>
-        /// Gets or Sets ModifiedBy
+        /// Details about the user who last modified the BCC email archive configuration.
         /// </summary>
+        /// <value>Details about the user who last modified the BCC email archive configuration.</value>
         [DataMember(Name="modifiedBy", EmitDefaultValue=false)]
         public UserInfo ModifiedBy { get; set; }
         /// <summary>

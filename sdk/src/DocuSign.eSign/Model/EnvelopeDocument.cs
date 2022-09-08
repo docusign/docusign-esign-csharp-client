@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopeDocument
+    /// This object contains details about the envelope document.
     /// </summary>
     [DataContract]
     public partial class EnvelopeDocument :  IEquatable<EnvelopeDocument>, IValidatableObject
@@ -41,24 +41,24 @@ namespace DocuSign.eSign.Model
         /// <param name="AddedRecipientIds">AddedRecipientIds.</param>
         /// <param name="AttachmentTabId">AttachmentTabId.</param>
         /// <param name="AuthoritativeCopy">Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled..</param>
-        /// <param name="AuthoritativeCopyMetadata">AuthoritativeCopyMetadata.</param>
+        /// <param name="AuthoritativeCopyMetadata">Metadata that indicates if the sender can edit the &#x60;authoritativeCopy&#x60; property. Not applicable for template documents..</param>
         /// <param name="AvailableDocumentTypes">AvailableDocumentTypes.</param>
         /// <param name="ContainsPdfFormFields">ContainsPdfFormFields.</param>
         /// <param name="Display">Display.</param>
-        /// <param name="DisplayMetadata">DisplayMetadata.</param>
+        /// <param name="DisplayMetadata">Metadata that indicates if the sender can edit the &#x60;display&#x60; property. Not applicable for template documents..</param>
         /// <param name="DocumentBase64">DocumentBase64.</param>
         /// <param name="DocumentFields">DocumentFields.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdGuid">DocumentIdGuid.</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="IncludeInDownload">IncludeInDownload.</param>
-        /// <param name="IncludeInDownloadMetadata">IncludeInDownloadMetadata.</param>
+        /// <param name="IncludeInDownloadMetadata">Metadata that indicates if the sender can edit the &#x60;includeInDownload&#x60; property. Not applicable for template documents..</param>
         /// <param name="Name">Name.</param>
-        /// <param name="NameMetadata">NameMetadata.</param>
+        /// <param name="NameMetadata">Metadata that indicates if the sender can edit the &#x60;name&#x60; property. Not applicable for template documents..</param>
         /// <param name="Order">Order.</param>
         /// <param name="Pages">Pages.</param>
         /// <param name="SignerMustAcknowledge">SignerMustAcknowledge.</param>
-        /// <param name="SignerMustAcknowledgeMetadata">SignerMustAcknowledgeMetadata.</param>
+        /// <param name="SignerMustAcknowledgeMetadata">Metadata that indicates if the sender can edit the &#x60;signerMustAcknowledge&#x60; property. Not applicable for template documents..</param>
         /// <param name="SizeBytes">SizeBytes.</param>
         /// <param name="TemplateLocked">When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. .</param>
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
@@ -111,8 +111,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="authoritativeCopy", EmitDefaultValue=false)]
         public string AuthoritativeCopy { get; set; }
         /// <summary>
-        /// Gets or Sets AuthoritativeCopyMetadata
+        /// Metadata that indicates if the sender can edit the &#x60;authoritativeCopy&#x60; property. Not applicable for template documents.
         /// </summary>
+        /// <value>Metadata that indicates if the sender can edit the &#x60;authoritativeCopy&#x60; property. Not applicable for template documents.</value>
         [DataMember(Name="authoritativeCopyMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AuthoritativeCopyMetadata { get; set; }
         /// <summary>
@@ -131,8 +132,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="display", EmitDefaultValue=false)]
         public string Display { get; set; }
         /// <summary>
-        /// Gets or Sets DisplayMetadata
+        /// Metadata that indicates if the sender can edit the &#x60;display&#x60; property. Not applicable for template documents.
         /// </summary>
+        /// <value>Metadata that indicates if the sender can edit the &#x60;display&#x60; property. Not applicable for template documents.</value>
         [DataMember(Name="displayMetadata", EmitDefaultValue=false)]
         public PropertyMetadata DisplayMetadata { get; set; }
         /// <summary>
@@ -157,8 +159,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentIdGuid", EmitDefaultValue=false)]
         public string DocumentIdGuid { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -167,8 +170,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includeInDownload", EmitDefaultValue=false)]
         public string IncludeInDownload { get; set; }
         /// <summary>
-        /// Gets or Sets IncludeInDownloadMetadata
+        /// Metadata that indicates if the sender can edit the &#x60;includeInDownload&#x60; property. Not applicable for template documents.
         /// </summary>
+        /// <value>Metadata that indicates if the sender can edit the &#x60;includeInDownload&#x60; property. Not applicable for template documents.</value>
         [DataMember(Name="includeInDownloadMetadata", EmitDefaultValue=false)]
         public PropertyMetadata IncludeInDownloadMetadata { get; set; }
         /// <summary>
@@ -177,8 +181,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// Gets or Sets NameMetadata
+        /// Metadata that indicates if the sender can edit the &#x60;name&#x60; property. Not applicable for template documents.
         /// </summary>
+        /// <value>Metadata that indicates if the sender can edit the &#x60;name&#x60; property. Not applicable for template documents.</value>
         [DataMember(Name="nameMetadata", EmitDefaultValue=false)]
         public PropertyMetadata NameMetadata { get; set; }
         /// <summary>
@@ -197,8 +202,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signerMustAcknowledge", EmitDefaultValue=false)]
         public string SignerMustAcknowledge { get; set; }
         /// <summary>
-        /// Gets or Sets SignerMustAcknowledgeMetadata
+        /// Metadata that indicates if the sender can edit the &#x60;signerMustAcknowledge&#x60; property. Not applicable for template documents.
         /// </summary>
+        /// <value>Metadata that indicates if the sender can edit the &#x60;signerMustAcknowledge&#x60; property. Not applicable for template documents.</value>
         [DataMember(Name="signerMustAcknowledgeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SignerMustAcknowledgeMetadata { get; set; }
         /// <summary>

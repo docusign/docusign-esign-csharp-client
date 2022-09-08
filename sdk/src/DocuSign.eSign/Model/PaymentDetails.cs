@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// PaymentDetails
+    /// When a formula tab has a &#x60;paymentDetails&#x60; property, the formula tab is a payment item. See [Requesting Payments Along with Signatures][paymentguide] in the DocuSign Support Center to learn more about payments.  [paymentguide]:     https://support.docusign.com/en/guides/requesting-payments-along-with-signatures 
     /// </summary>
     [DataContract]
     public partial class PaymentDetails :  IEquatable<PaymentDetails>, IValidatableObject
@@ -41,12 +41,12 @@ namespace DocuSign.eSign.Model
         /// <param name="AllowedPaymentMethods">AllowedPaymentMethods.</param>
         /// <param name="ChargeId">ChargeId.</param>
         /// <param name="CurrencyCode">CurrencyCode.</param>
-        /// <param name="CurrencyCodeMetadata">CurrencyCodeMetadata.</param>
+        /// <param name="CurrencyCodeMetadata">Metadata that indicates whether the &#x60;currencyCode&#x60; property is editable..</param>
         /// <param name="CustomerId">CustomerId.</param>
         /// <param name="CustomMetadata">CustomMetadata.</param>
         /// <param name="CustomMetadataRequired">CustomMetadataRequired.</param>
         /// <param name="GatewayAccountId">GatewayAccountId.</param>
-        /// <param name="GatewayAccountIdMetadata">GatewayAccountIdMetadata.</param>
+        /// <param name="GatewayAccountIdMetadata">Metadata that indicates whether the &#x60;gatewayAccountId&#x60; property is editable..</param>
         /// <param name="GatewayDisplayName">GatewayDisplayName.</param>
         /// <param name="GatewayName">GatewayName.</param>
         /// <param name="LineItems">LineItems.</param>
@@ -55,7 +55,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SignerValues">SignerValues.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="SubGatewayName">SubGatewayName.</param>
-        /// <param name="Total">Total.</param>
+        /// <param name="Total">This read-only property is a currency-formatted string that represents the total of all the line items. The total is available only after the document is completed, which is when all recipients have paid and have completed all required fields. .</param>
         public PaymentDetails(List<string> AllowedPaymentMethods = default(List<string>), string ChargeId = default(string), string CurrencyCode = default(string), PropertyMetadata CurrencyCodeMetadata = default(PropertyMetadata), string CustomerId = default(string), string CustomMetadata = default(string), bool? CustomMetadataRequired = default(bool?), string GatewayAccountId = default(string), PropertyMetadata GatewayAccountIdMetadata = default(PropertyMetadata), string GatewayDisplayName = default(string), string GatewayName = default(string), List<PaymentLineItem> LineItems = default(List<PaymentLineItem>), string PaymentOption = default(string), string PaymentSourceId = default(string), PaymentSignerValues SignerValues = default(PaymentSignerValues), string Status = default(string), string SubGatewayName = default(string), Money Total = default(Money))
         {
             this.AllowedPaymentMethods = AllowedPaymentMethods;
@@ -94,8 +94,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="currencyCode", EmitDefaultValue=false)]
         public string CurrencyCode { get; set; }
         /// <summary>
-        /// Gets or Sets CurrencyCodeMetadata
+        /// Metadata that indicates whether the &#x60;currencyCode&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;currencyCode&#x60; property is editable.</value>
         [DataMember(Name="currencyCodeMetadata", EmitDefaultValue=false)]
         public PropertyMetadata CurrencyCodeMetadata { get; set; }
         /// <summary>
@@ -119,8 +120,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="gatewayAccountId", EmitDefaultValue=false)]
         public string GatewayAccountId { get; set; }
         /// <summary>
-        /// Gets or Sets GatewayAccountIdMetadata
+        /// Metadata that indicates whether the &#x60;gatewayAccountId&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;gatewayAccountId&#x60; property is editable.</value>
         [DataMember(Name="gatewayAccountIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata GatewayAccountIdMetadata { get; set; }
         /// <summary>
@@ -165,8 +167,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="subGatewayName", EmitDefaultValue=false)]
         public string SubGatewayName { get; set; }
         /// <summary>
-        /// Gets or Sets Total
+        /// This read-only property is a currency-formatted string that represents the total of all the line items. The total is available only after the document is completed, which is when all recipients have paid and have completed all required fields. 
         /// </summary>
+        /// <value>This read-only property is a currency-formatted string that represents the total of all the line items. The total is available only after the document is completed, which is when all recipients have paid and have completed all required fields. </value>
         [DataMember(Name="total", EmitDefaultValue=false)]
         public Money Total { get; set; }
         /// <summary>

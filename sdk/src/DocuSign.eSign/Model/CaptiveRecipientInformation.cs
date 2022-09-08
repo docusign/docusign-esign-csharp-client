@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// CaptiveRecipientInformation
+    /// Contains information about captive (embedded) recipients.
     /// </summary>
     [DataContract]
     public partial class CaptiveRecipientInformation :  IEquatable<CaptiveRecipientInformation>, IValidatableObject

@@ -38,17 +38,17 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountBillingPlanResponse" /> class.
         /// </summary>
-        /// <param name="BillingAddress">BillingAddress.</param>
+        /// <param name="BillingAddress">The billing address for the account..</param>
         /// <param name="BillingAddressIsCreditCardAddress">When set to **true**, the credit card address information is the same as that returned as the billing address. If false, then the billing address is considered a billing contact address, and the credit card address can be different..</param>
-        /// <param name="BillingPlan">BillingPlan.</param>
-        /// <param name="CreditCardInformation">CreditCardInformation.</param>
-        /// <param name="DirectDebitProcessorInformation">DirectDebitProcessorInformation.</param>
+        /// <param name="BillingPlan">An object that contains details about the billing plan..</param>
+        /// <param name="CreditCardInformation">A complex type that has information about the credit card used to pay for this account..</param>
+        /// <param name="DirectDebitProcessorInformation">Information about the bank that processes direct debits for the payment plan..</param>
         /// <param name="DowngradePlanInformation">DowngradePlanInformation.</param>
         /// <param name="DowngradeRequestInformation">DowngradeRequestInformation.</param>
         /// <param name="EntityInformation">EntityInformation.</param>
         /// <param name="PaymentMethod">PaymentMethod.</param>
-        /// <param name="PaymentProcessorInformation">PaymentProcessorInformation.</param>
-        /// <param name="ReferralInformation">ReferralInformation.</param>
+        /// <param name="PaymentProcessorInformation">Information about the entity that processes payments for the billing plan..</param>
+        /// <param name="ReferralInformation">A complex type that contains properties for entering referral and discount information..</param>
         /// <param name="SuccessorPlans">SuccessorPlans.</param>
         /// <param name="TaxExemptId">TaxExemptId.</param>
         public AccountBillingPlanResponse(AccountAddress BillingAddress = default(AccountAddress), string BillingAddressIsCreditCardAddress = default(string), AccountBillingPlan BillingPlan = default(AccountBillingPlan), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), DowngradePlanUpdateResponse DowngradePlanInformation = default(DowngradePlanUpdateResponse), DowngradeRequestInformation DowngradeRequestInformation = default(DowngradeRequestInformation), BillingEntityInformationResponse EntityInformation = default(BillingEntityInformationResponse), string PaymentMethod = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), ReferralInformation ReferralInformation = default(ReferralInformation), List<BillingPlan> SuccessorPlans = default(List<BillingPlan>), string TaxExemptId = default(string))
@@ -69,8 +69,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets BillingAddress
+        /// The billing address for the account.
         /// </summary>
+        /// <value>The billing address for the account.</value>
         [DataMember(Name="billingAddress", EmitDefaultValue=false)]
         public AccountAddress BillingAddress { get; set; }
         /// <summary>
@@ -80,18 +81,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="billingAddressIsCreditCardAddress", EmitDefaultValue=false)]
         public string BillingAddressIsCreditCardAddress { get; set; }
         /// <summary>
-        /// Gets or Sets BillingPlan
+        /// An object that contains details about the billing plan.
         /// </summary>
+        /// <value>An object that contains details about the billing plan.</value>
         [DataMember(Name="billingPlan", EmitDefaultValue=false)]
         public AccountBillingPlan BillingPlan { get; set; }
         /// <summary>
-        /// Gets or Sets CreditCardInformation
+        /// A complex type that has information about the credit card used to pay for this account.
         /// </summary>
+        /// <value>A complex type that has information about the credit card used to pay for this account.</value>
         [DataMember(Name="creditCardInformation", EmitDefaultValue=false)]
         public CreditCardInformation CreditCardInformation { get; set; }
         /// <summary>
-        /// Gets or Sets DirectDebitProcessorInformation
+        /// Information about the bank that processes direct debits for the payment plan.
         /// </summary>
+        /// <value>Information about the bank that processes direct debits for the payment plan.</value>
         [DataMember(Name="directDebitProcessorInformation", EmitDefaultValue=false)]
         public DirectDebitProcessorInformation DirectDebitProcessorInformation { get; set; }
         /// <summary>
@@ -115,13 +119,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
         public string PaymentMethod { get; set; }
         /// <summary>
-        /// Gets or Sets PaymentProcessorInformation
+        /// Information about the entity that processes payments for the billing plan.
         /// </summary>
+        /// <value>Information about the entity that processes payments for the billing plan.</value>
         [DataMember(Name="paymentProcessorInformation", EmitDefaultValue=false)]
         public PaymentProcessorInformation PaymentProcessorInformation { get; set; }
         /// <summary>
-        /// Gets or Sets ReferralInformation
+        /// A complex type that contains properties for entering referral and discount information.
         /// </summary>
+        /// <value>A complex type that contains properties for entering referral and discount information.</value>
         [DataMember(Name="referralInformation", EmitDefaultValue=false)]
         public ReferralInformation ReferralInformation { get; set; }
         /// <summary>

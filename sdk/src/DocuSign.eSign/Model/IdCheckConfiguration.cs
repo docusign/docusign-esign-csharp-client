@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// IdCheckConfiguration
+    /// A complex object specifying ID check configuration.
     /// </summary>
     [DataContract]
     public partial class IdCheckConfiguration :  IEquatable<IdCheckConfiguration>, IValidatableObject

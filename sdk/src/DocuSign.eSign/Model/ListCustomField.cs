@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ListCustomField
+    /// This object represents a list custom field from which envelope creators and senders can select custom data.
     /// </summary>
     [DataContract]
     public partial class ListCustomField :  IEquatable<ListCustomField>, IValidatableObject
@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="ListCustomField" /> class.
         /// </summary>
         /// <param name="ConfigurationType">If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**..</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="FieldId">An ID used to specify a custom field..</param>
         /// <param name="ListItems">ListItems.</param>
         /// <param name="Name">The name of the custom field..</param>
@@ -65,8 +65,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="configurationType", EmitDefaultValue=false)]
         public string ConfigurationType { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

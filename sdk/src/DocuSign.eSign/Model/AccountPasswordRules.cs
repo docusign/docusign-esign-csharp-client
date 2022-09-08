@@ -40,24 +40,24 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ExpirePassword">ExpirePassword.</param>
         /// <param name="ExpirePasswordDays">ExpirePasswordDays.</param>
-        /// <param name="ExpirePasswordDaysMetadata">ExpirePasswordDaysMetadata.</param>
+        /// <param name="ExpirePasswordDaysMetadata">Metadata that indicates whether the &#x60;expirePasswordDays&#x60; property is editable. .</param>
         /// <param name="LockoutDurationMinutes">LockoutDurationMinutes.</param>
-        /// <param name="LockoutDurationMinutesMetadata">LockoutDurationMinutesMetadata.</param>
+        /// <param name="LockoutDurationMinutesMetadata">Metadata that indicates whether the &#x60;lockoutDurationMinutes&#x60; property is editable. .</param>
         /// <param name="LockoutDurationType">LockoutDurationType.</param>
-        /// <param name="LockoutDurationTypeMetadata">LockoutDurationTypeMetadata.</param>
+        /// <param name="LockoutDurationTypeMetadata">Metadata that indicates whether the &#x60;lockoutDurationType&#x60; property is editable. .</param>
         /// <param name="MinimumPasswordAgeDays">MinimumPasswordAgeDays.</param>
-        /// <param name="MinimumPasswordAgeDaysMetadata">MinimumPasswordAgeDaysMetadata.</param>
+        /// <param name="MinimumPasswordAgeDaysMetadata">Metadata that indicates whether the &#x60;minimumPasswordAgeDays&#x60; property is editable. .</param>
         /// <param name="MinimumPasswordLength">MinimumPasswordLength.</param>
-        /// <param name="MinimumPasswordLengthMetadata">MinimumPasswordLengthMetadata.</param>
+        /// <param name="MinimumPasswordLengthMetadata">Metadata that indicates whether the &#x60;minimumPasswordLength&#x60; property is editable. .</param>
         /// <param name="PasswordIncludeDigit">PasswordIncludeDigit.</param>
         /// <param name="PasswordIncludeDigitOrSpecialCharacter">PasswordIncludeDigitOrSpecialCharacter.</param>
         /// <param name="PasswordIncludeLowerCase">PasswordIncludeLowerCase.</param>
         /// <param name="PasswordIncludeSpecialCharacter">PasswordIncludeSpecialCharacter.</param>
         /// <param name="PasswordIncludeUpperCase">PasswordIncludeUpperCase.</param>
         /// <param name="PasswordStrengthType">PasswordStrengthType.</param>
-        /// <param name="PasswordStrengthTypeMetadata">PasswordStrengthTypeMetadata.</param>
+        /// <param name="PasswordStrengthTypeMetadata">Metadata that indicates whether the &#x60;passwordStrengthType&#x60; property is editable. .</param>
         /// <param name="QuestionsRequired">QuestionsRequired.</param>
-        /// <param name="QuestionsRequiredMetadata">QuestionsRequiredMetadata.</param>
+        /// <param name="QuestionsRequiredMetadata">Metadata that indicates whether the &#x60;questionsRequired&#x60; property is editable. .</param>
         public AccountPasswordRules(string ExpirePassword = default(string), string ExpirePasswordDays = default(string), AccountPasswordExpirePasswordDays ExpirePasswordDaysMetadata = default(AccountPasswordExpirePasswordDays), string LockoutDurationMinutes = default(string), AccountPasswordLockoutDurationMinutes LockoutDurationMinutesMetadata = default(AccountPasswordLockoutDurationMinutes), string LockoutDurationType = default(string), AccountPasswordLockoutDurationType LockoutDurationTypeMetadata = default(AccountPasswordLockoutDurationType), string MinimumPasswordAgeDays = default(string), AccountPasswordMinimumPasswordAgeDays MinimumPasswordAgeDaysMetadata = default(AccountPasswordMinimumPasswordAgeDays), string MinimumPasswordLength = default(string), AccountMinimumPasswordLength MinimumPasswordLengthMetadata = default(AccountMinimumPasswordLength), string PasswordIncludeDigit = default(string), string PasswordIncludeDigitOrSpecialCharacter = default(string), string PasswordIncludeLowerCase = default(string), string PasswordIncludeSpecialCharacter = default(string), string PasswordIncludeUpperCase = default(string), string PasswordStrengthType = default(string), AccountPasswordStrengthType PasswordStrengthTypeMetadata = default(AccountPasswordStrengthType), string QuestionsRequired = default(string), AccountPasswordQuestionsRequired QuestionsRequiredMetadata = default(AccountPasswordQuestionsRequired))
         {
             this.ExpirePassword = ExpirePassword;
@@ -93,8 +93,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="expirePasswordDays", EmitDefaultValue=false)]
         public string ExpirePasswordDays { get; set; }
         /// <summary>
-        /// Gets or Sets ExpirePasswordDaysMetadata
+        /// Metadata that indicates whether the &#x60;expirePasswordDays&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;expirePasswordDays&#x60; property is editable. </value>
         [DataMember(Name="expirePasswordDaysMetadata", EmitDefaultValue=false)]
         public AccountPasswordExpirePasswordDays ExpirePasswordDaysMetadata { get; set; }
         /// <summary>
@@ -103,8 +104,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lockoutDurationMinutes", EmitDefaultValue=false)]
         public string LockoutDurationMinutes { get; set; }
         /// <summary>
-        /// Gets or Sets LockoutDurationMinutesMetadata
+        /// Metadata that indicates whether the &#x60;lockoutDurationMinutes&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;lockoutDurationMinutes&#x60; property is editable. </value>
         [DataMember(Name="lockoutDurationMinutesMetadata", EmitDefaultValue=false)]
         public AccountPasswordLockoutDurationMinutes LockoutDurationMinutesMetadata { get; set; }
         /// <summary>
@@ -113,8 +115,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lockoutDurationType", EmitDefaultValue=false)]
         public string LockoutDurationType { get; set; }
         /// <summary>
-        /// Gets or Sets LockoutDurationTypeMetadata
+        /// Metadata that indicates whether the &#x60;lockoutDurationType&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;lockoutDurationType&#x60; property is editable. </value>
         [DataMember(Name="lockoutDurationTypeMetadata", EmitDefaultValue=false)]
         public AccountPasswordLockoutDurationType LockoutDurationTypeMetadata { get; set; }
         /// <summary>
@@ -123,8 +126,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="minimumPasswordAgeDays", EmitDefaultValue=false)]
         public string MinimumPasswordAgeDays { get; set; }
         /// <summary>
-        /// Gets or Sets MinimumPasswordAgeDaysMetadata
+        /// Metadata that indicates whether the &#x60;minimumPasswordAgeDays&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;minimumPasswordAgeDays&#x60; property is editable. </value>
         [DataMember(Name="minimumPasswordAgeDaysMetadata", EmitDefaultValue=false)]
         public AccountPasswordMinimumPasswordAgeDays MinimumPasswordAgeDaysMetadata { get; set; }
         /// <summary>
@@ -133,8 +137,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="minimumPasswordLength", EmitDefaultValue=false)]
         public string MinimumPasswordLength { get; set; }
         /// <summary>
-        /// Gets or Sets MinimumPasswordLengthMetadata
+        /// Metadata that indicates whether the &#x60;minimumPasswordLength&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;minimumPasswordLength&#x60; property is editable. </value>
         [DataMember(Name="minimumPasswordLengthMetadata", EmitDefaultValue=false)]
         public AccountMinimumPasswordLength MinimumPasswordLengthMetadata { get; set; }
         /// <summary>
@@ -168,8 +173,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="passwordStrengthType", EmitDefaultValue=false)]
         public string PasswordStrengthType { get; set; }
         /// <summary>
-        /// Gets or Sets PasswordStrengthTypeMetadata
+        /// Metadata that indicates whether the &#x60;passwordStrengthType&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;passwordStrengthType&#x60; property is editable. </value>
         [DataMember(Name="passwordStrengthTypeMetadata", EmitDefaultValue=false)]
         public AccountPasswordStrengthType PasswordStrengthTypeMetadata { get; set; }
         /// <summary>
@@ -178,8 +184,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="questionsRequired", EmitDefaultValue=false)]
         public string QuestionsRequired { get; set; }
         /// <summary>
-        /// Gets or Sets QuestionsRequiredMetadata
+        /// Metadata that indicates whether the &#x60;questionsRequired&#x60; property is editable. 
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;questionsRequired&#x60; property is editable. </value>
         [DataMember(Name="questionsRequiredMetadata", EmitDefaultValue=false)]
         public AccountPasswordQuestionsRequired QuestionsRequiredMetadata { get; set; }
         /// <summary>

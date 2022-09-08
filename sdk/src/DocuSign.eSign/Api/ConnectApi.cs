@@ -47,6 +47,29 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<ConnectCustomConfiguration> CreateConfigurationWithHttpInfo(string accountId, ConnectCustomConfiguration connectCustomConfiguration = null);
         /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectOAuthConfig"> (optional)</param>
+        /// <returns></returns>
+        ConnectOAuthConfig CreateConnectOAuthConfig(string accountId, ConnectOAuthConfig connectOAuthConfig = null);
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectOAuthConfig"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<ConnectOAuthConfig> CreateConnectOAuthConfigWithHttpInfo(string accountId, ConnectOAuthConfig connectOAuthConfig = null);
+        /// <summary>
         /// Deletes the specified connect configuration.
         /// </summary>
         /// <remarks>
@@ -69,6 +92,27 @@ namespace DocuSign.eSign.Api
         /// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteConfigurationWithHttpInfo(string accountId, string connectId);
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns></returns>
+        void DeleteConnectOAuthConfig(string accountId);
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteConnectOAuthConfigWithHttpInfo(string accountId);
         /// <summary>
         /// Deletes a Connect failure log entry.
         /// </summary>
@@ -207,6 +251,27 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<IntegratedConnectUserInfoList> GetConnectAllUsersWithHttpInfo(string accountId, string connectId, ConnectApi.GetConnectAllUsersOptions options = null);
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns></returns>
+        ConnectOAuthConfig GetConnectOAuthConfig(string accountId);
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<ConnectOAuthConfig> GetConnectOAuthConfigWithHttpInfo(string accountId);
         /// <summary>
         /// Get the specified Connect log entry.
         /// </summary>
@@ -463,6 +528,29 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (ConnectCustomConfiguration)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConnectCustomConfiguration>> CreateConfigurationAsyncWithHttpInfo(string accountId, ConnectCustomConfiguration connectCustomConfiguration = null);
         /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectOAuthConfig"> (optional)</param>
+        /// <returns>Task of ConnectOAuthConfig</returns>
+        System.Threading.Tasks.Task<ConnectOAuthConfig> CreateConnectOAuthConfigAsync(string accountId, ConnectOAuthConfig connectOAuthConfig = null);
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectOAuthConfig"> (optional)</param>
+        /// <returns>Task of ApiResponse (ConnectOAuthConfig)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConnectOAuthConfig>> CreateConnectOAuthConfigAsyncWithHttpInfo(string accountId, ConnectOAuthConfig connectOAuthConfig = null);
+        /// <summary>
         /// Deletes the specified connect configuration.
         /// </summary>
         /// <remarks>
@@ -485,6 +573,27 @@ namespace DocuSign.eSign.Api
         /// <param name="connectId">The ID of the custom Connect configuration being accessed.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteConfigurationAsyncWithHttpInfo(string accountId, string connectId);
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteConnectOAuthConfigAsync(string accountId);
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteConnectOAuthConfigAsyncWithHttpInfo(string accountId);
         /// <summary>
         /// Deletes a Connect failure log entry.
         /// </summary>
@@ -623,6 +732,27 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (IntegratedConnectUserInfoList)</returns>
         System.Threading.Tasks.Task<ApiResponse<IntegratedConnectUserInfoList>> GetConnectAllUsersAsyncWithHttpInfo(string accountId, string connectId, ConnectApi.GetConnectAllUsersOptions options = null);
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>Task of ConnectOAuthConfig</returns>
+        System.Threading.Tasks.Task<ConnectOAuthConfig> GetConnectOAuthConfigAsync(string accountId);
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>Task of ApiResponse (ConnectOAuthConfig)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConnectOAuthConfig>> GetConnectOAuthConfigAsyncWithHttpInfo(string accountId);
         /// <summary>
         /// Get the specified Connect log entry.
         /// </summary>
@@ -1093,6 +1223,189 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectOAuthConfig"> (optional)</param>
+        /// <returns>ConnectOAuthConfig</returns>
+        public ConnectOAuthConfig CreateConnectOAuthConfig(string accountId, ConnectOAuthConfig connectOAuthConfig = null)
+        {
+             ApiResponse<ConnectOAuthConfig> localVarResponse = CreateConnectOAuthConfigWithHttpInfo(accountId, connectOAuthConfig);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectOAuthConfig"> (optional)</param>
+        /// <returns>ApiResponse of ConnectOAuthConfig</returns>
+        public ApiResponse<ConnectOAuthConfig> CreateConnectOAuthConfigWithHttpInfo(string accountId, ConnectOAuthConfig connectOAuthConfig = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->CreateConnectOAuthConfig");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/connect/oauth";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (connectOAuthConfig != null && connectOAuthConfig.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(connectOAuthConfig); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = connectOAuthConfig; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateConnectOAuthConfig", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<ConnectOAuthConfig>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (ConnectOAuthConfig)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ConnectOAuthConfig)));
+            }
+            else
+            {
+                return new ApiResponse<ConnectOAuthConfig>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (ConnectOAuthConfig)this.ApiClient.Deserialize(localVarResponse, typeof(ConnectOAuthConfig)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectOAuthConfig"> (optional)</param>
+        /// <returns>Task of ConnectOAuthConfig</returns>
+        public async System.Threading.Tasks.Task<ConnectOAuthConfig> CreateConnectOAuthConfigAsync(string accountId, ConnectOAuthConfig connectOAuthConfig = null)
+        {
+             ApiResponse<ConnectOAuthConfig> localVarResponse = await CreateConnectOAuthConfigAsyncWithHttpInfo(accountId, connectOAuthConfig);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="connectOAuthConfig"> (optional)</param>
+        /// <returns>Task of ApiResponse (ConnectOAuthConfig)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ConnectOAuthConfig>> CreateConnectOAuthConfigAsyncWithHttpInfo(string accountId, ConnectOAuthConfig connectOAuthConfig = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->CreateConnectOAuthConfig");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/connect/oauth";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (connectOAuthConfig != null && connectOAuthConfig.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(connectOAuthConfig); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = connectOAuthConfig; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateConnectOAuthConfig", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ConnectOAuthConfig>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (ConnectOAuthConfig)this.ApiClient.Deserialize(localVarResponse, typeof(ConnectOAuthConfig)));
+            
+        }
+
+
+
+        /// <summary>
         /// Deletes the specified connect configuration. Deletes the specified DocuSign Connect configuration.  ###### Note: Connect must be enabled for your account to use this function.    
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1246,6 +1559,159 @@ namespace DocuSign.eSign.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("DeleteConfiguration", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns></returns>
+        public void DeleteConnectOAuthConfig(string accountId)
+        {
+             DeleteConnectOAuthConfigWithHttpInfo(accountId);
+        }
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DeleteConnectOAuthConfigWithHttpInfo(string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->DeleteConnectOAuthConfig");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/connect/oauth";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteConnectOAuthConfig", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteConnectOAuthConfigAsync(string accountId)
+        {
+             await DeleteConnectOAuthConfigAsyncWithHttpInfo(accountId);
+        }
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteConnectOAuthConfigAsyncWithHttpInfo(string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->DeleteConnectOAuthConfig");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/connect/oauth";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteConnectOAuthConfig", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2318,6 +2784,169 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<IntegratedConnectUserInfoList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (IntegratedConnectUserInfoList)this.ApiClient.Deserialize(localVarResponse, typeof(IntegratedConnectUserInfoList)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>ConnectOAuthConfig</returns>
+        public ConnectOAuthConfig GetConnectOAuthConfig(string accountId)
+        {
+             ApiResponse<ConnectOAuthConfig> localVarResponse = GetConnectOAuthConfigWithHttpInfo(accountId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>ApiResponse of ConnectOAuthConfig</returns>
+        public ApiResponse<ConnectOAuthConfig> GetConnectOAuthConfigWithHttpInfo(string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->GetConnectOAuthConfig");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/connect/oauth";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetConnectOAuthConfig", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<ConnectOAuthConfig>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (ConnectOAuthConfig)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ConnectOAuthConfig)));
+            }
+            else
+            {
+                return new ApiResponse<ConnectOAuthConfig>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (ConnectOAuthConfig)this.ApiClient.Deserialize(localVarResponse, typeof(ConnectOAuthConfig)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>Task of ConnectOAuthConfig</returns>
+        public async System.Threading.Tasks.Task<ConnectOAuthConfig> GetConnectOAuthConfigAsync(string accountId)
+        {
+             ApiResponse<ConnectOAuthConfig> localVarResponse = await GetConnectOAuthConfigAsyncWithHttpInfo(accountId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Sets the Connect OAuth Config for the account. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <returns>Task of ApiResponse (ConnectOAuthConfig)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ConnectOAuthConfig>> GetConnectOAuthConfigAsyncWithHttpInfo(string accountId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->GetConnectOAuthConfig");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/connect/oauth";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetConnectOAuthConfig", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ConnectOAuthConfig>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (ConnectOAuthConfig)this.ApiClient.Deserialize(localVarResponse, typeof(ConnectOAuthConfig)));
             
         }
 

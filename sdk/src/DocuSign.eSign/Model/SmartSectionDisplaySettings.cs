@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// SmartSectionDisplaySettings
+    /// These properties define how a Smart Section displays. A Smart Section is a type of display section.
     /// </summary>
     [DataContract]
     public partial class SmartSectionDisplaySettings :  IEquatable<SmartSectionDisplaySettings>, IValidatableObject
@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="SmartSectionDisplaySettings" /> class.
         /// </summary>
         /// <param name="CellStyle">CellStyle.</param>
-        /// <param name="CollapsibleSettings">CollapsibleSettings.</param>
+        /// <param name="CollapsibleSettings">This object defines the appearance and function of a collapsible section or item..</param>
         /// <param name="Display">Display.</param>
         /// <param name="DisplayLabel">DisplayLabel.</param>
         /// <param name="DisplayOrder">DisplayOrder.</param>
@@ -72,8 +72,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="cellStyle", EmitDefaultValue=false)]
         public string CellStyle { get; set; }
         /// <summary>
-        /// Gets or Sets CollapsibleSettings
+        /// This object defines the appearance and function of a collapsible section or item.
         /// </summary>
+        /// <value>This object defines the appearance and function of a collapsible section or item.</value>
         [DataMember(Name="collapsibleSettings", EmitDefaultValue=false)]
         public SmartSectionCollapsibleDisplaySettings CollapsibleSettings { get; set; }
         /// <summary>

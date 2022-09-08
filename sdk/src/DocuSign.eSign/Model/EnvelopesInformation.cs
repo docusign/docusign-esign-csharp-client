@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopesInformation
+    /// Result set for the Envelopes: listStatusChanges method
     /// </summary>
     [DataContract]
     public partial class EnvelopesInformation :  IEquatable<EnvelopesInformation>, IValidatableObject

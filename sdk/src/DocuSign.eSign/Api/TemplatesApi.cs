@@ -79,7 +79,7 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start an edit view of the Template UI
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -92,7 +92,7 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start an edit view of the Template UI
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -206,7 +206,7 @@ namespace DocuSign.eSign.Api
         /// Post Responsive HTML Preview for a document in a template.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML version of a specific template document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -220,7 +220,7 @@ namespace DocuSign.eSign.Api
         /// Post Responsive HTML Preview for a document in a template.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML version of a specific template document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -233,7 +233,7 @@ namespace DocuSign.eSign.Api
         /// Adds the tabs to a tempate
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds tabs to the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/templates/templatedocumenttabs/create/#definition__templatetabs_prefilltabs), your request body might look like this:  &#x60;&#x60;&#x60; {   \&quot;prefillTabs\&quot;: {     \&quot;textTabs\&quot;: [       {         \&quot;value\&quot;: \&quot;a prefill text tab\&quot;,         \&quot;pageNumber\&quot;: \&quot;1\&quot;,         \&quot;documentId\&quot;: \&quot;1\&quot;,         \&quot;xPosition\&quot;: 316,         \&quot;yPosition\&quot;: 97       }     ]   } } &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -247,7 +247,7 @@ namespace DocuSign.eSign.Api
         /// Adds the tabs to a tempate
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds tabs to the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/templates/templatedocumenttabs/create/#definition__templatetabs_prefilltabs), your request body might look like this:  &#x60;&#x60;&#x60; {   \&quot;prefillTabs\&quot;: {     \&quot;textTabs\&quot;: [       {         \&quot;value\&quot;: \&quot;a prefill text tab\&quot;,         \&quot;pageNumber\&quot;: \&quot;1\&quot;,         \&quot;documentId\&quot;: \&quot;1\&quot;,         \&quot;xPosition\&quot;: 316,         \&quot;yPosition\&quot;: 97       }     ]   } } &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -260,7 +260,7 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start a recipient view of the Envelope UI
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a URL for a template recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients&#39; experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -273,7 +273,7 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start a recipient view of the Envelope UI
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a URL for a template recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients&#39; experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -285,7 +285,7 @@ namespace DocuSign.eSign.Api
         /// Get Responsive HTML Preview for all documents in a template.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents associated with a template. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the documents.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -298,7 +298,7 @@ namespace DocuSign.eSign.Api
         /// Get Responsive HTML Preview for all documents in a template.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents associated with a template. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the documents.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -572,7 +572,7 @@ namespace DocuSign.eSign.Api
         /// Deletes tabs from an envelope document
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes tabs from the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -586,7 +586,7 @@ namespace DocuSign.eSign.Api
         /// Deletes tabs from an envelope document
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes tabs from the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -680,7 +680,7 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the document.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the tabs on the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -694,7 +694,7 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the document.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the tabs on the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -753,7 +753,7 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the specified page.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the tabs from the page specified by &#x60;pageNumber&#x60; of the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -767,7 +767,7 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the specified page.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the tabs from the page specified by &#x60;pageNumber&#x60; of the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -780,7 +780,7 @@ namespace DocuSign.eSign.Api
         /// Returns document page image(s) based on input.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns images of the pages in a template document for display based on the parameters that you specify.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -794,7 +794,7 @@ namespace DocuSign.eSign.Api
         /// Returns document page image(s) based on input.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns images of the pages in a template document for display based on the parameters that you specify.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1321,7 +1321,7 @@ namespace DocuSign.eSign.Api
         /// Updates the tabs for a template
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates tabs in the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1335,7 +1335,7 @@ namespace DocuSign.eSign.Api
         /// Updates the tabs for a template
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates tabs in the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1402,7 +1402,7 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start an edit view of the Template UI
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1415,7 +1415,7 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start an edit view of the Template UI
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1529,7 +1529,7 @@ namespace DocuSign.eSign.Api
         /// Post Responsive HTML Preview for a document in a template.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML version of a specific template document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1543,7 +1543,7 @@ namespace DocuSign.eSign.Api
         /// Post Responsive HTML Preview for a document in a template.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML version of a specific template document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1556,7 +1556,7 @@ namespace DocuSign.eSign.Api
         /// Adds the tabs to a tempate
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds tabs to the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/templates/templatedocumenttabs/create/#definition__templatetabs_prefilltabs), your request body might look like this:  &#x60;&#x60;&#x60; {   \&quot;prefillTabs\&quot;: {     \&quot;textTabs\&quot;: [       {         \&quot;value\&quot;: \&quot;a prefill text tab\&quot;,         \&quot;pageNumber\&quot;: \&quot;1\&quot;,         \&quot;documentId\&quot;: \&quot;1\&quot;,         \&quot;xPosition\&quot;: 316,         \&quot;yPosition\&quot;: 97       }     ]   } } &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1570,7 +1570,7 @@ namespace DocuSign.eSign.Api
         /// Adds the tabs to a tempate
         /// </summary>
         /// <remarks>
-        /// 
+        /// Adds tabs to the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/templates/templatedocumenttabs/create/#definition__templatetabs_prefilltabs), your request body might look like this:  &#x60;&#x60;&#x60; {   \&quot;prefillTabs\&quot;: {     \&quot;textTabs\&quot;: [       {         \&quot;value\&quot;: \&quot;a prefill text tab\&quot;,         \&quot;pageNumber\&quot;: \&quot;1\&quot;,         \&quot;documentId\&quot;: \&quot;1\&quot;,         \&quot;xPosition\&quot;: 316,         \&quot;yPosition\&quot;: 97       }     ]   } } &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1583,7 +1583,7 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start a recipient view of the Envelope UI
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a URL for a template recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients&#39; experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1596,7 +1596,7 @@ namespace DocuSign.eSign.Api
         /// Provides a URL to start a recipient view of the Envelope UI
         /// </summary>
         /// <remarks>
-        /// 
+        /// This method returns a URL for a template recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients&#39; experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1608,7 +1608,7 @@ namespace DocuSign.eSign.Api
         /// Get Responsive HTML Preview for all documents in a template.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents associated with a template. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the documents.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1621,7 +1621,7 @@ namespace DocuSign.eSign.Api
         /// Get Responsive HTML Preview for all documents in a template.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents associated with a template. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the documents.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1895,7 +1895,7 @@ namespace DocuSign.eSign.Api
         /// Deletes tabs from an envelope document
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes tabs from the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -1909,7 +1909,7 @@ namespace DocuSign.eSign.Api
         /// Deletes tabs from an envelope document
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes tabs from the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2003,7 +2003,7 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the document.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the tabs on the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2017,7 +2017,7 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the document.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the tabs on the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2076,7 +2076,7 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the specified page.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the tabs from the page specified by &#x60;pageNumber&#x60; of the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2090,7 +2090,7 @@ namespace DocuSign.eSign.Api
         /// Returns tabs on the specified page.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the tabs from the page specified by &#x60;pageNumber&#x60; of the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2103,7 +2103,7 @@ namespace DocuSign.eSign.Api
         /// Returns document page image(s) based on input.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns images of the pages in a template document for display based on the parameters that you specify.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2117,7 +2117,7 @@ namespace DocuSign.eSign.Api
         /// Returns document page image(s) based on input.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns images of the pages in a template document for display based on the parameters that you specify.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2644,7 +2644,7 @@ namespace DocuSign.eSign.Api
         /// Updates the tabs for a template
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates tabs in the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -2658,7 +2658,7 @@ namespace DocuSign.eSign.Api
         /// Updates the tabs for a template
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates tabs in the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3126,7 +3126,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Provides a URL to start an edit view of the Template UI 
+        /// Provides a URL to start an edit view of the Template UI This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3140,7 +3140,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Provides a URL to start an edit view of the Template UI 
+        /// Provides a URL to start an edit view of the Template UI This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3227,7 +3227,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Provides a URL to start an edit view of the Template UI 
+        /// Provides a URL to start an edit view of the Template UI This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -3241,7 +3241,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Provides a URL to start an edit view of the Template UI 
+        /// Provides a URL to start an edit view of the Template UI This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4121,7 +4121,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Post Responsive HTML Preview for a document in a template. 
+        /// Post Responsive HTML Preview for a document in a template. Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML version of a specific template document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4136,7 +4136,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Post Responsive HTML Preview for a document in a template. 
+        /// Post Responsive HTML Preview for a document in a template. Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML version of a specific template document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4228,7 +4228,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Post Responsive HTML Preview for a document in a template. 
+        /// Post Responsive HTML Preview for a document in a template. Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML version of a specific template document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4243,7 +4243,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Post Responsive HTML Preview for a document in a template. 
+        /// Post Responsive HTML Preview for a document in a template. Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML version of a specific template document. This method enables you to preview a PDF document conversion to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4328,7 +4328,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Adds the tabs to a tempate 
+        /// Adds the tabs to a tempate Adds tabs to the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/templates/templatedocumenttabs/create/#definition__templatetabs_prefilltabs), your request body might look like this:  &#x60;&#x60;&#x60; {   \&quot;prefillTabs\&quot;: {     \&quot;textTabs\&quot;: [       {         \&quot;value\&quot;: \&quot;a prefill text tab\&quot;,         \&quot;pageNumber\&quot;: \&quot;1\&quot;,         \&quot;documentId\&quot;: \&quot;1\&quot;,         \&quot;xPosition\&quot;: 316,         \&quot;yPosition\&quot;: 97       }     ]   } } &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4343,7 +4343,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Adds the tabs to a tempate 
+        /// Adds the tabs to a tempate Adds tabs to the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/templates/templatedocumenttabs/create/#definition__templatetabs_prefilltabs), your request body might look like this:  &#x60;&#x60;&#x60; {   \&quot;prefillTabs\&quot;: {     \&quot;textTabs\&quot;: [       {         \&quot;value\&quot;: \&quot;a prefill text tab\&quot;,         \&quot;pageNumber\&quot;: \&quot;1\&quot;,         \&quot;documentId\&quot;: \&quot;1\&quot;,         \&quot;xPosition\&quot;: 316,         \&quot;yPosition\&quot;: 97       }     ]   } } &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4435,7 +4435,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Adds the tabs to a tempate 
+        /// Adds the tabs to a tempate Adds tabs to the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/templates/templatedocumenttabs/create/#definition__templatetabs_prefilltabs), your request body might look like this:  &#x60;&#x60;&#x60; {   \&quot;prefillTabs\&quot;: {     \&quot;textTabs\&quot;: [       {         \&quot;value\&quot;: \&quot;a prefill text tab\&quot;,         \&quot;pageNumber\&quot;: \&quot;1\&quot;,         \&quot;documentId\&quot;: \&quot;1\&quot;,         \&quot;xPosition\&quot;: 316,         \&quot;yPosition\&quot;: 97       }     ]   } } &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4450,7 +4450,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Adds the tabs to a tempate 
+        /// Adds the tabs to a tempate Adds tabs to the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  In the request body, you only need to specify the tabs that your are adding. For example, to add a text [prefill tab](/docs/esign-rest-api/reference/templates/templatedocumenttabs/create/#definition__templatetabs_prefilltabs), your request body might look like this:  &#x60;&#x60;&#x60; {   \&quot;prefillTabs\&quot;: {     \&quot;textTabs\&quot;: [       {         \&quot;value\&quot;: \&quot;a prefill text tab\&quot;,         \&quot;pageNumber\&quot;: \&quot;1\&quot;,         \&quot;documentId\&quot;: \&quot;1\&quot;,         \&quot;xPosition\&quot;: 316,         \&quot;yPosition\&quot;: 97       }     ]   } } &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4535,7 +4535,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Provides a URL to start a recipient view of the Envelope UI 
+        /// Provides a URL to start a recipient view of the Envelope UI This method returns a URL for a template recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients&#39; experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4549,7 +4549,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Provides a URL to start a recipient view of the Envelope UI 
+        /// Provides a URL to start a recipient view of the Envelope UI This method returns a URL for a template recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients&#39; experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4636,7 +4636,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Provides a URL to start a recipient view of the Envelope UI 
+        /// Provides a URL to start a recipient view of the Envelope UI This method returns a URL for a template recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients&#39; experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4650,7 +4650,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Provides a URL to start a recipient view of the Envelope UI 
+        /// Provides a URL to start a recipient view of the Envelope UI This method returns a URL for a template recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients&#39; experience.  For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4730,7 +4730,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get Responsive HTML Preview for all documents in a template. 
+        /// Get Responsive HTML Preview for all documents in a template. Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents associated with a template. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the documents.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4744,7 +4744,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get Responsive HTML Preview for all documents in a template. 
+        /// Get Responsive HTML Preview for all documents in a template. Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents associated with a template. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the documents.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4831,7 +4831,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get Responsive HTML Preview for all documents in a template. 
+        /// Get Responsive HTML Preview for all documents in a template. Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents associated with a template. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the documents.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4845,7 +4845,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get Responsive HTML Preview for all documents in a template. 
+        /// Get Responsive HTML Preview for all documents in a template. Creates a preview of the [responsive](/docs/esign-rest-api/esign101/concepts/responsive/), HTML versions of all of the documents associated with a template. This method enables you to preview the PDF document conversions to responsive HTML across device types prior to sending.  The request body is a &#x60;documentHtmlDefinition&#x60; object, which holds the responsive signing parameters that define how to generate the HTML version of the documents.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6929,7 +6929,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Deletes tabs from an envelope document 
+        /// Deletes tabs from an envelope document Deletes tabs from the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6944,7 +6944,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes tabs from an envelope document 
+        /// Deletes tabs from an envelope document Deletes tabs from the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7036,7 +7036,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes tabs from an envelope document 
+        /// Deletes tabs from an envelope document Deletes tabs from the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7051,7 +7051,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Deletes tabs from an envelope document 
+        /// Deletes tabs from an envelope document Deletes tabs from the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7772,7 +7772,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns tabs on the document. 
+        /// Returns tabs on the document. Returns the tabs on the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  
         /// </summary>
         public class GetDocumentTabsOptions
         {
@@ -7781,7 +7781,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns tabs on the document. 
+        /// Returns tabs on the document. Returns the tabs on the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7796,7 +7796,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns tabs on the document. 
+        /// Returns tabs on the document. Returns the tabs on the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7884,7 +7884,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns tabs on the document. 
+        /// Returns tabs on the document. Returns the tabs on the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -7899,7 +7899,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns tabs on the document. 
+        /// Returns tabs on the document. Returns the tabs on the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;.  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8330,7 +8330,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns tabs on the specified page. 
+        /// Returns tabs on the specified page. Returns the tabs from the page specified by &#x60;pageNumber&#x60; of the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8345,7 +8345,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns tabs on the specified page. 
+        /// Returns tabs on the specified page. Returns the tabs from the page specified by &#x60;pageNumber&#x60; of the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8433,7 +8433,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns tabs on the specified page. 
+        /// Returns tabs on the specified page. Returns the tabs from the page specified by &#x60;pageNumber&#x60; of the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8448,7 +8448,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns tabs on the specified page. 
+        /// Returns tabs on the specified page. Returns the tabs from the page specified by &#x60;pageNumber&#x60; of the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8528,7 +8528,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Returns document page image(s) based on input. 
+        /// Returns document page image(s) based on input. Returns images of the pages in a template document for display based on the parameters that you specify.
         /// </summary>
         public class GetPagesOptions
         {
@@ -8549,7 +8549,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns document page image(s) based on input. 
+        /// Returns document page image(s) based on input. Returns images of the pages in a template document for display based on the parameters that you specify.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8564,7 +8564,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns document page image(s) based on input. 
+        /// Returns document page image(s) based on input. Returns images of the pages in a template document for display based on the parameters that you specify.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8658,7 +8658,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns document page image(s) based on input. 
+        /// Returns document page image(s) based on input. Returns images of the pages in a template document for display based on the parameters that you specify.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -8673,7 +8673,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Returns document page image(s) based on input. 
+        /// Returns document page image(s) based on input. Returns images of the pages in a template document for display based on the parameters that you specify.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -12822,7 +12822,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Updates the tabs for a template 
+        /// Updates the tabs for a template Updates tabs in the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -12837,7 +12837,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates the tabs for a template 
+        /// Updates the tabs for a template Updates tabs in the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -12929,7 +12929,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates the tabs for a template 
+        /// Updates the tabs for a template Updates tabs in the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -12944,7 +12944,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Updates the tabs for a template 
+        /// Updates the tabs for a template Updates tabs in the document specified by &#x60;documentId&#x60; in the template specified by &#x60;templateId&#x60;. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>

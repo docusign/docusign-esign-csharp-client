@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Money
+    /// Describes information about the &#x60;total&#x60; of a payment. 
     /// </summary>
     [DataContract]
     public partial class Money :  IEquatable<Money>, IValidatableObject

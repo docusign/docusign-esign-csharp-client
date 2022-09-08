@@ -38,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LockInformation" /> class.
         /// </summary>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="LockDurationInSeconds">Sets the time, in seconds, until the lock expires when there is no activity on the envelope.  If no value is entered, then the default value of 300 seconds is used. The maximum value is 1,800 seconds.  The lock duration can be extended. .</param>
         /// <param name="LockedByApp">Specifies the friendly name of  the application that is locking the envelope..</param>
-        /// <param name="LockedByUser">LockedByUser.</param>
+        /// <param name="LockedByUser">A complex type containing information about the user that has the envelope or template locked..</param>
         /// <param name="LockedUntilDateTime">The datetime until the envelope lock expires..</param>
         /// <param name="LockToken">A unique identifier provided to the owner of the envelope lock.   Used to prove ownership of the lock..</param>
         /// <param name="LockType">The type of envelope lock.  Currently \&quot;edit\&quot; is the only supported type..</param>
@@ -59,8 +59,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -76,8 +77,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="lockedByApp", EmitDefaultValue=false)]
         public string LockedByApp { get; set; }
         /// <summary>
-        /// Gets or Sets LockedByUser
+        /// A complex type containing information about the user that has the envelope or template locked.
         /// </summary>
+        /// <value>A complex type containing information about the user that has the envelope or template locked.</value>
         [DataMember(Name="lockedByUser", EmitDefaultValue=false)]
         public UserInfo LockedByUser { get; set; }
         /// <summary>

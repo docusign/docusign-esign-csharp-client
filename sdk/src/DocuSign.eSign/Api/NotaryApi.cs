@@ -27,7 +27,7 @@ namespace DocuSign.eSign.Api
         /// Add a notary to the system
         /// </summary>
         /// <remarks>
-        /// 
+        /// Registers the current user as a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Api
         /// Add a notary to the system
         /// </summary>
         /// <remarks>
-        /// 
+        /// Registers the current user as a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -48,7 +48,7 @@ namespace DocuSign.eSign.Api
         /// Add a notary jurisdiction to the system
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a jurisdiction object.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notaryJurisdiction"> (optional)</param>
@@ -59,7 +59,7 @@ namespace DocuSign.eSign.Api
         /// Add a notary jurisdiction to the system
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a jurisdiction object.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notaryJurisdiction"> (optional)</param>
@@ -69,7 +69,7 @@ namespace DocuSign.eSign.Api
         /// Delete a notary jurisdiction a specified user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes the specified jurisdiction.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -80,7 +80,7 @@ namespace DocuSign.eSign.Api
         /// Delete a notary jurisdiction a specified user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes the specified jurisdiction.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -90,7 +90,7 @@ namespace DocuSign.eSign.Api
         /// Get notary settings for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets settings for a notary user. The current user must be a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
@@ -101,7 +101,7 @@ namespace DocuSign.eSign.Api
         /// Get notary settings for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets settings for a notary user. The current user must be a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
@@ -111,7 +111,7 @@ namespace DocuSign.eSign.Api
         /// Get notary a jurisdiction for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets a jurisdiction object for the current user.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; must be a jurisdiction that the notary is registered for. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -122,7 +122,7 @@ namespace DocuSign.eSign.Api
         /// Get notary a jurisdiction for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets a jurisdiction object for the current user.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; must be a jurisdiction that the notary is registered for. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -153,7 +153,7 @@ namespace DocuSign.eSign.Api
         /// Get notary jurisdictions for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of jurisdictions that the notary is registered in. The current user must be a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
@@ -163,7 +163,7 @@ namespace DocuSign.eSign.Api
         /// Get notary jurisdictions for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of jurisdictions that the notary is registered in. The current user must be a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of </returns>
@@ -193,7 +193,7 @@ namespace DocuSign.eSign.Api
         /// Update a notary
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates notary information for the current user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -204,7 +204,7 @@ namespace DocuSign.eSign.Api
         /// Update a notary
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates notary information for the current user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -214,7 +214,7 @@ namespace DocuSign.eSign.Api
         /// Update a notary jurisdiction
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates the jurisdiction information about a notary.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; path parameter must be a jurisdiction that the notary is registered for. - The &#x60;jurisdictionId&#x60; path parameter must match the request body&#39;s &#x60;jurisdiction.jurisdictionId&#x60;.  The request body must have a full &#x60;jurisdiction&#x60; object for the jurisdiction property. The best way to do this is to use &#x60;getNotaryJurisdiction&#x60; to obtain the current values and update the properties you want to change.  For example, assume &#x60;getNotaryJurisdiction&#x60; returns this:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Bob Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60;  If you want to change the name of the notary from \&quot;Bob Notary\&quot; to \&quot;Robert Notary\&quot;, your request body would be:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Robert Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -226,7 +226,7 @@ namespace DocuSign.eSign.Api
         /// Update a notary jurisdiction
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates the jurisdiction information about a notary.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; path parameter must be a jurisdiction that the notary is registered for. - The &#x60;jurisdictionId&#x60; path parameter must match the request body&#39;s &#x60;jurisdiction.jurisdictionId&#x60;.  The request body must have a full &#x60;jurisdiction&#x60; object for the jurisdiction property. The best way to do this is to use &#x60;getNotaryJurisdiction&#x60; to obtain the current values and update the properties you want to change.  For example, assume &#x60;getNotaryJurisdiction&#x60; returns this:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Bob Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60;  If you want to change the name of the notary from \&quot;Bob Notary\&quot; to \&quot;Robert Notary\&quot;, your request body would be:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Robert Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -239,7 +239,7 @@ namespace DocuSign.eSign.Api
         /// Add a notary to the system
         /// </summary>
         /// <remarks>
-        /// 
+        /// Registers the current user as a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -250,7 +250,7 @@ namespace DocuSign.eSign.Api
         /// Add a notary to the system
         /// </summary>
         /// <remarks>
-        /// 
+        /// Registers the current user as a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -260,7 +260,7 @@ namespace DocuSign.eSign.Api
         /// Add a notary jurisdiction to the system
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a jurisdiction object.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notaryJurisdiction"> (optional)</param>
@@ -271,7 +271,7 @@ namespace DocuSign.eSign.Api
         /// Add a notary jurisdiction to the system
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a jurisdiction object.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notaryJurisdiction"> (optional)</param>
@@ -281,7 +281,7 @@ namespace DocuSign.eSign.Api
         /// Delete a notary jurisdiction a specified user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes the specified jurisdiction.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -292,7 +292,7 @@ namespace DocuSign.eSign.Api
         /// Delete a notary jurisdiction a specified user.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes the specified jurisdiction.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -302,7 +302,7 @@ namespace DocuSign.eSign.Api
         /// Get notary settings for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets settings for a notary user. The current user must be a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
@@ -313,7 +313,7 @@ namespace DocuSign.eSign.Api
         /// Get notary settings for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets settings for a notary user. The current user must be a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
@@ -323,7 +323,7 @@ namespace DocuSign.eSign.Api
         /// Get notary a jurisdiction for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets a jurisdiction object for the current user.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; must be a jurisdiction that the notary is registered for. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -334,7 +334,7 @@ namespace DocuSign.eSign.Api
         /// Get notary a jurisdiction for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Gets a jurisdiction object for the current user.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; must be a jurisdiction that the notary is registered for. 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -365,7 +365,7 @@ namespace DocuSign.eSign.Api
         /// Get notary jurisdictions for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of jurisdictions that the notary is registered in. The current user must be a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of NotaryJurisdictionList</returns>
@@ -375,7 +375,7 @@ namespace DocuSign.eSign.Api
         /// Get notary jurisdictions for a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a list of jurisdictions that the notary is registered in. The current user must be a notary.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (NotaryJurisdictionList)</returns>
@@ -405,7 +405,7 @@ namespace DocuSign.eSign.Api
         /// Update a notary
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates notary information for the current user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -416,7 +416,7 @@ namespace DocuSign.eSign.Api
         /// Update a notary
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates notary information for the current user.
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -426,7 +426,7 @@ namespace DocuSign.eSign.Api
         /// Update a notary jurisdiction
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates the jurisdiction information about a notary.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; path parameter must be a jurisdiction that the notary is registered for. - The &#x60;jurisdictionId&#x60; path parameter must match the request body&#39;s &#x60;jurisdiction.jurisdictionId&#x60;.  The request body must have a full &#x60;jurisdiction&#x60; object for the jurisdiction property. The best way to do this is to use &#x60;getNotaryJurisdiction&#x60; to obtain the current values and update the properties you want to change.  For example, assume &#x60;getNotaryJurisdiction&#x60; returns this:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Bob Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60;  If you want to change the name of the notary from \&quot;Bob Notary\&quot; to \&quot;Robert Notary\&quot;, your request body would be:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Robert Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -438,7 +438,7 @@ namespace DocuSign.eSign.Api
         /// Update a notary jurisdiction
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates the jurisdiction information about a notary.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; path parameter must be a jurisdiction that the notary is registered for. - The &#x60;jurisdictionId&#x60; path parameter must match the request body&#39;s &#x60;jurisdiction.jurisdictionId&#x60;.  The request body must have a full &#x60;jurisdiction&#x60; object for the jurisdiction property. The best way to do this is to use &#x60;getNotaryJurisdiction&#x60; to obtain the current values and update the properties you want to change.  For example, assume &#x60;getNotaryJurisdiction&#x60; returns this:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Bob Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60;  If you want to change the name of the notary from \&quot;Bob Notary\&quot; to \&quot;Robert Notary\&quot;, your request body would be:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Robert Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -502,7 +502,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Add a notary to the system 
+        /// Add a notary to the system Registers the current user as a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -514,7 +514,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Add a notary to the system 
+        /// Add a notary to the system Registers the current user as a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -591,7 +591,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Add a notary to the system 
+        /// Add a notary to the system Registers the current user as a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -603,7 +603,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Add a notary to the system 
+        /// Add a notary to the system Registers the current user as a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -673,7 +673,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Add a notary jurisdiction to the system 
+        /// Add a notary jurisdiction to the system Creates a jurisdiction object.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notaryJurisdiction"> (optional)</param>
@@ -685,7 +685,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Add a notary jurisdiction to the system 
+        /// Add a notary jurisdiction to the system Creates a jurisdiction object.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notaryJurisdiction"> (optional)</param>
@@ -762,7 +762,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Add a notary jurisdiction to the system 
+        /// Add a notary jurisdiction to the system Creates a jurisdiction object.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notaryJurisdiction"> (optional)</param>
@@ -774,7 +774,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Add a notary jurisdiction to the system 
+        /// Add a notary jurisdiction to the system Creates a jurisdiction object.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notaryJurisdiction"> (optional)</param>
@@ -844,7 +844,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Delete a notary jurisdiction a specified user. 
+        /// Delete a notary jurisdiction a specified user. Deletes the specified jurisdiction.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -855,7 +855,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete a notary jurisdiction a specified user. 
+        /// Delete a notary jurisdiction a specified user. Deletes the specified jurisdiction.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -920,7 +920,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete a notary jurisdiction a specified user. 
+        /// Delete a notary jurisdiction a specified user. Deletes the specified jurisdiction.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -931,7 +931,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Delete a notary jurisdiction a specified user. 
+        /// Delete a notary jurisdiction a specified user. Deletes the specified jurisdiction.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -996,7 +996,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get notary settings for a user 
+        /// Get notary settings for a user Gets settings for a notary user. The current user must be a notary.
         /// </summary>
         public class GetNotaryOptions
         {
@@ -1005,7 +1005,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get notary settings for a user 
+        /// Get notary settings for a user Gets settings for a notary user. The current user must be a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
@@ -1017,7 +1017,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get notary settings for a user 
+        /// Get notary settings for a user Gets settings for a notary user. The current user must be a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
@@ -1090,7 +1090,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get notary settings for a user 
+        /// Get notary settings for a user Gets settings for a notary user. The current user must be a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
@@ -1102,7 +1102,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get notary settings for a user 
+        /// Get notary settings for a user Gets settings for a notary user. The current user must be a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
@@ -1168,7 +1168,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get notary a jurisdiction for a user 
+        /// Get notary a jurisdiction for a user Gets a jurisdiction object for the current user.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; must be a jurisdiction that the notary is registered for. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -1180,7 +1180,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get notary a jurisdiction for a user 
+        /// Get notary a jurisdiction for a user Gets a jurisdiction object for the current user.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; must be a jurisdiction that the notary is registered for. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -1253,7 +1253,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get notary a jurisdiction for a user 
+        /// Get notary a jurisdiction for a user Gets a jurisdiction object for the current user.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; must be a jurisdiction that the notary is registered for. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -1265,7 +1265,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get notary a jurisdiction for a user 
+        /// Get notary a jurisdiction for a user Gets a jurisdiction object for the current user.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; must be a jurisdiction that the notary is registered for. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -1484,7 +1484,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Get notary jurisdictions for a user 
+        /// Get notary jurisdictions for a user Returns a list of jurisdictions that the notary is registered in. The current user must be a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>NotaryJurisdictionList</returns>
@@ -1495,7 +1495,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get notary jurisdictions for a user 
+        /// Get notary jurisdictions for a user Returns a list of jurisdictions that the notary is registered in. The current user must be a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of NotaryJurisdictionList</returns>
@@ -1563,7 +1563,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get notary jurisdictions for a user 
+        /// Get notary jurisdictions for a user Returns a list of jurisdictions that the notary is registered in. The current user must be a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of NotaryJurisdictionList</returns>
@@ -1574,7 +1574,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Get notary jurisdictions for a user 
+        /// Get notary jurisdictions for a user Returns a list of jurisdictions that the notary is registered in. The current user must be a notary.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (NotaryJurisdictionList)</returns>
@@ -1814,7 +1814,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Update a notary 
+        /// Update a notary Updates notary information for the current user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -1826,7 +1826,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update a notary 
+        /// Update a notary Updates notary information for the current user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -1903,7 +1903,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update a notary 
+        /// Update a notary Updates notary information for the current user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -1915,7 +1915,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update a notary 
+        /// Update a notary Updates notary information for the current user.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
@@ -1985,7 +1985,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Update a notary jurisdiction 
+        /// Update a notary jurisdiction Updates the jurisdiction information about a notary.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; path parameter must be a jurisdiction that the notary is registered for. - The &#x60;jurisdictionId&#x60; path parameter must match the request body&#39;s &#x60;jurisdiction.jurisdictionId&#x60;.  The request body must have a full &#x60;jurisdiction&#x60; object for the jurisdiction property. The best way to do this is to use &#x60;getNotaryJurisdiction&#x60; to obtain the current values and update the properties you want to change.  For example, assume &#x60;getNotaryJurisdiction&#x60; returns this:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Bob Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60;  If you want to change the name of the notary from \&quot;Bob Notary\&quot; to \&quot;Robert Notary\&quot;, your request body would be:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Robert Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -1998,7 +1998,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update a notary jurisdiction 
+        /// Update a notary jurisdiction Updates the jurisdiction information about a notary.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; path parameter must be a jurisdiction that the notary is registered for. - The &#x60;jurisdictionId&#x60; path parameter must match the request body&#39;s &#x60;jurisdiction.jurisdictionId&#x60;.  The request body must have a full &#x60;jurisdiction&#x60; object for the jurisdiction property. The best way to do this is to use &#x60;getNotaryJurisdiction&#x60; to obtain the current values and update the properties you want to change.  For example, assume &#x60;getNotaryJurisdiction&#x60; returns this:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Bob Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60;  If you want to change the name of the notary from \&quot;Bob Notary\&quot; to \&quot;Robert Notary\&quot;, your request body would be:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Robert Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -2080,7 +2080,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update a notary jurisdiction 
+        /// Update a notary jurisdiction Updates the jurisdiction information about a notary.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; path parameter must be a jurisdiction that the notary is registered for. - The &#x60;jurisdictionId&#x60; path parameter must match the request body&#39;s &#x60;jurisdiction.jurisdictionId&#x60;.  The request body must have a full &#x60;jurisdiction&#x60; object for the jurisdiction property. The best way to do this is to use &#x60;getNotaryJurisdiction&#x60; to obtain the current values and update the properties you want to change.  For example, assume &#x60;getNotaryJurisdiction&#x60; returns this:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Bob Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60;  If you want to change the name of the notary from \&quot;Bob Notary\&quot; to \&quot;Robert Notary\&quot;, your request body would be:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Robert Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
@@ -2093,7 +2093,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Update a notary jurisdiction 
+        /// Update a notary jurisdiction Updates the jurisdiction information about a notary.  The following restrictions apply:  - The current user must be a notary. - The &#x60;jurisdictionId&#x60; path parameter must be a jurisdiction that the notary is registered for. - The &#x60;jurisdictionId&#x60; path parameter must match the request body&#39;s &#x60;jurisdiction.jurisdictionId&#x60;.  The request body must have a full &#x60;jurisdiction&#x60; object for the jurisdiction property. The best way to do this is to use &#x60;getNotaryJurisdiction&#x60; to obtain the current values and update the properties you want to change.  For example, assume &#x60;getNotaryJurisdiction&#x60; returns this:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Bob Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60;  If you want to change the name of the notary from \&quot;Bob Notary\&quot; to \&quot;Robert Notary\&quot;, your request body would be:  &#x60;&#x60;&#x60; {     \&quot;jurisdiction\&quot;: {         \&quot;jurisdictionId\&quot;: \&quot;15\&quot;,         \&quot;name\&quot;: \&quot;Iowa\&quot;,         \&quot;county\&quot;: \&quot;\&quot;,         \&quot;enabled\&quot;: \&quot;true\&quot;,         \&quot;countyInSeal\&quot;: \&quot;false\&quot;,         \&quot;commissionIdInSeal\&quot;: \&quot;true\&quot;,         \&quot;stateNameInSeal\&quot;: \&quot;true\&quot;,         \&quot;notaryPublicInSeal\&quot;: \&quot;true\&quot;,         \&quot;allowSystemCreatedSeal\&quot;: \&quot;true\&quot;,         \&quot;allowUserUploadedSeal\&quot;: \&quot;false\&quot;     },     \&quot;commissionId\&quot;: \&quot;123456\&quot;,     \&quot;commissionExpiration\&quot;: \&quot;2020-08-31T07:00:00.0000000Z\&quot;,     \&quot;registeredName\&quot;: \&quot;Robert Notary\&quot;,     \&quot;county\&quot;: \&quot;Adams\&quot;,     \&quot;sealType\&quot;: \&quot;system_created\&quot; } &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>

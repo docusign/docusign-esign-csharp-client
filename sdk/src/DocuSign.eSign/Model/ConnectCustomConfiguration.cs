@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ConnectCustomConfiguration
+    /// The &#x60;connectCustomConfiguration&#x60; object describes how Connect is configured for your account.
     /// </summary>
     [DataContract]
     public partial class ConnectCustomConfiguration :  IEquatable<ConnectCustomConfiguration>, IValidatableObject
@@ -48,7 +48,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DisabledBy">DisabledBy.</param>
         /// <param name="EnableLog">This turns Connect logging on or off. When set to **true**, logging is turned on..</param>
         /// <param name="EnvelopeEvents">A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided..</param>
-        /// <param name="EventData">EventData.</param>
+        /// <param name="EventData">Allows you to specify the format of the information the Connect webhooks returns. For more information, see [Connect webhooks with JSON notifications](https://www.docusign.com/blog/developers/connect-webhooks-json-notifications).</param>
         /// <param name="Events">Events.</param>
         /// <param name="ExternalFolderId">ExternalFolderId.</param>
         /// <param name="ExternalFolderLabel">ExternalFolderLabel.</param>
@@ -181,8 +181,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopeEvents", EmitDefaultValue=false)]
         public List<string> EnvelopeEvents { get; set; }
         /// <summary>
-        /// Gets or Sets EventData
+        /// Allows you to specify the format of the information the Connect webhooks returns. For more information, see [Connect webhooks with JSON notifications](https://www.docusign.com/blog/developers/connect-webhooks-json-notifications)
         /// </summary>
+        /// <value>Allows you to specify the format of the information the Connect webhooks returns. For more information, see [Connect webhooks with JSON notifications](https://www.docusign.com/blog/developers/connect-webhooks-json-notifications)</value>
         [DataMember(Name="eventData", EmitDefaultValue=false)]
         public ConnectEventData EventData { get; set; }
         /// <summary>

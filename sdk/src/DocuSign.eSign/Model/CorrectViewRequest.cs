@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// CorrectViewRequest
+    /// The request body for the [EnvelopeViews: createCorrect](/docs/esign-rest-api/reference/envelopes/envelopeviews/createcorrect/) method.
     /// </summary>
     [DataContract]
     public partial class CorrectViewRequest :  IEquatable<CorrectViewRequest>, IValidatableObject
@@ -38,16 +38,23 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CorrectViewRequest" /> class.
         /// </summary>
+        /// <param name="BeginOnTagger">BeginOnTagger.</param>
         /// <param name="ReturnUrl">The url used after correct/send view session has ended. DocuSign redirects to the url and includes an event parameter that can be used by your app. The event parameters returned are:   * send (user corrected and sent the envelope) * save (user saved the envelope) * cancel (user canceled the transaction.) * error (there was an error when performing the correct or send) * sessionEnd (the session ended before the user completed a different action)  ###### Note: Include https:// in the URL or the redirect might not succeed on some browsers. .</param>
         /// <param name="SuppressNavigation">Specifies whether the window is displayed with or without dressing..</param>
         /// <param name="ViewUrl">ViewUrl.</param>
-        public CorrectViewRequest(string ReturnUrl = default(string), string SuppressNavigation = default(string), string ViewUrl = default(string))
+        public CorrectViewRequest(string BeginOnTagger = default(string), string ReturnUrl = default(string), string SuppressNavigation = default(string), string ViewUrl = default(string))
         {
+            this.BeginOnTagger = BeginOnTagger;
             this.ReturnUrl = ReturnUrl;
             this.SuppressNavigation = SuppressNavigation;
             this.ViewUrl = ViewUrl;
         }
         
+        /// <summary>
+        /// Gets or Sets BeginOnTagger
+        /// </summary>
+        [DataMember(Name="beginOnTagger", EmitDefaultValue=false)]
+        public string BeginOnTagger { get; set; }
         /// <summary>
         /// The url used after correct/send view session has ended. DocuSign redirects to the url and includes an event parameter that can be used by your app. The event parameters returned are:   * send (user corrected and sent the envelope) * save (user saved the envelope) * cancel (user canceled the transaction.) * error (there was an error when performing the correct or send) * sessionEnd (the session ended before the user completed a different action)  ###### Note: Include https:// in the URL or the redirect might not succeed on some browsers. 
         /// </summary>
@@ -73,6 +80,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CorrectViewRequest {\n");
+            sb.Append("  BeginOnTagger: ").Append(BeginOnTagger).Append("\n");
             sb.Append("  ReturnUrl: ").Append(ReturnUrl).Append("\n");
             sb.Append("  SuppressNavigation: ").Append(SuppressNavigation).Append("\n");
             sb.Append("  ViewUrl: ").Append(ViewUrl).Append("\n");
@@ -113,6 +121,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.BeginOnTagger == other.BeginOnTagger ||
+                    this.BeginOnTagger != null &&
+                    this.BeginOnTagger.Equals(other.BeginOnTagger)
+                ) && 
+                (
                     this.ReturnUrl == other.ReturnUrl ||
                     this.ReturnUrl != null &&
                     this.ReturnUrl.Equals(other.ReturnUrl)
@@ -140,6 +153,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.BeginOnTagger != null)
+                    hash = hash * 59 + this.BeginOnTagger.GetHashCode();
                 if (this.ReturnUrl != null)
                     hash = hash * 59 + this.ReturnUrl.GetHashCode();
                 if (this.SuppressNavigation != null)

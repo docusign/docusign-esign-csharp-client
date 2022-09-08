@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// SignatureProviderRequiredOption
+    /// Contains additional information that a specific signature provider requires.
     /// </summary>
     [DataContract]
     public partial class SignatureProviderRequiredOption :  IEquatable<SignatureProviderRequiredOption>, IValidatableObject

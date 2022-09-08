@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// AccessCodeFormat
+    /// Object specifying the format of the string provided to a recipient in order to access an envelope.
     /// </summary>
     [DataContract]
     public partial class AccessCodeFormat :  IEquatable<AccessCodeFormat>, IValidatableObject
@@ -39,15 +39,15 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="AccessCodeFormat" /> class.
         /// </summary>
         /// <param name="FormatRequired">FormatRequired.</param>
-        /// <param name="FormatRequiredMetadata">FormatRequiredMetadata.</param>
+        /// <param name="FormatRequiredMetadata">Metadata indicating whether the &#x60;formatRequired&#x60; property is editable..</param>
         /// <param name="LetterRequired">LetterRequired.</param>
-        /// <param name="LetterRequiredMetadata">LetterRequiredMetadata.</param>
+        /// <param name="LetterRequiredMetadata">Metadata indicating whether the &#x60;letterRequired&#x60; property is editable..</param>
         /// <param name="MinimumLength">MinimumLength.</param>
-        /// <param name="MinimumLengthMetadata">MinimumLengthMetadata.</param>
+        /// <param name="MinimumLengthMetadata">Metadata indicating whether the &#x60;minimumLength&#x60; property is editable..</param>
         /// <param name="NumberRequired">NumberRequired.</param>
-        /// <param name="NumberRequiredMetadata">NumberRequiredMetadata.</param>
+        /// <param name="NumberRequiredMetadata">Metadata indicating whether the &#x60;numberRequired&#x60; property is editable..</param>
         /// <param name="SpecialCharacterRequired">SpecialCharacterRequired.</param>
-        /// <param name="SpecialCharacterRequiredMetadata">SpecialCharacterRequiredMetadata.</param>
+        /// <param name="SpecialCharacterRequiredMetadata">Metadata indicating whether the &#x60;specialCharacterRequired&#x60; property is editable..</param>
         public AccessCodeFormat(string FormatRequired = default(string), SettingsMetadata FormatRequiredMetadata = default(SettingsMetadata), string LetterRequired = default(string), SettingsMetadata LetterRequiredMetadata = default(SettingsMetadata), string MinimumLength = default(string), SettingsMetadata MinimumLengthMetadata = default(SettingsMetadata), string NumberRequired = default(string), SettingsMetadata NumberRequiredMetadata = default(SettingsMetadata), string SpecialCharacterRequired = default(string), SettingsMetadata SpecialCharacterRequiredMetadata = default(SettingsMetadata))
         {
             this.FormatRequired = FormatRequired;
@@ -68,8 +68,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="formatRequired", EmitDefaultValue=false)]
         public string FormatRequired { get; set; }
         /// <summary>
-        /// Gets or Sets FormatRequiredMetadata
+        /// Metadata indicating whether the &#x60;formatRequired&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata indicating whether the &#x60;formatRequired&#x60; property is editable.</value>
         [DataMember(Name="formatRequiredMetadata", EmitDefaultValue=false)]
         public SettingsMetadata FormatRequiredMetadata { get; set; }
         /// <summary>
@@ -78,8 +79,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="letterRequired", EmitDefaultValue=false)]
         public string LetterRequired { get; set; }
         /// <summary>
-        /// Gets or Sets LetterRequiredMetadata
+        /// Metadata indicating whether the &#x60;letterRequired&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata indicating whether the &#x60;letterRequired&#x60; property is editable.</value>
         [DataMember(Name="letterRequiredMetadata", EmitDefaultValue=false)]
         public SettingsMetadata LetterRequiredMetadata { get; set; }
         /// <summary>
@@ -88,8 +90,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="minimumLength", EmitDefaultValue=false)]
         public string MinimumLength { get; set; }
         /// <summary>
-        /// Gets or Sets MinimumLengthMetadata
+        /// Metadata indicating whether the &#x60;minimumLength&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata indicating whether the &#x60;minimumLength&#x60; property is editable.</value>
         [DataMember(Name="minimumLengthMetadata", EmitDefaultValue=false)]
         public SettingsMetadata MinimumLengthMetadata { get; set; }
         /// <summary>
@@ -98,8 +101,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="numberRequired", EmitDefaultValue=false)]
         public string NumberRequired { get; set; }
         /// <summary>
-        /// Gets or Sets NumberRequiredMetadata
+        /// Metadata indicating whether the &#x60;numberRequired&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata indicating whether the &#x60;numberRequired&#x60; property is editable.</value>
         [DataMember(Name="numberRequiredMetadata", EmitDefaultValue=false)]
         public SettingsMetadata NumberRequiredMetadata { get; set; }
         /// <summary>
@@ -108,8 +112,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="specialCharacterRequired", EmitDefaultValue=false)]
         public string SpecialCharacterRequired { get; set; }
         /// <summary>
-        /// Gets or Sets SpecialCharacterRequiredMetadata
+        /// Metadata indicating whether the &#x60;specialCharacterRequired&#x60; property is editable.
         /// </summary>
+        /// <value>Metadata indicating whether the &#x60;specialCharacterRequired&#x60; property is editable.</value>
         [DataMember(Name="specialCharacterRequiredMetadata", EmitDefaultValue=false)]
         public SettingsMetadata SpecialCharacterRequiredMetadata { get; set; }
         /// <summary>

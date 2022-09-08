@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopeFormData
+    /// Describes the form data of the envelope.
     /// </summary>
     [DataContract]
     public partial class EnvelopeFormData :  IEquatable<EnvelopeFormData>, IValidatableObject
@@ -41,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
         /// <param name="FormData">FormData.</param>
-        /// <param name="PrefillFormData">PrefillFormData.</param>
+        /// <param name="PrefillFormData">An array of &#x60;formDataItem&#x60; objects for [prefill tabs](/docs/esign-rest-api/reference/envelopes/envelopedocumenttabs/create/#definition__tabs_prefilltabs). .</param>
         /// <param name="RecipientFormData">RecipientFormData.</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
@@ -74,8 +74,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="formData", EmitDefaultValue=false)]
         public List<FormDataItem> FormData { get; set; }
         /// <summary>
-        /// Gets or Sets PrefillFormData
+        /// An array of &#x60;formDataItem&#x60; objects for [prefill tabs](/docs/esign-rest-api/reference/envelopes/envelopedocumenttabs/create/#definition__tabs_prefilltabs). 
         /// </summary>
+        /// <value>An array of &#x60;formDataItem&#x60; objects for [prefill tabs](/docs/esign-rest-api/reference/envelopes/envelopedocumenttabs/create/#definition__tabs_prefilltabs). </value>
         [DataMember(Name="prefillFormData", EmitDefaultValue=false)]
         public PrefillFormData PrefillFormData { get; set; }
         /// <summary>

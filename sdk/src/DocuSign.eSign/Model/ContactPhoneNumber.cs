@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ContactPhoneNumber
+    /// Details about the phone numbers associated with a specific contact.
     /// </summary>
     [DataContract]
     public partial class ContactPhoneNumber :  IEquatable<ContactPhoneNumber>, IValidatableObject

@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// UserSharedItem
+    /// Information about a shared item.
     /// </summary>
     [DataContract]
     public partial class UserSharedItem :  IEquatable<UserSharedItem>, IValidatableObject
@@ -38,9 +38,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserSharedItem" /> class.
         /// </summary>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
-        /// <param name="User">User.</param>
+        /// <param name="User">The user whose sharing information is being requested..</param>
         public UserSharedItem(ErrorDetails ErrorDetails = default(ErrorDetails), string Shared = default(string), UserInfo User = default(UserInfo))
         {
             this.ErrorDetails = ErrorDetails;
@@ -49,8 +49,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -60,8 +61,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="shared", EmitDefaultValue=false)]
         public string Shared { get; set; }
         /// <summary>
-        /// Gets or Sets User
+        /// The user whose sharing information is being requested.
         /// </summary>
+        /// <value>The user whose sharing information is being requested.</value>
         [DataMember(Name="user", EmitDefaultValue=false)]
         public UserInfo User { get; set; }
         /// <summary>

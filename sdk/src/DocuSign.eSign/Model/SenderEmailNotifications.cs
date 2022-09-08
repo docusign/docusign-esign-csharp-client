@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// SenderEmailNotifications
+    /// Contains the settings for the email notifications that senders receive about the envelopes that they send.
     /// </summary>
     [DataContract]
     public partial class SenderEmailNotifications :  IEquatable<SenderEmailNotifications>, IValidatableObject

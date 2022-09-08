@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// FeatureSet
+    /// This object provides details about a feature set, or add-on product that is associated with an account. It is reserved for DocuSign internal use only.
     /// </summary>
     [DataContract]
     public partial class FeatureSet :  IEquatable<FeatureSet>, IValidatableObject

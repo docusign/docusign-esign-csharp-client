@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// PaymentGatewayAccount
+    /// This object contains details about a payment gateway account.
     /// </summary>
     [DataContract]
     public partial class PaymentGatewayAccount :  IEquatable<PaymentGatewayAccount>, IValidatableObject
@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="PaymentGatewayAccount" /> class.
         /// </summary>
         /// <param name="AllowCustomMetadata">AllowCustomMetadata.</param>
-        /// <param name="Config">Config.</param>
+        /// <param name="Config">This property contains metadata about the payment gateway account&#39;s configuration such as the API key, &#x60;userId&#x60;, and &#x60;merchantId&#x60; details..</param>
         /// <param name="DisplayName">DisplayName.</param>
         /// <param name="IsEnabled">IsEnabled.</param>
         /// <param name="IsLegacy">IsLegacy.</param>
@@ -47,7 +47,7 @@ namespace DocuSign.eSign.Model
         /// <param name="PaymentGateway">PaymentGateway.</param>
         /// <param name="PaymentGatewayAccountId">PaymentGatewayAccountId.</param>
         /// <param name="PaymentGatewayDisplayName">PaymentGatewayDisplayName.</param>
-        /// <param name="PayPalLegacySettings">PayPalLegacySettings.</param>
+        /// <param name="PayPalLegacySettings">Reserved for DocuSign..</param>
         /// <param name="SupportedCurrencies">SupportedCurrencies.</param>
         /// <param name="SupportedPaymentMethods">SupportedPaymentMethods.</param>
         /// <param name="SupportedPaymentMethodsWithOptions">SupportedPaymentMethodsWithOptions.</param>
@@ -76,8 +76,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowCustomMetadata", EmitDefaultValue=false)]
         public bool? AllowCustomMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets Config
+        /// This property contains metadata about the payment gateway account&#39;s configuration such as the API key, &#x60;userId&#x60;, and &#x60;merchantId&#x60; details.
         /// </summary>
+        /// <value>This property contains metadata about the payment gateway account&#39;s configuration such as the API key, &#x60;userId&#x60;, and &#x60;merchantId&#x60; details.</value>
         [DataMember(Name="config", EmitDefaultValue=false)]
         public PaymentGatewayAccountSetting Config { get; set; }
         /// <summary>
@@ -116,8 +117,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="paymentGatewayDisplayName", EmitDefaultValue=false)]
         public string PaymentGatewayDisplayName { get; set; }
         /// <summary>
-        /// Gets or Sets PayPalLegacySettings
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="payPalLegacySettings", EmitDefaultValue=false)]
         public PayPalLegacySettings PayPalLegacySettings { get; set; }
         /// <summary>

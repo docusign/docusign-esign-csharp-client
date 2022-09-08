@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// UserInformation
+    /// User information.
     /// </summary>
     [DataContract]
     public partial class UserInformation :  IEquatable<UserInformation>, IValidatableObject
@@ -47,12 +47,12 @@ namespace DocuSign.eSign.Model
         /// <param name="DefaultAccountId">DefaultAccountId.</param>
         /// <param name="Email">Email.</param>
         /// <param name="EnableConnectForUser">Specifies whether the user is enabled for updates from DocuSign Connect. Valid values: true or false..</param>
-        /// <param name="ErrorDetails">ErrorDetails.</param>
+        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="FirstName">The user&#39;s first name.  Maximum Length: 50 characters..</param>
-        /// <param name="ForgottenPasswordInfo">ForgottenPasswordInfo.</param>
+        /// <param name="ForgottenPasswordInfo">A complex element containing up to four Question/Answer pairs for forgotten password information..</param>
         /// <param name="GroupList">A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. .</param>
         /// <param name="HasRemoteNotary">HasRemoteNotary.</param>
-        /// <param name="HomeAddress">HomeAddress.</param>
+        /// <param name="HomeAddress">Specifies the email for the signing host. It is a Required element for In Person Signers recipient Type.  Maximum Length: 100 characters..</param>
         /// <param name="InitialsImageUri">Contains the URI for an endpoint that you can use to retrieve the initials image..</param>
         /// <param name="IsAdmin">Determines if the feature set is actively set as part of the plan..</param>
         /// <param name="IsAlternateAdmin">IsAlternateAdmin.</param>
@@ -78,7 +78,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserId">UserId.</param>
         /// <param name="UserName">UserName.</param>
         /// <param name="UserProfileLastModifiedDate">UserProfileLastModifiedDate.</param>
-        /// <param name="UserSettings">UserSettings.</param>
+        /// <param name="UserSettings">The collection of settings representing the actions a user can perform. See [userSettingsInformation](/docs/esign-rest-api/reference/users/users/get/#userSettingsInformation) for available settings..</param>
         /// <param name="UserStatus">UserStatus.</param>
         /// <param name="UserType">UserType.</param>
         /// <param name="WorkAddress">WorkAddress.</param>
@@ -180,8 +180,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableConnectForUser", EmitDefaultValue=false)]
         public string EnableConnectForUser { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetails
+        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
         /// </summary>
+        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -191,8 +192,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="firstName", EmitDefaultValue=false)]
         public string FirstName { get; set; }
         /// <summary>
-        /// Gets or Sets ForgottenPasswordInfo
+        /// A complex element containing up to four Question/Answer pairs for forgotten password information.
         /// </summary>
+        /// <value>A complex element containing up to four Question/Answer pairs for forgotten password information.</value>
         [DataMember(Name="forgottenPasswordInfo", EmitDefaultValue=false)]
         public ForgottenPasswordInformation ForgottenPasswordInfo { get; set; }
         /// <summary>
@@ -207,8 +209,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="hasRemoteNotary", EmitDefaultValue=false)]
         public bool? HasRemoteNotary { get; set; }
         /// <summary>
-        /// Gets or Sets HomeAddress
+        /// Specifies the email for the signing host. It is a Required element for In Person Signers recipient Type.  Maximum Length: 100 characters.
         /// </summary>
+        /// <value>Specifies the email for the signing host. It is a Required element for In Person Signers recipient Type.  Maximum Length: 100 characters.</value>
         [DataMember(Name="homeAddress", EmitDefaultValue=false)]
         public AddressInformation HomeAddress { get; set; }
         /// <summary>
@@ -347,8 +350,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="userProfileLastModifiedDate", EmitDefaultValue=false)]
         public string UserProfileLastModifiedDate { get; set; }
         /// <summary>
-        /// Gets or Sets UserSettings
+        /// The collection of settings representing the actions a user can perform. See [userSettingsInformation](/docs/esign-rest-api/reference/users/users/get/#userSettingsInformation) for available settings.
         /// </summary>
+        /// <value>The collection of settings representing the actions a user can perform. See [userSettingsInformation](/docs/esign-rest-api/reference/users/users/get/#userSettingsInformation) for available settings.</value>
         [DataMember(Name="userSettings", EmitDefaultValue=false)]
         public UserSettingsInformation UserSettings { get; set; }
         /// <summary>

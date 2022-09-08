@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// PermissionProfileInformation
+    /// Contains details about the permission profiles associated with an account.
     /// </summary>
     [DataContract]
     public partial class PermissionProfileInformation :  IEquatable<PermissionProfileInformation>, IValidatableObject

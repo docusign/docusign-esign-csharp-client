@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BulkSendRequest
+    /// This object contains information about the envelope or template that you want to send in bulk.
     /// </summary>
     [DataContract]
     public partial class BulkSendRequest :  IEquatable<BulkSendRequest>, IValidatableObject

@@ -39,13 +39,13 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="RecipientPhoneAuthentication" /> class.
         /// </summary>
         /// <param name="RecipMayProvideNumber">Boolean. When set to **true**, the recipient can supply a phone number their choice..</param>
-        /// <param name="RecipMayProvideNumberMetadata">RecipMayProvideNumberMetadata.</param>
+        /// <param name="RecipMayProvideNumberMetadata">Metadata that indicates whether the &#x60;recipMayProvideNumber&#x60; property can be edited..</param>
         /// <param name="RecordVoicePrint">Reserved..</param>
-        /// <param name="RecordVoicePrintMetadata">RecordVoicePrintMetadata.</param>
+        /// <param name="RecordVoicePrintMetadata">Reserved for DocuSign..</param>
         /// <param name="SenderProvidedNumbers">An Array containing a list of phone numbers the recipient may use for SMS text authentication. .</param>
-        /// <param name="SenderProvidedNumbersMetadata">SenderProvidedNumbersMetadata.</param>
+        /// <param name="SenderProvidedNumbersMetadata">Metadata that indicates whether the &#x60;senderProvidedNumbers&#x60; property can be edited..</param>
         /// <param name="ValidateRecipProvidedNumber"> Reserved..</param>
-        /// <param name="ValidateRecipProvidedNumberMetadata">ValidateRecipProvidedNumberMetadata.</param>
+        /// <param name="ValidateRecipProvidedNumberMetadata">Reserved for DocuSign..</param>
         public RecipientPhoneAuthentication(string RecipMayProvideNumber = default(string), PropertyMetadata RecipMayProvideNumberMetadata = default(PropertyMetadata), string RecordVoicePrint = default(string), PropertyMetadata RecordVoicePrintMetadata = default(PropertyMetadata), List<string> SenderProvidedNumbers = default(List<string>), PropertyMetadata SenderProvidedNumbersMetadata = default(PropertyMetadata), string ValidateRecipProvidedNumber = default(string), PropertyMetadata ValidateRecipProvidedNumberMetadata = default(PropertyMetadata))
         {
             this.RecipMayProvideNumber = RecipMayProvideNumber;
@@ -65,8 +65,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipMayProvideNumber", EmitDefaultValue=false)]
         public string RecipMayProvideNumber { get; set; }
         /// <summary>
-        /// Gets or Sets RecipMayProvideNumberMetadata
+        /// Metadata that indicates whether the &#x60;recipMayProvideNumber&#x60; property can be edited.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;recipMayProvideNumber&#x60; property can be edited.</value>
         [DataMember(Name="recipMayProvideNumberMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RecipMayProvideNumberMetadata { get; set; }
         /// <summary>
@@ -76,8 +77,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recordVoicePrint", EmitDefaultValue=false)]
         public string RecordVoicePrint { get; set; }
         /// <summary>
-        /// Gets or Sets RecordVoicePrintMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="recordVoicePrintMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RecordVoicePrintMetadata { get; set; }
         /// <summary>
@@ -87,8 +89,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="senderProvidedNumbers", EmitDefaultValue=false)]
         public List<string> SenderProvidedNumbers { get; set; }
         /// <summary>
-        /// Gets or Sets SenderProvidedNumbersMetadata
+        /// Metadata that indicates whether the &#x60;senderProvidedNumbers&#x60; property can be edited.
         /// </summary>
+        /// <value>Metadata that indicates whether the &#x60;senderProvidedNumbers&#x60; property can be edited.</value>
         [DataMember(Name="senderProvidedNumbersMetadata", EmitDefaultValue=false)]
         public PropertyMetadata SenderProvidedNumbersMetadata { get; set; }
         /// <summary>
@@ -98,8 +101,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="validateRecipProvidedNumber", EmitDefaultValue=false)]
         public string ValidateRecipProvidedNumber { get; set; }
         /// <summary>
-        /// Gets or Sets ValidateRecipProvidedNumberMetadata
+        /// Reserved for DocuSign.
         /// </summary>
+        /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="validateRecipProvidedNumberMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ValidateRecipProvidedNumberMetadata { get; set; }
         /// <summary>

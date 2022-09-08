@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// ChunkedUploadResponse
+    /// This response object is returned after you upload a chunked upload.
     /// </summary>
     [DataContract]
     public partial class ChunkedUploadResponse :  IEquatable<ChunkedUploadResponse>, IValidatableObject

@@ -105,7 +105,7 @@ namespace DocuSign.eSign.Client
         {
             Configuration = configuration ?? new Configuration();
 
-            SetBasePath(string.IsNullOrEmpty(configuration.BasePath) ? configuration.BasePath : Production_REST_BasePath);
+            SetBasePath(string.IsNullOrEmpty(configuration.BasePath) ? Production_REST_BasePath : configuration.BasePath);
             RestClient = buildDefaultHttpClient(configuration?.Timeout ?? Configuration.DefaultTimeoutValue);
 
             SetOAuthBasePath();
@@ -120,13 +120,12 @@ namespace DocuSign.eSign.Client
         /// <param name="apiBase">The API base path</param>
         /// <param name="proxy">An optional IWebProxy instance</param>
         /// <exception cref="ArgumentException">Thwon when apiBase is null or empty</exception>
-        public DocuSignClient(String apiBase, IWebProxy proxy = null)
+        public DocuSignClient(string apiBase, IWebProxy proxy = null)
         {
             if (String.IsNullOrEmpty(apiBase))
                 throw new ArgumentException("apiBase cannot be empty");
 
             RestClient = buildDefaultHttpClient(Configuration.DefaultTimeoutValue, proxy);
-            Configuration = new Configuration(apiBase);
 
             RestClient.AddDefaultRequestHeader("User-Agent", Configuration.UserAgent);
 
@@ -142,7 +141,7 @@ namespace DocuSign.eSign.Client
         /// <param name="oAuthBase">The oAuth base path</param>
         /// <param name="proxy">An optional IWebProxy instance</param>
         /// <exception cref="ArgumentException">Thrown when apiBase or oAuthBase are null or empty</exception>
-        public DocuSignClient(String apiBase, String oAuthBase, IWebProxy proxy = null)
+        public DocuSignClient(string apiBase, string oAuthBase, IWebProxy proxy = null)
         {
             if (String.IsNullOrEmpty(apiBase))
                 throw new ArgumentException("apiBase cannot be empty");
@@ -152,8 +151,8 @@ namespace DocuSign.eSign.Client
             RestClient = buildDefaultHttpClient(Configuration.DefaultTimeoutValue, proxy);
             Configuration = new Configuration(apiBase);
 
-            this.SetBasePath(basePath);
-            this.SetOAuthBasePath();
+            this.SetBasePath(apiBase);
+            this.SetOAuthBasePath(oAuthBase);
         }
 
         /// <summary>

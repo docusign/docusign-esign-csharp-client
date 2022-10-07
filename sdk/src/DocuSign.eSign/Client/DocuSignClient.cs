@@ -126,6 +126,7 @@ namespace DocuSign.eSign.Client
                 throw new ArgumentException("apiBase cannot be empty");
 
             RestClient = buildDefaultHttpClient(Configuration.DefaultTimeoutValue, proxy);
+            Configuration = new Configuration(apiBase);
 
             RestClient.AddDefaultRequestHeader("User-Agent", Configuration.UserAgent);
 

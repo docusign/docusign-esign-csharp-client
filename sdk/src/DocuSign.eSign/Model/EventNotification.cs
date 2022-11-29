@@ -48,6 +48,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IncludeDocuments">When set to **true**, the PDF documents are included in the message along with the updated XML. .</param>
         /// <param name="IncludeEnvelopeVoidReason">When set to **true**, this tells the Connect Service to include the void reason, as entered by the person that voided the envelope, in the message. .</param>
         /// <param name="IncludeHMAC">IncludeHMAC.</param>
+        /// <param name="IncludeOAuth">IncludeOAuth.</param>
         /// <param name="IncludeSenderAccountAsCustomField">When set to **true**, the sender account ID is included as a envelope custom field in the data. .</param>
         /// <param name="IncludeTimeZone">When set to **true**, the envelope time zone information is included in the message. .</param>
         /// <param name="LoggingEnabled">When set to **true**, logging is turned on for envelope events on the Web Console Connect page. .</param>
@@ -57,7 +58,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SoapNameSpace">This lists the namespace in the SOAP listener provided..</param>
         /// <param name="Url">Specifies the endpoint to which envelope updates are sent. Udpates are sent as XML unless &#x60;useSoapInterface&#x60; property is set to **true**..</param>
         /// <param name="UseSoapInterface">When set to **true**, this tells the Connect service that the user&#39;s endpoint has implemented a SOAP interface. .</param>
-        public EventNotification(string DeliveryMode = default(string), List<EnvelopeEvent> EnvelopeEvents = default(List<EnvelopeEvent>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertificateWithSoap = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeSenderAccountAsCustomField = default(string), string IncludeTimeZone = default(string), string LoggingEnabled = default(string), List<RecipientEvent> RecipientEvents = default(List<RecipientEvent>), string RequireAcknowledgment = default(string), string SignMessageWithX509Cert = default(string), string SoapNameSpace = default(string), string Url = default(string), string UseSoapInterface = default(string))
+        public EventNotification(string DeliveryMode = default(string), List<EnvelopeEvent> EnvelopeEvents = default(List<EnvelopeEvent>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertificateWithSoap = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeOAuth = default(string), string IncludeSenderAccountAsCustomField = default(string), string IncludeTimeZone = default(string), string LoggingEnabled = default(string), List<RecipientEvent> RecipientEvents = default(List<RecipientEvent>), string RequireAcknowledgment = default(string), string SignMessageWithX509Cert = default(string), string SoapNameSpace = default(string), string Url = default(string), string UseSoapInterface = default(string))
         {
             this.DeliveryMode = DeliveryMode;
             this.EnvelopeEvents = EnvelopeEvents;
@@ -69,6 +70,7 @@ namespace DocuSign.eSign.Model
             this.IncludeDocuments = IncludeDocuments;
             this.IncludeEnvelopeVoidReason = IncludeEnvelopeVoidReason;
             this.IncludeHMAC = IncludeHMAC;
+            this.IncludeOAuth = IncludeOAuth;
             this.IncludeSenderAccountAsCustomField = IncludeSenderAccountAsCustomField;
             this.IncludeTimeZone = IncludeTimeZone;
             this.LoggingEnabled = LoggingEnabled;
@@ -137,6 +139,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="includeHMAC", EmitDefaultValue=false)]
         public string IncludeHMAC { get; set; }
+        /// <summary>
+        /// Gets or Sets IncludeOAuth
+        /// </summary>
+        [DataMember(Name="includeOAuth", EmitDefaultValue=false)]
+        public string IncludeOAuth { get; set; }
         /// <summary>
         /// When set to **true**, the sender account ID is included as a envelope custom field in the data. 
         /// </summary>
@@ -209,6 +216,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IncludeDocuments: ").Append(IncludeDocuments).Append("\n");
             sb.Append("  IncludeEnvelopeVoidReason: ").Append(IncludeEnvelopeVoidReason).Append("\n");
             sb.Append("  IncludeHMAC: ").Append(IncludeHMAC).Append("\n");
+            sb.Append("  IncludeOAuth: ").Append(IncludeOAuth).Append("\n");
             sb.Append("  IncludeSenderAccountAsCustomField: ").Append(IncludeSenderAccountAsCustomField).Append("\n");
             sb.Append("  IncludeTimeZone: ").Append(IncludeTimeZone).Append("\n");
             sb.Append("  LoggingEnabled: ").Append(LoggingEnabled).Append("\n");
@@ -305,6 +313,11 @@ namespace DocuSign.eSign.Model
                     this.IncludeHMAC.Equals(other.IncludeHMAC)
                 ) && 
                 (
+                    this.IncludeOAuth == other.IncludeOAuth ||
+                    this.IncludeOAuth != null &&
+                    this.IncludeOAuth.Equals(other.IncludeOAuth)
+                ) && 
+                (
                     this.IncludeSenderAccountAsCustomField == other.IncludeSenderAccountAsCustomField ||
                     this.IncludeSenderAccountAsCustomField != null &&
                     this.IncludeSenderAccountAsCustomField.Equals(other.IncludeSenderAccountAsCustomField)
@@ -382,6 +395,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IncludeEnvelopeVoidReason.GetHashCode();
                 if (this.IncludeHMAC != null)
                     hash = hash * 59 + this.IncludeHMAC.GetHashCode();
+                if (this.IncludeOAuth != null)
+                    hash = hash * 59 + this.IncludeOAuth.GetHashCode();
                 if (this.IncludeSenderAccountAsCustomField != null)
                     hash = hash * 59 + this.IncludeSenderAccountAsCustomField.GetHashCode();
                 if (this.IncludeTimeZone != null)

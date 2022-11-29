@@ -105,7 +105,7 @@ namespace DocuSign.eSign.Client
         {
             Configuration = configuration ?? new Configuration();
 
-            SetBasePath(string.IsNullOrEmpty(configuration.BasePath) ? configuration.BasePath : Production_REST_BasePath);
+            SetBasePath(string.IsNullOrEmpty(configuration.BasePath) ? Production_REST_BasePath : configuration.BasePath);
             RestClient = buildDefaultHttpClient(configuration?.Timeout ?? Configuration.DefaultTimeoutValue);
 
             SetOAuthBasePath();
@@ -152,8 +152,8 @@ namespace DocuSign.eSign.Client
             RestClient = buildDefaultHttpClient(Configuration.DefaultTimeoutValue, proxy);
             Configuration = new Configuration(apiBase);
 
-            this.SetBasePath(basePath);
-            this.SetOAuthBasePath();
+            this.SetBasePath(apiBase);
+            this.SetOAuthBasePath(oAuthBase);
         }
 
         /// <summary>
@@ -332,25 +332,7 @@ namespace DocuSign.eSign.Client
 
             if (type == typeof(Stream))
             {
-                if (response.Headers != null)
-                {
-                    var filePath = String.IsNullOrEmpty(Configuration.TempFolderPath)
-                        ? Path.GetTempPath()
-                        : Configuration.TempFolderPath;
-                    var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
-                    foreach (var header in response.Headers)
-                    {
-                        var match = regex.Match(header.ToString());
-                        if (match.Success)
-                        {
-                            string fileName = filePath + SanitizeFilename(match.Groups[1].Value.Replace("\"", "").Replace("'", ""));
-                            File.WriteAllBytes(fileName, Encoding.UTF8.GetBytes(response.Content));
-                            return new FileStream(fileName, FileMode.Open);
-                        }
-                    }
-                }
-                var stream = new MemoryStream(Encoding.UTF8.GetBytes(response.Content));
-                return stream;
+                return new MemoryStream(response.RawBytes);
             }
 
             if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
@@ -372,23 +354,6 @@ namespace DocuSign.eSign.Client
             {
                 throw new ApiException(500, e.Message);
             }
-        }
-
-        /// <summary>
-        /// DocuSign: Deserialize the byte array into a proper object.
-        /// </summary>
-        /// <param name="content">Byte Araay (e.g. PDF bytes).</param>
-        /// <param name="type">Object type.</param>
-        /// <returns>Object representation of the JSON string.</returns>
-        public object Deserialize(byte[] content, Type type)
-        {
-            if (type == typeof(Stream))
-            {
-                MemoryStream ms = new MemoryStream(content);
-                return ms;
-            }
-
-            throw new ApiException(500, "Unhandled response type.");
         }
 
         /// <summary>
@@ -650,7 +615,7 @@ namespace DocuSign.eSign.Client
         /// <param name="responseType">determines the response type of the authorization request.
         /// <br /><i>Note</i>: these response types are mutually exclusive for a client application.
         /// A public/native client application may only request a response type of "token";
-        /// a private/trusted client application may only request a response type of "code".</br></param>
+        /// a private/trusted client application may only request a response type of "code".</param>
         /// <param name="state">Allows for arbitrary state that may be useful to your application.
         /// The value in this parameter will be round-tripped along with the response so you can make sure it didn't change.</param>
         /// <returns></returns>

@@ -44,8 +44,9 @@ namespace DocuSign.eSign.Model
         /// <param name="SignatureProvider">The signature provider associated with the Identity Verification workflow..</param>
         /// <param name="Steps">Steps.</param>
         /// <param name="WorkflowId">WorkflowId.</param>
+        /// <param name="WorkflowLabel">WorkflowLabel.</param>
         /// <param name="WorkflowResourceKey">WorkflowResourceKey.</param>
-        public AccountIdentityVerificationWorkflow(string DefaultDescription = default(string), string DefaultName = default(string), List<AccountIdentityInputOption> InputOptions = default(List<AccountIdentityInputOption>), AccountSignatureProvider SignatureProvider = default(AccountSignatureProvider), List<AccountIdentityVerificationStep> Steps = default(List<AccountIdentityVerificationStep>), string WorkflowId = default(string), string WorkflowResourceKey = default(string))
+        public AccountIdentityVerificationWorkflow(string DefaultDescription = default(string), string DefaultName = default(string), List<AccountIdentityInputOption> InputOptions = default(List<AccountIdentityInputOption>), AccountSignatureProvider SignatureProvider = default(AccountSignatureProvider), List<AccountIdentityVerificationStep> Steps = default(List<AccountIdentityVerificationStep>), string WorkflowId = default(string), string WorkflowLabel = default(string), string WorkflowResourceKey = default(string))
         {
             this.DefaultDescription = DefaultDescription;
             this.DefaultName = DefaultName;
@@ -53,6 +54,7 @@ namespace DocuSign.eSign.Model
             this.SignatureProvider = SignatureProvider;
             this.Steps = Steps;
             this.WorkflowId = WorkflowId;
+            this.WorkflowLabel = WorkflowLabel;
             this.WorkflowResourceKey = WorkflowResourceKey;
         }
         
@@ -88,6 +90,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="workflowId", EmitDefaultValue=false)]
         public string WorkflowId { get; set; }
         /// <summary>
+        /// Gets or Sets WorkflowLabel
+        /// </summary>
+        [DataMember(Name="workflowLabel", EmitDefaultValue=false)]
+        public string WorkflowLabel { get; set; }
+        /// <summary>
         /// Gets or Sets WorkflowResourceKey
         /// </summary>
         [DataMember(Name="workflowResourceKey", EmitDefaultValue=false)]
@@ -106,6 +113,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SignatureProvider: ").Append(SignatureProvider).Append("\n");
             sb.Append("  Steps: ").Append(Steps).Append("\n");
             sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
+            sb.Append("  WorkflowLabel: ").Append(WorkflowLabel).Append("\n");
             sb.Append("  WorkflowResourceKey: ").Append(WorkflowResourceKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -174,6 +182,11 @@ namespace DocuSign.eSign.Model
                     this.WorkflowId.Equals(other.WorkflowId)
                 ) && 
                 (
+                    this.WorkflowLabel == other.WorkflowLabel ||
+                    this.WorkflowLabel != null &&
+                    this.WorkflowLabel.Equals(other.WorkflowLabel)
+                ) && 
+                (
                     this.WorkflowResourceKey == other.WorkflowResourceKey ||
                     this.WorkflowResourceKey != null &&
                     this.WorkflowResourceKey.Equals(other.WorkflowResourceKey)
@@ -203,6 +216,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Steps.GetHashCode();
                 if (this.WorkflowId != null)
                     hash = hash * 59 + this.WorkflowId.GetHashCode();
+                if (this.WorkflowLabel != null)
+                    hash = hash * 59 + this.WorkflowLabel.GetHashCode();
                 if (this.WorkflowResourceKey != null)
                     hash = hash * 59 + this.WorkflowResourceKey.GetHashCode();
                 return hash;

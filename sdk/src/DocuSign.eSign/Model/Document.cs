@@ -41,6 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ApplyAnchorTabs">Reserved: TBD.</param>
         /// <param name="AssignTabsToRecipientId">AssignTabsToRecipientId.</param>
         /// <param name="Display">Display.</param>
+        /// <param name="DocGenFormFields">DocGenFormFields.</param>
         /// <param name="DocumentBase64">The document&#39;s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding..</param>
         /// <param name="DocumentFields">DocumentFields.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
@@ -49,6 +50,7 @@ namespace DocuSign.eSign.Model
         /// <param name="FileFormatHint">FileFormatHint.</param>
         /// <param name="HtmlDefinition">Defines how to generate the responsive-formatted HTML for the document. See [Responsive signing](/docs/esign-rest-api/esign101/concepts/responsive/) in the [eSignature concepts guide](/docs/esign-rest-api/esign101/concepts/)..</param>
         /// <param name="IncludeInDownload">IncludeInDownload.</param>
+        /// <param name="IsDocGenDocument">IsDocGenDocument.</param>
         /// <param name="MatchBoxes">Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  .</param>
         /// <param name="Name">Name.</param>
         /// <param name="Order">Order.</param>
@@ -63,11 +65,12 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TransformPdfFields">When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs. .</param>
         /// <param name="Uri">Uri.</param>
-        public Document(string ApplyAnchorTabs = default(string), string AssignTabsToRecipientId = default(string), string Display = default(string), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), string Order = default(string), string Pages = default(string), string Password = default(string), string PdfFormFieldOption = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), bool? SignerMustAcknowledgeUseAccountDefault = default(bool?), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
+        public Document(string ApplyAnchorTabs = default(string), string AssignTabsToRecipientId = default(string), string Display = default(string), List<DocGenFormField> DocGenFormFields = default(List<DocGenFormField>), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), string IsDocGenDocument = default(string), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), string Order = default(string), string Pages = default(string), string Password = default(string), string PdfFormFieldOption = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), bool? SignerMustAcknowledgeUseAccountDefault = default(bool?), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
         {
             this.ApplyAnchorTabs = ApplyAnchorTabs;
             this.AssignTabsToRecipientId = AssignTabsToRecipientId;
             this.Display = Display;
+            this.DocGenFormFields = DocGenFormFields;
             this.DocumentBase64 = DocumentBase64;
             this.DocumentFields = DocumentFields;
             this.DocumentId = DocumentId;
@@ -76,6 +79,7 @@ namespace DocuSign.eSign.Model
             this.FileFormatHint = FileFormatHint;
             this.HtmlDefinition = HtmlDefinition;
             this.IncludeInDownload = IncludeInDownload;
+            this.IsDocGenDocument = IsDocGenDocument;
             this.MatchBoxes = MatchBoxes;
             this.Name = Name;
             this.Order = Order;
@@ -108,6 +112,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="display", EmitDefaultValue=false)]
         public string Display { get; set; }
+        /// <summary>
+        /// Gets or Sets DocGenFormFields
+        /// </summary>
+        [DataMember(Name="docGenFormFields", EmitDefaultValue=false)]
+        public List<DocGenFormField> DocGenFormFields { get; set; }
         /// <summary>
         /// The document&#39;s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
         /// </summary>
@@ -153,6 +162,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="includeInDownload", EmitDefaultValue=false)]
         public string IncludeInDownload { get; set; }
+        /// <summary>
+        /// Gets or Sets IsDocGenDocument
+        /// </summary>
+        [DataMember(Name="isDocGenDocument", EmitDefaultValue=false)]
+        public string IsDocGenDocument { get; set; }
         /// <summary>
         /// Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  
         /// </summary>
@@ -240,6 +254,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ApplyAnchorTabs: ").Append(ApplyAnchorTabs).Append("\n");
             sb.Append("  AssignTabsToRecipientId: ").Append(AssignTabsToRecipientId).Append("\n");
             sb.Append("  Display: ").Append(Display).Append("\n");
+            sb.Append("  DocGenFormFields: ").Append(DocGenFormFields).Append("\n");
             sb.Append("  DocumentBase64: ").Append(DocumentBase64).Append("\n");
             sb.Append("  DocumentFields: ").Append(DocumentFields).Append("\n");
             sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
@@ -248,6 +263,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  FileFormatHint: ").Append(FileFormatHint).Append("\n");
             sb.Append("  HtmlDefinition: ").Append(HtmlDefinition).Append("\n");
             sb.Append("  IncludeInDownload: ").Append(IncludeInDownload).Append("\n");
+            sb.Append("  IsDocGenDocument: ").Append(IsDocGenDocument).Append("\n");
             sb.Append("  MatchBoxes: ").Append(MatchBoxes).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Order: ").Append(Order).Append("\n");
@@ -314,6 +330,11 @@ namespace DocuSign.eSign.Model
                     this.Display.Equals(other.Display)
                 ) && 
                 (
+                    this.DocGenFormFields == other.DocGenFormFields ||
+                    this.DocGenFormFields != null &&
+                    this.DocGenFormFields.SequenceEqual(other.DocGenFormFields)
+                ) && 
+                (
                     this.DocumentBase64 == other.DocumentBase64 ||
                     this.DocumentBase64 != null &&
                     this.DocumentBase64.Equals(other.DocumentBase64)
@@ -352,6 +373,11 @@ namespace DocuSign.eSign.Model
                     this.IncludeInDownload == other.IncludeInDownload ||
                     this.IncludeInDownload != null &&
                     this.IncludeInDownload.Equals(other.IncludeInDownload)
+                ) && 
+                (
+                    this.IsDocGenDocument == other.IsDocGenDocument ||
+                    this.IsDocGenDocument != null &&
+                    this.IsDocGenDocument.Equals(other.IsDocGenDocument)
                 ) && 
                 (
                     this.MatchBoxes == other.MatchBoxes ||
@@ -442,6 +468,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AssignTabsToRecipientId.GetHashCode();
                 if (this.Display != null)
                     hash = hash * 59 + this.Display.GetHashCode();
+                if (this.DocGenFormFields != null)
+                    hash = hash * 59 + this.DocGenFormFields.GetHashCode();
                 if (this.DocumentBase64 != null)
                     hash = hash * 59 + this.DocumentBase64.GetHashCode();
                 if (this.DocumentFields != null)
@@ -458,6 +486,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.HtmlDefinition.GetHashCode();
                 if (this.IncludeInDownload != null)
                     hash = hash * 59 + this.IncludeInDownload.GetHashCode();
+                if (this.IsDocGenDocument != null)
+                    hash = hash * 59 + this.IsDocGenDocument.GetHashCode();
                 if (this.MatchBoxes != null)
                     hash = hash * 59 + this.MatchBoxes.GetHashCode();
                 if (this.Name != null)

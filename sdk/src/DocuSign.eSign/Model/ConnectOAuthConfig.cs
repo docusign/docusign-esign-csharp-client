@@ -41,12 +41,14 @@ namespace DocuSign.eSign.Model
         /// <param name="AuthorizationServerUrl">AuthorizationServerUrl.</param>
         /// <param name="ClientId">ClientId.</param>
         /// <param name="ClientSecret">ClientSecret.</param>
+        /// <param name="CustomParameters">CustomParameters.</param>
         /// <param name="Scope">Scope.</param>
-        public ConnectOAuthConfig(string AuthorizationServerUrl = default(string), string ClientId = default(string), string ClientSecret = default(string), string Scope = default(string))
+        public ConnectOAuthConfig(string AuthorizationServerUrl = default(string), string ClientId = default(string), string ClientSecret = default(string), string CustomParameters = default(string), string Scope = default(string))
         {
             this.AuthorizationServerUrl = AuthorizationServerUrl;
             this.ClientId = ClientId;
             this.ClientSecret = ClientSecret;
+            this.CustomParameters = CustomParameters;
             this.Scope = Scope;
         }
         
@@ -66,6 +68,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="clientSecret", EmitDefaultValue=false)]
         public string ClientSecret { get; set; }
         /// <summary>
+        /// Gets or Sets CustomParameters
+        /// </summary>
+        [DataMember(Name="customParameters", EmitDefaultValue=false)]
+        public string CustomParameters { get; set; }
+        /// <summary>
         /// Gets or Sets Scope
         /// </summary>
         [DataMember(Name="scope", EmitDefaultValue=false)]
@@ -81,6 +88,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AuthorizationServerUrl: ").Append(AuthorizationServerUrl).Append("\n");
             sb.Append("  ClientId: ").Append(ClientId).Append("\n");
             sb.Append("  ClientSecret: ").Append(ClientSecret).Append("\n");
+            sb.Append("  CustomParameters: ").Append(CustomParameters).Append("\n");
             sb.Append("  Scope: ").Append(Scope).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -134,6 +142,11 @@ namespace DocuSign.eSign.Model
                     this.ClientSecret.Equals(other.ClientSecret)
                 ) && 
                 (
+                    this.CustomParameters == other.CustomParameters ||
+                    this.CustomParameters != null &&
+                    this.CustomParameters.Equals(other.CustomParameters)
+                ) && 
+                (
                     this.Scope == other.Scope ||
                     this.Scope != null &&
                     this.Scope.Equals(other.Scope)
@@ -157,6 +170,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ClientId.GetHashCode();
                 if (this.ClientSecret != null)
                     hash = hash * 59 + this.ClientSecret.GetHashCode();
+                if (this.CustomParameters != null)
+                    hash = hash * 59 + this.CustomParameters.GetHashCode();
                 if (this.Scope != null)
                     hash = hash * 59 + this.Scope.GetHashCode();
                 return hash;

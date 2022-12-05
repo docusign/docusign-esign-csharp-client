@@ -448,65 +448,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> CreateBulkProcessRequestWithHttpInfo(string accountId, string processAction)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkProcessDataApi->CreateBulkProcessRequest");
-            // verify the required parameter 'processAction' is set
-            if (processAction == null)
-                throw new ApiException(400, "Missing required parameter 'processAction' when calling BulkProcessDataApi->CreateBulkProcessRequest");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_process_data/actions/{processAction}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (processAction != null) localVarPathParams.Add("processAction", this.ApiClient.ParameterToString(processAction)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateBulkProcessRequest", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
+            return CreateBulkProcessRequestAsyncWithHttpInfo(accountId, processAction)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -618,85 +563,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkProcessResponse</returns>
         public ApiResponse<BulkProcessResponse> CreateBulkProcessRequestToQueueWithHttpInfo(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkProcessDataApi->CreateBulkProcessRequestToQueue");
-            // verify the required parameter 'processAction' is set
-            if (processAction == null)
-                throw new ApiException(400, "Missing required parameter 'processAction' when calling BulkProcessDataApi->CreateBulkProcessRequestToQueue");
-            // verify the required parameter 'bulkProcessListId' is set
-            if (bulkProcessListId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkProcessListId' when calling BulkProcessDataApi->CreateBulkProcessRequestToQueue");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_process_data/actions/{processAction}/{bulkProcessListId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (processAction != null) localVarPathParams.Add("processAction", this.ApiClient.ParameterToString(processAction)); // path parameter
-            if (bulkProcessListId != null) localVarPathParams.Add("bulkProcessListId", this.ApiClient.ParameterToString(bulkProcessListId)); // path parameter
-
-
-            if (bulkProcessRequest != null && bulkProcessRequest.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(bulkProcessRequest); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = bulkProcessRequest; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateBulkProcessRequestToQueue", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkProcessResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkProcessResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkProcessResponse)));
-            }
-            else
-            {
-                return new ApiResponse<BulkProcessResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkProcessResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResponse)));
-            }
-            
+            return CreateBulkProcessRequestToQueueAsyncWithHttpInfo(accountId, processAction, bulkProcessListId, bulkProcessRequest)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -791,10 +661,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkProcessResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkProcessResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkProcessResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResponse)));
-            
         }
 
 
@@ -823,77 +692,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkProcessResult</returns>
         public ApiResponse<BulkProcessResult> DeleteBulkProcessListWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkProcessDataApi->DeleteBulkProcessList");
-            // verify the required parameter 'processAction' is set
-            if (processAction == null)
-                throw new ApiException(400, "Missing required parameter 'processAction' when calling BulkProcessDataApi->DeleteBulkProcessList");
-            // verify the required parameter 'bulkProcessListId' is set
-            if (bulkProcessListId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkProcessListId' when calling BulkProcessDataApi->DeleteBulkProcessList");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_process_data/actions/{processAction}/{bulkProcessListId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (processAction != null) localVarPathParams.Add("processAction", this.ApiClient.ParameterToString(processAction)); // path parameter
-            if (bulkProcessListId != null) localVarPathParams.Add("bulkProcessListId", this.ApiClient.ParameterToString(bulkProcessListId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteBulkProcessList", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkProcessResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkProcessResult)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkProcessResult)));
-            }
-            else
-            {
-                return new ApiResponse<BulkProcessResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkProcessResult)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResult)));
-            }
-            
+            return DeleteBulkProcessListAsyncWithHttpInfo(accountId, processAction, bulkProcessListId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -978,10 +780,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkProcessResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkProcessResult>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkProcessResult)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResult)));
-            
         }
 
 
@@ -1010,81 +811,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkProcessResult</returns>
         public ApiResponse<BulkProcessResult> DeleteBulkProcessListsWithHttpInfo(string accountId, string processAction, BulkProcessingLists bulkProcessingLists = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkProcessDataApi->DeleteBulkProcessLists");
-            // verify the required parameter 'processAction' is set
-            if (processAction == null)
-                throw new ApiException(400, "Missing required parameter 'processAction' when calling BulkProcessDataApi->DeleteBulkProcessLists");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_process_data/actions/{processAction}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (processAction != null) localVarPathParams.Add("processAction", this.ApiClient.ParameterToString(processAction)); // path parameter
-
-
-            if (bulkProcessingLists != null && bulkProcessingLists.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(bulkProcessingLists); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = bulkProcessingLists; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteBulkProcessLists", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkProcessResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkProcessResult)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkProcessResult)));
-            }
-            else
-            {
-                return new ApiResponse<BulkProcessResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkProcessResult)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResult)));
-            }
-            
+            return DeleteBulkProcessListsAsyncWithHttpInfo(accountId, processAction, bulkProcessingLists)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1173,10 +903,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkProcessResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkProcessResult>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkProcessResult)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessResult)));
-            
         }
 
 
@@ -1204,69 +933,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> GetBulkProcessListWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkProcessDataApi->GetBulkProcessList");
-            // verify the required parameter 'processAction' is set
-            if (processAction == null)
-                throw new ApiException(400, "Missing required parameter 'processAction' when calling BulkProcessDataApi->GetBulkProcessList");
-            // verify the required parameter 'bulkProcessListId' is set
-            if (bulkProcessListId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkProcessListId' when calling BulkProcessDataApi->GetBulkProcessList");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_process_data/actions/{processAction}/{bulkProcessListId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (processAction != null) localVarPathParams.Add("processAction", this.ApiClient.ParameterToString(processAction)); // path parameter
-            if (bulkProcessListId != null) localVarPathParams.Add("bulkProcessListId", this.ApiClient.ParameterToString(bulkProcessListId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetBulkProcessList", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
+            return GetBulkProcessListAsyncWithHttpInfo(accountId, processAction, bulkProcessListId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1380,73 +1050,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkProcessingListSummaries</returns>
         public ApiResponse<BulkProcessingListSummaries> GetBulkProcessListsWithHttpInfo(string accountId, string processAction)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkProcessDataApi->GetBulkProcessLists");
-            // verify the required parameter 'processAction' is set
-            if (processAction == null)
-                throw new ApiException(400, "Missing required parameter 'processAction' when calling BulkProcessDataApi->GetBulkProcessLists");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_process_data/actions/{processAction}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (processAction != null) localVarPathParams.Add("processAction", this.ApiClient.ParameterToString(processAction)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetBulkProcessLists", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkProcessingListSummaries>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkProcessingListSummaries)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkProcessingListSummaries)));
-            }
-            else
-            {
-                return new ApiResponse<BulkProcessingListSummaries>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkProcessingListSummaries)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessingListSummaries)));
-            }
-            
+            return GetBulkProcessListsAsyncWithHttpInfo(accountId, processAction)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1525,10 +1132,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkProcessingListSummaries>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkProcessingListSummaries>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkProcessingListSummaries)this.ApiClient.Deserialize(localVarResponse, typeof(BulkProcessingListSummaries)));
-            
         }
 
 
@@ -1556,69 +1162,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> UpdateBulkProcessListWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkProcessDataApi->UpdateBulkProcessList");
-            // verify the required parameter 'processAction' is set
-            if (processAction == null)
-                throw new ApiException(400, "Missing required parameter 'processAction' when calling BulkProcessDataApi->UpdateBulkProcessList");
-            // verify the required parameter 'bulkProcessListId' is set
-            if (bulkProcessListId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkProcessListId' when calling BulkProcessDataApi->UpdateBulkProcessList");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_process_data/actions/{processAction}/{bulkProcessListId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (processAction != null) localVarPathParams.Add("processAction", this.ApiClient.ParameterToString(processAction)); // path parameter
-            if (bulkProcessListId != null) localVarPathParams.Add("bulkProcessListId", this.ApiClient.ParameterToString(bulkProcessListId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateBulkProcessList", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
+            return UpdateBulkProcessListAsyncWithHttpInfo(accountId, processAction, bulkProcessListId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>

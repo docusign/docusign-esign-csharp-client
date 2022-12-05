@@ -40,6 +40,8 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="AdminMessage">AdminMessage.</param>
         /// <param name="AskAnAdmin">AskAnAdmin.</param>
+        /// <param name="ClickwrapSchemaVersion">ClickwrapSchemaVersion.</param>
+        /// <param name="ClickwrapSchemaVersionMetadata">ClickwrapSchemaVersionMetadata.</param>
         /// <param name="EnableAdminMessage">EnableAdminMessage.</param>
         /// <param name="EnableAdminMessageMetadata">EnableAdminMessageMetadata.</param>
         /// <param name="EnableEasySignCanUseMultiTemplateApply">EnableEasySignCanUseMultiTemplateApply.</param>
@@ -66,10 +68,12 @@ namespace DocuSign.eSign.Model
         /// <param name="ShouldRedactAccessCodeMetadata">ShouldRedactAccessCodeMetadata.</param>
         /// <param name="UploadNewImageToSignOrInitial">UploadNewImageToSignOrInitial.</param>
         /// <param name="UploadNewImageToSignOrInitialMetadata">UploadNewImageToSignOrInitialMetadata.</param>
-        public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string EnableEnvelopeCopyWithData = default(string), SettingsMetadata EnableEnvelopeCopyWithDataMetadata = default(SettingsMetadata), string EnableLegacySendflowLink = default(string), SettingsMetadata EnableLegacySendflowLinkMetadata = default(SettingsMetadata), string HasExternalLinkedAccounts = default(string), SettingsMetadata HasExternalLinkedAccountsMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
+        public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string ClickwrapSchemaVersion = default(string), SettingsMetadata ClickwrapSchemaVersionMetadata = default(SettingsMetadata), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string EnableEnvelopeCopyWithData = default(string), SettingsMetadata EnableEnvelopeCopyWithDataMetadata = default(SettingsMetadata), string EnableLegacySendflowLink = default(string), SettingsMetadata EnableLegacySendflowLinkMetadata = default(SettingsMetadata), string HasExternalLinkedAccounts = default(string), SettingsMetadata HasExternalLinkedAccountsMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
         {
             this.AdminMessage = AdminMessage;
             this.AskAnAdmin = AskAnAdmin;
+            this.ClickwrapSchemaVersion = ClickwrapSchemaVersion;
+            this.ClickwrapSchemaVersionMetadata = ClickwrapSchemaVersionMetadata;
             this.EnableAdminMessage = EnableAdminMessage;
             this.EnableAdminMessageMetadata = EnableAdminMessageMetadata;
             this.EnableEasySignCanUseMultiTemplateApply = EnableEasySignCanUseMultiTemplateApply;
@@ -108,6 +112,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="askAnAdmin", EmitDefaultValue=false)]
         public AskAnAdmin AskAnAdmin { get; set; }
+        /// <summary>
+        /// Gets or Sets ClickwrapSchemaVersion
+        /// </summary>
+        [DataMember(Name="clickwrapSchemaVersion", EmitDefaultValue=false)]
+        public string ClickwrapSchemaVersion { get; set; }
+        /// <summary>
+        /// Gets or Sets ClickwrapSchemaVersionMetadata
+        /// </summary>
+        [DataMember(Name="clickwrapSchemaVersionMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata ClickwrapSchemaVersionMetadata { get; set; }
         /// <summary>
         /// Gets or Sets EnableAdminMessage
         /// </summary>
@@ -248,6 +262,8 @@ namespace DocuSign.eSign.Model
             sb.Append("class AccountUISettings {\n");
             sb.Append("  AdminMessage: ").Append(AdminMessage).Append("\n");
             sb.Append("  AskAnAdmin: ").Append(AskAnAdmin).Append("\n");
+            sb.Append("  ClickwrapSchemaVersion: ").Append(ClickwrapSchemaVersion).Append("\n");
+            sb.Append("  ClickwrapSchemaVersionMetadata: ").Append(ClickwrapSchemaVersionMetadata).Append("\n");
             sb.Append("  EnableAdminMessage: ").Append(EnableAdminMessage).Append("\n");
             sb.Append("  EnableAdminMessageMetadata: ").Append(EnableAdminMessageMetadata).Append("\n");
             sb.Append("  EnableEasySignCanUseMultiTemplateApply: ").Append(EnableEasySignCanUseMultiTemplateApply).Append("\n");
@@ -319,6 +335,16 @@ namespace DocuSign.eSign.Model
                     this.AskAnAdmin == other.AskAnAdmin ||
                     this.AskAnAdmin != null &&
                     this.AskAnAdmin.Equals(other.AskAnAdmin)
+                ) && 
+                (
+                    this.ClickwrapSchemaVersion == other.ClickwrapSchemaVersion ||
+                    this.ClickwrapSchemaVersion != null &&
+                    this.ClickwrapSchemaVersion.Equals(other.ClickwrapSchemaVersion)
+                ) && 
+                (
+                    this.ClickwrapSchemaVersionMetadata == other.ClickwrapSchemaVersionMetadata ||
+                    this.ClickwrapSchemaVersionMetadata != null &&
+                    this.ClickwrapSchemaVersionMetadata.Equals(other.ClickwrapSchemaVersionMetadata)
                 ) && 
                 (
                     this.EnableAdminMessage == other.EnableAdminMessage ||
@@ -467,6 +493,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AdminMessage.GetHashCode();
                 if (this.AskAnAdmin != null)
                     hash = hash * 59 + this.AskAnAdmin.GetHashCode();
+                if (this.ClickwrapSchemaVersion != null)
+                    hash = hash * 59 + this.ClickwrapSchemaVersion.GetHashCode();
+                if (this.ClickwrapSchemaVersionMetadata != null)
+                    hash = hash * 59 + this.ClickwrapSchemaVersionMetadata.GetHashCode();
                 if (this.EnableAdminMessage != null)
                     hash = hash * 59 + this.EnableAdminMessage.GetHashCode();
                 if (this.EnableAdminMessageMetadata != null)

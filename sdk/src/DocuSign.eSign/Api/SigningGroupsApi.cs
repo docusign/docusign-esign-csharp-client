@@ -529,77 +529,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of SigningGroupInformation</returns>
         public ApiResponse<SigningGroupInformation> CreateListWithHttpInfo(string accountId, SigningGroupInformation signingGroupInformation = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling SigningGroupsApi->CreateList");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/signing_groups";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-            if (signingGroupInformation != null && signingGroupInformation.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(signingGroupInformation); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = signingGroupInformation; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateList", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<SigningGroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(SigningGroupInformation)));
-            }
-            else
-            {
-                return new ApiResponse<SigningGroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupInformation)));
-            }
-            
+            return CreateListAsyncWithHttpInfo(accountId, signingGroupInformation)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -682,10 +615,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SigningGroupInformation>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<SigningGroupInformation>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupInformation)));
-            
         }
 
 
@@ -712,77 +644,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of SigningGroupInformation</returns>
         public ApiResponse<SigningGroupInformation> DeleteListWithHttpInfo(string accountId, SigningGroupInformation signingGroupInformation = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling SigningGroupsApi->DeleteList");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/signing_groups";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-            if (signingGroupInformation != null && signingGroupInformation.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(signingGroupInformation); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = signingGroupInformation; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteList", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<SigningGroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(SigningGroupInformation)));
-            }
-            else
-            {
-                return new ApiResponse<SigningGroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupInformation)));
-            }
-            
+            return DeleteListAsyncWithHttpInfo(accountId, signingGroupInformation)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -865,10 +730,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SigningGroupInformation>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<SigningGroupInformation>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupInformation)));
-            
         }
 
 
@@ -897,81 +761,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of SigningGroupUsers</returns>
         public ApiResponse<SigningGroupUsers> DeleteUsersWithHttpInfo(string accountId, string signingGroupId, SigningGroupUsers signingGroupUsers = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling SigningGroupsApi->DeleteUsers");
-            // verify the required parameter 'signingGroupId' is set
-            if (signingGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'signingGroupId' when calling SigningGroupsApi->DeleteUsers");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (signingGroupId != null) localVarPathParams.Add("signingGroupId", this.ApiClient.ParameterToString(signingGroupId)); // path parameter
-
-
-            if (signingGroupUsers != null && signingGroupUsers.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(signingGroupUsers); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = signingGroupUsers; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteUsers", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<SigningGroupUsers>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupUsers)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(SigningGroupUsers)));
-            }
-            else
-            {
-                return new ApiResponse<SigningGroupUsers>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupUsers)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupUsers)));
-            }
-            
+            return DeleteUsersAsyncWithHttpInfo(accountId, signingGroupId, signingGroupUsers)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1060,10 +853,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SigningGroupUsers>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<SigningGroupUsers>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (SigningGroupUsers)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupUsers)));
-            
         }
 
 
@@ -1090,73 +882,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of SigningGroup</returns>
         public ApiResponse<SigningGroup> GetWithHttpInfo(string accountId, string signingGroupId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling SigningGroupsApi->Get");
-            // verify the required parameter 'signingGroupId' is set
-            if (signingGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'signingGroupId' when calling SigningGroupsApi->Get");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (signingGroupId != null) localVarPathParams.Add("signingGroupId", this.ApiClient.ParameterToString(signingGroupId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("Get", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<SigningGroup>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroup)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(SigningGroup)));
-            }
-            else
-            {
-                return new ApiResponse<SigningGroup>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroup)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroup)));
-            }
-            
+            return GetAsyncWithHttpInfo(accountId, signingGroupId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1235,10 +964,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SigningGroup>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<SigningGroup>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (SigningGroup)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroup)));
-            
         }
 
 
@@ -1275,74 +1003,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of SigningGroupInformation</returns>
         public ApiResponse<SigningGroupInformation> ListWithHttpInfo(string accountId, SigningGroupsApi.ListOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling SigningGroupsApi->List");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/signing_groups";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.groupType != null) localVarQueryParams.Add("group_type", this.ApiClient.ParameterToString(options.groupType)); // query parameter
-                if (options.includeUsers != null) localVarQueryParams.Add("include_users", this.ApiClient.ParameterToString(options.includeUsers)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("List", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<SigningGroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(SigningGroupInformation)));
-            }
-            else
-            {
-                return new ApiResponse<SigningGroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupInformation)));
-            }
-            
+            return ListAsyncWithHttpInfo(accountId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1422,10 +1086,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SigningGroupInformation>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<SigningGroupInformation>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupInformation)));
-            
         }
 
 
@@ -1452,73 +1115,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of SigningGroupUsers</returns>
         public ApiResponse<SigningGroupUsers> ListUsersWithHttpInfo(string accountId, string signingGroupId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling SigningGroupsApi->ListUsers");
-            // verify the required parameter 'signingGroupId' is set
-            if (signingGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'signingGroupId' when calling SigningGroupsApi->ListUsers");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (signingGroupId != null) localVarPathParams.Add("signingGroupId", this.ApiClient.ParameterToString(signingGroupId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("ListUsers", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<SigningGroupUsers>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupUsers)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(SigningGroupUsers)));
-            }
-            else
-            {
-                return new ApiResponse<SigningGroupUsers>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupUsers)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupUsers)));
-            }
-            
+            return ListUsersAsyncWithHttpInfo(accountId, signingGroupId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1597,10 +1197,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SigningGroupUsers>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<SigningGroupUsers>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (SigningGroupUsers)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupUsers)));
-            
         }
 
 
@@ -1629,81 +1228,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of SigningGroup</returns>
         public ApiResponse<SigningGroup> UpdateWithHttpInfo(string accountId, string signingGroupId, SigningGroup signingGroup = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling SigningGroupsApi->Update");
-            // verify the required parameter 'signingGroupId' is set
-            if (signingGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'signingGroupId' when calling SigningGroupsApi->Update");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (signingGroupId != null) localVarPathParams.Add("signingGroupId", this.ApiClient.ParameterToString(signingGroupId)); // path parameter
-
-
-            if (signingGroup != null && signingGroup.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(signingGroup); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = signingGroup; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("Update", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<SigningGroup>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroup)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(SigningGroup)));
-            }
-            else
-            {
-                return new ApiResponse<SigningGroup>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroup)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroup)));
-            }
-            
+            return UpdateAsyncWithHttpInfo(accountId, signingGroupId, signingGroup)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1792,10 +1320,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SigningGroup>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<SigningGroup>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (SigningGroup)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroup)));
-            
         }
 
 
@@ -1822,77 +1349,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of SigningGroupInformation</returns>
         public ApiResponse<SigningGroupInformation> UpdateListWithHttpInfo(string accountId, SigningGroupInformation signingGroupInformation = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling SigningGroupsApi->UpdateList");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/signing_groups";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-            if (signingGroupInformation != null && signingGroupInformation.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(signingGroupInformation); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = signingGroupInformation; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateList", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<SigningGroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(SigningGroupInformation)));
-            }
-            else
-            {
-                return new ApiResponse<SigningGroupInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupInformation)));
-            }
-            
+            return UpdateListAsyncWithHttpInfo(accountId, signingGroupInformation)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1975,10 +1435,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SigningGroupInformation>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<SigningGroupInformation>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (SigningGroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupInformation)));
-            
         }
 
 
@@ -2007,81 +1466,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of SigningGroupUsers</returns>
         public ApiResponse<SigningGroupUsers> UpdateUsersWithHttpInfo(string accountId, string signingGroupId, SigningGroupUsers signingGroupUsers = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling SigningGroupsApi->UpdateUsers");
-            // verify the required parameter 'signingGroupId' is set
-            if (signingGroupId == null)
-                throw new ApiException(400, "Missing required parameter 'signingGroupId' when calling SigningGroupsApi->UpdateUsers");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (signingGroupId != null) localVarPathParams.Add("signingGroupId", this.ApiClient.ParameterToString(signingGroupId)); // path parameter
-
-
-            if (signingGroupUsers != null && signingGroupUsers.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(signingGroupUsers); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = signingGroupUsers; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateUsers", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<SigningGroupUsers>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupUsers)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(SigningGroupUsers)));
-            }
-            else
-            {
-                return new ApiResponse<SigningGroupUsers>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (SigningGroupUsers)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupUsers)));
-            }
-            
+            return UpdateUsersAsyncWithHttpInfo(accountId, signingGroupId, signingGroupUsers)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -2170,10 +1558,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<SigningGroupUsers>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<SigningGroupUsers>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (SigningGroupUsers)this.ApiClient.Deserialize(localVarResponse, typeof(SigningGroupUsers)));
-            
         }
 
     }

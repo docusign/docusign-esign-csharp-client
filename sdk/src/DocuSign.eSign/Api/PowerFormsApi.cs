@@ -479,77 +479,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of PowerForm</returns>
         public ApiResponse<PowerForm> CreatePowerFormWithHttpInfo(string accountId, PowerForm powerForm = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling PowerFormsApi->CreatePowerForm");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/powerforms";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-            if (powerForm != null && powerForm.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(powerForm); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = powerForm; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreatePowerForm", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerForm)));
-            }
-            else
-            {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
-            }
-            
+            return CreatePowerFormAsyncWithHttpInfo(accountId, powerForm)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -632,10 +565,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PowerForm>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<PowerForm>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
-            
         }
 
 
@@ -661,65 +593,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> DeletePowerFormWithHttpInfo(string accountId, string powerFormId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling PowerFormsApi->DeletePowerForm");
-            // verify the required parameter 'powerFormId' is set
-            if (powerFormId == null)
-                throw new ApiException(400, "Missing required parameter 'powerFormId' when calling PowerFormsApi->DeletePowerForm");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/powerforms/{powerFormId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (powerFormId != null) localVarPathParams.Add("powerFormId", this.ApiClient.ParameterToString(powerFormId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeletePowerForm", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
+            return DeletePowerFormAsyncWithHttpInfo(accountId, powerFormId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -827,77 +704,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of PowerFormsResponse</returns>
         public ApiResponse<PowerFormsResponse> DeletePowerFormsWithHttpInfo(string accountId, PowerFormsRequest powerFormsRequest = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling PowerFormsApi->DeletePowerForms");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/powerforms";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-            if (powerFormsRequest != null && powerFormsRequest.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(powerFormsRequest); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = powerFormsRequest; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeletePowerForms", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormsResponse)));
-            }
-            else
-            {
-                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
-            }
-            
+            return DeletePowerFormsAsyncWithHttpInfo(accountId, powerFormsRequest)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -980,10 +790,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PowerFormsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<PowerFormsResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
-            
         }
 
 
@@ -1010,73 +819,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of PowerForm</returns>
         public ApiResponse<PowerForm> GetPowerFormWithHttpInfo(string accountId, string powerFormId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling PowerFormsApi->GetPowerForm");
-            // verify the required parameter 'powerFormId' is set
-            if (powerFormId == null)
-                throw new ApiException(400, "Missing required parameter 'powerFormId' when calling PowerFormsApi->GetPowerForm");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/powerforms/{powerFormId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (powerFormId != null) localVarPathParams.Add("powerFormId", this.ApiClient.ParameterToString(powerFormId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetPowerForm", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerForm)));
-            }
-            else
-            {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
-            }
-            
+            return GetPowerFormAsyncWithHttpInfo(accountId, powerFormId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1155,10 +901,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PowerForm>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<PowerForm>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
-            
         }
 
 
@@ -1199,79 +944,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of PowerFormsFormDataResponse</returns>
         public ApiResponse<PowerFormsFormDataResponse> GetPowerFormDataWithHttpInfo(string accountId, string powerFormId, PowerFormsApi.GetPowerFormDataOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling PowerFormsApi->GetPowerFormData");
-            // verify the required parameter 'powerFormId' is set
-            if (powerFormId == null)
-                throw new ApiException(400, "Missing required parameter 'powerFormId' when calling PowerFormsApi->GetPowerFormData");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/powerforms/{powerFormId}/form_data";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (powerFormId != null) localVarPathParams.Add("powerFormId", this.ApiClient.ParameterToString(powerFormId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.dataLayout != null) localVarQueryParams.Add("data_layout", this.ApiClient.ParameterToString(options.dataLayout)); // query parameter
-                if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
-                if (options.toDate != null) localVarQueryParams.Add("to_date", this.ApiClient.ParameterToString(options.toDate)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetPowerFormData", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<PowerFormsFormDataResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerFormsFormDataResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormsFormDataResponse)));
-            }
-            else
-            {
-                return new ApiResponse<PowerFormsFormDataResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerFormsFormDataResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsFormDataResponse)));
-            }
-            
+            return GetPowerFormDataAsyncWithHttpInfo(accountId, powerFormId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1358,10 +1034,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PowerFormsFormDataResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<PowerFormsFormDataResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (PowerFormsFormDataResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsFormDataResponse)));
-            
         }
 
 
@@ -1396,73 +1071,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of PowerFormSendersResponse</returns>
         public ApiResponse<PowerFormSendersResponse> ListPowerFormSendersWithHttpInfo(string accountId, PowerFormsApi.ListPowerFormSendersOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling PowerFormsApi->ListPowerFormSenders");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/powerforms/senders";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("ListPowerFormSenders", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<PowerFormSendersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerFormSendersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormSendersResponse)));
-            }
-            else
-            {
-                return new ApiResponse<PowerFormSendersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerFormSendersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormSendersResponse)));
-            }
-            
+            return ListPowerFormSendersAsyncWithHttpInfo(accountId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1541,10 +1153,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PowerFormSendersResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<PowerFormSendersResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (PowerFormSendersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormSendersResponse)));
-            
         }
 
 
@@ -1589,78 +1200,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of PowerFormsResponse</returns>
         public ApiResponse<PowerFormsResponse> ListPowerFormsWithHttpInfo(string accountId, PowerFormsApi.ListPowerFormsOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling PowerFormsApi->ListPowerForms");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/powerforms";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
-                if (options.order != null) localVarQueryParams.Add("order", this.ApiClient.ParameterToString(options.order)); // query parameter
-                if (options.orderBy != null) localVarQueryParams.Add("order_by", this.ApiClient.ParameterToString(options.orderBy)); // query parameter
-                if (options.searchFields != null) localVarQueryParams.Add("search_fields", this.ApiClient.ParameterToString(options.searchFields)); // query parameter
-                if (options.searchText != null) localVarQueryParams.Add("search_text", this.ApiClient.ParameterToString(options.searchText)); // query parameter
-                if (options.toDate != null) localVarQueryParams.Add("to_date", this.ApiClient.ParameterToString(options.toDate)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("ListPowerForms", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerFormsResponse)));
-            }
-            else
-            {
-                return new ApiResponse<PowerFormsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
-            }
-            
+            return ListPowerFormsAsyncWithHttpInfo(accountId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1744,10 +1287,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PowerFormsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<PowerFormsResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (PowerFormsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PowerFormsResponse)));
-            
         }
 
 
@@ -1776,81 +1318,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of PowerForm</returns>
         public ApiResponse<PowerForm> UpdatePowerFormWithHttpInfo(string accountId, string powerFormId, PowerForm powerForm = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling PowerFormsApi->UpdatePowerForm");
-            // verify the required parameter 'powerFormId' is set
-            if (powerFormId == null)
-                throw new ApiException(400, "Missing required parameter 'powerFormId' when calling PowerFormsApi->UpdatePowerForm");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/powerforms/{powerFormId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (powerFormId != null) localVarPathParams.Add("powerFormId", this.ApiClient.ParameterToString(powerFormId)); // path parameter
-
-
-            if (powerForm != null && powerForm.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(powerForm); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = powerForm; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdatePowerForm", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(PowerForm)));
-            }
-            else
-            {
-                return new ApiResponse<PowerForm>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
-            }
-            
+            return UpdatePowerFormAsyncWithHttpInfo(accountId, powerFormId, powerForm)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1939,10 +1410,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PowerForm>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<PowerForm>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (PowerForm)this.ApiClient.Deserialize(localVarResponse, typeof(PowerForm)));
-            
         }
 
     }

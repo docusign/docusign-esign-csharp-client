@@ -679,77 +679,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkSendingList</returns>
         public ApiResponse<BulkSendingList> CreateBulkSendListWithHttpInfo(string accountId, BulkSendingList bulkSendingList = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->CreateBulkSendList");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_lists";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-            if (bulkSendingList != null && bulkSendingList.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(bulkSendingList); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = bulkSendingList; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateBulkSendList", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkSendingList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendingList)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendingList)));
-            }
-            else
-            {
-                return new ApiResponse<BulkSendingList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendingList)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingList)));
-            }
-            
+            return CreateBulkSendListAsyncWithHttpInfo(accountId, bulkSendingList)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -832,10 +765,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkSendingList>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkSendingList>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkSendingList)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingList)));
-            
         }
 
 
@@ -864,81 +796,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkSendResponse</returns>
         public ApiResponse<BulkSendResponse> CreateBulkSendRequestWithHttpInfo(string accountId, string bulkSendListId, BulkSendRequest bulkSendRequest = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->CreateBulkSendRequest");
-            // verify the required parameter 'bulkSendListId' is set
-            if (bulkSendListId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkSendListId' when calling BulkEnvelopesApi->CreateBulkSendRequest");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}/send";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (bulkSendListId != null) localVarPathParams.Add("bulkSendListId", this.ApiClient.ParameterToString(bulkSendListId)); // path parameter
-
-
-            if (bulkSendRequest != null && bulkSendRequest.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(bulkSendRequest); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = bulkSendRequest; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateBulkSendRequest", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkSendResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendResponse)));
-            }
-            else
-            {
-                return new ApiResponse<BulkSendResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendResponse)));
-            }
-            
+            return CreateBulkSendRequestAsyncWithHttpInfo(accountId, bulkSendListId, bulkSendRequest)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1027,10 +888,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkSendResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkSendResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkSendResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendResponse)));
-            
         }
 
 
@@ -1059,81 +919,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkSendTestResponse</returns>
         public ApiResponse<BulkSendTestResponse> CreateBulkSendTestRequestWithHttpInfo(string accountId, string bulkSendListId, BulkSendRequest bulkSendRequest = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->CreateBulkSendTestRequest");
-            // verify the required parameter 'bulkSendListId' is set
-            if (bulkSendListId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkSendListId' when calling BulkEnvelopesApi->CreateBulkSendTestRequest");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}/test";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (bulkSendListId != null) localVarPathParams.Add("bulkSendListId", this.ApiClient.ParameterToString(bulkSendListId)); // path parameter
-
-
-            if (bulkSendRequest != null && bulkSendRequest.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(bulkSendRequest); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = bulkSendRequest; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateBulkSendTestRequest", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkSendTestResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendTestResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendTestResponse)));
-            }
-            else
-            {
-                return new ApiResponse<BulkSendTestResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendTestResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendTestResponse)));
-            }
-            
+            return CreateBulkSendTestRequestAsyncWithHttpInfo(accountId, bulkSendListId, bulkSendRequest)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1222,10 +1011,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkSendTestResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkSendTestResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkSendTestResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendTestResponse)));
-            
         }
 
 
@@ -1252,73 +1040,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkSendingListSummaries</returns>
         public ApiResponse<BulkSendingListSummaries> DeleteBulkSendListWithHttpInfo(string accountId, string bulkSendListId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->DeleteBulkSendList");
-            // verify the required parameter 'bulkSendListId' is set
-            if (bulkSendListId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkSendListId' when calling BulkEnvelopesApi->DeleteBulkSendList");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (bulkSendListId != null) localVarPathParams.Add("bulkSendListId", this.ApiClient.ParameterToString(bulkSendListId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteBulkSendList", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkSendingListSummaries>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendingListSummaries)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendingListSummaries)));
-            }
-            else
-            {
-                return new ApiResponse<BulkSendingListSummaries>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendingListSummaries)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingListSummaries)));
-            }
-            
+            return DeleteBulkSendListAsyncWithHttpInfo(accountId, bulkSendListId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1397,10 +1122,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkSendingListSummaries>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkSendingListSummaries>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkSendingListSummaries)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingListSummaries)));
-            
         }
 
 
@@ -1449,83 +1173,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of EnvelopesInformation</returns>
         public ApiResponse<EnvelopesInformation> GetBulkSendBatchEnvelopesWithHttpInfo(string accountId, string bulkSendBatchId, BulkEnvelopesApi.GetBulkSendBatchEnvelopesOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->GetBulkSendBatchEnvelopes");
-            // verify the required parameter 'bulkSendBatchId' is set
-            if (bulkSendBatchId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkSendBatchId' when calling BulkEnvelopesApi->GetBulkSendBatchEnvelopes");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}/envelopes";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (bulkSendBatchId != null) localVarPathParams.Add("bulkSendBatchId", this.ApiClient.ParameterToString(bulkSendBatchId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
-                if (options.order != null) localVarQueryParams.Add("order", this.ApiClient.ParameterToString(options.order)); // query parameter
-                if (options.orderBy != null) localVarQueryParams.Add("order_by", this.ApiClient.ParameterToString(options.orderBy)); // query parameter
-                if (options.searchText != null) localVarQueryParams.Add("search_text", this.ApiClient.ParameterToString(options.searchText)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-                if (options.status != null) localVarQueryParams.Add("status", this.ApiClient.ParameterToString(options.status)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetBulkSendBatchEnvelopes", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<EnvelopesInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (EnvelopesInformation)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(EnvelopesInformation)));
-            }
-            else
-            {
-                return new ApiResponse<EnvelopesInformation>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (EnvelopesInformation)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopesInformation)));
-            }
-            
+            return GetBulkSendBatchEnvelopesAsyncWithHttpInfo(accountId, bulkSendBatchId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1616,10 +1267,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EnvelopesInformation>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<EnvelopesInformation>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (EnvelopesInformation)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopesInformation)));
-            
         }
 
 
@@ -1646,73 +1296,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkSendBatchStatus</returns>
         public ApiResponse<BulkSendBatchStatus> GetBulkSendBatchStatusWithHttpInfo(string accountId, string bulkSendBatchId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->GetBulkSendBatchStatus");
-            // verify the required parameter 'bulkSendBatchId' is set
-            if (bulkSendBatchId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkSendBatchId' when calling BulkEnvelopesApi->GetBulkSendBatchStatus");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (bulkSendBatchId != null) localVarPathParams.Add("bulkSendBatchId", this.ApiClient.ParameterToString(bulkSendBatchId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetBulkSendBatchStatus", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendBatchStatus)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendBatchStatus)));
-            }
-            else
-            {
-                return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendBatchStatus)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchStatus)));
-            }
-            
+            return GetBulkSendBatchStatusAsyncWithHttpInfo(accountId, bulkSendBatchId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -1791,10 +1378,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkSendBatchStatus)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchStatus)));
-            
         }
 
 
@@ -1843,80 +1429,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkSendBatchSummaries</returns>
         public ApiResponse<BulkSendBatchSummaries> GetBulkSendBatchesWithHttpInfo(string accountId, BulkEnvelopesApi.GetBulkSendBatchesOptions options = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->GetBulkSendBatches");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_batch";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-            if (options != null)
-            {
-                if (options.batchIds != null) localVarQueryParams.Add("batch_ids", this.ApiClient.ParameterToString(options.batchIds)); // query parameter
-                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
-                if (options.fromDate != null) localVarQueryParams.Add("from_date", this.ApiClient.ParameterToString(options.fromDate)); // query parameter
-                if (options.searchText != null) localVarQueryParams.Add("search_text", this.ApiClient.ParameterToString(options.searchText)); // query parameter
-                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
-                if (options.status != null) localVarQueryParams.Add("status", this.ApiClient.ParameterToString(options.status)); // query parameter
-                if (options.toDate != null) localVarQueryParams.Add("to_date", this.ApiClient.ParameterToString(options.toDate)); // query parameter
-                if (options.userId != null) localVarQueryParams.Add("user_id", this.ApiClient.ParameterToString(options.userId)); // query parameter
-            }
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetBulkSendBatches", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkSendBatchSummaries>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendBatchSummaries)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendBatchSummaries)));
-            }
-            else
-            {
-                return new ApiResponse<BulkSendBatchSummaries>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendBatchSummaries)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchSummaries)));
-            }
-            
+            return GetBulkSendBatchesAsyncWithHttpInfo(accountId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -2002,10 +1518,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkSendBatchSummaries>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkSendBatchSummaries>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkSendBatchSummaries)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchSummaries)));
-            
         }
 
 
@@ -2032,73 +1547,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkSendingList</returns>
         public ApiResponse<BulkSendingList> GetBulkSendListWithHttpInfo(string accountId, string bulkSendListId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->GetBulkSendList");
-            // verify the required parameter 'bulkSendListId' is set
-            if (bulkSendListId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkSendListId' when calling BulkEnvelopesApi->GetBulkSendList");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (bulkSendListId != null) localVarPathParams.Add("bulkSendListId", this.ApiClient.ParameterToString(bulkSendListId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetBulkSendList", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkSendingList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendingList)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendingList)));
-            }
-            else
-            {
-                return new ApiResponse<BulkSendingList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendingList)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingList)));
-            }
-            
+            return GetBulkSendListAsyncWithHttpInfo(accountId, bulkSendListId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -2177,10 +1629,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkSendingList>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkSendingList>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkSendingList)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingList)));
-            
         }
 
 
@@ -2205,69 +1656,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkSendingListSummaries</returns>
         public ApiResponse<BulkSendingListSummaries> GetBulkSendListsWithHttpInfo(string accountId)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->GetBulkSendLists");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_lists";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetBulkSendLists", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkSendingListSummaries>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendingListSummaries)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendingListSummaries)));
-            }
-            else
-            {
-                return new ApiResponse<BulkSendingListSummaries>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendingListSummaries)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingListSummaries)));
-            }
-            
+            return GetBulkSendListsAsyncWithHttpInfo(accountId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -2340,10 +1732,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkSendingListSummaries>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkSendingListSummaries>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkSendingListSummaries)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingListSummaries)));
-            
         }
 
 
@@ -2374,85 +1765,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkSendBatchStatus</returns>
         public ApiResponse<BulkSendBatchStatus> UpdateBulkSendBatchActionWithHttpInfo(string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->UpdateBulkSendBatchAction");
-            // verify the required parameter 'bulkSendBatchId' is set
-            if (bulkSendBatchId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkSendBatchId' when calling BulkEnvelopesApi->UpdateBulkSendBatchAction");
-            // verify the required parameter 'bulkAction' is set
-            if (bulkAction == null)
-                throw new ApiException(400, "Missing required parameter 'bulkAction' when calling BulkEnvelopesApi->UpdateBulkSendBatchAction");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}/{bulkAction}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (bulkSendBatchId != null) localVarPathParams.Add("bulkSendBatchId", this.ApiClient.ParameterToString(bulkSendBatchId)); // path parameter
-            if (bulkAction != null) localVarPathParams.Add("bulkAction", this.ApiClient.ParameterToString(bulkAction)); // path parameter
-
-
-            if (bulkSendBatchActionRequest != null && bulkSendBatchActionRequest.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(bulkSendBatchActionRequest); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = bulkSendBatchActionRequest; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateBulkSendBatchAction", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendBatchStatus)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendBatchStatus)));
-            }
-            else
-            {
-                return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendBatchStatus)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchStatus)));
-            }
-            
+            return UpdateBulkSendBatchActionAsyncWithHttpInfo(accountId, bulkSendBatchId, bulkAction, bulkSendBatchActionRequest)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -2547,10 +1863,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkSendBatchStatus)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchStatus)));
-            
         }
 
 
@@ -2579,81 +1894,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkSendBatchStatus</returns>
         public ApiResponse<BulkSendBatchStatus> UpdateBulkSendBatchStatusWithHttpInfo(string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->UpdateBulkSendBatchStatus");
-            // verify the required parameter 'bulkSendBatchId' is set
-            if (bulkSendBatchId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkSendBatchId' when calling BulkEnvelopesApi->UpdateBulkSendBatchStatus");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (bulkSendBatchId != null) localVarPathParams.Add("bulkSendBatchId", this.ApiClient.ParameterToString(bulkSendBatchId)); // path parameter
-
-
-            if (bulkSendBatchRequest != null && bulkSendBatchRequest.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(bulkSendBatchRequest); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = bulkSendBatchRequest; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateBulkSendBatchStatus", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendBatchStatus)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendBatchStatus)));
-            }
-            else
-            {
-                return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendBatchStatus)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchStatus)));
-            }
-            
+            return UpdateBulkSendBatchStatusAsyncWithHttpInfo(accountId, bulkSendBatchId, bulkSendBatchRequest)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -2742,10 +1986,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkSendBatchStatus>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkSendBatchStatus)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendBatchStatus)));
-            
         }
 
 
@@ -2774,81 +2017,10 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of BulkSendingList</returns>
         public ApiResponse<BulkSendingList> UpdateBulkSendListWithHttpInfo(string accountId, string bulkSendListId, BulkSendingList bulkSendingList = null)
         {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling BulkEnvelopesApi->UpdateBulkSendList");
-            // verify the required parameter 'bulkSendListId' is set
-            if (bulkSendListId == null)
-                throw new ApiException(400, "Missing required parameter 'bulkSendListId' when calling BulkEnvelopesApi->UpdateBulkSendList");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (bulkSendListId != null) localVarPathParams.Add("bulkSendListId", this.ApiClient.ParameterToString(bulkSendListId)); // path parameter
-
-
-            if (bulkSendingList != null && bulkSendingList.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(bulkSendingList); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = bulkSendingList; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateBulkSendList", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<BulkSendingList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendingList)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(BulkSendingList)));
-            }
-            else
-            {
-                return new ApiResponse<BulkSendingList>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), (BulkSendingList)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingList)));
-            }
-            
+            return UpdateBulkSendListAsyncWithHttpInfo(accountId, bulkSendListId, bulkSendingList)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -2937,10 +2109,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<BulkSendingList>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+            return new ApiResponse<BulkSendingList>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (BulkSendingList)this.ApiClient.Deserialize(localVarResponse, typeof(BulkSendingList)));
-            
         }
 
     }

@@ -475,7 +475,7 @@ namespace DocuSign.eSign.Api
         /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
         /// <returns></returns>
-        LockInformation DeleteLock(string accountId, string templateId, LockRequest lockRequest = null);
+        LockInformation DeleteLock(string accountId, string templateId, LockRequest lockRequest = null, TemplatesApi.DeleteLockOptions options = null);
 
         /// <summary>
         /// Deletes a template lock.
@@ -488,7 +488,7 @@ namespace DocuSign.eSign.Api
         /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<LockInformation> DeleteLockWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null);
+        ApiResponse<LockInformation> DeleteLockWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null, TemplatesApi.DeleteLockOptions options = null);
         /// <summary>
         /// Deletes the specified recipient file from a template.
         /// </summary>
@@ -1798,7 +1798,7 @@ namespace DocuSign.eSign.Api
         /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
         /// <returns>Task of LockInformation</returns>
-        System.Threading.Tasks.Task<LockInformation> DeleteLockAsync(string accountId, string templateId, LockRequest lockRequest = null);
+        System.Threading.Tasks.Task<LockInformation> DeleteLockAsync(string accountId, string templateId, LockRequest lockRequest = null, TemplatesApi.DeleteLockOptions options = null);
 
         /// <summary>
         /// Deletes a template lock.
@@ -1811,7 +1811,7 @@ namespace DocuSign.eSign.Api
         /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (LockInformation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LockInformation>> DeleteLockAsyncWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<LockInformation>> DeleteLockAsyncWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null, TemplatesApi.DeleteLockOptions options = null);
         /// <summary>
         /// Deletes the specified recipient file from a template.
         /// </summary>
@@ -4879,7 +4879,14 @@ namespace DocuSign.eSign.Api
                 (GroupInformation)this.ApiClient.Deserialize(localVarResponse, typeof(GroupInformation)));
         }
 
-
+        /// <summary>
+        /// Deletes a template lock. Deletes the lock from the specified template. The &#x60;X-DocuSign-Edit&#x60; header must be included in the request.
+        /// </summary>
+        public class DeleteLockOptions
+        {
+            /// When true (the default), any changes made while the lock was active are saved. When false, any changes made while the template was locked are discarded.
+            public bool? save_changes { get; set; }
+        }
 
         /// <summary>
         /// Deletes a template lock. Deletes the lock from the specified template. The &#x60;X-DocuSign-Edit&#x60; header must be included in the request.
@@ -4888,10 +4895,11 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>LockInformation</returns>
-        public LockInformation DeleteLock(string accountId, string templateId, LockRequest lockRequest = null)
+        public LockInformation DeleteLock(string accountId, string templateId, LockRequest lockRequest = null, TemplatesApi.DeleteLockOptions options = null)
         {
-             ApiResponse<LockInformation> localVarResponse = DeleteLockWithHttpInfo(accountId, templateId, lockRequest);
+             ApiResponse<LockInformation> localVarResponse = DeleteLockWithHttpInfo(accountId, templateId, lockRequest, options);
              return localVarResponse.Data;
         }
 
@@ -4902,10 +4910,11 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of LockInformation</returns>
-        public ApiResponse<LockInformation> DeleteLockWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null)
+        public ApiResponse<LockInformation> DeleteLockWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null, TemplatesApi.DeleteLockOptions options = null)
         {
-            return DeleteLockAsyncWithHttpInfo(accountId, templateId, lockRequest)
+            return DeleteLockAsyncWithHttpInfo(accountId, templateId, lockRequest, options)
                 .ConfigureAwait(false)
                 .GetAwaiter()
                 .GetResult();
@@ -4918,10 +4927,11 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of LockInformation</returns>
-        public async System.Threading.Tasks.Task<LockInformation> DeleteLockAsync(string accountId, string templateId, LockRequest lockRequest = null)
+        public async System.Threading.Tasks.Task<LockInformation> DeleteLockAsync(string accountId, string templateId, LockRequest lockRequest = null, TemplatesApi.DeleteLockOptions options = null)
         {
-             ApiResponse<LockInformation> localVarResponse = await DeleteLockAsyncWithHttpInfo(accountId, templateId, lockRequest);
+             ApiResponse<LockInformation> localVarResponse = await DeleteLockAsyncWithHttpInfo(accountId, templateId, lockRequest, options);
              return localVarResponse.Data;
         }
 
@@ -4932,8 +4942,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
         /// <param name="lockRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (LockInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LockInformation>> DeleteLockAsyncWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LockInformation>> DeleteLockAsyncWithHttpInfo(string accountId, string templateId, LockRequest lockRequest = null, TemplatesApi.DeleteLockOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -4969,6 +4980,10 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
+            if (options != null)
+            {
+                if (options.save_changes != null) localVarQueryParams.Add("save_changes", this.ApiClient.ParameterToString(options.save_changes)); // query parameter
+            }
             if (lockRequest != null && lockRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(lockRequest); // http body (model) parameter

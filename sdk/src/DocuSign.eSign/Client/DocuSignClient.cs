@@ -247,11 +247,10 @@ namespace DocuSign.eSign.Client
             return response;
         }
 
-        public async Task<DocuSignResponse> CallApiAsync(DocuSignRequest request)
+        public async Task<DocuSignResponse> CallApiAsync(DocuSignRequest request, CancellationToken cancellationToken = default)
         {
             //InterceptRequest(request);
-            CancellationTokenSource cts = new CancellationTokenSource();
-            var response = await RestClient.SendRequestAsync(request, cts.Token);
+            var response = await RestClient.SendRequestAsync(request, cancellationToken);
             //InterceptResponse(request, response);
 
             return response;

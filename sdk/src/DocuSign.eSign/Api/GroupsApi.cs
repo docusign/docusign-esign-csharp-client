@@ -596,7 +596,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
         /// <returns>Task of GroupInformation</returns>
-        public async System.Threading.Tasks.Task<GroupInformation> CreateGroupsAsync(string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<GroupInformation> CreateGroupsAsync(string accountId, GroupInformation groupInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<GroupInformation> localVarResponse = await CreateGroupsAsyncWithHttpInfo(accountId, groupInformation);
              return localVarResponse.Data;
@@ -609,7 +609,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> CreateGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> CreateGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -659,7 +659,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -714,7 +714,7 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         /// <returns>Task of GroupBrands</returns>
-        public async System.Threading.Tasks.Task<GroupBrands> DeleteBrandsAsync(string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public async System.Threading.Tasks.Task<GroupBrands> DeleteBrandsAsync(string accountId, string groupId, BrandsRequest brandsRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<GroupBrands> localVarResponse = await DeleteBrandsAsyncWithHttpInfo(accountId, groupId, brandsRequest);
              return localVarResponse.Data;
@@ -728,7 +728,7 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (GroupBrands)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> DeleteBrandsAsyncWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> DeleteBrandsAsyncWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -782,7 +782,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -837,7 +837,7 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
         /// <returns>Task of UsersResponse</returns>
-        public async System.Threading.Tasks.Task<UsersResponse> DeleteGroupUsersAsync(string accountId, string groupId, UserInfoList userInfoList = null)
+        public async System.Threading.Tasks.Task<UsersResponse> DeleteGroupUsersAsync(string accountId, string groupId, UserInfoList userInfoList = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<UsersResponse> localVarResponse = await DeleteGroupUsersAsyncWithHttpInfo(accountId, groupId, userInfoList);
              return localVarResponse.Data;
@@ -851,7 +851,7 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
         /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> DeleteGroupUsersAsyncWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> DeleteGroupUsersAsyncWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -905,7 +905,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -957,7 +957,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
         /// <returns>Task of GroupInformation</returns>
-        public async System.Threading.Tasks.Task<GroupInformation> DeleteGroupsAsync(string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<GroupInformation> DeleteGroupsAsync(string accountId, GroupInformation groupInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<GroupInformation> localVarResponse = await DeleteGroupsAsyncWithHttpInfo(accountId, groupInformation);
              return localVarResponse.Data;
@@ -970,7 +970,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> DeleteGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> DeleteGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1020,7 +1020,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1072,7 +1072,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <returns>Task of GroupBrands</returns>
-        public async System.Threading.Tasks.Task<GroupBrands> GetBrandsAsync(string accountId, string groupId)
+        public async System.Threading.Tasks.Task<GroupBrands> GetBrandsAsync(string accountId, string groupId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<GroupBrands> localVarResponse = await GetBrandsAsyncWithHttpInfo(accountId, groupId);
              return localVarResponse.Data;
@@ -1085,7 +1085,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <returns>Task of ApiResponse (GroupBrands)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> GetBrandsAsyncWithHttpInfo(string accountId, string groupId)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> GetBrandsAsyncWithHttpInfo(string accountId, string groupId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1131,7 +1131,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1196,9 +1196,9 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UsersResponse</returns>
-        public async System.Threading.Tasks.Task<UsersResponse> ListGroupUsersAsync(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
+        public async System.Threading.Tasks.Task<UsersResponse> ListGroupUsersAsync(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<UsersResponse> localVarResponse = await ListGroupUsersAsyncWithHttpInfo(accountId, groupId, options);
+             ApiResponse<UsersResponse> localVarResponse = await ListGroupUsersAsyncWithHttpInfo(accountId, groupId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1210,7 +1210,7 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> ListGroupUsersAsyncWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> ListGroupUsersAsyncWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1261,7 +1261,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1329,9 +1329,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of GroupInformation</returns>
-        public async System.Threading.Tasks.Task<GroupInformation> ListGroupsAsync(string accountId, GroupsApi.ListGroupsOptions options = null)
+        public async System.Threading.Tasks.Task<GroupInformation> ListGroupsAsync(string accountId, GroupsApi.ListGroupsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<GroupInformation> localVarResponse = await ListGroupsAsyncWithHttpInfo(accountId, options);
+             ApiResponse<GroupInformation> localVarResponse = await ListGroupsAsyncWithHttpInfo(accountId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1342,7 +1342,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> ListGroupsAsyncWithHttpInfo(string accountId, GroupsApi.ListGroupsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> ListGroupsAsyncWithHttpInfo(string accountId, GroupsApi.ListGroupsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1392,7 +1392,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1447,7 +1447,7 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         /// <returns>Task of GroupBrands</returns>
-        public async System.Threading.Tasks.Task<GroupBrands> UpdateBrandsAsync(string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public async System.Threading.Tasks.Task<GroupBrands> UpdateBrandsAsync(string accountId, string groupId, BrandsRequest brandsRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<GroupBrands> localVarResponse = await UpdateBrandsAsyncWithHttpInfo(accountId, groupId, brandsRequest);
              return localVarResponse.Data;
@@ -1461,7 +1461,7 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="brandsRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (GroupBrands)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> UpdateBrandsAsyncWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupBrands>> UpdateBrandsAsyncWithHttpInfo(string accountId, string groupId, BrandsRequest brandsRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1515,7 +1515,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1570,7 +1570,7 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
         /// <returns>Task of UsersResponse</returns>
-        public async System.Threading.Tasks.Task<UsersResponse> UpdateGroupUsersAsync(string accountId, string groupId, UserInfoList userInfoList = null)
+        public async System.Threading.Tasks.Task<UsersResponse> UpdateGroupUsersAsync(string accountId, string groupId, UserInfoList userInfoList = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<UsersResponse> localVarResponse = await UpdateGroupUsersAsyncWithHttpInfo(accountId, groupId, userInfoList);
              return localVarResponse.Data;
@@ -1584,7 +1584,7 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="userInfoList"> (optional)</param>
         /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> UpdateGroupUsersAsyncWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> UpdateGroupUsersAsyncWithHttpInfo(string accountId, string groupId, UserInfoList userInfoList = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1638,7 +1638,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1690,7 +1690,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
         /// <returns>Task of GroupInformation</returns>
-        public async System.Threading.Tasks.Task<GroupInformation> UpdateGroupsAsync(string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<GroupInformation> UpdateGroupsAsync(string accountId, GroupInformation groupInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<GroupInformation> localVarResponse = await UpdateGroupsAsyncWithHttpInfo(accountId, groupInformation);
              return localVarResponse.Data;
@@ -1703,7 +1703,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupInformation"> (optional)</param>
         /// <returns>Task of ApiResponse (GroupInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> UpdateGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GroupInformation>> UpdateGroupsAsyncWithHttpInfo(string accountId, GroupInformation groupInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1753,7 +1753,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

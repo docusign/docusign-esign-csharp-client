@@ -387,7 +387,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteRequestLogsAsync()
+        public async System.Threading.Tasks.Task DeleteRequestLogsAsync(, System.Threading.CancellationToken cancellationToken = default)
         {
              await DeleteRequestLogsAsyncWithHttpInfo();
         }
@@ -397,7 +397,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRequestLogsAsyncWithHttpInfo()
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRequestLogsAsyncWithHttpInfo(, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/diagnostics/request_logs";
@@ -435,7 +435,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -485,7 +485,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestLogId"></param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> GetRequestLogAsync(string requestLogId)
+        public async System.Threading.Tasks.Task<System.IO.Stream> GetRequestLogAsync(string requestLogId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<System.IO.Stream> localVarResponse = await GetRequestLogAsyncWithHttpInfo(requestLogId);
              return localVarResponse.Data;
@@ -497,7 +497,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestLogId"></param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetRequestLogAsyncWithHttpInfo(string requestLogId)
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetRequestLogAsyncWithHttpInfo(string requestLogId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'requestLogId' is set
             if (requestLogId == null)
@@ -539,7 +539,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -585,7 +585,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of DiagnosticsSettingsInformation</returns>
-        public async System.Threading.Tasks.Task<DiagnosticsSettingsInformation> GetRequestLogSettingsAsync()
+        public async System.Threading.Tasks.Task<DiagnosticsSettingsInformation> GetRequestLogSettingsAsync(, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<DiagnosticsSettingsInformation> localVarResponse = await GetRequestLogSettingsAsyncWithHttpInfo();
              return localVarResponse.Data;
@@ -596,7 +596,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (DiagnosticsSettingsInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> GetRequestLogSettingsAsyncWithHttpInfo()
+        public async System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> GetRequestLogSettingsAsyncWithHttpInfo(, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/diagnostics/settings";
@@ -634,7 +634,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -680,7 +680,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ResourceInformation</returns>
-        public async System.Threading.Tasks.Task<ResourceInformation> GetResourcesAsync()
+        public async System.Threading.Tasks.Task<ResourceInformation> GetResourcesAsync(, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<ResourceInformation> localVarResponse = await GetResourcesAsyncWithHttpInfo();
              return localVarResponse.Data;
@@ -691,7 +691,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ResourceInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResourceInformation>> GetResourcesAsyncWithHttpInfo()
+        public async System.Threading.Tasks.Task<ApiResponse<ResourceInformation>> GetResourcesAsyncWithHttpInfo(, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1";
@@ -729,7 +729,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -775,7 +775,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ServiceInformation</returns>
-        public async System.Threading.Tasks.Task<ServiceInformation> GetServiceAsync()
+        public async System.Threading.Tasks.Task<ServiceInformation> GetServiceAsync(, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<ServiceInformation> localVarResponse = await GetServiceAsyncWithHttpInfo();
              return localVarResponse.Data;
@@ -786,7 +786,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ServiceInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ServiceInformation>> GetServiceAsyncWithHttpInfo()
+        public async System.Threading.Tasks.Task<ApiResponse<ServiceInformation>> GetServiceAsyncWithHttpInfo(, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/service_information";
@@ -824,7 +824,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -881,9 +881,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiRequestLogsResult</returns>
-        public async System.Threading.Tasks.Task<ApiRequestLogsResult> ListRequestLogsAsync(DiagnosticsApi.ListRequestLogsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiRequestLogsResult> ListRequestLogsAsync(DiagnosticsApi.ListRequestLogsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<ApiRequestLogsResult> localVarResponse = await ListRequestLogsAsyncWithHttpInfo(options);
+             ApiResponse<ApiRequestLogsResult> localVarResponse = await ListRequestLogsAsyncWithHttpInfo(options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -893,7 +893,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (ApiRequestLogsResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ApiRequestLogsResult>> ListRequestLogsAsyncWithHttpInfo(DiagnosticsApi.ListRequestLogsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ApiRequestLogsResult>> ListRequestLogsAsyncWithHttpInfo(DiagnosticsApi.ListRequestLogsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/diagnostics/request_logs";
@@ -935,7 +935,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -984,7 +984,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="diagnosticsSettingsInformation"> (optional)</param>
         /// <returns>Task of DiagnosticsSettingsInformation</returns>
-        public async System.Threading.Tasks.Task<DiagnosticsSettingsInformation> UpdateRequestLogSettingsAsync(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null)
+        public async System.Threading.Tasks.Task<DiagnosticsSettingsInformation> UpdateRequestLogSettingsAsync(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<DiagnosticsSettingsInformation> localVarResponse = await UpdateRequestLogSettingsAsyncWithHttpInfo(diagnosticsSettingsInformation);
              return localVarResponse.Data;
@@ -996,7 +996,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="diagnosticsSettingsInformation"> (optional)</param>
         /// <returns>Task of ApiResponse (DiagnosticsSettingsInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> UpdateRequestLogSettingsAsyncWithHttpInfo(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DiagnosticsSettingsInformation>> UpdateRequestLogSettingsAsyncWithHttpInfo(DiagnosticsSettingsInformation diagnosticsSettingsInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/diagnostics/settings";
@@ -1042,7 +1042,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

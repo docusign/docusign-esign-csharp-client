@@ -692,7 +692,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bulkSendingList"> (optional)</param>
         /// <returns>Task of BulkSendingList</returns>
-        public async System.Threading.Tasks.Task<BulkSendingList> CreateBulkSendListAsync(string accountId, BulkSendingList bulkSendingList = null)
+        public async System.Threading.Tasks.Task<BulkSendingList> CreateBulkSendListAsync(string accountId, BulkSendingList bulkSendingList = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkSendingList> localVarResponse = await CreateBulkSendListAsyncWithHttpInfo(accountId, bulkSendingList);
              return localVarResponse.Data;
@@ -705,7 +705,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bulkSendingList"> (optional)</param>
         /// <returns>Task of ApiResponse (BulkSendingList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkSendingList>> CreateBulkSendListAsyncWithHttpInfo(string accountId, BulkSendingList bulkSendingList = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendingList>> CreateBulkSendListAsyncWithHttpInfo(string accountId, BulkSendingList bulkSendingList = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -755,7 +755,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -810,7 +810,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkSendListId"></param>
         /// <param name="bulkSendRequest"> (optional)</param>
         /// <returns>Task of BulkSendResponse</returns>
-        public async System.Threading.Tasks.Task<BulkSendResponse> CreateBulkSendRequestAsync(string accountId, string bulkSendListId, BulkSendRequest bulkSendRequest = null)
+        public async System.Threading.Tasks.Task<BulkSendResponse> CreateBulkSendRequestAsync(string accountId, string bulkSendListId, BulkSendRequest bulkSendRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkSendResponse> localVarResponse = await CreateBulkSendRequestAsyncWithHttpInfo(accountId, bulkSendListId, bulkSendRequest);
              return localVarResponse.Data;
@@ -824,7 +824,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkSendListId"></param>
         /// <param name="bulkSendRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (BulkSendResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkSendResponse>> CreateBulkSendRequestAsyncWithHttpInfo(string accountId, string bulkSendListId, BulkSendRequest bulkSendRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendResponse>> CreateBulkSendRequestAsyncWithHttpInfo(string accountId, string bulkSendListId, BulkSendRequest bulkSendRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -878,7 +878,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -933,7 +933,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkSendListId"></param>
         /// <param name="bulkSendRequest"> (optional)</param>
         /// <returns>Task of BulkSendTestResponse</returns>
-        public async System.Threading.Tasks.Task<BulkSendTestResponse> CreateBulkSendTestRequestAsync(string accountId, string bulkSendListId, BulkSendRequest bulkSendRequest = null)
+        public async System.Threading.Tasks.Task<BulkSendTestResponse> CreateBulkSendTestRequestAsync(string accountId, string bulkSendListId, BulkSendRequest bulkSendRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkSendTestResponse> localVarResponse = await CreateBulkSendTestRequestAsyncWithHttpInfo(accountId, bulkSendListId, bulkSendRequest);
              return localVarResponse.Data;
@@ -947,7 +947,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkSendListId"></param>
         /// <param name="bulkSendRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (BulkSendTestResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkSendTestResponse>> CreateBulkSendTestRequestAsyncWithHttpInfo(string accountId, string bulkSendListId, BulkSendRequest bulkSendRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendTestResponse>> CreateBulkSendTestRequestAsyncWithHttpInfo(string accountId, string bulkSendListId, BulkSendRequest bulkSendRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1001,7 +1001,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1053,7 +1053,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bulkSendListId"></param>
         /// <returns>Task of BulkSendingListSummaries</returns>
-        public async System.Threading.Tasks.Task<BulkSendingListSummaries> DeleteBulkSendListAsync(string accountId, string bulkSendListId)
+        public async System.Threading.Tasks.Task<BulkSendingListSummaries> DeleteBulkSendListAsync(string accountId, string bulkSendListId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkSendingListSummaries> localVarResponse = await DeleteBulkSendListAsyncWithHttpInfo(accountId, bulkSendListId);
              return localVarResponse.Data;
@@ -1066,7 +1066,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bulkSendListId"></param>
         /// <returns>Task of ApiResponse (BulkSendingListSummaries)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkSendingListSummaries>> DeleteBulkSendListAsyncWithHttpInfo(string accountId, string bulkSendListId)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendingListSummaries>> DeleteBulkSendListAsyncWithHttpInfo(string accountId, string bulkSendListId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1112,7 +1112,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1187,9 +1187,9 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkSendBatchId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of EnvelopesInformation</returns>
-        public async System.Threading.Tasks.Task<EnvelopesInformation> GetBulkSendBatchEnvelopesAsync(string accountId, string bulkSendBatchId, BulkEnvelopesApi.GetBulkSendBatchEnvelopesOptions options = null)
+        public async System.Threading.Tasks.Task<EnvelopesInformation> GetBulkSendBatchEnvelopesAsync(string accountId, string bulkSendBatchId, BulkEnvelopesApi.GetBulkSendBatchEnvelopesOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<EnvelopesInformation> localVarResponse = await GetBulkSendBatchEnvelopesAsyncWithHttpInfo(accountId, bulkSendBatchId, options);
+             ApiResponse<EnvelopesInformation> localVarResponse = await GetBulkSendBatchEnvelopesAsyncWithHttpInfo(accountId, bulkSendBatchId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1201,7 +1201,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkSendBatchId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (EnvelopesInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EnvelopesInformation>> GetBulkSendBatchEnvelopesAsyncWithHttpInfo(string accountId, string bulkSendBatchId, BulkEnvelopesApi.GetBulkSendBatchEnvelopesOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopesInformation>> GetBulkSendBatchEnvelopesAsyncWithHttpInfo(string accountId, string bulkSendBatchId, BulkEnvelopesApi.GetBulkSendBatchEnvelopesOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1257,7 +1257,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1309,7 +1309,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bulkSendBatchId"></param>
         /// <returns>Task of BulkSendBatchStatus</returns>
-        public async System.Threading.Tasks.Task<BulkSendBatchStatus> GetBulkSendBatchStatusAsync(string accountId, string bulkSendBatchId)
+        public async System.Threading.Tasks.Task<BulkSendBatchStatus> GetBulkSendBatchStatusAsync(string accountId, string bulkSendBatchId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkSendBatchStatus> localVarResponse = await GetBulkSendBatchStatusAsyncWithHttpInfo(accountId, bulkSendBatchId);
              return localVarResponse.Data;
@@ -1322,7 +1322,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bulkSendBatchId"></param>
         /// <returns>Task of ApiResponse (BulkSendBatchStatus)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkSendBatchStatus>> GetBulkSendBatchStatusAsyncWithHttpInfo(string accountId, string bulkSendBatchId)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendBatchStatus>> GetBulkSendBatchStatusAsyncWithHttpInfo(string accountId, string bulkSendBatchId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1368,7 +1368,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1442,9 +1442,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BulkSendBatchSummaries</returns>
-        public async System.Threading.Tasks.Task<BulkSendBatchSummaries> GetBulkSendBatchesAsync(string accountId, BulkEnvelopesApi.GetBulkSendBatchesOptions options = null)
+        public async System.Threading.Tasks.Task<BulkSendBatchSummaries> GetBulkSendBatchesAsync(string accountId, BulkEnvelopesApi.GetBulkSendBatchesOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<BulkSendBatchSummaries> localVarResponse = await GetBulkSendBatchesAsyncWithHttpInfo(accountId, options);
+             ApiResponse<BulkSendBatchSummaries> localVarResponse = await GetBulkSendBatchesAsyncWithHttpInfo(accountId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1455,7 +1455,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BulkSendBatchSummaries)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkSendBatchSummaries>> GetBulkSendBatchesAsyncWithHttpInfo(string accountId, BulkEnvelopesApi.GetBulkSendBatchesOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendBatchSummaries>> GetBulkSendBatchesAsyncWithHttpInfo(string accountId, BulkEnvelopesApi.GetBulkSendBatchesOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1508,7 +1508,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1560,7 +1560,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bulkSendListId"></param>
         /// <returns>Task of BulkSendingList</returns>
-        public async System.Threading.Tasks.Task<BulkSendingList> GetBulkSendListAsync(string accountId, string bulkSendListId)
+        public async System.Threading.Tasks.Task<BulkSendingList> GetBulkSendListAsync(string accountId, string bulkSendListId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkSendingList> localVarResponse = await GetBulkSendListAsyncWithHttpInfo(accountId, bulkSendListId);
              return localVarResponse.Data;
@@ -1573,7 +1573,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bulkSendListId"></param>
         /// <returns>Task of ApiResponse (BulkSendingList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkSendingList>> GetBulkSendListAsyncWithHttpInfo(string accountId, string bulkSendListId)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendingList>> GetBulkSendListAsyncWithHttpInfo(string accountId, string bulkSendListId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1619,7 +1619,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1668,7 +1668,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of BulkSendingListSummaries</returns>
-        public async System.Threading.Tasks.Task<BulkSendingListSummaries> GetBulkSendListsAsync(string accountId)
+        public async System.Threading.Tasks.Task<BulkSendingListSummaries> GetBulkSendListsAsync(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkSendingListSummaries> localVarResponse = await GetBulkSendListsAsyncWithHttpInfo(accountId);
              return localVarResponse.Data;
@@ -1680,7 +1680,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of ApiResponse (BulkSendingListSummaries)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkSendingListSummaries>> GetBulkSendListsAsyncWithHttpInfo(string accountId)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendingListSummaries>> GetBulkSendListsAsyncWithHttpInfo(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1722,7 +1722,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1780,7 +1780,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkAction"></param>
         /// <param name="bulkSendBatchActionRequest"> (optional)</param>
         /// <returns>Task of BulkSendBatchStatus</returns>
-        public async System.Threading.Tasks.Task<BulkSendBatchStatus> UpdateBulkSendBatchActionAsync(string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null)
+        public async System.Threading.Tasks.Task<BulkSendBatchStatus> UpdateBulkSendBatchActionAsync(string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkSendBatchStatus> localVarResponse = await UpdateBulkSendBatchActionAsyncWithHttpInfo(accountId, bulkSendBatchId, bulkAction, bulkSendBatchActionRequest);
              return localVarResponse.Data;
@@ -1795,7 +1795,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkAction"></param>
         /// <param name="bulkSendBatchActionRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (BulkSendBatchStatus)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkSendBatchStatus>> UpdateBulkSendBatchActionAsyncWithHttpInfo(string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendBatchStatus>> UpdateBulkSendBatchActionAsyncWithHttpInfo(string accountId, string bulkSendBatchId, string bulkAction, BulkSendBatchActionRequest bulkSendBatchActionRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1853,7 +1853,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1908,7 +1908,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkSendBatchId"></param>
         /// <param name="bulkSendBatchRequest"> (optional)</param>
         /// <returns>Task of BulkSendBatchStatus</returns>
-        public async System.Threading.Tasks.Task<BulkSendBatchStatus> UpdateBulkSendBatchStatusAsync(string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null)
+        public async System.Threading.Tasks.Task<BulkSendBatchStatus> UpdateBulkSendBatchStatusAsync(string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkSendBatchStatus> localVarResponse = await UpdateBulkSendBatchStatusAsyncWithHttpInfo(accountId, bulkSendBatchId, bulkSendBatchRequest);
              return localVarResponse.Data;
@@ -1922,7 +1922,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkSendBatchId"></param>
         /// <param name="bulkSendBatchRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (BulkSendBatchStatus)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkSendBatchStatus>> UpdateBulkSendBatchStatusAsyncWithHttpInfo(string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendBatchStatus>> UpdateBulkSendBatchStatusAsyncWithHttpInfo(string accountId, string bulkSendBatchId, BulkSendBatchRequest bulkSendBatchRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1976,7 +1976,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -2031,7 +2031,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkSendListId"></param>
         /// <param name="bulkSendingList"> (optional)</param>
         /// <returns>Task of BulkSendingList</returns>
-        public async System.Threading.Tasks.Task<BulkSendingList> UpdateBulkSendListAsync(string accountId, string bulkSendListId, BulkSendingList bulkSendingList = null)
+        public async System.Threading.Tasks.Task<BulkSendingList> UpdateBulkSendListAsync(string accountId, string bulkSendListId, BulkSendingList bulkSendingList = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkSendingList> localVarResponse = await UpdateBulkSendListAsyncWithHttpInfo(accountId, bulkSendListId, bulkSendingList);
              return localVarResponse.Data;
@@ -2045,7 +2045,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkSendListId"></param>
         /// <param name="bulkSendingList"> (optional)</param>
         /// <returns>Task of ApiResponse (BulkSendingList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkSendingList>> UpdateBulkSendListAsyncWithHttpInfo(string accountId, string bulkSendListId, BulkSendingList bulkSendingList = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkSendingList>> UpdateBulkSendListAsyncWithHttpInfo(string accountId, string bulkSendListId, BulkSendingList bulkSendingList = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2099,7 +2099,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

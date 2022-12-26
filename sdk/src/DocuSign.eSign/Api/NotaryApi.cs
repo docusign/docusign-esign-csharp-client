@@ -533,7 +533,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
         /// <returns>Task of Notary</returns>
-        public async System.Threading.Tasks.Task<Notary> CreateNotaryAsync(Notary notary = null)
+        public async System.Threading.Tasks.Task<Notary> CreateNotaryAsync(Notary notary = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<Notary> localVarResponse = await CreateNotaryAsyncWithHttpInfo(notary);
              return localVarResponse.Data;
@@ -545,7 +545,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
         /// <returns>Task of ApiResponse (Notary)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Notary>> CreateNotaryAsyncWithHttpInfo(Notary notary = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Notary>> CreateNotaryAsyncWithHttpInfo(Notary notary = null, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/current_user/notary";
@@ -591,7 +591,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -640,7 +640,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notaryJurisdiction"> (optional)</param>
         /// <returns>Task of NotaryJurisdiction</returns>
-        public async System.Threading.Tasks.Task<NotaryJurisdiction> CreateNotaryJurisdictionsAsync(NotaryJurisdiction notaryJurisdiction = null)
+        public async System.Threading.Tasks.Task<NotaryJurisdiction> CreateNotaryJurisdictionsAsync(NotaryJurisdiction notaryJurisdiction = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<NotaryJurisdiction> localVarResponse = await CreateNotaryJurisdictionsAsyncWithHttpInfo(notaryJurisdiction);
              return localVarResponse.Data;
@@ -652,7 +652,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notaryJurisdiction"> (optional)</param>
         /// <returns>Task of ApiResponse (NotaryJurisdiction)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> CreateNotaryJurisdictionsAsyncWithHttpInfo(NotaryJurisdiction notaryJurisdiction = null)
+        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> CreateNotaryJurisdictionsAsyncWithHttpInfo(NotaryJurisdiction notaryJurisdiction = null, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/current_user/notary/jurisdictions";
@@ -698,7 +698,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -746,7 +746,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteNotaryJurisdictionAsync(string jurisdictionId)
+        public async System.Threading.Tasks.Task DeleteNotaryJurisdictionAsync(string jurisdictionId, System.Threading.CancellationToken cancellationToken = default)
         {
              await DeleteNotaryJurisdictionAsyncWithHttpInfo(jurisdictionId);
         }
@@ -757,7 +757,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteNotaryJurisdictionAsyncWithHttpInfo(string jurisdictionId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteNotaryJurisdictionAsyncWithHttpInfo(string jurisdictionId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'jurisdictionId' is set
             if (jurisdictionId == null)
@@ -799,7 +799,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -857,9 +857,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of NotaryResult</returns>
-        public async System.Threading.Tasks.Task<NotaryResult> GetNotaryAsync(NotaryApi.GetNotaryOptions options = null)
+        public async System.Threading.Tasks.Task<NotaryResult> GetNotaryAsync(NotaryApi.GetNotaryOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<NotaryResult> localVarResponse = await GetNotaryAsyncWithHttpInfo(options);
+             ApiResponse<NotaryResult> localVarResponse = await GetNotaryAsyncWithHttpInfo(options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -869,7 +869,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (NotaryResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NotaryResult>> GetNotaryAsyncWithHttpInfo(NotaryApi.GetNotaryOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<NotaryResult>> GetNotaryAsyncWithHttpInfo(NotaryApi.GetNotaryOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/current_user/notary";
@@ -911,7 +911,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -960,7 +960,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
         /// <returns>Task of NotaryJurisdiction</returns>
-        public async System.Threading.Tasks.Task<NotaryJurisdiction> GetNotaryJurisdictionAsync(string jurisdictionId)
+        public async System.Threading.Tasks.Task<NotaryJurisdiction> GetNotaryJurisdictionAsync(string jurisdictionId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<NotaryJurisdiction> localVarResponse = await GetNotaryJurisdictionAsyncWithHttpInfo(jurisdictionId);
              return localVarResponse.Data;
@@ -972,7 +972,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
         /// <returns>Task of ApiResponse (NotaryJurisdiction)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> GetNotaryJurisdictionAsyncWithHttpInfo(string jurisdictionId)
+        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> GetNotaryJurisdictionAsyncWithHttpInfo(string jurisdictionId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'jurisdictionId' is set
             if (jurisdictionId == null)
@@ -1014,7 +1014,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1062,7 +1062,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetNotaryJurisdictionSealAsync(string jurisdictionId)
+        public async System.Threading.Tasks.Task GetNotaryJurisdictionSealAsync(string jurisdictionId, System.Threading.CancellationToken cancellationToken = default)
         {
              await GetNotaryJurisdictionSealAsyncWithHttpInfo(jurisdictionId);
         }
@@ -1073,7 +1073,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jurisdictionId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetNotaryJurisdictionSealAsyncWithHttpInfo(string jurisdictionId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetNotaryJurisdictionSealAsyncWithHttpInfo(string jurisdictionId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'jurisdictionId' is set
             if (jurisdictionId == null)
@@ -1115,7 +1115,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1162,7 +1162,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of NotaryJurisdictionList</returns>
-        public async System.Threading.Tasks.Task<NotaryJurisdictionList> GetNotaryJurisdictionsAsync()
+        public async System.Threading.Tasks.Task<NotaryJurisdictionList> GetNotaryJurisdictionsAsync(, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<NotaryJurisdictionList> localVarResponse = await GetNotaryJurisdictionsAsyncWithHttpInfo();
              return localVarResponse.Data;
@@ -1173,7 +1173,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (NotaryJurisdictionList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdictionList>> GetNotaryJurisdictionsAsyncWithHttpInfo()
+        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdictionList>> GetNotaryJurisdictionsAsyncWithHttpInfo(, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/current_user/notary/jurisdictions";
@@ -1211,7 +1211,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1272,9 +1272,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of NotaryJournalList</returns>
-        public async System.Threading.Tasks.Task<NotaryJournalList> ListNotaryJournalsAsync(NotaryApi.ListNotaryJournalsOptions options = null)
+        public async System.Threading.Tasks.Task<NotaryJournalList> ListNotaryJournalsAsync(NotaryApi.ListNotaryJournalsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<NotaryJournalList> localVarResponse = await ListNotaryJournalsAsyncWithHttpInfo(options);
+             ApiResponse<NotaryJournalList> localVarResponse = await ListNotaryJournalsAsyncWithHttpInfo(options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1284,7 +1284,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (NotaryJournalList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NotaryJournalList>> ListNotaryJournalsAsyncWithHttpInfo(NotaryApi.ListNotaryJournalsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<NotaryJournalList>> ListNotaryJournalsAsyncWithHttpInfo(NotaryApi.ListNotaryJournalsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/current_user/notary/journals";
@@ -1328,7 +1328,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1377,7 +1377,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
         /// <returns>Task of Notary</returns>
-        public async System.Threading.Tasks.Task<Notary> UpdateNotaryAsync(Notary notary = null)
+        public async System.Threading.Tasks.Task<Notary> UpdateNotaryAsync(Notary notary = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<Notary> localVarResponse = await UpdateNotaryAsyncWithHttpInfo(notary);
              return localVarResponse.Data;
@@ -1389,7 +1389,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notary"> (optional)</param>
         /// <returns>Task of ApiResponse (Notary)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Notary>> UpdateNotaryAsyncWithHttpInfo(Notary notary = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Notary>> UpdateNotaryAsyncWithHttpInfo(Notary notary = null, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/current_user/notary";
@@ -1435,7 +1435,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1487,7 +1487,7 @@ namespace DocuSign.eSign.Api
         /// <param name="jurisdictionId"></param>
         /// <param name="notaryJurisdiction"> (optional)</param>
         /// <returns>Task of NotaryJurisdiction</returns>
-        public async System.Threading.Tasks.Task<NotaryJurisdiction> UpdateNotaryJurisdictionAsync(string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null)
+        public async System.Threading.Tasks.Task<NotaryJurisdiction> UpdateNotaryJurisdictionAsync(string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<NotaryJurisdiction> localVarResponse = await UpdateNotaryJurisdictionAsyncWithHttpInfo(jurisdictionId, notaryJurisdiction);
              return localVarResponse.Data;
@@ -1500,7 +1500,7 @@ namespace DocuSign.eSign.Api
         /// <param name="jurisdictionId"></param>
         /// <param name="notaryJurisdiction"> (optional)</param>
         /// <returns>Task of ApiResponse (NotaryJurisdiction)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> UpdateNotaryJurisdictionAsyncWithHttpInfo(string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null)
+        public async System.Threading.Tasks.Task<ApiResponse<NotaryJurisdiction>> UpdateNotaryJurisdictionAsyncWithHttpInfo(string jurisdictionId, NotaryJurisdiction notaryJurisdiction = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'jurisdictionId' is set
             if (jurisdictionId == null)
@@ -1550,7 +1550,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

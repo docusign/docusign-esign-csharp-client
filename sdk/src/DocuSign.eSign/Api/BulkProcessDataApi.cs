@@ -461,7 +461,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="processAction"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateBulkProcessRequestAsync(string accountId, string processAction)
+        public async System.Threading.Tasks.Task CreateBulkProcessRequestAsync(string accountId, string processAction, System.Threading.CancellationToken cancellationToken = default)
         {
              await CreateBulkProcessRequestAsyncWithHttpInfo(accountId, processAction);
         }
@@ -473,7 +473,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="processAction"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> CreateBulkProcessRequestAsyncWithHttpInfo(string accountId, string processAction)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> CreateBulkProcessRequestAsyncWithHttpInfo(string accountId, string processAction, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -519,7 +519,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -578,7 +578,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkProcessListId"></param>
         /// <param name="bulkProcessRequest"> (optional)</param>
         /// <returns>Task of BulkProcessResponse</returns>
-        public async System.Threading.Tasks.Task<BulkProcessResponse> CreateBulkProcessRequestToQueueAsync(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null)
+        public async System.Threading.Tasks.Task<BulkProcessResponse> CreateBulkProcessRequestToQueueAsync(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkProcessResponse> localVarResponse = await CreateBulkProcessRequestToQueueAsyncWithHttpInfo(accountId, processAction, bulkProcessListId, bulkProcessRequest);
              return localVarResponse.Data;
@@ -593,7 +593,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bulkProcessListId"></param>
         /// <param name="bulkProcessRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (BulkProcessResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessResponse>> CreateBulkProcessRequestToQueueAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessResponse>> CreateBulkProcessRequestToQueueAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId, BulkProcessRequest bulkProcessRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -651,7 +651,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -706,7 +706,7 @@ namespace DocuSign.eSign.Api
         /// <param name="processAction"></param>
         /// <param name="bulkProcessListId"></param>
         /// <returns>Task of BulkProcessResult</returns>
-        public async System.Threading.Tasks.Task<BulkProcessResult> DeleteBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task<BulkProcessResult> DeleteBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkProcessResult> localVarResponse = await DeleteBulkProcessListAsyncWithHttpInfo(accountId, processAction, bulkProcessListId);
              return localVarResponse.Data;
@@ -720,7 +720,7 @@ namespace DocuSign.eSign.Api
         /// <param name="processAction"></param>
         /// <param name="bulkProcessListId"></param>
         /// <returns>Task of ApiResponse (BulkProcessResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessResult>> DeleteBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessResult>> DeleteBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -770,7 +770,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -825,7 +825,7 @@ namespace DocuSign.eSign.Api
         /// <param name="processAction"></param>
         /// <param name="bulkProcessingLists"> (optional)</param>
         /// <returns>Task of BulkProcessResult</returns>
-        public async System.Threading.Tasks.Task<BulkProcessResult> DeleteBulkProcessListsAsync(string accountId, string processAction, BulkProcessingLists bulkProcessingLists = null)
+        public async System.Threading.Tasks.Task<BulkProcessResult> DeleteBulkProcessListsAsync(string accountId, string processAction, BulkProcessingLists bulkProcessingLists = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkProcessResult> localVarResponse = await DeleteBulkProcessListsAsyncWithHttpInfo(accountId, processAction, bulkProcessingLists);
              return localVarResponse.Data;
@@ -839,7 +839,7 @@ namespace DocuSign.eSign.Api
         /// <param name="processAction"></param>
         /// <param name="bulkProcessingLists"> (optional)</param>
         /// <returns>Task of ApiResponse (BulkProcessResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessResult>> DeleteBulkProcessListsAsyncWithHttpInfo(string accountId, string processAction, BulkProcessingLists bulkProcessingLists = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessResult>> DeleteBulkProcessListsAsyncWithHttpInfo(string accountId, string processAction, BulkProcessingLists bulkProcessingLists = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -893,7 +893,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -947,7 +947,7 @@ namespace DocuSign.eSign.Api
         /// <param name="processAction"></param>
         /// <param name="bulkProcessListId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task GetBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId, System.Threading.CancellationToken cancellationToken = default)
         {
              await GetBulkProcessListAsyncWithHttpInfo(accountId, processAction, bulkProcessListId);
         }
@@ -960,7 +960,7 @@ namespace DocuSign.eSign.Api
         /// <param name="processAction"></param>
         /// <param name="bulkProcessListId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1010,7 +1010,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1063,7 +1063,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="processAction"></param>
         /// <returns>Task of BulkProcessingListSummaries</returns>
-        public async System.Threading.Tasks.Task<BulkProcessingListSummaries> GetBulkProcessListsAsync(string accountId, string processAction)
+        public async System.Threading.Tasks.Task<BulkProcessingListSummaries> GetBulkProcessListsAsync(string accountId, string processAction, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BulkProcessingListSummaries> localVarResponse = await GetBulkProcessListsAsyncWithHttpInfo(accountId, processAction);
              return localVarResponse.Data;
@@ -1076,7 +1076,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="processAction"></param>
         /// <returns>Task of ApiResponse (BulkProcessingListSummaries)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessingListSummaries>> GetBulkProcessListsAsyncWithHttpInfo(string accountId, string processAction)
+        public async System.Threading.Tasks.Task<ApiResponse<BulkProcessingListSummaries>> GetBulkProcessListsAsyncWithHttpInfo(string accountId, string processAction, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1122,7 +1122,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1176,7 +1176,7 @@ namespace DocuSign.eSign.Api
         /// <param name="processAction"></param>
         /// <param name="bulkProcessListId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task UpdateBulkProcessListAsync(string accountId, string processAction, string bulkProcessListId, System.Threading.CancellationToken cancellationToken = default)
         {
              await UpdateBulkProcessListAsyncWithHttpInfo(accountId, processAction, bulkProcessListId);
         }
@@ -1189,7 +1189,7 @@ namespace DocuSign.eSign.Api
         /// <param name="processAction"></param>
         /// <param name="bulkProcessListId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateBulkProcessListAsyncWithHttpInfo(string accountId, string processAction, string bulkProcessListId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1239,7 +1239,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

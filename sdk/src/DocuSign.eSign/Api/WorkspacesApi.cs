@@ -674,7 +674,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspace"> (optional)</param>
         /// <returns>Task of Workspace</returns>
-        public async System.Threading.Tasks.Task<Workspace> CreateWorkspaceAsync(string accountId, Workspace workspace = null)
+        public async System.Threading.Tasks.Task<Workspace> CreateWorkspaceAsync(string accountId, Workspace workspace = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<Workspace> localVarResponse = await CreateWorkspaceAsyncWithHttpInfo(accountId, workspace);
              return localVarResponse.Data;
@@ -687,7 +687,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspace"> (optional)</param>
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> CreateWorkspaceAsyncWithHttpInfo(string accountId, Workspace workspace = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> CreateWorkspaceAsyncWithHttpInfo(string accountId, Workspace workspace = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -737,7 +737,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -792,7 +792,7 @@ namespace DocuSign.eSign.Api
         /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <returns>Task of WorkspaceItem</returns>
-        public async System.Threading.Tasks.Task<WorkspaceItem> CreateWorkspaceFileAsync(string accountId, string workspaceId, string folderId)
+        public async System.Threading.Tasks.Task<WorkspaceItem> CreateWorkspaceFileAsync(string accountId, string workspaceId, string folderId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<WorkspaceItem> localVarResponse = await CreateWorkspaceFileAsyncWithHttpInfo(accountId, workspaceId, folderId);
              return localVarResponse.Data;
@@ -806,7 +806,7 @@ namespace DocuSign.eSign.Api
         /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <returns>Task of ApiResponse (WorkspaceItem)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> CreateWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId)
+        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> CreateWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -856,7 +856,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -908,7 +908,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of Workspace</returns>
-        public async System.Threading.Tasks.Task<Workspace> DeleteWorkspaceAsync(string accountId, string workspaceId)
+        public async System.Threading.Tasks.Task<Workspace> DeleteWorkspaceAsync(string accountId, string workspaceId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<Workspace> localVarResponse = await DeleteWorkspaceAsyncWithHttpInfo(accountId, workspaceId);
              return localVarResponse.Data;
@@ -921,7 +921,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> DeleteWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId)
+        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> DeleteWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -967,7 +967,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1024,7 +1024,7 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="workspaceItemList"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteWorkspaceFolderItemsAsync(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null)
+        public async System.Threading.Tasks.Task DeleteWorkspaceFolderItemsAsync(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null, System.Threading.CancellationToken cancellationToken = default)
         {
              await DeleteWorkspaceFolderItemsAsyncWithHttpInfo(accountId, workspaceId, folderId, workspaceItemList);
         }
@@ -1038,7 +1038,7 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="workspaceItemList"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWorkspaceFolderItemsAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWorkspaceFolderItemsAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1096,7 +1096,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1149,7 +1149,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of Workspace</returns>
-        public async System.Threading.Tasks.Task<Workspace> GetWorkspaceAsync(string accountId, string workspaceId)
+        public async System.Threading.Tasks.Task<Workspace> GetWorkspaceAsync(string accountId, string workspaceId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<Workspace> localVarResponse = await GetWorkspaceAsyncWithHttpInfo(accountId, workspaceId);
              return localVarResponse.Data;
@@ -1162,7 +1162,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> GetWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId)
+        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> GetWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1208,7 +1208,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1278,9 +1278,9 @@ namespace DocuSign.eSign.Api
         /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetWorkspaceFileAsync(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null)
+        public async System.Threading.Tasks.Task GetWorkspaceFileAsync(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             await GetWorkspaceFileAsyncWithHttpInfo(accountId, workspaceId, folderId, fileId, options);
+             await GetWorkspaceFileAsyncWithHttpInfo(accountId, workspaceId, folderId, fileId, options, cancellationToken);
         }
 
         /// <summary>
@@ -1293,7 +1293,7 @@ namespace DocuSign.eSign.Api
         /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1352,7 +1352,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1430,9 +1430,9 @@ namespace DocuSign.eSign.Api
         /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of PageImages</returns>
-        public async System.Threading.Tasks.Task<PageImages> ListWorkspaceFilePagesAsync(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null)
+        public async System.Threading.Tasks.Task<PageImages> ListWorkspaceFilePagesAsync(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<PageImages> localVarResponse = await ListWorkspaceFilePagesAsyncWithHttpInfo(accountId, workspaceId, folderId, fileId, options);
+             ApiResponse<PageImages> localVarResponse = await ListWorkspaceFilePagesAsyncWithHttpInfo(accountId, workspaceId, folderId, fileId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1446,7 +1446,7 @@ namespace DocuSign.eSign.Api
         /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PageImages)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PageImages>> ListWorkspaceFilePagesAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PageImages>> ListWorkspaceFilePagesAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1508,7 +1508,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1586,9 +1586,9 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of WorkspaceFolderContents</returns>
-        public async System.Threading.Tasks.Task<WorkspaceFolderContents> ListWorkspaceFolderItemsAsync(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null)
+        public async System.Threading.Tasks.Task<WorkspaceFolderContents> ListWorkspaceFolderItemsAsync(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<WorkspaceFolderContents> localVarResponse = await ListWorkspaceFolderItemsAsyncWithHttpInfo(accountId, workspaceId, folderId, options);
+             ApiResponse<WorkspaceFolderContents> localVarResponse = await ListWorkspaceFolderItemsAsyncWithHttpInfo(accountId, workspaceId, folderId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1601,7 +1601,7 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (WorkspaceFolderContents)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceFolderContents>> ListWorkspaceFolderItemsAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceFolderContents>> ListWorkspaceFolderItemsAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1661,7 +1661,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1710,7 +1710,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of WorkspaceList</returns>
-        public async System.Threading.Tasks.Task<WorkspaceList> ListWorkspacesAsync(string accountId)
+        public async System.Threading.Tasks.Task<WorkspaceList> ListWorkspacesAsync(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<WorkspaceList> localVarResponse = await ListWorkspacesAsyncWithHttpInfo(accountId);
              return localVarResponse.Data;
@@ -1722,7 +1722,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of ApiResponse (WorkspaceList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceList>> ListWorkspacesAsyncWithHttpInfo(string accountId)
+        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceList>> ListWorkspacesAsyncWithHttpInfo(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1764,7 +1764,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1819,7 +1819,7 @@ namespace DocuSign.eSign.Api
         /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="workspace"> (optional)</param>
         /// <returns>Task of Workspace</returns>
-        public async System.Threading.Tasks.Task<Workspace> UpdateWorkspaceAsync(string accountId, string workspaceId, Workspace workspace = null)
+        public async System.Threading.Tasks.Task<Workspace> UpdateWorkspaceAsync(string accountId, string workspaceId, Workspace workspace = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<Workspace> localVarResponse = await UpdateWorkspaceAsyncWithHttpInfo(accountId, workspaceId, workspace);
              return localVarResponse.Data;
@@ -1833,7 +1833,7 @@ namespace DocuSign.eSign.Api
         /// <param name="workspaceId">Specifies the workspace ID GUID.</param>
         /// <param name="workspace"> (optional)</param>
         /// <returns>Task of ApiResponse (Workspace)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> UpdateWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId, Workspace workspace = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Workspace>> UpdateWorkspaceAsyncWithHttpInfo(string accountId, string workspaceId, Workspace workspace = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1887,7 +1887,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1945,7 +1945,7 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <returns>Task of WorkspaceItem</returns>
-        public async System.Threading.Tasks.Task<WorkspaceItem> UpdateWorkspaceFileAsync(string accountId, string workspaceId, string folderId, string fileId)
+        public async System.Threading.Tasks.Task<WorkspaceItem> UpdateWorkspaceFileAsync(string accountId, string workspaceId, string folderId, string fileId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<WorkspaceItem> localVarResponse = await UpdateWorkspaceFileAsyncWithHttpInfo(accountId, workspaceId, folderId, fileId);
              return localVarResponse.Data;
@@ -1960,7 +1960,7 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="fileId">Specifies the room file ID GUID.</param>
         /// <returns>Task of ApiResponse (WorkspaceItem)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> UpdateWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId)
+        public async System.Threading.Tasks.Task<ApiResponse<WorkspaceItem>> UpdateWorkspaceFileAsyncWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2014,7 +2014,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

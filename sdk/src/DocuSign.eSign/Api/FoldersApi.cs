@@ -328,9 +328,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FoldersResponse</returns>
-        public async System.Threading.Tasks.Task<FoldersResponse> ListAsync(string accountId, FoldersApi.ListOptions options = null)
+        public async System.Threading.Tasks.Task<FoldersResponse> ListAsync(string accountId, FoldersApi.ListOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<FoldersResponse> localVarResponse = await ListAsyncWithHttpInfo(accountId, options);
+             ApiResponse<FoldersResponse> localVarResponse = await ListAsyncWithHttpInfo(accountId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -341,7 +341,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FoldersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> ListAsyncWithHttpInfo(string accountId, FoldersApi.ListOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> ListAsyncWithHttpInfo(string accountId, FoldersApi.ListOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -391,7 +391,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -468,9 +468,9 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FolderItemsResponse</returns>
-        public async System.Threading.Tasks.Task<FolderItemsResponse> ListItemsAsync(string accountId, string folderId, FoldersApi.ListItemsOptions options = null)
+        public async System.Threading.Tasks.Task<FolderItemsResponse> ListItemsAsync(string accountId, string folderId, FoldersApi.ListItemsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<FolderItemsResponse> localVarResponse = await ListItemsAsyncWithHttpInfo(accountId, folderId, options);
+             ApiResponse<FolderItemsResponse> localVarResponse = await ListItemsAsyncWithHttpInfo(accountId, folderId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -482,7 +482,7 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FolderItemsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FolderItemsResponse>> ListItemsAsyncWithHttpInfo(string accountId, string folderId, FoldersApi.ListItemsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FolderItemsResponse>> ListItemsAsyncWithHttpInfo(string accountId, string folderId, FoldersApi.ListItemsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -539,7 +539,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -594,7 +594,7 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="foldersRequest"> (optional)</param>
         /// <returns>Task of FoldersResponse</returns>
-        public async System.Threading.Tasks.Task<FoldersResponse> MoveEnvelopesAsync(string accountId, string folderId, FoldersRequest foldersRequest = null)
+        public async System.Threading.Tasks.Task<FoldersResponse> MoveEnvelopesAsync(string accountId, string folderId, FoldersRequest foldersRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<FoldersResponse> localVarResponse = await MoveEnvelopesAsyncWithHttpInfo(accountId, folderId, foldersRequest);
              return localVarResponse.Data;
@@ -608,7 +608,7 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="foldersRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (FoldersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> MoveEnvelopesAsyncWithHttpInfo(string accountId, string folderId, FoldersRequest foldersRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FoldersResponse>> MoveEnvelopesAsyncWithHttpInfo(string accountId, string folderId, FoldersRequest foldersRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -662,7 +662,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -739,9 +739,9 @@ namespace DocuSign.eSign.Api
         /// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of FolderItemResponse</returns>
-        public async System.Threading.Tasks.Task<FolderItemResponse> SearchAsync(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null)
+        public async System.Threading.Tasks.Task<FolderItemResponse> SearchAsync(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<FolderItemResponse> localVarResponse = await SearchAsyncWithHttpInfo(accountId, searchFolderId, options);
+             ApiResponse<FolderItemResponse> localVarResponse = await SearchAsyncWithHttpInfo(accountId, searchFolderId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -753,7 +753,7 @@ namespace DocuSign.eSign.Api
         /// <param name="searchFolderId">Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (FolderItemResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FolderItemResponse>> SearchAsyncWithHttpInfo(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FolderItemResponse>> SearchAsyncWithHttpInfo(string accountId, string searchFolderId, FoldersApi.SearchOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -810,7 +810,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

@@ -161,7 +161,7 @@ namespace DocuSign.eSign.Api
         /// <param name="organizationId"></param>
         /// <param name="reportCorrelationId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetReportV2Async(string organizationId, string reportCorrelationId)
+        public async System.Threading.Tasks.Task GetReportV2Async(string organizationId, string reportCorrelationId, System.Threading.CancellationToken cancellationToken = default)
         {
              await GetReportV2AsyncWithHttpInfo(organizationId, reportCorrelationId);
         }
@@ -173,7 +173,7 @@ namespace DocuSign.eSign.Api
         /// <param name="organizationId"></param>
         /// <param name="reportCorrelationId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetReportV2AsyncWithHttpInfo(string organizationId, string reportCorrelationId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetReportV2AsyncWithHttpInfo(string organizationId, string reportCorrelationId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -219,7 +219,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

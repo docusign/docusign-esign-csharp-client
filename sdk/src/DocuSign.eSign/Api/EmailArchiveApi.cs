@@ -304,7 +304,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchive"> (optional)</param>
         /// <returns>Task of BccEmailArchive</returns>
-        public async System.Threading.Tasks.Task<BccEmailArchive> CreateBCCEmailArchiveAsync(string accountId, BccEmailArchive bccEmailArchive = null)
+        public async System.Threading.Tasks.Task<BccEmailArchive> CreateBCCEmailArchiveAsync(string accountId, BccEmailArchive bccEmailArchive = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BccEmailArchive> localVarResponse = await CreateBCCEmailArchiveAsyncWithHttpInfo(accountId, bccEmailArchive);
              return localVarResponse.Data;
@@ -317,7 +317,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchive"> (optional)</param>
         /// <returns>Task of ApiResponse (BccEmailArchive)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchive>> CreateBCCEmailArchiveAsyncWithHttpInfo(string accountId, BccEmailArchive bccEmailArchive = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchive>> CreateBCCEmailArchiveAsyncWithHttpInfo(string accountId, BccEmailArchive bccEmailArchive = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -367,7 +367,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -418,7 +418,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchiveId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteBCCEmailArchiveAsync(string accountId, string bccEmailArchiveId)
+        public async System.Threading.Tasks.Task DeleteBCCEmailArchiveAsync(string accountId, string bccEmailArchiveId, System.Threading.CancellationToken cancellationToken = default)
         {
              await DeleteBCCEmailArchiveAsyncWithHttpInfo(accountId, bccEmailArchiveId);
         }
@@ -430,7 +430,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="bccEmailArchiveId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteBCCEmailArchiveAsyncWithHttpInfo(string accountId, string bccEmailArchiveId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteBCCEmailArchiveAsyncWithHttpInfo(string accountId, string bccEmailArchiveId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -476,7 +476,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -542,9 +542,9 @@ namespace DocuSign.eSign.Api
         /// <param name="bccEmailArchiveId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BccEmailArchiveHistoryList</returns>
-        public async System.Threading.Tasks.Task<BccEmailArchiveHistoryList> GetBCCEmailArchiveHistoryListAsync(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null)
+        public async System.Threading.Tasks.Task<BccEmailArchiveHistoryList> GetBCCEmailArchiveHistoryListAsync(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<BccEmailArchiveHistoryList> localVarResponse = await GetBCCEmailArchiveHistoryListAsyncWithHttpInfo(accountId, bccEmailArchiveId, options);
+             ApiResponse<BccEmailArchiveHistoryList> localVarResponse = await GetBCCEmailArchiveHistoryListAsyncWithHttpInfo(accountId, bccEmailArchiveId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -556,7 +556,7 @@ namespace DocuSign.eSign.Api
         /// <param name="bccEmailArchiveId"></param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BccEmailArchiveHistoryList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveHistoryList>> GetBCCEmailArchiveHistoryListAsyncWithHttpInfo(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveHistoryList>> GetBCCEmailArchiveHistoryListAsyncWithHttpInfo(string accountId, string bccEmailArchiveId, EmailArchiveApi.GetBCCEmailArchiveHistoryListOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -607,7 +607,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -669,9 +669,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BccEmailArchiveList</returns>
-        public async System.Threading.Tasks.Task<BccEmailArchiveList> GetBCCEmailArchiveListAsync(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null)
+        public async System.Threading.Tasks.Task<BccEmailArchiveList> GetBCCEmailArchiveListAsync(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<BccEmailArchiveList> localVarResponse = await GetBCCEmailArchiveListAsyncWithHttpInfo(accountId, options);
+             ApiResponse<BccEmailArchiveList> localVarResponse = await GetBCCEmailArchiveListAsyncWithHttpInfo(accountId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -682,7 +682,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BccEmailArchiveList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveList>> GetBCCEmailArchiveListAsyncWithHttpInfo(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BccEmailArchiveList>> GetBCCEmailArchiveListAsyncWithHttpInfo(string accountId, EmailArchiveApi.GetBCCEmailArchiveListOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -729,7 +729,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

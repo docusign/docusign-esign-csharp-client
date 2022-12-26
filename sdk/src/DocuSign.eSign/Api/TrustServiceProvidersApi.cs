@@ -155,7 +155,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of AccountSeals</returns>
-        public async System.Threading.Tasks.Task<AccountSeals> GetSealProvidersAsync(string accountId)
+        public async System.Threading.Tasks.Task<AccountSeals> GetSealProvidersAsync(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<AccountSeals> localVarResponse = await GetSealProvidersAsyncWithHttpInfo(accountId);
              return localVarResponse.Data;
@@ -167,7 +167,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of ApiResponse (AccountSeals)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AccountSeals>> GetSealProvidersAsyncWithHttpInfo(string accountId)
+        public async System.Threading.Tasks.Task<ApiResponse<AccountSeals>> GetSealProvidersAsyncWithHttpInfo(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -209,7 +209,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

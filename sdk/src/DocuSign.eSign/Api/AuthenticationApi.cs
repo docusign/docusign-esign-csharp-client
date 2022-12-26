@@ -428,7 +428,7 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteSocialLoginAsync(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public async System.Threading.Tasks.Task DeleteSocialLoginAsync(string accountId, string userId, SocialAccountInformation socialAccountInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
              await DeleteSocialLoginAsyncWithHttpInfo(accountId, userId, socialAccountInformation);
         }
@@ -441,7 +441,7 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSocialLoginAsyncWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSocialLoginAsyncWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -495,7 +495,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -542,7 +542,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of OauthAccess</returns>
-        public async System.Threading.Tasks.Task<OauthAccess> GetOAuthTokenAsync()
+        public async System.Threading.Tasks.Task<OauthAccess> GetOAuthTokenAsync(, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<OauthAccess> localVarResponse = await GetOAuthTokenAsyncWithHttpInfo();
              return localVarResponse.Data;
@@ -553,7 +553,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (OauthAccess)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OauthAccess>> GetOAuthTokenAsyncWithHttpInfo()
+        public async System.Threading.Tasks.Task<ApiResponse<OauthAccess>> GetOAuthTokenAsyncWithHttpInfo(, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/oauth2/token";
@@ -591,7 +591,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -643,7 +643,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <returns>Task of UserSocialIdResult</returns>
-        public async System.Threading.Tasks.Task<UserSocialIdResult> ListSocialLoginsAsync(string accountId, string userId)
+        public async System.Threading.Tasks.Task<UserSocialIdResult> ListSocialLoginsAsync(string accountId, string userId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<UserSocialIdResult> localVarResponse = await ListSocialLoginsAsyncWithHttpInfo(accountId, userId);
              return localVarResponse.Data;
@@ -656,7 +656,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <returns>Task of ApiResponse (UserSocialIdResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserSocialIdResult>> ListSocialLoginsAsyncWithHttpInfo(string accountId, string userId)
+        public async System.Threading.Tasks.Task<ApiResponse<UserSocialIdResult>> ListSocialLoginsAsyncWithHttpInfo(string accountId, string userId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -702,7 +702,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -765,9 +765,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of LoginInformation</returns>
-        public async System.Threading.Tasks.Task<LoginInformation> LoginAsync(AuthenticationApi.LoginOptions options = null)
+        public async System.Threading.Tasks.Task<LoginInformation> LoginAsync(AuthenticationApi.LoginOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<LoginInformation> localVarResponse = await LoginAsyncWithHttpInfo(options);
+             ApiResponse<LoginInformation> localVarResponse = await LoginAsyncWithHttpInfo(options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -777,7 +777,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (LoginInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LoginInformation>> LoginAsyncWithHttpInfo(AuthenticationApi.LoginOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LoginInformation>> LoginAsyncWithHttpInfo(AuthenticationApi.LoginOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/login_information";
@@ -822,7 +822,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -867,7 +867,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RevokeOAuthTokenAsync()
+        public async System.Threading.Tasks.Task RevokeOAuthTokenAsync(, System.Threading.CancellationToken cancellationToken = default)
         {
              await RevokeOAuthTokenAsyncWithHttpInfo();
         }
@@ -877,7 +877,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> RevokeOAuthTokenAsyncWithHttpInfo()
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RevokeOAuthTokenAsyncWithHttpInfo(, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/oauth2/revoke";
@@ -915,7 +915,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -967,7 +967,7 @@ namespace DocuSign.eSign.Api
         /// <param name="loginPart">Currently, only the value **password** is supported.</param>
         /// <param name="userPasswordInformation"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdatePasswordAsync(string loginPart, UserPasswordInformation userPasswordInformation = null)
+        public async System.Threading.Tasks.Task UpdatePasswordAsync(string loginPart, UserPasswordInformation userPasswordInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
              await UpdatePasswordAsyncWithHttpInfo(loginPart, userPasswordInformation);
         }
@@ -979,7 +979,7 @@ namespace DocuSign.eSign.Api
         /// <param name="loginPart">Currently, only the value **password** is supported.</param>
         /// <param name="userPasswordInformation"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePasswordAsyncWithHttpInfo(string loginPart, UserPasswordInformation userPasswordInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdatePasswordAsyncWithHttpInfo(string loginPart, UserPasswordInformation userPasswordInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'loginPart' is set
             if (loginPart == null)
@@ -1029,7 +1029,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1084,7 +1084,7 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateSocialLoginAsync(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public async System.Threading.Tasks.Task UpdateSocialLoginAsync(string accountId, string userId, SocialAccountInformation socialAccountInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
              await UpdateSocialLoginAsyncWithHttpInfo(accountId, userId, socialAccountInformation);
         }
@@ -1097,7 +1097,7 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="socialAccountInformation"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSocialLoginAsyncWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSocialLoginAsyncWithHttpInfo(string accountId, string userId, SocialAccountInformation socialAccountInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1151,7 +1151,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

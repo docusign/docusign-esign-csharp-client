@@ -737,7 +737,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="billingPlanId">The ID of the billing plan being accessed.</param>
         /// <returns>Task of BillingPlanResponse</returns>
-        public async System.Threading.Tasks.Task<BillingPlanResponse> GetBillingPlanAsync(string billingPlanId)
+        public async System.Threading.Tasks.Task<BillingPlanResponse> GetBillingPlanAsync(string billingPlanId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BillingPlanResponse> localVarResponse = await GetBillingPlanAsyncWithHttpInfo(billingPlanId);
              return localVarResponse.Data;
@@ -749,7 +749,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="billingPlanId">The ID of the billing plan being accessed.</param>
         /// <returns>Task of ApiResponse (BillingPlanResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BillingPlanResponse>> GetBillingPlanAsyncWithHttpInfo(string billingPlanId)
+        public async System.Threading.Tasks.Task<ApiResponse<BillingPlanResponse>> GetBillingPlanAsyncWithHttpInfo(string billingPlanId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'billingPlanId' is set
             if (billingPlanId == null)
@@ -791,7 +791,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -840,7 +840,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of CreditCardInformation</returns>
-        public async System.Threading.Tasks.Task<CreditCardInformation> GetCreditCardInfoAsync(string accountId)
+        public async System.Threading.Tasks.Task<CreditCardInformation> GetCreditCardInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<CreditCardInformation> localVarResponse = await GetCreditCardInfoAsyncWithHttpInfo(accountId);
              return localVarResponse.Data;
@@ -852,7 +852,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of ApiResponse (CreditCardInformation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CreditCardInformation>> GetCreditCardInfoAsyncWithHttpInfo(string accountId)
+        public async System.Threading.Tasks.Task<ApiResponse<CreditCardInformation>> GetCreditCardInfoAsyncWithHttpInfo(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -894,7 +894,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -943,7 +943,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of DowngradRequestBillingInfoResponse</returns>
-        public async System.Threading.Tasks.Task<DowngradRequestBillingInfoResponse> GetDowngradeRequestBillingInfoAsync(string accountId)
+        public async System.Threading.Tasks.Task<DowngradRequestBillingInfoResponse> GetDowngradeRequestBillingInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<DowngradRequestBillingInfoResponse> localVarResponse = await GetDowngradeRequestBillingInfoAsyncWithHttpInfo(accountId);
              return localVarResponse.Data;
@@ -955,7 +955,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of ApiResponse (DowngradRequestBillingInfoResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DowngradRequestBillingInfoResponse>> GetDowngradeRequestBillingInfoAsyncWithHttpInfo(string accountId)
+        public async System.Threading.Tasks.Task<ApiResponse<DowngradRequestBillingInfoResponse>> GetDowngradeRequestBillingInfoAsyncWithHttpInfo(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -997,7 +997,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1049,7 +1049,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="invoiceId"></param>
         /// <returns>Task of BillingInvoice</returns>
-        public async System.Threading.Tasks.Task<BillingInvoice> GetInvoiceAsync(string accountId, string invoiceId)
+        public async System.Threading.Tasks.Task<BillingInvoice> GetInvoiceAsync(string accountId, string invoiceId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BillingInvoice> localVarResponse = await GetInvoiceAsyncWithHttpInfo(accountId, invoiceId);
              return localVarResponse.Data;
@@ -1062,7 +1062,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="invoiceId"></param>
         /// <returns>Task of ApiResponse (BillingInvoice)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BillingInvoice>> GetInvoiceAsyncWithHttpInfo(string accountId, string invoiceId)
+        public async System.Threading.Tasks.Task<ApiResponse<BillingInvoice>> GetInvoiceAsyncWithHttpInfo(string accountId, string invoiceId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1108,7 +1108,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1160,7 +1160,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="paymentId"></param>
         /// <returns>Task of BillingPaymentItem</returns>
-        public async System.Threading.Tasks.Task<BillingPaymentItem> GetPaymentAsync(string accountId, string paymentId)
+        public async System.Threading.Tasks.Task<BillingPaymentItem> GetPaymentAsync(string accountId, string paymentId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BillingPaymentItem> localVarResponse = await GetPaymentAsyncWithHttpInfo(accountId, paymentId);
              return localVarResponse.Data;
@@ -1173,7 +1173,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="paymentId"></param>
         /// <returns>Task of ApiResponse (BillingPaymentItem)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BillingPaymentItem>> GetPaymentAsyncWithHttpInfo(string accountId, string paymentId)
+        public async System.Threading.Tasks.Task<ApiResponse<BillingPaymentItem>> GetPaymentAsyncWithHttpInfo(string accountId, string paymentId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1219,7 +1219,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1287,9 +1287,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of AccountBillingPlanResponse</returns>
-        public async System.Threading.Tasks.Task<AccountBillingPlanResponse> GetPlanAsync(string accountId, BillingApi.GetPlanOptions options = null)
+        public async System.Threading.Tasks.Task<AccountBillingPlanResponse> GetPlanAsync(string accountId, BillingApi.GetPlanOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<AccountBillingPlanResponse> localVarResponse = await GetPlanAsyncWithHttpInfo(accountId, options);
+             ApiResponse<AccountBillingPlanResponse> localVarResponse = await GetPlanAsyncWithHttpInfo(accountId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1300,7 +1300,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (AccountBillingPlanResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AccountBillingPlanResponse>> GetPlanAsyncWithHttpInfo(string accountId, BillingApi.GetPlanOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<AccountBillingPlanResponse>> GetPlanAsyncWithHttpInfo(string accountId, BillingApi.GetPlanOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1350,7 +1350,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1396,7 +1396,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of BillingPlansResponse</returns>
-        public async System.Threading.Tasks.Task<BillingPlansResponse> ListBillingPlansAsync()
+        public async System.Threading.Tasks.Task<BillingPlansResponse> ListBillingPlansAsync(, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BillingPlansResponse> localVarResponse = await ListBillingPlansAsyncWithHttpInfo();
              return localVarResponse.Data;
@@ -1407,7 +1407,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (BillingPlansResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BillingPlansResponse>> ListBillingPlansAsyncWithHttpInfo()
+        public async System.Threading.Tasks.Task<ApiResponse<BillingPlansResponse>> ListBillingPlansAsyncWithHttpInfo(, System.Threading.CancellationToken cancellationToken = default)
         {
 
             var localVarPath = "/v2.1/billing_plans";
@@ -1445,7 +1445,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1507,9 +1507,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BillingInvoicesResponse</returns>
-        public async System.Threading.Tasks.Task<BillingInvoicesResponse> ListInvoicesAsync(string accountId, BillingApi.ListInvoicesOptions options = null)
+        public async System.Threading.Tasks.Task<BillingInvoicesResponse> ListInvoicesAsync(string accountId, BillingApi.ListInvoicesOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<BillingInvoicesResponse> localVarResponse = await ListInvoicesAsyncWithHttpInfo(accountId, options);
+             ApiResponse<BillingInvoicesResponse> localVarResponse = await ListInvoicesAsyncWithHttpInfo(accountId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1520,7 +1520,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BillingInvoicesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BillingInvoicesResponse>> ListInvoicesAsyncWithHttpInfo(string accountId, BillingApi.ListInvoicesOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BillingInvoicesResponse>> ListInvoicesAsyncWithHttpInfo(string accountId, BillingApi.ListInvoicesOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1567,7 +1567,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1616,7 +1616,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of BillingInvoicesSummary</returns>
-        public async System.Threading.Tasks.Task<BillingInvoicesSummary> ListInvoicesPastDueAsync(string accountId)
+        public async System.Threading.Tasks.Task<BillingInvoicesSummary> ListInvoicesPastDueAsync(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BillingInvoicesSummary> localVarResponse = await ListInvoicesPastDueAsyncWithHttpInfo(accountId);
              return localVarResponse.Data;
@@ -1628,7 +1628,7 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of ApiResponse (BillingInvoicesSummary)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BillingInvoicesSummary>> ListInvoicesPastDueAsyncWithHttpInfo(string accountId)
+        public async System.Threading.Tasks.Task<ApiResponse<BillingInvoicesSummary>> ListInvoicesPastDueAsyncWithHttpInfo(string accountId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1670,7 +1670,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1732,9 +1732,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BillingPaymentsResponse</returns>
-        public async System.Threading.Tasks.Task<BillingPaymentsResponse> ListPaymentsAsync(string accountId, BillingApi.ListPaymentsOptions options = null)
+        public async System.Threading.Tasks.Task<BillingPaymentsResponse> ListPaymentsAsync(string accountId, BillingApi.ListPaymentsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<BillingPaymentsResponse> localVarResponse = await ListPaymentsAsyncWithHttpInfo(accountId, options);
+             ApiResponse<BillingPaymentsResponse> localVarResponse = await ListPaymentsAsyncWithHttpInfo(accountId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1745,7 +1745,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BillingPaymentsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BillingPaymentsResponse>> ListPaymentsAsyncWithHttpInfo(string accountId, BillingApi.ListPaymentsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BillingPaymentsResponse>> ListPaymentsAsyncWithHttpInfo(string accountId, BillingApi.ListPaymentsOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1792,7 +1792,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1844,7 +1844,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="billingPaymentRequest"> (optional)</param>
         /// <returns>Task of BillingPaymentResponse</returns>
-        public async System.Threading.Tasks.Task<BillingPaymentResponse> MakePaymentAsync(string accountId, BillingPaymentRequest billingPaymentRequest = null)
+        public async System.Threading.Tasks.Task<BillingPaymentResponse> MakePaymentAsync(string accountId, BillingPaymentRequest billingPaymentRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<BillingPaymentResponse> localVarResponse = await MakePaymentAsyncWithHttpInfo(accountId, billingPaymentRequest);
              return localVarResponse.Data;
@@ -1857,7 +1857,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="billingPaymentRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (BillingPaymentResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BillingPaymentResponse>> MakePaymentAsyncWithHttpInfo(string accountId, BillingPaymentRequest billingPaymentRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BillingPaymentResponse>> MakePaymentAsyncWithHttpInfo(string accountId, BillingPaymentRequest billingPaymentRequest = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1907,7 +1907,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1958,7 +1958,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="purchasedEnvelopesInformation"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PurchaseEnvelopesAsync(string accountId, PurchasedEnvelopesInformation purchasedEnvelopesInformation = null)
+        public async System.Threading.Tasks.Task PurchaseEnvelopesAsync(string accountId, PurchasedEnvelopesInformation purchasedEnvelopesInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
              await PurchaseEnvelopesAsyncWithHttpInfo(accountId, purchasedEnvelopesInformation);
         }
@@ -1970,7 +1970,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="purchasedEnvelopesInformation"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PurchaseEnvelopesAsyncWithHttpInfo(string accountId, PurchasedEnvelopesInformation purchasedEnvelopesInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PurchaseEnvelopesAsyncWithHttpInfo(string accountId, PurchasedEnvelopesInformation purchasedEnvelopesInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2020,7 +2020,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -2073,7 +2073,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="downgradeBillingPlanInformation"> (optional)</param>
         /// <returns>Task of DowngradePlanUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<DowngradePlanUpdateResponse> UpdateDowngradeAccountBillingPlanAsync(string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null)
+        public async System.Threading.Tasks.Task<DowngradePlanUpdateResponse> UpdateDowngradeAccountBillingPlanAsync(string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<DowngradePlanUpdateResponse> localVarResponse = await UpdateDowngradeAccountBillingPlanAsyncWithHttpInfo(accountId, downgradeBillingPlanInformation);
              return localVarResponse.Data;
@@ -2086,7 +2086,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="downgradeBillingPlanInformation"> (optional)</param>
         /// <returns>Task of ApiResponse (DowngradePlanUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DowngradePlanUpdateResponse>> UpdateDowngradeAccountBillingPlanAsyncWithHttpInfo(string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DowngradePlanUpdateResponse>> UpdateDowngradeAccountBillingPlanAsyncWithHttpInfo(string accountId, DowngradeBillingPlanInformation downgradeBillingPlanInformation = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2136,7 +2136,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -2199,9 +2199,9 @@ namespace DocuSign.eSign.Api
         /// <param name="billingPlanInformation"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of BillingPlanUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<BillingPlanUpdateResponse> UpdatePlanAsync(string accountId, BillingPlanInformation billingPlanInformation = null, BillingApi.UpdatePlanOptions options = null)
+        public async System.Threading.Tasks.Task<BillingPlanUpdateResponse> UpdatePlanAsync(string accountId, BillingPlanInformation billingPlanInformation = null, BillingApi.UpdatePlanOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<BillingPlanUpdateResponse> localVarResponse = await UpdatePlanAsyncWithHttpInfo(accountId, billingPlanInformation, options);
+             ApiResponse<BillingPlanUpdateResponse> localVarResponse = await UpdatePlanAsyncWithHttpInfo(accountId, billingPlanInformation, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -2213,7 +2213,7 @@ namespace DocuSign.eSign.Api
         /// <param name="billingPlanInformation"> (optional)</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (BillingPlanUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BillingPlanUpdateResponse>> UpdatePlanAsyncWithHttpInfo(string accountId, BillingPlanInformation billingPlanInformation = null, BillingApi.UpdatePlanOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BillingPlanUpdateResponse>> UpdatePlanAsyncWithHttpInfo(string accountId, BillingPlanInformation billingPlanInformation = null, BillingApi.UpdatePlanOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -2267,7 +2267,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

@@ -485,7 +485,7 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="cloudStorageProviders"> (optional)</param>
         /// <returns>Task of CloudStorageProviders</returns>
-        public async System.Threading.Tasks.Task<CloudStorageProviders> CreateProviderAsync(string accountId, string userId, CloudStorageProviders cloudStorageProviders = null)
+        public async System.Threading.Tasks.Task<CloudStorageProviders> CreateProviderAsync(string accountId, string userId, CloudStorageProviders cloudStorageProviders = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<CloudStorageProviders> localVarResponse = await CreateProviderAsyncWithHttpInfo(accountId, userId, cloudStorageProviders);
              return localVarResponse.Data;
@@ -499,7 +499,7 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="cloudStorageProviders"> (optional)</param>
         /// <returns>Task of ApiResponse (CloudStorageProviders)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> CreateProviderAsyncWithHttpInfo(string accountId, string userId, CloudStorageProviders cloudStorageProviders = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> CreateProviderAsyncWithHttpInfo(string accountId, string userId, CloudStorageProviders cloudStorageProviders = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -553,7 +553,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -608,7 +608,7 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         /// <returns>Task of CloudStorageProviders</returns>
-        public async System.Threading.Tasks.Task<CloudStorageProviders> DeleteProviderAsync(string accountId, string userId, string serviceId)
+        public async System.Threading.Tasks.Task<CloudStorageProviders> DeleteProviderAsync(string accountId, string userId, string serviceId, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<CloudStorageProviders> localVarResponse = await DeleteProviderAsyncWithHttpInfo(accountId, userId, serviceId);
              return localVarResponse.Data;
@@ -622,7 +622,7 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         /// <returns>Task of ApiResponse (CloudStorageProviders)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> DeleteProviderAsyncWithHttpInfo(string accountId, string userId, string serviceId)
+        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> DeleteProviderAsyncWithHttpInfo(string accountId, string userId, string serviceId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -672,7 +672,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -727,7 +727,7 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="cloudStorageProviders"> (optional)</param>
         /// <returns>Task of CloudStorageProviders</returns>
-        public async System.Threading.Tasks.Task<CloudStorageProviders> DeleteProvidersAsync(string accountId, string userId, CloudStorageProviders cloudStorageProviders = null)
+        public async System.Threading.Tasks.Task<CloudStorageProviders> DeleteProvidersAsync(string accountId, string userId, CloudStorageProviders cloudStorageProviders = null, System.Threading.CancellationToken cancellationToken = default)
         {
              ApiResponse<CloudStorageProviders> localVarResponse = await DeleteProvidersAsyncWithHttpInfo(accountId, userId, cloudStorageProviders);
              return localVarResponse.Data;
@@ -741,7 +741,7 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="cloudStorageProviders"> (optional)</param>
         /// <returns>Task of ApiResponse (CloudStorageProviders)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> DeleteProvidersAsyncWithHttpInfo(string accountId, string userId, CloudStorageProviders cloudStorageProviders = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> DeleteProvidersAsyncWithHttpInfo(string accountId, string userId, CloudStorageProviders cloudStorageProviders = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -795,7 +795,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -861,9 +861,9 @@ namespace DocuSign.eSign.Api
         /// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of CloudStorageProviders</returns>
-        public async System.Threading.Tasks.Task<CloudStorageProviders> GetProviderAsync(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null)
+        public async System.Threading.Tasks.Task<CloudStorageProviders> GetProviderAsync(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<CloudStorageProviders> localVarResponse = await GetProviderAsyncWithHttpInfo(accountId, userId, serviceId, options);
+             ApiResponse<CloudStorageProviders> localVarResponse = await GetProviderAsyncWithHttpInfo(accountId, userId, serviceId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -876,7 +876,7 @@ namespace DocuSign.eSign.Api
         /// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (CloudStorageProviders)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> GetProviderAsyncWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> GetProviderAsyncWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.GetProviderOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -930,7 +930,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1011,9 +1011,9 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ExternalFolder</returns>
-        public async System.Threading.Tasks.Task<ExternalFolder> ListAsync(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null)
+        public async System.Threading.Tasks.Task<ExternalFolder> ListAsync(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<ExternalFolder> localVarResponse = await ListAsyncWithHttpInfo(accountId, userId, serviceId, folderId, options);
+             ApiResponse<ExternalFolder> localVarResponse = await ListAsyncWithHttpInfo(accountId, userId, serviceId, folderId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1027,7 +1027,7 @@ namespace DocuSign.eSign.Api
         /// <param name="folderId">The ID of the folder being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (ExternalFolder)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListAsyncWithHttpInfo(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListAsyncWithHttpInfo(string accountId, string userId, string serviceId, string folderId, CloudStorageApi.ListOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1091,7 +1091,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1167,9 +1167,9 @@ namespace DocuSign.eSign.Api
         /// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ExternalFolder</returns>
-        public async System.Threading.Tasks.Task<ExternalFolder> ListFoldersAsync(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null)
+        public async System.Threading.Tasks.Task<ExternalFolder> ListFoldersAsync(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<ExternalFolder> localVarResponse = await ListFoldersAsyncWithHttpInfo(accountId, userId, serviceId, options);
+             ApiResponse<ExternalFolder> localVarResponse = await ListFoldersAsyncWithHttpInfo(accountId, userId, serviceId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1182,7 +1182,7 @@ namespace DocuSign.eSign.Api
         /// <param name="serviceId">The ID of the service to access.   Valid values are the service name (\&quot;Box\&quot;) or the numerical serviceId (\&quot;4136\&quot;).</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (ExternalFolder)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListFoldersAsyncWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalFolder>> ListFoldersAsyncWithHttpInfo(string accountId, string userId, string serviceId, CloudStorageApi.ListFoldersOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1241,7 +1241,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -1304,9 +1304,9 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of CloudStorageProviders</returns>
-        public async System.Threading.Tasks.Task<CloudStorageProviders> ListProvidersAsync(string accountId, string userId, CloudStorageApi.ListProvidersOptions options = null)
+        public async System.Threading.Tasks.Task<CloudStorageProviders> ListProvidersAsync(string accountId, string userId, CloudStorageApi.ListProvidersOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
-             ApiResponse<CloudStorageProviders> localVarResponse = await ListProvidersAsyncWithHttpInfo(accountId, userId, options);
+             ApiResponse<CloudStorageProviders> localVarResponse = await ListProvidersAsyncWithHttpInfo(accountId, userId, options, cancellationToken);
              return localVarResponse.Data;
         }
 
@@ -1318,7 +1318,7 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (CloudStorageProviders)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> ListProvidersAsyncWithHttpInfo(string accountId, string userId, CloudStorageApi.ListProvidersOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CloudStorageProviders>> ListProvidersAsyncWithHttpInfo(string accountId, string userId, CloudStorageApi.ListProvidersOptions options = null, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1368,7 +1368,7 @@ namespace DocuSign.eSign.Api
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest, cancellationToken)
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 

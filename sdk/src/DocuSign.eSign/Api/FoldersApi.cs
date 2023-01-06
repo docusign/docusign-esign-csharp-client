@@ -282,11 +282,15 @@ namespace DocuSign.eSign.Api
         public class ListOptions
         {
             /// 
+            public string count {get; set;}
+            /// 
             public string include {get; set;}
             /// 
             public string includeItems {get; set;}
             /// 
             public string startPosition {get; set;}
+            /// 
+            public string subFolderDepth {get; set;}
             /// Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned. 
             public string template {get; set;}
             /// 
@@ -375,9 +379,11 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (options != null)
             {
+                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
                 if (options.includeItems != null) localVarQueryParams.Add("include_items", this.ApiClient.ParameterToString(options.includeItems)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                if (options.subFolderDepth != null) localVarQueryParams.Add("sub_folder_depth", this.ApiClient.ParameterToString(options.subFolderDepth)); // query parameter
                 if (options.template != null) localVarQueryParams.Add("template", this.ApiClient.ParameterToString(options.template)); // query parameter
                 if (options.userFilter != null) localVarQueryParams.Add("user_filter", this.ApiClient.ParameterToString(options.userFilter)); // query parameter
             }

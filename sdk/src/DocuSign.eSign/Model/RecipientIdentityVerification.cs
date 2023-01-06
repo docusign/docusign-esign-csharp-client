@@ -41,11 +41,13 @@ namespace DocuSign.eSign.Model
         /// <param name="InputOptions">InputOptions.</param>
         /// <param name="WorkflowId">WorkflowId.</param>
         /// <param name="WorkflowIdMetadata">WorkflowIdMetadata.</param>
-        public RecipientIdentityVerification(List<RecipientIdentityInputOption> InputOptions = default(List<RecipientIdentityInputOption>), string WorkflowId = default(string), PropertyMetadata WorkflowIdMetadata = default(PropertyMetadata))
+        /// <param name="WorkflowLabel">WorkflowLabel.</param>
+        public RecipientIdentityVerification(List<RecipientIdentityInputOption> InputOptions = default(List<RecipientIdentityInputOption>), string WorkflowId = default(string), PropertyMetadata WorkflowIdMetadata = default(PropertyMetadata), string WorkflowLabel = default(string))
         {
             this.InputOptions = InputOptions;
             this.WorkflowId = WorkflowId;
             this.WorkflowIdMetadata = WorkflowIdMetadata;
+            this.WorkflowLabel = WorkflowLabel;
         }
         
         /// <summary>
@@ -64,6 +66,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="workflowIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata WorkflowIdMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets WorkflowLabel
+        /// </summary>
+        [DataMember(Name="workflowLabel", EmitDefaultValue=false)]
+        public string WorkflowLabel { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -74,6 +81,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  InputOptions: ").Append(InputOptions).Append("\n");
             sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
             sb.Append("  WorkflowIdMetadata: ").Append(WorkflowIdMetadata).Append("\n");
+            sb.Append("  WorkflowLabel: ").Append(WorkflowLabel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,6 +132,11 @@ namespace DocuSign.eSign.Model
                     this.WorkflowIdMetadata == other.WorkflowIdMetadata ||
                     this.WorkflowIdMetadata != null &&
                     this.WorkflowIdMetadata.Equals(other.WorkflowIdMetadata)
+                ) && 
+                (
+                    this.WorkflowLabel == other.WorkflowLabel ||
+                    this.WorkflowLabel != null &&
+                    this.WorkflowLabel.Equals(other.WorkflowLabel)
                 );
         }
 
@@ -144,6 +157,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.WorkflowId.GetHashCode();
                 if (this.WorkflowIdMetadata != null)
                     hash = hash * 59 + this.WorkflowIdMetadata.GetHashCode();
+                if (this.WorkflowLabel != null)
+                    hash = hash * 59 + this.WorkflowLabel.GetHashCode();
                 return hash;
             }
         }

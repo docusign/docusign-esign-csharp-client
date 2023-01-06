@@ -54,6 +54,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AutoNavigation">AutoNavigation.</param>
         /// <param name="BrandId">This sets the brand profile format used for the envelope. The value in the string is the brandId associated with the profile. Account branding must be enabled for the account to use this option..</param>
         /// <param name="BrandLock">BrandLock.</param>
+        /// <param name="BurnDefaultTabData">BurnDefaultTabData.</param>
         /// <param name="CertificateUri">Retrieves a URI for an endpoint that allows you to easily retrieve certificate information..</param>
         /// <param name="CompletedDateTime">Specifies the date and time this item was completed..</param>
         /// <param name="CompositeTemplates">A complex type that can be added to create envelopes from a combination of DocuSign templates and PDF forms. The basic envelope remains the same, while the Composite Template adds new document and template overlays into the envelope. There can be any number of Composite Template structures in the envelope..</param>
@@ -127,7 +128,7 @@ namespace DocuSign.eSign.Model
         /// <param name="VoidedDateTime">The date and time the envelope or template was voided..</param>
         /// <param name="VoidedReason">The reason the envelope or template was voided..</param>
         /// <param name="Workflow">Describes the workflow for this envelope..</param>
-        public EnvelopeDefinition(string AccessControlListBase64 = default(string), string Accessibility = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowRecipientRecursion = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string Asynchronous = default(string), List<Attachment> Attachments = default(List<Attachment>), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), List<CompositeTemplate> CompositeTemplates = default(List<CompositeTemplate>), string CopyRecipientData = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), string DocumentBase64 = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), EnvelopeCustomMetadata EnvelopeCustomMetadata = default(EnvelopeCustomMetadata), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), EventNotification EventNotification = default(EventNotification), List<EventNotification> EventNotifications = default(List<EventNotification>), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), List<Folder> Folders = default(List<Folder>), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string LastModifiedDateTime = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), string Password = default(string), PowerForm PowerForm = default(PowerForm), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), RecipientViewRequest RecipientViewRequest = default(RecipientViewRequest), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string StatusDateTime = default(string), string TemplateId = default(string), List<TemplateRole> TemplateRoles = default(List<TemplateRole>), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string), Workflow Workflow = default(Workflow))
+        public EnvelopeDefinition(string AccessControlListBase64 = default(string), string Accessibility = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowRecipientRecursion = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string Asynchronous = default(string), List<Attachment> Attachments = default(List<Attachment>), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string BurnDefaultTabData = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), List<CompositeTemplate> CompositeTemplates = default(List<CompositeTemplate>), string CopyRecipientData = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), string DocumentBase64 = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), EnvelopeCustomMetadata EnvelopeCustomMetadata = default(EnvelopeCustomMetadata), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), EventNotification EventNotification = default(EventNotification), List<EventNotification> EventNotifications = default(List<EventNotification>), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), List<Folder> Folders = default(List<Folder>), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string LastModifiedDateTime = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), string Password = default(string), PowerForm PowerForm = default(PowerForm), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), RecipientViewRequest RecipientViewRequest = default(RecipientViewRequest), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string StatusDateTime = default(string), string TemplateId = default(string), List<TemplateRole> TemplateRoles = default(List<TemplateRole>), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string), Workflow Workflow = default(Workflow))
         {
             this.AccessControlListBase64 = AccessControlListBase64;
             this.Accessibility = Accessibility;
@@ -145,6 +146,7 @@ namespace DocuSign.eSign.Model
             this.AutoNavigation = AutoNavigation;
             this.BrandId = BrandId;
             this.BrandLock = BrandLock;
+            this.BurnDefaultTabData = BurnDefaultTabData;
             this.CertificateUri = CertificateUri;
             this.CompletedDateTime = CompletedDateTime;
             this.CompositeTemplates = CompositeTemplates;
@@ -307,6 +309,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="brandLock", EmitDefaultValue=false)]
         public string BrandLock { get; set; }
+        /// <summary>
+        /// Gets or Sets BurnDefaultTabData
+        /// </summary>
+        [DataMember(Name="burnDefaultTabData", EmitDefaultValue=false)]
+        public string BurnDefaultTabData { get; set; }
         /// <summary>
         /// Retrieves a URI for an endpoint that allows you to easily retrieve certificate information.
         /// </summary>
@@ -741,6 +748,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AutoNavigation: ").Append(AutoNavigation).Append("\n");
             sb.Append("  BrandId: ").Append(BrandId).Append("\n");
             sb.Append("  BrandLock: ").Append(BrandLock).Append("\n");
+            sb.Append("  BurnDefaultTabData: ").Append(BurnDefaultTabData).Append("\n");
             sb.Append("  CertificateUri: ").Append(CertificateUri).Append("\n");
             sb.Append("  CompletedDateTime: ").Append(CompletedDateTime).Append("\n");
             sb.Append("  CompositeTemplates: ").Append(CompositeTemplates).Append("\n");
@@ -929,6 +937,11 @@ namespace DocuSign.eSign.Model
                     this.BrandLock == other.BrandLock ||
                     this.BrandLock != null &&
                     this.BrandLock.Equals(other.BrandLock)
+                ) && 
+                (
+                    this.BurnDefaultTabData == other.BurnDefaultTabData ||
+                    this.BurnDefaultTabData != null &&
+                    this.BurnDefaultTabData.Equals(other.BurnDefaultTabData)
                 ) && 
                 (
                     this.CertificateUri == other.CertificateUri ||
@@ -1340,6 +1353,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.BrandId.GetHashCode();
                 if (this.BrandLock != null)
                     hash = hash * 59 + this.BrandLock.GetHashCode();
+                if (this.BurnDefaultTabData != null)
+                    hash = hash * 59 + this.BurnDefaultTabData.GetHashCode();
                 if (this.CertificateUri != null)
                     hash = hash * 59 + this.CertificateUri.GetHashCode();
                 if (this.CompletedDateTime != null)

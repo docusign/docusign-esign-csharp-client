@@ -90,8 +90,9 @@ namespace DocuSign.eSign.Model
         /// <param name="Underline">When set to **true**, the information in the tab is underlined..</param>
         /// <param name="ValidationMessage">The message displayed if the custom tab fails input validation (either custom of embedded)..</param>
         /// <param name="ValidationPattern">A regular expression used to validate input for the tab..</param>
+        /// <param name="ValidationType">ValidationType.</param>
         /// <param name="Width">Width of the tab in pixels..</param>
-        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string Collaborative = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), LocalePolicyTab LocalePolicy = default(LocalePolicyTab), string Locked = default(string), string MaximumLength = default(string), string MaxNumericalValue = default(string), MergeField MergeField = default(MergeField), string MinNumericalValue = default(string), string Name = default(string), string NumericalValue = default(string), string PaymentItemCode = default(string), string PaymentItemDescription = default(string), string PaymentItemName = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string ScaleValue = default(string), string Selected = default(string), string Shared = default(string), string SignatureProviderId = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string Width = default(string))
+        public TabMetadata(string Anchor = default(string), string AnchorCaseSensitive = default(string), string AnchorHorizontalAlignment = default(string), string AnchorIgnoreIfNotPresent = default(string), string AnchorMatchWholeWord = default(string), string AnchorUnits = default(string), string AnchorXOffset = default(string), string AnchorYOffset = default(string), string Bold = default(string), string Collaborative = default(string), string ConcealValueOnDocument = default(string), string CreatedByDisplayName = default(string), string CreatedByUserId = default(string), string CustomTabId = default(string), string DisableAutoSize = default(string), string Editable = default(string), string Font = default(string), string FontColor = default(string), string FontSize = default(string), string Height = default(string), string IncludedInEmail = default(string), string InitialValue = default(string), string Italic = default(string), List<string> Items = default(List<string>), string LastModified = default(string), string LastModifiedByDisplayName = default(string), string LastModifiedByUserId = default(string), LocalePolicyTab LocalePolicy = default(LocalePolicyTab), string Locked = default(string), string MaximumLength = default(string), string MaxNumericalValue = default(string), MergeField MergeField = default(MergeField), string MinNumericalValue = default(string), string Name = default(string), string NumericalValue = default(string), string PaymentItemCode = default(string), string PaymentItemDescription = default(string), string PaymentItemName = default(string), string RequireAll = default(string), string Required = default(string), string RequireInitialOnSharedChange = default(string), string ScaleValue = default(string), string Selected = default(string), string Shared = default(string), string SignatureProviderId = default(string), string StampType = default(string), PropertyMetadata StampTypeMetadata = default(PropertyMetadata), string TabLabel = default(string), string Type = default(string), string Underline = default(string), string ValidationMessage = default(string), string ValidationPattern = default(string), string ValidationType = default(string), string Width = default(string))
         {
             this.Anchor = Anchor;
             this.AnchorCaseSensitive = AnchorCaseSensitive;
@@ -145,6 +146,7 @@ namespace DocuSign.eSign.Model
             this.Underline = Underline;
             this.ValidationMessage = ValidationMessage;
             this.ValidationPattern = ValidationPattern;
+            this.ValidationType = ValidationType;
             this.Width = Width;
         }
         
@@ -449,6 +451,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="validationPattern", EmitDefaultValue=false)]
         public string ValidationPattern { get; set; }
         /// <summary>
+        /// Gets or Sets ValidationType
+        /// </summary>
+        [DataMember(Name="validationType", EmitDefaultValue=false)]
+        public string ValidationType { get; set; }
+        /// <summary>
         /// Width of the tab in pixels.
         /// </summary>
         /// <value>Width of the tab in pixels.</value>
@@ -514,6 +521,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Underline: ").Append(Underline).Append("\n");
             sb.Append("  ValidationMessage: ").Append(ValidationMessage).Append("\n");
             sb.Append("  ValidationPattern: ").Append(ValidationPattern).Append("\n");
+            sb.Append("  ValidationType: ").Append(ValidationType).Append("\n");
             sb.Append("  Width: ").Append(Width).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -812,6 +820,11 @@ namespace DocuSign.eSign.Model
                     this.ValidationPattern.Equals(other.ValidationPattern)
                 ) && 
                 (
+                    this.ValidationType == other.ValidationType ||
+                    this.ValidationType != null &&
+                    this.ValidationType.Equals(other.ValidationType)
+                ) && 
+                (
                     this.Width == other.Width ||
                     this.Width != null &&
                     this.Width.Equals(other.Width)
@@ -933,6 +946,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ValidationMessage.GetHashCode();
                 if (this.ValidationPattern != null)
                     hash = hash * 59 + this.ValidationPattern.GetHashCode();
+                if (this.ValidationType != null)
+                    hash = hash * 59 + this.ValidationType.GetHashCode();
                 if (this.Width != null)
                     hash = hash * 59 + this.Width.GetHashCode();
                 return hash;

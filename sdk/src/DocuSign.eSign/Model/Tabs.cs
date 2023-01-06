@@ -64,6 +64,7 @@ namespace DocuSign.eSign.Model
         /// <param name="NotarySealTabs">NotarySealTabs.</param>
         /// <param name="NoteTabs">Specifies a location on the document where you want to place additional information, in the form of a note, for a recipient..</param>
         /// <param name="NumberTabs">Specifies a tag on the document where you want the recipient to enter a number. It uses the same parameters as a Text tab, with the validation message and pattern set for number information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response. .</param>
+        /// <param name="NumericalTabs">NumericalTabs.</param>
         /// <param name="PhoneNumberTabs">PhoneNumberTabs.</param>
         /// <param name="PolyLineOverlayTabs">PolyLineOverlayTabs.</param>
         /// <param name="PrefillTabs">Prefill tabs are tabs that the sender can fill in before the envelope is sent. They are sometimes called sender tags or pre-fill fields.   [Pre-Fill Your Own Document Fields][app] describes how prefill tabs work in the web application.   [Customize your envelopes with pre-fill fields][catblog] shows how to use prefill tabs in your application using the eSignature SDKs.  [app]:      https://support.docusign.com/en/guides/ndse-user-guide-prefill-fields [catblog]:  https://www.docusign.com/blog/developers/common-api-tasks-customize-your-envelopes-pre-fill-fields.</param>
@@ -77,7 +78,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TitleTabs">Specifies a tag on the document where you want the recipient&#39;s title to appear.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
         /// <param name="ViewTabs">ViewTabs.</param>
         /// <param name="ZipTabs">Specifies a tag on the document where you want the recipient to enter a ZIP code. The ZIP code can be a five numbers or the ZIP+4 format with nine numbers. The zip code can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for ZIP code information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response..</param>
-        public Tabs(List<Approve> ApproveTabs = default(List<Approve>), List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<CommentThread> CommentThreadTabs = default(List<CommentThread>), List<CommissionCounty> CommissionCountyTabs = default(List<CommissionCounty>), List<CommissionExpiration> CommissionExpirationTabs = default(List<CommissionExpiration>), List<CommissionNumber> CommissionNumberTabs = default(List<CommissionNumber>), List<CommissionState> CommissionStateTabs = default(List<CommissionState>), List<Company> CompanyTabs = default(List<Company>), List<Currency> CurrencyTabs = default(List<Currency>), List<DateSigned> DateSignedTabs = default(List<DateSigned>), List<DocuSign.eSign.Model.Date> DateTabs = default(List<DocuSign.eSign.Model.Date>), List<Decline> DeclineTabs = default(List<Decline>), List<Draw> DrawTabs = default(List<Draw>), List<EmailAddress> EmailAddressTabs = default(List<EmailAddress>), List<Email> EmailTabs = default(List<Email>), List<EnvelopeId> EnvelopeIdTabs = default(List<EnvelopeId>), List<FirstName> FirstNameTabs = default(List<FirstName>), List<FormulaTab> FormulaTabs = default(List<FormulaTab>), List<FullName> FullNameTabs = default(List<FullName>), List<InitialHere> InitialHereTabs = default(List<InitialHere>), List<LastName> LastNameTabs = default(List<LastName>), List<List> ListTabs = default(List<List>), List<Notarize> NotarizeTabs = default(List<Notarize>), List<NotarySeal> NotarySealTabs = default(List<NotarySeal>), List<Note> NoteTabs = default(List<Note>), List<Number> NumberTabs = default(List<Number>), List<PhoneNumber> PhoneNumberTabs = default(List<PhoneNumber>), List<PolyLineOverlay> PolyLineOverlayTabs = default(List<PolyLineOverlay>), PrefillTabs PrefillTabs = default(PrefillTabs), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SignerAttachment> SignerAttachmentTabs = default(List<SignerAttachment>), List<SignHere> SignHereTabs = default(List<SignHere>), List<SmartSection> SmartSectionTabs = default(List<SmartSection>), List<Ssn> SsnTabs = default(List<Ssn>), List<TabGroup> TabGroups = default(List<TabGroup>), List<Text> TextTabs = default(List<Text>), List<Title> TitleTabs = default(List<Title>), List<View> ViewTabs = default(List<View>), List<Zip> ZipTabs = default(List<Zip>))
+        public Tabs(List<Approve> ApproveTabs = default(List<Approve>), List<Checkbox> CheckboxTabs = default(List<Checkbox>), List<CommentThread> CommentThreadTabs = default(List<CommentThread>), List<CommissionCounty> CommissionCountyTabs = default(List<CommissionCounty>), List<CommissionExpiration> CommissionExpirationTabs = default(List<CommissionExpiration>), List<CommissionNumber> CommissionNumberTabs = default(List<CommissionNumber>), List<CommissionState> CommissionStateTabs = default(List<CommissionState>), List<Company> CompanyTabs = default(List<Company>), List<Currency> CurrencyTabs = default(List<Currency>), List<DateSigned> DateSignedTabs = default(List<DateSigned>), List<DocuSign.eSign.Model.Date> DateTabs = default(List<DocuSign.eSign.Model.Date>), List<Decline> DeclineTabs = default(List<Decline>), List<Draw> DrawTabs = default(List<Draw>), List<EmailAddress> EmailAddressTabs = default(List<EmailAddress>), List<Email> EmailTabs = default(List<Email>), List<EnvelopeId> EnvelopeIdTabs = default(List<EnvelopeId>), List<FirstName> FirstNameTabs = default(List<FirstName>), List<FormulaTab> FormulaTabs = default(List<FormulaTab>), List<FullName> FullNameTabs = default(List<FullName>), List<InitialHere> InitialHereTabs = default(List<InitialHere>), List<LastName> LastNameTabs = default(List<LastName>), List<List> ListTabs = default(List<List>), List<Notarize> NotarizeTabs = default(List<Notarize>), List<NotarySeal> NotarySealTabs = default(List<NotarySeal>), List<Note> NoteTabs = default(List<Note>), List<Number> NumberTabs = default(List<Number>), List<Numerical> NumericalTabs = default(List<Numerical>), List<PhoneNumber> PhoneNumberTabs = default(List<PhoneNumber>), List<PolyLineOverlay> PolyLineOverlayTabs = default(List<PolyLineOverlay>), PrefillTabs PrefillTabs = default(PrefillTabs), List<RadioGroup> RadioGroupTabs = default(List<RadioGroup>), List<SignerAttachment> SignerAttachmentTabs = default(List<SignerAttachment>), List<SignHere> SignHereTabs = default(List<SignHere>), List<SmartSection> SmartSectionTabs = default(List<SmartSection>), List<Ssn> SsnTabs = default(List<Ssn>), List<TabGroup> TabGroups = default(List<TabGroup>), List<Text> TextTabs = default(List<Text>), List<Title> TitleTabs = default(List<Title>), List<View> ViewTabs = default(List<View>), List<Zip> ZipTabs = default(List<Zip>))
         {
             this.ApproveTabs = ApproveTabs;
             this.CheckboxTabs = CheckboxTabs;
@@ -105,6 +106,7 @@ namespace DocuSign.eSign.Model
             this.NotarySealTabs = NotarySealTabs;
             this.NoteTabs = NoteTabs;
             this.NumberTabs = NumberTabs;
+            this.NumericalTabs = NumericalTabs;
             this.PhoneNumberTabs = PhoneNumberTabs;
             this.PolyLineOverlayTabs = PolyLineOverlayTabs;
             this.PrefillTabs = PrefillTabs;
@@ -268,6 +270,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="numberTabs", EmitDefaultValue=false)]
         public List<Number> NumberTabs { get; set; }
         /// <summary>
+        /// Gets or Sets NumericalTabs
+        /// </summary>
+        [DataMember(Name="numericalTabs", EmitDefaultValue=false)]
+        public List<Numerical> NumericalTabs { get; set; }
+        /// <summary>
         /// Gets or Sets PhoneNumberTabs
         /// </summary>
         [DataMember(Name="phoneNumberTabs", EmitDefaultValue=false)]
@@ -374,6 +381,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  NotarySealTabs: ").Append(NotarySealTabs).Append("\n");
             sb.Append("  NoteTabs: ").Append(NoteTabs).Append("\n");
             sb.Append("  NumberTabs: ").Append(NumberTabs).Append("\n");
+            sb.Append("  NumericalTabs: ").Append(NumericalTabs).Append("\n");
             sb.Append("  PhoneNumberTabs: ").Append(PhoneNumberTabs).Append("\n");
             sb.Append("  PolyLineOverlayTabs: ").Append(PolyLineOverlayTabs).Append("\n");
             sb.Append("  PrefillTabs: ").Append(PrefillTabs).Append("\n");
@@ -554,6 +562,11 @@ namespace DocuSign.eSign.Model
                     this.NumberTabs.SequenceEqual(other.NumberTabs)
                 ) && 
                 (
+                    this.NumericalTabs == other.NumericalTabs ||
+                    this.NumericalTabs != null &&
+                    this.NumericalTabs.SequenceEqual(other.NumericalTabs)
+                ) && 
+                (
                     this.PhoneNumberTabs == other.PhoneNumberTabs ||
                     this.PhoneNumberTabs != null &&
                     this.PhoneNumberTabs.SequenceEqual(other.PhoneNumberTabs)
@@ -683,6 +696,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.NoteTabs.GetHashCode();
                 if (this.NumberTabs != null)
                     hash = hash * 59 + this.NumberTabs.GetHashCode();
+                if (this.NumericalTabs != null)
+                    hash = hash * 59 + this.NumericalTabs.GetHashCode();
                 if (this.PhoneNumberTabs != null)
                     hash = hash * 59 + this.PhoneNumberTabs.GetHashCode();
                 if (this.PolyLineOverlayTabs != null)

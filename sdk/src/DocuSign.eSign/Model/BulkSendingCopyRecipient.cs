@@ -51,6 +51,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IdCheckConfigurationName">Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as &#39;ID Check $&#39; and &#39;SMS Auth $&#39;. To use ID check in an envelope, the idCheckConfigurationName should be &#39;ID Check &#39;. If you wanted to use SMS, it would be &#39;SMS Auth $&#39; and you would need to add you would need to add phone number information to the &#x60;smsAuthentication&#x60; node..</param>
         /// <param name="IdCheckInformationInput">An object that contains input information related to a recipient ID check..</param>
         /// <param name="IdentificationMethod">IdentificationMethod.</param>
+        /// <param name="IdentityVerification">IdentityVerification.</param>
         /// <param name="Name">Name.</param>
         /// <param name="Note">Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters..</param>
         /// <param name="PhoneAuthentication">When &#x60;idCheckConfigurationName&#x60; is set to &#x60;Phone Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * &#x60;recipMayProvideNumber&#x60;: Boolean. When **true,** the recipient can use whatever phone number they choose. * &#x60;senderProvidedNumbers&#x60;: ArrayOfStrings.  A list of phone numbers the recipient can use. * &#x60;recordVoicePrint&#x60;: Reserved for DocuSign. * &#x60;validateRecipProvidedNumber&#x60;: Reserved for DocuSign.  .</param>
@@ -62,7 +63,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SmsAuthentication">When &#x60;idCheckConfigurationName&#x60; is set to &#x60;SMS Auth $&#x60;, you use this complex type to provide the recipient authentication method details. It contains the element &#x60;senderProvidedNumbers&#x60;, which is an array of phone numbers that the recipient can use for SMS text authentication.   .</param>
         /// <param name="SocialAuthentications"> Lists the social ID type that can be used for recipient authentication..</param>
         /// <param name="Tabs">Tabs.</param>
-        public BulkSendingCopyRecipient(string AccessCode = default(string), string ClientUserId = default(string), List<string> CustomFields = default(List<string>), string DeliveryMethod = default(string), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), string FaxNumber = default(string), string HostEmail = default(string), string HostName = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string IdentificationMethod = default(string), string Name = default(string), string Note = default(string), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), string RecipientId = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RoleName = default(string), string SignerName = default(string), string SigningGroupId = default(string), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), List<BulkSendingCopyTab> Tabs = default(List<BulkSendingCopyTab>))
+        public BulkSendingCopyRecipient(string AccessCode = default(string), string ClientUserId = default(string), List<string> CustomFields = default(List<string>), string DeliveryMethod = default(string), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), string FaxNumber = default(string), string HostEmail = default(string), string HostName = default(string), string IdCheckConfigurationName = default(string), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), string IdentificationMethod = default(string), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string Name = default(string), string Note = default(string), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), string RecipientId = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RoleName = default(string), string SignerName = default(string), string SigningGroupId = default(string), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), List<BulkSendingCopyTab> Tabs = default(List<BulkSendingCopyTab>))
         {
             this.AccessCode = AccessCode;
             this.ClientUserId = ClientUserId;
@@ -77,6 +78,7 @@ namespace DocuSign.eSign.Model
             this.IdCheckConfigurationName = IdCheckConfigurationName;
             this.IdCheckInformationInput = IdCheckInformationInput;
             this.IdentificationMethod = IdentificationMethod;
+            this.IdentityVerification = IdentityVerification;
             this.Name = Name;
             this.Note = Note;
             this.PhoneAuthentication = PhoneAuthentication;
@@ -165,6 +167,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="identificationMethod", EmitDefaultValue=false)]
         public string IdentificationMethod { get; set; }
         /// <summary>
+        /// Gets or Sets IdentityVerification
+        /// </summary>
+        [DataMember(Name="identityVerification", EmitDefaultValue=false)]
+        public RecipientIdentityVerification IdentityVerification { get; set; }
+        /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name="name", EmitDefaultValue=false)]
@@ -247,6 +254,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IdCheckConfigurationName: ").Append(IdCheckConfigurationName).Append("\n");
             sb.Append("  IdCheckInformationInput: ").Append(IdCheckInformationInput).Append("\n");
             sb.Append("  IdentificationMethod: ").Append(IdentificationMethod).Append("\n");
+            sb.Append("  IdentityVerification: ").Append(IdentityVerification).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
             sb.Append("  PhoneAuthentication: ").Append(PhoneAuthentication).Append("\n");
@@ -360,6 +368,11 @@ namespace DocuSign.eSign.Model
                     this.IdentificationMethod.Equals(other.IdentificationMethod)
                 ) && 
                 (
+                    this.IdentityVerification == other.IdentityVerification ||
+                    this.IdentityVerification != null &&
+                    this.IdentityVerification.Equals(other.IdentityVerification)
+                ) && 
+                (
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
@@ -453,6 +466,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IdCheckInformationInput.GetHashCode();
                 if (this.IdentificationMethod != null)
                     hash = hash * 59 + this.IdentificationMethod.GetHashCode();
+                if (this.IdentityVerification != null)
+                    hash = hash * 59 + this.IdentityVerification.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Note != null)

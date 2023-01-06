@@ -3019,33 +3019,6 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<DocumentVisibilityList> UpdateRecipientsDocumentVisibilityWithHttpInfo(string accountId, string envelopeId, DocumentVisibilityList documentVisibilityList = null);
         /// <summary>
-        /// Retrieves a PDF document from the envelope with no CoC.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="regenDocumentId"></param>
-        /// <param name="document"> (optional)</param>
-        /// <returns></returns>
-        System.IO.Stream UpdateRegenDocument(string accountId, string envelopeId, string regenDocumentId, Document document = null);
-
-        /// <summary>
-        /// Retrieves a PDF document from the envelope with no CoC.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="regenDocumentId"></param>
-        /// <param name="document"> (optional)</param>
-        /// <returns>ApiResponse of </returns>
-        ApiResponse<System.IO.Stream> UpdateRegenDocumentWithHttpInfo(string accountId, string envelopeId, string regenDocumentId, Document document = null);
-        /// <summary>
         /// Updates the tabs for a recipient.  
         /// </summary>
         /// <remarks>
@@ -6248,33 +6221,6 @@ namespace DocuSign.eSign.Api
         /// <param name="documentVisibilityList"> (optional)</param>
         /// <returns>Task of ApiResponse (DocumentVisibilityList)</returns>
         System.Threading.Tasks.Task<ApiResponse<DocumentVisibilityList>> UpdateRecipientsDocumentVisibilityAsyncWithHttpInfo(string accountId, string envelopeId, DocumentVisibilityList documentVisibilityList = null);
-        /// <summary>
-        /// Retrieves a PDF document from the envelope with no CoC.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="regenDocumentId"></param>
-        /// <param name="document"> (optional)</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> UpdateRegenDocumentAsync(string accountId, string envelopeId, string regenDocumentId, Document document = null);
-
-        /// <summary>
-        /// Retrieves a PDF document from the envelope with no CoC.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="regenDocumentId"></param>
-        /// <param name="document"> (optional)</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> UpdateRegenDocumentAsyncWithHttpInfo(string accountId, string envelopeId, string regenDocumentId, Document document = null);
         /// <summary>
         /// Updates the tabs for a recipient.  
         /// </summary>
@@ -13273,7 +13219,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         public class GetConsumerDisclosureOptions
         {
-            /// The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language. 
+            /// The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language. 
             public string langCode2 {get; set;}
         }
 
@@ -21418,137 +21364,6 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<DocumentVisibilityList>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (DocumentVisibilityList)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentVisibilityList)));
-        }
-
-
-
-        /// <summary>
-        /// Retrieves a PDF document from the envelope with no CoC. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="regenDocumentId"></param>
-        /// <param name="document"> (optional)</param>
-        /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream UpdateRegenDocument(string accountId, string envelopeId, string regenDocumentId, Document document = null)
-        {
-             ApiResponse<System.IO.Stream> localVarResponse = UpdateRegenDocumentWithHttpInfo(accountId, envelopeId, regenDocumentId, document);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Retrieves a PDF document from the envelope with no CoC. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="regenDocumentId"></param>
-        /// <param name="document"> (optional)</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        public ApiResponse<System.IO.Stream> UpdateRegenDocumentWithHttpInfo(string accountId, string envelopeId, string regenDocumentId, Document document = null)
-        {
-            return UpdateRegenDocumentAsyncWithHttpInfo(accountId, envelopeId, regenDocumentId, document)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
-        }
-
-        /// <summary>
-        /// Retrieves a PDF document from the envelope with no CoC. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="regenDocumentId"></param>
-        /// <param name="document"> (optional)</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> UpdateRegenDocumentAsync(string accountId, string envelopeId, string regenDocumentId, Document document = null)
-        {
-             ApiResponse<System.IO.Stream> localVarResponse = await UpdateRegenDocumentAsyncWithHttpInfo(accountId, envelopeId, regenDocumentId, document);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Retrieves a PDF document from the envelope with no CoC. 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="regenDocumentId"></param>
-        /// <param name="document"> (optional)</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> UpdateRegenDocumentAsyncWithHttpInfo(string accountId, string envelopeId, string regenDocumentId, Document document = null)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->UpdateRegenDocument");
-            // verify the required parameter 'envelopeId' is set
-            if (envelopeId == null)
-                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->UpdateRegenDocument");
-            // verify the required parameter 'regenDocumentId' is set
-            if (regenDocumentId == null)
-                throw new ApiException(400, "Missing required parameter 'regenDocumentId' when calling EnvelopesApi->UpdateRegenDocument");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{regenDocumentId}/regen";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/pdf"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (regenDocumentId != null) localVarPathParams.Add("regenDocumentId", this.ApiClient.ParameterToString(regenDocumentId)); // path parameter
-            if (document != null && document.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(document); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = document; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateRegenDocument", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<System.IO.Stream>(localVarStatusCode, 
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
         }
 
 

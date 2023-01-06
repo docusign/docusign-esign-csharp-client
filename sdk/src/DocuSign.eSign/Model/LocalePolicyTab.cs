@@ -51,7 +51,8 @@ namespace DocuSign.eSign.Model
         /// <param name="NameFormat">NameFormat.</param>
         /// <param name="TimeFormat">TimeFormat.</param>
         /// <param name="TimeZone">TimeZone.</param>
-        public LocalePolicyTab(string AddressFormat = default(string), string CalendarType = default(string), string CultureName = default(string), string CurrencyCode = default(string), string CurrencyNegativeFormat = default(string), string CurrencyPositiveFormat = default(string), string CustomDateFormat = default(string), string CustomTimeFormat = default(string), string DateFormat = default(string), string InitialFormat = default(string), string NameFormat = default(string), string TimeFormat = default(string), string TimeZone = default(string))
+        /// <param name="UseLongCurrencyFormat">UseLongCurrencyFormat.</param>
+        public LocalePolicyTab(string AddressFormat = default(string), string CalendarType = default(string), string CultureName = default(string), string CurrencyCode = default(string), string CurrencyNegativeFormat = default(string), string CurrencyPositiveFormat = default(string), string CustomDateFormat = default(string), string CustomTimeFormat = default(string), string DateFormat = default(string), string InitialFormat = default(string), string NameFormat = default(string), string TimeFormat = default(string), string TimeZone = default(string), string UseLongCurrencyFormat = default(string))
         {
             this.AddressFormat = AddressFormat;
             this.CalendarType = CalendarType;
@@ -66,6 +67,7 @@ namespace DocuSign.eSign.Model
             this.NameFormat = NameFormat;
             this.TimeFormat = TimeFormat;
             this.TimeZone = TimeZone;
+            this.UseLongCurrencyFormat = UseLongCurrencyFormat;
         }
         
         /// <summary>
@@ -134,6 +136,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="timeZone", EmitDefaultValue=false)]
         public string TimeZone { get; set; }
         /// <summary>
+        /// Gets or Sets UseLongCurrencyFormat
+        /// </summary>
+        [DataMember(Name="useLongCurrencyFormat", EmitDefaultValue=false)]
+        public string UseLongCurrencyFormat { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -154,6 +161,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  NameFormat: ").Append(NameFormat).Append("\n");
             sb.Append("  TimeFormat: ").Append(TimeFormat).Append("\n");
             sb.Append("  TimeZone: ").Append(TimeZone).Append("\n");
+            sb.Append("  UseLongCurrencyFormat: ").Append(UseLongCurrencyFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -254,6 +262,11 @@ namespace DocuSign.eSign.Model
                     this.TimeZone == other.TimeZone ||
                     this.TimeZone != null &&
                     this.TimeZone.Equals(other.TimeZone)
+                ) && 
+                (
+                    this.UseLongCurrencyFormat == other.UseLongCurrencyFormat ||
+                    this.UseLongCurrencyFormat != null &&
+                    this.UseLongCurrencyFormat.Equals(other.UseLongCurrencyFormat)
                 );
         }
 
@@ -294,6 +307,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.TimeFormat.GetHashCode();
                 if (this.TimeZone != null)
                     hash = hash * 59 + this.TimeZone.GetHashCode();
+                if (this.UseLongCurrencyFormat != null)
+                    hash = hash * 59 + this.UseLongCurrencyFormat.GetHashCode();
                 return hash;
             }
         }

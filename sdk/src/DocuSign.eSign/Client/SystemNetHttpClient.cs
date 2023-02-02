@@ -10,6 +10,7 @@
 
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -47,9 +48,24 @@ namespace DocuSign.eSign.Client
             {
                 var response = await this.SendHttpRequestAsync(request, cancellationToken).ConfigureAwait(false);
 
+                IDictionary<string, string> combinedHeaders = new Dictionary<string, string>();
+                response.Headers.ToList().ForEach((kvp) =>
+                {
+                    if (!combinedHeaders.ContainsKey(kvp.Key))
+                    {
+                        combinedHeaders.Add(kvp.Key, kvp.Value.FirstOrDefault());
+                    }
+                });
+                response.Content.Headers.ToList().ForEach((kvp) => {
+                    if (!combinedHeaders.ContainsKey(kvp.Key))
+                    {
+                        combinedHeaders.Add(kvp.Key, kvp.Value.FirstOrDefault());
+                    }
+                });
+
                 return new DocuSignResponse(
                     response.StatusCode,
-                    response.Headers.ToDictionary(x => x.Key, x => x.Value.FirstOrDefault()),
+                    combinedHeaders,
                     await response.Content.ReadAsByteArrayAsync().ConfigureAwait(false),
                     response.Content.Headers?.ContentType?.MediaType);
             }

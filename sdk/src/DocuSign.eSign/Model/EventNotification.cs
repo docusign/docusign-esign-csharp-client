@@ -51,6 +51,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IncludeOAuth">IncludeOAuth.</param>
         /// <param name="IncludeSenderAccountAsCustomField">When set to **true**, the sender account ID is included as a envelope custom field in the data. .</param>
         /// <param name="IncludeTimeZone">When set to **true**, the envelope time zone information is included in the message. .</param>
+        /// <param name="IntegratorManaged">IntegratorManaged.</param>
         /// <param name="LoggingEnabled">When set to **true**, logging is turned on for envelope events on the Web Console Connect page. .</param>
         /// <param name="RecipientEvents">A list of recipient event statuses that will trigger Connect to send updates to   the endpoint specified in the url property.  To receive notifications, you must include either an &#x60;envelopeEvents&#x60; node or a &#x60;recipientEvents&#x60; node. You do not need to specify both..</param>
         /// <param name="RequireAcknowledgment">When set to **true**, the DocuSign Connect service checks that the message was received and retries on failures. .</param>
@@ -58,7 +59,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SoapNameSpace">This lists the namespace in the SOAP listener provided..</param>
         /// <param name="Url">Specifies the endpoint to which envelope updates are sent. Udpates are sent as XML unless &#x60;useSoapInterface&#x60; property is set to **true**..</param>
         /// <param name="UseSoapInterface">When set to **true**, this tells the Connect service that the user&#39;s endpoint has implemented a SOAP interface. .</param>
-        public EventNotification(string DeliveryMode = default(string), List<EnvelopeEvent> EnvelopeEvents = default(List<EnvelopeEvent>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertificateWithSoap = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeOAuth = default(string), string IncludeSenderAccountAsCustomField = default(string), string IncludeTimeZone = default(string), string LoggingEnabled = default(string), List<RecipientEvent> RecipientEvents = default(List<RecipientEvent>), string RequireAcknowledgment = default(string), string SignMessageWithX509Cert = default(string), string SoapNameSpace = default(string), string Url = default(string), string UseSoapInterface = default(string))
+        public EventNotification(string DeliveryMode = default(string), List<EnvelopeEvent> EnvelopeEvents = default(List<EnvelopeEvent>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertificateWithSoap = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeOAuth = default(string), string IncludeSenderAccountAsCustomField = default(string), string IncludeTimeZone = default(string), string IntegratorManaged = default(string), string LoggingEnabled = default(string), List<RecipientEvent> RecipientEvents = default(List<RecipientEvent>), string RequireAcknowledgment = default(string), string SignMessageWithX509Cert = default(string), string SoapNameSpace = default(string), string Url = default(string), string UseSoapInterface = default(string))
         {
             this.DeliveryMode = DeliveryMode;
             this.EnvelopeEvents = EnvelopeEvents;
@@ -73,6 +74,7 @@ namespace DocuSign.eSign.Model
             this.IncludeOAuth = IncludeOAuth;
             this.IncludeSenderAccountAsCustomField = IncludeSenderAccountAsCustomField;
             this.IncludeTimeZone = IncludeTimeZone;
+            this.IntegratorManaged = IntegratorManaged;
             this.LoggingEnabled = LoggingEnabled;
             this.RecipientEvents = RecipientEvents;
             this.RequireAcknowledgment = RequireAcknowledgment;
@@ -157,6 +159,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includeTimeZone", EmitDefaultValue=false)]
         public string IncludeTimeZone { get; set; }
         /// <summary>
+        /// Gets or Sets IntegratorManaged
+        /// </summary>
+        [DataMember(Name="integratorManaged", EmitDefaultValue=false)]
+        public string IntegratorManaged { get; set; }
+        /// <summary>
         /// When set to **true**, logging is turned on for envelope events on the Web Console Connect page. 
         /// </summary>
         /// <value>When set to **true**, logging is turned on for envelope events on the Web Console Connect page. </value>
@@ -219,6 +226,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IncludeOAuth: ").Append(IncludeOAuth).Append("\n");
             sb.Append("  IncludeSenderAccountAsCustomField: ").Append(IncludeSenderAccountAsCustomField).Append("\n");
             sb.Append("  IncludeTimeZone: ").Append(IncludeTimeZone).Append("\n");
+            sb.Append("  IntegratorManaged: ").Append(IntegratorManaged).Append("\n");
             sb.Append("  LoggingEnabled: ").Append(LoggingEnabled).Append("\n");
             sb.Append("  RecipientEvents: ").Append(RecipientEvents).Append("\n");
             sb.Append("  RequireAcknowledgment: ").Append(RequireAcknowledgment).Append("\n");
@@ -328,6 +336,11 @@ namespace DocuSign.eSign.Model
                     this.IncludeTimeZone.Equals(other.IncludeTimeZone)
                 ) && 
                 (
+                    this.IntegratorManaged == other.IntegratorManaged ||
+                    this.IntegratorManaged != null &&
+                    this.IntegratorManaged.Equals(other.IntegratorManaged)
+                ) && 
+                (
                     this.LoggingEnabled == other.LoggingEnabled ||
                     this.LoggingEnabled != null &&
                     this.LoggingEnabled.Equals(other.LoggingEnabled)
@@ -401,6 +414,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IncludeSenderAccountAsCustomField.GetHashCode();
                 if (this.IncludeTimeZone != null)
                     hash = hash * 59 + this.IncludeTimeZone.GetHashCode();
+                if (this.IntegratorManaged != null)
+                    hash = hash * 59 + this.IntegratorManaged.GetHashCode();
                 if (this.LoggingEnabled != null)
                     hash = hash * 59 + this.LoggingEnabled.GetHashCode();
                 if (this.RecipientEvents != null)

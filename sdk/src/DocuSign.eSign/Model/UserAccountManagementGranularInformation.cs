@@ -52,6 +52,8 @@ namespace DocuSign.eSign.Model
         /// <param name="CanManageEnvelopeTransferMetadata">CanManageEnvelopeTransferMetadata.</param>
         /// <param name="CanManageGroupsButNotUsers">CanManageGroupsButNotUsers.</param>
         /// <param name="CanManageGroupsButNotUsersMetadata">CanManageGroupsButNotUsersMetadata.</param>
+        /// <param name="CanManageJointAgreements">CanManageJointAgreements.</param>
+        /// <param name="CanManageJointAgreementsMetadata">CanManageJointAgreementsMetadata.</param>
         /// <param name="CanManageReporting">CanManageReporting.</param>
         /// <param name="CanManageReportingMetadata">CanManageReportingMetadata.</param>
         /// <param name="CanManageSharing">CanManageSharing.</param>
@@ -63,7 +65,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CanManageUsers">CanManageUsers.</param>
         /// <param name="CanManageUsersMetadata">Metadata that indicates whether the &#x60;canManageUsers&#x60; property is editable. .</param>
         /// <param name="CanViewUsers">CanViewUsers.</param>
-        public UserAccountManagementGranularInformation(string CanManageAccountSecuritySettings = default(string), SettingsMetadata CanManageAccountSecuritySettingsMetadata = default(SettingsMetadata), string CanManageAccountSettings = default(string), SettingsMetadata CanManageAccountSettingsMetadata = default(SettingsMetadata), string CanManageAdmins = default(string), SettingsMetadata CanManageAdminsMetadata = default(SettingsMetadata), string CanManageConnect = default(string), SettingsMetadata CanManageConnectMetadata = default(SettingsMetadata), string CanManageDocumentRetention = default(string), SettingsMetadata CanManageDocumentRetentionMetadata = default(SettingsMetadata), string CanManageEnvelopeTransfer = default(string), SettingsMetadata CanManageEnvelopeTransferMetadata = default(SettingsMetadata), string CanManageGroupsButNotUsers = default(string), SettingsMetadata CanManageGroupsButNotUsersMetadata = default(SettingsMetadata), string CanManageReporting = default(string), SettingsMetadata CanManageReportingMetadata = default(SettingsMetadata), string CanManageSharing = default(string), SettingsMetadata CanManageSharingMetadata = default(SettingsMetadata), string CanManageSigningGroups = default(string), SettingsMetadata CanManageSigningGroupsMetadata = default(SettingsMetadata), string CanManageStamps = default(string), SettingsMetadata CanManageStampsMetadata = default(SettingsMetadata), string CanManageUsers = default(string), SettingsMetadata CanManageUsersMetadata = default(SettingsMetadata), string CanViewUsers = default(string))
+        public UserAccountManagementGranularInformation(string CanManageAccountSecuritySettings = default(string), SettingsMetadata CanManageAccountSecuritySettingsMetadata = default(SettingsMetadata), string CanManageAccountSettings = default(string), SettingsMetadata CanManageAccountSettingsMetadata = default(SettingsMetadata), string CanManageAdmins = default(string), SettingsMetadata CanManageAdminsMetadata = default(SettingsMetadata), string CanManageConnect = default(string), SettingsMetadata CanManageConnectMetadata = default(SettingsMetadata), string CanManageDocumentRetention = default(string), SettingsMetadata CanManageDocumentRetentionMetadata = default(SettingsMetadata), string CanManageEnvelopeTransfer = default(string), SettingsMetadata CanManageEnvelopeTransferMetadata = default(SettingsMetadata), string CanManageGroupsButNotUsers = default(string), SettingsMetadata CanManageGroupsButNotUsersMetadata = default(SettingsMetadata), string CanManageJointAgreements = default(string), SettingsMetadata CanManageJointAgreementsMetadata = default(SettingsMetadata), string CanManageReporting = default(string), SettingsMetadata CanManageReportingMetadata = default(SettingsMetadata), string CanManageSharing = default(string), SettingsMetadata CanManageSharingMetadata = default(SettingsMetadata), string CanManageSigningGroups = default(string), SettingsMetadata CanManageSigningGroupsMetadata = default(SettingsMetadata), string CanManageStamps = default(string), SettingsMetadata CanManageStampsMetadata = default(SettingsMetadata), string CanManageUsers = default(string), SettingsMetadata CanManageUsersMetadata = default(SettingsMetadata), string CanViewUsers = default(string))
         {
             this.CanManageAccountSecuritySettings = CanManageAccountSecuritySettings;
             this.CanManageAccountSecuritySettingsMetadata = CanManageAccountSecuritySettingsMetadata;
@@ -79,6 +81,8 @@ namespace DocuSign.eSign.Model
             this.CanManageEnvelopeTransferMetadata = CanManageEnvelopeTransferMetadata;
             this.CanManageGroupsButNotUsers = CanManageGroupsButNotUsers;
             this.CanManageGroupsButNotUsersMetadata = CanManageGroupsButNotUsersMetadata;
+            this.CanManageJointAgreements = CanManageJointAgreements;
+            this.CanManageJointAgreementsMetadata = CanManageJointAgreementsMetadata;
             this.CanManageReporting = CanManageReporting;
             this.CanManageReportingMetadata = CanManageReportingMetadata;
             this.CanManageSharing = CanManageSharing;
@@ -164,6 +168,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageGroupsButNotUsersMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageGroupsButNotUsersMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets CanManageJointAgreements
+        /// </summary>
+        [DataMember(Name="canManageJointAgreements", EmitDefaultValue=false)]
+        public string CanManageJointAgreements { get; set; }
+        /// <summary>
+        /// Gets or Sets CanManageJointAgreementsMetadata
+        /// </summary>
+        [DataMember(Name="canManageJointAgreementsMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata CanManageJointAgreementsMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets CanManageReporting
         /// </summary>
         [DataMember(Name="canManageReporting", EmitDefaultValue=false)]
@@ -242,6 +256,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  CanManageEnvelopeTransferMetadata: ").Append(CanManageEnvelopeTransferMetadata).Append("\n");
             sb.Append("  CanManageGroupsButNotUsers: ").Append(CanManageGroupsButNotUsers).Append("\n");
             sb.Append("  CanManageGroupsButNotUsersMetadata: ").Append(CanManageGroupsButNotUsersMetadata).Append("\n");
+            sb.Append("  CanManageJointAgreements: ").Append(CanManageJointAgreements).Append("\n");
+            sb.Append("  CanManageJointAgreementsMetadata: ").Append(CanManageJointAgreementsMetadata).Append("\n");
             sb.Append("  CanManageReporting: ").Append(CanManageReporting).Append("\n");
             sb.Append("  CanManageReportingMetadata: ").Append(CanManageReportingMetadata).Append("\n");
             sb.Append("  CanManageSharing: ").Append(CanManageSharing).Append("\n");
@@ -360,6 +376,16 @@ namespace DocuSign.eSign.Model
                     this.CanManageGroupsButNotUsersMetadata.Equals(other.CanManageGroupsButNotUsersMetadata)
                 ) && 
                 (
+                    this.CanManageJointAgreements == other.CanManageJointAgreements ||
+                    this.CanManageJointAgreements != null &&
+                    this.CanManageJointAgreements.Equals(other.CanManageJointAgreements)
+                ) && 
+                (
+                    this.CanManageJointAgreementsMetadata == other.CanManageJointAgreementsMetadata ||
+                    this.CanManageJointAgreementsMetadata != null &&
+                    this.CanManageJointAgreementsMetadata.Equals(other.CanManageJointAgreementsMetadata)
+                ) && 
+                (
                     this.CanManageReporting == other.CanManageReporting ||
                     this.CanManageReporting != null &&
                     this.CanManageReporting.Equals(other.CanManageReporting)
@@ -455,6 +481,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CanManageGroupsButNotUsers.GetHashCode();
                 if (this.CanManageGroupsButNotUsersMetadata != null)
                     hash = hash * 59 + this.CanManageGroupsButNotUsersMetadata.GetHashCode();
+                if (this.CanManageJointAgreements != null)
+                    hash = hash * 59 + this.CanManageJointAgreements.GetHashCode();
+                if (this.CanManageJointAgreementsMetadata != null)
+                    hash = hash * 59 + this.CanManageJointAgreementsMetadata.GetHashCode();
                 if (this.CanManageReporting != null)
                     hash = hash * 59 + this.CanManageReporting.GetHashCode();
                 if (this.CanManageReportingMetadata != null)

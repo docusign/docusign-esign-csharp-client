@@ -39,12 +39,14 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BulkSendingCopy" /> class.
         /// </summary>
         /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
+        /// <param name="DocGenFormFields">DocGenFormFields.</param>
         /// <param name="EmailBlurb">EmailBlurb.</param>
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
         /// <param name="Recipients">An array of powerform recipients..</param>
-        public BulkSendingCopy(List<BulkSendingCopyCustomField> CustomFields = default(List<BulkSendingCopyCustomField>), string EmailBlurb = default(string), string EmailSubject = default(string), List<BulkSendingCopyRecipient> Recipients = default(List<BulkSendingCopyRecipient>))
+        public BulkSendingCopy(List<BulkSendingCopyCustomField> CustomFields = default(List<BulkSendingCopyCustomField>), List<BulksendingCopyDocGenFormField> DocGenFormFields = default(List<BulksendingCopyDocGenFormField>), string EmailBlurb = default(string), string EmailSubject = default(string), List<BulkSendingCopyRecipient> Recipients = default(List<BulkSendingCopyRecipient>))
         {
             this.CustomFields = CustomFields;
+            this.DocGenFormFields = DocGenFormFields;
             this.EmailBlurb = EmailBlurb;
             this.EmailSubject = EmailSubject;
             this.Recipients = Recipients;
@@ -56,6 +58,11 @@ namespace DocuSign.eSign.Model
         /// <value>An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.</value>
         [DataMember(Name="customFields", EmitDefaultValue=false)]
         public List<BulkSendingCopyCustomField> CustomFields { get; set; }
+        /// <summary>
+        /// Gets or Sets DocGenFormFields
+        /// </summary>
+        [DataMember(Name="docGenFormFields", EmitDefaultValue=false)]
+        public List<BulksendingCopyDocGenFormField> DocGenFormFields { get; set; }
         /// <summary>
         /// Gets or Sets EmailBlurb
         /// </summary>
@@ -82,6 +89,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class BulkSendingCopy {\n");
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
+            sb.Append("  DocGenFormFields: ").Append(DocGenFormFields).Append("\n");
             sb.Append("  EmailBlurb: ").Append(EmailBlurb).Append("\n");
             sb.Append("  EmailSubject: ").Append(EmailSubject).Append("\n");
             sb.Append("  Recipients: ").Append(Recipients).Append("\n");
@@ -127,6 +135,11 @@ namespace DocuSign.eSign.Model
                     this.CustomFields.SequenceEqual(other.CustomFields)
                 ) && 
                 (
+                    this.DocGenFormFields == other.DocGenFormFields ||
+                    this.DocGenFormFields != null &&
+                    this.DocGenFormFields.SequenceEqual(other.DocGenFormFields)
+                ) && 
+                (
                     this.EmailBlurb == other.EmailBlurb ||
                     this.EmailBlurb != null &&
                     this.EmailBlurb.Equals(other.EmailBlurb)
@@ -156,6 +169,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.CustomFields != null)
                     hash = hash * 59 + this.CustomFields.GetHashCode();
+                if (this.DocGenFormFields != null)
+                    hash = hash * 59 + this.DocGenFormFields.GetHashCode();
                 if (this.EmailBlurb != null)
                     hash = hash * 59 + this.EmailBlurb.GetHashCode();
                 if (this.EmailSubject != null)

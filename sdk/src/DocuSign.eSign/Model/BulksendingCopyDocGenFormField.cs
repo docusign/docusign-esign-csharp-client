@@ -25,30 +25,38 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// IdEvidenceViewLink
+    /// BulksendingCopyDocGenFormField
     /// </summary>
     [DataContract]
-    public partial class IdEvidenceViewLink :  IEquatable<IdEvidenceViewLink>, IValidatableObject
+    public partial class BulksendingCopyDocGenFormField :  IEquatable<BulksendingCopyDocGenFormField>, IValidatableObject
     {
-        public IdEvidenceViewLink()
+        public BulksendingCopyDocGenFormField()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="IdEvidenceViewLink" /> class.
+        /// Initializes a new instance of the <see cref="BulksendingCopyDocGenFormField" /> class.
         /// </summary>
-        /// <param name="ViewLink">ViewLink.</param>
-        public IdEvidenceViewLink(string ViewLink = default(string))
+        /// <param name="Label">Label.</param>
+        /// <param name="Value">Specifies the value of the tab. .</param>
+        public BulksendingCopyDocGenFormField(string Label = default(string), string Value = default(string))
         {
-            this.ViewLink = ViewLink;
+            this.Label = Label;
+            this.Value = Value;
         }
         
         /// <summary>
-        /// Gets or Sets ViewLink
+        /// Gets or Sets Label
         /// </summary>
-        [DataMember(Name="viewLink", EmitDefaultValue=false)]
-        public string ViewLink { get; set; }
+        [DataMember(Name="label", EmitDefaultValue=false)]
+        public string Label { get; set; }
+        /// <summary>
+        /// Specifies the value of the tab. 
+        /// </summary>
+        /// <value>Specifies the value of the tab. </value>
+        [DataMember(Name="value", EmitDefaultValue=false)]
+        public string Value { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -56,8 +64,9 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class IdEvidenceViewLink {\n");
-            sb.Append("  ViewLink: ").Append(ViewLink).Append("\n");
+            sb.Append("class BulksendingCopyDocGenFormField {\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,15 +88,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as IdEvidenceViewLink);
+            return this.Equals(obj as BulksendingCopyDocGenFormField);
         }
 
         /// <summary>
-        /// Returns true if IdEvidenceViewLink instances are equal
+        /// Returns true if BulksendingCopyDocGenFormField instances are equal
         /// </summary>
-        /// <param name="other">Instance of IdEvidenceViewLink to be compared</param>
+        /// <param name="other">Instance of BulksendingCopyDocGenFormField to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(IdEvidenceViewLink other)
+        public bool Equals(BulksendingCopyDocGenFormField other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -95,9 +104,14 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.ViewLink == other.ViewLink ||
-                    this.ViewLink != null &&
-                    this.ViewLink.Equals(other.ViewLink)
+                    this.Label == other.Label ||
+                    this.Label != null &&
+                    this.Label.Equals(other.Label)
+                ) && 
+                (
+                    this.Value == other.Value ||
+                    this.Value != null &&
+                    this.Value.Equals(other.Value)
                 );
         }
 
@@ -112,8 +126,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.ViewLink != null)
-                    hash = hash * 59 + this.ViewLink.GetHashCode();
+                if (this.Label != null)
+                    hash = hash * 59 + this.Label.GetHashCode();
+                if (this.Value != null)
+                    hash = hash * 59 + this.Value.GetHashCode();
                 return hash;
             }
         }

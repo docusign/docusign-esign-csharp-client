@@ -2568,8 +2568,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="documentFileBytes">Updated document content.</param>
         /// <returns></returns>
-        EnvelopeDocument UpdateDocument(string accountId, string envelopeId, string documentId);
+        EnvelopeDocument UpdateDocument(string accountId, string envelopeId, string documentId, byte[] documentFileBytes);
 
         /// <summary>
         /// Adds a document to an existing draft envelope.
@@ -2581,8 +2582,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="documentFileBytes">Updated document content.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<EnvelopeDocument> UpdateDocumentWithHttpInfo(string accountId, string envelopeId, string documentId);
+        ApiResponse<EnvelopeDocument> UpdateDocumentWithHttpInfo(string accountId, string envelopeId, string documentId, byte[] documentFileBytes);
         /// <summary>
         /// Updates existing custom document fields in an existing envelope document.
         /// </summary>
@@ -5771,8 +5773,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="documentFileBytes">Updated document content.</param>
         /// <returns>Task of EnvelopeDocument</returns>
-        System.Threading.Tasks.Task<EnvelopeDocument> UpdateDocumentAsync(string accountId, string envelopeId, string documentId);
+        System.Threading.Tasks.Task<EnvelopeDocument> UpdateDocumentAsync(string accountId, string envelopeId, string documentId, byte[] documentFileBytes);
 
         /// <summary>
         /// Adds a document to an existing draft envelope.
@@ -5784,8 +5787,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="documentFileBytes">Updated document content.</param>
         /// <returns>Task of ApiResponse (EnvelopeDocument)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EnvelopeDocument>> UpdateDocumentAsyncWithHttpInfo(string accountId, string envelopeId, string documentId);
+        System.Threading.Tasks.Task<ApiResponse<EnvelopeDocument>> UpdateDocumentAsyncWithHttpInfo(string accountId, string envelopeId, string documentId, byte[] documentFileBytes);
         /// <summary>
         /// Updates existing custom document fields in an existing envelope document.
         /// </summary>
@@ -19119,10 +19123,11 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="documentFileBytes">Updated document content.</param>
         /// <returns>EnvelopeDocument</returns>
-        public EnvelopeDocument UpdateDocument(string accountId, string envelopeId, string documentId)
+        public EnvelopeDocument UpdateDocument(string accountId, string envelopeId, string documentId, byte[] documentFileBytes)
         {
-             ApiResponse<EnvelopeDocument> localVarResponse = UpdateDocumentWithHttpInfo(accountId, envelopeId, documentId);
+             ApiResponse<EnvelopeDocument> localVarResponse = UpdateDocumentWithHttpInfo(accountId, envelopeId, documentId, documentFileBytes);
              return localVarResponse.Data;
         }
 
@@ -19133,10 +19138,11 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="documentFileBytes">Updated document content.</param>
         /// <returns>ApiResponse of EnvelopeDocument</returns>
-        public ApiResponse<EnvelopeDocument> UpdateDocumentWithHttpInfo(string accountId, string envelopeId, string documentId)
+        public ApiResponse<EnvelopeDocument> UpdateDocumentWithHttpInfo(string accountId, string envelopeId, string documentId, byte[] documentFileBytes)
         {
-            return UpdateDocumentAsyncWithHttpInfo(accountId, envelopeId, documentId)
+            return UpdateDocumentAsyncWithHttpInfo(accountId, envelopeId, documentId, documentFileBytes)
                 .ConfigureAwait(false)
                 .GetAwaiter()
                 .GetResult();
@@ -19149,10 +19155,11 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="documentFileBytes">Updated document content.</param>
         /// <returns>Task of EnvelopeDocument</returns>
-        public async System.Threading.Tasks.Task<EnvelopeDocument> UpdateDocumentAsync(string accountId, string envelopeId, string documentId)
+        public async System.Threading.Tasks.Task<EnvelopeDocument> UpdateDocumentAsync(string accountId, string envelopeId, string documentId, byte[] documentFileBytes)
         {
-             ApiResponse<EnvelopeDocument> localVarResponse = await UpdateDocumentAsyncWithHttpInfo(accountId, envelopeId, documentId);
+             ApiResponse<EnvelopeDocument> localVarResponse = await UpdateDocumentAsyncWithHttpInfo(accountId, envelopeId, documentId, documentFileBytes);
              return localVarResponse.Data;
         }
 
@@ -19163,8 +19170,9 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <param name="documentFileBytes">Updated document content.</param>
         /// <returns>Task of ApiResponse (EnvelopeDocument)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EnvelopeDocument>> UpdateDocumentAsyncWithHttpInfo(string accountId, string envelopeId, string documentId)
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopeDocument>> UpdateDocumentAsyncWithHttpInfo(string accountId, string envelopeId, string documentId, byte[] documentFileBytes)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -19175,6 +19183,9 @@ namespace DocuSign.eSign.Api
             // verify the required parameter 'documentId' is set
             if (documentId == null)
                 throw new ApiException(400, "Missing required parameter 'documentId' when calling EnvelopesApi->UpdateDocument");
+            // verify the required parameter 'documentFileBytes' is set
+            if (documentFileBytes == null)
+                throw new ApiException(400, "Missing required parameter 'documentFileBytes' when calling EnvelopesApi->UpdateDocument");
 
             var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -19187,6 +19198,7 @@ namespace DocuSign.eSign.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/pdf"
             };
             String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -19204,6 +19216,14 @@ namespace DocuSign.eSign.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
             if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
+            if (documentFileBytes != null && documentFileBytes.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(documentFileBytes); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = documentFileBytes; // byte array
+            }
 
             // authentication (docusignAccessCode) required
             // oauth required

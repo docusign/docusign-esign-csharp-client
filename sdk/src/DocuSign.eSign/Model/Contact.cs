@@ -47,12 +47,13 @@ namespace DocuSign.eSign.Model
         /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
         /// <param name="IsOwner">IsOwner.</param>
         /// <param name="Name">Name.</param>
+        /// <param name="NotaryContactDetails">NotaryContactDetails.</param>
         /// <param name="Organization">Organization.</param>
         /// <param name="RoomContactType">RoomContactType.</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="SigningGroup">SigningGroup.</param>
         /// <param name="SigningGroupName">The display name for the signing group.   Maximum Length: 100 characters. .</param>
-        public Contact(string CloudProvider = default(string), string CloudProviderContainerId = default(string), string ContactId = default(string), List<ContactPhoneNumber> ContactPhoneNumbers = default(List<ContactPhoneNumber>), string ContactUri = default(string), List<string> Emails = default(List<string>), ErrorDetails ErrorDetails = default(ErrorDetails), bool? IsOwner = default(bool?), string Name = default(string), string Organization = default(string), string RoomContactType = default(string), string Shared = default(string), string SigningGroup = default(string), string SigningGroupName = default(string))
+        public Contact(string CloudProvider = default(string), string CloudProviderContainerId = default(string), string ContactId = default(string), List<ContactPhoneNumber> ContactPhoneNumbers = default(List<ContactPhoneNumber>), string ContactUri = default(string), List<string> Emails = default(List<string>), ErrorDetails ErrorDetails = default(ErrorDetails), bool? IsOwner = default(bool?), string Name = default(string), NotaryContactDetails NotaryContactDetails = default(NotaryContactDetails), string Organization = default(string), string RoomContactType = default(string), string Shared = default(string), string SigningGroup = default(string), string SigningGroupName = default(string))
         {
             this.CloudProvider = CloudProvider;
             this.CloudProviderContainerId = CloudProviderContainerId;
@@ -63,6 +64,7 @@ namespace DocuSign.eSign.Model
             this.ErrorDetails = ErrorDetails;
             this.IsOwner = IsOwner;
             this.Name = Name;
+            this.NotaryContactDetails = NotaryContactDetails;
             this.Organization = Organization;
             this.RoomContactType = RoomContactType;
             this.Shared = Shared;
@@ -117,6 +119,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
+        /// Gets or Sets NotaryContactDetails
+        /// </summary>
+        [DataMember(Name="notaryContactDetails", EmitDefaultValue=false)]
+        public NotaryContactDetails NotaryContactDetails { get; set; }
+        /// <summary>
         /// Gets or Sets Organization
         /// </summary>
         [DataMember(Name="organization", EmitDefaultValue=false)]
@@ -160,6 +167,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("  IsOwner: ").Append(IsOwner).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  NotaryContactDetails: ").Append(NotaryContactDetails).Append("\n");
             sb.Append("  Organization: ").Append(Organization).Append("\n");
             sb.Append("  RoomContactType: ").Append(RoomContactType).Append("\n");
             sb.Append("  Shared: ").Append(Shared).Append("\n");
@@ -247,6 +255,11 @@ namespace DocuSign.eSign.Model
                     this.Name.Equals(other.Name)
                 ) && 
                 (
+                    this.NotaryContactDetails == other.NotaryContactDetails ||
+                    this.NotaryContactDetails != null &&
+                    this.NotaryContactDetails.Equals(other.NotaryContactDetails)
+                ) && 
+                (
                     this.Organization == other.Organization ||
                     this.Organization != null &&
                     this.Organization.Equals(other.Organization)
@@ -302,6 +315,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IsOwner.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.NotaryContactDetails != null)
+                    hash = hash * 59 + this.NotaryContactDetails.GetHashCode();
                 if (this.Organization != null)
                     hash = hash * 59 + this.Organization.GetHashCode();
                 if (this.RoomContactType != null)

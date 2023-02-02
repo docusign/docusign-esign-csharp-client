@@ -25,30 +25,37 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// IdEvidenceViewLink
+    /// NotaryContactDetails
     /// </summary>
     [DataContract]
-    public partial class IdEvidenceViewLink :  IEquatable<IdEvidenceViewLink>, IValidatableObject
+    public partial class NotaryContactDetails :  IEquatable<NotaryContactDetails>, IValidatableObject
     {
-        public IdEvidenceViewLink()
+        public NotaryContactDetails()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="IdEvidenceViewLink" /> class.
+        /// Initializes a new instance of the <see cref="NotaryContactDetails" /> class.
         /// </summary>
-        /// <param name="ViewLink">ViewLink.</param>
-        public IdEvidenceViewLink(string ViewLink = default(string))
+        /// <param name="HasDocusignCertificate">HasDocusignCertificate.</param>
+        /// <param name="Jurisdictions">Jurisdictions.</param>
+        public NotaryContactDetails(string HasDocusignCertificate = default(string), List<JurisdictionSummary> Jurisdictions = default(List<JurisdictionSummary>))
         {
-            this.ViewLink = ViewLink;
+            this.HasDocusignCertificate = HasDocusignCertificate;
+            this.Jurisdictions = Jurisdictions;
         }
         
         /// <summary>
-        /// Gets or Sets ViewLink
+        /// Gets or Sets HasDocusignCertificate
         /// </summary>
-        [DataMember(Name="viewLink", EmitDefaultValue=false)]
-        public string ViewLink { get; set; }
+        [DataMember(Name="hasDocusignCertificate", EmitDefaultValue=false)]
+        public string HasDocusignCertificate { get; set; }
+        /// <summary>
+        /// Gets or Sets Jurisdictions
+        /// </summary>
+        [DataMember(Name="jurisdictions", EmitDefaultValue=false)]
+        public List<JurisdictionSummary> Jurisdictions { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -56,8 +63,9 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class IdEvidenceViewLink {\n");
-            sb.Append("  ViewLink: ").Append(ViewLink).Append("\n");
+            sb.Append("class NotaryContactDetails {\n");
+            sb.Append("  HasDocusignCertificate: ").Append(HasDocusignCertificate).Append("\n");
+            sb.Append("  Jurisdictions: ").Append(Jurisdictions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,15 +87,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as IdEvidenceViewLink);
+            return this.Equals(obj as NotaryContactDetails);
         }
 
         /// <summary>
-        /// Returns true if IdEvidenceViewLink instances are equal
+        /// Returns true if NotaryContactDetails instances are equal
         /// </summary>
-        /// <param name="other">Instance of IdEvidenceViewLink to be compared</param>
+        /// <param name="other">Instance of NotaryContactDetails to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(IdEvidenceViewLink other)
+        public bool Equals(NotaryContactDetails other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -95,9 +103,14 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.ViewLink == other.ViewLink ||
-                    this.ViewLink != null &&
-                    this.ViewLink.Equals(other.ViewLink)
+                    this.HasDocusignCertificate == other.HasDocusignCertificate ||
+                    this.HasDocusignCertificate != null &&
+                    this.HasDocusignCertificate.Equals(other.HasDocusignCertificate)
+                ) && 
+                (
+                    this.Jurisdictions == other.Jurisdictions ||
+                    this.Jurisdictions != null &&
+                    this.Jurisdictions.SequenceEqual(other.Jurisdictions)
                 );
         }
 
@@ -112,8 +125,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.ViewLink != null)
-                    hash = hash * 59 + this.ViewLink.GetHashCode();
+                if (this.HasDocusignCertificate != null)
+                    hash = hash * 59 + this.HasDocusignCertificate.GetHashCode();
+                if (this.Jurisdictions != null)
+                    hash = hash * 59 + this.Jurisdictions.GetHashCode();
                 return hash;
             }
         }

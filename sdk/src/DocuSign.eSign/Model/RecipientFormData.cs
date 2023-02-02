@@ -61,12 +61,12 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Gets or Sets DeclinedTime
         /// </summary>
-        [DataMember(Name="DeclinedTime", EmitDefaultValue=false)]
+        [DataMember(Name="declinedTime", EmitDefaultValue=false)]
         public string DeclinedTime { get; set; }
         /// <summary>
         /// Gets or Sets DeliveredTime
         /// </summary>
-        [DataMember(Name="DeliveredTime", EmitDefaultValue=false)]
+        [DataMember(Name="deliveredTime", EmitDefaultValue=false)]
         public string DeliveredTime { get; set; }
         /// <summary>
         /// Gets or Sets Email
@@ -92,12 +92,12 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Gets or Sets SentTime
         /// </summary>
-        [DataMember(Name="SentTime", EmitDefaultValue=false)]
+        [DataMember(Name="sentTime", EmitDefaultValue=false)]
         public string SentTime { get; set; }
         /// <summary>
         /// Gets or Sets SignedTime
         /// </summary>
-        [DataMember(Name="SignedTime", EmitDefaultValue=false)]
+        [DataMember(Name="signedTime", EmitDefaultValue=false)]
         public string SignedTime { get; set; }
         /// <summary>
         /// Returns the string presentation of the object

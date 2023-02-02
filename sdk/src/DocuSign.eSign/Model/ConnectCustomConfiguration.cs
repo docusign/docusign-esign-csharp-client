@@ -62,6 +62,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IncludeOAuth">IncludeOAuth.</param>
         /// <param name="IncludeSenderAccountasCustomField">When set to **true**, Connect will include the sender account as Custom Field in the data..</param>
         /// <param name="IncludeTimeZoneInformation">When set to **true**, Connect will include the envelope time zone information..</param>
+        /// <param name="IntegratorManaged">IntegratorManaged.</param>
         /// <param name="Name">The name of the Connect configuration. The name helps identify the configuration in the list..</param>
         /// <param name="Password">Password.</param>
         /// <param name="RecipientEvents">A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded..</param>
@@ -80,7 +81,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserIds">A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s..</param>
         /// <param name="UserName">UserName.</param>
         /// <param name="UseSoapInterface">When set to **true**, indicates that the &#x60;urlToPublishTo&#x60; property contains a SOAP endpoint..</param>
-        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string AllUsersExcept = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string DisabledBy = default(string), string EnableLog = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), List<string> GroupIds = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeOAuth = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string Name = default(string), string Password = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
+        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string AllUsersExcept = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string DisabledBy = default(string), string EnableLog = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), List<string> GroupIds = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeOAuth = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string IntegratorManaged = default(string), string Name = default(string), string Password = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
         {
             this.AllowEnvelopePublish = AllowEnvelopePublish;
             this.AllowSalesforcePublish = AllowSalesforcePublish;
@@ -106,6 +107,7 @@ namespace DocuSign.eSign.Model
             this.IncludeOAuth = IncludeOAuth;
             this.IncludeSenderAccountasCustomField = IncludeSenderAccountasCustomField;
             this.IncludeTimeZoneInformation = IncludeTimeZoneInformation;
+            this.IntegratorManaged = IntegratorManaged;
             this.Name = Name;
             this.Password = Password;
             this.RecipientEvents = RecipientEvents;
@@ -260,6 +262,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includeTimeZoneInformation", EmitDefaultValue=false)]
         public string IncludeTimeZoneInformation { get; set; }
         /// <summary>
+        /// Gets or Sets IntegratorManaged
+        /// </summary>
+        [DataMember(Name="integratorManaged", EmitDefaultValue=false)]
+        public string IntegratorManaged { get; set; }
+        /// <summary>
         /// The name of the Connect configuration. The name helps identify the configuration in the list.
         /// </summary>
         /// <value>The name of the Connect configuration. The name helps identify the configuration in the list.</value>
@@ -389,6 +396,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IncludeOAuth: ").Append(IncludeOAuth).Append("\n");
             sb.Append("  IncludeSenderAccountasCustomField: ").Append(IncludeSenderAccountasCustomField).Append("\n");
             sb.Append("  IncludeTimeZoneInformation: ").Append(IncludeTimeZoneInformation).Append("\n");
+            sb.Append("  IntegratorManaged: ").Append(IntegratorManaged).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Password: ").Append(Password).Append("\n");
             sb.Append("  RecipientEvents: ").Append(RecipientEvents).Append("\n");
@@ -564,6 +572,11 @@ namespace DocuSign.eSign.Model
                     this.IncludeTimeZoneInformation.Equals(other.IncludeTimeZoneInformation)
                 ) && 
                 (
+                    this.IntegratorManaged == other.IntegratorManaged ||
+                    this.IntegratorManaged != null &&
+                    this.IntegratorManaged.Equals(other.IntegratorManaged)
+                ) && 
+                (
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
@@ -714,6 +727,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IncludeSenderAccountasCustomField.GetHashCode();
                 if (this.IncludeTimeZoneInformation != null)
                     hash = hash * 59 + this.IncludeTimeZoneInformation.GetHashCode();
+                if (this.IntegratorManaged != null)
+                    hash = hash * 59 + this.IntegratorManaged.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Password != null)

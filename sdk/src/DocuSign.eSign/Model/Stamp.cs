@@ -43,7 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CustomField">CustomField.</param>
         /// <param name="DateStampProperties">Specifies the area in which a date stamp is placed. This parameter uses pixel positioning to draw a rectangle at the center of the stamp area. The stamp is superimposed on top of this central area.  This property contains the following information about the central rectangle:  - &#x60;DateAreaX&#x60;: The X axis position of the top-left corner. - &#x60;DateAreaY&#x60;: The Y axis position of the top-left corner. - &#x60;DateAreaWidth&#x60;: The width of the rectangle. - &#x60;DateAreaHeight&#x60;: The height of the rectangle..</param>
         /// <param name="DisallowUserResizeStamp">DisallowUserResizeStamp.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="ExternalID">ExternalID.</param>
         /// <param name="ImageBase64">ImageBase64.</param>
         /// <param name="ImageType">ImageType.</param>
@@ -102,9 +102,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="disallowUserResizeStamp", EmitDefaultValue=false)]
         public string DisallowUserResizeStamp { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

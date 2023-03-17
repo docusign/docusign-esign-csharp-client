@@ -42,7 +42,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AccountName">AccountName.</param>
         /// <param name="ActivationAccessCode">ActivationAccessCode.</param>
         /// <param name="Email">Email.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
+        /// <param name="IpAddress">IpAddress.</param>
         /// <param name="LoginStatus">LoginStatus.</param>
         /// <param name="MembershipId">MembershipId.</param>
         /// <param name="SendActivationEmail">SendActivationEmail.</param>
@@ -51,13 +52,14 @@ namespace DocuSign.eSign.Model
         /// <param name="UserName">UserName.</param>
         /// <param name="UserStatus">UserStatus.</param>
         /// <param name="UserType">UserType.</param>
-        public UserInfo(string AccountId = default(string), string AccountName = default(string), string ActivationAccessCode = default(string), string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string LoginStatus = default(string), string MembershipId = default(string), string SendActivationEmail = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserStatus = default(string), string UserType = default(string))
+        public UserInfo(string AccountId = default(string), string AccountName = default(string), string ActivationAccessCode = default(string), string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IpAddress = default(string), string LoginStatus = default(string), string MembershipId = default(string), string SendActivationEmail = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserStatus = default(string), string UserType = default(string))
         {
             this.AccountId = AccountId;
             this.AccountName = AccountName;
             this.ActivationAccessCode = ActivationAccessCode;
             this.Email = Email;
             this.ErrorDetails = ErrorDetails;
+            this.IpAddress = IpAddress;
             this.LoginStatus = LoginStatus;
             this.MembershipId = MembershipId;
             this.SendActivationEmail = SendActivationEmail;
@@ -90,11 +92,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
+        /// <summary>
+        /// Gets or Sets IpAddress
+        /// </summary>
+        [DataMember(Name="ipAddress", EmitDefaultValue=false)]
+        public string IpAddress { get; set; }
         /// <summary>
         /// Gets or Sets LoginStatus
         /// </summary>
@@ -148,6 +155,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ActivationAccessCode: ").Append(ActivationAccessCode).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
+            sb.Append("  IpAddress: ").Append(IpAddress).Append("\n");
             sb.Append("  LoginStatus: ").Append(LoginStatus).Append("\n");
             sb.Append("  MembershipId: ").Append(MembershipId).Append("\n");
             sb.Append("  SendActivationEmail: ").Append(SendActivationEmail).Append("\n");
@@ -218,6 +226,11 @@ namespace DocuSign.eSign.Model
                     this.ErrorDetails.Equals(other.ErrorDetails)
                 ) && 
                 (
+                    this.IpAddress == other.IpAddress ||
+                    this.IpAddress != null &&
+                    this.IpAddress.Equals(other.IpAddress)
+                ) && 
+                (
                     this.LoginStatus == other.LoginStatus ||
                     this.LoginStatus != null &&
                     this.LoginStatus.Equals(other.LoginStatus)
@@ -280,6 +293,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Email.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                if (this.IpAddress != null)
+                    hash = hash * 59 + this.IpAddress.GetHashCode();
                 if (this.LoginStatus != null)
                     hash = hash * 59 + this.LoginStatus.GetHashCode();
                 if (this.MembershipId != null)

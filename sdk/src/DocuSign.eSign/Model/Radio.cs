@@ -62,7 +62,7 @@ namespace DocuSign.eSign.Model
         /// <param name="BoldMetadata">Metadata that indicates whether the &#x60;bold&#x60; property is editable..</param>
         /// <param name="Caption">Caption.</param>
         /// <param name="CaptionMetadata">CaptionMetadata.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="Font">The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default..</param>
         /// <param name="FontColor">The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White..</param>
         /// <param name="FontColorMetadata">Metadata that indicates whether the &#x60;fontColor&#x60; property is editable..</param>
@@ -73,6 +73,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ItalicMetadata">Metadata that indicates whether the &#x60;italic&#x60; property is editable..</param>
         /// <param name="Locked">When set to **true**, the signer cannot change the data of the custom tab..</param>
         /// <param name="LockedMetadata">Metadata that indicates whether the &#x60;locked&#x60; property is editable..</param>
+        /// <param name="MergeFieldXml">MergeFieldXml.</param>
         /// <param name="PageNumber">Specifies the page number on which the tab is located..</param>
         /// <param name="PageNumberMetadata">Metadata that indicates whether the &#x60;pageNumber&#x60; property is editable..</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
@@ -93,7 +94,7 @@ namespace DocuSign.eSign.Model
         /// <param name="XPositionMetadata">Metadata that indicates whether the &#x60;xPosition&#x60; property is editable..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPositionMetadata">Metadata that indicates whether the &#x60;yPosition&#x60; property is editable..</param>
-        public Radio(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
+        public Radio(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string MergeFieldXml = default(string), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
             this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
             this.AnchorAllowWhiteSpaceInCharactersMetadata = AnchorAllowWhiteSpaceInCharactersMetadata;
@@ -130,6 +131,7 @@ namespace DocuSign.eSign.Model
             this.ItalicMetadata = ItalicMetadata;
             this.Locked = Locked;
             this.LockedMetadata = LockedMetadata;
+            this.MergeFieldXml = MergeFieldXml;
             this.PageNumber = PageNumber;
             this.PageNumberMetadata = PageNumberMetadata;
             this.Required = Required;
@@ -293,9 +295,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="captionMetadata", EmitDefaultValue=false)]
         public PropertyMetadata CaptionMetadata { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -358,6 +360,11 @@ namespace DocuSign.eSign.Model
         /// <value>Metadata that indicates whether the &#x60;locked&#x60; property is editable.</value>
         [DataMember(Name="lockedMetadata", EmitDefaultValue=false)]
         public PropertyMetadata LockedMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets MergeFieldXml
+        /// </summary>
+        [DataMember(Name="mergeFieldXml", EmitDefaultValue=false)]
+        public string MergeFieldXml { get; set; }
         /// <summary>
         /// Specifies the page number on which the tab is located.
         /// </summary>
@@ -520,6 +527,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ItalicMetadata: ").Append(ItalicMetadata).Append("\n");
             sb.Append("  Locked: ").Append(Locked).Append("\n");
             sb.Append("  LockedMetadata: ").Append(LockedMetadata).Append("\n");
+            sb.Append("  MergeFieldXml: ").Append(MergeFieldXml).Append("\n");
             sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
             sb.Append("  PageNumberMetadata: ").Append(PageNumberMetadata).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
@@ -752,6 +760,11 @@ namespace DocuSign.eSign.Model
                     this.LockedMetadata.Equals(other.LockedMetadata)
                 ) && 
                 (
+                    this.MergeFieldXml == other.MergeFieldXml ||
+                    this.MergeFieldXml != null &&
+                    this.MergeFieldXml.Equals(other.MergeFieldXml)
+                ) && 
+                (
                     this.PageNumber == other.PageNumber ||
                     this.PageNumber != null &&
                     this.PageNumber.Equals(other.PageNumber)
@@ -934,6 +947,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Locked.GetHashCode();
                 if (this.LockedMetadata != null)
                     hash = hash * 59 + this.LockedMetadata.GetHashCode();
+                if (this.MergeFieldXml != null)
+                    hash = hash * 59 + this.MergeFieldXml.GetHashCode();
                 if (this.PageNumber != null)
                     hash = hash * 59 + this.PageNumber.GetHashCode();
                 if (this.PageNumberMetadata != null)

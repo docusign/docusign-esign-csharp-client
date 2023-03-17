@@ -307,31 +307,6 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<DocumentHtmlDefinitions> CreateTemplateResponsiveHtmlPreviewWithHttpInfo(string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null);
         /// <summary>
-        /// Deletes the bulk recipient list on a template.
-        /// </summary>
-        /// <remarks>
-        /// Deletes the bulk recipient list on a template.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <returns></returns>
-        BulkRecipientsUpdateResponse DeleteBulkRecipients(string accountId, string templateId, string recipientId);
-
-        /// <summary>
-        /// Deletes the bulk recipient list on a template.
-        /// </summary>
-        /// <remarks>
-        /// Deletes the bulk recipient list on a template.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <returns>ApiResponse of </returns>
-        ApiResponse<BulkRecipientsUpdateResponse> DeleteBulkRecipientsWithHttpInfo(string accountId, string templateId, string recipientId);
-        /// <summary>
         /// Deletes envelope custom fields in a template.
         /// </summary>
         /// <remarks>
@@ -1602,31 +1577,6 @@ namespace DocuSign.eSign.Api
         /// <param name="documentHtmlDefinition"> (optional)</param>
         /// <returns>Task of ApiResponse (DocumentHtmlDefinitions)</returns>
         System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitions>> CreateTemplateResponsiveHtmlPreviewAsyncWithHttpInfo(string accountId, string templateId, DocumentHtmlDefinition documentHtmlDefinition = null);
-        /// <summary>
-        /// Deletes the bulk recipient list on a template.
-        /// </summary>
-        /// <remarks>
-        /// Deletes the bulk recipient list on a template.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <returns>Task of BulkRecipientsUpdateResponse</returns>
-        System.Threading.Tasks.Task<BulkRecipientsUpdateResponse> DeleteBulkRecipientsAsync(string accountId, string templateId, string recipientId);
-
-        /// <summary>
-        /// Deletes the bulk recipient list on a template.
-        /// </summary>
-        /// <remarks>
-        /// Deletes the bulk recipient list on a template.
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <returns>Task of ApiResponse (BulkRecipientsUpdateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BulkRecipientsUpdateResponse>> DeleteBulkRecipientsAsyncWithHttpInfo(string accountId, string templateId, string recipientId);
         /// <summary>
         /// Deletes envelope custom fields in a template.
         /// </summary>
@@ -4058,125 +4008,6 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<DocumentHtmlDefinitions>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (DocumentHtmlDefinitions)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitions)));
-        }
-
-
-
-        /// <summary>
-        /// Deletes the bulk recipient list on a template. Deletes the bulk recipient list on a template.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <returns>BulkRecipientsUpdateResponse</returns>
-        public BulkRecipientsUpdateResponse DeleteBulkRecipients(string accountId, string templateId, string recipientId)
-        {
-             ApiResponse<BulkRecipientsUpdateResponse> localVarResponse = DeleteBulkRecipientsWithHttpInfo(accountId, templateId, recipientId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Deletes the bulk recipient list on a template. Deletes the bulk recipient list on a template.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <returns>ApiResponse of BulkRecipientsUpdateResponse</returns>
-        public ApiResponse<BulkRecipientsUpdateResponse> DeleteBulkRecipientsWithHttpInfo(string accountId, string templateId, string recipientId)
-        {
-            return DeleteBulkRecipientsAsyncWithHttpInfo(accountId, templateId, recipientId)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
-        }
-
-        /// <summary>
-        /// Deletes the bulk recipient list on a template. Deletes the bulk recipient list on a template.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <returns>Task of BulkRecipientsUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<BulkRecipientsUpdateResponse> DeleteBulkRecipientsAsync(string accountId, string templateId, string recipientId)
-        {
-             ApiResponse<BulkRecipientsUpdateResponse> localVarResponse = await DeleteBulkRecipientsAsyncWithHttpInfo(accountId, templateId, recipientId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Deletes the bulk recipient list on a template. Deletes the bulk recipient list on a template.
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <returns>Task of ApiResponse (BulkRecipientsUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BulkRecipientsUpdateResponse>> DeleteBulkRecipientsAsyncWithHttpInfo(string accountId, string templateId, string recipientId)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling TemplatesApi->DeleteBulkRecipients");
-            // verify the required parameter 'templateId' is set
-            if (templateId == null)
-                throw new ApiException(400, "Missing required parameter 'templateId' when calling TemplatesApi->DeleteBulkRecipients");
-            // verify the required parameter 'recipientId' is set
-            if (recipientId == null)
-                throw new ApiException(400, "Missing required parameter 'recipientId' when calling TemplatesApi->DeleteBulkRecipients");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-            if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeleteBulkRecipients", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<BulkRecipientsUpdateResponse>(localVarStatusCode, 
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (BulkRecipientsUpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(BulkRecipientsUpdateResponse)));
         }
 
 

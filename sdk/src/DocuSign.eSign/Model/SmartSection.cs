@@ -71,8 +71,8 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdMetadata">Metadata that indicates whether the &#x60;documentId&#x60; property is editable..</param>
         /// <param name="EndAnchor">EndAnchor.</param>
-        /// <param name="EndPosition">The last index position in the result set. .</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="EndPosition">The last position in the result set. .</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="FormOrder">FormOrder.</param>
         /// <param name="FormOrderMetadata">Metadata that indicates whether the &#x60;formOrder&#x60; property is editable..</param>
         /// <param name="FormPageLabel">FormPageLabel.</param>
@@ -100,7 +100,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SmartContractInformation">Reserved for DocuSign..</param>
         /// <param name="Source">Source.</param>
         /// <param name="StartAnchor">StartAnchor.</param>
-        /// <param name="StartPosition">The starting index position of the current result set..</param>
+        /// <param name="StartPosition">Starting position of the current result set..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusMetadata">Metadata that indicates whether the &#x60;status&#x60; property is editable..</param>
         /// <param name="TabGroupLabels">TabGroupLabels.</param>
@@ -407,15 +407,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="endAnchor", EmitDefaultValue=false)]
         public string EndAnchor { get; set; }
         /// <summary>
-        /// The last index position in the result set. 
+        /// The last position in the result set. 
         /// </summary>
-        /// <value>The last index position in the result set. </value>
+        /// <value>The last position in the result set. </value>
         [DataMember(Name="endPosition", EmitDefaultValue=false)]
         public SmartSectionAnchorPosition EndPosition { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -571,9 +571,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="startAnchor", EmitDefaultValue=false)]
         public string StartAnchor { get; set; }
         /// <summary>
-        /// The starting index position of the current result set.
+        /// Starting position of the current result set.
         /// </summary>
-        /// <value>The starting index position of the current result set.</value>
+        /// <value>Starting position of the current result set.</value>
         [DataMember(Name="startPosition", EmitDefaultValue=false)]
         public SmartSectionAnchorPosition StartPosition { get; set; }
         /// <summary>

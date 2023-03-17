@@ -60,7 +60,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CompositeTemplates">A complex type that can be added to create envelopes from a combination of DocuSign templates and PDF forms. The basic envelope remains the same, while the Composite Template adds new document and template overlays into the envelope. There can be any number of Composite Template structures in the envelope..</param>
         /// <param name="CopyRecipientData">CopyRecipientData.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
-        /// <param name="CustomFields">An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters.   **Note:** Any custom fields you set with this API method will _replace_ custom fields you have defined with [Envelope Custom Fields in Admin](https://support.docusign.com/en/guides/ndse-admin-guide-document-labels), whether the **Show field to envelope creators** or **Make fields required for envelopes** options are checked or not. .</param>
+        /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
         /// <param name="CustomFieldsUri">Contains a URI for an endpoint that you can use to retrieve the custom fields..</param>
         /// <param name="DeclinedDateTime">The date and time the recipient declined the document..</param>
         /// <param name="DeletedDateTime">Specifies the data and time the item was deleted..</param>
@@ -109,7 +109,7 @@ namespace DocuSign.eSign.Model
         /// <param name="PurgeCompletedDate">PurgeCompletedDate.</param>
         /// <param name="PurgeRequestDate">PurgeRequestDate.</param>
         /// <param name="PurgeState">Initiates a purge request. Valid values are: * documents_queued: Places envelope documents in the purge queue. * documents_and_metadata_queued: Places envelope documents and metadata in the purge queue. .</param>
-        /// <param name="Recipients">Specifies the envelope recipients..</param>
+        /// <param name="Recipients">An array of powerform recipients..</param>
         /// <param name="RecipientsLock">When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope..</param>
         /// <param name="RecipientsUri">Contains a URI for an endpoint that you can use to retrieve the recipients..</param>
         /// <param name="RecipientViewRequest">RecipientViewRequest.</param>
@@ -344,9 +344,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdDateTime", EmitDefaultValue=false)]
         public string CreatedDateTime { get; set; }
         /// <summary>
-        /// An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters.   **Note:** Any custom fields you set with this API method will _replace_ custom fields you have defined with [Envelope Custom Fields in Admin](https://support.docusign.com/en/guides/ndse-admin-guide-document-labels), whether the **Show field to envelope creators** or **Make fields required for envelopes** options are checked or not. 
+        /// An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
         /// </summary>
-        /// <value>An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters.   **Note:** Any custom fields you set with this API method will _replace_ custom fields you have defined with [Envelope Custom Fields in Admin](https://support.docusign.com/en/guides/ndse-admin-guide-document-labels), whether the **Show field to envelope creators** or **Make fields required for envelopes** options are checked or not. </value>
+        /// <value>An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.</value>
         [DataMember(Name="customFields", EmitDefaultValue=false)]
         public CustomFields CustomFields { get; set; }
         /// <summary>
@@ -614,9 +614,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="purgeState", EmitDefaultValue=false)]
         public string PurgeState { get; set; }
         /// <summary>
-        /// Specifies the envelope recipients.
+        /// An array of powerform recipients.
         /// </summary>
-        /// <value>Specifies the envelope recipients.</value>
+        /// <value>An array of powerform recipients.</value>
         [DataMember(Name="recipients", EmitDefaultValue=false)]
         public Recipients Recipients { get; set; }
         /// <summary>

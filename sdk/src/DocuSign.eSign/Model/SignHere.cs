@@ -68,7 +68,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CustomTabIdMetadata">Metadata that indicates whether the &#x60;customTabId&#x60; property is editable..</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdMetadata">Metadata that indicates whether the &#x60;documentId&#x60; property is editable..</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="FormOrder">FormOrder.</param>
         /// <param name="FormOrderMetadata">Metadata that indicates whether the &#x60;formOrder&#x60; property is editable..</param>
         /// <param name="FormPageLabel">FormPageLabel.</param>
@@ -387,9 +387,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata DocumentIdMetadata { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

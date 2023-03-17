@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="CloudStorageProvider" /> class.
         /// </summary>
         /// <param name="AuthenticationUrl">The authentication URL used for the cloud storage provider. This information is only included in the response if the user has not passed authentication for the cloud storage provider. If the redirectUrl query string is provided, the returnUrl is appended to the authenticationUrl. .</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="RedirectUrl">The URL the user is redirected to after the cloud storage provider authenticates the user. Using this will append the redirectUrl to the authenticationUrl.  The redirectUrl is restricted to URLs in the docusign.com or docusign.net domains..</param>
         /// <param name="Service">The service name for the cloud storage provider..</param>
         /// <param name="ServiceId">The DocuSign generated ID for the cloud storage provider.</param>
@@ -59,9 +59,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="authenticationUrl", EmitDefaultValue=false)]
         public string AuthenticationUrl { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

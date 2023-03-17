@@ -41,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ApiPassword">Contains a token that can be used for authentication in API calls instead of using the user name and password..</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="Email">Email.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="MembershipId">MembershipId.</param>
         /// <param name="PermissionProfileId">PermissionProfileId.</param>
         /// <param name="PermissionProfileName">PermissionProfileName.</param>
@@ -82,9 +82,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

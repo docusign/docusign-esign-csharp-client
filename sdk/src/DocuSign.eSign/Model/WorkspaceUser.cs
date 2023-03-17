@@ -44,7 +44,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Created">The UTC DateTime when the workspace user was created..</param>
         /// <param name="CreatedById">CreatedById.</param>
         /// <param name="Email">Email.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="InvitationEmailBlurb">InvitationEmailBlurb.</param>
         /// <param name="InvitationEmailSubject">InvitationEmailSubject.</param>
         /// <param name="LastModified">Utc date and time the comment was last updated (can only be done by creator.).</param>
@@ -114,9 +114,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

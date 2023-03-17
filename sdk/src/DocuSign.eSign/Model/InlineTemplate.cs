@@ -38,10 +38,10 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineTemplate" /> class.
         /// </summary>
-        /// <param name="CustomFields">An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters..</param>
+        /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
         /// <param name="Documents">Complex element contains the details on the documents in the envelope..</param>
         /// <param name="Envelope">A container used to send documents to recipients. The envelope carries information about the sender and timestamps to indicate the progress of the delivery procedure. It can contain collections of Documents, Tabs and Recipients..</param>
-        /// <param name="Recipients">An array of recipient objects that provides details about the recipients of the envelope..</param>
+        /// <param name="Recipients">An array of powerform recipients..</param>
         /// <param name="Sequence">Specifies the order in which templates are overlaid..</param>
         public InlineTemplate(CustomFields CustomFields = default(CustomFields), List<Document> Documents = default(List<Document>), Envelope Envelope = default(Envelope), Recipients Recipients = default(Recipients), string Sequence = default(string))
         {
@@ -53,9 +53,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters.
+        /// An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
         /// </summary>
-        /// <value>An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters.</value>
+        /// <value>An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.</value>
         [DataMember(Name="customFields", EmitDefaultValue=false)]
         public CustomFields CustomFields { get; set; }
         /// <summary>
@@ -71,9 +71,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelope", EmitDefaultValue=false)]
         public Envelope Envelope { get; set; }
         /// <summary>
-        /// An array of recipient objects that provides details about the recipients of the envelope.
+        /// An array of powerform recipients.
         /// </summary>
-        /// <value>An array of recipient objects that provides details about the recipients of the envelope.</value>
+        /// <value>An array of powerform recipients.</value>
         [DataMember(Name="recipients", EmitDefaultValue=false)]
         public Recipients Recipients { get; set; }
         /// <summary>

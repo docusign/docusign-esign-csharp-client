@@ -47,7 +47,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DefaultAccountId">DefaultAccountId.</param>
         /// <param name="Email">Email.</param>
         /// <param name="EnableConnectForUser">Specifies whether the user is enabled for updates from DocuSign Connect. Valid values: true or false..</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="FirstName">The user&#39;s first name.  Maximum Length: 50 characters..</param>
         /// <param name="ForgottenPasswordInfo">A complex element containing up to four Question/Answer pairs for forgotten password information..</param>
         /// <param name="GroupList">A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. .</param>
@@ -78,7 +78,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserId">UserId.</param>
         /// <param name="UserName">UserName.</param>
         /// <param name="UserProfileLastModifiedDate">UserProfileLastModifiedDate.</param>
-        /// <param name="UserSettings">The collection of settings representing the actions a user can perform. See [userSettingsInformation](/docs/esign-rest-api/reference/users/users/get/#userSettingsInformation) for available settings..</param>
+        /// <param name="UserSettings"> The name/value pair information for user settings. These determine the actions that a user can take in the account. The &#x60;[ML:userSettings]&#x60; are listed and described below..</param>
         /// <param name="UserStatus">UserStatus.</param>
         /// <param name="UserType">UserType.</param>
         /// <param name="WorkAddress">WorkAddress.</param>
@@ -180,9 +180,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableConnectForUser", EmitDefaultValue=false)]
         public string EnableConnectForUser { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -350,9 +350,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="userProfileLastModifiedDate", EmitDefaultValue=false)]
         public string UserProfileLastModifiedDate { get; set; }
         /// <summary>
-        /// The collection of settings representing the actions a user can perform. See [userSettingsInformation](/docs/esign-rest-api/reference/users/users/get/#userSettingsInformation) for available settings.
+        ///  The name/value pair information for user settings. These determine the actions that a user can take in the account. The &#x60;[ML:userSettings]&#x60; are listed and described below.
         /// </summary>
-        /// <value>The collection of settings representing the actions a user can perform. See [userSettingsInformation](/docs/esign-rest-api/reference/users/users/get/#userSettingsInformation) for available settings.</value>
+        /// <value> The name/value pair information for user settings. These determine the actions that a user can take in the account. The &#x60;[ML:userSettings]&#x60; are listed and described below.</value>
         [DataMember(Name="userSettings", EmitDefaultValue=false)]
         public UserSettingsInformation UserSettings { get; set; }
         /// <summary>

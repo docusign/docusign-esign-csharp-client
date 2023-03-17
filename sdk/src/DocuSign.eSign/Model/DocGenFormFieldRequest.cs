@@ -25,45 +25,30 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// MobileNotifierConfiguration
+    /// DocGenFormFieldRequest
     /// </summary>
     [DataContract]
-    public partial class MobileNotifierConfiguration :  IEquatable<MobileNotifierConfiguration>, IValidatableObject
+    public partial class DocGenFormFieldRequest :  IEquatable<DocGenFormFieldRequest>, IValidatableObject
     {
-        public MobileNotifierConfiguration()
+        public DocGenFormFieldRequest()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MobileNotifierConfiguration" /> class.
+        /// Initializes a new instance of the <see cref="DocGenFormFieldRequest" /> class.
         /// </summary>
-        /// <param name="DeviceId">DeviceId.</param>
-        /// <param name="ErrorDetails">Array or errors..</param>
-        /// <param name="Platform">Platform.</param>
-        public MobileNotifierConfiguration(string DeviceId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Platform = default(string))
+        /// <param name="DocGenFormFields">DocGenFormFields.</param>
+        public DocGenFormFieldRequest(List<DocGenFormFields> DocGenFormFields = default(List<DocGenFormFields>))
         {
-            this.DeviceId = DeviceId;
-            this.ErrorDetails = ErrorDetails;
-            this.Platform = Platform;
+            this.DocGenFormFields = DocGenFormFields;
         }
         
         /// <summary>
-        /// Gets or Sets DeviceId
+        /// Gets or Sets DocGenFormFields
         /// </summary>
-        [DataMember(Name="deviceId", EmitDefaultValue=false)]
-        public string DeviceId { get; set; }
-        /// <summary>
-        /// Array or errors.
-        /// </summary>
-        /// <value>Array or errors.</value>
-        [DataMember(Name="errorDetails", EmitDefaultValue=false)]
-        public ErrorDetails ErrorDetails { get; set; }
-        /// <summary>
-        /// Gets or Sets Platform
-        /// </summary>
-        [DataMember(Name="platform", EmitDefaultValue=false)]
-        public string Platform { get; set; }
+        [DataMember(Name="docGenFormFields", EmitDefaultValue=false)]
+        public List<DocGenFormFields> DocGenFormFields { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -71,10 +56,8 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class MobileNotifierConfiguration {\n");
-            sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
-            sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
-            sb.Append("  Platform: ").Append(Platform).Append("\n");
+            sb.Append("class DocGenFormFieldRequest {\n");
+            sb.Append("  DocGenFormFields: ").Append(DocGenFormFields).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,15 +79,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as MobileNotifierConfiguration);
+            return this.Equals(obj as DocGenFormFieldRequest);
         }
 
         /// <summary>
-        /// Returns true if MobileNotifierConfiguration instances are equal
+        /// Returns true if DocGenFormFieldRequest instances are equal
         /// </summary>
-        /// <param name="other">Instance of MobileNotifierConfiguration to be compared</param>
+        /// <param name="other">Instance of DocGenFormFieldRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(MobileNotifierConfiguration other)
+        public bool Equals(DocGenFormFieldRequest other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -112,19 +95,9 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.DeviceId == other.DeviceId ||
-                    this.DeviceId != null &&
-                    this.DeviceId.Equals(other.DeviceId)
-                ) && 
-                (
-                    this.ErrorDetails == other.ErrorDetails ||
-                    this.ErrorDetails != null &&
-                    this.ErrorDetails.Equals(other.ErrorDetails)
-                ) && 
-                (
-                    this.Platform == other.Platform ||
-                    this.Platform != null &&
-                    this.Platform.Equals(other.Platform)
+                    this.DocGenFormFields == other.DocGenFormFields ||
+                    this.DocGenFormFields != null &&
+                    this.DocGenFormFields.SequenceEqual(other.DocGenFormFields)
                 );
         }
 
@@ -139,12 +112,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.DeviceId != null)
-                    hash = hash * 59 + this.DeviceId.GetHashCode();
-                if (this.ErrorDetails != null)
-                    hash = hash * 59 + this.ErrorDetails.GetHashCode();
-                if (this.Platform != null)
-                    hash = hash * 59 + this.Platform.GetHashCode();
+                if (this.DocGenFormFields != null)
+                    hash = hash * 59 + this.DocGenFormFields.GetHashCode();
                 return hash;
             }
         }

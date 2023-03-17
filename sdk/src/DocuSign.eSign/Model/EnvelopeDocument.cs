@@ -53,7 +53,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentFields">DocumentFields.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdGuid">DocumentIdGuid.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="IncludeInDownload">IncludeInDownload.</param>
         /// <param name="IncludeInDownloadMetadata">Metadata that indicates if the sender can edit the &#x60;includeInDownload&#x60; property. Not applicable for template documents..</param>
         /// <param name="IsDocGenDocument">IsDocGenDocument.</param>
@@ -182,9 +182,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentIdGuid", EmitDefaultValue=false)]
         public string DocumentIdGuid { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MemberGroupSharedItem" /> class.
         /// </summary>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="Group">The group sharing the item..</param>
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         public MemberGroupSharedItem(ErrorDetails ErrorDetails = default(ErrorDetails), Group Group = default(Group), string Shared = default(string))
@@ -49,9 +49,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

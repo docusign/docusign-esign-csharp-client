@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LockInformation" /> class.
         /// </summary>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="LockDurationInSeconds">Sets the time, in seconds, until the lock expires when there is no activity on the envelope.  If no value is entered, then the default value of 300 seconds is used. The maximum value is 1,800 seconds.  The lock duration can be extended. .</param>
         /// <param name="LockedByApp">Specifies the friendly name of  the application that is locking the envelope..</param>
         /// <param name="LockedByUser">A complex type containing information about the user that has the envelope or template locked..</param>
@@ -59,9 +59,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

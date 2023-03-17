@@ -45,7 +45,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Colors">Colors.</param>
         /// <param name="DefaultBrandLanguage">DefaultBrandLanguage.</param>
         /// <param name="EmailContent">EmailContent.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="IsOverridingCompanyName">IsOverridingCompanyName.</param>
         /// <param name="IsSendingDefault">IsSendingDefault.</param>
         /// <param name="IsSigningDefault">IsSigningDefault.</param>
@@ -111,9 +111,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="emailContent", EmitDefaultValue=false)]
         public List<BrandEmailContent> EmailContent { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

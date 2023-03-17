@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="NewAccountDefinition" /> class.
         /// </summary>
         /// <param name="AccountName">The account name for the new account..</param>
-        /// <param name="AccountSettings">The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  .</param>
+        /// <param name="AccountSettings">The list of account settings. These determine the features available for the account. Note that some features are determined by the plan used to create the account, and cannot be overridden..</param>
         /// <param name="AddressInformation">A complex type that contains the following information for the new account: &#x60;Street1&#x60;, &#x60;Street2&#x60;, &#x60;City&#x60;, &#x60;State&#x60;, &#x60;Zip&#x60;, &#x60;Phone&#x60;, and &#x60;Fax&#x60;..</param>
         /// <param name="CreditCardInformation">A complex type that has information about the credit card used to pay for this account..</param>
         /// <param name="DirectDebitProcessorInformation">Information about the bank that processes direct debits for the payment plan..</param>
@@ -54,7 +54,7 @@ namespace DocuSign.eSign.Model
         /// <param name="PlanInformation">An object used to identify the features and attributes of the account being created..</param>
         /// <param name="ProcessPayment">ProcessPayment.</param>
         /// <param name="ReferralInformation">A complex type that contains properties for entering referral and discount information..</param>
-        /// <param name="SocialAccountInformation">Contains properties that map a DocuSign user to a social account such as Facebook or Yahoo..</param>
+        /// <param name="SocialAccountInformation">Contains properties that map a DocuSign user to a social account (Facebook, Yahoo, etc.).</param>
         /// <param name="TaxExemptId">TaxExemptId.</param>
         public NewAccountDefinition(string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), AccountAddress AddressInformation = default(AccountAddress), CreditCardInformation CreditCardInformation = default(CreditCardInformation), DirectDebitProcessorInformation DirectDebitProcessorInformation = default(DirectDebitProcessorInformation), string DistributorCode = default(string), string DistributorPassword = default(string), string EnablePreAuth = default(string), string EnvelopePartitionId = default(string), UserInformation InitialUser = default(UserInformation), string PaymentMethod = default(string), string PaymentProcessor = default(string), PaymentProcessorInformation PaymentProcessorInformation = default(PaymentProcessorInformation), PlanInformation PlanInformation = default(PlanInformation), string ProcessPayment = default(string), ReferralInformation ReferralInformation = default(ReferralInformation), SocialAccountInformation SocialAccountInformation = default(SocialAccountInformation), string TaxExemptId = default(string))
         {
@@ -85,9 +85,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="accountName", EmitDefaultValue=false)]
         public string AccountName { get; set; }
         /// <summary>
-        /// The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  
+        /// The list of account settings. These determine the features available for the account. Note that some features are determined by the plan used to create the account, and cannot be overridden.
         /// </summary>
-        /// <value>The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  </value>
+        /// <value>The list of account settings. These determine the features available for the account. Note that some features are determined by the plan used to create the account, and cannot be overridden.</value>
         [DataMember(Name="accountSettings", EmitDefaultValue=false)]
         public AccountSettingsInformation AccountSettings { get; set; }
         /// <summary>
@@ -170,9 +170,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="referralInformation", EmitDefaultValue=false)]
         public ReferralInformation ReferralInformation { get; set; }
         /// <summary>
-        /// Contains properties that map a DocuSign user to a social account such as Facebook or Yahoo.
+        /// Contains properties that map a DocuSign user to a social account (Facebook, Yahoo, etc.)
         /// </summary>
-        /// <value>Contains properties that map a DocuSign user to a social account such as Facebook or Yahoo.</value>
+        /// <value>Contains properties that map a DocuSign user to a social account (Facebook, Yahoo, etc.)</value>
         [DataMember(Name="socialAccountInformation", EmitDefaultValue=false)]
         public SocialAccountInformation SocialAccountInformation { get; set; }
         /// <summary>

@@ -38,7 +38,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Folder" /> class.
         /// </summary>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="Filter">An object used to present a filtered view of the items in a folder..</param>
         /// <param name="FolderId">FolderId.</param>
         /// <param name="FolderItems">A list of the envelopes in the specified folder or folders. .</param>
@@ -73,9 +73,9 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

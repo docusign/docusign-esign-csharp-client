@@ -68,7 +68,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CustomTabIdMetadata">Metadata that indicates whether the &#x60;customTabId&#x60; property is editable..</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdMetadata">Metadata that indicates whether the &#x60;documentId&#x60; property is editable..</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="FormOrder">FormOrder.</param>
         /// <param name="FormOrderMetadata">Metadata that indicates whether the &#x60;formOrder&#x60; property is editable..</param>
         /// <param name="FormPageLabel">FormPageLabel.</param>
@@ -90,7 +90,7 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
         /// <param name="RecipientIdGuidMetadata">Metadata that indicates whether the &#x60;recipientIdGuid&#x60; property is editable..</param>
         /// <param name="RecipientIdMetadata">Metadata that indicates whether the &#x60;recipientId&#x60; property is editable..</param>
-        /// <param name="ScaleValue">Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size..</param>
+        /// <param name="ScaleValue"> Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size..</param>
         /// <param name="ScaleValueMetadata">Metadata that indicates whether the &#x60;scaleValue&#x60; property is editable..</param>
         /// <param name="SmartContractInformation">Reserved for DocuSign..</param>
         /// <param name="Source">Source.</param>
@@ -379,9 +379,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata DocumentIdMetadata { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -504,9 +504,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RecipientIdMetadata { get; set; }
         /// <summary>
-        /// Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size.
+        ///  Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size.
         /// </summary>
-        /// <value>Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size.</value>
+        /// <value> Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size.</value>
         [DataMember(Name="scaleValue", EmitDefaultValue=false)]
         public string ScaleValue { get; set; }
         /// <summary>

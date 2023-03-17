@@ -40,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="BulkEnvelopeStatus">An object that describes the status of the bulk send envelopes..</param>
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="RecipientSigningUri">RecipientSigningUri.</param>
         /// <param name="RecipientSigningUriError">RecipientSigningUriError.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
@@ -71,9 +71,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopeId", EmitDefaultValue=false)]
         public string EnvelopeId { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

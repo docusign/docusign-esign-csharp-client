@@ -1410,7 +1410,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
+        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
         ConsumerDisclosure GetConsumerDisclosure(string accountId, string envelopeId, string recipientId, string langCode, EnvelopesApi.GetConsumerDisclosureOptions options = null);
@@ -1425,7 +1425,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
+        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<ConsumerDisclosure> GetConsumerDisclosureWithHttpInfo(string accountId, string envelopeId, string recipientId, string langCode, EnvelopesApi.GetConsumerDisclosureOptions options = null);
@@ -1612,6 +1612,29 @@ namespace DocuSign.eSign.Api
         /// <param name="workflowStepId"></param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<DelayedRouting> GetEnvelopeDelayedRoutingDefinitionWithHttpInfo(string accountId, string envelopeId, string workflowStepId);
+        /// <summary>
+        /// Returns formfields for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns></returns>
+        DocGenFormFieldResponse GetEnvelopeDocGenFormFields(string accountId, string envelopeId);
+
+        /// <summary>
+        /// Returns formfields for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<DocGenFormFieldResponse> GetEnvelopeDocGenFormFieldsWithHttpInfo(string accountId, string envelopeId);
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for a given document.
         /// </summary>
@@ -2716,6 +2739,33 @@ namespace DocuSign.eSign.Api
         /// <param name="delayedRouting"> (optional)</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<DelayedRouting> UpdateEnvelopeDelayedRoutingDefinitionWithHttpInfo(string accountId, string envelopeId, string workflowStepId, DelayedRouting delayedRouting = null);
+        /// <summary>
+        /// Updates formfields for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="docGenFormFieldRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        DocGenFormFieldResponse UpdateEnvelopeDocGenFormFields(string accountId, string envelopeId, DocGenFormFieldRequest docGenFormFieldRequest = null, EnvelopesApi.UpdateEnvelopeDocGenFormFieldsOptions options = null);
+
+        /// <summary>
+        /// Updates formfields for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="docGenFormFieldRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<DocGenFormFieldResponse> UpdateEnvelopeDocGenFormFieldsWithHttpInfo(string accountId, string envelopeId, DocGenFormFieldRequest docGenFormFieldRequest = null, EnvelopesApi.UpdateEnvelopeDocGenFormFieldsOptions options = null);
         /// <summary>
         /// Updates the scheduled sending rules for an envelope&#39;s workflow definition.
         /// </summary>
@@ -4615,7 +4665,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
+        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ConsumerDisclosure</returns>
         System.Threading.Tasks.Task<ConsumerDisclosure> GetConsumerDisclosureAsync(string accountId, string envelopeId, string recipientId, string langCode, EnvelopesApi.GetConsumerDisclosureOptions options = null);
@@ -4630,7 +4680,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
+        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (ConsumerDisclosure)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConsumerDisclosure>> GetConsumerDisclosureAsyncWithHttpInfo(string accountId, string envelopeId, string recipientId, string langCode, EnvelopesApi.GetConsumerDisclosureOptions options = null);
@@ -4817,6 +4867,29 @@ namespace DocuSign.eSign.Api
         /// <param name="workflowStepId"></param>
         /// <returns>Task of ApiResponse (DelayedRouting)</returns>
         System.Threading.Tasks.Task<ApiResponse<DelayedRouting>> GetEnvelopeDelayedRoutingDefinitionAsyncWithHttpInfo(string accountId, string envelopeId, string workflowStepId);
+        /// <summary>
+        /// Returns formfields for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>Task of DocGenFormFieldResponse</returns>
+        System.Threading.Tasks.Task<DocGenFormFieldResponse> GetEnvelopeDocGenFormFieldsAsync(string accountId, string envelopeId);
+
+        /// <summary>
+        /// Returns formfields for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>Task of ApiResponse (DocGenFormFieldResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocGenFormFieldResponse>> GetEnvelopeDocGenFormFieldsAsyncWithHttpInfo(string accountId, string envelopeId);
         /// <summary>
         /// Get the Original HTML Definition used to generate the Responsive HTML for a given document.
         /// </summary>
@@ -5921,6 +5994,33 @@ namespace DocuSign.eSign.Api
         /// <param name="delayedRouting"> (optional)</param>
         /// <returns>Task of ApiResponse (DelayedRouting)</returns>
         System.Threading.Tasks.Task<ApiResponse<DelayedRouting>> UpdateEnvelopeDelayedRoutingDefinitionAsyncWithHttpInfo(string accountId, string envelopeId, string workflowStepId, DelayedRouting delayedRouting = null);
+        /// <summary>
+        /// Updates formfields for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="docGenFormFieldRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of DocGenFormFieldResponse</returns>
+        System.Threading.Tasks.Task<DocGenFormFieldResponse> UpdateEnvelopeDocGenFormFieldsAsync(string accountId, string envelopeId, DocGenFormFieldRequest docGenFormFieldRequest = null, EnvelopesApi.UpdateEnvelopeDocGenFormFieldsOptions options = null);
+
+        /// <summary>
+        /// Updates formfields for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="docGenFormFieldRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (DocGenFormFieldResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocGenFormFieldResponse>> UpdateEnvelopeDocGenFormFieldsAsyncWithHttpInfo(string accountId, string envelopeId, DocGenFormFieldRequest docGenFormFieldRequest = null, EnvelopesApi.UpdateEnvelopeDocGenFormFieldsOptions options = null);
         /// <summary>
         /// Updates the scheduled sending rules for an envelope&#39;s workflow definition.
         /// </summary>
@@ -13223,7 +13323,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         public class GetConsumerDisclosureOptions
         {
-            /// The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language. 
+            /// The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language. 
             public string langCode2 {get; set;}
         }
 
@@ -13234,7 +13334,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
+        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ConsumerDisclosure</returns>
         public ConsumerDisclosure GetConsumerDisclosure(string accountId, string envelopeId, string recipientId, string langCode, EnvelopesApi.GetConsumerDisclosureOptions options = null)
@@ -13250,7 +13350,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
+        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of ConsumerDisclosure</returns>
         public ApiResponse<ConsumerDisclosure> GetConsumerDisclosureWithHttpInfo(string accountId, string envelopeId, string recipientId, string langCode, EnvelopesApi.GetConsumerDisclosureOptions options = null)
@@ -13268,7 +13368,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
+        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ConsumerDisclosure</returns>
         public async System.Threading.Tasks.Task<ConsumerDisclosure> GetConsumerDisclosureAsync(string accountId, string envelopeId, string recipientId, string langCode, EnvelopesApi.GetConsumerDisclosureOptions options = null)
@@ -13284,7 +13384,7 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
-        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
+        /// <param name="langCode">The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (ConsumerDisclosure)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ConsumerDisclosure>> GetConsumerDisclosureAsyncWithHttpInfo(string accountId, string envelopeId, string recipientId, string langCode, EnvelopesApi.GetConsumerDisclosureOptions options = null)
@@ -14302,6 +14402,117 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<DelayedRouting>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (DelayedRouting)this.ApiClient.Deserialize(localVarResponse, typeof(DelayedRouting)));
+        }
+
+
+
+        /// <summary>
+        /// Returns formfields for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>DocGenFormFieldResponse</returns>
+        public DocGenFormFieldResponse GetEnvelopeDocGenFormFields(string accountId, string envelopeId)
+        {
+             ApiResponse<DocGenFormFieldResponse> localVarResponse = GetEnvelopeDocGenFormFieldsWithHttpInfo(accountId, envelopeId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns formfields for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>ApiResponse of DocGenFormFieldResponse</returns>
+        public ApiResponse<DocGenFormFieldResponse> GetEnvelopeDocGenFormFieldsWithHttpInfo(string accountId, string envelopeId)
+        {
+            return GetEnvelopeDocGenFormFieldsAsyncWithHttpInfo(accountId, envelopeId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        /// <summary>
+        /// Returns formfields for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>Task of DocGenFormFieldResponse</returns>
+        public async System.Threading.Tasks.Task<DocGenFormFieldResponse> GetEnvelopeDocGenFormFieldsAsync(string accountId, string envelopeId)
+        {
+             ApiResponse<DocGenFormFieldResponse> localVarResponse = await GetEnvelopeDocGenFormFieldsAsyncWithHttpInfo(accountId, envelopeId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns formfields for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>Task of ApiResponse (DocGenFormFieldResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DocGenFormFieldResponse>> GetEnvelopeDocGenFormFieldsAsyncWithHttpInfo(string accountId, string envelopeId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->GetEnvelopeDocGenFormFields");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->GetEnvelopeDocGenFormFields");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/docGenFormFields";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetEnvelopeDocGenFormFields", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DocGenFormFieldResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (DocGenFormFieldResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DocGenFormFieldResponse)));
         }
 
 
@@ -19886,6 +20097,145 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<DelayedRouting>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (DelayedRouting)this.ApiClient.Deserialize(localVarResponse, typeof(DelayedRouting)));
+        }
+
+
+        /// <summary>
+        /// Updates formfields for an envelope 
+        /// </summary>
+        public class UpdateEnvelopeDocGenFormFieldsOptions
+        {
+            /// 
+            public string updateDocgenFormfieldsOnly {get; set;}
+        }
+
+        /// <summary>
+        /// Updates formfields for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="docGenFormFieldRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>DocGenFormFieldResponse</returns>
+        public DocGenFormFieldResponse UpdateEnvelopeDocGenFormFields(string accountId, string envelopeId, DocGenFormFieldRequest docGenFormFieldRequest = null, EnvelopesApi.UpdateEnvelopeDocGenFormFieldsOptions options = null)
+        {
+             ApiResponse<DocGenFormFieldResponse> localVarResponse = UpdateEnvelopeDocGenFormFieldsWithHttpInfo(accountId, envelopeId, docGenFormFieldRequest, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Updates formfields for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="docGenFormFieldRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of DocGenFormFieldResponse</returns>
+        public ApiResponse<DocGenFormFieldResponse> UpdateEnvelopeDocGenFormFieldsWithHttpInfo(string accountId, string envelopeId, DocGenFormFieldRequest docGenFormFieldRequest = null, EnvelopesApi.UpdateEnvelopeDocGenFormFieldsOptions options = null)
+        {
+            return UpdateEnvelopeDocGenFormFieldsAsyncWithHttpInfo(accountId, envelopeId, docGenFormFieldRequest, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        /// <summary>
+        /// Updates formfields for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="docGenFormFieldRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of DocGenFormFieldResponse</returns>
+        public async System.Threading.Tasks.Task<DocGenFormFieldResponse> UpdateEnvelopeDocGenFormFieldsAsync(string accountId, string envelopeId, DocGenFormFieldRequest docGenFormFieldRequest = null, EnvelopesApi.UpdateEnvelopeDocGenFormFieldsOptions options = null)
+        {
+             ApiResponse<DocGenFormFieldResponse> localVarResponse = await UpdateEnvelopeDocGenFormFieldsAsyncWithHttpInfo(accountId, envelopeId, docGenFormFieldRequest, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Updates formfields for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="docGenFormFieldRequest"> (optional)</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (DocGenFormFieldResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DocGenFormFieldResponse>> UpdateEnvelopeDocGenFormFieldsAsyncWithHttpInfo(string accountId, string envelopeId, DocGenFormFieldRequest docGenFormFieldRequest = null, EnvelopesApi.UpdateEnvelopeDocGenFormFieldsOptions options = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->UpdateEnvelopeDocGenFormFields");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->UpdateEnvelopeDocGenFormFields");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/docGenFormFields";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
+            if (options != null)
+            {
+                if (options.updateDocgenFormfieldsOnly != null) localVarQueryParams.Add("update_docgen_formfields_only", this.ApiClient.ParameterToString(options.updateDocgenFormfieldsOnly)); // query parameter
+            }
+            if (docGenFormFieldRequest != null && docGenFormFieldRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(docGenFormFieldRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = docGenFormFieldRequest; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateEnvelopeDocGenFormFields", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DocGenFormFieldResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (DocGenFormFieldResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DocGenFormFieldResponse)));
         }
 
 

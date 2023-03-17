@@ -16,17 +16,17 @@
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>6.2.0</VersionPrefix>
+    <VersionPrefix>6.3.0</VersionPrefix>
     <VersionSuffix/>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageTags>DocuSign.eSign;REST;eSign;docusign;eSignature;api</PackageTags>
+    <PackageTags/>
     <PackageIconUrl>https://s.gravatar.com/avatar/4a8c033df6baa902f730d514d5574c33</PackageIconUrl>
     <PackageProjectUrl>https://github.com/docusign/docusign-csharp-client</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v6.2.0] - ESignature API v2.1-22.4.02.00 - 2/1/2023</PackageReleaseNotes>
+    <PackageReleaseNotes>[v6.3.0] - ESignature API v2.1-23.1.01.00 - 3/17/2023</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net452'">
     <DefineConstants>NET452</DefineConstants>

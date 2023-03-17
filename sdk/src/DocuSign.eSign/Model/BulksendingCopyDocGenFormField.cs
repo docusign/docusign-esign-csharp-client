@@ -38,19 +38,19 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BulksendingCopyDocGenFormField" /> class.
         /// </summary>
-        /// <param name="Label">Label.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        public BulksendingCopyDocGenFormField(string Label = default(string), string Value = default(string))
+        public BulksendingCopyDocGenFormField(string Name = default(string), string Value = default(string))
         {
-            this.Label = Label;
+            this.Name = Name;
             this.Value = Value;
         }
         
         /// <summary>
-        /// Gets or Sets Label
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="label", EmitDefaultValue=false)]
-        public string Label { get; set; }
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
         /// <summary>
         /// Specifies the value of the tab. 
         /// </summary>
@@ -65,7 +65,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BulksendingCopyDocGenFormField {\n");
-            sb.Append("  Label: ").Append(Label).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -104,9 +104,9 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.Label == other.Label ||
-                    this.Label != null &&
-                    this.Label.Equals(other.Label)
+                    this.Name == other.Name ||
+                    this.Name != null &&
+                    this.Name.Equals(other.Name)
                 ) && 
                 (
                     this.Value == other.Value ||
@@ -126,8 +126,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Label != null)
-                    hash = hash * 59 + this.Label.GetHashCode();
+                if (this.Name != null)
+                    hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Value != null)
                     hash = hash * 59 + this.Value.GetHashCode();
                 return hash;

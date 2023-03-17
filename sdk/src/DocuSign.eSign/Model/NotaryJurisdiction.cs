@@ -41,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CommissionExpiration">CommissionExpiration.</param>
         /// <param name="CommissionId">CommissionId.</param>
         /// <param name="County">County.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="Jurisdiction">Description of the jurisdiction for this notary. This is a read-only property..</param>
         /// <param name="RegisteredName">RegisteredName.</param>
         /// <param name="SealType">SealType.</param>
@@ -72,9 +72,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="county", EmitDefaultValue=false)]
         public string County { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

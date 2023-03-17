@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="ListCustomField" /> class.
         /// </summary>
         /// <param name="ConfigurationType">If merge field&#39;s are being used, specifies the type of the merge field. The only  supported value is **salesforce**..</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="FieldId">An ID used to specify a custom field..</param>
         /// <param name="ListItems">ListItems.</param>
         /// <param name="Name">The name of the custom field..</param>
@@ -65,9 +65,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="configurationType", EmitDefaultValue=false)]
         public string ConfigurationType { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

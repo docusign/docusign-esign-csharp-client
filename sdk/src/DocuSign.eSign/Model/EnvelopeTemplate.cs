@@ -59,7 +59,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CopyRecipientData">CopyRecipientData.</param>
         /// <param name="Created">Created.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
-        /// <param name="CustomFields">An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters..</param>
+        /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
         /// <param name="CustomFieldsUri">Contains a URI for an endpoint that you can use to retrieve the custom fields..</param>
         /// <param name="DeclinedDateTime">The date and time the recipient declined the document..</param>
         /// <param name="DeletedDateTime">Specifies the data and time the item was deleted..</param>
@@ -121,7 +121,7 @@ namespace DocuSign.eSign.Model
         /// <param name="PurgeCompletedDate">PurgeCompletedDate.</param>
         /// <param name="PurgeRequestDate">PurgeRequestDate.</param>
         /// <param name="PurgeState">PurgeState.</param>
-        /// <param name="Recipients">An array of recipient objects that provides details about the recipients of the envelope..</param>
+        /// <param name="Recipients">An array of powerform recipients..</param>
         /// <param name="RecipientsLock">When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope..</param>
         /// <param name="RecipientsUri">Contains a URI for an endpoint that you can use to retrieve the recipients..</param>
         /// <param name="Sender">Information about the sender of the envelope..</param>
@@ -359,9 +359,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdDateTime", EmitDefaultValue=false)]
         public string CreatedDateTime { get; set; }
         /// <summary>
-        /// An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters.
+        /// An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
         /// </summary>
-        /// <value>An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each &#x60;customField&#x60; string can be a maximum of 100 characters.</value>
+        /// <value>An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.</value>
         [DataMember(Name="customFields", EmitDefaultValue=false)]
         public CustomFields CustomFields { get; set; }
         /// <summary>
@@ -690,9 +690,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="purgeState", EmitDefaultValue=false)]
         public string PurgeState { get; set; }
         /// <summary>
-        /// An array of recipient objects that provides details about the recipients of the envelope.
+        /// An array of powerform recipients.
         /// </summary>
-        /// <value>An array of recipient objects that provides details about the recipients of the envelope.</value>
+        /// <value>An array of powerform recipients.</value>
         [DataMember(Name="recipients", EmitDefaultValue=false)]
         public Recipients Recipients { get; set; }
         /// <summary>

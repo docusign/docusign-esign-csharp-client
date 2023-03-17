@@ -40,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ClientUserId">Specifies whether the recipient is embedded or remote.   If the &#x60;clientUserId&#x60; property is not null then the recipient is embedded. Note that if the &#x60;ClientUserId&#x60; property is set and either &#x60;SignerMustHaveAccount&#x60; or &#x60;SignerMustLoginToSign&#x60; property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. .</param>
         /// <param name="Email">Specifies the email address associated with the captive recipient..</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="UserName">Specifies the user name associated with the captive recipient..</param>
         public CaptiveRecipient(string ClientUserId = default(string), string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string UserName = default(string))
         {
@@ -63,9 +63,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

@@ -41,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentEndPage">DocumentEndPage.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentStartPage">DocumentStartPage.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
         public DocumentTemplate(string DocumentEndPage = default(string), string DocumentId = default(string), string DocumentStartPage = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string TemplateId = default(string))
         {
@@ -69,9 +69,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentStartPage", EmitDefaultValue=false)]
         public string DocumentStartPage { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

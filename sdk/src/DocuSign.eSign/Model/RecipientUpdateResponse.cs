@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="RecipientUpdateResponse" /> class.
         /// </summary>
         /// <param name="Combined">Combined.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="RecipientId">Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document..</param>
         /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
         /// <param name="Tabs">All of the tabs associated with the recipient..</param>
@@ -58,9 +58,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="combined", EmitDefaultValue=false)]
         public string Combined { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

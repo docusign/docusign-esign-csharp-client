@@ -39,7 +39,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="MemberSharedItems" /> class.
         /// </summary>
         /// <param name="Envelopes">Envelopes.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="Folders">Folders.</param>
         /// <param name="Templates">Templates.</param>
         /// <param name="User">Information about the user requesting sharing information..</param>
@@ -58,9 +58,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopes", EmitDefaultValue=false)]
         public List<SharedItem> Envelopes { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

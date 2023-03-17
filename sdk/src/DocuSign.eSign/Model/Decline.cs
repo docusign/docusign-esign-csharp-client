@@ -74,7 +74,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DeclineReasonMetadata">Metadata that indicates whether the &#x60;declineReason&#x60; property is editable..</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdMetadata">Metadata that indicates whether the &#x60;documentId&#x60; property is editable..</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="Font">The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default..</param>
         /// <param name="FontColor">The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White..</param>
         /// <param name="FontColorMetadata">Metadata that indicates whether the &#x60;fontColor&#x60; property is editable..</param>
@@ -435,9 +435,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata DocumentIdMetadata { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

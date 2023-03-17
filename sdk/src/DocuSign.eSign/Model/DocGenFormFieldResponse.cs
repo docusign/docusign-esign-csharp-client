@@ -25,29 +25,32 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Information about a shared item.
+    /// DocGenFormFieldResponse
     /// </summary>
     [DataContract]
-    public partial class UserSharedItem :  IEquatable<UserSharedItem>, IValidatableObject
+    public partial class DocGenFormFieldResponse :  IEquatable<DocGenFormFieldResponse>, IValidatableObject
     {
-        public UserSharedItem()
+        public DocGenFormFieldResponse()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserSharedItem" /> class.
+        /// Initializes a new instance of the <see cref="DocGenFormFieldResponse" /> class.
         /// </summary>
+        /// <param name="DocGenFormFields">DocGenFormFields.</param>
         /// <param name="ErrorDetails">Array or errors..</param>
-        /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
-        /// <param name="User">The user whose sharing information is being requested..</param>
-        public UserSharedItem(ErrorDetails ErrorDetails = default(ErrorDetails), string Shared = default(string), UserInfo User = default(UserInfo))
+        public DocGenFormFieldResponse(List<DocGenFormFields> DocGenFormFields = default(List<DocGenFormFields>), ErrorDetails ErrorDetails = default(ErrorDetails))
         {
+            this.DocGenFormFields = DocGenFormFields;
             this.ErrorDetails = ErrorDetails;
-            this.Shared = Shared;
-            this.User = User;
         }
         
+        /// <summary>
+        /// Gets or Sets DocGenFormFields
+        /// </summary>
+        [DataMember(Name="docGenFormFields", EmitDefaultValue=false)]
+        public List<DocGenFormFields> DocGenFormFields { get; set; }
         /// <summary>
         /// Array or errors.
         /// </summary>
@@ -55,28 +58,15 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
-        /// When set to **true**, this custom tab is shared.
-        /// </summary>
-        /// <value>When set to **true**, this custom tab is shared.</value>
-        [DataMember(Name="shared", EmitDefaultValue=false)]
-        public string Shared { get; set; }
-        /// <summary>
-        /// The user whose sharing information is being requested.
-        /// </summary>
-        /// <value>The user whose sharing information is being requested.</value>
-        [DataMember(Name="user", EmitDefaultValue=false)]
-        public UserInfo User { get; set; }
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UserSharedItem {\n");
+            sb.Append("class DocGenFormFieldResponse {\n");
+            sb.Append("  DocGenFormFields: ").Append(DocGenFormFields).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
-            sb.Append("  Shared: ").Append(Shared).Append("\n");
-            sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,15 +88,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as UserSharedItem);
+            return this.Equals(obj as DocGenFormFieldResponse);
         }
 
         /// <summary>
-        /// Returns true if UserSharedItem instances are equal
+        /// Returns true if DocGenFormFieldResponse instances are equal
         /// </summary>
-        /// <param name="other">Instance of UserSharedItem to be compared</param>
+        /// <param name="other">Instance of DocGenFormFieldResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UserSharedItem other)
+        public bool Equals(DocGenFormFieldResponse other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -114,19 +104,14 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.DocGenFormFields == other.DocGenFormFields ||
+                    this.DocGenFormFields != null &&
+                    this.DocGenFormFields.SequenceEqual(other.DocGenFormFields)
+                ) && 
+                (
                     this.ErrorDetails == other.ErrorDetails ||
                     this.ErrorDetails != null &&
                     this.ErrorDetails.Equals(other.ErrorDetails)
-                ) && 
-                (
-                    this.Shared == other.Shared ||
-                    this.Shared != null &&
-                    this.Shared.Equals(other.Shared)
-                ) && 
-                (
-                    this.User == other.User ||
-                    this.User != null &&
-                    this.User.Equals(other.User)
                 );
         }
 
@@ -141,12 +126,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.DocGenFormFields != null)
+                    hash = hash * 59 + this.DocGenFormFields.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
-                if (this.Shared != null)
-                    hash = hash * 59 + this.Shared.GetHashCode();
-                if (this.User != null)
-                    hash = hash * 59 + this.User.GetHashCode();
                 return hash;
             }
         }

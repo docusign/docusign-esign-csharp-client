@@ -40,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Created">Created.</param>
         /// <param name="CreatedBy">CreatedBy.</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="GroupEmail">GroupEmail.</param>
         /// <param name="GroupName">The name of the group..</param>
         /// <param name="GroupType">GroupType.</param>
@@ -73,9 +73,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="createdBy", EmitDefaultValue=false)]
         public string CreatedBy { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>

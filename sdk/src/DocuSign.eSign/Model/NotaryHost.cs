@@ -43,6 +43,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AddAccessCodeToEmail">This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient..</param>
         /// <param name="AllowSystemOverrideForLockedRecipient">AllowSystemOverrideForLockedRecipient.</param>
         /// <param name="AutoRespondedReason">AutoRespondedReason.</param>
+        /// <param name="BulkSendV2Recipient">BulkSendV2Recipient.</param>
         /// <param name="ClientUserId">Specifies whether the recipient is embedded or remote.   If the &#x60;clientUserId&#x60; property is not null then the recipient is embedded. Note that if the &#x60;ClientUserId&#x60; property is set and either &#x60;SignerMustHaveAccount&#x60; or &#x60;SignerMustLoginToSign&#x60; property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. .</param>
         /// <param name="CompletedCount">CompletedCount.</param>
         /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
@@ -56,9 +57,9 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentVisibility">DocumentVisibility.</param>
         /// <param name="Email">Email.</param>
         /// <param name="EmailMetadata">Metadata that indicates whether the &#x60;email&#x60; property is editable. This property is read-only..</param>
-        /// <param name="EmailNotification">An optional complex type that sets a specific email subject and body for this recipient&#39;s notification email.   **Note:** You can set the &#x60;emailNotification&#x60; property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level &#x60;emailSubject&#x60; and &#x60;emailBlurb&#x60;. .</param>
+        /// <param name="EmailNotification">A complex type that contains information sets the language of the recipient&#39;s email information.   **IMPORTANT**: If you enable email notification for one recipient, you must enable email notification for all recipients as it overrides the Envelope Subject and &#x60;EmailBlurb&#x60; property settings. .</param>
         /// <param name="EmbeddedRecipientStartURL">Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender&#39;s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to &#x60;SIGN_AT_DOCUSIGN&#x60;, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient&#39;s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets &#x60;EmbeddedRecipientStartURL&#x3D;SIGN_AT_DOCUSIGN&#x60;, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the &#x60;clientUserId&#x60; property is NOT set, and the &#x60;embeddedRecipientStartURL&#x60; is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The &#x60;customFields&#x60; property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   &#x60;http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&amp;[[mergeField3]]&#x60; .</param>
-        /// <param name="ErrorDetails">This object describes errors that occur. It is only valid for responses and ignored in requests..</param>
+        /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="FaxNumber">Reserved:.</param>
         /// <param name="FaxNumberMetadata">Reserved for DocuSign..</param>
         /// <param name="HostRecipientId">HostRecipientId.</param>
@@ -102,13 +103,14 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TotalTabCount">TotalTabCount.</param>
         /// <param name="UserId">UserId.</param>
-        public NotaryHost(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), string AllowSystemOverrideForLockedRecipient = default(string), string AutoRespondedReason = default(string), string ClientUserId = default(string), string CompletedCount = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), string DesignatorId = default(string), string DesignatorIdGuid = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), PropertyMetadata EmailMetadata = default(PropertyMetadata), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string HostRecipientId = default(string), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string InheritEmailNotificationConfiguration = default(string), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), string SignedDateTime = default(string), string SigningGroupId = default(string), PropertyMetadata SigningGroupIdMetadata = default(PropertyMetadata), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), string SuppressEmails = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
+        public NotaryHost(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), string AllowSystemOverrideForLockedRecipient = default(string), string AutoRespondedReason = default(string), string BulkSendV2Recipient = default(string), string ClientUserId = default(string), string CompletedCount = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), string DesignatorId = default(string), string DesignatorIdGuid = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), string Email = default(string), PropertyMetadata EmailMetadata = default(PropertyMetadata), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string HostRecipientId = default(string), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string InheritEmailNotificationConfiguration = default(string), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), string SignedDateTime = default(string), string SigningGroupId = default(string), PropertyMetadata SigningGroupIdMetadata = default(PropertyMetadata), string SigningGroupName = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), string SuppressEmails = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
         {
             this.AccessCode = AccessCode;
             this.AccessCodeMetadata = AccessCodeMetadata;
             this.AddAccessCodeToEmail = AddAccessCodeToEmail;
             this.AllowSystemOverrideForLockedRecipient = AllowSystemOverrideForLockedRecipient;
             this.AutoRespondedReason = AutoRespondedReason;
+            this.BulkSendV2Recipient = BulkSendV2Recipient;
             this.ClientUserId = ClientUserId;
             this.CompletedCount = CompletedCount;
             this.CustomFields = CustomFields;
@@ -199,6 +201,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="autoRespondedReason", EmitDefaultValue=false)]
         public string AutoRespondedReason { get; set; }
         /// <summary>
+        /// Gets or Sets BulkSendV2Recipient
+        /// </summary>
+        [DataMember(Name="bulkSendV2Recipient", EmitDefaultValue=false)]
+        public string BulkSendV2Recipient { get; set; }
+        /// <summary>
         /// Specifies whether the recipient is embedded or remote.   If the &#x60;clientUserId&#x60; property is not null then the recipient is embedded. Note that if the &#x60;ClientUserId&#x60; property is set and either &#x60;SignerMustHaveAccount&#x60; or &#x60;SignerMustLoginToSign&#x60; property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
         /// </summary>
         /// <value>Specifies whether the recipient is embedded or remote.   If the &#x60;clientUserId&#x60; property is not null then the recipient is embedded. Note that if the &#x60;ClientUserId&#x60; property is set and either &#x60;SignerMustHaveAccount&#x60; or &#x60;SignerMustLoginToSign&#x60; property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. </value>
@@ -272,9 +279,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="emailMetadata", EmitDefaultValue=false)]
         public PropertyMetadata EmailMetadata { get; set; }
         /// <summary>
-        /// An optional complex type that sets a specific email subject and body for this recipient&#39;s notification email.   **Note:** You can set the &#x60;emailNotification&#x60; property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level &#x60;emailSubject&#x60; and &#x60;emailBlurb&#x60;. 
+        /// A complex type that contains information sets the language of the recipient&#39;s email information.   **IMPORTANT**: If you enable email notification for one recipient, you must enable email notification for all recipients as it overrides the Envelope Subject and &#x60;EmailBlurb&#x60; property settings. 
         /// </summary>
-        /// <value>An optional complex type that sets a specific email subject and body for this recipient&#39;s notification email.   **Note:** You can set the &#x60;emailNotification&#x60; property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level &#x60;emailSubject&#x60; and &#x60;emailBlurb&#x60;. </value>
+        /// <value>A complex type that contains information sets the language of the recipient&#39;s email information.   **IMPORTANT**: If you enable email notification for one recipient, you must enable email notification for all recipients as it overrides the Envelope Subject and &#x60;EmailBlurb&#x60; property settings. </value>
         [DataMember(Name="emailNotification", EmitDefaultValue=false)]
         public RecipientEmailNotification EmailNotification { get; set; }
         /// <summary>
@@ -284,9 +291,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="embeddedRecipientStartURL", EmitDefaultValue=false)]
         public string EmbeddedRecipientStartURL { get; set; }
         /// <summary>
-        /// This object describes errors that occur. It is only valid for responses and ignored in requests.
+        /// Array or errors.
         /// </summary>
-        /// <value>This object describes errors that occur. It is only valid for responses and ignored in requests.</value>
+        /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
@@ -549,6 +556,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AddAccessCodeToEmail: ").Append(AddAccessCodeToEmail).Append("\n");
             sb.Append("  AllowSystemOverrideForLockedRecipient: ").Append(AllowSystemOverrideForLockedRecipient).Append("\n");
             sb.Append("  AutoRespondedReason: ").Append(AutoRespondedReason).Append("\n");
+            sb.Append("  BulkSendV2Recipient: ").Append(BulkSendV2Recipient).Append("\n");
             sb.Append("  ClientUserId: ").Append(ClientUserId).Append("\n");
             sb.Append("  CompletedCount: ").Append(CompletedCount).Append("\n");
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
@@ -668,6 +676,11 @@ namespace DocuSign.eSign.Model
                     this.AutoRespondedReason == other.AutoRespondedReason ||
                     this.AutoRespondedReason != null &&
                     this.AutoRespondedReason.Equals(other.AutoRespondedReason)
+                ) && 
+                (
+                    this.BulkSendV2Recipient == other.BulkSendV2Recipient ||
+                    this.BulkSendV2Recipient != null &&
+                    this.BulkSendV2Recipient.Equals(other.BulkSendV2Recipient)
                 ) && 
                 (
                     this.ClientUserId == other.ClientUserId ||
@@ -987,6 +1000,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AllowSystemOverrideForLockedRecipient.GetHashCode();
                 if (this.AutoRespondedReason != null)
                     hash = hash * 59 + this.AutoRespondedReason.GetHashCode();
+                if (this.BulkSendV2Recipient != null)
+                    hash = hash * 59 + this.BulkSendV2Recipient.GetHashCode();
                 if (this.ClientUserId != null)
                     hash = hash * 59 + this.ClientUserId.GetHashCode();
                 if (this.CompletedCount != null)

@@ -53,22 +53,22 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        [DataMember(Name="email", EmitDefaultValue=false)]
+        [DataMember(Name="Email", EmitDefaultValue=false)]
         public string Email { get; set; }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name="Name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
         /// Gets or Sets UserAuthorizationId
         /// </summary>
-        [DataMember(Name="userAuthorizationId", EmitDefaultValue=false)]
+        [DataMember(Name="UserAuthorizationId", EmitDefaultValue=false)]
         public string UserAuthorizationId { get; set; }
         /// <summary>
         /// Gets or Sets UserId
         /// </summary>
-        [DataMember(Name="userId", EmitDefaultValue=false)]
+        [DataMember(Name="UserId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>
         /// Returns the string presentation of the object

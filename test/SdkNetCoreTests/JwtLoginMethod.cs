@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using DocuSign.eSign.Client;
 using DocuSign.eSign.Client.Auth;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -25,6 +26,21 @@ namespace SdkNetCoreTests
                 privateKeyStream, 
                 testConfig.ExpiresInHours, 
                 scopes);
+
+            Assert.IsNotNull(tokenInfo.access_token);
+
+            using (MemoryStream ms = new MemoryStream(privateKeyStream))
+            {
+                OAuth.OAuthToken tokenInfoFromStream = testConfig.ApiClient.RequestJWTUserToken(
+                    testConfig.IntegratorKey,
+                    testConfig.UserId,
+                    testConfig.OAuthBasePath,
+                    ms,
+                    testConfig.ExpiresInHours,
+                    scopes);
+
+                Assert.IsNotNull(tokenInfoFromStream.access_token);
+            }
 
             OAuth.UserInfo userInfo = testConfig.ApiClient.GetUserInfo(tokenInfo.access_token);
 

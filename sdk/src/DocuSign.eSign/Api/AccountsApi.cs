@@ -145,6 +145,56 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<PermissionProfile> CreatePermissionProfileWithHttpInfo(string accountId, PermissionProfile permissionProfile = null, AccountsApi.CreatePermissionProfileOptions options = null);
         /// <summary>
+        /// Creates the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationCreateRequest"> (optional)</param>
+        /// <returns></returns>
+        UserAuthorization CreateUserAuthorization(string accountId, string userId, UserAuthorizationCreateRequest userAuthorizationCreateRequest = null);
+
+        /// <summary>
+        /// Creates the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationCreateRequest"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UserAuthorization> CreateUserAuthorizationWithHttpInfo(string accountId, string userId, UserAuthorizationCreateRequest userAuthorizationCreateRequest = null);
+        /// <summary>
+        /// Creates ot updates user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsRequest"> (optional)</param>
+        /// <returns></returns>
+        UserAuthorizationsResponse CreateUserAuthorizations(string accountId, string userId, UserAuthorizationsRequest userAuthorizationsRequest = null);
+
+        /// <summary>
+        /// Creates ot updates user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsRequest"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UserAuthorizationsResponse> CreateUserAuthorizationsWithHttpInfo(string accountId, string userId, UserAuthorizationsRequest userAuthorizationsRequest = null);
+        /// <summary>
         /// Deletes the specified account.
         /// </summary>
         /// <remarks>
@@ -381,6 +431,56 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeletePermissionProfileWithHttpInfo(string accountId, string permissionProfileId, AccountsApi.DeletePermissionProfileOptions options = null);
         /// <summary>
+        /// Deletes the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns></returns>
+        void DeleteUserAuthorization(string accountId, string userId, string authorizationId);
+
+        /// <summary>
+        /// Deletes the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteUserAuthorizationWithHttpInfo(string accountId, string userId, string authorizationId);
+        /// <summary>
+        /// Creates ot updates user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsDeleteRequest"> (optional)</param>
+        /// <returns></returns>
+        UserAuthorizationsDeleteResponse DeleteUserAuthorizations(string accountId, string userId, UserAuthorizationsDeleteRequest userAuthorizationsDeleteRequest = null);
+
+        /// <summary>
+        /// Creates ot updates user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsDeleteRequest"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UserAuthorizationsDeleteResponse> DeleteUserAuthorizationsWithHttpInfo(string accountId, string userId, UserAuthorizationsDeleteRequest userAuthorizationsDeleteRequest = null);
+        /// <summary>
         /// Get the list of identity verification options for an account
         /// </summary>
         /// <remarks>
@@ -518,6 +618,31 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<TabAccountSettings> GetAccountTabSettingsWithHttpInfo(string accountId);
+        /// <summary>
+        /// Returns the agent user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        UserAuthorizations GetAgentUserAuthorizations(string accountId, string userId, AccountsApi.GetAgentUserAuthorizationsOptions options = null);
+
+        /// <summary>
+        /// Returns the agent user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UserAuthorizations> GetAgentUserAuthorizationsWithHttpInfo(string accountId, string userId, AccountsApi.GetAgentUserAuthorizationsOptions options = null);
         /// <summary>
         /// Get all payment gateway account for the provided accountId
         /// </summary>
@@ -881,6 +1006,31 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<PermissionProfile> GetPermissionProfileWithHttpInfo(string accountId, string permissionProfileId, AccountsApi.GetPermissionProfileOptions options = null);
         /// <summary>
+        /// Returns the principal user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        UserAuthorizations GetPrincipalUserAuthorizations(string accountId, string userId, AccountsApi.GetPrincipalUserAuthorizationsOptions options = null);
+
+        /// <summary>
+        /// Returns the principal user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UserAuthorizations> GetPrincipalUserAuthorizationsWithHttpInfo(string accountId, string userId, AccountsApi.GetPrincipalUserAuthorizationsOptions options = null);
+        /// <summary>
         /// Retrieves the account provisioning information for the account.
         /// </summary>
         /// <remarks>
@@ -920,6 +1070,31 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<SupportedLanguages> GetSupportedLanguagesWithHttpInfo(string accountId);
+        /// <summary>
+        /// Returns the user authorization for a given authorization id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns></returns>
+        UserAuthorization GetUserAuthorization(string accountId, string userId, string authorizationId);
+
+        /// <summary>
+        /// Returns the user authorization for a given authorization id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UserAuthorization> GetUserAuthorizationWithHttpInfo(string accountId, string userId, string authorizationId);
         /// <summary>
         /// Get watermark information.
         /// </summary>
@@ -1589,6 +1764,33 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<AccountSharedAccess> UpdateSharedAccessWithHttpInfo(string accountId, AccountSharedAccess accountSharedAccess = null, AccountsApi.UpdateSharedAccessOptions options = null);
         /// <summary>
+        /// Updates the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <param name="userAuthorizationUpdateRequest"> (optional)</param>
+        /// <returns></returns>
+        UserAuthorization UpdateUserAuthorization(string accountId, string userId, string authorizationId, UserAuthorizationUpdateRequest userAuthorizationUpdateRequest = null);
+
+        /// <summary>
+        /// Updates the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <param name="userAuthorizationUpdateRequest"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UserAuthorization> UpdateUserAuthorizationWithHttpInfo(string accountId, string userId, string authorizationId, UserAuthorizationUpdateRequest userAuthorizationUpdateRequest = null);
+        /// <summary>
         /// Update watermark information.
         /// </summary>
         /// <remarks>
@@ -1734,6 +1936,56 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (PermissionProfile)</returns>
         System.Threading.Tasks.Task<ApiResponse<PermissionProfile>> CreatePermissionProfileAsyncWithHttpInfo(string accountId, PermissionProfile permissionProfile = null, AccountsApi.CreatePermissionProfileOptions options = null);
+        /// <summary>
+        /// Creates the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationCreateRequest"> (optional)</param>
+        /// <returns>Task of UserAuthorization</returns>
+        System.Threading.Tasks.Task<UserAuthorization> CreateUserAuthorizationAsync(string accountId, string userId, UserAuthorizationCreateRequest userAuthorizationCreateRequest = null);
+
+        /// <summary>
+        /// Creates the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationCreateRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (UserAuthorization)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserAuthorization>> CreateUserAuthorizationAsyncWithHttpInfo(string accountId, string userId, UserAuthorizationCreateRequest userAuthorizationCreateRequest = null);
+        /// <summary>
+        /// Creates ot updates user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsRequest"> (optional)</param>
+        /// <returns>Task of UserAuthorizationsResponse</returns>
+        System.Threading.Tasks.Task<UserAuthorizationsResponse> CreateUserAuthorizationsAsync(string accountId, string userId, UserAuthorizationsRequest userAuthorizationsRequest = null);
+
+        /// <summary>
+        /// Creates ot updates user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (UserAuthorizationsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserAuthorizationsResponse>> CreateUserAuthorizationsAsyncWithHttpInfo(string accountId, string userId, UserAuthorizationsRequest userAuthorizationsRequest = null);
         /// <summary>
         /// Deletes the specified account.
         /// </summary>
@@ -1971,6 +2223,56 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeletePermissionProfileAsyncWithHttpInfo(string accountId, string permissionProfileId, AccountsApi.DeletePermissionProfileOptions options = null);
         /// <summary>
+        /// Deletes the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteUserAuthorizationAsync(string accountId, string userId, string authorizationId);
+
+        /// <summary>
+        /// Deletes the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserAuthorizationAsyncWithHttpInfo(string accountId, string userId, string authorizationId);
+        /// <summary>
+        /// Creates ot updates user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsDeleteRequest"> (optional)</param>
+        /// <returns>Task of UserAuthorizationsDeleteResponse</returns>
+        System.Threading.Tasks.Task<UserAuthorizationsDeleteResponse> DeleteUserAuthorizationsAsync(string accountId, string userId, UserAuthorizationsDeleteRequest userAuthorizationsDeleteRequest = null);
+
+        /// <summary>
+        /// Creates ot updates user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsDeleteRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (UserAuthorizationsDeleteResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserAuthorizationsDeleteResponse>> DeleteUserAuthorizationsAsyncWithHttpInfo(string accountId, string userId, UserAuthorizationsDeleteRequest userAuthorizationsDeleteRequest = null);
+        /// <summary>
         /// Get the list of identity verification options for an account
         /// </summary>
         /// <remarks>
@@ -2108,6 +2410,31 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of ApiResponse (TabAccountSettings)</returns>
         System.Threading.Tasks.Task<ApiResponse<TabAccountSettings>> GetAccountTabSettingsAsyncWithHttpInfo(string accountId);
+        /// <summary>
+        /// Returns the agent user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of UserAuthorizations</returns>
+        System.Threading.Tasks.Task<UserAuthorizations> GetAgentUserAuthorizationsAsync(string accountId, string userId, AccountsApi.GetAgentUserAuthorizationsOptions options = null);
+
+        /// <summary>
+        /// Returns the agent user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (UserAuthorizations)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserAuthorizations>> GetAgentUserAuthorizationsAsyncWithHttpInfo(string accountId, string userId, AccountsApi.GetAgentUserAuthorizationsOptions options = null);
         /// <summary>
         /// Get all payment gateway account for the provided accountId
         /// </summary>
@@ -2471,6 +2798,31 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (PermissionProfile)</returns>
         System.Threading.Tasks.Task<ApiResponse<PermissionProfile>> GetPermissionProfileAsyncWithHttpInfo(string accountId, string permissionProfileId, AccountsApi.GetPermissionProfileOptions options = null);
         /// <summary>
+        /// Returns the principal user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of UserAuthorizations</returns>
+        System.Threading.Tasks.Task<UserAuthorizations> GetPrincipalUserAuthorizationsAsync(string accountId, string userId, AccountsApi.GetPrincipalUserAuthorizationsOptions options = null);
+
+        /// <summary>
+        /// Returns the principal user authorizations
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (UserAuthorizations)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserAuthorizations>> GetPrincipalUserAuthorizationsAsyncWithHttpInfo(string accountId, string userId, AccountsApi.GetPrincipalUserAuthorizationsOptions options = null);
+        /// <summary>
         /// Retrieves the account provisioning information for the account.
         /// </summary>
         /// <remarks>
@@ -2510,6 +2862,31 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <returns>Task of ApiResponse (SupportedLanguages)</returns>
         System.Threading.Tasks.Task<ApiResponse<SupportedLanguages>> GetSupportedLanguagesAsyncWithHttpInfo(string accountId);
+        /// <summary>
+        /// Returns the user authorization for a given authorization id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>Task of UserAuthorization</returns>
+        System.Threading.Tasks.Task<UserAuthorization> GetUserAuthorizationAsync(string accountId, string userId, string authorizationId);
+
+        /// <summary>
+        /// Returns the user authorization for a given authorization id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>Task of ApiResponse (UserAuthorization)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserAuthorization>> GetUserAuthorizationAsyncWithHttpInfo(string accountId, string userId, string authorizationId);
         /// <summary>
         /// Get watermark information.
         /// </summary>
@@ -3178,6 +3555,33 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (AccountSharedAccess)</returns>
         System.Threading.Tasks.Task<ApiResponse<AccountSharedAccess>> UpdateSharedAccessAsyncWithHttpInfo(string accountId, AccountSharedAccess accountSharedAccess = null, AccountsApi.UpdateSharedAccessOptions options = null);
+        /// <summary>
+        /// Updates the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <param name="userAuthorizationUpdateRequest"> (optional)</param>
+        /// <returns>Task of UserAuthorization</returns>
+        System.Threading.Tasks.Task<UserAuthorization> UpdateUserAuthorizationAsync(string accountId, string userId, string authorizationId, UserAuthorizationUpdateRequest userAuthorizationUpdateRequest = null);
+
+        /// <summary>
+        /// Updates the user authorization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <param name="userAuthorizationUpdateRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (UserAuthorization)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserAuthorization>> UpdateUserAuthorizationAsyncWithHttpInfo(string accountId, string userId, string authorizationId, UserAuthorizationUpdateRequest userAuthorizationUpdateRequest = null);
         /// <summary>
         /// Update watermark information.
         /// </summary>
@@ -3884,6 +4288,252 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<PermissionProfile>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (PermissionProfile)this.ApiClient.Deserialize(localVarResponse, typeof(PermissionProfile)));
+        }
+
+
+
+        /// <summary>
+        /// Creates the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationCreateRequest"> (optional)</param>
+        /// <returns>UserAuthorization</returns>
+        public UserAuthorization CreateUserAuthorization(string accountId, string userId, UserAuthorizationCreateRequest userAuthorizationCreateRequest = null)
+        {
+             ApiResponse<UserAuthorization> localVarResponse = CreateUserAuthorizationWithHttpInfo(accountId, userId, userAuthorizationCreateRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationCreateRequest"> (optional)</param>
+        /// <returns>ApiResponse of UserAuthorization</returns>
+        public ApiResponse<UserAuthorization> CreateUserAuthorizationWithHttpInfo(string accountId, string userId, UserAuthorizationCreateRequest userAuthorizationCreateRequest = null)
+        {
+            return CreateUserAuthorizationAsyncWithHttpInfo(accountId, userId, userAuthorizationCreateRequest)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        /// <summary>
+        /// Creates the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationCreateRequest"> (optional)</param>
+        /// <returns>Task of UserAuthorization</returns>
+        public async System.Threading.Tasks.Task<UserAuthorization> CreateUserAuthorizationAsync(string accountId, string userId, UserAuthorizationCreateRequest userAuthorizationCreateRequest = null)
+        {
+             ApiResponse<UserAuthorization> localVarResponse = await CreateUserAuthorizationAsyncWithHttpInfo(accountId, userId, userAuthorizationCreateRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationCreateRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (UserAuthorization)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserAuthorization>> CreateUserAuthorizationAsyncWithHttpInfo(string accountId, string userId, UserAuthorizationCreateRequest userAuthorizationCreateRequest = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->CreateUserAuthorization");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling AccountsApi->CreateUserAuthorization");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/users/{userId}/authorization";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (userAuthorizationCreateRequest != null && userAuthorizationCreateRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(userAuthorizationCreateRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userAuthorizationCreateRequest; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateUserAuthorization", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserAuthorization>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UserAuthorization)this.ApiClient.Deserialize(localVarResponse, typeof(UserAuthorization)));
+        }
+
+
+
+        /// <summary>
+        /// Creates ot updates user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsRequest"> (optional)</param>
+        /// <returns>UserAuthorizationsResponse</returns>
+        public UserAuthorizationsResponse CreateUserAuthorizations(string accountId, string userId, UserAuthorizationsRequest userAuthorizationsRequest = null)
+        {
+             ApiResponse<UserAuthorizationsResponse> localVarResponse = CreateUserAuthorizationsWithHttpInfo(accountId, userId, userAuthorizationsRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates ot updates user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsRequest"> (optional)</param>
+        /// <returns>ApiResponse of UserAuthorizationsResponse</returns>
+        public ApiResponse<UserAuthorizationsResponse> CreateUserAuthorizationsWithHttpInfo(string accountId, string userId, UserAuthorizationsRequest userAuthorizationsRequest = null)
+        {
+            return CreateUserAuthorizationsAsyncWithHttpInfo(accountId, userId, userAuthorizationsRequest)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        /// <summary>
+        /// Creates ot updates user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsRequest"> (optional)</param>
+        /// <returns>Task of UserAuthorizationsResponse</returns>
+        public async System.Threading.Tasks.Task<UserAuthorizationsResponse> CreateUserAuthorizationsAsync(string accountId, string userId, UserAuthorizationsRequest userAuthorizationsRequest = null)
+        {
+             ApiResponse<UserAuthorizationsResponse> localVarResponse = await CreateUserAuthorizationsAsyncWithHttpInfo(accountId, userId, userAuthorizationsRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates ot updates user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (UserAuthorizationsResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserAuthorizationsResponse>> CreateUserAuthorizationsAsyncWithHttpInfo(string accountId, string userId, UserAuthorizationsRequest userAuthorizationsRequest = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->CreateUserAuthorizations");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling AccountsApi->CreateUserAuthorizations");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/users/{userId}/authorizations";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (userAuthorizationsRequest != null && userAuthorizationsRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(userAuthorizationsRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userAuthorizationsRequest; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateUserAuthorizations", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserAuthorizationsResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UserAuthorizationsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserAuthorizationsResponse)));
         }
 
 
@@ -5040,6 +5690,247 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
+        /// Deletes the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns></returns>
+        public void DeleteUserAuthorization(string accountId, string userId, string authorizationId)
+        {
+             DeleteUserAuthorizationWithHttpInfo(accountId, userId, authorizationId);
+        }
+
+        /// <summary>
+        /// Deletes the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DeleteUserAuthorizationWithHttpInfo(string accountId, string userId, string authorizationId)
+        {
+            return DeleteUserAuthorizationAsyncWithHttpInfo(accountId, userId, authorizationId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        /// <summary>
+        /// Deletes the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteUserAuthorizationAsync(string accountId, string userId, string authorizationId)
+        {
+             await DeleteUserAuthorizationAsyncWithHttpInfo(accountId, userId, authorizationId);
+        }
+
+        /// <summary>
+        /// Deletes the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserAuthorizationAsyncWithHttpInfo(string accountId, string userId, string authorizationId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->DeleteUserAuthorization");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling AccountsApi->DeleteUserAuthorization");
+            // verify the required parameter 'authorizationId' is set
+            if (authorizationId == null)
+                throw new ApiException(400, "Missing required parameter 'authorizationId' when calling AccountsApi->DeleteUserAuthorization");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/users/{userId}/authorization/{authorizationId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (authorizationId != null) localVarPathParams.Add("authorizationId", this.ApiClient.ParameterToString(authorizationId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteUserAuthorization", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+
+
+        /// <summary>
+        /// Creates ot updates user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsDeleteRequest"> (optional)</param>
+        /// <returns>UserAuthorizationsDeleteResponse</returns>
+        public UserAuthorizationsDeleteResponse DeleteUserAuthorizations(string accountId, string userId, UserAuthorizationsDeleteRequest userAuthorizationsDeleteRequest = null)
+        {
+             ApiResponse<UserAuthorizationsDeleteResponse> localVarResponse = DeleteUserAuthorizationsWithHttpInfo(accountId, userId, userAuthorizationsDeleteRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates ot updates user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsDeleteRequest"> (optional)</param>
+        /// <returns>ApiResponse of UserAuthorizationsDeleteResponse</returns>
+        public ApiResponse<UserAuthorizationsDeleteResponse> DeleteUserAuthorizationsWithHttpInfo(string accountId, string userId, UserAuthorizationsDeleteRequest userAuthorizationsDeleteRequest = null)
+        {
+            return DeleteUserAuthorizationsAsyncWithHttpInfo(accountId, userId, userAuthorizationsDeleteRequest)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        /// <summary>
+        /// Creates ot updates user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsDeleteRequest"> (optional)</param>
+        /// <returns>Task of UserAuthorizationsDeleteResponse</returns>
+        public async System.Threading.Tasks.Task<UserAuthorizationsDeleteResponse> DeleteUserAuthorizationsAsync(string accountId, string userId, UserAuthorizationsDeleteRequest userAuthorizationsDeleteRequest = null)
+        {
+             ApiResponse<UserAuthorizationsDeleteResponse> localVarResponse = await DeleteUserAuthorizationsAsyncWithHttpInfo(accountId, userId, userAuthorizationsDeleteRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates ot updates user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="userAuthorizationsDeleteRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (UserAuthorizationsDeleteResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserAuthorizationsDeleteResponse>> DeleteUserAuthorizationsAsyncWithHttpInfo(string accountId, string userId, UserAuthorizationsDeleteRequest userAuthorizationsDeleteRequest = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->DeleteUserAuthorizations");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling AccountsApi->DeleteUserAuthorizations");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/users/{userId}/authorizations";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (userAuthorizationsDeleteRequest != null && userAuthorizationsDeleteRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(userAuthorizationsDeleteRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userAuthorizationsDeleteRequest; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteUserAuthorizations", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserAuthorizationsDeleteResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UserAuthorizationsDeleteResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserAuthorizationsDeleteResponse)));
+        }
+
+
+
+        /// <summary>
         /// Get the list of identity verification options for an account This method returns a list of Identity Verification workflows that are available to an account.  **Note:** To use this method, you must either be an account administrator or a sender.  ### Related topics  - [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)  
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
@@ -5731,6 +6622,148 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<TabAccountSettings>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (TabAccountSettings)this.ApiClient.Deserialize(localVarResponse, typeof(TabAccountSettings)));
+        }
+
+
+        /// <summary>
+        /// Returns the agent user authorizations 
+        /// </summary>
+        public class GetAgentUserAuthorizationsOptions
+        {
+            /// 
+            public string activeOnly {get; set;}
+            /// 
+            public string count {get; set;}
+            /// 
+            public string emailSubstring {get; set;}
+            /// 
+            public string permissions {get; set;}
+            /// 
+            public string startPosition {get; set;}
+            /// 
+            public string userNameSubstring {get; set;}
+        }
+
+        /// <summary>
+        /// Returns the agent user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>UserAuthorizations</returns>
+        public UserAuthorizations GetAgentUserAuthorizations(string accountId, string userId, AccountsApi.GetAgentUserAuthorizationsOptions options = null)
+        {
+             ApiResponse<UserAuthorizations> localVarResponse = GetAgentUserAuthorizationsWithHttpInfo(accountId, userId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns the agent user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of UserAuthorizations</returns>
+        public ApiResponse<UserAuthorizations> GetAgentUserAuthorizationsWithHttpInfo(string accountId, string userId, AccountsApi.GetAgentUserAuthorizationsOptions options = null)
+        {
+            return GetAgentUserAuthorizationsAsyncWithHttpInfo(accountId, userId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        /// <summary>
+        /// Returns the agent user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of UserAuthorizations</returns>
+        public async System.Threading.Tasks.Task<UserAuthorizations> GetAgentUserAuthorizationsAsync(string accountId, string userId, AccountsApi.GetAgentUserAuthorizationsOptions options = null)
+        {
+             ApiResponse<UserAuthorizations> localVarResponse = await GetAgentUserAuthorizationsAsyncWithHttpInfo(accountId, userId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns the agent user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (UserAuthorizations)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserAuthorizations>> GetAgentUserAuthorizationsAsyncWithHttpInfo(string accountId, string userId, AccountsApi.GetAgentUserAuthorizationsOptions options = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetAgentUserAuthorizations");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling AccountsApi->GetAgentUserAuthorizations");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/users/{userId}/authorizations/agent";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (options != null)
+            {
+                if (options.activeOnly != null) localVarQueryParams.Add("active_only", this.ApiClient.ParameterToString(options.activeOnly)); // query parameter
+                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.emailSubstring != null) localVarQueryParams.Add("email_substring", this.ApiClient.ParameterToString(options.emailSubstring)); // query parameter
+                if (options.permissions != null) localVarQueryParams.Add("permissions", this.ApiClient.ParameterToString(options.permissions)); // query parameter
+                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                if (options.userNameSubstring != null) localVarQueryParams.Add("user_name_substring", this.ApiClient.ParameterToString(options.userNameSubstring)); // query parameter
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAgentUserAuthorizations", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserAuthorizations>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UserAuthorizations)this.ApiClient.Deserialize(localVarResponse, typeof(UserAuthorizations)));
         }
 
 
@@ -7530,6 +8563,148 @@ namespace DocuSign.eSign.Api
         }
 
 
+        /// <summary>
+        /// Returns the principal user authorizations 
+        /// </summary>
+        public class GetPrincipalUserAuthorizationsOptions
+        {
+            /// 
+            public string activeOnly {get; set;}
+            /// 
+            public string count {get; set;}
+            /// 
+            public string emailSubstring {get; set;}
+            /// 
+            public string permissions {get; set;}
+            /// 
+            public string startPosition {get; set;}
+            /// 
+            public string userNameSubstring {get; set;}
+        }
+
+        /// <summary>
+        /// Returns the principal user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>UserAuthorizations</returns>
+        public UserAuthorizations GetPrincipalUserAuthorizations(string accountId, string userId, AccountsApi.GetPrincipalUserAuthorizationsOptions options = null)
+        {
+             ApiResponse<UserAuthorizations> localVarResponse = GetPrincipalUserAuthorizationsWithHttpInfo(accountId, userId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns the principal user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of UserAuthorizations</returns>
+        public ApiResponse<UserAuthorizations> GetPrincipalUserAuthorizationsWithHttpInfo(string accountId, string userId, AccountsApi.GetPrincipalUserAuthorizationsOptions options = null)
+        {
+            return GetPrincipalUserAuthorizationsAsyncWithHttpInfo(accountId, userId, options)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        /// <summary>
+        /// Returns the principal user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of UserAuthorizations</returns>
+        public async System.Threading.Tasks.Task<UserAuthorizations> GetPrincipalUserAuthorizationsAsync(string accountId, string userId, AccountsApi.GetPrincipalUserAuthorizationsOptions options = null)
+        {
+             ApiResponse<UserAuthorizations> localVarResponse = await GetPrincipalUserAuthorizationsAsyncWithHttpInfo(accountId, userId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns the principal user authorizations 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (UserAuthorizations)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserAuthorizations>> GetPrincipalUserAuthorizationsAsyncWithHttpInfo(string accountId, string userId, AccountsApi.GetPrincipalUserAuthorizationsOptions options = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetPrincipalUserAuthorizations");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling AccountsApi->GetPrincipalUserAuthorizations");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/users/{userId}/authorizations";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (options != null)
+            {
+                if (options.activeOnly != null) localVarQueryParams.Add("active_only", this.ApiClient.ParameterToString(options.activeOnly)); // query parameter
+                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.emailSubstring != null) localVarQueryParams.Add("email_substring", this.ApiClient.ParameterToString(options.emailSubstring)); // query parameter
+                if (options.permissions != null) localVarQueryParams.Add("permissions", this.ApiClient.ParameterToString(options.permissions)); // query parameter
+                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                if (options.userNameSubstring != null) localVarQueryParams.Add("user_name_substring", this.ApiClient.ParameterToString(options.userNameSubstring)); // query parameter
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPrincipalUserAuthorizations", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserAuthorizations>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UserAuthorizations)this.ApiClient.Deserialize(localVarResponse, typeof(UserAuthorizations)));
+        }
+
+
 
         /// <summary>
         /// Retrieves the account provisioning information for the account. Retrieves the account provisioning information for the account.
@@ -7725,6 +8900,125 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<SupportedLanguages>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (SupportedLanguages)this.ApiClient.Deserialize(localVarResponse, typeof(SupportedLanguages)));
+        }
+
+
+
+        /// <summary>
+        /// Returns the user authorization for a given authorization id 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>UserAuthorization</returns>
+        public UserAuthorization GetUserAuthorization(string accountId, string userId, string authorizationId)
+        {
+             ApiResponse<UserAuthorization> localVarResponse = GetUserAuthorizationWithHttpInfo(accountId, userId, authorizationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns the user authorization for a given authorization id 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>ApiResponse of UserAuthorization</returns>
+        public ApiResponse<UserAuthorization> GetUserAuthorizationWithHttpInfo(string accountId, string userId, string authorizationId)
+        {
+            return GetUserAuthorizationAsyncWithHttpInfo(accountId, userId, authorizationId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        /// <summary>
+        /// Returns the user authorization for a given authorization id 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>Task of UserAuthorization</returns>
+        public async System.Threading.Tasks.Task<UserAuthorization> GetUserAuthorizationAsync(string accountId, string userId, string authorizationId)
+        {
+             ApiResponse<UserAuthorization> localVarResponse = await GetUserAuthorizationAsyncWithHttpInfo(accountId, userId, authorizationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns the user authorization for a given authorization id 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <returns>Task of ApiResponse (UserAuthorization)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserAuthorization>> GetUserAuthorizationAsyncWithHttpInfo(string accountId, string userId, string authorizationId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetUserAuthorization");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling AccountsApi->GetUserAuthorization");
+            // verify the required parameter 'authorizationId' is set
+            if (authorizationId == null)
+                throw new ApiException(400, "Missing required parameter 'authorizationId' when calling AccountsApi->GetUserAuthorization");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/users/{userId}/authorization/{authorizationId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (authorizationId != null) localVarPathParams.Add("authorizationId", this.ApiClient.ParameterToString(authorizationId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserAuthorization", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserAuthorization>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UserAuthorization)this.ApiClient.Deserialize(localVarResponse, typeof(UserAuthorization)));
         }
 
 
@@ -11127,6 +12421,137 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<AccountSharedAccess>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (AccountSharedAccess)this.ApiClient.Deserialize(localVarResponse, typeof(AccountSharedAccess)));
+        }
+
+
+
+        /// <summary>
+        /// Updates the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <param name="userAuthorizationUpdateRequest"> (optional)</param>
+        /// <returns>UserAuthorization</returns>
+        public UserAuthorization UpdateUserAuthorization(string accountId, string userId, string authorizationId, UserAuthorizationUpdateRequest userAuthorizationUpdateRequest = null)
+        {
+             ApiResponse<UserAuthorization> localVarResponse = UpdateUserAuthorizationWithHttpInfo(accountId, userId, authorizationId, userAuthorizationUpdateRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Updates the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <param name="userAuthorizationUpdateRequest"> (optional)</param>
+        /// <returns>ApiResponse of UserAuthorization</returns>
+        public ApiResponse<UserAuthorization> UpdateUserAuthorizationWithHttpInfo(string accountId, string userId, string authorizationId, UserAuthorizationUpdateRequest userAuthorizationUpdateRequest = null)
+        {
+            return UpdateUserAuthorizationAsyncWithHttpInfo(accountId, userId, authorizationId, userAuthorizationUpdateRequest)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        /// <summary>
+        /// Updates the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <param name="userAuthorizationUpdateRequest"> (optional)</param>
+        /// <returns>Task of UserAuthorization</returns>
+        public async System.Threading.Tasks.Task<UserAuthorization> UpdateUserAuthorizationAsync(string accountId, string userId, string authorizationId, UserAuthorizationUpdateRequest userAuthorizationUpdateRequest = null)
+        {
+             ApiResponse<UserAuthorization> localVarResponse = await UpdateUserAuthorizationAsyncWithHttpInfo(accountId, userId, authorizationId, userAuthorizationUpdateRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Updates the user authorization 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
+        /// <param name="authorizationId"></param>
+        /// <param name="userAuthorizationUpdateRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (UserAuthorization)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserAuthorization>> UpdateUserAuthorizationAsyncWithHttpInfo(string accountId, string userId, string authorizationId, UserAuthorizationUpdateRequest userAuthorizationUpdateRequest = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->UpdateUserAuthorization");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling AccountsApi->UpdateUserAuthorization");
+            // verify the required parameter 'authorizationId' is set
+            if (authorizationId == null)
+                throw new ApiException(400, "Missing required parameter 'authorizationId' when calling AccountsApi->UpdateUserAuthorization");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/users/{userId}/authorization/{authorizationId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (authorizationId != null) localVarPathParams.Add("authorizationId", this.ApiClient.ParameterToString(authorizationId)); // path parameter
+            if (userAuthorizationUpdateRequest != null && userAuthorizationUpdateRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(userAuthorizationUpdateRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userAuthorizationUpdateRequest; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateUserAuthorization", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserAuthorization>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UserAuthorization)this.ApiClient.Deserialize(localVarResponse, typeof(UserAuthorization)));
         }
 
 

@@ -884,17 +884,14 @@ namespace DocuSign.eSign.Client
         /// <returns>The JWT user token</returns>
         public OAuth.OAuthToken RequestJWTUserToken(string clientId, string userId, string oauthBasePath, Stream privateKeyStream, int expiresInHours, List<string> scopes = null)
         {
-            using (StreamReader sr = new StreamReader(privateKeyStream))
+            if (privateKeyStream != null && privateKeyStream.CanRead && privateKeyStream.Length > 0)
             {
-                if (sr != null && sr.Peek() > 0)
-                {
-                    byte[] privateKeyBytes = ReadAsBytes(privateKeyStream);
-                    return this.RequestJWTUserToken(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes);
-                }
-                else
-                {
-                    throw new ApiException(400, "Private key stream not supplied or is invalid!");
-                }
+                byte[] privateKeyBytes = ReadAsBytes(privateKeyStream);
+                return this.RequestJWTUserToken(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes);
+            }
+            else
+            {
+                throw new ApiException(400, "Private key stream not supplied or is invalid!");
             }
         }
 

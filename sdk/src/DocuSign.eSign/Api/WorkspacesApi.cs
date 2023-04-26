@@ -638,7 +638,6 @@ namespace DocuSign.eSign.Api
         }
 
 
-
         /// <summary>
         /// Create a Workspace Creates a new workspace.
         /// </summary>
@@ -661,10 +660,68 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Workspace</returns>
         public ApiResponse<Workspace> CreateWorkspaceWithHttpInfo(string accountId, Workspace workspace = null)
         {
-            return CreateWorkspaceAsyncWithHttpInfo(accountId, workspace)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling WorkspacesApi->CreateWorkspace");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/workspaces";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (workspace != null && workspace.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(workspace); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = workspace; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateWorkspace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Workspace>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
         }
 
         /// <summary>
@@ -735,6 +792,7 @@ namespace DocuSign.eSign.Api
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -751,7 +809,6 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
         }
-
 
 
         /// <summary>
@@ -778,10 +835,68 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of WorkspaceItem</returns>
         public ApiResponse<WorkspaceItem> CreateWorkspaceFileWithHttpInfo(string accountId, string workspaceId, string folderId)
         {
-            return CreateWorkspaceFileAsyncWithHttpInfo(accountId, workspaceId, folderId)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling WorkspacesApi->CreateWorkspaceFile");
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspacesApi->CreateWorkspaceFile");
+            // verify the required parameter 'folderId' is set
+            if (folderId == null)
+                throw new ApiException(400, "Missing required parameter 'folderId' when calling WorkspacesApi->CreateWorkspaceFile");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
+            if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateWorkspaceFile", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<WorkspaceItem>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (WorkspaceItem)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceItem)));
         }
 
         /// <summary>
@@ -854,6 +969,7 @@ namespace DocuSign.eSign.Api
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -870,7 +986,6 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (WorkspaceItem)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceItem)));
         }
-
 
 
         /// <summary>
@@ -895,10 +1010,64 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Workspace</returns>
         public ApiResponse<Workspace> DeleteWorkspaceWithHttpInfo(string accountId, string workspaceId)
         {
-            return DeleteWorkspaceAsyncWithHttpInfo(accountId, workspaceId)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling WorkspacesApi->DeleteWorkspace");
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspacesApi->DeleteWorkspace");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/workspaces/{workspaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteWorkspace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Workspace>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
         }
 
         /// <summary>
@@ -965,6 +1134,7 @@ namespace DocuSign.eSign.Api
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -981,7 +1151,6 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
         }
-
 
 
         /// <summary>
@@ -1009,10 +1178,77 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> DeleteWorkspaceFolderItemsWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspaceItemList workspaceItemList = null)
         {
-            return DeleteWorkspaceFolderItemsAsyncWithHttpInfo(accountId, workspaceId, folderId, workspaceItemList)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling WorkspacesApi->DeleteWorkspaceFolderItems");
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspacesApi->DeleteWorkspaceFolderItems");
+            // verify the required parameter 'folderId' is set
+            if (folderId == null)
+                throw new ApiException(400, "Missing required parameter 'folderId' when calling WorkspacesApi->DeleteWorkspaceFolderItems");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
+            if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
+            if (workspaceItemList != null && workspaceItemList.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(workspaceItemList); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = workspaceItemList; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteWorkspaceFolderItems", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
@@ -1094,6 +1330,7 @@ namespace DocuSign.eSign.Api
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1111,7 +1348,6 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
-
 
 
         /// <summary>
@@ -1136,10 +1372,64 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Workspace</returns>
         public ApiResponse<Workspace> GetWorkspaceWithHttpInfo(string accountId, string workspaceId)
         {
-            return GetWorkspaceAsyncWithHttpInfo(accountId, workspaceId)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling WorkspacesApi->GetWorkspace");
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspacesApi->GetWorkspace");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/workspaces/{workspaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetWorkspace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Workspace>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
         }
 
         /// <summary>
@@ -1206,6 +1496,7 @@ namespace DocuSign.eSign.Api
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1222,7 +1513,6 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
         }
-
 
         /// <summary>
         /// Get Workspace File Retrieves a workspace file (the binary).
@@ -1262,10 +1552,78 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> GetWorkspaceFileWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.GetWorkspaceFileOptions options = null)
         {
-            return GetWorkspaceFileAsyncWithHttpInfo(accountId, workspaceId, folderId, fileId, options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling WorkspacesApi->GetWorkspaceFile");
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspacesApi->GetWorkspaceFile");
+            // verify the required parameter 'folderId' is set
+            if (folderId == null)
+                throw new ApiException(400, "Missing required parameter 'folderId' when calling WorkspacesApi->GetWorkspaceFile");
+            // verify the required parameter 'fileId' is set
+            if (fileId == null)
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling WorkspacesApi->GetWorkspaceFile");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
+            if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
+            if (fileId != null) localVarPathParams.Add("fileId", this.ApiClient.ParameterToString(fileId)); // path parameter
+            if (options != null)
+            {
+                if (options.isDownload != null) localVarQueryParams.Add("is_download", this.ApiClient.ParameterToString(options.isDownload)); // query parameter
+                if (options.pdfVersion != null) localVarQueryParams.Add("pdf_version", this.ApiClient.ParameterToString(options.pdfVersion)); // query parameter
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetWorkspaceFile", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
@@ -1350,6 +1708,7 @@ namespace DocuSign.eSign.Api
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1367,7 +1726,6 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
-
 
         /// <summary>
         /// List File Pages Retrieves a workspace file as rasterized pages.
@@ -1414,10 +1772,80 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of PageImages</returns>
         public ApiResponse<PageImages> ListWorkspaceFilePagesWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId, WorkspacesApi.ListWorkspaceFilePagesOptions options = null)
         {
-            return ListWorkspaceFilePagesAsyncWithHttpInfo(accountId, workspaceId, folderId, fileId, options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling WorkspacesApi->ListWorkspaceFilePages");
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspacesApi->ListWorkspaceFilePages");
+            // verify the required parameter 'folderId' is set
+            if (folderId == null)
+                throw new ApiException(400, "Missing required parameter 'folderId' when calling WorkspacesApi->ListWorkspaceFilePages");
+            // verify the required parameter 'fileId' is set
+            if (fileId == null)
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling WorkspacesApi->ListWorkspaceFilePages");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}/pages";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
+            if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
+            if (fileId != null) localVarPathParams.Add("fileId", this.ApiClient.ParameterToString(fileId)); // path parameter
+            if (options != null)
+            {
+                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.dpi != null) localVarQueryParams.Add("dpi", this.ApiClient.ParameterToString(options.dpi)); // query parameter
+                if (options.maxHeight != null) localVarQueryParams.Add("max_height", this.ApiClient.ParameterToString(options.maxHeight)); // query parameter
+                if (options.maxWidth != null) localVarQueryParams.Add("max_width", this.ApiClient.ParameterToString(options.maxWidth)); // query parameter
+                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListWorkspaceFilePages", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PageImages>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (PageImages)this.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
         }
 
         /// <summary>
@@ -1506,6 +1934,7 @@ namespace DocuSign.eSign.Api
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1522,7 +1951,6 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (PageImages)this.ApiClient.Deserialize(localVarResponse, typeof(PageImages)));
         }
-
 
         /// <summary>
         /// List Workspace Folder Contents Retrieves workspace folder contents, which can include sub folders and files.
@@ -1571,10 +1999,78 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of WorkspaceFolderContents</returns>
         public ApiResponse<WorkspaceFolderContents> ListWorkspaceFolderItemsWithHttpInfo(string accountId, string workspaceId, string folderId, WorkspacesApi.ListWorkspaceFolderItemsOptions options = null)
         {
-            return ListWorkspaceFolderItemsAsyncWithHttpInfo(accountId, workspaceId, folderId, options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling WorkspacesApi->ListWorkspaceFolderItems");
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspacesApi->ListWorkspaceFolderItems");
+            // verify the required parameter 'folderId' is set
+            if (folderId == null)
+                throw new ApiException(400, "Missing required parameter 'folderId' when calling WorkspacesApi->ListWorkspaceFolderItems");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
+            if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
+            if (options != null)
+            {
+                if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
+                if (options.includeFiles != null) localVarQueryParams.Add("include_files", this.ApiClient.ParameterToString(options.includeFiles)); // query parameter
+                if (options.includeSubFolders != null) localVarQueryParams.Add("include_sub_folders", this.ApiClient.ParameterToString(options.includeSubFolders)); // query parameter
+                if (options.includeThumbnails != null) localVarQueryParams.Add("include_thumbnails", this.ApiClient.ParameterToString(options.includeThumbnails)); // query parameter
+                if (options.includeUserDetail != null) localVarQueryParams.Add("include_user_detail", this.ApiClient.ParameterToString(options.includeUserDetail)); // query parameter
+                if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                if (options.workspaceUserId != null) localVarQueryParams.Add("workspace_user_id", this.ApiClient.ParameterToString(options.workspaceUserId)); // query parameter
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListWorkspaceFolderItems", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<WorkspaceFolderContents>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (WorkspaceFolderContents)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceFolderContents)));
         }
 
         /// <summary>
@@ -1659,6 +2155,7 @@ namespace DocuSign.eSign.Api
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1675,7 +2172,6 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (WorkspaceFolderContents)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceFolderContents)));
         }
-
 
 
         /// <summary>
@@ -1698,10 +2194,60 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of WorkspaceList</returns>
         public ApiResponse<WorkspaceList> ListWorkspacesWithHttpInfo(string accountId)
         {
-            return ListWorkspacesAsyncWithHttpInfo(accountId)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling WorkspacesApi->ListWorkspaces");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/workspaces";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ListWorkspaces", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<WorkspaceList>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (WorkspaceList)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceList)));
         }
 
         /// <summary>
@@ -1762,6 +2308,7 @@ namespace DocuSign.eSign.Api
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1778,7 +2325,6 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (WorkspaceList)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceList)));
         }
-
 
 
         /// <summary>
@@ -1805,10 +2351,72 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Workspace</returns>
         public ApiResponse<Workspace> UpdateWorkspaceWithHttpInfo(string accountId, string workspaceId, Workspace workspace = null)
         {
-            return UpdateWorkspaceAsyncWithHttpInfo(accountId, workspaceId, workspace)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling WorkspacesApi->UpdateWorkspace");
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspacesApi->UpdateWorkspace");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/workspaces/{workspaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
+            if (workspace != null && workspace.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(workspace); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = workspace; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateWorkspace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Workspace>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
         }
 
         /// <summary>
@@ -1885,6 +2493,7 @@ namespace DocuSign.eSign.Api
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1901,7 +2510,6 @@ namespace DocuSign.eSign.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (Workspace)this.ApiClient.Deserialize(localVarResponse, typeof(Workspace)));
         }
-
 
 
         /// <summary>
@@ -1930,10 +2538,72 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of WorkspaceItem</returns>
         public ApiResponse<WorkspaceItem> UpdateWorkspaceFileWithHttpInfo(string accountId, string workspaceId, string folderId, string fileId)
         {
-            return UpdateWorkspaceFileAsyncWithHttpInfo(accountId, workspaceId, folderId, fileId)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling WorkspacesApi->UpdateWorkspaceFile");
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspacesApi->UpdateWorkspaceFile");
+            // verify the required parameter 'folderId' is set
+            if (folderId == null)
+                throw new ApiException(400, "Missing required parameter 'folderId' when calling WorkspacesApi->UpdateWorkspaceFile");
+            // verify the required parameter 'fileId' is set
+            if (fileId == null)
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling WorkspacesApi->UpdateWorkspaceFile");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (workspaceId != null) localVarPathParams.Add("workspaceId", this.ApiClient.ParameterToString(workspaceId)); // path parameter
+            if (folderId != null) localVarPathParams.Add("folderId", this.ApiClient.ParameterToString(folderId)); // path parameter
+            if (fileId != null) localVarPathParams.Add("fileId", this.ApiClient.ParameterToString(fileId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateWorkspaceFile", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<WorkspaceItem>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (WorkspaceItem)this.ApiClient.Deserialize(localVarResponse, typeof(WorkspaceItem)));
         }
 
         /// <summary>
@@ -2011,6 +2681,7 @@ namespace DocuSign.eSign.Api
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
             }
+
 
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Put, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);

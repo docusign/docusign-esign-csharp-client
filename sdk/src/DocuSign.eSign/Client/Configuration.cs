@@ -26,7 +26,7 @@ namespace DocuSign.eSign.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "6.4.1";
+        public const string Version = "6.4.2";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -350,7 +350,7 @@ namespace DocuSign.eSign.Client
         /// <returns></returns>
         string _getFrameworkVersion()
         {
-#if NET452
+#if NET462
             return ".NET Framework";
 #else
             return _trimVersionDescription(System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription);

@@ -415,10 +415,10 @@ namespace SdkNetCoreTests
             // Create a stream of bytes... 
             byte[] privateKeyStream = System.Text.Encoding.UTF8.GetBytes(rsaKey);
 
-            Exception ex = Assert.ThrowsException<Exception>(() => _testConfig.ApiClient.RequestJWTUserToken(_testConfig.IntegratorKeyNoConsent, _testConfig.UserId, _testConfig.OAuthBasePath, privateKeyStream, _testConfig.ExpiresInHours));
+            Exception ex = Assert.ThrowsException<IOException>(() => _testConfig.ApiClient.RequestJWTUserToken(_testConfig.IntegratorKeyNoConsent, _testConfig.UserId, _testConfig.OAuthBasePath, privateKeyStream, _testConfig.ExpiresInHours));
 
             Assert.IsNotNull(ex);
-            Assert.AreEqual(ex.Message, "Unexpected PEM type");
+            Assert.AreEqual(ex.Message, "no data after consuming leading dashes");
         }
 
         [TestMethod]

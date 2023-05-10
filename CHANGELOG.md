@@ -1,5 +1,12 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v6.4.2] - eSignature API v2.1-23.1.01.01 - 2023-05-10
+### Changed
+- Removed support for .NET Framework 4.5.2. Miminum requirement is now .NET Framework 4.6.2
+- Removed [BouncyCastle.Crypto](https://www.nuget.org/packages/BouncyCastle) and [Portable.BouncyCastle](https://www.nuget.org/packages/Portable.BouncyCastle) dependencies as they've been deprecated and added [BouncyCastle.Cryptography](https://www.nuget.org/packages/BouncyCastle.Cryptography) which is the recommended replacement and is being maintained.
+- Added support for version v2.1-23.1.01.01 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v6.4.1] - eSignature API v2.1-23.1.01.01 - 2023-04-26
 ### Changed
 - Added support for version v2.1-23.1.01.01 of the DocuSign ESignature API.

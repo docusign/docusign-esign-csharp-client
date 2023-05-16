@@ -25,7 +25,7 @@ using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Reserved for DocuSign use.
+    /// DocuSign internal use, but it is needed for swagger tools (go lang, Elixir/OTP) to generate client library. 
     /// </summary>
     [DataContract]
     public partial class OfflineAttributes :  IEquatable<OfflineAttributes>, IValidatableObject

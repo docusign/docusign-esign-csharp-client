@@ -39,6 +39,8 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="AccountUISettings" /> class.
         /// </summary>
         /// <param name="AdminMessage">AdminMessage.</param>
+        /// <param name="AllowUsersToEditSharedAccess">AllowUsersToEditSharedAccess.</param>
+        /// <param name="AllowUsersToEditSharedAccessMetadata">AllowUsersToEditSharedAccessMetadata.</param>
         /// <param name="AskAnAdmin">AskAnAdmin.</param>
         /// <param name="ClickwrapSchemaVersion">ClickwrapSchemaVersion.</param>
         /// <param name="ClickwrapSchemaVersionMetadata">ClickwrapSchemaVersionMetadata.</param>
@@ -68,9 +70,11 @@ namespace DocuSign.eSign.Model
         /// <param name="ShouldRedactAccessCodeMetadata">ShouldRedactAccessCodeMetadata.</param>
         /// <param name="UploadNewImageToSignOrInitial">UploadNewImageToSignOrInitial.</param>
         /// <param name="UploadNewImageToSignOrInitialMetadata">UploadNewImageToSignOrInitialMetadata.</param>
-        public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string ClickwrapSchemaVersion = default(string), SettingsMetadata ClickwrapSchemaVersionMetadata = default(SettingsMetadata), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string EnableEnvelopeCopyWithData = default(string), SettingsMetadata EnableEnvelopeCopyWithDataMetadata = default(SettingsMetadata), string EnableLegacySendflowLink = default(string), SettingsMetadata EnableLegacySendflowLinkMetadata = default(SettingsMetadata), string HasExternalLinkedAccounts = default(string), SettingsMetadata HasExternalLinkedAccountsMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
+        public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), string AllowUsersToEditSharedAccess = default(string), SettingsMetadata AllowUsersToEditSharedAccessMetadata = default(SettingsMetadata), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string ClickwrapSchemaVersion = default(string), SettingsMetadata ClickwrapSchemaVersionMetadata = default(SettingsMetadata), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string EnableEnvelopeCopyWithData = default(string), SettingsMetadata EnableEnvelopeCopyWithDataMetadata = default(SettingsMetadata), string EnableLegacySendflowLink = default(string), SettingsMetadata EnableLegacySendflowLinkMetadata = default(SettingsMetadata), string HasExternalLinkedAccounts = default(string), SettingsMetadata HasExternalLinkedAccountsMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
         {
             this.AdminMessage = AdminMessage;
+            this.AllowUsersToEditSharedAccess = AllowUsersToEditSharedAccess;
+            this.AllowUsersToEditSharedAccessMetadata = AllowUsersToEditSharedAccessMetadata;
             this.AskAnAdmin = AskAnAdmin;
             this.ClickwrapSchemaVersion = ClickwrapSchemaVersion;
             this.ClickwrapSchemaVersionMetadata = ClickwrapSchemaVersionMetadata;
@@ -107,6 +111,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="adminMessage", EmitDefaultValue=false)]
         public AdminMessage AdminMessage { get; set; }
+        /// <summary>
+        /// Gets or Sets AllowUsersToEditSharedAccess
+        /// </summary>
+        [DataMember(Name="allowUsersToEditSharedAccess", EmitDefaultValue=false)]
+        public string AllowUsersToEditSharedAccess { get; set; }
+        /// <summary>
+        /// Gets or Sets AllowUsersToEditSharedAccessMetadata
+        /// </summary>
+        [DataMember(Name="allowUsersToEditSharedAccessMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata AllowUsersToEditSharedAccessMetadata { get; set; }
         /// <summary>
         /// Gets or Sets AskAnAdmin
         /// </summary>
@@ -261,6 +275,8 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class AccountUISettings {\n");
             sb.Append("  AdminMessage: ").Append(AdminMessage).Append("\n");
+            sb.Append("  AllowUsersToEditSharedAccess: ").Append(AllowUsersToEditSharedAccess).Append("\n");
+            sb.Append("  AllowUsersToEditSharedAccessMetadata: ").Append(AllowUsersToEditSharedAccessMetadata).Append("\n");
             sb.Append("  AskAnAdmin: ").Append(AskAnAdmin).Append("\n");
             sb.Append("  ClickwrapSchemaVersion: ").Append(ClickwrapSchemaVersion).Append("\n");
             sb.Append("  ClickwrapSchemaVersionMetadata: ").Append(ClickwrapSchemaVersionMetadata).Append("\n");
@@ -330,6 +346,16 @@ namespace DocuSign.eSign.Model
                     this.AdminMessage == other.AdminMessage ||
                     this.AdminMessage != null &&
                     this.AdminMessage.Equals(other.AdminMessage)
+                ) && 
+                (
+                    this.AllowUsersToEditSharedAccess == other.AllowUsersToEditSharedAccess ||
+                    this.AllowUsersToEditSharedAccess != null &&
+                    this.AllowUsersToEditSharedAccess.Equals(other.AllowUsersToEditSharedAccess)
+                ) && 
+                (
+                    this.AllowUsersToEditSharedAccessMetadata == other.AllowUsersToEditSharedAccessMetadata ||
+                    this.AllowUsersToEditSharedAccessMetadata != null &&
+                    this.AllowUsersToEditSharedAccessMetadata.Equals(other.AllowUsersToEditSharedAccessMetadata)
                 ) && 
                 (
                     this.AskAnAdmin == other.AskAnAdmin ||
@@ -491,6 +517,10 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.AdminMessage != null)
                     hash = hash * 59 + this.AdminMessage.GetHashCode();
+                if (this.AllowUsersToEditSharedAccess != null)
+                    hash = hash * 59 + this.AllowUsersToEditSharedAccess.GetHashCode();
+                if (this.AllowUsersToEditSharedAccessMetadata != null)
+                    hash = hash * 59 + this.AllowUsersToEditSharedAccessMetadata.GetHashCode();
                 if (this.AskAnAdmin != null)
                     hash = hash * 59 + this.AskAnAdmin.GetHashCode();
                 if (this.ClickwrapSchemaVersion != null)

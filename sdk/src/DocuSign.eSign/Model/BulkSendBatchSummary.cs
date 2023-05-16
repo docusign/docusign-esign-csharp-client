@@ -38,6 +38,8 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkSendBatchSummary" /> class.
         /// </summary>
+        /// <param name="Action">Action.</param>
+        /// <param name="ActionStatus">ActionStatus.</param>
         /// <param name="BatchId">BatchId.</param>
         /// <param name="BatchName">BatchName.</param>
         /// <param name="BatchSize">BatchSize.</param>
@@ -46,8 +48,10 @@ namespace DocuSign.eSign.Model
         /// <param name="Queued">Queued.</param>
         /// <param name="Sent">Sent.</param>
         /// <param name="SubmittedDate">SubmittedDate.</param>
-        public BulkSendBatchSummary(string BatchId = default(string), string BatchName = default(string), string BatchSize = default(string), string BatchUri = default(string), string Failed = default(string), string Queued = default(string), string Sent = default(string), string SubmittedDate = default(string))
+        public BulkSendBatchSummary(string Action = default(string), string ActionStatus = default(string), string BatchId = default(string), string BatchName = default(string), string BatchSize = default(string), string BatchUri = default(string), string Failed = default(string), string Queued = default(string), string Sent = default(string), string SubmittedDate = default(string))
         {
+            this.Action = Action;
+            this.ActionStatus = ActionStatus;
             this.BatchId = BatchId;
             this.BatchName = BatchName;
             this.BatchSize = BatchSize;
@@ -58,6 +62,16 @@ namespace DocuSign.eSign.Model
             this.SubmittedDate = SubmittedDate;
         }
         
+        /// <summary>
+        /// Gets or Sets Action
+        /// </summary>
+        [DataMember(Name="action", EmitDefaultValue=false)]
+        public string Action { get; set; }
+        /// <summary>
+        /// Gets or Sets ActionStatus
+        /// </summary>
+        [DataMember(Name="actionStatus", EmitDefaultValue=false)]
+        public string ActionStatus { get; set; }
         /// <summary>
         /// Gets or Sets BatchId
         /// </summary>
@@ -106,6 +120,8 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BulkSendBatchSummary {\n");
+            sb.Append("  Action: ").Append(Action).Append("\n");
+            sb.Append("  ActionStatus: ").Append(ActionStatus).Append("\n");
             sb.Append("  BatchId: ").Append(BatchId).Append("\n");
             sb.Append("  BatchName: ").Append(BatchName).Append("\n");
             sb.Append("  BatchSize: ").Append(BatchSize).Append("\n");
@@ -150,6 +166,16 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.Action == other.Action ||
+                    this.Action != null &&
+                    this.Action.Equals(other.Action)
+                ) && 
+                (
+                    this.ActionStatus == other.ActionStatus ||
+                    this.ActionStatus != null &&
+                    this.ActionStatus.Equals(other.ActionStatus)
+                ) && 
                 (
                     this.BatchId == other.BatchId ||
                     this.BatchId != null &&
@@ -203,6 +229,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Action != null)
+                    hash = hash * 59 + this.Action.GetHashCode();
+                if (this.ActionStatus != null)
+                    hash = hash * 59 + this.ActionStatus.GetHashCode();
                 if (this.BatchId != null)
                     hash = hash * 59 + this.BatchId.GetHashCode();
                 if (this.BatchName != null)

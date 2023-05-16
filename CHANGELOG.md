@@ -1,5 +1,10 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v6.5.0] - eSignature API v2.1-23.2.00.00 - 2023-05-15
+### Changed
+- Added support for version v2.1-23.2.00.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v6.4.2] - eSignature API v2.1-23.1.01.01 - 2023-05-10
 ### Changed
 - Removed support for .NET Framework 4.5.2. Miminum requirement is now .NET Framework 4.6.2

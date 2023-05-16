@@ -41,7 +41,7 @@ namespace DocuSign.eSign.Model
         /// <param name="BulkListId">BulkListId.</param>
         /// <param name="ResumeDate">An ISO 8601 formatted datetime string indicating the date and time that the envelope is (or was) scheduled to be sent or null if the envelope has not yet been sent..</param>
         /// <param name="Rules">A list of envelope delay rules specified by the user indicating how and when the envelope should be scheduled for sending in the future. Currently only 1 rule may be specified..</param>
-        /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
+        /// <param name="Status">\\\&quot;pending\\\&quot; if the envelope has not yet been sent and the scheduled sending delay has not iniaited. \\\&quot;started\\\&quot; if the scheduled sending delay is in progress. \\\&quot;completed\\\&quot; if the scheduled sending delay has elapsed and the envelope has been sent..</param>
         public ScheduledSending(string BulkListId = default(string), string ResumeDate = default(string), List<EnvelopeDelayRule> Rules = default(List<EnvelopeDelayRule>), string Status = default(string))
         {
             this.BulkListId = BulkListId;
@@ -68,9 +68,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="rules", EmitDefaultValue=false)]
         public List<EnvelopeDelayRule> Rules { get; set; }
         /// <summary>
-        /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+        /// \\\&quot;pending\\\&quot; if the envelope has not yet been sent and the scheduled sending delay has not iniaited. \\\&quot;started\\\&quot; if the scheduled sending delay is in progress. \\\&quot;completed\\\&quot; if the scheduled sending delay has elapsed and the envelope has been sent.
         /// </summary>
-        /// <value>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.</value>
+        /// <value>\\\&quot;pending\\\&quot; if the envelope has not yet been sent and the scheduled sending delay has not iniaited. \\\&quot;started\\\&quot; if the scheduled sending delay is in progress. \\\&quot;completed\\\&quot; if the scheduled sending delay has elapsed and the envelope has been sent.</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>

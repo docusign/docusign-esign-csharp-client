@@ -10,17 +10,11 @@
 
 using System;
 using System.Linq;
-using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -41,16 +35,20 @@ namespace DocuSign.eSign.Model
         /// <param name="DefaultDescription">DefaultDescription.</param>
         /// <param name="DefaultName">DefaultName.</param>
         /// <param name="InputOptions">InputOptions.</param>
+        /// <param name="IsDisabled">IsDisabled.</param>
+        /// <param name="OwnerType">OwnerType.</param>
         /// <param name="SignatureProvider">The signature provider associated with the Identity Verification workflow..</param>
         /// <param name="Steps">Steps.</param>
         /// <param name="WorkflowId">WorkflowId.</param>
         /// <param name="WorkflowLabel">WorkflowLabel.</param>
         /// <param name="WorkflowResourceKey">WorkflowResourceKey.</param>
-        public AccountIdentityVerificationWorkflow(string DefaultDescription = default(string), string DefaultName = default(string), List<AccountIdentityInputOption> InputOptions = default(List<AccountIdentityInputOption>), AccountSignatureProvider SignatureProvider = default(AccountSignatureProvider), List<AccountIdentityVerificationStep> Steps = default(List<AccountIdentityVerificationStep>), string WorkflowId = default(string), string WorkflowLabel = default(string), string WorkflowResourceKey = default(string))
+        public AccountIdentityVerificationWorkflow(string DefaultDescription = default(string), string DefaultName = default(string), List<AccountIdentityInputOption> InputOptions = default(List<AccountIdentityInputOption>), string IsDisabled = default(string), string OwnerType = default(string), AccountSignatureProvider SignatureProvider = default(AccountSignatureProvider), List<AccountIdentityVerificationStep> Steps = default(List<AccountIdentityVerificationStep>), string WorkflowId = default(string), string WorkflowLabel = default(string), string WorkflowResourceKey = default(string))
         {
             this.DefaultDescription = DefaultDescription;
             this.DefaultName = DefaultName;
             this.InputOptions = InputOptions;
+            this.IsDisabled = IsDisabled;
+            this.OwnerType = OwnerType;
             this.SignatureProvider = SignatureProvider;
             this.Steps = Steps;
             this.WorkflowId = WorkflowId;
@@ -73,6 +71,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="inputOptions", EmitDefaultValue=false)]
         public List<AccountIdentityInputOption> InputOptions { get; set; }
+        /// <summary>
+        /// Gets or Sets IsDisabled
+        /// </summary>
+        [DataMember(Name="isDisabled", EmitDefaultValue=false)]
+        public string IsDisabled { get; set; }
+        /// <summary>
+        /// Gets or Sets OwnerType
+        /// </summary>
+        [DataMember(Name="ownerType", EmitDefaultValue=false)]
+        public string OwnerType { get; set; }
         /// <summary>
         /// The signature provider associated with the Identity Verification workflow.
         /// </summary>
@@ -110,6 +118,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  DefaultDescription: ").Append(DefaultDescription).Append("\n");
             sb.Append("  DefaultName: ").Append(DefaultName).Append("\n");
             sb.Append("  InputOptions: ").Append(InputOptions).Append("\n");
+            sb.Append("  IsDisabled: ").Append(IsDisabled).Append("\n");
+            sb.Append("  OwnerType: ").Append(OwnerType).Append("\n");
             sb.Append("  SignatureProvider: ").Append(SignatureProvider).Append("\n");
             sb.Append("  Steps: ").Append(Steps).Append("\n");
             sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
@@ -167,6 +177,16 @@ namespace DocuSign.eSign.Model
                     this.InputOptions.SequenceEqual(other.InputOptions)
                 ) && 
                 (
+                    this.IsDisabled == other.IsDisabled ||
+                    this.IsDisabled != null &&
+                    this.IsDisabled.Equals(other.IsDisabled)
+                ) && 
+                (
+                    this.OwnerType == other.OwnerType ||
+                    this.OwnerType != null &&
+                    this.OwnerType.Equals(other.OwnerType)
+                ) && 
+                (
                     this.SignatureProvider == other.SignatureProvider ||
                     this.SignatureProvider != null &&
                     this.SignatureProvider.Equals(other.SignatureProvider)
@@ -210,6 +230,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DefaultName.GetHashCode();
                 if (this.InputOptions != null)
                     hash = hash * 59 + this.InputOptions.GetHashCode();
+                if (this.IsDisabled != null)
+                    hash = hash * 59 + this.IsDisabled.GetHashCode();
+                if (this.OwnerType != null)
+                    hash = hash * 59 + this.OwnerType.GetHashCode();
                 if (this.SignatureProvider != null)
                     hash = hash * 59 + this.SignatureProvider.GetHashCode();
                 if (this.Steps != null)

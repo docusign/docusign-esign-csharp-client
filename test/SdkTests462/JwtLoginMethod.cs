@@ -11,7 +11,7 @@ namespace SdkTests462
         [TestMethod]
         public static void RequestJWTUserToken_CorrectInputParameters_ReturnsOAuthToken(ref TestConfig testConfig)
         {
-            testConfig.ApiClient = new ApiClient(testConfig.Host);
+            testConfig.ApiClient = new DocuSignClient(testConfig.Host);
 
             Assert.IsNotNull(testConfig?.PrivateKey);
 

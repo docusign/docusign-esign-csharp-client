@@ -10,17 +10,11 @@
 
 using System;
 using System.Linq;
-using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -40,7 +34,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ResumeDate">An ISO 8601 formatted datetime string indicating the date and time that the envelope is (or was) scheduled to be sent to the recipients associated with the current workflow step or null if the envelope has not yet begun processing the current workflow step..</param>
         /// <param name="Rules">A list of envelope delay rules specified by the user indicating how and when the envelope should be sent in the future for the current workflow step and its associated recipients. Currently only 1 rule may be specified..</param>
-        /// <param name="Status">\\\&quot;pending\\\&quot; if the current workflow step has not been reached and the delay has not yet started. \\\&quot;started\\\&quot; if the delay is in progress. \\\&quot;completed\\\&quot; if the delay has elapsed and the envelope has been sent to the current workflow step&#39;s recipients..</param>
+        /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         public DelayedRouting(string ResumeDate = default(string), List<EnvelopeDelayRule> Rules = default(List<EnvelopeDelayRule>), string Status = default(string))
         {
             this.ResumeDate = ResumeDate;
@@ -61,9 +55,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="rules", EmitDefaultValue=false)]
         public List<EnvelopeDelayRule> Rules { get; set; }
         /// <summary>
-        /// \\\&quot;pending\\\&quot; if the current workflow step has not been reached and the delay has not yet started. \\\&quot;started\\\&quot; if the delay is in progress. \\\&quot;completed\\\&quot; if the delay has elapsed and the envelope has been sent to the current workflow step&#39;s recipients.
+        /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
         /// </summary>
-        /// <value>\\\&quot;pending\\\&quot; if the current workflow step has not been reached and the delay has not yet started. \\\&quot;started\\\&quot; if the delay is in progress. \\\&quot;completed\\\&quot; if the delay has elapsed and the envelope has been sent to the current workflow step&#39;s recipients.</value>
+        /// <value>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>

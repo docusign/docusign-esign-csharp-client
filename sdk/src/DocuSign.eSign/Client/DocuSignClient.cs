@@ -241,18 +241,18 @@ namespace DocuSign.eSign.Client
 
         public DocuSignResponse CallApi(DocuSignRequest request)
         {
-            //InterceptRequest(request);
+            InterceptRequest(request);
             var response = RestClient.SendRequest(request);
-            //InterceptResponse(request, response);
+            InterceptResponse(request, response);
             return response;
         }
 
         public async Task<DocuSignResponse> CallApiAsync(DocuSignRequest request)
         {
-            //InterceptRequest(request);
+            InterceptRequest(request);
             CancellationTokenSource cts = new CancellationTokenSource();
             var response = await RestClient.SendRequestAsync(request, cts.Token);
-            //InterceptResponse(request, response);
+            InterceptResponse(request, response);
 
             return response;
         }

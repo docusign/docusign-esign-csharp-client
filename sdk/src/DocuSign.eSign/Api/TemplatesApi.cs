@@ -6835,6 +6835,8 @@ namespace DocuSign.eSign.Api
             /// 
             public string encrypt {get; set;}
             /// 
+            public string fileType {get; set;}
+            /// 
             public string showChanges {get; set;}
         }
 
@@ -6905,6 +6907,7 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.encrypt != null) localVarQueryParams.Add("encrypt", this.ApiClient.ParameterToString(options.encrypt)); // query parameter
+                if (options.fileType != null) localVarQueryParams.Add("file_type", this.ApiClient.ParameterToString(options.fileType)); // query parameter
                 if (options.showChanges != null) localVarQueryParams.Add("show_changes", this.ApiClient.ParameterToString(options.showChanges)); // query parameter
             }
 
@@ -7000,6 +7003,7 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.encrypt != null) localVarQueryParams.Add("encrypt", this.ApiClient.ParameterToString(options.encrypt)); // query parameter
+                if (options.fileType != null) localVarQueryParams.Add("file_type", this.ApiClient.ParameterToString(options.fileType)); // query parameter
                 if (options.showChanges != null) localVarQueryParams.Add("show_changes", this.ApiClient.ParameterToString(options.showChanges)); // query parameter
             }
 

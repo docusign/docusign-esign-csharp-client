@@ -10,17 +10,11 @@
 
 using System;
 using System.Linq;
-using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -41,6 +35,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ContinuationToken">ContinuationToken.</param>
         /// <param name="EndPosition">The last position in the result set. .</param>
         /// <param name="Envelopes">Envelopes.</param>
+        /// <param name="EnvelopeSearchSource">EnvelopeSearchSource.</param>
         /// <param name="EnvelopeTransactionStatuses">EnvelopeTransactionStatuses.</param>
         /// <param name="Folders">Folders.</param>
         /// <param name="LastQueriedDateTime">LastQueriedDateTime.</param>
@@ -49,11 +44,12 @@ namespace DocuSign.eSign.Model
         /// <param name="ResultSetSize">The number of results returned in this response. .</param>
         /// <param name="StartPosition">Starting position of the current result set..</param>
         /// <param name="TotalSetSize">The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response..</param>
-        public EnvelopesInformation(string ContinuationToken = default(string), string EndPosition = default(string), List<Envelope> Envelopes = default(List<Envelope>), List<EnvelopeTransactionStatus> EnvelopeTransactionStatuses = default(List<EnvelopeTransactionStatus>), List<Folder> Folders = default(List<Folder>), string LastQueriedDateTime = default(string), string NextUri = default(string), string PreviousUri = default(string), string ResultSetSize = default(string), string StartPosition = default(string), string TotalSetSize = default(string))
+        public EnvelopesInformation(string ContinuationToken = default(string), string EndPosition = default(string), List<Envelope> Envelopes = default(List<Envelope>), string EnvelopeSearchSource = default(string), List<EnvelopeTransactionStatus> EnvelopeTransactionStatuses = default(List<EnvelopeTransactionStatus>), List<Folder> Folders = default(List<Folder>), string LastQueriedDateTime = default(string), string NextUri = default(string), string PreviousUri = default(string), string ResultSetSize = default(string), string StartPosition = default(string), string TotalSetSize = default(string))
         {
             this.ContinuationToken = ContinuationToken;
             this.EndPosition = EndPosition;
             this.Envelopes = Envelopes;
+            this.EnvelopeSearchSource = EnvelopeSearchSource;
             this.EnvelopeTransactionStatuses = EnvelopeTransactionStatuses;
             this.Folders = Folders;
             this.LastQueriedDateTime = LastQueriedDateTime;
@@ -80,6 +76,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="envelopes", EmitDefaultValue=false)]
         public List<Envelope> Envelopes { get; set; }
+        /// <summary>
+        /// Gets or Sets EnvelopeSearchSource
+        /// </summary>
+        [DataMember(Name="envelopeSearchSource", EmitDefaultValue=false)]
+        public string EnvelopeSearchSource { get; set; }
         /// <summary>
         /// Gets or Sets EnvelopeTransactionStatuses
         /// </summary>
@@ -136,6 +137,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ContinuationToken: ").Append(ContinuationToken).Append("\n");
             sb.Append("  EndPosition: ").Append(EndPosition).Append("\n");
             sb.Append("  Envelopes: ").Append(Envelopes).Append("\n");
+            sb.Append("  EnvelopeSearchSource: ").Append(EnvelopeSearchSource).Append("\n");
             sb.Append("  EnvelopeTransactionStatuses: ").Append(EnvelopeTransactionStatuses).Append("\n");
             sb.Append("  Folders: ").Append(Folders).Append("\n");
             sb.Append("  LastQueriedDateTime: ").Append(LastQueriedDateTime).Append("\n");
@@ -196,6 +198,11 @@ namespace DocuSign.eSign.Model
                     this.Envelopes.SequenceEqual(other.Envelopes)
                 ) && 
                 (
+                    this.EnvelopeSearchSource == other.EnvelopeSearchSource ||
+                    this.EnvelopeSearchSource != null &&
+                    this.EnvelopeSearchSource.Equals(other.EnvelopeSearchSource)
+                ) && 
+                (
                     this.EnvelopeTransactionStatuses == other.EnvelopeTransactionStatuses ||
                     this.EnvelopeTransactionStatuses != null &&
                     this.EnvelopeTransactionStatuses.SequenceEqual(other.EnvelopeTransactionStatuses)
@@ -254,6 +261,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EndPosition.GetHashCode();
                 if (this.Envelopes != null)
                     hash = hash * 59 + this.Envelopes.GetHashCode();
+                if (this.EnvelopeSearchSource != null)
+                    hash = hash * 59 + this.EnvelopeSearchSource.GetHashCode();
                 if (this.EnvelopeTransactionStatuses != null)
                     hash = hash * 59 + this.EnvelopeTransactionStatuses.GetHashCode();
                 if (this.Folders != null)

@@ -166,6 +166,7 @@
   <ItemGroup>
     <Compile Include="AccountsApiUnitTests.cs" />
     <Compile Include="CreateEnvelopeMethod.cs" />
+    <Compile Include="CustomClientUnitTests.cs" />
     <Compile Include="EnvelopesApiUnitTests.cs" />
     <Compile Include="DiagnosticApiUnitTests.cs" />
     <Compile Include="JwtLoginMethod.cs" />

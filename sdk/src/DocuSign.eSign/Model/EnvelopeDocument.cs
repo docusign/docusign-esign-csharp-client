@@ -10,17 +10,11 @@
 
 using System;
 using System.Linq;
-using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
 
 namespace DocuSign.eSign.Model
 {
@@ -56,6 +50,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="IncludeInDownload">IncludeInDownload.</param>
         /// <param name="IncludeInDownloadMetadata">Metadata that indicates if the sender can edit the &#x60;includeInDownload&#x60; property. Not applicable for template documents..</param>
+        /// <param name="IsAceGenDocument">IsAceGenDocument.</param>
         /// <param name="IsDocGenDocument">IsDocGenDocument.</param>
         /// <param name="Name">Name.</param>
         /// <param name="NameMetadata">Metadata that indicates if the sender can edit the &#x60;name&#x60; property. Not applicable for template documents..</param>
@@ -68,7 +63,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="Type">Type.</param>
         /// <param name="Uri">Uri.</param>
-        public EnvelopeDocument(List<string> AddedRecipientIds = default(List<string>), string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), PropertyMetadata AuthoritativeCopyMetadata = default(PropertyMetadata), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), PropertyMetadata DisplayMetadata = default(PropertyMetadata), string DocGenDocumentStatus = default(string), List<DocGenSyntaxError> DocGenErrors = default(List<DocGenSyntaxError>), List<DocGenFormField> DocGenFormFields = default(List<DocGenFormField>), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string DocumentIdGuid = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), PropertyMetadata IncludeInDownloadMetadata = default(PropertyMetadata), string IsDocGenDocument = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Order = default(string), List<Page> Pages = default(List<Page>), string SignerMustAcknowledge = default(string), PropertyMetadata SignerMustAcknowledgeMetadata = default(PropertyMetadata), string SizeBytes = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
+        public EnvelopeDocument(List<string> AddedRecipientIds = default(List<string>), string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), PropertyMetadata AuthoritativeCopyMetadata = default(PropertyMetadata), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), PropertyMetadata DisplayMetadata = default(PropertyMetadata), string DocGenDocumentStatus = default(string), List<DocGenSyntaxError> DocGenErrors = default(List<DocGenSyntaxError>), List<DocGenFormField> DocGenFormFields = default(List<DocGenFormField>), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string DocumentIdGuid = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), PropertyMetadata IncludeInDownloadMetadata = default(PropertyMetadata), string IsAceGenDocument = default(string), string IsDocGenDocument = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Order = default(string), List<Page> Pages = default(List<Page>), string SignerMustAcknowledge = default(string), PropertyMetadata SignerMustAcknowledgeMetadata = default(PropertyMetadata), string SizeBytes = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
         {
             this.AddedRecipientIds = AddedRecipientIds;
             this.AttachmentTabId = AttachmentTabId;
@@ -88,6 +83,7 @@ namespace DocuSign.eSign.Model
             this.ErrorDetails = ErrorDetails;
             this.IncludeInDownload = IncludeInDownload;
             this.IncludeInDownloadMetadata = IncludeInDownloadMetadata;
+            this.IsAceGenDocument = IsAceGenDocument;
             this.IsDocGenDocument = IsDocGenDocument;
             this.Name = Name;
             this.NameMetadata = NameMetadata;
@@ -199,6 +195,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="includeInDownloadMetadata", EmitDefaultValue=false)]
         public PropertyMetadata IncludeInDownloadMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets IsAceGenDocument
+        /// </summary>
+        [DataMember(Name="isAceGenDocument", EmitDefaultValue=false)]
+        public string IsAceGenDocument { get; set; }
+        /// <summary>
         /// Gets or Sets IsDocGenDocument
         /// </summary>
         [DataMember(Name="isDocGenDocument", EmitDefaultValue=false)]
@@ -288,6 +289,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("  IncludeInDownload: ").Append(IncludeInDownload).Append("\n");
             sb.Append("  IncludeInDownloadMetadata: ").Append(IncludeInDownloadMetadata).Append("\n");
+            sb.Append("  IsAceGenDocument: ").Append(IsAceGenDocument).Append("\n");
             sb.Append("  IsDocGenDocument: ").Append(IsDocGenDocument).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NameMetadata: ").Append(NameMetadata).Append("\n");
@@ -427,6 +429,11 @@ namespace DocuSign.eSign.Model
                     this.IncludeInDownloadMetadata.Equals(other.IncludeInDownloadMetadata)
                 ) && 
                 (
+                    this.IsAceGenDocument == other.IsAceGenDocument ||
+                    this.IsAceGenDocument != null &&
+                    this.IsAceGenDocument.Equals(other.IsAceGenDocument)
+                ) && 
+                (
                     this.IsDocGenDocument == other.IsDocGenDocument ||
                     this.IsDocGenDocument != null &&
                     this.IsDocGenDocument.Equals(other.IsDocGenDocument)
@@ -535,6 +542,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IncludeInDownload.GetHashCode();
                 if (this.IncludeInDownloadMetadata != null)
                     hash = hash * 59 + this.IncludeInDownloadMetadata.GetHashCode();
+                if (this.IsAceGenDocument != null)
+                    hash = hash * 59 + this.IsAceGenDocument.GetHashCode();
                 if (this.IsDocGenDocument != null)
                     hash = hash * 59 + this.IsDocGenDocument.GetHashCode();
                 if (this.Name != null)

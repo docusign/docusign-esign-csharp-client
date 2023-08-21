@@ -8,7 +8,7 @@ namespace SdkTests
     {
         public string IntegratorKey { get; set; }
         public string Host { get; set; }
-        public ApiClient ApiClient { get; set; }
+        public DocuSignClient ApiClient { get; set; }
         public string AccountId { get; set; }
         public string RecipientEmail { get; set; }
         public string RecipientName { get; set; }

@@ -10,17 +10,12 @@
 
 using System;
 using System.Linq;
-using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = DocuSign.eSign.Client.SwaggerDateConverter;
+using System.Text.RegularExpressions;
 
 namespace DocuSign.eSign.Model
 {
@@ -46,14 +41,16 @@ namespace DocuSign.eSign.Model
         /// <param name="DefaultBrandLanguage">DefaultBrandLanguage.</param>
         /// <param name="EmailContent">EmailContent.</param>
         /// <param name="ErrorDetails">Array or errors..</param>
+        /// <param name="IsOrganizationBrand">IsOrganizationBrand.</param>
         /// <param name="IsOverridingCompanyName">IsOverridingCompanyName.</param>
         /// <param name="IsSendingDefault">IsSendingDefault.</param>
         /// <param name="IsSigningDefault">IsSigningDefault.</param>
         /// <param name="LandingPages">LandingPages.</param>
         /// <param name="Links">Links.</param>
         /// <param name="Logos">The URIs for retrieving the logos that are associated with the brand..</param>
+        /// <param name="OrganizationBrandLogo">OrganizationBrandLogo.</param>
         /// <param name="Resources">An object containing the URLs for the four DocuSign master resource files that the brand uses for sending, signing, email messages, and captive (embedded) signing. You can modify the default email messages and formats in these file to customize the user experience.  **Note:** This object is returned only when the &#x60;resourceContentType&#x60; is &#x60;sending&#x60;, &#x60;signing&#x60;, &#x60;email&#x60;, or &#x60;signing_captive&#x60;..</param>
-        public Brand(string BrandCompany = default(string), string BrandId = default(string), List<string> BrandLanguages = default(List<string>), string BrandName = default(string), List<NameValue> Colors = default(List<NameValue>), string DefaultBrandLanguage = default(string), List<BrandEmailContent> EmailContent = default(List<BrandEmailContent>), ErrorDetails ErrorDetails = default(ErrorDetails), bool? IsOverridingCompanyName = default(bool?), bool? IsSendingDefault = default(bool?), bool? IsSigningDefault = default(bool?), List<NameValue> LandingPages = default(List<NameValue>), List<BrandLink> Links = default(List<BrandLink>), BrandLogos Logos = default(BrandLogos), BrandResourceUrls Resources = default(BrandResourceUrls))
+        public Brand(string BrandCompany = default(string), string BrandId = default(string), List<string> BrandLanguages = default(List<string>), string BrandName = default(string), List<NameValue> Colors = default(List<NameValue>), string DefaultBrandLanguage = default(string), List<BrandEmailContent> EmailContent = default(List<BrandEmailContent>), ErrorDetails ErrorDetails = default(ErrorDetails), string IsOrganizationBrand = default(string), bool? IsOverridingCompanyName = default(bool?), bool? IsSendingDefault = default(bool?), bool? IsSigningDefault = default(bool?), List<NameValue> LandingPages = default(List<NameValue>), List<BrandLink> Links = default(List<BrandLink>), BrandLogos Logos = default(BrandLogos), byte[] OrganizationBrandLogo = default(byte[]), BrandResourceUrls Resources = default(BrandResourceUrls))
         {
             this.BrandCompany = BrandCompany;
             this.BrandId = BrandId;
@@ -63,12 +60,14 @@ namespace DocuSign.eSign.Model
             this.DefaultBrandLanguage = DefaultBrandLanguage;
             this.EmailContent = EmailContent;
             this.ErrorDetails = ErrorDetails;
+            this.IsOrganizationBrand = IsOrganizationBrand;
             this.IsOverridingCompanyName = IsOverridingCompanyName;
             this.IsSendingDefault = IsSendingDefault;
             this.IsSigningDefault = IsSigningDefault;
             this.LandingPages = LandingPages;
             this.Links = Links;
             this.Logos = Logos;
+            this.OrganizationBrandLogo = OrganizationBrandLogo;
             this.Resources = Resources;
         }
         
@@ -117,6 +116,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
         /// <summary>
+        /// Gets or Sets IsOrganizationBrand
+        /// </summary>
+        [DataMember(Name="isOrganizationBrand", EmitDefaultValue=false)]
+        public string IsOrganizationBrand { get; set; }
+        /// <summary>
         /// Gets or Sets IsOverridingCompanyName
         /// </summary>
         [DataMember(Name="isOverridingCompanyName", EmitDefaultValue=false)]
@@ -148,6 +152,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="logos", EmitDefaultValue=false)]
         public BrandLogos Logos { get; set; }
         /// <summary>
+        /// Gets or Sets OrganizationBrandLogo
+        /// </summary>
+        [DataMember(Name="organizationBrandLogo", EmitDefaultValue=false)]
+        public byte[] OrganizationBrandLogo { get; set; }
+        /// <summary>
         /// An object containing the URLs for the four DocuSign master resource files that the brand uses for sending, signing, email messages, and captive (embedded) signing. You can modify the default email messages and formats in these file to customize the user experience.  **Note:** This object is returned only when the &#x60;resourceContentType&#x60; is &#x60;sending&#x60;, &#x60;signing&#x60;, &#x60;email&#x60;, or &#x60;signing_captive&#x60;.
         /// </summary>
         /// <value>An object containing the URLs for the four DocuSign master resource files that the brand uses for sending, signing, email messages, and captive (embedded) signing. You can modify the default email messages and formats in these file to customize the user experience.  **Note:** This object is returned only when the &#x60;resourceContentType&#x60; is &#x60;sending&#x60;, &#x60;signing&#x60;, &#x60;email&#x60;, or &#x60;signing_captive&#x60;.</value>
@@ -169,12 +178,14 @@ namespace DocuSign.eSign.Model
             sb.Append("  DefaultBrandLanguage: ").Append(DefaultBrandLanguage).Append("\n");
             sb.Append("  EmailContent: ").Append(EmailContent).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
+            sb.Append("  IsOrganizationBrand: ").Append(IsOrganizationBrand).Append("\n");
             sb.Append("  IsOverridingCompanyName: ").Append(IsOverridingCompanyName).Append("\n");
             sb.Append("  IsSendingDefault: ").Append(IsSendingDefault).Append("\n");
             sb.Append("  IsSigningDefault: ").Append(IsSigningDefault).Append("\n");
             sb.Append("  LandingPages: ").Append(LandingPages).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Logos: ").Append(Logos).Append("\n");
+            sb.Append("  OrganizationBrandLogo: ").Append(OrganizationBrandLogo).Append("\n");
             sb.Append("  Resources: ").Append(Resources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -253,6 +264,11 @@ namespace DocuSign.eSign.Model
                     this.ErrorDetails.Equals(other.ErrorDetails)
                 ) && 
                 (
+                    this.IsOrganizationBrand == other.IsOrganizationBrand ||
+                    this.IsOrganizationBrand != null &&
+                    this.IsOrganizationBrand.Equals(other.IsOrganizationBrand)
+                ) && 
+                (
                     this.IsOverridingCompanyName == other.IsOverridingCompanyName ||
                     this.IsOverridingCompanyName != null &&
                     this.IsOverridingCompanyName.Equals(other.IsOverridingCompanyName)
@@ -281,6 +297,11 @@ namespace DocuSign.eSign.Model
                     this.Logos == other.Logos ||
                     this.Logos != null &&
                     this.Logos.Equals(other.Logos)
+                ) && 
+                (
+                    this.OrganizationBrandLogo == other.OrganizationBrandLogo ||
+                    this.OrganizationBrandLogo != null &&
+                    this.OrganizationBrandLogo.Equals(other.OrganizationBrandLogo)
                 ) && 
                 (
                     this.Resources == other.Resources ||
@@ -316,6 +337,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EmailContent.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                if (this.IsOrganizationBrand != null)
+                    hash = hash * 59 + this.IsOrganizationBrand.GetHashCode();
                 if (this.IsOverridingCompanyName != null)
                     hash = hash * 59 + this.IsOverridingCompanyName.GetHashCode();
                 if (this.IsSendingDefault != null)
@@ -328,6 +351,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Links.GetHashCode();
                 if (this.Logos != null)
                     hash = hash * 59 + this.Logos.GetHashCode();
+                if (this.OrganizationBrandLogo != null)
+                    hash = hash * 59 + this.OrganizationBrandLogo.GetHashCode();
                 if (this.Resources != null)
                     hash = hash * 59 + this.Resources.GetHashCode();
                 return hash;
@@ -335,7 +360,7 @@ namespace DocuSign.eSign.Model
         }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        { 
+        {
             yield break;
         }
     }

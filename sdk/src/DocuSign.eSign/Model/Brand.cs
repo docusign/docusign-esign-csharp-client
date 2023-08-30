@@ -15,7 +15,6 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
 
 namespace DocuSign.eSign.Model
 {
@@ -50,7 +49,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Logos">The URIs for retrieving the logos that are associated with the brand..</param>
         /// <param name="OrganizationBrandLogo">OrganizationBrandLogo.</param>
         /// <param name="Resources">An object containing the URLs for the four DocuSign master resource files that the brand uses for sending, signing, email messages, and captive (embedded) signing. You can modify the default email messages and formats in these file to customize the user experience.  **Note:** This object is returned only when the &#x60;resourceContentType&#x60; is &#x60;sending&#x60;, &#x60;signing&#x60;, &#x60;email&#x60;, or &#x60;signing_captive&#x60;..</param>
-        public Brand(string BrandCompany = default(string), string BrandId = default(string), List<string> BrandLanguages = default(List<string>), string BrandName = default(string), List<NameValue> Colors = default(List<NameValue>), string DefaultBrandLanguage = default(string), List<BrandEmailContent> EmailContent = default(List<BrandEmailContent>), ErrorDetails ErrorDetails = default(ErrorDetails), string IsOrganizationBrand = default(string), bool? IsOverridingCompanyName = default(bool?), bool? IsSendingDefault = default(bool?), bool? IsSigningDefault = default(bool?), List<NameValue> LandingPages = default(List<NameValue>), List<BrandLink> Links = default(List<BrandLink>), BrandLogos Logos = default(BrandLogos), byte[] OrganizationBrandLogo = default(byte[]), BrandResourceUrls Resources = default(BrandResourceUrls))
+        public Brand(string BrandCompany = default(string), string BrandId = default(string), List<string> BrandLanguages = default(List<string>), string BrandName = default(string), List<NameValue> Colors = default(List<NameValue>), string DefaultBrandLanguage = default(string), List<BrandEmailContent> EmailContent = default(List<BrandEmailContent>), ErrorDetails ErrorDetails = default(ErrorDetails), string IsOrganizationBrand = default(string), bool? IsOverridingCompanyName = default(bool?), bool? IsSendingDefault = default(bool?), bool? IsSigningDefault = default(bool?), List<NameValue> LandingPages = default(List<NameValue>), List<BrandLink> Links = default(List<BrandLink>), BrandLogos Logos = default(BrandLogos), string OrganizationBrandLogo = default(string), BrandResourceUrls Resources = default(BrandResourceUrls))
         {
             this.BrandCompany = BrandCompany;
             this.BrandId = BrandId;
@@ -155,7 +154,7 @@ namespace DocuSign.eSign.Model
         /// Gets or Sets OrganizationBrandLogo
         /// </summary>
         [DataMember(Name="organizationBrandLogo", EmitDefaultValue=false)]
-        public byte[] OrganizationBrandLogo { get; set; }
+        public string OrganizationBrandLogo { get; set; }
         /// <summary>
         /// An object containing the URLs for the four DocuSign master resource files that the brand uses for sending, signing, email messages, and captive (embedded) signing. You can modify the default email messages and formats in these file to customize the user experience.  **Note:** This object is returned only when the &#x60;resourceContentType&#x60; is &#x60;sending&#x60;, &#x60;signing&#x60;, &#x60;email&#x60;, or &#x60;signing_captive&#x60;.
         /// </summary>
@@ -360,7 +359,7 @@ namespace DocuSign.eSign.Model
         }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
+        { 
             yield break;
         }
     }

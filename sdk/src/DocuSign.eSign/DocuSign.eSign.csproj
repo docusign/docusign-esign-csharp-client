@@ -26,7 +26,7 @@
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v6.6.0] - ESignature API v2.1-23.3.00.00 - 8/21/2023</PackageReleaseNotes>
+    <PackageReleaseNotes>[v6.6.0] - ESignature API v2.1-23.3.00.01 - 8/30/2023</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net462'">
     <DefineConstants>NET462</DefineConstants>

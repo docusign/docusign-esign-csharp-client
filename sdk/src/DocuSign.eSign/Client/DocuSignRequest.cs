@@ -39,6 +39,10 @@ namespace DocuSign.eSign.Client
 
     public class DocuSignRequest
     {
+        static bool isPostOrPutHttpMethod(HttpMethod method) => method == HttpMethod.Post || method == HttpMethod.Put;
+        
+        static bool isEmptyOrJsonContentType(string contentType) => contentType == "application/json" || string.IsNullOrEmpty(contentType);
+
         public HttpMethod Method { get; }
 
         public string Url { get; }
@@ -76,7 +80,7 @@ namespace DocuSign.eSign.Client
         public DocuSignRequest(HttpMethod method, string path, string contentType) : this(method, path, null, null, null, null, null, null, contentType, null) { }
 
         public DocuSignRequest(HttpMethod method, string path, List<KeyValuePair<string, string>> queryParams = null, Object bodyContent = null,
-            List<KeyValuePair<string, string>> headerParams = null, List<KeyValuePair<string, string>> postParams = null, List<KeyValuePair<string,string>> pathParams = null,
+            List<KeyValuePair<string, string>> headerParams = null, List<KeyValuePair<string, string>> postParams = null, List<KeyValuePair<string, string>> pathParams = null,
             List<FileParameter> fileParams = null, string contentType = null, string contentDisposition = null)
         {
             Method = method;
@@ -84,7 +88,9 @@ namespace DocuSign.eSign.Client
             Url = path;
             ContentType = contentType;
             ContentDisposition = contentDisposition;
-            BodyContent = bodyContent;
+            BodyContent = isPostOrPutHttpMethod(method) && bodyContent == null && isEmptyOrJsonContentType(contentType)
+                ? "{ }"
+                : bodyContent;
             QueryParams = queryParams ?? new List<KeyValuePair<string, string>>();
             PostParams = postParams ?? new List<KeyValuePair<string, string>>();
             HeaderParams = headerParams ?? new List<KeyValuePair<string, string>>();

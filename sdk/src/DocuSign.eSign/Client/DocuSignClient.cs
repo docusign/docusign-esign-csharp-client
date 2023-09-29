@@ -235,7 +235,7 @@ namespace DocuSign.eSign.Client
         public DocuSignRequest PrepareRequest(string path, HttpMethod method, List<KeyValuePair<string, string>> queryParams = null, object postBody = null, List<KeyValuePair<string, string>> headerParams = null,
                                                 List<KeyValuePair<string, string>> formParams = null, List<KeyValuePair<string, string>> pathParams = null, List<FileParameter> fileParams = null, string contentType = null, string contentDisposition = null)
         {
-             string url = $"{basePath}{path}";
+            string url = $"{basePath}{path}";
             return new DocuSignRequest(method, url, queryParams, postBody, headerParams, formParams, pathParams, fileParams, contentType, contentDisposition);
         }
 

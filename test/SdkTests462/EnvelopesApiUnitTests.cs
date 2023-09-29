@@ -189,6 +189,17 @@ namespace SdkTests462
         }
 
         [TestMethod]
+        public void CreateSenderView_NullOptionalParameter_ReturnViewUrl()
+        {
+            var envelopeStatusCreated = "created";
+            CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref _testConfig, envelopeStatusCreated);
+
+            ViewUrl senderView = _envelopesApi.CreateSenderView(_testConfig.AccountId, _testConfig.EnvelopeId);
+
+            Assert.IsNotNull(senderView?.Url);
+        }
+
+        [TestMethod]
         public void CreateRecipientView_CorrectInputParameters_ReturnViewUrl()
         {
             CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(

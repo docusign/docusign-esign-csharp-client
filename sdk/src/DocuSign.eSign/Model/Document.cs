@@ -9,11 +9,14 @@
  */
 
 using System;
-using System.Linq;
-using System.Text;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 
 namespace DocuSign.eSign.Model
@@ -34,6 +37,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ApplyAnchorTabs">Reserved: TBD.</param>
         /// <param name="AssignTabsToRecipientId">AssignTabsToRecipientId.</param>
+        /// <param name="AuthoritativeCopy">Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled..</param>
         /// <param name="Display">Display.</param>
         /// <param name="DocGenFormFields">DocGenFormFields.</param>
         /// <param name="DocumentBase64">The document&#39;s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding..</param>
@@ -59,10 +63,11 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TransformPdfFields">When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs. .</param>
         /// <param name="Uri">Uri.</param>
-        public Document(string ApplyAnchorTabs = default(string), string AssignTabsToRecipientId = default(string), string Display = default(string), List<DocGenFormField> DocGenFormFields = default(List<DocGenFormField>), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), string IsDocGenDocument = default(string), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), string Order = default(string), string Pages = default(string), string Password = default(string), string PdfFormFieldOption = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), bool? SignerMustAcknowledgeUseAccountDefault = default(bool?), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
+        public Document(string ApplyAnchorTabs = default(string), string AssignTabsToRecipientId = default(string), bool? AuthoritativeCopy = default(bool?), string Display = default(string), List<DocGenFormField> DocGenFormFields = default(List<DocGenFormField>), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), string IsDocGenDocument = default(string), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), string Order = default(string), string Pages = default(string), string Password = default(string), string PdfFormFieldOption = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), bool? SignerMustAcknowledgeUseAccountDefault = default(bool?), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
         {
             this.ApplyAnchorTabs = ApplyAnchorTabs;
             this.AssignTabsToRecipientId = AssignTabsToRecipientId;
+            this.AuthoritativeCopy = AuthoritativeCopy;
             this.Display = Display;
             this.DocGenFormFields = DocGenFormFields;
             this.DocumentBase64 = DocumentBase64;
@@ -101,6 +106,12 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="assignTabsToRecipientId", EmitDefaultValue=false)]
         public string AssignTabsToRecipientId { get; set; }
+        /// <summary>
+        /// Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+        /// </summary>
+        /// <value>Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.</value>
+        [DataMember(Name="authoritativeCopy", EmitDefaultValue=false)]
+        public bool? AuthoritativeCopy { get; set; }
         /// <summary>
         /// Gets or Sets Display
         /// </summary>
@@ -247,6 +258,7 @@ namespace DocuSign.eSign.Model
             sb.Append("class Document {\n");
             sb.Append("  ApplyAnchorTabs: ").Append(ApplyAnchorTabs).Append("\n");
             sb.Append("  AssignTabsToRecipientId: ").Append(AssignTabsToRecipientId).Append("\n");
+            sb.Append("  AuthoritativeCopy: ").Append(AuthoritativeCopy).Append("\n");
             sb.Append("  Display: ").Append(Display).Append("\n");
             sb.Append("  DocGenFormFields: ").Append(DocGenFormFields).Append("\n");
             sb.Append("  DocumentBase64: ").Append(DocumentBase64).Append("\n");
@@ -317,6 +329,11 @@ namespace DocuSign.eSign.Model
                     this.AssignTabsToRecipientId == other.AssignTabsToRecipientId ||
                     this.AssignTabsToRecipientId != null &&
                     this.AssignTabsToRecipientId.Equals(other.AssignTabsToRecipientId)
+                ) && 
+                (
+                    this.AuthoritativeCopy == other.AuthoritativeCopy ||
+                    this.AuthoritativeCopy != null &&
+                    this.AuthoritativeCopy.Equals(other.AuthoritativeCopy)
                 ) && 
                 (
                     this.Display == other.Display ||
@@ -460,6 +477,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ApplyAnchorTabs.GetHashCode();
                 if (this.AssignTabsToRecipientId != null)
                     hash = hash * 59 + this.AssignTabsToRecipientId.GetHashCode();
+                if (this.AuthoritativeCopy != null)
+                    hash = hash * 59 + this.AuthoritativeCopy.GetHashCode();
                 if (this.Display != null)
                     hash = hash * 59 + this.Display.GetHashCode();
                 if (this.DocGenFormFields != null)

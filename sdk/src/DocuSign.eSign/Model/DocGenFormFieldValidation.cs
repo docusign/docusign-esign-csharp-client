@@ -22,37 +22,37 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// BulkSendBatchError
+    /// DocGenFormFieldValidation
     /// </summary>
     [DataContract]
-    public partial class BulkSendBatchError :  IEquatable<BulkSendBatchError>, IValidatableObject
+    public partial class DocGenFormFieldValidation :  IEquatable<DocGenFormFieldValidation>, IValidatableObject
     {
-        public BulkSendBatchError()
+        public DocGenFormFieldValidation()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BulkSendBatchError" /> class.
+        /// Initializes a new instance of the <see cref="DocGenFormFieldValidation" /> class.
         /// </summary>
-        /// <param name="Error">Error.</param>
-        /// <param name="ErrorDetail">ErrorDetail.</param>
-        public BulkSendBatchError(string Error = default(string), string ErrorDetail = default(string))
+        /// <param name="ErrorMessage">ErrorMessage.</param>
+        /// <param name="Expression">Expression.</param>
+        public DocGenFormFieldValidation(string ErrorMessage = default(string), string Expression = default(string))
         {
-            this.Error = Error;
-            this.ErrorDetail = ErrorDetail;
+            this.ErrorMessage = ErrorMessage;
+            this.Expression = Expression;
         }
         
         /// <summary>
-        /// Gets or Sets Error
+        /// Gets or Sets ErrorMessage
         /// </summary>
-        [DataMember(Name="Error", EmitDefaultValue=false)]
-        public string Error { get; set; }
+        [DataMember(Name="errorMessage", EmitDefaultValue=false)]
+        public string ErrorMessage { get; set; }
         /// <summary>
-        /// Gets or Sets ErrorDetail
+        /// Gets or Sets Expression
         /// </summary>
-        [DataMember(Name="ErrorDetail", EmitDefaultValue=false)]
-        public string ErrorDetail { get; set; }
+        [DataMember(Name="expression", EmitDefaultValue=false)]
+        public string Expression { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -60,9 +60,9 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BulkSendBatchError {\n");
-            sb.Append("  Error: ").Append(Error).Append("\n");
-            sb.Append("  ErrorDetail: ").Append(ErrorDetail).Append("\n");
+            sb.Append("class DocGenFormFieldValidation {\n");
+            sb.Append("  ErrorMessage: ").Append(ErrorMessage).Append("\n");
+            sb.Append("  Expression: ").Append(Expression).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,15 +84,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as BulkSendBatchError);
+            return this.Equals(obj as DocGenFormFieldValidation);
         }
 
         /// <summary>
-        /// Returns true if BulkSendBatchError instances are equal
+        /// Returns true if DocGenFormFieldValidation instances are equal
         /// </summary>
-        /// <param name="other">Instance of BulkSendBatchError to be compared</param>
+        /// <param name="other">Instance of DocGenFormFieldValidation to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BulkSendBatchError other)
+        public bool Equals(DocGenFormFieldValidation other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -100,14 +100,14 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.Error == other.Error ||
-                    this.Error != null &&
-                    this.Error.Equals(other.Error)
+                    this.ErrorMessage == other.ErrorMessage ||
+                    this.ErrorMessage != null &&
+                    this.ErrorMessage.Equals(other.ErrorMessage)
                 ) && 
                 (
-                    this.ErrorDetail == other.ErrorDetail ||
-                    this.ErrorDetail != null &&
-                    this.ErrorDetail.Equals(other.ErrorDetail)
+                    this.Expression == other.Expression ||
+                    this.Expression != null &&
+                    this.Expression.Equals(other.Expression)
                 );
         }
 
@@ -122,10 +122,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Error != null)
-                    hash = hash * 59 + this.Error.GetHashCode();
-                if (this.ErrorDetail != null)
-                    hash = hash * 59 + this.ErrorDetail.GetHashCode();
+                if (this.ErrorMessage != null)
+                    hash = hash * 59 + this.ErrorMessage.GetHashCode();
+                if (this.Expression != null)
+                    hash = hash * 59 + this.Expression.GetHashCode();
                 return hash;
             }
         }

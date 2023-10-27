@@ -35,20 +35,33 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocGenFormField" /> class.
         /// </summary>
+        /// <param name="Description">Description.</param>
         /// <param name="Label">Label.</param>
         /// <param name="Name">Name.</param>
+        /// <param name="Options">Options.</param>
+        /// <param name="PredefinedValidation">PredefinedValidation.</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
         /// <param name="Type">Type.</param>
+        /// <param name="Validation">Validation.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        public DocGenFormField(string Label = default(string), string Name = default(string), string Required = default(string), string Type = default(string), string Value = default(string))
+        public DocGenFormField(string Description = default(string), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string PredefinedValidation = default(string), string Required = default(string), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
         {
+            this.Description = Description;
             this.Label = Label;
             this.Name = Name;
+            this.Options = Options;
+            this.PredefinedValidation = PredefinedValidation;
             this.Required = Required;
             this.Type = Type;
+            this.Validation = Validation;
             this.Value = Value;
         }
         
+        /// <summary>
+        /// Gets or Sets Description
+        /// </summary>
+        [DataMember(Name="description", EmitDefaultValue=false)]
+        public string Description { get; set; }
         /// <summary>
         /// Gets or Sets Label
         /// </summary>
@@ -60,6 +73,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
+        /// Gets or Sets Options
+        /// </summary>
+        [DataMember(Name="options", EmitDefaultValue=false)]
+        public List<DocGenFormFieldOption> Options { get; set; }
+        /// <summary>
+        /// Gets or Sets PredefinedValidation
+        /// </summary>
+        [DataMember(Name="predefinedValidation", EmitDefaultValue=false)]
+        public string PredefinedValidation { get; set; }
+        /// <summary>
         /// When set to **true**, the signer is required to fill out this tab
         /// </summary>
         /// <value>When set to **true**, the signer is required to fill out this tab</value>
@@ -70,6 +93,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
+        /// <summary>
+        /// Gets or Sets Validation
+        /// </summary>
+        [DataMember(Name="validation", EmitDefaultValue=false)]
+        public DocGenFormFieldValidation Validation { get; set; }
         /// <summary>
         /// Specifies the value of the tab. 
         /// </summary>
@@ -84,10 +112,14 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DocGenFormField {\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append("\n");
+            sb.Append("  PredefinedValidation: ").Append(PredefinedValidation).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Validation: ").Append(Validation).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -126,6 +158,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.Description == other.Description ||
+                    this.Description != null &&
+                    this.Description.Equals(other.Description)
+                ) && 
+                (
                     this.Label == other.Label ||
                     this.Label != null &&
                     this.Label.Equals(other.Label)
@@ -136,6 +173,16 @@ namespace DocuSign.eSign.Model
                     this.Name.Equals(other.Name)
                 ) && 
                 (
+                    this.Options == other.Options ||
+                    this.Options != null &&
+                    this.Options.SequenceEqual(other.Options)
+                ) && 
+                (
+                    this.PredefinedValidation == other.PredefinedValidation ||
+                    this.PredefinedValidation != null &&
+                    this.PredefinedValidation.Equals(other.PredefinedValidation)
+                ) && 
+                (
                     this.Required == other.Required ||
                     this.Required != null &&
                     this.Required.Equals(other.Required)
@@ -144,6 +191,11 @@ namespace DocuSign.eSign.Model
                     this.Type == other.Type ||
                     this.Type != null &&
                     this.Type.Equals(other.Type)
+                ) && 
+                (
+                    this.Validation == other.Validation ||
+                    this.Validation != null &&
+                    this.Validation.Equals(other.Validation)
                 ) && 
                 (
                     this.Value == other.Value ||
@@ -163,14 +215,22 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Description != null)
+                    hash = hash * 59 + this.Description.GetHashCode();
                 if (this.Label != null)
                     hash = hash * 59 + this.Label.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.Options != null)
+                    hash = hash * 59 + this.Options.GetHashCode();
+                if (this.PredefinedValidation != null)
+                    hash = hash * 59 + this.PredefinedValidation.GetHashCode();
                 if (this.Required != null)
                     hash = hash * 59 + this.Required.GetHashCode();
                 if (this.Type != null)
                     hash = hash * 59 + this.Type.GetHashCode();
+                if (this.Validation != null)
+                    hash = hash * 59 + this.Validation.GetHashCode();
                 if (this.Value != null)
                     hash = hash * 59 + this.Value.GetHashCode();
                 return hash;

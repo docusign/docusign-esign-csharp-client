@@ -107,13 +107,32 @@ namespace DocuSign.eSign.Client
             return response;
         }
 
+        bool isPostOrPutHttpMethod(HttpMethod method) => method == HttpMethod.Post || method == HttpMethod.Put;
+
+        bool isEmptyOrJsonContentType(string contentType, List<KeyValuePair<string, string>> headerParams)
+        {
+            if (contentType == "application/json")
+            {
+                return true;
+            }
+            else
+            {
+                KeyValuePair<string, string> contentTypeHeader = headerParams.FirstOrDefault(kvp => kvp.Key.ToLower() == "content-type");
+                if (contentTypeHeader.Value == "application/json" || string.IsNullOrEmpty(contentTypeHeader.Value))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private HttpRequestMessage BuildRequestMessage(DocuSignRequest request)
         {
-            string contentType = string.IsNullOrEmpty(request.ContentType) ? "application/json" : request.ContentType;
             var requestMessage = new HttpRequestMessage(request.Method, request.Url);
 
             if (request.BodyContent != null)
             {
+                string contentType = string.IsNullOrEmpty(request.ContentType) ? "application/json" : request.ContentType;
                 if (request.BodyContent is byte[])
                 {
                     requestMessage.Content = new ByteArrayContent(request.BodyContent as byte[]);
@@ -157,6 +176,13 @@ namespace DocuSign.eSign.Client
                         multipartFormContent.Add(content, file.Name, file.FileName);
                     }
                     requestMessage.Content = multipartFormContent;
+                }
+                else
+                {
+                    if (isPostOrPutHttpMethod(request.Method) && isEmptyOrJsonContentType(request.ContentType, request.HeaderParams))
+                    {
+                        requestMessage.Content = new StringContent("{ }", System.Text.Encoding.UTF8, "application/json");
+                    }
                 }
             }
 

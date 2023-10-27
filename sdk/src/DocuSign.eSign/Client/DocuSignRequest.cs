@@ -39,10 +39,6 @@ namespace DocuSign.eSign.Client
 
     public class DocuSignRequest
     {
-        static bool isPostOrPutHttpMethod(HttpMethod method) => method == HttpMethod.Post || method == HttpMethod.Put;
-        
-        static bool isEmptyOrJsonContentType(string contentType) => contentType == "application/json" || string.IsNullOrEmpty(contentType);
-
         public HttpMethod Method { get; }
 
         public string Url { get; }
@@ -88,9 +84,7 @@ namespace DocuSign.eSign.Client
             Url = path;
             ContentType = contentType;
             ContentDisposition = contentDisposition;
-            BodyContent = isPostOrPutHttpMethod(method) && bodyContent == null && isEmptyOrJsonContentType(contentType)
-                ? "{ }"
-                : bodyContent;
+            BodyContent = bodyContent;
             QueryParams = queryParams ?? new List<KeyValuePair<string, string>>();
             PostParams = postParams ?? new List<KeyValuePair<string, string>>();
             HeaderParams = headerParams ?? new List<KeyValuePair<string, string>>();

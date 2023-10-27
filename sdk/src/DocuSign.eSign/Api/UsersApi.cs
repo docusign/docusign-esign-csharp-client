@@ -674,9 +674,10 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="imageType">One of **signature_image** or **initials_image**.</param>
+        /// <param name="imageBytes">Image content.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        UserSignature UpdateSignatureImage(string accountId, string userId, string signatureId, string imageType, UsersApi.UpdateSignatureImageOptions options = null);
+        UserSignature UpdateSignatureImage(string accountId, string userId, string signatureId, string imageType, byte[] imageBytes, UsersApi.UpdateSignatureImageOptions options = null);
 
         /// <summary>
         /// Updates the user signature image or user initials image for the specified user.
@@ -689,9 +690,10 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="imageType">One of **signature_image** or **initials_image**.</param>
+        /// <param name="imageBytes">Image content.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UserSignature> UpdateSignatureImageWithHttpInfo(string accountId, string userId, string signatureId, string imageType, UsersApi.UpdateSignatureImageOptions options = null);
+        ApiResponse<UserSignature> UpdateSignatureImageWithHttpInfo(string accountId, string userId, string signatureId, string imageType, byte[] imageBytes, UsersApi.UpdateSignatureImageOptions options = null);
         /// <summary>
         /// Adds/updates a user signature.
         /// </summary>
@@ -1422,9 +1424,10 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="imageType">One of **signature_image** or **initials_image**.</param>
+        /// <param name="imageBytes">Image content.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserSignature</returns>
-        System.Threading.Tasks.Task<UserSignature> UpdateSignatureImageAsync(string accountId, string userId, string signatureId, string imageType, UsersApi.UpdateSignatureImageOptions options = null);
+        System.Threading.Tasks.Task<UserSignature> UpdateSignatureImageAsync(string accountId, string userId, string signatureId, string imageType, byte[] imageBytes, UsersApi.UpdateSignatureImageOptions options = null);
 
         /// <summary>
         /// Updates the user signature image or user initials image for the specified user.
@@ -1437,9 +1440,10 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="imageType">One of **signature_image** or **initials_image**.</param>
+        /// <param name="imageBytes">Image content.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserSignature)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureImageAsyncWithHttpInfo(string accountId, string userId, string signatureId, string imageType, UsersApi.UpdateSignatureImageOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureImageAsyncWithHttpInfo(string accountId, string userId, string signatureId, string imageType, byte[] imageBytes, UsersApi.UpdateSignatureImageOptions options = null);
         /// <summary>
         /// Adds/updates a user signature.
         /// </summary>
@@ -6344,11 +6348,12 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="imageType">One of **signature_image** or **initials_image**.</param>
+        /// <param name="imageBytes">Image content.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>UserSignature</returns>
-        public UserSignature UpdateSignatureImage(string accountId, string userId, string signatureId, string imageType, UsersApi.UpdateSignatureImageOptions options = null)
+        public UserSignature UpdateSignatureImage(string accountId, string userId, string signatureId, string imageType, byte[] imageBytes, UsersApi.UpdateSignatureImageOptions options = null)
         {
-             ApiResponse<UserSignature> localVarResponse = UpdateSignatureImageWithHttpInfo(accountId, userId, signatureId, imageType, options);
+             ApiResponse<UserSignature> localVarResponse = UpdateSignatureImageWithHttpInfo(accountId, userId, signatureId, imageType, imageBytes, options);
              return localVarResponse.Data;
         }
 
@@ -6360,9 +6365,10 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="imageType">One of **signature_image** or **initials_image**.</param>
+        /// <param name="imageBytes">Image content.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of UserSignature</returns>
-        public ApiResponse<UserSignature> UpdateSignatureImageWithHttpInfo(string accountId, string userId, string signatureId, string imageType, UsersApi.UpdateSignatureImageOptions options = null)
+        public ApiResponse<UserSignature> UpdateSignatureImageWithHttpInfo(string accountId, string userId, string signatureId, string imageType, byte[] imageBytes, UsersApi.UpdateSignatureImageOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6376,6 +6382,9 @@ namespace DocuSign.eSign.Api
             // verify the required parameter 'imageType' is set
             if (imageType == null)
                 throw new ApiException(400, "Missing required parameter 'imageType' when calling UsersApi->UpdateSignatureImage");
+            // verify the required parameter 'imageBytes' is set
+            if (imageBytes == null)
+                throw new ApiException(400, "Missing required parameter 'imageBytes' when calling UsersApi->UpdateSignatureImage");
 
             var localVarPath = "/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6410,6 +6419,14 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.transparentPng != null) localVarQueryParams.Add("transparent_png", this.ApiClient.ParameterToString(options.transparentPng)); // query parameter
+            }
+            if (imageBytes != null && imageBytes.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(imageBytes); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = imageBytes; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -6445,11 +6462,12 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="imageType">One of **signature_image** or **initials_image**.</param>
+        /// <param name="imageBytes">Image content.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UserSignature</returns>
-        public async System.Threading.Tasks.Task<UserSignature> UpdateSignatureImageAsync(string accountId, string userId, string signatureId, string imageType, UsersApi.UpdateSignatureImageOptions options = null)
+        public async System.Threading.Tasks.Task<UserSignature> UpdateSignatureImageAsync(string accountId, string userId, string signatureId, string imageType, byte[] imageBytes, UsersApi.UpdateSignatureImageOptions options = null)
         {
-             ApiResponse<UserSignature> localVarResponse = await UpdateSignatureImageAsyncWithHttpInfo(accountId, userId, signatureId, imageType, options);
+             ApiResponse<UserSignature> localVarResponse = await UpdateSignatureImageAsyncWithHttpInfo(accountId, userId, signatureId, imageType, imageBytes, options);
              return localVarResponse.Data;
         }
 
@@ -6461,9 +6479,10 @@ namespace DocuSign.eSign.Api
         /// <param name="userId">The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.</param>
         /// <param name="signatureId">The ID of the signature being accessed.</param>
         /// <param name="imageType">One of **signature_image** or **initials_image**.</param>
+        /// <param name="imageBytes">Image content.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UserSignature)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureImageAsyncWithHttpInfo(string accountId, string userId, string signatureId, string imageType, UsersApi.UpdateSignatureImageOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UserSignature>> UpdateSignatureImageAsyncWithHttpInfo(string accountId, string userId, string signatureId, string imageType, byte[] imageBytes, UsersApi.UpdateSignatureImageOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -6477,6 +6496,9 @@ namespace DocuSign.eSign.Api
             // verify the required parameter 'imageType' is set
             if (imageType == null)
                 throw new ApiException(400, "Missing required parameter 'imageType' when calling UsersApi->UpdateSignatureImage");
+            // verify the required parameter 'imageBytes' is set
+            if (imageBytes == null)
+                throw new ApiException(400, "Missing required parameter 'imageBytes' when calling UsersApi->UpdateSignatureImage");
 
             var localVarPath = "/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -6511,6 +6533,14 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.transparentPng != null) localVarQueryParams.Add("transparent_png", this.ApiClient.ParameterToString(options.transparentPng)); // query parameter
+            }
+            if (imageBytes != null && imageBytes.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(imageBytes); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = imageBytes; // byte array
             }
 
             // authentication (docusignAccessCode) required

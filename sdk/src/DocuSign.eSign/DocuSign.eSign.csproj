@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="NuGet">
     <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
@@ -17,7 +17,7 @@
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
     <VersionPrefix>6.8.0</VersionPrefix>
-    <VersionSuffix/>
+    <VersionSuffix />
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>DocuSign.eSign;REST;eSign;docusign;eSignature;api</PackageTags>
@@ -35,15 +35,15 @@
     <DefineConstants>NETSTANDARD2_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net462'">
-    <Reference Include="System.Web"/>
+    <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0"/>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0"/>
-    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="5.4.0"/>
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0"/>
-    <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1"/>
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="7.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="5.4.0" />
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1" />
   </ItemGroup>
-  <ItemGroup/>
+  <ItemGroup />
 </Project>

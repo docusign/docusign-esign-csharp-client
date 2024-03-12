@@ -516,24 +516,68 @@ namespace SdkNetCoreTests
         [TestMethod]
         public void JwtListTabsTest()
         {
+            // the document (file) we want signed
+            const string SignTest1File = @"../../../docs/SignTest1.pdf";
+
+            // Read a file from disk to use as a document.
+            byte[] fileBytes = File.ReadAllBytes(SignTest1File);
+
             EnvelopeDefinition envDef = new EnvelopeDefinition();
             envDef.EmailSubject = "[DocuSign C# SDK] - Please sign this doc";
 
-            // assign recipient to template role by setting name, email, and role name.  Note that the
-            // template role name must match the placeholder role name saved in your account template.  
-            TemplateRole tRole = new TemplateRole();
-            tRole.Email = _testConfig.RecipientEmail;
-            tRole.Name = _testConfig.RecipientName;
-            tRole.RoleName = "Manager";
+            // Add a document to the envelope
+            Document doc = new Document();
+            doc.DocumentBase64 = System.Convert.ToBase64String(fileBytes);
+            doc.Name = "TestFile.pdf";
+            doc.DocumentId = "1";
 
-            List<TemplateRole> rolesList = new List<TemplateRole>() { tRole };
-
-            // add the role to the envelope and assign valid templateId from your account
-            envDef.TemplateRoles = rolesList;
-            envDef.TemplateId = _testConfig.TemplateId;
+            envDef.Documents = new List<Document>
+            {
+                doc
+            };
 
             // set envelope status to "sent" to immediately send the signature request
             envDef.Status = "sent";
+
+            // Add a recipient to sign the documeent
+            Signer signer = new Signer()
+            {
+                Email = _testConfig.RecipientEmail,
+                Name = _testConfig.RecipientName,
+                RecipientId = "1",
+                ClientUserId = "1234",
+                Tabs = new Tabs(),
+            };
+
+            // Create a |ListTab| tab somewhere on the document for the recipient to choose from
+            List listTab = new List()
+            {
+                RecipientId = "1",
+                DocumentId = "1",
+                PageNumber = "1",
+                XPosition = "50",
+                YPosition = "50",
+                Value = "1",
+                ListItems = new List<ListItem>()
+                {
+                    new ListItem()
+                    {
+                        Text = "List Item 1",
+                        Value = "1"
+                    }
+                }
+            };
+
+            signer.Tabs.ListTabs = new List<List>()
+            {
+                listTab
+            };
+
+            envDef.Recipients = new Recipients();
+            envDef.Recipients.Signers = new List<Signer>
+            {
+                signer
+            };
 
             // |EnvelopesApi| contains methods related to creating and sending Envelopes (aka signature requests)
             EnvelopesApi envelopesApi = new EnvelopesApi(_testConfig.ApiClient);
@@ -543,7 +587,7 @@ namespace SdkNetCoreTests
             Assert.IsNotNull(envelopeSummary.EnvelopeId);
 
             var recipients = envelopesApi.ListRecipients(_testConfig.AccountId, envelopeSummary.EnvelopeId);
-            var tabs = envelopesApi.ListTabs(_testConfig.AccountId, envelopeSummary.EnvelopeId, recipients.Signers[1].RecipientId);
+            var tabs = envelopesApi.ListTabs(_testConfig.AccountId, envelopeSummary.EnvelopeId, recipients.Signers[0].RecipientId);
 
             Assert.IsNotNull(tabs);
             Assert.IsNotNull(tabs.ListTabs);

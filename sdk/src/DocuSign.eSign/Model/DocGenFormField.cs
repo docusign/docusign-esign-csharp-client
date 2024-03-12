@@ -41,10 +41,11 @@ namespace DocuSign.eSign.Model
         /// <param name="Options">Options.</param>
         /// <param name="PredefinedValidation">PredefinedValidation.</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
+        /// <param name="RowValues">RowValues.</param>
         /// <param name="Type">Type.</param>
         /// <param name="Validation">Validation.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        public DocGenFormField(string Description = default(string), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string PredefinedValidation = default(string), string Required = default(string), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
+        public DocGenFormField(string Description = default(string), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string PredefinedValidation = default(string), string Required = default(string), List<DocGenFormFieldRowValue> RowValues = default(List<DocGenFormFieldRowValue>), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
         {
             this.Description = Description;
             this.Label = Label;
@@ -52,6 +53,7 @@ namespace DocuSign.eSign.Model
             this.Options = Options;
             this.PredefinedValidation = PredefinedValidation;
             this.Required = Required;
+            this.RowValues = RowValues;
             this.Type = Type;
             this.Validation = Validation;
             this.Value = Value;
@@ -89,6 +91,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="required", EmitDefaultValue=false)]
         public string Required { get; set; }
         /// <summary>
+        /// Gets or Sets RowValues
+        /// </summary>
+        [DataMember(Name="rowValues", EmitDefaultValue=false)]
+        public List<DocGenFormFieldRowValue> RowValues { get; set; }
+        /// <summary>
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name="type", EmitDefaultValue=false)]
@@ -118,6 +125,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("  PredefinedValidation: ").Append(PredefinedValidation).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
+            sb.Append("  RowValues: ").Append(RowValues).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Validation: ").Append(Validation).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
@@ -188,6 +196,11 @@ namespace DocuSign.eSign.Model
                     this.Required.Equals(other.Required)
                 ) && 
                 (
+                    this.RowValues == other.RowValues ||
+                    this.RowValues != null &&
+                    this.RowValues.SequenceEqual(other.RowValues)
+                ) && 
+                (
                     this.Type == other.Type ||
                     this.Type != null &&
                     this.Type.Equals(other.Type)
@@ -227,6 +240,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PredefinedValidation.GetHashCode();
                 if (this.Required != null)
                     hash = hash * 59 + this.Required.GetHashCode();
+                if (this.RowValues != null)
+                    hash = hash * 59 + this.RowValues.GetHashCode();
                 if (this.Type != null)
                     hash = hash * 59 + this.Type.GetHashCode();
                 if (this.Validation != null)

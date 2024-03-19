@@ -87,7 +87,7 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientIdGuid">RecipientIdGuid.</param>
         /// <param name="RecipientIdGuidMetadata">Metadata that indicates whether the &#x60;recipientIdGuid&#x60; property is editable..</param>
         /// <param name="RecipientIdMetadata">Metadata that indicates whether the &#x60;recipientId&#x60; property is editable..</param>
-        /// <param name="ScaleValue">Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size..</param>
+        /// <param name="ScaleValue"> Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size..</param>
         /// <param name="ScaleValueMetadata">Metadata that indicates whether the &#x60;scaleValue&#x60; property is editable..</param>
         /// <param name="SmartContractInformation">Reserved for DocuSign..</param>
         /// <param name="Source">Source.</param>
@@ -501,9 +501,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientIdMetadata", EmitDefaultValue=false)]
         public PropertyMetadata RecipientIdMetadata { get; set; }
         /// <summary>
-        /// Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size.
+        ///  Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size.
         /// </summary>
-        /// <value>Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size.</value>
+        /// <value> Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size.</value>
         [DataMember(Name="scaleValue", EmitDefaultValue=false)]
         public string ScaleValue { get; set; }
         /// <summary>

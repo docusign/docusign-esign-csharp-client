@@ -26,7 +26,7 @@ namespace DocuSign.eSign.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "6.8.0";
+        public const string Version = "6.9.0-rc1";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -102,10 +102,10 @@ namespace DocuSign.eSign.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        public Configuration(string basePath = "https://www.docusign.net/restapi")
+        public Configuration(string basePath = "https://demo.docusign.net/restapi")
         {
-            UserAgent = $"C#/{Version}/{_getFrameworkVersion()}";
-            BasePath = basePath ?? "https://www.docusign.net/restapi";
+            UserAgent = $"Swagger-Codegen/v2.1/{Version}/C#/{_getFrameworkVersion()}";
+            BasePath = basePath ?? "https://demo.docusign.net/restapi";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();

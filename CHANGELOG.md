@@ -1,5 +1,23 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v6.9.0-rc1] - eSignature API v2.1-23.4.02.00 - 2024-03-12
+### Changed
+- Added support for version v2.1-23.4.02.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
+## [v6.9.0-alpha1] - eSignature API v2.1-23.4.02.00 - 2024-03-07
+### Breaking Changes
+- Modified the default path to `Demo_REST_BasePath`
+### Other Changes
+- Revised the logic to determine the `oAuthBasePath` based on the `baseUrl`.
+- Added support for version v2.1-23.4.02.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
+## [v6.8.1] - eSignature API v2.1-23.3.01.02 - 2023-12-15
+### Changed
+- Added support for version v2.1-23.3.01.02 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v6.8.0] - eSignature API v2.1-23.3.01.02 - 2023-10-25
 ### Changed
 - Added support for version v2.1-23.3.01.02 of the DocuSign ESignature API.

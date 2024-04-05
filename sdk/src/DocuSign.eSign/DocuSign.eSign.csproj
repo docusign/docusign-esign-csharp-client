@@ -16,7 +16,7 @@
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>6.9.0-rc1</VersionPrefix>
+    <VersionPrefix>6.9.0-rc2</VersionPrefix>
     <VersionSuffix/>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -26,7 +26,7 @@
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v6.9.0-rc1] - ESignature API v2.1-23.4.02.00 - 3/12/2024</PackageReleaseNotes>
+    <PackageReleaseNotes>[v6.9.0-rc2] - ESignature API v2.1-23.4.02.00 - 4/4/2024</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net462'">
     <DefineConstants>NET462</DefineConstants>
@@ -38,12 +38,12 @@
     <Reference Include="System.Web"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0"/>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0"/>
-    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="5.4.0"/>
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0"/>
-    <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1"/>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0"/>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0"/>
+    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="7.3.1"/>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.3.1"/>
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.3.0"/>
   </ItemGroup>
   <ItemGroup/>
 </Project>

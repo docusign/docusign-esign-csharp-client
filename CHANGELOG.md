@@ -1,6 +1,6 @@
 ﻿# DocuSign C# Client Changelog
 
-## [v6.9.0-rc2] - eSignature API v2.1-23.4.02.00 - 2024-04-05
+## [v7.0.0-rc1] - eSignature API v2.1-23.4.02.00 - 2024-04-05
 ### Breaking Changes
 - Updated C# SDK dependencies.
     - Microsoft.CSharp: Version bumped from 4.5.0 to 4.7.0.

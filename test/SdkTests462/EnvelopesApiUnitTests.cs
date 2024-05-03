@@ -178,7 +178,7 @@ namespace SdkTests462
             var envelopeStatusCreated = "created";
             CreateEnvelopeMethod.CreateEnvelope_CorrectAccountIdAndEnvelopeDefinition_ReturnEnvelopeSummary(ref _testConfig, envelopeStatusCreated);
 
-            var options = new ReturnUrlRequest
+            var options = new EnvelopeViewRequest
             {
                 ReturnUrl = _testConfig.ReturnUrl
             };

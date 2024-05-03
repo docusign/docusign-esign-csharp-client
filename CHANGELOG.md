@@ -1,5 +1,12 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v7.0.0-rc2] - eSignature API v2.1-24.1.01.00 - 2024-05-03
+### Breaking Changes
+- Updated from System.IdentityModel.Tokens.Jwt to Microsoft.IdentityModel.JsonWebTokens for token handling.
+### Changed
+- Added support for version v2.1-24.1.01.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v7.0.0-rc1] - eSignature API v2.1-23.4.02.00 - 2024-04-05
 ### Breaking Changes
 - Updated C# SDK dependencies.

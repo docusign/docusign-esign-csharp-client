@@ -265,9 +265,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns></returns>
-        ViewUrl CreateEditView(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null);
+        ViewUrl CreateEditView(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
 
         /// <summary>
         /// Returns a URL to the edit view UI.
@@ -278,9 +278,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ViewUrl> CreateEditViewWithHttpInfo(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null);
+        ApiResponse<ViewUrl> CreateEditViewWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
         /// <summary>
         /// Adds email setting overrides to an envelope.
         /// </summary>
@@ -586,12 +586,12 @@ namespace DocuSign.eSign.Api
         /// Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tokenScopes"></param>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        IdEvidenceResourceToken CreateRecipientProofFileResourceToken(string tokenScopes, string accountId, string envelopeId, string recipientId);
+        IdEvidenceResourceToken CreateRecipientProofFileResourceToken(string accountId, string envelopeId, string recipientId, EnvelopesApi.CreateRecipientProofFileResourceTokenOptions options = null);
 
         /// <summary>
         /// Returns a resource token to get access to the identity events stored in the proof service related to this recipient.
@@ -600,12 +600,12 @@ namespace DocuSign.eSign.Api
         /// Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tokenScopes"></param>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<IdEvidenceResourceToken> CreateRecipientProofFileResourceTokenWithHttpInfo(string tokenScopes, string accountId, string envelopeId, string recipientId);
+        ApiResponse<IdEvidenceResourceToken> CreateRecipientProofFileResourceTokenWithHttpInfo(string accountId, string envelopeId, string recipientId, EnvelopesApi.CreateRecipientProofFileResourceTokenOptions options = null);
         /// <summary>
         /// Returns a URL to the recipient view UI.
         /// </summary>
@@ -665,9 +665,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns></returns>
-        ViewUrl CreateSenderView(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null);
+        ViewUrl CreateSenderView(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
 
         /// <summary>
         /// Returns a URL to the sender view UI.
@@ -678,9 +678,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ViewUrl> CreateSenderViewWithHttpInfo(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null);
+        ApiResponse<ViewUrl> CreateSenderViewWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
         /// <summary>
         /// Adds tabs for a recipient.
         /// </summary>
@@ -3520,9 +3520,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ViewUrl</returns>
-        System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null);
+        System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
 
         /// <summary>
         /// Returns a URL to the edit view UI.
@@ -3533,9 +3533,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
         /// <summary>
         /// Adds email setting overrides to an envelope.
         /// </summary>
@@ -3841,12 +3841,12 @@ namespace DocuSign.eSign.Api
         /// Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tokenScopes"></param>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of IdEvidenceResourceToken</returns>
-        System.Threading.Tasks.Task<IdEvidenceResourceToken> CreateRecipientProofFileResourceTokenAsync(string tokenScopes, string accountId, string envelopeId, string recipientId);
+        System.Threading.Tasks.Task<IdEvidenceResourceToken> CreateRecipientProofFileResourceTokenAsync(string accountId, string envelopeId, string recipientId, EnvelopesApi.CreateRecipientProofFileResourceTokenOptions options = null);
 
         /// <summary>
         /// Returns a resource token to get access to the identity events stored in the proof service related to this recipient.
@@ -3855,12 +3855,12 @@ namespace DocuSign.eSign.Api
         /// Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
         /// </remarks>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tokenScopes"></param>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (IdEvidenceResourceToken)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdEvidenceResourceToken>> CreateRecipientProofFileResourceTokenAsyncWithHttpInfo(string tokenScopes, string accountId, string envelopeId, string recipientId);
+        System.Threading.Tasks.Task<ApiResponse<IdEvidenceResourceToken>> CreateRecipientProofFileResourceTokenAsyncWithHttpInfo(string accountId, string envelopeId, string recipientId, EnvelopesApi.CreateRecipientProofFileResourceTokenOptions options = null);
         /// <summary>
         /// Returns a URL to the recipient view UI.
         /// </summary>
@@ -3920,9 +3920,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ViewUrl</returns>
-        System.Threading.Tasks.Task<ViewUrl> CreateSenderViewAsync(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null);
+        System.Threading.Tasks.Task<ViewUrl> CreateSenderViewAsync(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
 
         /// <summary>
         /// Returns a URL to the sender view UI.
@@ -3933,9 +3933,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateSenderViewAsyncWithHttpInfo(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateSenderViewAsyncWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
         /// <summary>
         /// Adds tabs for a recipient.
         /// </summary>
@@ -8321,11 +8321,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>ViewUrl</returns>
-        public ViewUrl CreateEditView(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null)
+        public ViewUrl CreateEditView(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
-             ApiResponse<ViewUrl> localVarResponse = CreateEditViewWithHttpInfo(accountId, envelopeId, returnUrlRequest);
+             ApiResponse<ViewUrl> localVarResponse = CreateEditViewWithHttpInfo(accountId, envelopeId, envelopeViewRequest);
              return localVarResponse.Data;
         }
 
@@ -8335,9 +8335,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>ApiResponse of ViewUrl</returns>
-        public ApiResponse<ViewUrl> CreateEditViewWithHttpInfo(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null)
+        public ApiResponse<ViewUrl> CreateEditViewWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8373,13 +8373,13 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (returnUrlRequest != null && returnUrlRequest.GetType() != typeof(byte[]))
+            if (envelopeViewRequest != null && envelopeViewRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(returnUrlRequest); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(envelopeViewRequest); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = returnUrlRequest; // byte array
+                localVarPostBody = envelopeViewRequest; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -8413,11 +8413,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ViewUrl</returns>
-        public async System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null)
+        public async System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
-             ApiResponse<ViewUrl> localVarResponse = await CreateEditViewAsyncWithHttpInfo(accountId, envelopeId, returnUrlRequest);
+             ApiResponse<ViewUrl> localVarResponse = await CreateEditViewAsyncWithHttpInfo(accountId, envelopeId, envelopeViewRequest);
              return localVarResponse.Data;
         }
 
@@ -8427,9 +8427,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -8465,13 +8465,13 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (returnUrlRequest != null && returnUrlRequest.GetType() != typeof(byte[]))
+            if (envelopeViewRequest != null && envelopeViewRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(returnUrlRequest); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(envelopeViewRequest); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = returnUrlRequest; // byte array
+                localVarPostBody = envelopeViewRequest; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -10723,19 +10723,27 @@ namespace DocuSign.eSign.Api
                 (IdEvidenceViewLink)this.ApiClient.Deserialize(localVarResponse, typeof(IdEvidenceViewLink)));
         }
 
+        /// <summary>
+        /// Returns a resource token to get access to the identity events stored in the proof service related to this recipient. Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
+        /// </summary>
+        public class CreateRecipientProofFileResourceTokenOptions
+        {
+            /// 
+            public string tokenScopes {get; set;}
+        }
 
         /// <summary>
         /// Returns a resource token to get access to the identity events stored in the proof service related to this recipient. Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tokenScopes"></param>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>IdEvidenceResourceToken</returns>
-        public IdEvidenceResourceToken CreateRecipientProofFileResourceToken(string tokenScopes, string accountId, string envelopeId, string recipientId)
+        public IdEvidenceResourceToken CreateRecipientProofFileResourceToken(string accountId, string envelopeId, string recipientId, EnvelopesApi.CreateRecipientProofFileResourceTokenOptions options = null)
         {
-             ApiResponse<IdEvidenceResourceToken> localVarResponse = CreateRecipientProofFileResourceTokenWithHttpInfo(tokenScopes, accountId, envelopeId, recipientId);
+             ApiResponse<IdEvidenceResourceToken> localVarResponse = CreateRecipientProofFileResourceTokenWithHttpInfo(accountId, envelopeId, recipientId, options);
              return localVarResponse.Data;
         }
 
@@ -10743,16 +10751,13 @@ namespace DocuSign.eSign.Api
         /// Returns a resource token to get access to the identity events stored in the proof service related to this recipient. Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tokenScopes"></param>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of IdEvidenceResourceToken</returns>
-        public ApiResponse<IdEvidenceResourceToken> CreateRecipientProofFileResourceTokenWithHttpInfo(string tokenScopes, string accountId, string envelopeId, string recipientId)
+        public ApiResponse<IdEvidenceResourceToken> CreateRecipientProofFileResourceTokenWithHttpInfo(string accountId, string envelopeId, string recipientId, EnvelopesApi.CreateRecipientProofFileResourceTokenOptions options = null)
         {
-            // verify the required parameter 'tokenScopes' is set
-            if (tokenScopes == null)
-                throw new ApiException(400, "Missing required parameter 'tokenScopes' when calling EnvelopesApi->CreateRecipientProofFileResourceToken");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateRecipientProofFileResourceToken");
@@ -10788,10 +10793,13 @@ namespace DocuSign.eSign.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (tokenScopes != null) localVarPathParams.Add("token_scopes", this.ApiClient.ParameterToString(tokenScopes)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
             if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
+            if (options != null)
+            {
+                if (options.tokenScopes != null) localVarQueryParams.Add("token_scopes", this.ApiClient.ParameterToString(options.tokenScopes)); // query parameter
+            }
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -10822,14 +10830,14 @@ namespace DocuSign.eSign.Api
         /// Returns a resource token to get access to the identity events stored in the proof service related to this recipient. Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tokenScopes"></param>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of IdEvidenceResourceToken</returns>
-        public async System.Threading.Tasks.Task<IdEvidenceResourceToken> CreateRecipientProofFileResourceTokenAsync(string tokenScopes, string accountId, string envelopeId, string recipientId)
+        public async System.Threading.Tasks.Task<IdEvidenceResourceToken> CreateRecipientProofFileResourceTokenAsync(string accountId, string envelopeId, string recipientId, EnvelopesApi.CreateRecipientProofFileResourceTokenOptions options = null)
         {
-             ApiResponse<IdEvidenceResourceToken> localVarResponse = await CreateRecipientProofFileResourceTokenAsyncWithHttpInfo(tokenScopes, accountId, envelopeId, recipientId);
+             ApiResponse<IdEvidenceResourceToken> localVarResponse = await CreateRecipientProofFileResourceTokenAsyncWithHttpInfo(accountId, envelopeId, recipientId, options);
              return localVarResponse.Data;
         }
 
@@ -10837,16 +10845,13 @@ namespace DocuSign.eSign.Api
         /// Returns a resource token to get access to the identity events stored in the proof service related to this recipient. Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tokenScopes"></param>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <param name="recipientId">The ID of the recipient being accessed.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (IdEvidenceResourceToken)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<IdEvidenceResourceToken>> CreateRecipientProofFileResourceTokenAsyncWithHttpInfo(string tokenScopes, string accountId, string envelopeId, string recipientId)
+        public async System.Threading.Tasks.Task<ApiResponse<IdEvidenceResourceToken>> CreateRecipientProofFileResourceTokenAsyncWithHttpInfo(string accountId, string envelopeId, string recipientId, EnvelopesApi.CreateRecipientProofFileResourceTokenOptions options = null)
         {
-            // verify the required parameter 'tokenScopes' is set
-            if (tokenScopes == null)
-                throw new ApiException(400, "Missing required parameter 'tokenScopes' when calling EnvelopesApi->CreateRecipientProofFileResourceToken");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateRecipientProofFileResourceToken");
@@ -10882,10 +10887,13 @@ namespace DocuSign.eSign.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (tokenScopes != null) localVarPathParams.Add("token_scopes", this.ApiClient.ParameterToString(tokenScopes)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
             if (recipientId != null) localVarPathParams.Add("recipientId", this.ApiClient.ParameterToString(recipientId)); // path parameter
+            if (options != null)
+            {
+                if (options.tokenScopes != null) localVarQueryParams.Add("token_scopes", this.ApiClient.ParameterToString(options.tokenScopes)); // query parameter
+            }
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -11289,11 +11297,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>ViewUrl</returns>
-        public ViewUrl CreateSenderView(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null)
+        public ViewUrl CreateSenderView(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
-             ApiResponse<ViewUrl> localVarResponse = CreateSenderViewWithHttpInfo(accountId, envelopeId, returnUrlRequest);
+             ApiResponse<ViewUrl> localVarResponse = CreateSenderViewWithHttpInfo(accountId, envelopeId, envelopeViewRequest);
              return localVarResponse.Data;
         }
 
@@ -11303,9 +11311,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>ApiResponse of ViewUrl</returns>
-        public ApiResponse<ViewUrl> CreateSenderViewWithHttpInfo(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null)
+        public ApiResponse<ViewUrl> CreateSenderViewWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11341,13 +11349,13 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (returnUrlRequest != null && returnUrlRequest.GetType() != typeof(byte[]))
+            if (envelopeViewRequest != null && envelopeViewRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(returnUrlRequest); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(envelopeViewRequest); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = returnUrlRequest; // byte array
+                localVarPostBody = envelopeViewRequest; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -11381,11 +11389,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ViewUrl</returns>
-        public async System.Threading.Tasks.Task<ViewUrl> CreateSenderViewAsync(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null)
+        public async System.Threading.Tasks.Task<ViewUrl> CreateSenderViewAsync(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
-             ApiResponse<ViewUrl> localVarResponse = await CreateSenderViewAsyncWithHttpInfo(accountId, envelopeId, returnUrlRequest);
+             ApiResponse<ViewUrl> localVarResponse = await CreateSenderViewAsyncWithHttpInfo(accountId, envelopeId, envelopeViewRequest);
              return localVarResponse.Data;
         }
 
@@ -11395,9 +11403,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateSenderViewAsyncWithHttpInfo(string accountId, string envelopeId, ReturnUrlRequest returnUrlRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateSenderViewAsyncWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -11433,13 +11441,13 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (returnUrlRequest != null && returnUrlRequest.GetType() != typeof(byte[]))
+            if (envelopeViewRequest != null && envelopeViewRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(returnUrlRequest); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(envelopeViewRequest); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = returnUrlRequest; // byte array
+                localVarPostBody = envelopeViewRequest; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -16665,7 +16673,7 @@ namespace DocuSign.eSign.Api
         /// </summary>
         public class GetConsumerDisclosureOptions
         {
-            /// The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language. 
+            /// The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language. 
             public string langCode2 {get; set;}
         }
 

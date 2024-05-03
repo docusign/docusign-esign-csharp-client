@@ -9,6 +9,7 @@
  */
 
 using DocuSign.eSign.Client.Auth;
+using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Org.BouncyCastle.Crypto;
@@ -18,7 +19,6 @@ using Org.BouncyCastle.Security;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -915,7 +915,7 @@ namespace DocuSign.eSign.Client
         {
             string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
 
-            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler
+            JsonWebTokenHandler handler = new JsonWebTokenHandler
             {
                 SetDefaultTimesOnTokenCreation = false
             };
@@ -953,12 +953,13 @@ namespace DocuSign.eSign.Client
                 throw new ApiException(400, "Private key not supplied or is invalid!");
             }
 
-            var token = handler.CreateToken(descriptor);
-            string jwtToken = handler.WriteToken(token);
+            var jwtToken = handler.CreateToken(descriptor);
 
-            var localVarFormParams = new Dictionary<String, String>();
-            localVarFormParams.Add("grant_type", OAuth.Grant_Type_JWT);
-            localVarFormParams.Add("assertion", jwtToken);
+            var localVarFormParams = new Dictionary<string, string>
+            {
+                { "grant_type", OAuth.Grant_Type_JWT },
+                { "assertion", jwtToken }
+            };
 
             DocuSignRequest request = PrepareOAuthRequest(oauthBasePath, $"oauth/token", HttpMethod.Post, Configuration.DefaultHeader?.ToList(), localVarFormParams.ToList());
             DocuSignResponse response = RestClient.SendRequest(request);
@@ -1003,7 +1004,7 @@ namespace DocuSign.eSign.Client
         {
             string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
 
-            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+            JsonWebTokenHandler handler = new JsonWebTokenHandler();
 
             SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor()
             {
@@ -1028,12 +1029,13 @@ namespace DocuSign.eSign.Client
                 throw new ApiException(400, "Private key not supplied or is invalid!");
             }
 
-            var token = handler.CreateToken(descriptor);
-            string jwtToken = handler.WriteToken(token);
+            var jwtToken = handler.CreateToken(descriptor);
 
-            var localVarFormParams = new Dictionary<String, String>();
-            localVarFormParams.Add("grant_type", OAuth.Grant_Type_JWT);
-            localVarFormParams.Add("assertion", jwtToken);
+            var localVarFormParams = new Dictionary<string, string>
+            {
+                { "grant_type", OAuth.Grant_Type_JWT },
+                { "assertion", jwtToken }
+            };
 
             DocuSignRequest request = PrepareOAuthRequest(oauthBasePath, $"oauth/token", HttpMethod.Post, Configuration.DefaultHeader?.ToList(), localVarFormParams.ToList());
             DocuSignResponse response = RestClient.SendRequest(request);

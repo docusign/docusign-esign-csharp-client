@@ -322,7 +322,7 @@ namespace SdkTests462
         {
             JwtRequestSignatureOnDocumentTest("created");
 
-            ReturnUrlRequest options = new ReturnUrlRequest();
+            EnvelopeViewRequest options = new EnvelopeViewRequest();
             options.ReturnUrl = _testConfig.ReturnUrl;
 
             // |EnvelopesApi| contains methods related to envelopes and envelope recipients

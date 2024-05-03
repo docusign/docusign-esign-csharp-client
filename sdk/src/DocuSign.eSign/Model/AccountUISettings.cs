@@ -49,6 +49,8 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableEasySignTemplateUploadMetadata">EnableEasySignTemplateUploadMetadata.</param>
         /// <param name="EnableEnvelopeCopyWithData">EnableEnvelopeCopyWithData.</param>
         /// <param name="EnableEnvelopeCopyWithDataMetadata">EnableEnvelopeCopyWithDataMetadata.</param>
+        /// <param name="EnableEnvelopeTypes">EnableEnvelopeTypes.</param>
+        /// <param name="EnableEnvelopeTypesMetadata">EnableEnvelopeTypesMetadata.</param>
         /// <param name="EnableLegacySendflowLink">EnableLegacySendflowLink.</param>
         /// <param name="EnableLegacySendflowLinkMetadata">EnableLegacySendflowLinkMetadata.</param>
         /// <param name="HasExternalLinkedAccounts">HasExternalLinkedAccounts.</param>
@@ -67,7 +69,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ShouldRedactAccessCodeMetadata">ShouldRedactAccessCodeMetadata.</param>
         /// <param name="UploadNewImageToSignOrInitial">UploadNewImageToSignOrInitial.</param>
         /// <param name="UploadNewImageToSignOrInitialMetadata">UploadNewImageToSignOrInitialMetadata.</param>
-        public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), string AllowUsersToEditSharedAccess = default(string), SettingsMetadata AllowUsersToEditSharedAccessMetadata = default(SettingsMetadata), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string ClickwrapSchemaVersion = default(string), SettingsMetadata ClickwrapSchemaVersionMetadata = default(SettingsMetadata), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string EnableEnvelopeCopyWithData = default(string), SettingsMetadata EnableEnvelopeCopyWithDataMetadata = default(SettingsMetadata), string EnableLegacySendflowLink = default(string), SettingsMetadata EnableLegacySendflowLinkMetadata = default(SettingsMetadata), string HasExternalLinkedAccounts = default(string), SettingsMetadata HasExternalLinkedAccountsMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
+        public AccountUISettings(AdminMessage AdminMessage = default(AdminMessage), string AllowUsersToEditSharedAccess = default(string), SettingsMetadata AllowUsersToEditSharedAccessMetadata = default(SettingsMetadata), AskAnAdmin AskAnAdmin = default(AskAnAdmin), string ClickwrapSchemaVersion = default(string), SettingsMetadata ClickwrapSchemaVersionMetadata = default(SettingsMetadata), string EnableAdminMessage = default(string), SettingsMetadata EnableAdminMessageMetadata = default(SettingsMetadata), string EnableEasySignCanUseMultiTemplateApply = default(string), SettingsMetadata EnableEasySignCanUseMultiTemplateApplyMetadata = default(SettingsMetadata), string EnableEasySignTemplateUpload = default(string), SettingsMetadata EnableEasySignTemplateUploadMetadata = default(SettingsMetadata), string EnableEnvelopeCopyWithData = default(string), SettingsMetadata EnableEnvelopeCopyWithDataMetadata = default(SettingsMetadata), string EnableEnvelopeTypes = default(string), SettingsMetadata EnableEnvelopeTypesMetadata = default(SettingsMetadata), string EnableLegacySendflowLink = default(string), SettingsMetadata EnableLegacySendflowLinkMetadata = default(SettingsMetadata), string HasExternalLinkedAccounts = default(string), SettingsMetadata HasExternalLinkedAccountsMetadata = default(SettingsMetadata), string HideSendAnEnvelope = default(string), SettingsMetadata HideSendAnEnvelopeMetadata = default(SettingsMetadata), string HideUseATemplate = default(string), string HideUseATemplateInPrepare = default(string), SettingsMetadata HideUseATemplateInPrepareMetadata = default(SettingsMetadata), SettingsMetadata HideUseATemplateMetadata = default(SettingsMetadata), string OrderBasedRecipientIdGeneration = default(string), SettingsMetadata OrderBasedRecipientIdGenerationMetadata = default(SettingsMetadata), string RemoveEnvelopeForwarding = default(string), SettingsMetadata RemoveEnvelopeForwardingMetadata = default(SettingsMetadata), string ShouldRedactAccessCode = default(string), SettingsMetadata ShouldRedactAccessCodeMetadata = default(SettingsMetadata), string UploadNewImageToSignOrInitial = default(string), SettingsMetadata UploadNewImageToSignOrInitialMetadata = default(SettingsMetadata))
         {
             this.AdminMessage = AdminMessage;
             this.AllowUsersToEditSharedAccess = AllowUsersToEditSharedAccess;
@@ -83,6 +85,8 @@ namespace DocuSign.eSign.Model
             this.EnableEasySignTemplateUploadMetadata = EnableEasySignTemplateUploadMetadata;
             this.EnableEnvelopeCopyWithData = EnableEnvelopeCopyWithData;
             this.EnableEnvelopeCopyWithDataMetadata = EnableEnvelopeCopyWithDataMetadata;
+            this.EnableEnvelopeTypes = EnableEnvelopeTypes;
+            this.EnableEnvelopeTypesMetadata = EnableEnvelopeTypesMetadata;
             this.EnableLegacySendflowLink = EnableLegacySendflowLink;
             this.EnableLegacySendflowLinkMetadata = EnableLegacySendflowLinkMetadata;
             this.HasExternalLinkedAccounts = HasExternalLinkedAccounts;
@@ -173,6 +177,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="enableEnvelopeCopyWithDataMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableEnvelopeCopyWithDataMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableEnvelopeTypes
+        /// </summary>
+        [DataMember(Name="enableEnvelopeTypes", EmitDefaultValue=false)]
+        public string EnableEnvelopeTypes { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableEnvelopeTypesMetadata
+        /// </summary>
+        [DataMember(Name="enableEnvelopeTypesMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableEnvelopeTypesMetadata { get; set; }
         /// <summary>
         /// Gets or Sets EnableLegacySendflowLink
         /// </summary>
@@ -285,6 +299,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnableEasySignTemplateUploadMetadata: ").Append(EnableEasySignTemplateUploadMetadata).Append("\n");
             sb.Append("  EnableEnvelopeCopyWithData: ").Append(EnableEnvelopeCopyWithData).Append("\n");
             sb.Append("  EnableEnvelopeCopyWithDataMetadata: ").Append(EnableEnvelopeCopyWithDataMetadata).Append("\n");
+            sb.Append("  EnableEnvelopeTypes: ").Append(EnableEnvelopeTypes).Append("\n");
+            sb.Append("  EnableEnvelopeTypesMetadata: ").Append(EnableEnvelopeTypesMetadata).Append("\n");
             sb.Append("  EnableLegacySendflowLink: ").Append(EnableLegacySendflowLink).Append("\n");
             sb.Append("  EnableLegacySendflowLinkMetadata: ").Append(EnableLegacySendflowLinkMetadata).Append("\n");
             sb.Append("  HasExternalLinkedAccounts: ").Append(HasExternalLinkedAccounts).Append("\n");
@@ -408,6 +424,16 @@ namespace DocuSign.eSign.Model
                     this.EnableEnvelopeCopyWithDataMetadata == other.EnableEnvelopeCopyWithDataMetadata ||
                     this.EnableEnvelopeCopyWithDataMetadata != null &&
                     this.EnableEnvelopeCopyWithDataMetadata.Equals(other.EnableEnvelopeCopyWithDataMetadata)
+                ) && 
+                (
+                    this.EnableEnvelopeTypes == other.EnableEnvelopeTypes ||
+                    this.EnableEnvelopeTypes != null &&
+                    this.EnableEnvelopeTypes.Equals(other.EnableEnvelopeTypes)
+                ) && 
+                (
+                    this.EnableEnvelopeTypesMetadata == other.EnableEnvelopeTypesMetadata ||
+                    this.EnableEnvelopeTypesMetadata != null &&
+                    this.EnableEnvelopeTypesMetadata.Equals(other.EnableEnvelopeTypesMetadata)
                 ) && 
                 (
                     this.EnableLegacySendflowLink == other.EnableLegacySendflowLink ||
@@ -540,6 +566,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnableEnvelopeCopyWithData.GetHashCode();
                 if (this.EnableEnvelopeCopyWithDataMetadata != null)
                     hash = hash * 59 + this.EnableEnvelopeCopyWithDataMetadata.GetHashCode();
+                if (this.EnableEnvelopeTypes != null)
+                    hash = hash * 59 + this.EnableEnvelopeTypes.GetHashCode();
+                if (this.EnableEnvelopeTypesMetadata != null)
+                    hash = hash * 59 + this.EnableEnvelopeTypesMetadata.GetHashCode();
                 if (this.EnableLegacySendflowLink != null)
                     hash = hash * 59 + this.EnableLegacySendflowLink.GetHashCode();
                 if (this.EnableLegacySendflowLinkMetadata != null)

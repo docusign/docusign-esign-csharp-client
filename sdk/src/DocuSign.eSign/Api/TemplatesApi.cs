@@ -84,9 +84,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="templateViewRequest"> (optional)</param>
         /// <returns></returns>
-        ViewUrl CreateEditView(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
+        ViewUrl CreateEditView(string accountId, string templateId, TemplateViewRequest templateViewRequest = null);
 
         /// <summary>
         /// Provides a URL to start an edit view of the Template UI
@@ -97,9 +97,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="templateViewRequest"> (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ViewUrl> CreateEditViewWithHttpInfo(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
+        ApiResponse<ViewUrl> CreateEditViewWithHttpInfo(string accountId, string templateId, TemplateViewRequest templateViewRequest = null);
         /// <summary>
         /// Lock a template.
         /// </summary>
@@ -1355,9 +1355,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="templateViewRequest"> (optional)</param>
         /// <returns>Task of ViewUrl</returns>
-        System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
+        System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync(string accountId, string templateId, TemplateViewRequest templateViewRequest = null);
 
         /// <summary>
         /// Provides a URL to start an edit view of the Template UI
@@ -1368,9 +1368,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="templateViewRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo(string accountId, string templateId, TemplateViewRequest templateViewRequest = null);
         /// <summary>
         /// Lock a template.
         /// </summary>
@@ -3006,11 +3006,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="templateViewRequest"> (optional)</param>
         /// <returns>ViewUrl</returns>
-        public ViewUrl CreateEditView(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
+        public ViewUrl CreateEditView(string accountId, string templateId, TemplateViewRequest templateViewRequest = null)
         {
-             ApiResponse<ViewUrl> localVarResponse = CreateEditViewWithHttpInfo(accountId, templateId, returnUrlRequest);
+             ApiResponse<ViewUrl> localVarResponse = CreateEditViewWithHttpInfo(accountId, templateId, templateViewRequest);
              return localVarResponse.Data;
         }
 
@@ -3020,9 +3020,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="templateViewRequest"> (optional)</param>
         /// <returns>ApiResponse of ViewUrl</returns>
-        public ApiResponse<ViewUrl> CreateEditViewWithHttpInfo(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
+        public ApiResponse<ViewUrl> CreateEditViewWithHttpInfo(string accountId, string templateId, TemplateViewRequest templateViewRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3058,13 +3058,13 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-            if (returnUrlRequest != null && returnUrlRequest.GetType() != typeof(byte[]))
+            if (templateViewRequest != null && templateViewRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(returnUrlRequest); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(templateViewRequest); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = returnUrlRequest; // byte array
+                localVarPostBody = templateViewRequest; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -3098,11 +3098,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="templateViewRequest"> (optional)</param>
         /// <returns>Task of ViewUrl</returns>
-        public async System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
+        public async System.Threading.Tasks.Task<ViewUrl> CreateEditViewAsync(string accountId, string templateId, TemplateViewRequest templateViewRequest = null)
         {
-             ApiResponse<ViewUrl> localVarResponse = await CreateEditViewAsyncWithHttpInfo(accountId, templateId, returnUrlRequest);
+             ApiResponse<ViewUrl> localVarResponse = await CreateEditViewAsyncWithHttpInfo(accountId, templateId, templateViewRequest);
              return localVarResponse.Data;
         }
 
@@ -3112,9 +3112,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <param name="returnUrlRequest"> (optional)</param>
+        /// <param name="templateViewRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo(string accountId, string templateId, ReturnUrlRequest returnUrlRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateEditViewAsyncWithHttpInfo(string accountId, string templateId, TemplateViewRequest templateViewRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -3150,13 +3150,13 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-            if (returnUrlRequest != null && returnUrlRequest.GetType() != typeof(byte[]))
+            if (templateViewRequest != null && templateViewRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(returnUrlRequest); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(templateViewRequest); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = returnUrlRequest; // byte array
+                localVarPostBody = templateViewRequest; // byte array
             }
 
             // authentication (docusignAccessCode) required

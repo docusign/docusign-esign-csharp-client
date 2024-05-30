@@ -7,7 +7,7 @@ The Docusign REST API makes integrating Docusign into your apps and websites a s
 
 ## Version Information
 - **API version**: v2.1
-- **Latest SDK version (Including prerelease)**: 7.0.0-rc2
+- **Latest SDK version (Including prerelease)**: 7.0.0-rc3
 
 ## Requirements
 *   Microsoft .NET version 4.6.2+ (4.7 recommended)
@@ -42,15 +42,15 @@ This client has the following external dependencies:
 
 ### .NET Standard v2 and .NET Core:
 *   Newtonsoft.Json v13.0.3
-*   BouncyCastle.Cryptography v2.3.0
+*   BouncyCastle.Cryptography v2.3.1
 *   System.ComponentModel.Annotations v5.0.0
-*   Microsoft.IdentityModel.JsonWebTokens v7.5.1
+*   Microsoft.IdentityModel.JsonWebTokens v7.5.2
 
 ### .NET Framework, version 4.6.2:
 *   Newtonsoft.Json v13.0.3
-*   BouncyCastle.Cryptography v2.3.0
+*   BouncyCastle.Cryptography v2.3.1
 *   System.ComponentModel.Annotations v5.0.0
-*   Microsoft.IdentityModel.JsonWebTokens v7.5.1
+*   Microsoft.IdentityModel.JsonWebTokens v7.5.2
 
 ## Code examples
 Explore our GitHub repository for the [Launcher](https://github.com/docusign/code-examples-csharp/), a self-executing package housing code examples for the eSignature C# SDK. This package showcases several common use cases and their respective source files. Additionally, you can download a version preconfigured for your Docusign developer account from [Quickstart](https://developers.docusign.com/docs/esign-rest-api/quickstart/). These examples support both the [Authorization Code Grant](https://developers.docusign.com/platform/auth/authcode/) and [JSON Web Token (JWT)](https://developers.docusign.com/platform/auth/jwt/) authentication workflows.

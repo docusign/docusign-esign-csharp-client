@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="NuGet">
     <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
@@ -16,7 +16,7 @@
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>6.9.0-rc2</VersionPrefix>
+    <VersionPrefix>6.9.0</VersionPrefix>
     <VersionSuffix/>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -26,7 +26,7 @@
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v6.9.0-rc2] - ESignature API v2.1-23.4.02.00 - 4/4/2024</PackageReleaseNotes>
+    <PackageReleaseNotes>[v6.9.0] - ESignature API v2.1-23.4.02.00 - 4/4/2024</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net462'">
     <DefineConstants>NET462</DefineConstants>
@@ -41,9 +41,9 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0"/>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0"/>
-    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="7.3.1"/>
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.3.1"/>
-    <PackageReference Include="BouncyCastle.Cryptography" Version="2.3.0"/>
+    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="7.5.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.5.2" />
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.3.1" />
   </ItemGroup>
-  <ItemGroup/>
+  <ItemGroup />
 </Project>

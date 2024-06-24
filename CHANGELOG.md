@@ -1,5 +1,12 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v6.9.0] - eSignature API v2.1-23.4.02.00 - 2024-06-24
+- Updated the SDK release version.
+- Updated C# SDK dependencies.
+    - Microsoft.IdentityModel.Protocols: Version bumped from 7.3.1 to 7.5.2.
+    - System.IdentityModel.Tokens.Jwt: Version bumped from 7.3.1 to 7.5.2.
+    - BouncyCastle.Cryptography: Version bumped from 2.3.0 to 2.3.1.
+
 ## [v6.9.0-rc2] - eSignature API v2.1-23.4.02.00 - 2024-04-05
 ### Breaking Changes
 - Updated C# SDK dependencies.

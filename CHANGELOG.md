@@ -1,5 +1,47 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v7.0.0-rc3] - eSignature API v2.1-24.1.01.00 - 2024-05-20
+### Changed
+- Updated C# SDK dependencies.
+    - BouncyCastle.Cryptography: Version bumped from 2.3.0 to 2.3.1.
+    - Microsoft.IdentityModel.JsonWebTokens: Version bumped from 7.5.1 to 7.5.2.
+## [v7.0.0-rc2] - eSignature API v2.1-24.1.01.00 - 2024-05-03
+### Breaking Changes
+- Updated from System.IdentityModel.Tokens.Jwt to Microsoft.IdentityModel.JsonWebTokens for token handling.
+### Changed
+- Added support for version v2.1-24.1.01.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
+## [v7.0.0-rc1] - eSignature API v2.1-23.4.02.00 - 2024-04-05
+### Breaking Changes
+- Updated C# SDK dependencies.
+    - Microsoft.CSharp: Version bumped from 4.5.0 to 4.7.0.
+    - Newtonsoft.Json: Version bumped from 13.0.1 to 13.0.3.
+    - System.ComponentModel.Annotations: Version bumped from 4.5.0 to 5.0.0.
+    - Microsoft.IdentityModel.Protocols: Version bumped from 5.4.0 to 7.3.1.
+    - System.IdentityModel.Tokens.Jwt: Version bumped from 5.4.0 to 7.3.1.
+    - BouncyCastle.Cryptography: Version bumped from 2.2.1 to 2.3.0.
+### Changed
+- Updated the SDK release version.
+
+## [v6.9.0-rc1] - eSignature API v2.1-23.4.02.00 - 2024-03-12
+### Changed
+- Added support for version v2.1-23.4.02.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
+## [v6.9.0-alpha1] - eSignature API v2.1-23.4.02.00 - 2024-03-07
+### Breaking Changes
+- Modified the default path to `Demo_REST_BasePath`
+### Other Changes
+- Revised the logic to determine the `oAuthBasePath` based on the `baseUrl`.
+- Added support for version v2.1-23.4.02.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
+## [v6.8.1] - eSignature API v2.1-23.3.01.02 - 2023-12-15
+### Changed
+- Added support for version v2.1-23.3.01.02 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v6.8.0] - eSignature API v2.1-23.3.01.02 - 2023-10-25
 ### Changed
 - Added support for version v2.1-23.3.01.02 of the DocuSign ESignature API.

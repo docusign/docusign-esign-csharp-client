@@ -35,26 +35,35 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Group" /> class.
         /// </summary>
+        /// <param name="AccessType">AccessType.</param>
         /// <param name="DsGroupId">DsGroupId.</param>
         /// <param name="ErrorDetails">Array or errors..</param>
         /// <param name="GroupId">The DocuSign group ID for the group..</param>
         /// <param name="GroupName">The name of the group..</param>
         /// <param name="GroupType">The group type..</param>
+        /// <param name="LastModifiedOn">LastModifiedOn.</param>
         /// <param name="PermissionProfileId">The ID of the permission profile associated with the group..</param>
         /// <param name="Users">Users.</param>
         /// <param name="UsersCount">UsersCount.</param>
-        public Group(string DsGroupId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string GroupId = default(string), string GroupName = default(string), string GroupType = default(string), string PermissionProfileId = default(string), List<UserInfo> Users = default(List<UserInfo>), string UsersCount = default(string))
+        public Group(string AccessType = default(string), string DsGroupId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string GroupId = default(string), string GroupName = default(string), string GroupType = default(string), string LastModifiedOn = default(string), string PermissionProfileId = default(string), List<UserInfo> Users = default(List<UserInfo>), string UsersCount = default(string))
         {
+            this.AccessType = AccessType;
             this.DsGroupId = DsGroupId;
             this.ErrorDetails = ErrorDetails;
             this.GroupId = GroupId;
             this.GroupName = GroupName;
             this.GroupType = GroupType;
+            this.LastModifiedOn = LastModifiedOn;
             this.PermissionProfileId = PermissionProfileId;
             this.Users = Users;
             this.UsersCount = UsersCount;
         }
         
+        /// <summary>
+        /// Gets or Sets AccessType
+        /// </summary>
+        [DataMember(Name="accessType", EmitDefaultValue=false)]
+        public string AccessType { get; set; }
         /// <summary>
         /// Gets or Sets DsGroupId
         /// </summary>
@@ -85,6 +94,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="groupType", EmitDefaultValue=false)]
         public string GroupType { get; set; }
         /// <summary>
+        /// Gets or Sets LastModifiedOn
+        /// </summary>
+        [DataMember(Name="lastModifiedOn", EmitDefaultValue=false)]
+        public string LastModifiedOn { get; set; }
+        /// <summary>
         /// The ID of the permission profile associated with the group.
         /// </summary>
         /// <value>The ID of the permission profile associated with the group.</value>
@@ -108,11 +122,13 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Group {\n");
+            sb.Append("  AccessType: ").Append(AccessType).Append("\n");
             sb.Append("  DsGroupId: ").Append(DsGroupId).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("  GroupId: ").Append(GroupId).Append("\n");
             sb.Append("  GroupName: ").Append(GroupName).Append("\n");
             sb.Append("  GroupType: ").Append(GroupType).Append("\n");
+            sb.Append("  LastModifiedOn: ").Append(LastModifiedOn).Append("\n");
             sb.Append("  PermissionProfileId: ").Append(PermissionProfileId).Append("\n");
             sb.Append("  Users: ").Append(Users).Append("\n");
             sb.Append("  UsersCount: ").Append(UsersCount).Append("\n");
@@ -153,6 +169,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.AccessType == other.AccessType ||
+                    this.AccessType != null &&
+                    this.AccessType.Equals(other.AccessType)
+                ) && 
+                (
                     this.DsGroupId == other.DsGroupId ||
                     this.DsGroupId != null &&
                     this.DsGroupId.Equals(other.DsGroupId)
@@ -176,6 +197,11 @@ namespace DocuSign.eSign.Model
                     this.GroupType == other.GroupType ||
                     this.GroupType != null &&
                     this.GroupType.Equals(other.GroupType)
+                ) && 
+                (
+                    this.LastModifiedOn == other.LastModifiedOn ||
+                    this.LastModifiedOn != null &&
+                    this.LastModifiedOn.Equals(other.LastModifiedOn)
                 ) && 
                 (
                     this.PermissionProfileId == other.PermissionProfileId ||
@@ -205,6 +231,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AccessType != null)
+                    hash = hash * 59 + this.AccessType.GetHashCode();
                 if (this.DsGroupId != null)
                     hash = hash * 59 + this.DsGroupId.GetHashCode();
                 if (this.ErrorDetails != null)
@@ -215,6 +243,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.GroupName.GetHashCode();
                 if (this.GroupType != null)
                     hash = hash * 59 + this.GroupType.GetHashCode();
+                if (this.LastModifiedOn != null)
+                    hash = hash * 59 + this.LastModifiedOn.GetHashCode();
                 if (this.PermissionProfileId != null)
                     hash = hash * 59 + this.PermissionProfileId.GetHashCode();
                 if (this.Users != null)

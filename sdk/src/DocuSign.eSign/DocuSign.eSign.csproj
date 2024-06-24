@@ -4,10 +4,10 @@
     <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
     <IsPackable>true</IsPackable>
     <PackageId>DocuSign.eSign.dll</PackageId>
-    <Description>The DocuSign NuGet package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-esign-csharp-client repository. Join the eSign revolution!</Description>
+    <Description>The Docusign NuGet package makes integrating Docusign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-esign-csharp-client repository. Join the eSign revolution!</Description>
     <Company>DocuSign Inc.</Company>
     <Owners>DocuSign</Owners>
-    <Copyright>Copyright © DocuSign 2023</Copyright>
+    <Copyright>Copyright © DocuSign 2024</Copyright>
     <AssemblyTitle>DocuSign.eSign</AssemblyTitle>
     <Authors>DocuSign</Authors>
     <OutputType>Library</OutputType>
@@ -16,7 +16,7 @@
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>6.8.0</VersionPrefix>
+    <VersionPrefix>7.0.0-rc3</VersionPrefix>
     <VersionSuffix/>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -26,7 +26,7 @@
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v6.8.0] - ESignature API v2.1-23.3.01.02 - 10/25/2023</PackageReleaseNotes>
+    <PackageReleaseNotes>[v7.0.0-rc3] - ESignature API v2.1-24.1.01.00 - 5/19/2024</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net462'">
     <DefineConstants>NET462</DefineConstants>
@@ -38,12 +38,10 @@
     <Reference Include="System.Web"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0"/>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0"/>
-    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="5.4.0"/>
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0"/>
-    <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1"/>
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="7.5.2"/>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0"/>
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.3.1"/>
   </ItemGroup>
   <ItemGroup/>
 </Project>

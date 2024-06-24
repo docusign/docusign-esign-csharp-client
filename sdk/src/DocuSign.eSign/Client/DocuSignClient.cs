@@ -9,6 +9,7 @@
  */
 
 using DocuSign.eSign.Client.Auth;
+using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Org.BouncyCastle.Crypto;
@@ -18,7 +19,6 @@ using Org.BouncyCastle.Security;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -46,15 +46,15 @@ namespace DocuSign.eSign.Client
         // Stage base path
         public const string Stage_REST_BasePath = "https://stage.docusign.net/restapi";
 
-        protected string basePath = Production_REST_BasePath;
+        protected string basePath = Demo_REST_BasePath;
 
-        protected Uri baseUri => Uri.TryCreate(basePath, UriKind.Absolute, out Uri uri) ? uri : new Uri(Production_REST_BasePath);
+        protected Uri baseUri => Uri.TryCreate(basePath, UriKind.Absolute, out Uri uri) ? uri : new Uri(Demo_REST_BasePath);
 
-        protected string oAuthBasePath = OAuth.Production_OAuth_BasePath;
+        protected string oAuthBasePath = OAuth.Demo_OAuth_BasePath;
 
         protected string oAuthBasePathWithScheme => $"https://{oAuthBasePath}/";
 
-        protected Uri oAuthBaseUri => Uri.TryCreate(oAuthBasePathWithScheme, UriKind.Absolute, out Uri uri) ? uri : new Uri(OAuth.Production_OAuth_BasePath);
+        protected Uri oAuthBaseUri => Uri.TryCreate(oAuthBasePathWithScheme, UriKind.Absolute, out Uri uri) ? uri : new Uri(OAuth.Demo_OAuth_BasePath);
 
         protected JsonSerializerSettings serializerSettings = new JsonSerializerSettings
         {
@@ -82,13 +82,13 @@ namespace DocuSign.eSign.Client
 
         /// <summary>
         /// Initializes a new instance of <see cref="DocuSignClient"/> with default
-        /// with default base path (https://www.docusign.net/restapi).
+        /// with default base path (https://demo.docusign.net/restapi).
         /// </summary>
         public DocuSignClient()
         {
             Configuration = new Configuration();
 
-            SetBasePath(Production_REST_BasePath);
+            SetBasePath(Demo_REST_BasePath);
             RestClient = buildDefaultHttpClient();
 
             SetOAuthBasePath();
@@ -98,14 +98,14 @@ namespace DocuSign.eSign.Client
 
         /// <summary>
         /// Initializes a new instance of <see cref="DocuSignClient"/> using
-        /// the provided configuration with the default base path (https://www.docusign.net/restapi).
+        /// the provided configuration with the default base path (https://demo.docusign.net/restapi).
         /// </summary>
         /// <param name="configuration">Provided pre-populated <see cref="Configuration"/> object</param>
         public DocuSignClient(Configuration configuration)
         {
             Configuration = configuration ?? new Configuration();
 
-            SetBasePath(string.IsNullOrEmpty(configuration.BasePath) ? Production_REST_BasePath : configuration.BasePath);
+            SetBasePath(string.IsNullOrEmpty(configuration.BasePath) ? Demo_REST_BasePath : configuration.BasePath);
             RestClient = buildDefaultHttpClient(configuration?.Timeout ?? Configuration.DefaultTimeoutValue);
 
             SetOAuthBasePath();
@@ -181,7 +181,7 @@ namespace DocuSign.eSign.Client
         /// <param name="client"></param>
         public DocuSignClient(string apiBase, IHttpClient client)
         {
-            string baseUrl = string.IsNullOrEmpty(apiBase) ? Production_REST_BasePath : apiBase;
+            string baseUrl = string.IsNullOrEmpty(apiBase) ? Demo_REST_BasePath : apiBase;
             Configuration = new Configuration(baseUrl);
 
             SetBasePath(baseUrl);
@@ -720,11 +720,11 @@ namespace DocuSign.eSign.Client
             //Derive OAuth Base Path if not given.
             if (Uri.TryCreate(this.basePath, UriKind.Absolute, out Uri baseUri))
             {
-                if (Uri.TryCreate(Demo_REST_BasePath, UriKind.Absolute, out Uri demoBaseUri) && (Uri.Compare(baseUri, demoBaseUri, UriComponents.Host, UriFormat.Unescaped, StringComparison.InvariantCultureIgnoreCase) == 0))
+                if (baseUri.Host.StartsWith("apps-d") || baseUri.Host.StartsWith("demo"))
                 {
                     this.oAuthBasePath = OAuth.Demo_OAuth_BasePath;
                 }
-                else if (Uri.TryCreate(Stage_REST_BasePath, UriKind.Absolute, out Uri stageBaseUri) && (Uri.Compare(baseUri, stageBaseUri, UriComponents.Host, UriFormat.Unescaped, StringComparison.InvariantCultureIgnoreCase) == 0))
+                else if (baseUri.Host.StartsWith("apps-s") || baseUri.Host.StartsWith("stage"))
                 {
                     this.oAuthBasePath = OAuth.Stage_OAuth_BasePath;
                 }
@@ -735,7 +735,7 @@ namespace DocuSign.eSign.Client
             }
             else
             {
-                this.oAuthBasePath = OAuth.Production_OAuth_BasePath;
+                this.oAuthBasePath = OAuth.Demo_OAuth_BasePath;
             }
         }
 
@@ -915,7 +915,7 @@ namespace DocuSign.eSign.Client
         {
             string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
 
-            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler
+            JsonWebTokenHandler handler = new JsonWebTokenHandler
             {
                 SetDefaultTimesOnTokenCreation = false
             };
@@ -953,12 +953,13 @@ namespace DocuSign.eSign.Client
                 throw new ApiException(400, "Private key not supplied or is invalid!");
             }
 
-            var token = handler.CreateToken(descriptor);
-            string jwtToken = handler.WriteToken(token);
+            var jwtToken = handler.CreateToken(descriptor);
 
-            var localVarFormParams = new Dictionary<String, String>();
-            localVarFormParams.Add("grant_type", OAuth.Grant_Type_JWT);
-            localVarFormParams.Add("assertion", jwtToken);
+            var localVarFormParams = new Dictionary<string, string>
+            {
+                { "grant_type", OAuth.Grant_Type_JWT },
+                { "assertion", jwtToken }
+            };
 
             DocuSignRequest request = PrepareOAuthRequest(oauthBasePath, $"oauth/token", HttpMethod.Post, Configuration.DefaultHeader?.ToList(), localVarFormParams.ToList());
             DocuSignResponse response = RestClient.SendRequest(request);
@@ -1003,7 +1004,7 @@ namespace DocuSign.eSign.Client
         {
             string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
 
-            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+            JsonWebTokenHandler handler = new JsonWebTokenHandler();
 
             SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor()
             {
@@ -1028,12 +1029,13 @@ namespace DocuSign.eSign.Client
                 throw new ApiException(400, "Private key not supplied or is invalid!");
             }
 
-            var token = handler.CreateToken(descriptor);
-            string jwtToken = handler.WriteToken(token);
+            var jwtToken = handler.CreateToken(descriptor);
 
-            var localVarFormParams = new Dictionary<String, String>();
-            localVarFormParams.Add("grant_type", OAuth.Grant_Type_JWT);
-            localVarFormParams.Add("assertion", jwtToken);
+            var localVarFormParams = new Dictionary<string, string>
+            {
+                { "grant_type", OAuth.Grant_Type_JWT },
+                { "assertion", jwtToken }
+            };
 
             DocuSignRequest request = PrepareOAuthRequest(oauthBasePath, $"oauth/token", HttpMethod.Post, Configuration.DefaultHeader?.ToList(), localVarFormParams.ToList());
             DocuSignResponse response = RestClient.SendRequest(request);

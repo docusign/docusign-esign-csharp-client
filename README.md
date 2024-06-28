@@ -7,7 +7,7 @@ The Docusign REST API makes integrating Docusign into your apps and websites a s
 
 ## Version Information
 - **API version**: v2.1
-- **Latest SDK version (Including prerelease)**: 7.0.0-rc3
+- **Latest SDK version (Including prerelease)**: 7.0.0
 
 ## Requirements
 *   Microsoft .NET version 4.6.2+ (4.7 recommended)

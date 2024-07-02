@@ -1,7 +1,7 @@
 /* 
- * DocuSign REST API
+ * Docusign eSignature REST API
  *
- * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ * The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
  *
  * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
@@ -26,7 +26,7 @@ namespace DocuSign.eSign.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "7.0.0";
+        public const string Version = "8.0.0-rc1";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -50,8 +50,21 @@ namespace DocuSign.eSign.Client
         public static readonly ExceptionFactory DefaultExceptionFactory = (methodName, response) =>
         {
             int status = (int)response.StatusCode;
-            if (status >= 400) return new ApiException(status, String.Format("Error calling {0}: {1}", methodName, response.Content), response.Content, response);
-            if (status == 0) return new ApiException(status, String.Format("Error calling {0}: {1}", methodName, response.ErrorMessage), response.ErrorMessage, response);
+
+            if (status >= 400)
+            {
+                var hasContent = !string.IsNullOrWhiteSpace(response.Content);
+                return new ApiException((int)response.StatusCode,
+                            string.Format("Error calling {0}: {1}", methodName, hasContent ? response.Content : response.ErrorMessage),
+                            hasContent ? (dynamic)response.Content : response.Exception,
+                            response);
+            }
+
+            if (status == 0)
+            {
+                return new ApiException(status, String.Format("Error calling {0}: {1}", methodName, response.ErrorMessage), response.ErrorMessage, response);
+            }
+
             return null;
         };
 

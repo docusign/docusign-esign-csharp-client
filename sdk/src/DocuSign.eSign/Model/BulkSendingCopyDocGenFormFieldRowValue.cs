@@ -22,30 +22,30 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// TemplateInformation
+    /// BulkSendingCopyDocGenFormFieldRowValue
     /// </summary>
     [DataContract]
-    public partial class TemplateInformation :  IEquatable<TemplateInformation>, IValidatableObject
+    public partial class BulkSendingCopyDocGenFormFieldRowValue :  IEquatable<BulkSendingCopyDocGenFormFieldRowValue>, IValidatableObject
     {
-        public TemplateInformation()
+        public BulkSendingCopyDocGenFormFieldRowValue()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TemplateInformation" /> class.
+        /// Initializes a new instance of the <see cref="BulkSendingCopyDocGenFormFieldRowValue" /> class.
         /// </summary>
-        /// <param name="Templates">Templates.</param>
-        public TemplateInformation(List<TemplateSummary> Templates = default(List<TemplateSummary>))
+        /// <param name="DocGenFormFieldList">DocGenFormFieldList.</param>
+        public BulkSendingCopyDocGenFormFieldRowValue(List<BulksendingCopyDocGenFormField> DocGenFormFieldList = default(List<BulksendingCopyDocGenFormField>))
         {
-            this.Templates = Templates;
+            this.DocGenFormFieldList = DocGenFormFieldList;
         }
         
         /// <summary>
-        /// Gets or Sets Templates
+        /// Gets or Sets DocGenFormFieldList
         /// </summary>
-        [DataMember(Name="templates", EmitDefaultValue=false)]
-        public List<TemplateSummary> Templates { get; set; }
+        [DataMember(Name="docGenFormFieldList", EmitDefaultValue=false)]
+        public List<BulksendingCopyDocGenFormField> DocGenFormFieldList { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -53,8 +53,8 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TemplateInformation {\n");
-            sb.Append("  Templates: ").Append(Templates).Append("\n");
+            sb.Append("class BulkSendingCopyDocGenFormFieldRowValue {\n");
+            sb.Append("  DocGenFormFieldList: ").Append(DocGenFormFieldList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +76,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as TemplateInformation);
+            return this.Equals(obj as BulkSendingCopyDocGenFormFieldRowValue);
         }
 
         /// <summary>
-        /// Returns true if TemplateInformation instances are equal
+        /// Returns true if BulkSendingCopyDocGenFormFieldRowValue instances are equal
         /// </summary>
-        /// <param name="other">Instance of TemplateInformation to be compared</param>
+        /// <param name="other">Instance of BulkSendingCopyDocGenFormFieldRowValue to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TemplateInformation other)
+        public bool Equals(BulkSendingCopyDocGenFormFieldRowValue other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -92,9 +92,9 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.Templates == other.Templates ||
-                    this.Templates != null &&
-                    this.Templates.SequenceEqual(other.Templates)
+                    this.DocGenFormFieldList == other.DocGenFormFieldList ||
+                    this.DocGenFormFieldList != null &&
+                    this.DocGenFormFieldList.SequenceEqual(other.DocGenFormFieldList)
                 );
         }
 
@@ -109,8 +109,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Templates != null)
-                    hash = hash * 59 + this.Templates.GetHashCode();
+                if (this.DocGenFormFieldList != null)
+                    hash = hash * 59 + this.DocGenFormFieldList.GetHashCode();
                 return hash;
             }
         }

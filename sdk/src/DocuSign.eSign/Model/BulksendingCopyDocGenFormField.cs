@@ -1,7 +1,7 @@
 /* 
- * DocuSign REST API
+ * Docusign eSignature REST API
  *
- * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ * The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
  *
  * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
@@ -36,10 +36,12 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="BulksendingCopyDocGenFormField" /> class.
         /// </summary>
         /// <param name="Name">Name.</param>
+        /// <param name="RowValues">RowValues.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        public BulksendingCopyDocGenFormField(string Name = default(string), string Value = default(string))
+        public BulksendingCopyDocGenFormField(string Name = default(string), List<BulkSendingCopyDocGenFormFieldRowValue> RowValues = default(List<BulkSendingCopyDocGenFormFieldRowValue>), string Value = default(string))
         {
             this.Name = Name;
+            this.RowValues = RowValues;
             this.Value = Value;
         }
         
@@ -48,6 +50,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+        /// <summary>
+        /// Gets or Sets RowValues
+        /// </summary>
+        [DataMember(Name="rowValues", EmitDefaultValue=false)]
+        public List<BulkSendingCopyDocGenFormFieldRowValue> RowValues { get; set; }
         /// <summary>
         /// Specifies the value of the tab. 
         /// </summary>
@@ -63,6 +70,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class BulksendingCopyDocGenFormField {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  RowValues: ").Append(RowValues).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -106,6 +114,11 @@ namespace DocuSign.eSign.Model
                     this.Name.Equals(other.Name)
                 ) && 
                 (
+                    this.RowValues == other.RowValues ||
+                    this.RowValues != null &&
+                    this.RowValues.SequenceEqual(other.RowValues)
+                ) && 
+                (
                     this.Value == other.Value ||
                     this.Value != null &&
                     this.Value.Equals(other.Value)
@@ -125,6 +138,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.RowValues != null)
+                    hash = hash * 59 + this.RowValues.GetHashCode();
                 if (this.Value != null)
                     hash = hash * 59 + this.Value.GetHashCode();
                 return hash;

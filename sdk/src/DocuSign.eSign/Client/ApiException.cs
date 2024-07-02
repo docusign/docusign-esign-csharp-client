@@ -1,7 +1,7 @@
 /* 
- * DocuSign REST API
+ * Docusign eSignature REST API
  *
- * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ * The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
  *
  * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
@@ -67,7 +67,7 @@ namespace DocuSign.eSign.Client
         /// <param name="message">Error message.</param>
         /// <param name="errorContent">Error content.</param>
         /// <param name="response">DocuSignResponse object.</param>
-        public ApiException(int errorCode, string message, dynamic errorContent = null, DocuSignResponse response = null) : base(message)
+        public ApiException(int errorCode, string message, dynamic errorContent = null, DocuSignResponse response = null) : base(response.Exception?.Message ?? message, response.Exception?.InnerException)
         {
             this.ErrorCode = errorCode;
             this.ErrorContent = errorContent;

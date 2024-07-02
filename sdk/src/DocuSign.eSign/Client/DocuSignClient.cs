@@ -1,7 +1,7 @@
 /* 
- * DocuSign REST API
+ * Docusign eSignature REST API
  *
- * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ * The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
  *
  * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
@@ -795,10 +795,7 @@ namespace DocuSign.eSign.Client
             }
             else
             {
-                throw new ApiException((int)response.StatusCode,
-                  "Error while requesting server, received a non successful HTTP code with response Body: " + response.Content,
-                   response.Content,
-                   response);
+                throw CreateApiExceptionFromDocuSignResponse(response);
             }
         }
 
@@ -829,10 +826,7 @@ namespace DocuSign.eSign.Client
             }
             else
             {
-                throw new ApiException((int)response.StatusCode,
-                      "Error while requesting server, received a non successful HTTP code with response Body: " + response.Content,
-                       response.Content,
-                       response);
+                throw CreateApiExceptionFromDocuSignResponse(response);
             }
         }
 
@@ -979,10 +973,7 @@ namespace DocuSign.eSign.Client
             }
             else
             {
-                throw new ApiException((int)response.StatusCode,
-                      "Error while requesting server, received a non successful HTTP code with response Body: " + response.Content,
-                       response.Content,
-                       response);
+                throw CreateApiExceptionFromDocuSignResponse(response);
             }
         }
 
@@ -1055,11 +1046,19 @@ namespace DocuSign.eSign.Client
             }
             else
             {
-                throw new ApiException((int)response.StatusCode,
-                      "Error while requesting server, received a non successful HTTP code with response Body: " + response.Content,
-                       response.Content,
-                       response);
+                throw CreateApiExceptionFromDocuSignResponse(response);
             }
         }
+
+        private ApiException CreateApiExceptionFromDocuSignResponse(DocuSignResponse response)
+        {
+            var hasContent = !string.IsNullOrWhiteSpace(response.Content);
+
+            return new ApiException((int)response.StatusCode,
+                            "Error while requesting server, received a non successful HTTP code with response Body: " + (hasContent ? response.Content : response.ErrorMessage),
+                            (hasContent ? (dynamic)response.Content : response.Exception),
+                            response);
+        }
+
     }
 }

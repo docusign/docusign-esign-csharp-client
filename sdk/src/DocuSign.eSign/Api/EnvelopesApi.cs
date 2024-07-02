@@ -1,7 +1,7 @@
 /* 
- * DocuSign REST API
+ * Docusign eSignature REST API
  *
- * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ * The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
  *
  * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
@@ -134,9 +134,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="correctViewRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns></returns>
-        ViewUrl CreateCorrectView(string accountId, string envelopeId, CorrectViewRequest correctViewRequest = null);
+        ViewUrl CreateCorrectView(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
 
         /// <summary>
         /// Returns a URL to the envelope correction UI.
@@ -147,9 +147,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="correctViewRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<ViewUrl> CreateCorrectViewWithHttpInfo(string accountId, string envelopeId, CorrectViewRequest correctViewRequest = null);
+        ApiResponse<ViewUrl> CreateCorrectViewWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
         /// <summary>
         /// Updates envelope custom fields for an envelope.
         /// </summary>
@@ -3389,9 +3389,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="correctViewRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ViewUrl</returns>
-        System.Threading.Tasks.Task<ViewUrl> CreateCorrectViewAsync(string accountId, string envelopeId, CorrectViewRequest correctViewRequest = null);
+        System.Threading.Tasks.Task<ViewUrl> CreateCorrectViewAsync(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
 
         /// <summary>
         /// Returns a URL to the envelope correction UI.
@@ -3402,9 +3402,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="correctViewRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateCorrectViewAsyncWithHttpInfo(string accountId, string envelopeId, CorrectViewRequest correctViewRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateCorrectViewAsyncWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null);
         /// <summary>
         /// Updates envelope custom fields for an envelope.
         /// </summary>
@@ -7360,11 +7360,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="correctViewRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>ViewUrl</returns>
-        public ViewUrl CreateCorrectView(string accountId, string envelopeId, CorrectViewRequest correctViewRequest = null)
+        public ViewUrl CreateCorrectView(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
-             ApiResponse<ViewUrl> localVarResponse = CreateCorrectViewWithHttpInfo(accountId, envelopeId, correctViewRequest);
+             ApiResponse<ViewUrl> localVarResponse = CreateCorrectViewWithHttpInfo(accountId, envelopeId, envelopeViewRequest);
              return localVarResponse.Data;
         }
 
@@ -7374,9 +7374,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="correctViewRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>ApiResponse of ViewUrl</returns>
-        public ApiResponse<ViewUrl> CreateCorrectViewWithHttpInfo(string accountId, string envelopeId, CorrectViewRequest correctViewRequest = null)
+        public ApiResponse<ViewUrl> CreateCorrectViewWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7412,13 +7412,13 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (correctViewRequest != null && correctViewRequest.GetType() != typeof(byte[]))
+            if (envelopeViewRequest != null && envelopeViewRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(correctViewRequest); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(envelopeViewRequest); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = correctViewRequest; // byte array
+                localVarPostBody = envelopeViewRequest; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -7452,11 +7452,11 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="correctViewRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ViewUrl</returns>
-        public async System.Threading.Tasks.Task<ViewUrl> CreateCorrectViewAsync(string accountId, string envelopeId, CorrectViewRequest correctViewRequest = null)
+        public async System.Threading.Tasks.Task<ViewUrl> CreateCorrectViewAsync(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
-             ApiResponse<ViewUrl> localVarResponse = await CreateCorrectViewAsyncWithHttpInfo(accountId, envelopeId, correctViewRequest);
+             ApiResponse<ViewUrl> localVarResponse = await CreateCorrectViewAsyncWithHttpInfo(accountId, envelopeId, envelopeViewRequest);
              return localVarResponse.Data;
         }
 
@@ -7466,9 +7466,9 @@ namespace DocuSign.eSign.Api
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
-        /// <param name="correctViewRequest"> (optional)</param>
+        /// <param name="envelopeViewRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (ViewUrl)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateCorrectViewAsyncWithHttpInfo(string accountId, string envelopeId, CorrectViewRequest correctViewRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ViewUrl>> CreateCorrectViewAsyncWithHttpInfo(string accountId, string envelopeId, EnvelopeViewRequest envelopeViewRequest = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -7504,13 +7504,13 @@ namespace DocuSign.eSign.Api
             localVarPathParams.Add("format", "json");
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
-            if (correctViewRequest != null && correctViewRequest.GetType() != typeof(byte[]))
+            if (envelopeViewRequest != null && envelopeViewRequest.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(correctViewRequest); // http body (model) parameter
+                localVarPostBody = this.ApiClient.Serialize(envelopeViewRequest); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = correctViewRequest; // byte array
+                localVarPostBody = envelopeViewRequest; // byte array
             }
 
             // authentication (docusignAccessCode) required
@@ -17899,6 +17899,8 @@ namespace DocuSign.eSign.Api
             public string advancedUpdate {get; set;}
             /// 
             public string include {get; set;}
+            /// 
+            public string includeAnchorTabLocations {get; set;}
         }
 
         /// <summary>
@@ -17963,6 +17965,7 @@ namespace DocuSign.eSign.Api
             {
                 if (options.advancedUpdate != null) localVarQueryParams.Add("advanced_update", this.ApiClient.ParameterToString(options.advancedUpdate)); // query parameter
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
+                if (options.includeAnchorTabLocations != null) localVarQueryParams.Add("include_anchor_tab_locations", this.ApiClient.ParameterToString(options.includeAnchorTabLocations)); // query parameter
             }
 
             // authentication (docusignAccessCode) required
@@ -18052,6 +18055,7 @@ namespace DocuSign.eSign.Api
             {
                 if (options.advancedUpdate != null) localVarQueryParams.Add("advanced_update", this.ApiClient.ParameterToString(options.advancedUpdate)); // query parameter
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
+                if (options.includeAnchorTabLocations != null) localVarQueryParams.Add("include_anchor_tab_locations", this.ApiClient.ParameterToString(options.includeAnchorTabLocations)); // query parameter
             }
 
             // authentication (docusignAccessCode) required
@@ -24750,6 +24754,8 @@ namespace DocuSign.eSign.Api
         {
             /// When set to **true**, allows the caller to update recipients, tabs, custom fields, notification, email settings and other envelope attributes. 
             public string advancedUpdate {get; set;}
+            /// 
+            public string recycleOnVoid {get; set;}
             /// When set to **true**, sends the specified envelope again. 
             public string resendEnvelope {get; set;}
         }
@@ -24817,6 +24823,7 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.advancedUpdate != null) localVarQueryParams.Add("advanced_update", this.ApiClient.ParameterToString(options.advancedUpdate)); // query parameter
+                if (options.recycleOnVoid != null) localVarQueryParams.Add("recycle_on_void", this.ApiClient.ParameterToString(options.recycleOnVoid)); // query parameter
                 if (options.resendEnvelope != null) localVarQueryParams.Add("resend_envelope", this.ApiClient.ParameterToString(options.resendEnvelope)); // query parameter
             }
             if (envelope != null && envelope.GetType() != typeof(byte[]))
@@ -24916,6 +24923,7 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.advancedUpdate != null) localVarQueryParams.Add("advanced_update", this.ApiClient.ParameterToString(options.advancedUpdate)); // query parameter
+                if (options.recycleOnVoid != null) localVarQueryParams.Add("recycle_on_void", this.ApiClient.ParameterToString(options.recycleOnVoid)); // query parameter
                 if (options.resendEnvelope != null) localVarQueryParams.Add("resend_envelope", this.ApiClient.ParameterToString(options.resendEnvelope)); // query parameter
             }
             if (envelope != null && envelope.GetType() != typeof(byte[]))

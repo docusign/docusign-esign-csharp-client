@@ -54,7 +54,7 @@ namespace DocuSign.eSign.Client.Auth
         * 
         * UserInfo model with the following properties:
         * <br /><b>sub</b>: the user ID GUID.
-        * <br /><b>accounts</b>: this is list of DocuSign accounts associated with the current user.
+        * <br /><b>accounts</b>: this is list of Docusign accounts associated with the current user.
         * <br /><b>name</b>: the user's full name.
         * <br /><b>givenName</b>: the user's given name.
         * <br /><b>familyName</b>: the user's family name.
@@ -73,7 +73,7 @@ namespace DocuSign.eSign.Client.Auth
             /// isDefault: whether this is the default account, when the user has access to multiple accounts.
             /// accountName: the human-readable name of the account.
             /// baseUri: the base URI associated with this account.
-            /// It also tells which DocuSign data center the account is hosted on.
+            /// It also tells which Docusign data center the account is hosted on.
             /// </summary>
             [DataContract]
             public class Account : IEquatable<Account>, IValidatableObject
@@ -235,8 +235,8 @@ namespace DocuSign.eSign.Client.Auth
 
             /// <summary>
             /// Organization model with the following properties:
-            /// organizationId: the organization ID GUID if DocuSign Org Admin is enabled.
-            /// links: this is list of organization direct links associated with the DocuSign account.
+            /// organizationId: the organization ID GUID if Docusign Org Admin is enabled.
+            /// links: this is list of organization direct links associated with the Docusign account.
             /// </summary>
             [DataContract]
             public class Organization : IEquatable<Organization>, IValidatableObject

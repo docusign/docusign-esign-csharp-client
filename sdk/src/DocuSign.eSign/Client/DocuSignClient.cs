@@ -34,7 +34,7 @@ using System.Threading.Tasks;
 namespace DocuSign.eSign.Client
 {
     /// <summary>
-    /// DocuSignClient is mainly responsible for facilitating HTTP calls to the DocuSign APIs.
+    /// DocuSignClient is mainly responsible for facilitating HTTP calls to the Docusign APIs.
     /// </summary>
     public class DocuSignClient
     {
@@ -739,17 +739,58 @@ namespace DocuSign.eSign.Client
             }
         }
 
+        private static T TryCatchWrapper<T>(Func<T> func)
+        {
+            try
+            {
+                return func.Invoke();
+            }
+            catch (AggregateException ae)
+            {
+                foreach (var e in ae.InnerExceptions)
+                {
+                    throw e;
+                }
+
+                // This line is technically unreachable, but necessary for the compiler to be happy.
+                throw;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
         /// <summary>
         /// GenerateAccessToken will exchange the authorization code for an access token and refresh tokens.
         /// </summary>
         /// <param name="clientId">OAuth2 client ID: Identifies the client making the request.</param>
-        /// <param name="clientSecret">the secret key you generated when you set up the integration in DocuSign Admin console.</param>
+        /// <param name="clientSecret">the secret key you generated when you set up the integration in Docusign Admin console.</param>
         /// <param name="code">The authorization code that you received from the <i> GetAuthorizationUri </i> callback.</param>
         /// <returns> OAuth.OAuthToken object.
         /// ApiException if the HTTP call status is different than 2xx.
         /// IOException  if there is a problem while parsing the reponse object.
         /// </returns>
         public OAuth.OAuthToken GenerateAccessToken(string clientId, string clientSecret, string code)
+        {
+            CancellationTokenSource cts = new CancellationTokenSource();
+            return TryCatchWrapper(() => GenerateAccessTokenAsync(clientId, clientSecret, code, cts.Token).ConfigureAwait(false).GetAwaiter().GetResult());
+        }
+
+        /// <summary>
+        /// GenerateAccessTokenAsync will exchange the authorization code for an access token and refresh tokens.
+        /// </summary>
+        /// <param name="clientId">OAuth2 client ID: Identifies the client making the request.</param>
+        /// <param name="clientSecret">the secret key you generated when you set up the integration in Docusign Admin console.</param>
+        /// <param name="code">The authorization code that you received from the <i> GetAuthorizationUri </i> callback.</param>
+        /// <param name="cancellationToken">A CancellationToken which can be used to propagate notification that operations should be canceled. </param>
+        /// <returns> 
+        /// Task&lt;OAuth.OAuthToken&gt; object.
+        /// ApiException if the HTTP call status is different than 2xx.
+        /// IOException  if there is a problem while parsing the reponse object.
+        /// </returns>
+        public async Task<OAuth.OAuthToken> GenerateAccessTokenAsync(string clientId, string clientSecret, string code, CancellationToken cancellationToken)
         {
             if (string.IsNullOrEmpty(clientId) || string.IsNullOrEmpty(clientSecret) || string.IsNullOrEmpty(code))
             {
@@ -777,20 +818,13 @@ namespace DocuSign.eSign.Client
             foreach (var item in formParams)
                 request.AddPostParameter(item.Key, item.Value);
 
-            DocuSignResponse response = RestClient.SendRequest(request);
+            DocuSignResponse response = await RestClient.SendRequestAsync(request, cancellationToken);
             if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
             {
                 OAuth.OAuthToken tokenObj = JsonConvert.DeserializeObject<OAuth.OAuthToken>(response.Content);
                 // Add the token to this ApiClient
                 string authHeader = "Bearer " + tokenObj.access_token;
-                if (!this.Configuration.DefaultHeader.ContainsKey("Authorization"))
-                {
-                    this.Configuration.DefaultHeader.Add("Authorization", authHeader);
-                }
-                else
-                {
-                    this.Configuration.DefaultHeader["Authorization"] = authHeader;
-                }
+                this.Configuration.DefaultHeader["Authorization"] = authHeader;
                 return tokenObj;
             }
             else
@@ -800,11 +834,23 @@ namespace DocuSign.eSign.Client
         }
 
         /// <summary>
-        /// Get User Info method takes the accessToken to retrieve User Account Data.
+        /// GetUserInfo method takes the accessToken to retrieve User Account Data.
         /// </summary>
         /// <param name="accessToken"></param>
         /// <returns>The User Info model.</returns>
         public OAuth.UserInfo GetUserInfo(string accessToken)
+        {
+            CancellationTokenSource cts = new CancellationTokenSource();
+            return TryCatchWrapper(() => GetUserInfoAsync(accessToken, cts.Token).ConfigureAwait(false).GetAwaiter().GetResult());
+        }
+
+        /// <summary>
+        /// GetUserInfoAsync method takes the accessToken to retrieve User Account Data.
+        /// </summary>
+        /// <param name="accessToken"></param>
+        /// <param name="cancellationToken">A CancellationToken which can be used to propagate notification that operations should be canceled. </param>
+        /// <returns>The User Info model.</returns>
+        public async Task<OAuth.UserInfo> GetUserInfoAsync(string accessToken, CancellationToken cancellationToken)
         {
             if (string.IsNullOrEmpty(accessToken))
             {
@@ -817,7 +863,7 @@ namespace DocuSign.eSign.Client
             localVarHeaderParams.Add("Authorization", "Bearer " + accessToken);
 
             DocuSignRequest request = PrepareOAuthRequest(oAuthBasePath, $"oauth/userinfo", HttpMethod.Get, localVarHeaderParams.ToList(), localVarFormParams.ToList());
-            DocuSignResponse response = RestClient.SendRequest(request);
+            DocuSignResponse response = await RestClient.SendRequestAsync(request, cancellationToken);
 
             if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
             {
@@ -861,12 +907,12 @@ namespace DocuSign.eSign.Client
         }
 
         /// <summary>
-        /// Request JWT User Token
-        /// Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign
+        /// RequestJWTUserToken
+        /// Configures the current instance of ApiClient with a fresh OAuth JWT access token from Docusign
         /// </summary>
-        /// <param name="clientId">DocuSign OAuth Client Id(AKA Integrator Key)</param>
-        /// <param name="userId">DocuSign user Id to be impersonated(This is a UUID)</param>
-        /// <param name="oauthBasePath"> DocuSign OAuth base path
+        /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
+        /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
+        /// <param name="oauthBasePath"> Docusign OAuth base path
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
@@ -878,10 +924,33 @@ namespace DocuSign.eSign.Client
         /// <returns>The JWT user token</returns>
         public OAuth.OAuthToken RequestJWTUserToken(string clientId, string userId, string oauthBasePath, Stream privateKeyStream, int expiresInHours, List<string> scopes = null)
         {
+            CancellationTokenSource cts = new CancellationTokenSource();
+            return TryCatchWrapper(() => RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyStream, expiresInHours, scopes, cts.Token).ConfigureAwait(false).GetAwaiter().GetResult());
+        }
+
+        /// <summary>
+        /// RequestJWTUserTokenAsync
+        /// Configures the current instance of ApiClient with a fresh OAuth JWT access token from Docusign
+        /// </summary>
+        /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
+        /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
+        /// <param name="oauthBasePath"> Docusign OAuth base path
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
+        /// </param>
+        /// <param name="privateKeyStream">The Stream of the RSA private key</param>
+        /// <param name="expiresInHours">Number of hours remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to)
+        /// <param name="cancellationToken">A CancellationToken which can be used to propagate notification that operations should be canceled. </param>
+        /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
+        /// </param>
+        /// <returns>The JWT user token</returns>
+        public Task<OAuth.OAuthToken> RequestJWTUserTokenAsync(string clientId, string userId, string oauthBasePath, Stream privateKeyStream, int expiresInHours, List<string> scopes = null, CancellationToken cancellationToken = default)
+        {
             if (privateKeyStream != null && privateKeyStream.CanRead && privateKeyStream.Length > 0)
             {
                 byte[] privateKeyBytes = ReadAsBytes(privateKeyStream);
-                return this.RequestJWTUserToken(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes);
+                return this.RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes, cancellationToken);
             }
             else
             {
@@ -890,12 +959,12 @@ namespace DocuSign.eSign.Client
         }
 
         /// <summary>
-        /// Request JWT User Token
-        /// Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign
+        /// RequestJWTUserToken
+        /// Configures the current instance of ApiClient with a fresh OAuth JWT access token from Docusign
         /// </summary>
-        /// <param name="clientId">DocuSign OAuth Client Id(AKA Integrator Key)</param>
-        /// <param name="userId">DocuSign user Id to be impersonated(This is a UUID)</param>
-        /// <param name="oauthBasePath"> DocuSign OAuth base path
+        /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
+        /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
+        /// <param name="oauthBasePath"> Docusign OAuth base path
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
@@ -906,6 +975,29 @@ namespace DocuSign.eSign.Client
         /// </param>
         /// <returns>The JWT user token</returns>
         public OAuth.OAuthToken RequestJWTUserToken(string clientId, string userId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null)
+        {
+            CancellationTokenSource cts = new CancellationTokenSource();
+            return TryCatchWrapper(() => RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes, cts.Token).ConfigureAwait(false).GetAwaiter().GetResult());
+        }
+
+        /// <summary>
+        /// RequestJWTUserTokenAsync
+        /// Configures the current instance of ApiClient with a fresh OAuth JWT access token from Docusign
+        /// </summary>
+        /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
+        /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
+        /// <param name="oauthBasePath"> Docusign OAuth base path
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
+        /// </param>
+        /// <param name="privateKeyBytes">The byte contents of the RSA private key</param>
+        /// <param name="expiresInHours">Number of hours remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to) You can also pass any advanced scope.
+        /// <param name="cancellationToken">A CancellationToken which can be used to propagate notification that operations should be canceled. </param>
+        /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
+        /// </param>
+        /// <returns>The JWT user token</returns>
+        public async Task<OAuth.OAuthToken> RequestJWTUserTokenAsync(string clientId, string userId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null, CancellationToken cancellationToken = default)
         {
             string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
 
@@ -956,19 +1048,13 @@ namespace DocuSign.eSign.Client
             };
 
             DocuSignRequest request = PrepareOAuthRequest(oauthBasePath, $"oauth/token", HttpMethod.Post, Configuration.DefaultHeader?.ToList(), localVarFormParams.ToList());
-            DocuSignResponse response = RestClient.SendRequest(request);
+            DocuSignResponse response = await RestClient.SendRequestAsync(request, cancellationToken);
 
             if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
             {
                 OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(response.Content);
-                if (!this.Configuration.DefaultHeader.ContainsKey("Authorization"))
-                {
-                    this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
-                }
-                else
-                {
-                    this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
-                }
+                this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
+
                 return tokenInfo;
             }
             else
@@ -978,10 +1064,10 @@ namespace DocuSign.eSign.Client
         }
 
         /// <summary>
-        /// *RESERVED FOR PARTNERS* Request JWT Application Token
+        /// *RESERVED FOR PARTNERS* RequestJWTApplicationToken
         /// </summary>
-        /// <param name="clientId">DocuSign OAuth Client Id(AKA Integrator Key)</param>
-        /// <param name="oauthBasePath"> DocuSign OAuth base path
+        /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
+        /// <param name="oauthBasePath"> Docusign OAuth base path
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
@@ -992,6 +1078,27 @@ namespace DocuSign.eSign.Client
         /// </param>
         /// <returns>The JWT application token</returns>
         public OAuth.OAuthToken RequestJWTApplicationToken(string clientId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null)
+        {
+            CancellationTokenSource cts = new CancellationTokenSource();
+            return TryCatchWrapper(() => RequestJWTApplicationTokenAsync(clientId, oAuthBasePath, privateKeyBytes, expiresInHours, scopes, cts.Token).ConfigureAwait(false).GetAwaiter().GetResult());
+        }
+
+        /// <summary>
+        /// *RESERVED FOR PARTNERS* RequestJWTApplicationTokenAsync
+        /// </summary>
+        /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
+        /// <param name="oauthBasePath"> Docusign OAuth base path
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
+        /// </param>
+        /// <param name="privateKeyBytes">The byte contents of the RSA private key</param>
+        /// <param name="expiresInHours">Number of hours remaining before the JWT assertion is considered as invalid</param>
+        /// <param name="scopes">Optional. The list of requested scopes may include (but not limited to) You can also pass any advanced scope.
+        /// <param name="cancellationToken">A CancellationToken which can be used to propagate notification that operations should be canceled. </param>
+        /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
+        /// </param>
+        /// <returns>The JWT application token</returns>
+        public async Task<OAuth.OAuthToken> RequestJWTApplicationTokenAsync(string clientId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null, CancellationToken cancellationToken = default)
         {
             string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
 
@@ -1029,19 +1136,12 @@ namespace DocuSign.eSign.Client
             };
 
             DocuSignRequest request = PrepareOAuthRequest(oauthBasePath, $"oauth/token", HttpMethod.Post, Configuration.DefaultHeader?.ToList(), localVarFormParams.ToList());
-            DocuSignResponse response = RestClient.SendRequest(request);
+            DocuSignResponse response = await RestClient.SendRequestAsync(request, cancellationToken);
 
             if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
             {
                 OAuth.OAuthToken tokenInfo = JsonConvert.DeserializeObject<OAuth.OAuthToken>(response.Content);
-                if (!this.Configuration.DefaultHeader.ContainsKey("Authorization"))
-                {
-                    this.Configuration.DefaultHeader.Add("Authorization", string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token));
-                }
-                else
-                {
-                    this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
-                }
+                this.Configuration.DefaultHeader["Authorization"] = string.Format("{0} {1}", tokenInfo.token_type, tokenInfo.access_token);
                 return tokenInfo;
             }
             else

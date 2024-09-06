@@ -1,5 +1,8 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v8.0.0] - eSignature API v2.1-24.2.00.00 - 2024-09-04
+### Changed
+- Updated the SDK release version.
 ## [v8.0.0-rc2] - eSignature API v2.1-24.2.00.00 - 2024-07-23
 ### Changed
 - Introduced async versions of `ApiClient` authorization methods.

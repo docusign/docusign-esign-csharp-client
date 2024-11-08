@@ -37,8 +37,6 @@ namespace DocuSign.eSign.Client.Auth
         public static string Demo_OAuth_BasePath = "account-d.docusign.com";
         // Production server base path
         public static string Production_OAuth_BasePath = "account.docusign.com";
-        // Stage server base path
-        public static string Stage_OAuth_BasePath = "account-s.docusign.com";
 
         //  OAuth ResponseType constants
         //  used by public/native client applications.

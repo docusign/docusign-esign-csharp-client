@@ -1,5 +1,12 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v8.0.1] - eSignature API v2.1-24.2.00.00 - 2024-11-07
+### Changed
+- Fixed Deadlock issue with UI Apps (E.g. WinForms).
+- Fixed deserialization issue of text/csv type response
+- Removed the staging base path and OAuth path constant.
+- Updated the SDK release version.
+
 ## [v8.0.0] - eSignature API v2.1-24.2.00.00 - 2024-09-06
 ### Breaking Changes
 

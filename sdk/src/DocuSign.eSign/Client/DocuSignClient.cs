@@ -220,9 +220,9 @@ namespace DocuSign.eSign.Client
         /// <value>An instance of the RestClient</value>
         public IHttpClient RestClient { get; set; }
 
-        public DocuSignRequest PrepareOAuthRequest(string oAuthBasePath, string path, HttpMethod method, List<KeyValuePair<string, string>> headerParams = null, List<KeyValuePair<string, string>> formParams = null)
+        public DocuSignRequest PrepareOAuthRequest(string oAuthBasePathParam, string path, HttpMethod method, List<KeyValuePair<string, string>> headerParams = null, List<KeyValuePair<string, string>> formParams = null)
         {
-            string url = $"https://{oAuthBasePath}/{path}";
+            string url = $"https://{oAuthBasePathParam}/{path}";
             
             if (!headerParams.Any(kvp => kvp.Key?.Equals("Content-Type") ?? false)) { headerParams.Add(new KeyValuePair<string, string>("Content-Type", "application/x-www-form-urlencoded")); }
             if (!headerParams.Any(kvp => kvp.Key?.Equals("Cache-Control") ?? false)) { headerParams.Add(new KeyValuePair<string, string>("Cache-Control", "no-store")); }
@@ -914,7 +914,7 @@ namespace DocuSign.eSign.Client
             if (localVarHeaderParams.ContainsKey("Authorization")) { localVarHeaderParams.Remove("Authorization"); }
             localVarHeaderParams.Add("Authorization", "Bearer " + accessToken);
 
-            DocuSignRequest request = PrepareOAuthRequest(oAuthBasePath, $"oauth/userinfo", HttpMethod.Get, localVarHeaderParams.ToList(), localVarFormParams.ToList());
+            DocuSignRequest request = PrepareOAuthRequest(this.oAuthBasePath, $"oauth/userinfo", HttpMethod.Get, localVarHeaderParams.ToList(), localVarFormParams.ToList());
             DocuSignResponse response = await RestClient.SendRequestAsync(request, cancellationToken);
 
             if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
@@ -964,7 +964,7 @@ namespace DocuSign.eSign.Client
         /// </summary>
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
         /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
-        /// <param name="oauthBasePath"> Docusign OAuth base path
+        /// <param name="oAuthBasePathParam"> Docusign OAuth base path
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
@@ -974,12 +974,12 @@ namespace DocuSign.eSign.Client
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
         /// <returns>The JWT user token</returns>
-        public OAuth.OAuthToken RequestJWTUserToken(string clientId, string userId, string oauthBasePath, Stream privateKeyStream, int expiresInHours, List<string> scopes = null)
+        public OAuth.OAuthToken RequestJWTUserToken(string clientId, string userId, string oAuthBasePathParam, Stream privateKeyStream, int expiresInHours, List<string> scopes = null)
         {
             using (var cts = new CancellationTokenSource())
             {              
                 return TryCatchWrapper(() => {
-                    var task = Task.Run(async () => await RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyStream, expiresInHours, scopes, cts.Token));
+                    var task = Task.Run(async () => await RequestJWTUserTokenAsync(clientId, userId, oAuthBasePathParam, privateKeyStream, expiresInHours, scopes, cts.Token));
                     task.Wait();
                     return task.Result;
                 });
@@ -992,7 +992,7 @@ namespace DocuSign.eSign.Client
         /// </summary>
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
         /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
-        /// <param name="oauthBasePath"> Docusign OAuth base path
+        /// <param name="oAuthBasePathParam"> Docusign OAuth base path
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
@@ -1003,12 +1003,12 @@ namespace DocuSign.eSign.Client
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
         /// <returns>The JWT user token</returns>
-        public async Task<OAuth.OAuthToken> RequestJWTUserTokenAsync(string clientId, string userId, string oauthBasePath, Stream privateKeyStream, int expiresInHours, List<string> scopes = null, CancellationToken cancellationToken = default)
+        public async Task<OAuth.OAuthToken> RequestJWTUserTokenAsync(string clientId, string userId, string oAuthBasePathParam, Stream privateKeyStream, int expiresInHours, List<string> scopes = null, CancellationToken cancellationToken = default)
         {
             if (privateKeyStream != null && privateKeyStream.CanRead && privateKeyStream.Length > 0)
             {
                 byte[] privateKeyBytes = ReadAsBytes(privateKeyStream);
-                return await this.RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes, cancellationToken);
+                return await this.RequestJWTUserTokenAsync(clientId, userId, oAuthBasePathParam, privateKeyBytes, expiresInHours, scopes, cancellationToken);
             }
             else
             {
@@ -1022,7 +1022,7 @@ namespace DocuSign.eSign.Client
         /// </summary>
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
         /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
-        /// <param name="oauthBasePath"> Docusign OAuth base path
+        /// <param name="oAuthBasePathParam"> Docusign OAuth base path
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
@@ -1032,13 +1032,13 @@ namespace DocuSign.eSign.Client
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
         /// <returns>The JWT user token</returns>
-        public OAuth.OAuthToken RequestJWTUserToken(string clientId, string userId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null)
+        public OAuth.OAuthToken RequestJWTUserToken(string clientId, string userId, string oAuthBasePathParam, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null)
         {
 
             using (var cts = new CancellationTokenSource())
             {              
                 return TryCatchWrapper(() => {
-                    var task = Task.Run(async () => await RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes, cts.Token));
+                    var task = Task.Run(async () => await RequestJWTUserTokenAsync(clientId, userId, oAuthBasePathParam, privateKeyBytes, expiresInHours, scopes, cts.Token));
                     task.Wait();
                     return task.Result;
                 });
@@ -1051,7 +1051,7 @@ namespace DocuSign.eSign.Client
         /// </summary>
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
         /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
-        /// <param name="oauthBasePath"> Docusign OAuth base path
+        /// <param name="oAuthBasePathParam"> Docusign OAuth base path
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
@@ -1062,7 +1062,7 @@ namespace DocuSign.eSign.Client
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
         /// <returns>The JWT user token</returns>
-        public async Task<OAuth.OAuthToken> RequestJWTUserTokenAsync(string clientId, string userId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null, CancellationToken cancellationToken = default)
+        public async Task<OAuth.OAuthToken> RequestJWTUserTokenAsync(string clientId, string userId, string oAuthBasePathParam, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null, CancellationToken cancellationToken = default)
         {
             string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
 
@@ -1081,7 +1081,7 @@ namespace DocuSign.eSign.Client
 
             descriptor.Subject = new ClaimsIdentity();
             descriptor.Subject.AddClaim(new Claim("scope", String.Join(" ", scopes)));
-            descriptor.Subject.AddClaim(new Claim("aud", oauthBasePath));
+            descriptor.Subject.AddClaim(new Claim("aud", oAuthBasePathParam));
             descriptor.Subject.AddClaim(new Claim("iss", clientId));
 
             if (!string.IsNullOrEmpty(userId))
@@ -1112,7 +1112,7 @@ namespace DocuSign.eSign.Client
                 { "assertion", jwtToken }
             };
 
-            DocuSignRequest request = PrepareOAuthRequest(oauthBasePath, $"oauth/token", HttpMethod.Post, Configuration.DefaultHeader?.ToList(), localVarFormParams.ToList());
+            DocuSignRequest request = PrepareOAuthRequest(oAuthBasePathParam, $"oauth/token", HttpMethod.Post, Configuration.DefaultHeader?.ToList(), localVarFormParams.ToList());
             DocuSignResponse response = await RestClient.SendRequestAsync(request, cancellationToken);
 
             if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)
@@ -1132,7 +1132,7 @@ namespace DocuSign.eSign.Client
         /// *RESERVED FOR PARTNERS* RequestJWTApplicationToken
         /// </summary>
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
-        /// <param name="oauthBasePath"> Docusign OAuth base path
+        /// <param name="oAuthBasePathParam"> Docusign OAuth base path
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
@@ -1142,12 +1142,12 @@ namespace DocuSign.eSign.Client
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
         /// <returns>The JWT application token</returns>
-        public OAuth.OAuthToken RequestJWTApplicationToken(string clientId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null)
+        public OAuth.OAuthToken RequestJWTApplicationToken(string clientId, string oAuthBasePathParam, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null)
         {
             using (var cts = new CancellationTokenSource())
             {              
                 return TryCatchWrapper(() => {
-                    var task = Task.Run(async () => await RequestJWTApplicationTokenAsync(clientId, oAuthBasePath, privateKeyBytes, expiresInHours, scopes, cts.Token));
+                    var task = Task.Run(async () => await RequestJWTApplicationTokenAsync(clientId, oAuthBasePathParam, privateKeyBytes, expiresInHours, scopes, cts.Token));
                     task.Wait();
                     return task.Result;
                 });
@@ -1158,7 +1158,7 @@ namespace DocuSign.eSign.Client
         /// *RESERVED FOR PARTNERS* RequestJWTApplicationTokenAsync
         /// </summary>
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
-        /// <param name="oauthBasePath"> Docusign OAuth base path
+        /// <param name="oAuthBasePathParam"> Docusign OAuth base path
         /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
@@ -1169,7 +1169,7 @@ namespace DocuSign.eSign.Client
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
         /// <returns>The JWT application token</returns>
-        public async Task<OAuth.OAuthToken> RequestJWTApplicationTokenAsync(string clientId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null, CancellationToken cancellationToken = default)
+        public async Task<OAuth.OAuthToken> RequestJWTApplicationTokenAsync(string clientId, string oAuthBasePathParam, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null, CancellationToken cancellationToken = default)
         {
             string privateKey = Encoding.UTF8.GetString(privateKeyBytes);
 
@@ -1184,7 +1184,7 @@ namespace DocuSign.eSign.Client
 
             descriptor.Subject = new ClaimsIdentity();
             descriptor.Subject.AddClaim(new Claim("scope", String.Join(" ", scopes)));
-            descriptor.Subject.AddClaim(new Claim("aud", oauthBasePath));
+            descriptor.Subject.AddClaim(new Claim("aud", oAuthBasePathParam));
             descriptor.Subject.AddClaim(new Claim("iss", clientId));
 
             if (!string.IsNullOrEmpty(privateKey))
@@ -1206,7 +1206,7 @@ namespace DocuSign.eSign.Client
                 { "assertion", jwtToken }
             };
 
-            DocuSignRequest request = PrepareOAuthRequest(oauthBasePath, $"oauth/token", HttpMethod.Post, Configuration.DefaultHeader?.ToList(), localVarFormParams.ToList());
+            DocuSignRequest request = PrepareOAuthRequest(oAuthBasePathParam, $"oauth/token", HttpMethod.Post, Configuration.DefaultHeader?.ToList(), localVarFormParams.ToList());
             DocuSignResponse response = await RestClient.SendRequestAsync(request, cancellationToken);
 
             if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode < HttpStatusCode.BadRequest)

@@ -1,5 +1,13 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v8.0.2] - eSignature API v2.1-24.2.00.00 - 2024-11-15
+### Changed
+- Resolved an issue that prevented the use of `RequestJWTApplicationToken` with a production account URL.
+- Updated C# SDK dependencies.
+    - BouncyCastle.Cryptography: Version bumped from 2.3.1 to 2.4.0.
+    - Microsoft.IdentityModelJsonWebTokens: Version bumped from 7.5.2 to 8.2.0.
+- Updated the SDK release version.
+
 ## [v8.0.1] - eSignature API v2.1-24.2.00.00 - 2024-11-07
 ### Changed
 - Fixed Deadlock issue with UI Apps (E.g. WinForms).

@@ -43,9 +43,10 @@ namespace DocuSign.eSign.Model
         /// <param name="NextUri">The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. .</param>
         /// <param name="PreviousUri">The postal code for the billing address..</param>
         /// <param name="ResultSetSize">The number of results returned in this response. .</param>
+        /// <param name="SkyDriveSkipToken">SkyDriveSkipToken.</param>
         /// <param name="StartPosition">Starting position of the current result set..</param>
         /// <param name="TotalSetSize">The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response..</param>
-        public ExternalFolder(string EndPosition = default(string), ExternalDocServiceErrorDetails ErrorDetails = default(ExternalDocServiceErrorDetails), string Id = default(string), List<ExternalFile> Items = default(List<ExternalFile>), string Name = default(string), string NextUri = default(string), string PreviousUri = default(string), string ResultSetSize = default(string), string StartPosition = default(string), string TotalSetSize = default(string))
+        public ExternalFolder(string EndPosition = default(string), ExternalDocServiceErrorDetails ErrorDetails = default(ExternalDocServiceErrorDetails), string Id = default(string), List<ExternalFile> Items = default(List<ExternalFile>), string Name = default(string), string NextUri = default(string), string PreviousUri = default(string), string ResultSetSize = default(string), string SkyDriveSkipToken = default(string), string StartPosition = default(string), string TotalSetSize = default(string))
         {
             this.EndPosition = EndPosition;
             this.ErrorDetails = ErrorDetails;
@@ -55,6 +56,7 @@ namespace DocuSign.eSign.Model
             this.NextUri = NextUri;
             this.PreviousUri = PreviousUri;
             this.ResultSetSize = ResultSetSize;
+            this.SkyDriveSkipToken = SkyDriveSkipToken;
             this.StartPosition = StartPosition;
             this.TotalSetSize = TotalSetSize;
         }
@@ -105,6 +107,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="resultSetSize", EmitDefaultValue=false)]
         public string ResultSetSize { get; set; }
         /// <summary>
+        /// Gets or Sets SkyDriveSkipToken
+        /// </summary>
+        [DataMember(Name="skyDriveSkipToken", EmitDefaultValue=false)]
+        public string SkyDriveSkipToken { get; set; }
+        /// <summary>
         /// Starting position of the current result set.
         /// </summary>
         /// <value>Starting position of the current result set.</value>
@@ -132,6 +139,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  NextUri: ").Append(NextUri).Append("\n");
             sb.Append("  PreviousUri: ").Append(PreviousUri).Append("\n");
             sb.Append("  ResultSetSize: ").Append(ResultSetSize).Append("\n");
+            sb.Append("  SkyDriveSkipToken: ").Append(SkyDriveSkipToken).Append("\n");
             sb.Append("  StartPosition: ").Append(StartPosition).Append("\n");
             sb.Append("  TotalSetSize: ").Append(TotalSetSize).Append("\n");
             sb.Append("}\n");
@@ -211,6 +219,11 @@ namespace DocuSign.eSign.Model
                     this.ResultSetSize.Equals(other.ResultSetSize)
                 ) && 
                 (
+                    this.SkyDriveSkipToken == other.SkyDriveSkipToken ||
+                    this.SkyDriveSkipToken != null &&
+                    this.SkyDriveSkipToken.Equals(other.SkyDriveSkipToken)
+                ) && 
+                (
                     this.StartPosition == other.StartPosition ||
                     this.StartPosition != null &&
                     this.StartPosition.Equals(other.StartPosition)
@@ -249,6 +262,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PreviousUri.GetHashCode();
                 if (this.ResultSetSize != null)
                     hash = hash * 59 + this.ResultSetSize.GetHashCode();
+                if (this.SkyDriveSkipToken != null)
+                    hash = hash * 59 + this.SkyDriveSkipToken.GetHashCode();
                 if (this.StartPosition != null)
                     hash = hash * 59 + this.StartPosition.GetHashCode();
                 if (this.TotalSetSize != null)

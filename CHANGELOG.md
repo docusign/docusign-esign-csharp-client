@@ -1,5 +1,10 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v8.1.0-rc] - eSignature API v2.1-25.1.00.00 - 2025-03-10
+### Changed
+- Added support for version v2.1-25.1.00.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v8.0.2] - eSignature API v2.1-24.2.00.00 - 2024-11-15
 ### Changed
 - Resolved an issue that prevented the use of `RequestJWTApplicationToken` with a production account URL.

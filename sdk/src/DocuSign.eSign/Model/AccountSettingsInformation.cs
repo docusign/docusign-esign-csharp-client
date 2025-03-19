@@ -78,7 +78,9 @@ namespace DocuSign.eSign.Model
         /// <param name="AllowBulkSendMetadata">Metadata that indicates whether the &#x60;allowBulkSend&#x60; property is editable. .</param>
         /// <param name="AllowCDWithdraw">AllowCDWithdraw.</param>
         /// <param name="AllowCDWithdrawMetadata">Metadata that indicates whether the &#x60;allowCDWithdraw&#x60; property is editable. .</param>
+        /// <param name="AllowConnectAuthoritativeCopyReadyEventUI">AllowConnectAuthoritativeCopyReadyEventUI.</param>
         /// <param name="AllowConnectEnvelopeRemovedEvent">AllowConnectEnvelopeRemovedEvent.</param>
+        /// <param name="AllowConnectExtensionUI">AllowConnectExtensionUI.</param>
         /// <param name="AllowConnectHttpListenerConfigs">AllowConnectHttpListenerConfigs.</param>
         /// <param name="AllowConnectIdentityVerificationUI">AllowConnectIdentityVerificationUI.</param>
         /// <param name="AllowConnectOAuthUI">AllowConnectOAuthUI.</param>
@@ -163,6 +165,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AllowOcrOfEnvelopeDocumentsMetadata">AllowOcrOfEnvelopeDocumentsMetadata.</param>
         /// <param name="AllowOfflineSigning">AllowOfflineSigning.</param>
         /// <param name="AllowOfflineSigningMetadata">Metadata that indicates whether the &#x60;allowOfflineSigning&#x60; property is editable. .</param>
+        /// <param name="AllowOnlyStandaloneWebForms">AllowOnlyStandaloneWebForms.</param>
+        /// <param name="AllowOnlyStandaloneWebFormsMetadata">AllowOnlyStandaloneWebFormsMetadata.</param>
         /// <param name="AllowOpenTrustSignerCertificate">AllowOpenTrustSignerCertificate.</param>
         /// <param name="AllowOpenTrustSignerCertificateMetadata">Metadata that indicates whether the &#x60;allowOpenTrustSignerCertificate&#x60; property is editable. .</param>
         /// <param name="AllowOrganizationBranding">AllowOrganizationBranding.</param>
@@ -300,6 +304,7 @@ namespace DocuSign.eSign.Model
         /// <param name="CheckForMultipleAdminsOnAccountMetadata">Metadata that indicates whether the &#x60;checkForMultipleAdminsOnAccount&#x60; property is editable..</param>
         /// <param name="ChromeSignatureEnabled">ChromeSignatureEnabled.</param>
         /// <param name="ChromeSignatureEnabledMetadata">Metadata that indicates whether the &#x60;chromeSignatureEnabled&#x60; property is editable. .</param>
+        /// <param name="CloudReady">CloudReady.</param>
         /// <param name="CommentEmailShowMessageText">CommentEmailShowMessageText.</param>
         /// <param name="CommentEmailShowMessageTextMetadata">Metadata that indicates whether the &#x60;commentEmailShowMessageText&#x60; property is editable. .</param>
         /// <param name="CommentsAllowEnvelopeOverride">CommentsAllowEnvelopeOverride.</param>
@@ -318,8 +323,6 @@ namespace DocuSign.eSign.Model
         /// <param name="DefaultToAdvancedEnvelopesFilterFormMetadata">DefaultToAdvancedEnvelopesFilterFormMetadata.</param>
         /// <param name="DisableAutoTemplateMatching">DisableAutoTemplateMatching.</param>
         /// <param name="DisableAutoTemplateMatchingMetadata">DisableAutoTemplateMatchingMetadata.</param>
-        /// <param name="DisableBulkSendRecipientLimit">DisableBulkSendRecipientLimit.</param>
-        /// <param name="DisableBulkSendRecipientLimitMetaData">DisableBulkSendRecipientLimitMetaData.</param>
         /// <param name="DisableMobileApp">DisableMobileApp.</param>
         /// <param name="DisableMobileAppMetadata">Metadata that indicates whether the &#x60;disableMobileApp&#x60; property is editable. .</param>
         /// <param name="DisableMobilePushNotifications">DisableMobilePushNotifications.</param>
@@ -350,8 +353,6 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentVisibilityMetadata">Metadata that indicates whether the &#x60;documentVisibility&#x60; property is editable. .</param>
         /// <param name="DraftEnvelopeRetention">DraftEnvelopeRetention.</param>
         /// <param name="DraftEnvelopeRetentionMetadata">DraftEnvelopeRetentionMetadata.</param>
-        /// <param name="DssEnableProvisioningPenConfigurationRadminOption">DssEnableProvisioningPenConfigurationRadminOption.</param>
-        /// <param name="DssEnableSignatureTypeCustomTagRadminRadminOption">DssEnableSignatureTypeCustomTagRadminRadminOption.</param>
         /// <param name="DssSCOREFDN196RebrandDocuSignIsNotAVerb">DssSCOREFDN196RebrandDocuSignIsNotAVerb.</param>
         /// <param name="DssSIGN28411EnableLeavePagePromptRadminOption">DssSIGN28411EnableLeavePagePromptRadminOption.</param>
         /// <param name="DssSIGN29182SlideUpBarRadminOption">DssSIGN29182SlideUpBarRadminOption.</param>
@@ -377,8 +378,12 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableAgreementActionsForCLMMetadata">EnableAgreementActionsForCLMMetadata.</param>
         /// <param name="EnableAgreementActionsForESign">EnableAgreementActionsForESign.</param>
         /// <param name="EnableAgreementActionsForESignMetadata">EnableAgreementActionsForESignMetadata.</param>
+        /// <param name="EnableAIContractReview">EnableAIContractReview.</param>
+        /// <param name="EnableAIContractReviewMetadata">EnableAIContractReviewMetadata.</param>
         /// <param name="EnableAutoNav">EnableAutoNav.</param>
         /// <param name="EnableAutoNavMetadata">Metadata that indicates whether the &#x60;enableAutoNav&#x60; property is editable. .</param>
+        /// <param name="EnableBatchUpdateEnvelopeTypes">EnableBatchUpdateEnvelopeTypes.</param>
+        /// <param name="EnableBatchUpdateEnvelopeTypesMetadata">EnableBatchUpdateEnvelopeTypesMetadata.</param>
         /// <param name="EnableBccDummyLink">EnableBccDummyLink.</param>
         /// <param name="EnableBccDummyLinkMetadata">EnableBccDummyLinkMetadata.</param>
         /// <param name="EnableCalculatedFields">EnableCalculatedFields.</param>
@@ -402,10 +407,16 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableContactSuggestionsMetadata">EnableContactSuggestionsMetadata.</param>
         /// <param name="EnableContentSearch">EnableContentSearch.</param>
         /// <param name="EnableContentSearchMetadata">EnableContentSearchMetadata.</param>
+        /// <param name="EnableCoupaCore">EnableCoupaCore.</param>
+        /// <param name="EnableCoupaCoreMetaData">EnableCoupaCoreMetaData.</param>
+        /// <param name="EnableCustomDataVerificationExtensions">EnableCustomDataVerificationExtensions.</param>
+        /// <param name="EnableCustomDataVerificationExtensionsMetadata">EnableCustomDataVerificationExtensionsMetadata.</param>
         /// <param name="EnableCustomerSatisfactionMetricTracking">EnableCustomerSatisfactionMetricTracking.</param>
         /// <param name="EnableCustomerSatisfactionMetricTrackingMetadata">Metadata that indicates whether the &#x60;enableCustomerSatisfactionMetricTracking&#x60; property is editable. .</param>
         /// <param name="EnableDataVerificationExtensions">EnableDataVerificationExtensions.</param>
         /// <param name="EnableDataVerificationExtensionsMetadata">EnableDataVerificationExtensionsMetadata.</param>
+        /// <param name="EnableDocumentTemplateLibrary">EnableDocumentTemplateLibrary.</param>
+        /// <param name="EnableDocumentTemplateLibraryMetadata">EnableDocumentTemplateLibraryMetadata.</param>
         /// <param name="EnableDSigEUAdvancedPens">EnableDSigEUAdvancedPens.</param>
         /// <param name="EnableDSigEUAdvancedPensMetadata">EnableDSigEUAdvancedPensMetadata.</param>
         /// <param name="EnableDSigExpressPens">EnableDSigExpressPens.</param>
@@ -449,8 +460,18 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableKeyTermsSuggestionsByDocumentTypeMetadata">EnableKeyTermsSuggestionsByDocumentTypeMetadata.</param>
         /// <param name="EnableLargeFileSupport">EnableLargeFileSupport.</param>
         /// <param name="EnableLargeFileSupportMetadata">EnableLargeFileSupportMetadata.</param>
+        /// <param name="EnableLegacySharedEnvelopes">EnableLegacySharedEnvelopes.</param>
+        /// <param name="EnableLegacySharedEnvelopesMetadata">EnableLegacySharedEnvelopesMetadata.</param>
+        /// <param name="EnableLicenseManagement">EnableLicenseManagement.</param>
+        /// <param name="EnableLicenseManagementMetadata">EnableLicenseManagementMetadata.</param>
         /// <param name="EnableMultiUserRepositoryFeatures">EnableMultiUserRepositoryFeatures.</param>
         /// <param name="EnableMultiUserRepositoryFeaturesMetadata">EnableMultiUserRepositoryFeaturesMetadata.</param>
+        /// <param name="EnableNavigatorPartialIngestion">EnableNavigatorPartialIngestion.</param>
+        /// <param name="EnableNavigatorPartialIngestionMetadata">EnableNavigatorPartialIngestionMetadata.</param>
+        /// <param name="EnableNavigatorTrial">EnableNavigatorTrial.</param>
+        /// <param name="EnableNavigatorTrialMetadata">EnableNavigatorTrialMetadata.</param>
+        /// <param name="EnableObligationManagement">EnableObligationManagement.</param>
+        /// <param name="EnableObligationManagementMetadata">EnableObligationManagementMetadata.</param>
         /// <param name="EnableParticipantRecipientSettingMetadata">EnableParticipantRecipientSettingMetadata.</param>
         /// <param name="EnablePaymentProcessing">EnablePaymentProcessing.</param>
         /// <param name="EnablePaymentProcessingMetadata">Metadata that indicates whether the &#x60;enablePaymentProcessing&#x60; property is editable. .</param>
@@ -498,6 +519,8 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableSigningExtensionCommentsMetadata">Metadata that indicates whether the &#x60;enableSigningExtensionComments&#x60; property is editable. .</param>
         /// <param name="EnableSigningExtensionConversations">EnableSigningExtensionConversations.</param>
         /// <param name="EnableSigningExtensionConversationsMetadata">Metadata that indicates whether the &#x60;enableSigningExtensionConversations&#x60; property is editable. .</param>
+        /// <param name="EnableSigningGroupContinuePageSetting">EnableSigningGroupContinuePageSetting.</param>
+        /// <param name="EnableSigningGroupContinuePageSettingMetadata">EnableSigningGroupContinuePageSettingMetadata.</param>
         /// <param name="EnableSigningOrderSettingsForAccount">EnableSigningOrderSettingsForAccount.</param>
         /// <param name="EnableSigningOrderSettingsForAccountMetadata">Metadata that indicates whether the &#x60;enableSigningOrderSettingsForAccount&#x60; property is editable. .</param>
         /// <param name="EnableSignOnPaper">EnableSignOnPaper.</param>
@@ -529,6 +552,8 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableWebFormsSeparateUserPermissionsMetadata">EnableWebFormsSeparateUserPermissionsMetadata.</param>
         /// <param name="EnableWitnessing">EnableWitnessing.</param>
         /// <param name="EnableWitnessingMetadata">Metadata that indicates whether the &#x60;enableWitnessing&#x60; property is editable. .</param>
+        /// <param name="EnableWorkdayFinancialsExtension">EnableWorkdayFinancialsExtension.</param>
+        /// <param name="EnableWorkdayFinancialsExtensionMetaData">EnableWorkdayFinancialsExtensionMetaData.</param>
         /// <param name="EnforceTemplateNameUniqueness">EnforceTemplateNameUniqueness.</param>
         /// <param name="EnforceTemplateNameUniquenessMetadata">Metadata that indicates whether the &#x60;enforceTemplateNameUniqueness&#x60; property is editable. .</param>
         /// <param name="EnforceTlsEmails">EnforceTlsEmails.</param>
@@ -595,6 +620,8 @@ namespace DocuSign.eSign.Model
         /// <param name="InSessionSuppressEmails">InSessionSuppressEmails.</param>
         /// <param name="InSessionSuppressEmailsMetadata">Metadata that indicates whether the &#x60;inSessionSuppressEmails&#x60; property is editable. .</param>
         /// <param name="IsConnectDocumentFieldsEnabled">IsConnectDocumentFieldsEnabled.</param>
+        /// <param name="IsvEmbed">IsvEmbed.</param>
+        /// <param name="IsvEmbedMetaData">IsvEmbedMetaData.</param>
         /// <param name="IsvOemEmbed">IsvOemEmbed.</param>
         /// <param name="IsvOemEmbedMetaData">IsvOemEmbedMetaData.</param>
         /// <param name="LinkedExternalPrimaryAccounts">LinkedExternalPrimaryAccounts.</param>
@@ -615,6 +642,9 @@ namespace DocuSign.eSign.Model
         /// <param name="OptOutAutoNavTextAndTabColorUpdatesMetadata">Metadata that indicates whether the &#x60;optOutAutoNavTextAndTabColorUpdates&#x60; property is editable. .</param>
         /// <param name="OptOutNewPlatformSeal">OptOutNewPlatformSeal.</param>
         /// <param name="OptOutNewPlatformSealPlatformMetadata">Metadata that indicates whether the &#x60;optOutNewPlatformSealPlatform&#x60; property is editable. .</param>
+        /// <param name="OriginalAccountSite">OriginalAccountSite.</param>
+        /// <param name="ParticipantCopyOptOut">ParticipantCopyOptOut.</param>
+        /// <param name="ParticipantCopyOptOutMetadata">ParticipantCopyOptOutMetadata.</param>
         /// <param name="PdfMaxChunkedUploadPartSize">PdfMaxChunkedUploadPartSize.</param>
         /// <param name="PdfMaxChunkedUploadPartSizeMetadata">PdfMaxChunkedUploadPartSizeMetadata.</param>
         /// <param name="PdfMaxChunkedUploadTotalSize">PdfMaxChunkedUploadTotalSize.</param>
@@ -631,6 +661,8 @@ namespace DocuSign.eSign.Model
         /// <param name="RecipientsCanSignOfflineMetadata">Metadata that indicates whether the &#x60;recipientsCanSignOffline&#x60; property is editable. .</param>
         /// <param name="RecipientSigningAutoNavigationControl">RecipientSigningAutoNavigationControl.</param>
         /// <param name="RecipientSigningAutoNavigationControlMetadata">Metadata that indicates whether the &#x60;recipientSigningAutoNavigationControl&#x60; property is editable. .</param>
+        /// <param name="RecycleBinEnvelopeRetention">RecycleBinEnvelopeRetention.</param>
+        /// <param name="RecycleBinEnvelopeRetentionMetadata">RecycleBinEnvelopeRetentionMetadata.</param>
         /// <param name="Require21CFRpt11Compliance">Require21CFRpt11Compliance.</param>
         /// <param name="Require21CFRpt11ComplianceMetadata">Metadata that indicates whether the &#x60;require21CFRpt11Compliance&#x60; property is editable. .</param>
         /// <param name="RequireDeclineReason">RequireDeclineReason.</param>
@@ -643,7 +675,6 @@ namespace DocuSign.eSign.Model
         /// <param name="RsaVeridPassword">RsaVeridPassword.</param>
         /// <param name="RsaVeridRuleset">RsaVeridRuleset.</param>
         /// <param name="RsaVeridUserId">RsaVeridUserId.</param>
-        /// <param name="SbsTransactionLevel">SbsTransactionLevel.</param>
         /// <param name="SelfSignedRecipientEmailDocument">SelfSignedRecipientEmailDocument.</param>
         /// <param name="SelfSignedRecipientEmailDocumentMetadata">Metadata that indicates whether the &#x60;selfSignedRecipientEmailDocument&#x60; property is editable. .</param>
         /// <param name="SelfSignedRecipientEmailDocumentUserOverride">SelfSignedRecipientEmailDocumentUserOverride.</param>
@@ -742,6 +773,8 @@ namespace DocuSign.eSign.Model
         /// <param name="TimezoneOffsetUI">TimezoneOffsetUI.</param>
         /// <param name="TimezoneOffsetUIMetadata">Metadata that indicates whether the &#x60;timezoneOffsetUI&#x60; property is editable. .</param>
         /// <param name="UniversalSignatureOptIn">UniversalSignatureOptIn.</param>
+        /// <param name="UniversalSignatureSkipPlatformSignature">UniversalSignatureSkipPlatformSignature.</param>
+        /// <param name="UniversalSignatureSkipPlatformSignatureMetadata">UniversalSignatureSkipPlatformSignatureMetadata.</param>
         /// <param name="UseAccountLevelEmail">UseAccountLevelEmail.</param>
         /// <param name="UseAccountLevelEmailMetadata">Metadata that indicates whether the &#x60;useAccountLevelEmail&#x60; property is editable. .</param>
         /// <param name="UseConsumerDisclosure">UseConsumerDisclosure.</param>
@@ -787,7 +820,7 @@ namespace DocuSign.eSign.Model
         /// <param name="WriteReminderToEnvelopeHistoryMetadata">Metadata that indicates whether the &#x60;writeReminderToEnvelopeHistory&#x60; property is editable. .</param>
         /// <param name="WurflMinAllowableScreenSize">WurflMinAllowableScreenSize.</param>
         /// <param name="WurflMinAllowableScreenSizeMetadata">Metadata that indicates whether the &#x60;wurflMinAllowableScreenSize&#x60; property is editable. .</param>
-        public AccountSettingsInformation(AccessCodeFormat AccessCodeFormat = default(AccessCodeFormat), string AccountDateTimeFormat = default(string), SettingsMetadata AccountDateTimeFormatMetadata = default(SettingsMetadata), string AccountDefaultLanguage = default(string), SettingsMetadata AccountDefaultLanguageMetadata = default(SettingsMetadata), string AccountName = default(string), SettingsMetadata AccountNameMetadata = default(SettingsMetadata), AccountNotification AccountNotification = default(AccountNotification), AccountUISettings AccountUISettings = default(AccountUISettings), string AdoptSigConfig = default(string), SettingsMetadata AdoptSigConfigMetadata = default(SettingsMetadata), string AdvancedCorrect = default(string), SettingsMetadata AdvancedCorrectMetadata = default(SettingsMetadata), string AdvancedSearchEnableTabField = default(string), SettingsMetadata AdvancedSearchEnableTabFieldMetadata = default(SettingsMetadata), string AdvancedSearchEnableTemplateIdField = default(string), SettingsMetadata AdvancedSearchEnableTemplateIdFieldMetadata = default(SettingsMetadata), string AdvancedSearchEnableTemplateNameField = default(string), SettingsMetadata AdvancedSearchEnableTemplateNameFieldMetadata = default(SettingsMetadata), string AllowAccessCodeFormat = default(string), SettingsMetadata AllowAccessCodeFormatMetadata = default(SettingsMetadata), string AllowAccountManagementGranular = default(string), SettingsMetadata AllowAccountManagementGranularMetadata = default(SettingsMetadata), string AllowAccountMemberNameChange = default(string), SettingsMetadata AllowAccountMemberNameChangeMetadata = default(SettingsMetadata), string AllowACE = default(string), SettingsMetadata AllowACEMetadata = default(SettingsMetadata), string AllowAdvancedRecipientRoutingConditional = default(string), SettingsMetadata AllowAdvancedRecipientRoutingConditionalMetadata = default(SettingsMetadata), string AllowAgentNameEmailEdit = default(string), SettingsMetadata AllowAgentNameEmailEditMetadata = default(SettingsMetadata), string AllowAgreementActions = default(string), SettingsMetadata AllowAgreementActionsMetadata = default(SettingsMetadata), string AllowAgreementOrchestrations = default(string), SettingsMetadata AllowAgreementOrchestrationsMetadata = default(SettingsMetadata), string AllowAutoNavSettings = default(string), SettingsMetadata AllowAutoNavSettingsMetadata = default(SettingsMetadata), string AllowAutoTagging = default(string), SettingsMetadata AllowAutoTaggingMetadata = default(SettingsMetadata), string AllowBulkSend = default(string), SettingsMetadata AllowBulkSendMetadata = default(SettingsMetadata), string AllowCDWithdraw = default(string), SettingsMetadata AllowCDWithdrawMetadata = default(SettingsMetadata), string AllowConnectEnvelopeRemovedEvent = default(string), string AllowConnectHttpListenerConfigs = default(string), string AllowConnectIdentityVerificationUI = default(string), string AllowConnectOAuthUI = default(string), string AllowConnectSendFinishLater = default(string), SettingsMetadata AllowConnectSendFinishLaterMetadata = default(SettingsMetadata), string AllowConnectUnifiedPayloadUI = default(string), string AllowConsumerDisclosureOverride = default(string), SettingsMetadata AllowConsumerDisclosureOverrideMetadata = default(SettingsMetadata), string AllowDataDownload = default(string), SettingsMetadata AllowDataDownloadMetadata = default(SettingsMetadata), string AllowDelayedRouting = default(string), SettingsMetadata AllowDelayedRoutingMetadata = default(SettingsMetadata), string AllowDelegatedSigning = default(string), SettingsMetadata AllowDelegatedSigningMetadata = default(SettingsMetadata), string AllowDocGenDocuments = default(string), SettingsMetadata AllowDocGenDocumentsMetadata = default(SettingsMetadata), string AllowDocumentDisclosures = default(string), SettingsMetadata AllowDocumentDisclosuresMetadata = default(SettingsMetadata), string AllowDocumentsOnSignedEnvelopes = default(string), SettingsMetadata AllowDocumentsOnSignedEnvelopesMetadata = default(SettingsMetadata), string AllowDocumentVisibility = default(string), SettingsMetadata AllowDocumentVisibilityMetadata = default(SettingsMetadata), string AllowEditingEnvelopesOnBehalfOfOthers = default(string), SettingsMetadata AllowEditingEnvelopesOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowEHankoStamps = default(string), SettingsMetadata AllowEHankoStampsMetadata = default(SettingsMetadata), string AllowENoteEOriginal = default(string), SettingsMetadata AllowENoteEOriginalMetadata = default(SettingsMetadata), string AllowEnvelopeCorrect = default(string), SettingsMetadata AllowEnvelopeCorrectMetadata = default(SettingsMetadata), string AllowEnvelopeCustodyTransfer = default(string), SettingsMetadata AllowEnvelopeCustodyTransferMetadata = default(SettingsMetadata), string AllowEnvelopeCustomFields = default(string), SettingsMetadata AllowEnvelopeCustomFieldsMetadata = default(SettingsMetadata), string AllowEnvelopePublishReporting = default(string), SettingsMetadata AllowEnvelopePublishReportingMetadata = default(SettingsMetadata), string AllowEnvelopeReporting = default(string), SettingsMetadata AllowEnvelopeReportingMetadata = default(SettingsMetadata), string AllowExpression = default(string), SettingsMetadata AllowExpressionMetadata = default(SettingsMetadata), string AllowExpressSignerCertificate = default(string), SettingsMetadata AllowExpressSignerCertificateMetadata = default(SettingsMetadata), string AllowExtendedSendingResourceFile = default(string), SettingsMetadata AllowExtendedSendingResourceFileMetadata = default(SettingsMetadata), string AllowExternalLinkedAccounts = default(string), SettingsMetadata AllowExternalLinkedAccountsMetadata = default(SettingsMetadata), string AllowExternalSignaturePad = default(string), SettingsMetadata AllowExternalSignaturePadMetadata = default(SettingsMetadata), string AllowIDVForEUQualifiedSignatures = default(string), SettingsMetadata AllowIDVForEUQualifiedSignaturesMetadata = default(SettingsMetadata), string AllowIDVLevel1 = default(string), SettingsMetadata AllowIDVLevel1Metadata = default(SettingsMetadata), string AllowIDVLevel1Trial = default(string), SettingsMetadata AllowIDVLevel1TrialMetadata = default(SettingsMetadata), string AllowIDVLevel2 = default(string), SettingsMetadata AllowIDVLevel2Metadata = default(SettingsMetadata), string AllowIDVLevel3 = default(string), SettingsMetadata AllowIDVLevel3Metadata = default(SettingsMetadata), string AllowIDVPlatform = default(string), SettingsMetadata AllowIDVPlatformMetadata = default(SettingsMetadata), string AllowInPerson = default(string), string AllowInPersonElectronicNotary = default(string), SettingsMetadata AllowInPersonElectronicNotaryMetadata = default(SettingsMetadata), SettingsMetadata AllowInPersonMetadata = default(SettingsMetadata), string AllowManagedStamps = default(string), SettingsMetadata AllowManagedStampsMetadata = default(SettingsMetadata), string AllowManagingEnvelopesOnBehalfOfOthers = default(string), SettingsMetadata AllowManagingEnvelopesOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowMarkup = default(string), SettingsMetadata AllowMarkupMetadata = default(SettingsMetadata), string AllowMemberTimeZone = default(string), SettingsMetadata AllowMemberTimeZoneMetadata = default(SettingsMetadata), string AllowMergeFields = default(string), SettingsMetadata AllowMergeFieldsMetadata = default(SettingsMetadata), string AllowMultipleBrandProfiles = default(string), SettingsMetadata AllowMultipleBrandProfilesMetadata = default(SettingsMetadata), string AllowMultipleSignerAttachments = default(string), SettingsMetadata AllowMultipleSignerAttachmentsMetadata = default(SettingsMetadata), string AllowNonUSPhoneAuth = default(string), SettingsMetadata AllowNonUSPhoneAuthMetadata = default(SettingsMetadata), string AllowOcrOfEnvelopeDocuments = default(string), SettingsMetadata AllowOcrOfEnvelopeDocumentsMetadata = default(SettingsMetadata), string AllowOfflineSigning = default(string), SettingsMetadata AllowOfflineSigningMetadata = default(SettingsMetadata), string AllowOpenTrustSignerCertificate = default(string), SettingsMetadata AllowOpenTrustSignerCertificateMetadata = default(SettingsMetadata), string AllowOrganizationBranding = default(string), SettingsMetadata AllowOrganizationBrandingMetadata = default(SettingsMetadata), string AllowOrganizationDocusignMonitor = default(string), string AllowOrganizationDocusignMonitorFree = default(string), SettingsMetadata AllowOrganizationDocusignMonitorFreeMetadata = default(SettingsMetadata), SettingsMetadata AllowOrganizationDocusignMonitorMetadata = default(SettingsMetadata), string AllowOrganizationDomainUserManagement = default(string), SettingsMetadata AllowOrganizationDomainUserManagementMetadata = default(SettingsMetadata), string AllowOrganizations = default(string), SettingsMetadata AllowOrganizationsMetadata = default(SettingsMetadata), string AllowOrganizationSsoManagement = default(string), SettingsMetadata AllowOrganizationSsoManagementMetadata = default(SettingsMetadata), string AllowOrganizationToUseInPersonElectronicNotary = default(string), SettingsMetadata AllowOrganizationToUseInPersonElectronicNotaryMetadata = default(SettingsMetadata), string AllowOrganizationToUseRemoteNotary = default(string), SettingsMetadata AllowOrganizationToUseRemoteNotaryMetadata = default(SettingsMetadata), string AllowOrganizationToUseThirdPartyElectronicNotary = default(string), SettingsMetadata AllowOrganizationToUseThirdPartyElectronicNotaryMetadata = default(SettingsMetadata), string AllowParticipantRecipientType = default(string), SettingsMetadata AllowParticipantRecipientTypeMetadata = default(SettingsMetadata), string AllowPaymentProcessing = default(string), SettingsMetadata AllowPaymentProcessingMetadata = default(SettingsMetadata), string AllowPendingDestinationUrlEdition = default(string), SettingsMetadata AllowPendingDestinationUrlEditionMetadata = default(SettingsMetadata), string AllowPerformanceAnalytics = default(string), SettingsMetadata AllowPerformanceAnalyticsMetadata = default(SettingsMetadata), string AllowPhoneAuthentication = default(string), SettingsMetadata AllowPhoneAuthenticationMetadata = default(SettingsMetadata), string AllowPhoneAuthOverride = default(string), SettingsMetadata AllowPhoneAuthOverrideMetadata = default(SettingsMetadata), string AllowPrivateSigningGroups = default(string), SettingsMetadata AllowPrivateSigningGroupsMetadata = default(SettingsMetadata), string AllowRecipientConnect = default(string), SettingsMetadata AllowRecipientConnectMetadata = default(SettingsMetadata), string AllowReminders = default(string), SettingsMetadata AllowRemindersMetadata = default(SettingsMetadata), string AllowRemoteNotary = default(string), SettingsMetadata AllowRemoteNotaryMetadata = default(SettingsMetadata), string AllowResourceFileBranding = default(string), SettingsMetadata AllowResourceFileBrandingMetadata = default(SettingsMetadata), string AllowSafeBioPharmaSignerCertificate = default(string), SettingsMetadata AllowSafeBioPharmaSignerCertificateMetadata = default(SettingsMetadata), string AllowScheduledSending = default(string), SettingsMetadata AllowScheduledSendingMetadata = default(SettingsMetadata), string AllowSecurityAppliance = default(string), SettingsMetadata AllowSecurityApplianceMetadata = default(SettingsMetadata), string AllowSendingEnvelopesOnBehalfOfOthers = default(string), SettingsMetadata AllowSendingEnvelopesOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowSendToCertifiedDelivery = default(string), SettingsMetadata AllowSendToCertifiedDeliveryMetadata = default(SettingsMetadata), string AllowSendToIntermediary = default(string), SettingsMetadata AllowSendToIntermediaryMetadata = default(SettingsMetadata), string AllowServerTemplates = default(string), SettingsMetadata AllowServerTemplatesMetadata = default(SettingsMetadata), string AllowSetEmbeddedRecipientStartURL = default(string), SettingsMetadata AllowSetEmbeddedRecipientStartURLMetadata = default(SettingsMetadata), string AllowSharedTabs = default(string), SettingsMetadata AllowSharedTabsMetadata = default(SettingsMetadata), string AllowSignatureStamps = default(string), SettingsMetadata AllowSignatureStampsMetadata = default(SettingsMetadata), string AllowSignDocumentFromHomePage = default(string), SettingsMetadata AllowSignDocumentFromHomePageMetadata = default(SettingsMetadata), string AllowSignerReassign = default(string), SettingsMetadata AllowSignerReassignMetadata = default(SettingsMetadata), string AllowSignerReassignOverride = default(string), SettingsMetadata AllowSignerReassignOverrideMetadata = default(SettingsMetadata), string AllowSigningExtensions = default(string), SettingsMetadata AllowSigningExtensionsMetadata = default(SettingsMetadata), string AllowSigningGroups = default(string), SettingsMetadata AllowSigningGroupsMetadata = default(SettingsMetadata), string AllowSigningInsights = default(string), SettingsMetadata AllowSigningInsightsMetadata = default(SettingsMetadata), string AllowSigningRadioDeselect = default(string), SettingsMetadata AllowSigningRadioDeselectMetadata = default(SettingsMetadata), string AllowSignNow = default(string), string AllowSignNowMetadata = default(string), string AllowSMSDelivery = default(string), SettingsMetadata AllowSMSDeliveryMetadata = default(SettingsMetadata), string AllowSocialIdLogin = default(string), SettingsMetadata AllowSocialIdLoginMetadata = default(SettingsMetadata), string AllowSupplementalDocuments = default(string), SettingsMetadata AllowSupplementalDocumentsMetadata = default(SettingsMetadata), string AllowThirdPartyElectronicNotary = default(string), SettingsMetadata AllowThirdPartyElectronicNotaryMetadata = default(SettingsMetadata), string AllowTransactionsWorkspace = default(string), SettingsMetadata AllowTransactionsWorkspaceMetadata = default(SettingsMetadata), string AllowTransactionsWorkspaceOriginal = default(string), SettingsMetadata AllowTransactionsWorkspaceOriginalMetadata = default(SettingsMetadata), string AllowUsersToAccessDirectory = default(string), SettingsMetadata AllowUsersToAccessDirectoryMetadata = default(SettingsMetadata), string AllowValueInsights = default(string), SettingsMetadata AllowValueInsightsMetadata = default(SettingsMetadata), string AllowWebForms = default(string), SettingsMetadata AllowWebFormsMetadata = default(SettingsMetadata), string AllowWhatsAppDelivery = default(string), SettingsMetadata AllowWhatsAppDeliveryMetadata = default(SettingsMetadata), string AnchorPopulationScope = default(string), SettingsMetadata AnchorPopulationScopeMetadata = default(SettingsMetadata), string AnchorTagVersionedPlacementEnabled = default(string), SettingsMetadata AnchorTagVersionedPlacementMetadataEnabled = default(SettingsMetadata), string AttachCompletedEnvelope = default(string), SettingsMetadata AttachCompletedEnvelopeMetadata = default(SettingsMetadata), string AuthenticationCheck = default(string), SettingsMetadata AuthenticationCheckMetadata = default(SettingsMetadata), string AutoNavRule = default(string), SettingsMetadata AutoNavRuleMetadata = default(SettingsMetadata), string AutoProvisionSignerAccount = default(string), SettingsMetadata AutoProvisionSignerAccountMetadata = default(SettingsMetadata), string BccEmailArchive = default(string), SettingsMetadata BccEmailArchiveMetadata = default(SettingsMetadata), string BetaSwitchConfiguration = default(string), SettingsMetadata BetaSwitchConfigurationMetadata = default(SettingsMetadata), AddressInformation BillingAddress = default(AddressInformation), SettingsMetadata BillingAddressMetadata = default(SettingsMetadata), string BulkSend = default(string), string BulkSendActionResendLimit = default(string), string BulkSendMaxCopiesInBatch = default(string), string BulkSendMaxUnprocessedEnvelopesCount = default(string), SettingsMetadata BulkSendMetadata = default(SettingsMetadata), string CanSelfBrandSend = default(string), SettingsMetadata CanSelfBrandSendMetadata = default(SettingsMetadata), string CanSelfBrandSign = default(string), SettingsMetadata CanSelfBrandSignMetadata = default(SettingsMetadata), string CanUseSalesforceOAuth = default(string), SettingsMetadata CanUseSalesforceOAuthMetadata = default(SettingsMetadata), string CaptureVoiceRecording = default(string), SettingsMetadata CaptureVoiceRecordingMetadata = default(SettingsMetadata), string Cfr21SimplifiedSigningEnabled = default(string), SettingsMetadata Cfr21SimplifiedSigningEnabledMetadata = default(SettingsMetadata), string CfrUseWideImage = default(string), SettingsMetadata CfrUseWideImageMetadata = default(SettingsMetadata), string CheckForMultipleAdminsOnAccount = default(string), SettingsMetadata CheckForMultipleAdminsOnAccountMetadata = default(SettingsMetadata), string ChromeSignatureEnabled = default(string), SettingsMetadata ChromeSignatureEnabledMetadata = default(SettingsMetadata), string CommentEmailShowMessageText = default(string), SettingsMetadata CommentEmailShowMessageTextMetadata = default(SettingsMetadata), string CommentsAllowEnvelopeOverride = default(string), SettingsMetadata CommentsAllowEnvelopeOverrideMetadata = default(SettingsMetadata), string ConditionalFieldsEnabled = default(string), SettingsMetadata ConditionalFieldsEnabledMetadata = default(SettingsMetadata), string ConsumerDisclosureFrequency = default(string), SettingsMetadata ConsumerDisclosureFrequencyMetadata = default(SettingsMetadata), string ConvertPdfFields = default(string), SettingsMetadata ConvertPdfFieldsMetadata = default(SettingsMetadata), string DataPopulationScope = default(string), SettingsMetadata DataPopulationScopeMetadata = default(SettingsMetadata), string DefaultSigningResponsiveView = default(string), SettingsMetadata DefaultSigningResponsiveViewMetadata = default(SettingsMetadata), string DefaultToAdvancedEnvelopesFilterForm = default(string), SettingsMetadata DefaultToAdvancedEnvelopesFilterFormMetadata = default(SettingsMetadata), string DisableAutoTemplateMatching = default(string), SettingsMetadata DisableAutoTemplateMatchingMetadata = default(SettingsMetadata), string DisableBulkSendRecipientLimit = default(string), SettingsMetadata DisableBulkSendRecipientLimitMetaData = default(SettingsMetadata), string DisableMobileApp = default(string), SettingsMetadata DisableMobileAppMetadata = default(SettingsMetadata), string DisableMobilePushNotifications = default(string), SettingsMetadata DisableMobilePushNotificationsMetadata = default(SettingsMetadata), string DisableMobileSending = default(string), SettingsMetadata DisableMobileSendingMetadata = default(SettingsMetadata), string DisableMultipleSessions = default(string), SettingsMetadata DisableMultipleSessionsMetadata = default(SettingsMetadata), SettingsMetadata DisablePurgeNotificationsForSenderMetadata = default(SettingsMetadata), string DisableSignerCertView = default(string), SettingsMetadata DisableSignerCertViewMetadata = default(SettingsMetadata), string DisableSignerHistoryView = default(string), SettingsMetadata DisableSignerHistoryViewMetadata = default(SettingsMetadata), string DisableStyleSignature = default(string), SettingsMetadata DisableStyleSignatureMetadata = default(SettingsMetadata), string DisableUploadSignature = default(string), SettingsMetadata DisableUploadSignatureMetadata = default(SettingsMetadata), string DisableUserSharing = default(string), SettingsMetadata DisableUserSharingMetadata = default(SettingsMetadata), string DisplayBetaSwitch = default(string), SettingsMetadata DisplayBetaSwitchMetadata = default(SettingsMetadata), string DocumentConversionRestrictions = default(string), SettingsMetadata DocumentConversionRestrictionsMetadata = default(SettingsMetadata), string DocumentRetention = default(string), SettingsMetadata DocumentRetentionMetadata = default(SettingsMetadata), string DocumentRetentionPurgeTabs = default(string), string DocumentVisibility = default(string), SettingsMetadata DocumentVisibilityMetadata = default(SettingsMetadata), string DraftEnvelopeRetention = default(string), SettingsMetadata DraftEnvelopeRetentionMetadata = default(SettingsMetadata), string DssEnableProvisioningPenConfigurationRadminOption = default(string), string DssEnableSignatureTypeCustomTagRadminRadminOption = default(string), string DssSCOREFDN196RebrandDocuSignIsNotAVerb = default(string), string DssSIGN28411EnableLeavePagePromptRadminOption = default(string), string DssSIGN29182SlideUpBarRadminOption = default(string), string EmailTemplateVersion = default(string), SettingsMetadata EmailTemplateVersionMetadata = default(SettingsMetadata), string EnableAccessCodeGenerator = default(string), SettingsMetadata EnableAccessCodeGeneratorMetadata = default(SettingsMetadata), string EnableAccountWideSearch = default(string), SettingsMetadata EnableAccountWideSearchMetadata = default(SettingsMetadata), string EnableAdditionalAdvancedWebFormsFeatures = default(string), SettingsMetadata EnableAdditionalAdvancedWebFormsFeaturesMetadata = default(SettingsMetadata), string EnableAdmHealthcare = default(string), SettingsMetadata EnableAdmHealthcareMetadata = default(SettingsMetadata), string EnableAdvancedEnvelopesSearch = default(string), SettingsMetadata EnableAdvancedEnvelopesSearchMetadata = default(SettingsMetadata), string EnableAdvancedPayments = default(string), SettingsMetadata EnableAdvancedPaymentsMetadata = default(SettingsMetadata), string EnableAdvancedPowerForms = default(string), SettingsMetadata EnableAdvancedPowerFormsMetadata = default(SettingsMetadata), string EnableAdvancedSearch = default(string), SettingsMetadata EnableAdvancedSearchMetadata = default(SettingsMetadata), string EnableAgreementActionsForCLM = default(string), SettingsMetadata EnableAgreementActionsForCLMMetadata = default(SettingsMetadata), string EnableAgreementActionsForESign = default(string), SettingsMetadata EnableAgreementActionsForESignMetadata = default(SettingsMetadata), string EnableAutoNav = default(string), SettingsMetadata EnableAutoNavMetadata = default(SettingsMetadata), string EnableBccDummyLink = default(string), SettingsMetadata EnableBccDummyLinkMetadata = default(SettingsMetadata), string EnableCalculatedFields = default(string), SettingsMetadata EnableCalculatedFieldsMetadata = default(SettingsMetadata), string EnableClickPlus = default(string), string EnableClickPlusConditionalContent = default(string), SettingsMetadata EnableClickPlusConditionalContentMetaData = default(SettingsMetadata), string EnableClickPlusCustomFields = default(string), SettingsMetadata EnableClickPlusCustomFieldsMetaData = default(SettingsMetadata), string EnableClickPlusCustomStyle = default(string), SettingsMetadata EnableClickPlusCustomStyleMetaData = default(SettingsMetadata), string EnableClickPlusDynamicContent = default(string), SettingsMetadata EnableClickPlusDynamicContentMetaData = default(SettingsMetadata), SettingsMetadata EnableClickPlusMetaData = default(SettingsMetadata), string EnableClickwraps = default(string), SettingsMetadata EnableClickwrapsMetadata = default(SettingsMetadata), string EnableCombinedPDFDownloadForSBS = default(string), string EnableCommentsHistoryDownloadInSigning = default(string), SettingsMetadata EnableCommentsHistoryDownloadInSigningMetadata = default(SettingsMetadata), string EnableContactSuggestions = default(string), SettingsMetadata EnableContactSuggestionsMetadata = default(SettingsMetadata), string EnableContentSearch = default(string), SettingsMetadata EnableContentSearchMetadata = default(SettingsMetadata), string EnableCustomerSatisfactionMetricTracking = default(string), SettingsMetadata EnableCustomerSatisfactionMetricTrackingMetadata = default(SettingsMetadata), string EnableDataVerificationExtensions = default(string), SettingsMetadata EnableDataVerificationExtensionsMetadata = default(SettingsMetadata), string EnableDSigEUAdvancedPens = default(string), SettingsMetadata EnableDSigEUAdvancedPensMetadata = default(SettingsMetadata), string EnableDSigExpressPens = default(string), SettingsMetadata EnableDSigExpressPensMetadata = default(SettingsMetadata), string EnableDSigIDCheckForAESPens = default(string), SettingsMetadata EnableDSigIDCheckForAESPensMetadata = default(SettingsMetadata), string EnableDSigIDCheckInPersonForQESPens = default(string), SettingsMetadata EnableDSigIDCheckInPersonForQESPensMetadata = default(SettingsMetadata), string EnableDSigIDCheckRemoteForQESPens = default(string), SettingsMetadata EnableDSigIDCheckRemoteForQESPensMetadata = default(SettingsMetadata), string EnableDSigIDVerificationPens = default(string), SettingsMetadata EnableDSigIDVerificationPensMetadata = default(SettingsMetadata), string EnableDSigIDVerificationPremierPens = default(string), SettingsMetadata EnableDSigIDVerificationPremierPensMetadata = default(SettingsMetadata), string EnableDSPro = default(string), SettingsMetadata EnableDSProMetadata = default(SettingsMetadata), SettingsMetadata EnableEnforceTlsEmailsSettingMetadata = default(SettingsMetadata), string EnableEnvelopeStampingByAccountAdmin = default(string), SettingsMetadata EnableEnvelopeStampingByAccountAdminMetadata = default(SettingsMetadata), string EnableEnvelopeStampingByDSAdmin = default(string), SettingsMetadata EnableEnvelopeStampingByDSAdminMetadata = default(SettingsMetadata), string EnableESignAPIHourlyLimitManagement = default(string), SettingsMetadata EnableESignAPIHourlyLimitManagementMetadata = default(SettingsMetadata), string EnableEsignCommunities = default(string), SettingsMetadata EnableEsignCommunitiesMetadata = default(SettingsMetadata), string EnableIDFxAccountlessSMSAuthForPart11 = default(string), SettingsMetadata EnableIDFxAccountlessSMSAuthForPart11Metadata = default(SettingsMetadata), string EnableIDFxIntuitKBA = default(string), SettingsMetadata EnableIDFxIntuitKBAMetadata = default(SettingsMetadata), string EnableIDFxPhoneAuthentication = default(string), SettingsMetadata EnableIDFxPhoneAuthenticationMetadata = default(SettingsMetadata), string EnableIdfxPhoneAuthSignatureAuthStatus = default(string), SettingsMetadata EnableIdfxPhoneAuthSignatureAuthStatusMetadata = default(SettingsMetadata), string EnableInboxBrowseViewsPoweredByElasticSearch = default(string), SettingsMetadata EnableInboxBrowseViewsPoweredByElasticSearchMetadata = default(SettingsMetadata), string EnableInboxRelevanceSort = default(string), SettingsMetadata EnableInboxRelevanceSortMetadata = default(SettingsMetadata), string EnableInBrowserEditor = default(string), SettingsMetadata EnableInBrowserEditorMetadata = default(SettingsMetadata), string EnableKeyTermsSuggestionsByDocumentType = default(string), SettingsMetadata EnableKeyTermsSuggestionsByDocumentTypeMetadata = default(SettingsMetadata), string EnableLargeFileSupport = default(string), SettingsMetadata EnableLargeFileSupportMetadata = default(SettingsMetadata), string EnableMultiUserRepositoryFeatures = default(string), SettingsMetadata EnableMultiUserRepositoryFeaturesMetadata = default(SettingsMetadata), SettingsMetadata EnableParticipantRecipientSettingMetadata = default(SettingsMetadata), string EnablePaymentProcessing = default(string), SettingsMetadata EnablePaymentProcessingMetadata = default(SettingsMetadata), string EnablePDFAConversion = default(string), SettingsMetadata EnablePDFAConversionMetadata = default(SettingsMetadata), string EnablePowerForm = default(string), string EnablePowerFormDirect = default(string), SettingsMetadata EnablePowerFormDirectMetadata = default(SettingsMetadata), SettingsMetadata EnablePowerFormMetadata = default(SettingsMetadata), string EnablePremiumDataVerificationExtensions = default(string), SettingsMetadata EnablePremiumDataVerificationExtensionsMetadata = default(SettingsMetadata), string EnableRecipientDomainValidation = default(string), SettingsMetadata EnableRecipientDomainValidationMetadata = default(SettingsMetadata), string EnableRecipientMayProvidePhoneNumber = default(string), SettingsMetadata EnableRecipientMayProvidePhoneNumberMetadata = default(SettingsMetadata), string EnableReportLinks = default(string), SettingsMetadata EnableReportLinksMetadata = default(SettingsMetadata), string EnableRequireSignOnPaper = default(string), SettingsMetadata EnableRequireSignOnPaperMetadata = default(SettingsMetadata), string EnableReservedDomain = default(string), SettingsMetadata EnableReservedDomainMetadata = default(SettingsMetadata), string EnableResponsiveSigning = default(string), SettingsMetadata EnableResponsiveSigningMetadata = default(SettingsMetadata), string EnableScheduledRelease = default(string), SettingsMetadata EnableScheduledReleaseMetadata = default(SettingsMetadata), string EnableSearchServiceAzureUri = default(string), SettingsMetadata EnableSearchServiceAzureUriMetadata = default(SettingsMetadata), string EnableSearchSiteSpecificApi = default(string), SettingsMetadata EnableSearchSiteSpecificApiMetadata = default(SettingsMetadata), string EnableSendingTagsFontSettings = default(string), SettingsMetadata EnableSendingTagsFontSettingsMetadata = default(SettingsMetadata), string EnableSendToAgent = default(string), SettingsMetadata EnableSendToAgentMetadata = default(SettingsMetadata), string EnableSendToIntermediary = default(string), SettingsMetadata EnableSendToIntermediaryMetadata = default(SettingsMetadata), string EnableSendToManage = default(string), SettingsMetadata EnableSendToManageMetadata = default(SettingsMetadata), string EnableSequentialSigningAPI = default(string), SettingsMetadata EnableSequentialSigningAPIMetadata = default(SettingsMetadata), string EnableSequentialSigningUI = default(string), SettingsMetadata EnableSequentialSigningUIMetadata = default(SettingsMetadata), string EnableSignerAttachments = default(string), SettingsMetadata EnableSignerAttachmentsMetadata = default(SettingsMetadata), string EnableSigningExtensionComments = default(string), SettingsMetadata EnableSigningExtensionCommentsMetadata = default(SettingsMetadata), string EnableSigningExtensionConversations = default(string), SettingsMetadata EnableSigningExtensionConversationsMetadata = default(SettingsMetadata), string EnableSigningOrderSettingsForAccount = default(string), SettingsMetadata EnableSigningOrderSettingsForAccountMetadata = default(SettingsMetadata), string EnableSignOnPaper = default(string), SettingsMetadata EnableSignOnPaperMetadata = default(SettingsMetadata), string EnableSignOnPaperOverride = default(string), SettingsMetadata EnableSignOnPaperOverrideMetadata = default(SettingsMetadata), string EnableSignWithNotary = default(string), SettingsMetadata EnableSignWithNotaryMetadata = default(SettingsMetadata), string EnableSmartContracts = default(string), SettingsMetadata EnableSmartContractsMetadata = default(SettingsMetadata), string EnableSMSAuthentication = default(string), SettingsMetadata EnableSMSAuthenticationMetadata = default(SettingsMetadata), string EnableSMSDeliveryAdditionalNotification = default(string), SettingsMetadata EnableSMSDeliveryAdditionalNotificationMetadata = default(SettingsMetadata), string EnableSMSDeliveryPrimary = default(string), string EnableSocialIdLogin = default(string), SettingsMetadata EnableSocialIdLoginMetadata = default(SettingsMetadata), string EnableStrikeThrough = default(string), SettingsMetadata EnableStrikeThroughMetadata = default(SettingsMetadata), string EnableTransactionPoint = default(string), SettingsMetadata EnableTransactionPointMetadata = default(SettingsMetadata), string EnableUnifiedRepository = default(string), SettingsMetadata EnableUnifiedRepositoryMetadata = default(SettingsMetadata), string EnableVaulting = default(string), SettingsMetadata EnableVaultingMetadata = default(SettingsMetadata), string EnableWebFormsRuntimeAPIs = default(string), SettingsMetadata EnableWebFormsRuntimeAPIsMetadata = default(SettingsMetadata), string EnableWebFormsSeparateUserPermissions = default(string), SettingsMetadata EnableWebFormsSeparateUserPermissionsMetadata = default(SettingsMetadata), string EnableWitnessing = default(string), SettingsMetadata EnableWitnessingMetadata = default(SettingsMetadata), string EnforceTemplateNameUniqueness = default(string), SettingsMetadata EnforceTemplateNameUniquenessMetadata = default(SettingsMetadata), string EnforceTlsEmails = default(string), SettingsMetadata EnforceTlsEmailsMetadata = default(SettingsMetadata), string EnvelopeIntegrationAllowed = default(string), SettingsMetadata EnvelopeIntegrationAllowedMetadata = default(SettingsMetadata), string EnvelopeIntegrationEnabled = default(string), SettingsMetadata EnvelopeIntegrationEnabledMetadata = default(SettingsMetadata), string EnvelopeLimitsTotalDocumentSizeAllowedInMB = default(string), string EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled = default(string), SettingsMetadata EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata = default(SettingsMetadata), SettingsMetadata EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata = default(SettingsMetadata), string EnvelopeSearchMode = default(string), SettingsMetadata EnvelopeSearchModeMetadata = default(SettingsMetadata), string EnvelopeStampingDefaultValue = default(string), SettingsMetadata EnvelopeStampingDefaultValueMetadata = default(SettingsMetadata), string ExitPrompt = default(string), SettingsMetadata ExitPromptMetadata = default(SettingsMetadata), string ExpressSend = default(string), string ExpressSendAllowTabs = default(string), SettingsMetadata ExpressSendAllowTabsMetadata = default(SettingsMetadata), SettingsMetadata ExpressSendMetadata = default(SettingsMetadata), ExternalDocumentSources ExternalDocumentSources = default(ExternalDocumentSources), string ExternalSignaturePadType = default(string), SettingsMetadata ExternalSignaturePadTypeMetadata = default(SettingsMetadata), string FaxOutEnabled = default(string), SettingsMetadata FaxOutEnabledMetadata = default(SettingsMetadata), string FinishReminder = default(string), SettingsMetadata FinishReminderMetadata = default(SettingsMetadata), string ForbidAddingUserStamps = default(string), SettingsMetadata ForbidAddingUserStampsMetadata = default(SettingsMetadata), string GuidedFormsHtmlAllowed = default(string), SettingsMetadata GuidedFormsHtmlAllowedMetadata = default(SettingsMetadata), string GuidedFormsHtmlConversionPolicy = default(string), SettingsMetadata GuidedFormsHtmlConversionPolicyMetadata = default(SettingsMetadata), string HasRecipientConnectClaimedDomain = default(string), string HideAccountAddressInCoC = default(string), SettingsMetadata HideAccountAddressInCoCMetadata = default(SettingsMetadata), string HidePricing = default(string), SettingsMetadata HidePricingMetadata = default(SettingsMetadata), List<IdCheckConfiguration> IdCheckConfigurations = default(List<IdCheckConfiguration>), string IdCheckExpire = default(string), string IdCheckExpireDays = default(string), SettingsMetadata IdCheckExpireDaysMetadata = default(SettingsMetadata), SettingsMetadata IdCheckExpireMetadata = default(SettingsMetadata), string IdCheckExpireMinutes = default(string), SettingsMetadata IdCheckExpireMinutesMetadata = default(SettingsMetadata), string IdCheckRequired = default(string), SettingsMetadata IdCheckRequiredMetadata = default(SettingsMetadata), List<AccountIdentityVerificationWorkflow> IdentityVerification = default(List<AccountIdentityVerificationWorkflow>), SettingsMetadata IdentityVerificationMetadata = default(SettingsMetadata), string IdfxKBAAuthenticationOverride = default(string), SettingsMetadata IdfxKBAAuthenticationOverrideMetadata = default(SettingsMetadata), string IdfxPhoneAuthenticationOverride = default(string), SettingsMetadata IdfxPhoneAuthenticationOverrideMetadata = default(SettingsMetadata), string IgnoreErrorIfAnchorTabNotFound = default(string), SettingsMetadata IgnoreErrorIfAnchorTabNotFoundMetadataEnabled = default(SettingsMetadata), string InPersonIDCheckQuestion = default(string), SettingsMetadata InPersonIDCheckQuestionMetadata = default(SettingsMetadata), string InPersonSigningEnabled = default(string), SettingsMetadata InPersonSigningEnabledMetadata = default(SettingsMetadata), string InSessionEnabled = default(string), SettingsMetadata InSessionEnabledMetadata = default(SettingsMetadata), string InSessionSuppressEmails = default(string), SettingsMetadata InSessionSuppressEmailsMetadata = default(SettingsMetadata), string IsConnectDocumentFieldsEnabled = default(string), string IsvOemEmbed = default(string), SettingsMetadata IsvOemEmbedMetaData = default(SettingsMetadata), List<LinkedExternalPrimaryAccount> LinkedExternalPrimaryAccounts = default(List<LinkedExternalPrimaryAccount>), string MaximumSigningGroups = default(string), SettingsMetadata MaximumSigningGroupsMetadata = default(SettingsMetadata), string MaximumUsersPerSigningGroup = default(string), SettingsMetadata MaximumUsersPerSigningGroupMetadata = default(SettingsMetadata), string MaxNumberOfCustomStamps = default(string), string MergeMixedModeResults = default(string), SettingsMetadata MergeMixedModeResultsMetadata = default(SettingsMetadata), string MobileSessionTimeout = default(string), SettingsMetadata MobileSessionTimeoutMetadata = default(SettingsMetadata), string NumberOfActiveCustomStamps = default(string), string OptInMobileSigningV02 = default(string), SettingsMetadata OptInMobileSigningV02Metadata = default(SettingsMetadata), string OptInUniversalSignatures = default(string), string OptOutAutoNavTextAndTabColorUpdates = default(string), SettingsMetadata OptOutAutoNavTextAndTabColorUpdatesMetadata = default(SettingsMetadata), string OptOutNewPlatformSeal = default(string), SettingsMetadata OptOutNewPlatformSealPlatformMetadata = default(SettingsMetadata), string PdfMaxChunkedUploadPartSize = default(string), SettingsMetadata PdfMaxChunkedUploadPartSizeMetadata = default(SettingsMetadata), string PdfMaxChunkedUploadTotalSize = default(string), SettingsMetadata PdfMaxChunkedUploadTotalSizeMetadata = default(SettingsMetadata), string PdfMaxIndividualUploadSize = default(string), SettingsMetadata PdfMaxIndividualUploadSizeMetadata = default(SettingsMetadata), string PhoneAuthRecipientMayProvidePhoneNumber = default(string), SettingsMetadata PhoneAuthRecipientMayProvidePhoneNumberMetadata = default(SettingsMetadata), string PkiSignDownloadedPDFDocs = default(string), SettingsMetadata PkiSignDownloadedPDFDocsMetadata = default(SettingsMetadata), string ReadOnlyMode = default(string), SettingsMetadata ReadOnlyModeMetadata = default(SettingsMetadata), string RecipientsCanSignOffline = default(string), SettingsMetadata RecipientsCanSignOfflineMetadata = default(SettingsMetadata), string RecipientSigningAutoNavigationControl = default(string), SettingsMetadata RecipientSigningAutoNavigationControlMetadata = default(SettingsMetadata), string Require21CFRpt11Compliance = default(string), SettingsMetadata Require21CFRpt11ComplianceMetadata = default(SettingsMetadata), string RequireDeclineReason = default(string), SettingsMetadata RequireDeclineReasonMetadata = default(SettingsMetadata), string RequireExternalUserManagement = default(string), SettingsMetadata RequireExternalUserManagementMetadata = default(SettingsMetadata), string RequireSignerCertificateType = default(string), SettingsMetadata RequireSignerCertificateTypeMetadata = default(SettingsMetadata), string RsaVeridAccountName = default(string), string RsaVeridPassword = default(string), string RsaVeridRuleset = default(string), string RsaVeridUserId = default(string), string SbsTransactionLevel = default(string), string SelfSignedRecipientEmailDocument = default(string), SettingsMetadata SelfSignedRecipientEmailDocumentMetadata = default(SettingsMetadata), string SelfSignedRecipientEmailDocumentUserOverride = default(string), SettingsMetadata SelfSignedRecipientEmailDocumentUserOverrideMetadata = default(SettingsMetadata), string SenderCanSignInEachLocation = default(string), SettingsMetadata SenderCanSignInEachLocationMetadata = default(SettingsMetadata), string SenderMustAuthenticateSigning = default(string), SettingsMetadata SenderMustAuthenticateSigningMetadata = default(SettingsMetadata), string SendingTagsFontColor = default(string), SettingsMetadata SendingTagsFontColorMetadata = default(SettingsMetadata), string SendingTagsFontName = default(string), SettingsMetadata SendingTagsFontNameMetadata = default(SettingsMetadata), string SendingTagsFontSize = default(string), SettingsMetadata SendingTagsFontSizeMetadata = default(SettingsMetadata), string SendLockoutRecipientNotification = default(string), SettingsMetadata SendLockoutRecipientNotificationMetadata = default(SettingsMetadata), string SendToCertifiedDeliveryEnabled = default(string), SettingsMetadata SendToCertifiedDeliveryEnabledMetadata = default(SettingsMetadata), string SessionTimeout = default(string), SettingsMetadata SessionTimeoutMetadata = default(SettingsMetadata), string SetRecipEmailLang = default(string), SettingsMetadata SetRecipEmailLangMetadata = default(SettingsMetadata), string SetRecipSignLang = default(string), SettingsMetadata SetRecipSignLangMetadata = default(SettingsMetadata), string SharedTemplateFolders = default(string), SettingsMetadata SharedTemplateFoldersMetadata = default(SettingsMetadata), string ShowCompleteDialogInEmbeddedSession = default(string), SettingsMetadata ShowCompleteDialogInEmbeddedSessionMetadata = default(SettingsMetadata), string ShowConditionalRoutingOnSend = default(string), SettingsMetadata ShowConditionalRoutingOnSendMetadata = default(SettingsMetadata), string ShowInitialConditionalFields = default(string), SettingsMetadata ShowInitialConditionalFieldsMetadata = default(SettingsMetadata), string ShowLocalizedWatermarks = default(string), SettingsMetadata ShowLocalizedWatermarksMetadata = default(SettingsMetadata), string ShowMaskedFieldsWhenDownloadingDocumentAsSender = default(string), SettingsMetadata ShowMaskedFieldsWhenDownloadingDocumentAsSenderMetadata = default(SettingsMetadata), string ShowTutorials = default(string), SettingsMetadata ShowTutorialsMetadata = default(SettingsMetadata), List<string> SignatureProviders = default(List<string>), SettingsMetadata SignatureProvidersMetadata = default(SettingsMetadata), string SignDateFormat = default(string), SettingsMetadata SignDateFormatMetadata = default(SettingsMetadata), string SignDateTimeAccountLanguageOverride = default(string), SettingsMetadata SignDateTimeAccountLanguageOverrideMetadata = default(SettingsMetadata), string SignDateTimeAccountTimezoneOverride = default(string), SettingsMetadata SignDateTimeAccountTimezoneOverrideMetadata = default(SettingsMetadata), string SignerAttachCertificateToEnvelopePDF = default(string), SettingsMetadata SignerAttachCertificateToEnvelopePDFMetadata = default(SettingsMetadata), string SignerAttachConcat = default(string), SettingsMetadata SignerAttachConcatMetadata = default(SettingsMetadata), string SignerCanCreateAccount = default(string), SettingsMetadata SignerCanCreateAccountMetadata = default(SettingsMetadata), string SignerCanSignOnMobile = default(string), SettingsMetadata SignerCanSignOnMobileMetadata = default(SettingsMetadata), string SignerInSessionUseEnvelopeCompleteEmail = default(string), SettingsMetadata SignerInSessionUseEnvelopeCompleteEmailMetadata = default(SettingsMetadata), string SignerLoginRequirements = default(string), SettingsMetadata SignerLoginRequirementsMetadata = default(SettingsMetadata), string SignerMustHaveAccount = default(string), SettingsMetadata SignerMustHaveAccountMetadata = default(SettingsMetadata), string SignerMustLoginToSign = default(string), SettingsMetadata SignerMustLoginToSignMetadata = default(SettingsMetadata), string SignerShowSecureFieldInitialValues = default(string), SettingsMetadata SignerShowSecureFieldInitialValuesMetadata = default(SettingsMetadata), string SigningSessionTimeout = default(string), SettingsMetadata SigningSessionTimeoutMetadata = default(SettingsMetadata), string SigningUiVersion = default(string), SettingsMetadata SigningUiVersionMetadata = default(SettingsMetadata), string SignTimeFormat = default(string), SettingsMetadata SignTimeFormatMetadata = default(SettingsMetadata), string SignTimeShowAmPm = default(string), SettingsMetadata SignTimeShowAmPmMetadata = default(SettingsMetadata), string SimplifiedSendingEnabled = default(string), SettingsMetadata SimplifiedSendingEnabledMetadata = default(SettingsMetadata), string SingleSignOnEnabled = default(string), SettingsMetadata SingleSignOnEnabledMetadata = default(SettingsMetadata), string SkipAuthCompletedEnvelopes = default(string), SettingsMetadata SkipAuthCompletedEnvelopesMetadata = default(SettingsMetadata), string SocialIdRecipAuth = default(string), SettingsMetadata SocialIdRecipAuthMetadata = default(SettingsMetadata), string SpecifyDocumentVisibility = default(string), SettingsMetadata SpecifyDocumentVisibilityMetadata = default(SettingsMetadata), string StartInAdvancedCorrect = default(string), SettingsMetadata StartInAdvancedCorrectMetadata = default(SettingsMetadata), string SupplementalDocumentsMustAccept = default(string), SettingsMetadata SupplementalDocumentsMustAcceptMetadata = default(SettingsMetadata), string SupplementalDocumentsMustRead = default(string), SettingsMetadata SupplementalDocumentsMustReadMetadata = default(SettingsMetadata), string SupplementalDocumentsMustView = default(string), SettingsMetadata SupplementalDocumentsMustViewMetadata = default(SettingsMetadata), string SuppressCertificateEnforcement = default(string), SettingsMetadata SuppressCertificateEnforcementMetadata = default(SettingsMetadata), TabAccountSettings TabAccountSettings = default(TabAccountSettings), string TimezoneOffsetAPI = default(string), SettingsMetadata TimezoneOffsetAPIMetadata = default(SettingsMetadata), string TimezoneOffsetUI = default(string), SettingsMetadata TimezoneOffsetUIMetadata = default(SettingsMetadata), string UniversalSignatureOptIn = default(string), string UseAccountLevelEmail = default(string), SettingsMetadata UseAccountLevelEmailMetadata = default(SettingsMetadata), string UseConsumerDisclosure = default(string), SettingsMetadata UseConsumerDisclosureMetadata = default(SettingsMetadata), string UseConsumerDisclosureWithinAccount = default(string), SettingsMetadata UseConsumerDisclosureWithinAccountMetadata = default(SettingsMetadata), string UseDerivedKeys = default(string), SettingsMetadata UseDerivedKeysMetadata = default(SettingsMetadata), string UseDocuSignExpressSignerCertificate = default(string), SettingsMetadata UseDocuSignExpressSignerCertificateMetadata = default(SettingsMetadata), string UseEnvelopeSearchMixedMode = default(string), SettingsMetadata UseEnvelopeSearchMixedModeMetadata = default(SettingsMetadata), string UseMultiAppGroupsData = default(string), SettingsMetadata UseMultiAppGroupsDataMetadata = default(SettingsMetadata), string UseNewBlobForPdf = default(string), SettingsMetadata UseNewBlobForPdfMetadata = default(SettingsMetadata), string UseNewEnvelopeSearch = default(string), SettingsMetadata UseNewEnvelopeSearchMetadata = default(SettingsMetadata), string UseNewEnvelopeSearchOnlyWhenSearchingAfterDate = default(string), SettingsMetadata UseNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata = default(SettingsMetadata), string UseNewEnvelopeSearchOnlyWithSearchTerm = default(string), SettingsMetadata UseNewEnvelopeSearchOnlyWithSearchTermMetadata = default(SettingsMetadata), string UseSAFESignerCertificates = default(string), SettingsMetadata UseSAFESignerCertificatesMetadata = default(SettingsMetadata), string UsesAPI = default(string), SettingsMetadata UsesAPIMetadata = default(SettingsMetadata), string UseSignatureProviderPlatform = default(string), SettingsMetadata UseSignatureProviderPlatformMetadata = default(SettingsMetadata), string UseSmartContractsV1 = default(string), string ValidationsAllowed = default(string), SettingsMetadata ValidationsAllowedMetadata = default(SettingsMetadata), string ValidationsBrand = default(string), SettingsMetadata ValidationsBrandMetadata = default(SettingsMetadata), string ValidationsCadence = default(string), SettingsMetadata ValidationsCadenceMetadata = default(SettingsMetadata), string ValidationsEnabled = default(string), SettingsMetadata ValidationsEnabledMetadata = default(SettingsMetadata), string ValidationsReport = default(string), SettingsMetadata ValidationsReportMetadata = default(SettingsMetadata), string WaterMarkEnabled = default(string), SettingsMetadata WaterMarkEnabledMetadata = default(SettingsMetadata), string WriteReminderToEnvelopeHistory = default(string), SettingsMetadata WriteReminderToEnvelopeHistoryMetadata = default(SettingsMetadata), string WurflMinAllowableScreenSize = default(string), SettingsMetadata WurflMinAllowableScreenSizeMetadata = default(SettingsMetadata))
+        public AccountSettingsInformation(AccessCodeFormat AccessCodeFormat = default(AccessCodeFormat), string AccountDateTimeFormat = default(string), SettingsMetadata AccountDateTimeFormatMetadata = default(SettingsMetadata), string AccountDefaultLanguage = default(string), SettingsMetadata AccountDefaultLanguageMetadata = default(SettingsMetadata), string AccountName = default(string), SettingsMetadata AccountNameMetadata = default(SettingsMetadata), AccountNotification AccountNotification = default(AccountNotification), AccountUISettings AccountUISettings = default(AccountUISettings), string AdoptSigConfig = default(string), SettingsMetadata AdoptSigConfigMetadata = default(SettingsMetadata), string AdvancedCorrect = default(string), SettingsMetadata AdvancedCorrectMetadata = default(SettingsMetadata), string AdvancedSearchEnableTabField = default(string), SettingsMetadata AdvancedSearchEnableTabFieldMetadata = default(SettingsMetadata), string AdvancedSearchEnableTemplateIdField = default(string), SettingsMetadata AdvancedSearchEnableTemplateIdFieldMetadata = default(SettingsMetadata), string AdvancedSearchEnableTemplateNameField = default(string), SettingsMetadata AdvancedSearchEnableTemplateNameFieldMetadata = default(SettingsMetadata), string AllowAccessCodeFormat = default(string), SettingsMetadata AllowAccessCodeFormatMetadata = default(SettingsMetadata), string AllowAccountManagementGranular = default(string), SettingsMetadata AllowAccountManagementGranularMetadata = default(SettingsMetadata), string AllowAccountMemberNameChange = default(string), SettingsMetadata AllowAccountMemberNameChangeMetadata = default(SettingsMetadata), string AllowACE = default(string), SettingsMetadata AllowACEMetadata = default(SettingsMetadata), string AllowAdvancedRecipientRoutingConditional = default(string), SettingsMetadata AllowAdvancedRecipientRoutingConditionalMetadata = default(SettingsMetadata), string AllowAgentNameEmailEdit = default(string), SettingsMetadata AllowAgentNameEmailEditMetadata = default(SettingsMetadata), string AllowAgreementActions = default(string), SettingsMetadata AllowAgreementActionsMetadata = default(SettingsMetadata), string AllowAgreementOrchestrations = default(string), SettingsMetadata AllowAgreementOrchestrationsMetadata = default(SettingsMetadata), string AllowAutoNavSettings = default(string), SettingsMetadata AllowAutoNavSettingsMetadata = default(SettingsMetadata), string AllowAutoTagging = default(string), SettingsMetadata AllowAutoTaggingMetadata = default(SettingsMetadata), string AllowBulkSend = default(string), SettingsMetadata AllowBulkSendMetadata = default(SettingsMetadata), string AllowCDWithdraw = default(string), SettingsMetadata AllowCDWithdrawMetadata = default(SettingsMetadata), string AllowConnectAuthoritativeCopyReadyEventUI = default(string), string AllowConnectEnvelopeRemovedEvent = default(string), string AllowConnectExtensionUI = default(string), string AllowConnectHttpListenerConfigs = default(string), string AllowConnectIdentityVerificationUI = default(string), string AllowConnectOAuthUI = default(string), string AllowConnectSendFinishLater = default(string), SettingsMetadata AllowConnectSendFinishLaterMetadata = default(SettingsMetadata), string AllowConnectUnifiedPayloadUI = default(string), string AllowConsumerDisclosureOverride = default(string), SettingsMetadata AllowConsumerDisclosureOverrideMetadata = default(SettingsMetadata), string AllowDataDownload = default(string), SettingsMetadata AllowDataDownloadMetadata = default(SettingsMetadata), string AllowDelayedRouting = default(string), SettingsMetadata AllowDelayedRoutingMetadata = default(SettingsMetadata), string AllowDelegatedSigning = default(string), SettingsMetadata AllowDelegatedSigningMetadata = default(SettingsMetadata), string AllowDocGenDocuments = default(string), SettingsMetadata AllowDocGenDocumentsMetadata = default(SettingsMetadata), string AllowDocumentDisclosures = default(string), SettingsMetadata AllowDocumentDisclosuresMetadata = default(SettingsMetadata), string AllowDocumentsOnSignedEnvelopes = default(string), SettingsMetadata AllowDocumentsOnSignedEnvelopesMetadata = default(SettingsMetadata), string AllowDocumentVisibility = default(string), SettingsMetadata AllowDocumentVisibilityMetadata = default(SettingsMetadata), string AllowEditingEnvelopesOnBehalfOfOthers = default(string), SettingsMetadata AllowEditingEnvelopesOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowEHankoStamps = default(string), SettingsMetadata AllowEHankoStampsMetadata = default(SettingsMetadata), string AllowENoteEOriginal = default(string), SettingsMetadata AllowENoteEOriginalMetadata = default(SettingsMetadata), string AllowEnvelopeCorrect = default(string), SettingsMetadata AllowEnvelopeCorrectMetadata = default(SettingsMetadata), string AllowEnvelopeCustodyTransfer = default(string), SettingsMetadata AllowEnvelopeCustodyTransferMetadata = default(SettingsMetadata), string AllowEnvelopeCustomFields = default(string), SettingsMetadata AllowEnvelopeCustomFieldsMetadata = default(SettingsMetadata), string AllowEnvelopePublishReporting = default(string), SettingsMetadata AllowEnvelopePublishReportingMetadata = default(SettingsMetadata), string AllowEnvelopeReporting = default(string), SettingsMetadata AllowEnvelopeReportingMetadata = default(SettingsMetadata), string AllowExpression = default(string), SettingsMetadata AllowExpressionMetadata = default(SettingsMetadata), string AllowExpressSignerCertificate = default(string), SettingsMetadata AllowExpressSignerCertificateMetadata = default(SettingsMetadata), string AllowExtendedSendingResourceFile = default(string), SettingsMetadata AllowExtendedSendingResourceFileMetadata = default(SettingsMetadata), string AllowExternalLinkedAccounts = default(string), SettingsMetadata AllowExternalLinkedAccountsMetadata = default(SettingsMetadata), string AllowExternalSignaturePad = default(string), SettingsMetadata AllowExternalSignaturePadMetadata = default(SettingsMetadata), string AllowIDVForEUQualifiedSignatures = default(string), SettingsMetadata AllowIDVForEUQualifiedSignaturesMetadata = default(SettingsMetadata), string AllowIDVLevel1 = default(string), SettingsMetadata AllowIDVLevel1Metadata = default(SettingsMetadata), string AllowIDVLevel1Trial = default(string), SettingsMetadata AllowIDVLevel1TrialMetadata = default(SettingsMetadata), string AllowIDVLevel2 = default(string), SettingsMetadata AllowIDVLevel2Metadata = default(SettingsMetadata), string AllowIDVLevel3 = default(string), SettingsMetadata AllowIDVLevel3Metadata = default(SettingsMetadata), string AllowIDVPlatform = default(string), SettingsMetadata AllowIDVPlatformMetadata = default(SettingsMetadata), string AllowInPerson = default(string), string AllowInPersonElectronicNotary = default(string), SettingsMetadata AllowInPersonElectronicNotaryMetadata = default(SettingsMetadata), SettingsMetadata AllowInPersonMetadata = default(SettingsMetadata), string AllowManagedStamps = default(string), SettingsMetadata AllowManagedStampsMetadata = default(SettingsMetadata), string AllowManagingEnvelopesOnBehalfOfOthers = default(string), SettingsMetadata AllowManagingEnvelopesOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowMarkup = default(string), SettingsMetadata AllowMarkupMetadata = default(SettingsMetadata), string AllowMemberTimeZone = default(string), SettingsMetadata AllowMemberTimeZoneMetadata = default(SettingsMetadata), string AllowMergeFields = default(string), SettingsMetadata AllowMergeFieldsMetadata = default(SettingsMetadata), string AllowMultipleBrandProfiles = default(string), SettingsMetadata AllowMultipleBrandProfilesMetadata = default(SettingsMetadata), string AllowMultipleSignerAttachments = default(string), SettingsMetadata AllowMultipleSignerAttachmentsMetadata = default(SettingsMetadata), string AllowNonUSPhoneAuth = default(string), SettingsMetadata AllowNonUSPhoneAuthMetadata = default(SettingsMetadata), string AllowOcrOfEnvelopeDocuments = default(string), SettingsMetadata AllowOcrOfEnvelopeDocumentsMetadata = default(SettingsMetadata), string AllowOfflineSigning = default(string), SettingsMetadata AllowOfflineSigningMetadata = default(SettingsMetadata), string AllowOnlyStandaloneWebForms = default(string), SettingsMetadata AllowOnlyStandaloneWebFormsMetadata = default(SettingsMetadata), string AllowOpenTrustSignerCertificate = default(string), SettingsMetadata AllowOpenTrustSignerCertificateMetadata = default(SettingsMetadata), string AllowOrganizationBranding = default(string), SettingsMetadata AllowOrganizationBrandingMetadata = default(SettingsMetadata), string AllowOrganizationDocusignMonitor = default(string), string AllowOrganizationDocusignMonitorFree = default(string), SettingsMetadata AllowOrganizationDocusignMonitorFreeMetadata = default(SettingsMetadata), SettingsMetadata AllowOrganizationDocusignMonitorMetadata = default(SettingsMetadata), string AllowOrganizationDomainUserManagement = default(string), SettingsMetadata AllowOrganizationDomainUserManagementMetadata = default(SettingsMetadata), string AllowOrganizations = default(string), SettingsMetadata AllowOrganizationsMetadata = default(SettingsMetadata), string AllowOrganizationSsoManagement = default(string), SettingsMetadata AllowOrganizationSsoManagementMetadata = default(SettingsMetadata), string AllowOrganizationToUseInPersonElectronicNotary = default(string), SettingsMetadata AllowOrganizationToUseInPersonElectronicNotaryMetadata = default(SettingsMetadata), string AllowOrganizationToUseRemoteNotary = default(string), SettingsMetadata AllowOrganizationToUseRemoteNotaryMetadata = default(SettingsMetadata), string AllowOrganizationToUseThirdPartyElectronicNotary = default(string), SettingsMetadata AllowOrganizationToUseThirdPartyElectronicNotaryMetadata = default(SettingsMetadata), string AllowParticipantRecipientType = default(string), SettingsMetadata AllowParticipantRecipientTypeMetadata = default(SettingsMetadata), string AllowPaymentProcessing = default(string), SettingsMetadata AllowPaymentProcessingMetadata = default(SettingsMetadata), string AllowPendingDestinationUrlEdition = default(string), SettingsMetadata AllowPendingDestinationUrlEditionMetadata = default(SettingsMetadata), string AllowPerformanceAnalytics = default(string), SettingsMetadata AllowPerformanceAnalyticsMetadata = default(SettingsMetadata), string AllowPhoneAuthentication = default(string), SettingsMetadata AllowPhoneAuthenticationMetadata = default(SettingsMetadata), string AllowPhoneAuthOverride = default(string), SettingsMetadata AllowPhoneAuthOverrideMetadata = default(SettingsMetadata), string AllowPrivateSigningGroups = default(string), SettingsMetadata AllowPrivateSigningGroupsMetadata = default(SettingsMetadata), string AllowRecipientConnect = default(string), SettingsMetadata AllowRecipientConnectMetadata = default(SettingsMetadata), string AllowReminders = default(string), SettingsMetadata AllowRemindersMetadata = default(SettingsMetadata), string AllowRemoteNotary = default(string), SettingsMetadata AllowRemoteNotaryMetadata = default(SettingsMetadata), string AllowResourceFileBranding = default(string), SettingsMetadata AllowResourceFileBrandingMetadata = default(SettingsMetadata), string AllowSafeBioPharmaSignerCertificate = default(string), SettingsMetadata AllowSafeBioPharmaSignerCertificateMetadata = default(SettingsMetadata), string AllowScheduledSending = default(string), SettingsMetadata AllowScheduledSendingMetadata = default(SettingsMetadata), string AllowSecurityAppliance = default(string), SettingsMetadata AllowSecurityApplianceMetadata = default(SettingsMetadata), string AllowSendingEnvelopesOnBehalfOfOthers = default(string), SettingsMetadata AllowSendingEnvelopesOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowSendToCertifiedDelivery = default(string), SettingsMetadata AllowSendToCertifiedDeliveryMetadata = default(SettingsMetadata), string AllowSendToIntermediary = default(string), SettingsMetadata AllowSendToIntermediaryMetadata = default(SettingsMetadata), string AllowServerTemplates = default(string), SettingsMetadata AllowServerTemplatesMetadata = default(SettingsMetadata), string AllowSetEmbeddedRecipientStartURL = default(string), SettingsMetadata AllowSetEmbeddedRecipientStartURLMetadata = default(SettingsMetadata), string AllowSharedTabs = default(string), SettingsMetadata AllowSharedTabsMetadata = default(SettingsMetadata), string AllowSignatureStamps = default(string), SettingsMetadata AllowSignatureStampsMetadata = default(SettingsMetadata), string AllowSignDocumentFromHomePage = default(string), SettingsMetadata AllowSignDocumentFromHomePageMetadata = default(SettingsMetadata), string AllowSignerReassign = default(string), SettingsMetadata AllowSignerReassignMetadata = default(SettingsMetadata), string AllowSignerReassignOverride = default(string), SettingsMetadata AllowSignerReassignOverrideMetadata = default(SettingsMetadata), string AllowSigningExtensions = default(string), SettingsMetadata AllowSigningExtensionsMetadata = default(SettingsMetadata), string AllowSigningGroups = default(string), SettingsMetadata AllowSigningGroupsMetadata = default(SettingsMetadata), string AllowSigningInsights = default(string), SettingsMetadata AllowSigningInsightsMetadata = default(SettingsMetadata), string AllowSigningRadioDeselect = default(string), SettingsMetadata AllowSigningRadioDeselectMetadata = default(SettingsMetadata), string AllowSignNow = default(string), string AllowSignNowMetadata = default(string), string AllowSMSDelivery = default(string), SettingsMetadata AllowSMSDeliveryMetadata = default(SettingsMetadata), string AllowSocialIdLogin = default(string), SettingsMetadata AllowSocialIdLoginMetadata = default(SettingsMetadata), string AllowSupplementalDocuments = default(string), SettingsMetadata AllowSupplementalDocumentsMetadata = default(SettingsMetadata), string AllowThirdPartyElectronicNotary = default(string), SettingsMetadata AllowThirdPartyElectronicNotaryMetadata = default(SettingsMetadata), string AllowTransactionsWorkspace = default(string), SettingsMetadata AllowTransactionsWorkspaceMetadata = default(SettingsMetadata), string AllowTransactionsWorkspaceOriginal = default(string), SettingsMetadata AllowTransactionsWorkspaceOriginalMetadata = default(SettingsMetadata), string AllowUsersToAccessDirectory = default(string), SettingsMetadata AllowUsersToAccessDirectoryMetadata = default(SettingsMetadata), string AllowValueInsights = default(string), SettingsMetadata AllowValueInsightsMetadata = default(SettingsMetadata), string AllowWebForms = default(string), SettingsMetadata AllowWebFormsMetadata = default(SettingsMetadata), string AllowWhatsAppDelivery = default(string), SettingsMetadata AllowWhatsAppDeliveryMetadata = default(SettingsMetadata), string AnchorPopulationScope = default(string), SettingsMetadata AnchorPopulationScopeMetadata = default(SettingsMetadata), string AnchorTagVersionedPlacementEnabled = default(string), SettingsMetadata AnchorTagVersionedPlacementMetadataEnabled = default(SettingsMetadata), string AttachCompletedEnvelope = default(string), SettingsMetadata AttachCompletedEnvelopeMetadata = default(SettingsMetadata), string AuthenticationCheck = default(string), SettingsMetadata AuthenticationCheckMetadata = default(SettingsMetadata), string AutoNavRule = default(string), SettingsMetadata AutoNavRuleMetadata = default(SettingsMetadata), string AutoProvisionSignerAccount = default(string), SettingsMetadata AutoProvisionSignerAccountMetadata = default(SettingsMetadata), string BccEmailArchive = default(string), SettingsMetadata BccEmailArchiveMetadata = default(SettingsMetadata), string BetaSwitchConfiguration = default(string), SettingsMetadata BetaSwitchConfigurationMetadata = default(SettingsMetadata), AddressInformation BillingAddress = default(AddressInformation), SettingsMetadata BillingAddressMetadata = default(SettingsMetadata), string BulkSend = default(string), string BulkSendActionResendLimit = default(string), string BulkSendMaxCopiesInBatch = default(string), string BulkSendMaxUnprocessedEnvelopesCount = default(string), SettingsMetadata BulkSendMetadata = default(SettingsMetadata), string CanSelfBrandSend = default(string), SettingsMetadata CanSelfBrandSendMetadata = default(SettingsMetadata), string CanSelfBrandSign = default(string), SettingsMetadata CanSelfBrandSignMetadata = default(SettingsMetadata), string CanUseSalesforceOAuth = default(string), SettingsMetadata CanUseSalesforceOAuthMetadata = default(SettingsMetadata), string CaptureVoiceRecording = default(string), SettingsMetadata CaptureVoiceRecordingMetadata = default(SettingsMetadata), string Cfr21SimplifiedSigningEnabled = default(string), SettingsMetadata Cfr21SimplifiedSigningEnabledMetadata = default(SettingsMetadata), string CfrUseWideImage = default(string), SettingsMetadata CfrUseWideImageMetadata = default(SettingsMetadata), string CheckForMultipleAdminsOnAccount = default(string), SettingsMetadata CheckForMultipleAdminsOnAccountMetadata = default(SettingsMetadata), string ChromeSignatureEnabled = default(string), SettingsMetadata ChromeSignatureEnabledMetadata = default(SettingsMetadata), string CloudReady = default(string), string CommentEmailShowMessageText = default(string), SettingsMetadata CommentEmailShowMessageTextMetadata = default(SettingsMetadata), string CommentsAllowEnvelopeOverride = default(string), SettingsMetadata CommentsAllowEnvelopeOverrideMetadata = default(SettingsMetadata), string ConditionalFieldsEnabled = default(string), SettingsMetadata ConditionalFieldsEnabledMetadata = default(SettingsMetadata), string ConsumerDisclosureFrequency = default(string), SettingsMetadata ConsumerDisclosureFrequencyMetadata = default(SettingsMetadata), string ConvertPdfFields = default(string), SettingsMetadata ConvertPdfFieldsMetadata = default(SettingsMetadata), string DataPopulationScope = default(string), SettingsMetadata DataPopulationScopeMetadata = default(SettingsMetadata), string DefaultSigningResponsiveView = default(string), SettingsMetadata DefaultSigningResponsiveViewMetadata = default(SettingsMetadata), string DefaultToAdvancedEnvelopesFilterForm = default(string), SettingsMetadata DefaultToAdvancedEnvelopesFilterFormMetadata = default(SettingsMetadata), string DisableAutoTemplateMatching = default(string), SettingsMetadata DisableAutoTemplateMatchingMetadata = default(SettingsMetadata), string DisableMobileApp = default(string), SettingsMetadata DisableMobileAppMetadata = default(SettingsMetadata), string DisableMobilePushNotifications = default(string), SettingsMetadata DisableMobilePushNotificationsMetadata = default(SettingsMetadata), string DisableMobileSending = default(string), SettingsMetadata DisableMobileSendingMetadata = default(SettingsMetadata), string DisableMultipleSessions = default(string), SettingsMetadata DisableMultipleSessionsMetadata = default(SettingsMetadata), SettingsMetadata DisablePurgeNotificationsForSenderMetadata = default(SettingsMetadata), string DisableSignerCertView = default(string), SettingsMetadata DisableSignerCertViewMetadata = default(SettingsMetadata), string DisableSignerHistoryView = default(string), SettingsMetadata DisableSignerHistoryViewMetadata = default(SettingsMetadata), string DisableStyleSignature = default(string), SettingsMetadata DisableStyleSignatureMetadata = default(SettingsMetadata), string DisableUploadSignature = default(string), SettingsMetadata DisableUploadSignatureMetadata = default(SettingsMetadata), string DisableUserSharing = default(string), SettingsMetadata DisableUserSharingMetadata = default(SettingsMetadata), string DisplayBetaSwitch = default(string), SettingsMetadata DisplayBetaSwitchMetadata = default(SettingsMetadata), string DocumentConversionRestrictions = default(string), SettingsMetadata DocumentConversionRestrictionsMetadata = default(SettingsMetadata), string DocumentRetention = default(string), SettingsMetadata DocumentRetentionMetadata = default(SettingsMetadata), string DocumentRetentionPurgeTabs = default(string), string DocumentVisibility = default(string), SettingsMetadata DocumentVisibilityMetadata = default(SettingsMetadata), string DraftEnvelopeRetention = default(string), SettingsMetadata DraftEnvelopeRetentionMetadata = default(SettingsMetadata), string DssSCOREFDN196RebrandDocuSignIsNotAVerb = default(string), string DssSIGN28411EnableLeavePagePromptRadminOption = default(string), string DssSIGN29182SlideUpBarRadminOption = default(string), string EmailTemplateVersion = default(string), SettingsMetadata EmailTemplateVersionMetadata = default(SettingsMetadata), string EnableAccessCodeGenerator = default(string), SettingsMetadata EnableAccessCodeGeneratorMetadata = default(SettingsMetadata), string EnableAccountWideSearch = default(string), SettingsMetadata EnableAccountWideSearchMetadata = default(SettingsMetadata), string EnableAdditionalAdvancedWebFormsFeatures = default(string), SettingsMetadata EnableAdditionalAdvancedWebFormsFeaturesMetadata = default(SettingsMetadata), string EnableAdmHealthcare = default(string), SettingsMetadata EnableAdmHealthcareMetadata = default(SettingsMetadata), string EnableAdvancedEnvelopesSearch = default(string), SettingsMetadata EnableAdvancedEnvelopesSearchMetadata = default(SettingsMetadata), string EnableAdvancedPayments = default(string), SettingsMetadata EnableAdvancedPaymentsMetadata = default(SettingsMetadata), string EnableAdvancedPowerForms = default(string), SettingsMetadata EnableAdvancedPowerFormsMetadata = default(SettingsMetadata), string EnableAdvancedSearch = default(string), SettingsMetadata EnableAdvancedSearchMetadata = default(SettingsMetadata), string EnableAgreementActionsForCLM = default(string), SettingsMetadata EnableAgreementActionsForCLMMetadata = default(SettingsMetadata), string EnableAgreementActionsForESign = default(string), SettingsMetadata EnableAgreementActionsForESignMetadata = default(SettingsMetadata), string EnableAIContractReview = default(string), SettingsMetadata EnableAIContractReviewMetadata = default(SettingsMetadata), string EnableAutoNav = default(string), SettingsMetadata EnableAutoNavMetadata = default(SettingsMetadata), string EnableBatchUpdateEnvelopeTypes = default(string), SettingsMetadata EnableBatchUpdateEnvelopeTypesMetadata = default(SettingsMetadata), string EnableBccDummyLink = default(string), SettingsMetadata EnableBccDummyLinkMetadata = default(SettingsMetadata), string EnableCalculatedFields = default(string), SettingsMetadata EnableCalculatedFieldsMetadata = default(SettingsMetadata), string EnableClickPlus = default(string), string EnableClickPlusConditionalContent = default(string), SettingsMetadata EnableClickPlusConditionalContentMetaData = default(SettingsMetadata), string EnableClickPlusCustomFields = default(string), SettingsMetadata EnableClickPlusCustomFieldsMetaData = default(SettingsMetadata), string EnableClickPlusCustomStyle = default(string), SettingsMetadata EnableClickPlusCustomStyleMetaData = default(SettingsMetadata), string EnableClickPlusDynamicContent = default(string), SettingsMetadata EnableClickPlusDynamicContentMetaData = default(SettingsMetadata), SettingsMetadata EnableClickPlusMetaData = default(SettingsMetadata), string EnableClickwraps = default(string), SettingsMetadata EnableClickwrapsMetadata = default(SettingsMetadata), string EnableCombinedPDFDownloadForSBS = default(string), string EnableCommentsHistoryDownloadInSigning = default(string), SettingsMetadata EnableCommentsHistoryDownloadInSigningMetadata = default(SettingsMetadata), string EnableContactSuggestions = default(string), SettingsMetadata EnableContactSuggestionsMetadata = default(SettingsMetadata), string EnableContentSearch = default(string), SettingsMetadata EnableContentSearchMetadata = default(SettingsMetadata), string EnableCoupaCore = default(string), SettingsMetadata EnableCoupaCoreMetaData = default(SettingsMetadata), string EnableCustomDataVerificationExtensions = default(string), SettingsMetadata EnableCustomDataVerificationExtensionsMetadata = default(SettingsMetadata), string EnableCustomerSatisfactionMetricTracking = default(string), SettingsMetadata EnableCustomerSatisfactionMetricTrackingMetadata = default(SettingsMetadata), string EnableDataVerificationExtensions = default(string), SettingsMetadata EnableDataVerificationExtensionsMetadata = default(SettingsMetadata), string EnableDocumentTemplateLibrary = default(string), SettingsMetadata EnableDocumentTemplateLibraryMetadata = default(SettingsMetadata), string EnableDSigEUAdvancedPens = default(string), SettingsMetadata EnableDSigEUAdvancedPensMetadata = default(SettingsMetadata), string EnableDSigExpressPens = default(string), SettingsMetadata EnableDSigExpressPensMetadata = default(SettingsMetadata), string EnableDSigIDCheckForAESPens = default(string), SettingsMetadata EnableDSigIDCheckForAESPensMetadata = default(SettingsMetadata), string EnableDSigIDCheckInPersonForQESPens = default(string), SettingsMetadata EnableDSigIDCheckInPersonForQESPensMetadata = default(SettingsMetadata), string EnableDSigIDCheckRemoteForQESPens = default(string), SettingsMetadata EnableDSigIDCheckRemoteForQESPensMetadata = default(SettingsMetadata), string EnableDSigIDVerificationPens = default(string), SettingsMetadata EnableDSigIDVerificationPensMetadata = default(SettingsMetadata), string EnableDSigIDVerificationPremierPens = default(string), SettingsMetadata EnableDSigIDVerificationPremierPensMetadata = default(SettingsMetadata), string EnableDSPro = default(string), SettingsMetadata EnableDSProMetadata = default(SettingsMetadata), SettingsMetadata EnableEnforceTlsEmailsSettingMetadata = default(SettingsMetadata), string EnableEnvelopeStampingByAccountAdmin = default(string), SettingsMetadata EnableEnvelopeStampingByAccountAdminMetadata = default(SettingsMetadata), string EnableEnvelopeStampingByDSAdmin = default(string), SettingsMetadata EnableEnvelopeStampingByDSAdminMetadata = default(SettingsMetadata), string EnableESignAPIHourlyLimitManagement = default(string), SettingsMetadata EnableESignAPIHourlyLimitManagementMetadata = default(SettingsMetadata), string EnableEsignCommunities = default(string), SettingsMetadata EnableEsignCommunitiesMetadata = default(SettingsMetadata), string EnableIDFxAccountlessSMSAuthForPart11 = default(string), SettingsMetadata EnableIDFxAccountlessSMSAuthForPart11Metadata = default(SettingsMetadata), string EnableIDFxIntuitKBA = default(string), SettingsMetadata EnableIDFxIntuitKBAMetadata = default(SettingsMetadata), string EnableIDFxPhoneAuthentication = default(string), SettingsMetadata EnableIDFxPhoneAuthenticationMetadata = default(SettingsMetadata), string EnableIdfxPhoneAuthSignatureAuthStatus = default(string), SettingsMetadata EnableIdfxPhoneAuthSignatureAuthStatusMetadata = default(SettingsMetadata), string EnableInboxBrowseViewsPoweredByElasticSearch = default(string), SettingsMetadata EnableInboxBrowseViewsPoweredByElasticSearchMetadata = default(SettingsMetadata), string EnableInboxRelevanceSort = default(string), SettingsMetadata EnableInboxRelevanceSortMetadata = default(SettingsMetadata), string EnableInBrowserEditor = default(string), SettingsMetadata EnableInBrowserEditorMetadata = default(SettingsMetadata), string EnableKeyTermsSuggestionsByDocumentType = default(string), SettingsMetadata EnableKeyTermsSuggestionsByDocumentTypeMetadata = default(SettingsMetadata), string EnableLargeFileSupport = default(string), SettingsMetadata EnableLargeFileSupportMetadata = default(SettingsMetadata), string EnableLegacySharedEnvelopes = default(string), SettingsMetadata EnableLegacySharedEnvelopesMetadata = default(SettingsMetadata), string EnableLicenseManagement = default(string), SettingsMetadata EnableLicenseManagementMetadata = default(SettingsMetadata), string EnableMultiUserRepositoryFeatures = default(string), SettingsMetadata EnableMultiUserRepositoryFeaturesMetadata = default(SettingsMetadata), string EnableNavigatorPartialIngestion = default(string), SettingsMetadata EnableNavigatorPartialIngestionMetadata = default(SettingsMetadata), string EnableNavigatorTrial = default(string), SettingsMetadata EnableNavigatorTrialMetadata = default(SettingsMetadata), string EnableObligationManagement = default(string), SettingsMetadata EnableObligationManagementMetadata = default(SettingsMetadata), SettingsMetadata EnableParticipantRecipientSettingMetadata = default(SettingsMetadata), string EnablePaymentProcessing = default(string), SettingsMetadata EnablePaymentProcessingMetadata = default(SettingsMetadata), string EnablePDFAConversion = default(string), SettingsMetadata EnablePDFAConversionMetadata = default(SettingsMetadata), string EnablePowerForm = default(string), string EnablePowerFormDirect = default(string), SettingsMetadata EnablePowerFormDirectMetadata = default(SettingsMetadata), SettingsMetadata EnablePowerFormMetadata = default(SettingsMetadata), string EnablePremiumDataVerificationExtensions = default(string), SettingsMetadata EnablePremiumDataVerificationExtensionsMetadata = default(SettingsMetadata), string EnableRecipientDomainValidation = default(string), SettingsMetadata EnableRecipientDomainValidationMetadata = default(SettingsMetadata), string EnableRecipientMayProvidePhoneNumber = default(string), SettingsMetadata EnableRecipientMayProvidePhoneNumberMetadata = default(SettingsMetadata), string EnableReportLinks = default(string), SettingsMetadata EnableReportLinksMetadata = default(SettingsMetadata), string EnableRequireSignOnPaper = default(string), SettingsMetadata EnableRequireSignOnPaperMetadata = default(SettingsMetadata), string EnableReservedDomain = default(string), SettingsMetadata EnableReservedDomainMetadata = default(SettingsMetadata), string EnableResponsiveSigning = default(string), SettingsMetadata EnableResponsiveSigningMetadata = default(SettingsMetadata), string EnableScheduledRelease = default(string), SettingsMetadata EnableScheduledReleaseMetadata = default(SettingsMetadata), string EnableSearchServiceAzureUri = default(string), SettingsMetadata EnableSearchServiceAzureUriMetadata = default(SettingsMetadata), string EnableSearchSiteSpecificApi = default(string), SettingsMetadata EnableSearchSiteSpecificApiMetadata = default(SettingsMetadata), string EnableSendingTagsFontSettings = default(string), SettingsMetadata EnableSendingTagsFontSettingsMetadata = default(SettingsMetadata), string EnableSendToAgent = default(string), SettingsMetadata EnableSendToAgentMetadata = default(SettingsMetadata), string EnableSendToIntermediary = default(string), SettingsMetadata EnableSendToIntermediaryMetadata = default(SettingsMetadata), string EnableSendToManage = default(string), SettingsMetadata EnableSendToManageMetadata = default(SettingsMetadata), string EnableSequentialSigningAPI = default(string), SettingsMetadata EnableSequentialSigningAPIMetadata = default(SettingsMetadata), string EnableSequentialSigningUI = default(string), SettingsMetadata EnableSequentialSigningUIMetadata = default(SettingsMetadata), string EnableSignerAttachments = default(string), SettingsMetadata EnableSignerAttachmentsMetadata = default(SettingsMetadata), string EnableSigningExtensionComments = default(string), SettingsMetadata EnableSigningExtensionCommentsMetadata = default(SettingsMetadata), string EnableSigningExtensionConversations = default(string), SettingsMetadata EnableSigningExtensionConversationsMetadata = default(SettingsMetadata), string EnableSigningGroupContinuePageSetting = default(string), SettingsMetadata EnableSigningGroupContinuePageSettingMetadata = default(SettingsMetadata), string EnableSigningOrderSettingsForAccount = default(string), SettingsMetadata EnableSigningOrderSettingsForAccountMetadata = default(SettingsMetadata), string EnableSignOnPaper = default(string), SettingsMetadata EnableSignOnPaperMetadata = default(SettingsMetadata), string EnableSignOnPaperOverride = default(string), SettingsMetadata EnableSignOnPaperOverrideMetadata = default(SettingsMetadata), string EnableSignWithNotary = default(string), SettingsMetadata EnableSignWithNotaryMetadata = default(SettingsMetadata), string EnableSmartContracts = default(string), SettingsMetadata EnableSmartContractsMetadata = default(SettingsMetadata), string EnableSMSAuthentication = default(string), SettingsMetadata EnableSMSAuthenticationMetadata = default(SettingsMetadata), string EnableSMSDeliveryAdditionalNotification = default(string), SettingsMetadata EnableSMSDeliveryAdditionalNotificationMetadata = default(SettingsMetadata), string EnableSMSDeliveryPrimary = default(string), string EnableSocialIdLogin = default(string), SettingsMetadata EnableSocialIdLoginMetadata = default(SettingsMetadata), string EnableStrikeThrough = default(string), SettingsMetadata EnableStrikeThroughMetadata = default(SettingsMetadata), string EnableTransactionPoint = default(string), SettingsMetadata EnableTransactionPointMetadata = default(SettingsMetadata), string EnableUnifiedRepository = default(string), SettingsMetadata EnableUnifiedRepositoryMetadata = default(SettingsMetadata), string EnableVaulting = default(string), SettingsMetadata EnableVaultingMetadata = default(SettingsMetadata), string EnableWebFormsRuntimeAPIs = default(string), SettingsMetadata EnableWebFormsRuntimeAPIsMetadata = default(SettingsMetadata), string EnableWebFormsSeparateUserPermissions = default(string), SettingsMetadata EnableWebFormsSeparateUserPermissionsMetadata = default(SettingsMetadata), string EnableWitnessing = default(string), SettingsMetadata EnableWitnessingMetadata = default(SettingsMetadata), string EnableWorkdayFinancialsExtension = default(string), SettingsMetadata EnableWorkdayFinancialsExtensionMetaData = default(SettingsMetadata), string EnforceTemplateNameUniqueness = default(string), SettingsMetadata EnforceTemplateNameUniquenessMetadata = default(SettingsMetadata), string EnforceTlsEmails = default(string), SettingsMetadata EnforceTlsEmailsMetadata = default(SettingsMetadata), string EnvelopeIntegrationAllowed = default(string), SettingsMetadata EnvelopeIntegrationAllowedMetadata = default(SettingsMetadata), string EnvelopeIntegrationEnabled = default(string), SettingsMetadata EnvelopeIntegrationEnabledMetadata = default(SettingsMetadata), string EnvelopeLimitsTotalDocumentSizeAllowedInMB = default(string), string EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled = default(string), SettingsMetadata EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata = default(SettingsMetadata), SettingsMetadata EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata = default(SettingsMetadata), string EnvelopeSearchMode = default(string), SettingsMetadata EnvelopeSearchModeMetadata = default(SettingsMetadata), string EnvelopeStampingDefaultValue = default(string), SettingsMetadata EnvelopeStampingDefaultValueMetadata = default(SettingsMetadata), string ExitPrompt = default(string), SettingsMetadata ExitPromptMetadata = default(SettingsMetadata), string ExpressSend = default(string), string ExpressSendAllowTabs = default(string), SettingsMetadata ExpressSendAllowTabsMetadata = default(SettingsMetadata), SettingsMetadata ExpressSendMetadata = default(SettingsMetadata), ExternalDocumentSources ExternalDocumentSources = default(ExternalDocumentSources), string ExternalSignaturePadType = default(string), SettingsMetadata ExternalSignaturePadTypeMetadata = default(SettingsMetadata), string FaxOutEnabled = default(string), SettingsMetadata FaxOutEnabledMetadata = default(SettingsMetadata), string FinishReminder = default(string), SettingsMetadata FinishReminderMetadata = default(SettingsMetadata), string ForbidAddingUserStamps = default(string), SettingsMetadata ForbidAddingUserStampsMetadata = default(SettingsMetadata), string GuidedFormsHtmlAllowed = default(string), SettingsMetadata GuidedFormsHtmlAllowedMetadata = default(SettingsMetadata), string GuidedFormsHtmlConversionPolicy = default(string), SettingsMetadata GuidedFormsHtmlConversionPolicyMetadata = default(SettingsMetadata), string HasRecipientConnectClaimedDomain = default(string), string HideAccountAddressInCoC = default(string), SettingsMetadata HideAccountAddressInCoCMetadata = default(SettingsMetadata), string HidePricing = default(string), SettingsMetadata HidePricingMetadata = default(SettingsMetadata), List<IdCheckConfiguration> IdCheckConfigurations = default(List<IdCheckConfiguration>), string IdCheckExpire = default(string), string IdCheckExpireDays = default(string), SettingsMetadata IdCheckExpireDaysMetadata = default(SettingsMetadata), SettingsMetadata IdCheckExpireMetadata = default(SettingsMetadata), string IdCheckExpireMinutes = default(string), SettingsMetadata IdCheckExpireMinutesMetadata = default(SettingsMetadata), string IdCheckRequired = default(string), SettingsMetadata IdCheckRequiredMetadata = default(SettingsMetadata), List<AccountIdentityVerificationWorkflow> IdentityVerification = default(List<AccountIdentityVerificationWorkflow>), SettingsMetadata IdentityVerificationMetadata = default(SettingsMetadata), string IdfxKBAAuthenticationOverride = default(string), SettingsMetadata IdfxKBAAuthenticationOverrideMetadata = default(SettingsMetadata), string IdfxPhoneAuthenticationOverride = default(string), SettingsMetadata IdfxPhoneAuthenticationOverrideMetadata = default(SettingsMetadata), string IgnoreErrorIfAnchorTabNotFound = default(string), SettingsMetadata IgnoreErrorIfAnchorTabNotFoundMetadataEnabled = default(SettingsMetadata), string InPersonIDCheckQuestion = default(string), SettingsMetadata InPersonIDCheckQuestionMetadata = default(SettingsMetadata), string InPersonSigningEnabled = default(string), SettingsMetadata InPersonSigningEnabledMetadata = default(SettingsMetadata), string InSessionEnabled = default(string), SettingsMetadata InSessionEnabledMetadata = default(SettingsMetadata), string InSessionSuppressEmails = default(string), SettingsMetadata InSessionSuppressEmailsMetadata = default(SettingsMetadata), string IsConnectDocumentFieldsEnabled = default(string), string IsvEmbed = default(string), SettingsMetadata IsvEmbedMetaData = default(SettingsMetadata), string IsvOemEmbed = default(string), SettingsMetadata IsvOemEmbedMetaData = default(SettingsMetadata), List<LinkedExternalPrimaryAccount> LinkedExternalPrimaryAccounts = default(List<LinkedExternalPrimaryAccount>), string MaximumSigningGroups = default(string), SettingsMetadata MaximumSigningGroupsMetadata = default(SettingsMetadata), string MaximumUsersPerSigningGroup = default(string), SettingsMetadata MaximumUsersPerSigningGroupMetadata = default(SettingsMetadata), string MaxNumberOfCustomStamps = default(string), string MergeMixedModeResults = default(string), SettingsMetadata MergeMixedModeResultsMetadata = default(SettingsMetadata), string MobileSessionTimeout = default(string), SettingsMetadata MobileSessionTimeoutMetadata = default(SettingsMetadata), string NumberOfActiveCustomStamps = default(string), string OptInMobileSigningV02 = default(string), SettingsMetadata OptInMobileSigningV02Metadata = default(SettingsMetadata), string OptInUniversalSignatures = default(string), string OptOutAutoNavTextAndTabColorUpdates = default(string), SettingsMetadata OptOutAutoNavTextAndTabColorUpdatesMetadata = default(SettingsMetadata), string OptOutNewPlatformSeal = default(string), SettingsMetadata OptOutNewPlatformSealPlatformMetadata = default(SettingsMetadata), string OriginalAccountSite = default(string), string ParticipantCopyOptOut = default(string), SettingsMetadata ParticipantCopyOptOutMetadata = default(SettingsMetadata), string PdfMaxChunkedUploadPartSize = default(string), SettingsMetadata PdfMaxChunkedUploadPartSizeMetadata = default(SettingsMetadata), string PdfMaxChunkedUploadTotalSize = default(string), SettingsMetadata PdfMaxChunkedUploadTotalSizeMetadata = default(SettingsMetadata), string PdfMaxIndividualUploadSize = default(string), SettingsMetadata PdfMaxIndividualUploadSizeMetadata = default(SettingsMetadata), string PhoneAuthRecipientMayProvidePhoneNumber = default(string), SettingsMetadata PhoneAuthRecipientMayProvidePhoneNumberMetadata = default(SettingsMetadata), string PkiSignDownloadedPDFDocs = default(string), SettingsMetadata PkiSignDownloadedPDFDocsMetadata = default(SettingsMetadata), string ReadOnlyMode = default(string), SettingsMetadata ReadOnlyModeMetadata = default(SettingsMetadata), string RecipientsCanSignOffline = default(string), SettingsMetadata RecipientsCanSignOfflineMetadata = default(SettingsMetadata), string RecipientSigningAutoNavigationControl = default(string), SettingsMetadata RecipientSigningAutoNavigationControlMetadata = default(SettingsMetadata), string RecycleBinEnvelopeRetention = default(string), SettingsMetadata RecycleBinEnvelopeRetentionMetadata = default(SettingsMetadata), string Require21CFRpt11Compliance = default(string), SettingsMetadata Require21CFRpt11ComplianceMetadata = default(SettingsMetadata), string RequireDeclineReason = default(string), SettingsMetadata RequireDeclineReasonMetadata = default(SettingsMetadata), string RequireExternalUserManagement = default(string), SettingsMetadata RequireExternalUserManagementMetadata = default(SettingsMetadata), string RequireSignerCertificateType = default(string), SettingsMetadata RequireSignerCertificateTypeMetadata = default(SettingsMetadata), string RsaVeridAccountName = default(string), string RsaVeridPassword = default(string), string RsaVeridRuleset = default(string), string RsaVeridUserId = default(string), string SelfSignedRecipientEmailDocument = default(string), SettingsMetadata SelfSignedRecipientEmailDocumentMetadata = default(SettingsMetadata), string SelfSignedRecipientEmailDocumentUserOverride = default(string), SettingsMetadata SelfSignedRecipientEmailDocumentUserOverrideMetadata = default(SettingsMetadata), string SenderCanSignInEachLocation = default(string), SettingsMetadata SenderCanSignInEachLocationMetadata = default(SettingsMetadata), string SenderMustAuthenticateSigning = default(string), SettingsMetadata SenderMustAuthenticateSigningMetadata = default(SettingsMetadata), string SendingTagsFontColor = default(string), SettingsMetadata SendingTagsFontColorMetadata = default(SettingsMetadata), string SendingTagsFontName = default(string), SettingsMetadata SendingTagsFontNameMetadata = default(SettingsMetadata), string SendingTagsFontSize = default(string), SettingsMetadata SendingTagsFontSizeMetadata = default(SettingsMetadata), string SendLockoutRecipientNotification = default(string), SettingsMetadata SendLockoutRecipientNotificationMetadata = default(SettingsMetadata), string SendToCertifiedDeliveryEnabled = default(string), SettingsMetadata SendToCertifiedDeliveryEnabledMetadata = default(SettingsMetadata), string SessionTimeout = default(string), SettingsMetadata SessionTimeoutMetadata = default(SettingsMetadata), string SetRecipEmailLang = default(string), SettingsMetadata SetRecipEmailLangMetadata = default(SettingsMetadata), string SetRecipSignLang = default(string), SettingsMetadata SetRecipSignLangMetadata = default(SettingsMetadata), string SharedTemplateFolders = default(string), SettingsMetadata SharedTemplateFoldersMetadata = default(SettingsMetadata), string ShowCompleteDialogInEmbeddedSession = default(string), SettingsMetadata ShowCompleteDialogInEmbeddedSessionMetadata = default(SettingsMetadata), string ShowConditionalRoutingOnSend = default(string), SettingsMetadata ShowConditionalRoutingOnSendMetadata = default(SettingsMetadata), string ShowInitialConditionalFields = default(string), SettingsMetadata ShowInitialConditionalFieldsMetadata = default(SettingsMetadata), string ShowLocalizedWatermarks = default(string), SettingsMetadata ShowLocalizedWatermarksMetadata = default(SettingsMetadata), string ShowMaskedFieldsWhenDownloadingDocumentAsSender = default(string), SettingsMetadata ShowMaskedFieldsWhenDownloadingDocumentAsSenderMetadata = default(SettingsMetadata), string ShowTutorials = default(string), SettingsMetadata ShowTutorialsMetadata = default(SettingsMetadata), List<string> SignatureProviders = default(List<string>), SettingsMetadata SignatureProvidersMetadata = default(SettingsMetadata), string SignDateFormat = default(string), SettingsMetadata SignDateFormatMetadata = default(SettingsMetadata), string SignDateTimeAccountLanguageOverride = default(string), SettingsMetadata SignDateTimeAccountLanguageOverrideMetadata = default(SettingsMetadata), string SignDateTimeAccountTimezoneOverride = default(string), SettingsMetadata SignDateTimeAccountTimezoneOverrideMetadata = default(SettingsMetadata), string SignerAttachCertificateToEnvelopePDF = default(string), SettingsMetadata SignerAttachCertificateToEnvelopePDFMetadata = default(SettingsMetadata), string SignerAttachConcat = default(string), SettingsMetadata SignerAttachConcatMetadata = default(SettingsMetadata), string SignerCanCreateAccount = default(string), SettingsMetadata SignerCanCreateAccountMetadata = default(SettingsMetadata), string SignerCanSignOnMobile = default(string), SettingsMetadata SignerCanSignOnMobileMetadata = default(SettingsMetadata), string SignerInSessionUseEnvelopeCompleteEmail = default(string), SettingsMetadata SignerInSessionUseEnvelopeCompleteEmailMetadata = default(SettingsMetadata), string SignerLoginRequirements = default(string), SettingsMetadata SignerLoginRequirementsMetadata = default(SettingsMetadata), string SignerMustHaveAccount = default(string), SettingsMetadata SignerMustHaveAccountMetadata = default(SettingsMetadata), string SignerMustLoginToSign = default(string), SettingsMetadata SignerMustLoginToSignMetadata = default(SettingsMetadata), string SignerShowSecureFieldInitialValues = default(string), SettingsMetadata SignerShowSecureFieldInitialValuesMetadata = default(SettingsMetadata), string SigningSessionTimeout = default(string), SettingsMetadata SigningSessionTimeoutMetadata = default(SettingsMetadata), string SigningUiVersion = default(string), SettingsMetadata SigningUiVersionMetadata = default(SettingsMetadata), string SignTimeFormat = default(string), SettingsMetadata SignTimeFormatMetadata = default(SettingsMetadata), string SignTimeShowAmPm = default(string), SettingsMetadata SignTimeShowAmPmMetadata = default(SettingsMetadata), string SimplifiedSendingEnabled = default(string), SettingsMetadata SimplifiedSendingEnabledMetadata = default(SettingsMetadata), string SingleSignOnEnabled = default(string), SettingsMetadata SingleSignOnEnabledMetadata = default(SettingsMetadata), string SkipAuthCompletedEnvelopes = default(string), SettingsMetadata SkipAuthCompletedEnvelopesMetadata = default(SettingsMetadata), string SocialIdRecipAuth = default(string), SettingsMetadata SocialIdRecipAuthMetadata = default(SettingsMetadata), string SpecifyDocumentVisibility = default(string), SettingsMetadata SpecifyDocumentVisibilityMetadata = default(SettingsMetadata), string StartInAdvancedCorrect = default(string), SettingsMetadata StartInAdvancedCorrectMetadata = default(SettingsMetadata), string SupplementalDocumentsMustAccept = default(string), SettingsMetadata SupplementalDocumentsMustAcceptMetadata = default(SettingsMetadata), string SupplementalDocumentsMustRead = default(string), SettingsMetadata SupplementalDocumentsMustReadMetadata = default(SettingsMetadata), string SupplementalDocumentsMustView = default(string), SettingsMetadata SupplementalDocumentsMustViewMetadata = default(SettingsMetadata), string SuppressCertificateEnforcement = default(string), SettingsMetadata SuppressCertificateEnforcementMetadata = default(SettingsMetadata), TabAccountSettings TabAccountSettings = default(TabAccountSettings), string TimezoneOffsetAPI = default(string), SettingsMetadata TimezoneOffsetAPIMetadata = default(SettingsMetadata), string TimezoneOffsetUI = default(string), SettingsMetadata TimezoneOffsetUIMetadata = default(SettingsMetadata), string UniversalSignatureOptIn = default(string), string UniversalSignatureSkipPlatformSignature = default(string), SettingsMetadata UniversalSignatureSkipPlatformSignatureMetadata = default(SettingsMetadata), string UseAccountLevelEmail = default(string), SettingsMetadata UseAccountLevelEmailMetadata = default(SettingsMetadata), string UseConsumerDisclosure = default(string), SettingsMetadata UseConsumerDisclosureMetadata = default(SettingsMetadata), string UseConsumerDisclosureWithinAccount = default(string), SettingsMetadata UseConsumerDisclosureWithinAccountMetadata = default(SettingsMetadata), string UseDerivedKeys = default(string), SettingsMetadata UseDerivedKeysMetadata = default(SettingsMetadata), string UseDocuSignExpressSignerCertificate = default(string), SettingsMetadata UseDocuSignExpressSignerCertificateMetadata = default(SettingsMetadata), string UseEnvelopeSearchMixedMode = default(string), SettingsMetadata UseEnvelopeSearchMixedModeMetadata = default(SettingsMetadata), string UseMultiAppGroupsData = default(string), SettingsMetadata UseMultiAppGroupsDataMetadata = default(SettingsMetadata), string UseNewBlobForPdf = default(string), SettingsMetadata UseNewBlobForPdfMetadata = default(SettingsMetadata), string UseNewEnvelopeSearch = default(string), SettingsMetadata UseNewEnvelopeSearchMetadata = default(SettingsMetadata), string UseNewEnvelopeSearchOnlyWhenSearchingAfterDate = default(string), SettingsMetadata UseNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata = default(SettingsMetadata), string UseNewEnvelopeSearchOnlyWithSearchTerm = default(string), SettingsMetadata UseNewEnvelopeSearchOnlyWithSearchTermMetadata = default(SettingsMetadata), string UseSAFESignerCertificates = default(string), SettingsMetadata UseSAFESignerCertificatesMetadata = default(SettingsMetadata), string UsesAPI = default(string), SettingsMetadata UsesAPIMetadata = default(SettingsMetadata), string UseSignatureProviderPlatform = default(string), SettingsMetadata UseSignatureProviderPlatformMetadata = default(SettingsMetadata), string UseSmartContractsV1 = default(string), string ValidationsAllowed = default(string), SettingsMetadata ValidationsAllowedMetadata = default(SettingsMetadata), string ValidationsBrand = default(string), SettingsMetadata ValidationsBrandMetadata = default(SettingsMetadata), string ValidationsCadence = default(string), SettingsMetadata ValidationsCadenceMetadata = default(SettingsMetadata), string ValidationsEnabled = default(string), SettingsMetadata ValidationsEnabledMetadata = default(SettingsMetadata), string ValidationsReport = default(string), SettingsMetadata ValidationsReportMetadata = default(SettingsMetadata), string WaterMarkEnabled = default(string), SettingsMetadata WaterMarkEnabledMetadata = default(SettingsMetadata), string WriteReminderToEnvelopeHistory = default(string), SettingsMetadata WriteReminderToEnvelopeHistoryMetadata = default(SettingsMetadata), string WurflMinAllowableScreenSize = default(string), SettingsMetadata WurflMinAllowableScreenSizeMetadata = default(SettingsMetadata))
         {
             this.AccessCodeFormat = AccessCodeFormat;
             this.AccountDateTimeFormat = AccountDateTimeFormat;
@@ -832,7 +865,9 @@ namespace DocuSign.eSign.Model
             this.AllowBulkSendMetadata = AllowBulkSendMetadata;
             this.AllowCDWithdraw = AllowCDWithdraw;
             this.AllowCDWithdrawMetadata = AllowCDWithdrawMetadata;
+            this.AllowConnectAuthoritativeCopyReadyEventUI = AllowConnectAuthoritativeCopyReadyEventUI;
             this.AllowConnectEnvelopeRemovedEvent = AllowConnectEnvelopeRemovedEvent;
+            this.AllowConnectExtensionUI = AllowConnectExtensionUI;
             this.AllowConnectHttpListenerConfigs = AllowConnectHttpListenerConfigs;
             this.AllowConnectIdentityVerificationUI = AllowConnectIdentityVerificationUI;
             this.AllowConnectOAuthUI = AllowConnectOAuthUI;
@@ -917,6 +952,8 @@ namespace DocuSign.eSign.Model
             this.AllowOcrOfEnvelopeDocumentsMetadata = AllowOcrOfEnvelopeDocumentsMetadata;
             this.AllowOfflineSigning = AllowOfflineSigning;
             this.AllowOfflineSigningMetadata = AllowOfflineSigningMetadata;
+            this.AllowOnlyStandaloneWebForms = AllowOnlyStandaloneWebForms;
+            this.AllowOnlyStandaloneWebFormsMetadata = AllowOnlyStandaloneWebFormsMetadata;
             this.AllowOpenTrustSignerCertificate = AllowOpenTrustSignerCertificate;
             this.AllowOpenTrustSignerCertificateMetadata = AllowOpenTrustSignerCertificateMetadata;
             this.AllowOrganizationBranding = AllowOrganizationBranding;
@@ -1054,6 +1091,7 @@ namespace DocuSign.eSign.Model
             this.CheckForMultipleAdminsOnAccountMetadata = CheckForMultipleAdminsOnAccountMetadata;
             this.ChromeSignatureEnabled = ChromeSignatureEnabled;
             this.ChromeSignatureEnabledMetadata = ChromeSignatureEnabledMetadata;
+            this.CloudReady = CloudReady;
             this.CommentEmailShowMessageText = CommentEmailShowMessageText;
             this.CommentEmailShowMessageTextMetadata = CommentEmailShowMessageTextMetadata;
             this.CommentsAllowEnvelopeOverride = CommentsAllowEnvelopeOverride;
@@ -1072,8 +1110,6 @@ namespace DocuSign.eSign.Model
             this.DefaultToAdvancedEnvelopesFilterFormMetadata = DefaultToAdvancedEnvelopesFilterFormMetadata;
             this.DisableAutoTemplateMatching = DisableAutoTemplateMatching;
             this.DisableAutoTemplateMatchingMetadata = DisableAutoTemplateMatchingMetadata;
-            this.DisableBulkSendRecipientLimit = DisableBulkSendRecipientLimit;
-            this.DisableBulkSendRecipientLimitMetaData = DisableBulkSendRecipientLimitMetaData;
             this.DisableMobileApp = DisableMobileApp;
             this.DisableMobileAppMetadata = DisableMobileAppMetadata;
             this.DisableMobilePushNotifications = DisableMobilePushNotifications;
@@ -1104,8 +1140,6 @@ namespace DocuSign.eSign.Model
             this.DocumentVisibilityMetadata = DocumentVisibilityMetadata;
             this.DraftEnvelopeRetention = DraftEnvelopeRetention;
             this.DraftEnvelopeRetentionMetadata = DraftEnvelopeRetentionMetadata;
-            this.DssEnableProvisioningPenConfigurationRadminOption = DssEnableProvisioningPenConfigurationRadminOption;
-            this.DssEnableSignatureTypeCustomTagRadminRadminOption = DssEnableSignatureTypeCustomTagRadminRadminOption;
             this.DssSCOREFDN196RebrandDocuSignIsNotAVerb = DssSCOREFDN196RebrandDocuSignIsNotAVerb;
             this.DssSIGN28411EnableLeavePagePromptRadminOption = DssSIGN28411EnableLeavePagePromptRadminOption;
             this.DssSIGN29182SlideUpBarRadminOption = DssSIGN29182SlideUpBarRadminOption;
@@ -1131,8 +1165,12 @@ namespace DocuSign.eSign.Model
             this.EnableAgreementActionsForCLMMetadata = EnableAgreementActionsForCLMMetadata;
             this.EnableAgreementActionsForESign = EnableAgreementActionsForESign;
             this.EnableAgreementActionsForESignMetadata = EnableAgreementActionsForESignMetadata;
+            this.EnableAIContractReview = EnableAIContractReview;
+            this.EnableAIContractReviewMetadata = EnableAIContractReviewMetadata;
             this.EnableAutoNav = EnableAutoNav;
             this.EnableAutoNavMetadata = EnableAutoNavMetadata;
+            this.EnableBatchUpdateEnvelopeTypes = EnableBatchUpdateEnvelopeTypes;
+            this.EnableBatchUpdateEnvelopeTypesMetadata = EnableBatchUpdateEnvelopeTypesMetadata;
             this.EnableBccDummyLink = EnableBccDummyLink;
             this.EnableBccDummyLinkMetadata = EnableBccDummyLinkMetadata;
             this.EnableCalculatedFields = EnableCalculatedFields;
@@ -1156,10 +1194,16 @@ namespace DocuSign.eSign.Model
             this.EnableContactSuggestionsMetadata = EnableContactSuggestionsMetadata;
             this.EnableContentSearch = EnableContentSearch;
             this.EnableContentSearchMetadata = EnableContentSearchMetadata;
+            this.EnableCoupaCore = EnableCoupaCore;
+            this.EnableCoupaCoreMetaData = EnableCoupaCoreMetaData;
+            this.EnableCustomDataVerificationExtensions = EnableCustomDataVerificationExtensions;
+            this.EnableCustomDataVerificationExtensionsMetadata = EnableCustomDataVerificationExtensionsMetadata;
             this.EnableCustomerSatisfactionMetricTracking = EnableCustomerSatisfactionMetricTracking;
             this.EnableCustomerSatisfactionMetricTrackingMetadata = EnableCustomerSatisfactionMetricTrackingMetadata;
             this.EnableDataVerificationExtensions = EnableDataVerificationExtensions;
             this.EnableDataVerificationExtensionsMetadata = EnableDataVerificationExtensionsMetadata;
+            this.EnableDocumentTemplateLibrary = EnableDocumentTemplateLibrary;
+            this.EnableDocumentTemplateLibraryMetadata = EnableDocumentTemplateLibraryMetadata;
             this.EnableDSigEUAdvancedPens = EnableDSigEUAdvancedPens;
             this.EnableDSigEUAdvancedPensMetadata = EnableDSigEUAdvancedPensMetadata;
             this.EnableDSigExpressPens = EnableDSigExpressPens;
@@ -1203,8 +1247,18 @@ namespace DocuSign.eSign.Model
             this.EnableKeyTermsSuggestionsByDocumentTypeMetadata = EnableKeyTermsSuggestionsByDocumentTypeMetadata;
             this.EnableLargeFileSupport = EnableLargeFileSupport;
             this.EnableLargeFileSupportMetadata = EnableLargeFileSupportMetadata;
+            this.EnableLegacySharedEnvelopes = EnableLegacySharedEnvelopes;
+            this.EnableLegacySharedEnvelopesMetadata = EnableLegacySharedEnvelopesMetadata;
+            this.EnableLicenseManagement = EnableLicenseManagement;
+            this.EnableLicenseManagementMetadata = EnableLicenseManagementMetadata;
             this.EnableMultiUserRepositoryFeatures = EnableMultiUserRepositoryFeatures;
             this.EnableMultiUserRepositoryFeaturesMetadata = EnableMultiUserRepositoryFeaturesMetadata;
+            this.EnableNavigatorPartialIngestion = EnableNavigatorPartialIngestion;
+            this.EnableNavigatorPartialIngestionMetadata = EnableNavigatorPartialIngestionMetadata;
+            this.EnableNavigatorTrial = EnableNavigatorTrial;
+            this.EnableNavigatorTrialMetadata = EnableNavigatorTrialMetadata;
+            this.EnableObligationManagement = EnableObligationManagement;
+            this.EnableObligationManagementMetadata = EnableObligationManagementMetadata;
             this.EnableParticipantRecipientSettingMetadata = EnableParticipantRecipientSettingMetadata;
             this.EnablePaymentProcessing = EnablePaymentProcessing;
             this.EnablePaymentProcessingMetadata = EnablePaymentProcessingMetadata;
@@ -1252,6 +1306,8 @@ namespace DocuSign.eSign.Model
             this.EnableSigningExtensionCommentsMetadata = EnableSigningExtensionCommentsMetadata;
             this.EnableSigningExtensionConversations = EnableSigningExtensionConversations;
             this.EnableSigningExtensionConversationsMetadata = EnableSigningExtensionConversationsMetadata;
+            this.EnableSigningGroupContinuePageSetting = EnableSigningGroupContinuePageSetting;
+            this.EnableSigningGroupContinuePageSettingMetadata = EnableSigningGroupContinuePageSettingMetadata;
             this.EnableSigningOrderSettingsForAccount = EnableSigningOrderSettingsForAccount;
             this.EnableSigningOrderSettingsForAccountMetadata = EnableSigningOrderSettingsForAccountMetadata;
             this.EnableSignOnPaper = EnableSignOnPaper;
@@ -1283,6 +1339,8 @@ namespace DocuSign.eSign.Model
             this.EnableWebFormsSeparateUserPermissionsMetadata = EnableWebFormsSeparateUserPermissionsMetadata;
             this.EnableWitnessing = EnableWitnessing;
             this.EnableWitnessingMetadata = EnableWitnessingMetadata;
+            this.EnableWorkdayFinancialsExtension = EnableWorkdayFinancialsExtension;
+            this.EnableWorkdayFinancialsExtensionMetaData = EnableWorkdayFinancialsExtensionMetaData;
             this.EnforceTemplateNameUniqueness = EnforceTemplateNameUniqueness;
             this.EnforceTemplateNameUniquenessMetadata = EnforceTemplateNameUniquenessMetadata;
             this.EnforceTlsEmails = EnforceTlsEmails;
@@ -1349,6 +1407,8 @@ namespace DocuSign.eSign.Model
             this.InSessionSuppressEmails = InSessionSuppressEmails;
             this.InSessionSuppressEmailsMetadata = InSessionSuppressEmailsMetadata;
             this.IsConnectDocumentFieldsEnabled = IsConnectDocumentFieldsEnabled;
+            this.IsvEmbed = IsvEmbed;
+            this.IsvEmbedMetaData = IsvEmbedMetaData;
             this.IsvOemEmbed = IsvOemEmbed;
             this.IsvOemEmbedMetaData = IsvOemEmbedMetaData;
             this.LinkedExternalPrimaryAccounts = LinkedExternalPrimaryAccounts;
@@ -1369,6 +1429,9 @@ namespace DocuSign.eSign.Model
             this.OptOutAutoNavTextAndTabColorUpdatesMetadata = OptOutAutoNavTextAndTabColorUpdatesMetadata;
             this.OptOutNewPlatformSeal = OptOutNewPlatformSeal;
             this.OptOutNewPlatformSealPlatformMetadata = OptOutNewPlatformSealPlatformMetadata;
+            this.OriginalAccountSite = OriginalAccountSite;
+            this.ParticipantCopyOptOut = ParticipantCopyOptOut;
+            this.ParticipantCopyOptOutMetadata = ParticipantCopyOptOutMetadata;
             this.PdfMaxChunkedUploadPartSize = PdfMaxChunkedUploadPartSize;
             this.PdfMaxChunkedUploadPartSizeMetadata = PdfMaxChunkedUploadPartSizeMetadata;
             this.PdfMaxChunkedUploadTotalSize = PdfMaxChunkedUploadTotalSize;
@@ -1385,6 +1448,8 @@ namespace DocuSign.eSign.Model
             this.RecipientsCanSignOfflineMetadata = RecipientsCanSignOfflineMetadata;
             this.RecipientSigningAutoNavigationControl = RecipientSigningAutoNavigationControl;
             this.RecipientSigningAutoNavigationControlMetadata = RecipientSigningAutoNavigationControlMetadata;
+            this.RecycleBinEnvelopeRetention = RecycleBinEnvelopeRetention;
+            this.RecycleBinEnvelopeRetentionMetadata = RecycleBinEnvelopeRetentionMetadata;
             this.Require21CFRpt11Compliance = Require21CFRpt11Compliance;
             this.Require21CFRpt11ComplianceMetadata = Require21CFRpt11ComplianceMetadata;
             this.RequireDeclineReason = RequireDeclineReason;
@@ -1397,7 +1462,6 @@ namespace DocuSign.eSign.Model
             this.RsaVeridPassword = RsaVeridPassword;
             this.RsaVeridRuleset = RsaVeridRuleset;
             this.RsaVeridUserId = RsaVeridUserId;
-            this.SbsTransactionLevel = SbsTransactionLevel;
             this.SelfSignedRecipientEmailDocument = SelfSignedRecipientEmailDocument;
             this.SelfSignedRecipientEmailDocumentMetadata = SelfSignedRecipientEmailDocumentMetadata;
             this.SelfSignedRecipientEmailDocumentUserOverride = SelfSignedRecipientEmailDocumentUserOverride;
@@ -1496,6 +1560,8 @@ namespace DocuSign.eSign.Model
             this.TimezoneOffsetUI = TimezoneOffsetUI;
             this.TimezoneOffsetUIMetadata = TimezoneOffsetUIMetadata;
             this.UniversalSignatureOptIn = UniversalSignatureOptIn;
+            this.UniversalSignatureSkipPlatformSignature = UniversalSignatureSkipPlatformSignature;
+            this.UniversalSignatureSkipPlatformSignatureMetadata = UniversalSignatureSkipPlatformSignatureMetadata;
             this.UseAccountLevelEmail = UseAccountLevelEmail;
             this.UseAccountLevelEmailMetadata = UseAccountLevelEmailMetadata;
             this.UseConsumerDisclosure = UseConsumerDisclosure;
@@ -1776,10 +1842,20 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowCDWithdrawMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowCDWithdrawMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets AllowConnectAuthoritativeCopyReadyEventUI
+        /// </summary>
+        [DataMember(Name="allowConnectAuthoritativeCopyReadyEventUI", EmitDefaultValue=false)]
+        public string AllowConnectAuthoritativeCopyReadyEventUI { get; set; }
+        /// <summary>
         /// Gets or Sets AllowConnectEnvelopeRemovedEvent
         /// </summary>
         [DataMember(Name="allowConnectEnvelopeRemovedEvent", EmitDefaultValue=false)]
         public string AllowConnectEnvelopeRemovedEvent { get; set; }
+        /// <summary>
+        /// Gets or Sets AllowConnectExtensionUI
+        /// </summary>
+        [DataMember(Name="allowConnectExtensionUI", EmitDefaultValue=false)]
+        public string AllowConnectExtensionUI { get; set; }
         /// <summary>
         /// Gets or Sets AllowConnectHttpListenerConfigs
         /// </summary>
@@ -2232,6 +2308,16 @@ namespace DocuSign.eSign.Model
         /// <value>Metadata that indicates whether the &#x60;allowOfflineSigning&#x60; property is editable. </value>
         [DataMember(Name="allowOfflineSigningMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowOfflineSigningMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets AllowOnlyStandaloneWebForms
+        /// </summary>
+        [DataMember(Name="allowOnlyStandaloneWebForms", EmitDefaultValue=false)]
+        public string AllowOnlyStandaloneWebForms { get; set; }
+        /// <summary>
+        /// Gets or Sets AllowOnlyStandaloneWebFormsMetadata
+        /// </summary>
+        [DataMember(Name="allowOnlyStandaloneWebFormsMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata AllowOnlyStandaloneWebFormsMetadata { get; set; }
         /// <summary>
         /// Gets or Sets AllowOpenTrustSignerCertificate
         /// </summary>
@@ -2963,6 +3049,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="chromeSignatureEnabledMetadata", EmitDefaultValue=false)]
         public SettingsMetadata ChromeSignatureEnabledMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets CloudReady
+        /// </summary>
+        [DataMember(Name="cloudReady", EmitDefaultValue=false)]
+        public string CloudReady { get; set; }
+        /// <summary>
         /// Gets or Sets CommentEmailShowMessageText
         /// </summary>
         [DataMember(Name="commentEmailShowMessageText", EmitDefaultValue=false)]
@@ -3058,16 +3149,6 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="disableAutoTemplateMatchingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DisableAutoTemplateMatchingMetadata { get; set; }
-        /// <summary>
-        /// Gets or Sets DisableBulkSendRecipientLimit
-        /// </summary>
-        [DataMember(Name="disableBulkSendRecipientLimit", EmitDefaultValue=false)]
-        public string DisableBulkSendRecipientLimit { get; set; }
-        /// <summary>
-        /// Gets or Sets DisableBulkSendRecipientLimitMetaData
-        /// </summary>
-        [DataMember(Name="disableBulkSendRecipientLimitMetaData", EmitDefaultValue=false)]
-        public SettingsMetadata DisableBulkSendRecipientLimitMetaData { get; set; }
         /// <summary>
         /// Gets or Sets DisableMobileApp
         /// </summary>
@@ -3233,16 +3314,6 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="draftEnvelopeRetentionMetadata", EmitDefaultValue=false)]
         public SettingsMetadata DraftEnvelopeRetentionMetadata { get; set; }
         /// <summary>
-        /// Gets or Sets DssEnableProvisioningPenConfigurationRadminOption
-        /// </summary>
-        [DataMember(Name="dss_EnableProvisioningPenConfiguration_RadminOption", EmitDefaultValue=false)]
-        public string DssEnableProvisioningPenConfigurationRadminOption { get; set; }
-        /// <summary>
-        /// Gets or Sets DssEnableSignatureTypeCustomTagRadminRadminOption
-        /// </summary>
-        [DataMember(Name="dss_EnableSignatureTypeCustomTagRadmin_RadminOption", EmitDefaultValue=false)]
-        public string DssEnableSignatureTypeCustomTagRadminRadminOption { get; set; }
-        /// <summary>
         /// Gets or Sets DssSCOREFDN196RebrandDocuSignIsNotAVerb
         /// </summary>
         [DataMember(Name="dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb", EmitDefaultValue=false)]
@@ -3374,6 +3445,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableAgreementActionsForESignMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableAgreementActionsForESignMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets EnableAIContractReview
+        /// </summary>
+        [DataMember(Name="enableAIContractReview", EmitDefaultValue=false)]
+        public string EnableAIContractReview { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableAIContractReviewMetadata
+        /// </summary>
+        [DataMember(Name="enableAIContractReviewMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableAIContractReviewMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets EnableAutoNav
         /// </summary>
         [DataMember(Name="enableAutoNav", EmitDefaultValue=false)]
@@ -3384,6 +3465,16 @@ namespace DocuSign.eSign.Model
         /// <value>Metadata that indicates whether the &#x60;enableAutoNav&#x60; property is editable. </value>
         [DataMember(Name="enableAutoNavMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableAutoNavMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableBatchUpdateEnvelopeTypes
+        /// </summary>
+        [DataMember(Name="enableBatchUpdateEnvelopeTypes", EmitDefaultValue=false)]
+        public string EnableBatchUpdateEnvelopeTypes { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableBatchUpdateEnvelopeTypesMetadata
+        /// </summary>
+        [DataMember(Name="enableBatchUpdateEnvelopeTypesMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableBatchUpdateEnvelopeTypesMetadata { get; set; }
         /// <summary>
         /// Gets or Sets EnableBccDummyLink
         /// </summary>
@@ -3502,6 +3593,26 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableContentSearchMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableContentSearchMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets EnableCoupaCore
+        /// </summary>
+        [DataMember(Name="enableCoupaCore", EmitDefaultValue=false)]
+        public string EnableCoupaCore { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableCoupaCoreMetaData
+        /// </summary>
+        [DataMember(Name="enableCoupaCoreMetaData", EmitDefaultValue=false)]
+        public SettingsMetadata EnableCoupaCoreMetaData { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableCustomDataVerificationExtensions
+        /// </summary>
+        [DataMember(Name="enableCustomDataVerificationExtensions", EmitDefaultValue=false)]
+        public string EnableCustomDataVerificationExtensions { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableCustomDataVerificationExtensionsMetadata
+        /// </summary>
+        [DataMember(Name="enableCustomDataVerificationExtensionsMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableCustomDataVerificationExtensionsMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets EnableCustomerSatisfactionMetricTracking
         /// </summary>
         [DataMember(Name="enableCustomerSatisfactionMetricTracking", EmitDefaultValue=false)]
@@ -3522,6 +3633,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="enableDataVerificationExtensionsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableDataVerificationExtensionsMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableDocumentTemplateLibrary
+        /// </summary>
+        [DataMember(Name="enableDocumentTemplateLibrary", EmitDefaultValue=false)]
+        public string EnableDocumentTemplateLibrary { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableDocumentTemplateLibraryMetadata
+        /// </summary>
+        [DataMember(Name="enableDocumentTemplateLibraryMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableDocumentTemplateLibraryMetadata { get; set; }
         /// <summary>
         /// Gets or Sets EnableDSigEUAdvancedPens
         /// </summary>
@@ -3741,6 +3862,26 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableLargeFileSupportMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableLargeFileSupportMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets EnableLegacySharedEnvelopes
+        /// </summary>
+        [DataMember(Name="enableLegacySharedEnvelopes", EmitDefaultValue=false)]
+        public string EnableLegacySharedEnvelopes { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableLegacySharedEnvelopesMetadata
+        /// </summary>
+        [DataMember(Name="enableLegacySharedEnvelopesMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableLegacySharedEnvelopesMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableLicenseManagement
+        /// </summary>
+        [DataMember(Name="enableLicenseManagement", EmitDefaultValue=false)]
+        public string EnableLicenseManagement { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableLicenseManagementMetadata
+        /// </summary>
+        [DataMember(Name="enableLicenseManagementMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableLicenseManagementMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets EnableMultiUserRepositoryFeatures
         /// </summary>
         [DataMember(Name="enableMultiUserRepositoryFeatures", EmitDefaultValue=false)]
@@ -3750,6 +3891,36 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="enableMultiUserRepositoryFeaturesMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableMultiUserRepositoryFeaturesMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableNavigatorPartialIngestion
+        /// </summary>
+        [DataMember(Name="enableNavigatorPartialIngestion", EmitDefaultValue=false)]
+        public string EnableNavigatorPartialIngestion { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableNavigatorPartialIngestionMetadata
+        /// </summary>
+        [DataMember(Name="enableNavigatorPartialIngestionMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableNavigatorPartialIngestionMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableNavigatorTrial
+        /// </summary>
+        [DataMember(Name="enableNavigatorTrial", EmitDefaultValue=false)]
+        public string EnableNavigatorTrial { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableNavigatorTrialMetadata
+        /// </summary>
+        [DataMember(Name="enableNavigatorTrialMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableNavigatorTrialMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableObligationManagement
+        /// </summary>
+        [DataMember(Name="enableObligationManagement", EmitDefaultValue=false)]
+        public string EnableObligationManagement { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableObligationManagementMetadata
+        /// </summary>
+        [DataMember(Name="enableObligationManagementMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableObligationManagementMetadata { get; set; }
         /// <summary>
         /// Gets or Sets EnableParticipantRecipientSettingMetadata
         /// </summary>
@@ -4004,6 +4175,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="enableSigningExtensionConversationsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableSigningExtensionConversationsMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets EnableSigningGroupContinuePageSetting
+        /// </summary>
+        [DataMember(Name="enableSigningGroupContinuePageSetting", EmitDefaultValue=false)]
+        public string EnableSigningGroupContinuePageSetting { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableSigningGroupContinuePageSettingMetadata
+        /// </summary>
+        [DataMember(Name="enableSigningGroupContinuePageSettingMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata EnableSigningGroupContinuePageSettingMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets EnableSigningOrderSettingsForAccount
         /// </summary>
         [DataMember(Name="enableSigningOrderSettingsForAccount", EmitDefaultValue=false)]
@@ -4169,6 +4350,16 @@ namespace DocuSign.eSign.Model
         /// <value>Metadata that indicates whether the &#x60;enableWitnessing&#x60; property is editable. </value>
         [DataMember(Name="enableWitnessingMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableWitnessingMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableWorkdayFinancialsExtension
+        /// </summary>
+        [DataMember(Name="enableWorkdayFinancialsExtension", EmitDefaultValue=false)]
+        public string EnableWorkdayFinancialsExtension { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableWorkdayFinancialsExtensionMetaData
+        /// </summary>
+        [DataMember(Name="enableWorkdayFinancialsExtensionMetaData", EmitDefaultValue=false)]
+        public SettingsMetadata EnableWorkdayFinancialsExtensionMetaData { get; set; }
         /// <summary>
         /// Gets or Sets EnforceTemplateNameUniqueness
         /// </summary>
@@ -4521,6 +4712,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="isConnectDocumentFieldsEnabled", EmitDefaultValue=false)]
         public string IsConnectDocumentFieldsEnabled { get; set; }
         /// <summary>
+        /// Gets or Sets IsvEmbed
+        /// </summary>
+        [DataMember(Name="isvEmbed", EmitDefaultValue=false)]
+        public string IsvEmbed { get; set; }
+        /// <summary>
+        /// Gets or Sets IsvEmbedMetaData
+        /// </summary>
+        [DataMember(Name="isvEmbedMetaData", EmitDefaultValue=false)]
+        public SettingsMetadata IsvEmbedMetaData { get; set; }
+        /// <summary>
         /// Gets or Sets IsvOemEmbed
         /// </summary>
         [DataMember(Name="isvOemEmbed", EmitDefaultValue=false)]
@@ -4627,6 +4828,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="optOutNewPlatformSealPlatformMetadata", EmitDefaultValue=false)]
         public SettingsMetadata OptOutNewPlatformSealPlatformMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets OriginalAccountSite
+        /// </summary>
+        [DataMember(Name="originalAccountSite", EmitDefaultValue=false)]
+        public string OriginalAccountSite { get; set; }
+        /// <summary>
+        /// Gets or Sets ParticipantCopyOptOut
+        /// </summary>
+        [DataMember(Name="participantCopyOptOut", EmitDefaultValue=false)]
+        public string ParticipantCopyOptOut { get; set; }
+        /// <summary>
+        /// Gets or Sets ParticipantCopyOptOutMetadata
+        /// </summary>
+        [DataMember(Name="participantCopyOptOutMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata ParticipantCopyOptOutMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets PdfMaxChunkedUploadPartSize
         /// </summary>
         [DataMember(Name="pdfMaxChunkedUploadPartSize", EmitDefaultValue=false)]
@@ -4711,6 +4927,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientSigningAutoNavigationControlMetadata", EmitDefaultValue=false)]
         public SettingsMetadata RecipientSigningAutoNavigationControlMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets RecycleBinEnvelopeRetention
+        /// </summary>
+        [DataMember(Name="recycleBinEnvelopeRetention", EmitDefaultValue=false)]
+        public string RecycleBinEnvelopeRetention { get; set; }
+        /// <summary>
+        /// Gets or Sets RecycleBinEnvelopeRetentionMetadata
+        /// </summary>
+        [DataMember(Name="recycleBinEnvelopeRetentionMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata RecycleBinEnvelopeRetentionMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets Require21CFRpt11Compliance
         /// </summary>
         [DataMember(Name="require21CFRpt11Compliance", EmitDefaultValue=false)]
@@ -4774,11 +5000,6 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="rsaVeridUserId", EmitDefaultValue=false)]
         public string RsaVeridUserId { get; set; }
-        /// <summary>
-        /// Gets or Sets SbsTransactionLevel
-        /// </summary>
-        [DataMember(Name="sbsTransactionLevel", EmitDefaultValue=false)]
-        public string SbsTransactionLevel { get; set; }
         /// <summary>
         /// Gets or Sets SelfSignedRecipientEmailDocument
         /// </summary>
@@ -5314,6 +5535,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="universalSignatureOptIn", EmitDefaultValue=false)]
         public string UniversalSignatureOptIn { get; set; }
         /// <summary>
+        /// Gets or Sets UniversalSignatureSkipPlatformSignature
+        /// </summary>
+        [DataMember(Name="universalSignatureSkipPlatformSignature", EmitDefaultValue=false)]
+        public string UniversalSignatureSkipPlatformSignature { get; set; }
+        /// <summary>
+        /// Gets or Sets UniversalSignatureSkipPlatformSignatureMetadata
+        /// </summary>
+        [DataMember(Name="universalSignatureSkipPlatformSignatureMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata UniversalSignatureSkipPlatformSignatureMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets UseAccountLevelEmail
         /// </summary>
         [DataMember(Name="useAccountLevelEmail", EmitDefaultValue=false)]
@@ -5606,7 +5837,9 @@ namespace DocuSign.eSign.Model
             sb.Append("  AllowBulkSendMetadata: ").Append(AllowBulkSendMetadata).Append("\n");
             sb.Append("  AllowCDWithdraw: ").Append(AllowCDWithdraw).Append("\n");
             sb.Append("  AllowCDWithdrawMetadata: ").Append(AllowCDWithdrawMetadata).Append("\n");
+            sb.Append("  AllowConnectAuthoritativeCopyReadyEventUI: ").Append(AllowConnectAuthoritativeCopyReadyEventUI).Append("\n");
             sb.Append("  AllowConnectEnvelopeRemovedEvent: ").Append(AllowConnectEnvelopeRemovedEvent).Append("\n");
+            sb.Append("  AllowConnectExtensionUI: ").Append(AllowConnectExtensionUI).Append("\n");
             sb.Append("  AllowConnectHttpListenerConfigs: ").Append(AllowConnectHttpListenerConfigs).Append("\n");
             sb.Append("  AllowConnectIdentityVerificationUI: ").Append(AllowConnectIdentityVerificationUI).Append("\n");
             sb.Append("  AllowConnectOAuthUI: ").Append(AllowConnectOAuthUI).Append("\n");
@@ -5691,6 +5924,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  AllowOcrOfEnvelopeDocumentsMetadata: ").Append(AllowOcrOfEnvelopeDocumentsMetadata).Append("\n");
             sb.Append("  AllowOfflineSigning: ").Append(AllowOfflineSigning).Append("\n");
             sb.Append("  AllowOfflineSigningMetadata: ").Append(AllowOfflineSigningMetadata).Append("\n");
+            sb.Append("  AllowOnlyStandaloneWebForms: ").Append(AllowOnlyStandaloneWebForms).Append("\n");
+            sb.Append("  AllowOnlyStandaloneWebFormsMetadata: ").Append(AllowOnlyStandaloneWebFormsMetadata).Append("\n");
             sb.Append("  AllowOpenTrustSignerCertificate: ").Append(AllowOpenTrustSignerCertificate).Append("\n");
             sb.Append("  AllowOpenTrustSignerCertificateMetadata: ").Append(AllowOpenTrustSignerCertificateMetadata).Append("\n");
             sb.Append("  AllowOrganizationBranding: ").Append(AllowOrganizationBranding).Append("\n");
@@ -5828,6 +6063,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  CheckForMultipleAdminsOnAccountMetadata: ").Append(CheckForMultipleAdminsOnAccountMetadata).Append("\n");
             sb.Append("  ChromeSignatureEnabled: ").Append(ChromeSignatureEnabled).Append("\n");
             sb.Append("  ChromeSignatureEnabledMetadata: ").Append(ChromeSignatureEnabledMetadata).Append("\n");
+            sb.Append("  CloudReady: ").Append(CloudReady).Append("\n");
             sb.Append("  CommentEmailShowMessageText: ").Append(CommentEmailShowMessageText).Append("\n");
             sb.Append("  CommentEmailShowMessageTextMetadata: ").Append(CommentEmailShowMessageTextMetadata).Append("\n");
             sb.Append("  CommentsAllowEnvelopeOverride: ").Append(CommentsAllowEnvelopeOverride).Append("\n");
@@ -5846,8 +6082,6 @@ namespace DocuSign.eSign.Model
             sb.Append("  DefaultToAdvancedEnvelopesFilterFormMetadata: ").Append(DefaultToAdvancedEnvelopesFilterFormMetadata).Append("\n");
             sb.Append("  DisableAutoTemplateMatching: ").Append(DisableAutoTemplateMatching).Append("\n");
             sb.Append("  DisableAutoTemplateMatchingMetadata: ").Append(DisableAutoTemplateMatchingMetadata).Append("\n");
-            sb.Append("  DisableBulkSendRecipientLimit: ").Append(DisableBulkSendRecipientLimit).Append("\n");
-            sb.Append("  DisableBulkSendRecipientLimitMetaData: ").Append(DisableBulkSendRecipientLimitMetaData).Append("\n");
             sb.Append("  DisableMobileApp: ").Append(DisableMobileApp).Append("\n");
             sb.Append("  DisableMobileAppMetadata: ").Append(DisableMobileAppMetadata).Append("\n");
             sb.Append("  DisableMobilePushNotifications: ").Append(DisableMobilePushNotifications).Append("\n");
@@ -5878,8 +6112,6 @@ namespace DocuSign.eSign.Model
             sb.Append("  DocumentVisibilityMetadata: ").Append(DocumentVisibilityMetadata).Append("\n");
             sb.Append("  DraftEnvelopeRetention: ").Append(DraftEnvelopeRetention).Append("\n");
             sb.Append("  DraftEnvelopeRetentionMetadata: ").Append(DraftEnvelopeRetentionMetadata).Append("\n");
-            sb.Append("  DssEnableProvisioningPenConfigurationRadminOption: ").Append(DssEnableProvisioningPenConfigurationRadminOption).Append("\n");
-            sb.Append("  DssEnableSignatureTypeCustomTagRadminRadminOption: ").Append(DssEnableSignatureTypeCustomTagRadminRadminOption).Append("\n");
             sb.Append("  DssSCOREFDN196RebrandDocuSignIsNotAVerb: ").Append(DssSCOREFDN196RebrandDocuSignIsNotAVerb).Append("\n");
             sb.Append("  DssSIGN28411EnableLeavePagePromptRadminOption: ").Append(DssSIGN28411EnableLeavePagePromptRadminOption).Append("\n");
             sb.Append("  DssSIGN29182SlideUpBarRadminOption: ").Append(DssSIGN29182SlideUpBarRadminOption).Append("\n");
@@ -5905,8 +6137,12 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnableAgreementActionsForCLMMetadata: ").Append(EnableAgreementActionsForCLMMetadata).Append("\n");
             sb.Append("  EnableAgreementActionsForESign: ").Append(EnableAgreementActionsForESign).Append("\n");
             sb.Append("  EnableAgreementActionsForESignMetadata: ").Append(EnableAgreementActionsForESignMetadata).Append("\n");
+            sb.Append("  EnableAIContractReview: ").Append(EnableAIContractReview).Append("\n");
+            sb.Append("  EnableAIContractReviewMetadata: ").Append(EnableAIContractReviewMetadata).Append("\n");
             sb.Append("  EnableAutoNav: ").Append(EnableAutoNav).Append("\n");
             sb.Append("  EnableAutoNavMetadata: ").Append(EnableAutoNavMetadata).Append("\n");
+            sb.Append("  EnableBatchUpdateEnvelopeTypes: ").Append(EnableBatchUpdateEnvelopeTypes).Append("\n");
+            sb.Append("  EnableBatchUpdateEnvelopeTypesMetadata: ").Append(EnableBatchUpdateEnvelopeTypesMetadata).Append("\n");
             sb.Append("  EnableBccDummyLink: ").Append(EnableBccDummyLink).Append("\n");
             sb.Append("  EnableBccDummyLinkMetadata: ").Append(EnableBccDummyLinkMetadata).Append("\n");
             sb.Append("  EnableCalculatedFields: ").Append(EnableCalculatedFields).Append("\n");
@@ -5930,10 +6166,16 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnableContactSuggestionsMetadata: ").Append(EnableContactSuggestionsMetadata).Append("\n");
             sb.Append("  EnableContentSearch: ").Append(EnableContentSearch).Append("\n");
             sb.Append("  EnableContentSearchMetadata: ").Append(EnableContentSearchMetadata).Append("\n");
+            sb.Append("  EnableCoupaCore: ").Append(EnableCoupaCore).Append("\n");
+            sb.Append("  EnableCoupaCoreMetaData: ").Append(EnableCoupaCoreMetaData).Append("\n");
+            sb.Append("  EnableCustomDataVerificationExtensions: ").Append(EnableCustomDataVerificationExtensions).Append("\n");
+            sb.Append("  EnableCustomDataVerificationExtensionsMetadata: ").Append(EnableCustomDataVerificationExtensionsMetadata).Append("\n");
             sb.Append("  EnableCustomerSatisfactionMetricTracking: ").Append(EnableCustomerSatisfactionMetricTracking).Append("\n");
             sb.Append("  EnableCustomerSatisfactionMetricTrackingMetadata: ").Append(EnableCustomerSatisfactionMetricTrackingMetadata).Append("\n");
             sb.Append("  EnableDataVerificationExtensions: ").Append(EnableDataVerificationExtensions).Append("\n");
             sb.Append("  EnableDataVerificationExtensionsMetadata: ").Append(EnableDataVerificationExtensionsMetadata).Append("\n");
+            sb.Append("  EnableDocumentTemplateLibrary: ").Append(EnableDocumentTemplateLibrary).Append("\n");
+            sb.Append("  EnableDocumentTemplateLibraryMetadata: ").Append(EnableDocumentTemplateLibraryMetadata).Append("\n");
             sb.Append("  EnableDSigEUAdvancedPens: ").Append(EnableDSigEUAdvancedPens).Append("\n");
             sb.Append("  EnableDSigEUAdvancedPensMetadata: ").Append(EnableDSigEUAdvancedPensMetadata).Append("\n");
             sb.Append("  EnableDSigExpressPens: ").Append(EnableDSigExpressPens).Append("\n");
@@ -5977,8 +6219,18 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnableKeyTermsSuggestionsByDocumentTypeMetadata: ").Append(EnableKeyTermsSuggestionsByDocumentTypeMetadata).Append("\n");
             sb.Append("  EnableLargeFileSupport: ").Append(EnableLargeFileSupport).Append("\n");
             sb.Append("  EnableLargeFileSupportMetadata: ").Append(EnableLargeFileSupportMetadata).Append("\n");
+            sb.Append("  EnableLegacySharedEnvelopes: ").Append(EnableLegacySharedEnvelopes).Append("\n");
+            sb.Append("  EnableLegacySharedEnvelopesMetadata: ").Append(EnableLegacySharedEnvelopesMetadata).Append("\n");
+            sb.Append("  EnableLicenseManagement: ").Append(EnableLicenseManagement).Append("\n");
+            sb.Append("  EnableLicenseManagementMetadata: ").Append(EnableLicenseManagementMetadata).Append("\n");
             sb.Append("  EnableMultiUserRepositoryFeatures: ").Append(EnableMultiUserRepositoryFeatures).Append("\n");
             sb.Append("  EnableMultiUserRepositoryFeaturesMetadata: ").Append(EnableMultiUserRepositoryFeaturesMetadata).Append("\n");
+            sb.Append("  EnableNavigatorPartialIngestion: ").Append(EnableNavigatorPartialIngestion).Append("\n");
+            sb.Append("  EnableNavigatorPartialIngestionMetadata: ").Append(EnableNavigatorPartialIngestionMetadata).Append("\n");
+            sb.Append("  EnableNavigatorTrial: ").Append(EnableNavigatorTrial).Append("\n");
+            sb.Append("  EnableNavigatorTrialMetadata: ").Append(EnableNavigatorTrialMetadata).Append("\n");
+            sb.Append("  EnableObligationManagement: ").Append(EnableObligationManagement).Append("\n");
+            sb.Append("  EnableObligationManagementMetadata: ").Append(EnableObligationManagementMetadata).Append("\n");
             sb.Append("  EnableParticipantRecipientSettingMetadata: ").Append(EnableParticipantRecipientSettingMetadata).Append("\n");
             sb.Append("  EnablePaymentProcessing: ").Append(EnablePaymentProcessing).Append("\n");
             sb.Append("  EnablePaymentProcessingMetadata: ").Append(EnablePaymentProcessingMetadata).Append("\n");
@@ -6026,6 +6278,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnableSigningExtensionCommentsMetadata: ").Append(EnableSigningExtensionCommentsMetadata).Append("\n");
             sb.Append("  EnableSigningExtensionConversations: ").Append(EnableSigningExtensionConversations).Append("\n");
             sb.Append("  EnableSigningExtensionConversationsMetadata: ").Append(EnableSigningExtensionConversationsMetadata).Append("\n");
+            sb.Append("  EnableSigningGroupContinuePageSetting: ").Append(EnableSigningGroupContinuePageSetting).Append("\n");
+            sb.Append("  EnableSigningGroupContinuePageSettingMetadata: ").Append(EnableSigningGroupContinuePageSettingMetadata).Append("\n");
             sb.Append("  EnableSigningOrderSettingsForAccount: ").Append(EnableSigningOrderSettingsForAccount).Append("\n");
             sb.Append("  EnableSigningOrderSettingsForAccountMetadata: ").Append(EnableSigningOrderSettingsForAccountMetadata).Append("\n");
             sb.Append("  EnableSignOnPaper: ").Append(EnableSignOnPaper).Append("\n");
@@ -6057,6 +6311,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnableWebFormsSeparateUserPermissionsMetadata: ").Append(EnableWebFormsSeparateUserPermissionsMetadata).Append("\n");
             sb.Append("  EnableWitnessing: ").Append(EnableWitnessing).Append("\n");
             sb.Append("  EnableWitnessingMetadata: ").Append(EnableWitnessingMetadata).Append("\n");
+            sb.Append("  EnableWorkdayFinancialsExtension: ").Append(EnableWorkdayFinancialsExtension).Append("\n");
+            sb.Append("  EnableWorkdayFinancialsExtensionMetaData: ").Append(EnableWorkdayFinancialsExtensionMetaData).Append("\n");
             sb.Append("  EnforceTemplateNameUniqueness: ").Append(EnforceTemplateNameUniqueness).Append("\n");
             sb.Append("  EnforceTemplateNameUniquenessMetadata: ").Append(EnforceTemplateNameUniquenessMetadata).Append("\n");
             sb.Append("  EnforceTlsEmails: ").Append(EnforceTlsEmails).Append("\n");
@@ -6123,6 +6379,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  InSessionSuppressEmails: ").Append(InSessionSuppressEmails).Append("\n");
             sb.Append("  InSessionSuppressEmailsMetadata: ").Append(InSessionSuppressEmailsMetadata).Append("\n");
             sb.Append("  IsConnectDocumentFieldsEnabled: ").Append(IsConnectDocumentFieldsEnabled).Append("\n");
+            sb.Append("  IsvEmbed: ").Append(IsvEmbed).Append("\n");
+            sb.Append("  IsvEmbedMetaData: ").Append(IsvEmbedMetaData).Append("\n");
             sb.Append("  IsvOemEmbed: ").Append(IsvOemEmbed).Append("\n");
             sb.Append("  IsvOemEmbedMetaData: ").Append(IsvOemEmbedMetaData).Append("\n");
             sb.Append("  LinkedExternalPrimaryAccounts: ").Append(LinkedExternalPrimaryAccounts).Append("\n");
@@ -6143,6 +6401,9 @@ namespace DocuSign.eSign.Model
             sb.Append("  OptOutAutoNavTextAndTabColorUpdatesMetadata: ").Append(OptOutAutoNavTextAndTabColorUpdatesMetadata).Append("\n");
             sb.Append("  OptOutNewPlatformSeal: ").Append(OptOutNewPlatformSeal).Append("\n");
             sb.Append("  OptOutNewPlatformSealPlatformMetadata: ").Append(OptOutNewPlatformSealPlatformMetadata).Append("\n");
+            sb.Append("  OriginalAccountSite: ").Append(OriginalAccountSite).Append("\n");
+            sb.Append("  ParticipantCopyOptOut: ").Append(ParticipantCopyOptOut).Append("\n");
+            sb.Append("  ParticipantCopyOptOutMetadata: ").Append(ParticipantCopyOptOutMetadata).Append("\n");
             sb.Append("  PdfMaxChunkedUploadPartSize: ").Append(PdfMaxChunkedUploadPartSize).Append("\n");
             sb.Append("  PdfMaxChunkedUploadPartSizeMetadata: ").Append(PdfMaxChunkedUploadPartSizeMetadata).Append("\n");
             sb.Append("  PdfMaxChunkedUploadTotalSize: ").Append(PdfMaxChunkedUploadTotalSize).Append("\n");
@@ -6159,6 +6420,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  RecipientsCanSignOfflineMetadata: ").Append(RecipientsCanSignOfflineMetadata).Append("\n");
             sb.Append("  RecipientSigningAutoNavigationControl: ").Append(RecipientSigningAutoNavigationControl).Append("\n");
             sb.Append("  RecipientSigningAutoNavigationControlMetadata: ").Append(RecipientSigningAutoNavigationControlMetadata).Append("\n");
+            sb.Append("  RecycleBinEnvelopeRetention: ").Append(RecycleBinEnvelopeRetention).Append("\n");
+            sb.Append("  RecycleBinEnvelopeRetentionMetadata: ").Append(RecycleBinEnvelopeRetentionMetadata).Append("\n");
             sb.Append("  Require21CFRpt11Compliance: ").Append(Require21CFRpt11Compliance).Append("\n");
             sb.Append("  Require21CFRpt11ComplianceMetadata: ").Append(Require21CFRpt11ComplianceMetadata).Append("\n");
             sb.Append("  RequireDeclineReason: ").Append(RequireDeclineReason).Append("\n");
@@ -6171,7 +6434,6 @@ namespace DocuSign.eSign.Model
             sb.Append("  RsaVeridPassword: ").Append(RsaVeridPassword).Append("\n");
             sb.Append("  RsaVeridRuleset: ").Append(RsaVeridRuleset).Append("\n");
             sb.Append("  RsaVeridUserId: ").Append(RsaVeridUserId).Append("\n");
-            sb.Append("  SbsTransactionLevel: ").Append(SbsTransactionLevel).Append("\n");
             sb.Append("  SelfSignedRecipientEmailDocument: ").Append(SelfSignedRecipientEmailDocument).Append("\n");
             sb.Append("  SelfSignedRecipientEmailDocumentMetadata: ").Append(SelfSignedRecipientEmailDocumentMetadata).Append("\n");
             sb.Append("  SelfSignedRecipientEmailDocumentUserOverride: ").Append(SelfSignedRecipientEmailDocumentUserOverride).Append("\n");
@@ -6270,6 +6532,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  TimezoneOffsetUI: ").Append(TimezoneOffsetUI).Append("\n");
             sb.Append("  TimezoneOffsetUIMetadata: ").Append(TimezoneOffsetUIMetadata).Append("\n");
             sb.Append("  UniversalSignatureOptIn: ").Append(UniversalSignatureOptIn).Append("\n");
+            sb.Append("  UniversalSignatureSkipPlatformSignature: ").Append(UniversalSignatureSkipPlatformSignature).Append("\n");
+            sb.Append("  UniversalSignatureSkipPlatformSignatureMetadata: ").Append(UniversalSignatureSkipPlatformSignatureMetadata).Append("\n");
             sb.Append("  UseAccountLevelEmail: ").Append(UseAccountLevelEmail).Append("\n");
             sb.Append("  UseAccountLevelEmailMetadata: ").Append(UseAccountLevelEmailMetadata).Append("\n");
             sb.Append("  UseConsumerDisclosure: ").Append(UseConsumerDisclosure).Append("\n");
@@ -6567,9 +6831,19 @@ namespace DocuSign.eSign.Model
                     this.AllowCDWithdrawMetadata.Equals(other.AllowCDWithdrawMetadata)
                 ) && 
                 (
+                    this.AllowConnectAuthoritativeCopyReadyEventUI == other.AllowConnectAuthoritativeCopyReadyEventUI ||
+                    this.AllowConnectAuthoritativeCopyReadyEventUI != null &&
+                    this.AllowConnectAuthoritativeCopyReadyEventUI.Equals(other.AllowConnectAuthoritativeCopyReadyEventUI)
+                ) && 
+                (
                     this.AllowConnectEnvelopeRemovedEvent == other.AllowConnectEnvelopeRemovedEvent ||
                     this.AllowConnectEnvelopeRemovedEvent != null &&
                     this.AllowConnectEnvelopeRemovedEvent.Equals(other.AllowConnectEnvelopeRemovedEvent)
+                ) && 
+                (
+                    this.AllowConnectExtensionUI == other.AllowConnectExtensionUI ||
+                    this.AllowConnectExtensionUI != null &&
+                    this.AllowConnectExtensionUI.Equals(other.AllowConnectExtensionUI)
                 ) && 
                 (
                     this.AllowConnectHttpListenerConfigs == other.AllowConnectHttpListenerConfigs ||
@@ -6990,6 +7264,16 @@ namespace DocuSign.eSign.Model
                     this.AllowOfflineSigningMetadata == other.AllowOfflineSigningMetadata ||
                     this.AllowOfflineSigningMetadata != null &&
                     this.AllowOfflineSigningMetadata.Equals(other.AllowOfflineSigningMetadata)
+                ) && 
+                (
+                    this.AllowOnlyStandaloneWebForms == other.AllowOnlyStandaloneWebForms ||
+                    this.AllowOnlyStandaloneWebForms != null &&
+                    this.AllowOnlyStandaloneWebForms.Equals(other.AllowOnlyStandaloneWebForms)
+                ) && 
+                (
+                    this.AllowOnlyStandaloneWebFormsMetadata == other.AllowOnlyStandaloneWebFormsMetadata ||
+                    this.AllowOnlyStandaloneWebFormsMetadata != null &&
+                    this.AllowOnlyStandaloneWebFormsMetadata.Equals(other.AllowOnlyStandaloneWebFormsMetadata)
                 ) && 
                 (
                     this.AllowOpenTrustSignerCertificate == other.AllowOpenTrustSignerCertificate ||
@@ -7677,6 +7961,11 @@ namespace DocuSign.eSign.Model
                     this.ChromeSignatureEnabledMetadata.Equals(other.ChromeSignatureEnabledMetadata)
                 ) && 
                 (
+                    this.CloudReady == other.CloudReady ||
+                    this.CloudReady != null &&
+                    this.CloudReady.Equals(other.CloudReady)
+                ) && 
+                (
                     this.CommentEmailShowMessageText == other.CommentEmailShowMessageText ||
                     this.CommentEmailShowMessageText != null &&
                     this.CommentEmailShowMessageText.Equals(other.CommentEmailShowMessageText)
@@ -7765,16 +8054,6 @@ namespace DocuSign.eSign.Model
                     this.DisableAutoTemplateMatchingMetadata == other.DisableAutoTemplateMatchingMetadata ||
                     this.DisableAutoTemplateMatchingMetadata != null &&
                     this.DisableAutoTemplateMatchingMetadata.Equals(other.DisableAutoTemplateMatchingMetadata)
-                ) && 
-                (
-                    this.DisableBulkSendRecipientLimit == other.DisableBulkSendRecipientLimit ||
-                    this.DisableBulkSendRecipientLimit != null &&
-                    this.DisableBulkSendRecipientLimit.Equals(other.DisableBulkSendRecipientLimit)
-                ) && 
-                (
-                    this.DisableBulkSendRecipientLimitMetaData == other.DisableBulkSendRecipientLimitMetaData ||
-                    this.DisableBulkSendRecipientLimitMetaData != null &&
-                    this.DisableBulkSendRecipientLimitMetaData.Equals(other.DisableBulkSendRecipientLimitMetaData)
                 ) && 
                 (
                     this.DisableMobileApp == other.DisableMobileApp ||
@@ -7927,16 +8206,6 @@ namespace DocuSign.eSign.Model
                     this.DraftEnvelopeRetentionMetadata.Equals(other.DraftEnvelopeRetentionMetadata)
                 ) && 
                 (
-                    this.DssEnableProvisioningPenConfigurationRadminOption == other.DssEnableProvisioningPenConfigurationRadminOption ||
-                    this.DssEnableProvisioningPenConfigurationRadminOption != null &&
-                    this.DssEnableProvisioningPenConfigurationRadminOption.Equals(other.DssEnableProvisioningPenConfigurationRadminOption)
-                ) && 
-                (
-                    this.DssEnableSignatureTypeCustomTagRadminRadminOption == other.DssEnableSignatureTypeCustomTagRadminRadminOption ||
-                    this.DssEnableSignatureTypeCustomTagRadminRadminOption != null &&
-                    this.DssEnableSignatureTypeCustomTagRadminRadminOption.Equals(other.DssEnableSignatureTypeCustomTagRadminRadminOption)
-                ) && 
-                (
                     this.DssSCOREFDN196RebrandDocuSignIsNotAVerb == other.DssSCOREFDN196RebrandDocuSignIsNotAVerb ||
                     this.DssSCOREFDN196RebrandDocuSignIsNotAVerb != null &&
                     this.DssSCOREFDN196RebrandDocuSignIsNotAVerb.Equals(other.DssSCOREFDN196RebrandDocuSignIsNotAVerb)
@@ -8062,6 +8331,16 @@ namespace DocuSign.eSign.Model
                     this.EnableAgreementActionsForESignMetadata.Equals(other.EnableAgreementActionsForESignMetadata)
                 ) && 
                 (
+                    this.EnableAIContractReview == other.EnableAIContractReview ||
+                    this.EnableAIContractReview != null &&
+                    this.EnableAIContractReview.Equals(other.EnableAIContractReview)
+                ) && 
+                (
+                    this.EnableAIContractReviewMetadata == other.EnableAIContractReviewMetadata ||
+                    this.EnableAIContractReviewMetadata != null &&
+                    this.EnableAIContractReviewMetadata.Equals(other.EnableAIContractReviewMetadata)
+                ) && 
+                (
                     this.EnableAutoNav == other.EnableAutoNav ||
                     this.EnableAutoNav != null &&
                     this.EnableAutoNav.Equals(other.EnableAutoNav)
@@ -8070,6 +8349,16 @@ namespace DocuSign.eSign.Model
                     this.EnableAutoNavMetadata == other.EnableAutoNavMetadata ||
                     this.EnableAutoNavMetadata != null &&
                     this.EnableAutoNavMetadata.Equals(other.EnableAutoNavMetadata)
+                ) && 
+                (
+                    this.EnableBatchUpdateEnvelopeTypes == other.EnableBatchUpdateEnvelopeTypes ||
+                    this.EnableBatchUpdateEnvelopeTypes != null &&
+                    this.EnableBatchUpdateEnvelopeTypes.Equals(other.EnableBatchUpdateEnvelopeTypes)
+                ) && 
+                (
+                    this.EnableBatchUpdateEnvelopeTypesMetadata == other.EnableBatchUpdateEnvelopeTypesMetadata ||
+                    this.EnableBatchUpdateEnvelopeTypesMetadata != null &&
+                    this.EnableBatchUpdateEnvelopeTypesMetadata.Equals(other.EnableBatchUpdateEnvelopeTypesMetadata)
                 ) && 
                 (
                     this.EnableBccDummyLink == other.EnableBccDummyLink ||
@@ -8187,6 +8476,26 @@ namespace DocuSign.eSign.Model
                     this.EnableContentSearchMetadata.Equals(other.EnableContentSearchMetadata)
                 ) && 
                 (
+                    this.EnableCoupaCore == other.EnableCoupaCore ||
+                    this.EnableCoupaCore != null &&
+                    this.EnableCoupaCore.Equals(other.EnableCoupaCore)
+                ) && 
+                (
+                    this.EnableCoupaCoreMetaData == other.EnableCoupaCoreMetaData ||
+                    this.EnableCoupaCoreMetaData != null &&
+                    this.EnableCoupaCoreMetaData.Equals(other.EnableCoupaCoreMetaData)
+                ) && 
+                (
+                    this.EnableCustomDataVerificationExtensions == other.EnableCustomDataVerificationExtensions ||
+                    this.EnableCustomDataVerificationExtensions != null &&
+                    this.EnableCustomDataVerificationExtensions.Equals(other.EnableCustomDataVerificationExtensions)
+                ) && 
+                (
+                    this.EnableCustomDataVerificationExtensionsMetadata == other.EnableCustomDataVerificationExtensionsMetadata ||
+                    this.EnableCustomDataVerificationExtensionsMetadata != null &&
+                    this.EnableCustomDataVerificationExtensionsMetadata.Equals(other.EnableCustomDataVerificationExtensionsMetadata)
+                ) && 
+                (
                     this.EnableCustomerSatisfactionMetricTracking == other.EnableCustomerSatisfactionMetricTracking ||
                     this.EnableCustomerSatisfactionMetricTracking != null &&
                     this.EnableCustomerSatisfactionMetricTracking.Equals(other.EnableCustomerSatisfactionMetricTracking)
@@ -8205,6 +8514,16 @@ namespace DocuSign.eSign.Model
                     this.EnableDataVerificationExtensionsMetadata == other.EnableDataVerificationExtensionsMetadata ||
                     this.EnableDataVerificationExtensionsMetadata != null &&
                     this.EnableDataVerificationExtensionsMetadata.Equals(other.EnableDataVerificationExtensionsMetadata)
+                ) && 
+                (
+                    this.EnableDocumentTemplateLibrary == other.EnableDocumentTemplateLibrary ||
+                    this.EnableDocumentTemplateLibrary != null &&
+                    this.EnableDocumentTemplateLibrary.Equals(other.EnableDocumentTemplateLibrary)
+                ) && 
+                (
+                    this.EnableDocumentTemplateLibraryMetadata == other.EnableDocumentTemplateLibraryMetadata ||
+                    this.EnableDocumentTemplateLibraryMetadata != null &&
+                    this.EnableDocumentTemplateLibraryMetadata.Equals(other.EnableDocumentTemplateLibraryMetadata)
                 ) && 
                 (
                     this.EnableDSigEUAdvancedPens == other.EnableDSigEUAdvancedPens ||
@@ -8422,6 +8741,26 @@ namespace DocuSign.eSign.Model
                     this.EnableLargeFileSupportMetadata.Equals(other.EnableLargeFileSupportMetadata)
                 ) && 
                 (
+                    this.EnableLegacySharedEnvelopes == other.EnableLegacySharedEnvelopes ||
+                    this.EnableLegacySharedEnvelopes != null &&
+                    this.EnableLegacySharedEnvelopes.Equals(other.EnableLegacySharedEnvelopes)
+                ) && 
+                (
+                    this.EnableLegacySharedEnvelopesMetadata == other.EnableLegacySharedEnvelopesMetadata ||
+                    this.EnableLegacySharedEnvelopesMetadata != null &&
+                    this.EnableLegacySharedEnvelopesMetadata.Equals(other.EnableLegacySharedEnvelopesMetadata)
+                ) && 
+                (
+                    this.EnableLicenseManagement == other.EnableLicenseManagement ||
+                    this.EnableLicenseManagement != null &&
+                    this.EnableLicenseManagement.Equals(other.EnableLicenseManagement)
+                ) && 
+                (
+                    this.EnableLicenseManagementMetadata == other.EnableLicenseManagementMetadata ||
+                    this.EnableLicenseManagementMetadata != null &&
+                    this.EnableLicenseManagementMetadata.Equals(other.EnableLicenseManagementMetadata)
+                ) && 
+                (
                     this.EnableMultiUserRepositoryFeatures == other.EnableMultiUserRepositoryFeatures ||
                     this.EnableMultiUserRepositoryFeatures != null &&
                     this.EnableMultiUserRepositoryFeatures.Equals(other.EnableMultiUserRepositoryFeatures)
@@ -8430,6 +8769,36 @@ namespace DocuSign.eSign.Model
                     this.EnableMultiUserRepositoryFeaturesMetadata == other.EnableMultiUserRepositoryFeaturesMetadata ||
                     this.EnableMultiUserRepositoryFeaturesMetadata != null &&
                     this.EnableMultiUserRepositoryFeaturesMetadata.Equals(other.EnableMultiUserRepositoryFeaturesMetadata)
+                ) && 
+                (
+                    this.EnableNavigatorPartialIngestion == other.EnableNavigatorPartialIngestion ||
+                    this.EnableNavigatorPartialIngestion != null &&
+                    this.EnableNavigatorPartialIngestion.Equals(other.EnableNavigatorPartialIngestion)
+                ) && 
+                (
+                    this.EnableNavigatorPartialIngestionMetadata == other.EnableNavigatorPartialIngestionMetadata ||
+                    this.EnableNavigatorPartialIngestionMetadata != null &&
+                    this.EnableNavigatorPartialIngestionMetadata.Equals(other.EnableNavigatorPartialIngestionMetadata)
+                ) && 
+                (
+                    this.EnableNavigatorTrial == other.EnableNavigatorTrial ||
+                    this.EnableNavigatorTrial != null &&
+                    this.EnableNavigatorTrial.Equals(other.EnableNavigatorTrial)
+                ) && 
+                (
+                    this.EnableNavigatorTrialMetadata == other.EnableNavigatorTrialMetadata ||
+                    this.EnableNavigatorTrialMetadata != null &&
+                    this.EnableNavigatorTrialMetadata.Equals(other.EnableNavigatorTrialMetadata)
+                ) && 
+                (
+                    this.EnableObligationManagement == other.EnableObligationManagement ||
+                    this.EnableObligationManagement != null &&
+                    this.EnableObligationManagement.Equals(other.EnableObligationManagement)
+                ) && 
+                (
+                    this.EnableObligationManagementMetadata == other.EnableObligationManagementMetadata ||
+                    this.EnableObligationManagementMetadata != null &&
+                    this.EnableObligationManagementMetadata.Equals(other.EnableObligationManagementMetadata)
                 ) && 
                 (
                     this.EnableParticipantRecipientSettingMetadata == other.EnableParticipantRecipientSettingMetadata ||
@@ -8667,6 +9036,16 @@ namespace DocuSign.eSign.Model
                     this.EnableSigningExtensionConversationsMetadata.Equals(other.EnableSigningExtensionConversationsMetadata)
                 ) && 
                 (
+                    this.EnableSigningGroupContinuePageSetting == other.EnableSigningGroupContinuePageSetting ||
+                    this.EnableSigningGroupContinuePageSetting != null &&
+                    this.EnableSigningGroupContinuePageSetting.Equals(other.EnableSigningGroupContinuePageSetting)
+                ) && 
+                (
+                    this.EnableSigningGroupContinuePageSettingMetadata == other.EnableSigningGroupContinuePageSettingMetadata ||
+                    this.EnableSigningGroupContinuePageSettingMetadata != null &&
+                    this.EnableSigningGroupContinuePageSettingMetadata.Equals(other.EnableSigningGroupContinuePageSettingMetadata)
+                ) && 
+                (
                     this.EnableSigningOrderSettingsForAccount == other.EnableSigningOrderSettingsForAccount ||
                     this.EnableSigningOrderSettingsForAccount != null &&
                     this.EnableSigningOrderSettingsForAccount.Equals(other.EnableSigningOrderSettingsForAccount)
@@ -8820,6 +9199,16 @@ namespace DocuSign.eSign.Model
                     this.EnableWitnessingMetadata == other.EnableWitnessingMetadata ||
                     this.EnableWitnessingMetadata != null &&
                     this.EnableWitnessingMetadata.Equals(other.EnableWitnessingMetadata)
+                ) && 
+                (
+                    this.EnableWorkdayFinancialsExtension == other.EnableWorkdayFinancialsExtension ||
+                    this.EnableWorkdayFinancialsExtension != null &&
+                    this.EnableWorkdayFinancialsExtension.Equals(other.EnableWorkdayFinancialsExtension)
+                ) && 
+                (
+                    this.EnableWorkdayFinancialsExtensionMetaData == other.EnableWorkdayFinancialsExtensionMetaData ||
+                    this.EnableWorkdayFinancialsExtensionMetaData != null &&
+                    this.EnableWorkdayFinancialsExtensionMetaData.Equals(other.EnableWorkdayFinancialsExtensionMetaData)
                 ) && 
                 (
                     this.EnforceTemplateNameUniqueness == other.EnforceTemplateNameUniqueness ||
@@ -9152,6 +9541,16 @@ namespace DocuSign.eSign.Model
                     this.IsConnectDocumentFieldsEnabled.Equals(other.IsConnectDocumentFieldsEnabled)
                 ) && 
                 (
+                    this.IsvEmbed == other.IsvEmbed ||
+                    this.IsvEmbed != null &&
+                    this.IsvEmbed.Equals(other.IsvEmbed)
+                ) && 
+                (
+                    this.IsvEmbedMetaData == other.IsvEmbedMetaData ||
+                    this.IsvEmbedMetaData != null &&
+                    this.IsvEmbedMetaData.Equals(other.IsvEmbedMetaData)
+                ) && 
+                (
                     this.IsvOemEmbed == other.IsvOemEmbed ||
                     this.IsvOemEmbed != null &&
                     this.IsvOemEmbed.Equals(other.IsvOemEmbed)
@@ -9252,6 +9651,21 @@ namespace DocuSign.eSign.Model
                     this.OptOutNewPlatformSealPlatformMetadata.Equals(other.OptOutNewPlatformSealPlatformMetadata)
                 ) && 
                 (
+                    this.OriginalAccountSite == other.OriginalAccountSite ||
+                    this.OriginalAccountSite != null &&
+                    this.OriginalAccountSite.Equals(other.OriginalAccountSite)
+                ) && 
+                (
+                    this.ParticipantCopyOptOut == other.ParticipantCopyOptOut ||
+                    this.ParticipantCopyOptOut != null &&
+                    this.ParticipantCopyOptOut.Equals(other.ParticipantCopyOptOut)
+                ) && 
+                (
+                    this.ParticipantCopyOptOutMetadata == other.ParticipantCopyOptOutMetadata ||
+                    this.ParticipantCopyOptOutMetadata != null &&
+                    this.ParticipantCopyOptOutMetadata.Equals(other.ParticipantCopyOptOutMetadata)
+                ) && 
+                (
                     this.PdfMaxChunkedUploadPartSize == other.PdfMaxChunkedUploadPartSize ||
                     this.PdfMaxChunkedUploadPartSize != null &&
                     this.PdfMaxChunkedUploadPartSize.Equals(other.PdfMaxChunkedUploadPartSize)
@@ -9332,6 +9746,16 @@ namespace DocuSign.eSign.Model
                     this.RecipientSigningAutoNavigationControlMetadata.Equals(other.RecipientSigningAutoNavigationControlMetadata)
                 ) && 
                 (
+                    this.RecycleBinEnvelopeRetention == other.RecycleBinEnvelopeRetention ||
+                    this.RecycleBinEnvelopeRetention != null &&
+                    this.RecycleBinEnvelopeRetention.Equals(other.RecycleBinEnvelopeRetention)
+                ) && 
+                (
+                    this.RecycleBinEnvelopeRetentionMetadata == other.RecycleBinEnvelopeRetentionMetadata ||
+                    this.RecycleBinEnvelopeRetentionMetadata != null &&
+                    this.RecycleBinEnvelopeRetentionMetadata.Equals(other.RecycleBinEnvelopeRetentionMetadata)
+                ) && 
+                (
                     this.Require21CFRpt11Compliance == other.Require21CFRpt11Compliance ||
                     this.Require21CFRpt11Compliance != null &&
                     this.Require21CFRpt11Compliance.Equals(other.Require21CFRpt11Compliance)
@@ -9390,11 +9814,6 @@ namespace DocuSign.eSign.Model
                     this.RsaVeridUserId == other.RsaVeridUserId ||
                     this.RsaVeridUserId != null &&
                     this.RsaVeridUserId.Equals(other.RsaVeridUserId)
-                ) && 
-                (
-                    this.SbsTransactionLevel == other.SbsTransactionLevel ||
-                    this.SbsTransactionLevel != null &&
-                    this.SbsTransactionLevel.Equals(other.SbsTransactionLevel)
                 ) && 
                 (
                     this.SelfSignedRecipientEmailDocument == other.SelfSignedRecipientEmailDocument ||
@@ -9887,6 +10306,16 @@ namespace DocuSign.eSign.Model
                     this.UniversalSignatureOptIn.Equals(other.UniversalSignatureOptIn)
                 ) && 
                 (
+                    this.UniversalSignatureSkipPlatformSignature == other.UniversalSignatureSkipPlatformSignature ||
+                    this.UniversalSignatureSkipPlatformSignature != null &&
+                    this.UniversalSignatureSkipPlatformSignature.Equals(other.UniversalSignatureSkipPlatformSignature)
+                ) && 
+                (
+                    this.UniversalSignatureSkipPlatformSignatureMetadata == other.UniversalSignatureSkipPlatformSignatureMetadata ||
+                    this.UniversalSignatureSkipPlatformSignatureMetadata != null &&
+                    this.UniversalSignatureSkipPlatformSignatureMetadata.Equals(other.UniversalSignatureSkipPlatformSignatureMetadata)
+                ) && 
+                (
                     this.UseAccountLevelEmail == other.UseAccountLevelEmail ||
                     this.UseAccountLevelEmail != null &&
                     this.UseAccountLevelEmail.Equals(other.UseAccountLevelEmail)
@@ -10210,8 +10639,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AllowCDWithdraw.GetHashCode();
                 if (this.AllowCDWithdrawMetadata != null)
                     hash = hash * 59 + this.AllowCDWithdrawMetadata.GetHashCode();
+                if (this.AllowConnectAuthoritativeCopyReadyEventUI != null)
+                    hash = hash * 59 + this.AllowConnectAuthoritativeCopyReadyEventUI.GetHashCode();
                 if (this.AllowConnectEnvelopeRemovedEvent != null)
                     hash = hash * 59 + this.AllowConnectEnvelopeRemovedEvent.GetHashCode();
+                if (this.AllowConnectExtensionUI != null)
+                    hash = hash * 59 + this.AllowConnectExtensionUI.GetHashCode();
                 if (this.AllowConnectHttpListenerConfigs != null)
                     hash = hash * 59 + this.AllowConnectHttpListenerConfigs.GetHashCode();
                 if (this.AllowConnectIdentityVerificationUI != null)
@@ -10380,6 +10813,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AllowOfflineSigning.GetHashCode();
                 if (this.AllowOfflineSigningMetadata != null)
                     hash = hash * 59 + this.AllowOfflineSigningMetadata.GetHashCode();
+                if (this.AllowOnlyStandaloneWebForms != null)
+                    hash = hash * 59 + this.AllowOnlyStandaloneWebForms.GetHashCode();
+                if (this.AllowOnlyStandaloneWebFormsMetadata != null)
+                    hash = hash * 59 + this.AllowOnlyStandaloneWebFormsMetadata.GetHashCode();
                 if (this.AllowOpenTrustSignerCertificate != null)
                     hash = hash * 59 + this.AllowOpenTrustSignerCertificate.GetHashCode();
                 if (this.AllowOpenTrustSignerCertificateMetadata != null)
@@ -10654,6 +11091,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ChromeSignatureEnabled.GetHashCode();
                 if (this.ChromeSignatureEnabledMetadata != null)
                     hash = hash * 59 + this.ChromeSignatureEnabledMetadata.GetHashCode();
+                if (this.CloudReady != null)
+                    hash = hash * 59 + this.CloudReady.GetHashCode();
                 if (this.CommentEmailShowMessageText != null)
                     hash = hash * 59 + this.CommentEmailShowMessageText.GetHashCode();
                 if (this.CommentEmailShowMessageTextMetadata != null)
@@ -10690,10 +11129,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DisableAutoTemplateMatching.GetHashCode();
                 if (this.DisableAutoTemplateMatchingMetadata != null)
                     hash = hash * 59 + this.DisableAutoTemplateMatchingMetadata.GetHashCode();
-                if (this.DisableBulkSendRecipientLimit != null)
-                    hash = hash * 59 + this.DisableBulkSendRecipientLimit.GetHashCode();
-                if (this.DisableBulkSendRecipientLimitMetaData != null)
-                    hash = hash * 59 + this.DisableBulkSendRecipientLimitMetaData.GetHashCode();
                 if (this.DisableMobileApp != null)
                     hash = hash * 59 + this.DisableMobileApp.GetHashCode();
                 if (this.DisableMobileAppMetadata != null)
@@ -10754,10 +11189,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DraftEnvelopeRetention.GetHashCode();
                 if (this.DraftEnvelopeRetentionMetadata != null)
                     hash = hash * 59 + this.DraftEnvelopeRetentionMetadata.GetHashCode();
-                if (this.DssEnableProvisioningPenConfigurationRadminOption != null)
-                    hash = hash * 59 + this.DssEnableProvisioningPenConfigurationRadminOption.GetHashCode();
-                if (this.DssEnableSignatureTypeCustomTagRadminRadminOption != null)
-                    hash = hash * 59 + this.DssEnableSignatureTypeCustomTagRadminRadminOption.GetHashCode();
                 if (this.DssSCOREFDN196RebrandDocuSignIsNotAVerb != null)
                     hash = hash * 59 + this.DssSCOREFDN196RebrandDocuSignIsNotAVerb.GetHashCode();
                 if (this.DssSIGN28411EnableLeavePagePromptRadminOption != null)
@@ -10808,10 +11239,18 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnableAgreementActionsForESign.GetHashCode();
                 if (this.EnableAgreementActionsForESignMetadata != null)
                     hash = hash * 59 + this.EnableAgreementActionsForESignMetadata.GetHashCode();
+                if (this.EnableAIContractReview != null)
+                    hash = hash * 59 + this.EnableAIContractReview.GetHashCode();
+                if (this.EnableAIContractReviewMetadata != null)
+                    hash = hash * 59 + this.EnableAIContractReviewMetadata.GetHashCode();
                 if (this.EnableAutoNav != null)
                     hash = hash * 59 + this.EnableAutoNav.GetHashCode();
                 if (this.EnableAutoNavMetadata != null)
                     hash = hash * 59 + this.EnableAutoNavMetadata.GetHashCode();
+                if (this.EnableBatchUpdateEnvelopeTypes != null)
+                    hash = hash * 59 + this.EnableBatchUpdateEnvelopeTypes.GetHashCode();
+                if (this.EnableBatchUpdateEnvelopeTypesMetadata != null)
+                    hash = hash * 59 + this.EnableBatchUpdateEnvelopeTypesMetadata.GetHashCode();
                 if (this.EnableBccDummyLink != null)
                     hash = hash * 59 + this.EnableBccDummyLink.GetHashCode();
                 if (this.EnableBccDummyLinkMetadata != null)
@@ -10858,6 +11297,14 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnableContentSearch.GetHashCode();
                 if (this.EnableContentSearchMetadata != null)
                     hash = hash * 59 + this.EnableContentSearchMetadata.GetHashCode();
+                if (this.EnableCoupaCore != null)
+                    hash = hash * 59 + this.EnableCoupaCore.GetHashCode();
+                if (this.EnableCoupaCoreMetaData != null)
+                    hash = hash * 59 + this.EnableCoupaCoreMetaData.GetHashCode();
+                if (this.EnableCustomDataVerificationExtensions != null)
+                    hash = hash * 59 + this.EnableCustomDataVerificationExtensions.GetHashCode();
+                if (this.EnableCustomDataVerificationExtensionsMetadata != null)
+                    hash = hash * 59 + this.EnableCustomDataVerificationExtensionsMetadata.GetHashCode();
                 if (this.EnableCustomerSatisfactionMetricTracking != null)
                     hash = hash * 59 + this.EnableCustomerSatisfactionMetricTracking.GetHashCode();
                 if (this.EnableCustomerSatisfactionMetricTrackingMetadata != null)
@@ -10866,6 +11313,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnableDataVerificationExtensions.GetHashCode();
                 if (this.EnableDataVerificationExtensionsMetadata != null)
                     hash = hash * 59 + this.EnableDataVerificationExtensionsMetadata.GetHashCode();
+                if (this.EnableDocumentTemplateLibrary != null)
+                    hash = hash * 59 + this.EnableDocumentTemplateLibrary.GetHashCode();
+                if (this.EnableDocumentTemplateLibraryMetadata != null)
+                    hash = hash * 59 + this.EnableDocumentTemplateLibraryMetadata.GetHashCode();
                 if (this.EnableDSigEUAdvancedPens != null)
                     hash = hash * 59 + this.EnableDSigEUAdvancedPens.GetHashCode();
                 if (this.EnableDSigEUAdvancedPensMetadata != null)
@@ -10952,10 +11403,30 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnableLargeFileSupport.GetHashCode();
                 if (this.EnableLargeFileSupportMetadata != null)
                     hash = hash * 59 + this.EnableLargeFileSupportMetadata.GetHashCode();
+                if (this.EnableLegacySharedEnvelopes != null)
+                    hash = hash * 59 + this.EnableLegacySharedEnvelopes.GetHashCode();
+                if (this.EnableLegacySharedEnvelopesMetadata != null)
+                    hash = hash * 59 + this.EnableLegacySharedEnvelopesMetadata.GetHashCode();
+                if (this.EnableLicenseManagement != null)
+                    hash = hash * 59 + this.EnableLicenseManagement.GetHashCode();
+                if (this.EnableLicenseManagementMetadata != null)
+                    hash = hash * 59 + this.EnableLicenseManagementMetadata.GetHashCode();
                 if (this.EnableMultiUserRepositoryFeatures != null)
                     hash = hash * 59 + this.EnableMultiUserRepositoryFeatures.GetHashCode();
                 if (this.EnableMultiUserRepositoryFeaturesMetadata != null)
                     hash = hash * 59 + this.EnableMultiUserRepositoryFeaturesMetadata.GetHashCode();
+                if (this.EnableNavigatorPartialIngestion != null)
+                    hash = hash * 59 + this.EnableNavigatorPartialIngestion.GetHashCode();
+                if (this.EnableNavigatorPartialIngestionMetadata != null)
+                    hash = hash * 59 + this.EnableNavigatorPartialIngestionMetadata.GetHashCode();
+                if (this.EnableNavigatorTrial != null)
+                    hash = hash * 59 + this.EnableNavigatorTrial.GetHashCode();
+                if (this.EnableNavigatorTrialMetadata != null)
+                    hash = hash * 59 + this.EnableNavigatorTrialMetadata.GetHashCode();
+                if (this.EnableObligationManagement != null)
+                    hash = hash * 59 + this.EnableObligationManagement.GetHashCode();
+                if (this.EnableObligationManagementMetadata != null)
+                    hash = hash * 59 + this.EnableObligationManagementMetadata.GetHashCode();
                 if (this.EnableParticipantRecipientSettingMetadata != null)
                     hash = hash * 59 + this.EnableParticipantRecipientSettingMetadata.GetHashCode();
                 if (this.EnablePaymentProcessing != null)
@@ -11050,6 +11521,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnableSigningExtensionConversations.GetHashCode();
                 if (this.EnableSigningExtensionConversationsMetadata != null)
                     hash = hash * 59 + this.EnableSigningExtensionConversationsMetadata.GetHashCode();
+                if (this.EnableSigningGroupContinuePageSetting != null)
+                    hash = hash * 59 + this.EnableSigningGroupContinuePageSetting.GetHashCode();
+                if (this.EnableSigningGroupContinuePageSettingMetadata != null)
+                    hash = hash * 59 + this.EnableSigningGroupContinuePageSettingMetadata.GetHashCode();
                 if (this.EnableSigningOrderSettingsForAccount != null)
                     hash = hash * 59 + this.EnableSigningOrderSettingsForAccount.GetHashCode();
                 if (this.EnableSigningOrderSettingsForAccountMetadata != null)
@@ -11112,6 +11587,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnableWitnessing.GetHashCode();
                 if (this.EnableWitnessingMetadata != null)
                     hash = hash * 59 + this.EnableWitnessingMetadata.GetHashCode();
+                if (this.EnableWorkdayFinancialsExtension != null)
+                    hash = hash * 59 + this.EnableWorkdayFinancialsExtension.GetHashCode();
+                if (this.EnableWorkdayFinancialsExtensionMetaData != null)
+                    hash = hash * 59 + this.EnableWorkdayFinancialsExtensionMetaData.GetHashCode();
                 if (this.EnforceTemplateNameUniqueness != null)
                     hash = hash * 59 + this.EnforceTemplateNameUniqueness.GetHashCode();
                 if (this.EnforceTemplateNameUniquenessMetadata != null)
@@ -11244,6 +11723,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.InSessionSuppressEmailsMetadata.GetHashCode();
                 if (this.IsConnectDocumentFieldsEnabled != null)
                     hash = hash * 59 + this.IsConnectDocumentFieldsEnabled.GetHashCode();
+                if (this.IsvEmbed != null)
+                    hash = hash * 59 + this.IsvEmbed.GetHashCode();
+                if (this.IsvEmbedMetaData != null)
+                    hash = hash * 59 + this.IsvEmbedMetaData.GetHashCode();
                 if (this.IsvOemEmbed != null)
                     hash = hash * 59 + this.IsvOemEmbed.GetHashCode();
                 if (this.IsvOemEmbedMetaData != null)
@@ -11284,6 +11767,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.OptOutNewPlatformSeal.GetHashCode();
                 if (this.OptOutNewPlatformSealPlatformMetadata != null)
                     hash = hash * 59 + this.OptOutNewPlatformSealPlatformMetadata.GetHashCode();
+                if (this.OriginalAccountSite != null)
+                    hash = hash * 59 + this.OriginalAccountSite.GetHashCode();
+                if (this.ParticipantCopyOptOut != null)
+                    hash = hash * 59 + this.ParticipantCopyOptOut.GetHashCode();
+                if (this.ParticipantCopyOptOutMetadata != null)
+                    hash = hash * 59 + this.ParticipantCopyOptOutMetadata.GetHashCode();
                 if (this.PdfMaxChunkedUploadPartSize != null)
                     hash = hash * 59 + this.PdfMaxChunkedUploadPartSize.GetHashCode();
                 if (this.PdfMaxChunkedUploadPartSizeMetadata != null)
@@ -11316,6 +11805,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.RecipientSigningAutoNavigationControl.GetHashCode();
                 if (this.RecipientSigningAutoNavigationControlMetadata != null)
                     hash = hash * 59 + this.RecipientSigningAutoNavigationControlMetadata.GetHashCode();
+                if (this.RecycleBinEnvelopeRetention != null)
+                    hash = hash * 59 + this.RecycleBinEnvelopeRetention.GetHashCode();
+                if (this.RecycleBinEnvelopeRetentionMetadata != null)
+                    hash = hash * 59 + this.RecycleBinEnvelopeRetentionMetadata.GetHashCode();
                 if (this.Require21CFRpt11Compliance != null)
                     hash = hash * 59 + this.Require21CFRpt11Compliance.GetHashCode();
                 if (this.Require21CFRpt11ComplianceMetadata != null)
@@ -11340,8 +11833,6 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.RsaVeridRuleset.GetHashCode();
                 if (this.RsaVeridUserId != null)
                     hash = hash * 59 + this.RsaVeridUserId.GetHashCode();
-                if (this.SbsTransactionLevel != null)
-                    hash = hash * 59 + this.SbsTransactionLevel.GetHashCode();
                 if (this.SelfSignedRecipientEmailDocument != null)
                     hash = hash * 59 + this.SelfSignedRecipientEmailDocument.GetHashCode();
                 if (this.SelfSignedRecipientEmailDocumentMetadata != null)
@@ -11538,6 +12029,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.TimezoneOffsetUIMetadata.GetHashCode();
                 if (this.UniversalSignatureOptIn != null)
                     hash = hash * 59 + this.UniversalSignatureOptIn.GetHashCode();
+                if (this.UniversalSignatureSkipPlatformSignature != null)
+                    hash = hash * 59 + this.UniversalSignatureSkipPlatformSignature.GetHashCode();
+                if (this.UniversalSignatureSkipPlatformSignatureMetadata != null)
+                    hash = hash * 59 + this.UniversalSignatureSkipPlatformSignatureMetadata.GetHashCode();
                 if (this.UseAccountLevelEmail != null)
                     hash = hash * 59 + this.UseAccountLevelEmail.GetHashCode();
                 if (this.UseAccountLevelEmailMetadata != null)

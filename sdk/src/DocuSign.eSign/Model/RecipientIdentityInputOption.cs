@@ -37,11 +37,13 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="Name">Name.</param>
         /// <param name="PhoneNumberList">PhoneNumberList.</param>
+        /// <param name="StringValue">StringValue.</param>
         /// <param name="ValueType">ValueType.</param>
-        public RecipientIdentityInputOption(string Name = default(string), List<RecipientIdentityPhoneNumber> PhoneNumberList = default(List<RecipientIdentityPhoneNumber>), string ValueType = default(string))
+        public RecipientIdentityInputOption(string Name = default(string), List<RecipientIdentityPhoneNumber> PhoneNumberList = default(List<RecipientIdentityPhoneNumber>), string StringValue = default(string), string ValueType = default(string))
         {
             this.Name = Name;
             this.PhoneNumberList = PhoneNumberList;
+            this.StringValue = StringValue;
             this.ValueType = ValueType;
         }
         
@@ -55,6 +57,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="phoneNumberList", EmitDefaultValue=false)]
         public List<RecipientIdentityPhoneNumber> PhoneNumberList { get; set; }
+        /// <summary>
+        /// Gets or Sets StringValue
+        /// </summary>
+        [DataMember(Name="stringValue", EmitDefaultValue=false)]
+        public string StringValue { get; set; }
         /// <summary>
         /// Gets or Sets ValueType
         /// </summary>
@@ -70,6 +77,7 @@ namespace DocuSign.eSign.Model
             sb.Append("class RecipientIdentityInputOption {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  PhoneNumberList: ").Append(PhoneNumberList).Append("\n");
+            sb.Append("  StringValue: ").Append(StringValue).Append("\n");
             sb.Append("  ValueType: ").Append(ValueType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -118,6 +126,11 @@ namespace DocuSign.eSign.Model
                     this.PhoneNumberList.SequenceEqual(other.PhoneNumberList)
                 ) && 
                 (
+                    this.StringValue == other.StringValue ||
+                    this.StringValue != null &&
+                    this.StringValue.Equals(other.StringValue)
+                ) && 
+                (
                     this.ValueType == other.ValueType ||
                     this.ValueType != null &&
                     this.ValueType.Equals(other.ValueType)
@@ -139,6 +152,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.PhoneNumberList != null)
                     hash = hash * 59 + this.PhoneNumberList.GetHashCode();
+                if (this.StringValue != null)
+                    hash = hash * 59 + this.StringValue.GetHashCode();
                 if (this.ValueType != null)
                     hash = hash * 59 + this.ValueType.GetHashCode();
                 return hash;

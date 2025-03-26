@@ -39,6 +39,8 @@ namespace DocuSign.eSign.Model
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="Email">Email.</param>
         /// <param name="ErrorDetails">Array or errors..</param>
+        /// <param name="LicenseStatus">LicenseStatus.</param>
+        /// <param name="LicenseType">LicenseType.</param>
         /// <param name="MembershipId">MembershipId.</param>
         /// <param name="PermissionProfileId">PermissionProfileId.</param>
         /// <param name="PermissionProfileName">PermissionProfileName.</param>
@@ -46,12 +48,14 @@ namespace DocuSign.eSign.Model
         /// <param name="UserId">Specifies the user ID for the new user..</param>
         /// <param name="UserName">UserName.</param>
         /// <param name="UserStatus">UserStatus.</param>
-        public NewUser(string ApiPassword = default(string), string CreatedDateTime = default(string), string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string MembershipId = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserStatus = default(string))
+        public NewUser(string ApiPassword = default(string), string CreatedDateTime = default(string), string Email = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string LicenseStatus = default(string), string LicenseType = default(string), string MembershipId = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string Uri = default(string), string UserId = default(string), string UserName = default(string), string UserStatus = default(string))
         {
             this.ApiPassword = ApiPassword;
             this.CreatedDateTime = CreatedDateTime;
             this.Email = Email;
             this.ErrorDetails = ErrorDetails;
+            this.LicenseStatus = LicenseStatus;
+            this.LicenseType = LicenseType;
             this.MembershipId = MembershipId;
             this.PermissionProfileId = PermissionProfileId;
             this.PermissionProfileName = PermissionProfileName;
@@ -84,6 +88,16 @@ namespace DocuSign.eSign.Model
         /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
+        /// <summary>
+        /// Gets or Sets LicenseStatus
+        /// </summary>
+        [DataMember(Name="licenseStatus", EmitDefaultValue=false)]
+        public string LicenseStatus { get; set; }
+        /// <summary>
+        /// Gets or Sets LicenseType
+        /// </summary>
+        [DataMember(Name="licenseType", EmitDefaultValue=false)]
+        public string LicenseType { get; set; }
         /// <summary>
         /// Gets or Sets MembershipId
         /// </summary>
@@ -132,6 +146,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  CreatedDateTime: ").Append(CreatedDateTime).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
+            sb.Append("  LicenseStatus: ").Append(LicenseStatus).Append("\n");
+            sb.Append("  LicenseType: ").Append(LicenseType).Append("\n");
             sb.Append("  MembershipId: ").Append(MembershipId).Append("\n");
             sb.Append("  PermissionProfileId: ").Append(PermissionProfileId).Append("\n");
             sb.Append("  PermissionProfileName: ").Append(PermissionProfileName).Append("\n");
@@ -196,6 +212,16 @@ namespace DocuSign.eSign.Model
                     this.ErrorDetails.Equals(other.ErrorDetails)
                 ) && 
                 (
+                    this.LicenseStatus == other.LicenseStatus ||
+                    this.LicenseStatus != null &&
+                    this.LicenseStatus.Equals(other.LicenseStatus)
+                ) && 
+                (
+                    this.LicenseType == other.LicenseType ||
+                    this.LicenseType != null &&
+                    this.LicenseType.Equals(other.LicenseType)
+                ) && 
+                (
                     this.MembershipId == other.MembershipId ||
                     this.MembershipId != null &&
                     this.MembershipId.Equals(other.MembershipId)
@@ -251,6 +277,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Email.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                if (this.LicenseStatus != null)
+                    hash = hash * 59 + this.LicenseStatus.GetHashCode();
+                if (this.LicenseType != null)
+                    hash = hash * 59 + this.LicenseType.GetHashCode();
                 if (this.MembershipId != null)
                     hash = hash * 59 + this.MembershipId.GetHashCode();
                 if (this.PermissionProfileId != null)

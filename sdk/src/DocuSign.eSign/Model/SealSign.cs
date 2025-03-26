@@ -51,6 +51,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DeliveryMethodMetadata">Reserved for DocuSign..</param>
         /// <param name="DesignatorId">DesignatorId.</param>
         /// <param name="DesignatorIdGuid">DesignatorIdGuid.</param>
+        /// <param name="DocumentTemplateId">DocumentTemplateId.</param>
         /// <param name="DocumentVisibility">DocumentVisibility.</param>
         /// <param name="EmailNotification">A complex type that contains information sets the language of the recipient&#39;s email information.   **IMPORTANT**: If you enable email notification for one recipient, you must enable email notification for all recipients as it overrides the Envelope Subject and &#x60;EmailBlurb&#x60; property settings. .</param>
         /// <param name="EmbeddedRecipientStartURL">Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender&#39;s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to &#x60;SIGN_AT_DOCUSIGN&#x60;, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient&#39;s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets &#x60;EmbeddedRecipientStartURL&#x3D;SIGN_AT_DOCUSIGN&#x60;, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the &#x60;clientUserId&#x60; property is NOT set, and the &#x60;embeddedRecipientStartURL&#x60; is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The &#x60;customFields&#x60; property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   *Example*:   &#x60;http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&amp;[[mergeField3]]&#x60; .</param>
@@ -93,7 +94,8 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TotalTabCount">TotalTabCount.</param>
         /// <param name="UserId">UserId.</param>
-        public SealSign(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), string AllowSystemOverrideForLockedRecipient = default(string), string AutoRespondedReason = default(string), string BulkSendV2Recipient = default(string), string ClientUserId = default(string), string CompletedCount = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), string DesignatorId = default(string), string DesignatorIdGuid = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string InheritEmailNotificationConfiguration = default(string), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), string SignedDateTime = default(string), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), string SuppressEmails = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string))
+        /// <param name="WebFormRecipientViewId">WebFormRecipientViewId.</param>
+        public SealSign(string AccessCode = default(string), PropertyMetadata AccessCodeMetadata = default(PropertyMetadata), string AddAccessCodeToEmail = default(string), string AllowSystemOverrideForLockedRecipient = default(string), string AutoRespondedReason = default(string), string BulkSendV2Recipient = default(string), string ClientUserId = default(string), string CompletedCount = default(string), List<string> CustomFields = default(List<string>), string DeclinedDateTime = default(string), string DeclinedReason = default(string), string DeliveredDateTime = default(string), string DeliveryMethod = default(string), PropertyMetadata DeliveryMethodMetadata = default(PropertyMetadata), string DesignatorId = default(string), string DesignatorIdGuid = default(string), string DocumentTemplateId = default(string), List<DocumentVisibility> DocumentVisibility = default(List<DocumentVisibility>), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FaxNumber = default(string), PropertyMetadata FaxNumberMetadata = default(PropertyMetadata), string IdCheckConfigurationName = default(string), PropertyMetadata IdCheckConfigurationNameMetadata = default(PropertyMetadata), IdCheckInformationInput IdCheckInformationInput = default(IdCheckInformationInput), RecipientIdentityVerification IdentityVerification = default(RecipientIdentityVerification), string InheritEmailNotificationConfiguration = default(string), string LockedRecipientPhoneAuthEditable = default(string), string LockedRecipientSmsEditable = default(string), string Name = default(string), string Note = default(string), PropertyMetadata NoteMetadata = default(PropertyMetadata), RecipientPhoneAuthentication PhoneAuthentication = default(RecipientPhoneAuthentication), List<RecipientAttachment> RecipientAttachments = default(List<RecipientAttachment>), AuthenticationStatus RecipientAuthenticationStatus = default(AuthenticationStatus), List<FeatureAvailableMetadata> RecipientFeatureMetadata = default(List<FeatureAvailableMetadata>), string RecipientId = default(string), string RecipientIdGuid = default(string), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RecipientType = default(string), PropertyMetadata RecipientTypeMetadata = default(PropertyMetadata), string RequireIdLookup = default(string), PropertyMetadata RequireIdLookupMetadata = default(PropertyMetadata), string RoleName = default(string), string RoutingOrder = default(string), PropertyMetadata RoutingOrderMetadata = default(PropertyMetadata), string SentDateTime = default(string), string SignedDateTime = default(string), RecipientSMSAuthentication SmsAuthentication = default(RecipientSMSAuthentication), List<SocialAuthentication> SocialAuthentications = default(List<SocialAuthentication>), string Status = default(string), string StatusCode = default(string), string SuppressEmails = default(string), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TotalTabCount = default(string), string UserId = default(string), string WebFormRecipientViewId = default(string))
         {
             this.AccessCode = AccessCode;
             this.AccessCodeMetadata = AccessCodeMetadata;
@@ -111,6 +113,7 @@ namespace DocuSign.eSign.Model
             this.DeliveryMethodMetadata = DeliveryMethodMetadata;
             this.DesignatorId = DesignatorId;
             this.DesignatorIdGuid = DesignatorIdGuid;
+            this.DocumentTemplateId = DocumentTemplateId;
             this.DocumentVisibility = DocumentVisibility;
             this.EmailNotification = EmailNotification;
             this.EmbeddedRecipientStartURL = EmbeddedRecipientStartURL;
@@ -153,6 +156,7 @@ namespace DocuSign.eSign.Model
             this.TemplateRequired = TemplateRequired;
             this.TotalTabCount = TotalTabCount;
             this.UserId = UserId;
+            this.WebFormRecipientViewId = WebFormRecipientViewId;
         }
         
         /// <summary>
@@ -245,6 +249,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="designatorIdGuid", EmitDefaultValue=false)]
         public string DesignatorIdGuid { get; set; }
+        /// <summary>
+        /// Gets or Sets DocumentTemplateId
+        /// </summary>
+        [DataMember(Name="documentTemplateId", EmitDefaultValue=false)]
+        public string DocumentTemplateId { get; set; }
         /// <summary>
         /// Gets or Sets DocumentVisibility
         /// </summary>
@@ -486,6 +495,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>
+        /// Gets or Sets WebFormRecipientViewId
+        /// </summary>
+        [DataMember(Name="webFormRecipientViewId", EmitDefaultValue=false)]
+        public string WebFormRecipientViewId { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -509,6 +523,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DeliveryMethodMetadata: ").Append(DeliveryMethodMetadata).Append("\n");
             sb.Append("  DesignatorId: ").Append(DesignatorId).Append("\n");
             sb.Append("  DesignatorIdGuid: ").Append(DesignatorIdGuid).Append("\n");
+            sb.Append("  DocumentTemplateId: ").Append(DocumentTemplateId).Append("\n");
             sb.Append("  DocumentVisibility: ").Append(DocumentVisibility).Append("\n");
             sb.Append("  EmailNotification: ").Append(EmailNotification).Append("\n");
             sb.Append("  EmbeddedRecipientStartURL: ").Append(EmbeddedRecipientStartURL).Append("\n");
@@ -551,6 +566,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  TemplateRequired: ").Append(TemplateRequired).Append("\n");
             sb.Append("  TotalTabCount: ").Append(TotalTabCount).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
+            sb.Append("  WebFormRecipientViewId: ").Append(WebFormRecipientViewId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -666,6 +682,11 @@ namespace DocuSign.eSign.Model
                     this.DesignatorIdGuid == other.DesignatorIdGuid ||
                     this.DesignatorIdGuid != null &&
                     this.DesignatorIdGuid.Equals(other.DesignatorIdGuid)
+                ) && 
+                (
+                    this.DocumentTemplateId == other.DocumentTemplateId ||
+                    this.DocumentTemplateId != null &&
+                    this.DocumentTemplateId.Equals(other.DocumentTemplateId)
                 ) && 
                 (
                     this.DocumentVisibility == other.DocumentVisibility ||
@@ -876,6 +897,11 @@ namespace DocuSign.eSign.Model
                     this.UserId == other.UserId ||
                     this.UserId != null &&
                     this.UserId.Equals(other.UserId)
+                ) && 
+                (
+                    this.WebFormRecipientViewId == other.WebFormRecipientViewId ||
+                    this.WebFormRecipientViewId != null &&
+                    this.WebFormRecipientViewId.Equals(other.WebFormRecipientViewId)
                 );
         }
 
@@ -922,6 +948,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DesignatorId.GetHashCode();
                 if (this.DesignatorIdGuid != null)
                     hash = hash * 59 + this.DesignatorIdGuid.GetHashCode();
+                if (this.DocumentTemplateId != null)
+                    hash = hash * 59 + this.DocumentTemplateId.GetHashCode();
                 if (this.DocumentVisibility != null)
                     hash = hash * 59 + this.DocumentVisibility.GetHashCode();
                 if (this.EmailNotification != null)
@@ -1006,6 +1034,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.TotalTabCount.GetHashCode();
                 if (this.UserId != null)
                     hash = hash * 59 + this.UserId.GetHashCode();
+                if (this.WebFormRecipientViewId != null)
+                    hash = hash * 59 + this.WebFormRecipientViewId.GetHashCode();
                 return hash;
             }
         }

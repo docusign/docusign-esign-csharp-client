@@ -50,11 +50,16 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentFields">DocumentFields.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdGuid">DocumentIdGuid.</param>
+        /// <param name="DocumentTemplateAgreementTypeId">DocumentTemplateAgreementTypeId.</param>
+        /// <param name="DocumentTemplateId">DocumentTemplateId.</param>
         /// <param name="ErrorDetails">Array or errors..</param>
+        /// <param name="HasDigitalSignature">HasDigitalSignature.</param>
         /// <param name="IncludeInDownload">IncludeInDownload.</param>
         /// <param name="IncludeInDownloadMetadata">Metadata that indicates if the sender can edit the &#x60;includeInDownload&#x60; property. Not applicable for template documents..</param>
         /// <param name="IsAceGenDocument">IsAceGenDocument.</param>
         /// <param name="IsDocGenDocument">IsDocGenDocument.</param>
+        /// <param name="IsExternallyAvailable">IsExternallyAvailable.</param>
+        /// <param name="IsFlattened">IsFlattened.</param>
         /// <param name="Name">Name.</param>
         /// <param name="NameMetadata">Metadata that indicates if the sender can edit the &#x60;name&#x60; property. Not applicable for template documents..</param>
         /// <param name="Order">Order.</param>
@@ -66,7 +71,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="Type">Type.</param>
         /// <param name="Uri">Uri.</param>
-        public EnvelopeDocument(List<string> AddedRecipientIds = default(List<string>), string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), PropertyMetadata AuthoritativeCopyMetadata = default(PropertyMetadata), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), PropertyMetadata DisplayMetadata = default(PropertyMetadata), string DocGenDocumentStatus = default(string), List<DocGenSyntaxError> DocGenErrors = default(List<DocGenSyntaxError>), List<DocGenFormField> DocGenFormFields = default(List<DocGenFormField>), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string DocumentIdGuid = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string IncludeInDownload = default(string), PropertyMetadata IncludeInDownloadMetadata = default(PropertyMetadata), string IsAceGenDocument = default(string), string IsDocGenDocument = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Order = default(string), List<Page> Pages = default(List<Page>), string SignerMustAcknowledge = default(string), PropertyMetadata SignerMustAcknowledgeMetadata = default(PropertyMetadata), string SizeBytes = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
+        public EnvelopeDocument(List<string> AddedRecipientIds = default(List<string>), string AttachmentTabId = default(string), string AuthoritativeCopy = default(string), PropertyMetadata AuthoritativeCopyMetadata = default(PropertyMetadata), List<SignatureType> AvailableDocumentTypes = default(List<SignatureType>), string ContainsPdfFormFields = default(string), string Display = default(string), PropertyMetadata DisplayMetadata = default(PropertyMetadata), string DocGenDocumentStatus = default(string), List<DocGenSyntaxError> DocGenErrors = default(List<DocGenSyntaxError>), List<DocGenFormField> DocGenFormFields = default(List<DocGenFormField>), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string DocumentIdGuid = default(string), string DocumentTemplateAgreementTypeId = default(string), string DocumentTemplateId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string HasDigitalSignature = default(string), string IncludeInDownload = default(string), PropertyMetadata IncludeInDownloadMetadata = default(PropertyMetadata), string IsAceGenDocument = default(string), string IsDocGenDocument = default(string), string IsExternallyAvailable = default(string), string IsFlattened = default(string), string Name = default(string), PropertyMetadata NameMetadata = default(PropertyMetadata), string Order = default(string), List<Page> Pages = default(List<Page>), string SignerMustAcknowledge = default(string), PropertyMetadata SignerMustAcknowledgeMetadata = default(PropertyMetadata), string SizeBytes = default(string), string TemplateLocked = default(string), string TemplateRequired = default(string), string Type = default(string), string Uri = default(string))
         {
             this.AddedRecipientIds = AddedRecipientIds;
             this.AttachmentTabId = AttachmentTabId;
@@ -83,11 +88,16 @@ namespace DocuSign.eSign.Model
             this.DocumentFields = DocumentFields;
             this.DocumentId = DocumentId;
             this.DocumentIdGuid = DocumentIdGuid;
+            this.DocumentTemplateAgreementTypeId = DocumentTemplateAgreementTypeId;
+            this.DocumentTemplateId = DocumentTemplateId;
             this.ErrorDetails = ErrorDetails;
+            this.HasDigitalSignature = HasDigitalSignature;
             this.IncludeInDownload = IncludeInDownload;
             this.IncludeInDownloadMetadata = IncludeInDownloadMetadata;
             this.IsAceGenDocument = IsAceGenDocument;
             this.IsDocGenDocument = IsDocGenDocument;
+            this.IsExternallyAvailable = IsExternallyAvailable;
+            this.IsFlattened = IsFlattened;
             this.Name = Name;
             this.NameMetadata = NameMetadata;
             this.Order = Order;
@@ -181,11 +191,26 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentIdGuid", EmitDefaultValue=false)]
         public string DocumentIdGuid { get; set; }
         /// <summary>
+        /// Gets or Sets DocumentTemplateAgreementTypeId
+        /// </summary>
+        [DataMember(Name="documentTemplateAgreementTypeId", EmitDefaultValue=false)]
+        public string DocumentTemplateAgreementTypeId { get; set; }
+        /// <summary>
+        /// Gets or Sets DocumentTemplateId
+        /// </summary>
+        [DataMember(Name="documentTemplateId", EmitDefaultValue=false)]
+        public string DocumentTemplateId { get; set; }
+        /// <summary>
         /// Array or errors.
         /// </summary>
         /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
+        /// <summary>
+        /// Gets or Sets HasDigitalSignature
+        /// </summary>
+        [DataMember(Name="hasDigitalSignature", EmitDefaultValue=false)]
+        public string HasDigitalSignature { get; set; }
         /// <summary>
         /// Gets or Sets IncludeInDownload
         /// </summary>
@@ -207,6 +232,16 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="isDocGenDocument", EmitDefaultValue=false)]
         public string IsDocGenDocument { get; set; }
+        /// <summary>
+        /// Gets or Sets IsExternallyAvailable
+        /// </summary>
+        [DataMember(Name="isExternallyAvailable", EmitDefaultValue=false)]
+        public string IsExternallyAvailable { get; set; }
+        /// <summary>
+        /// Gets or Sets IsFlattened
+        /// </summary>
+        [DataMember(Name="isFlattened", EmitDefaultValue=false)]
+        public string IsFlattened { get; set; }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -289,11 +324,16 @@ namespace DocuSign.eSign.Model
             sb.Append("  DocumentFields: ").Append(DocumentFields).Append("\n");
             sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
             sb.Append("  DocumentIdGuid: ").Append(DocumentIdGuid).Append("\n");
+            sb.Append("  DocumentTemplateAgreementTypeId: ").Append(DocumentTemplateAgreementTypeId).Append("\n");
+            sb.Append("  DocumentTemplateId: ").Append(DocumentTemplateId).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
+            sb.Append("  HasDigitalSignature: ").Append(HasDigitalSignature).Append("\n");
             sb.Append("  IncludeInDownload: ").Append(IncludeInDownload).Append("\n");
             sb.Append("  IncludeInDownloadMetadata: ").Append(IncludeInDownloadMetadata).Append("\n");
             sb.Append("  IsAceGenDocument: ").Append(IsAceGenDocument).Append("\n");
             sb.Append("  IsDocGenDocument: ").Append(IsDocGenDocument).Append("\n");
+            sb.Append("  IsExternallyAvailable: ").Append(IsExternallyAvailable).Append("\n");
+            sb.Append("  IsFlattened: ").Append(IsFlattened).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NameMetadata: ").Append(NameMetadata).Append("\n");
             sb.Append("  Order: ").Append(Order).Append("\n");
@@ -417,9 +457,24 @@ namespace DocuSign.eSign.Model
                     this.DocumentIdGuid.Equals(other.DocumentIdGuid)
                 ) && 
                 (
+                    this.DocumentTemplateAgreementTypeId == other.DocumentTemplateAgreementTypeId ||
+                    this.DocumentTemplateAgreementTypeId != null &&
+                    this.DocumentTemplateAgreementTypeId.Equals(other.DocumentTemplateAgreementTypeId)
+                ) && 
+                (
+                    this.DocumentTemplateId == other.DocumentTemplateId ||
+                    this.DocumentTemplateId != null &&
+                    this.DocumentTemplateId.Equals(other.DocumentTemplateId)
+                ) && 
+                (
                     this.ErrorDetails == other.ErrorDetails ||
                     this.ErrorDetails != null &&
                     this.ErrorDetails.Equals(other.ErrorDetails)
+                ) && 
+                (
+                    this.HasDigitalSignature == other.HasDigitalSignature ||
+                    this.HasDigitalSignature != null &&
+                    this.HasDigitalSignature.Equals(other.HasDigitalSignature)
                 ) && 
                 (
                     this.IncludeInDownload == other.IncludeInDownload ||
@@ -440,6 +495,16 @@ namespace DocuSign.eSign.Model
                     this.IsDocGenDocument == other.IsDocGenDocument ||
                     this.IsDocGenDocument != null &&
                     this.IsDocGenDocument.Equals(other.IsDocGenDocument)
+                ) && 
+                (
+                    this.IsExternallyAvailable == other.IsExternallyAvailable ||
+                    this.IsExternallyAvailable != null &&
+                    this.IsExternallyAvailable.Equals(other.IsExternallyAvailable)
+                ) && 
+                (
+                    this.IsFlattened == other.IsFlattened ||
+                    this.IsFlattened != null &&
+                    this.IsFlattened.Equals(other.IsFlattened)
                 ) && 
                 (
                     this.Name == other.Name ||
@@ -539,8 +604,14 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DocumentId.GetHashCode();
                 if (this.DocumentIdGuid != null)
                     hash = hash * 59 + this.DocumentIdGuid.GetHashCode();
+                if (this.DocumentTemplateAgreementTypeId != null)
+                    hash = hash * 59 + this.DocumentTemplateAgreementTypeId.GetHashCode();
+                if (this.DocumentTemplateId != null)
+                    hash = hash * 59 + this.DocumentTemplateId.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                if (this.HasDigitalSignature != null)
+                    hash = hash * 59 + this.HasDigitalSignature.GetHashCode();
                 if (this.IncludeInDownload != null)
                     hash = hash * 59 + this.IncludeInDownload.GetHashCode();
                 if (this.IncludeInDownloadMetadata != null)
@@ -549,6 +620,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IsAceGenDocument.GetHashCode();
                 if (this.IsDocGenDocument != null)
                     hash = hash * 59 + this.IsDocGenDocument.GetHashCode();
+                if (this.IsExternallyAvailable != null)
+                    hash = hash * 59 + this.IsExternallyAvailable.GetHashCode();
+                if (this.IsFlattened != null)
+                    hash = hash * 59 + this.IsFlattened.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.NameMetadata != null)

@@ -62,11 +62,13 @@ namespace DocuSign.eSign.Model
         /// <param name="ConditionalParentLabelMetadata">Metadata that indicates whether the &#x60;conditionalParentLabel&#x60; property is editable..</param>
         /// <param name="ConditionalParentValue">For conditional fields, this is the value of the parent tab that controls the tab&#39;s visibility.  If the parent tab is a Checkbox, Radio button, Optional Signature, or Optional Initial use \&quot;on\&quot; as the value to show that the parent tab is active. .</param>
         /// <param name="ConditionalParentValueMetadata">Metadata that indicates whether the &#x60;conditionalParentValue&#x60; property is editable..</param>
+        /// <param name="ConnectedObjectDetails">ConnectedObjectDetails.</param>
         /// <param name="CustomTabId">The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties..</param>
         /// <param name="CustomTabIdMetadata">Metadata that indicates whether the &#x60;customTabId&#x60; property is editable..</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentIdMetadata">Metadata that indicates whether the &#x60;documentId&#x60; property is editable..</param>
         /// <param name="ErrorDetails">Array or errors..</param>
+        /// <param name="ExtensionData">ExtensionData.</param>
         /// <param name="FormOrder">FormOrder.</param>
         /// <param name="FormOrderMetadata">Metadata that indicates whether the &#x60;formOrder&#x60; property is editable..</param>
         /// <param name="FormPageLabel">FormPageLabel.</param>
@@ -93,6 +95,7 @@ namespace DocuSign.eSign.Model
         /// <param name="Source">Source.</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusMetadata">Metadata that indicates whether the &#x60;status&#x60; property is editable..</param>
+        /// <param name="TabFullyQualifiedPath">TabFullyQualifiedPath.</param>
         /// <param name="TabGroupLabels">TabGroupLabels.</param>
         /// <param name="TabGroupLabelsMetadata">Metadata that indicates whether the &#x60;tabGroupLabels&#x60; property is editable..</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
@@ -109,13 +112,14 @@ namespace DocuSign.eSign.Model
         /// <param name="Tooltip">Tooltip.</param>
         /// <param name="ToolTipMetadata">Metadata that indicates whether the &#x60;toolTip&#x60; property is editable..</param>
         /// <param name="UseBackgroundAsCanvas">UseBackgroundAsCanvas.</param>
+        /// <param name="WarningDetails">WarningDetails.</param>
         /// <param name="Width">Width of the tab in pixels..</param>
         /// <param name="WidthMetadata">Metadata that indicates whether the &#x60;width&#x60; property is editable..</param>
         /// <param name="XPosition">This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="XPositionMetadata">Metadata that indicates whether the &#x60;xPosition&#x60; property is editable..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPositionMetadata">Metadata that indicates whether the &#x60;yPosition&#x60; property is editable..</param>
-        public Draw(string AllowSignerUpload = default(string), string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), SmartContractInformation SmartContractInformation = default(SmartContractInformation), string Source = default(string), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string UseBackgroundAsCanvas = default(string), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
+        public Draw(string AllowSignerUpload = default(string), string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), string ConditionalParentLabel = default(string), PropertyMetadata ConditionalParentLabelMetadata = default(PropertyMetadata), string ConditionalParentValue = default(string), PropertyMetadata ConditionalParentValueMetadata = default(PropertyMetadata), ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), string CustomTabId = default(string), PropertyMetadata CustomTabIdMetadata = default(PropertyMetadata), string DocumentId = default(string), PropertyMetadata DocumentIdMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), ExtensionData ExtensionData = default(ExtensionData), string FormOrder = default(string), PropertyMetadata FormOrderMetadata = default(PropertyMetadata), string FormPageLabel = default(string), PropertyMetadata FormPageLabelMetadata = default(PropertyMetadata), string FormPageNumber = default(string), PropertyMetadata FormPageNumberMetadata = default(PropertyMetadata), string Height = default(string), PropertyMetadata HeightMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), MergeField MergeField = default(MergeField), string MergeFieldXml = default(string), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string RecipientId = default(string), string RecipientIdGuid = default(string), PropertyMetadata RecipientIdGuidMetadata = default(PropertyMetadata), PropertyMetadata RecipientIdMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Shared = default(string), PropertyMetadata SharedMetadata = default(PropertyMetadata), SmartContractInformation SmartContractInformation = default(SmartContractInformation), string Source = default(string), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabFullyQualifiedPath = default(string), List<string> TabGroupLabels = default(List<string>), PropertyMetadata TabGroupLabelsMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), PropertyMetadata TabLabelMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string TabType = default(string), PropertyMetadata TabTypeMetadata = default(PropertyMetadata), string TemplateLocked = default(string), PropertyMetadata TemplateLockedMetadata = default(PropertyMetadata), string TemplateRequired = default(string), PropertyMetadata TemplateRequiredMetadata = default(PropertyMetadata), string Tooltip = default(string), PropertyMetadata ToolTipMetadata = default(PropertyMetadata), string UseBackgroundAsCanvas = default(string), ErrorDetails WarningDetails = default(ErrorDetails), string Width = default(string), PropertyMetadata WidthMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
             this.AllowSignerUpload = AllowSignerUpload;
             this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
@@ -144,11 +148,13 @@ namespace DocuSign.eSign.Model
             this.ConditionalParentLabelMetadata = ConditionalParentLabelMetadata;
             this.ConditionalParentValue = ConditionalParentValue;
             this.ConditionalParentValueMetadata = ConditionalParentValueMetadata;
+            this.ConnectedObjectDetails = ConnectedObjectDetails;
             this.CustomTabId = CustomTabId;
             this.CustomTabIdMetadata = CustomTabIdMetadata;
             this.DocumentId = DocumentId;
             this.DocumentIdMetadata = DocumentIdMetadata;
             this.ErrorDetails = ErrorDetails;
+            this.ExtensionData = ExtensionData;
             this.FormOrder = FormOrder;
             this.FormOrderMetadata = FormOrderMetadata;
             this.FormPageLabel = FormPageLabel;
@@ -175,6 +181,7 @@ namespace DocuSign.eSign.Model
             this.Source = Source;
             this.Status = Status;
             this.StatusMetadata = StatusMetadata;
+            this.TabFullyQualifiedPath = TabFullyQualifiedPath;
             this.TabGroupLabels = TabGroupLabels;
             this.TabGroupLabelsMetadata = TabGroupLabelsMetadata;
             this.TabId = TabId;
@@ -191,6 +198,7 @@ namespace DocuSign.eSign.Model
             this.Tooltip = Tooltip;
             this.ToolTipMetadata = ToolTipMetadata;
             this.UseBackgroundAsCanvas = UseBackgroundAsCanvas;
+            this.WarningDetails = WarningDetails;
             this.Width = Width;
             this.WidthMetadata = WidthMetadata;
             this.XPosition = XPosition;
@@ -357,6 +365,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="conditionalParentValueMetadata", EmitDefaultValue=false)]
         public PropertyMetadata ConditionalParentValueMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets ConnectedObjectDetails
+        /// </summary>
+        [DataMember(Name="connectedObjectDetails", EmitDefaultValue=false)]
+        public ConnectedObjectDetails ConnectedObjectDetails { get; set; }
+        /// <summary>
         /// The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties.
         /// </summary>
         /// <value>The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties.</value>
@@ -386,6 +399,11 @@ namespace DocuSign.eSign.Model
         /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
+        /// <summary>
+        /// Gets or Sets ExtensionData
+        /// </summary>
+        [DataMember(Name="extensionData", EmitDefaultValue=false)]
+        public ExtensionData ExtensionData { get; set; }
         /// <summary>
         /// Gets or Sets FormOrder
         /// </summary>
@@ -537,6 +555,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="statusMetadata", EmitDefaultValue=false)]
         public PropertyMetadata StatusMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets TabFullyQualifiedPath
+        /// </summary>
+        [DataMember(Name="tabFullyQualifiedPath", EmitDefaultValue=false)]
+        public string TabFullyQualifiedPath { get; set; }
+        /// <summary>
         /// Gets or Sets TabGroupLabels
         /// </summary>
         [DataMember(Name="tabGroupLabels", EmitDefaultValue=false)]
@@ -628,6 +651,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="useBackgroundAsCanvas", EmitDefaultValue=false)]
         public string UseBackgroundAsCanvas { get; set; }
         /// <summary>
+        /// Gets or Sets WarningDetails
+        /// </summary>
+        [DataMember(Name="warningDetails", EmitDefaultValue=false)]
+        public ErrorDetails WarningDetails { get; set; }
+        /// <summary>
         /// Width of the tab in pixels.
         /// </summary>
         /// <value>Width of the tab in pixels.</value>
@@ -698,11 +726,13 @@ namespace DocuSign.eSign.Model
             sb.Append("  ConditionalParentLabelMetadata: ").Append(ConditionalParentLabelMetadata).Append("\n");
             sb.Append("  ConditionalParentValue: ").Append(ConditionalParentValue).Append("\n");
             sb.Append("  ConditionalParentValueMetadata: ").Append(ConditionalParentValueMetadata).Append("\n");
+            sb.Append("  ConnectedObjectDetails: ").Append(ConnectedObjectDetails).Append("\n");
             sb.Append("  CustomTabId: ").Append(CustomTabId).Append("\n");
             sb.Append("  CustomTabIdMetadata: ").Append(CustomTabIdMetadata).Append("\n");
             sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
             sb.Append("  DocumentIdMetadata: ").Append(DocumentIdMetadata).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
+            sb.Append("  ExtensionData: ").Append(ExtensionData).Append("\n");
             sb.Append("  FormOrder: ").Append(FormOrder).Append("\n");
             sb.Append("  FormOrderMetadata: ").Append(FormOrderMetadata).Append("\n");
             sb.Append("  FormPageLabel: ").Append(FormPageLabel).Append("\n");
@@ -729,6 +759,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Source: ").Append(Source).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StatusMetadata: ").Append(StatusMetadata).Append("\n");
+            sb.Append("  TabFullyQualifiedPath: ").Append(TabFullyQualifiedPath).Append("\n");
             sb.Append("  TabGroupLabels: ").Append(TabGroupLabels).Append("\n");
             sb.Append("  TabGroupLabelsMetadata: ").Append(TabGroupLabelsMetadata).Append("\n");
             sb.Append("  TabId: ").Append(TabId).Append("\n");
@@ -745,6 +776,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  Tooltip: ").Append(Tooltip).Append("\n");
             sb.Append("  ToolTipMetadata: ").Append(ToolTipMetadata).Append("\n");
             sb.Append("  UseBackgroundAsCanvas: ").Append(UseBackgroundAsCanvas).Append("\n");
+            sb.Append("  WarningDetails: ").Append(WarningDetails).Append("\n");
             sb.Append("  Width: ").Append(Width).Append("\n");
             sb.Append("  WidthMetadata: ").Append(WidthMetadata).Append("\n");
             sb.Append("  XPosition: ").Append(XPosition).Append("\n");
@@ -923,6 +955,11 @@ namespace DocuSign.eSign.Model
                     this.ConditionalParentValueMetadata.Equals(other.ConditionalParentValueMetadata)
                 ) && 
                 (
+                    this.ConnectedObjectDetails == other.ConnectedObjectDetails ||
+                    this.ConnectedObjectDetails != null &&
+                    this.ConnectedObjectDetails.Equals(other.ConnectedObjectDetails)
+                ) && 
+                (
                     this.CustomTabId == other.CustomTabId ||
                     this.CustomTabId != null &&
                     this.CustomTabId.Equals(other.CustomTabId)
@@ -946,6 +983,11 @@ namespace DocuSign.eSign.Model
                     this.ErrorDetails == other.ErrorDetails ||
                     this.ErrorDetails != null &&
                     this.ErrorDetails.Equals(other.ErrorDetails)
+                ) && 
+                (
+                    this.ExtensionData == other.ExtensionData ||
+                    this.ExtensionData != null &&
+                    this.ExtensionData.Equals(other.ExtensionData)
                 ) && 
                 (
                     this.FormOrder == other.FormOrder ||
@@ -1078,6 +1120,11 @@ namespace DocuSign.eSign.Model
                     this.StatusMetadata.Equals(other.StatusMetadata)
                 ) && 
                 (
+                    this.TabFullyQualifiedPath == other.TabFullyQualifiedPath ||
+                    this.TabFullyQualifiedPath != null &&
+                    this.TabFullyQualifiedPath.Equals(other.TabFullyQualifiedPath)
+                ) && 
+                (
                     this.TabGroupLabels == other.TabGroupLabels ||
                     this.TabGroupLabels != null &&
                     this.TabGroupLabels.SequenceEqual(other.TabGroupLabels)
@@ -1156,6 +1203,11 @@ namespace DocuSign.eSign.Model
                     this.UseBackgroundAsCanvas == other.UseBackgroundAsCanvas ||
                     this.UseBackgroundAsCanvas != null &&
                     this.UseBackgroundAsCanvas.Equals(other.UseBackgroundAsCanvas)
+                ) && 
+                (
+                    this.WarningDetails == other.WarningDetails ||
+                    this.WarningDetails != null &&
+                    this.WarningDetails.Equals(other.WarningDetails)
                 ) && 
                 (
                     this.Width == other.Width ||
@@ -1254,6 +1306,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ConditionalParentValue.GetHashCode();
                 if (this.ConditionalParentValueMetadata != null)
                     hash = hash * 59 + this.ConditionalParentValueMetadata.GetHashCode();
+                if (this.ConnectedObjectDetails != null)
+                    hash = hash * 59 + this.ConnectedObjectDetails.GetHashCode();
                 if (this.CustomTabId != null)
                     hash = hash * 59 + this.CustomTabId.GetHashCode();
                 if (this.CustomTabIdMetadata != null)
@@ -1264,6 +1318,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DocumentIdMetadata.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                if (this.ExtensionData != null)
+                    hash = hash * 59 + this.ExtensionData.GetHashCode();
                 if (this.FormOrder != null)
                     hash = hash * 59 + this.FormOrder.GetHashCode();
                 if (this.FormOrderMetadata != null)
@@ -1316,6 +1372,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.StatusMetadata != null)
                     hash = hash * 59 + this.StatusMetadata.GetHashCode();
+                if (this.TabFullyQualifiedPath != null)
+                    hash = hash * 59 + this.TabFullyQualifiedPath.GetHashCode();
                 if (this.TabGroupLabels != null)
                     hash = hash * 59 + this.TabGroupLabels.GetHashCode();
                 if (this.TabGroupLabelsMetadata != null)
@@ -1348,6 +1406,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ToolTipMetadata.GetHashCode();
                 if (this.UseBackgroundAsCanvas != null)
                     hash = hash * 59 + this.UseBackgroundAsCanvas.GetHashCode();
+                if (this.WarningDetails != null)
+                    hash = hash * 59 + this.WarningDetails.GetHashCode();
                 if (this.Width != null)
                     hash = hash * 59 + this.Width.GetHashCode();
                 if (this.WidthMetadata != null)

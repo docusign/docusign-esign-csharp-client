@@ -45,10 +45,11 @@ namespace DocuSign.eSign.Model
         /// <param name="ShowBackButton">ShowBackButton.</param>
         /// <param name="ShowDiscardAction">ShowDiscardAction.</param>
         /// <param name="ShowHeaderActions">ShowHeaderActions.</param>
+        /// <param name="ShowSignNow">ShowSignNow.</param>
         /// <param name="StartingScreen">StartingScreen.</param>
         /// <param name="TaggerSettings">TaggerSettings.</param>
         /// <param name="TemplateSettings">TemplateSettings.</param>
-        public EnvelopeViewSettings(string BackButtonAction = default(string), EnvelopeViewDocumentSettings DocumentSettings = default(EnvelopeViewDocumentSettings), EnvelopeViewEnvelopeCustomFieldSettings EnvelopeCustomFieldSettings = default(EnvelopeViewEnvelopeCustomFieldSettings), string LockToken = default(string), EnvelopeViewRecipientSettings RecipientSettings = default(EnvelopeViewRecipientSettings), string SendButtonAction = default(string), string ShowAdvancedOptions = default(string), string ShowBackButton = default(string), string ShowDiscardAction = default(string), string ShowHeaderActions = default(string), string StartingScreen = default(string), EnvelopeViewTaggerSettings TaggerSettings = default(EnvelopeViewTaggerSettings), EnvelopeViewTemplateSettings TemplateSettings = default(EnvelopeViewTemplateSettings))
+        public EnvelopeViewSettings(string BackButtonAction = default(string), EnvelopeViewDocumentSettings DocumentSettings = default(EnvelopeViewDocumentSettings), EnvelopeViewEnvelopeCustomFieldSettings EnvelopeCustomFieldSettings = default(EnvelopeViewEnvelopeCustomFieldSettings), string LockToken = default(string), EnvelopeViewRecipientSettings RecipientSettings = default(EnvelopeViewRecipientSettings), string SendButtonAction = default(string), string ShowAdvancedOptions = default(string), string ShowBackButton = default(string), string ShowDiscardAction = default(string), string ShowHeaderActions = default(string), string ShowSignNow = default(string), string StartingScreen = default(string), EnvelopeViewTaggerSettings TaggerSettings = default(EnvelopeViewTaggerSettings), EnvelopeViewTemplateSettings TemplateSettings = default(EnvelopeViewTemplateSettings))
         {
             this.BackButtonAction = BackButtonAction;
             this.DocumentSettings = DocumentSettings;
@@ -60,6 +61,7 @@ namespace DocuSign.eSign.Model
             this.ShowBackButton = ShowBackButton;
             this.ShowDiscardAction = ShowDiscardAction;
             this.ShowHeaderActions = ShowHeaderActions;
+            this.ShowSignNow = ShowSignNow;
             this.StartingScreen = StartingScreen;
             this.TaggerSettings = TaggerSettings;
             this.TemplateSettings = TemplateSettings;
@@ -116,6 +118,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="showHeaderActions", EmitDefaultValue=false)]
         public string ShowHeaderActions { get; set; }
         /// <summary>
+        /// Gets or Sets ShowSignNow
+        /// </summary>
+        [DataMember(Name="showSignNow", EmitDefaultValue=false)]
+        public string ShowSignNow { get; set; }
+        /// <summary>
         /// Gets or Sets StartingScreen
         /// </summary>
         [DataMember(Name="startingScreen", EmitDefaultValue=false)]
@@ -148,6 +155,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ShowBackButton: ").Append(ShowBackButton).Append("\n");
             sb.Append("  ShowDiscardAction: ").Append(ShowDiscardAction).Append("\n");
             sb.Append("  ShowHeaderActions: ").Append(ShowHeaderActions).Append("\n");
+            sb.Append("  ShowSignNow: ").Append(ShowSignNow).Append("\n");
             sb.Append("  StartingScreen: ").Append(StartingScreen).Append("\n");
             sb.Append("  TaggerSettings: ").Append(TaggerSettings).Append("\n");
             sb.Append("  TemplateSettings: ").Append(TemplateSettings).Append("\n");
@@ -238,6 +246,11 @@ namespace DocuSign.eSign.Model
                     this.ShowHeaderActions.Equals(other.ShowHeaderActions)
                 ) && 
                 (
+                    this.ShowSignNow == other.ShowSignNow ||
+                    this.ShowSignNow != null &&
+                    this.ShowSignNow.Equals(other.ShowSignNow)
+                ) && 
+                (
                     this.StartingScreen == other.StartingScreen ||
                     this.StartingScreen != null &&
                     this.StartingScreen.Equals(other.StartingScreen)
@@ -285,6 +298,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ShowDiscardAction.GetHashCode();
                 if (this.ShowHeaderActions != null)
                     hash = hash * 59 + this.ShowHeaderActions.GetHashCode();
+                if (this.ShowSignNow != null)
+                    hash = hash * 59 + this.ShowSignNow.GetHashCode();
                 if (this.StartingScreen != null)
                     hash = hash * 59 + this.StartingScreen.GetHashCode();
                 if (this.TaggerSettings != null)

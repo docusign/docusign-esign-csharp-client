@@ -39,16 +39,18 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
         /// <param name="DocumentName">DocumentName.</param>
         /// <param name="ErrorDetails">Array or errors..</param>
+        /// <param name="HasDocumentTemplateLibrary">HasDocumentTemplateLibrary.</param>
         /// <param name="Name">Name.</param>
         /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
         /// <param name="TemplateMatch">TemplateMatch.</param>
         /// <param name="Uri">Uri.</param>
-        public TemplateSummary(string Applied = default(string), string DocumentId = default(string), string DocumentName = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string Name = default(string), string TemplateId = default(string), TemplateMatch TemplateMatch = default(TemplateMatch), string Uri = default(string))
+        public TemplateSummary(string Applied = default(string), string DocumentId = default(string), string DocumentName = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string HasDocumentTemplateLibrary = default(string), string Name = default(string), string TemplateId = default(string), TemplateMatch TemplateMatch = default(TemplateMatch), string Uri = default(string))
         {
             this.Applied = Applied;
             this.DocumentId = DocumentId;
             this.DocumentName = DocumentName;
             this.ErrorDetails = ErrorDetails;
+            this.HasDocumentTemplateLibrary = HasDocumentTemplateLibrary;
             this.Name = Name;
             this.TemplateId = TemplateId;
             this.TemplateMatch = TemplateMatch;
@@ -78,6 +80,11 @@ namespace DocuSign.eSign.Model
         /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
+        /// <summary>
+        /// Gets or Sets HasDocumentTemplateLibrary
+        /// </summary>
+        [DataMember(Name="hasDocumentTemplateLibrary", EmitDefaultValue=false)]
+        public string HasDocumentTemplateLibrary { get; set; }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
@@ -111,6 +118,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
             sb.Append("  DocumentName: ").Append(DocumentName).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
+            sb.Append("  HasDocumentTemplateLibrary: ").Append(HasDocumentTemplateLibrary).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  TemplateId: ").Append(TemplateId).Append("\n");
             sb.Append("  TemplateMatch: ").Append(TemplateMatch).Append("\n");
@@ -172,6 +180,11 @@ namespace DocuSign.eSign.Model
                     this.ErrorDetails.Equals(other.ErrorDetails)
                 ) && 
                 (
+                    this.HasDocumentTemplateLibrary == other.HasDocumentTemplateLibrary ||
+                    this.HasDocumentTemplateLibrary != null &&
+                    this.HasDocumentTemplateLibrary.Equals(other.HasDocumentTemplateLibrary)
+                ) && 
+                (
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
@@ -212,6 +225,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DocumentName.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                if (this.HasDocumentTemplateLibrary != null)
+                    hash = hash * 59 + this.HasDocumentTemplateLibrary.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.TemplateId != null)

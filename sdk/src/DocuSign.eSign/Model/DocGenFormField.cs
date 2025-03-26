@@ -35,22 +35,28 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocGenFormField" /> class.
         /// </summary>
+        /// <param name="ConnectedObjectDetails">ConnectedObjectDetails.</param>
         /// <param name="Description">Description.</param>
+        /// <param name="FullyQualifiedPath">FullyQualifiedPath.</param>
         /// <param name="Label">Label.</param>
         /// <param name="Name">Name.</param>
         /// <param name="Options">Options.</param>
+        /// <param name="Order">Order.</param>
         /// <param name="PredefinedValidation">PredefinedValidation.</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
         /// <param name="RowValues">RowValues.</param>
         /// <param name="Type">Type.</param>
         /// <param name="Validation">Validation.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        public DocGenFormField(string Description = default(string), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string PredefinedValidation = default(string), string Required = default(string), List<DocGenFormFieldRowValue> RowValues = default(List<DocGenFormFieldRowValue>), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
+        public DocGenFormField(ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), string Description = default(string), string FullyQualifiedPath = default(string), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string Order = default(string), string PredefinedValidation = default(string), string Required = default(string), List<DocGenFormFieldRowValue> RowValues = default(List<DocGenFormFieldRowValue>), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
         {
+            this.ConnectedObjectDetails = ConnectedObjectDetails;
             this.Description = Description;
+            this.FullyQualifiedPath = FullyQualifiedPath;
             this.Label = Label;
             this.Name = Name;
             this.Options = Options;
+            this.Order = Order;
             this.PredefinedValidation = PredefinedValidation;
             this.Required = Required;
             this.RowValues = RowValues;
@@ -60,10 +66,20 @@ namespace DocuSign.eSign.Model
         }
         
         /// <summary>
+        /// Gets or Sets ConnectedObjectDetails
+        /// </summary>
+        [DataMember(Name="connectedObjectDetails", EmitDefaultValue=false)]
+        public ConnectedObjectDetails ConnectedObjectDetails { get; set; }
+        /// <summary>
         /// Gets or Sets Description
         /// </summary>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
+        /// <summary>
+        /// Gets or Sets FullyQualifiedPath
+        /// </summary>
+        [DataMember(Name="fullyQualifiedPath", EmitDefaultValue=false)]
+        public string FullyQualifiedPath { get; set; }
         /// <summary>
         /// Gets or Sets Label
         /// </summary>
@@ -79,6 +95,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="options", EmitDefaultValue=false)]
         public List<DocGenFormFieldOption> Options { get; set; }
+        /// <summary>
+        /// Gets or Sets Order
+        /// </summary>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public string Order { get; set; }
         /// <summary>
         /// Gets or Sets PredefinedValidation
         /// </summary>
@@ -119,10 +140,13 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DocGenFormField {\n");
+            sb.Append("  ConnectedObjectDetails: ").Append(ConnectedObjectDetails).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  FullyQualifiedPath: ").Append(FullyQualifiedPath).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
+            sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  PredefinedValidation: ").Append(PredefinedValidation).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
             sb.Append("  RowValues: ").Append(RowValues).Append("\n");
@@ -166,9 +190,19 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.ConnectedObjectDetails == other.ConnectedObjectDetails ||
+                    this.ConnectedObjectDetails != null &&
+                    this.ConnectedObjectDetails.Equals(other.ConnectedObjectDetails)
+                ) && 
+                (
                     this.Description == other.Description ||
                     this.Description != null &&
                     this.Description.Equals(other.Description)
+                ) && 
+                (
+                    this.FullyQualifiedPath == other.FullyQualifiedPath ||
+                    this.FullyQualifiedPath != null &&
+                    this.FullyQualifiedPath.Equals(other.FullyQualifiedPath)
                 ) && 
                 (
                     this.Label == other.Label ||
@@ -184,6 +218,11 @@ namespace DocuSign.eSign.Model
                     this.Options == other.Options ||
                     this.Options != null &&
                     this.Options.SequenceEqual(other.Options)
+                ) && 
+                (
+                    this.Order == other.Order ||
+                    this.Order != null &&
+                    this.Order.Equals(other.Order)
                 ) && 
                 (
                     this.PredefinedValidation == other.PredefinedValidation ||
@@ -228,14 +267,20 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.ConnectedObjectDetails != null)
+                    hash = hash * 59 + this.ConnectedObjectDetails.GetHashCode();
                 if (this.Description != null)
                     hash = hash * 59 + this.Description.GetHashCode();
+                if (this.FullyQualifiedPath != null)
+                    hash = hash * 59 + this.FullyQualifiedPath.GetHashCode();
                 if (this.Label != null)
                     hash = hash * 59 + this.Label.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Options != null)
                     hash = hash * 59 + this.Options.GetHashCode();
+                if (this.Order != null)
+                    hash = hash * 59 + this.Order.GetHashCode();
                 if (this.PredefinedValidation != null)
                     hash = hash * 59 + this.PredefinedValidation.GetHashCode();
                 if (this.Required != null)

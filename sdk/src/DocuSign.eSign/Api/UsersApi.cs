@@ -3374,6 +3374,8 @@ namespace DocuSign.eSign.Api
             public string additionalInfo {get; set;}
             /// 
             public string email {get; set;}
+            /// 
+            public string includeLicense {get; set;}
         }
 
         /// <summary>
@@ -3438,6 +3440,7 @@ namespace DocuSign.eSign.Api
             {
                 if (options.additionalInfo != null) localVarQueryParams.Add("additional_info", this.ApiClient.ParameterToString(options.additionalInfo)); // query parameter
                 if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
+                if (options.includeLicense != null) localVarQueryParams.Add("include_license", this.ApiClient.ParameterToString(options.includeLicense)); // query parameter
             }
 
             // authentication (docusignAccessCode) required
@@ -3527,6 +3530,7 @@ namespace DocuSign.eSign.Api
             {
                 if (options.additionalInfo != null) localVarQueryParams.Add("additional_info", this.ApiClient.ParameterToString(options.additionalInfo)); // query parameter
                 if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
+                if (options.includeLicense != null) localVarQueryParams.Add("include_license", this.ApiClient.ParameterToString(options.includeLicense)); // query parameter
             }
 
             // authentication (docusignAccessCode) required
@@ -4475,6 +4479,8 @@ namespace DocuSign.eSign.Api
             /// Filters user records returned by one or more group Id&#39;s. 
             public string groupId {get; set;}
             /// 
+            public string includeLicense {get; set;}
+            /// 
             public string includeUsersettingsForCsv {get; set;}
             /// 
             public string loginStatus {get; set;}
@@ -4549,6 +4555,7 @@ namespace DocuSign.eSign.Api
                 if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
                 if (options.emailSubstring != null) localVarQueryParams.Add("email_substring", this.ApiClient.ParameterToString(options.emailSubstring)); // query parameter
                 if (options.groupId != null) localVarQueryParams.Add("group_id", this.ApiClient.ParameterToString(options.groupId)); // query parameter
+                if (options.includeLicense != null) localVarQueryParams.Add("include_license", this.ApiClient.ParameterToString(options.includeLicense)); // query parameter
                 if (options.includeUsersettingsForCsv != null) localVarQueryParams.Add("include_usersettings_for_csv", this.ApiClient.ParameterToString(options.includeUsersettingsForCsv)); // query parameter
                 if (options.loginStatus != null) localVarQueryParams.Add("login_status", this.ApiClient.ParameterToString(options.loginStatus)); // query parameter
                 if (options.notGroupId != null) localVarQueryParams.Add("not_group_id", this.ApiClient.ParameterToString(options.notGroupId)); // query parameter
@@ -4643,6 +4650,7 @@ namespace DocuSign.eSign.Api
                 if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
                 if (options.emailSubstring != null) localVarQueryParams.Add("email_substring", this.ApiClient.ParameterToString(options.emailSubstring)); // query parameter
                 if (options.groupId != null) localVarQueryParams.Add("group_id", this.ApiClient.ParameterToString(options.groupId)); // query parameter
+                if (options.includeLicense != null) localVarQueryParams.Add("include_license", this.ApiClient.ParameterToString(options.includeLicense)); // query parameter
                 if (options.includeUsersettingsForCsv != null) localVarQueryParams.Add("include_usersettings_for_csv", this.ApiClient.ParameterToString(options.includeUsersettingsForCsv)); // query parameter
                 if (options.loginStatus != null) localVarQueryParams.Add("login_status", this.ApiClient.ParameterToString(options.loginStatus)); // query parameter
                 if (options.notGroupId != null) localVarQueryParams.Add("not_group_id", this.ApiClient.ParameterToString(options.notGroupId)); // query parameter

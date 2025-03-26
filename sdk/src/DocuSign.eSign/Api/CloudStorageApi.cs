@@ -1206,6 +1206,8 @@ namespace DocuSign.eSign.Api
             public string orderBy {get; set;}
             /// 
             public string searchText {get; set;}
+            /// 
+            public string skyDriveSkipToken {get; set;}
             /// Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0.   
             public string startPosition {get; set;}
         }
@@ -1288,6 +1290,7 @@ namespace DocuSign.eSign.Api
                 if (options.order != null) localVarQueryParams.Add("order", this.ApiClient.ParameterToString(options.order)); // query parameter
                 if (options.orderBy != null) localVarQueryParams.Add("order_by", this.ApiClient.ParameterToString(options.orderBy)); // query parameter
                 if (options.searchText != null) localVarQueryParams.Add("search_text", this.ApiClient.ParameterToString(options.searchText)); // query parameter
+                if (options.skyDriveSkipToken != null) localVarQueryParams.Add("sky_drive_skip_token", this.ApiClient.ParameterToString(options.skyDriveSkipToken)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
 
@@ -1394,6 +1397,7 @@ namespace DocuSign.eSign.Api
                 if (options.order != null) localVarQueryParams.Add("order", this.ApiClient.ParameterToString(options.order)); // query parameter
                 if (options.orderBy != null) localVarQueryParams.Add("order_by", this.ApiClient.ParameterToString(options.orderBy)); // query parameter
                 if (options.searchText != null) localVarQueryParams.Add("search_text", this.ApiClient.ParameterToString(options.searchText)); // query parameter
+                if (options.skyDriveSkipToken != null) localVarQueryParams.Add("sky_drive_skip_token", this.ApiClient.ParameterToString(options.skyDriveSkipToken)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
             }
 

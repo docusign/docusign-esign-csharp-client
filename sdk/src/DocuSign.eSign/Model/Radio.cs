@@ -59,7 +59,9 @@ namespace DocuSign.eSign.Model
         /// <param name="BoldMetadata">Metadata that indicates whether the &#x60;bold&#x60; property is editable..</param>
         /// <param name="Caption">Caption.</param>
         /// <param name="CaptionMetadata">CaptionMetadata.</param>
+        /// <param name="ConnectedObjectDetails">ConnectedObjectDetails.</param>
         /// <param name="ErrorDetails">Array or errors..</param>
+        /// <param name="ExtensionData">ExtensionData.</param>
         /// <param name="Font">The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default..</param>
         /// <param name="FontColor">The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White..</param>
         /// <param name="FontColorMetadata">Metadata that indicates whether the &#x60;fontColor&#x60; property is editable..</param>
@@ -79,6 +81,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SelectedMetadata">Metadata that indicates whether the &#x60;selected&#x60; property is editable..</param>
         /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusMetadata">Metadata that indicates whether the &#x60;status&#x60; property is editable..</param>
+        /// <param name="TabFullyQualifiedPath">TabFullyQualifiedPath.</param>
         /// <param name="TabId">The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     .</param>
         /// <param name="TabIdMetadata">Metadata that indicates whether the &#x60;tabId&#x60; property is editable..</param>
         /// <param name="TabOrder">TabOrder.</param>
@@ -91,7 +94,7 @@ namespace DocuSign.eSign.Model
         /// <param name="XPositionMetadata">Metadata that indicates whether the &#x60;xPosition&#x60; property is editable..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPositionMetadata">Metadata that indicates whether the &#x60;yPosition&#x60; property is editable..</param>
-        public Radio(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), ErrorDetails ErrorDetails = default(ErrorDetails), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string MergeFieldXml = default(string), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
+        public Radio(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), ErrorDetails ErrorDetails = default(ErrorDetails), ExtensionData ExtensionData = default(ExtensionData), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string MergeFieldXml = default(string), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabFullyQualifiedPath = default(string), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
             this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
             this.AnchorAllowWhiteSpaceInCharactersMetadata = AnchorAllowWhiteSpaceInCharactersMetadata;
@@ -117,7 +120,9 @@ namespace DocuSign.eSign.Model
             this.BoldMetadata = BoldMetadata;
             this.Caption = Caption;
             this.CaptionMetadata = CaptionMetadata;
+            this.ConnectedObjectDetails = ConnectedObjectDetails;
             this.ErrorDetails = ErrorDetails;
+            this.ExtensionData = ExtensionData;
             this.Font = Font;
             this.FontColor = FontColor;
             this.FontColorMetadata = FontColorMetadata;
@@ -137,6 +142,7 @@ namespace DocuSign.eSign.Model
             this.SelectedMetadata = SelectedMetadata;
             this.Status = Status;
             this.StatusMetadata = StatusMetadata;
+            this.TabFullyQualifiedPath = TabFullyQualifiedPath;
             this.TabId = TabId;
             this.TabIdMetadata = TabIdMetadata;
             this.TabOrder = TabOrder;
@@ -292,11 +298,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="captionMetadata", EmitDefaultValue=false)]
         public PropertyMetadata CaptionMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets ConnectedObjectDetails
+        /// </summary>
+        [DataMember(Name="connectedObjectDetails", EmitDefaultValue=false)]
+        public ConnectedObjectDetails ConnectedObjectDetails { get; set; }
+        /// <summary>
         /// Array or errors.
         /// </summary>
         /// <value>Array or errors.</value>
         [DataMember(Name="errorDetails", EmitDefaultValue=false)]
         public ErrorDetails ErrorDetails { get; set; }
+        /// <summary>
+        /// Gets or Sets ExtensionData
+        /// </summary>
+        [DataMember(Name="extensionData", EmitDefaultValue=false)]
+        public ExtensionData ExtensionData { get; set; }
         /// <summary>
         /// The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
         /// </summary>
@@ -411,6 +427,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="statusMetadata", EmitDefaultValue=false)]
         public PropertyMetadata StatusMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets TabFullyQualifiedPath
+        /// </summary>
+        [DataMember(Name="tabFullyQualifiedPath", EmitDefaultValue=false)]
+        public string TabFullyQualifiedPath { get; set; }
+        /// <summary>
         /// The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     
         /// </summary>
         /// <value>The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     </value>
@@ -513,7 +534,9 @@ namespace DocuSign.eSign.Model
             sb.Append("  BoldMetadata: ").Append(BoldMetadata).Append("\n");
             sb.Append("  Caption: ").Append(Caption).Append("\n");
             sb.Append("  CaptionMetadata: ").Append(CaptionMetadata).Append("\n");
+            sb.Append("  ConnectedObjectDetails: ").Append(ConnectedObjectDetails).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
+            sb.Append("  ExtensionData: ").Append(ExtensionData).Append("\n");
             sb.Append("  Font: ").Append(Font).Append("\n");
             sb.Append("  FontColor: ").Append(FontColor).Append("\n");
             sb.Append("  FontColorMetadata: ").Append(FontColorMetadata).Append("\n");
@@ -533,6 +556,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SelectedMetadata: ").Append(SelectedMetadata).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StatusMetadata: ").Append(StatusMetadata).Append("\n");
+            sb.Append("  TabFullyQualifiedPath: ").Append(TabFullyQualifiedPath).Append("\n");
             sb.Append("  TabId: ").Append(TabId).Append("\n");
             sb.Append("  TabIdMetadata: ").Append(TabIdMetadata).Append("\n");
             sb.Append("  TabOrder: ").Append(TabOrder).Append("\n");
@@ -702,9 +726,19 @@ namespace DocuSign.eSign.Model
                     this.CaptionMetadata.Equals(other.CaptionMetadata)
                 ) && 
                 (
+                    this.ConnectedObjectDetails == other.ConnectedObjectDetails ||
+                    this.ConnectedObjectDetails != null &&
+                    this.ConnectedObjectDetails.Equals(other.ConnectedObjectDetails)
+                ) && 
+                (
                     this.ErrorDetails == other.ErrorDetails ||
                     this.ErrorDetails != null &&
                     this.ErrorDetails.Equals(other.ErrorDetails)
+                ) && 
+                (
+                    this.ExtensionData == other.ExtensionData ||
+                    this.ExtensionData != null &&
+                    this.ExtensionData.Equals(other.ExtensionData)
                 ) && 
                 (
                     this.Font == other.Font ||
@@ -800,6 +834,11 @@ namespace DocuSign.eSign.Model
                     this.StatusMetadata == other.StatusMetadata ||
                     this.StatusMetadata != null &&
                     this.StatusMetadata.Equals(other.StatusMetadata)
+                ) && 
+                (
+                    this.TabFullyQualifiedPath == other.TabFullyQualifiedPath ||
+                    this.TabFullyQualifiedPath != null &&
+                    this.TabFullyQualifiedPath.Equals(other.TabFullyQualifiedPath)
                 ) && 
                 (
                     this.TabId == other.TabId ||
@@ -922,8 +961,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Caption.GetHashCode();
                 if (this.CaptionMetadata != null)
                     hash = hash * 59 + this.CaptionMetadata.GetHashCode();
+                if (this.ConnectedObjectDetails != null)
+                    hash = hash * 59 + this.ConnectedObjectDetails.GetHashCode();
                 if (this.ErrorDetails != null)
                     hash = hash * 59 + this.ErrorDetails.GetHashCode();
+                if (this.ExtensionData != null)
+                    hash = hash * 59 + this.ExtensionData.GetHashCode();
                 if (this.Font != null)
                     hash = hash * 59 + this.Font.GetHashCode();
                 if (this.FontColor != null)
@@ -962,6 +1005,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.StatusMetadata != null)
                     hash = hash * 59 + this.StatusMetadata.GetHashCode();
+                if (this.TabFullyQualifiedPath != null)
+                    hash = hash * 59 + this.TabFullyQualifiedPath.GetHashCode();
                 if (this.TabId != null)
                     hash = hash * 59 + this.TabId.GetHashCode();
                 if (this.TabIdMetadata != null)

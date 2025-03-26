@@ -43,6 +43,8 @@ namespace DocuSign.eSign.Model
         /// <param name="DocumentBase64">The document&#39;s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding..</param>
         /// <param name="DocumentFields">DocumentFields.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
+        /// <param name="DocumentTemplateAgreementTypeId">DocumentTemplateAgreementTypeId.</param>
+        /// <param name="DocumentTemplateId">DocumentTemplateId.</param>
         /// <param name="EncryptedWithKeyManager">When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.  .</param>
         /// <param name="FileExtension">The file extension type of the document. If the document is not a PDF it is converted to a PDF.  .</param>
         /// <param name="FileFormatHint">FileFormatHint.</param>
@@ -63,7 +65,7 @@ namespace DocuSign.eSign.Model
         /// <param name="TemplateRequired">When set to **true**, the sender may not remove the recipient. Used only when working with template recipients..</param>
         /// <param name="TransformPdfFields">When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs. .</param>
         /// <param name="Uri">Uri.</param>
-        public Document(string ApplyAnchorTabs = default(string), string AssignTabsToRecipientId = default(string), bool? AuthoritativeCopy = default(bool?), string Display = default(string), List<DocGenFormField> DocGenFormFields = default(List<DocGenFormField>), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), string IsDocGenDocument = default(string), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), string Order = default(string), string Pages = default(string), string Password = default(string), string PdfFormFieldOption = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), bool? SignerMustAcknowledgeUseAccountDefault = default(bool?), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
+        public Document(string ApplyAnchorTabs = default(string), string AssignTabsToRecipientId = default(string), bool? AuthoritativeCopy = default(bool?), string Display = default(string), List<DocGenFormField> DocGenFormFields = default(List<DocGenFormField>), string DocumentBase64 = default(string), List<NameValue> DocumentFields = default(List<NameValue>), string DocumentId = default(string), string DocumentTemplateAgreementTypeId = default(string), string DocumentTemplateId = default(string), string EncryptedWithKeyManager = default(string), string FileExtension = default(string), string FileFormatHint = default(string), DocumentHtmlDefinition HtmlDefinition = default(DocumentHtmlDefinition), string IncludeInDownload = default(string), string IsDocGenDocument = default(string), List<MatchBox> MatchBoxes = default(List<MatchBox>), string Name = default(string), string Order = default(string), string Pages = default(string), string Password = default(string), string PdfFormFieldOption = default(string), string RemoteUrl = default(string), string SignerMustAcknowledge = default(string), bool? SignerMustAcknowledgeUseAccountDefault = default(bool?), Tabs Tabs = default(Tabs), string TemplateLocked = default(string), string TemplateRequired = default(string), string TransformPdfFields = default(string), string Uri = default(string))
         {
             this.ApplyAnchorTabs = ApplyAnchorTabs;
             this.AssignTabsToRecipientId = AssignTabsToRecipientId;
@@ -73,6 +75,8 @@ namespace DocuSign.eSign.Model
             this.DocumentBase64 = DocumentBase64;
             this.DocumentFields = DocumentFields;
             this.DocumentId = DocumentId;
+            this.DocumentTemplateAgreementTypeId = DocumentTemplateAgreementTypeId;
+            this.DocumentTemplateId = DocumentTemplateId;
             this.EncryptedWithKeyManager = EncryptedWithKeyManager;
             this.FileExtension = FileExtension;
             this.FileFormatHint = FileFormatHint;
@@ -139,6 +143,16 @@ namespace DocuSign.eSign.Model
         /// <value>Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute.</value>
         [DataMember(Name="documentId", EmitDefaultValue=false)]
         public string DocumentId { get; set; }
+        /// <summary>
+        /// Gets or Sets DocumentTemplateAgreementTypeId
+        /// </summary>
+        [DataMember(Name="documentTemplateAgreementTypeId", EmitDefaultValue=false)]
+        public string DocumentTemplateAgreementTypeId { get; set; }
+        /// <summary>
+        /// Gets or Sets DocumentTemplateId
+        /// </summary>
+        [DataMember(Name="documentTemplateId", EmitDefaultValue=false)]
+        public string DocumentTemplateId { get; set; }
         /// <summary>
         /// When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.  
         /// </summary>
@@ -264,6 +278,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  DocumentBase64: ").Append(DocumentBase64).Append("\n");
             sb.Append("  DocumentFields: ").Append(DocumentFields).Append("\n");
             sb.Append("  DocumentId: ").Append(DocumentId).Append("\n");
+            sb.Append("  DocumentTemplateAgreementTypeId: ").Append(DocumentTemplateAgreementTypeId).Append("\n");
+            sb.Append("  DocumentTemplateId: ").Append(DocumentTemplateId).Append("\n");
             sb.Append("  EncryptedWithKeyManager: ").Append(EncryptedWithKeyManager).Append("\n");
             sb.Append("  FileExtension: ").Append(FileExtension).Append("\n");
             sb.Append("  FileFormatHint: ").Append(FileFormatHint).Append("\n");
@@ -359,6 +375,16 @@ namespace DocuSign.eSign.Model
                     this.DocumentId == other.DocumentId ||
                     this.DocumentId != null &&
                     this.DocumentId.Equals(other.DocumentId)
+                ) && 
+                (
+                    this.DocumentTemplateAgreementTypeId == other.DocumentTemplateAgreementTypeId ||
+                    this.DocumentTemplateAgreementTypeId != null &&
+                    this.DocumentTemplateAgreementTypeId.Equals(other.DocumentTemplateAgreementTypeId)
+                ) && 
+                (
+                    this.DocumentTemplateId == other.DocumentTemplateId ||
+                    this.DocumentTemplateId != null &&
+                    this.DocumentTemplateId.Equals(other.DocumentTemplateId)
                 ) && 
                 (
                     this.EncryptedWithKeyManager == other.EncryptedWithKeyManager ||
@@ -489,6 +515,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DocumentFields.GetHashCode();
                 if (this.DocumentId != null)
                     hash = hash * 59 + this.DocumentId.GetHashCode();
+                if (this.DocumentTemplateAgreementTypeId != null)
+                    hash = hash * 59 + this.DocumentTemplateAgreementTypeId.GetHashCode();
+                if (this.DocumentTemplateId != null)
+                    hash = hash * 59 + this.DocumentTemplateId.GetHashCode();
                 if (this.EncryptedWithKeyManager != null)
                     hash = hash * 59 + this.EncryptedWithKeyManager.GetHashCode();
                 if (this.FileExtension != null)

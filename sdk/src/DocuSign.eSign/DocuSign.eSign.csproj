@@ -16,7 +16,7 @@
     <RootNamespace>DocuSign.eSign</RootNamespace>
     <AssemblyName>DocuSign.eSign</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>8.1.0-rc</VersionPrefix>
+    <VersionPrefix>8.1.0-rc2</VersionPrefix>
     <VersionSuffix/>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -26,7 +26,7 @@
     <PackageLicenseUrl>https://github.com/docusign/docusign-esign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-esign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v8.1.0-rc] - ESignature API v2.1-25.1.00.01 - 3/26/2025</PackageReleaseNotes>
+    <PackageReleaseNotes>[v8.1.0-rc2] - ESignature API v2.1-25.1.00.02 - 4/4/2025</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net462'">
     <DefineConstants>NET462</DefineConstants>

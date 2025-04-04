@@ -26,7 +26,7 @@ namespace DocuSign.eSign.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "8.1.0-rc";
+        public const string Version = "8.1.0-rc2";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format

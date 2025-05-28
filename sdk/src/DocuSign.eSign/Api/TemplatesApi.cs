@@ -8972,6 +8972,8 @@ namespace DocuSign.eSign.Api
         public class ListDocumentsOptions
         {
             /// 
+            public string includeAgreementType {get; set;}
+            /// 
             public string includeTabs {get; set;}
         }
 
@@ -9035,6 +9037,7 @@ namespace DocuSign.eSign.Api
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (options != null)
             {
+                if (options.includeAgreementType != null) localVarQueryParams.Add("include_agreement_type", this.ApiClient.ParameterToString(options.includeAgreementType)); // query parameter
                 if (options.includeTabs != null) localVarQueryParams.Add("include_tabs", this.ApiClient.ParameterToString(options.includeTabs)); // query parameter
             }
 
@@ -9123,6 +9126,7 @@ namespace DocuSign.eSign.Api
             if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
             if (options != null)
             {
+                if (options.includeAgreementType != null) localVarQueryParams.Add("include_agreement_type", this.ApiClient.ParameterToString(options.includeAgreementType)); // query parameter
                 if (options.includeTabs != null) localVarQueryParams.Add("include_tabs", this.ApiClient.ParameterToString(options.includeTabs)); // query parameter
             }
 

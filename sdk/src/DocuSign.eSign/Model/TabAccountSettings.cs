@@ -81,7 +81,9 @@ namespace DocuSign.eSign.Model
         /// <param name="TabTextFormattingMetadata">Metadata that indicates whether the &#x60;tabTextFormatting&#x60; property is editable. .</param>
         /// <param name="TextTabsEnabled">TextTabsEnabled.</param>
         /// <param name="TextTabsMetadata">Metadata that indicates whether the &#x60;textTabs&#x60; property is editable. .</param>
-        public TabAccountSettings(string AllowTabOrder = default(string), SettingsMetadata AllowTabOrderMetadata = default(SettingsMetadata), string ApproveDeclineTabsEnabled = default(string), SettingsMetadata ApproveDeclineTabsMetadata = default(SettingsMetadata), string CalculatedFieldsEnabled = default(string), SettingsMetadata CalculatedFieldsMetadata = default(SettingsMetadata), string CheckboxTabsEnabled = default(string), SettingsMetadata CheckBoxTabsMetadata = default(SettingsMetadata), string DataFieldRegexEnabled = default(string), SettingsMetadata DataFieldRegexMetadata = default(SettingsMetadata), string DataFieldSizeEnabled = default(string), SettingsMetadata DataFieldSizeMetadata = default(SettingsMetadata), string DrawTabsEnabled = default(string), SettingsMetadata DrawTabsMetadata = default(SettingsMetadata), string EnableTabAgreementDetails = default(string), SettingsMetadata EnableTabAgreementDetailsMetadata = default(SettingsMetadata), string FirstLastEmailTabsEnabled = default(string), SettingsMetadata FirstLastEmailTabsMetadata = default(SettingsMetadata), string ListTabsEnabled = default(string), SettingsMetadata ListTabsMetadata = default(SettingsMetadata), string NoteTabsEnabled = default(string), SettingsMetadata NoteTabsMetadata = default(SettingsMetadata), string NumericalTabsEnabled = default(string), SettingsMetadata NumericalTabsMetadata = default(SettingsMetadata), string PrefillTabsEnabled = default(string), SettingsMetadata PrefillTabsMetadata = default(SettingsMetadata), string RadioTabsEnabled = default(string), SettingsMetadata RadioTabsMetadata = default(SettingsMetadata), string SavingCustomTabsEnabled = default(string), SettingsMetadata SavingCustomTabsMetadata = default(SettingsMetadata), string SenderToChangeTabAssignmentsEnabled = default(string), SettingsMetadata SenderToChangeTabAssignmentsMetadata = default(SettingsMetadata), string SharedCustomTabsEnabled = default(string), SettingsMetadata SharedCustomTabsMetadata = default(SettingsMetadata), string TabDataLabelEnabled = default(string), SettingsMetadata TabDataLabelMetadata = default(SettingsMetadata), string TabLocationEnabled = default(string), SettingsMetadata TabLocationMetadata = default(SettingsMetadata), string TabLockingEnabled = default(string), SettingsMetadata TabLockingMetadata = default(SettingsMetadata), string TabScaleEnabled = default(string), SettingsMetadata TabScaleMetadata = default(SettingsMetadata), string TabTextFormattingEnabled = default(string), SettingsMetadata TabTextFormattingMetadata = default(SettingsMetadata), string TextTabsEnabled = default(string), SettingsMetadata TextTabsMetadata = default(SettingsMetadata))
+        /// <param name="UriTabsEnabled">UriTabsEnabled.</param>
+        /// <param name="UriTabsMetadata">UriTabsMetadata.</param>
+        public TabAccountSettings(string AllowTabOrder = default(string), SettingsMetadata AllowTabOrderMetadata = default(SettingsMetadata), string ApproveDeclineTabsEnabled = default(string), SettingsMetadata ApproveDeclineTabsMetadata = default(SettingsMetadata), string CalculatedFieldsEnabled = default(string), SettingsMetadata CalculatedFieldsMetadata = default(SettingsMetadata), string CheckboxTabsEnabled = default(string), SettingsMetadata CheckBoxTabsMetadata = default(SettingsMetadata), string DataFieldRegexEnabled = default(string), SettingsMetadata DataFieldRegexMetadata = default(SettingsMetadata), string DataFieldSizeEnabled = default(string), SettingsMetadata DataFieldSizeMetadata = default(SettingsMetadata), string DrawTabsEnabled = default(string), SettingsMetadata DrawTabsMetadata = default(SettingsMetadata), string EnableTabAgreementDetails = default(string), SettingsMetadata EnableTabAgreementDetailsMetadata = default(SettingsMetadata), string FirstLastEmailTabsEnabled = default(string), SettingsMetadata FirstLastEmailTabsMetadata = default(SettingsMetadata), string ListTabsEnabled = default(string), SettingsMetadata ListTabsMetadata = default(SettingsMetadata), string NoteTabsEnabled = default(string), SettingsMetadata NoteTabsMetadata = default(SettingsMetadata), string NumericalTabsEnabled = default(string), SettingsMetadata NumericalTabsMetadata = default(SettingsMetadata), string PrefillTabsEnabled = default(string), SettingsMetadata PrefillTabsMetadata = default(SettingsMetadata), string RadioTabsEnabled = default(string), SettingsMetadata RadioTabsMetadata = default(SettingsMetadata), string SavingCustomTabsEnabled = default(string), SettingsMetadata SavingCustomTabsMetadata = default(SettingsMetadata), string SenderToChangeTabAssignmentsEnabled = default(string), SettingsMetadata SenderToChangeTabAssignmentsMetadata = default(SettingsMetadata), string SharedCustomTabsEnabled = default(string), SettingsMetadata SharedCustomTabsMetadata = default(SettingsMetadata), string TabDataLabelEnabled = default(string), SettingsMetadata TabDataLabelMetadata = default(SettingsMetadata), string TabLocationEnabled = default(string), SettingsMetadata TabLocationMetadata = default(SettingsMetadata), string TabLockingEnabled = default(string), SettingsMetadata TabLockingMetadata = default(SettingsMetadata), string TabScaleEnabled = default(string), SettingsMetadata TabScaleMetadata = default(SettingsMetadata), string TabTextFormattingEnabled = default(string), SettingsMetadata TabTextFormattingMetadata = default(SettingsMetadata), string TextTabsEnabled = default(string), SettingsMetadata TextTabsMetadata = default(SettingsMetadata), string UriTabsEnabled = default(string), SettingsMetadata UriTabsMetadata = default(SettingsMetadata))
         {
             this.AllowTabOrder = AllowTabOrder;
             this.AllowTabOrderMetadata = AllowTabOrderMetadata;
@@ -129,6 +131,8 @@ namespace DocuSign.eSign.Model
             this.TabTextFormattingMetadata = TabTextFormattingMetadata;
             this.TextTabsEnabled = TextTabsEnabled;
             this.TextTabsMetadata = TextTabsMetadata;
+            this.UriTabsEnabled = UriTabsEnabled;
+            this.UriTabsMetadata = UriTabsMetadata;
         }
         
         /// <summary>
@@ -381,6 +385,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="textTabsMetadata", EmitDefaultValue=false)]
         public SettingsMetadata TextTabsMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets UriTabsEnabled
+        /// </summary>
+        [DataMember(Name="uriTabsEnabled", EmitDefaultValue=false)]
+        public string UriTabsEnabled { get; set; }
+        /// <summary>
+        /// Gets or Sets UriTabsMetadata
+        /// </summary>
+        [DataMember(Name="uriTabsMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata UriTabsMetadata { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -434,6 +448,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  TabTextFormattingMetadata: ").Append(TabTextFormattingMetadata).Append("\n");
             sb.Append("  TextTabsEnabled: ").Append(TextTabsEnabled).Append("\n");
             sb.Append("  TextTabsMetadata: ").Append(TextTabsMetadata).Append("\n");
+            sb.Append("  UriTabsEnabled: ").Append(UriTabsEnabled).Append("\n");
+            sb.Append("  UriTabsMetadata: ").Append(UriTabsMetadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -699,6 +715,16 @@ namespace DocuSign.eSign.Model
                     this.TextTabsMetadata == other.TextTabsMetadata ||
                     this.TextTabsMetadata != null &&
                     this.TextTabsMetadata.Equals(other.TextTabsMetadata)
+                ) && 
+                (
+                    this.UriTabsEnabled == other.UriTabsEnabled ||
+                    this.UriTabsEnabled != null &&
+                    this.UriTabsEnabled.Equals(other.UriTabsEnabled)
+                ) && 
+                (
+                    this.UriTabsMetadata == other.UriTabsMetadata ||
+                    this.UriTabsMetadata != null &&
+                    this.UriTabsMetadata.Equals(other.UriTabsMetadata)
                 );
         }
 
@@ -805,6 +831,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.TextTabsEnabled.GetHashCode();
                 if (this.TextTabsMetadata != null)
                     hash = hash * 59 + this.TextTabsMetadata.GetHashCode();
+                if (this.UriTabsEnabled != null)
+                    hash = hash * 59 + this.UriTabsEnabled.GetHashCode();
+                if (this.UriTabsMetadata != null)
+                    hash = hash * 59 + this.UriTabsMetadata.GetHashCode();
                 return hash;
             }
         }

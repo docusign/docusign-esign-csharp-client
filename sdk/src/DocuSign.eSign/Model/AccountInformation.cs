@@ -62,6 +62,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ForgottenPasswordQuestionsCount"> A complex element that contains up to four Question/Answer pairs for forgotten password information for a user..</param>
         /// <param name="FreeEnvelopeSendsRemainingForAdvancedDocGen">FreeEnvelopeSendsRemainingForAdvancedDocGen.</param>
         /// <param name="IsDowngrade">IsDowngrade.</param>
+        /// <param name="IsFreeToTrialEligible">IsFreeToTrialEligible.</param>
         /// <param name="PaymentMethod">PaymentMethod.</param>
         /// <param name="PlanClassification">Identifies the type of plan. Examples include Business, Corporate, Enterprise, Free..</param>
         /// <param name="PlanEndDate">The date that the current plan will end..</param>
@@ -74,7 +75,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SuspensionDate">SuspensionDate.</param>
         /// <param name="SuspensionStatus">SuspensionStatus.</param>
         /// <param name="UseDisplayAppliance">UseDisplayAppliance.</param>
-        public AccountInformation(string AccountIdGuid = default(string), string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), string AllowTransactionRooms = default(string), string BillingPeriodDaysRemaining = default(string), string BillingPeriodEndDate = default(string), string BillingPeriodEnvelopesAllowed = default(string), string BillingPeriodEnvelopesSent = default(string), string BillingPeriodStartDate = default(string), string BillingProfile = default(string), BrandsResponse Brands = default(BrandsResponse), string CanUpgrade = default(string), string ConnectPermission = default(string), string CreatedDate = default(string), string CurrencyCode = default(string), string CurrentPlanId = default(string), string DisplayApplianceStartUrl = default(string), string DisplayApplianceUrl = default(string), string DistributorCode = default(string), string DocuSignLandingUrl = default(string), Dictionary<string, string> DssValues = default(Dictionary<string, string>), string EnvelopeSendingBlocked = default(string), string EnvelopeUnitPrice = default(string), string ExternalAccountId = default(string), string ForgottenPasswordQuestionsCount = default(string), int? FreeEnvelopeSendsRemainingForAdvancedDocGen = default(int?), string IsDowngrade = default(string), string PaymentMethod = default(string), string PlanClassification = default(string), string PlanEndDate = default(string), string PlanName = default(string), string PlanStartDate = default(string), List<RecipientDomain> RecipientDomains = default(List<RecipientDomain>), string SeatsAllowed = default(string), string SeatsInUse = default(string), string Status21CFRPart11 = default(string), string SuspensionDate = default(string), string SuspensionStatus = default(string), bool? UseDisplayAppliance = default(bool?))
+        public AccountInformation(string AccountIdGuid = default(string), string AccountName = default(string), AccountSettingsInformation AccountSettings = default(AccountSettingsInformation), string AllowTransactionRooms = default(string), string BillingPeriodDaysRemaining = default(string), string BillingPeriodEndDate = default(string), string BillingPeriodEnvelopesAllowed = default(string), string BillingPeriodEnvelopesSent = default(string), string BillingPeriodStartDate = default(string), string BillingProfile = default(string), BrandsResponse Brands = default(BrandsResponse), string CanUpgrade = default(string), string ConnectPermission = default(string), string CreatedDate = default(string), string CurrencyCode = default(string), string CurrentPlanId = default(string), string DisplayApplianceStartUrl = default(string), string DisplayApplianceUrl = default(string), string DistributorCode = default(string), string DocuSignLandingUrl = default(string), Dictionary<string, string> DssValues = default(Dictionary<string, string>), string EnvelopeSendingBlocked = default(string), string EnvelopeUnitPrice = default(string), string ExternalAccountId = default(string), string ForgottenPasswordQuestionsCount = default(string), int? FreeEnvelopeSendsRemainingForAdvancedDocGen = default(int?), string IsDowngrade = default(string), string IsFreeToTrialEligible = default(string), string PaymentMethod = default(string), string PlanClassification = default(string), string PlanEndDate = default(string), string PlanName = default(string), string PlanStartDate = default(string), List<RecipientDomain> RecipientDomains = default(List<RecipientDomain>), string SeatsAllowed = default(string), string SeatsInUse = default(string), string Status21CFRPart11 = default(string), string SuspensionDate = default(string), string SuspensionStatus = default(string), bool? UseDisplayAppliance = default(bool?))
         {
             this.AccountIdGuid = AccountIdGuid;
             this.AccountName = AccountName;
@@ -103,6 +104,7 @@ namespace DocuSign.eSign.Model
             this.ForgottenPasswordQuestionsCount = ForgottenPasswordQuestionsCount;
             this.FreeEnvelopeSendsRemainingForAdvancedDocGen = FreeEnvelopeSendsRemainingForAdvancedDocGen;
             this.IsDowngrade = IsDowngrade;
+            this.IsFreeToTrialEligible = IsFreeToTrialEligible;
             this.PaymentMethod = PaymentMethod;
             this.PlanClassification = PlanClassification;
             this.PlanEndDate = PlanEndDate;
@@ -268,6 +270,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="isDowngrade", EmitDefaultValue=false)]
         public string IsDowngrade { get; set; }
         /// <summary>
+        /// Gets or Sets IsFreeToTrialEligible
+        /// </summary>
+        [DataMember(Name="isFreeToTrialEligible", EmitDefaultValue=false)]
+        public string IsFreeToTrialEligible { get; set; }
+        /// <summary>
         /// Gets or Sets PaymentMethod
         /// </summary>
         [DataMember(Name="paymentMethod", EmitDefaultValue=false)]
@@ -366,6 +373,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ForgottenPasswordQuestionsCount: ").Append(ForgottenPasswordQuestionsCount).Append("\n");
             sb.Append("  FreeEnvelopeSendsRemainingForAdvancedDocGen: ").Append(FreeEnvelopeSendsRemainingForAdvancedDocGen).Append("\n");
             sb.Append("  IsDowngrade: ").Append(IsDowngrade).Append("\n");
+            sb.Append("  IsFreeToTrialEligible: ").Append(IsFreeToTrialEligible).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  PlanClassification: ").Append(PlanClassification).Append("\n");
             sb.Append("  PlanEndDate: ").Append(PlanEndDate).Append("\n");
@@ -550,6 +558,11 @@ namespace DocuSign.eSign.Model
                     this.IsDowngrade.Equals(other.IsDowngrade)
                 ) && 
                 (
+                    this.IsFreeToTrialEligible == other.IsFreeToTrialEligible ||
+                    this.IsFreeToTrialEligible != null &&
+                    this.IsFreeToTrialEligible.Equals(other.IsFreeToTrialEligible)
+                ) && 
+                (
                     this.PaymentMethod == other.PaymentMethod ||
                     this.PaymentMethod != null &&
                     this.PaymentMethod.Equals(other.PaymentMethod)
@@ -676,6 +689,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.FreeEnvelopeSendsRemainingForAdvancedDocGen.GetHashCode();
                 if (this.IsDowngrade != null)
                     hash = hash * 59 + this.IsDowngrade.GetHashCode();
+                if (this.IsFreeToTrialEligible != null)
+                    hash = hash * 59 + this.IsFreeToTrialEligible.GetHashCode();
                 if (this.PaymentMethod != null)
                     hash = hash * 59 + this.PaymentMethod.GetHashCode();
                 if (this.PlanClassification != null)

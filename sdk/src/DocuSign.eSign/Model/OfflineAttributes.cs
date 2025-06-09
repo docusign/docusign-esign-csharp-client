@@ -22,7 +22,7 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// DocuSign internal use, but it is needed for swagger tools (go lang, Elixir/OTP) to generate client library. 
+    /// Reserved for DocuSign use.
     /// </summary>
     [DataContract]
     public partial class OfflineAttributes :  IEquatable<OfflineAttributes>, IValidatableObject

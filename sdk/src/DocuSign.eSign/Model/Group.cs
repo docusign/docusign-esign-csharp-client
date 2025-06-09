@@ -44,9 +44,10 @@ namespace DocuSign.eSign.Model
         /// <param name="IsManagedByScim">IsManagedByScim.</param>
         /// <param name="LastModifiedOn">LastModifiedOn.</param>
         /// <param name="PermissionProfileId">The ID of the permission profile associated with the group..</param>
+        /// <param name="UserGroupType">UserGroupType.</param>
         /// <param name="Users">Users.</param>
         /// <param name="UsersCount">UsersCount.</param>
-        public Group(string AccessType = default(string), string DsGroupId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string GroupId = default(string), string GroupName = default(string), string GroupType = default(string), string IsManagedByScim = default(string), string LastModifiedOn = default(string), string PermissionProfileId = default(string), List<UserInfo> Users = default(List<UserInfo>), string UsersCount = default(string))
+        public Group(string AccessType = default(string), string DsGroupId = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string GroupId = default(string), string GroupName = default(string), string GroupType = default(string), bool? IsManagedByScim = default(bool?), string LastModifiedOn = default(string), string PermissionProfileId = default(string), string UserGroupType = default(string), List<UserInfo> Users = default(List<UserInfo>), string UsersCount = default(string))
         {
             this.AccessType = AccessType;
             this.DsGroupId = DsGroupId;
@@ -57,6 +58,7 @@ namespace DocuSign.eSign.Model
             this.IsManagedByScim = IsManagedByScim;
             this.LastModifiedOn = LastModifiedOn;
             this.PermissionProfileId = PermissionProfileId;
+            this.UserGroupType = UserGroupType;
             this.Users = Users;
             this.UsersCount = UsersCount;
         }
@@ -99,7 +101,7 @@ namespace DocuSign.eSign.Model
         /// Gets or Sets IsManagedByScim
         /// </summary>
         [DataMember(Name="isManagedByScim", EmitDefaultValue=false)]
-        public string IsManagedByScim { get; set; }
+        public bool? IsManagedByScim { get; set; }
         /// <summary>
         /// Gets or Sets LastModifiedOn
         /// </summary>
@@ -111,6 +113,11 @@ namespace DocuSign.eSign.Model
         /// <value>The ID of the permission profile associated with the group.</value>
         [DataMember(Name="permissionProfileId", EmitDefaultValue=false)]
         public string PermissionProfileId { get; set; }
+        /// <summary>
+        /// Gets or Sets UserGroupType
+        /// </summary>
+        [DataMember(Name="userGroupType", EmitDefaultValue=false)]
+        public string UserGroupType { get; set; }
         /// <summary>
         /// Gets or Sets Users
         /// </summary>
@@ -138,6 +145,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IsManagedByScim: ").Append(IsManagedByScim).Append("\n");
             sb.Append("  LastModifiedOn: ").Append(LastModifiedOn).Append("\n");
             sb.Append("  PermissionProfileId: ").Append(PermissionProfileId).Append("\n");
+            sb.Append("  UserGroupType: ").Append(UserGroupType).Append("\n");
             sb.Append("  Users: ").Append(Users).Append("\n");
             sb.Append("  UsersCount: ").Append(UsersCount).Append("\n");
             sb.Append("}\n");
@@ -222,6 +230,11 @@ namespace DocuSign.eSign.Model
                     this.PermissionProfileId.Equals(other.PermissionProfileId)
                 ) && 
                 (
+                    this.UserGroupType == other.UserGroupType ||
+                    this.UserGroupType != null &&
+                    this.UserGroupType.Equals(other.UserGroupType)
+                ) && 
+                (
                     this.Users == other.Users ||
                     this.Users != null &&
                     this.Users.SequenceEqual(other.Users)
@@ -262,6 +275,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.LastModifiedOn.GetHashCode();
                 if (this.PermissionProfileId != null)
                     hash = hash * 59 + this.PermissionProfileId.GetHashCode();
+                if (this.UserGroupType != null)
+                    hash = hash * 59 + this.UserGroupType.GetHashCode();
                 if (this.Users != null)
                     hash = hash * 59 + this.Users.GetHashCode();
                 if (this.UsersCount != null)

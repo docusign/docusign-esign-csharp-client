@@ -1,5 +1,10 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v8.3.0] - eSignature API v2.1-25.2.01.00 - 2025-07-08
+### Changed
+- Added support for version v2.1-25.2.01.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v8.2.0] - eSignature API v2.1-25.2.00.00 - 2025-05-21
 ### Changed
 - Added support for version v2.1-25.2.00.00 of the DocuSign ESignature API.

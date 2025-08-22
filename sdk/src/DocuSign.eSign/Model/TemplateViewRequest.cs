@@ -36,10 +36,12 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="TemplateViewRequest" /> class.
         /// </summary>
         /// <param name="ReturnUrl">ReturnUrl.</param>
+        /// <param name="Settings">Settings.</param>
         /// <param name="ViewAccess">ViewAccess.</param>
-        public TemplateViewRequest(string ReturnUrl = default(string), string ViewAccess = default(string))
+        public TemplateViewRequest(string ReturnUrl = default(string), TemplateViewSettings Settings = default(TemplateViewSettings), string ViewAccess = default(string))
         {
             this.ReturnUrl = ReturnUrl;
+            this.Settings = Settings;
             this.ViewAccess = ViewAccess;
         }
         
@@ -48,6 +50,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="returnUrl", EmitDefaultValue=false)]
         public string ReturnUrl { get; set; }
+        /// <summary>
+        /// Gets or Sets Settings
+        /// </summary>
+        [DataMember(Name="settings", EmitDefaultValue=false)]
+        public TemplateViewSettings Settings { get; set; }
         /// <summary>
         /// Gets or Sets ViewAccess
         /// </summary>
@@ -62,6 +69,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class TemplateViewRequest {\n");
             sb.Append("  ReturnUrl: ").Append(ReturnUrl).Append("\n");
+            sb.Append("  Settings: ").Append(Settings).Append("\n");
             sb.Append("  ViewAccess: ").Append(ViewAccess).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -105,6 +113,11 @@ namespace DocuSign.eSign.Model
                     this.ReturnUrl.Equals(other.ReturnUrl)
                 ) && 
                 (
+                    this.Settings == other.Settings ||
+                    this.Settings != null &&
+                    this.Settings.Equals(other.Settings)
+                ) && 
+                (
                     this.ViewAccess == other.ViewAccess ||
                     this.ViewAccess != null &&
                     this.ViewAccess.Equals(other.ViewAccess)
@@ -124,6 +137,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.ReturnUrl != null)
                     hash = hash * 59 + this.ReturnUrl.GetHashCode();
+                if (this.Settings != null)
+                    hash = hash * 59 + this.Settings.GetHashCode();
                 if (this.ViewAccess != null)
                     hash = hash * 59 + this.ViewAccess.GetHashCode();
                 return hash;

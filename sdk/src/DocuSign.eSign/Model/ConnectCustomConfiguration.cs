@@ -62,6 +62,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IntegratorManaged">IntegratorManaged.</param>
         /// <param name="Name">The name of the Connect configuration. The name helps identify the configuration in the list..</param>
         /// <param name="Password">Password.</param>
+        /// <param name="PausePublish">PausePublish.</param>
         /// <param name="RecipientEvents">A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded..</param>
         /// <param name="RequireMutualTls">RequireMutualTls.</param>
         /// <param name="RequiresAcknowledgement">When set to **true**, and a publication message fails to be acknowledged, the message goes back into the queue and the system will retry delivery after a successful acknowledgement is received. If the delivery fails a second time, the message is not returned to the queue for sending until Connect receives a successful acknowledgement and it has been at least 24 hours since the previous retry. There is a maximum of ten retries Alternately, you can use Republish Connect Information to manually republish the envelope information..</param>
@@ -78,7 +79,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserIds">A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s..</param>
         /// <param name="UserName">UserName.</param>
         /// <param name="UseSoapInterface">When set to **true**, indicates that the &#x60;urlToPublishTo&#x60; property contains a SOAP endpoint..</param>
-        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string AllUsersExcept = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string DisabledBy = default(string), string EnableLog = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), List<string> GroupIds = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeOAuth = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string IntegratorManaged = default(string), string Name = default(string), string Password = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
+        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string AllUsersExcept = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string DisabledBy = default(string), string EnableLog = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), List<string> GroupIds = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeOAuth = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string IntegratorManaged = default(string), string Name = default(string), string Password = default(string), string PausePublish = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
         {
             this.AllowEnvelopePublish = AllowEnvelopePublish;
             this.AllowSalesforcePublish = AllowSalesforcePublish;
@@ -107,6 +108,7 @@ namespace DocuSign.eSign.Model
             this.IntegratorManaged = IntegratorManaged;
             this.Name = Name;
             this.Password = Password;
+            this.PausePublish = PausePublish;
             this.RecipientEvents = RecipientEvents;
             this.RequireMutualTls = RequireMutualTls;
             this.RequiresAcknowledgement = RequiresAcknowledgement;
@@ -275,6 +277,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="password", EmitDefaultValue=false)]
         public string Password { get; set; }
         /// <summary>
+        /// Gets or Sets PausePublish
+        /// </summary>
+        [DataMember(Name="pausePublish", EmitDefaultValue=false)]
+        public string PausePublish { get; set; }
+        /// <summary>
         /// A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
         /// </summary>
         /// <value>A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.</value>
@@ -396,6 +403,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IntegratorManaged: ").Append(IntegratorManaged).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Password: ").Append(Password).Append("\n");
+            sb.Append("  PausePublish: ").Append(PausePublish).Append("\n");
             sb.Append("  RecipientEvents: ").Append(RecipientEvents).Append("\n");
             sb.Append("  RequireMutualTls: ").Append(RequireMutualTls).Append("\n");
             sb.Append("  RequiresAcknowledgement: ").Append(RequiresAcknowledgement).Append("\n");
@@ -584,6 +592,11 @@ namespace DocuSign.eSign.Model
                     this.Password.Equals(other.Password)
                 ) && 
                 (
+                    this.PausePublish == other.PausePublish ||
+                    this.PausePublish != null &&
+                    this.PausePublish.Equals(other.PausePublish)
+                ) && 
+                (
                     this.RecipientEvents == other.RecipientEvents ||
                     this.RecipientEvents != null &&
                     this.RecipientEvents.SequenceEqual(other.RecipientEvents)
@@ -730,6 +743,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Password != null)
                     hash = hash * 59 + this.Password.GetHashCode();
+                if (this.PausePublish != null)
+                    hash = hash * 59 + this.PausePublish.GetHashCode();
                 if (this.RecipientEvents != null)
                     hash = hash * 59 + this.RecipientEvents.GetHashCode();
                 if (this.RequireMutualTls != null)

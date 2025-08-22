@@ -40,7 +40,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ClientSecret">ClientSecret.</param>
         /// <param name="CustomParameters">CustomParameters.</param>
         /// <param name="Scope">Scope.</param>
-        public ConnectOAuthConfig(string AuthorizationServerUrl = default(string), string ClientId = default(string), string ClientSecret = default(string), string CustomParameters = default(string), string Scope = default(string))
+        public ConnectOAuthConfig(string AuthorizationServerUrl = default(string), string ClientId = default(string), string ClientSecret = default(string), Dictionary<string, string> CustomParameters = default(Dictionary<string, string>), string Scope = default(string))
         {
             this.AuthorizationServerUrl = AuthorizationServerUrl;
             this.ClientId = ClientId;
@@ -68,7 +68,7 @@ namespace DocuSign.eSign.Model
         /// Gets or Sets CustomParameters
         /// </summary>
         [DataMember(Name="customParameters", EmitDefaultValue=false)]
-        public string CustomParameters { get; set; }
+        public Dictionary<string, string> CustomParameters { get; set; }
         /// <summary>
         /// Gets or Sets Scope
         /// </summary>
@@ -141,7 +141,7 @@ namespace DocuSign.eSign.Model
                 (
                     this.CustomParameters == other.CustomParameters ||
                     this.CustomParameters != null &&
-                    this.CustomParameters.Equals(other.CustomParameters)
+                    this.CustomParameters.SequenceEqual(other.CustomParameters)
                 ) && 
                 (
                     this.Scope == other.Scope ||

@@ -635,6 +635,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="tabs", EmitDefaultValue=false)]
         public Tabs Tabs { get; set; }
         /// <summary>
+        /// When set to **true**, the access code will be required for the recipient. Used only when working with template recipients. 
+        /// </summary>
+        /// <value>When set to **true**, the access code will be required for the recipient. Used only when working with template recipients. </value>
+		[DataMember(Name="templateAccessCodeRequired", EmitDefaultValue=false)]
+		public string TemplateAccessCodeRequired { get; set; }
+        /// <summary>
         /// When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
         /// </summary>
         /// <value>When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. </value>

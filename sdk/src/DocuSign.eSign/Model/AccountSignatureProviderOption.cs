@@ -36,13 +36,17 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="AccountSignatureProviderOption" /> class.
         /// </summary>
         /// <param name="SignatureProviderOptionDisplayName">SignatureProviderOptionDisplayName.</param>
+        /// <param name="SignatureProviderOptionHintOverrideValue">SignatureProviderOptionHintOverrideValue.</param>
         /// <param name="SignatureProviderOptionId">SignatureProviderOptionId.</param>
         /// <param name="SignatureProviderOptionName">SignatureProviderOptionName.</param>
-        public AccountSignatureProviderOption(string SignatureProviderOptionDisplayName = default(string), string SignatureProviderOptionId = default(string), string SignatureProviderOptionName = default(string))
+        /// <param name="SignatureProviderOptionRegexValidationPattern">SignatureProviderOptionRegexValidationPattern.</param>
+        public AccountSignatureProviderOption(string SignatureProviderOptionDisplayName = default(string), string SignatureProviderOptionHintOverrideValue = default(string), string SignatureProviderOptionId = default(string), string SignatureProviderOptionName = default(string), string SignatureProviderOptionRegexValidationPattern = default(string))
         {
             this.SignatureProviderOptionDisplayName = SignatureProviderOptionDisplayName;
+            this.SignatureProviderOptionHintOverrideValue = SignatureProviderOptionHintOverrideValue;
             this.SignatureProviderOptionId = SignatureProviderOptionId;
             this.SignatureProviderOptionName = SignatureProviderOptionName;
+            this.SignatureProviderOptionRegexValidationPattern = SignatureProviderOptionRegexValidationPattern;
         }
         
         /// <summary>
@@ -50,6 +54,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="signatureProviderOptionDisplayName", EmitDefaultValue=false)]
         public string SignatureProviderOptionDisplayName { get; set; }
+        /// <summary>
+        /// Gets or Sets SignatureProviderOptionHintOverrideValue
+        /// </summary>
+        [DataMember(Name="signatureProviderOptionHintOverrideValue", EmitDefaultValue=false)]
+        public string SignatureProviderOptionHintOverrideValue { get; set; }
         /// <summary>
         /// Gets or Sets SignatureProviderOptionId
         /// </summary>
@@ -61,6 +70,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signatureProviderOptionName", EmitDefaultValue=false)]
         public string SignatureProviderOptionName { get; set; }
         /// <summary>
+        /// Gets or Sets SignatureProviderOptionRegexValidationPattern
+        /// </summary>
+        [DataMember(Name="signatureProviderOptionRegexValidationPattern", EmitDefaultValue=false)]
+        public string SignatureProviderOptionRegexValidationPattern { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -69,8 +83,10 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class AccountSignatureProviderOption {\n");
             sb.Append("  SignatureProviderOptionDisplayName: ").Append(SignatureProviderOptionDisplayName).Append("\n");
+            sb.Append("  SignatureProviderOptionHintOverrideValue: ").Append(SignatureProviderOptionHintOverrideValue).Append("\n");
             sb.Append("  SignatureProviderOptionId: ").Append(SignatureProviderOptionId).Append("\n");
             sb.Append("  SignatureProviderOptionName: ").Append(SignatureProviderOptionName).Append("\n");
+            sb.Append("  SignatureProviderOptionRegexValidationPattern: ").Append(SignatureProviderOptionRegexValidationPattern).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,6 +129,11 @@ namespace DocuSign.eSign.Model
                     this.SignatureProviderOptionDisplayName.Equals(other.SignatureProviderOptionDisplayName)
                 ) && 
                 (
+                    this.SignatureProviderOptionHintOverrideValue == other.SignatureProviderOptionHintOverrideValue ||
+                    this.SignatureProviderOptionHintOverrideValue != null &&
+                    this.SignatureProviderOptionHintOverrideValue.Equals(other.SignatureProviderOptionHintOverrideValue)
+                ) && 
+                (
                     this.SignatureProviderOptionId == other.SignatureProviderOptionId ||
                     this.SignatureProviderOptionId != null &&
                     this.SignatureProviderOptionId.Equals(other.SignatureProviderOptionId)
@@ -121,6 +142,11 @@ namespace DocuSign.eSign.Model
                     this.SignatureProviderOptionName == other.SignatureProviderOptionName ||
                     this.SignatureProviderOptionName != null &&
                     this.SignatureProviderOptionName.Equals(other.SignatureProviderOptionName)
+                ) && 
+                (
+                    this.SignatureProviderOptionRegexValidationPattern == other.SignatureProviderOptionRegexValidationPattern ||
+                    this.SignatureProviderOptionRegexValidationPattern != null &&
+                    this.SignatureProviderOptionRegexValidationPattern.Equals(other.SignatureProviderOptionRegexValidationPattern)
                 );
         }
 
@@ -137,10 +163,14 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.SignatureProviderOptionDisplayName != null)
                     hash = hash * 59 + this.SignatureProviderOptionDisplayName.GetHashCode();
+                if (this.SignatureProviderOptionHintOverrideValue != null)
+                    hash = hash * 59 + this.SignatureProviderOptionHintOverrideValue.GetHashCode();
                 if (this.SignatureProviderOptionId != null)
                     hash = hash * 59 + this.SignatureProviderOptionId.GetHashCode();
                 if (this.SignatureProviderOptionName != null)
                     hash = hash * 59 + this.SignatureProviderOptionName.GetHashCode();
+                if (this.SignatureProviderOptionRegexValidationPattern != null)
+                    hash = hash * 59 + this.SignatureProviderOptionRegexValidationPattern.GetHashCode();
                 return hash;
             }
         }

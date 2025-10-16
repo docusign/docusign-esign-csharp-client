@@ -44,6 +44,7 @@ namespace DocuSign.eSign.Model
         /// <param name="DeliveryMode">DeliveryMode.</param>
         /// <param name="DisabledBy">DisabledBy.</param>
         /// <param name="EnableLog">This turns Connect logging on or off. When set to **true**, logging is turned on..</param>
+        /// <param name="EnableOAuthPerConfiguration">EnableOAuthPerConfiguration.</param>
         /// <param name="EnvelopeEvents">A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided..</param>
         /// <param name="EventData">Allows you to specify the format of the information the Connect webhooks returns. For more information, see [Connect webhooks with JSON notifications](https://www.docusign.com/blog/developers/connect-webhooks-json-notifications).</param>
         /// <param name="Events">Events.</param>
@@ -61,6 +62,7 @@ namespace DocuSign.eSign.Model
         /// <param name="IncludeTimeZoneInformation">When set to **true**, Connect will include the envelope time zone information..</param>
         /// <param name="IntegratorManaged">IntegratorManaged.</param>
         /// <param name="Name">The name of the Connect configuration. The name helps identify the configuration in the list..</param>
+        /// <param name="OAuthConfiguration">OAuthConfiguration.</param>
         /// <param name="Password">Password.</param>
         /// <param name="PausePublish">PausePublish.</param>
         /// <param name="RecipientEvents">A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded..</param>
@@ -79,7 +81,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserIds">A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s..</param>
         /// <param name="UserName">UserName.</param>
         /// <param name="UseSoapInterface">When set to **true**, indicates that the &#x60;urlToPublishTo&#x60; property contains a SOAP endpoint..</param>
-        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string AllUsersExcept = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string DisabledBy = default(string), string EnableLog = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), List<string> GroupIds = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeOAuth = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string IntegratorManaged = default(string), string Name = default(string), string Password = default(string), string PausePublish = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
+        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string AllUsersExcept = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string DisabledBy = default(string), string EnableLog = default(string), string EnableOAuthPerConfiguration = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), List<string> GroupIds = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeOAuth = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string IntegratorManaged = default(string), string Name = default(string), ConnectOAuthConfig OAuthConfiguration = default(ConnectOAuthConfig), string Password = default(string), string PausePublish = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
         {
             this.AllowEnvelopePublish = AllowEnvelopePublish;
             this.AllowSalesforcePublish = AllowSalesforcePublish;
@@ -90,6 +92,7 @@ namespace DocuSign.eSign.Model
             this.DeliveryMode = DeliveryMode;
             this.DisabledBy = DisabledBy;
             this.EnableLog = EnableLog;
+            this.EnableOAuthPerConfiguration = EnableOAuthPerConfiguration;
             this.EnvelopeEvents = EnvelopeEvents;
             this.EventData = EventData;
             this.Events = Events;
@@ -107,6 +110,7 @@ namespace DocuSign.eSign.Model
             this.IncludeTimeZoneInformation = IncludeTimeZoneInformation;
             this.IntegratorManaged = IntegratorManaged;
             this.Name = Name;
+            this.OAuthConfiguration = OAuthConfiguration;
             this.Password = Password;
             this.PausePublish = PausePublish;
             this.RecipientEvents = RecipientEvents;
@@ -177,6 +181,11 @@ namespace DocuSign.eSign.Model
         /// <value>This turns Connect logging on or off. When set to **true**, logging is turned on.</value>
         [DataMember(Name="enableLog", EmitDefaultValue=false)]
         public string EnableLog { get; set; }
+        /// <summary>
+        /// Gets or Sets EnableOAuthPerConfiguration
+        /// </summary>
+        [DataMember(Name="enableOAuthPerConfiguration", EmitDefaultValue=false)]
+        public string EnableOAuthPerConfiguration { get; set; }
         /// <summary>
         /// A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
         /// </summary>
@@ -271,6 +280,11 @@ namespace DocuSign.eSign.Model
         /// <value>The name of the Connect configuration. The name helps identify the configuration in the list.</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+        /// <summary>
+        /// Gets or Sets OAuthConfiguration
+        /// </summary>
+        [DataMember(Name="oAuthConfiguration", EmitDefaultValue=false)]
+        public ConnectOAuthConfig OAuthConfiguration { get; set; }
         /// <summary>
         /// Gets or Sets Password
         /// </summary>
@@ -385,6 +399,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DeliveryMode: ").Append(DeliveryMode).Append("\n");
             sb.Append("  DisabledBy: ").Append(DisabledBy).Append("\n");
             sb.Append("  EnableLog: ").Append(EnableLog).Append("\n");
+            sb.Append("  EnableOAuthPerConfiguration: ").Append(EnableOAuthPerConfiguration).Append("\n");
             sb.Append("  EnvelopeEvents: ").Append(EnvelopeEvents).Append("\n");
             sb.Append("  EventData: ").Append(EventData).Append("\n");
             sb.Append("  Events: ").Append(Events).Append("\n");
@@ -402,6 +417,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IncludeTimeZoneInformation: ").Append(IncludeTimeZoneInformation).Append("\n");
             sb.Append("  IntegratorManaged: ").Append(IntegratorManaged).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  OAuthConfiguration: ").Append(OAuthConfiguration).Append("\n");
             sb.Append("  Password: ").Append(Password).Append("\n");
             sb.Append("  PausePublish: ").Append(PausePublish).Append("\n");
             sb.Append("  RecipientEvents: ").Append(RecipientEvents).Append("\n");
@@ -502,6 +518,11 @@ namespace DocuSign.eSign.Model
                     this.EnableLog.Equals(other.EnableLog)
                 ) && 
                 (
+                    this.EnableOAuthPerConfiguration == other.EnableOAuthPerConfiguration ||
+                    this.EnableOAuthPerConfiguration != null &&
+                    this.EnableOAuthPerConfiguration.Equals(other.EnableOAuthPerConfiguration)
+                ) && 
+                (
                     this.EnvelopeEvents == other.EnvelopeEvents ||
                     this.EnvelopeEvents != null &&
                     this.EnvelopeEvents.SequenceEqual(other.EnvelopeEvents)
@@ -585,6 +606,11 @@ namespace DocuSign.eSign.Model
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
+                ) && 
+                (
+                    this.OAuthConfiguration == other.OAuthConfiguration ||
+                    this.OAuthConfiguration != null &&
+                    this.OAuthConfiguration.Equals(other.OAuthConfiguration)
                 ) && 
                 (
                     this.Password == other.Password ||
@@ -707,6 +733,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DisabledBy.GetHashCode();
                 if (this.EnableLog != null)
                     hash = hash * 59 + this.EnableLog.GetHashCode();
+                if (this.EnableOAuthPerConfiguration != null)
+                    hash = hash * 59 + this.EnableOAuthPerConfiguration.GetHashCode();
                 if (this.EnvelopeEvents != null)
                     hash = hash * 59 + this.EnvelopeEvents.GetHashCode();
                 if (this.EventData != null)
@@ -741,6 +769,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.IntegratorManaged.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.OAuthConfiguration != null)
+                    hash = hash * 59 + this.OAuthConfiguration.GetHashCode();
                 if (this.Password != null)
                     hash = hash * 59 + this.Password.GetHashCode();
                 if (this.PausePublish != null)

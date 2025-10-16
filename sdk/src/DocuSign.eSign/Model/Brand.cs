@@ -49,10 +49,11 @@ namespace DocuSign.eSign.Model
         /// <param name="IsSigningDefault">IsSigningDefault.</param>
         /// <param name="LandingPages">LandingPages.</param>
         /// <param name="Links">Links.</param>
+        /// <param name="LogoIds">LogoIds.</param>
         /// <param name="Logos">The URIs for retrieving the logos that are associated with the brand..</param>
         /// <param name="OrganizationBrandLogo">OrganizationBrandLogo.</param>
         /// <param name="Resources">An object containing the URLs for the four DocuSign master resource files that the brand uses for sending, signing, email messages, and captive (embedded) signing. You can modify the default email messages and formats in these file to customize the user experience.  **Note:** This object is returned only when the &#x60;resourceContentType&#x60; is &#x60;sending&#x60;, &#x60;signing&#x60;, &#x60;email&#x60;, or &#x60;signing_captive&#x60;..</param>
-        public Brand(string BrandCompany = default(string), string BrandId = default(string), List<string> BrandLanguages = default(List<string>), string BrandName = default(string), List<NameValue> Colors = default(List<NameValue>), string DefaultBrandLanguage = default(string), List<BrandEmailContent> EmailContent = default(List<BrandEmailContent>), ErrorDetails ErrorDetails = default(ErrorDetails), string IsOrganizationBrand = default(string), bool? IsOverridingCompanyName = default(bool?), bool? IsSendingDefault = default(bool?), bool? IsSigningDefault = default(bool?), List<NameValue> LandingPages = default(List<NameValue>), List<BrandLink> Links = default(List<BrandLink>), BrandLogos Logos = default(BrandLogos), string OrganizationBrandLogo = default(string), BrandResourceUrls Resources = default(BrandResourceUrls))
+        public Brand(string BrandCompany = default(string), string BrandId = default(string), List<string> BrandLanguages = default(List<string>), string BrandName = default(string), List<NameValue> Colors = default(List<NameValue>), string DefaultBrandLanguage = default(string), List<BrandEmailContent> EmailContent = default(List<BrandEmailContent>), ErrorDetails ErrorDetails = default(ErrorDetails), string IsOrganizationBrand = default(string), bool? IsOverridingCompanyName = default(bool?), bool? IsSendingDefault = default(bool?), bool? IsSigningDefault = default(bool?), List<NameValue> LandingPages = default(List<NameValue>), List<BrandLink> Links = default(List<BrandLink>), BrandLogoIds LogoIds = default(BrandLogoIds), BrandLogos Logos = default(BrandLogos), string OrganizationBrandLogo = default(string), BrandResourceUrls Resources = default(BrandResourceUrls))
         {
             this.BrandCompany = BrandCompany;
             this.BrandId = BrandId;
@@ -68,6 +69,7 @@ namespace DocuSign.eSign.Model
             this.IsSigningDefault = IsSigningDefault;
             this.LandingPages = LandingPages;
             this.Links = Links;
+            this.LogoIds = LogoIds;
             this.Logos = Logos;
             this.OrganizationBrandLogo = OrganizationBrandLogo;
             this.Resources = Resources;
@@ -148,6 +150,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="links", EmitDefaultValue=false)]
         public List<BrandLink> Links { get; set; }
         /// <summary>
+        /// Gets or Sets LogoIds
+        /// </summary>
+        [DataMember(Name="logoIds", EmitDefaultValue=false)]
+        public BrandLogoIds LogoIds { get; set; }
+        /// <summary>
         /// The URIs for retrieving the logos that are associated with the brand.
         /// </summary>
         /// <value>The URIs for retrieving the logos that are associated with the brand.</value>
@@ -186,6 +193,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  IsSigningDefault: ").Append(IsSigningDefault).Append("\n");
             sb.Append("  LandingPages: ").Append(LandingPages).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  LogoIds: ").Append(LogoIds).Append("\n");
             sb.Append("  Logos: ").Append(Logos).Append("\n");
             sb.Append("  OrganizationBrandLogo: ").Append(OrganizationBrandLogo).Append("\n");
             sb.Append("  Resources: ").Append(Resources).Append("\n");
@@ -296,6 +304,11 @@ namespace DocuSign.eSign.Model
                     this.Links.SequenceEqual(other.Links)
                 ) && 
                 (
+                    this.LogoIds == other.LogoIds ||
+                    this.LogoIds != null &&
+                    this.LogoIds.Equals(other.LogoIds)
+                ) && 
+                (
                     this.Logos == other.Logos ||
                     this.Logos != null &&
                     this.Logos.Equals(other.Logos)
@@ -351,6 +364,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.LandingPages.GetHashCode();
                 if (this.Links != null)
                     hash = hash * 59 + this.Links.GetHashCode();
+                if (this.LogoIds != null)
+                    hash = hash * 59 + this.LogoIds.GetHashCode();
                 if (this.Logos != null)
                     hash = hash * 59 + this.Logos.GetHashCode();
                 if (this.OrganizationBrandLogo != null)

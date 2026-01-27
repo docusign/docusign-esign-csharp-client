@@ -35,16 +35,23 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Reminders" /> class.
         /// </summary>
+        /// <param name="MaximumReminderCount">MaximumReminderCount.</param>
         /// <param name="ReminderDelay">An interger that sets the number of days after the recipient receives the envelope that reminder emails are sent to the recipient..</param>
         /// <param name="ReminderEnabled">When set to **true**, the envelope expires (is no longer available for signing) in the set number of days. If false, the account default setting is used. If the account does not have an expiration setting, the DocuSign default value of 120 days is used..</param>
         /// <param name="ReminderFrequency">An interger that sets the interval, in days, between reminder emails..</param>
-        public Reminders(string ReminderDelay = default(string), string ReminderEnabled = default(string), string ReminderFrequency = default(string))
+        public Reminders(string MaximumReminderCount = default(string), string ReminderDelay = default(string), string ReminderEnabled = default(string), string ReminderFrequency = default(string))
         {
+            this.MaximumReminderCount = MaximumReminderCount;
             this.ReminderDelay = ReminderDelay;
             this.ReminderEnabled = ReminderEnabled;
             this.ReminderFrequency = ReminderFrequency;
         }
         
+        /// <summary>
+        /// Gets or Sets MaximumReminderCount
+        /// </summary>
+        [DataMember(Name="maximumReminderCount", EmitDefaultValue=false)]
+        public string MaximumReminderCount { get; set; }
         /// <summary>
         /// An interger that sets the number of days after the recipient receives the envelope that reminder emails are sent to the recipient.
         /// </summary>
@@ -71,6 +78,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Reminders {\n");
+            sb.Append("  MaximumReminderCount: ").Append(MaximumReminderCount).Append("\n");
             sb.Append("  ReminderDelay: ").Append(ReminderDelay).Append("\n");
             sb.Append("  ReminderEnabled: ").Append(ReminderEnabled).Append("\n");
             sb.Append("  ReminderFrequency: ").Append(ReminderFrequency).Append("\n");
@@ -111,6 +119,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.MaximumReminderCount == other.MaximumReminderCount ||
+                    this.MaximumReminderCount != null &&
+                    this.MaximumReminderCount.Equals(other.MaximumReminderCount)
+                ) && 
+                (
                     this.ReminderDelay == other.ReminderDelay ||
                     this.ReminderDelay != null &&
                     this.ReminderDelay.Equals(other.ReminderDelay)
@@ -138,6 +151,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.MaximumReminderCount != null)
+                    hash = hash * 59 + this.MaximumReminderCount.GetHashCode();
                 if (this.ReminderDelay != null)
                     hash = hash * 59 + this.ReminderDelay.GetHashCode();
                 if (this.ReminderEnabled != null)

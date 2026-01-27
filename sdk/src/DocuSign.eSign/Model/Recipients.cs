@@ -44,12 +44,13 @@ namespace DocuSign.eSign.Model
         /// <param name="InPersonSigners">Specifies a signer that is in the same physical location as a DocuSign user who will act as a Signing Host for the transaction. The recipient added is the Signing Host and new separate Signer Name field appears after Sign in person is selected..</param>
         /// <param name="Intermediaries">Identifies a recipient that can, but is not required to, add name and email information for recipients at the same or subsequent level in the routing order (until subsequent Agents, Editors or Intermediaries recipient types are added)..</param>
         /// <param name="Notaries">Notaries.</param>
+        /// <param name="NotaryWitnesses">NotaryWitnesses.</param>
         /// <param name="Participants">Participants.</param>
         /// <param name="RecipientCount">RecipientCount.</param>
         /// <param name="Seals">Seals.</param>
         /// <param name="Signers">A complex type containing information about the Signer recipient..</param>
         /// <param name="Witnesses">Witnesses.</param>
-        public Recipients(List<Agent> Agents = default(List<Agent>), List<CarbonCopy> CarbonCopies = default(List<CarbonCopy>), List<CertifiedDelivery> CertifiedDeliveries = default(List<CertifiedDelivery>), string CurrentRoutingOrder = default(string), List<Editor> Editors = default(List<Editor>), ErrorDetails ErrorDetails = default(ErrorDetails), List<InPersonSigner> InPersonSigners = default(List<InPersonSigner>), List<Intermediary> Intermediaries = default(List<Intermediary>), List<NotaryRecipient> Notaries = default(List<NotaryRecipient>), List<Participant> Participants = default(List<Participant>), string RecipientCount = default(string), List<SealSign> Seals = default(List<SealSign>), List<Signer> Signers = default(List<Signer>), List<Witness> Witnesses = default(List<Witness>))
+        public Recipients(List<Agent> Agents = default(List<Agent>), List<CarbonCopy> CarbonCopies = default(List<CarbonCopy>), List<CertifiedDelivery> CertifiedDeliveries = default(List<CertifiedDelivery>), string CurrentRoutingOrder = default(string), List<Editor> Editors = default(List<Editor>), ErrorDetails ErrorDetails = default(ErrorDetails), List<InPersonSigner> InPersonSigners = default(List<InPersonSigner>), List<Intermediary> Intermediaries = default(List<Intermediary>), List<NotaryRecipient> Notaries = default(List<NotaryRecipient>), List<NotaryWitness> NotaryWitnesses = default(List<NotaryWitness>), List<Participant> Participants = default(List<Participant>), string RecipientCount = default(string), List<SealSign> Seals = default(List<SealSign>), List<Signer> Signers = default(List<Signer>), List<Witness> Witnesses = default(List<Witness>))
         {
             this.Agents = Agents;
             this.CarbonCopies = CarbonCopies;
@@ -60,6 +61,7 @@ namespace DocuSign.eSign.Model
             this.InPersonSigners = InPersonSigners;
             this.Intermediaries = Intermediaries;
             this.Notaries = Notaries;
+            this.NotaryWitnesses = NotaryWitnesses;
             this.Participants = Participants;
             this.RecipientCount = RecipientCount;
             this.Seals = Seals;
@@ -120,6 +122,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="notaries", EmitDefaultValue=false)]
         public List<NotaryRecipient> Notaries { get; set; }
         /// <summary>
+        /// Gets or Sets NotaryWitnesses
+        /// </summary>
+        [DataMember(Name="notaryWitnesses", EmitDefaultValue=false)]
+        public List<NotaryWitness> NotaryWitnesses { get; set; }
+        /// <summary>
         /// Gets or Sets Participants
         /// </summary>
         [DataMember(Name="participants", EmitDefaultValue=false)]
@@ -162,6 +169,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  InPersonSigners: ").Append(InPersonSigners).Append("\n");
             sb.Append("  Intermediaries: ").Append(Intermediaries).Append("\n");
             sb.Append("  Notaries: ").Append(Notaries).Append("\n");
+            sb.Append("  NotaryWitnesses: ").Append(NotaryWitnesses).Append("\n");
             sb.Append("  Participants: ").Append(Participants).Append("\n");
             sb.Append("  RecipientCount: ").Append(RecipientCount).Append("\n");
             sb.Append("  Seals: ").Append(Seals).Append("\n");
@@ -249,6 +257,11 @@ namespace DocuSign.eSign.Model
                     this.Notaries.SequenceEqual(other.Notaries)
                 ) && 
                 (
+                    this.NotaryWitnesses == other.NotaryWitnesses ||
+                    this.NotaryWitnesses != null &&
+                    this.NotaryWitnesses.SequenceEqual(other.NotaryWitnesses)
+                ) && 
+                (
                     this.Participants == other.Participants ||
                     this.Participants != null &&
                     this.Participants.SequenceEqual(other.Participants)
@@ -304,6 +317,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Intermediaries.GetHashCode();
                 if (this.Notaries != null)
                     hash = hash * 59 + this.Notaries.GetHashCode();
+                if (this.NotaryWitnesses != null)
+                    hash = hash * 59 + this.NotaryWitnesses.GetHashCode();
                 if (this.Participants != null)
                     hash = hash * 59 + this.Participants.GetHashCode();
                 if (this.RecipientCount != null)

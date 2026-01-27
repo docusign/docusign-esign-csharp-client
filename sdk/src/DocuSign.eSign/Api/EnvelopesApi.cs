@@ -17905,6 +17905,8 @@ namespace DocuSign.eSign.Api
             public string include {get; set;}
             /// 
             public string includeAnchorTabLocations {get; set;}
+            /// 
+            public string userId {get; set;}
         }
 
         /// <summary>
@@ -17970,6 +17972,7 @@ namespace DocuSign.eSign.Api
                 if (options.advancedUpdate != null) localVarQueryParams.Add("advanced_update", this.ApiClient.ParameterToString(options.advancedUpdate)); // query parameter
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
                 if (options.includeAnchorTabLocations != null) localVarQueryParams.Add("include_anchor_tab_locations", this.ApiClient.ParameterToString(options.includeAnchorTabLocations)); // query parameter
+                if (options.userId != null) localVarQueryParams.Add("user_id", this.ApiClient.ParameterToString(options.userId)); // query parameter
             }
 
             // authentication (docusignAccessCode) required
@@ -18060,6 +18063,7 @@ namespace DocuSign.eSign.Api
                 if (options.advancedUpdate != null) localVarQueryParams.Add("advanced_update", this.ApiClient.ParameterToString(options.advancedUpdate)); // query parameter
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
                 if (options.includeAnchorTabLocations != null) localVarQueryParams.Add("include_anchor_tab_locations", this.ApiClient.ParameterToString(options.includeAnchorTabLocations)); // query parameter
+                if (options.userId != null) localVarQueryParams.Add("user_id", this.ApiClient.ParameterToString(options.userId)); // query parameter
             }
 
             // authentication (docusignAccessCode) required

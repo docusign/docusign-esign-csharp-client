@@ -35,6 +35,9 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountRoleSettings" /> class.
         /// </summary>
+        /// <param name="AccountAgreementsAccessType">AccountAgreementsAccessType.</param>
+        /// <param name="AccountAgreementsAccessTypeMetadata">AccountAgreementsAccessTypeMetadata.</param>
+        /// <param name="AccountManagementGranular">AccountManagementGranular.</param>
         /// <param name="AllowAccountManagement">AllowAccountManagement.</param>
         /// <param name="AllowAccountManagementMetadata">Metadata that indicates whether the &#x60;allowAccountManagement&#x60; property is editable. .</param>
         /// <param name="AllowApiAccess">AllowApiAccess.</param>
@@ -83,6 +86,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AllowVaultingMetadata">Reserved for DocuSign..</param>
         /// <param name="AllowWetSigningOverride">AllowWetSigningOverride.</param>
         /// <param name="AllowWetSigningOverrideMetadata">Metadata that indicates whether the &#x60;allowWetSigningOverride&#x60; property is editable. .</param>
+        /// <param name="CanBulkUploadAgreements">CanBulkUploadAgreements.</param>
+        /// <param name="CanBulkUploadAgreementsMetadata">CanBulkUploadAgreementsMetadata.</param>
         /// <param name="CanCreateTransaction">CanCreateTransaction.</param>
         /// <param name="CanCreateTransactionMetadata">CanCreateTransactionMetadata.</param>
         /// <param name="CanCreateWorkspaces">CanCreateWorkspaces.</param>
@@ -91,6 +96,10 @@ namespace DocuSign.eSign.Model
         /// <param name="CanDeleteDocumentsInTransactionMetadata">CanDeleteDocumentsInTransactionMetadata.</param>
         /// <param name="CanDeleteTransaction">CanDeleteTransaction.</param>
         /// <param name="CanDeleteTransactionMetadata">CanDeleteTransactionMetadata.</param>
+        /// <param name="CanManageAgreementDeskRequest">CanManageAgreementDeskRequest.</param>
+        /// <param name="CanManageAgreementDeskRequestMetadata">CanManageAgreementDeskRequestMetadata.</param>
+        /// <param name="CanManageAgreementDeskRequestSetting">CanManageAgreementDeskRequestSetting.</param>
+        /// <param name="CanManageAgreementDeskRequestSettingMetadata">CanManageAgreementDeskRequestSettingMetadata.</param>
         /// <param name="CanSendEnvelopesViaSMS">CanSendEnvelopesViaSMS.</param>
         /// <param name="CanSendEnvelopesViaSMSMetadata">CanSendEnvelopesViaSMSMetadata.</param>
         /// <param name="DisableDocumentUpload">DisableDocumentUpload.</param>
@@ -107,6 +116,8 @@ namespace DocuSign.eSign.Model
         /// <param name="EnableSequentialSigningInterfaceMetadata">Metadata that indicates whether the &#x60;enableSequentialSigningInterface&#x60; property is editable. .</param>
         /// <param name="EnableTransactionPointIntegration">EnableTransactionPointIntegration.</param>
         /// <param name="EnableTransactionPointIntegrationMetadata">Reserved for DocuSign..</param>
+        /// <param name="PlaybookAccess">PlaybookAccess.</param>
+        /// <param name="PlaybookAccessMetadata">PlaybookAccessMetadata.</param>
         /// <param name="PowerFormRole">PowerFormRole.</param>
         /// <param name="PowerFormRoleMetadata">Metadata that indicates whether the &#x60;powerFormRole&#x60; property is editable. .</param>
         /// <param name="ReceiveCompletedSelfSignedDocumentsAsEmailLinks">ReceiveCompletedSelfSignedDocumentsAsEmailLinks.</param>
@@ -126,8 +137,11 @@ namespace DocuSign.eSign.Model
         /// <param name="VaultingModeMetadata">Reserved for DocuSign..</param>
         /// <param name="WebForms">WebForms.</param>
         /// <param name="WebFormsMetadata">WebFormsMetadata.</param>
-        public AccountRoleSettings(string AllowAccountManagement = default(string), SettingsMetadata AllowAccountManagementMetadata = default(SettingsMetadata), string AllowApiAccess = default(string), SettingsMetadata AllowApiAccessMetadata = default(SettingsMetadata), string AllowApiAccessToAccount = default(string), SettingsMetadata AllowApiAccessToAccountMetadata = default(SettingsMetadata), string AllowApiSendingOnBehalfOfOthers = default(string), SettingsMetadata AllowApiSendingOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowApiSequentialSigning = default(string), SettingsMetadata AllowApiSequentialSigningMetadata = default(SettingsMetadata), string AllowAutoTagging = default(string), SettingsMetadata AllowAutoTaggingMetadata = default(SettingsMetadata), string AllowBulkSending = default(string), SettingsMetadata AllowBulkSendingMetadata = default(SettingsMetadata), string AllowDocuSignDesktopClient = default(string), SettingsMetadata AllowDocuSignDesktopClientMetadata = default(SettingsMetadata), string AllowedAddressBookAccess = default(string), SettingsMetadata AllowedAddressBookAccessMetadata = default(SettingsMetadata), string AllowedClickwrapsAccess = default(string), SettingsMetadata AllowedClickwrapsAccessMetadata = default(SettingsMetadata), string AllowedDocumentTemplateLibraryAccess = default(string), SettingsMetadata AllowedDocumentTemplateLibraryAccessMetadata = default(SettingsMetadata), string AllowedOrchestrationAccess = default(string), SettingsMetadata AllowedOrchestrationAccessMetadata = default(SettingsMetadata), string AllowedTemplateAccess = default(string), SettingsMetadata AllowedTemplateAccessMetadata = default(SettingsMetadata), string AllowedToBeEnvelopeTransferRecipient = default(string), SettingsMetadata AllowedToBeEnvelopeTransferRecipientMetadata = default(SettingsMetadata), string AllowEnvelopeSending = default(string), SettingsMetadata AllowEnvelopeSendingMetadata = default(SettingsMetadata), string AllowESealRecipients = default(string), SettingsMetadata AllowESealRecipientsMetadata = default(SettingsMetadata), string AllowPowerFormsAdminToAccessAllPowerFormEnvelopes = default(string), SettingsMetadata AllowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata = default(SettingsMetadata), string AllowSendersToSetRecipientEmailLanguage = default(string), SettingsMetadata AllowSendersToSetRecipientEmailLanguageMetadata = default(SettingsMetadata), string AllowSignerAttachments = default(string), SettingsMetadata AllowSignerAttachmentsMetadata = default(SettingsMetadata), string AllowSupplementalDocuments = default(string), SettingsMetadata AllowSupplementalDocumentsMetadata = default(SettingsMetadata), string AllowTaggingInSendAndCorrect = default(string), SettingsMetadata AllowTaggingInSendAndCorrectMetadata = default(SettingsMetadata), string AllowTransactions = default(string), SettingsMetadata AllowTransactionsMetadata = default(SettingsMetadata), string AllowVaulting = default(string), SettingsMetadata AllowVaultingMetadata = default(SettingsMetadata), string AllowWetSigningOverride = default(string), SettingsMetadata AllowWetSigningOverrideMetadata = default(SettingsMetadata), string CanCreateTransaction = default(string), SettingsMetadata CanCreateTransactionMetadata = default(SettingsMetadata), string CanCreateWorkspaces = default(string), SettingsMetadata CanCreateWorkspacesMetadata = default(SettingsMetadata), string CanDeleteDocumentsInTransaction = default(string), SettingsMetadata CanDeleteDocumentsInTransactionMetadata = default(SettingsMetadata), string CanDeleteTransaction = default(string), SettingsMetadata CanDeleteTransactionMetadata = default(SettingsMetadata), string CanSendEnvelopesViaSMS = default(string), SettingsMetadata CanSendEnvelopesViaSMSMetadata = default(SettingsMetadata), string DisableDocumentUpload = default(string), SettingsMetadata DisableDocumentUploadMetadata = default(SettingsMetadata), string DisableOtherActions = default(string), SettingsMetadata DisableOtherActionsMetadata = default(SettingsMetadata), string EnableApiRequestLogging = default(string), SettingsMetadata EnableApiRequestLoggingMetadata = default(SettingsMetadata), string EnableKeyTermsSuggestionsByDocumentType = default(string), SettingsMetadata EnableKeyTermsSuggestionsByDocumentTypeMetadata = default(SettingsMetadata), string EnableRecipientViewingNotifications = default(string), SettingsMetadata EnableRecipientViewingNotificationsMetadata = default(SettingsMetadata), string EnableSequentialSigningInterface = default(string), SettingsMetadata EnableSequentialSigningInterfaceMetadata = default(SettingsMetadata), string EnableTransactionPointIntegration = default(string), SettingsMetadata EnableTransactionPointIntegrationMetadata = default(SettingsMetadata), string PowerFormRole = default(string), SettingsMetadata PowerFormRoleMetadata = default(SettingsMetadata), string ReceiveCompletedSelfSignedDocumentsAsEmailLinks = default(string), SettingsMetadata ReceiveCompletedSelfSignedDocumentsAsEmailLinksMetadata = default(SettingsMetadata), SettingsMetadata SigningUiVersionMetadata = default(SettingsMetadata), string SupplementalDocumentsMustAccept = default(string), SettingsMetadata SupplementalDocumentsMustAcceptMetadata = default(SettingsMetadata), string SupplementalDocumentsMustRead = default(string), SettingsMetadata SupplementalDocumentsMustReadMetadata = default(SettingsMetadata), string SupplementalDocumentsMustView = default(string), SettingsMetadata SupplementalDocumentsMustViewMetadata = default(SettingsMetadata), string UseNewDocuSignExperienceInterface = default(string), SettingsMetadata UseNewDocuSignExperienceInterfaceMetadata = default(SettingsMetadata), string UseNewSendingInterface = default(string), SettingsMetadata UseNewSendingInterfaceMetadata = default(SettingsMetadata), string VaultingMode = default(string), SettingsMetadata VaultingModeMetadata = default(SettingsMetadata), string WebForms = default(string), SettingsMetadata WebFormsMetadata = default(SettingsMetadata))
+        public AccountRoleSettings(string AccountAgreementsAccessType = default(string), SettingsMetadata AccountAgreementsAccessTypeMetadata = default(SettingsMetadata), AccountManagementGranular AccountManagementGranular = default(AccountManagementGranular), string AllowAccountManagement = default(string), SettingsMetadata AllowAccountManagementMetadata = default(SettingsMetadata), string AllowApiAccess = default(string), SettingsMetadata AllowApiAccessMetadata = default(SettingsMetadata), string AllowApiAccessToAccount = default(string), SettingsMetadata AllowApiAccessToAccountMetadata = default(SettingsMetadata), string AllowApiSendingOnBehalfOfOthers = default(string), SettingsMetadata AllowApiSendingOnBehalfOfOthersMetadata = default(SettingsMetadata), string AllowApiSequentialSigning = default(string), SettingsMetadata AllowApiSequentialSigningMetadata = default(SettingsMetadata), string AllowAutoTagging = default(string), SettingsMetadata AllowAutoTaggingMetadata = default(SettingsMetadata), string AllowBulkSending = default(string), SettingsMetadata AllowBulkSendingMetadata = default(SettingsMetadata), string AllowDocuSignDesktopClient = default(string), SettingsMetadata AllowDocuSignDesktopClientMetadata = default(SettingsMetadata), string AllowedAddressBookAccess = default(string), SettingsMetadata AllowedAddressBookAccessMetadata = default(SettingsMetadata), string AllowedClickwrapsAccess = default(string), SettingsMetadata AllowedClickwrapsAccessMetadata = default(SettingsMetadata), string AllowedDocumentTemplateLibraryAccess = default(string), SettingsMetadata AllowedDocumentTemplateLibraryAccessMetadata = default(SettingsMetadata), string AllowedOrchestrationAccess = default(string), SettingsMetadata AllowedOrchestrationAccessMetadata = default(SettingsMetadata), string AllowedTemplateAccess = default(string), SettingsMetadata AllowedTemplateAccessMetadata = default(SettingsMetadata), string AllowedToBeEnvelopeTransferRecipient = default(string), SettingsMetadata AllowedToBeEnvelopeTransferRecipientMetadata = default(SettingsMetadata), string AllowEnvelopeSending = default(string), SettingsMetadata AllowEnvelopeSendingMetadata = default(SettingsMetadata), string AllowESealRecipients = default(string), SettingsMetadata AllowESealRecipientsMetadata = default(SettingsMetadata), string AllowPowerFormsAdminToAccessAllPowerFormEnvelopes = default(string), SettingsMetadata AllowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata = default(SettingsMetadata), string AllowSendersToSetRecipientEmailLanguage = default(string), SettingsMetadata AllowSendersToSetRecipientEmailLanguageMetadata = default(SettingsMetadata), string AllowSignerAttachments = default(string), SettingsMetadata AllowSignerAttachmentsMetadata = default(SettingsMetadata), string AllowSupplementalDocuments = default(string), SettingsMetadata AllowSupplementalDocumentsMetadata = default(SettingsMetadata), string AllowTaggingInSendAndCorrect = default(string), SettingsMetadata AllowTaggingInSendAndCorrectMetadata = default(SettingsMetadata), string AllowTransactions = default(string), SettingsMetadata AllowTransactionsMetadata = default(SettingsMetadata), string AllowVaulting = default(string), SettingsMetadata AllowVaultingMetadata = default(SettingsMetadata), string AllowWetSigningOverride = default(string), SettingsMetadata AllowWetSigningOverrideMetadata = default(SettingsMetadata), string CanBulkUploadAgreements = default(string), SettingsMetadata CanBulkUploadAgreementsMetadata = default(SettingsMetadata), string CanCreateTransaction = default(string), SettingsMetadata CanCreateTransactionMetadata = default(SettingsMetadata), string CanCreateWorkspaces = default(string), SettingsMetadata CanCreateWorkspacesMetadata = default(SettingsMetadata), string CanDeleteDocumentsInTransaction = default(string), SettingsMetadata CanDeleteDocumentsInTransactionMetadata = default(SettingsMetadata), string CanDeleteTransaction = default(string), SettingsMetadata CanDeleteTransactionMetadata = default(SettingsMetadata), string CanManageAgreementDeskRequest = default(string), SettingsMetadata CanManageAgreementDeskRequestMetadata = default(SettingsMetadata), string CanManageAgreementDeskRequestSetting = default(string), SettingsMetadata CanManageAgreementDeskRequestSettingMetadata = default(SettingsMetadata), string CanSendEnvelopesViaSMS = default(string), SettingsMetadata CanSendEnvelopesViaSMSMetadata = default(SettingsMetadata), string DisableDocumentUpload = default(string), SettingsMetadata DisableDocumentUploadMetadata = default(SettingsMetadata), string DisableOtherActions = default(string), SettingsMetadata DisableOtherActionsMetadata = default(SettingsMetadata), string EnableApiRequestLogging = default(string), SettingsMetadata EnableApiRequestLoggingMetadata = default(SettingsMetadata), string EnableKeyTermsSuggestionsByDocumentType = default(string), SettingsMetadata EnableKeyTermsSuggestionsByDocumentTypeMetadata = default(SettingsMetadata), string EnableRecipientViewingNotifications = default(string), SettingsMetadata EnableRecipientViewingNotificationsMetadata = default(SettingsMetadata), string EnableSequentialSigningInterface = default(string), SettingsMetadata EnableSequentialSigningInterfaceMetadata = default(SettingsMetadata), string EnableTransactionPointIntegration = default(string), SettingsMetadata EnableTransactionPointIntegrationMetadata = default(SettingsMetadata), string PlaybookAccess = default(string), SettingsMetadata PlaybookAccessMetadata = default(SettingsMetadata), string PowerFormRole = default(string), SettingsMetadata PowerFormRoleMetadata = default(SettingsMetadata), string ReceiveCompletedSelfSignedDocumentsAsEmailLinks = default(string), SettingsMetadata ReceiveCompletedSelfSignedDocumentsAsEmailLinksMetadata = default(SettingsMetadata), SettingsMetadata SigningUiVersionMetadata = default(SettingsMetadata), string SupplementalDocumentsMustAccept = default(string), SettingsMetadata SupplementalDocumentsMustAcceptMetadata = default(SettingsMetadata), string SupplementalDocumentsMustRead = default(string), SettingsMetadata SupplementalDocumentsMustReadMetadata = default(SettingsMetadata), string SupplementalDocumentsMustView = default(string), SettingsMetadata SupplementalDocumentsMustViewMetadata = default(SettingsMetadata), string UseNewDocuSignExperienceInterface = default(string), SettingsMetadata UseNewDocuSignExperienceInterfaceMetadata = default(SettingsMetadata), string UseNewSendingInterface = default(string), SettingsMetadata UseNewSendingInterfaceMetadata = default(SettingsMetadata), string VaultingMode = default(string), SettingsMetadata VaultingModeMetadata = default(SettingsMetadata), string WebForms = default(string), SettingsMetadata WebFormsMetadata = default(SettingsMetadata))
         {
+            this.AccountAgreementsAccessType = AccountAgreementsAccessType;
+            this.AccountAgreementsAccessTypeMetadata = AccountAgreementsAccessTypeMetadata;
+            this.AccountManagementGranular = AccountManagementGranular;
             this.AllowAccountManagement = AllowAccountManagement;
             this.AllowAccountManagementMetadata = AllowAccountManagementMetadata;
             this.AllowApiAccess = AllowApiAccess;
@@ -176,6 +190,8 @@ namespace DocuSign.eSign.Model
             this.AllowVaultingMetadata = AllowVaultingMetadata;
             this.AllowWetSigningOverride = AllowWetSigningOverride;
             this.AllowWetSigningOverrideMetadata = AllowWetSigningOverrideMetadata;
+            this.CanBulkUploadAgreements = CanBulkUploadAgreements;
+            this.CanBulkUploadAgreementsMetadata = CanBulkUploadAgreementsMetadata;
             this.CanCreateTransaction = CanCreateTransaction;
             this.CanCreateTransactionMetadata = CanCreateTransactionMetadata;
             this.CanCreateWorkspaces = CanCreateWorkspaces;
@@ -184,6 +200,10 @@ namespace DocuSign.eSign.Model
             this.CanDeleteDocumentsInTransactionMetadata = CanDeleteDocumentsInTransactionMetadata;
             this.CanDeleteTransaction = CanDeleteTransaction;
             this.CanDeleteTransactionMetadata = CanDeleteTransactionMetadata;
+            this.CanManageAgreementDeskRequest = CanManageAgreementDeskRequest;
+            this.CanManageAgreementDeskRequestMetadata = CanManageAgreementDeskRequestMetadata;
+            this.CanManageAgreementDeskRequestSetting = CanManageAgreementDeskRequestSetting;
+            this.CanManageAgreementDeskRequestSettingMetadata = CanManageAgreementDeskRequestSettingMetadata;
             this.CanSendEnvelopesViaSMS = CanSendEnvelopesViaSMS;
             this.CanSendEnvelopesViaSMSMetadata = CanSendEnvelopesViaSMSMetadata;
             this.DisableDocumentUpload = DisableDocumentUpload;
@@ -200,6 +220,8 @@ namespace DocuSign.eSign.Model
             this.EnableSequentialSigningInterfaceMetadata = EnableSequentialSigningInterfaceMetadata;
             this.EnableTransactionPointIntegration = EnableTransactionPointIntegration;
             this.EnableTransactionPointIntegrationMetadata = EnableTransactionPointIntegrationMetadata;
+            this.PlaybookAccess = PlaybookAccess;
+            this.PlaybookAccessMetadata = PlaybookAccessMetadata;
             this.PowerFormRole = PowerFormRole;
             this.PowerFormRoleMetadata = PowerFormRoleMetadata;
             this.ReceiveCompletedSelfSignedDocumentsAsEmailLinks = ReceiveCompletedSelfSignedDocumentsAsEmailLinks;
@@ -221,6 +243,21 @@ namespace DocuSign.eSign.Model
             this.WebFormsMetadata = WebFormsMetadata;
         }
         
+        /// <summary>
+        /// Gets or Sets AccountAgreementsAccessType
+        /// </summary>
+        [DataMember(Name="accountAgreementsAccessType", EmitDefaultValue=false)]
+        public string AccountAgreementsAccessType { get; set; }
+        /// <summary>
+        /// Gets or Sets AccountAgreementsAccessTypeMetadata
+        /// </summary>
+        [DataMember(Name="accountAgreementsAccessTypeMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata AccountAgreementsAccessTypeMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets AccountManagementGranular
+        /// </summary>
+        [DataMember(Name="accountManagementGranular", EmitDefaultValue=false)]
+        public AccountManagementGranular AccountManagementGranular { get; set; }
         /// <summary>
         /// Gets or Sets AllowAccountManagement
         /// </summary>
@@ -482,6 +519,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowWetSigningOverrideMetadata", EmitDefaultValue=false)]
         public SettingsMetadata AllowWetSigningOverrideMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets CanBulkUploadAgreements
+        /// </summary>
+        [DataMember(Name="canBulkUploadAgreements", EmitDefaultValue=false)]
+        public string CanBulkUploadAgreements { get; set; }
+        /// <summary>
+        /// Gets or Sets CanBulkUploadAgreementsMetadata
+        /// </summary>
+        [DataMember(Name="canBulkUploadAgreementsMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata CanBulkUploadAgreementsMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets CanCreateTransaction
         /// </summary>
         [DataMember(Name="canCreateTransaction", EmitDefaultValue=false)]
@@ -522,6 +569,26 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="canDeleteTransactionMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanDeleteTransactionMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets CanManageAgreementDeskRequest
+        /// </summary>
+        [DataMember(Name="canManageAgreementDeskRequest", EmitDefaultValue=false)]
+        public string CanManageAgreementDeskRequest { get; set; }
+        /// <summary>
+        /// Gets or Sets CanManageAgreementDeskRequestMetadata
+        /// </summary>
+        [DataMember(Name="canManageAgreementDeskRequestMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata CanManageAgreementDeskRequestMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets CanManageAgreementDeskRequestSetting
+        /// </summary>
+        [DataMember(Name="canManageAgreementDeskRequestSetting", EmitDefaultValue=false)]
+        public string CanManageAgreementDeskRequestSetting { get; set; }
+        /// <summary>
+        /// Gets or Sets CanManageAgreementDeskRequestSettingMetadata
+        /// </summary>
+        [DataMember(Name="canManageAgreementDeskRequestSettingMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata CanManageAgreementDeskRequestSettingMetadata { get; set; }
         /// <summary>
         /// Gets or Sets CanSendEnvelopesViaSMS
         /// </summary>
@@ -608,6 +675,16 @@ namespace DocuSign.eSign.Model
         /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="enableTransactionPointIntegrationMetadata", EmitDefaultValue=false)]
         public SettingsMetadata EnableTransactionPointIntegrationMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets PlaybookAccess
+        /// </summary>
+        [DataMember(Name="playbookAccess", EmitDefaultValue=false)]
+        public string PlaybookAccess { get; set; }
+        /// <summary>
+        /// Gets or Sets PlaybookAccessMetadata
+        /// </summary>
+        [DataMember(Name="playbookAccessMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata PlaybookAccessMetadata { get; set; }
         /// <summary>
         /// Gets or Sets PowerFormRole
         /// </summary>
@@ -720,6 +797,9 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AccountRoleSettings {\n");
+            sb.Append("  AccountAgreementsAccessType: ").Append(AccountAgreementsAccessType).Append("\n");
+            sb.Append("  AccountAgreementsAccessTypeMetadata: ").Append(AccountAgreementsAccessTypeMetadata).Append("\n");
+            sb.Append("  AccountManagementGranular: ").Append(AccountManagementGranular).Append("\n");
             sb.Append("  AllowAccountManagement: ").Append(AllowAccountManagement).Append("\n");
             sb.Append("  AllowAccountManagementMetadata: ").Append(AllowAccountManagementMetadata).Append("\n");
             sb.Append("  AllowApiAccess: ").Append(AllowApiAccess).Append("\n");
@@ -768,6 +848,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  AllowVaultingMetadata: ").Append(AllowVaultingMetadata).Append("\n");
             sb.Append("  AllowWetSigningOverride: ").Append(AllowWetSigningOverride).Append("\n");
             sb.Append("  AllowWetSigningOverrideMetadata: ").Append(AllowWetSigningOverrideMetadata).Append("\n");
+            sb.Append("  CanBulkUploadAgreements: ").Append(CanBulkUploadAgreements).Append("\n");
+            sb.Append("  CanBulkUploadAgreementsMetadata: ").Append(CanBulkUploadAgreementsMetadata).Append("\n");
             sb.Append("  CanCreateTransaction: ").Append(CanCreateTransaction).Append("\n");
             sb.Append("  CanCreateTransactionMetadata: ").Append(CanCreateTransactionMetadata).Append("\n");
             sb.Append("  CanCreateWorkspaces: ").Append(CanCreateWorkspaces).Append("\n");
@@ -776,6 +858,10 @@ namespace DocuSign.eSign.Model
             sb.Append("  CanDeleteDocumentsInTransactionMetadata: ").Append(CanDeleteDocumentsInTransactionMetadata).Append("\n");
             sb.Append("  CanDeleteTransaction: ").Append(CanDeleteTransaction).Append("\n");
             sb.Append("  CanDeleteTransactionMetadata: ").Append(CanDeleteTransactionMetadata).Append("\n");
+            sb.Append("  CanManageAgreementDeskRequest: ").Append(CanManageAgreementDeskRequest).Append("\n");
+            sb.Append("  CanManageAgreementDeskRequestMetadata: ").Append(CanManageAgreementDeskRequestMetadata).Append("\n");
+            sb.Append("  CanManageAgreementDeskRequestSetting: ").Append(CanManageAgreementDeskRequestSetting).Append("\n");
+            sb.Append("  CanManageAgreementDeskRequestSettingMetadata: ").Append(CanManageAgreementDeskRequestSettingMetadata).Append("\n");
             sb.Append("  CanSendEnvelopesViaSMS: ").Append(CanSendEnvelopesViaSMS).Append("\n");
             sb.Append("  CanSendEnvelopesViaSMSMetadata: ").Append(CanSendEnvelopesViaSMSMetadata).Append("\n");
             sb.Append("  DisableDocumentUpload: ").Append(DisableDocumentUpload).Append("\n");
@@ -792,6 +878,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnableSequentialSigningInterfaceMetadata: ").Append(EnableSequentialSigningInterfaceMetadata).Append("\n");
             sb.Append("  EnableTransactionPointIntegration: ").Append(EnableTransactionPointIntegration).Append("\n");
             sb.Append("  EnableTransactionPointIntegrationMetadata: ").Append(EnableTransactionPointIntegrationMetadata).Append("\n");
+            sb.Append("  PlaybookAccess: ").Append(PlaybookAccess).Append("\n");
+            sb.Append("  PlaybookAccessMetadata: ").Append(PlaybookAccessMetadata).Append("\n");
             sb.Append("  PowerFormRole: ").Append(PowerFormRole).Append("\n");
             sb.Append("  PowerFormRoleMetadata: ").Append(PowerFormRoleMetadata).Append("\n");
             sb.Append("  ReceiveCompletedSelfSignedDocumentsAsEmailLinks: ").Append(ReceiveCompletedSelfSignedDocumentsAsEmailLinks).Append("\n");
@@ -847,6 +935,21 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.AccountAgreementsAccessType == other.AccountAgreementsAccessType ||
+                    this.AccountAgreementsAccessType != null &&
+                    this.AccountAgreementsAccessType.Equals(other.AccountAgreementsAccessType)
+                ) && 
+                (
+                    this.AccountAgreementsAccessTypeMetadata == other.AccountAgreementsAccessTypeMetadata ||
+                    this.AccountAgreementsAccessTypeMetadata != null &&
+                    this.AccountAgreementsAccessTypeMetadata.Equals(other.AccountAgreementsAccessTypeMetadata)
+                ) && 
+                (
+                    this.AccountManagementGranular == other.AccountManagementGranular ||
+                    this.AccountManagementGranular != null &&
+                    this.AccountManagementGranular.Equals(other.AccountManagementGranular)
+                ) && 
                 (
                     this.AllowAccountManagement == other.AllowAccountManagement ||
                     this.AllowAccountManagement != null &&
@@ -1088,6 +1191,16 @@ namespace DocuSign.eSign.Model
                     this.AllowWetSigningOverrideMetadata.Equals(other.AllowWetSigningOverrideMetadata)
                 ) && 
                 (
+                    this.CanBulkUploadAgreements == other.CanBulkUploadAgreements ||
+                    this.CanBulkUploadAgreements != null &&
+                    this.CanBulkUploadAgreements.Equals(other.CanBulkUploadAgreements)
+                ) && 
+                (
+                    this.CanBulkUploadAgreementsMetadata == other.CanBulkUploadAgreementsMetadata ||
+                    this.CanBulkUploadAgreementsMetadata != null &&
+                    this.CanBulkUploadAgreementsMetadata.Equals(other.CanBulkUploadAgreementsMetadata)
+                ) && 
+                (
                     this.CanCreateTransaction == other.CanCreateTransaction ||
                     this.CanCreateTransaction != null &&
                     this.CanCreateTransaction.Equals(other.CanCreateTransaction)
@@ -1126,6 +1239,26 @@ namespace DocuSign.eSign.Model
                     this.CanDeleteTransactionMetadata == other.CanDeleteTransactionMetadata ||
                     this.CanDeleteTransactionMetadata != null &&
                     this.CanDeleteTransactionMetadata.Equals(other.CanDeleteTransactionMetadata)
+                ) && 
+                (
+                    this.CanManageAgreementDeskRequest == other.CanManageAgreementDeskRequest ||
+                    this.CanManageAgreementDeskRequest != null &&
+                    this.CanManageAgreementDeskRequest.Equals(other.CanManageAgreementDeskRequest)
+                ) && 
+                (
+                    this.CanManageAgreementDeskRequestMetadata == other.CanManageAgreementDeskRequestMetadata ||
+                    this.CanManageAgreementDeskRequestMetadata != null &&
+                    this.CanManageAgreementDeskRequestMetadata.Equals(other.CanManageAgreementDeskRequestMetadata)
+                ) && 
+                (
+                    this.CanManageAgreementDeskRequestSetting == other.CanManageAgreementDeskRequestSetting ||
+                    this.CanManageAgreementDeskRequestSetting != null &&
+                    this.CanManageAgreementDeskRequestSetting.Equals(other.CanManageAgreementDeskRequestSetting)
+                ) && 
+                (
+                    this.CanManageAgreementDeskRequestSettingMetadata == other.CanManageAgreementDeskRequestSettingMetadata ||
+                    this.CanManageAgreementDeskRequestSettingMetadata != null &&
+                    this.CanManageAgreementDeskRequestSettingMetadata.Equals(other.CanManageAgreementDeskRequestSettingMetadata)
                 ) && 
                 (
                     this.CanSendEnvelopesViaSMS == other.CanSendEnvelopesViaSMS ||
@@ -1206,6 +1339,16 @@ namespace DocuSign.eSign.Model
                     this.EnableTransactionPointIntegrationMetadata == other.EnableTransactionPointIntegrationMetadata ||
                     this.EnableTransactionPointIntegrationMetadata != null &&
                     this.EnableTransactionPointIntegrationMetadata.Equals(other.EnableTransactionPointIntegrationMetadata)
+                ) && 
+                (
+                    this.PlaybookAccess == other.PlaybookAccess ||
+                    this.PlaybookAccess != null &&
+                    this.PlaybookAccess.Equals(other.PlaybookAccess)
+                ) && 
+                (
+                    this.PlaybookAccessMetadata == other.PlaybookAccessMetadata ||
+                    this.PlaybookAccessMetadata != null &&
+                    this.PlaybookAccessMetadata.Equals(other.PlaybookAccessMetadata)
                 ) && 
                 (
                     this.PowerFormRole == other.PowerFormRole ||
@@ -1315,6 +1458,12 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.AccountAgreementsAccessType != null)
+                    hash = hash * 59 + this.AccountAgreementsAccessType.GetHashCode();
+                if (this.AccountAgreementsAccessTypeMetadata != null)
+                    hash = hash * 59 + this.AccountAgreementsAccessTypeMetadata.GetHashCode();
+                if (this.AccountManagementGranular != null)
+                    hash = hash * 59 + this.AccountManagementGranular.GetHashCode();
                 if (this.AllowAccountManagement != null)
                     hash = hash * 59 + this.AllowAccountManagement.GetHashCode();
                 if (this.AllowAccountManagementMetadata != null)
@@ -1411,6 +1560,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AllowWetSigningOverride.GetHashCode();
                 if (this.AllowWetSigningOverrideMetadata != null)
                     hash = hash * 59 + this.AllowWetSigningOverrideMetadata.GetHashCode();
+                if (this.CanBulkUploadAgreements != null)
+                    hash = hash * 59 + this.CanBulkUploadAgreements.GetHashCode();
+                if (this.CanBulkUploadAgreementsMetadata != null)
+                    hash = hash * 59 + this.CanBulkUploadAgreementsMetadata.GetHashCode();
                 if (this.CanCreateTransaction != null)
                     hash = hash * 59 + this.CanCreateTransaction.GetHashCode();
                 if (this.CanCreateTransactionMetadata != null)
@@ -1427,6 +1580,14 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CanDeleteTransaction.GetHashCode();
                 if (this.CanDeleteTransactionMetadata != null)
                     hash = hash * 59 + this.CanDeleteTransactionMetadata.GetHashCode();
+                if (this.CanManageAgreementDeskRequest != null)
+                    hash = hash * 59 + this.CanManageAgreementDeskRequest.GetHashCode();
+                if (this.CanManageAgreementDeskRequestMetadata != null)
+                    hash = hash * 59 + this.CanManageAgreementDeskRequestMetadata.GetHashCode();
+                if (this.CanManageAgreementDeskRequestSetting != null)
+                    hash = hash * 59 + this.CanManageAgreementDeskRequestSetting.GetHashCode();
+                if (this.CanManageAgreementDeskRequestSettingMetadata != null)
+                    hash = hash * 59 + this.CanManageAgreementDeskRequestSettingMetadata.GetHashCode();
                 if (this.CanSendEnvelopesViaSMS != null)
                     hash = hash * 59 + this.CanSendEnvelopesViaSMS.GetHashCode();
                 if (this.CanSendEnvelopesViaSMSMetadata != null)
@@ -1459,6 +1620,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnableTransactionPointIntegration.GetHashCode();
                 if (this.EnableTransactionPointIntegrationMetadata != null)
                     hash = hash * 59 + this.EnableTransactionPointIntegrationMetadata.GetHashCode();
+                if (this.PlaybookAccess != null)
+                    hash = hash * 59 + this.PlaybookAccess.GetHashCode();
+                if (this.PlaybookAccessMetadata != null)
+                    hash = hash * 59 + this.PlaybookAccessMetadata.GetHashCode();
                 if (this.PowerFormRole != null)
                     hash = hash * 59 + this.PowerFormRole.GetHashCode();
                 if (this.PowerFormRoleMetadata != null)

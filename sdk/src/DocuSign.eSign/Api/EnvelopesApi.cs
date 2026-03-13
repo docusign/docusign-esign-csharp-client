@@ -455,6 +455,31 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<WorkflowStep> CreateEnvelopeWorkflowStepDefinitionWithHttpInfo(string accountId, string envelopeId, WorkflowStep workflowStep = null);
         /// <summary>
+        /// Creates new envelopes shares
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopesSharesRequest"> (optional)</param>
+        /// <returns></returns>
+        EnvelopesSharesResponse CreateEnvelopesShares(string accountId, string envelopeId, EnvelopesSharesRequest envelopesSharesRequest = null);
+
+        /// <summary>
+        /// Creates new envelopes shares
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopesSharesRequest"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<EnvelopesSharesResponse> CreateEnvelopesSharesWithHttpInfo(string accountId, string envelopeId, EnvelopesSharesRequest envelopesSharesRequest = null);
+        /// <summary>
         /// Submits a batch of historical envelopes for republish to an adhoc config.
         /// </summary>
         /// <remarks>
@@ -3711,6 +3736,31 @@ namespace DocuSign.eSign.Api
         /// <param name="workflowStep"> (optional)</param>
         /// <returns>Task of ApiResponse (WorkflowStep)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkflowStep>> CreateEnvelopeWorkflowStepDefinitionAsyncWithHttpInfo(string accountId, string envelopeId, WorkflowStep workflowStep = null);
+        /// <summary>
+        /// Creates new envelopes shares
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopesSharesRequest"> (optional)</param>
+        /// <returns>Task of EnvelopesSharesResponse</returns>
+        System.Threading.Tasks.Task<EnvelopesSharesResponse> CreateEnvelopesSharesAsync(string accountId, string envelopeId, EnvelopesSharesRequest envelopesSharesRequest = null);
+
+        /// <summary>
+        /// Creates new envelopes shares
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopesSharesRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (EnvelopesSharesResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EnvelopesSharesResponse>> CreateEnvelopesSharesAsyncWithHttpInfo(string accountId, string envelopeId, EnvelopesSharesRequest envelopesSharesRequest = null);
         /// <summary>
         /// Submits a batch of historical envelopes for republish to an adhoc config.
         /// </summary>
@@ -9808,6 +9858,191 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<WorkflowStep>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (WorkflowStep)this.ApiClient.Deserialize(localVarResponse, typeof(WorkflowStep)));
+        }
+
+
+        /// <summary>
+        /// Creates new envelopes shares 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopesSharesRequest"> (optional)</param>
+        /// <returns>EnvelopesSharesResponse</returns>
+        public EnvelopesSharesResponse CreateEnvelopesShares(string accountId, string envelopeId, EnvelopesSharesRequest envelopesSharesRequest = null)
+        {
+             ApiResponse<EnvelopesSharesResponse> localVarResponse = CreateEnvelopesSharesWithHttpInfo(accountId, envelopeId, envelopesSharesRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates new envelopes shares 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopesSharesRequest"> (optional)</param>
+        /// <returns>ApiResponse of EnvelopesSharesResponse</returns>
+        public ApiResponse<EnvelopesSharesResponse> CreateEnvelopesSharesWithHttpInfo(string accountId, string envelopeId, EnvelopesSharesRequest envelopesSharesRequest = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateEnvelopesShares");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->CreateEnvelopesShares");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
+            if (envelopesSharesRequest != null && envelopesSharesRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopesSharesRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopesSharesRequest; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateEnvelopesShares", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopesSharesResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (EnvelopesSharesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopesSharesResponse)));
+        }
+
+        /// <summary>
+        /// Creates new envelopes shares 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopesSharesRequest"> (optional)</param>
+        /// <returns>Task of EnvelopesSharesResponse</returns>
+        public async System.Threading.Tasks.Task<EnvelopesSharesResponse> CreateEnvelopesSharesAsync(string accountId, string envelopeId, EnvelopesSharesRequest envelopesSharesRequest = null)
+        {
+             ApiResponse<EnvelopesSharesResponse> localVarResponse = await CreateEnvelopesSharesAsyncWithHttpInfo(accountId, envelopeId, envelopesSharesRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates new envelopes shares 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopesSharesRequest"> (optional)</param>
+        /// <returns>Task of ApiResponse (EnvelopesSharesResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopesSharesResponse>> CreateEnvelopesSharesAsyncWithHttpInfo(string accountId, string envelopeId, EnvelopesSharesRequest envelopesSharesRequest = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateEnvelopesShares");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->CreateEnvelopesShares");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
+            if (envelopesSharesRequest != null && envelopesSharesRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopesSharesRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopesSharesRequest; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateEnvelopesShares", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopesSharesResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (EnvelopesSharesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopesSharesResponse)));
         }
 
 

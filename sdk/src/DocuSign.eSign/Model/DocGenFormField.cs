@@ -37,27 +37,33 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="ConnectedObjectDetails">ConnectedObjectDetails.</param>
         /// <param name="Description">Description.</param>
+        /// <param name="Format">Format.</param>
         /// <param name="FullyQualifiedPath">FullyQualifiedPath.</param>
+        /// <param name="Hidden">Hidden.</param>
         /// <param name="Label">Label.</param>
         /// <param name="Name">Name.</param>
         /// <param name="Options">Options.</param>
         /// <param name="Order">Order.</param>
         /// <param name="PredefinedValidation">PredefinedValidation.</param>
+        /// <param name="ReadOnly">ReadOnly.</param>
         /// <param name="Required">When set to **true**, the signer is required to fill out this tab.</param>
         /// <param name="RowValues">RowValues.</param>
         /// <param name="Type">Type.</param>
         /// <param name="Validation">Validation.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        public DocGenFormField(ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), string Description = default(string), string FullyQualifiedPath = default(string), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string Order = default(string), string PredefinedValidation = default(string), string Required = default(string), List<DocGenFormFieldRowValue> RowValues = default(List<DocGenFormFieldRowValue>), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
+        public DocGenFormField(ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), string Description = default(string), DocGenFormat Format = default(DocGenFormat), string FullyQualifiedPath = default(string), string Hidden = default(string), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string Order = default(string), string PredefinedValidation = default(string), string ReadOnly = default(string), string Required = default(string), List<DocGenFormFieldRowValue> RowValues = default(List<DocGenFormFieldRowValue>), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
         {
             this.ConnectedObjectDetails = ConnectedObjectDetails;
             this.Description = Description;
+            this.Format = Format;
             this.FullyQualifiedPath = FullyQualifiedPath;
+            this.Hidden = Hidden;
             this.Label = Label;
             this.Name = Name;
             this.Options = Options;
             this.Order = Order;
             this.PredefinedValidation = PredefinedValidation;
+            this.ReadOnly = ReadOnly;
             this.Required = Required;
             this.RowValues = RowValues;
             this.Type = Type;
@@ -76,10 +82,20 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
+        /// Gets or Sets Format
+        /// </summary>
+        [DataMember(Name="format", EmitDefaultValue=false)]
+        public DocGenFormat Format { get; set; }
+        /// <summary>
         /// Gets or Sets FullyQualifiedPath
         /// </summary>
         [DataMember(Name="fullyQualifiedPath", EmitDefaultValue=false)]
         public string FullyQualifiedPath { get; set; }
+        /// <summary>
+        /// Gets or Sets Hidden
+        /// </summary>
+        [DataMember(Name="hidden", EmitDefaultValue=false)]
+        public string Hidden { get; set; }
         /// <summary>
         /// Gets or Sets Label
         /// </summary>
@@ -105,6 +121,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="predefinedValidation", EmitDefaultValue=false)]
         public string PredefinedValidation { get; set; }
+        /// <summary>
+        /// Gets or Sets ReadOnly
+        /// </summary>
+        [DataMember(Name="readOnly", EmitDefaultValue=false)]
+        public string ReadOnly { get; set; }
         /// <summary>
         /// When set to **true**, the signer is required to fill out this tab
         /// </summary>
@@ -142,12 +163,15 @@ namespace DocuSign.eSign.Model
             sb.Append("class DocGenFormField {\n");
             sb.Append("  ConnectedObjectDetails: ").Append(ConnectedObjectDetails).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Format: ").Append(Format).Append("\n");
             sb.Append("  FullyQualifiedPath: ").Append(FullyQualifiedPath).Append("\n");
+            sb.Append("  Hidden: ").Append(Hidden).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  PredefinedValidation: ").Append(PredefinedValidation).Append("\n");
+            sb.Append("  ReadOnly: ").Append(ReadOnly).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
             sb.Append("  RowValues: ").Append(RowValues).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -200,9 +224,19 @@ namespace DocuSign.eSign.Model
                     this.Description.Equals(other.Description)
                 ) && 
                 (
+                    this.Format == other.Format ||
+                    this.Format != null &&
+                    this.Format.Equals(other.Format)
+                ) && 
+                (
                     this.FullyQualifiedPath == other.FullyQualifiedPath ||
                     this.FullyQualifiedPath != null &&
                     this.FullyQualifiedPath.Equals(other.FullyQualifiedPath)
+                ) && 
+                (
+                    this.Hidden == other.Hidden ||
+                    this.Hidden != null &&
+                    this.Hidden.Equals(other.Hidden)
                 ) && 
                 (
                     this.Label == other.Label ||
@@ -228,6 +262,11 @@ namespace DocuSign.eSign.Model
                     this.PredefinedValidation == other.PredefinedValidation ||
                     this.PredefinedValidation != null &&
                     this.PredefinedValidation.Equals(other.PredefinedValidation)
+                ) && 
+                (
+                    this.ReadOnly == other.ReadOnly ||
+                    this.ReadOnly != null &&
+                    this.ReadOnly.Equals(other.ReadOnly)
                 ) && 
                 (
                     this.Required == other.Required ||
@@ -271,8 +310,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ConnectedObjectDetails.GetHashCode();
                 if (this.Description != null)
                     hash = hash * 59 + this.Description.GetHashCode();
+                if (this.Format != null)
+                    hash = hash * 59 + this.Format.GetHashCode();
                 if (this.FullyQualifiedPath != null)
                     hash = hash * 59 + this.FullyQualifiedPath.GetHashCode();
+                if (this.Hidden != null)
+                    hash = hash * 59 + this.Hidden.GetHashCode();
                 if (this.Label != null)
                     hash = hash * 59 + this.Label.GetHashCode();
                 if (this.Name != null)
@@ -283,6 +326,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Order.GetHashCode();
                 if (this.PredefinedValidation != null)
                     hash = hash * 59 + this.PredefinedValidation.GetHashCode();
+                if (this.ReadOnly != null)
+                    hash = hash * 59 + this.ReadOnly.GetHashCode();
                 if (this.Required != null)
                     hash = hash * 59 + this.Required.GetHashCode();
                 if (this.RowValues != null)

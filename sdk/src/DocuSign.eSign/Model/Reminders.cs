@@ -39,12 +39,14 @@ namespace DocuSign.eSign.Model
         /// <param name="ReminderDelay">An interger that sets the number of days after the recipient receives the envelope that reminder emails are sent to the recipient..</param>
         /// <param name="ReminderEnabled">When set to **true**, the envelope expires (is no longer available for signing) in the set number of days. If false, the account default setting is used. If the account does not have an expiration setting, the DocuSign default value of 120 days is used..</param>
         /// <param name="ReminderFrequency">An interger that sets the interval, in days, between reminder emails..</param>
-        public Reminders(string MaximumReminderCount = default(string), string ReminderDelay = default(string), string ReminderEnabled = default(string), string ReminderFrequency = default(string))
+        /// <param name="SmartReminderEnabled">SmartReminderEnabled.</param>
+        public Reminders(string MaximumReminderCount = default(string), string ReminderDelay = default(string), string ReminderEnabled = default(string), string ReminderFrequency = default(string), string SmartReminderEnabled = default(string))
         {
             this.MaximumReminderCount = MaximumReminderCount;
             this.ReminderDelay = ReminderDelay;
             this.ReminderEnabled = ReminderEnabled;
             this.ReminderFrequency = ReminderFrequency;
+            this.SmartReminderEnabled = SmartReminderEnabled;
         }
         
         /// <summary>
@@ -71,6 +73,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="reminderFrequency", EmitDefaultValue=false)]
         public string ReminderFrequency { get; set; }
         /// <summary>
+        /// Gets or Sets SmartReminderEnabled
+        /// </summary>
+        [DataMember(Name="smartReminderEnabled", EmitDefaultValue=false)]
+        public string SmartReminderEnabled { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -82,6 +89,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ReminderDelay: ").Append(ReminderDelay).Append("\n");
             sb.Append("  ReminderEnabled: ").Append(ReminderEnabled).Append("\n");
             sb.Append("  ReminderFrequency: ").Append(ReminderFrequency).Append("\n");
+            sb.Append("  SmartReminderEnabled: ").Append(SmartReminderEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -137,6 +145,11 @@ namespace DocuSign.eSign.Model
                     this.ReminderFrequency == other.ReminderFrequency ||
                     this.ReminderFrequency != null &&
                     this.ReminderFrequency.Equals(other.ReminderFrequency)
+                ) && 
+                (
+                    this.SmartReminderEnabled == other.SmartReminderEnabled ||
+                    this.SmartReminderEnabled != null &&
+                    this.SmartReminderEnabled.Equals(other.SmartReminderEnabled)
                 );
         }
 
@@ -159,6 +172,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ReminderEnabled.GetHashCode();
                 if (this.ReminderFrequency != null)
                     hash = hash * 59 + this.ReminderFrequency.GetHashCode();
+                if (this.SmartReminderEnabled != null)
+                    hash = hash * 59 + this.SmartReminderEnabled.GetHashCode();
                 return hash;
             }
         }

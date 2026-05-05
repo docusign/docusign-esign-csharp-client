@@ -8974,6 +8974,8 @@ namespace DocuSign.eSign.Api
             /// 
             public string includeAgreementType {get; set;}
             /// 
+            public string includeIsEdited {get; set;}
+            /// 
             public string includeTabs {get; set;}
         }
 
@@ -9038,6 +9040,7 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.includeAgreementType != null) localVarQueryParams.Add("include_agreement_type", this.ApiClient.ParameterToString(options.includeAgreementType)); // query parameter
+                if (options.includeIsEdited != null) localVarQueryParams.Add("include_is_edited", this.ApiClient.ParameterToString(options.includeIsEdited)); // query parameter
                 if (options.includeTabs != null) localVarQueryParams.Add("include_tabs", this.ApiClient.ParameterToString(options.includeTabs)); // query parameter
             }
 
@@ -9127,6 +9130,7 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.includeAgreementType != null) localVarQueryParams.Add("include_agreement_type", this.ApiClient.ParameterToString(options.includeAgreementType)); // query parameter
+                if (options.includeIsEdited != null) localVarQueryParams.Add("include_is_edited", this.ApiClient.ParameterToString(options.includeIsEdited)); // query parameter
                 if (options.includeTabs != null) localVarQueryParams.Add("include_tabs", this.ApiClient.ParameterToString(options.includeTabs)); // query parameter
             }
 
@@ -9573,6 +9577,8 @@ namespace DocuSign.eSign.Api
             /// 
             public string isDownload {get; set;}
             /// 
+            public string linkConfigurationId {get; set;}
+            /// 
             public string modifiedFromDate {get; set;}
             /// 
             public string modifiedToDate {get; set;}
@@ -9665,6 +9671,7 @@ namespace DocuSign.eSign.Api
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
                 if (options.isDeletedTemplateOnly != null) localVarQueryParams.Add("is_deleted_template_only", this.ApiClient.ParameterToString(options.isDeletedTemplateOnly)); // query parameter
                 if (options.isDownload != null) localVarQueryParams.Add("is_download", this.ApiClient.ParameterToString(options.isDownload)); // query parameter
+                if (options.linkConfigurationId != null) localVarQueryParams.Add("link_configuration_id", this.ApiClient.ParameterToString(options.linkConfigurationId)); // query parameter
                 if (options.modifiedFromDate != null) localVarQueryParams.Add("modified_from_date", this.ApiClient.ParameterToString(options.modifiedFromDate)); // query parameter
                 if (options.modifiedToDate != null) localVarQueryParams.Add("modified_to_date", this.ApiClient.ParameterToString(options.modifiedToDate)); // query parameter
                 if (options.order != null) localVarQueryParams.Add("order", this.ApiClient.ParameterToString(options.order)); // query parameter
@@ -9769,6 +9776,7 @@ namespace DocuSign.eSign.Api
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
                 if (options.isDeletedTemplateOnly != null) localVarQueryParams.Add("is_deleted_template_only", this.ApiClient.ParameterToString(options.isDeletedTemplateOnly)); // query parameter
                 if (options.isDownload != null) localVarQueryParams.Add("is_download", this.ApiClient.ParameterToString(options.isDownload)); // query parameter
+                if (options.linkConfigurationId != null) localVarQueryParams.Add("link_configuration_id", this.ApiClient.ParameterToString(options.linkConfigurationId)); // query parameter
                 if (options.modifiedFromDate != null) localVarQueryParams.Add("modified_from_date", this.ApiClient.ParameterToString(options.modifiedFromDate)); // query parameter
                 if (options.modifiedToDate != null) localVarQueryParams.Add("modified_to_date", this.ApiClient.ParameterToString(options.modifiedToDate)); // query parameter
                 if (options.order != null) localVarQueryParams.Add("order", this.ApiClient.ParameterToString(options.order)); // query parameter

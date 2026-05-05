@@ -37,6 +37,7 @@ namespace DocuSign.eSign.Model
         /// </summary>
         /// <param name="DefaultDescription">DefaultDescription.</param>
         /// <param name="DefaultName">DefaultName.</param>
+        /// <param name="DisplayOrder">DisplayOrder.</param>
         /// <param name="InputOptions">InputOptions.</param>
         /// <param name="IsDisabled">IsDisabled.</param>
         /// <param name="OwnerType">OwnerType.</param>
@@ -45,10 +46,11 @@ namespace DocuSign.eSign.Model
         /// <param name="WorkflowId">WorkflowId.</param>
         /// <param name="WorkflowLabel">WorkflowLabel.</param>
         /// <param name="WorkflowResourceKey">WorkflowResourceKey.</param>
-        public AccountIdentityVerificationWorkflow(string DefaultDescription = default(string), string DefaultName = default(string), List<AccountIdentityInputOption> InputOptions = default(List<AccountIdentityInputOption>), string IsDisabled = default(string), string OwnerType = default(string), AccountSignatureProvider SignatureProvider = default(AccountSignatureProvider), List<AccountIdentityVerificationStep> Steps = default(List<AccountIdentityVerificationStep>), string WorkflowId = default(string), string WorkflowLabel = default(string), string WorkflowResourceKey = default(string))
+        public AccountIdentityVerificationWorkflow(string DefaultDescription = default(string), string DefaultName = default(string), string DisplayOrder = default(string), List<AccountIdentityInputOption> InputOptions = default(List<AccountIdentityInputOption>), string IsDisabled = default(string), string OwnerType = default(string), AccountSignatureProvider SignatureProvider = default(AccountSignatureProvider), List<AccountIdentityVerificationStep> Steps = default(List<AccountIdentityVerificationStep>), string WorkflowId = default(string), string WorkflowLabel = default(string), string WorkflowResourceKey = default(string))
         {
             this.DefaultDescription = DefaultDescription;
             this.DefaultName = DefaultName;
+            this.DisplayOrder = DisplayOrder;
             this.InputOptions = InputOptions;
             this.IsDisabled = IsDisabled;
             this.OwnerType = OwnerType;
@@ -69,6 +71,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="defaultName", EmitDefaultValue=false)]
         public string DefaultName { get; set; }
+        /// <summary>
+        /// Gets or Sets DisplayOrder
+        /// </summary>
+        [DataMember(Name="displayOrder", EmitDefaultValue=false)]
+        public string DisplayOrder { get; set; }
         /// <summary>
         /// Gets or Sets InputOptions
         /// </summary>
@@ -120,6 +127,7 @@ namespace DocuSign.eSign.Model
             sb.Append("class AccountIdentityVerificationWorkflow {\n");
             sb.Append("  DefaultDescription: ").Append(DefaultDescription).Append("\n");
             sb.Append("  DefaultName: ").Append(DefaultName).Append("\n");
+            sb.Append("  DisplayOrder: ").Append(DisplayOrder).Append("\n");
             sb.Append("  InputOptions: ").Append(InputOptions).Append("\n");
             sb.Append("  IsDisabled: ").Append(IsDisabled).Append("\n");
             sb.Append("  OwnerType: ").Append(OwnerType).Append("\n");
@@ -173,6 +181,11 @@ namespace DocuSign.eSign.Model
                     this.DefaultName == other.DefaultName ||
                     this.DefaultName != null &&
                     this.DefaultName.Equals(other.DefaultName)
+                ) && 
+                (
+                    this.DisplayOrder == other.DisplayOrder ||
+                    this.DisplayOrder != null &&
+                    this.DisplayOrder.Equals(other.DisplayOrder)
                 ) && 
                 (
                     this.InputOptions == other.InputOptions ||
@@ -231,6 +244,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DefaultDescription.GetHashCode();
                 if (this.DefaultName != null)
                     hash = hash * 59 + this.DefaultName.GetHashCode();
+                if (this.DisplayOrder != null)
+                    hash = hash * 59 + this.DisplayOrder.GetHashCode();
                 if (this.InputOptions != null)
                     hash = hash * 59 + this.InputOptions.GetHashCode();
                 if (this.IsDisabled != null)

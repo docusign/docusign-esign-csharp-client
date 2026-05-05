@@ -22914,6 +22914,8 @@ namespace DocuSign.eSign.Api
             /// 
             public string includeDocumentSize {get; set;}
             /// 
+            public string includeIsEdited {get; set;}
+            /// 
             public string includeMetadata {get; set;}
             /// 
             public string includeTabs {get; set;}
@@ -22987,6 +22989,7 @@ namespace DocuSign.eSign.Api
                 if (options.includeAgreementType != null) localVarQueryParams.Add("include_agreement_type", this.ApiClient.ParameterToString(options.includeAgreementType)); // query parameter
                 if (options.includeDocgenFormfields != null) localVarQueryParams.Add("include_docgen_formfields", this.ApiClient.ParameterToString(options.includeDocgenFormfields)); // query parameter
                 if (options.includeDocumentSize != null) localVarQueryParams.Add("include_document_size", this.ApiClient.ParameterToString(options.includeDocumentSize)); // query parameter
+                if (options.includeIsEdited != null) localVarQueryParams.Add("include_is_edited", this.ApiClient.ParameterToString(options.includeIsEdited)); // query parameter
                 if (options.includeMetadata != null) localVarQueryParams.Add("include_metadata", this.ApiClient.ParameterToString(options.includeMetadata)); // query parameter
                 if (options.includeTabs != null) localVarQueryParams.Add("include_tabs", this.ApiClient.ParameterToString(options.includeTabs)); // query parameter
                 if (options.recipientId != null) localVarQueryParams.Add("recipient_id", this.ApiClient.ParameterToString(options.recipientId)); // query parameter
@@ -23082,6 +23085,7 @@ namespace DocuSign.eSign.Api
                 if (options.includeAgreementType != null) localVarQueryParams.Add("include_agreement_type", this.ApiClient.ParameterToString(options.includeAgreementType)); // query parameter
                 if (options.includeDocgenFormfields != null) localVarQueryParams.Add("include_docgen_formfields", this.ApiClient.ParameterToString(options.includeDocgenFormfields)); // query parameter
                 if (options.includeDocumentSize != null) localVarQueryParams.Add("include_document_size", this.ApiClient.ParameterToString(options.includeDocumentSize)); // query parameter
+                if (options.includeIsEdited != null) localVarQueryParams.Add("include_is_edited", this.ApiClient.ParameterToString(options.includeIsEdited)); // query parameter
                 if (options.includeMetadata != null) localVarQueryParams.Add("include_metadata", this.ApiClient.ParameterToString(options.includeMetadata)); // query parameter
                 if (options.includeTabs != null) localVarQueryParams.Add("include_tabs", this.ApiClient.ParameterToString(options.includeTabs)); // query parameter
                 if (options.recipientId != null) localVarQueryParams.Add("recipient_id", this.ApiClient.ParameterToString(options.recipientId)); // query parameter

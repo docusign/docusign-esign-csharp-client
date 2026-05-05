@@ -35,6 +35,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Contact" /> class.
         /// </summary>
+        /// <param name="CanManage">CanManage.</param>
         /// <param name="CloudProvider">CloudProvider.</param>
         /// <param name="CloudProviderContainerId">CloudProviderContainerId.</param>
         /// <param name="ContactId">ContactId.</param>
@@ -50,8 +51,9 @@ namespace DocuSign.eSign.Model
         /// <param name="Shared">When set to **true**, this custom tab is shared..</param>
         /// <param name="SigningGroup">SigningGroup.</param>
         /// <param name="SigningGroupName">The display name for the signing group.   Maximum Length: 100 characters. .</param>
-        public Contact(string CloudProvider = default(string), string CloudProviderContainerId = default(string), string ContactId = default(string), List<ContactPhoneNumber> ContactPhoneNumbers = default(List<ContactPhoneNumber>), string ContactUri = default(string), List<string> Emails = default(List<string>), ErrorDetails ErrorDetails = default(ErrorDetails), bool? IsOwner = default(bool?), string Name = default(string), NotaryContactDetails NotaryContactDetails = default(NotaryContactDetails), string Organization = default(string), string RoomContactType = default(string), string Shared = default(string), string SigningGroup = default(string), string SigningGroupName = default(string))
+        public Contact(string CanManage = default(string), string CloudProvider = default(string), string CloudProviderContainerId = default(string), string ContactId = default(string), List<ContactPhoneNumber> ContactPhoneNumbers = default(List<ContactPhoneNumber>), string ContactUri = default(string), List<string> Emails = default(List<string>), ErrorDetails ErrorDetails = default(ErrorDetails), bool? IsOwner = default(bool?), string Name = default(string), NotaryContactDetails NotaryContactDetails = default(NotaryContactDetails), string Organization = default(string), string RoomContactType = default(string), string Shared = default(string), string SigningGroup = default(string), string SigningGroupName = default(string))
         {
+            this.CanManage = CanManage;
             this.CloudProvider = CloudProvider;
             this.CloudProviderContainerId = CloudProviderContainerId;
             this.ContactId = ContactId;
@@ -69,6 +71,11 @@ namespace DocuSign.eSign.Model
             this.SigningGroupName = SigningGroupName;
         }
         
+        /// <summary>
+        /// Gets or Sets CanManage
+        /// </summary>
+        [DataMember(Name="canManage", EmitDefaultValue=false)]
+        public string CanManage { get; set; }
         /// <summary>
         /// Gets or Sets CloudProvider
         /// </summary>
@@ -155,6 +162,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Contact {\n");
+            sb.Append("  CanManage: ").Append(CanManage).Append("\n");
             sb.Append("  CloudProvider: ").Append(CloudProvider).Append("\n");
             sb.Append("  CloudProviderContainerId: ").Append(CloudProviderContainerId).Append("\n");
             sb.Append("  ContactId: ").Append(ContactId).Append("\n");
@@ -206,6 +214,11 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.CanManage == other.CanManage ||
+                    this.CanManage != null &&
+                    this.CanManage.Equals(other.CanManage)
+                ) && 
                 (
                     this.CloudProvider == other.CloudProvider ||
                     this.CloudProvider != null &&
@@ -294,6 +307,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.CanManage != null)
+                    hash = hash * 59 + this.CanManage.GetHashCode();
                 if (this.CloudProvider != null)
                     hash = hash * 59 + this.CloudProvider.GetHashCode();
                 if (this.CloudProviderContainerId != null)

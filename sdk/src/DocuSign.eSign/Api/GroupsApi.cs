@@ -153,7 +153,7 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        UsersResponse ListGroupUsers(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
+        GroupUsersResponse ListGroupUsers(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
 
         /// <summary>
         /// Gets a list of users in a group.
@@ -166,7 +166,7 @@ namespace DocuSign.eSign.Api
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<UsersResponse> ListGroupUsersWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
+        ApiResponse<GroupUsersResponse> ListGroupUsersWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
         /// <summary>
         /// Gets information about groups associated with the account.
         /// </summary>
@@ -394,8 +394,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of UsersResponse</returns>
-        System.Threading.Tasks.Task<UsersResponse> ListGroupUsersAsync(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
+        /// <returns>Task of GroupUsersResponse</returns>
+        System.Threading.Tasks.Task<GroupUsersResponse> ListGroupUsersAsync(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
 
         /// <summary>
         /// Gets a list of users in a group.
@@ -407,8 +407,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UsersResponse>> ListGroupUsersAsyncWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
+        /// <returns>Task of ApiResponse (GroupUsersResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GroupUsersResponse>> ListGroupUsersAsyncWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null);
         /// <summary>
         /// Gets information about groups associated with the account.
         /// </summary>
@@ -1458,10 +1458,10 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>UsersResponse</returns>
-        public UsersResponse ListGroupUsers(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
+        /// <returns>GroupUsersResponse</returns>
+        public GroupUsersResponse ListGroupUsers(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
         {
-             ApiResponse<UsersResponse> localVarResponse = ListGroupUsersWithHttpInfo(accountId, groupId, options);
+             ApiResponse<GroupUsersResponse> localVarResponse = ListGroupUsersWithHttpInfo(accountId, groupId, options);
              return localVarResponse.Data;
         }
 
@@ -1472,8 +1472,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>ApiResponse of UsersResponse</returns>
-        public ApiResponse<UsersResponse> ListGroupUsersWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
+        /// <returns>ApiResponse of GroupUsersResponse</returns>
+        public ApiResponse<GroupUsersResponse> ListGroupUsersWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1535,9 +1535,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<UsersResponse>(localVarStatusCode, 
+            return new ApiResponse<GroupUsersResponse>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (UsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
+                (GroupUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(GroupUsersResponse)));
         }
 
         /// <summary>
@@ -1547,10 +1547,10 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of UsersResponse</returns>
-        public async System.Threading.Tasks.Task<UsersResponse> ListGroupUsersAsync(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
+        /// <returns>Task of GroupUsersResponse</returns>
+        public async System.Threading.Tasks.Task<GroupUsersResponse> ListGroupUsersAsync(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
         {
-             ApiResponse<UsersResponse> localVarResponse = await ListGroupUsersAsyncWithHttpInfo(accountId, groupId, options);
+             ApiResponse<GroupUsersResponse> localVarResponse = await ListGroupUsersAsyncWithHttpInfo(accountId, groupId, options);
              return localVarResponse.Data;
         }
 
@@ -1561,8 +1561,8 @@ namespace DocuSign.eSign.Api
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
         /// <param name="groupId">The ID of the group being accessed.</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (UsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UsersResponse>> ListGroupUsersAsyncWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
+        /// <returns>Task of ApiResponse (GroupUsersResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GroupUsersResponse>> ListGroupUsersAsyncWithHttpInfo(string accountId, string groupId, GroupsApi.ListGroupUsersOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -1624,9 +1624,9 @@ namespace DocuSign.eSign.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<UsersResponse>(localVarStatusCode, 
+            return new ApiResponse<GroupUsersResponse>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (UsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersResponse)));
+                (GroupUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(GroupUsersResponse)));
         }
 
         /// <summary>

@@ -22,30 +22,45 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopesSharesRequest
+    /// AdditionalSetting
     /// </summary>
     [DataContract]
-    public partial class EnvelopesSharesRequest :  IEquatable<EnvelopesSharesRequest>, IValidatableObject
+    public partial class AdditionalSetting :  IEquatable<AdditionalSetting>, IValidatableObject
     {
-        public EnvelopesSharesRequest()
+        public AdditionalSetting()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EnvelopesSharesRequest" /> class.
+        /// Initializes a new instance of the <see cref="AdditionalSetting" /> class.
         /// </summary>
-        /// <param name="Shares">Shares.</param>
-        public EnvelopesSharesRequest(List<EnvelopesShareRequest> Shares = default(List<EnvelopesShareRequest>))
+        /// <param name="Metadata">Metadata.</param>
+        /// <param name="Name">Name.</param>
+        /// <param name="Value">Specifies the value of the tab. .</param>
+        public AdditionalSetting(SettingsMetadata Metadata = default(SettingsMetadata), string Name = default(string), string Value = default(string))
         {
-            this.Shares = Shares;
+            this.Metadata = Metadata;
+            this.Name = Name;
+            this.Value = Value;
         }
         
         /// <summary>
-        /// Gets or Sets Shares
+        /// Gets or Sets Metadata
         /// </summary>
-        [DataMember(Name="shares", EmitDefaultValue=false)]
-        public List<EnvelopesShareRequest> Shares { get; set; }
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
+        public SettingsMetadata Metadata { get; set; }
+        /// <summary>
+        /// Gets or Sets Name
+        /// </summary>
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
+        /// <summary>
+        /// Specifies the value of the tab. 
+        /// </summary>
+        /// <value>Specifies the value of the tab. </value>
+        [DataMember(Name="value", EmitDefaultValue=false)]
+        public string Value { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -53,8 +68,10 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class EnvelopesSharesRequest {\n");
-            sb.Append("  Shares: ").Append(Shares).Append("\n");
+            sb.Append("class AdditionalSetting {\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +93,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as EnvelopesSharesRequest);
+            return this.Equals(obj as AdditionalSetting);
         }
 
         /// <summary>
-        /// Returns true if EnvelopesSharesRequest instances are equal
+        /// Returns true if AdditionalSetting instances are equal
         /// </summary>
-        /// <param name="other">Instance of EnvelopesSharesRequest to be compared</param>
+        /// <param name="other">Instance of AdditionalSetting to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EnvelopesSharesRequest other)
+        public bool Equals(AdditionalSetting other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -92,9 +109,19 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.Shares == other.Shares ||
-                    this.Shares != null &&
-                    this.Shares.SequenceEqual(other.Shares)
+                    this.Metadata == other.Metadata ||
+                    this.Metadata != null &&
+                    this.Metadata.Equals(other.Metadata)
+                ) && 
+                (
+                    this.Name == other.Name ||
+                    this.Name != null &&
+                    this.Name.Equals(other.Name)
+                ) && 
+                (
+                    this.Value == other.Value ||
+                    this.Value != null &&
+                    this.Value.Equals(other.Value)
                 );
         }
 
@@ -109,8 +136,12 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Shares != null)
-                    hash = hash * 59 + this.Shares.GetHashCode();
+                if (this.Metadata != null)
+                    hash = hash * 59 + this.Metadata.GetHashCode();
+                if (this.Name != null)
+                    hash = hash * 59 + this.Name.GetHashCode();
+                if (this.Value != null)
+                    hash = hash * 59 + this.Value.GetHashCode();
                 return hash;
             }
         }

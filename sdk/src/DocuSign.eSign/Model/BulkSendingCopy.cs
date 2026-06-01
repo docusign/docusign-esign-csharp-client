@@ -39,13 +39,15 @@ namespace DocuSign.eSign.Model
         /// <param name="DocGenFormFields">DocGenFormFields.</param>
         /// <param name="EmailBlurb">EmailBlurb.</param>
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
+        /// <param name="PrefillTabs">PrefillTabs.</param>
         /// <param name="Recipients">An array of powerform recipients..</param>
-        public BulkSendingCopy(List<BulkSendingCopyCustomField> CustomFields = default(List<BulkSendingCopyCustomField>), List<BulksendingCopyDocGenFormField> DocGenFormFields = default(List<BulksendingCopyDocGenFormField>), string EmailBlurb = default(string), string EmailSubject = default(string), List<BulkSendingCopyRecipient> Recipients = default(List<BulkSendingCopyRecipient>))
+        public BulkSendingCopy(List<BulkSendingCopyCustomField> CustomFields = default(List<BulkSendingCopyCustomField>), List<BulksendingCopyDocGenFormField> DocGenFormFields = default(List<BulksendingCopyDocGenFormField>), string EmailBlurb = default(string), string EmailSubject = default(string), List<BulkSendingCopyPrefillTab> PrefillTabs = default(List<BulkSendingCopyPrefillTab>), List<BulkSendingCopyRecipient> Recipients = default(List<BulkSendingCopyRecipient>))
         {
             this.CustomFields = CustomFields;
             this.DocGenFormFields = DocGenFormFields;
             this.EmailBlurb = EmailBlurb;
             this.EmailSubject = EmailSubject;
+            this.PrefillTabs = PrefillTabs;
             this.Recipients = Recipients;
         }
         
@@ -72,6 +74,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="emailSubject", EmitDefaultValue=false)]
         public string EmailSubject { get; set; }
         /// <summary>
+        /// Gets or Sets PrefillTabs
+        /// </summary>
+        [DataMember(Name="prefillTabs", EmitDefaultValue=false)]
+        public List<BulkSendingCopyPrefillTab> PrefillTabs { get; set; }
+        /// <summary>
         /// An array of powerform recipients.
         /// </summary>
         /// <value>An array of powerform recipients.</value>
@@ -89,6 +96,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DocGenFormFields: ").Append(DocGenFormFields).Append("\n");
             sb.Append("  EmailBlurb: ").Append(EmailBlurb).Append("\n");
             sb.Append("  EmailSubject: ").Append(EmailSubject).Append("\n");
+            sb.Append("  PrefillTabs: ").Append(PrefillTabs).Append("\n");
             sb.Append("  Recipients: ").Append(Recipients).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -147,6 +155,11 @@ namespace DocuSign.eSign.Model
                     this.EmailSubject.Equals(other.EmailSubject)
                 ) && 
                 (
+                    this.PrefillTabs == other.PrefillTabs ||
+                    this.PrefillTabs != null &&
+                    this.PrefillTabs.SequenceEqual(other.PrefillTabs)
+                ) && 
+                (
                     this.Recipients == other.Recipients ||
                     this.Recipients != null &&
                     this.Recipients.SequenceEqual(other.Recipients)
@@ -172,6 +185,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EmailBlurb.GetHashCode();
                 if (this.EmailSubject != null)
                     hash = hash * 59 + this.EmailSubject.GetHashCode();
+                if (this.PrefillTabs != null)
+                    hash = hash * 59 + this.PrefillTabs.GetHashCode();
                 if (this.Recipients != null)
                     hash = hash * 59 + this.Recipients.GetHashCode();
                 return hash;

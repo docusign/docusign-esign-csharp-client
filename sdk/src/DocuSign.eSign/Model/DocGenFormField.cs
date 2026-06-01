@@ -36,6 +36,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="DocGenFormField" /> class.
         /// </summary>
         /// <param name="ConnectedObjectDetails">ConnectedObjectDetails.</param>
+        /// <param name="DefaultValue">DefaultValue.</param>
         /// <param name="Description">Description.</param>
         /// <param name="Format">Format.</param>
         /// <param name="FullyQualifiedPath">FullyQualifiedPath.</param>
@@ -51,9 +52,10 @@ namespace DocuSign.eSign.Model
         /// <param name="Type">Type.</param>
         /// <param name="Validation">Validation.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        public DocGenFormField(ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), string Description = default(string), DocGenFormat Format = default(DocGenFormat), string FullyQualifiedPath = default(string), string Hidden = default(string), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string Order = default(string), string PredefinedValidation = default(string), string ReadOnly = default(string), string Required = default(string), List<DocGenFormFieldRowValue> RowValues = default(List<DocGenFormFieldRowValue>), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
+        public DocGenFormField(ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), string DefaultValue = default(string), string Description = default(string), DocGenFormat Format = default(DocGenFormat), string FullyQualifiedPath = default(string), string Hidden = default(string), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string Order = default(string), string PredefinedValidation = default(string), string ReadOnly = default(string), string Required = default(string), List<DocGenFormFieldRowValue> RowValues = default(List<DocGenFormFieldRowValue>), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
         {
             this.ConnectedObjectDetails = ConnectedObjectDetails;
+            this.DefaultValue = DefaultValue;
             this.Description = Description;
             this.Format = Format;
             this.FullyQualifiedPath = FullyQualifiedPath;
@@ -76,6 +78,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="connectedObjectDetails", EmitDefaultValue=false)]
         public ConnectedObjectDetails ConnectedObjectDetails { get; set; }
+        /// <summary>
+        /// Gets or Sets DefaultValue
+        /// </summary>
+        [DataMember(Name="defaultValue", EmitDefaultValue=false)]
+        public string DefaultValue { get; set; }
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
@@ -162,6 +169,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class DocGenFormField {\n");
             sb.Append("  ConnectedObjectDetails: ").Append(ConnectedObjectDetails).Append("\n");
+            sb.Append("  DefaultValue: ").Append(DefaultValue).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Format: ").Append(Format).Append("\n");
             sb.Append("  FullyQualifiedPath: ").Append(FullyQualifiedPath).Append("\n");
@@ -217,6 +225,11 @@ namespace DocuSign.eSign.Model
                     this.ConnectedObjectDetails == other.ConnectedObjectDetails ||
                     this.ConnectedObjectDetails != null &&
                     this.ConnectedObjectDetails.Equals(other.ConnectedObjectDetails)
+                ) && 
+                (
+                    this.DefaultValue == other.DefaultValue ||
+                    this.DefaultValue != null &&
+                    this.DefaultValue.Equals(other.DefaultValue)
                 ) && 
                 (
                     this.Description == other.Description ||
@@ -308,6 +321,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.ConnectedObjectDetails != null)
                     hash = hash * 59 + this.ConnectedObjectDetails.GetHashCode();
+                if (this.DefaultValue != null)
+                    hash = hash * 59 + this.DefaultValue.GetHashCode();
                 if (this.Description != null)
                     hash = hash * 59 + this.Description.GetHashCode();
                 if (this.Format != null)

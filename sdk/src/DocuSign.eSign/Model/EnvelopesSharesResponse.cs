@@ -36,7 +36,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="EnvelopesSharesResponse" /> class.
         /// </summary>
         /// <param name="Shares">Shares.</param>
-        public EnvelopesSharesResponse(List<EnvelopesSharesResponseItem> Shares = default(List<EnvelopesSharesResponseItem>))
+        public EnvelopesSharesResponse(List<EnvelopesShareResponse> Shares = default(List<EnvelopesShareResponse>))
         {
             this.Shares = Shares;
         }
@@ -45,7 +45,7 @@ namespace DocuSign.eSign.Model
         /// Gets or Sets Shares
         /// </summary>
         [DataMember(Name="shares", EmitDefaultValue=false)]
-        public List<EnvelopesSharesResponseItem> Shares { get; set; }
+        public List<EnvelopesShareResponse> Shares { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

@@ -22,30 +22,39 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopesSharesRequest
+    /// BulkSendingCopyPrefillTab
     /// </summary>
     [DataContract]
-    public partial class EnvelopesSharesRequest :  IEquatable<EnvelopesSharesRequest>, IValidatableObject
+    public partial class BulkSendingCopyPrefillTab :  IEquatable<BulkSendingCopyPrefillTab>, IValidatableObject
     {
-        public EnvelopesSharesRequest()
+        public BulkSendingCopyPrefillTab()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EnvelopesSharesRequest" /> class.
+        /// Initializes a new instance of the <see cref="BulkSendingCopyPrefillTab" /> class.
         /// </summary>
-        /// <param name="Shares">Shares.</param>
-        public EnvelopesSharesRequest(List<EnvelopesShareRequest> Shares = default(List<EnvelopesShareRequest>))
+        /// <param name="InitialValue">The original value of the tab..</param>
+        /// <param name="TabLabel">The label string associated with the tab..</param>
+        public BulkSendingCopyPrefillTab(string InitialValue = default(string), string TabLabel = default(string))
         {
-            this.Shares = Shares;
+            this.InitialValue = InitialValue;
+            this.TabLabel = TabLabel;
         }
         
         /// <summary>
-        /// Gets or Sets Shares
+        /// The original value of the tab.
         /// </summary>
-        [DataMember(Name="shares", EmitDefaultValue=false)]
-        public List<EnvelopesShareRequest> Shares { get; set; }
+        /// <value>The original value of the tab.</value>
+        [DataMember(Name="initialValue", EmitDefaultValue=false)]
+        public string InitialValue { get; set; }
+        /// <summary>
+        /// The label string associated with the tab.
+        /// </summary>
+        /// <value>The label string associated with the tab.</value>
+        [DataMember(Name="tabLabel", EmitDefaultValue=false)]
+        public string TabLabel { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -53,8 +62,9 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class EnvelopesSharesRequest {\n");
-            sb.Append("  Shares: ").Append(Shares).Append("\n");
+            sb.Append("class BulkSendingCopyPrefillTab {\n");
+            sb.Append("  InitialValue: ").Append(InitialValue).Append("\n");
+            sb.Append("  TabLabel: ").Append(TabLabel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +86,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as EnvelopesSharesRequest);
+            return this.Equals(obj as BulkSendingCopyPrefillTab);
         }
 
         /// <summary>
-        /// Returns true if EnvelopesSharesRequest instances are equal
+        /// Returns true if BulkSendingCopyPrefillTab instances are equal
         /// </summary>
-        /// <param name="other">Instance of EnvelopesSharesRequest to be compared</param>
+        /// <param name="other">Instance of BulkSendingCopyPrefillTab to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EnvelopesSharesRequest other)
+        public bool Equals(BulkSendingCopyPrefillTab other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -92,9 +102,14 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.Shares == other.Shares ||
-                    this.Shares != null &&
-                    this.Shares.SequenceEqual(other.Shares)
+                    this.InitialValue == other.InitialValue ||
+                    this.InitialValue != null &&
+                    this.InitialValue.Equals(other.InitialValue)
+                ) && 
+                (
+                    this.TabLabel == other.TabLabel ||
+                    this.TabLabel != null &&
+                    this.TabLabel.Equals(other.TabLabel)
                 );
         }
 
@@ -109,8 +124,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Shares != null)
-                    hash = hash * 59 + this.Shares.GetHashCode();
+                if (this.InitialValue != null)
+                    hash = hash * 59 + this.InitialValue.GetHashCode();
+                if (this.TabLabel != null)
+                    hash = hash * 59 + this.TabLabel.GetHashCode();
                 return hash;
             }
         }

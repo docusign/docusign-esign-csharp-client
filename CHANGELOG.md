@@ -1,5 +1,10 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v10.0.0] - eSignature API v2.1-26.2.00.00 - 2026-06-01
+### Changed
+- Added support for version v2.1-26.2.00.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v9.0.0] - eSignature API v2.1-26.1.02.00 - 2026-05-04
 ### Removed
 - Removed the deprecated `ListRecipientNamesByEmail` endpoint (`/v2.1/accounts/{accountId}/recipient_names`).

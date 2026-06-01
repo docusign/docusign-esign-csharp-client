@@ -49,6 +49,7 @@ namespace DocuSign.eSign.Model
         /// <param name="AnchorStringMetadata">Metadata that indicates whether the &#x60;anchorString&#x60; property is editable..</param>
         /// <param name="AnchorTabProcessorVersion">AnchorTabProcessorVersion.</param>
         /// <param name="AnchorTabProcessorVersionMetadata">Reserved for DocuSign..</param>
+        /// <param name="AnchorTabScope">AnchorTabScope.</param>
         /// <param name="AnchorUnits">Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches..</param>
         /// <param name="AnchorUnitsMetadata">Metadata that indicates whether the &#x60;anchorUnits&#x60; property is editable..</param>
         /// <param name="AnchorXOffset">Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString..</param>
@@ -94,7 +95,7 @@ namespace DocuSign.eSign.Model
         /// <param name="XPositionMetadata">Metadata that indicates whether the &#x60;xPosition&#x60; property is editable..</param>
         /// <param name="YPosition">This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position..</param>
         /// <param name="YPositionMetadata">Metadata that indicates whether the &#x60;yPosition&#x60; property is editable..</param>
-        public Radio(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), ErrorDetails ErrorDetails = default(ErrorDetails), ExtensionData ExtensionData = default(ExtensionData), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string MergeFieldXml = default(string), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabFullyQualifiedPath = default(string), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
+        public Radio(string AnchorAllowWhiteSpaceInCharacters = default(string), PropertyMetadata AnchorAllowWhiteSpaceInCharactersMetadata = default(PropertyMetadata), string AnchorCaseSensitive = default(string), PropertyMetadata AnchorCaseSensitiveMetadata = default(PropertyMetadata), string AnchorHorizontalAlignment = default(string), PropertyMetadata AnchorHorizontalAlignmentMetadata = default(PropertyMetadata), string AnchorIgnoreIfNotPresent = default(string), PropertyMetadata AnchorIgnoreIfNotPresentMetadata = default(PropertyMetadata), string AnchorMatchWholeWord = default(string), PropertyMetadata AnchorMatchWholeWordMetadata = default(PropertyMetadata), string AnchorString = default(string), PropertyMetadata AnchorStringMetadata = default(PropertyMetadata), string AnchorTabProcessorVersion = default(string), PropertyMetadata AnchorTabProcessorVersionMetadata = default(PropertyMetadata), string AnchorTabScope = default(string), string AnchorUnits = default(string), PropertyMetadata AnchorUnitsMetadata = default(PropertyMetadata), string AnchorXOffset = default(string), PropertyMetadata AnchorXOffsetMetadata = default(PropertyMetadata), string AnchorYOffset = default(string), PropertyMetadata AnchorYOffsetMetadata = default(PropertyMetadata), string Bold = default(string), PropertyMetadata BoldMetadata = default(PropertyMetadata), string Caption = default(string), PropertyMetadata CaptionMetadata = default(PropertyMetadata), ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), ErrorDetails ErrorDetails = default(ErrorDetails), ExtensionData ExtensionData = default(ExtensionData), string Font = default(string), string FontColor = default(string), PropertyMetadata FontColorMetadata = default(PropertyMetadata), PropertyMetadata FontMetadata = default(PropertyMetadata), string FontSize = default(string), PropertyMetadata FontSizeMetadata = default(PropertyMetadata), string Italic = default(string), PropertyMetadata ItalicMetadata = default(PropertyMetadata), string Locked = default(string), PropertyMetadata LockedMetadata = default(PropertyMetadata), string MergeFieldXml = default(string), string PageNumber = default(string), PropertyMetadata PageNumberMetadata = default(PropertyMetadata), string Required = default(string), PropertyMetadata RequiredMetadata = default(PropertyMetadata), string Selected = default(string), PropertyMetadata SelectedMetadata = default(PropertyMetadata), string Status = default(string), PropertyMetadata StatusMetadata = default(PropertyMetadata), string TabFullyQualifiedPath = default(string), string TabId = default(string), PropertyMetadata TabIdMetadata = default(PropertyMetadata), string TabOrder = default(string), PropertyMetadata TabOrderMetadata = default(PropertyMetadata), string Underline = default(string), PropertyMetadata UnderlineMetadata = default(PropertyMetadata), string Value = default(string), PropertyMetadata ValueMetadata = default(PropertyMetadata), string XPosition = default(string), PropertyMetadata XPositionMetadata = default(PropertyMetadata), string YPosition = default(string), PropertyMetadata YPositionMetadata = default(PropertyMetadata))
         {
             this.AnchorAllowWhiteSpaceInCharacters = AnchorAllowWhiteSpaceInCharacters;
             this.AnchorAllowWhiteSpaceInCharactersMetadata = AnchorAllowWhiteSpaceInCharactersMetadata;
@@ -110,6 +111,7 @@ namespace DocuSign.eSign.Model
             this.AnchorStringMetadata = AnchorStringMetadata;
             this.AnchorTabProcessorVersion = AnchorTabProcessorVersion;
             this.AnchorTabProcessorVersionMetadata = AnchorTabProcessorVersionMetadata;
+            this.AnchorTabScope = AnchorTabScope;
             this.AnchorUnits = AnchorUnits;
             this.AnchorUnitsMetadata = AnchorUnitsMetadata;
             this.AnchorXOffset = AnchorXOffset;
@@ -239,6 +241,11 @@ namespace DocuSign.eSign.Model
         /// <value>Reserved for DocuSign.</value>
         [DataMember(Name="anchorTabProcessorVersionMetadata", EmitDefaultValue=false)]
         public PropertyMetadata AnchorTabProcessorVersionMetadata { get; set; }
+        /// <summary>
+        /// Gets or Sets AnchorTabScope
+        /// </summary>
+        [DataMember(Name="anchorTabScope", EmitDefaultValue=false)]
+        public string AnchorTabScope { get; set; }
         /// <summary>
         /// Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
         /// </summary>
@@ -524,6 +531,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AnchorStringMetadata: ").Append(AnchorStringMetadata).Append("\n");
             sb.Append("  AnchorTabProcessorVersion: ").Append(AnchorTabProcessorVersion).Append("\n");
             sb.Append("  AnchorTabProcessorVersionMetadata: ").Append(AnchorTabProcessorVersionMetadata).Append("\n");
+            sb.Append("  AnchorTabScope: ").Append(AnchorTabScope).Append("\n");
             sb.Append("  AnchorUnits: ").Append(AnchorUnits).Append("\n");
             sb.Append("  AnchorUnitsMetadata: ").Append(AnchorUnitsMetadata).Append("\n");
             sb.Append("  AnchorXOffset: ").Append(AnchorXOffset).Append("\n");
@@ -674,6 +682,11 @@ namespace DocuSign.eSign.Model
                     this.AnchorTabProcessorVersionMetadata == other.AnchorTabProcessorVersionMetadata ||
                     this.AnchorTabProcessorVersionMetadata != null &&
                     this.AnchorTabProcessorVersionMetadata.Equals(other.AnchorTabProcessorVersionMetadata)
+                ) && 
+                (
+                    this.AnchorTabScope == other.AnchorTabScope ||
+                    this.AnchorTabScope != null &&
+                    this.AnchorTabScope.Equals(other.AnchorTabScope)
                 ) && 
                 (
                     this.AnchorUnits == other.AnchorUnits ||
@@ -941,6 +954,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AnchorTabProcessorVersion.GetHashCode();
                 if (this.AnchorTabProcessorVersionMetadata != null)
                     hash = hash * 59 + this.AnchorTabProcessorVersionMetadata.GetHashCode();
+                if (this.AnchorTabScope != null)
+                    hash = hash * 59 + this.AnchorTabScope.GetHashCode();
                 if (this.AnchorUnits != null)
                     hash = hash * 59 + this.AnchorUnits.GetHashCode();
                 if (this.AnchorUnitsMetadata != null)

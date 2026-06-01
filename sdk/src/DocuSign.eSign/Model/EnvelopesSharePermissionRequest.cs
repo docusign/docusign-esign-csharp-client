@@ -22,30 +22,37 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// EnvelopesSharesRequest
+    /// EnvelopesSharePermissionRequest
     /// </summary>
     [DataContract]
-    public partial class EnvelopesSharesRequest :  IEquatable<EnvelopesSharesRequest>, IValidatableObject
+    public partial class EnvelopesSharePermissionRequest :  IEquatable<EnvelopesSharePermissionRequest>, IValidatableObject
     {
-        public EnvelopesSharesRequest()
+        public EnvelopesSharePermissionRequest()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EnvelopesSharesRequest" /> class.
+        /// Initializes a new instance of the <see cref="EnvelopesSharePermissionRequest" /> class.
         /// </summary>
-        /// <param name="Shares">Shares.</param>
-        public EnvelopesSharesRequest(List<EnvelopesShareRequest> Shares = default(List<EnvelopesShareRequest>))
+        /// <param name="CustomMessage">CustomMessage.</param>
+        /// <param name="Permission">Permission.</param>
+        public EnvelopesSharePermissionRequest(string CustomMessage = default(string), string Permission = default(string))
         {
-            this.Shares = Shares;
+            this.CustomMessage = CustomMessage;
+            this.Permission = Permission;
         }
         
         /// <summary>
-        /// Gets or Sets Shares
+        /// Gets or Sets CustomMessage
         /// </summary>
-        [DataMember(Name="shares", EmitDefaultValue=false)]
-        public List<EnvelopesShareRequest> Shares { get; set; }
+        [DataMember(Name="customMessage", EmitDefaultValue=false)]
+        public string CustomMessage { get; set; }
+        /// <summary>
+        /// Gets or Sets Permission
+        /// </summary>
+        [DataMember(Name="permission", EmitDefaultValue=false)]
+        public string Permission { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -53,8 +60,9 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class EnvelopesSharesRequest {\n");
-            sb.Append("  Shares: ").Append(Shares).Append("\n");
+            sb.Append("class EnvelopesSharePermissionRequest {\n");
+            sb.Append("  CustomMessage: ").Append(CustomMessage).Append("\n");
+            sb.Append("  Permission: ").Append(Permission).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +84,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as EnvelopesSharesRequest);
+            return this.Equals(obj as EnvelopesSharePermissionRequest);
         }
 
         /// <summary>
-        /// Returns true if EnvelopesSharesRequest instances are equal
+        /// Returns true if EnvelopesSharePermissionRequest instances are equal
         /// </summary>
-        /// <param name="other">Instance of EnvelopesSharesRequest to be compared</param>
+        /// <param name="other">Instance of EnvelopesSharePermissionRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EnvelopesSharesRequest other)
+        public bool Equals(EnvelopesSharePermissionRequest other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -92,9 +100,14 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.Shares == other.Shares ||
-                    this.Shares != null &&
-                    this.Shares.SequenceEqual(other.Shares)
+                    this.CustomMessage == other.CustomMessage ||
+                    this.CustomMessage != null &&
+                    this.CustomMessage.Equals(other.CustomMessage)
+                ) && 
+                (
+                    this.Permission == other.Permission ||
+                    this.Permission != null &&
+                    this.Permission.Equals(other.Permission)
                 );
         }
 
@@ -109,8 +122,10 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Shares != null)
-                    hash = hash * 59 + this.Shares.GetHashCode();
+                if (this.CustomMessage != null)
+                    hash = hash * 59 + this.CustomMessage.GetHashCode();
+                if (this.Permission != null)
+                    hash = hash * 59 + this.Permission.GetHashCode();
                 return hash;
             }
         }

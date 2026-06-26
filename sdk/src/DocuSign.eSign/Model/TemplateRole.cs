@@ -50,8 +50,11 @@ namespace DocuSign.eSign.Model
         /// <param name="RoleName">Optional element. Specifies the role name associated with the recipient.&lt;br/&gt;&lt;br/&gt;This is required when working with template recipients..</param>
         /// <param name="RoutingOrder">Specifies the routing order of the recipient in the envelope. .</param>
         /// <param name="SigningGroupId">When set to **true** and the feature is enabled in the sender&#39;s account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once)..</param>
+        /// <param name="SigningGroupName">The display name for the signing group.   Maximum Length: 100 characters. .</param>
+        /// <param name="SigningGroupType">SigningGroupType.</param>
+        /// <param name="SigningGroupUsers">A complex type that contains information about users in the signing group..</param>
         /// <param name="Tabs">A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients..</param>
-        public TemplateRole(string AccessCode = default(string), List<RecipientAdditionalNotification> AdditionalNotifications = default(List<RecipientAdditionalNotification>), string ClientUserId = default(string), string DefaultRecipient = default(string), string DeliveryMethod = default(string), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), string InPersonSignerName = default(string), string Name = default(string), RecipientPhoneNumber PhoneNumber = default(RecipientPhoneNumber), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RoleName = default(string), string RoutingOrder = default(string), string SigningGroupId = default(string), Tabs Tabs = default(Tabs))
+        public TemplateRole(string AccessCode = default(string), List<RecipientAdditionalNotification> AdditionalNotifications = default(List<RecipientAdditionalNotification>), string ClientUserId = default(string), string DefaultRecipient = default(string), string DeliveryMethod = default(string), string Email = default(string), RecipientEmailNotification EmailNotification = default(RecipientEmailNotification), string EmbeddedRecipientStartURL = default(string), string InPersonSignerName = default(string), string Name = default(string), RecipientPhoneNumber PhoneNumber = default(RecipientPhoneNumber), List<RecipientSignatureProvider> RecipientSignatureProviders = default(List<RecipientSignatureProvider>), string RoleName = default(string), string RoutingOrder = default(string), string SigningGroupId = default(string), string SigningGroupName = default(string), string SigningGroupType = default(string), List<UserInfo> SigningGroupUsers = default(List<UserInfo>), Tabs Tabs = default(Tabs))
         {
             this.AccessCode = AccessCode;
             this.AdditionalNotifications = AdditionalNotifications;
@@ -68,6 +71,9 @@ namespace DocuSign.eSign.Model
             this.RoleName = RoleName;
             this.RoutingOrder = RoutingOrder;
             this.SigningGroupId = SigningGroupId;
+            this.SigningGroupName = SigningGroupName;
+            this.SigningGroupType = SigningGroupType;
+            this.SigningGroupUsers = SigningGroupUsers;
             this.Tabs = Tabs;
         }
         
@@ -160,6 +166,23 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signingGroupId", EmitDefaultValue=false)]
         public string SigningGroupId { get; set; }
         /// <summary>
+        /// The display name for the signing group.   Maximum Length: 100 characters. 
+        /// </summary>
+        /// <value>The display name for the signing group.   Maximum Length: 100 characters. </value>
+        [DataMember(Name="signingGroupName", EmitDefaultValue=false)]
+        public string SigningGroupName { get; set; }
+        /// <summary>
+        /// Gets or Sets SigningGroupType
+        /// </summary>
+        [DataMember(Name="signingGroupType", EmitDefaultValue=false)]
+        public string SigningGroupType { get; set; }
+        /// <summary>
+        /// A complex type that contains information about users in the signing group.
+        /// </summary>
+        /// <value>A complex type that contains information about users in the signing group.</value>
+        [DataMember(Name="signingGroupUsers", EmitDefaultValue=false)]
+        public List<UserInfo> SigningGroupUsers { get; set; }
+        /// <summary>
         /// A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients.
         /// </summary>
         /// <value>A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients.</value>
@@ -188,6 +211,9 @@ namespace DocuSign.eSign.Model
             sb.Append("  RoleName: ").Append(RoleName).Append("\n");
             sb.Append("  RoutingOrder: ").Append(RoutingOrder).Append("\n");
             sb.Append("  SigningGroupId: ").Append(SigningGroupId).Append("\n");
+            sb.Append("  SigningGroupName: ").Append(SigningGroupName).Append("\n");
+            sb.Append("  SigningGroupType: ").Append(SigningGroupType).Append("\n");
+            sb.Append("  SigningGroupUsers: ").Append(SigningGroupUsers).Append("\n");
             sb.Append("  Tabs: ").Append(Tabs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -301,6 +327,21 @@ namespace DocuSign.eSign.Model
                     this.SigningGroupId.Equals(other.SigningGroupId)
                 ) && 
                 (
+                    this.SigningGroupName == other.SigningGroupName ||
+                    this.SigningGroupName != null &&
+                    this.SigningGroupName.Equals(other.SigningGroupName)
+                ) && 
+                (
+                    this.SigningGroupType == other.SigningGroupType ||
+                    this.SigningGroupType != null &&
+                    this.SigningGroupType.Equals(other.SigningGroupType)
+                ) && 
+                (
+                    this.SigningGroupUsers == other.SigningGroupUsers ||
+                    this.SigningGroupUsers != null &&
+                    this.SigningGroupUsers.SequenceEqual(other.SigningGroupUsers)
+                ) && 
+                (
                     this.Tabs == other.Tabs ||
                     this.Tabs != null &&
                     this.Tabs.Equals(other.Tabs)
@@ -348,6 +389,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.RoutingOrder.GetHashCode();
                 if (this.SigningGroupId != null)
                     hash = hash * 59 + this.SigningGroupId.GetHashCode();
+                if (this.SigningGroupName != null)
+                    hash = hash * 59 + this.SigningGroupName.GetHashCode();
+                if (this.SigningGroupType != null)
+                    hash = hash * 59 + this.SigningGroupType.GetHashCode();
+                if (this.SigningGroupUsers != null)
+                    hash = hash * 59 + this.SigningGroupUsers.GetHashCode();
                 if (this.Tabs != null)
                     hash = hash * 59 + this.Tabs.GetHashCode();
                 return hash;

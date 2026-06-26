@@ -36,6 +36,7 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="TemplateRecipients" /> class.
         /// </summary>
         /// <param name="Agents">A complex type defining the management and access rights of a recipient assigned assigned as an agent on the document..</param>
+        /// <param name="AuthorizedSignatories">AuthorizedSignatories.</param>
         /// <param name="CarbonCopies">A complex type containing information about recipients who should receive a copy of the envelope, but does not need to sign it..</param>
         /// <param name="CertifiedDeliveries">A complex type containing information on a recipient the must receive the completed documents for the envelope to be completed, but the recipient does not need to sign, initial, date, or add information to any of the documents..</param>
         /// <param name="CurrentRoutingOrder">CurrentRoutingOrder.</param>
@@ -50,9 +51,10 @@ namespace DocuSign.eSign.Model
         /// <param name="Seals">Seals.</param>
         /// <param name="Signers">A complex type containing information about the Signer recipient..</param>
         /// <param name="Witnesses">Witnesses.</param>
-        public TemplateRecipients(List<Agent> Agents = default(List<Agent>), List<CarbonCopy> CarbonCopies = default(List<CarbonCopy>), List<CertifiedDelivery> CertifiedDeliveries = default(List<CertifiedDelivery>), string CurrentRoutingOrder = default(string), List<Editor> Editors = default(List<Editor>), ErrorDetails ErrorDetails = default(ErrorDetails), List<InPersonSigner> InPersonSigners = default(List<InPersonSigner>), List<Intermediary> Intermediaries = default(List<Intermediary>), List<NotaryRecipient> Notaries = default(List<NotaryRecipient>), List<NotaryWitness> NotaryWitnesses = default(List<NotaryWitness>), List<Participant> Participants = default(List<Participant>), string RecipientCount = default(string), List<SealSign> Seals = default(List<SealSign>), List<Signer> Signers = default(List<Signer>), List<Witness> Witnesses = default(List<Witness>))
+        public TemplateRecipients(List<Agent> Agents = default(List<Agent>), List<AuthorizedSignatory> AuthorizedSignatories = default(List<AuthorizedSignatory>), List<CarbonCopy> CarbonCopies = default(List<CarbonCopy>), List<CertifiedDelivery> CertifiedDeliveries = default(List<CertifiedDelivery>), string CurrentRoutingOrder = default(string), List<Editor> Editors = default(List<Editor>), ErrorDetails ErrorDetails = default(ErrorDetails), List<InPersonSigner> InPersonSigners = default(List<InPersonSigner>), List<Intermediary> Intermediaries = default(List<Intermediary>), List<NotaryRecipient> Notaries = default(List<NotaryRecipient>), List<NotaryWitness> NotaryWitnesses = default(List<NotaryWitness>), List<Participant> Participants = default(List<Participant>), string RecipientCount = default(string), List<SealSign> Seals = default(List<SealSign>), List<Signer> Signers = default(List<Signer>), List<Witness> Witnesses = default(List<Witness>))
         {
             this.Agents = Agents;
+            this.AuthorizedSignatories = AuthorizedSignatories;
             this.CarbonCopies = CarbonCopies;
             this.CertifiedDeliveries = CertifiedDeliveries;
             this.CurrentRoutingOrder = CurrentRoutingOrder;
@@ -75,6 +77,11 @@ namespace DocuSign.eSign.Model
         /// <value>A complex type defining the management and access rights of a recipient assigned assigned as an agent on the document.</value>
         [DataMember(Name="agents", EmitDefaultValue=false)]
         public List<Agent> Agents { get; set; }
+        /// <summary>
+        /// Gets or Sets AuthorizedSignatories
+        /// </summary>
+        [DataMember(Name="authorizedSignatories", EmitDefaultValue=false)]
+        public List<AuthorizedSignatory> AuthorizedSignatories { get; set; }
         /// <summary>
         /// A complex type containing information about recipients who should receive a copy of the envelope, but does not need to sign it.
         /// </summary>
@@ -161,6 +168,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class TemplateRecipients {\n");
             sb.Append("  Agents: ").Append(Agents).Append("\n");
+            sb.Append("  AuthorizedSignatories: ").Append(AuthorizedSignatories).Append("\n");
             sb.Append("  CarbonCopies: ").Append(CarbonCopies).Append("\n");
             sb.Append("  CertifiedDeliveries: ").Append(CertifiedDeliveries).Append("\n");
             sb.Append("  CurrentRoutingOrder: ").Append(CurrentRoutingOrder).Append("\n");
@@ -215,6 +223,11 @@ namespace DocuSign.eSign.Model
                     this.Agents == other.Agents ||
                     this.Agents != null &&
                     this.Agents.SequenceEqual(other.Agents)
+                ) && 
+                (
+                    this.AuthorizedSignatories == other.AuthorizedSignatories ||
+                    this.AuthorizedSignatories != null &&
+                    this.AuthorizedSignatories.SequenceEqual(other.AuthorizedSignatories)
                 ) && 
                 (
                     this.CarbonCopies == other.CarbonCopies ||
@@ -301,6 +314,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Agents != null)
                     hash = hash * 59 + this.Agents.GetHashCode();
+                if (this.AuthorizedSignatories != null)
+                    hash = hash * 59 + this.AuthorizedSignatories.GetHashCode();
                 if (this.CarbonCopies != null)
                     hash = hash * 59 + this.CarbonCopies.GetHashCode();
                 if (this.CertifiedDeliveries != null)

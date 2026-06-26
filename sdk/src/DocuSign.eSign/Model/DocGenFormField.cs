@@ -38,6 +38,7 @@ namespace DocuSign.eSign.Model
         /// <param name="ConnectedObjectDetails">ConnectedObjectDetails.</param>
         /// <param name="DefaultValue">DefaultValue.</param>
         /// <param name="Description">Description.</param>
+        /// <param name="Filter">Filter.</param>
         /// <param name="Format">Format.</param>
         /// <param name="FullyQualifiedPath">FullyQualifiedPath.</param>
         /// <param name="Hidden">Hidden.</param>
@@ -52,11 +53,12 @@ namespace DocuSign.eSign.Model
         /// <param name="Type">Type.</param>
         /// <param name="Validation">Validation.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        public DocGenFormField(ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), string DefaultValue = default(string), string Description = default(string), DocGenFormat Format = default(DocGenFormat), string FullyQualifiedPath = default(string), string Hidden = default(string), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string Order = default(string), string PredefinedValidation = default(string), string ReadOnly = default(string), string Required = default(string), List<DocGenFormFieldRowValue> RowValues = default(List<DocGenFormFieldRowValue>), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
+        public DocGenFormField(ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), string DefaultValue = default(string), string Description = default(string), Object Filter = default(Object), DocGenFormat Format = default(DocGenFormat), string FullyQualifiedPath = default(string), bool? Hidden = default(bool?), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string Order = default(string), string PredefinedValidation = default(string), bool? ReadOnly = default(bool?), string Required = default(string), List<DocGenFormFieldRowValue> RowValues = default(List<DocGenFormFieldRowValue>), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
         {
             this.ConnectedObjectDetails = ConnectedObjectDetails;
             this.DefaultValue = DefaultValue;
             this.Description = Description;
+            this.Filter = Filter;
             this.Format = Format;
             this.FullyQualifiedPath = FullyQualifiedPath;
             this.Hidden = Hidden;
@@ -89,6 +91,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
         /// <summary>
+        /// Gets or Sets Filter
+        /// </summary>
+        [DataMember(Name="filter", EmitDefaultValue=false)]
+        public Object Filter { get; set; }
+        /// <summary>
         /// Gets or Sets Format
         /// </summary>
         [DataMember(Name="format", EmitDefaultValue=false)]
@@ -102,7 +109,7 @@ namespace DocuSign.eSign.Model
         /// Gets or Sets Hidden
         /// </summary>
         [DataMember(Name="hidden", EmitDefaultValue=false)]
-        public string Hidden { get; set; }
+        public bool? Hidden { get; set; }
         /// <summary>
         /// Gets or Sets Label
         /// </summary>
@@ -132,7 +139,7 @@ namespace DocuSign.eSign.Model
         /// Gets or Sets ReadOnly
         /// </summary>
         [DataMember(Name="readOnly", EmitDefaultValue=false)]
-        public string ReadOnly { get; set; }
+        public bool? ReadOnly { get; set; }
         /// <summary>
         /// When set to **true**, the signer is required to fill out this tab
         /// </summary>
@@ -171,6 +178,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  ConnectedObjectDetails: ").Append(ConnectedObjectDetails).Append("\n");
             sb.Append("  DefaultValue: ").Append(DefaultValue).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Filter: ").Append(Filter).Append("\n");
             sb.Append("  Format: ").Append(Format).Append("\n");
             sb.Append("  FullyQualifiedPath: ").Append(FullyQualifiedPath).Append("\n");
             sb.Append("  Hidden: ").Append(Hidden).Append("\n");
@@ -235,6 +243,11 @@ namespace DocuSign.eSign.Model
                     this.Description == other.Description ||
                     this.Description != null &&
                     this.Description.Equals(other.Description)
+                ) && 
+                (
+                    this.Filter == other.Filter ||
+                    this.Filter != null &&
+                    this.Filter.Equals(other.Filter)
                 ) && 
                 (
                     this.Format == other.Format ||
@@ -325,6 +338,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DefaultValue.GetHashCode();
                 if (this.Description != null)
                     hash = hash * 59 + this.Description.GetHashCode();
+                if (this.Filter != null)
+                    hash = hash * 59 + this.Filter.GetHashCode();
                 if (this.Format != null)
                     hash = hash * 59 + this.Format.GetHashCode();
                 if (this.FullyQualifiedPath != null)

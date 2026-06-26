@@ -815,50 +815,6 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> GetBrandResourcesByContentTypeWithHttpInfo(string accountId, string brandId, string resourceContentType, AccountsApi.GetBrandResourcesByContentTypeOptions options = null);
         /// <summary>
-        /// Gets completion rate for the template
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <returns></returns>
-        TemplateCompletionRateResponse GetCompletionRateForTemplate(string accountId, string templateId);
-
-        /// <summary>
-        /// Gets completion rate for the template
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <returns>ApiResponse of </returns>
-        ApiResponse<TemplateCompletionRateResponse> GetCompletionRateForTemplateWithHttpInfo(string accountId, string templateId);
-        /// <summary>
-        /// Gets completion rate for the user
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <returns></returns>
-        UserCompletionRateResponse GetCompletionRateForTemplateOwner(string accountId);
-
-        /// <summary>
-        /// Gets completion rate for the user
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <returns>ApiResponse of </returns>
-        ApiResponse<UserCompletionRateResponse> GetCompletionRateForTemplateOwnerWithHttpInfo(string accountId);
-        /// <summary>
         /// Gets the Electronic Record and Signature Disclosure.
         /// </summary>
         /// <remarks>
@@ -2631,50 +2587,6 @@ namespace DocuSign.eSign.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> GetBrandResourcesByContentTypeAsyncWithHttpInfo(string accountId, string brandId, string resourceContentType, AccountsApi.GetBrandResourcesByContentTypeOptions options = null);
-        /// <summary>
-        /// Gets completion rate for the template
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <returns>Task of TemplateCompletionRateResponse</returns>
-        System.Threading.Tasks.Task<TemplateCompletionRateResponse> GetCompletionRateForTemplateAsync(string accountId, string templateId);
-
-        /// <summary>
-        /// Gets completion rate for the template
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <returns>Task of ApiResponse (TemplateCompletionRateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TemplateCompletionRateResponse>> GetCompletionRateForTemplateAsyncWithHttpInfo(string accountId, string templateId);
-        /// <summary>
-        /// Gets completion rate for the user
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <returns>Task of UserCompletionRateResponse</returns>
-        System.Threading.Tasks.Task<UserCompletionRateResponse> GetCompletionRateForTemplateOwnerAsync(string accountId);
-
-        /// <summary>
-        /// Gets completion rate for the user
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <returns>Task of ApiResponse (UserCompletionRateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserCompletionRateResponse>> GetCompletionRateForTemplateOwnerAsyncWithHttpInfo(string accountId);
         /// <summary>
         /// Gets the Electronic Record and Signature Disclosure.
         /// </summary>
@@ -8176,6 +8088,10 @@ namespace DocuSign.eSign.Api
             /// 
             public string startPosition {get; set;}
             /// 
+            public string taskSource {get; set;}
+            /// 
+            public string taskType {get; set;}
+            /// 
             public string userNameSubstring {get; set;}
         }
 
@@ -8245,6 +8161,8 @@ namespace DocuSign.eSign.Api
                 if (options.includeClosedUsers != null) localVarQueryParams.Add("include_closed_users", this.ApiClient.ParameterToString(options.includeClosedUsers)); // query parameter
                 if (options.permissions != null) localVarQueryParams.Add("permissions", this.ApiClient.ParameterToString(options.permissions)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                if (options.taskSource != null) localVarQueryParams.Add("task_source", this.ApiClient.ParameterToString(options.taskSource)); // query parameter
+                if (options.taskType != null) localVarQueryParams.Add("task_type", this.ApiClient.ParameterToString(options.taskType)); // query parameter
                 if (options.userNameSubstring != null) localVarQueryParams.Add("user_name_substring", this.ApiClient.ParameterToString(options.userNameSubstring)); // query parameter
             }
 
@@ -8339,6 +8257,8 @@ namespace DocuSign.eSign.Api
                 if (options.includeClosedUsers != null) localVarQueryParams.Add("include_closed_users", this.ApiClient.ParameterToString(options.includeClosedUsers)); // query parameter
                 if (options.permissions != null) localVarQueryParams.Add("permissions", this.ApiClient.ParameterToString(options.permissions)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                if (options.taskSource != null) localVarQueryParams.Add("task_source", this.ApiClient.ParameterToString(options.taskSource)); // query parameter
+                if (options.taskType != null) localVarQueryParams.Add("task_type", this.ApiClient.ParameterToString(options.taskType)); // query parameter
                 if (options.userNameSubstring != null) localVarQueryParams.Add("user_name_substring", this.ApiClient.ParameterToString(options.userNameSubstring)); // query parameter
             }
 
@@ -9588,324 +9508,6 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
-        }
-
-
-        /// <summary>
-        /// Gets completion rate for the template 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <returns>TemplateCompletionRateResponse</returns>
-        public TemplateCompletionRateResponse GetCompletionRateForTemplate(string accountId, string templateId)
-        {
-             ApiResponse<TemplateCompletionRateResponse> localVarResponse = GetCompletionRateForTemplateWithHttpInfo(accountId, templateId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Gets completion rate for the template 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <returns>ApiResponse of TemplateCompletionRateResponse</returns>
-        public ApiResponse<TemplateCompletionRateResponse> GetCompletionRateForTemplateWithHttpInfo(string accountId, string templateId)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetCompletionRateForTemplate");
-            // verify the required parameter 'templateId' is set
-            if (templateId == null)
-                throw new ApiException(400, "Missing required parameter 'templateId' when calling AccountsApi->GetCompletionRateForTemplate");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/templates/{templateId}/insights/completionRate";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetCompletionRateForTemplate", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<TemplateCompletionRateResponse>(localVarStatusCode, 
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (TemplateCompletionRateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateCompletionRateResponse)));
-        }
-
-        /// <summary>
-        /// Gets completion rate for the template 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <returns>Task of TemplateCompletionRateResponse</returns>
-        public async System.Threading.Tasks.Task<TemplateCompletionRateResponse> GetCompletionRateForTemplateAsync(string accountId, string templateId)
-        {
-             ApiResponse<TemplateCompletionRateResponse> localVarResponse = await GetCompletionRateForTemplateAsyncWithHttpInfo(accountId, templateId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Gets completion rate for the template 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <param name="templateId">The ID of the template being accessed.</param>
-        /// <returns>Task of ApiResponse (TemplateCompletionRateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TemplateCompletionRateResponse>> GetCompletionRateForTemplateAsyncWithHttpInfo(string accountId, string templateId)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetCompletionRateForTemplate");
-            // verify the required parameter 'templateId' is set
-            if (templateId == null)
-                throw new ApiException(400, "Missing required parameter 'templateId' when calling AccountsApi->GetCompletionRateForTemplate");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/templates/{templateId}/insights/completionRate";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (templateId != null) localVarPathParams.Add("templateId", this.ApiClient.ParameterToString(templateId)); // path parameter
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetCompletionRateForTemplate", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<TemplateCompletionRateResponse>(localVarStatusCode, 
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (TemplateCompletionRateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(TemplateCompletionRateResponse)));
-        }
-
-
-        /// <summary>
-        /// Gets completion rate for the user 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <returns>UserCompletionRateResponse</returns>
-        public UserCompletionRateResponse GetCompletionRateForTemplateOwner(string accountId)
-        {
-             ApiResponse<UserCompletionRateResponse> localVarResponse = GetCompletionRateForTemplateOwnerWithHttpInfo(accountId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Gets completion rate for the user 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <returns>ApiResponse of UserCompletionRateResponse</returns>
-        public ApiResponse<UserCompletionRateResponse> GetCompletionRateForTemplateOwnerWithHttpInfo(string accountId)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetCompletionRateForTemplateOwner");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/templates/insights/completionRate";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetCompletionRateForTemplateOwner", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<UserCompletionRateResponse>(localVarStatusCode, 
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (UserCompletionRateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserCompletionRateResponse)));
-        }
-
-        /// <summary>
-        /// Gets completion rate for the user 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <returns>Task of UserCompletionRateResponse</returns>
-        public async System.Threading.Tasks.Task<UserCompletionRateResponse> GetCompletionRateForTemplateOwnerAsync(string accountId)
-        {
-             ApiResponse<UserCompletionRateResponse> localVarResponse = await GetCompletionRateForTemplateOwnerAsyncWithHttpInfo(accountId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Gets completion rate for the user 
-        /// </summary>
-        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
-        /// <returns>Task of ApiResponse (UserCompletionRateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserCompletionRateResponse>> GetCompletionRateForTemplateOwnerAsyncWithHttpInfo(string accountId)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetCompletionRateForTemplateOwner");
-
-            var localVarPath = "/v2.1/accounts/{accountId}/templates/insights/completionRate";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetCompletionRateForTemplateOwner", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<UserCompletionRateResponse>(localVarStatusCode, 
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (UserCompletionRateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserCompletionRateResponse)));
         }
 
 
@@ -11355,6 +10957,10 @@ namespace DocuSign.eSign.Api
             /// 
             public string startPosition {get; set;}
             /// 
+            public string taskSource {get; set;}
+            /// 
+            public string taskType {get; set;}
+            /// 
             public string userNameSubstring {get; set;}
         }
 
@@ -11424,6 +11030,8 @@ namespace DocuSign.eSign.Api
                 if (options.includeClosedUsers != null) localVarQueryParams.Add("include_closed_users", this.ApiClient.ParameterToString(options.includeClosedUsers)); // query parameter
                 if (options.permissions != null) localVarQueryParams.Add("permissions", this.ApiClient.ParameterToString(options.permissions)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                if (options.taskSource != null) localVarQueryParams.Add("task_source", this.ApiClient.ParameterToString(options.taskSource)); // query parameter
+                if (options.taskType != null) localVarQueryParams.Add("task_type", this.ApiClient.ParameterToString(options.taskType)); // query parameter
                 if (options.userNameSubstring != null) localVarQueryParams.Add("user_name_substring", this.ApiClient.ParameterToString(options.userNameSubstring)); // query parameter
             }
 
@@ -11518,6 +11126,8 @@ namespace DocuSign.eSign.Api
                 if (options.includeClosedUsers != null) localVarQueryParams.Add("include_closed_users", this.ApiClient.ParameterToString(options.includeClosedUsers)); // query parameter
                 if (options.permissions != null) localVarQueryParams.Add("permissions", this.ApiClient.ParameterToString(options.permissions)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
+                if (options.taskSource != null) localVarQueryParams.Add("task_source", this.ApiClient.ParameterToString(options.taskSource)); // query parameter
+                if (options.taskType != null) localVarQueryParams.Add("task_type", this.ApiClient.ParameterToString(options.taskType)); // query parameter
                 if (options.userNameSubstring != null) localVarQueryParams.Add("user_name_substring", this.ApiClient.ParameterToString(options.userNameSubstring)); // query parameter
             }
 

@@ -1,5 +1,18 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v11.0.0] - eSignature API v2.1-26.2.01.01 - 2026-06-25
+### Added
+- **Envelopes API**: `GetEnvelopesShares` and `GetEnvelopesShare` methods for retrieving envelope share information.
+- **Recipients**: New `AuthorizedSignatories` recipient type on `Recipients` and `TemplateRecipients`.
+- **Models**: `AuthorizedSignatory` model for authorized signatory recipients.
+- **Account Settings**: `EnableAIAgents`, `EnableAIAgentsMetadata`, and `AllowConnectWorkspaceUploadRequestUI` properties.
+- **DocGen**: `Filter` property on `DocGenFormField`.
+- **Template Roles**: Signing group properties (`SigningGroupName`, `SigningGroupType`, `SigningGroupUsers`) on `TemplateRole`.
+- **User Authorizations**: `TaskSource` and `TaskType` properties and query parameters for authorization listing endpoints.
+
+### Changed
+- Added support for version v2.1-26.2.01.01 of the DocuSign ESignature API.
+- Updated the SDK release version.
 ## [v10.0.0] - eSignature API v2.1-26.2.00.00 - 2026-06-01
 ### Changed
 - Added support for version v2.1-26.2.00.00 of the DocuSign ESignature API.

@@ -45,7 +45,9 @@ namespace DocuSign.eSign.Model
         /// <param name="Permission">Permission.</param>
         /// <param name="PrincipalUser">PrincipalUser.</param>
         /// <param name="StartDate">StartDate.</param>
-        public UserAuthorization(AuthorizationUser AgentUser = default(AuthorizationUser), string AuthorizationId = default(string), string Created = default(string), string CreatedBy = default(string), string EndDate = default(string), string Modified = default(string), string ModifiedBy = default(string), string Permission = default(string), AuthorizationUser PrincipalUser = default(AuthorizationUser), string StartDate = default(string))
+        /// <param name="TaskSource">TaskSource.</param>
+        /// <param name="TaskType">TaskType.</param>
+        public UserAuthorization(AuthorizationUser AgentUser = default(AuthorizationUser), string AuthorizationId = default(string), string Created = default(string), string CreatedBy = default(string), string EndDate = default(string), string Modified = default(string), string ModifiedBy = default(string), string Permission = default(string), AuthorizationUser PrincipalUser = default(AuthorizationUser), string StartDate = default(string), string TaskSource = default(string), string TaskType = default(string))
         {
             this.AgentUser = AgentUser;
             this.AuthorizationId = AuthorizationId;
@@ -57,6 +59,8 @@ namespace DocuSign.eSign.Model
             this.Permission = Permission;
             this.PrincipalUser = PrincipalUser;
             this.StartDate = StartDate;
+            this.TaskSource = TaskSource;
+            this.TaskType = TaskType;
         }
         
         /// <summary>
@@ -110,6 +114,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="startDate", EmitDefaultValue=false)]
         public string StartDate { get; set; }
         /// <summary>
+        /// Gets or Sets TaskSource
+        /// </summary>
+        [DataMember(Name="taskSource", EmitDefaultValue=false)]
+        public string TaskSource { get; set; }
+        /// <summary>
+        /// Gets or Sets TaskType
+        /// </summary>
+        [DataMember(Name="taskType", EmitDefaultValue=false)]
+        public string TaskType { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -127,6 +141,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  Permission: ").Append(Permission).Append("\n");
             sb.Append("  PrincipalUser: ").Append(PrincipalUser).Append("\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
+            sb.Append("  TaskSource: ").Append(TaskSource).Append("\n");
+            sb.Append("  TaskType: ").Append(TaskType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -212,6 +228,16 @@ namespace DocuSign.eSign.Model
                     this.StartDate == other.StartDate ||
                     this.StartDate != null &&
                     this.StartDate.Equals(other.StartDate)
+                ) && 
+                (
+                    this.TaskSource == other.TaskSource ||
+                    this.TaskSource != null &&
+                    this.TaskSource.Equals(other.TaskSource)
+                ) && 
+                (
+                    this.TaskType == other.TaskType ||
+                    this.TaskType != null &&
+                    this.TaskType.Equals(other.TaskType)
                 );
         }
 
@@ -246,6 +272,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.PrincipalUser.GetHashCode();
                 if (this.StartDate != null)
                     hash = hash * 59 + this.StartDate.GetHashCode();
+                if (this.TaskSource != null)
+                    hash = hash * 59 + this.TaskSource.GetHashCode();
+                if (this.TaskType != null)
+                    hash = hash * 59 + this.TaskType.GetHashCode();
                 return hash;
             }
         }

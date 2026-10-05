@@ -61,8 +61,10 @@ namespace DocuSign.eSign.Model
         /// <param name="CanManageStampsMetadata">CanManageStampsMetadata.</param>
         /// <param name="CanManageUsers">CanManageUsers.</param>
         /// <param name="CanManageUsersMetadata">Metadata that indicates whether the &#x60;canManageUsers&#x60; property is editable. .</param>
+        /// <param name="CanViewOnlyAccountAdminPages">CanViewOnlyAccountAdminPages.</param>
+        /// <param name="CanViewOnlyAccountAdminPagesMetadata">CanViewOnlyAccountAdminPagesMetadata.</param>
         /// <param name="CanViewUsers">CanViewUsers.</param>
-        public UserAccountManagementGranularInformation(string CanManageAccountSecuritySettings = default(string), SettingsMetadata CanManageAccountSecuritySettingsMetadata = default(SettingsMetadata), string CanManageAccountSettings = default(string), SettingsMetadata CanManageAccountSettingsMetadata = default(SettingsMetadata), string CanManageAdmins = default(string), SettingsMetadata CanManageAdminsMetadata = default(SettingsMetadata), string CanManageConnect = default(string), SettingsMetadata CanManageConnectMetadata = default(SettingsMetadata), string CanManageDocumentRetention = default(string), SettingsMetadata CanManageDocumentRetentionMetadata = default(SettingsMetadata), string CanManageEnvelopeTransfer = default(string), SettingsMetadata CanManageEnvelopeTransferMetadata = default(SettingsMetadata), string CanManageGroupsButNotUsers = default(string), SettingsMetadata CanManageGroupsButNotUsersMetadata = default(SettingsMetadata), string CanManageJointAgreements = default(string), SettingsMetadata CanManageJointAgreementsMetadata = default(SettingsMetadata), string CanManageReporting = default(string), SettingsMetadata CanManageReportingMetadata = default(SettingsMetadata), string CanManageSharing = default(string), SettingsMetadata CanManageSharingMetadata = default(SettingsMetadata), string CanManageSigningGroups = default(string), SettingsMetadata CanManageSigningGroupsMetadata = default(SettingsMetadata), string CanManageStamps = default(string), SettingsMetadata CanManageStampsMetadata = default(SettingsMetadata), string CanManageUsers = default(string), SettingsMetadata CanManageUsersMetadata = default(SettingsMetadata), string CanViewUsers = default(string))
+        public UserAccountManagementGranularInformation(string CanManageAccountSecuritySettings = default(string), SettingsMetadata CanManageAccountSecuritySettingsMetadata = default(SettingsMetadata), string CanManageAccountSettings = default(string), SettingsMetadata CanManageAccountSettingsMetadata = default(SettingsMetadata), string CanManageAdmins = default(string), SettingsMetadata CanManageAdminsMetadata = default(SettingsMetadata), string CanManageConnect = default(string), SettingsMetadata CanManageConnectMetadata = default(SettingsMetadata), string CanManageDocumentRetention = default(string), SettingsMetadata CanManageDocumentRetentionMetadata = default(SettingsMetadata), string CanManageEnvelopeTransfer = default(string), SettingsMetadata CanManageEnvelopeTransferMetadata = default(SettingsMetadata), string CanManageGroupsButNotUsers = default(string), SettingsMetadata CanManageGroupsButNotUsersMetadata = default(SettingsMetadata), string CanManageJointAgreements = default(string), SettingsMetadata CanManageJointAgreementsMetadata = default(SettingsMetadata), string CanManageReporting = default(string), SettingsMetadata CanManageReportingMetadata = default(SettingsMetadata), string CanManageSharing = default(string), SettingsMetadata CanManageSharingMetadata = default(SettingsMetadata), string CanManageSigningGroups = default(string), SettingsMetadata CanManageSigningGroupsMetadata = default(SettingsMetadata), string CanManageStamps = default(string), SettingsMetadata CanManageStampsMetadata = default(SettingsMetadata), string CanManageUsers = default(string), SettingsMetadata CanManageUsersMetadata = default(SettingsMetadata), string CanViewOnlyAccountAdminPages = default(string), SettingsMetadata CanViewOnlyAccountAdminPagesMetadata = default(SettingsMetadata), string CanViewUsers = default(string))
         {
             this.CanManageAccountSecuritySettings = CanManageAccountSecuritySettings;
             this.CanManageAccountSecuritySettingsMetadata = CanManageAccountSecuritySettingsMetadata;
@@ -90,6 +92,8 @@ namespace DocuSign.eSign.Model
             this.CanManageStampsMetadata = CanManageStampsMetadata;
             this.CanManageUsers = CanManageUsers;
             this.CanManageUsersMetadata = CanManageUsersMetadata;
+            this.CanViewOnlyAccountAdminPages = CanViewOnlyAccountAdminPages;
+            this.CanViewOnlyAccountAdminPagesMetadata = CanViewOnlyAccountAdminPagesMetadata;
             this.CanViewUsers = CanViewUsers;
         }
         
@@ -227,6 +231,16 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="canManageUsersMetadata", EmitDefaultValue=false)]
         public SettingsMetadata CanManageUsersMetadata { get; set; }
         /// <summary>
+        /// Gets or Sets CanViewOnlyAccountAdminPages
+        /// </summary>
+        [DataMember(Name="canViewOnlyAccountAdminPages", EmitDefaultValue=false)]
+        public string CanViewOnlyAccountAdminPages { get; set; }
+        /// <summary>
+        /// Gets or Sets CanViewOnlyAccountAdminPagesMetadata
+        /// </summary>
+        [DataMember(Name="canViewOnlyAccountAdminPagesMetadata", EmitDefaultValue=false)]
+        public SettingsMetadata CanViewOnlyAccountAdminPagesMetadata { get; set; }
+        /// <summary>
         /// Gets or Sets CanViewUsers
         /// </summary>
         [DataMember(Name="canViewUsers", EmitDefaultValue=false)]
@@ -265,6 +279,8 @@ namespace DocuSign.eSign.Model
             sb.Append("  CanManageStampsMetadata: ").Append(CanManageStampsMetadata).Append("\n");
             sb.Append("  CanManageUsers: ").Append(CanManageUsers).Append("\n");
             sb.Append("  CanManageUsersMetadata: ").Append(CanManageUsersMetadata).Append("\n");
+            sb.Append("  CanViewOnlyAccountAdminPages: ").Append(CanViewOnlyAccountAdminPages).Append("\n");
+            sb.Append("  CanViewOnlyAccountAdminPagesMetadata: ").Append(CanViewOnlyAccountAdminPagesMetadata).Append("\n");
             sb.Append("  CanViewUsers: ").Append(CanViewUsers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -433,6 +449,16 @@ namespace DocuSign.eSign.Model
                     this.CanManageUsersMetadata.Equals(other.CanManageUsersMetadata)
                 ) && 
                 (
+                    this.CanViewOnlyAccountAdminPages == other.CanViewOnlyAccountAdminPages ||
+                    this.CanViewOnlyAccountAdminPages != null &&
+                    this.CanViewOnlyAccountAdminPages.Equals(other.CanViewOnlyAccountAdminPages)
+                ) && 
+                (
+                    this.CanViewOnlyAccountAdminPagesMetadata == other.CanViewOnlyAccountAdminPagesMetadata ||
+                    this.CanViewOnlyAccountAdminPagesMetadata != null &&
+                    this.CanViewOnlyAccountAdminPagesMetadata.Equals(other.CanViewOnlyAccountAdminPagesMetadata)
+                ) && 
+                (
                     this.CanViewUsers == other.CanViewUsers ||
                     this.CanViewUsers != null &&
                     this.CanViewUsers.Equals(other.CanViewUsers)
@@ -502,6 +528,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CanManageUsers.GetHashCode();
                 if (this.CanManageUsersMetadata != null)
                     hash = hash * 59 + this.CanManageUsersMetadata.GetHashCode();
+                if (this.CanViewOnlyAccountAdminPages != null)
+                    hash = hash * 59 + this.CanViewOnlyAccountAdminPages.GetHashCode();
+                if (this.CanViewOnlyAccountAdminPagesMetadata != null)
+                    hash = hash * 59 + this.CanViewOnlyAccountAdminPagesMetadata.GetHashCode();
                 if (this.CanViewUsers != null)
                     hash = hash * 59 + this.CanViewUsers.GetHashCode();
                 return hash;

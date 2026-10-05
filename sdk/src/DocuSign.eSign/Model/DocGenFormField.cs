@@ -35,6 +35,7 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocGenFormField" /> class.
         /// </summary>
+        /// <param name="Children">Children.</param>
         /// <param name="ConnectedObjectDetails">ConnectedObjectDetails.</param>
         /// <param name="DefaultValue">DefaultValue.</param>
         /// <param name="Description">Description.</param>
@@ -53,8 +54,9 @@ namespace DocuSign.eSign.Model
         /// <param name="Type">Type.</param>
         /// <param name="Validation">Validation.</param>
         /// <param name="Value">Specifies the value of the tab. .</param>
-        public DocGenFormField(ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), string DefaultValue = default(string), string Description = default(string), Object Filter = default(Object), DocGenFormat Format = default(DocGenFormat), string FullyQualifiedPath = default(string), bool? Hidden = default(bool?), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string Order = default(string), string PredefinedValidation = default(string), bool? ReadOnly = default(bool?), string Required = default(string), List<DocGenFormFieldRowValue> RowValues = default(List<DocGenFormFieldRowValue>), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
+        public DocGenFormField(List<DocGenFormField> Children = default(List<DocGenFormField>), ConnectedObjectDetails ConnectedObjectDetails = default(ConnectedObjectDetails), string DefaultValue = default(string), string Description = default(string), Object Filter = default(Object), DocGenFormat Format = default(DocGenFormat), string FullyQualifiedPath = default(string), bool? Hidden = default(bool?), string Label = default(string), string Name = default(string), List<DocGenFormFieldOption> Options = default(List<DocGenFormFieldOption>), string Order = default(string), string PredefinedValidation = default(string), bool? ReadOnly = default(bool?), string Required = default(string), List<DocGenFormFieldRowValue> RowValues = default(List<DocGenFormFieldRowValue>), string Type = default(string), DocGenFormFieldValidation Validation = default(DocGenFormFieldValidation), string Value = default(string))
         {
+            this.Children = Children;
             this.ConnectedObjectDetails = ConnectedObjectDetails;
             this.DefaultValue = DefaultValue;
             this.Description = Description;
@@ -75,6 +77,11 @@ namespace DocuSign.eSign.Model
             this.Value = Value;
         }
         
+        /// <summary>
+        /// Gets or Sets Children
+        /// </summary>
+        [DataMember(Name="children", EmitDefaultValue=false)]
+        public List<DocGenFormField> Children { get; set; }
         /// <summary>
         /// Gets or Sets ConnectedObjectDetails
         /// </summary>
@@ -175,6 +182,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DocGenFormField {\n");
+            sb.Append("  Children: ").Append(Children).Append("\n");
             sb.Append("  ConnectedObjectDetails: ").Append(ConnectedObjectDetails).Append("\n");
             sb.Append("  DefaultValue: ").Append(DefaultValue).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -229,6 +237,11 @@ namespace DocuSign.eSign.Model
                 return false;
 
             return 
+                (
+                    this.Children == other.Children ||
+                    this.Children != null &&
+                    this.Children.SequenceEqual(other.Children)
+                ) && 
                 (
                     this.ConnectedObjectDetails == other.ConnectedObjectDetails ||
                     this.ConnectedObjectDetails != null &&
@@ -332,6 +345,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Children != null)
+                    hash = hash * 59 + this.Children.GetHashCode();
                 if (this.ConnectedObjectDetails != null)
                     hash = hash * 59 + this.ConnectedObjectDetails.GetHashCode();
                 if (this.DefaultValue != null)

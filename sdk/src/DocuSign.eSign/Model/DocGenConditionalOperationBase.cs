@@ -22,37 +22,20 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// UserAuthorizationsDeleteRequest
+    /// DocGenConditionalOperationBase
     /// </summary>
     [DataContract]
-    public partial class UserAuthorizationsDeleteRequest :  IEquatable<UserAuthorizationsDeleteRequest>, IValidatableObject
+    public partial class DocGenConditionalOperationBase :  IEquatable<DocGenConditionalOperationBase>, IValidatableObject
     {
-        public UserAuthorizationsDeleteRequest()
-        {
-            // Empty Constructor
-        }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserAuthorizationsDeleteRequest" /> class.
+        /// Initializes a new instance of the <see cref="DocGenConditionalOperationBase" /> class.
         /// </summary>
-        /// <param name="Authorizations">Authorizations.</param>
-        /// <param name="SendNotification">SendNotification.</param>
-        public UserAuthorizationsDeleteRequest(List<string> Authorizations = default(List<string>), string SendNotification = default(string))
+        [JsonConstructorAttribute]
+        public DocGenConditionalOperationBase()
         {
-            this.Authorizations = Authorizations;
-            this.SendNotification = SendNotification;
         }
         
-        /// <summary>
-        /// Gets or Sets Authorizations
-        /// </summary>
-        [DataMember(Name="authorizations", EmitDefaultValue=false)]
-        public List<string> Authorizations { get; set; }
-        /// <summary>
-        /// Gets or Sets SendNotification
-        /// </summary>
-        [DataMember(Name="sendNotification", EmitDefaultValue=false)]
-        public string SendNotification { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -60,9 +43,7 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UserAuthorizationsDeleteRequest {\n");
-            sb.Append("  Authorizations: ").Append(Authorizations).Append("\n");
-            sb.Append("  SendNotification: ").Append(SendNotification).Append("\n");
+            sb.Append("class DocGenConditionalOperationBase {\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,31 +65,21 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as UserAuthorizationsDeleteRequest);
+            return this.Equals(obj as DocGenConditionalOperationBase);
         }
 
         /// <summary>
-        /// Returns true if UserAuthorizationsDeleteRequest instances are equal
+        /// Returns true if DocGenConditionalOperationBase instances are equal
         /// </summary>
-        /// <param name="other">Instance of UserAuthorizationsDeleteRequest to be compared</param>
+        /// <param name="other">Instance of DocGenConditionalOperationBase to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UserAuthorizationsDeleteRequest other)
+        public bool Equals(DocGenConditionalOperationBase other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
                 return false;
 
-            return 
-                (
-                    this.Authorizations == other.Authorizations ||
-                    this.Authorizations != null &&
-                    this.Authorizations.SequenceEqual(other.Authorizations)
-                ) && 
-                (
-                    this.SendNotification == other.SendNotification ||
-                    this.SendNotification != null &&
-                    this.SendNotification.Equals(other.SendNotification)
-                );
+            return false;
         }
 
         /// <summary>
@@ -122,10 +93,6 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Authorizations != null)
-                    hash = hash * 59 + this.Authorizations.GetHashCode();
-                if (this.SendNotification != null)
-                    hash = hash * 59 + this.SendNotification.GetHashCode();
                 return hash;
             }
         }

@@ -36,9 +36,11 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="EnvelopeAuditEventResponse" /> class.
         /// </summary>
         /// <param name="AuditEvents">Reserved: TBD.</param>
-        public EnvelopeAuditEventResponse(List<EnvelopeAuditEvent> AuditEvents = default(List<EnvelopeAuditEvent>))
+        /// <param name="PaymentEvents">PaymentEvents.</param>
+        public EnvelopeAuditEventResponse(List<EnvelopeAuditEvent> AuditEvents = default(List<EnvelopeAuditEvent>), List<PaymentAuditEvent> PaymentEvents = default(List<PaymentAuditEvent>))
         {
             this.AuditEvents = AuditEvents;
+            this.PaymentEvents = PaymentEvents;
         }
         
         /// <summary>
@@ -48,6 +50,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="auditEvents", EmitDefaultValue=false)]
         public List<EnvelopeAuditEvent> AuditEvents { get; set; }
         /// <summary>
+        /// Gets or Sets PaymentEvents
+        /// </summary>
+        [DataMember(Name="paymentEvents", EmitDefaultValue=false)]
+        public List<PaymentAuditEvent> PaymentEvents { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -56,6 +63,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class EnvelopeAuditEventResponse {\n");
             sb.Append("  AuditEvents: ").Append(AuditEvents).Append("\n");
+            sb.Append("  PaymentEvents: ").Append(PaymentEvents).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,6 +104,11 @@ namespace DocuSign.eSign.Model
                     this.AuditEvents == other.AuditEvents ||
                     this.AuditEvents != null &&
                     this.AuditEvents.SequenceEqual(other.AuditEvents)
+                ) && 
+                (
+                    this.PaymentEvents == other.PaymentEvents ||
+                    this.PaymentEvents != null &&
+                    this.PaymentEvents.SequenceEqual(other.PaymentEvents)
                 );
         }
 
@@ -112,6 +125,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.AuditEvents != null)
                     hash = hash * 59 + this.AuditEvents.GetHashCode();
+                if (this.PaymentEvents != null)
+                    hash = hash * 59 + this.PaymentEvents.GetHashCode();
                 return hash;
             }
         }

@@ -38,11 +38,13 @@ namespace DocuSign.eSign.Model
         /// <param name="AgentUser">AgentUser.</param>
         /// <param name="CustomMessage">CustomMessage.</param>
         /// <param name="Permission">Permission.</param>
-        public EnvelopesShareRequest(AuthorizationUser AgentUser = default(AuthorizationUser), string CustomMessage = default(string), string Permission = default(string))
+        /// <param name="ShareId">ShareId.</param>
+        public EnvelopesShareRequest(AuthorizationUser AgentUser = default(AuthorizationUser), string CustomMessage = default(string), string Permission = default(string), string ShareId = default(string))
         {
             this.AgentUser = AgentUser;
             this.CustomMessage = CustomMessage;
             this.Permission = Permission;
+            this.ShareId = ShareId;
         }
         
         /// <summary>
@@ -61,6 +63,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="permission", EmitDefaultValue=false)]
         public string Permission { get; set; }
         /// <summary>
+        /// Gets or Sets ShareId
+        /// </summary>
+        [DataMember(Name="shareId", EmitDefaultValue=false)]
+        public string ShareId { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -71,6 +78,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AgentUser: ").Append(AgentUser).Append("\n");
             sb.Append("  CustomMessage: ").Append(CustomMessage).Append("\n");
             sb.Append("  Permission: ").Append(Permission).Append("\n");
+            sb.Append("  ShareId: ").Append(ShareId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,6 +129,11 @@ namespace DocuSign.eSign.Model
                     this.Permission == other.Permission ||
                     this.Permission != null &&
                     this.Permission.Equals(other.Permission)
+                ) && 
+                (
+                    this.ShareId == other.ShareId ||
+                    this.ShareId != null &&
+                    this.ShareId.Equals(other.ShareId)
                 );
         }
 
@@ -141,6 +154,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CustomMessage.GetHashCode();
                 if (this.Permission != null)
                     hash = hash * 59 + this.Permission.GetHashCode();
+                if (this.ShareId != null)
+                    hash = hash * 59 + this.ShareId.GetHashCode();
                 return hash;
             }
         }

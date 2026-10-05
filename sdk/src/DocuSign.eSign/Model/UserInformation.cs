@@ -61,6 +61,7 @@ namespace DocuSign.eSign.Model
         /// <param name="LastName">The user&#39;s last name.  Maximum Length: 50 characters..</param>
         /// <param name="LicenseStatus">LicenseStatus.</param>
         /// <param name="LicenseType">LicenseType.</param>
+        /// <param name="LicenseTypes">LicenseTypes.</param>
         /// <param name="LoginStatus">Shows the current status of the user&#39;s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  .</param>
         /// <param name="MiddleName">The user&#39;s middle name.  Maximum Length: 50 characters..</param>
         /// <param name="Password">Password.</param>
@@ -83,7 +84,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserStatus">UserStatus.</param>
         /// <param name="UserType">UserType.</param>
         /// <param name="WorkAddress">WorkAddress.</param>
-        public UserInformation(string ActivationAccessCode = default(string), string Company = default(string), List<ConnectUserObject> ConnectConfigurations = default(List<ConnectUserObject>), string CountryCode = default(string), string CreatedDateTime = default(string), List<NameValue> CustomSettings = default(List<NameValue>), string DefaultAccountId = default(string), string Email = default(string), string EnableConnectForUser = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FirstName = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), List<Group> GroupList = default(List<Group>), bool? HasRemoteNotary = default(bool?), AddressInformation HomeAddress = default(AddressInformation), string InitialsImageUri = default(string), string IsAdmin = default(string), string IsAlternateAdmin = default(string), string IsManagedByScim = default(string), string IsMembershipManagedByScim = default(string), string IsNAREnabled = default(string), string JobTitle = default(string), string LastLogin = default(string), string LastName = default(string), string LicenseStatus = default(string), string LicenseType = default(string), string LoginStatus = default(string), string MiddleName = default(string), string Password = default(string), string PasswordExpiration = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string ProfileImageUri = default(string), string SendActivationEmail = default(string), string SendActivationOnInvalidLogin = default(string), string SignatureImageUri = default(string), string Subscribe = default(string), string SuffixName = default(string), string Title = default(string), string Uri = default(string), string UserAddedToAccountDateTime = default(string), string UserId = default(string), string UserName = default(string), string UserProfileLastModifiedDate = default(string), UserSettingsInformation UserSettings = default(UserSettingsInformation), string UserStatus = default(string), string UserType = default(string), AddressInformation WorkAddress = default(AddressInformation))
+        public UserInformation(string ActivationAccessCode = default(string), string Company = default(string), List<ConnectUserObject> ConnectConfigurations = default(List<ConnectUserObject>), string CountryCode = default(string), string CreatedDateTime = default(string), List<NameValue> CustomSettings = default(List<NameValue>), string DefaultAccountId = default(string), string Email = default(string), string EnableConnectForUser = default(string), ErrorDetails ErrorDetails = default(ErrorDetails), string FirstName = default(string), ForgottenPasswordInformation ForgottenPasswordInfo = default(ForgottenPasswordInformation), List<Group> GroupList = default(List<Group>), bool? HasRemoteNotary = default(bool?), AddressInformation HomeAddress = default(AddressInformation), string InitialsImageUri = default(string), string IsAdmin = default(string), string IsAlternateAdmin = default(string), string IsManagedByScim = default(string), string IsMembershipManagedByScim = default(string), string IsNAREnabled = default(string), string JobTitle = default(string), string LastLogin = default(string), string LastName = default(string), string LicenseStatus = default(string), string LicenseType = default(string), List<string> LicenseTypes = default(List<string>), string LoginStatus = default(string), string MiddleName = default(string), string Password = default(string), string PasswordExpiration = default(string), string PermissionProfileId = default(string), string PermissionProfileName = default(string), string ProfileImageUri = default(string), string SendActivationEmail = default(string), string SendActivationOnInvalidLogin = default(string), string SignatureImageUri = default(string), string Subscribe = default(string), string SuffixName = default(string), string Title = default(string), string Uri = default(string), string UserAddedToAccountDateTime = default(string), string UserId = default(string), string UserName = default(string), string UserProfileLastModifiedDate = default(string), UserSettingsInformation UserSettings = default(UserSettingsInformation), string UserStatus = default(string), string UserType = default(string), AddressInformation WorkAddress = default(AddressInformation))
         {
             this.ActivationAccessCode = ActivationAccessCode;
             this.Company = Company;
@@ -111,6 +112,7 @@ namespace DocuSign.eSign.Model
             this.LastName = LastName;
             this.LicenseStatus = LicenseStatus;
             this.LicenseType = LicenseType;
+            this.LicenseTypes = LicenseTypes;
             this.LoginStatus = LoginStatus;
             this.MiddleName = MiddleName;
             this.Password = Password;
@@ -279,6 +281,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="licenseType", EmitDefaultValue=false)]
         public string LicenseType { get; set; }
         /// <summary>
+        /// Gets or Sets LicenseTypes
+        /// </summary>
+        [DataMember(Name="licenseTypes", EmitDefaultValue=false)]
+        public List<string> LicenseTypes { get; set; }
+        /// <summary>
         /// Shows the current status of the user&#39;s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
         /// </summary>
         /// <value>Shows the current status of the user&#39;s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  </value>
@@ -429,6 +436,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  LicenseStatus: ").Append(LicenseStatus).Append("\n");
             sb.Append("  LicenseType: ").Append(LicenseType).Append("\n");
+            sb.Append("  LicenseTypes: ").Append(LicenseTypes).Append("\n");
             sb.Append("  LoginStatus: ").Append(LoginStatus).Append("\n");
             sb.Append("  MiddleName: ").Append(MiddleName).Append("\n");
             sb.Append("  Password: ").Append(Password).Append("\n");
@@ -618,6 +626,11 @@ namespace DocuSign.eSign.Model
                     this.LicenseType.Equals(other.LicenseType)
                 ) && 
                 (
+                    this.LicenseTypes == other.LicenseTypes ||
+                    this.LicenseTypes != null &&
+                    this.LicenseTypes.SequenceEqual(other.LicenseTypes)
+                ) && 
+                (
                     this.LoginStatus == other.LoginStatus ||
                     this.LoginStatus != null &&
                     this.LoginStatus.Equals(other.LoginStatus)
@@ -792,6 +805,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.LicenseStatus.GetHashCode();
                 if (this.LicenseType != null)
                     hash = hash * 59 + this.LicenseType.GetHashCode();
+                if (this.LicenseTypes != null)
+                    hash = hash * 59 + this.LicenseTypes.GetHashCode();
                 if (this.LoginStatus != null)
                     hash = hash * 59 + this.LoginStatus.GetHashCode();
                 if (this.MiddleName != null)

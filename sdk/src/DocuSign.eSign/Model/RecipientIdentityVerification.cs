@@ -35,18 +35,25 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RecipientIdentityVerification" /> class.
         /// </summary>
+        /// <param name="HasAutoAttachedRiskAssessment">HasAutoAttachedRiskAssessment.</param>
         /// <param name="InputOptions">InputOptions.</param>
         /// <param name="WorkflowId">WorkflowId.</param>
         /// <param name="WorkflowIdMetadata">WorkflowIdMetadata.</param>
         /// <param name="WorkflowLabel">WorkflowLabel.</param>
-        public RecipientIdentityVerification(List<RecipientIdentityInputOption> InputOptions = default(List<RecipientIdentityInputOption>), string WorkflowId = default(string), PropertyMetadata WorkflowIdMetadata = default(PropertyMetadata), string WorkflowLabel = default(string))
+        public RecipientIdentityVerification(string HasAutoAttachedRiskAssessment = default(string), List<RecipientIdentityInputOption> InputOptions = default(List<RecipientIdentityInputOption>), string WorkflowId = default(string), PropertyMetadata WorkflowIdMetadata = default(PropertyMetadata), string WorkflowLabel = default(string))
         {
+            this.HasAutoAttachedRiskAssessment = HasAutoAttachedRiskAssessment;
             this.InputOptions = InputOptions;
             this.WorkflowId = WorkflowId;
             this.WorkflowIdMetadata = WorkflowIdMetadata;
             this.WorkflowLabel = WorkflowLabel;
         }
         
+        /// <summary>
+        /// Gets or Sets HasAutoAttachedRiskAssessment
+        /// </summary>
+        [DataMember(Name="hasAutoAttachedRiskAssessment", EmitDefaultValue=false)]
+        public string HasAutoAttachedRiskAssessment { get; set; }
         /// <summary>
         /// Gets or Sets InputOptions
         /// </summary>
@@ -75,6 +82,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class RecipientIdentityVerification {\n");
+            sb.Append("  HasAutoAttachedRiskAssessment: ").Append(HasAutoAttachedRiskAssessment).Append("\n");
             sb.Append("  InputOptions: ").Append(InputOptions).Append("\n");
             sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
             sb.Append("  WorkflowIdMetadata: ").Append(WorkflowIdMetadata).Append("\n");
@@ -116,6 +124,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.HasAutoAttachedRiskAssessment == other.HasAutoAttachedRiskAssessment ||
+                    this.HasAutoAttachedRiskAssessment != null &&
+                    this.HasAutoAttachedRiskAssessment.Equals(other.HasAutoAttachedRiskAssessment)
+                ) && 
+                (
                     this.InputOptions == other.InputOptions ||
                     this.InputOptions != null &&
                     this.InputOptions.SequenceEqual(other.InputOptions)
@@ -148,6 +161,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.HasAutoAttachedRiskAssessment != null)
+                    hash = hash * 59 + this.HasAutoAttachedRiskAssessment.GetHashCode();
                 if (this.InputOptions != null)
                     hash = hash * 59 + this.InputOptions.GetHashCode();
                 if (this.WorkflowId != null)

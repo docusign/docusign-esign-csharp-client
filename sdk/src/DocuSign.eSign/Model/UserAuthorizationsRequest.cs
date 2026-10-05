@@ -36,9 +36,11 @@ namespace DocuSign.eSign.Model
         /// Initializes a new instance of the <see cref="UserAuthorizationsRequest" /> class.
         /// </summary>
         /// <param name="Authorizations">Authorizations.</param>
-        public UserAuthorizationsRequest(List<UserAuthorizationCreateRequestWithId> Authorizations = default(List<UserAuthorizationCreateRequestWithId>))
+        /// <param name="SendNotification">SendNotification.</param>
+        public UserAuthorizationsRequest(List<UserAuthorizationCreateRequestWithId> Authorizations = default(List<UserAuthorizationCreateRequestWithId>), string SendNotification = default(string))
         {
             this.Authorizations = Authorizations;
+            this.SendNotification = SendNotification;
         }
         
         /// <summary>
@@ -46,6 +48,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="authorizations", EmitDefaultValue=false)]
         public List<UserAuthorizationCreateRequestWithId> Authorizations { get; set; }
+        /// <summary>
+        /// Gets or Sets SendNotification
+        /// </summary>
+        [DataMember(Name="sendNotification", EmitDefaultValue=false)]
+        public string SendNotification { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -55,6 +62,7 @@ namespace DocuSign.eSign.Model
             var sb = new StringBuilder();
             sb.Append("class UserAuthorizationsRequest {\n");
             sb.Append("  Authorizations: ").Append(Authorizations).Append("\n");
+            sb.Append("  SendNotification: ").Append(SendNotification).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,6 +103,11 @@ namespace DocuSign.eSign.Model
                     this.Authorizations == other.Authorizations ||
                     this.Authorizations != null &&
                     this.Authorizations.SequenceEqual(other.Authorizations)
+                ) && 
+                (
+                    this.SendNotification == other.SendNotification ||
+                    this.SendNotification != null &&
+                    this.SendNotification.Equals(other.SendNotification)
                 );
         }
 
@@ -111,6 +124,8 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Authorizations != null)
                     hash = hash * 59 + this.Authorizations.GetHashCode();
+                if (this.SendNotification != null)
+                    hash = hash * 59 + this.SendNotification.GetHashCode();
                 return hash;
             }
         }

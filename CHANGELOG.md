@@ -1,5 +1,10 @@
 ﻿# DocuSign C# Client Changelog
 
+## [v11.1.0] - eSignature API v2.1-26.3.01.02 - 2026-09-30
+### Changed
+- Added support for version v2.1-26.3.01.02 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v11.0.1] - eSignature API v2.1-26.2.01.01 - 2026-07-01
 ### Changed
 - Fixed CreateChunkedUpload sending incorrect Content-Type: multipart/form-data instead of application/json.

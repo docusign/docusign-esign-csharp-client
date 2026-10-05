@@ -62,7 +62,8 @@ namespace DocuSign.eSign.Model
         /// <param name="AllowManageUsers">AllowManageUsers.</param>
         /// <param name="AllowManageUsersMetadata">AllowManageUsersMetadata.</param>
         /// <param name="AllowViewUsers">AllowViewUsers.</param>
-        public AccountManagementGranular(string AllowManageAccountSecuritySettings = default(string), SettingsMetadata AllowManageAccountSecuritySettingsMetadata = default(SettingsMetadata), string AllowManageAccountSettings = default(string), SettingsMetadata AllowManageAccountSettingsMetadata = default(SettingsMetadata), string AllowManageAdmins = default(string), SettingsMetadata AllowManageAdminsMetadata = default(SettingsMetadata), string AllowManageConnect = default(string), SettingsMetadata AllowManageConnectMetadata = default(SettingsMetadata), string AllowManageDocumentRetention = default(string), SettingsMetadata AllowManageDocumentRetentionMetadata = default(SettingsMetadata), string AllowManageEnvelopeTransfer = default(string), SettingsMetadata AllowManageEnvelopeTransferMetadata = default(SettingsMetadata), string AllowManageGroupsButNotUsers = default(string), SettingsMetadata AllowManageGroupsButNotUsersMetadata = default(SettingsMetadata), string AllowManageJointAgreements = default(string), SettingsMetadata AllowManageJointAgreementsMetadata = default(SettingsMetadata), string AllowManageReporting = default(string), SettingsMetadata AllowManageReportingMetadata = default(SettingsMetadata), string AllowManageSharing = default(string), SettingsMetadata AllowManageSharingMetadata = default(SettingsMetadata), string AllowManageSigningGroups = default(string), SettingsMetadata AllowManageSigningGroupsMetadata = default(SettingsMetadata), string AllowManageStamps = default(string), SettingsMetadata AllowManageStampsMetadata = default(SettingsMetadata), string AllowManageUsers = default(string), SettingsMetadata AllowManageUsersMetadata = default(SettingsMetadata), string AllowViewUsers = default(string))
+        /// <param name="ViewOnlyAccountAdminPages">ViewOnlyAccountAdminPages.</param>
+        public AccountManagementGranular(string AllowManageAccountSecuritySettings = default(string), SettingsMetadata AllowManageAccountSecuritySettingsMetadata = default(SettingsMetadata), string AllowManageAccountSettings = default(string), SettingsMetadata AllowManageAccountSettingsMetadata = default(SettingsMetadata), string AllowManageAdmins = default(string), SettingsMetadata AllowManageAdminsMetadata = default(SettingsMetadata), string AllowManageConnect = default(string), SettingsMetadata AllowManageConnectMetadata = default(SettingsMetadata), string AllowManageDocumentRetention = default(string), SettingsMetadata AllowManageDocumentRetentionMetadata = default(SettingsMetadata), string AllowManageEnvelopeTransfer = default(string), SettingsMetadata AllowManageEnvelopeTransferMetadata = default(SettingsMetadata), string AllowManageGroupsButNotUsers = default(string), SettingsMetadata AllowManageGroupsButNotUsersMetadata = default(SettingsMetadata), string AllowManageJointAgreements = default(string), SettingsMetadata AllowManageJointAgreementsMetadata = default(SettingsMetadata), string AllowManageReporting = default(string), SettingsMetadata AllowManageReportingMetadata = default(SettingsMetadata), string AllowManageSharing = default(string), SettingsMetadata AllowManageSharingMetadata = default(SettingsMetadata), string AllowManageSigningGroups = default(string), SettingsMetadata AllowManageSigningGroupsMetadata = default(SettingsMetadata), string AllowManageStamps = default(string), SettingsMetadata AllowManageStampsMetadata = default(SettingsMetadata), string AllowManageUsers = default(string), SettingsMetadata AllowManageUsersMetadata = default(SettingsMetadata), string AllowViewUsers = default(string), string ViewOnlyAccountAdminPages = default(string))
         {
             this.AllowManageAccountSecuritySettings = AllowManageAccountSecuritySettings;
             this.AllowManageAccountSecuritySettingsMetadata = AllowManageAccountSecuritySettingsMetadata;
@@ -91,6 +92,7 @@ namespace DocuSign.eSign.Model
             this.AllowManageUsers = AllowManageUsers;
             this.AllowManageUsersMetadata = AllowManageUsersMetadata;
             this.AllowViewUsers = AllowViewUsers;
+            this.ViewOnlyAccountAdminPages = ViewOnlyAccountAdminPages;
         }
         
         /// <summary>
@@ -229,6 +231,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowViewUsers", EmitDefaultValue=false)]
         public string AllowViewUsers { get; set; }
         /// <summary>
+        /// Gets or Sets ViewOnlyAccountAdminPages
+        /// </summary>
+        [DataMember(Name="viewOnlyAccountAdminPages", EmitDefaultValue=false)]
+        public string ViewOnlyAccountAdminPages { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -263,6 +270,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  AllowManageUsers: ").Append(AllowManageUsers).Append("\n");
             sb.Append("  AllowManageUsersMetadata: ").Append(AllowManageUsersMetadata).Append("\n");
             sb.Append("  AllowViewUsers: ").Append(AllowViewUsers).Append("\n");
+            sb.Append("  ViewOnlyAccountAdminPages: ").Append(ViewOnlyAccountAdminPages).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -433,6 +441,11 @@ namespace DocuSign.eSign.Model
                     this.AllowViewUsers == other.AllowViewUsers ||
                     this.AllowViewUsers != null &&
                     this.AllowViewUsers.Equals(other.AllowViewUsers)
+                ) && 
+                (
+                    this.ViewOnlyAccountAdminPages == other.ViewOnlyAccountAdminPages ||
+                    this.ViewOnlyAccountAdminPages != null &&
+                    this.ViewOnlyAccountAdminPages.Equals(other.ViewOnlyAccountAdminPages)
                 );
         }
 
@@ -501,6 +514,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.AllowManageUsersMetadata.GetHashCode();
                 if (this.AllowViewUsers != null)
                     hash = hash * 59 + this.AllowViewUsers.GetHashCode();
+                if (this.ViewOnlyAccountAdminPages != null)
+                    hash = hash * 59 + this.ViewOnlyAccountAdminPages.GetHashCode();
                 return hash;
             }
         }

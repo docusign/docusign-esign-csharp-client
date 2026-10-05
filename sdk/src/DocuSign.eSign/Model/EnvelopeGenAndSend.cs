@@ -22,26 +22,30 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// Envelope
+    /// EnvelopeGenAndSend
     /// </summary>
     [DataContract]
-    public partial class Envelope :  IEquatable<Envelope>, IValidatableObject
+    public partial class EnvelopeGenAndSend :  IEquatable<EnvelopeGenAndSend>, IValidatableObject
     {
-        public Envelope()
+        public EnvelopeGenAndSend()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Envelope" /> class.
+        /// Initializes a new instance of the <see cref="EnvelopeGenAndSend" /> class.
         /// </summary>
         /// <param name="AccessControlListBase64">AccessControlListBase64.</param>
+        /// <param name="Accessibility">Accessibility.</param>
         /// <param name="AllowComments">AllowComments.</param>
         /// <param name="AllowMarkup">When set to **true**, Document Markup is enabled for envelope. Account must have Document Markup enabled to use this.</param>
         /// <param name="AllowReassign">When set to **true**, the recipient can redirect an envelope to a more appropriate recipient..</param>
+        /// <param name="AllowRecipientRecursion">AllowRecipientRecursion.</param>
         /// <param name="AllowViewHistory">AllowViewHistory.</param>
         /// <param name="AnySigner">AnySigner.</param>
+        /// <param name="ArchiveAction">ArchiveAction.</param>
         /// <param name="Asynchronous">When set to **true**, the envelope is queued for processing and the value of the &#x60;status&#x60; property is set to &#39;Processing&#39;. Additionally, get status calls return &#39;Processing&#39; until completed..</param>
+        /// <param name="Attachments">Attachments.</param>
         /// <param name="AttachmentsUri">AttachmentsUri.</param>
         /// <param name="AuthoritativeCopy">Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled..</param>
         /// <param name="AuthoritativeCopyDefault">AuthoritativeCopyDefault.</param>
@@ -51,6 +55,7 @@ namespace DocuSign.eSign.Model
         /// <param name="BurnDefaultTabData">BurnDefaultTabData.</param>
         /// <param name="CertificateUri">Retrieves a URI for an endpoint that allows you to easily retrieve certificate information..</param>
         /// <param name="CompletedDateTime">Specifies the date and time this item was completed..</param>
+        /// <param name="CompositeTemplates">CompositeTemplates.</param>
         /// <param name="CopyRecipientData">CopyRecipientData.</param>
         /// <param name="CreatedDateTime">Indicates the date and time the item was created..</param>
         /// <param name="CustomFields">An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters..</param>
@@ -60,10 +65,11 @@ namespace DocuSign.eSign.Model
         /// <param name="DeliveredDateTime">Reserved: For DocuSign use only..</param>
         /// <param name="DisableResponsiveDocument">DisableResponsiveDocument.</param>
         /// <param name="DocumentBase64">DocumentBase64.</param>
+        /// <param name="Documents">Complex element contains the details on the documents in the envelope..</param>
         /// <param name="DocumentsCombinedUri">DocumentsCombinedUri.</param>
         /// <param name="DocumentsUri">Contains a URI for an endpoint that you can use to retrieve the documents..</param>
-        /// <param name="EmailBlurb">This is the same as the email body. If specified it is included in email body for all envelope recipients..</param>
-        /// <param name="EmailSettings">A complex type that contains email settings..</param>
+        /// <param name="EmailBlurb">EmailBlurb.</param>
+        /// <param name="EmailSettings">EmailSettings.</param>
         /// <param name="EmailSubject">Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject..</param>
         /// <param name="EnableWetSign">When set to **true**, the signer is allowed to print the document and sign it on paper..</param>
         /// <param name="EnforceSignerVisibility">When set to **true**, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent.  Your account must have Document Visibility enabled to use this..</param>
@@ -74,17 +80,23 @@ namespace DocuSign.eSign.Model
         /// <param name="EnvelopeId">The envelope ID of the envelope status that failed to post..</param>
         /// <param name="EnvelopeIdStamping">When set to **true**, Envelope ID Stamping is enabled..</param>
         /// <param name="EnvelopeLocation">EnvelopeLocation.</param>
-        /// <param name="EnvelopeMetadata">Provides information about the features and services that are enabled for the envelope, including the Correct feature, the Advanced Correct feature, and DocuSign eNotary service..</param>
+        /// <param name="EnvelopeMetadata">EnvelopeMetadata.</param>
         /// <param name="EnvelopeUri">Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes..</param>
+        /// <param name="EventNotification">EventNotification.</param>
+        /// <param name="EventNotifications">EventNotifications.</param>
         /// <param name="ExpireAfter">ExpireAfter.</param>
         /// <param name="ExpireDateTime">ExpireDateTime.</param>
         /// <param name="ExpireEnabled">ExpireEnabled.</param>
         /// <param name="ExternalEnvelopeId">ExternalEnvelopeId.</param>
         /// <param name="Folders">Folders.</param>
+        /// <param name="GenerateDataSource">GenerateDataSource.</param>
+        /// <param name="GenerateProperties">GenerateProperties.</param>
+        /// <param name="GenerateSchemaId">GenerateSchemaId.</param>
         /// <param name="HasComments">HasComments.</param>
         /// <param name="HasFormDataChanged">HasFormDataChanged.</param>
         /// <param name="HasWavFile">HasWavFile.</param>
         /// <param name="Holder">Holder.</param>
+        /// <param name="ImageHandling">ImageHandling.</param>
         /// <param name="InitialSentDateTime">InitialSentDateTime.</param>
         /// <param name="Is21CFRPart11">When set to **true**, indicates that this module is enabled on the account..</param>
         /// <param name="IsDynamicEnvelope">IsDynamicEnvelope.</param>
@@ -92,23 +104,28 @@ namespace DocuSign.eSign.Model
         /// <param name="IsTicketRelatedEnvelope">IsTicketRelatedEnvelope.</param>
         /// <param name="LastModifiedDateTime">The date and time the item was last modified..</param>
         /// <param name="Location">Location.</param>
-        /// <param name="LockInformation">Provides lock information about an envelope that a user has locked..</param>
+        /// <param name="LockInformation">LockInformation.</param>
         /// <param name="MessageLock">When set to **true**, prevents senders from changing the contents of &#x60;emailBlurb&#x60; and &#x60;emailSubject&#x60; properties for the envelope.   Additionally, this prevents users from making changes to the contents of &#x60;emailBlurb&#x60; and &#x60;emailSubject&#x60; properties when correcting envelopes.   However, if the &#x60;messageLock&#x60; node is set to true**** and the &#x60;emailSubject&#x60; property is empty, senders and correctors are able to add a subject to the envelope..</param>
         /// <param name="Notification">Notification.</param>
         /// <param name="NotificationUri">Contains a URI for an endpoint that you can use to retrieve the notifications..</param>
-        /// <param name="PowerForm">Information about any PowerForms that are included in the envelope..</param>
+        /// <param name="Password">Password.</param>
+        /// <param name="PowerForm">PowerForm.</param>
         /// <param name="PurgeCompletedDate">PurgeCompletedDate.</param>
         /// <param name="PurgeRequestDate">PurgeRequestDate.</param>
         /// <param name="PurgeState">PurgeState.</param>
         /// <param name="Recipients">An array of powerform recipients..</param>
         /// <param name="RecipientsLock">When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope..</param>
         /// <param name="RecipientsUri">Contains a URI for an endpoint that you can use to retrieve the recipients..</param>
-        /// <param name="Sender">Information about the sender of the envelope..</param>
+        /// <param name="RecipientViewRequest">RecipientViewRequest.</param>
+        /// <param name="SaveDocumentsToArchive">SaveDocumentsToArchive.</param>
+        /// <param name="Sender">Sender.</param>
         /// <param name="SentDateTime">The date and time the envelope was sent..</param>
         /// <param name="SignerCanSignOnMobile">SignerCanSignOnMobile.</param>
         /// <param name="SigningLocation">Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online..</param>
-        /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  *created - The envelope is saved as a draft and can be modified and sent later..</param>
+        /// <param name="Status">Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later..</param>
         /// <param name="StatusChangedDateTime">The data and time the status changed..</param>
+        /// <param name="TemplateId">The unique identifier of the template. If this is not provided, DocuSign will generate a value. .</param>
+        /// <param name="TemplateRoles">TemplateRoles.</param>
         /// <param name="TemplatesUri">Contains a URI for an endpoint which you can use to retrieve the templates..</param>
         /// <param name="TransactionId"> Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The &#x60;transactionId&#x60; property can be used determine an envelope&#39;s status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned..</param>
         /// <param name="UseDisclosure">When set to **true**, the disclosure is shown to recipients in accordance with the account&#39;s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the &#x60;useDisclosure&#x60; property is not set, then the account&#39;s normal disclosure setting is used and the value of the &#x60;useDisclosure&#x60; property is not returned in responses when getting envelope information..</param>
@@ -117,15 +134,19 @@ namespace DocuSign.eSign.Model
         /// <param name="VoidedReason">The reason the envelope or template was voided..</param>
         /// <param name="WatermarkLanguage">WatermarkLanguage.</param>
         /// <param name="Workflow">Workflow.</param>
-        public Envelope(string AccessControlListBase64 = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string Asynchronous = default(string), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string BurnDefaultTabData = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), string CopyRecipientData = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), string DocumentBase64 = default(string), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), string EnvelopeClassification = default(string), EnvelopeCustomMetadata EnvelopeCustomMetadata = default(EnvelopeCustomMetadata), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), List<Folder> Folders = default(List<Folder>), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string IsTicketRelatedEnvelope = default(string), string LastModifiedDateTime = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), PowerForm PowerForm = default(PowerForm), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string USigState = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string), string WatermarkLanguage = default(string), Workflow Workflow = default(Workflow))
+        public EnvelopeGenAndSend(string AccessControlListBase64 = default(string), string Accessibility = default(string), string AllowComments = default(string), string AllowMarkup = default(string), string AllowReassign = default(string), string AllowRecipientRecursion = default(string), string AllowViewHistory = default(string), string AnySigner = default(string), string ArchiveAction = default(string), string Asynchronous = default(string), List<Attachment> Attachments = default(List<Attachment>), string AttachmentsUri = default(string), string AuthoritativeCopy = default(string), string AuthoritativeCopyDefault = default(string), string AutoNavigation = default(string), string BrandId = default(string), string BrandLock = default(string), string BurnDefaultTabData = default(string), string CertificateUri = default(string), string CompletedDateTime = default(string), List<CompositeTemplate> CompositeTemplates = default(List<CompositeTemplate>), string CopyRecipientData = default(string), string CreatedDateTime = default(string), CustomFields CustomFields = default(CustomFields), string CustomFieldsUri = default(string), string DeclinedDateTime = default(string), string DeletedDateTime = default(string), string DeliveredDateTime = default(string), string DisableResponsiveDocument = default(string), string DocumentBase64 = default(string), List<Document> Documents = default(List<Document>), string DocumentsCombinedUri = default(string), string DocumentsUri = default(string), string EmailBlurb = default(string), EmailSettings EmailSettings = default(EmailSettings), string EmailSubject = default(string), string EnableWetSign = default(string), string EnforceSignerVisibility = default(string), List<Attachment> EnvelopeAttachments = default(List<Attachment>), string EnvelopeClassification = default(string), EnvelopeCustomMetadata EnvelopeCustomMetadata = default(EnvelopeCustomMetadata), List<EnvelopeDocument> EnvelopeDocuments = default(List<EnvelopeDocument>), string EnvelopeId = default(string), string EnvelopeIdStamping = default(string), string EnvelopeLocation = default(string), EnvelopeMetadata EnvelopeMetadata = default(EnvelopeMetadata), string EnvelopeUri = default(string), EventNotification EventNotification = default(EventNotification), List<EventNotification> EventNotifications = default(List<EventNotification>), string ExpireAfter = default(string), string ExpireDateTime = default(string), string ExpireEnabled = default(string), string ExternalEnvelopeId = default(string), List<Folder> Folders = default(List<Folder>), string GenerateDataSource = default(string), List<EnvelopeGenAndSendProperties> GenerateProperties = default(List<EnvelopeGenAndSendProperties>), string GenerateSchemaId = default(string), string HasComments = default(string), string HasFormDataChanged = default(string), string HasWavFile = default(string), string Holder = default(string), string ImageHandling = default(string), string InitialSentDateTime = default(string), string Is21CFRPart11 = default(string), string IsDynamicEnvelope = default(string), string IsSignatureProviderEnvelope = default(string), string IsTicketRelatedEnvelope = default(string), string LastModifiedDateTime = default(string), string Location = default(string), LockInformation LockInformation = default(LockInformation), string MessageLock = default(string), Notification Notification = default(Notification), string NotificationUri = default(string), string Password = default(string), PowerForm PowerForm = default(PowerForm), string PurgeCompletedDate = default(string), string PurgeRequestDate = default(string), string PurgeState = default(string), Recipients Recipients = default(Recipients), string RecipientsLock = default(string), string RecipientsUri = default(string), RecipientViewRequest RecipientViewRequest = default(RecipientViewRequest), string SaveDocumentsToArchive = default(string), UserInfo Sender = default(UserInfo), string SentDateTime = default(string), string SignerCanSignOnMobile = default(string), string SigningLocation = default(string), string Status = default(string), string StatusChangedDateTime = default(string), string TemplateId = default(string), List<TemplateRole> TemplateRoles = default(List<TemplateRole>), string TemplatesUri = default(string), string TransactionId = default(string), string UseDisclosure = default(string), string USigState = default(string), string VoidedDateTime = default(string), string VoidedReason = default(string), string WatermarkLanguage = default(string), Workflow Workflow = default(Workflow))
         {
             this.AccessControlListBase64 = AccessControlListBase64;
+            this.Accessibility = Accessibility;
             this.AllowComments = AllowComments;
             this.AllowMarkup = AllowMarkup;
             this.AllowReassign = AllowReassign;
+            this.AllowRecipientRecursion = AllowRecipientRecursion;
             this.AllowViewHistory = AllowViewHistory;
             this.AnySigner = AnySigner;
+            this.ArchiveAction = ArchiveAction;
             this.Asynchronous = Asynchronous;
+            this.Attachments = Attachments;
             this.AttachmentsUri = AttachmentsUri;
             this.AuthoritativeCopy = AuthoritativeCopy;
             this.AuthoritativeCopyDefault = AuthoritativeCopyDefault;
@@ -135,6 +156,7 @@ namespace DocuSign.eSign.Model
             this.BurnDefaultTabData = BurnDefaultTabData;
             this.CertificateUri = CertificateUri;
             this.CompletedDateTime = CompletedDateTime;
+            this.CompositeTemplates = CompositeTemplates;
             this.CopyRecipientData = CopyRecipientData;
             this.CreatedDateTime = CreatedDateTime;
             this.CustomFields = CustomFields;
@@ -144,6 +166,7 @@ namespace DocuSign.eSign.Model
             this.DeliveredDateTime = DeliveredDateTime;
             this.DisableResponsiveDocument = DisableResponsiveDocument;
             this.DocumentBase64 = DocumentBase64;
+            this.Documents = Documents;
             this.DocumentsCombinedUri = DocumentsCombinedUri;
             this.DocumentsUri = DocumentsUri;
             this.EmailBlurb = EmailBlurb;
@@ -160,15 +183,21 @@ namespace DocuSign.eSign.Model
             this.EnvelopeLocation = EnvelopeLocation;
             this.EnvelopeMetadata = EnvelopeMetadata;
             this.EnvelopeUri = EnvelopeUri;
+            this.EventNotification = EventNotification;
+            this.EventNotifications = EventNotifications;
             this.ExpireAfter = ExpireAfter;
             this.ExpireDateTime = ExpireDateTime;
             this.ExpireEnabled = ExpireEnabled;
             this.ExternalEnvelopeId = ExternalEnvelopeId;
             this.Folders = Folders;
+            this.GenerateDataSource = GenerateDataSource;
+            this.GenerateProperties = GenerateProperties;
+            this.GenerateSchemaId = GenerateSchemaId;
             this.HasComments = HasComments;
             this.HasFormDataChanged = HasFormDataChanged;
             this.HasWavFile = HasWavFile;
             this.Holder = Holder;
+            this.ImageHandling = ImageHandling;
             this.InitialSentDateTime = InitialSentDateTime;
             this.Is21CFRPart11 = Is21CFRPart11;
             this.IsDynamicEnvelope = IsDynamicEnvelope;
@@ -180,6 +209,7 @@ namespace DocuSign.eSign.Model
             this.MessageLock = MessageLock;
             this.Notification = Notification;
             this.NotificationUri = NotificationUri;
+            this.Password = Password;
             this.PowerForm = PowerForm;
             this.PurgeCompletedDate = PurgeCompletedDate;
             this.PurgeRequestDate = PurgeRequestDate;
@@ -187,12 +217,16 @@ namespace DocuSign.eSign.Model
             this.Recipients = Recipients;
             this.RecipientsLock = RecipientsLock;
             this.RecipientsUri = RecipientsUri;
+            this.RecipientViewRequest = RecipientViewRequest;
+            this.SaveDocumentsToArchive = SaveDocumentsToArchive;
             this.Sender = Sender;
             this.SentDateTime = SentDateTime;
             this.SignerCanSignOnMobile = SignerCanSignOnMobile;
             this.SigningLocation = SigningLocation;
             this.Status = Status;
             this.StatusChangedDateTime = StatusChangedDateTime;
+            this.TemplateId = TemplateId;
+            this.TemplateRoles = TemplateRoles;
             this.TemplatesUri = TemplatesUri;
             this.TransactionId = TransactionId;
             this.UseDisclosure = UseDisclosure;
@@ -208,6 +242,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="accessControlListBase64", EmitDefaultValue=false)]
         public string AccessControlListBase64 { get; set; }
+        /// <summary>
+        /// Gets or Sets Accessibility
+        /// </summary>
+        [DataMember(Name="accessibility", EmitDefaultValue=false)]
+        public string Accessibility { get; set; }
         /// <summary>
         /// Gets or Sets AllowComments
         /// </summary>
@@ -226,6 +265,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="allowReassign", EmitDefaultValue=false)]
         public string AllowReassign { get; set; }
         /// <summary>
+        /// Gets or Sets AllowRecipientRecursion
+        /// </summary>
+        [DataMember(Name="allowRecipientRecursion", EmitDefaultValue=false)]
+        public string AllowRecipientRecursion { get; set; }
+        /// <summary>
         /// Gets or Sets AllowViewHistory
         /// </summary>
         [DataMember(Name="allowViewHistory", EmitDefaultValue=false)]
@@ -236,11 +280,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="anySigner", EmitDefaultValue=false)]
         public string AnySigner { get; set; }
         /// <summary>
+        /// Gets or Sets ArchiveAction
+        /// </summary>
+        [DataMember(Name="archiveAction", EmitDefaultValue=false)]
+        public string ArchiveAction { get; set; }
+        /// <summary>
         /// When set to **true**, the envelope is queued for processing and the value of the &#x60;status&#x60; property is set to &#39;Processing&#39;. Additionally, get status calls return &#39;Processing&#39; until completed.
         /// </summary>
         /// <value>When set to **true**, the envelope is queued for processing and the value of the &#x60;status&#x60; property is set to &#39;Processing&#39;. Additionally, get status calls return &#39;Processing&#39; until completed.</value>
         [DataMember(Name="asynchronous", EmitDefaultValue=false)]
         public string Asynchronous { get; set; }
+        /// <summary>
+        /// Gets or Sets Attachments
+        /// </summary>
+        [DataMember(Name="attachments", EmitDefaultValue=false)]
+        public List<Attachment> Attachments { get; set; }
         /// <summary>
         /// Gets or Sets AttachmentsUri
         /// </summary>
@@ -289,6 +343,11 @@ namespace DocuSign.eSign.Model
         /// <value>Specifies the date and time this item was completed.</value>
         [DataMember(Name="completedDateTime", EmitDefaultValue=false)]
         public string CompletedDateTime { get; set; }
+        /// <summary>
+        /// Gets or Sets CompositeTemplates
+        /// </summary>
+        [DataMember(Name="compositeTemplates", EmitDefaultValue=false)]
+        public List<CompositeTemplate> CompositeTemplates { get; set; }
         /// <summary>
         /// Gets or Sets CopyRecipientData
         /// </summary>
@@ -341,6 +400,12 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentBase64", EmitDefaultValue=false)]
         public string DocumentBase64 { get; set; }
         /// <summary>
+        /// Complex element contains the details on the documents in the envelope.
+        /// </summary>
+        /// <value>Complex element contains the details on the documents in the envelope.</value>
+        [DataMember(Name="documents", EmitDefaultValue=false)]
+        public List<Document> Documents { get; set; }
+        /// <summary>
         /// Gets or Sets DocumentsCombinedUri
         /// </summary>
         [DataMember(Name="documentsCombinedUri", EmitDefaultValue=false)]
@@ -352,15 +417,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="documentsUri", EmitDefaultValue=false)]
         public string DocumentsUri { get; set; }
         /// <summary>
-        /// This is the same as the email body. If specified it is included in email body for all envelope recipients.
+        /// Gets or Sets EmailBlurb
         /// </summary>
-        /// <value>This is the same as the email body. If specified it is included in email body for all envelope recipients.</value>
         [DataMember(Name="emailBlurb", EmitDefaultValue=false)]
         public string EmailBlurb { get; set; }
         /// <summary>
-        /// A complex type that contains email settings.
+        /// Gets or Sets EmailSettings
         /// </summary>
-        /// <value>A complex type that contains email settings.</value>
         [DataMember(Name="emailSettings", EmitDefaultValue=false)]
         public EmailSettings EmailSettings { get; set; }
         /// <summary>
@@ -419,9 +482,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="envelopeLocation", EmitDefaultValue=false)]
         public string EnvelopeLocation { get; set; }
         /// <summary>
-        /// Provides information about the features and services that are enabled for the envelope, including the Correct feature, the Advanced Correct feature, and DocuSign eNotary service.
+        /// Gets or Sets EnvelopeMetadata
         /// </summary>
-        /// <value>Provides information about the features and services that are enabled for the envelope, including the Correct feature, the Advanced Correct feature, and DocuSign eNotary service.</value>
         [DataMember(Name="envelopeMetadata", EmitDefaultValue=false)]
         public EnvelopeMetadata EnvelopeMetadata { get; set; }
         /// <summary>
@@ -430,6 +492,16 @@ namespace DocuSign.eSign.Model
         /// <value>Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.</value>
         [DataMember(Name="envelopeUri", EmitDefaultValue=false)]
         public string EnvelopeUri { get; set; }
+        /// <summary>
+        /// Gets or Sets EventNotification
+        /// </summary>
+        [DataMember(Name="eventNotification", EmitDefaultValue=false)]
+        public EventNotification EventNotification { get; set; }
+        /// <summary>
+        /// Gets or Sets EventNotifications
+        /// </summary>
+        [DataMember(Name="eventNotifications", EmitDefaultValue=false)]
+        public List<EventNotification> EventNotifications { get; set; }
         /// <summary>
         /// Gets or Sets ExpireAfter
         /// </summary>
@@ -456,6 +528,21 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="folders", EmitDefaultValue=false)]
         public List<Folder> Folders { get; set; }
         /// <summary>
+        /// Gets or Sets GenerateDataSource
+        /// </summary>
+        [DataMember(Name="generateDataSource", EmitDefaultValue=false)]
+        public string GenerateDataSource { get; set; }
+        /// <summary>
+        /// Gets or Sets GenerateProperties
+        /// </summary>
+        [DataMember(Name="generateProperties", EmitDefaultValue=false)]
+        public List<EnvelopeGenAndSendProperties> GenerateProperties { get; set; }
+        /// <summary>
+        /// Gets or Sets GenerateSchemaId
+        /// </summary>
+        [DataMember(Name="generateSchemaId", EmitDefaultValue=false)]
+        public string GenerateSchemaId { get; set; }
+        /// <summary>
         /// Gets or Sets HasComments
         /// </summary>
         [DataMember(Name="hasComments", EmitDefaultValue=false)]
@@ -475,6 +562,11 @@ namespace DocuSign.eSign.Model
         /// </summary>
         [DataMember(Name="holder", EmitDefaultValue=false)]
         public string Holder { get; set; }
+        /// <summary>
+        /// Gets or Sets ImageHandling
+        /// </summary>
+        [DataMember(Name="imageHandling", EmitDefaultValue=false)]
+        public string ImageHandling { get; set; }
         /// <summary>
         /// Gets or Sets InitialSentDateTime
         /// </summary>
@@ -513,9 +605,8 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="location", EmitDefaultValue=false)]
         public string Location { get; set; }
         /// <summary>
-        /// Provides lock information about an envelope that a user has locked.
+        /// Gets or Sets LockInformation
         /// </summary>
-        /// <value>Provides lock information about an envelope that a user has locked.</value>
         [DataMember(Name="lockInformation", EmitDefaultValue=false)]
         public LockInformation LockInformation { get; set; }
         /// <summary>
@@ -536,9 +627,13 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="notificationUri", EmitDefaultValue=false)]
         public string NotificationUri { get; set; }
         /// <summary>
-        /// Information about any PowerForms that are included in the envelope.
+        /// Gets or Sets Password
         /// </summary>
-        /// <value>Information about any PowerForms that are included in the envelope.</value>
+        [DataMember(Name="password", EmitDefaultValue=false)]
+        public string Password { get; set; }
+        /// <summary>
+        /// Gets or Sets PowerForm
+        /// </summary>
         [DataMember(Name="powerForm", EmitDefaultValue=false)]
         public PowerForm PowerForm { get; set; }
         /// <summary>
@@ -575,9 +670,18 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="recipientsUri", EmitDefaultValue=false)]
         public string RecipientsUri { get; set; }
         /// <summary>
-        /// Information about the sender of the envelope.
+        /// Gets or Sets RecipientViewRequest
         /// </summary>
-        /// <value>Information about the sender of the envelope.</value>
+        [DataMember(Name="recipientViewRequest", EmitDefaultValue=false)]
+        public RecipientViewRequest RecipientViewRequest { get; set; }
+        /// <summary>
+        /// Gets or Sets SaveDocumentsToArchive
+        /// </summary>
+        [DataMember(Name="saveDocumentsToArchive", EmitDefaultValue=false)]
+        public string SaveDocumentsToArchive { get; set; }
+        /// <summary>
+        /// Gets or Sets Sender
+        /// </summary>
         [DataMember(Name="sender", EmitDefaultValue=false)]
         public UserInfo Sender { get; set; }
         /// <summary>
@@ -598,9 +702,9 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="signingLocation", EmitDefaultValue=false)]
         public string SigningLocation { get; set; }
         /// <summary>
-        /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  *created - The envelope is saved as a draft and can be modified and sent later.
+        /// Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
         /// </summary>
-        /// <value>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  *created - The envelope is saved as a draft and can be modified and sent later.</value>
+        /// <value>Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public string Status { get; set; }
         /// <summary>
@@ -609,6 +713,17 @@ namespace DocuSign.eSign.Model
         /// <value>The data and time the status changed.</value>
         [DataMember(Name="statusChangedDateTime", EmitDefaultValue=false)]
         public string StatusChangedDateTime { get; set; }
+        /// <summary>
+        /// The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+        /// </summary>
+        /// <value>The unique identifier of the template. If this is not provided, DocuSign will generate a value. </value>
+        [DataMember(Name="templateId", EmitDefaultValue=false)]
+        public string TemplateId { get; set; }
+        /// <summary>
+        /// Gets or Sets TemplateRoles
+        /// </summary>
+        [DataMember(Name="templateRoles", EmitDefaultValue=false)]
+        public List<TemplateRole> TemplateRoles { get; set; }
         /// <summary>
         /// Contains a URI for an endpoint which you can use to retrieve the templates.
         /// </summary>
@@ -661,14 +776,18 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Envelope {\n");
+            sb.Append("class EnvelopeGenAndSend {\n");
             sb.Append("  AccessControlListBase64: ").Append(AccessControlListBase64).Append("\n");
+            sb.Append("  Accessibility: ").Append(Accessibility).Append("\n");
             sb.Append("  AllowComments: ").Append(AllowComments).Append("\n");
             sb.Append("  AllowMarkup: ").Append(AllowMarkup).Append("\n");
             sb.Append("  AllowReassign: ").Append(AllowReassign).Append("\n");
+            sb.Append("  AllowRecipientRecursion: ").Append(AllowRecipientRecursion).Append("\n");
             sb.Append("  AllowViewHistory: ").Append(AllowViewHistory).Append("\n");
             sb.Append("  AnySigner: ").Append(AnySigner).Append("\n");
+            sb.Append("  ArchiveAction: ").Append(ArchiveAction).Append("\n");
             sb.Append("  Asynchronous: ").Append(Asynchronous).Append("\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  AttachmentsUri: ").Append(AttachmentsUri).Append("\n");
             sb.Append("  AuthoritativeCopy: ").Append(AuthoritativeCopy).Append("\n");
             sb.Append("  AuthoritativeCopyDefault: ").Append(AuthoritativeCopyDefault).Append("\n");
@@ -678,6 +797,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  BurnDefaultTabData: ").Append(BurnDefaultTabData).Append("\n");
             sb.Append("  CertificateUri: ").Append(CertificateUri).Append("\n");
             sb.Append("  CompletedDateTime: ").Append(CompletedDateTime).Append("\n");
+            sb.Append("  CompositeTemplates: ").Append(CompositeTemplates).Append("\n");
             sb.Append("  CopyRecipientData: ").Append(CopyRecipientData).Append("\n");
             sb.Append("  CreatedDateTime: ").Append(CreatedDateTime).Append("\n");
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
@@ -687,6 +807,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  DeliveredDateTime: ").Append(DeliveredDateTime).Append("\n");
             sb.Append("  DisableResponsiveDocument: ").Append(DisableResponsiveDocument).Append("\n");
             sb.Append("  DocumentBase64: ").Append(DocumentBase64).Append("\n");
+            sb.Append("  Documents: ").Append(Documents).Append("\n");
             sb.Append("  DocumentsCombinedUri: ").Append(DocumentsCombinedUri).Append("\n");
             sb.Append("  DocumentsUri: ").Append(DocumentsUri).Append("\n");
             sb.Append("  EmailBlurb: ").Append(EmailBlurb).Append("\n");
@@ -703,15 +824,21 @@ namespace DocuSign.eSign.Model
             sb.Append("  EnvelopeLocation: ").Append(EnvelopeLocation).Append("\n");
             sb.Append("  EnvelopeMetadata: ").Append(EnvelopeMetadata).Append("\n");
             sb.Append("  EnvelopeUri: ").Append(EnvelopeUri).Append("\n");
+            sb.Append("  EventNotification: ").Append(EventNotification).Append("\n");
+            sb.Append("  EventNotifications: ").Append(EventNotifications).Append("\n");
             sb.Append("  ExpireAfter: ").Append(ExpireAfter).Append("\n");
             sb.Append("  ExpireDateTime: ").Append(ExpireDateTime).Append("\n");
             sb.Append("  ExpireEnabled: ").Append(ExpireEnabled).Append("\n");
             sb.Append("  ExternalEnvelopeId: ").Append(ExternalEnvelopeId).Append("\n");
             sb.Append("  Folders: ").Append(Folders).Append("\n");
+            sb.Append("  GenerateDataSource: ").Append(GenerateDataSource).Append("\n");
+            sb.Append("  GenerateProperties: ").Append(GenerateProperties).Append("\n");
+            sb.Append("  GenerateSchemaId: ").Append(GenerateSchemaId).Append("\n");
             sb.Append("  HasComments: ").Append(HasComments).Append("\n");
             sb.Append("  HasFormDataChanged: ").Append(HasFormDataChanged).Append("\n");
             sb.Append("  HasWavFile: ").Append(HasWavFile).Append("\n");
             sb.Append("  Holder: ").Append(Holder).Append("\n");
+            sb.Append("  ImageHandling: ").Append(ImageHandling).Append("\n");
             sb.Append("  InitialSentDateTime: ").Append(InitialSentDateTime).Append("\n");
             sb.Append("  Is21CFRPart11: ").Append(Is21CFRPart11).Append("\n");
             sb.Append("  IsDynamicEnvelope: ").Append(IsDynamicEnvelope).Append("\n");
@@ -723,6 +850,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  MessageLock: ").Append(MessageLock).Append("\n");
             sb.Append("  Notification: ").Append(Notification).Append("\n");
             sb.Append("  NotificationUri: ").Append(NotificationUri).Append("\n");
+            sb.Append("  Password: ").Append(Password).Append("\n");
             sb.Append("  PowerForm: ").Append(PowerForm).Append("\n");
             sb.Append("  PurgeCompletedDate: ").Append(PurgeCompletedDate).Append("\n");
             sb.Append("  PurgeRequestDate: ").Append(PurgeRequestDate).Append("\n");
@@ -730,12 +858,16 @@ namespace DocuSign.eSign.Model
             sb.Append("  Recipients: ").Append(Recipients).Append("\n");
             sb.Append("  RecipientsLock: ").Append(RecipientsLock).Append("\n");
             sb.Append("  RecipientsUri: ").Append(RecipientsUri).Append("\n");
+            sb.Append("  RecipientViewRequest: ").Append(RecipientViewRequest).Append("\n");
+            sb.Append("  SaveDocumentsToArchive: ").Append(SaveDocumentsToArchive).Append("\n");
             sb.Append("  Sender: ").Append(Sender).Append("\n");
             sb.Append("  SentDateTime: ").Append(SentDateTime).Append("\n");
             sb.Append("  SignerCanSignOnMobile: ").Append(SignerCanSignOnMobile).Append("\n");
             sb.Append("  SigningLocation: ").Append(SigningLocation).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StatusChangedDateTime: ").Append(StatusChangedDateTime).Append("\n");
+            sb.Append("  TemplateId: ").Append(TemplateId).Append("\n");
+            sb.Append("  TemplateRoles: ").Append(TemplateRoles).Append("\n");
             sb.Append("  TemplatesUri: ").Append(TemplatesUri).Append("\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
             sb.Append("  UseDisclosure: ").Append(UseDisclosure).Append("\n");
@@ -765,15 +897,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as Envelope);
+            return this.Equals(obj as EnvelopeGenAndSend);
         }
 
         /// <summary>
-        /// Returns true if Envelope instances are equal
+        /// Returns true if EnvelopeGenAndSend instances are equal
         /// </summary>
-        /// <param name="other">Instance of Envelope to be compared</param>
+        /// <param name="other">Instance of EnvelopeGenAndSend to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Envelope other)
+        public bool Equals(EnvelopeGenAndSend other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -784,6 +916,11 @@ namespace DocuSign.eSign.Model
                     this.AccessControlListBase64 == other.AccessControlListBase64 ||
                     this.AccessControlListBase64 != null &&
                     this.AccessControlListBase64.Equals(other.AccessControlListBase64)
+                ) && 
+                (
+                    this.Accessibility == other.Accessibility ||
+                    this.Accessibility != null &&
+                    this.Accessibility.Equals(other.Accessibility)
                 ) && 
                 (
                     this.AllowComments == other.AllowComments ||
@@ -801,6 +938,11 @@ namespace DocuSign.eSign.Model
                     this.AllowReassign.Equals(other.AllowReassign)
                 ) && 
                 (
+                    this.AllowRecipientRecursion == other.AllowRecipientRecursion ||
+                    this.AllowRecipientRecursion != null &&
+                    this.AllowRecipientRecursion.Equals(other.AllowRecipientRecursion)
+                ) && 
+                (
                     this.AllowViewHistory == other.AllowViewHistory ||
                     this.AllowViewHistory != null &&
                     this.AllowViewHistory.Equals(other.AllowViewHistory)
@@ -811,9 +953,19 @@ namespace DocuSign.eSign.Model
                     this.AnySigner.Equals(other.AnySigner)
                 ) && 
                 (
+                    this.ArchiveAction == other.ArchiveAction ||
+                    this.ArchiveAction != null &&
+                    this.ArchiveAction.Equals(other.ArchiveAction)
+                ) && 
+                (
                     this.Asynchronous == other.Asynchronous ||
                     this.Asynchronous != null &&
                     this.Asynchronous.Equals(other.Asynchronous)
+                ) && 
+                (
+                    this.Attachments == other.Attachments ||
+                    this.Attachments != null &&
+                    this.Attachments.SequenceEqual(other.Attachments)
                 ) && 
                 (
                     this.AttachmentsUri == other.AttachmentsUri ||
@@ -861,6 +1013,11 @@ namespace DocuSign.eSign.Model
                     this.CompletedDateTime.Equals(other.CompletedDateTime)
                 ) && 
                 (
+                    this.CompositeTemplates == other.CompositeTemplates ||
+                    this.CompositeTemplates != null &&
+                    this.CompositeTemplates.SequenceEqual(other.CompositeTemplates)
+                ) && 
+                (
                     this.CopyRecipientData == other.CopyRecipientData ||
                     this.CopyRecipientData != null &&
                     this.CopyRecipientData.Equals(other.CopyRecipientData)
@@ -904,6 +1061,11 @@ namespace DocuSign.eSign.Model
                     this.DocumentBase64 == other.DocumentBase64 ||
                     this.DocumentBase64 != null &&
                     this.DocumentBase64.Equals(other.DocumentBase64)
+                ) && 
+                (
+                    this.Documents == other.Documents ||
+                    this.Documents != null &&
+                    this.Documents.SequenceEqual(other.Documents)
                 ) && 
                 (
                     this.DocumentsCombinedUri == other.DocumentsCombinedUri ||
@@ -986,6 +1148,16 @@ namespace DocuSign.eSign.Model
                     this.EnvelopeUri.Equals(other.EnvelopeUri)
                 ) && 
                 (
+                    this.EventNotification == other.EventNotification ||
+                    this.EventNotification != null &&
+                    this.EventNotification.Equals(other.EventNotification)
+                ) && 
+                (
+                    this.EventNotifications == other.EventNotifications ||
+                    this.EventNotifications != null &&
+                    this.EventNotifications.SequenceEqual(other.EventNotifications)
+                ) && 
+                (
                     this.ExpireAfter == other.ExpireAfter ||
                     this.ExpireAfter != null &&
                     this.ExpireAfter.Equals(other.ExpireAfter)
@@ -1011,6 +1183,21 @@ namespace DocuSign.eSign.Model
                     this.Folders.SequenceEqual(other.Folders)
                 ) && 
                 (
+                    this.GenerateDataSource == other.GenerateDataSource ||
+                    this.GenerateDataSource != null &&
+                    this.GenerateDataSource.Equals(other.GenerateDataSource)
+                ) && 
+                (
+                    this.GenerateProperties == other.GenerateProperties ||
+                    this.GenerateProperties != null &&
+                    this.GenerateProperties.SequenceEqual(other.GenerateProperties)
+                ) && 
+                (
+                    this.GenerateSchemaId == other.GenerateSchemaId ||
+                    this.GenerateSchemaId != null &&
+                    this.GenerateSchemaId.Equals(other.GenerateSchemaId)
+                ) && 
+                (
                     this.HasComments == other.HasComments ||
                     this.HasComments != null &&
                     this.HasComments.Equals(other.HasComments)
@@ -1029,6 +1216,11 @@ namespace DocuSign.eSign.Model
                     this.Holder == other.Holder ||
                     this.Holder != null &&
                     this.Holder.Equals(other.Holder)
+                ) && 
+                (
+                    this.ImageHandling == other.ImageHandling ||
+                    this.ImageHandling != null &&
+                    this.ImageHandling.Equals(other.ImageHandling)
                 ) && 
                 (
                     this.InitialSentDateTime == other.InitialSentDateTime ||
@@ -1086,6 +1278,11 @@ namespace DocuSign.eSign.Model
                     this.NotificationUri.Equals(other.NotificationUri)
                 ) && 
                 (
+                    this.Password == other.Password ||
+                    this.Password != null &&
+                    this.Password.Equals(other.Password)
+                ) && 
+                (
                     this.PowerForm == other.PowerForm ||
                     this.PowerForm != null &&
                     this.PowerForm.Equals(other.PowerForm)
@@ -1121,6 +1318,16 @@ namespace DocuSign.eSign.Model
                     this.RecipientsUri.Equals(other.RecipientsUri)
                 ) && 
                 (
+                    this.RecipientViewRequest == other.RecipientViewRequest ||
+                    this.RecipientViewRequest != null &&
+                    this.RecipientViewRequest.Equals(other.RecipientViewRequest)
+                ) && 
+                (
+                    this.SaveDocumentsToArchive == other.SaveDocumentsToArchive ||
+                    this.SaveDocumentsToArchive != null &&
+                    this.SaveDocumentsToArchive.Equals(other.SaveDocumentsToArchive)
+                ) && 
+                (
                     this.Sender == other.Sender ||
                     this.Sender != null &&
                     this.Sender.Equals(other.Sender)
@@ -1149,6 +1356,16 @@ namespace DocuSign.eSign.Model
                     this.StatusChangedDateTime == other.StatusChangedDateTime ||
                     this.StatusChangedDateTime != null &&
                     this.StatusChangedDateTime.Equals(other.StatusChangedDateTime)
+                ) && 
+                (
+                    this.TemplateId == other.TemplateId ||
+                    this.TemplateId != null &&
+                    this.TemplateId.Equals(other.TemplateId)
+                ) && 
+                (
+                    this.TemplateRoles == other.TemplateRoles ||
+                    this.TemplateRoles != null &&
+                    this.TemplateRoles.SequenceEqual(other.TemplateRoles)
                 ) && 
                 (
                     this.TemplatesUri == other.TemplatesUri ||
@@ -1205,18 +1422,26 @@ namespace DocuSign.eSign.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.AccessControlListBase64 != null)
                     hash = hash * 59 + this.AccessControlListBase64.GetHashCode();
+                if (this.Accessibility != null)
+                    hash = hash * 59 + this.Accessibility.GetHashCode();
                 if (this.AllowComments != null)
                     hash = hash * 59 + this.AllowComments.GetHashCode();
                 if (this.AllowMarkup != null)
                     hash = hash * 59 + this.AllowMarkup.GetHashCode();
                 if (this.AllowReassign != null)
                     hash = hash * 59 + this.AllowReassign.GetHashCode();
+                if (this.AllowRecipientRecursion != null)
+                    hash = hash * 59 + this.AllowRecipientRecursion.GetHashCode();
                 if (this.AllowViewHistory != null)
                     hash = hash * 59 + this.AllowViewHistory.GetHashCode();
                 if (this.AnySigner != null)
                     hash = hash * 59 + this.AnySigner.GetHashCode();
+                if (this.ArchiveAction != null)
+                    hash = hash * 59 + this.ArchiveAction.GetHashCode();
                 if (this.Asynchronous != null)
                     hash = hash * 59 + this.Asynchronous.GetHashCode();
+                if (this.Attachments != null)
+                    hash = hash * 59 + this.Attachments.GetHashCode();
                 if (this.AttachmentsUri != null)
                     hash = hash * 59 + this.AttachmentsUri.GetHashCode();
                 if (this.AuthoritativeCopy != null)
@@ -1235,6 +1460,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.CertificateUri.GetHashCode();
                 if (this.CompletedDateTime != null)
                     hash = hash * 59 + this.CompletedDateTime.GetHashCode();
+                if (this.CompositeTemplates != null)
+                    hash = hash * 59 + this.CompositeTemplates.GetHashCode();
                 if (this.CopyRecipientData != null)
                     hash = hash * 59 + this.CopyRecipientData.GetHashCode();
                 if (this.CreatedDateTime != null)
@@ -1253,6 +1480,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.DisableResponsiveDocument.GetHashCode();
                 if (this.DocumentBase64 != null)
                     hash = hash * 59 + this.DocumentBase64.GetHashCode();
+                if (this.Documents != null)
+                    hash = hash * 59 + this.Documents.GetHashCode();
                 if (this.DocumentsCombinedUri != null)
                     hash = hash * 59 + this.DocumentsCombinedUri.GetHashCode();
                 if (this.DocumentsUri != null)
@@ -1285,6 +1514,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.EnvelopeMetadata.GetHashCode();
                 if (this.EnvelopeUri != null)
                     hash = hash * 59 + this.EnvelopeUri.GetHashCode();
+                if (this.EventNotification != null)
+                    hash = hash * 59 + this.EventNotification.GetHashCode();
+                if (this.EventNotifications != null)
+                    hash = hash * 59 + this.EventNotifications.GetHashCode();
                 if (this.ExpireAfter != null)
                     hash = hash * 59 + this.ExpireAfter.GetHashCode();
                 if (this.ExpireDateTime != null)
@@ -1295,6 +1528,12 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.ExternalEnvelopeId.GetHashCode();
                 if (this.Folders != null)
                     hash = hash * 59 + this.Folders.GetHashCode();
+                if (this.GenerateDataSource != null)
+                    hash = hash * 59 + this.GenerateDataSource.GetHashCode();
+                if (this.GenerateProperties != null)
+                    hash = hash * 59 + this.GenerateProperties.GetHashCode();
+                if (this.GenerateSchemaId != null)
+                    hash = hash * 59 + this.GenerateSchemaId.GetHashCode();
                 if (this.HasComments != null)
                     hash = hash * 59 + this.HasComments.GetHashCode();
                 if (this.HasFormDataChanged != null)
@@ -1303,6 +1542,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.HasWavFile.GetHashCode();
                 if (this.Holder != null)
                     hash = hash * 59 + this.Holder.GetHashCode();
+                if (this.ImageHandling != null)
+                    hash = hash * 59 + this.ImageHandling.GetHashCode();
                 if (this.InitialSentDateTime != null)
                     hash = hash * 59 + this.InitialSentDateTime.GetHashCode();
                 if (this.Is21CFRPart11 != null)
@@ -1325,6 +1566,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Notification.GetHashCode();
                 if (this.NotificationUri != null)
                     hash = hash * 59 + this.NotificationUri.GetHashCode();
+                if (this.Password != null)
+                    hash = hash * 59 + this.Password.GetHashCode();
                 if (this.PowerForm != null)
                     hash = hash * 59 + this.PowerForm.GetHashCode();
                 if (this.PurgeCompletedDate != null)
@@ -1339,6 +1582,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.RecipientsLock.GetHashCode();
                 if (this.RecipientsUri != null)
                     hash = hash * 59 + this.RecipientsUri.GetHashCode();
+                if (this.RecipientViewRequest != null)
+                    hash = hash * 59 + this.RecipientViewRequest.GetHashCode();
+                if (this.SaveDocumentsToArchive != null)
+                    hash = hash * 59 + this.SaveDocumentsToArchive.GetHashCode();
                 if (this.Sender != null)
                     hash = hash * 59 + this.Sender.GetHashCode();
                 if (this.SentDateTime != null)
@@ -1351,6 +1598,10 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.StatusChangedDateTime != null)
                     hash = hash * 59 + this.StatusChangedDateTime.GetHashCode();
+                if (this.TemplateId != null)
+                    hash = hash * 59 + this.TemplateId.GetHashCode();
+                if (this.TemplateRoles != null)
+                    hash = hash * 59 + this.TemplateRoles.GetHashCode();
                 if (this.TemplatesUri != null)
                     hash = hash * 59 + this.TemplatesUri.GetHashCode();
                 if (this.TransactionId != null)

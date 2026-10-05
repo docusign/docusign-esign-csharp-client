@@ -71,6 +71,7 @@ namespace DocuSign.eSign.Model
         /// <param name="SalesforceApiVersion">SalesforceApiVersion.</param>
         /// <param name="SalesforceAuthcode">SalesforceAuthcode.</param>
         /// <param name="SalesforceCallBackUrl">SalesforceCallBackUrl.</param>
+        /// <param name="SalesforceCodeVerifier">SalesforceCodeVerifier.</param>
         /// <param name="SalesforceDocumentsAsContentFiles">SalesforceDocumentsAsContentFiles.</param>
         /// <param name="SenderOverride">SenderOverride.</param>
         /// <param name="SenderSelectableItems">SenderSelectableItems.</param>
@@ -81,7 +82,7 @@ namespace DocuSign.eSign.Model
         /// <param name="UserIds">A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s..</param>
         /// <param name="UserName">UserName.</param>
         /// <param name="UseSoapInterface">When set to **true**, indicates that the &#x60;urlToPublishTo&#x60; property contains a SOAP endpoint..</param>
-        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string AllUsersExcept = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string DisabledBy = default(string), string EnableLog = default(string), string EnableOAuthPerConfiguration = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), List<string> GroupIds = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeOAuth = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string IntegratorManaged = default(string), string Name = default(string), ConnectOAuthConfig OAuthConfiguration = default(ConnectOAuthConfig), string Password = default(string), string PausePublish = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
+        public ConnectCustomConfiguration(string AllowEnvelopePublish = default(string), string AllowSalesforcePublish = default(string), string AllUsers = default(string), string AllUsersExcept = default(string), string ConfigurationType = default(string), string ConnectId = default(string), string DeliveryMode = default(string), string DisabledBy = default(string), string EnableLog = default(string), string EnableOAuthPerConfiguration = default(string), List<string> EnvelopeEvents = default(List<string>), ConnectEventData EventData = default(ConnectEventData), List<string> Events = default(List<string>), string ExternalFolderId = default(string), string ExternalFolderLabel = default(string), List<string> GroupIds = default(List<string>), string IncludeCertificateOfCompletion = default(string), string IncludeCertSoapHeader = default(string), string IncludeDocumentFields = default(string), string IncludeDocuments = default(string), string IncludeEnvelopeVoidReason = default(string), string IncludeHMAC = default(string), string IncludeOAuth = default(string), string IncludeSenderAccountasCustomField = default(string), string IncludeTimeZoneInformation = default(string), string IntegratorManaged = default(string), string Name = default(string), ConnectOAuthConfig OAuthConfiguration = default(ConnectOAuthConfig), string Password = default(string), string PausePublish = default(string), List<string> RecipientEvents = default(List<string>), string RequireMutualTls = default(string), string RequiresAcknowledgement = default(string), string SalesforceApiVersion = default(string), string SalesforceAuthcode = default(string), string SalesforceCallBackUrl = default(string), string SalesforceCodeVerifier = default(string), string SalesforceDocumentsAsContentFiles = default(string), string SenderOverride = default(string), List<string> SenderSelectableItems = default(List<string>), List<ConnectSalesforceObject> SfObjects = default(List<ConnectSalesforceObject>), string SignMessageWithX509Certificate = default(string), string SoapNamespace = default(string), string UrlToPublishTo = default(string), List<string> UserIds = default(List<string>), string UserName = default(string), string UseSoapInterface = default(string))
         {
             this.AllowEnvelopePublish = AllowEnvelopePublish;
             this.AllowSalesforcePublish = AllowSalesforcePublish;
@@ -119,6 +120,7 @@ namespace DocuSign.eSign.Model
             this.SalesforceApiVersion = SalesforceApiVersion;
             this.SalesforceAuthcode = SalesforceAuthcode;
             this.SalesforceCallBackUrl = SalesforceCallBackUrl;
+            this.SalesforceCodeVerifier = SalesforceCodeVerifier;
             this.SalesforceDocumentsAsContentFiles = SalesforceDocumentsAsContentFiles;
             this.SenderOverride = SenderOverride;
             this.SenderSelectableItems = SenderSelectableItems;
@@ -328,6 +330,11 @@ namespace DocuSign.eSign.Model
         [DataMember(Name="salesforceCallBackUrl", EmitDefaultValue=false)]
         public string SalesforceCallBackUrl { get; set; }
         /// <summary>
+        /// Gets or Sets SalesforceCodeVerifier
+        /// </summary>
+        [DataMember(Name="salesforceCodeVerifier", EmitDefaultValue=false)]
+        public string SalesforceCodeVerifier { get; set; }
+        /// <summary>
         /// Gets or Sets SalesforceDocumentsAsContentFiles
         /// </summary>
         [DataMember(Name="salesforceDocumentsAsContentFiles", EmitDefaultValue=false)]
@@ -426,6 +433,7 @@ namespace DocuSign.eSign.Model
             sb.Append("  SalesforceApiVersion: ").Append(SalesforceApiVersion).Append("\n");
             sb.Append("  SalesforceAuthcode: ").Append(SalesforceAuthcode).Append("\n");
             sb.Append("  SalesforceCallBackUrl: ").Append(SalesforceCallBackUrl).Append("\n");
+            sb.Append("  SalesforceCodeVerifier: ").Append(SalesforceCodeVerifier).Append("\n");
             sb.Append("  SalesforceDocumentsAsContentFiles: ").Append(SalesforceDocumentsAsContentFiles).Append("\n");
             sb.Append("  SenderOverride: ").Append(SenderOverride).Append("\n");
             sb.Append("  SenderSelectableItems: ").Append(SenderSelectableItems).Append("\n");
@@ -653,6 +661,11 @@ namespace DocuSign.eSign.Model
                     this.SalesforceCallBackUrl.Equals(other.SalesforceCallBackUrl)
                 ) && 
                 (
+                    this.SalesforceCodeVerifier == other.SalesforceCodeVerifier ||
+                    this.SalesforceCodeVerifier != null &&
+                    this.SalesforceCodeVerifier.Equals(other.SalesforceCodeVerifier)
+                ) && 
+                (
                     this.SalesforceDocumentsAsContentFiles == other.SalesforceDocumentsAsContentFiles ||
                     this.SalesforceDocumentsAsContentFiles != null &&
                     this.SalesforceDocumentsAsContentFiles.Equals(other.SalesforceDocumentsAsContentFiles)
@@ -787,6 +800,8 @@ namespace DocuSign.eSign.Model
                     hash = hash * 59 + this.SalesforceAuthcode.GetHashCode();
                 if (this.SalesforceCallBackUrl != null)
                     hash = hash * 59 + this.SalesforceCallBackUrl.GetHashCode();
+                if (this.SalesforceCodeVerifier != null)
+                    hash = hash * 59 + this.SalesforceCodeVerifier.GetHashCode();
                 if (this.SalesforceDocumentsAsContentFiles != null)
                     hash = hash * 59 + this.SalesforceDocumentsAsContentFiles.GetHashCode();
                 if (this.SenderOverride != null)

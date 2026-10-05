@@ -22,37 +22,30 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.eSign.Model
 {
     /// <summary>
-    /// UserAuthorizationsDeleteRequest
+    /// GeneratedDocumentsResult
     /// </summary>
     [DataContract]
-    public partial class UserAuthorizationsDeleteRequest :  IEquatable<UserAuthorizationsDeleteRequest>, IValidatableObject
+    public partial class GeneratedDocumentsResult :  IEquatable<GeneratedDocumentsResult>, IValidatableObject
     {
-        public UserAuthorizationsDeleteRequest()
+        public GeneratedDocumentsResult()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserAuthorizationsDeleteRequest" /> class.
+        /// Initializes a new instance of the <see cref="GeneratedDocumentsResult" /> class.
         /// </summary>
-        /// <param name="Authorizations">Authorizations.</param>
-        /// <param name="SendNotification">SendNotification.</param>
-        public UserAuthorizationsDeleteRequest(List<string> Authorizations = default(List<string>), string SendNotification = default(string))
+        /// <param name="GeneratedDocuments">GeneratedDocuments.</param>
+        public GeneratedDocumentsResult(List<GeneratedDocument> GeneratedDocuments = default(List<GeneratedDocument>))
         {
-            this.Authorizations = Authorizations;
-            this.SendNotification = SendNotification;
+            this.GeneratedDocuments = GeneratedDocuments;
         }
         
         /// <summary>
-        /// Gets or Sets Authorizations
+        /// Gets or Sets GeneratedDocuments
         /// </summary>
-        [DataMember(Name="authorizations", EmitDefaultValue=false)]
-        public List<string> Authorizations { get; set; }
-        /// <summary>
-        /// Gets or Sets SendNotification
-        /// </summary>
-        [DataMember(Name="sendNotification", EmitDefaultValue=false)]
-        public string SendNotification { get; set; }
+        [DataMember(Name="generatedDocuments", EmitDefaultValue=false)]
+        public List<GeneratedDocument> GeneratedDocuments { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -60,9 +53,8 @@ namespace DocuSign.eSign.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UserAuthorizationsDeleteRequest {\n");
-            sb.Append("  Authorizations: ").Append(Authorizations).Append("\n");
-            sb.Append("  SendNotification: ").Append(SendNotification).Append("\n");
+            sb.Append("class GeneratedDocumentsResult {\n");
+            sb.Append("  GeneratedDocuments: ").Append(GeneratedDocuments).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,15 +76,15 @@ namespace DocuSign.eSign.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as UserAuthorizationsDeleteRequest);
+            return this.Equals(obj as GeneratedDocumentsResult);
         }
 
         /// <summary>
-        /// Returns true if UserAuthorizationsDeleteRequest instances are equal
+        /// Returns true if GeneratedDocumentsResult instances are equal
         /// </summary>
-        /// <param name="other">Instance of UserAuthorizationsDeleteRequest to be compared</param>
+        /// <param name="other">Instance of GeneratedDocumentsResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UserAuthorizationsDeleteRequest other)
+        public bool Equals(GeneratedDocumentsResult other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -100,14 +92,9 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
-                    this.Authorizations == other.Authorizations ||
-                    this.Authorizations != null &&
-                    this.Authorizations.SequenceEqual(other.Authorizations)
-                ) && 
-                (
-                    this.SendNotification == other.SendNotification ||
-                    this.SendNotification != null &&
-                    this.SendNotification.Equals(other.SendNotification)
+                    this.GeneratedDocuments == other.GeneratedDocuments ||
+                    this.GeneratedDocuments != null &&
+                    this.GeneratedDocuments.SequenceEqual(other.GeneratedDocuments)
                 );
         }
 
@@ -122,10 +109,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Authorizations != null)
-                    hash = hash * 59 + this.Authorizations.GetHashCode();
-                if (this.SendNotification != null)
-                    hash = hash * 59 + this.SendNotification.GetHashCode();
+                if (this.GeneratedDocuments != null)
+                    hash = hash * 59 + this.GeneratedDocuments.GetHashCode();
                 return hash;
             }
         }

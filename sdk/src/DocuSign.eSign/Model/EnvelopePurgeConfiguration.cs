@@ -35,28 +35,49 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnvelopePurgeConfiguration" /> class.
         /// </summary>
+        /// <param name="ApplyPurgePolicyForUnaccountedRecipients">ApplyPurgePolicyForUnaccountedRecipients.</param>
         /// <param name="PurgeEnvelopes">PurgeEnvelopes.</param>
+        /// <param name="PurgeEnvelopesReceived">PurgeEnvelopesReceived.</param>
         /// <param name="RedactPII">RedactPII.</param>
+        /// <param name="RedactPIIReceived">RedactPIIReceived.</param>
         /// <param name="RemoveTabsAndEnvelopeAttachments">RemoveTabsAndEnvelopeAttachments.</param>
         /// <param name="RetentionDays">RetentionDays.</param>
-        public EnvelopePurgeConfiguration(string PurgeEnvelopes = default(string), string RedactPII = default(string), string RemoveTabsAndEnvelopeAttachments = default(string), string RetentionDays = default(string))
+        public EnvelopePurgeConfiguration(string ApplyPurgePolicyForUnaccountedRecipients = default(string), string PurgeEnvelopes = default(string), string PurgeEnvelopesReceived = default(string), string RedactPII = default(string), string RedactPIIReceived = default(string), string RemoveTabsAndEnvelopeAttachments = default(string), string RetentionDays = default(string))
         {
+            this.ApplyPurgePolicyForUnaccountedRecipients = ApplyPurgePolicyForUnaccountedRecipients;
             this.PurgeEnvelopes = PurgeEnvelopes;
+            this.PurgeEnvelopesReceived = PurgeEnvelopesReceived;
             this.RedactPII = RedactPII;
+            this.RedactPIIReceived = RedactPIIReceived;
             this.RemoveTabsAndEnvelopeAttachments = RemoveTabsAndEnvelopeAttachments;
             this.RetentionDays = RetentionDays;
         }
         
+        /// <summary>
+        /// Gets or Sets ApplyPurgePolicyForUnaccountedRecipients
+        /// </summary>
+        [DataMember(Name="applyPurgePolicyForUnaccountedRecipients", EmitDefaultValue=false)]
+        public string ApplyPurgePolicyForUnaccountedRecipients { get; set; }
         /// <summary>
         /// Gets or Sets PurgeEnvelopes
         /// </summary>
         [DataMember(Name="purgeEnvelopes", EmitDefaultValue=false)]
         public string PurgeEnvelopes { get; set; }
         /// <summary>
+        /// Gets or Sets PurgeEnvelopesReceived
+        /// </summary>
+        [DataMember(Name="purgeEnvelopesReceived", EmitDefaultValue=false)]
+        public string PurgeEnvelopesReceived { get; set; }
+        /// <summary>
         /// Gets or Sets RedactPII
         /// </summary>
         [DataMember(Name="redactPII", EmitDefaultValue=false)]
         public string RedactPII { get; set; }
+        /// <summary>
+        /// Gets or Sets RedactPIIReceived
+        /// </summary>
+        [DataMember(Name="redactPIIReceived", EmitDefaultValue=false)]
+        public string RedactPIIReceived { get; set; }
         /// <summary>
         /// Gets or Sets RemoveTabsAndEnvelopeAttachments
         /// </summary>
@@ -75,8 +96,11 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class EnvelopePurgeConfiguration {\n");
+            sb.Append("  ApplyPurgePolicyForUnaccountedRecipients: ").Append(ApplyPurgePolicyForUnaccountedRecipients).Append("\n");
             sb.Append("  PurgeEnvelopes: ").Append(PurgeEnvelopes).Append("\n");
+            sb.Append("  PurgeEnvelopesReceived: ").Append(PurgeEnvelopesReceived).Append("\n");
             sb.Append("  RedactPII: ").Append(RedactPII).Append("\n");
+            sb.Append("  RedactPIIReceived: ").Append(RedactPIIReceived).Append("\n");
             sb.Append("  RemoveTabsAndEnvelopeAttachments: ").Append(RemoveTabsAndEnvelopeAttachments).Append("\n");
             sb.Append("  RetentionDays: ").Append(RetentionDays).Append("\n");
             sb.Append("}\n");
@@ -116,14 +140,29 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.ApplyPurgePolicyForUnaccountedRecipients == other.ApplyPurgePolicyForUnaccountedRecipients ||
+                    this.ApplyPurgePolicyForUnaccountedRecipients != null &&
+                    this.ApplyPurgePolicyForUnaccountedRecipients.Equals(other.ApplyPurgePolicyForUnaccountedRecipients)
+                ) && 
+                (
                     this.PurgeEnvelopes == other.PurgeEnvelopes ||
                     this.PurgeEnvelopes != null &&
                     this.PurgeEnvelopes.Equals(other.PurgeEnvelopes)
                 ) && 
                 (
+                    this.PurgeEnvelopesReceived == other.PurgeEnvelopesReceived ||
+                    this.PurgeEnvelopesReceived != null &&
+                    this.PurgeEnvelopesReceived.Equals(other.PurgeEnvelopesReceived)
+                ) && 
+                (
                     this.RedactPII == other.RedactPII ||
                     this.RedactPII != null &&
                     this.RedactPII.Equals(other.RedactPII)
+                ) && 
+                (
+                    this.RedactPIIReceived == other.RedactPIIReceived ||
+                    this.RedactPIIReceived != null &&
+                    this.RedactPIIReceived.Equals(other.RedactPIIReceived)
                 ) && 
                 (
                     this.RemoveTabsAndEnvelopeAttachments == other.RemoveTabsAndEnvelopeAttachments ||
@@ -148,10 +187,16 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.ApplyPurgePolicyForUnaccountedRecipients != null)
+                    hash = hash * 59 + this.ApplyPurgePolicyForUnaccountedRecipients.GetHashCode();
                 if (this.PurgeEnvelopes != null)
                     hash = hash * 59 + this.PurgeEnvelopes.GetHashCode();
+                if (this.PurgeEnvelopesReceived != null)
+                    hash = hash * 59 + this.PurgeEnvelopesReceived.GetHashCode();
                 if (this.RedactPII != null)
                     hash = hash * 59 + this.RedactPII.GetHashCode();
+                if (this.RedactPIIReceived != null)
+                    hash = hash * 59 + this.RedactPIIReceived.GetHashCode();
                 if (this.RemoveTabsAndEnvelopeAttachments != null)
                     hash = hash * 59 + this.RemoveTabsAndEnvelopeAttachments.GetHashCode();
                 if (this.RetentionDays != null)

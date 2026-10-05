@@ -6829,6 +6829,8 @@ namespace DocuSign.eSign.Api
         {
             /// 
             public string include {get; set;}
+            /// 
+            public string linkConfigurationId {get; set;}
         }
 
         /// <summary>
@@ -6892,6 +6894,7 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
+                if (options.linkConfigurationId != null) localVarQueryParams.Add("link_configuration_id", this.ApiClient.ParameterToString(options.linkConfigurationId)); // query parameter
             }
 
             // authentication (docusignAccessCode) required
@@ -6980,6 +6983,7 @@ namespace DocuSign.eSign.Api
             if (options != null)
             {
                 if (options.include != null) localVarQueryParams.Add("include", this.ApiClient.ParameterToString(options.include)); // query parameter
+                if (options.linkConfigurationId != null) localVarQueryParams.Add("link_configuration_id", this.ApiClient.ParameterToString(options.linkConfigurationId)); // query parameter
             }
 
             // authentication (docusignAccessCode) required

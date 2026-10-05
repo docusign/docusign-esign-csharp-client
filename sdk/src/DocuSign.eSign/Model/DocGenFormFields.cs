@@ -35,18 +35,25 @@ namespace DocuSign.eSign.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocGenFormFields" /> class.
         /// </summary>
+        /// <param name="DocGenConditionalRules">DocGenConditionalRules.</param>
         /// <param name="DocGenDocumentStatus">DocGenDocumentStatus.</param>
         /// <param name="DocGenErrors">DocGenErrors.</param>
         /// <param name="DocGenFormFieldList">DocGenFormFieldList.</param>
         /// <param name="DocumentId">Specifies the document ID number that the tab is placed on. This must refer to an existing Document&#39;s ID attribute..</param>
-        public DocGenFormFields(string DocGenDocumentStatus = default(string), List<DocGenSyntaxError> DocGenErrors = default(List<DocGenSyntaxError>), List<DocGenFormField> DocGenFormFieldList = default(List<DocGenFormField>), string DocumentId = default(string))
+        public DocGenFormFields(List<DocGenConditionalRule> DocGenConditionalRules = default(List<DocGenConditionalRule>), string DocGenDocumentStatus = default(string), List<DocGenSyntaxError> DocGenErrors = default(List<DocGenSyntaxError>), List<DocGenFormField> DocGenFormFieldList = default(List<DocGenFormField>), string DocumentId = default(string))
         {
+            this.DocGenConditionalRules = DocGenConditionalRules;
             this.DocGenDocumentStatus = DocGenDocumentStatus;
             this.DocGenErrors = DocGenErrors;
             this.DocGenFormFieldList = DocGenFormFieldList;
             this.DocumentId = DocumentId;
         }
         
+        /// <summary>
+        /// Gets or Sets DocGenConditionalRules
+        /// </summary>
+        [DataMember(Name="docGenConditionalRules", EmitDefaultValue=false)]
+        public List<DocGenConditionalRule> DocGenConditionalRules { get; set; }
         /// <summary>
         /// Gets or Sets DocGenDocumentStatus
         /// </summary>
@@ -76,6 +83,7 @@ namespace DocuSign.eSign.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DocGenFormFields {\n");
+            sb.Append("  DocGenConditionalRules: ").Append(DocGenConditionalRules).Append("\n");
             sb.Append("  DocGenDocumentStatus: ").Append(DocGenDocumentStatus).Append("\n");
             sb.Append("  DocGenErrors: ").Append(DocGenErrors).Append("\n");
             sb.Append("  DocGenFormFieldList: ").Append(DocGenFormFieldList).Append("\n");
@@ -117,6 +125,11 @@ namespace DocuSign.eSign.Model
 
             return 
                 (
+                    this.DocGenConditionalRules == other.DocGenConditionalRules ||
+                    this.DocGenConditionalRules != null &&
+                    this.DocGenConditionalRules.SequenceEqual(other.DocGenConditionalRules)
+                ) && 
+                (
                     this.DocGenDocumentStatus == other.DocGenDocumentStatus ||
                     this.DocGenDocumentStatus != null &&
                     this.DocGenDocumentStatus.Equals(other.DocGenDocumentStatus)
@@ -149,6 +162,8 @@ namespace DocuSign.eSign.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.DocGenConditionalRules != null)
+                    hash = hash * 59 + this.DocGenConditionalRules.GetHashCode();
                 if (this.DocGenDocumentStatus != null)
                     hash = hash * 59 + this.DocGenDocumentStatus.GetHashCode();
                 if (this.DocGenErrors != null)

@@ -170,7 +170,7 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<UserAuthorization> CreateUserAuthorizationWithHttpInfo(string accountId, string userId, UserAuthorizationCreateRequest userAuthorizationCreateRequest = null);
         /// <summary>
-        /// Creates ot updates user authorizations
+        /// Creates or updates user authorizations
         /// </summary>
         /// <remarks>
         /// 
@@ -183,7 +183,7 @@ namespace DocuSign.eSign.Api
         UserAuthorizationsResponse CreateUserAuthorizations(string accountId, string userId, UserAuthorizationsRequest userAuthorizationsRequest = null);
 
         /// <summary>
-        /// Creates ot updates user authorizations
+        /// Creates or updates user authorizations
         /// </summary>
         /// <remarks>
         /// 
@@ -458,7 +458,7 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteUserAuthorizationWithHttpInfo(string accountId, string userId, string authorizationId);
         /// <summary>
-        /// Creates ot updates user authorizations
+        /// Deletes user authorizations
         /// </summary>
         /// <remarks>
         /// 
@@ -471,7 +471,7 @@ namespace DocuSign.eSign.Api
         UserAuthorizationsDeleteResponse DeleteUserAuthorizations(string accountId, string userId, UserAuthorizationsDeleteRequest userAuthorizationsDeleteRequest = null);
 
         /// <summary>
-        /// Creates ot updates user authorizations
+        /// Deletes user authorizations
         /// </summary>
         /// <remarks>
         /// 
@@ -1943,7 +1943,7 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (UserAuthorization)</returns>
         System.Threading.Tasks.Task<ApiResponse<UserAuthorization>> CreateUserAuthorizationAsyncWithHttpInfo(string accountId, string userId, UserAuthorizationCreateRequest userAuthorizationCreateRequest = null);
         /// <summary>
-        /// Creates ot updates user authorizations
+        /// Creates or updates user authorizations
         /// </summary>
         /// <remarks>
         /// 
@@ -1956,7 +1956,7 @@ namespace DocuSign.eSign.Api
         System.Threading.Tasks.Task<UserAuthorizationsResponse> CreateUserAuthorizationsAsync(string accountId, string userId, UserAuthorizationsRequest userAuthorizationsRequest = null);
 
         /// <summary>
-        /// Creates ot updates user authorizations
+        /// Creates or updates user authorizations
         /// </summary>
         /// <remarks>
         /// 
@@ -2231,7 +2231,7 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserAuthorizationAsyncWithHttpInfo(string accountId, string userId, string authorizationId);
         /// <summary>
-        /// Creates ot updates user authorizations
+        /// Deletes user authorizations
         /// </summary>
         /// <remarks>
         /// 
@@ -2244,7 +2244,7 @@ namespace DocuSign.eSign.Api
         System.Threading.Tasks.Task<UserAuthorizationsDeleteResponse> DeleteUserAuthorizationsAsync(string accountId, string userId, UserAuthorizationsDeleteRequest userAuthorizationsDeleteRequest = null);
 
         /// <summary>
-        /// Creates ot updates user authorizations
+        /// Deletes user authorizations
         /// </summary>
         /// <remarks>
         /// 
@@ -4741,7 +4741,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Creates ot updates user authorizations 
+        /// Creates or updates user authorizations 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4755,7 +4755,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates ot updates user authorizations 
+        /// Creates or updates user authorizations 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4833,7 +4833,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates ot updates user authorizations 
+        /// Creates or updates user authorizations 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -4847,7 +4847,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates ot updates user authorizations 
+        /// Creates or updates user authorizations 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6841,7 +6841,7 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
-        /// Creates ot updates user authorizations 
+        /// Deletes user authorizations 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6855,7 +6855,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates ot updates user authorizations 
+        /// Deletes user authorizations 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6933,7 +6933,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates ot updates user authorizations 
+        /// Deletes user authorizations 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>
@@ -6947,7 +6947,7 @@ namespace DocuSign.eSign.Api
         }
 
         /// <summary>
-        /// Creates ot updates user authorizations 
+        /// Deletes user authorizations 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The external account number (int) or account ID Guid.</param>

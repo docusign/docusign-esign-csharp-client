@@ -80,6 +80,29 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<DocumentTemplateList> ApplyTemplateToDocumentWithHttpInfo(string accountId, string envelopeId, string documentId, DocumentTemplateList documentTemplateList = null, EnvelopesApi.ApplyTemplateToDocumentOptions options = null);
         /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns></returns>
+        EnvelopeArchiveSummary CreateArchiveMetadataEnvelopes(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<EnvelopeArchiveSummary> CreateArchiveMetadataEnvelopesWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+        /// <summary>
         /// Initiate a new ChunkedUpload.
         /// </summary>
         /// <remarks>
@@ -480,6 +503,98 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of </returns>
         ApiResponse<EnvelopesSharesResponse> CreateEnvelopesSharesWithHttpInfo(string accountId, string envelopeId, EnvelopesSharesRequest envelopesSharesRequest = null);
         /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the html content of the document.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns></returns>
+        System.IO.Stream CreateGenAndArchiveEnvelopes(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the html content of the document.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<System.IO.Stream> CreateGenAndArchiveEnvelopesWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns></returns>
+        System.IO.Stream CreateGenAndConvertEnvelopes(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<System.IO.Stream> CreateGenAndConvertEnvelopesWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+        /// <summary>
+        /// Generates multiple document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns></returns>
+        GeneratedDocumentsResult CreateGenAndConvertMultiEnvelopes(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Generates multiple document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<GeneratedDocumentsResult> CreateGenAndConvertMultiEnvelopesWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+        /// <summary>
+        /// Generates the documents for an envelope using DocuSign Spring CM then creates the envelope.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns></returns>
+        EnvelopeSummary CreateGenAndSendEnvelopes(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Generates the documents for an envelope using DocuSign Spring CM then creates the envelope.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<EnvelopeSummary> CreateGenAndSendEnvelopesWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+        /// <summary>
         /// Submits a batch of historical envelopes for republish to an adhoc config.
         /// </summary>
         /// <remarks>
@@ -502,6 +617,31 @@ namespace DocuSign.eSign.Api
         /// <param name="connectHistoricalEnvelopeRepublish"> (optional)</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<EnvelopePublishTransaction> CreateHistoricalEnvelopePublishTransactionWithHttpInfo(string accountId, ConnectHistoricalEnvelopeRepublish connectHistoricalEnvelopeRepublish = null);
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns></returns>
+        EnvelopeSummary CreateLinkMetadataEnvelopes(string accountId, string envelopeId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<EnvelopeSummary> CreateLinkMetadataEnvelopesWithHttpInfo(string accountId, string envelopeId, EnvelopeGenAndSend envelopeGenAndSend = null);
         /// <summary>
         /// Lock an envelope.
         /// </summary>
@@ -1378,6 +1518,29 @@ namespace DocuSign.eSign.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteTemplatesFromDocumentWithHttpInfo(string accountId, string envelopeId, string documentId, string templateId);
         /// <summary>
+        /// Return generated html document from archive.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <returns></returns>
+        System.IO.Stream GetArchiveDocument(string accountId, string documentId);
+
+        /// <summary>
+        /// Return generated html document from archive.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<System.IO.Stream> GetArchiveDocumentWithHttpInfo(string accountId, string documentId);
+        /// <summary>
         /// Retrieves an attachment from the envelope.
         /// </summary>
         /// <remarks>
@@ -1758,6 +1921,29 @@ namespace DocuSign.eSign.Api
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<DocumentHtmlDefinitionOriginals> GetEnvelopeHtmlDefinitionsWithHttpInfo(string accountId, string envelopeId);
+        /// <summary>
+        /// Gets the permission level the calling user has for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns></returns>
+        EnvelopesSharePermissionResponse GetEnvelopePermission(string accountId, string envelopeId);
+
+        /// <summary>
+        /// Gets the permission level the calling user has for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<EnvelopesSharePermissionResponse> GetEnvelopePermissionWithHttpInfo(string accountId, string envelopeId);
         /// <summary>
         /// Returns the scheduled sending rules for an envelope&#39;s workflow definition.
         /// </summary>
@@ -3535,6 +3721,29 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (DocumentTemplateList)</returns>
         System.Threading.Tasks.Task<ApiResponse<DocumentTemplateList>> ApplyTemplateToDocumentAsyncWithHttpInfo(string accountId, string envelopeId, string documentId, DocumentTemplateList documentTemplateList = null, EnvelopesApi.ApplyTemplateToDocumentOptions options = null);
         /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of EnvelopeArchiveSummary</returns>
+        System.Threading.Tasks.Task<EnvelopeArchiveSummary> CreateArchiveMetadataEnvelopesAsync(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (EnvelopeArchiveSummary)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EnvelopeArchiveSummary>> CreateArchiveMetadataEnvelopesAsyncWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+        /// <summary>
         /// Initiate a new ChunkedUpload.
         /// </summary>
         /// <remarks>
@@ -3935,6 +4144,98 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse (EnvelopesSharesResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<EnvelopesSharesResponse>> CreateEnvelopesSharesAsyncWithHttpInfo(string accountId, string envelopeId, EnvelopesSharesRequest envelopesSharesRequest = null);
         /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the html content of the document.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> CreateGenAndArchiveEnvelopesAsync(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the html content of the document.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> CreateGenAndArchiveEnvelopesAsyncWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> CreateGenAndConvertEnvelopesAsync(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> CreateGenAndConvertEnvelopesAsyncWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+        /// <summary>
+        /// Generates multiple document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of GeneratedDocumentsResult</returns>
+        System.Threading.Tasks.Task<GeneratedDocumentsResult> CreateGenAndConvertMultiEnvelopesAsync(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Generates multiple document using DocuSign Spring CM template then returns the content of the document based on the return document type.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (GeneratedDocumentsResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GeneratedDocumentsResult>> CreateGenAndConvertMultiEnvelopesAsyncWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+        /// <summary>
+        /// Generates the documents for an envelope using DocuSign Spring CM then creates the envelope.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of EnvelopeSummary</returns>
+        System.Threading.Tasks.Task<EnvelopeSummary> CreateGenAndSendEnvelopesAsync(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Generates the documents for an envelope using DocuSign Spring CM then creates the envelope.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (EnvelopeSummary)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EnvelopeSummary>> CreateGenAndSendEnvelopesAsyncWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null);
+        /// <summary>
         /// Submits a batch of historical envelopes for republish to an adhoc config.
         /// </summary>
         /// <remarks>
@@ -3957,6 +4258,31 @@ namespace DocuSign.eSign.Api
         /// <param name="connectHistoricalEnvelopeRepublish"> (optional)</param>
         /// <returns>Task of ApiResponse (EnvelopePublishTransaction)</returns>
         System.Threading.Tasks.Task<ApiResponse<EnvelopePublishTransaction>> CreateHistoricalEnvelopePublishTransactionAsyncWithHttpInfo(string accountId, ConnectHistoricalEnvelopeRepublish connectHistoricalEnvelopeRepublish = null);
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of EnvelopeSummary</returns>
+        System.Threading.Tasks.Task<EnvelopeSummary> CreateLinkMetadataEnvelopesAsync(string accountId, string envelopeId, EnvelopeGenAndSend envelopeGenAndSend = null);
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (EnvelopeSummary)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EnvelopeSummary>> CreateLinkMetadataEnvelopesAsyncWithHttpInfo(string accountId, string envelopeId, EnvelopeGenAndSend envelopeGenAndSend = null);
         /// <summary>
         /// Lock an envelope.
         /// </summary>
@@ -4833,6 +5159,29 @@ namespace DocuSign.eSign.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTemplatesFromDocumentAsyncWithHttpInfo(string accountId, string envelopeId, string documentId, string templateId);
         /// <summary>
+        /// Return generated html document from archive.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> GetArchiveDocumentAsync(string accountId, string documentId);
+
+        /// <summary>
+        /// Return generated html document from archive.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetArchiveDocumentAsyncWithHttpInfo(string accountId, string documentId);
+        /// <summary>
         /// Retrieves an attachment from the envelope.
         /// </summary>
         /// <remarks>
@@ -5213,6 +5562,29 @@ namespace DocuSign.eSign.Api
         /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
         /// <returns>Task of ApiResponse (DocumentHtmlDefinitionOriginals)</returns>
         System.Threading.Tasks.Task<ApiResponse<DocumentHtmlDefinitionOriginals>> GetEnvelopeHtmlDefinitionsAsyncWithHttpInfo(string accountId, string envelopeId);
+        /// <summary>
+        /// Gets the permission level the calling user has for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>Task of EnvelopesSharePermissionResponse</returns>
+        System.Threading.Tasks.Task<EnvelopesSharePermissionResponse> GetEnvelopePermissionAsync(string accountId, string envelopeId);
+
+        /// <summary>
+        /// Gets the permission level the calling user has for an envelope
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>Task of ApiResponse (EnvelopesSharePermissionResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EnvelopesSharePermissionResponse>> GetEnvelopePermissionAsyncWithHttpInfo(string accountId, string envelopeId);
         /// <summary>
         /// Returns the scheduled sending rules for an envelope&#39;s workflow definition.
         /// </summary>
@@ -7405,6 +7777,179 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<DocumentTemplateList>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (DocumentTemplateList)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentTemplateList)));
+        }
+
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>EnvelopeArchiveSummary</returns>
+        public EnvelopeArchiveSummary CreateArchiveMetadataEnvelopes(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<EnvelopeArchiveSummary> localVarResponse = CreateArchiveMetadataEnvelopesWithHttpInfo(accountId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of EnvelopeArchiveSummary</returns>
+        public ApiResponse<EnvelopeArchiveSummary> CreateArchiveMetadataEnvelopesWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateArchiveMetadataEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/archive_metadata";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateArchiveMetadataEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopeArchiveSummary>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (EnvelopeArchiveSummary)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeArchiveSummary)));
+        }
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of EnvelopeArchiveSummary</returns>
+        public async System.Threading.Tasks.Task<EnvelopeArchiveSummary> CreateArchiveMetadataEnvelopesAsync(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<EnvelopeArchiveSummary> localVarResponse = await CreateArchiveMetadataEnvelopesAsyncWithHttpInfo(accountId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (EnvelopeArchiveSummary)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopeArchiveSummary>> CreateArchiveMetadataEnvelopesAsyncWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateArchiveMetadataEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/archive_metadata";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateArchiveMetadataEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopeArchiveSummary>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (EnvelopeArchiveSummary)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeArchiveSummary)));
         }
 
 
@@ -10393,6 +10938,698 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the html content of the document. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream CreateGenAndArchiveEnvelopes(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = CreateGenAndArchiveEnvelopesWithHttpInfo(accountId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the html content of the document. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public ApiResponse<System.IO.Stream> CreateGenAndArchiveEnvelopesWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateGenAndArchiveEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/generate_and_archive";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateGenAndArchiveEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the html content of the document. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> CreateGenAndArchiveEnvelopesAsync(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = await CreateGenAndArchiveEnvelopesAsyncWithHttpInfo(accountId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the html content of the document. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> CreateGenAndArchiveEnvelopesAsyncWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateGenAndArchiveEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/generate_and_archive";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateGenAndArchiveEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the content of the document based on the return document type. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream CreateGenAndConvertEnvelopes(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = CreateGenAndConvertEnvelopesWithHttpInfo(accountId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the content of the document based on the return document type. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public ApiResponse<System.IO.Stream> CreateGenAndConvertEnvelopesWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateGenAndConvertEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/generate_and_convert";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateGenAndConvertEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the content of the document based on the return document type. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> CreateGenAndConvertEnvelopesAsync(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = await CreateGenAndConvertEnvelopesAsyncWithHttpInfo(accountId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Generates the document using DocuSign Spring CM template then returns the content of the document based on the return document type. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> CreateGenAndConvertEnvelopesAsyncWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateGenAndConvertEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/generate_and_convert";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateGenAndConvertEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+
+        /// <summary>
+        /// Generates multiple document using DocuSign Spring CM template then returns the content of the document based on the return document type. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>GeneratedDocumentsResult</returns>
+        public GeneratedDocumentsResult CreateGenAndConvertMultiEnvelopes(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<GeneratedDocumentsResult> localVarResponse = CreateGenAndConvertMultiEnvelopesWithHttpInfo(accountId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Generates multiple document using DocuSign Spring CM template then returns the content of the document based on the return document type. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of GeneratedDocumentsResult</returns>
+        public ApiResponse<GeneratedDocumentsResult> CreateGenAndConvertMultiEnvelopesWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateGenAndConvertMultiEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/generate_and_convert_multi";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateGenAndConvertMultiEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GeneratedDocumentsResult>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (GeneratedDocumentsResult)this.ApiClient.Deserialize(localVarResponse, typeof(GeneratedDocumentsResult)));
+        }
+
+        /// <summary>
+        /// Generates multiple document using DocuSign Spring CM template then returns the content of the document based on the return document type. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of GeneratedDocumentsResult</returns>
+        public async System.Threading.Tasks.Task<GeneratedDocumentsResult> CreateGenAndConvertMultiEnvelopesAsync(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<GeneratedDocumentsResult> localVarResponse = await CreateGenAndConvertMultiEnvelopesAsyncWithHttpInfo(accountId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Generates multiple document using DocuSign Spring CM template then returns the content of the document based on the return document type. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (GeneratedDocumentsResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GeneratedDocumentsResult>> CreateGenAndConvertMultiEnvelopesAsyncWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateGenAndConvertMultiEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/generate_and_convert_multi";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateGenAndConvertMultiEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GeneratedDocumentsResult>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (GeneratedDocumentsResult)this.ApiClient.Deserialize(localVarResponse, typeof(GeneratedDocumentsResult)));
+        }
+
+
+        /// <summary>
+        /// Generates the documents for an envelope using DocuSign Spring CM then creates the envelope. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>EnvelopeSummary</returns>
+        public EnvelopeSummary CreateGenAndSendEnvelopes(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<EnvelopeSummary> localVarResponse = CreateGenAndSendEnvelopesWithHttpInfo(accountId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Generates the documents for an envelope using DocuSign Spring CM then creates the envelope. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of EnvelopeSummary</returns>
+        public ApiResponse<EnvelopeSummary> CreateGenAndSendEnvelopesWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateGenAndSendEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/generate_and_send";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateGenAndSendEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopeSummary>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (EnvelopeSummary)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeSummary)));
+        }
+
+        /// <summary>
+        /// Generates the documents for an envelope using DocuSign Spring CM then creates the envelope. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of EnvelopeSummary</returns>
+        public async System.Threading.Tasks.Task<EnvelopeSummary> CreateGenAndSendEnvelopesAsync(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<EnvelopeSummary> localVarResponse = await CreateGenAndSendEnvelopesAsyncWithHttpInfo(accountId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Generates the documents for an envelope using DocuSign Spring CM then creates the envelope. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (EnvelopeSummary)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopeSummary>> CreateGenAndSendEnvelopesAsyncWithHttpInfo(string accountId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateGenAndSendEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/generate_and_send";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateGenAndSendEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopeSummary>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (EnvelopeSummary)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeSummary)));
+        }
+
+
+        /// <summary>
         /// Submits a batch of historical envelopes for republish to an adhoc config. 
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
@@ -10562,6 +11799,191 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<EnvelopePublishTransaction>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (EnvelopePublishTransaction)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopePublishTransaction)));
+        }
+
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>EnvelopeSummary</returns>
+        public EnvelopeSummary CreateLinkMetadataEnvelopes(string accountId, string envelopeId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<EnvelopeSummary> localVarResponse = CreateLinkMetadataEnvelopesWithHttpInfo(accountId, envelopeId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>ApiResponse of EnvelopeSummary</returns>
+        public ApiResponse<EnvelopeSummary> CreateLinkMetadataEnvelopesWithHttpInfo(string accountId, string envelopeId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateLinkMetadataEnvelopes");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->CreateLinkMetadataEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/archive_metadata";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateLinkMetadataEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopeSummary>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (EnvelopeSummary)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeSummary)));
+        }
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of EnvelopeSummary</returns>
+        public async System.Threading.Tasks.Task<EnvelopeSummary> CreateLinkMetadataEnvelopesAsync(string accountId, string envelopeId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+             ApiResponse<EnvelopeSummary> localVarResponse = await CreateLinkMetadataEnvelopesAsyncWithHttpInfo(accountId, envelopeId, envelopeGenAndSend);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add metadata in the form of GenAndSend to existing envelopes in docusign. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <param name="envelopeGenAndSend"> (optional)</param>
+        /// <returns>Task of ApiResponse (EnvelopeSummary)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopeSummary>> CreateLinkMetadataEnvelopesAsyncWithHttpInfo(string accountId, string envelopeId, EnvelopeGenAndSend envelopeGenAndSend = null)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->CreateLinkMetadataEnvelopes");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->CreateLinkMetadataEnvelopes");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/archive_metadata";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
+            if (envelopeGenAndSend != null && envelopeGenAndSend.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(envelopeGenAndSend); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = envelopeGenAndSend; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateLinkMetadataEnvelopes", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopeSummary>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (EnvelopeSummary)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopeSummary)));
         }
 
 
@@ -16905,6 +18327,171 @@ namespace DocuSign.eSign.Api
 
 
         /// <summary>
+        /// Return generated html document from archive. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream GetArchiveDocument(string accountId, string documentId)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = GetArchiveDocumentWithHttpInfo(accountId, documentId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Return generated html document from archive. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public ApiResponse<System.IO.Stream> GetArchiveDocumentWithHttpInfo(string accountId, string documentId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->GetArchiveDocument");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling EnvelopesApi->GetArchiveDocument");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/archivedocuments/{documentId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetArchiveDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+        /// <summary>
+        /// Return generated html document from archive. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> GetArchiveDocumentAsync(string accountId, string documentId)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = await GetArchiveDocumentAsyncWithHttpInfo(accountId, documentId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Return generated html document from archive. 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="documentId">The ID of the document being accessed.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetArchiveDocumentAsyncWithHttpInfo(string accountId, string documentId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->GetArchiveDocument");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling EnvelopesApi->GetArchiveDocument");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/archivedocuments/{documentId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", this.ApiClient.ParameterToString(documentId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetArchiveDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (System.IO.Stream)this.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+
+        /// <summary>
         /// Retrieves an attachment from the envelope. Retrieves an attachment from an envelope.
         /// </summary>
         /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
@@ -19716,6 +21303,171 @@ namespace DocuSign.eSign.Api
             return new ApiResponse<DocumentHtmlDefinitionOriginals>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (DocumentHtmlDefinitionOriginals)this.ApiClient.Deserialize(localVarResponse, typeof(DocumentHtmlDefinitionOriginals)));
+        }
+
+
+        /// <summary>
+        /// Gets the permission level the calling user has for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>EnvelopesSharePermissionResponse</returns>
+        public EnvelopesSharePermissionResponse GetEnvelopePermission(string accountId, string envelopeId)
+        {
+             ApiResponse<EnvelopesSharePermissionResponse> localVarResponse = GetEnvelopePermissionWithHttpInfo(accountId, envelopeId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets the permission level the calling user has for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>ApiResponse of EnvelopesSharePermissionResponse</returns>
+        public ApiResponse<EnvelopesSharePermissionResponse> GetEnvelopePermissionWithHttpInfo(string accountId, string envelopeId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->GetEnvelopePermission");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->GetEnvelopePermission");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares/permission";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetEnvelopePermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopesSharePermissionResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (EnvelopesSharePermissionResponse)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopesSharePermissionResponse)));
+        }
+
+        /// <summary>
+        /// Gets the permission level the calling user has for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>Task of EnvelopesSharePermissionResponse</returns>
+        public async System.Threading.Tasks.Task<EnvelopesSharePermissionResponse> GetEnvelopePermissionAsync(string accountId, string envelopeId)
+        {
+             ApiResponse<EnvelopesSharePermissionResponse> localVarResponse = await GetEnvelopePermissionAsyncWithHttpInfo(accountId, envelopeId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets the permission level the calling user has for an envelope 
+        /// </summary>
+        /// <exception cref="DocuSign.eSign.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The external account number (int) or account ID Guid.</param>
+        /// <param name="envelopeId">The envelopeId Guid of the envelope being accessed.</param>
+        /// <returns>Task of ApiResponse (EnvelopesSharePermissionResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EnvelopesSharePermissionResponse>> GetEnvelopePermissionAsyncWithHttpInfo(string accountId, string envelopeId)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling EnvelopesApi->GetEnvelopePermission");
+            // verify the required parameter 'envelopeId' is set
+            if (envelopeId == null)
+                throw new ApiException(400, "Missing required parameter 'envelopeId' when calling EnvelopesApi->GetEnvelopePermission");
+
+            var localVarPath = "/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares/permission";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (envelopeId != null) localVarPathParams.Add("envelopeId", this.ApiClient.ParameterToString(envelopeId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetEnvelopePermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EnvelopesSharePermissionResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (EnvelopesSharePermissionResponse)this.ApiClient.Deserialize(localVarResponse, typeof(EnvelopesSharePermissionResponse)));
         }
 
 
